@@ -1,0 +1,7 @@
+{{ define "main" }}
+<h1>{{ .Site.Title }}</h1>
+{{ with .Params.subtitle }}
+<h2 class="text-secondary h3">{{ . }}</h2>
+{{ end }}
+{{ .Content }}
+{{ end }}
