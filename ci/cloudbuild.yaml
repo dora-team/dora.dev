@@ -17,7 +17,12 @@ steps:
  # create a docker container that can run on cloud run
   - name: gcr.io/cloud-builders/docker
     id: 'build'
-    args: ["build", "-f", "tools/nginx_container/Dockerfile", "-t", "gcr.io/$PROJECT_ID/doradotdev:commit$SHORT_SHA", "."]
+    args: [
+      "build", 
+      "-f", "tools/nginx_container/Dockerfile", 
+      "-t", "gcr.io/$PROJECT_ID/doradotdev:commit$SHORT_SHA", 
+      "-t", "gcr.io/$PROJECT_ID/doradotdev:latest", 
+      "."]
     waitFor: [
       'hugo', 
       'sed'
