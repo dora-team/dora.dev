@@ -1,0 +1,60 @@
+steps: 
+  - name: gcr.io/$PROJECT_ID/hugo
+    id: 'hugo'
+    args: [
+      "-d","./public"
+      ]
+    waitFor: ['-']
+
+  - name: ubuntu
+    id: 'sed'
+    entrypoint: '/bin/bash'
+    args:
+      - '-c'
+      - 'tools/nginx_container/create_redirects.sh'
+    waitFor: ['-']
+
+ # create a docker container that can run on cloud run
+  - name: gcr.io/cloud-builders/docker
+    id: 'build'
+    args: ["build", "-f", "tools/nginx_container/Dockerfile", "-t", "gcr.io/$PROJECT_ID/doradotdev:commit$SHORT_SHA", "."]
+    waitFor: [
+      'hugo', 
+      'sed'
+      ]
+
+  - name: gcr.io/cloud-builders/docker
+    id: 'push'
+    args: ["push","gcr.io/$PROJECT_ID/doradotdev:commit$SHORT_SHA"]
+    waitFor: ['build']
+
+  # deploy to Cloud Run
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk:410.0.0-slim
+    id: 'deploy'
+    entrypoint: gcloud
+    args: [
+    'alpha', 'run', 'deploy', '$_CLOUD_RUN_TARGET_SVC', 
+    '--image', 'gcr.io/$PROJECT_ID/doradotdev:commit$SHORT_SHA', 
+    '--region', 'us-central1',
+    '--platform', 'managed',
+    '--tag=commit$SHORT_SHA',
+    '--allow-unauthenticated',
+    '--quiet'
+    ]
+    waitFor: ['push']
+
+  # route traffic to new revision
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk:410.0.0-slim
+    id: 'activate'
+    entrypoint: gcloud
+    args: [
+      'alpha', 'run', 'services', 'update-traffic', '$_CLOUD_RUN_TARGET_SVC',
+      '--region', 'us-central1',
+      '--to-tags','commit$SHORT_SHA=100',
+      '--platform', 'managed',
+      '--quiet'
+    ]
+    waitFor: ['deploy']
+    
+substitutions:
+  _CLOUD_RUN_TARGET_SVC: prod-doradotdev
