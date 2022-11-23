@@ -1,4 +1,4 @@
-FROM python:3.8-slim
+FROM python:3.10-slim
 
 RUN pip install pygithub google-cloud-secret-manager click
 
