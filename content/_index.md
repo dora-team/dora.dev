@@ -7,4 +7,4 @@ draft: false
 Homepage for forthcoming dora.dev site (currently, there is no content for this page\*; at launch, we may opt to redirect to `/research/`)
 
 
-\*or any other page! &#128556; This site is WIP.
+\*or any other page! This site is WIP.
