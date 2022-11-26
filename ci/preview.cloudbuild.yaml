@@ -2,6 +2,7 @@ steps:
   - name: gcr.io/$PROJECT_ID/hugo
     id: 'hugo'
     args: [
+      "-s","./hugo",
       "-d","./public"
       ]
     waitFor: ['-']
