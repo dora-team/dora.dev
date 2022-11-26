@@ -6,10 +6,6 @@ steps:
       "-d","../tools/nginx_container/generated_site"
       ]
     waitFor: ['-']
-  
-  - name: bash
-    dir: tools/nginx_container/generated_site
-    script: ls
 
   - name: ubuntu
     id: 'sed'

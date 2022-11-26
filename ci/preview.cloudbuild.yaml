@@ -3,7 +3,7 @@ steps:
     id: 'hugo'
     args: [
       "-s","./hugo",
-      "-d","./public"
+      "-d","../tools/nginx_container/generated_site"
       ]
     waitFor: ['-']
 
@@ -19,9 +19,12 @@ steps:
   - name: gcr.io/cloud-builders/docker
     id: 'build'
     args: [
-      "build", "-f", "tools/nginx_container/Dockerfile", 
-      "-t", "gcr.io/$PROJECT_ID/doradotdev:commit$SHORT_SHA", "."
+      "build", 
+      "-t", "gcr.io/$PROJECT_ID/doradotdev:commit$SHORT_SHA",
+      "-t", "gcr.io/$PROJECT_ID/doradotdev:latest", 
+      "."
       ]
+    dir: 'tools/nginx_container'
     waitFor: ['hugo', 'sed']
   
   - name: gcr.io/cloud-builders/docker
