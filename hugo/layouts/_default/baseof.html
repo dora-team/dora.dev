@@ -1,12 +1,13 @@
 <!doctype html>
+<meta charset="utf-8">
 <html lang="en">
-  <head>
-    {{- partial "head" . -}}
-  </head>
-  <body>
-    {{- partial "wip_banner" -}}
-    {{- partial "header" . -}}
-    {{- block "main" . }}{{- end }}
-    {{- partial "footer" . -}}
-  </body>
+    <head>
+        {{- partial "head" . -}}
+    </head>
+    <body>
+        {{- partial "wip_banner" -}}
+        {{- partial "header" . -}}
+        {{- block "main" . }}{{- end }}
+        {{- partial "footer" . -}}
+    </body>
 </html>
