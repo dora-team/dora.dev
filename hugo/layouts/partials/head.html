@@ -1,5 +1,5 @@
 <title>DORA</title>
-{{ $options := (dict "targetPath" "css/main.css") }}
+{{ $options := (dict "targetPath" "css/main.css" "outputStyle" "compressed") }}
 {{ $styles := resources.Get "scss/main.scss" | toCSS $options | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
 
