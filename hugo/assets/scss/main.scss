@@ -1,4 +1,7 @@
+$layout-breakpoint-small: 960px;
+
 @import "normalize.scss";
+@import "nav.scss";
 
 * {
     font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
@@ -12,31 +15,6 @@ header {
 
     .dora-logo {
         margin:2px;
-    }
-
-    nav {
-        display:flex;
-        flex-grow: 1;
-        justify-content:flex-end;
-        margin-right:16px;
-        font-size:.9em;
-        ul {
-            display:flex;
-            margin:0;
-            li {
-                list-style-type: none;
-                padding: 0 1em;
-
-                a {
-                    text-decoration: none;
-                    color:rgb(95,  99, 104);
-                }
-
-                a:hover {
-                    color:rgb(0,0,0);
-                }
-            }
-        }
     }
 }
 
