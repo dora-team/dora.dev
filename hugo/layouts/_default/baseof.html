@@ -7,7 +7,9 @@
     <body>
         {{- partial "wip_banner" -}}
         {{- partial "header" . -}}
-        {{- block "main" . }}{{- end }}
+        <main>
+            {{- block "main" . }}{{- end }}
+        </main>
         {{- partial "footer" . -}}
     </body>
 </html>
