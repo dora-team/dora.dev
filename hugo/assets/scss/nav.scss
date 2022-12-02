@@ -25,10 +25,37 @@ header {
     }
 }
 
+
 // hamburger menu for mobile
 header nav input[type=checkbox] { display:none; }
 
 @media (max-width: $layout-breakpoint-small) {
+
+    $mobile-menu-width: 180px;
+
+    header nav label {
+
+            ul {
+            position: absolute;
+            top:64px;
+            right:0px;
+            background-color: white;
+            transform: translate($mobile-menu-width);
+            opacity: 0;
+            transition: .25s 0s ease;
+            width:$mobile-menu-width;
+            height:calc(100% - 64px);
+            display:block;
+            padding:0;
+            z-index: 300;
+
+            li {
+                padding:24px 4px 24px 24px;
+                border-bottom:1px solid #dadce0;
+            }
+
+        }
+    }
 
     label .menu {
         position: absolute;
@@ -36,7 +63,6 @@ header nav input[type=checkbox] { display:none; }
         right:0;
         width: 64px;
         height: 64px;
-        -webkit-transition: .5s ease-in-out;
         transition: .5s ease-in-out;
         cursor: pointer;
     }
@@ -49,15 +75,12 @@ header nav input[type=checkbox] { display:none; }
         height: 2px;
         background: rgb(95,  99, 104);;
         display: block;
-        -webkit-transform-origin: center;
         transform-origin: center;
-        -webkit-transition: .5s ease-in-out;
         transition: .5s ease-in-out;
     }
     
     label .hamburger:after, label .hamburger:before {
-        -webkit-transition: .5s ease-in-out;
-        transition: .5s ease-in-out;
+        transition: .35s ease-in-out;
         content: "";
         position: absolute;
         display: block;
@@ -73,45 +96,41 @@ header nav input[type=checkbox] { display:none; }
     label input { display: none; }
     
     label input:checked + .menu .hamburger {
-        -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
     }
     
     label input:checked + .menu .hamburger:after {
-        -webkit-transform: rotate(90deg);
         transform: rotate(90deg);
         bottom: 0;
         
     }
     
     label input:checked + .menu .hamburger:before {
-        -webkit-transform: rotate(90deg);
         transform: rotate(90deg);
         top: 0;
         
     }
     
-    label input:checked + .menu + ul { opacity: 1; }
-    
-    label ul {
-        z-index: 200;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        -webkit-transition: .25s 0s ease-in-out;
-        transition: .25s 0s ease-in-out;
+    label input:checked + .menu + ul { 
+        opacity: 1; 
+        transform:translate(0);
     }
     
-    label a {
-        margin-bottom: 1em;
-        display: block;
-        color: #f38630;
-        text-decoration: none;
-        
+    .page-overlay {
+        transition:.35s ease;
+        background-color:rgba(0,0,0,0);
+        position: absolute;
+        top:64px;
+        left:0;
+        width:100%;
+        bottom:0;
+        z-index:100;
+        visibility: hidden;
     }
 
+    label input:checked + .menu + ul + .page-overlay {
+        background-color:rgba(0,0,0,.4);
+        visibility: visible;
+    }
 
 }
