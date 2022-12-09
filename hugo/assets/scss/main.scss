@@ -1,10 +1,23 @@
 $layout-breakpoint-small: 960px;
+$light-background: #F8F9FA;
 
 @import "normalize.scss";
 @import "nav.scss";
 
 * {
     font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
+}
+
+p {
+    font-family: "Roboto",Arial,Helvetica,sans-serif;
+    font-weight: 300;
+}
+
+h1 {
+    font-weight:400;
+    font-size:2.5em;
+    margin-bottom: 8px;
+    line-height: 120%;
 }
 
 header {
@@ -19,13 +32,25 @@ header {
 }
 
 main {
-    max-width: 1440px;
+    max-width: 960px;
     min-height: 720px;
-    padding: 0 28px;
+    padding: 16px 28px 8px 28px;
     margin:auto;
 }
 
+section.banner {
+    background-color: $light-background;
+
+    .content {
+        max-width: 960px;
+        padding: 16px 28px;
+        margin:auto;
+        line-height:1.7;
+    }
+
+}
+
 footer {
-    background-color: #F8F9FA;
+    background-color: $light-background;
     padding:24px 16px 16px 16px;
 }

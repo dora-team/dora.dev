@@ -2,9 +2,10 @@
 title: "Home"
 date: 2022-11-22
 draft: false
+bannerTitle: "DevOps Research and Assessment"
+bannerSubtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 ---
 
-Homepage for forthcoming dora.dev site (currently, there is no content for this page\*; at launch, we may opt to redirect to `/research/`)
-
-
-\*or any other page! This site is WIP. For now, please refer to [devops-research.com](https://devops-research.com/research.html)
+{{< article "Article Title" >}}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+{{< /article >}}

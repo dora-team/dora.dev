@@ -1,6 +1,5 @@
 baseURL = 'http://dora.dev/'
 languageCode = 'en-us'
-title = 'DORA.dev'
 
 [params]
     Keywords = "DevOps, Lead time, Deploy frequency, Change fail rate, MTTR, Time to restore, metrics, DORA"

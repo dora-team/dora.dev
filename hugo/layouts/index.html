@@ -1,7 +1,7 @@
-{{ define "main" }}
-<h1>{{ .Site.Title }}</h1>
-{{ with .Params.subtitle }}
-<h2 class="text-secondary h3">{{ . }}</h2>
+{{ define "banner" }}
+    <h1>{{ .Params.bannerTitle }}</h1>
+    <p>{{ .Params.bannerSubtitle }}</p>
 {{ end }}
-{{ .Content }}
+{{ define "main" }}
+    {{ .Content }}
 {{ end }}
