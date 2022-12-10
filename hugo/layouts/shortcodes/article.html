@@ -1,2 +1,6 @@
-<h2>{{ .Get 0 }}</h2>
-<p>{{ .Inner }}</p>
+<article class='cols_{{ .Get "columns"}}'>
+    <div class="content">
+        <h2>{{ .Get "title" }}</h2>
+        <p>{{ .Inner }}</p>
+    </div>
+</article>
