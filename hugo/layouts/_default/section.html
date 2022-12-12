@@ -2,7 +2,7 @@
     {{ .Content }}
     {{ range .Pages }}
     <li>
-        <a href="{{.Permalink}}">{{ .Date.Format "Mon, Jan 2, 2006" }} | {{.Title}}</a>
+        <a href="{{.RelPermalink}}">{{ .Date.Format "Mon, Jan 2, 2006" }} | {{.Title}}</a>
     </li>
     {{ end }}
 {{ end }}
