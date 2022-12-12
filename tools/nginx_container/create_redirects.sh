@@ -1,4 +1,10 @@
 #!/bin/bash
+
+# TODO fix this script; it doesn't seem to be working
+exit 0;
+
+
+
 # this script is intended to be run from the repo root
 # where '_redirects' lives.
 # it modifies the NGINX config in tools/nginx_container
