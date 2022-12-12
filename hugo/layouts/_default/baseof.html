@@ -7,11 +7,14 @@
     <body>
         {{- partial "wip_banner" -}}
         {{- partial "header" . -}}
+        {{ if or (.Params.bannerTitle) (.Params.bannerSubtitle) }}
         <section class="banner">
             <div class="content">
-                {{- block "banner" . }}{{- end}}
+                <h1>{{ .Params.bannerTitle }}</h1>
+                <p>{{ .Params.bannerSubtitle }}</p>
             </div>
         </section>
+        {{ end }}
         <main>
             {{- block "main" . }}{{- end }}
         </main>
