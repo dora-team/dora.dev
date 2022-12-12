@@ -13,7 +13,8 @@ for row in "${rows[@]}"; do
     dest=${row_array[1]}                                                         
 
     # construct NGINX redirect rule
-    rule="rewrite ^${src}$ ${dest} redirect;"
+    # 2022-12-12: changing to 302 during development
+    rule="rewrite ^${src}$ ${dest}"
     echo ${rule}
 
     # insert rule after heading
