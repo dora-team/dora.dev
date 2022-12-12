@@ -1,0 +1,42 @@
+@import "variables.scss";
+
+section.question  {
+
+    display:flex;
+        flex-direction: row;
+
+    aside {
+        flex-grow: 0;
+    }
+
+    fieldset {
+        flex-grow: 1;
+
+        legend {
+            font-size:1.1em;
+        }
+
+        label {
+            font-size:.9em;
+        }
+
+    }
+
+}
+
+
+img.spot {
+    width:260px;
+    margin:32px;
+}
+
+@media (max-width: $layout-breakpoint-small) {
+    section.question {
+ 
+        flex-direction: column;
+
+        aside > img.spot {
+            display:none;
+        }
+    }
+}

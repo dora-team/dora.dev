@@ -5,13 +5,17 @@
         {{- partial "head" . -}}
     </head>
     <body>
-        {{- partial "wip_banner" -}}
         {{- partial "header" . -}}
         {{ if or (.Params.bannerTitle) (.Params.bannerSubtitle) }}
         <section class="banner">
             <div class="content">
-                <h1>{{ .Params.bannerTitle }}</h1>
-                <p>{{ .Params.bannerSubtitle }}</p>
+                <article>
+                    <h1>{{ .Params.bannerTitle }}</h1>
+                    <p>{{ .Params.bannerSubtitle | markdownify }}</p>
+                </article>
+                {{ if .Params.bannerHighlightImage }}
+                    <img src="{{ .Params.bannerHighlightImage }}" class="highlight">
+                {{ end }}
             </div>
         </section>
         {{ end }}

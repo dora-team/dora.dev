@@ -27,7 +27,7 @@ header {
 
 
 // hamburger menu for mobile
-header nav input[type=checkbox] { display:none; }
+header > nav > label > input[type=checkbox] { display:none; }
 
 @media (max-width: $layout-breakpoint-small) {
 
@@ -92,8 +92,6 @@ header nav input[type=checkbox] { display:none; }
     label .hamburger:before { top: -10px; }
     
     label .hamburger:after { bottom: -10px; }
-    
-    label input { display: none; }
     
     label input:checked + .menu .hamburger {
         transform: rotate(45deg);

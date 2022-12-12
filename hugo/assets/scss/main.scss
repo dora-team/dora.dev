@@ -1,22 +1,45 @@
-$text-color: #202124;
-
-$layout-breakpoint-small: 960px;
-$light-background: #F8F9FA;
-$light-border: #dadce0;
-
+@import "variables.scss";
 
 @import "normalize.scss";
 @import "nav.scss";
+@import "homepage.scss";
 
-* {
+body {
     font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
     color: $text-color;
 }
 
-p {
+p, .paragraph {
     font-family: "Roboto",Arial,Helvetica,sans-serif;
     font-weight: 300;
     margin:0;
+}
+
+p > bold, p > strong {
+    font-weight: 500;
+}
+
+
+fieldset {
+    padding:0;
+    border:none;
+
+    ul  {
+
+        padding:0;
+
+        li {
+            list-style-type: none;
+            margin-bottom:6px;
+        }
+
+    }
+
+}
+
+input[type=radio] {
+    transform:scale(1.25);
+    margin-right:.5em;
 }
 
 @mixin headings {
@@ -26,7 +49,7 @@ p {
   }
 
 @include headings {
-    font-weight:400;
+    font-weight:500;
     margin-bottom: 0;
     margin-top: .25em;
     padding-bottom:0em;
@@ -40,6 +63,18 @@ p {
 
   h2 {
     font-size:1.75em;
+  }
+
+  h3 {
+    font-size:1.5em;
+    font-weight:400;
+  }
+
+  h5 {
+    font-size:.7em;
+    letter-spacing:1.25px;
+    color: #777;
+    text-transform: uppercase;
   }
 
 header {
@@ -64,46 +99,29 @@ section.banner {
     background-color: $light-background;
 
     .content {
+        display:flex;
         max-width: 960px;
         padding: 16px 28px;
         margin:auto;
         line-height:1.75;
     }
 
-}
-
-section.features {
-
-    display:flex;
-    flex-wrap: wrap;
-
-    article {
-        padding:0;
-        margin:0;
-
-        div.content {
-            margin:12px;
-            padding:4px 12px 8px 12px;
-            border: 1px solid $light-border;
-            border-radius: 8px;
-        }
+    .content p {
+        margin-right:2em;
     }
 
-    .cols_1 {
+    img.highlight {
+        align:right;
         width:50%;
+        max-width:400px;
     }
 
-    .cols_2 {
-        width:100%;
-    }
-    
 }
 
 @media (max-width: $layout-breakpoint-small) {
-    section.features {
-        .cols_1 {
-            width:100%;
-        }
+
+    section.banner img.highlight {
+        display:none;
     }
 }
 
