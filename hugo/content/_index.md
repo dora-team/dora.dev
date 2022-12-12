@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "DevOps Research and Assessment"
 date: 2022-11-22
 draft: false
 bannerTitle: "DevOps Research and Assessment"
