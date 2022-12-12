@@ -1,3 +1,1 @@
-/research.html /research/
-/quickcheck.html /quickcheck/2022/
-/quickcheck/ /quickcheck/2022/
+^\/quickcheck\/$ /quickcheck/2022/
