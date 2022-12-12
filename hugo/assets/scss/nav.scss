@@ -42,10 +42,10 @@ header > nav > label > input[type=checkbox] { display:none; }
             background-color: white;
             transform: translate($mobile-menu-width);
             opacity: 0;
-            transition: .25s 0s ease;
             width:$mobile-menu-width;
             height:calc(100% - 64px);
             display:block;
+            opacity:0;
             padding:0;
             z-index: 300;
 
@@ -112,6 +112,7 @@ header > nav > label > input[type=checkbox] { display:none; }
     label input:checked + .menu + ul { 
         opacity: 1; 
         transform:translate(0);
+        transition: .25s ease;
     }
     
     .page-overlay {
