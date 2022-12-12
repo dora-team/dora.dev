@@ -4,7 +4,7 @@
 # it modifies the NGINX config in tools/nginx_container
 
 # read file lines into an array
-readarray rows < redirects.txt
+readarray rows < _redirects
 
 # for each line, parse redirect source and destination 
 for row in "${rows[@]}"; do                                                      
