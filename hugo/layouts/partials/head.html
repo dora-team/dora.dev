@@ -1,7 +1,13 @@
-<title>DORA</title>
-{{ $options := (dict "targetPath" "css/main.css" "outputStyle" "compressed") }}
+<title>DORA | {{ .Title }}</title>
+{{ $options := (dict "targetPath" "css/main.css" "outputStyle" "normal") }}
 {{ $styles := resources.Get "scss/main.scss" | toCSS $options | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+
+<!--- add page-specific stylesheets -->
+{{ range .Params.stylesheets }}
+    {{ $stylesheet := printf "scss/%s.scss" .name | resources.Get | toCSS | fingerprint }}
+    <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
+{{ end }}
 
 <meta name="description" content="{{ .Site.Params.Description }}">
 <meta name="keywords" content="{{ .Site.Params.Keywords }}">

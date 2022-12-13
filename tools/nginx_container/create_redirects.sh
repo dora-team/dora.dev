@@ -1,10 +1,16 @@
 #!/bin/bash
+
+# TODO fix this script; it doesn't seem to be working
+exit 0;
+
+
+
 # this script is intended to be run from the repo root
-# where 'redirects.txt' lives.
+# where '_redirects' lives.
 # it modifies the NGINX config in tools/nginx_container
 
 # read file lines into an array
-readarray rows < redirects.txt
+readarray rows < _redirects
 
 # for each line, parse redirect source and destination 
 for row in "${rows[@]}"; do                                                      
@@ -13,7 +19,7 @@ for row in "${rows[@]}"; do
     dest=${row_array[1]}                                                         
 
     # construct NGINX redirect rule
-    rule="rewrite ^${src} ${dest} redirect;"
+    rule="rewrite ${src} ${dest} redirect;"
     echo ${rule}
 
     # insert rule after heading

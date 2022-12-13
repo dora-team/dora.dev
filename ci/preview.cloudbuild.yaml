@@ -2,8 +2,9 @@ steps:
   - name: gcr.io/$PROJECT_ID/hugo
     id: 'hugo'
     args: [
-      "-s","./hugo",
-      "-d","../tools/nginx_container/generated_site"
+      "-v","-s","./hugo",
+      "-d","../tools/nginx_container/generated_site",
+      "--debug"
       ]
     waitFor: ['-']
 

@@ -1,46 +1,24 @@
-$text-color: #202124;
-
-$layout-breakpoint-small: 960px;
-$light-background: #F8F9FA;
-$light-border: #dadce0;
-
+@import "variables.scss";
 
 @import "normalize.scss";
 @import "nav.scss";
+@import "headings.scss";
+@import "forms.scss";
 
-* {
+body {
     font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
     color: $text-color;
 }
 
-p {
+p, .paragraph, select {
     font-family: "Roboto",Arial,Helvetica,sans-serif;
     font-weight: 300;
     margin:0;
 }
 
-@mixin headings {
-    h1, h2, h3, h4, h5, h6 {
-      @content;
-    }
-  }
-
-@include headings {
-    font-weight:400;
-    margin-bottom: 0;
-    margin-top: .25em;
-    padding-bottom:0em;
-    padding-top:0;
-    line-height: 120%;
-  }
-
-  h1 {
-    font-size:2.5em;
-  }
-
-  h2 {
-    font-size:1.75em;
-  }
+p > bold, p > strong {
+    font-weight: 500;
+}
 
 header {
     display:flex;
@@ -61,53 +39,33 @@ main {
 }
 
 section.banner {
-    background-color: $light-background;
+    background-color: $background-light;
 
     .content {
+        display:flex;
         max-width: 960px;
         padding: 16px 28px;
         margin:auto;
         line-height:1.75;
     }
 
+    img.highlight {
+        align:right;
+        width:40%;
+        max-width:400px;
+        margin-left:1.5em;
+    }
+
 }
 
-section.features {
+@media (max-width: $layout-breakpoint-medium) {
 
-    display:flex;
-    flex-wrap: wrap;
-
-    article {
-        padding:0;
-        margin:0;
-
-        div.content {
-            margin:12px;
-            padding:4px 12px 8px 12px;
-            border: 1px solid $light-border;
-            border-radius: 8px;
-        }
-    }
-
-    .cols_1 {
-        width:50%;
-    }
-
-    .cols_2 {
-        width:100%;
-    }
-    
-}
-
-@media (max-width: $layout-breakpoint-small) {
-    section.features {
-        .cols_1 {
-            width:100%;
-        }
+    section.banner img.highlight {
+        display:none;
     }
 }
 
 footer {
-    background-color: $light-background;
+    background-color: $background-light;
     padding:24px 16px 16px 16px;
 }

@@ -1,0 +1,63 @@
+@import "variables.scss";
+
+section.question  {
+
+    display:flex;
+    flex-direction: row;
+
+    padding-bottom: 24px;
+    border-bottom: 1px solid $border-light;
+    margin-bottom: 32px;
+
+    aside {
+        flex-grow: 0;
+        width:35%;
+    }
+
+    fieldset {
+        flex-grow: 1;
+        width:65%;
+
+        legend {
+            font-size:1.1em;
+        }
+
+        label {
+            font-size:.9em;
+        }
+
+    }
+
+}
+
+section.submit {
+    text-align: right;
+}
+
+select {
+    width:100%;
+}
+
+img.spot {
+    width:260px;
+    margin:32px;
+}
+
+@media (max-width: $layout-breakpoint-medium) {
+    section.question {
+ 
+        flex-direction: column;
+
+        aside {
+            width:100%;
+        }
+
+        aside > img.spot {
+            // display:none;
+        }
+
+        fieldset {
+            width:100%;
+        }
+    }
+}
