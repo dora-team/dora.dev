@@ -8,3 +8,4 @@ bannerHighlightImage: "/img/quickcheck/hero_illustration.svg"
 type: "quickcheck"
 ---
 
+[2019]({{% relref "2019/" %}})
