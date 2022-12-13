@@ -2,6 +2,7 @@
 
 @import "normalize.scss";
 @import "nav.scss";
+@import "headings.scss";
 @import "homepage.scss";
 
 body {
@@ -18,7 +19,6 @@ p, .paragraph {
 p > bold, p > strong {
     font-weight: 500;
 }
-
 
 fieldset {
     padding:0;
@@ -41,41 +41,6 @@ input[type=radio] {
     transform:scale(1.25);
     margin-right:.5em;
 }
-
-@mixin headings {
-    h1, h2, h3, h4, h5, h6 {
-      @content;
-    }
-  }
-
-@include headings {
-    font-weight:500;
-    margin-bottom: 0;
-    margin-top: .25em;
-    padding-bottom:0em;
-    padding-top:0;
-    line-height: 120%;
-  }
-
-  h1 {
-    font-size:2.5em;
-  }
-
-  h2 {
-    font-size:1.75em;
-  }
-
-  h3 {
-    font-size:1.5em;
-    font-weight:400;
-  }
-
-  h5 {
-    font-size:.7em;
-    letter-spacing:1.25px;
-    color: #777;
-    text-transform: uppercase;
-  }
 
 header {
     display:flex;
@@ -106,19 +71,16 @@ section.banner {
         line-height:1.75;
     }
 
-    .content p {
-        margin-right:2em;
-    }
-
     img.highlight {
         align:right;
         width:50%;
         max-width:400px;
+        margin-left:1.5em;
     }
 
 }
 
-@media (max-width: $layout-breakpoint-small) {
+@media (max-width: $layout-breakpoint-large) {
 
     section.banner img.highlight {
         display:none;

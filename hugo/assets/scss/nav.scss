@@ -29,7 +29,7 @@ header {
 // hamburger menu for mobile
 header > nav > label > input[type=checkbox] { display:none; }
 
-@media (max-width: $layout-breakpoint-small) {
+@media (max-width: $layout-breakpoint-large) {
 
     $mobile-menu-width: 180px;
 

@@ -1,0 +1,63 @@
+@mixin headings {
+    h1, h2, h3, h4, h5, h6 {
+      @content;
+    }
+  }
+
+@include headings {
+    font-weight:500;
+    margin-bottom: 0;
+    margin-top: .25em;
+    padding-bottom:0em;
+    padding-top:0;
+    line-height: 120%;
+  }
+
+  h1 {
+    font-size:5vmin;
+  }
+
+  h2 {
+    font-size:3.25vmin;
+  }
+
+  h3 {
+    font-size:2.5vmin;
+    font-weight:400;
+  }
+
+  h4 {
+    font-size:2vmin;
+  }
+
+  h5 {
+    font-size:1.5vmin;
+    letter-spacing:1.25px;
+    color: #777;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: $layout-breakpoint-medium) {
+
+    $base-mobile-heading-size: 24px;
+
+    h1 {
+        font-size:$base-mobile-heading-size;
+    }
+
+    h2 {
+        font-size:$base-mobile-heading-size * .85;
+    }
+
+    h3 {
+        font-size:$base-mobile-heading-size * .7;
+    }
+
+    h4 {
+        font-size:$base-mobile-heading-size * .5;
+    }
+
+    h5 {
+        font-size:10px;
+    }
+}

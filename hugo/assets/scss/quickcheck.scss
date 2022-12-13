@@ -30,13 +30,13 @@ img.spot {
     margin:32px;
 }
 
-@media (max-width: $layout-breakpoint-small) {
+@media (max-width: $layout-breakpoint-medium) {
     section.question {
  
         flex-direction: column;
 
         aside > img.spot {
-            display:none;
+            // display:none;
         }
     }
 }
