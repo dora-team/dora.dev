@@ -3,14 +3,14 @@
 @import "normalize.scss";
 @import "nav.scss";
 @import "headings.scss";
-@import "homepage.scss";
+@import "forms.scss";
 
 body {
     font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
     color: $text-color;
 }
 
-p, .paragraph {
+p, .paragraph, select {
     font-family: "Roboto",Arial,Helvetica,sans-serif;
     font-weight: 300;
     margin:0;
@@ -18,28 +18,6 @@ p, .paragraph {
 
 p > bold, p > strong {
     font-weight: 500;
-}
-
-fieldset {
-    padding:0;
-    border:none;
-
-    ul  {
-
-        padding:0;
-
-        li {
-            list-style-type: none;
-            margin-bottom:6px;
-        }
-
-    }
-
-}
-
-input[type=radio] {
-    transform:scale(1.25);
-    margin-right:.5em;
 }
 
 header {
@@ -61,7 +39,7 @@ main {
 }
 
 section.banner {
-    background-color: $light-background;
+    background-color: $background-light;
 
     .content {
         display:flex;
@@ -73,14 +51,14 @@ section.banner {
 
     img.highlight {
         align:right;
-        width:50%;
+        width:40%;
         max-width:400px;
         margin-left:1.5em;
     }
 
 }
 
-@media (max-width: $layout-breakpoint-large) {
+@media (max-width: $layout-breakpoint-medium) {
 
     section.banner img.highlight {
         display:none;
@@ -88,6 +66,6 @@ section.banner {
 }
 
 footer {
-    background-color: $light-background;
+    background-color: $background-light;
     padding:24px 16px 16px 16px;
 }

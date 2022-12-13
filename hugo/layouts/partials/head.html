@@ -5,8 +5,8 @@
 
 <!--- add page-specific stylesheets -->
 {{ range .Params.stylesheets }}
-    {{ $stylesheet := printf "scss/%s.scss" .name | resources.Get | toCSS }}
-    <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}">
+    {{ $stylesheet := printf "scss/%s.scss" .name | resources.Get | toCSS | fingerprint }}
+    <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
 {{ end }}
 
 <meta name="description" content="{{ .Site.Params.Description }}">

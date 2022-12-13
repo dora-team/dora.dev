@@ -13,25 +13,27 @@
     line-height: 120%;
   }
 
+  // note: CSS 'min' function is capitalized here to bypass SCSS parser
+
   h1 {
-    font-size:5vmin;
+    font-size:Min(5vmin,16px);
   }
 
   h2 {
-    font-size:3.25vmin;
+    font-size:Min(3.25vmin,12px);
   }
 
   h3 {
-    font-size:2.5vmin;
+    font-size:Min(2.75vmin,12px);
     font-weight:400;
   }
 
   h4 {
-    font-size:2vmin;
+    font-size:Min(2vmin,12px);
   }
 
   h5 {
-    font-size:1.5vmin;
+    font-size:Min(1.5vmin,10px);
     letter-spacing:1.25px;
     color: #777;
     text-transform: uppercase;
