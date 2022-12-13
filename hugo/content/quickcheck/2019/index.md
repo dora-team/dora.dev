@@ -9,7 +9,7 @@ stylesheets:
     - name: quickcheck
 ---
 
-<form action="https://devops-research.com/performance.html" method="get">
+<form action="/quickcheck/2019/results/" method="get">
 
 <h5>Question 1 of 5</h5>
 <section class="question">
