@@ -13,28 +13,26 @@
     line-height: 120%;
   }
 
-  // note: CSS 'max' function is capitalized here to bypass SCSS parser
-
   h1 {
-    font-size:Max(5vmin,16px);
+    font-size:24px;
   }
 
   h2 {
-    font-size:Max(3.25vmin,12px);
+    font-size:18px;
   }
 
   h3 {
-    font-size:Max(2.75vmin,12px);
+    font-size:16px;
     font-weight:400;
   }
 
   h4 {
-    font-size:Max(2vmin,12px);
+    font-size:12px;
     font-weight:400;
   }
 
   h5 {
-    font-size:Max(1.5vmin,10px);
+    font-size:10px;
     letter-spacing:1.25px;
     color: #777;
     text-transform: uppercase;

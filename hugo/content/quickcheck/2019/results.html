@@ -40,20 +40,41 @@ stylesheets:
       </div>
 </section>
 <section>
-<ul id="tabs" role="tablist">
-    <li>
-        <a href="#c-focus" class="selected" role="tab" aria-controls="c-focus" aria-selected="true" tabindex="0">Improvement areas</a>
-    </li>
-    <li>
-        <a href="#c-compare"  role="tab" aria-controls="c-compare" aria-selected="false" tabindex="-1">Performance
-        comparison</a>
-    </li>
-    <li>
-        <a href="#c-breakdown"  role="tab" aria-controls="c-breakdown" aria-selected="false" tabindex="-1"><span class="profile-title">Unknown</span> performers</a>
-    </li>
+
+    <script>
+        // TODO: move this to a script file. Extra credit: wrap the whole tabset thing into a hugo shortcode.
+        function showTab(clickedTab) {
+            tabs = clickedTab.closest('.tabs').querySelectorAll('a');
+
+            // console.log(tabs);
+
+            tabs.forEach(element => {
+                element.classList.remove('selected');
+                activeTabId = element.getAttribute('aria-controls');
+                document.getElementById(activeTabId).style.display = 'none';
+                if (activeTabId === clickedTab.getAttribute('aria-controls')) {
+                    element.classList.add('selected');
+                    document.getElementById(activeTabId).style.display = 'block';
+                }
+            });
+
+        }
+    </script>
+
+    <ul class="tabs" id="tabs-sections" role="tablist">
+        <li>
+            <a href="#c-focus" class="selected" role="tab" aria-controls="c-focus" aria-selected="true" tabindex="0" onClick="showTab(this)">Improvement areas</a>
+        </li>
+        <li>
+            <a href="#c-compare"  role="tab" aria-controls="c-compare" aria-selected="false" tabindex="-1" onClick="showTab(this)"">Performance
+            comparison</a>
+        </li>
+        <li>
+            <a href="#c-breakdown"  role="tab" aria-controls="c-breakdown" aria-selected="false" tabindex="-1"  onClick="showTab(this)"><span class="profile-title">Unknown</span> performers</a>
+        </li>
     </ul>
 </section>
-<section id="c-focus">
+<section id="c-focus" class="tab">
 <h2>Key DevOps capabilities for <span class="profile-title">unknown</span> performers</h2>
     <div id="key-capabilities">
         <div class="rec">
@@ -162,9 +183,7 @@ stylesheets:
 </section>
 
 
-<section>
-    <uL>
-        <li id="c-compare" >
+<section id="c-compare" class="tab">
         <div >
             <div >
             <div >
@@ -205,8 +224,8 @@ stylesheets:
             </div>
             </div>
         </div>
-        </li>
-        <li id="c-breakdown" >
+    </section>
+    <section id="c-breakdown" class="tab">
         <div >
             <h2 ><span>Unknown</span> performance profile breakdown</h2>
             <div >
@@ -294,9 +313,8 @@ stylesheets:
             </table>
             </div>
         </div>
-        </li>
-    </ul>
     </div>
+    </section>
 </section>
 
 <div id="modal"  role="dialog" aria-modal="true" aria-labelledby="modal-label"

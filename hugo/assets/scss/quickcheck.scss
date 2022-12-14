@@ -47,7 +47,9 @@ img.spot {
 
 // results page
 
-ul#tabs {
+
+
+ul.tabs {
     display:flex;
     justify-content: center;
     border-bottom: 1px solid $border-light;
