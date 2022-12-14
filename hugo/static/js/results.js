@@ -195,6 +195,14 @@
       chart.draw(dataTable, options);
     }
   
+    function renderPerformanceComparison(industry, element){
+        let allIndicators = ['leadtime', 'deployfreq', 'ttr', 'chgfail'];
+
+        allIndicators.forEach(indicator => {
+            renderGraph(indicator, industry, element);
+        });
+    }
+
     function renderGraph(indicator, industry, element) {
       let dataTable = new google.visualization.DataTable();
       dataTable.addColumn('string', 'Aspect of Software Delivery Performance');
@@ -203,8 +211,7 @@
       var industryString = `${industry} industr${pluralIndustry} performance`.capitalize()
       dataTable.addColumn('number', industryString);
       dataTable.addRows([[
-        indicators[indicator]['label'], perfValues[indicator],
-        baselines[industry][indicator]
+        indicators[indicator]['label'], perfValues[indicator], baselines[industry][indicator]
       ]]);
       let chartHeight = indicators[indicator]['legend'] == 'bottom' ? 120 : 70;
       var options = {
@@ -226,14 +233,9 @@
         var parent = document.getElementById(element + indicator);
         addOverlayMarker(parent, Math.floor(cli.getXLocation(dataTable.getValue(0, 1))), 'you', colors['bar']);
       };
-  
-      let chart = new google.visualization.BarChart(
-      document.getElementById(element + indicator));
-      google.visualization.events.addListener(
-      chart,
-      'ready',
-      placeMarkers.bind(chart, dataTable)
-      );
+
+      let chart = new google.visualization.BarChart(document.getElementById(element + indicator));
+      console.log(dataTable);
       chart.draw(dataTable, options);
     }
   
@@ -461,24 +463,24 @@
       }
     }
   
-    function renderIndustryTab(mutationsList, observer) {
-      renderGraphTab(mutationsList, observer, urlParams.get('industry'), 'perf-ind-');
-    }
+    // function renderIndustryTab(mutationsList, observer) {
+    //   renderGraphTab(mutationsList, observer, urlParams.get('industry'), 'perf-ind-');
+    // }
   
-    function renderOverallTab(mutationsList, observer) {
-      renderGraphTab(mutationsList, observer, 'all', 'perf-main-');
-    }
+    // function renderOverallTab(mutationsList, observer) {
+    //   renderGraphTab(mutationsList, observer, 'all', 'perf-main-');
+    // }
   
-    function renderGraphTab(mutationsList, observer, industry, element) {
-      for (let mutation of mutationsList) {
-        if (mutation.target.classList.contains('glue-is-shown')) {
-          for (let variable of Object.keys(indicators)) {
-            renderGraph(variable, industry, element);
-          }
-          observer.disconnect();
-        }
-      }
-    }
+    // function renderGraphTab(mutationsList, observer, industry, element) {
+    //   for (let mutation of mutationsList) {
+    //     if (mutation.target.classList.contains('glue-is-shown')) {
+    //       for (let variable of Object.keys(indicators)) {
+    //         renderGraph(variable, industry, element);
+    //       }
+    //       observer.disconnect();
+    //     }
+    //   }
+    // }
   
     function showCapabilityModal() {
       showModal("modal","c-focus","modal-close");
@@ -528,17 +530,9 @@
       }
       xhr.open("GET", "/js/capabilities.json");
       xhr.send();
-  
-      const observerConfig = { attributes: true, attributesFilter: ['class'] };
-  
-      const observer1 = new MutationObserver(renderIndustryTab);
-      observer1.observe(document.getElementById('tab-2'), observerConfig);
-  
-      const observer2 = new MutationObserver(renderOverallTab);
-      observer2.observe(document.getElementById('c-compare'), observerConfig);
-  
-      const observer3 = new MutationObserver(renderBreakdown);
-      observer3.observe(document.getElementById('c-breakdown'), observerConfig);
+    
+    renderPerformanceComparison('all', 'perf-main-');
+    renderPerformanceComparison(urlParams.get('industry'), 'perf-ind-');
   
       document.querySelectorAll('#share-button').forEach(button => {
         button.addEventListener('click', () => {
