@@ -1,4 +1,10 @@
-$text-color: #202124;
+// colors
+$color-text: #202124;
+$color-text-light: #9aa0a6;
+
+$color-link: #1a73e8;
+$color-link-hover: #174ea6;
+$color-link-focus: $color-link-hover;
 
 $layout-breakpoint-large: 960px;
 $layout-breakpoint-medium: 720px;
@@ -8,3 +14,6 @@ $background-light: #F8F9FA;
 
 $border-light: #dadce0;
 $border-medium: #aeb0b7;
+
+$font-google-sans: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
+$font-roboto: "Roboto",Arial,Helvetica,sans-serif;

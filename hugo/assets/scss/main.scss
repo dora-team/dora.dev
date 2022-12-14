@@ -6,18 +6,28 @@
 @import "forms.scss";
 
 body {
-    font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
-    color: $text-color;
+    font-family: $font-google-sans;
+    color: $color-text;
 }
 
 p, .paragraph, select {
-    font-family: "Roboto",Arial,Helvetica,sans-serif;
+    font-family: $font-roboto;
     font-weight: 300;
     margin:0;
 }
 
 p > bold, p > strong {
     font-weight: 500;
+}
+
+a {
+    color: $color-link;
+    &:hover {
+        color: $color-link-hover;
+    }
+    &:focus {
+        color: $color-link-focus;
+    }
 }
 
 header {

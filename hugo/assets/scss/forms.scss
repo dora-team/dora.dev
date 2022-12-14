@@ -42,14 +42,24 @@ button, input[type=submit] {
     color:white;
     background-color: #1a73e8;
     cursor: pointer;
+
+    &:disabled {
+        background-color: #dadce0;
+    }
+
+    &:hover {
+        background-color: #174ea6;
+    }
 }
 
-button:disabled, input[type=submit]:disabled {
-    background-color: #dadce0;
-}
+button.secondary {
+    background-color: white;
+    color: #1a73e8;
+    border: 1px solid #dadce0;
 
-button:hover, input[type=submit]:hover {
-    background-color: #174ea6;
+    &:hover {
+        background-color: #e1f3fc;
+    }
 }
 
 
