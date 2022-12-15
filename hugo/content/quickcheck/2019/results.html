@@ -1,0 +1,332 @@
+---
+title: "DevOps Quick Check 2019: Results"
+date: 2019-09-01
+draft: false
+stylesheets:
+    - name: quickcheck
+---
+
+<h1>Your software delivery&nbsp;performance</h1>
+<section class="quickcheck_results">
+    <aside>
+        <div  >
+            <h3 ><span >Your performance:</span>
+                <span id="profile" class="color-by-profile">&nbsp;</span>
+            </h3>
+            <h4>You're performing better than <span id="percentile"></span>&percnt; of
+              <a href="https://cloud.google.com/devops/state-of-devops/">State&nbsp;of DevOps&nbsp;Survey</a> respondents. <a id="popover-more"  title="How was this calculated?"><span class="sr-only">How was this calculated?</span></a></h4>
+            <div class="calc_popover">
+              <p>We used responses from the <a href="https://cloud.google.com/devops/state-of-devops/">2019 State of DevOps Survey</a> to calculate the four performance profiles (see the &ldquo;<span >Unknown</span>  performers&rdquo; tab) as well as your percentile.</p>
+              <button type="button"  aria-label="Close">×</button>
+            </div>
+    </aside>
+    <div id="performance-graph"></div>
+</section>
+<section id="results-actions">
+    <button id="share-button" >
+    Share results
+    </button>
+    <a href='{{% relref "/quickcheck/2019/" %}}'><button class="secondary">Start over</button></a>
+    <div id="share-modal"  role="dialog" aria-modal="true" aria-labelledby="share-modal-label" aria-describedby="share-modal-content">
+        <div >
+          <h2 id="share-modal-label" >Share your results</h2>
+          <div id="share-modal-content" >
+            <p >We've copied the URL to your DORA DevOps Quick Check results to your clipboard.</p>
+            <p >Share via social media, email or chat.</p>
+            <textarea id="share-url"></textarea>
+          </div>
+          <button ></button>
+        </div>
+      </div>
+</section>
+<section>
+
+    <script>
+        // TODO: move this to a script file. Extra credit: wrap the whole tabset thing into a hugo shortcode.
+        function showTab(clickedTab) {
+            tabs = clickedTab.closest('.tabs').querySelectorAll('a');
+
+            // console.log(tabs);
+
+            tabs.forEach(element => {
+                element.classList.remove('selected');
+                activeTabId = element.getAttribute('aria-controls');
+                document.getElementById(activeTabId).style.display = 'none';
+                if (activeTabId === clickedTab.getAttribute('aria-controls')) {
+                    element.classList.add('selected');
+                    document.getElementById(activeTabId).style.display = 'block';
+                }
+            });
+
+        }
+    </script>
+
+    <ul class="tabs" id="tabs-sections" role="tablist">
+        <li>
+            <a href="#c-focus" class="selected" role="tab" aria-controls="c-focus" aria-selected="true" tabindex="0" onClick="showTab(this)">Improvement areas</a>
+        </li>
+        <li>
+            <a href="#c-compare"  role="tab" aria-controls="c-compare" aria-selected="false" tabindex="-1" onClick="showTab(this)"">Performance
+            comparison</a>
+        </li>
+        <li>
+            <a href="#c-breakdown"  role="tab" aria-controls="c-breakdown" aria-selected="false" tabindex="-1"  onClick="showTab(this)"><span class="profile-title">Unknown</span> performers</a>
+        </li>
+    </ul>
+</section>
+<section id="c-focus" class="tab">
+<h2>Key DevOps capabilities for <span class="profile-title">unknown</span> performers</h2>
+    <div id="key-capabilities">
+        <div class="rec">
+            <a  id="rec-link-0"
+                href="https://cloud.google.com/solutions/devops/devops-tech-version-control"
+                target="_blank">
+                <img src="https://www.google.com/images/icons/material/system/svg/assignment_turned_in_24px.svg" class="rec-img" id="rec-img-0" alt="Icon that represents this capability">
+                <h3 id="rec-name-0">Version control</h3>
+                Learn more <img class="h-c-icon" alt="Arrow pointing right" src="https://www.gstatic.com/images/icons/material/system_gm/svg/arrow_right_alt_24px.svg">
+            </a>
+        </div>
+        <div class="rec">
+            <a  id="rec-link-1"
+                href="https://cloud.google.com/solutions/devops/devops-tech-version-control"
+                target="_blank">
+                <img src="https://www.google.com/images/icons/material/system/svg/assignment_turned_in_24px.svg" class="rec-img" id="rec-img-1" alt="Icon that represents this capability">
+                <h3 id="rec-name-1">Version control</h3>
+                Learn more <img class="h-c-icon" alt="Arrow pointing right" src="https://www.gstatic.com/images/icons/material/system_gm/svg/arrow_right_alt_24px.svg">
+            </a>
+        </div>
+        <div class="rec">
+            <a  id="rec-link-2"
+                href="https://cloud.google.com/solutions/devops/devops-tech-version-control"
+                target="_blank">
+                <img src="https://www.google.com/images/icons/material/system/svg/assignment_turned_in_24px.svg" class="rec-img" id="rec-img-2" alt="Icon that represents this capability">
+                <h3 id="rec-name-2">Version control</h3>
+                Learn more <img class="h-c-icon" alt="Arrow pointing right" src="https://www.gstatic.com/images/icons/material/system_gm/svg/arrow_right_alt_24px.svg">
+            </a>
+        </div>
+    </div>
+    <p >When we analyzed the responses of other <strong class="color-by-profile"><span class="profile-title">unknown</span> performers</strong>, we found that working on these three
+        capabilities had the most impact on improving their software delivery performance.</p>
+    <p><button  id="cap-click">Help me prioritize</button></p>
+    <p ><small>Rank your responses to a series of 3-12 questions for
+        each of these three capabilities, to determine how you perform and which to consider focusing on
+        first.</small></p>
+    <div  id="rec-results">
+        <h2 >Key DevOps capabilities recommended
+        for you</h2>
+        <div >
+        <div  >Based on your performance profile, we
+            think you should work on the three capabilities listed below. Based on your responses to the
+            capabilities assessment, <strong>we recommend you focus on <span id="capability"></span>
+            first.</strong> <a id="popover-why"  title="How was this calculated?"><span >How was this calculated?</span></a>
+            <div >
+            <p>We prioritized based on your average score for each capability. You should also consider other factors, such as the effort required to implement these capabilities in your organization, and which you think will have the biggest impact on your performance.</p>
+            <button type="button"  aria-label="Close">×</button>
+            </div>
+        </div>
+        <div >
+            <h2 ><span id="cap-title-0">Capability
+                A</span> <span >Key focus area</span></h2>
+            <div >
+            <div >
+                <img id="cap-img-0"  alt="Icon that represents this capability" />
+                <p id="cap-description-0">Capability A description</p>
+                <div ><a id="cap-url-0"
+                                                    target="_blank">View solution</a></div>
+            </div>
+            <div >
+                <h3 >Your performance</h3>
+                <div >
+                <div id="cap-graph-0" ></div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div >
+            <h2 id="cap-title-1" >Capability B</h2>
+            <div >
+            <div >
+                <img id="cap-img-1"  alt="Icon that represents this capability" />
+                <p id="cap-description-1">Capability B description</p>
+                <div ><a id="cap-url-1"
+                                                    target="_blank">View solution</a>
+                </div>
+            </div>
+            <div >
+                <h3 >Your performance</h3>
+                <div >
+                <div id="cap-graph-1" ></div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div >
+            <h2 id="cap-title-2" >Capability C</h2>
+            <div >
+            <div >
+                <img id="cap-img-2"  alt="Icon that represents this capability" />
+                <p id="cap-description-2">Capability C description</p>
+                <div ><a id="cap-url-2"
+                                                    target="_blank">View solution</a>
+                </div>
+            </div>
+            <div >
+                <h3 >Your performance</h3>
+                <div >
+                <div id="cap-graph-2" ></div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="c-compare" class="tab">
+        <div >
+            <div >
+            <div >
+                <h2 >How your performance compares
+                </h2>
+                <p>Based on your <a href="quickcheck.html">quick check</a> answers, see how you compare to the
+                <a href="https://cloud.google.com/devops/state-of-devops/">2019 State of DevOps</a> respondents
+                overall, and to people within the same industry as you.</p>
+            </div>
+            <div >
+                    <ul  >
+                    <li >
+                        <a href="#tab-1"  >All industries</a>
+                    </li>
+                    <li >
+                        <a href="#tab-2"  >Your
+                        industry</a>
+                    </li>
+                    </ul>
+                    <div id="perf-main">
+                        <div id="perf-main-leadtime"></div>
+                        <div id="perf-main-deployfreq"></div>
+                        <div id="perf-main-ttr"></div>
+                        <div id="perf-main-chgfail"></div>
+                    </div>
+                    <div id="perf-ind">
+                        <div id="perf-ind-leadtime"></div>
+                        <div id="perf-ind-deployfreq"></div>
+                        <div id="perf-ind-ttr"></div>
+                        <div id="perf-ind-chgfail"></div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </section>
+    <section id="c-breakdown" class="tab">
+        <div >
+            <h2 ><span class="profile-title">Unknown</span> performance profile breakdown</h2>
+            <div >
+            <p >Based on your performance, you are classified as a <strong class="color-by-profile"><span class="profile-title">unknown</span> performer</strong>. Here is how the performance profiles compare. Note
+                that your answers to the five questions asked in Step 1 of the quick check may not match the
+                descriptions in the table below. The performance profiles in this table are based on statistical
+                analysis of the aggregated responses to the 2019 State of DevOps survey. For more on this analysis, read the &ldquo;Methodology&rdquo; section of the <a href="https://cloud.google.com/devops/state-of-devops/">State of DevOps Report</a>.</p>
+            </div>
+            <div >
+            <table >
+                <thead>
+                <tr>
+                    <th scope="col" >Aspect of software delivery performance</th>
+                    <th scope="col">Low</th>
+                    <th scope="col">Medium</th>
+                    <th scope="col">High</th>
+                    <th scope="col">Elite</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td data-colheader="Deployment frequency">
+                    <h4 >Deployment frequency
+                    </h4>
+                    <p>For the primary application or service you
+                        work on, how often does your organization deploy code to production or release it to
+                        users?</p>
+                    </td>
+                    <td data-colheader="Low" id="deployfreq-low" >Between once per month and
+                    once every six
+                    months</td>
+                    <td data-colheader="Medium" id="deployfreq-medium" >Between once per week
+                    and once per month
+                    </td>
+                    <td data-colheader="High" id="deployfreq-high" >Between once per day and
+                    once per week
+                    </td>
+                    <td data-colheader="Elite" id="deployfreq-elite" >On demand (multiple
+                    deploys per day)
+                    </td>
+                </tr>
+                <tr>
+                    <td data-colheader="Lead time for changes">
+                    <h4 >Lead time for changes
+                    </h4> For the primary application or service you
+                    work on, what is your lead time for changes (that is, how long does it take to go from
+                    code committed to code successfully running in production)?
+                    </td>
+                    <td data-colheader="Low" id="leadtime-low" >Between one month and six
+                    months</td>
+                    <td data-colheader="Medium" id="leadtime-medium" >Between one week and one
+                    month</td>
+                    <td data-colheader="High" id="leadtime-high" >Between one day and one week
+                    </td>
+                    <td data-colheader="Elite" id="leadtime-elite" >Less than one day</td>
+                </tr>
+                <tr>
+                    <td data-colheader="Time to restore service">
+                    <h4 >Time to restore
+                        service</h4> For the primary application or service you
+                    work on, how long does it generally take to restore service when a service incident
+                    or a defect that impacts users occurs (for example, unplanned outage or service
+                    impairment)?
+                    </td>
+                    <td data-colheader="Low" id="ttr-low" >Between one week and one month</td>
+                    <td data-colheader="Medium" id="ttr-medium" >Less than one day</td>
+                    <td data-colheader="High" id="ttr-high" >Less than one day</td>
+                    <td data-colheader="Elite" id="ttr-elite" >Less than one hour</td>
+                </tr>
+                <tr>
+                    <td data-colheader="Change fail rate">
+                    <h4 >Change fail rate</h4>
+                    For the primary application or service you work
+                    on, what percentage of changes to production or released to users result in degraded
+                    service (for example, lead to service impairment or service outage) and subsequently
+                    require remediation (for example, require a hotfix, rollback, fix forward, patch)?
+                    </td>
+                    <td data-colheader="Low" id="chgfail-low" >46-60&percnt;</td>
+                    <td data-colheader="Medium" id="chgfail-medium" >0-15&percnt;</td>
+                    <td data-colheader="High" id="chgfail-high" >0-15&percnt;</td>
+                    <td data-colheader="Elite" id="chgfail-elite" >0-15&percnt;</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+    </section>
+</section>
+
+<div id="modal"  role="dialog" aria-modal="true" aria-labelledby="modal-label"
+  aria-describedby="modal-content">
+    <div >
+    <h2 id="modal-label" >DevOps capabilities assessment</h2>
+    <div id="modal-content" >
+    <p >Answer the following questions to find out which capability you, as <span >a <span class="profile-title">unknown</span> performer</span>, should consider focusing on first.</p>
+    </div>
+    <p id="modal-error" >You must respond to all questions before results can be calculated.</p>
+    <p>
+    <button id="modal-close" >Close</button>
+    <button id="results" disabled="true" >View results</button>
+    </p>
+    <button ></button>
+    </div>
+</div>
+
+
+
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="/js/results.js"></script>

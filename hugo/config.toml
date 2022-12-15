@@ -1,6 +1,9 @@
 baseURL = 'http://dora.dev/'
 languageCode = 'en-us'
 
+[markup.goldmark.renderer]
+unsafe= true
+
 [params]
     Keywords = "DevOps, Lead time, Deploy frequency, Change fail rate, MTTR, Time to restore, metrics, DORA"
     Description = "DevOps Research and Assessment (DORA) is a research group within Google. We study the technical, process, cultural, and measurement capabilities which enable software teams to deliver value to their organizations."
