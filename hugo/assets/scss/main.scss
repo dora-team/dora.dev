@@ -48,6 +48,10 @@ main {
     margin:auto;
 }
 
+.capitalize {
+    text-transform: capitalize;
+}
+
 section.banner {
     background-color: $background-light;
 

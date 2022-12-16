@@ -111,37 +111,37 @@ function getProfileAndPercentile(userPerformanceIndicators) {
 
 }
 
+function decoratePagewithProfileAndPercentage(userProfileAndPercentile) {
+    Array.from(document.getElementsByClassName('profile-title')).forEach(element => {
+        element.innerText = userProfileAndPercentile.profile;
+    })
+    Array.from(document.getElementsByClassName('color-by-profile')).forEach(element => {
+        element.classList.add(userProfileAndPercentile.profile);
+    })
+    document.getElementById('percentile').innerText = userProfileAndPercentile.percentile;
+}
+
 // invoke calculations when page is ready
-window.addEventListener('DOMContentLoaded',function(event){
+window.addEventListener('load',function(event){
 
   // TODO: test for presence of all URL Params and fail gracefully if any are missing.
-
   const urlParams = new URLSearchParams(window.location.search);
   
   let industry = urlParams.get('industry');
 
   let userPerformanceIndicators = getUserPerformanceIndicators(urlParams);
-  console.debug(userPerformanceIndicators);
-  
-  // TODO: pass userPerformanceIndicators instead of urlParams to getProfileAndPercentile
   let userProfileAndPercentile = getProfileAndPercentile(userPerformanceIndicators);
-  console.debug(userProfileAndPercentile);
+  
+  decoratePagewithProfileAndPercentage(userProfileAndPercentile);
   
   let industryBaselines = baselines[industry];
   console.debug(industryBaselines);
-
-  // output data to page (TODO: output as pretty graphs)
-  document.getElementById('performance-profile').innerText = userProfileAndPercentile.profile;
-  document.getElementById('performance-percentile').innerText = userProfileAndPercentile.percentile;
 
   for (let indicator of indicators) {
     let userScore = userPerformanceIndicators[indicator];
     let globalAverage = baselines['all'][indicator]/100 * 6;
     let industryAverage = baselines[industry][indicator]/100 * 6;
 
-    document.getElementById(indicator + '-you').innerText = userScore;
-    document.getElementById(indicator + '-all').innerText = globalAverage;
-    document.getElementById(indicator + '-ind').innerText = industryAverage;
   }
 
 });
