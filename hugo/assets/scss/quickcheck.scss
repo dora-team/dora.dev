@@ -114,8 +114,14 @@ section.quickcheck_results {
 
     }
 
-    #performance-graph {
+    .performance-graph-container {
         flex-grow: 1;
+    }
+
+    #yourPerformanceMarker {
+        display:inline-block;
+        position:relative;
+        left:0px;
     }
     
 }

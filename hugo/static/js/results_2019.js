@@ -136,6 +136,7 @@ function decoratePagewithProfileAndPercentage(userProfileAndPercentile) {
     document.getElementById('percentile').innerText = userProfileAndPercentile.percentile;
 }
 
+
 function renderPerformanceGraph(percentile) {
 
     let yourPerformance = percentile / 100;
@@ -156,8 +157,7 @@ function renderPerformanceGraph(percentile) {
     labels.push('Your Performance');
     values.push(yourPerformance);
     buffervalues.push(yourPerformance);
-    let dataTable = google.visualization.arrayToDataTable(
-    [labels, buffervalues, values, buffervalues]);
+    let dataTable = google.visualization.arrayToDataTable([labels, buffervalues, values, buffervalues]);
     var options = {
       isStacked: true,
       bars: 'horizontal',
@@ -180,30 +180,21 @@ function renderPerformanceGraph(percentile) {
       },
       legend: { position: 'bottom' }
     };
-
-    function addOverlayMarker(parentElement, xPos, iconName, color) {
-        const overlayHtml = `<div class="overlay-marker">${icons[iconName]}</div>`;
-        parentElement.insertAdjacentHTML('beforeend',overlayHtml)
-        var overlay = parentElement.lastChild;
-        overlay.style.left = `${xPos-11}px`;
-        overlay.style.color = color;
-        overlay.style.visibility = 'visible';
-      }
-
-    function placeMarker(dataTable) {
-        var cli = this.getChartLayoutInterface();
-        var parent = document.getElementById('performance-graph');
-        addOverlayMarker(parent, Math.floor(cli.getXLocation(dataTable.getValue(1, 5))), 'you', colors['you']);
-      };
   
-      let chart = new google.visualization.BarChart(
-      document.getElementById('performance-graph'));
-      google.visualization.events.addListener(
-      chart,
-      'ready',
-      placeMarker.bind(chart, dataTable)
-      );
-      chart.draw(dataTable, options);
+    let chart = new google.visualization.BarChart(document.getElementById('performance-graph'));
+    
+    // move the "you" icon into place
+    google.visualization.events.addListener(
+        chart,
+        'ready',
+        function() {
+            var cli = chart.getChartLayoutInterface();
+            yourXpos = cli.getXLocation(dataTable.getValue(1, 5));
+            document.getElementById('yourPerformanceMarker').style.left = yourXpos-12;
+        }
+    );
+
+    chart.draw(dataTable, options);
 
 }
 
@@ -243,6 +234,7 @@ function drawCharts() {
     });
 
     google.charts.setOnLoadCallback(drawCharts);
+    
 
 
 }());
