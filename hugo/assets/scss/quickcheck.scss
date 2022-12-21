@@ -118,12 +118,15 @@ section.quickcheck_results {
         flex-grow: 1;
     }
 
-    #yourPerformanceMarker {
+    .icon-container {
+        height:24px;
+    }
+
+    .icon {
         display:inline-block;
         position:relative;
         left:0px;
     }
-    
 }
 
 #share-modal {
@@ -192,7 +195,7 @@ img.rec-img {
   }
 
 // tab content
-#c-compare, #c-breakdown {
+#c_focus, #c_breakdown {
     display: none;
 }
 

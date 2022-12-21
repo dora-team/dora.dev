@@ -6,12 +6,7 @@
 const mean = 4.251338;
 const stddev = 1.000992;
 
-const indicators = [
-  'leadtime',
-  'deployfreq',
-  'ttr',
-  'chgfail'
-];
+const indicators = ['leadtime','deployfreq','ttr','chgfail'];
 
 const profileStats = {
   'low': 3.5,
@@ -46,11 +41,6 @@ const baselines = {
   'telecoms': { 'leadtime': 44, 'deployfreq': 43, 'ttr': 79, 'chgfail': 81 },
   'other': { 'leadtime': 51, 'deployfreq': 48, 'ttr': 80, 'chgfail': 89 }
 }
-
-const icons = {
-    'you': `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c-4.97 0-9 4.03-9 9 0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11c0-4.97-4.03-9-9-9zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.3c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>`,
-    'average': `<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><rect fill="none" height="24" width="24"/><g><path fill="currentColor" d="M12,12.75c1.63,0,3.07,0.39,4.24,0.9c1.08,0.48,1.76,1.56,1.76,2.73L18,18H6l0-1.61c0-1.18,0.68-2.26,1.76-2.73 C8.93,13.14,10.37,12.75,12,12.75z M4,13c1.1,0,2-0.9,2-2c0-1.1-0.9-2-2-2s-2,0.9-2,2C2,12.1,2.9,13,4,13z M5.13,14.1 C4.76,14.04,4.39,14,4,14c-0.99,0-1.93,0.21-2.78,0.58C0.48,14.9,0,15.62,0,16.43V18l4.5,0v-1.61C4.5,15.56,4.73,14.78,5.13,14.1z M20,13c1.1,0,2-0.9,2-2c0-1.1-0.9-2-2-2s-2,0.9-2,2C18,12.1,18.9,13,20,13z M24,16.43c0-0.81-0.48-1.53-1.22-1.85 C21.93,14.21,20.99,14,20,14c-0.39,0-0.76,0.04-1.13,0.1c0.4,0.68,0.63,1.46,0.63,2.29V18l4.5,0V16.43z M12,6c1.66,0,3,1.34,3,3 c0,1.66-1.34,3-3,3s-3-1.34-3-3C9,7.34,10.34,6,12,6z"/></g></svg>`
-  }
 
 // general helper functions
 String.prototype.capitalize = function () {
@@ -128,16 +118,16 @@ function getProfileAndPercentile(userPerformanceIndicators) {
 
 function decoratePagewithProfileAndPercentage(userProfileAndPercentile) {
     Array.from(document.getElementsByClassName('profile-title')).forEach(element => {
-        element.innerText = userProfileAndPercentile.profile;
+        element.innerText = element.innerText.toLowerCase().replace('unknown',userProfileAndPercentile.profile);
     })
     Array.from(document.getElementsByClassName('color-by-profile')).forEach(element => {
         element.classList.add(userProfileAndPercentile.profile);
     })
     document.getElementById('percentile').innerText = userProfileAndPercentile.percentile;
-}
+   }
 
 
-function renderPerformanceGraph(percentile) {
+function drawUserPerformanceChart(percentile) {
 
     let yourPerformance = percentile / 100;
 
@@ -190,7 +180,7 @@ function renderPerformanceGraph(percentile) {
         function() {
             var cli = chart.getChartLayoutInterface();
             yourXpos = cli.getXLocation(dataTable.getValue(1, 5));
-            document.getElementById('yourPerformanceMarker').style.left = yourXpos-12;
+            document.getElementById('yourPerformanceMarker').style.left = yourXpos-12 + 'px';
         }
     );
 
@@ -198,43 +188,38 @@ function renderPerformanceGraph(percentile) {
 
 }
 
-function drawCharts() {
-    
-    // TODO: test for presence of all URL Params and fail gracefully if any are missing.
-    const urlParams = new URLSearchParams(window.location.search);
-
-    // COMPUTE USER SCORES
-  let industry = urlParams.get('industry');
-  let userPerformanceIndicators = getUserPerformanceIndicators(urlParams);
-  let userProfileAndPercentile = getProfileAndPercentile(userPerformanceIndicators);
-  
-  // UPDATE PAGE WITH USER SCORES
-  decoratePagewithProfileAndPercentage(userProfileAndPercentile);
-  
-  // DRAW CHARTS
-  renderPerformanceGraph(userProfileAndPercentile.percentile);
-
-  let industryBaselines = baselines[industry];
-  console.debug(industryBaselines);
-
-  for (let indicator of indicators) {
-    let userScore = userPerformanceIndicators[indicator];
-    let globalAverage = baselines['all'][indicator]/100 * 6;
-    let industryAverage = baselines[industry][indicator]/100 * 6;
-
-  }
-
-}
-
-// invoke calculations and decorate page
+// bootstrap display of user profile
 (function() {
 
+    // load charting library
     google.charts.load('current', {
         packages: ['corechart', 'bar'] 
     });
 
-    google.charts.setOnLoadCallback(drawCharts);
-    
+    // TODO: test for presence of all URL Params and fail gracefully if any are missing.
+    const urlParams = new URLSearchParams(window.location.search);
 
+    // COMPUTE USER SCORES
+    let industry = urlParams.get('industry');
+    let userPerformanceIndicators = getUserPerformanceIndicators(urlParams);
+    let userProfileAndPercentile = getProfileAndPercentile(userPerformanceIndicators);
+
+    // UPDATE PAGE WITH USER SCORES
+    decoratePagewithProfileAndPercentage(userProfileAndPercentile);
+    
+    // When charting library is loaded, render charts
+    google.charts.setOnLoadCallback(function() {
+        drawUserPerformanceChart(userProfileAndPercentile.percentile);
+    })
+
+    let industryBaselines = baselines[industry];
+    console.debug(industryBaselines);
+  
+    for (let indicator of indicators) {
+      let userScore = userPerformanceIndicators[indicator];
+      let globalAverage = baselines['all'][indicator]/100 * 6;
+      let industryAverage = baselines[industry][indicator]/100 * 6;
+  
+    }
 
 }());

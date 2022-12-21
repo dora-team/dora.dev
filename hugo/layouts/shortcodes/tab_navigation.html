@@ -1,0 +1,37 @@
+<script>
+    if(typeof showTab != 'function') {
+        function showTab(clickedTab) {
+            tabs = clickedTab.closest('.tabs').querySelectorAll('a');
+            tabs.forEach(element => {
+                element.classList.remove('selected');
+                activeTabId = element.getAttribute('aria-controls');
+                document.getElementById(activeTabId).style.display = 'none';
+                if (activeTabId === clickedTab.getAttribute('aria-controls')) {
+                    element.classList.add('selected');
+                    document.getElementById(activeTabId).style.display = 'block';
+                }
+            });
+
+        }
+    }
+</script>
+
+{{/* extract data from parameters */}}
+
+{{ $tab_titles := split .Params.titles "," }}
+{{ $tab_controls := split .Params.controls "," }}
+{{ $tab_classes := split .Params.classes "," }}
+
+{{ $counter := 0 }}
+
+<ul class="tabs" id="tabs-sections" role="tablist">
+{{ range $tab_titles }}
+    {{ $this_title := index $tab_titles $counter }}
+    {{ $this_controls := index $tab_controls $counter }}
+    {{ $this_class := index $tab_classes $counter }}
+    <li>
+        <a href="#{{ $this_controls }}" class="{{ if eq $this_title $.Params.selected }}selected{{ end }} {{ $this_class }}" role="tab" aria-controls="{{ $this_controls }}" aria-selected="{{ if eq $this_title $.Params.selected }}true{{ end }}" onClick="showTab(this)">{{ $this_title }}</a>
+    </li>
+    {{ $counter = add $counter 1 }}
+{{ end }}
+</ul>
