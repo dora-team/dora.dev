@@ -210,8 +210,6 @@ img.rec-img {
     display:none;
 }
 
-
-
 .sr-only {
     clip: rect(0 0 0 0);
     clip-path: inset(100%);
@@ -221,6 +219,12 @@ img.rec-img {
     white-space: nowrap;
     width: 1px;
 }
+
+#perf-comparison {
+    max-width:820px;
+    margin:auto;
+}
+
 
 @media (max-width: $layout-breakpoint-medium) {
     section.question {

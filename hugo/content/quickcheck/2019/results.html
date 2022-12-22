@@ -157,38 +157,56 @@ stylesheets:
 
 
 <section id="c_compare" class="tab">
-        <div >
-            <div >
-            <div >
-                <h2 >How your performance compares
-                </h2>
-                <p>Based on your <a href="quickcheck.html">quick check</a> answers, see how you compare to the
-                <a href="https://cloud.google.com/devops/state-of-devops/">2019 State of DevOps</a> respondents
-                overall, and to people within the same industry as you.</p>
+        <div>
+            <div>
+                <h>How your performance compares</h2>
+                <p>Based on your <a href='{{% relref "/quickcheck/2019/" %}}'>quick check</a> answers, see how you compare to the
+                <a href="https://cloud.google.com/devops/state-of-devops/">2019 State of DevOps</a> respondents overall, and to people within the same industry as you.</p>
             </div>
-            <div >
-                    <ul  >
-                    <li >
-                        <a href="#tab-1"  >All industries</a>
-                    </li>
-                    <li >
-                        <a href="#tab-2"  >Your
-                        industry</a>
-                    </li>
-                    </ul>
-                    <div id="perf-main">
-                        <div id="perf-main-leadtime"></div>
-                        <div id="perf-main-deployfreq"></div>
-                        <div id="perf-main-ttr"></div>
-                        <div id="perf-main-chgfail"></div>
+            <div id="perf-comparison">
+                <div>
+                    {{< tab_navigation 
+                        titles="All Industries,Your Industry"
+                        controls="perf-all,perf-industry" 
+                        selected="All Industries" 
+                        >}}
+                </div>
+                <div id="perf-all">
+                    <div id="perf-all-leadtime-container">
+                        <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-leadtime-marker"></div>
+                        <div id="perf-all-leadtime"></div>  
                     </div>
-                    <div id="perf-ind">
-                        <div id="perf-ind-leadtime"></div>
-                        <div id="perf-ind-deployfreq"></div>
-                        <div id="perf-ind-ttr"></div>
-                        <div id="perf-ind-chgfail"></div>
+                    <div id="perf-all-deployfreq-container">
+                        <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-deployfreq-marker"></div>
+                        <div id="perf-all-deployfreq"></div>  
                     </div>
-                </div>    
+                    <div id="perf-all-ttr-container">
+                        <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-ttr-marker"></div>
+                        <div id="perf-all-ttr"></div>  
+                    </div>
+                    <div id="perf-all-chgfail-container">
+                        <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-chgfail-marker"></div>
+                        <div id="perf-all-chgfail"></div>  
+                    </div>
+                </div>
+                <div id="perf-industry">
+                    <div id="perf-industry-leadtime-container">
+                        <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-leadtime-marker"></div>
+                        <div id="perf-industry-leadtime"></div>  
+                    </div>
+                    <div id="perf-industry-deployfreq-container">
+                        <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-deployfreq-marker"></div>
+                        <div id="perf-industry-deployfreq"></div>  
+                    </div>
+                    <div id="perf-industry-ttr-container">
+                        <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-ttr-marker"></div>
+                        <div id="perf-industry-ttr"></div>  
+                    </div>
+                    <div id="perf-industry-chgfail-container">
+                        <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-chgfail-marker"></div>
+                        <div id="perf-industry-chgfail"></div>  
+                    </div>
+                </div>
             </div>
         </div>
     </section>

@@ -6,7 +6,36 @@
 const mean = 4.251338;
 const stddev = 1.000992;
 
-const indicators = ['leadtime','deployfreq','ttr','chgfail'];
+const indicators = {
+    'leadtime': {
+      'label': 'Lead time',
+      'ticks': [
+        { v: 0, f: '>6m' }, { v: 20, f: '1-6m' }, { v: 40, f: '1w - 1m' },
+        { v: 60, f: '1d - 1w' }, { v: 80, f: '<1d' }, { v: 100, f: '<1h' }
+      ]
+    },
+    'deployfreq': {
+      'label': 'Deploy frequency',
+      'ticks': [
+        { v: 0, f: '>6m' }, { v: 20, f: '1-6m' }, { v: 40, f: '1w - 1m' },
+        { v: 60, f: '1d - 1w' }, { v: 80, f: '<1d' }, { v: 100, f: 'on demand' }
+      ]
+    },
+    'ttr': {
+      'label': 'Time to restore',
+      'ticks': [
+        { v: 0, f: '>6m' }, { v: 20, f: '1-6m' }, { v: 40, f: '1w - 1m' },
+        { v: 60, f: '1d - 1w' }, { v: 80, f: '<1d' }, { v: 100, f: '<1h' }
+      ]
+    },
+    'chgfail': {
+      'label': 'Change fail rate',
+      'ticks': [
+        { v: 0, f: '76-100%' }, { v: 20, f: '61-75%' }, { v: 40, f: '46-60%' },
+        { v: 60, f: '31-45%' }, { v: 80, f: '16-30%' }, { v: 100, f: '0-15%' }
+      ]
+    }
+  };
 
 const profileStats = {
   'low': 3.5,
@@ -80,7 +109,7 @@ function getUserPerformanceIndicators(urlParams) {
 
   let userPerformanceIndicators = {};
 
-  indicators.forEach(indicator => {
+  Object.keys(indicators).forEach(indicator => {
     userPerformanceIndicators[indicator] = urlParams.get(indicator);
   });
 
@@ -90,14 +119,17 @@ function getUserPerformanceIndicators(urlParams) {
 function getProfileAndPercentile(userPerformanceIndicators) {
 
   let average = 0;
-  for (let indicator of indicators) {
+
+  Object.keys(indicators).forEach(indicator => {
     
     indicator_value = userPerformanceIndicators[indicator];
 
     let unnormalized = clamp(parseInt(indicator_value), 6);
     average += unnormalized;
-  }
-  average = average / indicators.length;
+
+  })
+
+  average = average / Object.keys(indicators).length;
 
   let profile = '';
   for (let my_profile of Object.keys(profileStats)) {
@@ -108,7 +140,8 @@ function getProfileAndPercentile(userPerformanceIndicators) {
   }
 
   let percentile = Math.round(100 * normDist(average, mean, stddev));
-  
+
+
   return {
     profile: profile,
     percentile: percentile
@@ -117,6 +150,7 @@ function getProfileAndPercentile(userPerformanceIndicators) {
 }
 
 function decoratePagewithProfileAndPercentage(userProfileAndPercentile) {
+    
     Array.from(document.getElementsByClassName('profile-title')).forEach(element => {
         element.innerText = element.innerText.toLowerCase().replace('unknown',userProfileAndPercentile.profile);
     })
@@ -188,7 +222,49 @@ function drawUserPerformanceChart(percentile) {
 
 }
 
-// bootstrap display of user profile
+function drawComparisonChart(indicator, user_score, industry, show_legend) {
+
+    industry_baseline = baselines[industry];
+    user_score = scalePerf(user_score);
+
+    let dataTable = new google.visualization.DataTable();
+    dataTable.addColumn('string', 'Aspect of Software Delivery Performance');
+    dataTable.addColumn('number', 'Your performance');
+    var pluralIndustry = industry=='all' ? 'ies' : 'y';
+    var industryString = `${industry} industr${pluralIndustry} performance`.capitalize()
+    dataTable.addColumn('number', industryString);
+    dataTable.addRows([[indicators[indicator].label, user_score, industry_baseline]]);
+    
+    var options = {
+      bars: 'horizontal',
+      bar: { groupWidth: '30%' },
+      height: show_legend ? 120 : 70,
+      chartArea: { top: 0, left: 120, right: 20, height: 40 },
+      enableInteractivity: false,
+      series: {
+        0: { color: colors['bar'] },
+        1: { type: 'line', color: colors['average'], lineWidth: 0, pointSize: 8, pointShape: 'diamond' }
+      },
+        hAxis: { minValue: 0, 
+            maxValue: 100, 
+            ticks: indicators[indicator]['ticks'] 
+            },
+        legend: { position: show_legend ? 'bottom' : 'off' }
+    };
+
+    // function placeMarkers(dataTable) {
+    //   var cli = this.getChartLayoutInterface();
+    //   var parent = document.getElementById(element + indicator);
+    //   addOverlayMarker(parent, Math.floor(cli.getXLocation(dataTable.getValue(0, 1))), 'you', colors['bar']);
+    // };
+
+    let target_div = (industry == 'all') ? 'all' : 'industry';
+    let chart = new google.visualization.BarChart(document.getElementById('perf-' + target_div + '-' + indicator));
+    chart.draw(dataTable, options);
+
+}
+
+// compute metrics and render display
 (function() {
 
     // load charting library
@@ -206,20 +282,38 @@ function drawUserPerformanceChart(percentile) {
 
     // UPDATE PAGE WITH USER SCORES
     decoratePagewithProfileAndPercentage(userProfileAndPercentile);
-    
-    // When charting library is loaded, render charts
-    google.charts.setOnLoadCallback(function() {
-        drawUserPerformanceChart(userProfileAndPercentile.percentile);
-    })
 
     let industryBaselines = baselines[industry];
     console.debug(industryBaselines);
-  
-    for (let indicator of indicators) {
-      let userScore = userPerformanceIndicators[indicator];
-      let globalAverage = baselines['all'][indicator]/100 * 6;
-      let industryAverage = baselines[industry][indicator]/100 * 6;
-  
-    }
+    console.debug(userPerformanceIndicators);
+
+    // When charting library is loaded, render charts
+    google.charts.setOnLoadCallback(function() {
+        
+        drawUserPerformanceChart(userProfileAndPercentile.percentile);
+        
+        // for each indicator, draw comparison chart
+        Object.keys(indicators).forEach((indicator, index, arr) => {
+            
+            // draw 'all industries'
+            drawComparisonChart(
+                indicator,
+                userPerformanceIndicators[indicator],
+                'all',
+                arr[index + 1] ? false : true // show legend on last graph
+            );
+
+            // draw 'your industry'
+            drawComparisonChart(
+                indicator,
+                userPerformanceIndicators[indicator],
+                industry,
+                arr[index + 1] ? false : true // show legend on last graph
+            );
+        });
+
+        // hide 'your industry' until clicked
+        document.getElementById('perf-industry').style.display='none';
+    })  
 
 }());
