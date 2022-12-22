@@ -2,6 +2,12 @@
 
 // survey page
 
+.icon {
+    display:inline-block;
+    position:relative;
+    left:0px;
+}
+
 section.question  {
 
     display:flex;
@@ -120,12 +126,6 @@ section.quickcheck_results {
 
     .icon-container {
         height:24px;
-    }
-
-    .icon {
-        display:inline-block;
-        position:relative;
-        left:0px;
     }
 }
 

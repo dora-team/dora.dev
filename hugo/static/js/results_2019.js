@@ -50,7 +50,7 @@ const colors = {
     'high': '#34A853',
     'elite': '#0D652D',
     'you': '#0F346F',
-    'average': '#5F6368',
+    'average': '#afb2b6',
     'bar': '#0F346F'
 }
 
@@ -233,8 +233,8 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
     var pluralIndustry = industry=='all' ? 'ies' : 'y';
     var industryString = `${industry} industr${pluralIndustry} performance`.capitalize()
     dataTable.addColumn('number', industryString);
-    dataTable.addRows([[indicators[indicator].label, user_score, industry_baseline]]);
-    
+    dataTable.addRows([[indicators[indicator].label, user_score, industry_baseline[indicator]]]);
+
     var options = {
       bars: 'horizontal',
       bar: { groupWidth: '30%' },
@@ -243,7 +243,7 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
       enableInteractivity: false,
       series: {
         0: { color: colors['bar'] },
-        1: { type: 'line', color: colors['average'], lineWidth: 0, pointSize: 8, pointShape: 'diamond' }
+        1: { type: 'line', color: colors['average'], lineWidth: 0, pointSize: 12, pointShape: 'diamond'}
       },
         hAxis: { minValue: 0, 
             maxValue: 100, 
@@ -251,15 +251,22 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
             },
         legend: { position: show_legend ? 'bottom' : 'off' }
     };
-
-    // function placeMarkers(dataTable) {
-    //   var cli = this.getChartLayoutInterface();
-    //   var parent = document.getElementById(element + indicator);
-    //   addOverlayMarker(parent, Math.floor(cli.getXLocation(dataTable.getValue(0, 1))), 'you', colors['bar']);
-    // };
-
+        
     let target_div = (industry == 'all') ? 'all' : 'industry';
     let chart = new google.visualization.BarChart(document.getElementById('perf-' + target_div + '-' + indicator));
+    
+    // move the "you" icon into place
+    icon_id = 'perf-' + target_div + '-' + indicator + '-marker';
+    google.visualization.events.addListener(
+        chart,
+        'ready',
+        function() {
+            var cli = chart.getChartLayoutInterface();
+            yourXpos = cli.getXLocation(dataTable.getValue(0, 1));
+            document.getElementById(icon_id).style.left = yourXpos-12 + 'px';
+        }
+    );
+    
     chart.draw(dataTable, options);
 
 }
