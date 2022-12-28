@@ -94,7 +94,8 @@ ul.tabs {
 
 section.quickcheck_results {
     display:flex;
-    margin-top:24px;
+    margin:24px auto;
+    max-width: $layout-breakpoint-large;
 
     aside {
         width:30%;
@@ -135,10 +136,6 @@ section.quickcheck_results {
 
 #results-actions {
     text-align: center;
-}
-
-#c_focus, #c_breakdown {
-    display:none;
 }
 
 #key-capabilities {
@@ -223,6 +220,86 @@ img.rec-img {
     max-width:820px;
     margin:auto;
 }
+
+// Performance comparison table
+.comparison-table {
+    -webkit-text-size-adjust: 100%;
+    color: #202124;
+    cursor: auto;
+    font-family: "Roboto",Arial,Helvetica,sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    word-wrap: break-word;
+    list-style-position: outside;
+    list-style-type: none;
+    line-height: 1.625;
+    font-size: 16px;
+    letter-spacing: 0;
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #fff;
+    border-width: 0 1px;
+    display: table;
+    margin-top:36px;
+    margin-bottom:48px;
+
+    tr:nth-child(even) {
+        background-color: rgba(32,33,36,0.03);
+    }
+
+    td, th {
+        font-size: 16px;
+    }
+
+    td {
+        padding:20px;
+
+        &.perf {
+            vertical-align: top;
+            line-height: 1.625;
+            letter-spacing: 0;
+            padding-bottom: 20px;
+            border: none;
+            font-weight: 300;
+            flex-wrap: nowrap;
+            padding-top: 50px;
+            text-align: center;
+            color: #777777;
+            background: url(https://www.gstatic.com/images/icons/material/system/2x/lens_grey_24dp.png) no-repeat center 20px;
+            background-size:24px !important;
+        }
+
+        &.highlight {
+            background: url(https://www.gstatic.com/images/icons/material/system/2x/check_circle_googblue_24dp.png) no-repeat center 20px;
+            font-weight:400;
+            color:#36f;
+        }
+        
+    }
+
+    td:has(h4) {
+        width: 40%;
+    }
+
+    th {
+        border-bottom: 1px solid $border-light;
+        padding: 20px 8px 8px 8px;
+        text-align: center;
+        background-color: #fff;
+    }
+
+    h4 {
+        font-size:18px;
+        font-family: $font-google-sans;
+    }
+}
+
 
 
 @media (max-width: $layout-breakpoint-medium) {

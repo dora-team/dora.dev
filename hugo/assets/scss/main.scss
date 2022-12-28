@@ -8,6 +8,17 @@
 body {
     font-family: $font-google-sans;
     color: $color-text;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    // use flex so footer sticks to bottom of page
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
 }
 
 p, .paragraph, select {
@@ -42,7 +53,7 @@ header {
 }
 
 main {
-    max-width: 960px;
+    max-width: $layout-breakpoint-max;
     min-height: 720px;
     padding: 16px 28px 8px 28px;
     margin:auto;
@@ -57,7 +68,7 @@ section.banner {
 
     .content {
         display:flex;
-        max-width: 960px;
+        max-width: $layout-breakpoint-max;
         padding: 16px 28px;
         margin:auto;
         line-height:1.75;

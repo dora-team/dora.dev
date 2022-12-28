@@ -158,7 +158,12 @@ function decoratePagewithProfileAndPercentage(userProfileAndPercentile) {
         element.classList.add(userProfileAndPercentile.profile);
     })
     document.getElementById('percentile').innerText = userProfileAndPercentile.percentile;
-   }
+
+    // highlight performance comparison table
+    Object.keys(indicators).forEach((indicator) => {
+        document.getElementById(indicator + '-' + userProfileAndPercentile.profile).classList.add('highlight');
+    });
+}
 
 
 function drawUserPerformanceChart(percentile) {
@@ -255,7 +260,7 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
     let target_div = (industry == 'all') ? 'all' : 'industry';
     let chart = new google.visualization.BarChart(document.getElementById('perf-' + target_div + '-' + indicator));
     
-    // move the "you" icon into place
+    // move the "you" icons into place
     icon_id = 'perf-' + target_div + '-' + indicator + '-marker';
     google.visualization.events.addListener(
         chart,
@@ -321,6 +326,12 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
 
         // hide 'your industry' until clicked
         document.getElementById('perf-industry').style.display='none';
+
+        // hide other tabs until clicked
+        let tabs_to_hide = ["c_focus","c_compare"]
+        tabs_to_hide.forEach((tab) => {
+            document.getElementById(tab).style.display='none';
+        })
     })  
 
 }());
