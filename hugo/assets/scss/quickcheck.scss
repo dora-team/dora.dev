@@ -73,6 +73,8 @@ ul.tabs {
             text-decoration:none;
             color:$color-text-light;
             text-transform: uppercase;
+            border-bottom: 2px solid white;
+            transition: border-bottom 400ms ease-out;
 
             &:hover{
                 color:$color-text;

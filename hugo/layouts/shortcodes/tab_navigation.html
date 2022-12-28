@@ -14,9 +14,15 @@
                     document.getElementById(activeTabId).style.display = 'block';
                 }
             });
-
         }
     }
+
+    document.querySelectorAll('[role="tab"]').forEach((element) => {
+        element.addEventListener('click', function(e){ 
+            e.preventDefault();
+        });
+    })
+
 </script>
 
 {{/* extract data from parameters */}}
