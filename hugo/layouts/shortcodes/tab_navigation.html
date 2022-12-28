@@ -1,6 +1,9 @@
+{{/*  be sure to hide inactive tabs in css  */}}
+
+
 <script>
-    if(typeof showTab != 'function') {
-        function showTab(clickedTab) {
+    if(typeof showTab !== 'function') {
+        showTab = function(clickedTab) {
             tabs = clickedTab.closest('.tabs').querySelectorAll('a');
             tabs.forEach(element => {
                 element.classList.remove('selected');
@@ -21,25 +24,6 @@
 {{ $tab_titles := split .Params.titles "," }}
 {{ $tab_controls := split .Params.controls "," }}
 {{ $tab_classes := split .Params.classes "," }}
-
-
-{{/* hide inactive tabs */}}
-<script>
-    function hideTabs() {
-        {{ $counter := 0 }}
-    {{ range $tab_titles }}
-        {{ if ne (index $tab_titles $counter) $.Params.selected }}
-            document.getElementById({{ index $tab_controls $counter }}).style.display='none';
-        {{ end }}
-        {{ $counter = add $counter 1 }}
-    {{ end }}
-    };
-
-    document.addEventListener("DOMContentLoaded", function(){
-        hideTabs();
-        console.log({{ $.Params.selected }})
-    });
-</script>
 
 <ul class="tabs" id="tabs-sections" role="tablist">
 {{ $counter := 0 }}
