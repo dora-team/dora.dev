@@ -22,11 +22,27 @@
 {{ $tab_controls := split .Params.controls "," }}
 {{ $tab_classes := split .Params.classes "," }}
 
-{{ $counter := 0 }}
 
-{{/* render tabs */}}
+{{/* hide inactive tabs */}}
+<script>
+    function hideTabs() {
+        {{ $counter := 0 }}
+    {{ range $tab_titles }}
+        {{ if ne (index $tab_titles $counter) $.Params.selected }}
+            document.getElementById({{ index $tab_controls $counter }}).style.display='none';
+        {{ end }}
+        {{ $counter = add $counter 1 }}
+    {{ end }}
+    };
+
+    document.addEventListener("DOMContentLoaded", function(){
+        hideTabs();
+        console.log({{ $.Params.selected }})
+    });
+</script>
 
 <ul class="tabs" id="tabs-sections" role="tablist">
+{{ $counter := 0 }}
 {{ range $tab_titles }}
     {{ $this_title := index $tab_titles $counter }}
     {{ $this_controls := index $tab_controls $counter }}
