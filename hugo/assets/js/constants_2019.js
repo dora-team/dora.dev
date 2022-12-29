@@ -1,4 +1,73 @@
-{
+// data constants for 2019
+const mean = 4.251338;
+const stddev = 1.000992;
+
+const indicators = {
+    'leadtime': {
+      'label': 'Lead time',
+      'ticks': [
+        { v: 0, f: '>6m' }, { v: 20, f: '1-6m' }, { v: 40, f: '1w - 1m' },
+        { v: 60, f: '1d - 1w' }, { v: 80, f: '<1d' }, { v: 100, f: '<1h' }
+      ]
+    },
+    'deployfreq': {
+      'label': 'Deploy frequency',
+      'ticks': [
+        { v: 0, f: '>6m' }, { v: 20, f: '1-6m' }, { v: 40, f: '1w - 1m' },
+        { v: 60, f: '1d - 1w' }, { v: 80, f: '<1d' }, { v: 100, f: 'on demand' }
+      ]
+    },
+    'ttr': {
+      'label': 'Time to restore',
+      'ticks': [
+        { v: 0, f: '>6m' }, { v: 20, f: '1-6m' }, { v: 40, f: '1w - 1m' },
+        { v: 60, f: '1d - 1w' }, { v: 80, f: '<1d' }, { v: 100, f: '<1h' }
+      ]
+    },
+    'chgfail': {
+      'label': 'Change fail rate',
+      'ticks': [
+        { v: 0, f: '76-100%' }, { v: 20, f: '61-75%' }, { v: 40, f: '46-60%' },
+        { v: 60, f: '31-45%' }, { v: 80, f: '16-30%' }, { v: 100, f: '0-15%' }
+      ]
+    }
+  };
+
+const profileStats = {
+  'low': 3.5,
+  'medium': 4.4,
+  'high': 5.2,
+  'elite': 6
+};
+
+const colors = {
+    'low': '#D93025',
+    'medium': '#FBBC04',
+    'high': '#34A853',
+    'elite': '#0D652D',
+    'you': '#0F346F',
+    'average': '#afb2b6',
+    'bar': '#0F346F'
+}
+
+const baselines = {
+  'all': { 'leadtime': 50, 'deployfreq': 49, 'ttr': 78, 'chgfail': 88 },
+  'education': { 'leadtime': 52, 'deployfreq': 49, 'ttr': 73, 'chgfail': 96 },
+  'energy': { 'leadtime': 40, 'deployfreq': 35, 'ttr': 73, 'chgfail': 81 },
+  'finance': { 'leadtime': 46, 'deployfreq': 44, 'ttr': 78, 'chgfail': 84 },
+  'government': { 'leadtime': 38, 'deployfreq': 36, 'ttr': 70, 'chgfail': 88 },
+  'healthcare': { 'leadtime': 41, 'deployfreq': 42, 'ttr': 68, 'chgfail': 82 },
+  'industrials': { 'leadtime': 40, 'deployfreq': 39, 'ttr': 79, 'chgfail': 91 },
+  'insurance': { 'leadtime': 49, 'deployfreq': 51, 'ttr': 80, 'chgfail': 91 },
+  'media': { 'leadtime': 58, 'deployfreq': 65, 'ttr': 85, 'chgfail': 85 },
+  'nonprofit': { 'leadtime': 67, 'deployfreq': 73, 'ttr': 93, 'chgfail': 98 },
+  'retail': { 'leadtime': 59, 'deployfreq': 67, 'ttr': 87, 'chgfail': 89 },
+  'technology': { 'leadtime': 51, 'deployfreq': 51, 'ttr': 78, 'chgfail': 90 },
+  'telecoms': { 'leadtime': 44, 'deployfreq': 43, 'ttr': 79, 'chgfail': 81 },
+  'other': { 'leadtime': 51, 'deployfreq': 48, 'ttr': 80, 'chgfail': 89 }
+}
+
+const allCapabilities = {
     "elite": {
       "westrum": {
         "title": "Westrum organizational culture",
@@ -193,4 +262,3 @@
         ] }
     }
   }
-  

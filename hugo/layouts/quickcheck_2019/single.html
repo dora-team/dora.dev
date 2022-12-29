@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+    {{- $helpers := resources.Get "js/helpers_2019.js" -}}
+    {{- $constants := resources.Get "js/constants_2019.js" -}}
+    {{- $results := resources.Get "js/results_2019.js" -}}
+
+    {{- $jsFiles := slice $helpers $constants $results}}
+    {{- $jsBundle := $jsFiles | resources.Concat "js/quickcheck_2019" | fingerprint -}}
+
+    <script defer src="https://www.gstatic.com/charts/loader.js"></script>
+    <script defer src="{{ $jsBundle.RelPermalink }}" integrity="{{ $jsBundle.Data.Integrity }}" defer></script>
+    
+    {{ .Content }}
+
+{{ end }}

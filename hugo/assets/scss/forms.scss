@@ -26,13 +26,12 @@ select {
     border-radius: 4px;
 }
 
-button, input[type=submit] {
+button, input[type=submit], .button {
     display: inline-block;
     border: none;
     border-radius: 2px;
     font-size:14px;
     font-weight:500;
-    height: 46px;
     letter-spacing: .75px;
     line-height:1;
     vertical-align: middle;
@@ -45,9 +44,10 @@ button, input[type=submit] {
 
     &:disabled {
         background-color: #dadce0;
+        cursor:default;
     }
 
-    &:hover {
+    &:hover:not(:disabled) {
         background-color: #174ea6;
     }
 }
