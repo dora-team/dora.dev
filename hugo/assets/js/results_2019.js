@@ -293,12 +293,13 @@ function createCapabilitiesTable(profile) {
     
   }
 
-  function populateRecommendations(profile, userPerformanceIndicators) {
+  function populateRecommendations(profile) {
+    const urlParams = new URLSearchParams(window.location.search);
     let capabilities = allCapabilities[profile];
     let performance = [];
     for (let capability of Object.keys(capabilities)) {
-    let difference = 25 * parseFloat(userPerformanceIndicators[capability]);
-    performance.push([capability, difference]);
+        let difference = 25 * parseFloat(urlParams.get(capability));
+        performance.push([capability, difference]);
     }
 
     performance.sort(function (first, second) {
@@ -316,14 +317,65 @@ function createCapabilitiesTable(profile) {
         title.textContent = capabilities[capability].title;
         if (i == 0) {
           recommendation.textContent = capabilities[capability].title.toLowerCase();
-        }
+        } 
         let description = document.getElementById("cap-description-" + i);
         description.innerHTML = capabilities[capability].description;
         let url = document.getElementById("cap-url-" + i);
         url.href = capabilities[capability].url;
-        // renderCapabilityGraph(capability, capabilities[capability], "cap-graph-" + i, i == 0);
+        renderCapabilityGraph(capability, capabilities[capability], i, i == 0, profile);
       }
   }
+
+  function renderCapabilityGraph(capability, data, capability_index, focus, profile) {
+    let element = `cap-graph-${capability_index}`;
+    const urlParams = new URLSearchParams(window.location.search);
+    let dataTable = new google.visualization.DataTable();
+    let value = parseFloat(urlParams.get(capability)) / 4.0;
+    let mean = data["mean"] / 100;
+    let profileMean = data["profile-mean"] / 100;
+    let backgroundColor = focus ? '#E8F0FE' : 'white';
+    dataTable.addColumn('string', 'Capability');
+    dataTable.addColumn('number', 'Your performance');
+    dataTable.addColumn('number', 'Average (all industries)');
+    dataTable.addColumn('number', `${profile} performer avg.`.capitalize());
+    dataTable.addRows([[data["title"], value, mean, profileMean]]);
+    var options = {
+      bars: 'horizontal',
+      bar: { groupWidth: '40%' },
+      height: 120,
+      chartArea: { top: 0, left: 0, right: 20, height: 40 },
+      enableInteractivity: false,
+      series: {
+        0: { color: colors['bar'] },
+        1: { type: 'line', color: colors['average'], lineWidth: 0, pointSize: 8, pointShape: 'diamond' },
+        2: { type: 'line', color: colors[profile], lineWidth: 0, pointSize: 8, pointShape: 'circle' }
+      },
+      hAxis: {
+        minValue: 0,
+        maxValue: 1,
+        ticks: [0, .25, .5, .75, 1],
+        format: 'percent'
+      },
+      vAxis: {
+        textPosition: 'none'
+      },
+      legend: { position: 'bottom' },
+      backgroundColor: backgroundColor
+    };
+
+      let chart = new google.visualization.BarChart(document.getElementById(element));
+          // move the "you" icon into place
+        google.visualization.events.addListener(
+            chart,
+            'ready',
+            function() {
+                var cli = chart.getChartLayoutInterface();
+                yourXpos = cli.getXLocation(dataTable.getValue(0, 1));
+                document.getElementById(`capability-marker-${capability_index}`).style.left = yourXpos-12 + 'px';
+            }
+        );
+      chart.draw(dataTable, options);
+}
 
 
 // compute metrics and render display

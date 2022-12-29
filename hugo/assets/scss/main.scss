@@ -46,6 +46,7 @@ header {
     align-items: center;
     height: 64px;
     box-shadow: 0 2px 6px 0 transparentize(#000, .88), inset 0 -1px 0 0 #dadce0;
+    z-index: 100;
 
     .dora-logo {
         margin:2px 8px;
@@ -93,4 +94,5 @@ section.banner {
 footer {
     background-color: $background-light;
     padding:24px 16px 16px 16px;
+    margin-top:4rem;
 }

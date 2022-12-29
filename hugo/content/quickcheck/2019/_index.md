@@ -7,6 +7,7 @@ bannerSubtitle: "Measure your team's software delivery performance in less than 
 bannerHighlightImage: "/img/quickcheck/hero_illustration.svg"
 stylesheets:
     - name: quickcheck
+type: quickcheck_2019
 ---
 
 <form action={{% relref "/quickcheck/2019/results.html" %}} method="get">

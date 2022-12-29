@@ -6,7 +6,18 @@ main {
     width:100%;
 }
 
-h1 {text-align: center;}
+h1 {
+    text-align: center;
+    font-weight:300;
+    font-size:44px;
+    margin-top:4rem;
+}
+
+h2 {
+    font-size:28px;
+    font-weight:300;
+    margin: 2rem 0 1rem 0;
+}
 
 .icon {
     display:inline-block;
@@ -174,6 +185,29 @@ section.quickcheck_results {
     }
 }
 
+#caps_unprioritized {
+    display:flex;
+    flex-wrap: wrap;
+
+    h2 {
+        width:100%;
+        flex-grow:1;
+    }
+
+    .description {
+        width:30%;
+    }
+
+    #key-capabilities {
+        width:65%;
+        margin-left:1rem;
+    }
+
+    .small {
+        line-height:100%;
+    }
+}
+
 #caps_prioritized {
 
     h2 {
@@ -186,25 +220,33 @@ section.quickcheck_results {
     }
 }
 
-.recommendation {
-    background-color: #E8F0FE;
+.recommendation-container {
     margin-top: 2em;
     border-radius: 8px;
     border: 1px solid #dadce0;
     padding: 1.5em 2em;
-    display:flex;
-
-    .description {
-        width:50%;
-    }
-
-    .graph-container {
-        width:50%;
-    }
-
+    
     h3 {
         font-size:1.5rem;
     }
+
+    &.top {
+        background-color: #E8F0FE;
+    }
+
+    .recommendation {
+        display:flex;
+
+        .description {
+            width:50%;
+        }
+        
+        .graph-container {
+            width:50%;
+            margin-left: 2em;
+        }
+
+    }    
 }
 
 .focus {
@@ -277,6 +319,7 @@ img.rec-img {
     text-align: center;
     box-sizing: border-box;
     margin: 0;
+    margin-bottom:72px;
     background: white;
     position: relative;
     box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.05),0 4px 8px 3px rgba(60, 64, 67, 0.15);
