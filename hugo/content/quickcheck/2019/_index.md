@@ -7,14 +7,15 @@ bannerSubtitle: "Measure your team's software delivery performance in less than 
 bannerHighlightImage: "/img/quickcheck/hero_illustration.svg"
 stylesheets:
     - name: quickcheck
+type: quickcheck_2019
 ---
 
-<form action="https://devops-research.com/performance.html" method="get">
+<form action={{% relref "/quickcheck/2019/results.html" %}} method="get">
 
 <h5>Question 1 of 5</h5>
 <section class="question">
 <aside>
-    <h3>Lead time</h3>
+    <h2>Lead time</h2>
     <img src="/img/quickcheck/lead_time.svg" class="spot">
 </aside>
 <fieldset class="paragraph">
@@ -33,7 +34,7 @@ stylesheets:
 <h5>Question 2 of 5</h5>
 <section class="question">
 <aside>
-    <h3>Deploy frequency</h3>
+    <h2>Deploy frequency</h2>
     <img src="/img/quickcheck/deploy_freq.svg" class="spot">
 </aside>
 <fieldset class="paragraph">
@@ -53,7 +54,7 @@ stylesheets:
 <h5>Question 3 of 5</h5>
 <section class="question">
 <aside>
-    <h3>Time to restore</h3>
+    <h2>Time to restore</h2>
     <img src="/img/quickcheck/ttr.svg" class="spot">
 </aside>
 <fieldset class="paragraph">
@@ -73,7 +74,7 @@ stylesheets:
 <h5>Question 4 of 5</h5>
 <section class="question">
     <aside>
-        <h3>Change fail percentage</h3>
+        <h2>Change fail percentage</h2>
         <img src="/img/quickcheck/chg_fail.svg" class="spot">
     </aside>
     <fieldset class="paragraph">
@@ -93,7 +94,7 @@ stylesheets:
 <h5>Question 5 of 5</h5>
 <section class="question">
     <aside>
-        <h3>Industry</h3>
+        <h2>Industry</h2>
     </aside>
     <fieldset class="paragraph">
         <legend>

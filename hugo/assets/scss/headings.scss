@@ -5,38 +5,38 @@
   }
 
 @include headings {
-    font-weight:500;
-    margin-bottom: 0;
-    margin-top: .25em;
-    padding-bottom:0em;
-    padding-top:0;
-    line-height: 120%;
+    font-weight:400;
+    margin-bottom: .5rem;
+    margin-top: .25rem;
+    padding:0;
+    line-height:120%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
   }
 
-  // note: CSS 'max' function is capitalized here to bypass SCSS parser
-
   h1 {
-    font-size:Max(5vmin,16px);
+    font-size:2.75rem;
   }
 
   h2 {
-    font-size:Max(3.25vmin,12px);
+    font-size:2rem;
   }
 
   h3 {
-    font-size:Max(2.75vmin,12px);
-    font-weight:400;
+    font-size:1rem;
   }
 
   h4 {
-    font-size:Max(2vmin,12px);
+    font-size:1rem;
+    font-weight:500;
   }
 
   h5 {
-    font-size:Max(1.5vmin,10px);
+    font-size:11px;
     letter-spacing:1.25px;
     color: #777;
     text-transform: uppercase;
+    font-weight:500;
   }
 
   @media (max-width: $layout-breakpoint-medium) {

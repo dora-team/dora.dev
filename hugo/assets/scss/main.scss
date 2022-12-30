@@ -4,20 +4,45 @@
 @import "nav.scss";
 @import "headings.scss";
 @import "forms.scss";
+@import "widgets.scss";
 
 body {
-    font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
-    color: $text-color;
+    font-family: $font-google-sans;
+    color: $color-text;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    // use flex so footer sticks to bottom of page
+    display: flex;
+    flex-direction: column;
+    letter-spacing: .35px;
+}
+
+main {
+    flex-grow: 1;
 }
 
 p, .paragraph, select {
-    font-family: "Roboto",Arial,Helvetica,sans-serif;
+    font-family: $font-roboto;
     font-weight: 300;
     margin:0;
+    font-size:1rem;
 }
 
 p > bold, p > strong {
     font-weight: 500;
+}
+
+a {
+    color: $color-link;
+
+    &:hover {
+        color: $color-link-hover;
+    }
+    &:focus {
+        color: $color-link-focus;
+    }
 }
 
 header {
@@ -25,6 +50,7 @@ header {
     align-items: center;
     height: 64px;
     box-shadow: 0 2px 6px 0 transparentize(#000, .88), inset 0 -1px 0 0 #dadce0;
+    z-index: 100;
 
     .dora-logo {
         margin:2px 8px;
@@ -32,10 +58,14 @@ header {
 }
 
 main {
-    max-width: 960px;
+    max-width: $layout-breakpoint-max;
     min-height: 720px;
-    padding: 16px 28px 8px 28px;
+    padding: 1rem 4rem .5rem 4rem;
     margin:auto;
+}
+
+.capitalize {
+    text-transform: capitalize;
 }
 
 section.banner {
@@ -43,8 +73,8 @@ section.banner {
 
     .content {
         display:flex;
-        max-width: 960px;
-        padding: 16px 28px;
+        max-width: $layout-breakpoint-max;
+        padding: 2rem 4rem;
         margin:auto;
         line-height:1.75;
     }
@@ -68,4 +98,5 @@ section.banner {
 footer {
     background-color: $background-light;
     padding:24px 16px 16px 16px;
+    margin-top:4rem;
 }

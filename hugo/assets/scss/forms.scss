@@ -26,13 +26,12 @@ select {
     border-radius: 4px;
 }
 
-button, input[type=submit] {
+button, input[type=submit], .button {
     display: inline-block;
     border: none;
     border-radius: 2px;
     font-size:14px;
     font-weight:500;
-    height: 46px;
     letter-spacing: .75px;
     line-height:1;
     vertical-align: middle;
@@ -42,14 +41,27 @@ button, input[type=submit] {
     color:white;
     background-color: #1a73e8;
     cursor: pointer;
+    text-decoration: none;
+
+    &:disabled {
+        background-color: #dadce0;
+        cursor:default;
+    }
+
+    &:hover:not(:disabled) {
+        background-color: #174ea6;
+        color:white;
+    }
 }
 
-button:disabled, input[type=submit]:disabled {
-    background-color: #dadce0;
-}
+button.secondary, .button.secondary {
+    background-color: white;
+    color: #1a73e8;
+    border: 1px solid #dadce0;
 
-button:hover, input[type=submit]:hover {
-    background-color: #174ea6;
+    &:hover {
+        background-color: #e1f3fc;
+    }
 }
 
 

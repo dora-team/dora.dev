@@ -1,3 +1,10 @@
 <footer>
     <a href="//cloud.google.com/" target="_blank"><img src="/img/cloud-logo-dark.svg"></a>
 </footer>
+
+{{- $widgets := resources.Get "js/widgets.js" -}}
+    
+{{- $jsFiles := slice $widgets}}
+{{- $jsBundle := $jsFiles | resources.Concat "js/core" | fingerprint -}}
+
+<script defer src="{{ $jsBundle.RelPermalink }}" integrity="{{ $jsBundle.Data.Integrity }}" defer></script>    
