@@ -26,19 +26,21 @@ type: quickcheck_2019
     </div>
 </section>
 <section id="results-actions">
-    <button id="share-button" onClick="alert('not yet implemented');">
-    Share results
-    </button>
+    <button class="modal-open" aria-controls="share-modal">Share results</button>
     <a href='{{% relref "/quickcheck/2019/" %}}'><button class="secondary">Start over</button></a>
     <div id="share-modal"  role="dialog" aria-modal="true" aria-labelledby="share-modal-label" aria-describedby="share-modal-content">
-        <div >
-          <h2 id="share-modal-label" >Share your results</h2>
+        <div class="wrapper">
+          <h1 id="share-modal-label" >Share your results</h1>
           <div id="share-modal-content" >
             <p >We've copied the URL to your DORA DevOps Quick Check results to your clipboard.</p>
             <p >Share via social media, email or chat.</p>
-            <textarea id="share-url"></textarea>
+            <div id="share-url-container">
+                <div id="share-url" contenteditable="true">
+                  I am vertically aligned
+                </div>
+              </div>
           </div>
-          <button ></button>
+          <img class="modal-close x" aria-controls="share-modal" src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg" alt="close">
         </div>
       </div>
 </section>

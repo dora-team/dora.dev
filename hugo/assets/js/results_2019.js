@@ -463,6 +463,9 @@ function createCapabilitiesTable(profile) {
             document.getElementById(tab).style.display='none';
         })
 
+        // populate "share your results" textarea
+        document.getElementById("share-url").textContent = location.href;
+
     })  
 
 }());
