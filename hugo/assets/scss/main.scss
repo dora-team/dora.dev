@@ -64,8 +64,8 @@ main {
     padding: 1rem 4rem .5rem 4rem;
     margin:auto;
 
-    @include media-small {
-        padding:1rem;
+    @include media-medium {
+        padding:1em;
     }
 
 }
