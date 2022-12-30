@@ -40,7 +40,7 @@ header > nav > label > input[type=checkbox] { display:none; }
             top:64px;
             right:0px;
             background-color: white;
-            // transform: translate($mobile-menu-width);
+            visibility:hidden;
             opacity: 0;
             width:$mobile-menu-width;
             height:calc(100% - 64px);
@@ -111,8 +111,8 @@ header > nav > label > input[type=checkbox] { display:none; }
     
     label input:checked + .menu + ul { 
         opacity: 1; 
-        transform:translate(0);
         transition: .25s ease;
+        visibility:visible;
     }
     
     .page-overlay {
