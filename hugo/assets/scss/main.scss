@@ -15,6 +15,7 @@ body {
     // use flex so footer sticks to bottom of page
     display: flex;
     flex-direction: column;
+    letter-spacing: .35px;
 }
 
 main {
@@ -25,6 +26,7 @@ p, .paragraph, select {
     font-family: $font-roboto;
     font-weight: 300;
     margin:0;
+    font-size:1rem;
 }
 
 p > bold, p > strong {
@@ -33,6 +35,7 @@ p > bold, p > strong {
 
 a {
     color: $color-link;
+
     &:hover {
         color: $color-link-hover;
     }
@@ -56,7 +59,7 @@ header {
 main {
     max-width: $layout-breakpoint-max;
     min-height: 720px;
-    padding: 16px 28px 8px 28px;
+    padding: 1rem 4rem .5rem 4rem;
     margin:auto;
 }
 
@@ -70,7 +73,7 @@ section.banner {
     .content {
         display:flex;
         max-width: $layout-breakpoint-max;
-        padding: 16px 28px;
+        padding: 2rem 4rem;
         margin:auto;
         line-height:1.75;
     }

@@ -7,7 +7,7 @@ stylesheets:
 type: quickcheck_2019
 ---
 
-<h1>Your software delivery&nbsp;performance</h1>
+<h1 id="results_h1">Your software delivery&nbsp;performance</h1>
 <section class="quickcheck_results">
     <aside>
         <div  >
@@ -15,7 +15,7 @@ type: quickcheck_2019
                 <span class="profile-title capitalize color-by-profile">unknown</span>
             </h3>
             <h4>You're performing better than <span id="percentile">&nbsp;&nbsp;&nbsp;</span>&percnt; of
-              <a href="https://cloud.google.com/devops/state-of-devops/">State&nbsp;of&nbsp;DevOps&nbsp;Survey</a> respondents. <a id="popover-more"  title="How was this calculated?"><span class="sr-only">How was this calculated?</span></a></h4>
+              <a href="https://cloud.google.com/devops/state-of-devops/">State&nbsp;of&nbsp;DevOps&nbsp;Survey</a> respondents.&nbsp;<a id="popover-more"  title="How was this calculated?"><span class="sr-only">How was this calculated?</span></a></h4>
             <div class="popover">
               <p>We used responses from the <a href="https://cloud.google.com/devops/state-of-devops/">2019 State of DevOps Survey</a> to calculate the four performance profiles (see the &ldquo;<span class="profile-title capitalize">Unknown</span>  performers&rdquo; tab) as well as your percentile.</p>
               <button type="button"  aria-label="Close">&times;</button>
@@ -58,37 +58,39 @@ type: quickcheck_2019
             <p >When we analyzed the responses of other <strong class="color-by-profile"><span class="profile-title">unknown</span> performers</strong>, we found that working on these three
                 capabilities had the most impact on improving their software delivery performance.</p>
             <p><button  id="cap-click">Help me prioritize</button></p>
-            <p class="small"><small>Rank your responses to a series of 3-12 questions for
+            <p class="small">Rank your responses to a series of 3-12 questions for
                 each of these three capabilities, to determine how you perform and which to consider focusing on
-                first.</small></p>
+                first.</p>
         </div>
         <div id="key-capabilities">
-            <div class="rec">
-                <a  id="rec-link-0"
-                    href="https://cloud.google.com/solutions/devops/devops-tech-version-control"
-                    target="_blank">
-                    <img src="https://www.google.com/images/icons/material/system/svg/assignment_turned_in_24px.svg" class="rec-img" id="rec-img-0" alt="Icon that represents this capability">
-                    <h3 id="rec-name-0">Version control</h3>
-                    Learn more <img class="h-c-icon" alt="Arrow pointing right" src="https://www.gstatic.com/images/icons/material/system_gm/svg/arrow_right_alt_24px.svg">
-                </a>
-            </div>
-            <div class="rec">
-                <a  id="rec-link-1"
-                    href="https://cloud.google.com/solutions/devops/devops-tech-version-control"
-                    target="_blank">
-                    <img src="https://www.google.com/images/icons/material/system/svg/assignment_turned_in_24px.svg" class="rec-img" id="rec-img-1" alt="Icon that represents this capability">
-                    <h3 id="rec-name-1">Version control</h3>
-                    Learn more <img class="h-c-icon" alt="Arrow pointing right" src="https://www.gstatic.com/images/icons/material/system_gm/svg/arrow_right_alt_24px.svg">
-                </a>
-            </div>
-            <div class="rec">
-                <a  id="rec-link-2"
-                    href="https://cloud.google.com/solutions/devops/devops-tech-version-control"
-                    target="_blank">
-                    <img src="https://www.google.com/images/icons/material/system/svg/assignment_turned_in_24px.svg" class="rec-img" id="rec-img-2" alt="Icon that represents this capability">
-                    <h3 id="rec-name-2">Version control</h3>
-                    Learn more <img class="h-c-icon" alt="Arrow pointing right" src="https://www.gstatic.com/images/icons/material/system_gm/svg/arrow_right_alt_24px.svg">
-                </a>
+            <div class="capabilities-container">
+                <div class="rec">
+                    <a  id="rec-link-0"
+                        href="https://cloud.google.com/solutions/devops/devops-tech-version-control"
+                        target="_blank">
+                        <img src="https://www.google.com/images/icons/material/system/svg/assignment_turned_in_24px.svg" class="rec-img" id="rec-img-0" alt="Icon that represents this capability">
+                        <h3 id="rec-name-0">Version control</h3>
+                        Learn more <img class="h-c-icon" alt="Arrow pointing right" src="https://www.gstatic.com/images/icons/material/system_gm/svg/arrow_right_alt_24px.svg">
+                    </a>
+                </div>
+                <div class="rec">
+                    <a  id="rec-link-1"
+                        href="https://cloud.google.com/solutions/devops/devops-tech-version-control"
+                        target="_blank">
+                        <img src="https://www.google.com/images/icons/material/system/svg/assignment_turned_in_24px.svg" class="rec-img" id="rec-img-1" alt="Icon that represents this capability">
+                        <h3 id="rec-name-1">Version control</h3>
+                        Learn more <img class="h-c-icon" alt="Arrow pointing right" src="https://www.gstatic.com/images/icons/material/system_gm/svg/arrow_right_alt_24px.svg">
+                    </a>
+                </div>
+                <div class="rec">
+                    <a  id="rec-link-2"
+                        href="https://cloud.google.com/solutions/devops/devops-tech-version-control"
+                        target="_blank">
+                        <img src="https://www.google.com/images/icons/material/system/svg/assignment_turned_in_24px.svg" class="rec-img" id="rec-img-2" alt="Icon that represents this capability">
+                        <h3 id="rec-name-2">Version control</h3>
+                        Learn more <img class="h-c-icon" alt="Arrow pointing right" src="https://www.gstatic.com/images/icons/material/system_gm/svg/arrow_right_alt_24px.svg">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -149,7 +151,7 @@ type: quickcheck_2019
 <section id="c_compare" class="tab">
         <div>
             <div>
-                <h>How your performance compares</h2>
+                <h2>How your performance compares</h2>
                 <p>Based on your <a href='{{% relref "/quickcheck/2019/" %}}'>quick check</a> answers, see how you compare to the
                 <a href="https://cloud.google.com/devops/state-of-devops/">2019 State of DevOps</a> respondents overall, and to people within the same industry as you.</p>
             </div>

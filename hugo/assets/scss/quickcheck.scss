@@ -2,23 +2,6 @@
 
 // survey page
 
-main {
-    width:100%;
-}
-
-h1 {
-    text-align: center;
-    font-weight:300;
-    font-size:44px;
-    margin-top:4rem;
-}
-
-h2 {
-    font-size:28px;
-    font-weight:300;
-    margin: 2rem 0 1rem 0;
-}
-
 .icon {
     display:inline-block;
     position:relative;
@@ -48,7 +31,8 @@ section.question  {
         }
 
         label {
-            font-size:.9em;
+            display:block;
+            margin:.5rem;
         }
 
     }
@@ -70,7 +54,10 @@ img.spot {
 
 // results page
 
-
+h1#results_h1 {
+    text-align: center;
+    margin-top:3rem;
+}
 
 ul.tabs {
     display:flex;
@@ -114,17 +101,17 @@ ul.tabs {
 section.quickcheck_results {
     display:flex;
     margin:24px auto;
-    max-width: $layout-breakpoint-large;
+    max-width: $layout-breakpoint-medium;
 
     aside {
-        width:30%;
+        width:35%;
         max-width:240px;
         padding-right:40px;
 
         .profile-title {
             display:block;
-            font-size: 3rem;
-            line-height:1.5;
+            font-size:3.5rem;
+            line-height: 1em;
         }
 
         #popover-more  {
@@ -136,6 +123,12 @@ section.quickcheck_results {
             background-size: contain;
             filter: invert(53%) sepia(12%) saturate(175%) hue-rotate(165deg) brightness(97%) contrast(91%);
             border-bottom: 0;
+        }
+
+        h4 {
+            font-weight:400;
+            font-size:12px;
+            font-family:$font-roboto;
         }
 
     }
@@ -155,34 +148,40 @@ section.quickcheck_results {
 
 #results-actions {
     text-align: center;
+    margin:2.5rem 0;
 }
 
 #key-capabilities {
     
-    display:flex;
 
-    .rec {
+    .capabilities-container {
 
-        flex: 1;
-        flex-wrap: nowrap;
-        text-align:center;
+        display:flex;
 
-        border: 1px solid $border-light;
-        border-radius: 8px;
-        margin:8px;
-        padding:8px;
+        .rec {
 
-        h3 {
-            color: $color-text;
-            font-weight: 500;
-            font-size:1.2rem;
+            flex: 1;
+            flex-wrap: nowrap;
+            text-align:center;
+    
+            border: 1px solid $border-light;
+            border-radius: 8px;
+            margin:.5rem;
+            padding:.5rem .5rem 1rem .5rem ;
+    
+            h3 {
+                color: $color-text;
+                font-weight: 500;
+            }
+    
+            a {
+                text-decoration: none;
+                font-size:.85rem;
+            }
         }
 
-        a {
-            text-decoration: none;
-            font-size:.85rem;
-        }
     }
+
 }
 
 #caps_unprioritized {
@@ -204,16 +203,16 @@ section.quickcheck_results {
     }
 
     .small {
-        line-height:100%;
+        line-height:150%;
+        font-size:12px;
+    }
+
+    #cap-click {
+        margin:1.5rem 0;
     }
 }
 
 #caps_prioritized {
-
-    h2 {
-        font-size:1.75rem;
-        font-weight: 400;
-    }
 
     .header {
         width:60%;
@@ -474,7 +473,7 @@ img.rec-img {
         &.highlight {
             background: url(https://www.gstatic.com/images/icons/material/system/2x/check_circle_googblue_24dp.png) no-repeat center 20px;
             font-weight:400;
-            color:#36f;
+            color:$color-link
         }
         
     }
