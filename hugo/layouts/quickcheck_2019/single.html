@@ -1,5 +1,7 @@
 {{ define "main" }}
 
+    {{ .Content }}
+
     {{- $helpers := resources.Get "js/helpers_2019.js" -}}
     {{- $constants := resources.Get "js/constants_2019.js" -}}
     {{- $results := resources.Get "js/results_2019.js" -}}
@@ -10,6 +12,4 @@
     <script defer src="https://www.gstatic.com/charts/loader.js"></script>
     <script defer src="{{ $jsBundle.RelPermalink }}" integrity="{{ $jsBundle.Data.Integrity }}" defer></script>
     
-    {{ .Content }}
-
 {{ end }}

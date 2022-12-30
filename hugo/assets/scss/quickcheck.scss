@@ -94,10 +94,6 @@ ul.tabs {
     }
 }
 
-.popover {
-    display:none;
-}
-
 section.quickcheck_results {
     display:flex;
     margin:24px auto;
@@ -108,21 +104,10 @@ section.quickcheck_results {
         max-width:240px;
         padding-right:40px;
 
-        .profile-title {
+        .profile-title.color-by-profile {
             display:block;
             font-size:3.5rem;
             line-height: 1em;
-        }
-
-        #popover-more  {
-            display: inline-block;
-            height: 1.25em;
-            width: 1.25em;
-            vertical-align: top;
-            background: url(https://www.google.com/images/icons/material/system/svg/help_24px.svg) no-repeat center center;
-            background-size: contain;
-            filter: invert(53%) sepia(12%) saturate(175%) hue-rotate(165deg) brightness(97%) contrast(91%);
-            border-bottom: 0;
         }
 
         h4 {
@@ -323,17 +308,6 @@ img.rec-img {
     position: relative;
     box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.05),0 4px 8px 3px rgba(60, 64, 67, 0.15);
     padding: 4em;
-}
-
-#modal-close {
-    margin: 0;
-    cursor: pointer;
-    height: 48px;
-    width: 48px;
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    border: none;
 }
 
 #modal {

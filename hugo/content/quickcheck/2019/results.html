@@ -14,11 +14,10 @@ type: quickcheck_2019
             <h3 ><span >Your performance:</span>
                 <span class="profile-title capitalize color-by-profile">unknown</span>
             </h3>
-            <h4>You're performing better than <span id="percentile">&nbsp;&nbsp;&nbsp;</span>&percnt; of
-              <a href="https://cloud.google.com/devops/state-of-devops/">State&nbsp;of&nbsp;DevOps&nbsp;Survey</a> respondents.&nbsp;<a id="popover-more"  title="How was this calculated?"><span class="sr-only">How was this calculated?</span></a></h4>
-            <div class="popover">
+            <h4>You're performing better than <span id="percentile">&nbsp;&nbsp;&nbsp;</span>&percnt; of <a href="https://cloud.google.com/devops/state-of-devops/">State&nbsp;of&nbsp;DevOps&nbsp;Survey</a> respondents.&nbsp;<a class="popover-more modal-open" aria-controls="profile-modal" title="How was this calculated?"><span class="sr-only">How was this calculated?</span></a></h4>
+            <div class="popover" id="profile-modal">
+                <img class="modal-close x" aria-controls="profile-modal" src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg" alt="close">
               <p>We used responses from the <a href="https://cloud.google.com/devops/state-of-devops/">2019 State of DevOps Survey</a> to calculate the four performance profiles (see the &ldquo;<span class="profile-title capitalize">Unknown</span>  performers&rdquo; tab) as well as your percentile.</p>
-              <button type="button"  aria-label="Close">&times;</button>
             </div>
     </aside>
     <div class="performance-graph-container">
@@ -98,10 +97,11 @@ type: quickcheck_2019
 <div id="caps_prioritized">
     <h2>Key DevOps capabilities recommended for you</h2>
     <div class="recommendations">
-        <div class="header">Based on your performance profile, we think you should work on the three capabilities listed below. Based on your responses to the capabilities assessment, <strong>we recommend you focus on <span id="capability"></span> first.</strong> <a id="popover-why" title="How was this calculated?">?<span class="sr-only">How was this calculated?</span></a>
+        <div class="header">
+            <p>Based on your performance profile, we think you should work on the three capabilities listed below. Based on your responses to the capabilities assessment, <strong>we recommend you focus on <span id="capability"></span> first.</strong> <a class="popover-more modal-open" aria-controls="capability-calc-popover" title="How was this calculated?"><span class="sr-only">How was this calculated?</span></a></p>
             <div id="capability-calc-popover" class="popover">
             <p>We prioritized based on your average score for each capability. You should also consider other factors, such as the effort required to implement these capabilities in your organization, and which you think will have the biggest impact on your performance.</p>
-            <button type="button" aria-label="Close">&times;</button>
+            <img class="modal-close x" aria-controls="capability-calc-popover" src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg" alt="close">
             </div>
         </div>
         <div class="recommendation-container top">
@@ -275,8 +275,8 @@ type: quickcheck_2019
         <div id="modal-content"></div>
         <p id="modal-error" >You must respond to all questions before results can be calculated.</p>
         <p>
-            <a id="modal-close"><img src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg" alt="close"></a>
-            <button id="modal-close-bottom" class="secondary" >Close</button>
+            <img class="modal-close x" aria-controls="modal" src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg" alt="close">
+            <button class="secondary modal-close" aria-controls="modal">Close</button>
             <button id="results" disabled="true" >View results</button>
         </p>
     </div>

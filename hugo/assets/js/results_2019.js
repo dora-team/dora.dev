@@ -401,17 +401,6 @@ function createCapabilitiesTable(profile) {
     populateKeyCapabilities(userProfileAndPercentile.profile);
 
     let industryBaselines = baselines[industry];
-
-    // apply listeners for modal
-
-    let close_controls = ['modal-close','modal-close-bottom'];
-
-    close_controls.forEach((element) => {
-        document.getElementById(element).addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('modal').style.display='none';
-        })
-    })
     
     document.getElementById('cap-click').addEventListener('click', function(e) {
         e.preventDefault();
