@@ -18,19 +18,18 @@ section.features {
     }
 
     .cols_1 {
+        
+
         width:50%;
+
+        @include media-medium {
+            width:100%;
+        }
+
     }
 
     .cols_2 {
         width:100%;
     }
     
-}
-
-@media (max-width: $layout-breakpoint-large) {
-    section.features {
-        .cols_1 {
-            width:100%;
-        }
-    }
 }

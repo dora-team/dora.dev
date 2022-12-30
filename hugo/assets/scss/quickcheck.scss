@@ -37,6 +37,22 @@ section.question  {
 
     }
 
+    @include media-medium {
+        flex-direction: column;
+
+        aside {
+            width:100%;
+        }
+
+        aside > img.spot {
+            // display:none;
+        }
+
+        fieldset {
+            width:100%;
+        }
+    }
+
 }
 
 section.submit {
@@ -149,7 +165,7 @@ section.quickcheck_results {
             border-radius: 8px;
             margin:.5rem;
             padding:.5rem .5rem 1rem .5rem ;
-    
+            
             h3 {
                 color: $color-text;
                 font-weight: 500;
@@ -472,30 +488,5 @@ img.rec-img {
         text-align: center;
         background-color: #fff;
     }
-
-    h4 {
-        font-size:18px;
-        font-family: $font-google-sans;
-    }
-}
-
-
-
-@media (max-width: $layout-breakpoint-medium) {
-    section.question {
- 
-        flex-direction: column;
-
-        aside {
-            width:100%;
-        }
-
-        aside > img.spot {
-            // display:none;
-        }
-
-        fieldset {
-            width:100%;
-        }
-    }
+    
 }

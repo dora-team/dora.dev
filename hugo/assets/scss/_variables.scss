@@ -21,3 +21,29 @@ $border-medium: #aeb0b7;
 
 $font-google-sans: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
 $font-roboto: "Roboto",Arial,Helvetica,sans-serif;
+
+
+// mixins for responsive layout; allows specification of media queries inline
+@mixin media-small {
+    @media (max-width: #{$layout-breakpoint-small}) {
+        @content;
+    }
+ }
+ 
+ @mixin media-medium {
+    @media (max-width: #{$layout-breakpoint-medium}) {
+        @content;
+    }
+ }
+
+ @mixin media-large {
+    @media (max-width: #{$layout-breakpoint-large}) {
+        @content;
+    }
+ }
+ 
+ @mixin media-max {
+    @media (max-width: #{$layout-breakpoint-max}) {
+        @content;
+    }
+ }

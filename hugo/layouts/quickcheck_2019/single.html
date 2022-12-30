@@ -2,6 +2,8 @@
 
     {{ .Content }}
 
+    {{- partial "pagefooter_gofurther" . -}}
+
     {{- $helpers := resources.Get "js/helpers_2019.js" -}}
     {{- $constants := resources.Get "js/constants_2019.js" -}}
     {{- $results := resources.Get "js/results_2019.js" -}}

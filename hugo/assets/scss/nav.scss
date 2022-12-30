@@ -29,7 +29,7 @@ header {
 // hamburger menu for mobile
 header > nav > label > input[type=checkbox] { display:none; }
 
-@media (max-width: $layout-breakpoint-large) {
+@include media-large {
 
     $mobile-menu-width: 180px;
 
@@ -40,7 +40,7 @@ header > nav > label > input[type=checkbox] { display:none; }
             top:64px;
             right:0px;
             background-color: white;
-            transform: translate($mobile-menu-width);
+            // transform: translate($mobile-menu-width);
             opacity: 0;
             width:$mobile-menu-width;
             height:calc(100% - 64px);

@@ -63,6 +63,11 @@ main {
     min-height: 720px;
     padding: 1rem 4rem .5rem 4rem;
     margin:auto;
+
+    @include media-small {
+        padding:1rem;
+    }
+
 }
 
 .capitalize {
@@ -78,6 +83,11 @@ section.banner {
         padding: 2rem 4rem;
         margin:auto;
         line-height:1.75;
+
+        @include media-medium {
+            padding: 1rem;
+        }
+
     }
 
     img.highlight {
@@ -85,14 +95,33 @@ section.banner {
         width:40%;
         max-width:400px;
         margin-left:1.5em;
+
+        @include media-medium {
+            display:none;
+        }
     }
 
 }
 
-@media (max-width: $layout-breakpoint-medium) {
+.pagefooter {
+    display:flex;
+    flex-direction: row;
 
-    section.banner img.highlight {
-        display:none;
+    @include media-medium {
+        flex-direction:column;
+    }
+
+    div {
+        margin:2rem;
+
+        @include media-medium {
+            margin:.5rem 1rem;
+        }
+
+        &:has(h2) {
+            min-width:25%;
+            flex-grow:1;
+        }
     }
 }
 
