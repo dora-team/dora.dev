@@ -1,37 +1,37 @@
 /*
 
-styles for UI widgets such as popovers, modals
+styles for UI widgets such as popovers, modals, tabs
 
 */
 
-@import "variables.scss";
+@import "_variables.scss";
 
 .popover {
     position: absolute;
     padding: 32px 64px 32px 32px;
     border: 1px solid $border-light;
     border-radius: 5px;
-    box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.05),0 4px 8px 3px rgba(60, 64, 67, 0.15);
+    box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.05), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
     z-index: 9999;
     background-color: $color-popover-background;
     top: auto;
     display: block;
-    width:30%;
-    min-width:200px;
-    max-width:400px;
+    width: 30%;
+    min-width: 200px;
+    max-width: 400px;
 }
 
 // the .modal-open and .modal-close classes are also used to identify controls that manipulate modals
 
 .modal-open {
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .modal-close {
     cursor: pointer;
-}       
+}
 
-.popover-more  {
+.popover-more {
     display: inline-block;
     height: 1.25em;
     width: 1.25em;
@@ -52,6 +52,74 @@ styles for UI widgets such as popovers, modals
     border: none;
 
     &:hover {
-        background-color:#e1f3fc;
+        background-color: #e1f3fc;
     }
-}       
+}
+
+ul.tabs {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid $border-light;
+    padding:0;
+
+    li {
+        list-style-type: none;
+        text-align: center;
+
+        a {
+            display: inline-block;
+            padding: 4px 18px;
+            margin: 0 12px;
+
+            font-family: $font-roboto;
+            font-weight: 300;
+            font-size: .85rem;
+            text-decoration: none;
+            color: $color-text-light;
+            text-transform: uppercase;
+            border-bottom: 2px solid white;
+            transition: border-bottom 400ms ease-out;
+
+            &:hover {
+                color: $color-text;
+            }
+
+            &.selected {
+                color: $color-text;
+                font-weight: 500;
+                border-bottom: 2px solid $color-link;
+            }
+        }
+
+    }
+
+    @include media-small {
+        flex-direction: column;
+        li {
+            a {
+                font-size:1.25rem;
+
+                &.selected {
+                    border:none;
+
+                    &::before {
+                        content: "• ";
+                        color:$color-link;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+// elements that are present only for screen readers
+.sr-only {
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}

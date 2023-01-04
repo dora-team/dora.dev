@@ -1,5 +1,4 @@
 // colors
-
 $color-text: #202124;
 $color-text-light: #9aa0a6;
 
@@ -9,41 +8,42 @@ $color-link-focus: $color-link-hover;
 
 $color-popover-background: #f8f9fa;
 
-$layout-breakpoint-max: 1200px;
-$layout-breakpoint-large: 960px;
-$layout-breakpoint-medium: 720px;
-$layout-breakpoint-small: 480px;
-
-$background-light: #F8F9FA;
+$background-light: #f8f9fa;
 
 $border-light: #dadce0;
 $border-medium: #aeb0b7;
 
-$font-google-sans: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
-$font-roboto: "Roboto",Arial,Helvetica,sans-serif;
+// fonts
+$font-google-sans: "Google Sans", "Roboto", Arial, Helvetica, sans-serif;
+$font-roboto: "Roboto", Arial, Helvetica, sans-serif;
 
+// breakpoints for responsive
+$layout-breakpoint-max: 1200px;
+$layout-breakpoint-large: 960px;
+$layout-breakpoint-medium: 720px;
+$layout-breakpoint-small: 480px;
 
 // mixins for responsive layout; allows specification of media queries inline
 @mixin media-small {
     @media (max-width: #{$layout-breakpoint-small}) {
         @content;
     }
- }
- 
- @mixin media-medium {
+}
+
+@mixin media-medium {
     @media (max-width: #{$layout-breakpoint-medium}) {
         @content;
     }
- }
+}
 
- @mixin media-large {
+@mixin media-large {
     @media (max-width: #{$layout-breakpoint-large}) {
         @content;
     }
- }
- 
- @mixin media-max {
+}
+
+@mixin media-max {
     @media (max-width: #{$layout-breakpoint-max}) {
         @content;
     }
- }
+}

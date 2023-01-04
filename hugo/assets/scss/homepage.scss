@@ -1,35 +1,30 @@
-@import "variables.scss";
+@import "_variables.scss";
 
 section.features {
-
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
 
     article {
-        padding:0;
-        margin:0;
+        padding: 0;
+        margin: 0;
 
         div.content {
-            margin:12px;
-            padding:4px 12px 8px 12px;
+            margin: 12px;
+            padding: 4px 12px 8px 12px;
             border: 1px solid $border-light;
             border-radius: 8px;
         }
     }
 
     .cols_1 {
-        
-
-        width:50%;
+        width: 50%;
 
         @include media-medium {
-            width:100%;
+            width: 100%;
         }
-
     }
 
     .cols_2 {
-        width:100%;
+        width: 100%;
     }
-    
 }

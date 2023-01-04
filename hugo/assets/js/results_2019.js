@@ -93,6 +93,7 @@ function drawUserPerformanceChart(percentile) {
       bars: 'horizontal',
       bar: { groupWidth: '100%' },
       height: 120,
+      width: screen.width <= 480 ? 350 : '',
       chartArea: { top: 0, left: 20, right: 20, height: 60 },
       enableInteractivity: false,
       series: {
@@ -145,6 +146,7 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
       bars: 'horizontal',
       bar: { groupWidth: '30%' },
       height: show_legend ? 120 : 70,
+      width: screen.width <= 480 ? 350 : '',
       chartArea: { top: 0, left: 120, right: 20, height: 40 },
       enableInteractivity: false,
       series: {
