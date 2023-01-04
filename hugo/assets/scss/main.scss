@@ -1,4 +1,4 @@
-@import "variables.scss";
+@import "_variables.scss";
 
 @import "normalize.scss";
 @import "nav.scss";
@@ -16,22 +16,31 @@ body {
     // use flex so footer sticks to bottom of page
     display: flex;
     flex-direction: column;
-    letter-spacing: .35px;
+    letter-spacing: 0.35px;
+
+    main {
+        flex-grow: 1;
+        max-width: $layout-breakpoint-max;
+        padding: 1rem 4rem 0.5rem 4rem;
+        margin: auto;
+
+        @include media-medium {
+            padding: 1em;
+        }
+    }
 }
 
-main {
-    flex-grow: 1;
-}
-
-p, .paragraph, select {
+p,
+.paragraph,
+select {
     font-family: $font-roboto;
     font-weight: 300;
-    margin:0;
-    margin-bottom:.5rem;
-    font-size:1rem;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
 }
 
-p > bold, p > strong {
+p > strong {
     font-weight: 500;
 }
 
@@ -47,27 +56,15 @@ a {
 }
 
 header {
-    display:flex;
+    display: flex;
     align-items: center;
     height: 64px;
-    box-shadow: 0 2px 6px 0 transparentize(#000, .88), inset 0 -1px 0 0 #dadce0;
+    box-shadow: 0 2px 6px 0 transparentize(#000, 0.88), inset 0 -1px 0 0 #dadce0;
     z-index: 100;
 
     .dora-logo {
-        margin:2px 8px;
+        margin: 2px 8px;
     }
-}
-
-main {
-    max-width: $layout-breakpoint-max;
-    min-height: 720px;
-    padding: 1rem 4rem .5rem 4rem;
-    margin:auto;
-
-    @include media-medium {
-        padding:1em;
-    }
-
 }
 
 .capitalize {
@@ -78,55 +75,52 @@ section.banner {
     background-color: $background-light;
 
     .content {
-        display:flex;
+        display: flex;
         max-width: $layout-breakpoint-max;
         padding: 2rem 4rem;
-        margin:auto;
-        line-height:1.75;
+        margin: auto;
+        line-height: 1.75;
 
         @include media-medium {
             padding: 1rem;
         }
 
-    }
+        img.highlight {
+            width: 40%;
+            max-width: 400px;
+            margin-left: 1.5em;
 
-    img.highlight {
-        align:right;
-        width:40%;
-        max-width:400px;
-        margin-left:1.5em;
-
-        @include media-medium {
-            display:none;
+            @include media-medium {
+                display: none;
+            }
         }
     }
-
 }
 
 .pagefooter {
-    display:flex;
+    display: flex;
     flex-direction: row;
 
     @include media-medium {
-        flex-direction:column;
+        flex-direction: column;
     }
 
     div {
-        margin:2rem;
+        margin: 2rem;
 
         @include media-medium {
-            margin:.5rem 1rem;
+            margin: 0.5rem 1rem;
         }
 
         &:has(h2) {
-            min-width:25%;
-            flex-grow:1;
+            min-width: 25%;
+            flex-grow: 1;
         }
     }
 }
 
 footer {
     background-color: $background-light;
-    padding:24px 16px 16px 16px;
-    margin-top:4rem;
+    padding: 24px 16px 16px 16px;
+    margin-top: 4rem;
 }

@@ -1,60 +1,60 @@
 fieldset {
-    padding:0;
-    border:none;
+    padding: 0;
+    border: none;
 
-    ul  {
-
-        padding:0;
+    ul {
+        padding: 0;
 
         li {
             list-style-type: none;
-            margin-bottom:6px;
+            margin-bottom: 6px;
         }
-
     }
-
 }
 
-input[type=radio] {
-    transform:scale(1.25);
-    margin-right:.5em;
+input[type="radio"] {
+    transform: scale(1.25);
+    margin-right: 0.5em;
 }
 
 select {
-    padding:2px 4px;
-    border-color:$border-medium;
+    padding: 2px 4px;
+    border-color: $border-medium;
     border-radius: 4px;
 }
 
-button, input[type=submit], .button {
+button,
+input[type="submit"],
+.button {
     display: inline-block;
     border: none;
     border-radius: 2px;
-    font-size:14px;
-    font-weight:500;
-    letter-spacing: .75px;
-    line-height:1;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1;
     vertical-align: middle;
-    margin: 8px  0;
+    margin: 8px 0;
     padding: 15px 24px;
-    transition: color .15s linear, background-color .15s linear;
-    color:white;
+    transition: color 0.15s linear, background-color 0.15s linear;
+    color: white;
     background-color: #1a73e8;
     cursor: pointer;
     text-decoration: none;
 
     &:disabled {
         background-color: #dadce0;
-        cursor:default;
+        cursor: default;
     }
 
     &:hover:not(:disabled) {
         background-color: #174ea6;
-        color:white;
+        color: white;
     }
 }
 
-button.secondary, .button.secondary {
+button.secondary,
+.button.secondary {
     background-color: white;
     color: #1a73e8;
     border: 1px solid #dadce0;
@@ -63,5 +63,3 @@ button.secondary, .button.secondary {
         background-color: #e1f3fc;
     }
 }
-
-
