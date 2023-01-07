@@ -123,3 +123,11 @@ ul.tabs {
     white-space: nowrap;
     width: 1px;
 }
+
+// icons
+img.icon {
+    &.arrow-right {
+        height:.9em;
+        vertical-align:middle;
+    }
+}

@@ -81,6 +81,11 @@ section.banner {
         margin: auto;
         line-height: 1.75;
 
+        p {
+            font-family: $font-google-sans;
+            font-weight: 300;
+        }
+
         @include media-medium {
             padding: 1rem;
         }

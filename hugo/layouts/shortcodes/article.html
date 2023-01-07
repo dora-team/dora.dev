@@ -1,6 +1,37 @@
+<!---
+    params:
+    title -- content of header (optional)
+    url -- destination that header and image will link to (optional)
+    url-target -- html "target" for link (optional) [TODO: auto-set this based on whether url is relative or absolute]
+    img-src -- source of image (optional)
+    img-alt -- alt text for image; (required if img-src is set)
+    img-align -- position of image [left|right] (optional; defaults to "left")
+    img-stroke -- if this param is present, a stroke will be drawn around image
+-->
+
 <article class='cols_{{ .Get "columns"}}'>
-    <div class="content">
-        <h2>{{ .Get "title" }}</h2>
-        <p>{{ .Inner }}</p>
+    <div class="content-wrapper">
+        <h2>
+            {{- if .Get "url" -}}<a href='{{ .Get "url" }}' target='{{ .Get "url-target" }}'>{{- end -}}{{ .Get "title" }}{{- if .Get "url" -}}</a>{{- end -}}
+        </h2>
+        <div class='content image-{{ .Get "img-align" }}'>
+            <div class="text">
+                <p>
+                {{ $content := .Inner }}
+                {{ if .Get "url" }}
+                    {{ $url := .Get "url"}}
+                    {{ $urltarget := .Get "url-target"}}
+                    {{ $arrow := (printf "&nbsp;<a href='%s' target='%s'><img src=/img/icons/arrow-right.svg class='icon arrow-right'></a>" $url $urltarget)  }}
+                    {{ $content = (printf "%s%s" $content $arrow) }}
+                {{ end }}
+                {{ $content | markdownify }}
+                </p>
+            </div>
+            {{- if .Get "img-src" -}}
+            <div class="image">
+                <a href='{{ .Get "url" }}' target='{{ .Get "url-target" }}'><img src='{{ .Get "img-src" }}' alt='{{ .Get "img-alt" }}' class='feature {{ if .Get "img-stroke" }} stroke{{ end }}'></a>
+            </div>
+            {{- end -}}
+        </div>
     </div>
 </article>
