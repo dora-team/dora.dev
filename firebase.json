@@ -1,20 +1,10 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "hugo/public",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ]
-  },
-  "emulators": {
-    "hosting": {
-      "port": 5000
-    },
-    "ui": {
-      "enabled": true,
-      "port": 5001
-    },
-    "singleProjectMode": true
   }
 }
