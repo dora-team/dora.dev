@@ -3,63 +3,27 @@ steps:
     id: 'hugo'
     args: [
       "-v","-s","./hugo",
-      "-d","../tools/nginx_container/generated_site",
+      "-d","/workspace/hugo/public",
       "--debug"
       ]
-    waitFor: ['-']
-
-  - name: ubuntu
-    id: 'sed'
-    entrypoint: '/bin/bash'
-    args:
-      - '-c'
-      - 'tools/nginx_container/create_redirects.sh'
-    waitFor: ['-']
-
-  # create a docker container that can run on cloud run
-  - name: gcr.io/cloud-builders/docker
-    id: 'build'
-    args: [
-      "build", 
-      "-t", "gcr.io/$PROJECT_ID/doradotdev:commit$SHORT_SHA",
-      "-t", "gcr.io/$PROJECT_ID/doradotdev:latest", 
-      "."
-      ]
-    dir: 'tools/nginx_container'
-    waitFor: ['hugo', 'sed']
   
-  - name: gcr.io/cloud-builders/docker
-    id: 'push'
-    args: ["push","gcr.io/$PROJECT_ID/doradotdev:commit$SHORT_SHA"]
-    waitFor: ['build']
-
-
-  # deploy to Cloud Run
-  - name: gcr.io/google.com/cloudsdktool/cloud-sdk:410.0.0-slim
-    id: 'deploy'
-    entrypoint: gcloud
+  # TODO: use a pre-built Firebase builder instead of installing the CLI on the fly
+  - name: gcr.io/$PROJECT_ID/firebase
     args: [
-      'alpha', 'run', 'deploy', 'preview-doradotdev',
-      '--image=gcr.io/$PROJECT_ID/doradotdev:commit$SHORT_SHA',
-      '--region', 'us-central1',
-      '--platform', 'managed',
-      '--allow-unauthenticated',
-      '--tag=commit$SHORT_SHA',
-      '--no-traffic',
-      '--quiet'
+      "hosting:channel:deploy", "pr-test-1", 
+      "--project=$PROJECT_ID"
     ]
-    waitFor: ['push']
 
-  # add preview URL as a status check
-  # prereq: a github token exists in Secret manager, named with the name specified by `github-token-secret-name`
-  # the token must have access: `repo:status` (or `repo:all` for a private repo)
-  - name: 'gcr.io/${PROJECT_ID}/pr-status-poster'
-    id: 'status'
-    args: [
-      '--project-id', '${PROJECT_ID}', 
-      '--repo-name', 'dora-team/${REPO_NAME}',
-      '--commit-sha', '${COMMIT_SHA}',
-      '--target-url', 'https://commit$SHORT_SHA---preview-doradotdev-gr5oklvxhq-uc.a.run.app',
-      '--github-token-secret-name', 'github_token'
-    ]
-    waitFor: ['deploy']
+  # # add preview URL as a status check
+  # # prereq: a github token exists in Secret manager, named with the name specified by `github-token-secret-name`
+  # # the token must have access: `repo:status` (or `repo:all` for a private repo)
+  # - name: 'gcr.io/${PROJECT_ID}/pr-status-poster'
+  #   id: 'status'
+  #   args: [
+  #     '--project-id', '${PROJECT_ID}', 
+  #     '--repo-name', 'dora-team/${REPO_NAME}',
+  #     '--commit-sha', '${COMMIT_SHA}',
+  #     '--target-url', 'https://commit$SHORT_SHA---preview-doradotdev-gr5oklvxhq-uc.a.run.app',
+  #     '--github-token-secret-name', 'github_token'
+  #   ]
+  #   waitFor: ['deploy']
