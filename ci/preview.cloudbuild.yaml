@@ -11,7 +11,7 @@ steps:
     env:
       - "_PR_NUMBER=$_PR_NUMBER"
     script: |
-      PREVIEW_CHANNEL="PR_$_PR_NUMBER"
+      PREVIEW_CHANNEL="PR$_PR_NUMBER"
 
       firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=$PROJECT_ID
       
