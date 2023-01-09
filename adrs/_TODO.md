@@ -1,5 +1,4 @@
 # This is a list of decsions that have been made and should be documented:
 
-* Serve site via NGINX in Cloud Run
+* Serve site from Firebase
 * CI pipelines
-* (not implemented, but needs to be documented once implemented) Use Glue and Hercules CSS/JS frameworks 

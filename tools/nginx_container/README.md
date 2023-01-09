@@ -1,1 +1,0 @@
-This folder contains the Dockerfile used to package generated site files into a runnable container (in prod, this is served via Cloud Run).
