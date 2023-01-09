@@ -30,5 +30,5 @@ steps:
         --project-id ${PROJECT_ID} \
         --repo-name dora-team/${REPO_NAME} \
         --commit-sha ${COMMIT_SHA} \
-        --target-url $(cat /workspace/preview-url.txt) \
+        --target-url "$(cat /workspace/preview-url.txt)" \
         --github-token-secret-name github_token
