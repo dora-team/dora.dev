@@ -32,6 +32,7 @@ steps:
       echo "commit sha: ${COMMIT_SHA}"
       echo "repo name: ${REPO_NAME}"
       echo "project id: ${PROJECT_ID}"
+      echo "target URL: $(cat /workspace/preview-url.txt)"
       python /app/set-check-status.py \
         --project-id ${PROJECT_ID} \
         --repo-name dora-team/${REPO_NAME} \
