@@ -2,28 +2,30 @@ steps:
   - name: gcr.io/$PROJECT_ID/hugo
     id: 'hugo'
     args: [
-      "-v","-s","./hugo",
-      "-d","/workspace/hugo/public",
+      "-v", "-s", "./hugo",
+      "-d", "/workspace/hugo/public",
       "--debug"
       ]
-  
-  # TODO: use a pre-built Firebase builder instead of installing the CLI on the fly
-  - name: gcr.io/$PROJECT_ID/firebase
-    args: [
-      "hosting:channel:deploy", "pr-test-1", 
-      "--project=$PROJECT_ID"
-    ]
 
-  # # add preview URL as a status check
-  # # prereq: a github token exists in Secret manager, named with the name specified by `github-token-secret-name`
-  # # the token must have access: `repo:status` (or `repo:all` for a private repo)
-  # - name: 'gcr.io/${PROJECT_ID}/pr-status-poster'
-  #   id: 'status'
-  #   args: [
-  #     '--project-id', '${PROJECT_ID}', 
-  #     '--repo-name', 'dora-team/${REPO_NAME}',
-  #     '--commit-sha', '${COMMIT_SHA}',
-  #     '--target-url', 'https://commit$SHORT_SHA---preview-doradotdev-gr5oklvxhq-uc.a.run.app',
-  #     '--github-token-secret-name', 'github_token'
-  #   ]
-  #   waitFor: ['deploy']
+  - name: gcr.io/$PROJECT_ID/firebase
+    env:
+      - "COMMIT_SHA=$COMMIT_SHA"
+    script: |
+      firebase hosting:channel:deploy $COMMIT_SHA --project=$PROJECT_ID
+      firebase hosting:channel:open $COMMIT_SHA > /workspace/preview-url.txt
+      cat /workspace/preview-url.txt
+
+# add preview URL as a status check
+# prereq: a github token exists in Secret manager named with the name specified by `github-token-secret-name`
+# the token must have access: `repo:status` (or `repo:all` for a private repo)
+  - name: 'gcr.io/${PROJECT_ID}/pr-status-poster'
+    env:
+      - "COMMIT_SHA=$COMMIT_SHA"
+      - "REPO_NAME=$REPO_NAME"
+    script: |
+      python /app/set-check-status.py \
+        --project-id ${PROJECT_ID} \
+        --repo-name dora-team/${REPO_NAME} \
+        --commit-sha ${COMMIT_SHA} \
+        --target-url $(cat /workspace/preview-url.txt) \
+        --github-token-secret-name github_token
