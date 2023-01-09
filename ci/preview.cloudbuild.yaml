@@ -9,13 +9,15 @@ steps:
 
   - name: gcr.io/$PROJECT_ID/firebase
     env:
-      - "COMMIT_SHA=$COMMIT_SHA"
+      - "_PR_NUMBER=$_PR_NUMBER"
     script: |
-      firebase hosting:channel:deploy $COMMIT_SHA --project=$PROJECT_ID
+      PREVIEW_CHANNEL="PR_$_PR_NUMBER"
+
+      firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=$PROJECT_ID
       
       # get the url of the deployed site
       # (it returns in format `i  hosting:channel: https://<url>`)
-      CHANNEL_DATA="$(firebase hosting:channel:open $COMMIT_SHA)"
+      CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL)"
       
       echo "channel data: ${CHANNEL_DATA}"
 
