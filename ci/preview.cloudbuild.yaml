@@ -17,8 +17,12 @@ steps:
       # (it returns in format `i  hosting:channel: https://<url>`)
       $CHANNEL_DATA = $(firebase hosting:channel:open $COMMIT_SHA)
       
+      echo "channel data: ${CHANNEL_DATA}"
+
       # extract the URL from the channel data and save it to /workspace
       echo "${CHANNEL_DATA##* }" > /workspace/preview-url.txt
+      echo "url..."
+      cat /workspace/preview-url.txt
 
 # add preview URL as a status check
 # prereq: a github token exists in Secret manager named with the name specified by `github-token-secret-name`
