@@ -15,7 +15,7 @@ steps:
       
       # get the url of the deployed site
       # (it returns in format `i  hosting:channel: https://<url>`)
-      $CHANNEL_DATA = $(firebase hosting:channel:open $COMMIT_SHA)
+      $CHANNEL_DATA = "$(firebase hosting:channel:open $COMMIT_SHA)"
       
       echo "channel data: ${CHANNEL_DATA}"
 
