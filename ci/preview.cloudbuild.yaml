@@ -2,64 +2,47 @@ steps:
   - name: gcr.io/$PROJECT_ID/hugo
     id: 'hugo'
     args: [
-      "-v","-s","./hugo",
-      "-d","../tools/nginx_container/generated_site",
+      "-v", "-s", "./hugo",
+      "-d", "/workspace/hugo/public",
       "--debug"
       ]
-    waitFor: ['-']
 
-  - name: ubuntu
-    id: 'sed'
-    entrypoint: '/bin/bash'
-    args:
-      - '-c'
-      - 'tools/nginx_container/create_redirects.sh'
-    waitFor: ['-']
+  - name: gcr.io/$PROJECT_ID/firebase
+    env:
+      - "_PR_NUMBER=$_PR_NUMBER"
+    script: |
+      PREVIEW_CHANNEL="PR$_PR_NUMBER"
 
-  # create a docker container that can run on cloud run
-  - name: gcr.io/cloud-builders/docker
-    id: 'build'
-    args: [
-      "build", 
-      "-t", "gcr.io/$PROJECT_ID/doradotdev:commit$SHORT_SHA",
-      "-t", "gcr.io/$PROJECT_ID/doradotdev:latest", 
-      "."
-      ]
-    dir: 'tools/nginx_container'
-    waitFor: ['hugo', 'sed']
-  
-  - name: gcr.io/cloud-builders/docker
-    id: 'push'
-    args: ["push","gcr.io/$PROJECT_ID/doradotdev:commit$SHORT_SHA"]
-    waitFor: ['build']
+      firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=$PROJECT_ID
+      
+      # get the url of the deployed site
+      # (it returns in format `i  hosting:channel: https://<url>`)
+      CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL)"
+      
+      echo "channel data: ${CHANNEL_DATA}"
 
+      # extract the URL from the channel data and save it to /workspace
+      echo "${CHANNEL_DATA##* }" > /workspace/preview-url.txt
+      echo "url..."
+      cat /workspace/preview-url.txt
 
-  # deploy to Cloud Run
-  - name: gcr.io/google.com/cloudsdktool/cloud-sdk:410.0.0-slim
-    id: 'deploy'
-    entrypoint: gcloud
-    args: [
-      'alpha', 'run', 'deploy', 'preview-doradotdev',
-      '--image=gcr.io/$PROJECT_ID/doradotdev:commit$SHORT_SHA',
-      '--region', 'us-central1',
-      '--platform', 'managed',
-      '--allow-unauthenticated',
-      '--tag=commit$SHORT_SHA',
-      '--no-traffic',
-      '--quiet'
-    ]
-    waitFor: ['push']
-
-  # add preview URL as a status check
-  # prereq: a github token exists in Secret manager, named with the name specified by `github-token-secret-name`
-  # the token must have access: `repo:status` (or `repo:all` for a private repo)
+# add preview URL as a status check
+# prereq: a github token exists in Secret manager named with the name specified by `github-token-secret-name`
+# the token must have access: `repo:status` (or `repo:all` for a private repo)
   - name: 'gcr.io/${PROJECT_ID}/pr-status-poster'
-    id: 'status'
-    args: [
-      '--project-id', '${PROJECT_ID}', 
-      '--repo-name', 'dora-team/${REPO_NAME}',
-      '--commit-sha', '${COMMIT_SHA}',
-      '--target-url', 'https://commit$SHORT_SHA---preview-doradotdev-gr5oklvxhq-uc.a.run.app',
-      '--github-token-secret-name', 'github_token'
-    ]
-    waitFor: ['deploy']
+    env:
+      - "COMMIT_SHA=$COMMIT_SHA"
+      - "REPO_NAME=$REPO_NAME"
+      - "PROJECT_ID=$PROJECT_ID"
+    script: |
+      echo "commit sha: ${COMMIT_SHA}"
+      echo "repo name: ${REPO_NAME}"
+      echo "project id: ${PROJECT_ID}"
+      echo "target URL: $(cat /workspace/preview-url.txt)"
+      python /app/set-check-status.py \
+        --project-id ${PROJECT_ID} \
+        --repo-name dora-team/${REPO_NAME} \
+        --commit-sha ${COMMIT_SHA} \
+        --target-url "$(cat /workspace/preview-url.txt)" \
+        --github-token-secret-name github_token
+
