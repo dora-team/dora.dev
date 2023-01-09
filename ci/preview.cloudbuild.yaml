@@ -12,18 +12,14 @@ steps:
       - "_PR_NUMBER=$_PR_NUMBER"
     script: |
       PREVIEW_CHANNEL="PR$_PR_NUMBER"
-
       firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=$PROJECT_ID
       
       # get the url of the deployed site
       # (it returns in format `i  hosting:channel: https://<url>`)
       CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL)"
-      
-      echo "channel data: ${CHANNEL_DATA}"
 
       # extract the URL from the channel data and save it to /workspace
       echo "${CHANNEL_DATA##* }" > /workspace/preview-url.txt
-      echo "url..."
       cat /workspace/preview-url.txt
 
 # add preview URL as a status check
@@ -35,10 +31,6 @@ steps:
       - "REPO_NAME=$REPO_NAME"
       - "PROJECT_ID=$PROJECT_ID"
     script: |
-      echo "commit sha: ${COMMIT_SHA}"
-      echo "repo name: ${REPO_NAME}"
-      echo "project id: ${PROJECT_ID}"
-      echo "target URL: $(cat /workspace/preview-url.txt)"
       python /app/set-check-status.py \
         --project-id ${PROJECT_ID} \
         --repo-name dora-team/${REPO_NAME} \
