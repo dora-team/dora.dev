@@ -22,9 +22,9 @@ steps:
       - "COMMIT_SHA=$COMMIT_SHA"
       - "REPO_NAME=$REPO_NAME"
     script: |
-      echo "commit sha: ${COMMIT_SHA}
-      echo "repo name: ${REPO_NAME}
-      echo "project id: ${PROJECT_ID}
+      echo "commit sha: ${COMMIT_SHA}"
+      echo "repo name: ${REPO_NAME}"
+      echo "project id: ${PROJECT_ID}"
       # python /app/set-check-status.py \
       #   --project-id ${PROJECT_ID} \
       #   --repo-name dora-team/${REPO_NAME} \
