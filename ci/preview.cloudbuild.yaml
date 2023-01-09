@@ -1,18 +1,18 @@
 steps:
-  - name: gcr.io/$PROJECT_ID/hugo
-    id: 'hugo'
-    args: [
-      "-v", "-s", "./hugo",
-      "-d", "/workspace/hugo/public",
-      "--debug"
-      ]
+  # - name: gcr.io/$PROJECT_ID/hugo
+  #   id: 'hugo'
+  #   args: [
+  #     "-v", "-s", "./hugo",
+  #     "-d", "/workspace/hugo/public",
+  #     "--debug"
+  #     ]
 
-  - name: gcr.io/$PROJECT_ID/firebase
-    env:
-      - "COMMIT_SHA=$COMMIT_SHA"
-    script: |
-      firebase hosting:channel:deploy $COMMIT_SHA --project=$PROJECT_ID
-      firebase hosting:channel:open $COMMIT_SHA > /workspace/preview-url.txt
+  # - name: gcr.io/$PROJECT_ID/firebase
+  #   env:
+  #     - "COMMIT_SHA=$COMMIT_SHA"
+  #   script: |
+  #     firebase hosting:channel:deploy $COMMIT_SHA --project=$PROJECT_ID
+  #     firebase hosting:channel:open $COMMIT_SHA > /workspace/preview-url.txt
 
 # add preview URL as a status check
 # prereq: a github token exists in Secret manager named with the name specified by `github-token-secret-name`
@@ -22,9 +22,12 @@ steps:
       - "COMMIT_SHA=$COMMIT_SHA"
       - "REPO_NAME=$REPO_NAME"
     script: |
-      python /app/set-check-status.py \
-        --project-id ${PROJECT_ID} \
-        --repo-name dora-team/${REPO_NAME} \
-        --commit-sha ${COMMIT_SHA} \
-        --target-url $(cat /workspace/preview-url.txt) \
-        --github-token-secret-name github_token
+      echo "commit sha: ${COMMIT_SHA}
+      echo "repo name: ${REPO_NAME}
+      echo "project id: ${PROJECT_ID}
+      # python /app/set-check-status.py \
+      #   --project-id ${PROJECT_ID} \
+      #   --repo-name dora-team/${REPO_NAME} \
+      #   --commit-sha ${COMMIT_SHA} \
+      #   --target-url $(cat /workspace/preview-url.txt) \
+      #   --github-token-secret-name github_token
