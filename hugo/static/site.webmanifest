@@ -1,6 +1,9 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "DevOps Research and Assessment",
+    "short_name": "DORA",
+    "description": "DevOps Research and Assessment (DORA) is a long running research program that seeks to understand the capabilities that drive software delivery and operations performance. DORA helps teams apply those capabilities, leading to better organizational performance.",
+    "id": "/",
+    "start_url": "/",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
