@@ -10,28 +10,26 @@
 -->
 
 <article class='cols_{{ .Get "columns"}}'>
-    <div class="content-wrapper">
-        <h2>
-            {{- if .Get "url" -}}<a href='{{ .Get "url" }}' target='{{ .Get "url-target" }}'>{{- end -}}{{ .Get "title" }}{{- if .Get "url" -}}</a>{{- end -}}
-        </h2>
-        <div class='content image-{{ .Get "img-align" }}'>
-            <div class="text">
-                <p>
-                {{ $content := .Inner }}
-                {{ if .Get "url" }}
-                    {{ $url := .Get "url"}}
-                    {{ $urltarget := .Get "url-target"}}
-                    {{ $arrow := (printf "&nbsp;<a href='%s' target='%s'><img src=/img/icons/arrow-right.svg class='icon arrow-right'></a>" $url $urltarget)  }}
-                    {{ $content = (printf "%s%s" $content $arrow) }}
-                {{ end }}
-                {{ $content | markdownify }}
-                </p>
-            </div>
-            {{- if .Get "img-src" -}}
-            <div class="image">
-                <a href='{{ .Get "url" }}' target='{{ .Get "url-target" }}'><img src='{{ .Get "img-src" }}' alt='{{ .Get "img-alt" }}' class='feature {{ if .Get "img-stroke" }} stroke{{ end }}'></a>
-            </div>
-            {{- end -}}
+    <h2>
+        {{- if .Get "url" -}}<a href='{{ .Get "url" }}' target='{{ .Get "url-target" }}'>{{- end -}}{{ .Get "title" }}{{- if .Get "url" -}}</a>{{- end -}}
+    </h2>
+    <div class='content image-{{ .Get "img-align" }}'>
+        <div class="text">
+            <p>
+            {{ $content := .Inner }}
+            {{ if .Get "url" }}
+                {{ $url := .Get "url"}}
+                {{ $urltarget := .Get "url-target"}}
+                {{ $arrow := (printf "&nbsp;<a href='%s' target='%s'><img src=/img/icons/arrow-right.svg class='icon arrow-right'></a>" $url $urltarget)  }}
+                {{ $content = (printf "%s%s" $content $arrow) }}
+            {{ end }}
+            {{ $content | markdownify }}
+            </p>
         </div>
+        {{- if .Get "img-src" -}}
+        <div class="image">
+            <a href='{{ .Get "url" }}' target='{{ .Get "url-target" }}'><img src='{{ .Get "img-src" }}' alt='{{ .Get "img-alt" }}' class='feature {{ if .Get "img-stroke" }} stroke{{ end }}'></a>
+        </div>
+        {{- end -}}
     </div>
 </article>
