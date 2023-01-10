@@ -1,5 +1,7 @@
 # dora.dev
-Public-facing knowledge site: https://dora.dev
+This repo contains the source for DORA's public-facing knowledge site: https://dora.dev
 
-### TODO: infra setup docs
-Dave needs to add documentation here. But meanwhile, refer to github.com/davidstanke/stanke.dev from which the design is cribbed.
+[Hugo](https://gohugo.io), a static site generator, is used to transform the contents of `/content` into HTML/CSS/JS, which is hosted via Firebase.
+
+See `/docs` for technical documentation.
+
