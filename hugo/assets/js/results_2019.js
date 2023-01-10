@@ -388,7 +388,7 @@ function createCapabilitiesTable(profile) {
         packages: ['corechart', 'bar'] 
     });
 
-    // TODO: test for presence of all URL Params and fail gracefully if any are missing.
+    // TODO: #38 test for presence of all URL Params and fail gracefully if any are missing.
     const urlParams = new URLSearchParams(window.location.search);
 
     // COMPUTE USER SCORES
