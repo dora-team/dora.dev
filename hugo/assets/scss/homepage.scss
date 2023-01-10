@@ -1,30 +1,89 @@
 @import "_variables.scss";
 
 section.features {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 1em;
+    place-items: stretch;
 
     article {
         padding: 0;
-        margin: 0;
+        border: 1px solid $border-light;
+        border-radius: 8px;
+
+        h2 {
+            background-color: $background-light;
+            margin:0;
+            padding:1rem 1rem .5rem 1rem;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+
+            a {
+                color:$color-text;
+                text-decoration: none;
+            }
+        }
 
         div.content {
-            margin: 12px;
-            padding: 4px 12px 8px 12px;
-            border: 1px solid $border-light;
-            border-radius: 8px;
+            display: flex;
+            flex-direction: row;
+
+            .text {
+                padding:1rem;
+            }
+
+            .image {
+                
+                text-align: center;
+
+                img {
+                    margin:1rem;
+
+                    &.stroke {
+                        border:1px solid $border-light;
+                    }
+                }
+
+
+            }
+
+            &.image-left {
+                flex-direction: row-reverse;
+
+                @include media-medium {
+                    flex-direction: column-reverse;
+                }
+            }
+
+            @include media-medium {
+                flex-direction: column-reverse;
+            }
         }
-    }
+    
+        &.cols_1 {
 
-    .cols_1 {
-        width: 50%;
-
-        @include media-medium {
-            width: 100%;
+            img.feature {
+                width:10rem;
+                @include media-large {
+                    width:8rem;
+                }
+            }
+    
+            @include media-medium {
+                grid-column: span 2;
+            }
         }
-    }
+    
+        &.cols_2 {
+            grid-column: span 2;
 
-    .cols_2 {
-        width: 100%;
+            img.feature {
+                width:16rem;
+                @include media-large {
+                    width:12rem;
+                }
+            }
+        }
+    
     }
 }
