@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+    {{ .Content }}
+
+    {{- partial "pagefooter_gofurther" . -}}
+
+    {{- $helpers := resources.Get "js/helpers_2019.js" -}}
+    {{- $constants := resources.Get "js/constants_2019.js" -}}
+    {{- $results := resources.Get "js/results.js" -}}
+
+    {{- $jsFiles := slice $helpers $constants $results}}
+    {{- $jsBundle := $jsFiles | resources.Concat "js/quickcheck" | fingerprint -}}
+
+    <script defer src="https://www.gstatic.com/charts/loader.js"></script>
+    <script defer src="{{ $jsBundle.RelPermalink }}" integrity="{{ $jsBundle.Data.Integrity }}" defer></script>
+    
+{{ end }}
