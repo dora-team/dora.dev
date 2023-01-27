@@ -486,18 +486,23 @@ img.rec-img {
 
 .performance-graph-container {
     position:relative;
-    padding-top:30px;
+    padding-top:26px;
 }
 
+$spectrum-width:600px;
+$spectrum-height:30px;
+$spectrum-border-radius: $spectrum-height / 2;
+$spectrum-left-pad: 12px;
+
 .performance-spectrum {
-    height:30px;
+    height:$spectrum-height;
+    width:$spectrum-width;
+    border-radius:$spectrum-border-radius;
     background: rgb(230,47,35);
     background: linear-gradient(90deg, rgba(230,47,35,1) 0%, rgba(122,35,230,1) 50%, rgba(23,133,230,1) 100%);
     position: relative;
     top:30px;
     left:12px;
-    width:600px;
-    border-radius:2px;
 }
 
 #your-performance {
@@ -505,4 +510,37 @@ img.rec-img {
     position:absolute;
     left:0;
     z-index:1000;
+}
+
+
+.tickmarks {
+    display: flex;
+    width: calc(($spectrum-width - 2 * $spectrum-border-radius)+3ch);
+    position:absolute;
+    top:90px;
+    left:$spectrum-border-radius + $spectrum-left-pad;
+    .tick-container {
+        color:$color-text-light;
+        font-size:10px;
+        width:($spectrum-width - 2 * $spectrum-border-radius) / 4;
+        text-align: left;
+        .tick {
+            position: relative;
+            left:-.75ch; // shift left so the tick value straddles the (implied) line
+        }
+
+        &:first-child {
+            .tick {
+                left:-.5ch; // "0" is only one character, so shift less
+            }
+        }
+
+        &:last-child {
+            width:3ch;
+
+            .tick {
+                left:-1.5ch; // "100" is more characters, so shift more
+            }
+        }
+    }
 }

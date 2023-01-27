@@ -60,12 +60,13 @@ function decoratePagewithProfileAndPercentage(userProfileAndPercentile) {
     })
     document.getElementById('percentile').innerText = userProfileAndPercentile.percentile;
 
-    let spectrum_width = 600;
-    let marker_width = 24;
-    let marker_position = userProfileAndPercentile.percentile * spectrum_width / 100 + marker_width/2;
+    let spectrum_width = 570;
+
+    let marker_position = userProfileAndPercentile.percentile * spectrum_width / 100 + 15;
     document.getElementById('your-performance').style.left = marker_position + 'px' ;
 
     let percentile_rounded = Math.round(userProfileAndPercentile.percentile/10) * 10;
+    if (percentile_rounded == 0) { percentile_rounded = 10 };
     document.getElementById('percentile-banner').classList.add('percentile_' + percentile_rounded);
     document.getElementById('percentile-banner').innerText=userProfileAndPercentile.percentile;
 
