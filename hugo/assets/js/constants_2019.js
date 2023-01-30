@@ -2,37 +2,6 @@
 const mean = 4.251338;
 const stddev = 1.000992;
 
-const indicators = {
-    'leadtime': {
-      'label': 'Lead time',
-      'ticks': [
-        { v: 0, f: '>6m' }, { v: 20, f: '1-6m' }, { v: 40, f: '1w - 1m' },
-        { v: 60, f: '1d - 1w' }, { v: 80, f: '<1d' }, { v: 100, f: '<1h' }
-      ]
-    },
-    'deployfreq': {
-      'label': 'Deploy frequency',
-      'ticks': [
-        { v: 0, f: '>6m' }, { v: 20, f: '1-6m' }, { v: 40, f: '1w - 1m' },
-        { v: 60, f: '1d - 1w' }, { v: 80, f: '<1d' }, { v: 100, f: 'on demand' }
-      ]
-    },
-    'ttr': {
-      'label': 'Time to restore',
-      'ticks': [
-        { v: 0, f: '>6m' }, { v: 20, f: '1-6m' }, { v: 40, f: '1w - 1m' },
-        { v: 60, f: '1d - 1w' }, { v: 80, f: '<1d' }, { v: 100, f: '<1h' }
-      ]
-    },
-    'chgfail': {
-      'label': 'Change fail rate',
-      'ticks': [
-        { v: 0, f: '76-100%' }, { v: 20, f: '61-75%' }, { v: 40, f: '46-60%' },
-        { v: 60, f: '31-45%' }, { v: 80, f: '16-30%' }, { v: 100, f: '0-15%' }
-      ]
-    }
-  };
-
 const profileStats = {
   'low': 3.5,
   'medium': 4.4,

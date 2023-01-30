@@ -32,19 +32,10 @@ function getProfileAndPercentile(userPerformanceIndicators) {
 
   average = average / Object.keys(indicators).length;
 
-  let profile = '';
-  for (let my_profile of Object.keys(profileStats)) {
-    if (average <= profileStats[my_profile]) {
-      profile = my_profile;
-      break;
-    }
-  }
-
   let percentile = Math.round(100 * normDist(average, mean, stddev));
 
-
+  // TODO: #42 this doesn't have to be a struct since it's returning a single value
   return {
-    profile: profile,
     percentile: percentile
   }
 
@@ -93,8 +84,8 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
       chartArea: { top: 0, left: 120, right: 20, height: 40 },
       enableInteractivity: false,
       series: {
-        0: { color: colors['bar'] },
-        1: { type: 'line', color: colors['average'], lineWidth: 0, pointSize: 12, pointShape: 'diamond'}
+        0: { color: '#0F346F' },
+        1: { type: 'line', color: '#afb2b6', lineWidth: 0, pointSize: 12, pointShape: 'diamond'}
       },
         hAxis: { minValue: 0, 
             maxValue: 100, 
