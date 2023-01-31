@@ -2,8 +2,8 @@
  * Compute performance data
  */
 
-// constants are included from `constants_2019.js` via Hugo pipelines
-// helpers are included from `helpers_2019.js` via Hugo pipelines
+// constants are included from `constants_2022.js` via Hugo pipelines
+// helpers are included from `helpers.js` via Hugo pipelines
 
 // user data analysis functions
 function getUserPerformanceIndicators(urlParams) {
@@ -74,7 +74,7 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
     var pluralIndustry = industry=='all' ? 'ies' : 'y';
     var industryString = `${industry} industr${pluralIndustry} performance`.capitalize()
     dataTable.addColumn('number', industryString);
-    dataTable.addRows([[indicators[indicator].label, user_score, industry_baseline[indicator]]]);
+    dataTable.addRows([[indicators[indicator].label, user_score, scalePerf(industry_baseline[indicator])]]);
 
     var options = {
       bars: 'horizontal',
@@ -87,8 +87,8 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
         0: { color: '#0F346F' },
         1: { type: 'line', color: '#afb2b6', lineWidth: 0, pointSize: 12, pointShape: 'diamond'}
       },
-        hAxis: { minValue: 0, 
-            maxValue: 100, 
+        hAxis: { minValue: 1, 
+            maxValue: 6, 
             ticks: indicators[indicator]['ticks'] 
             },
         legend: { position: show_legend ? 'bottom' : 'off' }
