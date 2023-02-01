@@ -246,7 +246,7 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
         document.getElementById('perf-industry').style.display='none';
 
         // hide other tabs until clicked
-        let things_to_hide = ["c_compare"]
+        let things_to_hide = ["c_capabilities"]
         things_to_hide.forEach((tab) => {
             document.getElementById(tab).style.display='none';
         })
