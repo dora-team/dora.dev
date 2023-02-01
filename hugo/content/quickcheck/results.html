@@ -1,0 +1,133 @@
+---
+title: "DevOps Quick Check: Results"
+date: 2022-09-01
+draft: false
+stylesheets:
+    - name: quickcheck
+type: quickcheck
+---
+
+<h1 id="results_h1">Your software delivery&nbsp;performance</h1>
+<section class="quickcheck_results">
+    <aside>
+        <div  >
+            <h3>Your performance:</h3>
+            <div id="percentile-banner">00</div>
+            <h4>You're performing better than <span id="percentile">&nbsp;&nbsp;&nbsp;</span>&percnt; of <a href="https://cloud.google.com/devops/state-of-devops/">State&nbsp;of&nbsp;DevOps&nbsp;Survey</a> respondents.&nbsp;<a class="popover-more modal-open" aria-controls="profile-modal" title="How was this calculated?"><span class="sr-only">How was this calculated?</span></a></h4>
+            <div class="popover" id="profile-modal">
+                <img class="modal-close x" aria-controls="profile-modal" src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg" alt="close">
+              <p>We used responses from the <a href="https://cloud.google.com/devops/state-of-devops/">2022 State of DevOps Survey</a> to calculate the four performance profiles (see the &ldquo;<span class="profile-title capitalize">Unknown</span>  performers&rdquo; tab) as well as your percentile.</p>
+            </div>
+    </aside>
+    <div class="performance-graph-container">
+        <img src="/img/quickcheck/your_performance.svg" id="your-performance">
+        <div class="performance-spectrum"></div>
+        <div class="tickmarks">
+            <div class="tick-container">
+                <div class="tick tick_first">
+                    0
+                </div>
+            </div>
+            <div class="tick-container">
+                <div class="tick">
+                    25
+                </div>
+            </div>
+            <div class="tick-container">
+                <div class="tick">
+                    50
+                </div>
+            </div>
+            <div class="tick-container">
+                <div class="tick">
+                    75
+                </div>
+            </div>
+            <div class="tick-container">
+                <div class="tick">100</div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<section>
+    {{< tab_navigation 
+        titles="Next steps,Performance comparison"
+        controls="c_capabilities,c_compare" 
+        classes=" , ,"
+        selected="Performance comparison" 
+        >}}
+</section>
+<section id="c_capabilities" class="tab">
+   <div style="text-align:center;padding:8em;font-size:2rem">TODO</div>
+</section>
+
+
+<section id="c_compare" class="tab">
+        <div>
+            <div>
+                <h2>How your performance compares</h2>
+                <p>Based on your <a href='{{% relref "/quickcheck/" %}}'>quick check</a> answers, see how you compare to the
+                <a href="https://cloud.google.com/devops/state-of-devops/">2022 State of DevOps</a> respondents overall, and to people within the same industry as you.</p>
+            </div>
+            <div id="perf-comparison">
+                <div>
+                    {{< tab_navigation 
+                        titles="All Industries,Your Industry"
+                        controls="perf-all,perf-industry" 
+                        selected="Your Industry" 
+                        >}}
+                </div>
+                <div id="perf-all">
+                    <div id="perf-all-leadtime-container">
+                        <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-leadtime-marker"></div>
+                        <div id="perf-all-leadtime"></div>  
+                    </div>
+                    <div id="perf-all-deployfreq-container">
+                        <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-deployfreq-marker"></div>
+                        <div id="perf-all-deployfreq"></div>  
+                    </div>
+                    <div id="perf-all-ttr-container">
+                        <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-ttr-marker"></div>
+                        <div id="perf-all-ttr"></div>  
+                    </div>
+                    <div id="perf-all-chgfail-container">
+                        <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-chgfail-marker"></div>
+                        <div id="perf-all-chgfail"></div>  
+                    </div>
+                </div>
+                <div id="perf-industry">
+                    <div id="perf-industry-leadtime-container">
+                        <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-leadtime-marker"></div>
+                        <div id="perf-industry-leadtime"></div>  
+                    </div>
+                    <div id="perf-industry-deployfreq-container">
+                        <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-deployfreq-marker"></div>
+                        <div id="perf-industry-deployfreq"></div>  
+                    </div>
+                    <div id="perf-industry-ttr-container">
+                        <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-ttr-marker"></div>
+                        <div id="perf-industry-ttr"></div>  
+                    </div>
+                    <div id="perf-industry-chgfail-container">
+                        <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-chgfail-marker"></div>
+                        <div id="perf-industry-chgfail"></div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<div id="modal"  role="dialog" aria-modal="true" aria-labelledby="modal-label" aria-describedby="modal-content">
+    <div class="wrapper">
+        <h1 id="modal-label" >DevOps capabilities assessment</h1>
+        <p >Answer the following questions to find out which capability you, as <strong class="color-by-profile">a <span class="profile-title">unknown</span> performer</strong>, should consider focusing on first.</p>
+        <div id="modal-content"></div>
+        <p id="modal-error" >You must respond to all questions before results can be calculated.</p>
+        <p>
+            <img class="modal-close x" aria-controls="modal" src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg" alt="close">
+            <button class="secondary modal-close" aria-controls="modal">Close</button>
+            <button id="results" disabled="true" >View results</button>
+        </p>
+    </div>
+</div>
