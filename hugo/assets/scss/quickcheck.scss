@@ -68,46 +68,58 @@ h1#results_h1 {
     margin-top: 3rem;
 }
 
-section.quickcheck_results {
-    display: flex;
-    margin: 24px auto;
-    max-width: $layout-breakpoint-medium;
+section.quickcheck_results_container {
+    div.quickcheck_results {
+        display: flex;
+        margin: 24px auto;
+        max-width: $layout-breakpoint-medium;
 
-    @include media-small {
-        flex-direction: column;
-    }
-
-    aside {
-        width: 35%;
-        max-width: 240px;
-        padding-right: 40px;
-        
         @include media-small {
-            width:100%;
-            max-width:100%;
-            padding-right:0;
-            text-align:center;
+            flex-direction: column;
         }
 
-        .profile-title.color-by-profile {
-            display: block;
-            font-size: 3.5rem;
-            line-height: 1em;
+        aside {
+            width: 35%;
+            max-width: 240px;
+            padding-right: 40px;
+            
+            @include media-small {
+                width:100%;
+                max-width:100%;
+                padding-right:0;
+                text-align:center;
+            }
+
+            .profile-title.color-by-profile {
+                display: block;
+                font-size: 3.5rem;
+                line-height: 1em;
+            }
+
+            h4 {
+                font-weight: 400;
+                font-size: 12px;
+                font-family: $font-roboto;
+            }
         }
 
-        h4 {
-            font-weight: 400;
-            font-size: 12px;
-            font-family: $font-roboto;
+        .performance-graph-container {
+            flex-grow: 1;
+        }
+
+        .icon-container {
+            height: 24px;
         }
     }
 
-    .performance-graph-container {
-        flex-grow: 1;
-    }
+    h3.better-than {
+            text-align: center;
+            margin:1.5em auto 3em auto;
+        }
 
-    .icon-container {
-        height: 24px;
+    #results-year {
+        display:inline-block;
+        width:4.5em;
     }
 }
 

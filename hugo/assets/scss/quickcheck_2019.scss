@@ -109,11 +109,17 @@ section.quickcheck_results {
     .icon-container {
         height: 24px;
     }
+    
+}
+
+#results-year {
+    display:inline-block;
+    width:4.5em;
 }
 
 #results-actions {
     text-align: center;
-    margin: 2.5rem 0;
+    margin-bottom:2.5rem;
 }
 
 #key-capabilities {
