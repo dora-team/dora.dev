@@ -8,9 +8,32 @@ stylesheets:
     - name: "homepage"
 ---
 
+{{< article columns="1" 
+    title="DevOps Quick Check" 
+    url="/quickcheck/"
+    cta="Take the Quick Check" 
+    img-src="/img/quickcheck/hero_illustration.svg" 
+    img-align="left" 
+    >}}
+Use our quick check tool to discover how you compare to industry peers, identify specific capabilities you can use to improve performance, and make progress toward becoming an elite performer.
+{{< /article >}}
+
+{{< article 
+    columns="1" 
+    title="The ROI of DevOps" 
+    url="https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper"
+    cta="Read the Whitepaper"
+    img-src="/img/features/whitepaper-roi.png"
+    img-align="left"
+    img-stroke="true" 
+    url-target="_blank" >}}
+Organizations are constantly grappling to quantify the value of technology transformation. The whitepaper takes an analytical, data-driven approach to forecast the value and justify investment in DevOps transformations.
+{{< /article >}}
+
 {{< article columns="2" 
-    title="Read the 2022 State of DevOps Report" 
+    title="The 2022 Accelerate State of DevOps Report" 
     url="https://bit.ly/dora-sodr"
+    cta="Read the Report"
     url-target="_blank" 
     img-src="/img/sodr/sodr-2022-thumb.png"  
     img-alt="The State of DevOps 2022" 
@@ -22,29 +45,10 @@ In 2021, more than [22 billion records were exposed](https://www.securitymagazin
 Over the past eight years, more than 33,000 professionals around the world have taken part in the Accelerate State of DevOps survey, making it the largest and longest-running research of its kind. Year after year, Accelerate State of DevOps Reports provide data-driven industry insights that examine the capabilities and practices that drive software delivery, as well as operational and organizational performance.
 {{< /article >}}
 
-{{< article columns="1" 
-    title="Take the Quick Check" 
-    url="/quickcheck/" 
-    img-src="/img/quickcheck/hero_illustration.svg" 
-    img-align="left" 
-    >}}
-Use our quick check tool to discover how you compare to industry peers, identify specific capabilities you can use to improve performance, and make progress toward becoming an elite performer.
-{{< /article >}}
-
-{{< article 
-    columns="1" 
-    title="The ROI of DevOps" 
-    url="https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper"
-    img-src="/img/features/whitepaper-roi.png"
-    img-align="left"
-    img-stroke="true" 
-    url-target="_blank" >}}
-Organizations are constantly grappling to quantify the value of technology transformation. The whitepaper takes an analytical, data-driven approach to forecast the value and justify investment in DevOps transformations.
-{{< /article >}}
-
 {{< article 
     columns="2" 
-    title="DevOps Awards Winners" 
+    title="DevOps Awards" 
+    cta="See the Winners"
     url="https://cloud.google.com/awards/devops"
     url-target="_blank" >}}
 The Winners of the DevOps Awards are implementing DevOps practices to drive organizationaal success and deliver high-quality customer experiences. Read about their journeys and learn how they applied a philosophy of continuous improvement.

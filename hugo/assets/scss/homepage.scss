@@ -2,7 +2,7 @@
 
 section.features {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
     gap: 1em;
     place-items: stretch;
 
