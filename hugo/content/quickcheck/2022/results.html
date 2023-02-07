@@ -8,47 +8,46 @@ type: quickcheck
 ---
 
 <h1 id="results_h1">Your software delivery&nbsp;performance</h1>
-<section class="quickcheck_results">
+<section class="quickcheck_results_container">
+    <div class="quickcheck_results">
     <aside>
-        <div  >
-            <h3>Your performance:</h3>
-            <div id="percentile-banner">00</div>
-            <h4>You're performing better than <span id="percentile">&nbsp;&nbsp;&nbsp;</span>&percnt; of <a href="https://cloud.google.com/devops/state-of-devops/">State&nbsp;of&nbsp;DevOps&nbsp;Survey</a> respondents.&nbsp;<a class="popover-more modal-open" aria-controls="profile-modal" title="How was this calculated?"><span class="sr-only">How was this calculated?</span></a></h4>
-            <div class="popover" id="profile-modal">
-                <img class="modal-close x" aria-controls="profile-modal" src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg" alt="close">
-              <p>We used responses from the <a href="https://cloud.google.com/devops/state-of-devops/">2022 State of DevOps Survey</a> to calculate the four performance profiles (see the &ldquo;<span class="profile-title capitalize">Unknown</span>  performers&rdquo; tab) as well as your percentile.</p>
+            <div  >
+                <h3>Your performance:</h3>
+                <div id="percentile-banner">00</div>
             </div>
-    </aside>
-    <div class="performance-graph-container">
-        <img src="/img/quickcheck/your_performance.svg" id="your-performance">
-        <div class="performance-spectrum"></div>
-        <div class="tickmarks">
-            <div class="tick-container">
-                <div class="tick tick_first">
-                    0
+        </aside>
+        <div class="performance-graph-container">
+            <img src="/img/quickcheck/your_performance.svg" id="your-performance">
+            <div class="performance-spectrum"></div>
+            <div class="tickmarks">
+                <div class="tick-container">
+                    <div class="tick tick_first">
+                        0
+                    </div>
                 </div>
-            </div>
-            <div class="tick-container">
-                <div class="tick">
-                    25
+                <div class="tick-container">
+                    <div class="tick">
+                        25
+                    </div>
                 </div>
-            </div>
-            <div class="tick-container">
-                <div class="tick">
-                    50
+                <div class="tick-container">
+                    <div class="tick">
+                        50
+                    </div>
                 </div>
-            </div>
-            <div class="tick-container">
-                <div class="tick">
-                    75
+                <div class="tick-container">
+                    <div class="tick">
+                        75
+                    </div>
                 </div>
+                <div class="tick-container">
+                    <div class="tick">100</div>
+                </div>
+                
             </div>
-            <div class="tick-container">
-                <div class="tick">100</div>
-            </div>
-            
         </div>
     </div>
+    <h3 class="better-than">You're performing better than <span id="percentile">&nbsp;&nbsp;&nbsp;</span>&percnt; of <select id="results-year" onchange="switchResultsYear(this.value)"><option selected>2022</option><option>2019</option></select>&nbsp;&nbsp;<a href="https://cloud.google.com/devops/state-of-devops/" target="_blank">State&nbsp;of&nbsp;DevOps&nbsp;Survey</a> respondents.&nbsp;</h3>
 </section>
 <section>
     {{< tab_navigation 
@@ -75,7 +74,7 @@ type: quickcheck
                     {{< tab_navigation 
                         titles="All Industries,Your Industry"
                         controls="perf-all,perf-industry" 
-                        selected="Your Industry" 
+                        selected="All Industries" 
                         >}}
                 </div>
                 <div id="perf-all">

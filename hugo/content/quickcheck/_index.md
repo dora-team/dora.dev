@@ -10,7 +10,7 @@ stylesheets:
 type: quickcheck
 ---
 
-<form action={{% relref "/quickcheck/results.html" %}} method="get">
+<form action={{% relref "/quickcheck/2022/results.html" %}} method="get">
 
 <h5>Question 1 of 5</h5>
 <section class="question">
