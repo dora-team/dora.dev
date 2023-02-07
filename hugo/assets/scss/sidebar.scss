@@ -1,0 +1,30 @@
+@import "_variables.scss";
+
+section.hasSidebar {
+    display:flex;
+    flex-direction: row;
+}
+
+section.hasSidebar article {
+    width:80%;
+}
+
+section.hasSidebar sidebar {
+    width:20%;
+    min-width:200px;
+    margin-left:1em;
+}
+
+section.hasSidebar sidebar a {
+    white-space:nowrap;
+}
+
+section.hasSidebar sidebar section {
+    padding:.5em .1em .5em 1em;
+    margin-left:1em;
+    border-left:1px solid lightgray;
+}
+
+section.hasSidebar sidebar section:last-child {
+    border-bottom: none;
+}
