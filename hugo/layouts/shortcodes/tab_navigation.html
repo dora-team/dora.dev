@@ -2,27 +2,29 @@
 
 
 <script>
-    if(typeof showTab !== 'function') {
-        showTab = function(clickedTab) {
-            tabs = clickedTab.closest('.tabs').querySelectorAll('a');
-            tabs.forEach(element => {
-                element.classList.remove('selected');
-                activeTabId = element.getAttribute('aria-controls');
-                document.getElementById(activeTabId).style.display = 'none';
-                if (activeTabId === clickedTab.getAttribute('aria-controls')) {
-                    element.classList.add('selected');
-                    document.getElementById(activeTabId).style.display = 'block';
-                }
-            });
+    window.addEventListener("load", function () {
+        if(typeof showTab !== 'function') {
+            showTab = function(clickedTab) {
+                tabs = clickedTab.closest('.tabs').querySelectorAll('a');
+                tabs.forEach(element => {
+                    element.classList.remove('selected');
+                    activeTabId = element.getAttribute('aria-controls');
+                    document.getElementById(activeTabId).style.display = 'none';
+                    if (activeTabId === clickedTab.getAttribute('aria-controls')) {
+                        element.classList.add('selected');
+                        document.getElementById(activeTabId).style.display = 'block';
+                    }
+                });
+            }
         }
-    }
 
-    document.querySelectorAll('[role="tab"]').forEach((element) => {
-        element.addEventListener('click', function(e){ 
-            e.preventDefault();
-        });
+        document.querySelectorAll('[role="tab"]').forEach((element) => {
+            element.addEventListener('click', function(e){ 
+                e.preventDefault();
+                showTab(e.srcElement);
+            });
+        })
     })
-
 </script>
 
 {{/* extract data from parameters */}}
@@ -38,7 +40,7 @@
     {{ $this_controls := index $tab_controls $counter }}
     {{ $this_class := index $tab_classes $counter }}
     <li>
-        <a href="#{{ $this_controls }}" class="{{ if eq $this_title $.Params.selected }}selected{{ end }} {{ $this_class }}" role="tab" aria-controls="{{ $this_controls }}" aria-selected="{{ if eq $this_title $.Params.selected }}true{{ end }}" onClick="showTab(this)">{{ $this_title }}</a>
+        <a href="#{{ $this_controls }}" class="{{ if eq $this_title $.Params.selected }}selected{{ end }} {{ $this_class }}" role="tab" aria-controls="{{ $this_controls }}" aria-selected="{{ if eq $this_title $.Params.selected }}true{{ end }}">{{ $this_title }}</a>
     </li>
     {{ $counter = add $counter 1 }}
 {{ end }}

@@ -14,11 +14,7 @@ type: quickcheck_2019
             <h3 ><span >Your performance:</span>
                 <span class="profile-title capitalize color-by-profile">unknown</span>
             </h3>
-            <h4>You're performing better than <span id="percentile">&nbsp;&nbsp;&nbsp;</span>&percnt; of <a href="https://cloud.google.com/devops/state-of-devops/">State&nbsp;of&nbsp;DevOps&nbsp;Survey</a> respondents.&nbsp;<a class="popover-more modal-open" aria-controls="profile-modal" title="How was this calculated?"><span class="sr-only">How was this calculated?</span></a></h4>
-            <div class="popover" id="profile-modal">
-                <img class="modal-close x" aria-controls="profile-modal" src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg" alt="close">
-              <p>We used responses from the <a href="https://cloud.google.com/devops/state-of-devops/">2019 State of DevOps Survey</a> to calculate the four performance profiles (see the &ldquo;<span class="profile-title capitalize">Unknown</span>  performers&rdquo; tab) as well as your percentile.</p>
-            </div>
+        </div>
     </aside>
     <div class="performance-graph-container">
         <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="yourPerformanceMarker"></div>
@@ -26,8 +22,9 @@ type: quickcheck_2019
     </div>
 </section>
 <section id="results-actions">
+    <h3>You're performing better than <span id="percentile">&nbsp;&nbsp;&nbsp;</span>&percnt; of <select id="results-year" onchange="switchResultsYear(this.value)"><option>2022</option><option selected>2019</option></select>&nbsp;&nbsp;<a href="https://cloud.google.com/devops/state-of-devops/" target="_blank">State&nbsp;of&nbsp;DevOps&nbsp;Survey</a> respondents.&nbsp;</h3>
     <button class="modal-open" aria-controls="share-modal">Share results</button>
-    <a href='{{% relref "/quickcheck/2019/" %}}'><button class="secondary">Start over</button></a>
+    <a href='{{% relref "/quickcheck/" %}}'><button class="secondary">Start over</button></a>
     <div id="share-modal"  role="dialog" aria-modal="true" aria-labelledby="share-modal-label" aria-describedby="share-modal-content">
         <div class="wrapper">
           <h1 id="share-modal-label" >Share your results</h1>
@@ -151,7 +148,7 @@ type: quickcheck_2019
         <div>
             <div>
                 <h2>How your performance compares</h2>
-                <p>Based on your <a href='{{% relref "/quickcheck/2019/" %}}'>quick check</a> answers, see how you compare to the
+                <p>Based on your <a href='{{% relref "/quickcheck/" %}}'>quick check</a> answers, see how you compare to the
                 <a href="https://cloud.google.com/devops/state-of-devops/">2019 State of DevOps</a> respondents overall, and to people within the same industry as you.</p>
             </div>
             <div id="perf-comparison">
@@ -159,7 +156,7 @@ type: quickcheck_2019
                     {{< tab_navigation 
                         titles="All Industries,Your Industry"
                         controls="perf-all,perf-industry" 
-                        selected="Your Industry" 
+                        selected="All Industries" 
                         >}}
                 </div>
                 <div id="perf-all">
