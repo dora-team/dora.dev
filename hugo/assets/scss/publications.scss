@@ -1,0 +1,60 @@
+@import "_variables.scss";
+
+.publications {
+
+    h2:not(:first-child) {
+        margin-top:2rem;
+    }
+
+    section.publicationHighlight {
+        display:flex;
+        gap:1rem;
+
+        aside {
+
+            img {
+                width:12rem;
+                border:1px solid $border-light;
+            }
+
+        }
+
+    }
+
+    ul {
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr; 
+        gap: 1.5em; 
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style-type: none;
+            border:1px solid $border-light;
+            padding:.5em;
+            border-radius: .5em;
+            font-weight:300;
+
+            img {
+                max-width:32em;
+                max-height:24em;
+            }
+
+            a {
+                font-size:80%;
+                display: block;
+                margin-top: .5em;
+            }
+
+            h4 {
+                margin-bottom:0;
+            }
+
+            h4 a {
+                color:$color-text;
+                text-decoration: none;
+                font-size: 100%;
+            }
+        }
+    }
+}
