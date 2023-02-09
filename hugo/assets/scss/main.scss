@@ -127,6 +127,13 @@ section.banner {
 
 footer {
     background-color: $background-light;
-    padding: 24px 16px 16px 16px;
+    padding: 24px 24px 16px 24px;
     margin-top: 4rem;
+    display:flex;
+    justify-content: space-between;
+
+    a {
+        color:$color-text;
+        text-decoration: none;
+    }
 }

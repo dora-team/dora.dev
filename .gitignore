@@ -15,5 +15,7 @@ hugo.linux
 # Location of generated site files when built in CI
 /tools/nginx_container/generated_site
 
-# Firebase work directory
+# Firebase work directory and local logs
 .firebase/*
+firebase-debug.log
+firestore-debug.log

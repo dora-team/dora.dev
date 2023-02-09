@@ -1,5 +1,5 @@
-{{/*  be sure to hide inactive tabs in css or js  */}}
-
+<!--  be sure to hide inactive tabs in css or js -->
+<!-- TODO: #54 auto-hide inactive tabs in this module -->
 
 <script>
     window.addEventListener("load", function () {
@@ -27,8 +27,7 @@
     })
 </script>
 
-{{/* extract data from parameters */}}
-
+<!-- extract data from params -->
 {{ $tab_titles := split .Params.titles "," }}
 {{ $tab_controls := split .Params.controls "," }}
 {{ $tab_classes := split .Params.classes "," }}

@@ -7,16 +7,29 @@
       "**/node_modules/**"
     ],
     "redirects": [
-        {
-            "source": "/quickcheck.html",
-            "destination": "/quickcheck/",
-            "type": 302
-        },
-        {
-            "source": "/performance.html:querystring*",
-            "destination": "/quickcheck/2019/results/:querystring",
-            "type": 302
-        }
+      {
+        "source": "/quickcheck.html",
+        "destination": "/quickcheck/",
+        "type": 302
+      },
+      {
+        "source": "/performance.html:querystring*",
+        "destination": "/quickcheck/2019/results/:querystring",
+        "type": 302
+      }
     ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": 6001
+    },
+    "ui": {
+      "enabled": true,
+      "port": 6002
+    },
+    "singleProjectMode": true,
+    "firestore": {
+      "port": 6100
+    }
   }
 }
