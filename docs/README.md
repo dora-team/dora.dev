@@ -8,3 +8,17 @@ To preview Firebase-specific functionality (e.g. server-side redirects), you can
 
 ### CI/CD
 See `/ci/README.md`
+
+### DEV Misc
+#### Firebase can be emulated locally, to test the functionality it provides. This requires two terminal windows
+To emulate only firestore (used by the email contact form)  
+- in terminal 1, run `hugo serve -s hugo --disableFastRender --debug --watch`
+  - in terminal 2, run `firebase emulators:start`
+  - access the site at `http://localhost:6001`
+
+To emulate firestore and firebase hosting (to see features like server-side redirects)
+  - in terminal 1, run `watch -n 2 hugo -s hugo -e development`
+  - in terminal 2, run `firebase emulators:start`
+  - access the site at `http://localhost:1313`
+
+*NOTE: Firebase hosting uses non-standard port 6001 because Dave was having trouble with the standard port, 5000. We should figure that out and revert to the standard port.*

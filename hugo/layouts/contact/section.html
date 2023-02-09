@@ -1,10 +1,106 @@
-<!doctype html>
-<meta charset="utf-8">
-<html lang="en">
-    <head>
-        {{- partial "head" . -}}
-    </head>
-    <body>
-        {{- partial "header" . -}}
-    </body>
-</html>
+{{ define "main" }}
+        <form id="inquiry-form">
+        <h1>Contact DORA</h1>
+        <div id="inquiry-form-fields">
+            <label>Your Name:</label>
+            <div>
+                <input type="text" id="first_name" required="true" placeholder="first" class="name">
+                &nbsp;<input type="text" id="last_name" required="true" placeholder="last" class="name">
+            </div>
+            <label>Your Email Address:</label>
+            <input type="email" id="from_email" required="true" placeholder="email">
+            <label>Inquiry Type:</label>
+            <div>
+                <select id="inquiry_type" required>
+                    <option value=""></option>
+                    <option value="State of DevOps Sponsorship">State of DevOps Sponsorship</option>
+                    <option value="Speaker Request">Speaker Request</option>
+                    <option value="Workshop or Assessment">Speaker Inquiry</option>
+                    <option value="(Other)">General Inquiry</option>
+                </select>
+            </div>
+            <label>Message:</label>
+            <textarea required rows="8" id="message"></textarea>
+            <label></label><div><input type="submit" value="Submit"></div>
+        </div>
+        <div id="contact-thanks">
+            <h3>Thank you. Your inquiry has been sent.</h3>
+            <a href="#" id="goback">&lt; back</a>
+        </div>
+    </form>
+
+        <script type="module">
+            {{ if not hugo.IsProduction }}
+                console.log('Hello developer! To test this form locally, you\'ll need to run `firebase emulators:start` (if you haven\'t already). Leave it running in the background so the form can write to (emulated) Firestore.');
+                import { connectFirestoreEmulator } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js';
+            {{ end }}
+
+            import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js'
+            import { 
+                getFirestore, 
+                collection, 
+                doc, 
+                setDoc, 
+                serverTimestamp,
+            } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js'
+
+            const firebaseConfig = {
+                apiKey: "AIzaSyB8xakcxSGv6Gms7u-Kk21r20h4zRySqh4",
+                authDomain: "doradotdev.firebaseapp.com",
+                projectId: "doradotdev",
+                storageBucket: "doradotdev.appspot.com",
+                messagingSenderId: "712907887884",
+                appId: "1:712907887884:web:a424bce80cf0eabcf56529",
+                measurementId: "G-HWLXSJLRVQ"
+            };
+
+             // Initialize Firebase
+             const app = initializeApp(firebaseConfig);
+             const db = getFirestore(app);
+             {{ if not hugo.IsProduction }}
+                connectFirestoreEmulator(db, 'localhost', 6100);
+            {{ end }}
+
+             const newInquiryRef = doc(collection(db, "email-inquiry"));
+
+            document.addEventListener('DOMContentLoaded', function() {
+
+                document.querySelector("#inquiry-form").addEventListener("submit", submitForm);
+
+                function submitForm(e) {
+                    e.preventDefault();
+                    
+                    let inquiry_data = {
+                        created: serverTimestamp(),
+                        from_email: document.querySelector("#from_email").value,
+                        first_name: document.querySelector("#first_name").value,
+                        last_name: document.querySelector("#last_name").value,
+                        inquiry_type: document.querySelector("#inquiry_type").value,
+                        message: document.querySelector("#message").value,
+                    };
+                    
+                    sendEmailInquiry(inquiry_data);
+                }
+
+                function sendEmailInquiry(inquiry_data) {
+                    setDoc(
+                        newInquiryRef,
+                        inquiry_data  
+                    );
+
+                    document.querySelector('#contact-thanks').style.display='block';
+                    document.querySelector('#inquiry-form-fields').style.display='none';
+
+                }
+
+                document.querySelector("#goback").addEventListener("click", resetForm);
+
+                function resetForm() {
+                    document.querySelector('#inquiry-form').reset();
+                    document.querySelector('#contact-thanks').style.display='none';
+                    document.querySelector('#inquiry-form-fields').style.display='inline-grid';
+                }
+                
+            }, false);
+        </script>
+{{ end }}

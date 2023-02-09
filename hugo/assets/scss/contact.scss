@@ -1,0 +1,34 @@
+@import "_variables.scss";
+
+form {
+    margin:0 auto;
+    
+    h1 { 
+        margin-bottom:.5em;
+    }
+
+    #inquiry-form-fields {
+        display: inline-grid;
+        grid-template-columns: auto auto;
+        gap:1em .5em;
+    }
+
+    input:not([type=submit]), select {
+        width:24em;
+        border-color: 1px solid $border-light;
+
+        &.name {
+            width:11.5em;
+        }
+    }
+
+    input::placeholder{
+        font-weight:200;
+        color:$color-text-light;
+    }
+
+    #contact-thanks {
+        text-align: center;
+        display: none;
+    }
+}
