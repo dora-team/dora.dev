@@ -4,23 +4,23 @@
         <div id="inquiry-form-fields">
             <label>Your Name:</label>
             <div>
-                <input type="text" id="first_name" required="true" placeholder="first" class="name">
-                &nbsp;<input type="text" id="last_name" required="true" placeholder="last" class="name">
+                <input type="text" id="first_name" required="true" placeholder="first name" class="name">
+                &nbsp;<input type="text" id="last_name" required="true" placeholder="last name" class="name">
             </div>
             <label>Your Email Address:</label>
             <input type="email" id="from_email" required="true" placeholder="email">
             <label>Inquiry Type:</label>
             <div>
                 <select id="inquiry_type" required>
-                    <option value=""></option>
+                    <option value="">- inquiry type -</option>
                     <option value="State of DevOps Sponsorship">State of DevOps Sponsorship</option>
                     <option value="Speaker Request">Speaker Request</option>
-                    <option value="Workshop or Assessment">Speaker Inquiry</option>
+                    <option value="Workshop or Assessment">Workshop or Assessment Inquiry</option>
                     <option value="(Other)">General Inquiry</option>
                 </select>
             </div>
             <label>Message:</label>
-            <textarea required rows="8" id="message"></textarea>
+            <textarea required rows="8" id="message" placeholder="your message"></textarea>
             <label></label><div><input type="submit" value="Submit"></div>
         </div>
         <div id="contact-thanks">
