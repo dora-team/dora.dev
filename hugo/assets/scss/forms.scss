@@ -63,3 +63,8 @@ button.secondary,
         background-color: #e1f3fc;
     }
 }
+
+::placeholder{
+    font-weight:200;
+    color:$color-text-light;
+}
