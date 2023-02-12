@@ -15,22 +15,26 @@
         font-size: 85%;
     }
 </style>
+<script>
+    window.addEventListener('load', function(event) {
+        document.querySelector('#questions').style.display='none';
+    })
+</script>
 <section class="hasSidebar">
     <div class="mainContent">
         <article>
             {{ .Content }}
         </article>
-        <article>
-            <!-- TODO: use a tab set to display these two sections -->
-            <!-- {{ if in .Params.sections_to_display "sem" }}
+        {{ if in .Params.sections_to_display "sem" }}
+            <article id="sem" class="tab">
                 <h2>Structural Equation Model</h2>
                 <p>The DORA research program uses structural equation modeling (SEM), a predictive statistical modeling technique used to test relationships. We utilize PLS-PM (partial least squares path modeling) for our analysis, for several reasons: it does not require assumptions of normality in the data, it is will suited to exploratory and incremental research, and the analysis optimizes for prediction of the dependent variable (vs. testing for model fit of the data). All paths shown in the SEM figures are p &lt; .05.</p>
                 
                 <a href="/img/sodr/sem_sodr_{{ .Params.research_year }}.png" target="_blank"><img src="/img/sodr/sem_sodr_{{ .Params.research_year }}.png" style="max-width:100%"></a>
-            {{ end }} -->
-        </article>
-        <article>
-            {{ if in .Params.sections_to_display "questions" }}
+            </article>
+        {{ end }}
+        {{ if in .Params.sections_to_display "questions" }}
+            <article id="questions" class="tab">
                 <h2>Survey Questions</h2>
                 <p><strong>Participants in the {{ .Params.research_year }} State of DevOps survey were asked to respond to the following statements</strong></p>
                 {{ range where .Site.Data.survey_questions "year" .Params.research_year }}
@@ -51,8 +55,8 @@
                         {{ end }}
                     {{ end }}
                 {{ end }}
-            {{ end }}
-        </article> 
+            </article> 
+        {{ end }}
     </div>
     {{ partial "research_sidebar.html" }}
 </section>
