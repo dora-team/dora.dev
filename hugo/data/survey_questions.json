@@ -3,18 +3,399 @@
         "year": 2022,
         "categories": [
             {
-                "heading": "Ice Cream",
+                "heading": "Generative Organizational Culture",
                 "question_groups": [
                     {
-                        "description": "Think about ice cream. Really, really think about it. Indicate how much you like to eat the following flavors:",
+                        "description": "Think about your organization when you answer the following questions and rate how strongly you agree or disagree with the following statements. In my organization...",
                         "questions": [
-                            "Chocolate",
-                            "Mint Chocolate Chip",
-                            "Butter Brickle (really?!?)"
+                            "Information is actively sought",
+                            "Responsibilities are shared",
+                            "Messengers are not punished when they deliver news of failures or other bad news",
+                            "New ideas are welcomed",
+                            "Failures are treated primarily as opportunities to improve the system",
+                            "Cross-functional collaboration is encouraged and rewarded"
                         ]
                     }
                 ]
-            }       
+            },
+            {
+                "heading": "Architecture",
+                "question_groups": [
+                    {
+                        "description": "Think about how your team and work are structured. For the primary application or service you work on, please rate how strongly you agree or disagree with the following statements.",
+                        "questions": [
+                            "On my team, we can make large-scale changes to the design of our system without creating significant work for other teams",
+                            "To complete my own work, I don’t need to communicate and coordinate with people outside my team",
+                            "My team can deploy and release our product or service on demand, independently of other services it depends upon",
+                            "We can do most of our testing on demand, without requiring an integrated test environment",
+                            "On my team, we can make large-scale changes to the design of our system without depending on other teams to make changes in their systems",
+                            "On my team, we perform deployments during normal business hours with negligible downtime"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Burnout",
+                "question_groups": [
+                    {
+                        "description": "Sustainability of work is important, and burnout is an important indicator of this. Please answer a few questions about how your work has affected you. Please rate how strongly you agree or disagree with the following statements:",
+                        "questions": [
+                            "My feelings about work negatively affect my life outside of work.",
+                            "I feel like I am ineffective in my work.",
+                            "I am indifferent or cynical about my work.",
+                            "I feel exhausted.",
+                            "I feel burned out from my work."
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Change Approvals",
+                "question_groups": [
+                    {
+                        "description": "The next set of questions are about the change approval process. For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.",
+                        "questions": [
+                            "I have a clear understanding of the process to get changes approved for implementation",
+                            "I am confident I can get changes through the approval process in a timely manner",
+                            "All significant changes must be approved by a senior manager prior to implementation",
+                            "We have a formal process to approve changes to applications or production systems prior to implementation or release",
+                            "Production changes must be approved by an external body (e.g., change approval board, manager, etc.) before implementation or deployment",
+                            "For all the types of changes that I typically make, I know the steps it takes to go from “submitted” to “accepted” every time"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Cloud Computing",
+                "question_groups": [
+                    {
+                        "description": "Please rate how strongly you agree or disagree with the following statements in relation to your use of cloud services.",
+                        "questions": [
+                            "The cloud my product or service runs on serves multiple teams and applications, with compute and infrastructure resources dynamically assigned and re-assigned based on demand",
+                            "I can monitor or control the quantity and/or cost of cloud resources used by the service or product that I primarily support",
+                            "Once I have access, I can independently provision and configure the cloud resources and capabilities required for my product or service on demand without raising tickets or requiring human interaction",
+                            "I can dynamically increase or decrease the cloud resources available for the service or product that I primarily support based on demand",
+                            "The service or product that I primarily work on is designed to be accessed from a broad range of devices (e.g. smartphones, tablets, laptops) over the network without the need for proprietary plug-ins or protocols"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Continuous Delivery",
+                "question_groups": [
+                    {
+                        "description": "For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.",
+                        "questions": [
+                            "When people get feedback that the system is not deployable (such as failing builds or tests), they make fixing these issues their highest priority",
+                            "We can deploy our system to production, or to end users, at any time, on demand",
+                            "Fast feedback on the quality and deployability of the system is available to anyone on the team",
+                            "Our software is in a deployable state throughout its lifecycle",
+                            "My team prioritizes keeping the software deployable over working on new features"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Continuous Integration",
+                "question_groups": [
+                    {
+                        "description": "The next set of questions ask about committing code and building and deploying software at work. For the primary application or service you work on, please rate how strongly you agree or disagree with the following statements.",
+                        "questions": [
+                            "Code commits result in a series of automated tests being run",
+                            "Automated builds and tests are executed successfully every day",
+                            "Code commits result in an automated build of the software",
+                            "Automated test failures will block a commit’s progress through the pipeline"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Documentation",
+                "question_groups": [
+                    {
+                        "description": "The following questions ask about documentation. We define documentation as internal documentation for the services or applications you work on (e.g., manuals, readmes, code comments, etc.). End-users are not the audience for these documents. Please rate how strongly you agree or disagree with the following statements.",
+                        "questions": [
+                            "Technical documentation is updated as changes are made",
+                            "It is easy for me to understand our technical documentation",
+                            "I can rely on our technical documentation when I need to use or work with the services or applications I work on",
+                            "Our technical documentation is well organized",
+                            "When there’s an incident or problem that needs troubleshooting, I reach for the documentation",
+                            "It is easy to find the right technical document when I need to understand something about the services or applications I work on",
+                            "The technical documentation correctly reflects the capabilities and requirements of the primary service or application I work on",
+                            "Most of the code for the services or applications I work with is documented"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "How Time is Spent",
+                "question_groups": [
+                    {
+                        "description": "In an average week, approximately what percent of your time at work is spent...",
+                        "questions": [
+                            "completing operations related tasks (e.g., troubleshooting production problems, collecting metrics and logs, monitoring dashboards, monitoring logs, responding to incidents), if any?",
+                            "actively coding (e.g., writing new code, improving existing code, fixing bugs, testing, designing and architecting code), if any?",
+                            "completing administrative tasks (e.g., planning, meetings, emails), if any?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Infrastructure Platform",
+                "question_groups": [
+                    {
+                        "description": "Please rate how strongly you agree or disagree with the following statement.",
+                        "questions": [
+                            "Where are you deploying your applications or services currently?   Select all that apply.|vms_hardware, vms_cloud, servers, saas, paas, other, mobile_devices, faas, cots, container",
+                            "The product or service I primarily work on was originally designed and architected to run in the cloud.",
+                            "The product or service that I primarily work on runs on...   Select all that apply.|hybrid_cloud, multiple_public_clouds, on_prem, other, private_cloud, public_cloud, server_under_desk"
+                        ]
+                    },
+                    {
+                        "questions": [
+                            "What are the benefits you have realized by adopting multiple cloud providers? Select all that apply|Availability, Disaster recovery, Legal compliance, Leverage unique benefits of each provider, Negotiation tactic or procurement requirement, Other (please specify), Trust is spread across multiple providers, We only have one cloud provider or we are not using public cloud"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "New Technology",
+                "question_groups": [
+                    {
+                        "description": "Think about the degree to which your organization uses new technology. To what extent do you agree with the following?",
+                        "questions": [
+                            "My organization uses outdated processes and technologies",
+                            "My team does not have the freedom to explore new technologies"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Organizational Performance",
+                "question_groups": [
+                    {
+                        "description": "For each of the following performance indicators, how well did your organization meet its goals over the past year?",
+                        "questions": [
+                            "Your organization’s overall profitability",
+                            "Your organization’s overall performance",
+                            "Relative market share for primary products",
+                            "Increased number of customers"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Predictions",
+                "question_groups": [
+                    {
+                        "description": "Making predictions isn’t easy, but some people find it helps them better express their perspective. Please indicate how unlikely or likely you think the following events are for the primary service or application you work on.",
+                        "questions": [
+                            "We will start using a new product in the next 90 days",
+                            "We will have an outage due to quota or capacity misunderstanding in the next 90 days",
+                            "Someone is let go from the team  in the next 90 days",
+                            "We will invest more to reduce risk for dependencies in the next year",
+                            "We will have a significant performance degradation in the next year",
+                            "Leadership will sponsor one or more software security initiatives in the next year",
+                            "We will invest more to improve our deployment security and monitoring in the next year",
+                            "We will invest more to improve our build systems in the next year",
+                            "We will have an increased spending budget for new tools in the next year",
+                            "We will increase the amount funding for getting new tools in the next year",
+                            "We will see an increase in multi- and/or hybrid-cloud adoption in the next year",
+                            "We will see a decrease in on-premises solutions/data centers in the next year",
+                            "We will be compromised by a security vulnerability in the next year",
+                            "We will have a complete service/product outage in the next year",
+                            "Someone quits in the next 30 days",
+                            "We will have an emergency code or configuration change in the next 30 days"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Reliability",
+                "question_groups": [
+                    {
+                        "description": "These next questions ask about reliability, and how you and your team think about it. For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.",
+                        "questions": [
+                            "It has well-defined targets for reliability (such as Service Level Agreements / Service Level Objectives) that are clearly communicated among the team and to customers",
+                            "Reliability reviews are performed throughout the development process for all major features on the applications I work on",
+                            "I know what its reliability actually was in the most recent period",
+                            "When we miss our reliability targets, we perform improvement work and/or re-prioritize",
+                            "My team regularly reviews and revises reliability targets based on evidence",
+                            "My team actively identifies and eliminates, automates, or streamlines repetitive manual work (sometimes called \"toil\")"
+                        ]
+                    },
+                    {
+                        "description": "Now let's focus on your team's alerting strategy. For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.",
+                        "questions": [
+                            "Alerts are generated based on service degradation from the perspective of end users or dependent systems (as opposed to system metrics like CPU %, ICMP latency, or disk IO)",
+                            "Alerts are configured so that humans are only paged when an immediate response is needed"
+                        ]
+                    },
+                    {
+                        "description": "We'd also like to understand how your team prepares for incidents or changes in capacity needs. For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.",
+                        "questions": [
+                            "My team has well-defined protocols and tools for responding to production incidents",
+                            "My team regularly practices incident response procedures"
+                        ]
+                    },
+                    {
+                        "questions": [
+                            "How often do your services meet reliability expectations (i.e., SLOs)?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Security",
+                "question_groups": [
+                    {
+                        "description": "Please indicate the extent to which you agree with the following statements.",
+                        "questions": [
+                            "I have access to the necessary tooling to execute security tests",
+                            "We have ongoing efforts to monitor information coming from public sources regarding possible vulnerabilities in the software we use and its third-party components",
+                            "At my company, we have a standardized process for addressing software security across projects",
+                            "The software security processes that exist at my company slow down the development process for the applications I work on",
+                            "At my company, the software-security protocol is seamlessly built into our development process",
+                            "Security requirements are reviewed at regular intervals (annually, or sooner if required)",
+                            "Our org has processes in place to identify and document all security requirements for the software our organization develops or acquires (including third-party and open source)",
+                            "Security roles are integrated into our software development team",
+                            "My organization has an effective method for identifying security threats",
+                            "My organization has an effective method for addressing security threats",
+                            "Security tests are run early in the software development process, either by me or by another team",
+                            "We continuously engage in automated or manual code analysis and testing for all supported releases, in order to identify or confirm the presence of previously undetected vulnerabilities",
+                            "Security review is conducted for all major features on the applications I work on",
+                            "At my company, security practices are considered a box to check, rather than a fundamental part of the development process"
+                        ]
+                    },
+                    {
+                        "description": "How established are the following practices for the primary application or service you work on?",
+                        "questions": [
+                            "Build metadata (e.g., dependencies, build process, build environment) about an artifact cannot be edited by build services users",
+                            "Every change in a revision’s history must be individually reviewed and approved by two trusted persons prior to submission",
+                            "When running builds, build steps are prevented from loading any build inputs dynamically (i.e., all required sources and dependencies are fetched upfront)",
+                            "Build metadata (e.g., dependencies, build process, build environment) about an artifact includes all build parameters",
+                            "The build metadata (e.g., dependencies, build process, build environment) about how an artifact was produced is signed by my build service",
+                            "Build metadata (e.g., dependencies, build process, build environment) is either generated by the build service, or by a build-metadata generator that reads the build service",
+                            "Build metadata (e.g., dependencies, build process, build environment) is available to the people who need it (e.g. via a central database), and is delivered in a format that they accept",
+                            "Builds are isolated; they cannot interfere with concurrent or subsequent builds",
+                            "Revisions and their change history are preserved indefinitely",
+                            "Build metadata (e.g., dependencies, build process, build environment) about an artifact documents all dependencies",
+                            "Production releases are built by using a centralized CI/CD system, never on a developer’s workstation",
+                            "Build definitions and configurations are defined in text files stored in a version control system",
+                            "Builds are fully defined through the build script and nothing else"
+                        ]
+                    },
+                    {
+                        "questions": [
+                            "If your team was involved in responding to a large security incident within the last four years (such as log4j or SolarWinds), what did your team do to assess the impact? Select all that apply|Database, Grep, Scripts, Unsure, Uninvolved, (other)"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Software Delivery Performance",
+                "question_groups": [
+                    {
+                        "questions": [
+                            "For the primary application or service you work on, how long does it generally take to restore service when a service incident or a defect that impacts users occurs (e.g., unplanned outage, service impairment)?",
+                            "For the primary application or service you work on, what is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?",
+                            "For the primary application or service you work on, how often does your organization deploy code to production or release it to end users?",
+                            "For the primary application or service you work on, what percentage of changes to production or released to users result in degraded service (e.g., lead to service impairment or service outage) and subsequently require remediation (e.g., require a hotfix, rollback, fix forward, patch)?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Team Characteristics",
+                "question_groups": [
+                    {
+                        "description": "Think about your team (the people around you who report to the same manager or skip-level manager). To what extent do you agree or disagree with the following statements?",
+                        "questions": [
+                            "A majority of the team has been working in the same role for at least 12 months",
+                            "Most of the people that were on this team 12 months ago are still on the team today",
+                            "The size of the team is larger today than it was 12 months ago"
+                        ]
+                    },
+                    {
+                        "questions": [
+                            "What is the percentage of women who work on your immediate team? Please enter a number between 0 and 100."
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Trunk-Based Development",
+                "question_groups": [
+                    {
+                        "description": "We are interested in the development practices and patterns you follow at work. Please rate how strongly you agree or disagree with the following statements.",
+                        "questions": [
+                            "There are fewer than three active branches on the application's code repo",
+                            "Branches and forks have very short lifetimes (less than a day) before being merged to the main branch",
+                            "Our application team never has code lock periods when no one can check in code or do pull requests due to merging conflicts",
+                            "All developers on my team push code to trunk / main branch at least daily"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Version Control",
+                "question_groups": [
+                    {
+                        "description": "For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.",
+                        "questions": [
+                            "Our system configurations are in a version control system",
+                            "Our scripts for automating build and configuration are in a version control system",
+                            "Our application code is in a version control system",
+                            "Our application configurations are in a version control system"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Work Environment",
+                "question_groups": [
+                    {
+                        "description": "Think about how your team's current work practices. To what extent do you agree or disagree with the following statements.",
+                        "questions": [
+                            "I expect to be working on this same team next year",
+                            "Continuing to work using our current practices will have a negative impact on my team",
+                            "Continuing to work using our current practices will have a negative impact on our business",
+                            "My team knows that changing our practices will improve productivity",
+                            "Changing the practices of my team will improve our productivity"
+                        ]
+                    },
+                    {
+                        "questions": [
+                            "Approximately what percentage of your time is spent on rework or unplanned work?",
+                            "Currently, how inflexible or flexible is your company with regard to employee work arrangements (e.g., voluntary work from home, full-time remote work, hybrid schedules, etc.)?",
+                            "How likely are you to recommend your team as a place to work to a friend or colleague?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Demographics and Firmographics",
+                "question_groups": [
+                    {
+                        "description": "",
+                        "questions": [
+                            "Approximately many people are on your immediate team?",
+                            "Do you identify as a member of an underrepresented group?",
+                            "Do you identify as a person with a disability? This includes disabilities associated with seeing, hearing, walking, remembering/concentrating, self-care, or communication.",
+                            "How many employees work at your organization?",
+                            "How many years of experience do you have in a role similar to your current role?",
+                            "Location",
+                            "Response Type",
+                            "Start Date",
+                            "User Language",
+                            "What is your gender?",
+                            "What is the principal industry of your organization?",
+                            "Which most closely describes your work role? (OPTIONS TODO)",
+                            "With which racial or ethnic groups do you identify? Select all that apply|American Indian or Alaska Native, Asian, Black or African American, Hispanic, Latino, or Spanish origin, Middle Eastern or North African, Native Hawaiian or Pacific Islander, Other (please specify), Prefer not to respond, White"
+                        ]
+                    }
+                ]
+            }
         ]
     }
 ]
