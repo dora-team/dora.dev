@@ -4,5 +4,11 @@ date: 2023-02-02T18:23:33Z
 draft: false
 ---
 
-# DORA's Research Program
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+# Explore DORA's Research Program
+DORA's research program represents over nine years of research and data from over 33,000 professionals worldwide. It is the longest running academically rigorous research investigation of its kind, providing an independent view into the practices and capabilities that drive high performance in technology delivery and ultimately organizational outcomes. Our research uses behavioral science to identify the most effective and efficient ways to develop and deliver software.
+
+Use our [quick check tool](/quickcheck/) to discover how you compare to industry peers, identify specific capabilities you can use to improve performance, and make progress toward your software delivery performance goals.
+
+You can also explore our research program using the diagram below, or browse our [capability catalog](https://bit.ly/dora-capabilities). To learn more about research from a particular year, browse the [research archives](/research/archives/).
+
+[TODO: add BFD and maybe some other bits]

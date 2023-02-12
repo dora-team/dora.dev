@@ -1,0 +1,20 @@
+[
+    {
+        "year": 2022,
+        "categories": [
+            {
+                "heading": "Ice Cream",
+                "question_groups": [
+                    {
+                        "description": "Think about ice cream. Really, really think about it. Indicate how much you like to eat the following flavors:",
+                        "questions": [
+                            "Chocolate",
+                            "Mint Chocolate Chip",
+                            "Butter Brickle (really?!?)"
+                        ]
+                    }
+                ]
+            }       
+        ]
+    }
+]
