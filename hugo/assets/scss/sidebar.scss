@@ -1,12 +1,10 @@
 @import "_variables.scss";
 
+
+/* TODO: nest these styles */
 section.hasSidebar {
     display:flex;
     flex-direction: row;
-}
-
-section.hasSidebar article {
-    width:80%;
 }
 
 section.hasSidebar sidebar {
