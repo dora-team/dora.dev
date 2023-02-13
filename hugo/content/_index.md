@@ -15,7 +15,7 @@ stylesheets:
     img-src="/img/quickcheck/hero_illustration.svg" 
     img-align="left" 
     >}}
-Use our quick check tool to discover how you compare to industry peers, identify specific capabilities you can use to improve performance, and make progress toward becoming an elite performer.
+Use our quick check tool to discover how you compare to industry peers, identify specific capabilities you can use to improve performance, and make progress on your software delivery goals.
 {{< /article >}}
 
 {{< article 
@@ -48,5 +48,5 @@ Over the past eight years, more than 33,000 professionals around the world have 
     title="DevOps Awards" 
     cta="See the Winners"
     url="https://cloud.google.com/awards/devops" >}}
-The Winners of the DevOps Awards are implementing DevOps practices to drive organizationaal success and deliver high-quality customer experiences. Read about their journeys and learn how they applied a philosophy of continuous improvement.
+The Winners of the DevOps Awards are implementing DevOps practices to drive organizational success and deliver high-quality customer experiences. Read about their journeys and learn how they applied a philosophy of continuous improvement.
 {{< /article >}}
