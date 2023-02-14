@@ -556,3 +556,36 @@ $spectrum-left-pad: 12px;
         }
     }
 }
+
+.prioritize_container {
+
+    width:960px;
+    overflow: hidden;
+
+    .prioritize_contents {
+        width:3840px;
+        position:relative;
+        left:0px;
+        transition: left 250ms ease-out;
+
+        display:flex;
+        flex-direction: row;
+
+        .prioritize_step {
+            flex-shrink:0;
+            width:960px;
+        }
+    }
+}
+
+.prioritization_control {
+    margin-top:2em;
+    text-align: center;
+
+    .button_description {
+        width:40%;
+        min-width:300px;
+        margin:auto;
+        line-height: 1.1;
+    }
+}
