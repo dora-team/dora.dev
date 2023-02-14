@@ -38,3 +38,5 @@ Kim Castillo is a UXR Program Manager at Google and drives the cross-functional 
   - Nathen Harvey
   - Nicole Forsgren
   - Todd Kulesza
+
+Prior to 2018, The State of DevOps Report was published [in partnership with Puppet](https://www.puppet.com/resources/history-of-devops-reports).
