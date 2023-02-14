@@ -7,7 +7,7 @@ stylesheets:
     - name: headshots
 ---
 
-# Meet DORA's Research Team
+# DORA's Research Team
 
 ### Derek DeBellis
 ![Derek Debellis](/img/headshots/derek-debellis.jpeg)
@@ -21,7 +21,7 @@ Dustin Smith is a human factors psychologist and staff user experience research 
 ![Kim Castillo](/img/headshots/kim-castillo.jpeg)
 Kim Castillo is a UXR Program Manager at Google and drives the cross-functional effort behind the State of DevOps Report. Kim likewise supports Developer Experience UX Research on AppEco in Google Cloud. The DORA program combines Kim's passion for research, software delivery practice, and coaching. Prior to Google, Kim worked as a Delivery Lead/Technical Program Manager for several backend service teams, and as an Agile Development Practices Coach.
 
-## Emeritus Researchers and Authors
+## Contributors
 
   - Claire Peters
   - Daniella Villalba
