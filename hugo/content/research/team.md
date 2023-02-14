@@ -15,7 +15,7 @@ Derek DeBellis is a quantitative researcher at Google. At Google, Derek focuses 
 
 ### Dustin Smith
 ![Dustin Smith](/img/headshots/dustin-smith.jpeg)
-Dustin Smith is a human factors psychologist and staff research manager at Google, where he has worked on the DORA project since 2019. For the past seven years, he has studied how people are affected by the systems and environments around them in a variety of contexts: software engineering, free-to-play gaming, healthcare, and military. His research at Google identifies areas where software developers can feel happier and more productive during development. Dustin received his PhD in Human Factors Psychology from Wichita State University.
+Dustin Smith is a human factors psychologist and staff research manager at Google, where he has worked on the DORA project since 2019. For over ten years, he has studied how people are affected by the systems and environments around them in a variety of contexts: software engineering, free-to-play gaming, healthcare, and military. His research at Google identifies areas where software developers can feel happier and more productive during development. Dustin received his PhD in Human Factors Psychology from Wichita State University.
 
 ### Kim Castillo
 ![Kim Castillo](/img/headshots/kim-castillo.jpeg)
