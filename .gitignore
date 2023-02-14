@@ -12,9 +12,6 @@ hugo.linux
 # Temporary lock file while building
 /hugo/.hugo_build.lock
 
-# Location of generated site files when built in CI
-/tools/nginx_container/generated_site
-
 # Firebase work directory and local logs
 .firebase/*
 firebase-debug.log
