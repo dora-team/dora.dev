@@ -1,28 +1,36 @@
 @import "_variables.scss";
 
-
-/* TODO: nest these styles */
 section.hasSidebar {
     display:flex;
     flex-direction: row;
-}
 
-section.hasSidebar sidebar {
-    width:20%;
-    min-width:200px;
-    margin-left:1em;
-}
+    @include media-small {
+        flex-direction: column;
+    }
 
-section.hasSidebar sidebar a {
-    white-space:nowrap;
-}
+    sidebar {
+        width:20%;
+        min-width:200px;
+        margin-left:1em;
 
-section.hasSidebar sidebar section {
-    padding:.5em .1em .5em 1em;
-    margin-left:1em;
-    border-left:1px solid lightgray;
-}
+        a {
+            white-space:nowrap;
+        }
 
-section.hasSidebar sidebar section:last-child {
-    border-bottom: none;
+        section {
+            padding:.5em .1em .5em 1em;
+            margin-left:1em;
+            border-left:1px solid $border-light;
+
+            @include media-small {
+                padding:1em 0;
+                margin:0;
+                border-left:none;
+                border-bottom:1px solid $border-light;
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
 }
