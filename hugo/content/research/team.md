@@ -7,26 +7,28 @@ stylesheets:
     - name: headshots
 ---
 
-# DORA's Research Team
+# Meet DORA’s Research Team
 
 ### Derek DeBellis
 ![Derek Debellis](/img/headshots/derek-debellis.jpeg)
-Derek DeBellis is a Quantitative User Experience Researcher at Google. At Google, Derek focuses on survey research, logs analysis, and figuring out ways to measure concepts central to product development. Derek has recently published on Human-AI interaction, the impact of Covid-19’s onset on smoking cessation, designing for NLP errors and the role of UX in privacy discussions.
+Derek DeBellis is a quantitative researcher at Google. At Google, Derek focuses on survey research, logs analysis, and figuring out ways to measure concepts central to product development. Derek has recently published on Human-AI interaction, the impact of COVID-19's onset on smoking cessation, designing for NLP errors, and the role of UX in privacy discussions.
 
 ### Dustin Smith
 ![Dustin Smith](/img/headshots/dustin-smith.jpeg)
-Dustin Smith is a human factors psychologist and staff user experience research manager at Google and he has worked on the DORA project for three years. For the past seven years, he has studied how people are affected by the systems and environments around them in a variety of contexts: software engineering, free-to-play gaming, healthcare, and military. His research at Google identifies areas where software developers can feel happier and more productive during development. He has worked on the DORA project for two years. Dustin received his PhD in Human Factors Psychology from Wichita State University.
+Dustin Smith is a human factors psychologist and staff research manager at Google, where he has worked on the DORA project since 2019. For the past seven years, he has studied how people are affected by the systems and environments around them in a variety of contexts: software engineering, free-to-play gaming, healthcare, and military. His research at Google identifies areas where software developers can feel happier and more productive during development. Dustin received his PhD in Human Factors Psychology from Wichita State University.
 
 ### Kim Castillo
 ![Kim Castillo](/img/headshots/kim-castillo.jpeg)
-Kim Castillo is a UXR Program Manager at Google and drives the cross-functional effort behind the State of DevOps Report. Kim likewise supports Developer Experience UX Research on AppEco in Google Cloud. The DORA program combines Kim's passion for research, software delivery practice, and coaching. Prior to Google, Kim worked as a Delivery Lead/Technical Program Manager for several backend service teams, and as an Agile Development Practices Coach.
+Kim Castillo is a UXR program manager at Google and drives the cross-functional effort behind the State of DevOps Report. Kim likewise supports developer experience UX research in Google Cloud. The DORA program combines Kim's passion for research, software delivery practice, and coaching. Prior to Google, Kim worked as a delivery lead/technical program manager for several backend service teams, and as an agile development practices coach.
 
-## Contributors
+## Meet the DORA Collective
+The collective includes current and former leaders, researchers, authors, and subject matter experts who have all made significant contributions to the research program.
 
+  - Brenna Washington
   - Claire Peters
   - Daniella Villalba
-  - Dave Stanke
   - Dave Farley
+  - Dave Stanke
   - Eric Maxwell
   - Frank Xu
   - Gene Kim
