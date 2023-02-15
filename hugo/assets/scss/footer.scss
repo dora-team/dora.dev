@@ -1,0 +1,31 @@
+@import "_variables.scss";
+
+footer {
+    background-color: $background-light;
+    padding: 24px 24px 16px 24px;
+    margin-top: 4rem;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+
+    a {
+        color:$color-text-medium;
+        text-decoration: none;
+    }
+
+}
+
+
+.logo {
+    vertical-align: middle;
+}
+
+.links {
+
+    a {
+        display:inline-block;
+        padding:.5em;
+        line-height: 1;
+        vertical-align: middle;
+    }
+}
