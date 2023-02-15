@@ -18,6 +18,14 @@ footer {
 
 .logo {
     vertical-align: middle;
+    font-size:14px;
+    font-family: $font-roboto;
+    font-weight:300;
+    display:flex;
+
+    div {
+        padding:.5em 1em;
+    }
 }
 
 .links {
