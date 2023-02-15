@@ -6,6 +6,7 @@
 @import "forms.scss";
 @import "widgets.scss";
 @import "sidebar.scss";
+@import "footer.scss";
 
 body {
     font-family: $font-google-sans;
@@ -124,18 +125,22 @@ section.banner {
             min-width: 25%;
             flex-grow: 1;
         }
+
     }
 }
 
-footer {
-    background-color: $background-light;
-    padding: 24px 24px 16px 24px;
-    margin-top: 4rem;
-    display:flex;
-    justify-content: space-between;
-
-    a {
-        color:$color-text;
-        text-decoration: none;
-    }
+.google-material-icons {
+    font-family: 'Google Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
 }
