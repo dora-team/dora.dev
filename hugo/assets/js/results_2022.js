@@ -260,16 +260,26 @@ window.addEventListener('DOMContentLoaded', () => {
     let step_width = document.querySelector('.prioritize_step').getBoundingClientRect().width;
     console.log(step_width);
 
+
     function showPrioritizationStep(step) {
+        
+        console.log('step: ' + step);
+
         document.querySelector('.prioritize_contents').style.left = 0 - (step_width * step) + 'px';
+
+        let selectedStepHeight = document.querySelector('#prioritize_' + step).getBoundingClientRect().height;
+
+        document.querySelector('.prioritize_container').style.height = selectedStepHeight + 'px';
 
         if(step > 4) {
             console.log('error: prioritization step out of bounds');
             return;
         }
 
+        let prioritizeButton = document.querySelector('#prioritize_button');
+
         if(0 < step < 4) {
-            let prioritizeButton = document.querySelector('#prioritize_button');
+            
 
             prioritizeButton.innerText='Next';
             
@@ -277,11 +287,15 @@ window.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.button_description').style.display = (step == 0)? 'block' : 'none';
 
             // set button to advance to next step
-            prioritizeButton.dataset.target_step++;
+            prioritizeButton.dataset.target_step = parseInt(step) + 1;
 
             // disable button until fields are completed
-            prioritizeButton.disabled = 'true';
+            // prioritizeButton.disabled = 'true';
 
+        } 
+        
+        if (step == 4) {
+            prioritizeButton.style.display='none';
         }
 
     }
@@ -290,5 +304,7 @@ window.addEventListener('DOMContentLoaded', () => {
         let target_step = event.target.dataset.target_step;
         showPrioritizationStep(target_step);
     });
+
+    showPrioritizationStep(0);
 
 });
