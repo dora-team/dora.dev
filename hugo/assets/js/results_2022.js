@@ -246,7 +246,7 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
         document.getElementById('perf-industry').style.display='none';
 
         // hide other tabs until clicked
-        let things_to_hide = ["c_capabilities"]
+        let things_to_hide = ["c_compare"]
         things_to_hide.forEach((tab) => {
             document.getElementById(tab).style.display='none';
         })
@@ -254,3 +254,57 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
     })  
 
 }());
+
+window.addEventListener('DOMContentLoaded', () => {
+    // prioritization exercise
+    let step_width = document.querySelector('.prioritize_step').getBoundingClientRect().width;
+    console.log(step_width);
+
+
+    function showPrioritizationStep(step) {
+        
+        console.log('step: ' + step);
+
+        document.querySelector('.prioritize_contents').style.left = 0 - (step_width * step) + 'px';
+
+        let selectedStepHeight = document.querySelector('#prioritize_' + step).getBoundingClientRect().height;
+
+        document.querySelector('.prioritize_container').style.height = selectedStepHeight + 'px';
+
+        if(step > 4) {
+            console.log('error: prioritization step out of bounds');
+            return;
+        }
+
+        let prioritizeButton = document.querySelector('#prioritize_button');
+
+        if(0 < step < 4) {
+            
+
+            prioritizeButton.innerText='Next';
+            
+            // remove description of exercise
+            document.querySelector('.button_description').style.display = (step == 0)? 'block' : 'none';
+
+            // set button to advance to next step
+            prioritizeButton.dataset.target_step = parseInt(step) + 1;
+
+            // disable button until fields are completed
+            // prioritizeButton.disabled = 'true';
+
+        } 
+        
+        if (step == 4) {
+            prioritizeButton.style.display='none';
+        }
+
+    }
+
+    document.querySelector("#prioritize_button").addEventListener("click", function(event){
+        let target_step = event.target.dataset.target_step;
+        showPrioritizationStep(target_step);
+    });
+
+    showPrioritizationStep(0);
+
+});
