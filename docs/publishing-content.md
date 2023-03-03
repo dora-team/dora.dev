@@ -1,0 +1,34 @@
+## Adding new content
+
+### Adding a capability
+> These instructions assume you're using the hugo command-line utility. If not, you can add content by copying an existing file in the same directory and editing it.
+
+Starting from the repo root:
+- `cd hugo`
+- Choose a path name for the capability. This should be a descriptive title, in [`kebab-case`](https://www.theserverside.com/definition/Kebab-case). Don't include generic terms like "DORA," "DevOps," or "Capability;" these are provided by the template.
+    - example: `streamlining-change-approval`
+- run `hugo new capabilities/<PATH_NAME>/index.md`
+  - example: `hugo new capabilities/streamlining-change-approval/index.md`
+- A folder will be created within "capabilities" which contains your article as markdown
+- Edit the markdown file
+  - In the front matter (the metadata above the `---` separator), edit the following:
+    - title -- This will be auto-generated from the path name but may be edited if desired.
+    - summary -- This is a summary (150-250 words) of the content which will appear in certain views. It should stand on its own, and serve as a teaser to encourage readers to click through to the full article to learn more.
+    - draft -- leave this as `true` until you're ready to make it visible to everyone (see below)
+  - In the body of the article (the area below the `---` separator), enter the capability content in markdown format
+  - Images may be placed in the same folder as the markdown file for this capability.
+    - TODO: document this.
+
+## Authoring content
+
+### Writing and editing
+See [docs](/docs) for instructions on how to run a local server which will live-update as you edit files.
+
+### Proposing changes
+To propose a change, make Pull Request against branch `main`. A temporary preview environment will be created, and linked to from the "checks" area of the PR. This URL can be shared with anyone, but it will be automatically deprovisioned after about 30 days. In these PR preview environments, all content statues—draft and non-draft—will be visible.
+
+### Publishing a draft to draft.dora.dev
+To make your content available on [draft.dora.dev](https://draft.dora.dev), leave "draft" set to `true`, and merge your change to `main`. A pipeline will deploy your change; typically, this will be complete within 10 minutes.
+
+### Publishing finished content to dora.dev
+When you are ready to go live, set "draft" to `false` (by editing the front matter in your markdown file), and merge your change to `main`. A pipeline will deploy your change; typically, this will be complete within 10 minutes.

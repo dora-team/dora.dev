@@ -1,22 +1,19 @@
 steps:
   - name: gcr.io/$PROJECT_ID/hugo
-    id: 'hugo'
-    args: [
-      "-v", "-s", "./hugo",
-      "-d", "/workspace/hugo/public",
-      "--debug"
-      ]
+    script: |
+      # Build draft site and published site
+      hugo -D -v -s ./hugo -d /workspace/hugo/draft --debug
 
   - name: gcr.io/$PROJECT_ID/firebase
     env:
       - "_PR_NUMBER=$_PR_NUMBER"
     script: |
       PREVIEW_CHANNEL="PR$_PR_NUMBER"
-      firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=$PROJECT_ID
+      firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=$PROJECT_ID --only draft
       
-      # get the url of the deployed site
+      # get the url of this preview channel, within the "draft" site
       # (it returns in format `i  hosting:channel: https://<url>`)
-      CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL)"
+      CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL --site draft-dora-dev)"
 
       # extract the URL from the channel data and save it to /workspace
       echo "${CHANNEL_DATA##* }" > /workspace/preview-url.txt
