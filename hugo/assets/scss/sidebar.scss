@@ -1,6 +1,6 @@
 @import "_variables.scss";
 
-section.hasSidebar {
+section.hasAside {
     display:flex;
     flex-direction: row;
 
@@ -8,7 +8,7 @@ section.hasSidebar {
         flex-direction: column;
     }
 
-    sidebar {
+    aside {
         width:20%;
         min-width:200px;
         margin-left:1em;

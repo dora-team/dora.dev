@@ -1,10 +1,12 @@
 {{ define "main" }}
-<h4><a href="/capabilities">DevOps Capabilities</a> : <a href="/capabilities/CATEGORY">[todo: category]</a></h4>
+<h4><a href="/capabilities">DevOps capabilities</a> : <a href="/capabilities/CATEGORY">{{ .Params.category }} capabilities</a></h4>
 <h1>{{ .Title }}</h1>
-<section class="hasSidebar">
+<section class="hasAside">
     <article>
         {{ .Content }}
     </article>
-    TODO: put a new sidebar here listing capabilities
+    <aside>
+        TODO: put a new sidebar here listing capabilities
+    </aside>
 </section>
 {{ end }}
