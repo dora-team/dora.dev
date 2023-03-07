@@ -1,11 +1,12 @@
 steps:
+
   - name: gcr.io/$PROJECT_ID/hugo
-    id: 'hugo'
-    args: [
-      "-v", "-s", "./hugo",
-      "-d", "/workspace/hugo/public",
-      "--debug"
-      ]
+    script: |
+      # Build the draft version of the site (this will include content where the front matter specifies Draft: true)
+      hugo -D -v -s ./hugo -d /workspace/hugo/draft --debug
+
+      # Build the prod version of the site (this will omit content where the front matter specifies Draft: true)
+      hugo -v -s ./hugo -d /workspace/hugo/public --debug
 
   - name: gcr.io/$PROJECT_ID/firebase
     script: |

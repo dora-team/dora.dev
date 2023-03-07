@@ -1,4 +1,4 @@
-<title>DORA | {{ .Title }}</title>
+<title>DORA | {{ if .Params.TitleForHTMLHead }}{{ .Params.TitleForHTMLHead }}{{ else }}{{ .Title }}{{ end }}</title>
 {{ $options := (dict "targetPath" "css/main.css" "outputStyle" "normal") }}
 {{ $styles := resources.Get "scss/main.scss" | toCSS $options | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
