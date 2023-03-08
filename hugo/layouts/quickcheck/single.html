@@ -5,8 +5,8 @@
     {{- partial "pagefooter_gofurther" . -}}
 
     {{- $helpers := resources.Get "js/helpers.js" -}}
-    {{- $constants := resources.Get "js/constants_2022.js" -}}
-    {{- $results := resources.Get "js/results_2022.js" -}}
+    {{- $constants := resources.Get "js/constants.js" -}}
+    {{- $results := resources.Get "js/results.js" -}}
 
     {{- $jsFiles := slice $helpers $constants $results}}
     {{- $jsBundle := $jsFiles | resources.Concat "js/quickcheck" | fingerprint -}}
