@@ -22,3 +22,4 @@ To emulate firestore and firebase hosting (to see features like server-side redi
     - _in this configuration, the browser will not auto-reload when source files are changed_
 
 *NOTE: Firebase hosting uses non-standard port 6001 because Dave was having trouble with the standard port, 5000. We should figure that out and revert to the standard port.*
+
