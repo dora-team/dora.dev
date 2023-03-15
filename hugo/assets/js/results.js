@@ -2,7 +2,7 @@
  * Compute performance data
  */
 
-// constants are included from `constants_2022.js` via Hugo pipelines
+// constants are included from `constants.js` via Hugo pipelines
 // helpers are included from `helpers.js` via Hugo pipelines
 
 // user data analysis functions
@@ -17,7 +17,7 @@ function getUserPerformanceIndicators(urlParams) {
   return userPerformanceIndicators;
 }
 
-function getProfileAndPercentile(userPerformanceIndicators) {
+function getProfileAndPercentile(constants, userPerformanceIndicators) {
 
   let average = 0;
 
@@ -32,7 +32,7 @@ function getProfileAndPercentile(userPerformanceIndicators) {
 
   average = average / Object.keys(indicators).length;
 
-  let percentile = Math.round(100 * normDist(average, mean, stddev));
+  let percentile = Math.round(100 * normDist(average, constants.mean, constants.stddev));
 
   // TODO: #42 this doesn't have to be a struct since it's returning a single value
   return {
@@ -63,7 +63,9 @@ function decoratePagewithProfileAndPercentage(userProfileAndPercentile) {
 
 }
 
-function drawComparisonChart(indicator, user_score, industry, show_legend) {
+function drawComparisonChart(constants, indicator, user_score, industry, show_legend) {
+
+    let baselines = constants.baselines;
 
     industry_baseline = baselines[industry];
     user_score = scalePerf(user_score);
@@ -194,6 +196,10 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
 // compute metrics and render display
 (function() {
 
+    // load the constants (research outputs) for this year
+    let thisyear = document.querySelector('#results-year').value;
+    let constants_thisyear = constants[thisyear];
+
     // load charting library
     google.charts.load('current', {
         packages: ['corechart', 'bar'] 
@@ -205,12 +211,12 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
     // COMPUTE USER SCORES
     let industry = urlParams.get('industry');
     let userPerformanceIndicators = getUserPerformanceIndicators(urlParams);
-    let userProfileAndPercentile = getProfileAndPercentile(userPerformanceIndicators);
+    let userProfileAndPercentile = getProfileAndPercentile(constants_thisyear, userPerformanceIndicators);
 
     // UPDATE PAGE BASED ON USER PROFILE
     decoratePagewithProfileAndPercentage(userProfileAndPercentile);
 
-    let industryBaselines = baselines[industry];
+    let industryBaselines = constants_thisyear.baselines[industry];
 
     document.getElementById('results').addEventListener('click', function(e) {
         e.preventDefault();
@@ -227,6 +233,7 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
             
             // draw 'all industries'
             drawComparisonChart(
+                constants_thisyear,
                 indicator,
                 userPerformanceIndicators[indicator],
                 'all',
@@ -235,6 +242,7 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
 
             // draw 'your industry'
             drawComparisonChart(
+                constants_thisyear,
                 indicator,
                 userPerformanceIndicators[indicator],
                 industry,
@@ -256,10 +264,10 @@ function drawComparisonChart(indicator, user_score, industry, show_legend) {
 }());
 
 window.addEventListener('DOMContentLoaded', () => {
+
     // prioritization exercise
     let step_width = document.querySelector('.prioritize_step').getBoundingClientRect().width;
     console.log(step_width);
-
 
     function showPrioritizationStep(step) {
         

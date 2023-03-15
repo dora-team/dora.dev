@@ -15,6 +15,7 @@ String.prototype.capitalize = function () {
     const p = 0.3275911;
   
     let val = (mean - x) / (Math.sqrt(2) * standardDeviation);
+
     let sign = (val < 0) ? -1 : 1;
     var xabs = Math.abs(val);
     var t = 1.0 / (1.0 + xabs * p);
