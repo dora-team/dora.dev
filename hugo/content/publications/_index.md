@@ -16,7 +16,7 @@ stylesheets:
 
 <section class="publicationHighlight">
     <aside>
-        <a href="https://bit.ly/dora-sodr/" target="_blank"><img src="/img/sodr/sodr-2022-thumb.png" alt="2022 Accelerate State of DevOps Report"></a>
+        <a href="https://bit.ly/dora-sodr" target="_blank"><img src="/img/sodr/sodr-2022-thumb.png" alt="2022 Accelerate State of DevOps Report"></a>
     </aside>
     <article>
        <p>Over the past eight years, more than 33,000 professionals around the world have taken part in the Accelerate State of DevOps survey, making it the largest and longest-running research of its kind. Year after year, Accelerate State of DevOps Reports provide data-driven industry insights that examine the capabilities and practices that drive software delivery, as well as operational and organizational performance.</p>
