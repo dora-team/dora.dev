@@ -21,6 +21,9 @@
               <br>
               <a href='{{ .Get "url"}}'><button class="secondary">{{ .Get "cta" }}</button></a>
             {{- end -}}
+            {{- if and (.Get "cta_2") (.Get "url_2") -}}
+              <a href='{{ .Get "url_2"}}'><button class="secondary">{{ .Get "cta_2" }}</button></a>
+            {{- end -}}
             </p>
         </div>
         
