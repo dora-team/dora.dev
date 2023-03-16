@@ -47,6 +47,9 @@ In 2021, more than [22 billion records were exposed](https://www.securitymagazin
     columns="2" 
     title="DevOps Awards" 
     cta="See the Winners"
-    url="https://cloud.google.com/awards/devops" >}}
+    url="https://cloud.google.com/awards/devops" 
+    cta_2="Read the ebook"
+    url_2="https://services.google.com/fh/files/misc/devops_awards_fullebook_final.pdf" 
+    >}}
 The Winners of the DevOps Awards are implementing DevOps practices to drive organizational success and deliver high-quality customer experiences. Read about their journeys and learn how they applied a philosophy of continuous improvement.
 {{< /article >}}
