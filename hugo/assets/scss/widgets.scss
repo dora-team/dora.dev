@@ -131,3 +131,20 @@ img.icon {
         vertical-align:middle;
     }
 }
+
+// blockquote (used as a highlight/snipe e.g. "sponsor the devops awards")
+blockquote {
+    display:block;
+    width:fit-content;
+    margin:0 auto;
+    color: $color-text-highlight;
+    background-color: $background-highlight;
+    padding: .5em 1.5em;
+    border-radius: .25em;
+    p {
+        font-family: $font-google-sans;
+        margin:0;
+        padding:0;
+        text-align: center;
+    }
+}

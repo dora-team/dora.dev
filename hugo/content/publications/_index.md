@@ -8,6 +8,10 @@ stylesheets:
     - name: publications
 ---
 
+> Interested in being a sponsor of one of our upcoming Accelerate State of DevOps Reports?
+> 
+> Please reach out to sponsor-dora@google.com for more information on the sponsorship opportunities!
+
 ## 2022 Accelerate State of DevOps Report
 
 <section class="publicationHighlight">
