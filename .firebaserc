@@ -1,15 +1,25 @@
 {
   "projects": {
-    "default": "doradotdev"
+    "default": "doradotdev-stanke"
   },
   "targets": {
     "doradotdev": {
       "hosting": {
         "prod": [
-          "doradotdev"
+          "doradotdev-stanke"
         ],
         "draft": [
-          "draft-dora-dev"
+          "draft-dora-dev-stanke"
+        ]
+      }
+    },
+    "doradotdev-stanke": {
+      "hosting": {
+        "prod": [
+          "doradotdev-stanke"
+        ],
+        "draft": [
+          "draft-dora-dev-stanke"
         ]
       }
     }
