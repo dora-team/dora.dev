@@ -33,7 +33,7 @@ steps:
     script: |
       python /app/set-check-status.py \
         --project-id ${PROJECT_ID} \
-        --repo-name dora-team/${REPO_NAME} \
+        --repo-name davidstanke/${REPO_NAME} \
         --commit-sha ${COMMIT_SHA} \
         --target-url "$(cat /workspace/preview-url.txt)" \
         --github-token-secret-name github_token
