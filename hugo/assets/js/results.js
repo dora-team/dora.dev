@@ -197,7 +197,7 @@ function drawComparisonChart(constants, indicator, user_score, industry, show_le
 (function() {
 
     // load the constants (research outputs) for this year
-    let thisyear = document.querySelector('#results-year').value;
+    let thisyear = document.querySelector('.quickcheck_results_container').dataset.resultsYear;
     let constants_thisyear = constants[thisyear];
 
     // load charting library

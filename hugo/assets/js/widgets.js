@@ -30,10 +30,3 @@ for (element of close_controls) {
         close_target.style.display='none';
     })
 }
-
-// year selector for quickcheck results
-function switchResultsYear(year) {
-    let urlParams = new URLSearchParams(window.location.search);
-    let targetUrl = `/quickcheck/${year}/results/?` + urlParams;
-    location.href = targetUrl;
-}
