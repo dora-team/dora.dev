@@ -10,7 +10,16 @@ stylesheets:
 type: quickcheck
 ---
 
-<form action={{% relref "/quickcheck/2022/results.html" %}} method="get">
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const queryParams = new URLSearchParams(window.location.search);
+        if (queryParams.has('year')) {
+            document.querySelector('#quickcheck_form').action = document.querySelector('#quickcheck_form').action.replace('2022',queryParams.get('year'));
+        }
+    });
+</script>
+
+<form action={{% relref "/quickcheck/2022/results.html" %}} method="get" id="quickcheck_form">
 
 <h5>Question 1 of 5</h5>
 <section class="question">

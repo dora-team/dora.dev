@@ -69,6 +69,9 @@ h1#results_h1 {
 }
 
 section.quickcheck_results_container {
+
+    margin-bottom:2em;
+
     div.quickcheck_results {
         display: flex;
         margin: 24px auto;
@@ -114,13 +117,15 @@ section.quickcheck_results_container {
 
     h3.better-than {
             text-align: center;
-            margin:1.5em auto 3em auto;
+            margin:1.5em auto 1em auto;
         }
 
-    #results-year {
-        display:inline-block;
-        width:4.5em;
+    small {
+        display:block;
+        text-align: center;
+        font-weight: 200;
     }
+
 }
 
 #results-actions {
