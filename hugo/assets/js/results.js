@@ -216,14 +216,6 @@ function drawComparisonChart(constants, indicator, user_score, industry, show_le
     // UPDATE PAGE BASED ON USER PROFILE
     decoratePagewithProfileAndPercentage(userProfileAndPercentile);
 
-    let industryBaselines = constants_thisyear.baselines[industry];
-
-    document.getElementById('results').addEventListener('click', function(e) {
-        e.preventDefault();
-        viewPerformance();
-        populateRecommendations(userProfileAndPercentile.profile, userPerformanceIndicators);
-    })
-
     // When charting library is loaded, render charts
     google.charts.setOnLoadCallback(function() {
         

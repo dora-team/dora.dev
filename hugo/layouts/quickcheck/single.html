@@ -1,50 +1,22 @@
 {{ define "main" }}
 
     <h1 id="results_h1">Your software delivery&nbsp;performance</h1>
-    <section class="quickcheck_results_container" data-results-year='{{ .Date.Year }}'>
-        <div class="quickcheck_results">
-        <aside>
-                <div  >
-                    <h3>Your performance:</h3>
-                    <div id="percentile-banner">00</div>
-                </div>
-            </aside>
-            <div class="performance-graph-container">
-                <img src="/img/quickcheck/your_performance.svg" id="your-performance">
-                <div class="performance-spectrum"></div>
-                <div class="tickmarks">
-                    <div class="tick-container">
-                        <div class="tick tick_first">
-                            0
-                        </div>
-                    </div>
-                    <div class="tick-container">
-                        <div class="tick">
-                            25
-                        </div>
-                    </div>
-                    <div class="tick-container">
-                        <div class="tick">
-                            50
-                        </div>
-                    </div>
-                    <div class="tick-container">
-                        <div class="tick">
-                            75
-                        </div>
-                    </div>
-                    <div class="tick-container">
-                        <div class="tick">100</div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <h3 class="better-than">You're performing better than <span id="percentile">&nbsp;&nbsp;&nbsp;</span>&percnt; of {{ .Date.Year }} <a href="https://cloud.google.com/devops/state-of-devops/" target="_blank">State&nbsp;of&nbsp;DevOps&nbsp;Survey</a> respondents.&nbsp;</h3>
-        {{- partial "other_quickcheck_years" . -}}
-    </section>
+    {{- partial "quickcheck/percentile_graph" . -}}
 
-    {{ .Content }}
+    {{- partial "tab_navigation"
+        (dict
+            "Titles" "Next steps,Performance comparison"
+            "Controls" "c_capabilities,c_compare" 
+            "Selected" "Next steps" 
+        )
+    -}}
+
+    <section id="c_capabilities" class="tab">
+        {{- partial "quickcheck/prioritize" . -}}
+    </section>
+    <section id="c_compare" class="tab">
+        {{- partial "quickcheck/performance_comparison" . -}}
+    </section>
 
     {{- partial "pagefooter_gofurther" . -}}
 
