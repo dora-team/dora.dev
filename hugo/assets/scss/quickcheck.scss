@@ -617,7 +617,11 @@ table.prioritize_questions {
     }
 
     td {
-        padding:1.5em 1em;
+
+        label {
+            padding: 1.5em 1em;
+            display:block;
+        }
     }
 
     td:not(:first-child) {
