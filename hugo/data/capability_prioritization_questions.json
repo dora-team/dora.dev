@@ -1,0 +1,98 @@
+[
+    {
+        "position": 1,
+        "capability": "Continuous Integration",
+        "description": "Continuous integration (CI) is the first step towards continuous delivery. This is a development practice where code is regularly checked in, and each check-in triggers a set of quick tests to discover serious regressions, which developers fix immediately. The CI process creates canonical builds and packages that are ultimately deployed and released.",
+        "article_url": "https://cloud.google.com/architecture/devops/devops-tech-continuous-integration",
+        "questions": [
+            {
+                "position": 1,
+                "question_text": "Code commits result in an automated build of the software."
+            },
+            {
+                "position": 2,
+                "question_text": "Code commits result in a series of automated tests being run."
+            },
+            {
+                "position": 3,
+                "question_text": "Automated builds and tests are executed successfully every day."
+            },
+            {
+                "position": 4,
+                "question_text": "Current builds are available to testers for exploratory testing."
+            },
+            {
+                "position": 5,
+                "question_text": "Developers get feedback from the acceptance and performance tests every day."
+            }
+        ]
+    },
+    {
+        "position": 2,
+        "capability": "Streamlining Change Approvals",
+        "description": "Most IT organizations have change management processes to manage the life cycle of changes to IT services, both internal and customer-facing. These processes are often the primary controls to reduce the operational and security risks of change. Change approvals can be implemented through peer review during the development process, supplemented by automation to detect, prevent, and correct bad changes early in the software delivery life cycle.",
+        "article_url": "https://cloud.google.com/architecture/devops/devops-process-streamlining-change-approval",
+        "questions": [
+            {
+                "position": 1,
+                "question_text": "I have a clear understanding of the process to get changes approved for implementation."
+            },
+            {
+                "position": 2,
+                "question_text": "I am confident I can get changes through the approval process in a timely manner."
+            },
+            {
+                "position": 3,
+                "question_text": "All significant changes must be approved by a senior manager prior to implementation."
+            },
+            {
+                "position": 4,
+                "question_text": "We have a formal process to approve changes to applications or production systems prior to implementation or release."
+            },
+            {
+                "position": 5,
+                "question_text": "Production changes must be approved by an external body (e.g., change approval board, manager, etc.) before implementation or deployment."
+            },
+            {
+                "position": 6,
+                "question_text": "For all the types of changes that I typically make, I know the steps it takes to go from “submitted” to “accepted” every time."
+            }
+        ]
+    },
+    {
+        "position": 3,
+        "capability": "Generative Organizational Culture",
+        "description": "Westrum's measure of organizational culture is predictive of IT performance, organizational performance, and decreasing burnout. Hallmarks of this measure include good information flow, high cooperation and trust, bridging between teams, and conscious inquiry.",
+        "article_url": "https://cloud.google.com/solutions/devops/devops-culture-westrum-organizational-culture",
+        "questions": [
+            {
+                "position": 1,
+                "question_text": "Information is actively sought."
+            },
+            {
+                "position": 2,
+                "question_text": "Messengers are not punished when they deliver news of failures or other bad news."
+            },
+            {
+                "position": 3,
+                "question_text": "Responsibilities are shared."
+            },
+            {
+                "position": 4,
+                "question_text": "Cross-functional collaboration is encouraged and rewarded."
+            },
+            {
+                "position": 5,
+                "question_text": "Failure causes inquiry."
+            },
+            {
+                "position": 6,
+                "question_text": "New ideas are welcomed."
+            },
+            {
+                "position": 7,
+                "question_text": "Failures are treated primarily as opportunities to improve the system."
+            }
+        ]
+    }
+]
