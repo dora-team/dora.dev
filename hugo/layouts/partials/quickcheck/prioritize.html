@@ -7,8 +7,8 @@
             </p>
         </div>
         {{ range .Site.Data.capability_prioritization_questions }}
-            <div class="prioritize_step" id="prioritize_{{ .position}}">
-                <h2>Capability {{ .position }} of 3: {{ .capability }}</h2>
+            <div class="prioritize_step" id="prioritize_{{ .step}}">
+                <h2>Capability {{ .step }} of 3: {{ .capability }}</h2>
                 <p>{{ .description }} <a href="{{ .article_url }}" target="_blank">Learn more</a></p>
                 <div style="border:1px solid #DB4437; border-radius:4px;color:#DB4437;width:fit-content;margin:auto;padding:0 1em;">This feature is WIP -- there is currently no form validation or computation</div>
                 <table class="prioritize_questions">
@@ -22,13 +22,13 @@
                             <th>Strongly agree</th>
                         </tr>
                     </thead>
+                    {{ $.Scratch.Set "step" .step }}
                     {{ range .questions }}
+                        {{ $row_id := (printf "question_%v_%v" ($.Scratch.Get "step") .number) }}
                         <tr>
                             <td>{{ .question_text }}</td>
-                            {{ $.Scratch.Set "position" .position}}
-                            {{ $position := .position}}
                             {{ range seq 5 }}
-                                <td><label for='question_{{ $position }}_{{.}}'><input type="radio" name='question_{{ $position }}' id='question_{{ $position }}_{{.}}' value="{{.}}"></label></td>
+                                <td><label for='{{$row_id}}_{{.}}'><input type="radio" name='{{$row_id}}' data-question-number='' id='{{$row_id}}_{{.}}' value="{{.}}"></label></td>
                             {{ end }}
                         </tr>
                     {{ end }}
@@ -92,7 +92,7 @@
     </div>
 </div>
 <div class="prioritization_control">
-    <a href="#c_capabilities"><button id="prioritize_button" data-target_step="0">Help Me Prioritize</button></a>
+    <a href="#c_capabilities"><button id="prioritize_button" data-target_step="1">Help Me Prioritize</button></a>
     <div class="button_description">
         <small>
             Complete a brief survey for each of these three capabilities to determine how you perform and which to consider focusing on first.

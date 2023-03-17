@@ -621,6 +621,11 @@ table.prioritize_questions {
         label {
             padding: 1.5em 1em;
             display:block;
+            cursor:pointer;
+        }
+
+        input {
+            cursor:pointer;
         }
     }
 
