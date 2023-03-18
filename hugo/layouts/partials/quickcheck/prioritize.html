@@ -1,4 +1,4 @@
-<div class="prioritize_container">
+<div class="prioritize_container" data-step="0">
     <div class="prioritize_contents">
         <div class="prioritize_step" id="prioritize_0">
             <h2>What's holding you back?</h2>
@@ -10,7 +10,6 @@
             <div class="prioritize_step" id="prioritize_{{ .step}}">
                 <h2>Capability {{ .step }} of 3: {{ .capability }}</h2>
                 <p>{{ .description }} <a href="{{ .article_url }}" target="_blank">Learn more</a></p>
-                <div style="border:1px solid #DB4437; border-radius:4px;color:#DB4437;width:fit-content;margin:auto;padding:0 1em;">This feature is WIP -- there is currently no form validation or computation</div>
                 <table class="prioritize_questions">
                     <thead>
                         <tr>
@@ -28,7 +27,7 @@
                         <tr>
                             <td>{{ .question_text }}</td>
                             {{ range seq 5 }}
-                                <td><label for='{{$row_id}}_{{.}}'><input type="radio" name='{{$row_id}}' data-question-number='' id='{{$row_id}}_{{.}}' value="{{.}}"></label></td>
+                                <td><label for='{{$row_id}}_{{.}}'><input type="radio" name='{{$row_id}}' id='{{$row_id}}_{{.}}' value="{{.}}"></label></td>
                             {{ end }}
                         </tr>
                     {{ end }}
@@ -38,7 +37,6 @@
         <div class="prioritize_step" id="prioritize_4">
             <h2>Capabilities analysis</h2>
             <p>Based on your responses, here's how your team is performing:</p>
-            <div style="border:1px solid #DB4437; border-radius:4px;color:#DB4437;width:fit-content;margin:auto;padding:0 1em;">This feature is WIP -- there is currently no form validation or computation</div>
             <table class="capability_scores">
                 <tr>
                     <td>
@@ -47,7 +45,7 @@
                         <a href="https://cloud.google.com/architecture/devops/devops-tech-continuous-integration">Learn more about continuous integration</a>
                     </td>
                     <td>
-                        <div class="capabilityScore percentile_70">3.4</div>
+                        <div class="capabilityScore" id="ci_score"></div>
                     </td>
                 </tr>
                 <tr>
@@ -57,7 +55,7 @@
                         <a href="https://cloud.google.com/architecture/devops/devops-process-streamlining-change-approval">Learn more about streamlining change approval</a>
                     </td>
                     <td>
-                        <div class="capabilityScore percentile_40">1.9</div>
+                        <div class="capabilityScore" id="change_score"></div>
                     </td>
                 </tr>
                 <tr>
@@ -67,7 +65,7 @@
                         <a href="https://cloud.google.com/architecture/devops/devops-culture-westrum-organizational-culture">Learn more about generative organizational culture</a>
                     </td>
                     <td>
-                        <div class="capabilityScore percentile_90">5.5</div>
+                        <div class="capabilityScore" id="culture_score"></div>
                     </td>
                 </tr>
             </table>
@@ -92,7 +90,7 @@
     </div>
 </div>
 <div class="prioritization_control">
-    <a href="#c_capabilities"><button id="prioritize_button" data-target_step="1">Help Me Prioritize</button></a>
+    <a href="#c_capabilities"><button id="prioritize_button">Help Me Prioritize</button></a>
     <div class="button_description">
         <small>
             Complete a brief survey for each of these three capabilities to determine how you perform and which to consider focusing on first.

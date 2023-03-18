@@ -2,6 +2,18 @@
 String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
   };
+
+Array.prototype.average = function() {
+    let sum = this.reduce(function(a, b) {return parseInt(a) + parseInt(b)});
+    return sum / this.length;
+};  
+
+// translate a decimal value on a scale of 1-5 to an integer on a scale of 0-100, rounded to the nearest 10.
+function fiveScaleToDecile(input) {
+    return Math.round(((input-1) * 25) / 10) * 10;
+}
+
+
   
   // analysis helper functions
   // algorithm from Handbook of Mathematical Functions (Abramowitz & Stegun),

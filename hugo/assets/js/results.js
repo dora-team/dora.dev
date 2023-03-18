@@ -258,8 +258,13 @@ function renderCapabilityGraph(capability, data, capability_index, focus, profil
 
 window.addEventListener('DOMContentLoaded', () => {
 
+    let urlParams = new URLSearchParams(window.location.search);
+
     // prioritization exercise
     function showPrioritizationStep(step) {
+
+        let prioritizeContainer = document.querySelector('.prioritize_container');
+        prioritizeContainer.dataset.step = step;
 
         let step_width = document.querySelector('.prioritize_step').getBoundingClientRect().width;
         document.querySelector('.prioritize_contents').style.left = 0 - (step_width * step) + 'px';
@@ -274,9 +279,6 @@ window.addEventListener('DOMContentLoaded', () => {
             // remove description of exercise
             document.querySelector('.button_description').style.display = (step == 0) ? 'block' : 'none';
 
-            // set button to advance to next step
-            prioritizeButton.dataset.target_step = parseInt(step) + 1;
-
             // disable button until fields are completed
             prioritizeButton.disabled = true;
 
@@ -290,6 +292,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
         } else if (step == 4) {
             prioritizeButton.style.display = 'none';
+            let ci_average = urlParams.get("step1").split('').average();
+            let change_average = urlParams.get("step2").split('').average();
+            let culture_average = urlParams.get("step3").split('').average();
+
+            document.querySelector('#ci_score').innerText = ci_average.toFixed(1);
+            document.querySelector('#ci_score').classList.add('percentile_' + fiveScaleToDecile(ci_average));
+
+            document.querySelector('#change_score').innerText = change_average.toFixed(1);
+            document.querySelector('#change_score').classList.add('percentile_' + fiveScaleToDecile(change_average));
+            
+            document.querySelector('#culture_score').innerText = culture_average.toFixed(1);
+            document.querySelector('#culture_score').classList.add('percentile_' + fiveScaleToDecile(culture_average));
+
         } else if (step > 4) {
             console.log('error: prioritization step out of bounds');
             return;
@@ -321,10 +336,39 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     document.querySelector("#prioritize_button").addEventListener("click", function (event) {
-        let target_step = event.target.dataset.target_step;
-        showPrioritizationStep(target_step);
+        // put current step's answers to the querystring
+        // TODO: can we DRY this out w/r/t `validateResponse()`?
+        let currentStep = parseInt(document.querySelector('.prioritize_container').dataset.step);
+
+        // determine number of questions (equal to the number of rows in the table, minus one [the header row])
+        let numQuestions = document.querySelectorAll('#prioritize_' + currentStep + ' tr').length - 1;
+
+        if ( 1 <= currentStep && currentStep <= 3 ) {
+            // get values for current step
+            let stepValues = new Array();
+            for (let i=1; i < numQuestions+1; i++) {
+                let thisQuestion = `question_${currentStep}_${i}`
+                let options = document.querySelectorAll('input[name="' + thisQuestion + '"]');
+                options.forEach( (option) => {
+                    if (option.checked) {
+                        stepValues.push(option.value);
+                    }
+                });
+            }
+            urlParams.append(`step${currentStep}`,stepValues.join(""));
+            window.history.replaceState({step: currentStep+1}, window.title, `?${urlParams.toString()}`);
+        }
+
+
+        // move onto next step
+        showPrioritizationStep(currentStep + 1);
     });
 
-    showPrioritizationStep(0);
+    // if the URL contains values for the prioritization steps, skip to the results
+    if(urlParams.has('step1') && urlParams.has('step2') && urlParams.has('step3')) {
+        showPrioritizationStep(4);
+    } else {
+        showPrioritizationStep(0);
+    }
 
 });
