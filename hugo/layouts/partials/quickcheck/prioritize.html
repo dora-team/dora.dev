@@ -38,13 +38,14 @@
             <h2>Capabilities analysis</h2>
             <p>Based on your responses, here's how your team is performing:</p>
             <table class="capability_scores">
+                {{ range .Site.Data.capability_prioritization_questions }}
                 <tr>
                     <td>
-                        <h4>Technical</h4>
-                        <h2>Continuous Integration</h2>
-                        <a href="https://cloud.google.com/architecture/devops/devops-tech-continuous-integration">Learn more about continuous integration</a>
+                        <h4>{{ .category }}</h4>
+                        <h2>{{ .capability }}</h2>
+                        <a href="{{.article_url}}">Learn more about {{ .capability }}</a>
                     </td>
-                    <td id="ci_score">
+                    <td id="{{.shortname}}_score">
                         <div class="capabilityScoreContainer">
                             <div class="capabilityScoreGraph">
                                 <div class="capabilityScoreData"> </div>
@@ -53,36 +54,7 @@
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <h4>Process</h4>
-                        <h2>Steamlining Change Approval</h2>
-                        <a href="https://cloud.google.com/architecture/devops/devops-process-streamlining-change-approval">Learn more about streamlining change approval</a>
-                    </td>
-                    <td id="change_score">
-                        <div class="capabilityScoreContainer">
-                            <div class="capabilityScoreGraph">
-                                <div class="capabilityScoreData"> </div>
-                            </div>
-                            <div class="capabilityScore"><span class="capabilityScoreText"></span> / 5</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h4>Cultural</h4>
-                        <h2>Generative Organizational Culture</h2>
-                        <a href="https://cloud.google.com/architecture/devops/devops-culture-westrum-organizational-culture">Learn more about generative organizational culture</a>
-                    </td>
-                    <td id="culture_score">
-                        <div class="capabilityScoreContainer">
-                            <div class="capabilityScoreGraph">
-                                <div class="capabilityScoreData"> </div>
-                            </div>
-                            <div class="capabilityScore"><span class="capabilityScoreText"></span> / 5</div>
-                        </div>
-                    </td>
-                </tr>
+                {{ end }}
             </table>
             <div>
                 <p>These are only three of the capabilities that our research has shown to predict software delivery and operations performance. Here are some resources to help you plan the next step of your DevOps journey:</p>
