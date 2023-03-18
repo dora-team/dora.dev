@@ -645,6 +645,10 @@ table.prioritize_questions {
         }
     }
 
+    td:first-child {
+        padding-left:1em;
+    }
+
     td:not(:first-child) {
         text-align: center;
         width: 10%;
