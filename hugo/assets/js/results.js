@@ -296,15 +296,19 @@ window.addEventListener('DOMContentLoaded', () => {
             let change_average = urlParams.get("step2").split('').average();
             let culture_average = urlParams.get("step3").split('').average();
 
-            document.querySelector('#ci_score').innerText = ci_average.toFixed(1);
-            document.querySelector('#ci_score').classList.add('percentile_' + fiveScaleToDecile(ci_average));
+            document.querySelector('#ci_score .capabilityScoreText').innerText = ci_average.toFixed(1);
+            document.querySelector('#ci_score .capabilityScoreData').classList.add('percentile_' + fiveScaleToDecile(ci_average));
+            document.querySelector('#ci_score .capabilityScoreData').style.width = ci_average * 2 + 'em';
 
-            document.querySelector('#change_score').innerText = change_average.toFixed(1);
-            document.querySelector('#change_score').classList.add('percentile_' + fiveScaleToDecile(change_average));
-            
-            document.querySelector('#culture_score').innerText = culture_average.toFixed(1);
-            document.querySelector('#culture_score').classList.add('percentile_' + fiveScaleToDecile(culture_average));
+            document.querySelector('#change_score .capabilityScoreText').innerText = change_average.toFixed(1);
+            document.querySelector('#change_score .capabilityScoreData').classList.add('percentile_' + fiveScaleToDecile(change_average));
+            document.querySelector('#change_score .capabilityScoreData').style.width = change_average * 2 + 'em';
 
+            document.querySelector('#culture_score .capabilityScoreText').innerText = culture_average.toFixed(1);
+            document.querySelector('#culture_score .capabilityScoreData').classList.add('percentile_' + fiveScaleToDecile(culture_average));
+            document.querySelector('#culture_score .capabilityScoreData').style.width = culture_average * 2 + 'em';
+
+ 
         } else if (step > 4) {
             console.log('error: prioritization step out of bounds');
             return;
