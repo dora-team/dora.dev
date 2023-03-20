@@ -291,18 +291,18 @@ window.addEventListener('DOMContentLoaded', () => {
             });
 
         } else if (step == 4) {
-            prioritizeButton.style.display = 'none';
+            document.querySelector('.prioritization_control').style.display = 'none';
             let ci_average = urlParams.get("step1").split('').average();
-            let change_average = urlParams.get("step2").split('').average();
+            let arch_average = urlParams.get("step2").split('').average();
             let culture_average = urlParams.get("step3").split('').average();
 
             document.querySelector('#ci_score .capabilityScoreText').innerText = ci_average.toFixed(1);
             document.querySelector('#ci_score .capabilityScoreData').classList.add('percentile_' + fiveScaleToDecile(ci_average));
             document.querySelector('#ci_score .capabilityScoreData').style.width = ci_average * 2 + 'em';
 
-            document.querySelector('#change_score .capabilityScoreText').innerText = change_average.toFixed(1);
-            document.querySelector('#change_score .capabilityScoreData').classList.add('percentile_' + fiveScaleToDecile(change_average));
-            document.querySelector('#change_score .capabilityScoreData').style.width = change_average * 2 + 'em';
+            document.querySelector('#arch_score .capabilityScoreText').innerText = arch_average.toFixed(1);
+            document.querySelector('#arch_score .capabilityScoreData').classList.add('percentile_' + fiveScaleToDecile(arch_average));
+            document.querySelector('#arch_score .capabilityScoreData').style.width = arch_average * 2 + 'em';
 
             document.querySelector('#culture_score .capabilityScoreText').innerText = culture_average.toFixed(1);
             document.querySelector('#culture_score .capabilityScoreData').classList.add('percentile_' + fiveScaleToDecile(culture_average));

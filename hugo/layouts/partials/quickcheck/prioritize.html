@@ -3,7 +3,7 @@
         <div class="prioritize_step" id="prioritize_0">
             <h2>What's holding you back?</h2>
             <p>
-                In our <a href='{{ "/research/" | relURL }}'>research</a>, DORA has identified several key capabilities which drive higher software delivery and organizational performance. Improving these technical, process, and cultural capabilities can help your team deliver more value to your customers and organization. It's important to focus your efforts on the specific thing that  is currently holding you back. While every team will take a different journey, we have identified three capabilities that are often beneficial to improve: <strong>Continuous&nbsp;Integration</strong>, <strong>Streamlining&nbsp;Change&nbsp;Approvals</strong>, and <strong>Westrum&nbsp;Organizational&nbsp;Culture</strong>. 
+                In our <a href='{{ "/research/" | relURL }}'>research</a>, DORA has identified several key capabilities which drive higher software delivery and organizational performance. Improving these technical, process, and cultural capabilities can help your team deliver more value to your customers and organization. It's important to focus your efforts on the specific thing that  is currently holding you back. While every team will take a different journey, we have identified three capabilities that are often beneficial to improve: <strong>Continuous&nbsp;Integration</strong>, <strong>Loosely&nbsp;Coupled&nbsp;Architecture</strong>, and <strong>Westrum&nbsp;Organizational&nbsp;Culture</strong>. 
             </p>
         </div>
         {{ range .Site.Data.capability_prioritization_questions }}
@@ -41,7 +41,6 @@
                 {{ range .Site.Data.capability_prioritization_questions }}
                 <tr>
                     <td>
-                        <h4>{{ .category }}</h4>
                         <h2>{{ .capability }}</h2>
                         <a href="{{.article_url}}">Learn more about {{ .capability }}</a>
                     </td>
