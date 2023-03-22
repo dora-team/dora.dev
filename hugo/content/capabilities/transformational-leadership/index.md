@@ -4,7 +4,7 @@ titleForHTMLHead: "DevOps Capabilities: Transformational Leadership" # TODO: can
 date: 2023-03-22T13:43:36Z
 category: cultural
 draft: true
-summary: "A summary (150-250 words) that describes this capability."
+summary: "Effective leadership has a measurable, significant impact on software delivery outcomes. However, rather than driving these outcomes directly, effective transformational leaders influence software delivery performance by enabling the adoption of technical and product management capabilities and practices by practitioners, which in turn drives the outcomes leaders care about."
 ---
 
 <!-- TODO: Add NOTE banner to the below section -->
