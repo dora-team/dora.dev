@@ -240,19 +240,25 @@ function createCapabilitiesTable(profile) {
       html += '<div class="ranking-align h-c-table__overflowcontainer">';
       html += '<table id="capabilities-table" class="h-c-table h-c-table--datatable h-c-table--datatable-altrows h-c-table--stacked"><thead><tr>';
       html += `<thead><tr>
-  <th scope="col" style="width:40%" class="ranking-key">${capability.context}</th>
-  <th scope="col" style="width:12%">${ranking[0]}</th>
-  <th scope="col" style="width:12%">${ranking[1]}</th>
-  <th scope="col" style="width:12%">${ranking[2]}</th>
-  <th scope="col" style="width:12%">${ranking[3]}</th>
-  <th scope="col" style="width:12%">${ranking[4]}</th>
+  <th scope="col" class="ranking-key">${capability.context}</th>
+  <th scope="col">${ranking[0]}</th>
+  <th scope="col">${ranking[1]}</th>
+  <th scope="col">${ranking[2]}</th>
+  <th scope="col">${ranking[3]}</th>
+  <th scope="col">${ranking[4]}</th>
 </tr></thead><tbody>`;
       let index = 0;
       for (let question of capability.questions) {
         html += `<tr><td class='question'><p>${question}</p></td>`;
         questionKey = key.toString() + "-" + index.toString();
         for (let score = 0; score < 5; score++) {
-          html += `<td><label for="${questionKey}_${score}"><input type="radio" name="${questionKey}" value="${score}" id="${questionKey}_${score}"/><span>${ranking[score]}</span></label></td>`;
+          html += 
+            `<td>
+                <label for="${questionKey}_${score}">
+                    <input type="radio" name="${questionKey}" value="${score}" id="${questionKey}_${score}"/>
+                    <span>${ranking[score]}</span>
+                </label>
+            </td>`;
         }
         capabilityQuestions[questionKey] = false;
         html += "</tr>";
