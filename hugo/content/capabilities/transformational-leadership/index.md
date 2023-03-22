@@ -2,7 +2,7 @@
 title: "Transformational Leadership"
 titleForHTMLHead: "DevOps Capabilities: Transformational Leadership" # TODO: can we DRY this out?
 date: 2023-03-22T13:43:36Z
-category: 
+category: cultural
 draft: true
 summary: "A summary (150-250 words) that describes this capability."
 ---
