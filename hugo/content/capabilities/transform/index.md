@@ -4,7 +4,8 @@ titleForHTMLHead: "DevOps Capabilities: Transform" # TODO: can we DRY this out?
 date: 2023-03-22T13:43:36Z
 category: cultural
 draft: true
-summary: ""
+headline: "Find out about the importance of ensuring your people have the tools and resources to do their job, and of making good use of their skills and abilities."
+summary: "Find out about the importance of ensuring your people have the tools and resources to do their job, and of making good use of their skills and abilities."
 ---
 
 Every organization is constantly undergoing change. Therefore, some questions to

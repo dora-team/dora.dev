@@ -4,6 +4,7 @@ titleForHTMLHead: "DevOps Capabilities: Learning Culture" # TODO: can we DRY thi
 date: 2023-03-22T13:43:36Z
 category: cultural
 draft: true
+headline: "Grow a learning culture and understand its impact on your organizational performance."
 summary: "A culture’s attitudes towards learning and if it is valued. For example, is learning considered essential for continued progress? Is learning thought of as a cost, or an investment? This is a measure of an organization’s learning culture."
 ---
 
