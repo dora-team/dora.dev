@@ -11,6 +11,15 @@ footer {
         text-decoration: none;
     }
 
+    .logo {
+        display:flex;
+        align-items: center;
+
+        img {
+            display:block;
+        }
+    }
+
 }
 
 
