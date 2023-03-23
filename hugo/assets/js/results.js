@@ -368,9 +368,13 @@ window.addEventListener('DOMContentLoaded', () => {
         showPrioritizationStep(currentStep + 1);
     });
 
-    // if the URL contains values for the prioritization steps, skip to the results
+    
     if(urlParams.has('step1') && urlParams.has('step2') && urlParams.has('step3')) {
+        // if the URL contains values for the prioritization steps, skip to the results
         showPrioritizationStep(4);
+    } else if (urlParams.has('debugPrioritizationStep')) {
+        // for developing/debugging/testing, pass a url parameter to skip directly to the specified step
+        showPrioritizationStep(urlParams.get('debugPrioritizationStep'));
     } else {
         showPrioritizationStep(0);
     }
