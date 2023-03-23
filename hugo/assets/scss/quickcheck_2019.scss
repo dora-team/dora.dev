@@ -194,6 +194,9 @@ section.quickcheck_results {
 #caps_prioritized {
     .header {
         width: 60%;
+        @include media-medium {
+            width:100%;
+        }
     }
 }
 
@@ -222,6 +225,26 @@ section.quickcheck_results {
             width: 50%;
             margin-left: 2em;
         }
+    }
+
+    @include media-small {
+        .recommendation {
+            flex-direction: column;
+
+            .description {
+                width:100%;
+            }
+
+            .graph-container {
+                width:100%;
+                margin-left:0;
+            }
+        }
+
+        .capability-graph {
+            width:18em;
+        }
+
     }
 }
 
@@ -283,6 +306,11 @@ img.rec-img {
     overflow-y: scroll;
     background: rgba(60, 64, 67, 0.15);
     padding: 5% 10%;
+
+        @include media-small {
+            padding: 2%;
+        }
+
     display: block;
     opacity: 1;
     transition: opacity 200ms ease-in;
@@ -312,6 +340,10 @@ img.rec-img {
     position: relative;
     box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.05), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
     padding: 4em;
+
+    @include media-small {
+        padding:1em;
+    }
 }
 
 // TODO: #20 move #modal styles into `widgets.css` (but leave quickcheck-specific bits here)
@@ -360,6 +392,9 @@ img.rec-img {
         }
 
         label span {
+            font-family: $font-roboto;
+            font-weight:300;
+            font-size:.9em;
             display: none;
         }
 
@@ -369,6 +404,12 @@ img.rec-img {
             padding: 8px;
             font-size: 14px;
             vertical-align: bottom;
+            width:12%;
+
+            &.ranking-key {
+                width:40%;
+                text-align: left;
+            }
         }
 
         td {
@@ -377,6 +418,46 @@ img.rec-img {
             &.question {
                 text-align: left;
             }
+        }
+
+        // for small screens, display in single column
+        @include media-medium {
+            th.ranking-key {
+                width:100%;
+            }
+
+            th:not(:first-child) {
+                display:none;    
+            }
+
+            tr {
+                display:flex;
+                flex-direction: column;
+                margin-top:6px;
+
+                td {
+                    padding: 2px 2px 2px 6px;
+                    text-align: left;
+
+                    p {
+                        font-size:1em;
+                        font-family: $font-google-sans;
+                    }
+
+                    label {
+                        padding:2px;
+
+                        span {
+                            display:inline;
+                        }
+                    }
+
+                    &.question {
+                        padding-top:6px;
+                    }
+                }
+            }
+            
         }
     }
 }

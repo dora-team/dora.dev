@@ -76,21 +76,10 @@ section.quickcheck_results_container {
         margin: 24px auto;
         max-width: $layout-breakpoint-medium;
 
-        @include media-small {
-            flex-direction: column;
-        }
-
         aside {
             width: 35%;
             max-width: 240px;
             padding-right: 40px;
-
-            @include media-small {
-                width: 100%;
-                max-width: 100%;
-                padding-right: 0;
-                text-align: center;
-            }
 
             .profile-title.color-by-profile {
                 display: block;
@@ -102,6 +91,17 @@ section.quickcheck_results_container {
                 font-weight: 400;
                 font-size: 12px;
                 font-family: $font-roboto;
+            }
+        }
+
+        @include media-medium {
+            flex-direction: column;
+
+            aside {
+                width: 100%;
+                max-width: 100%;
+                padding-right: 0;
+                text-align: center;
             }
         }
 
@@ -523,6 +523,7 @@ img.rec-img {
 .performance-graph-container {
     position: relative;
     padding-top: 26px;
+    margin: 0 auto 30px auto;
 }
 
 $spectrum-width: 600px;
@@ -531,6 +532,11 @@ $spectrum-border-radius: $spectrum-height / 2;
 $spectrum-left-pad: 12px;
 
 .performance-spectrum {
+    // TODO: DRY this out. (For unknown reasons, when this @include occurs after the @spectrum-width declaration, it fails)
+    @include media-small {
+        width: 360px;
+    }
+
     height: $spectrum-height;
     width: $spectrum-width;
     border-radius: $spectrum-border-radius;
@@ -551,6 +557,9 @@ $spectrum-left-pad: 12px;
 .tickmarks {
     display: flex;
     width: calc(($spectrum-width - 2 * $spectrum-border-radius)+3ch);
+    @include media-small {
+        width: 360px;
+    }
     position: absolute;
     top: 90px;
     left: $spectrum-border-radius + $spectrum-left-pad;
@@ -581,11 +590,21 @@ $spectrum-left-pad: 12px;
 }
 
 .prioritize_container {
-    width: 960px;
+    width: $layout-breakpoint-large;
+
+    @include media-medium {
+        width: 96vw;
+    }
+    
     overflow: hidden;
 
     .prioritize_contents {
-        width: 3840px;
+        width: 4 * $layout-breakpoint-large;
+
+        @include media-medium {
+            width: 4 * 96vw;
+        }
+
         position: relative;
         left: 0px;
         transition: all 250ms ease-out;
@@ -595,7 +614,12 @@ $spectrum-left-pad: 12px;
 
         .prioritize_step {
             flex-shrink: 0;
-            width: 960px;
+            width: $layout-breakpoint-large;
+
+            @include media-medium {
+                width:96vw;
+            }
+
             height: min-content;
         }
     }
@@ -640,18 +664,58 @@ table.prioritize_questions {
             cursor: pointer;
         }
 
+        span {
+            display: none;
+        }
+
         input {
             cursor: pointer;
         }
     }
 
     td:first-child {
-        padding-left:1em;
+        padding-left: 1em;
     }
 
     td:not(:first-child) {
         text-align: center;
         width: 10%;
+    }
+
+    @include media-medium {
+        tr {
+            display: flex;
+            flex-direction: column;
+            margin-bottom:.5em;
+        }
+        th:not(:first-child) {
+            display: none;
+        }
+
+        td {
+            width:100%;
+
+            &:first-child {
+                font-family:$font-google-sans;
+                font-weight:400;
+                padding:2px;
+                padding-left:4px;
+            }
+
+            &:not(:first-child) {
+                width:100%;
+                text-align: left;
+            }
+
+            label {
+
+                padding:4px 2px 4px 6px;
+
+                span {
+                    display: inline;
+                }
+            }
+        }
     }
 }
 
@@ -700,7 +764,7 @@ table.capability_scores {
             display: inline-block;
 
             .capabilityScoreData {
-                width:2em;
+                width: 2em;
                 min-width: 2em;
                 height: 2em;
                 border-radius: 1.5em;
@@ -708,16 +772,20 @@ table.capability_scores {
         }
 
         div.capabilityScore {
-            margin-left:.5em;
+            margin-left: 0.5em;
             line-height: 2em;
             vertical-align: middle;
             display: inline-block;
 
             span.capabilityScoreText {
                 color: $color-text;
-                font-weight: 500;;
+                font-weight: 500;
             }
         }
+    }
+
+    @include media-medium {
+        line-height:1.2;
     }
 }
 
