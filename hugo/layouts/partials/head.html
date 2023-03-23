@@ -1,3 +1,13 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HWLXSJLRVQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HWLXSJLRVQ');
+</script>
+
 <title>DORA | {{ if .Params.TitleForHTMLHead }}{{ .Params.TitleForHTMLHead }}{{ else }}{{ .Title }}{{ end }}</title>
 {{ $options := (dict "targetPath" "css/main.css" "outputStyle" "normal") }}
 {{ $styles := resources.Get "scss/main.scss" | toCSS $options | fingerprint }}
