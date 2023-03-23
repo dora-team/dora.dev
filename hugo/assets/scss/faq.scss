@@ -1,0 +1,38 @@
+/*
+
+styles for UI widgets such as popovers, modals, tabs
+
+*/
+
+@import "_variables.scss";
+
+main {
+    h2 {
+        margin-top: 2em;
+        font-size: 1em;
+        font-weight: 500;
+    }
+
+    h3 {
+        border-bottom: 1px solid $border-light;
+        font-size: 1.5em;
+    }
+
+    ul {
+        padding-left: 0;
+
+        li {
+            line-height: 150%;
+        }
+
+        & > li {
+            list-style-type: none;
+
+            &:nth-child(even) {
+                font-family: $font-roboto;
+                font-weight: 300;
+                margin-bottom: 0.75em;
+            }
+        }
+    }
+}
