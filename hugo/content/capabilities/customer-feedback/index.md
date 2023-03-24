@@ -2,7 +2,7 @@
 title: "Customer Feedback"
 titleForHTMLHead: "DevOps Capabilities: Customer Feedback" # TODO: can we DRY this out?
 date: 2023-03-24T12:54:18Z
-category: 
+category: process
 draft: true
 headline: "Drive better organizational outcomes by gathering cutsomer feedback and incorporating it into product and feature design."
 summary: "A summary (150-250 words) that describes this capability."
@@ -11,7 +11,7 @@ summary: "A summary (150-250 words) that describes this capability."
 Note: *Customer feedback* is one of a set of capabilities that drive higher
 software delivery and organizational performance.  These capabilities were
 discovered by the
-[DORA State of DevOps research program](https://www.devops-research.com/research.html),
+[DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
 [DevOps resources](https://cloud.google.com/devops).
@@ -22,10 +22,10 @@ building are actually helping users solve their problems, or whether the
 features are being used at all.
 
 Customer feedback is part of a wider group of capabilities, including
-[visibility of work in the value stream](../visual-management),
-[working in small batches](../working-in-small-batches),
+[visibility of work in the value stream](/capabilities/visual-management),
+[working in small batches](/capabilities/working-in-small-batches),
 and
-[team experimentation](../team-experimentation),
+[team experimentation](/capabilities/team-experimentation),
 that together represent a
 [lean approach to product management](https://books.google.com/books/about/Escaping_the_Build_Trap.html?id=PQ8dMQAACAAJ).
 
@@ -37,7 +37,7 @@ When these capabilities are applied together, they help predict the following:
     market share, and productivity.
 
 DevOps Research and Assessment (DORA) research
-[shows](https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=35)
+[shows](/publications/pdf/state-of-devops-2016.pdf#page=35)
 (PDF) that teams achieve higher performance when they work in organizations that
 utilize those capabilities and also do the following:
 
@@ -101,7 +101,7 @@ successfully solving customer problems:
 Success requires you to not only deploy and release software quickly, but to
 address customer needs better, smarter, and faster. This can be achieved by
 experimenting more thoroughly than your competition. Retail is one industry that
-[has seen particular success with this](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf)
+[has seen particular success with this](/publications/pdf/state-of-devops-2019.pdf)
 (PDF).
 Techniques such as
 [hypothesis-driven development](https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development),
@@ -111,7 +111,7 @@ innovation, and create organizational learning.
 
 Increased engagement with customers and participation in product management
 processes contributes to stronger identification with your organization's
-[goals and values](https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=37)
+[goals and values](/publications/pdf/state-of-devops-2019.pdf#page=37)
 (PDF). This in turn helps contribute to organizational performance.
 
 ## Common pitfalls
@@ -138,7 +138,7 @@ following:
 -   **Failing to allow teams to act on feedback**. Delivery teams must be
     empowered to make changes to the design or specification of the system in
     response to feedback, as discussed in the document on
-    [team experimentation](../team-experimentation).
+    [team experimentation](/capabilities/team-experimentation).
 -   **Measuring success based on the wrong metric**. In some cases,
     solutions without sufficient customer validation are provided to
     development and delivery teams as finalized requirements. In those cases,

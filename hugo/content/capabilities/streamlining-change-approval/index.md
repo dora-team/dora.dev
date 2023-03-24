@@ -4,18 +4,17 @@ titleForHTMLHead: "DevOps Capabilities: Streamlining Change Approval" # TODO: ca
 date: 2023-03-22T11:02:58Z
 category: process
 draft: true
-summary: "A summary (150-250 words) that describes this capability."
+headline: "Replace heavyweight change-approval processes with peer review, to get the benefits of a more reliable, compliant release process without sacrificing speed."
+summary: "Replace heavyweight change-approval processes with peer review, to get the benefits of a more reliable, compliant release process without sacrificing speed."
 ---
-
-# DevOps process: Streamlining change approval
 
 Note: *Streamlining change approval* is one of a set of capabilities
 that drive higher software delivery and organizational performance.
 These capabilities were discovered by the
-[DORA State of DevOps research program](https://www.devops-research.com/research.html),
+[DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](/devops).
+[DevOps resources](https://cloud.google.com/devops).
 
 Most IT organizations have change management processes to manage the life cycle
 of changes to IT services, both internal and customer-facing. These processes
@@ -30,14 +29,14 @@ validate compliance requirements, which typically require evidence that all
 changes are appropriately authorized.
 
 Research by DevOps Research and Assessment (DORA), presented in the
-[2019 State of DevOps Report (PDF)](https://cloud.google.com/devops/state-of-devops),
+[2019 State of DevOps Report (PDF)](/publications/),
 finds that change approvals are best implemented through peer review during the
 development process, supplemented by automation to detect, prevent, and correct
 bad changes early in the software delivery life cycle. Techniques such as
-[continuous testing](../test-automation),
-[continuous integration](../continuous-integration),
+[continuous testing](/capabilities/test-automation),
+[continuous integration](/capabilities/continuous-integration),
 and
-[comprehensive monitoring and observability](../monitoring-and-observability)
+[comprehensive monitoring and observability](/capabilities/monitoring-and-observability)
 provide early and automated detection, visibility, and fast feedback.
 
 Further, organizations can improve their performance by doing a better job of
@@ -70,12 +69,12 @@ Instead, teams should:
 
 *   Use peer review to meet the goal of segregation of duties, with reviews,
     comments, and approvals captured in the team's
-    [development platform](../code-maintainability)
+    [development platform](/capabilities/code-maintainability)
     as part of the development process.
-*   Employ [continuous testing](../test-automation),
-    [continuous integration](../continuous-integration),
+*   Employ [continuous testing](/capabilities/test-automation),
+    [continuous integration](/capabilities/continuous-integration),
     and
-    [comprehensive monitoring and observability](../monitoring-and-observability)
+    [comprehensive monitoring and observability](/capabilities/monitoring-and-observability)
     to rapidly detect, prevent, and correct bad changes.
 *   Treat your development platform as a product that makes it easy for
     developers to get fast feedback on the impact of their changes on multiple
@@ -84,7 +83,7 @@ Instead, teams should:
 Your goal should be to make your regular change management process fast and
 reliable enough that you can use it to make emergency changes too.
 
-In the [continuous delivery](../continuous-delivery)
+In the [continuous delivery](/capabilities/continuous-delivery)
 paradigm the CAB still has a vital role, which includes:
 
 *   Facilitating notification and coordination between teams.
@@ -145,7 +144,7 @@ To improve your change approval processes, focus on implementing the following:
     reviewing them manually as part of the software delivery process.
 
 Research from the
-[2019 State of DevOps Report (PDF)](https://cloud.google.com/devops/state-of-devops)
+[2019 State of DevOps Report (PDF)](/publications/)
 shows that while moving away from traditional, formal change management
 processes is the ultimate goal, simply doing a better job of communicating the
 existing process and helping teams navigate it efficiently has a positive impact
@@ -160,64 +159,26 @@ make.
 
 Now your teams can list possible ways to measure change approval:
 
-<table>
-<thead>
-<tr>
-<th>Factor to test</th>
-<th>What to measure</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Can changes be promoted to production without manual change approvals?
-</td>
-<td>The percentage of changes that do (or do not) require a manual change to be
-promoted to production. <br>
-<br>
-Tip: You can also measure this factor based on risk profile: what
-percentage of low-, medium-, and high-risk changes require a manual change
-to be promoted to production? <br>
-</td>
-</tr>
-<tr>
-<td>Do production changes need to be approved by an external body before
-deployment or implementation? </td>
-<td>The amount of time changes spend waiting for approval from external
-bodies.<br>
-<br>
-Tip: As you shift approvals closer to the work, measure the amount of time
-spent waiting for approval from local approval bodies or reviewers. <br>
-<br>
-You can also measure this factor by risk profile. Measure number or
-proportion of changes that require approval from external bodies, as well
-as the time spent waiting for those approvals.</td>
-</tr>
-<tr>
-<td>Do you rely on peer review to manage changes?</td>
-<td>Percentage of changes that are managed by peer-review. <br>
-<br>
-You can also measure this factor by risk profile.</td>
-</tr>
-<tr>
-<td>Do team members have a clear understanding of the process to get changes approved for implementation?</td>
-<td>The extent to which team members are confident they can get changes through the approval process in a timely manner and know the steps it takes to go from "submitted" to "accepted" every time for all the types of changes they typically make.</td>
-</tbody>
-</table>
 
-While you consider your own environment, you will likely develop your own
-measures to understand and gain insight into your change approval processes. We
-suggest you use these to not only measure your process but also work to improve
-it.
+|  Factor to test                                                                                       |   What to measure    |
+| ---   | ---   |
+| Can changes be promoted to production without manual change approvals?                                | The percentage of changes that do (or do not) require a manual change to be promoted to production. <br> **Tip:** You can also measure this factor based on risk profile what percentage of low-, medium-, and high-risk changes require a manual change to be promoted to production?  <br><br>  |
+| Do production changes need to be approved by an external body before deployment or implementation?    | The amount of time changes spend waiting for approval from external bodies. <br> **Tip:** As you shift approvals closer to the work, measure the amount of time spent waiting for approval from local approval bodies or reviewers. <br><br>     |
+| Do you rely on peer review to manage changes?                                                         | You can also measure this factor by risk profile. Measure number or proportion of changes that require approval from external bodies, as well as the time spent waiting for those approvals   <br><br>   |
+| Do team members have a clear understanding of the process to get changes approved for implementati    | The extent to which team members are confident they can get changes through the approval process in a timely manner and know the steps it takes to go from "submitted" to "accepted" every time for all the types of changes they typically make    |
+
+
+While you consider your own environment, you will likely develop your own measures to understand and gain insight into your change approval processes. We suggest you use these to not only measure your process but also work to improve it.
 
 ## What's next
 
 -   See how to
-    [perform vulnerability scanning as part of your deployment pipeline](/binary-authorization/docs/vulnerability-scanning-kritis)
+    [perform vulnerability scanning as part of your deployment pipeline](https://cloud.google.com/binary-authorization/docs/vulnerability-scanning-kritis)
     with Cloud Build, Container Analysis, and Kritis Signer.
 -   For links to other articles and resources, see the
-    [DevOps page](/devops/).
+    [DevOps page](https://cloud.google.com/devops).
 -   Explore our DevOps
-    [research program](https://www.devops-research.com/research.html).
+    [research program](/).
 -   Take the
-    [DevOps quick check](https://www.devops-research.com/quickcheck.html)
+    [DevOps quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.
