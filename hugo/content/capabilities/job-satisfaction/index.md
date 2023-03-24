@@ -18,7 +18,7 @@ their engagement, their creativity, and their strongest thinking."
 Note: *Job satisfaction* is one of a set of capabilities that drive higher
 software delivery and organizational performance. These capabilities were
 discovered by the
-[DORA State of DevOps research program](https://www.devops-research.com/research.html),
+[DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
 [DevOps resources](https://cloud.google.com/devops).
@@ -49,7 +49,7 @@ win.
 
 The following pitfalls are commonly related to job satisfaction:
 
-- Not giving people the [tools](../teams-empowered-to-choose-tools) they need to be successful.
+- Not giving people the [tools](/capabilities/teams-empowered-to-choose-tools) they need to be successful.
 - Not giving people meaningful work.
 
 Practitioners and leaders must remember that technology transformations are
@@ -60,11 +60,11 @@ navigate. If you're trying to institute change, don't forget that you must make
 time and resources available for improvement work. Creating change takes time,
 and people also need time to adjust to the changes, as you build practices such
 as
-[automation](../test-automation)
+[automation](/capabilities/test-automation)
 and
-[continuous integration](../continuous-integration)
+[continuous integration](/capabilities/continuous-integration)
 into your
-[delivery process](../deployment-automation).
+[delivery process](/capabilities/deployment-automation).
 On top of that, improving process is itself a skill that needs to be learned.
 Teams that routinely work on improvement get better at it over time, and are
 more likely to stay with the company.
@@ -76,7 +76,7 @@ DORA research on job satisfaction recommends the following key actions:
 -   **Give employees the tools and resources needed to do their work.**
 
     Employees must have the tools necessary to get their work done, and
-    [teams that can decide which tools they use](../teams-empowered-to-choose-tools)
+    [teams that can decide which tools they use](/capabilities/teams-empowered-to-choose-tools)
     do better at continuous delivery. Teams that can choose their own tools
     make these choices based on how they work, and on the tasks they need to
     perform. No one knows better than practitioners what they need to be
@@ -107,7 +107,7 @@ signal that something is wrong and it's worth looking into.
 ## What's next
 
 -   For links to other articles and resources, see the
-    [DevOps page]([/devops/](https://cloud.google.com/devops)).
+    [DevOps page](https://cloud.google.com/devops).
 -   Read [Accepting Lower Salaries for Meaningful Work](https://www.frontiersin.org/articles/10.3389/fpsyg.2017.01649/full), by
     Jing Hu and Jacob B. Hirsh.
 -   Read [The Search for Meaning](https://www.shrm.org/hr-today/news/all-things-work/pages/the-search-for-meaning.aspx), by
@@ -117,7 +117,7 @@ signal that something is wrong and it's worth looking into.
 -   Read [9 Out of 10 People Are Willing to Earn Less Money to Do More-Meaningful Work](https://hbr.org/2018/11/9-out-of-10-people-are-willing-to-earn-less-money-to-do-more-meaningful-work), by
     Shawn Achor, Andrew Reece, Gabriella Rosen Kellerman, and Alexi Robichaux.
 -   Explore our DevOps
-    [research program](https://www.devops-research.com/research.html).
+    [research program](/).
 -   Take the
     [DevOps quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.
