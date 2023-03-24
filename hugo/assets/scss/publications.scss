@@ -57,4 +57,14 @@
             }
         }
     }
+
+    @include media-small {
+        section.publicationHighlight {
+            flex-direction: column;
+        }
+
+        ul {
+            grid-template-columns: 1fr;
+        }
+    }
 }
