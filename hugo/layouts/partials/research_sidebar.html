@@ -9,10 +9,11 @@
     <section>
         Research archives:
         <ul>
-            <li><a href="/research/archives/2022/">2022</a></li>
-            <li><a href="/research/archives/2021/">2021</a></li>
-            <li><a href="/research/archives/2020/">2020</a></li>
-            <li><a href="/research/archives/2019/">2019</a></li>
+            {{ range (where .Site.RegularPages "Section" "research")}}
+                {{ if strings.Contains .Page "archives" }}
+                    <li><a href="{{ .Page.RelPermalink }}">{{ .Date.Format "2006" }}</a></li>
+                {{ end }}
+            {{ end }}
         </ul>
     </section>
 </sidebar>
