@@ -1,0 +1,10 @@
+{{ define "main" }}
+
+    <h1>DORA Research Archives</h1>
+    <p>DORA has been exploring software development continuously since 2013. Explore the history of our investigations and findings throughout the years:</p>
+
+    {{ range .Pages }}
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    {{ end }}
+
+{{ end }}

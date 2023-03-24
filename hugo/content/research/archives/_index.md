@@ -5,4 +5,4 @@ draft: false
 type: research_archives
 ---
 
-TODO: make this page
+<!-- content defined in tempate /research_archives/section.html -->
