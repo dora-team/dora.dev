@@ -2,7 +2,7 @@
 title: "Job Satisfaction"
 titleForHTMLHead: "DevOps Capabilities: Job Satisfaction" # TODO: can we DRY this out?
 date: 2023-03-22T13:43:36Z
-category: cultural
+category: process
 draft: true
 headline: "Find out about the importance of ensuring your people have the tools and resources to do their job, and of making good use of their skills and abilities."
 summary: "Everybody knows how job satisfaction feels. It's about doing work that's
