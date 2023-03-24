@@ -147,4 +147,8 @@ section.banner {
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
+
+    &.divider-before {
+        border-left:1px solid $border-light;
+    }
 }
