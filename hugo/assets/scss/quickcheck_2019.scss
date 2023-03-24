@@ -529,6 +529,11 @@ img.rec-img {
             font-weight: 400;
             color: $color-link;
         }
+
+        span {
+            // these are displayed only on small screens
+            display:none;
+        }
     }
 
     td:has(h4) {
@@ -540,5 +545,38 @@ img.rec-img {
         padding: 20px 8px 8px 8px;
         text-align: center;
         background-color: #fff;
+    }
+
+    @include media-medium {
+
+        th:not(:first-child) {
+            display:none;
+        }
+
+        tr {
+            display:flex;
+            flex-direction: column;
+        }
+
+        td {
+
+            padding:2px;
+
+            &.perf, &.highlight {
+                background:none;
+                padding:2px;
+                padding-bottom:6px;
+                text-align: left;
+            }
+
+            &:has(h4) {
+                width:100%;
+            }
+
+            span {
+                display:inline;
+                font-weight:500;
+            }
+        }
     }
 }
