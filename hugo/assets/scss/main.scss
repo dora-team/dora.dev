@@ -42,7 +42,7 @@ select {
     font-size: .85rem;
 
     @include media-medium {
-        line-height:1.25;
+        line-height:1.35;
     }
 }
 
@@ -147,4 +147,8 @@ section.banner {
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
+
+    &.divider-before {
+        border-left:1px solid $border-light;
+    }
 }
