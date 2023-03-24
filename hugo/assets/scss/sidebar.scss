@@ -1,32 +1,50 @@
 @import "_variables.scss";
 
-section.hasAside {
-    display:flex;
+section.hasSidebar {
+    display: flex;
     flex-direction: row;
 
-    @include media-small {
-        flex-direction: column;
-    }
-
-    aside {
-        width:20%;
-        min-width:200px;
-        margin-left:1em;
+    sidebar {
+        width: 20%;
+        min-width: 200px;
+        margin-left: 1em;
 
         a {
-            white-space:nowrap;
+            text-decoration: none;
         }
 
         section {
-            padding:.5em .1em .5em 1em;
-            margin-left:1em;
-            border-left:1px solid $border-light;
+            padding: 0.5em 0.1em 0.5em 1em;
+            margin-left: 1em;
+            border-left: 1px solid $border-light;
 
-            @include media-small {
-                padding:1em 0;
-                margin:0;
-                border-left:none;
-                border-bottom:1px solid $border-light;
+            .snipe {
+                border: 1px solid $border-light;
+                border-radius: 0.5em;
+                padding: 0.5em 1em;
+                font-weight: 500;
+                transition: all 0.25s;
+
+                &:hover {
+                    box-shadow: 3px 3px 3px 0px rgba(153, 153, 153, 1);
+                }
+            }
+        }
+    }
+
+    @include media-small {
+        flex-direction: column;
+
+        sidebar {
+            width: 100%;
+            margin-left:.5em;
+            margin-right:.5em;
+
+            section {
+                padding: 1em 0;
+                margin-left: 0;
+                border-left: none;
+                border-bottom: 1px solid $border-light;
                 &:last-child {
                     border-bottom: none;
                 }
