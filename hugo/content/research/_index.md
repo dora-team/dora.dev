@@ -12,4 +12,5 @@ Use our [quick check tool](/quickcheck/) to discover how you compare to industry
 You can also explore our research program using the diagram below, or browse our [capability catalog](https://bit.ly/dora-capabilities). To learn more about research from a particular year, browse the [research archives](/research/archives/).
 
 <img src="/img/big_friendly_diagram.png" style="width:100%">
+<div style="text-align:center"><small>Predictive model 2020</small></div>
 <div style="text-align:center"><a href="/pdf/big_friendly_diagram.pdf" target="_blank"><button>View PDF</button></a></div>
