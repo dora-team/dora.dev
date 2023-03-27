@@ -21,10 +21,9 @@ steps:
 
   - name: 'bash'
     script: |
-      #!/usr/bin/env bash
-      
-      # okay, what distro is this?
-      cat /etc/*-release
+      apk add github-cli
+
+      gh version
 
 
 
