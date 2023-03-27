@@ -8,13 +8,13 @@ headline: "Make it easy for developers to find, reuse, and change code, and keep
 summary: "Make it easy for developers to find, reuse, and change code, and keep dependencies up-to-date."
 ---
 
-Note: *Code maintainability* is one of a set of capabilities that drive higher
+<blockquote>Note: *Code maintainability* is one of a set of capabilities that drive higher
 software delivery and organizational performance. These capabilities were
 discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
+[DevOps resources](https://cloud.google.com/devops).</blockquote>
 
 It takes
 [a lot of code](https://www.businessinsider.com/how-many-lines-of-code-it-takes-to-run-different-software-2017-2)
@@ -25,7 +25,7 @@ billion lines of code, and a typical smartphone app has 50,000 lines of code.
 The 2019 State of DevOps Report from [DevOps Research and Assessment (DORA)](https://cloud.google.com/devops) research shows that the ability of teams to maintain their code
 effectively is one of a number of technical practices that contribute positively
 to success with
-[continuous delivery](continuous-delivery).
+[continuous delivery](/capabilities/continuous-delivery).
 
 If your team is doing a good job with code maintainability, the following are true:
 
@@ -121,9 +121,9 @@ be updated.
 It is essential to adopt and evolve processes and tooling that make it easy for
 teams to consume known-good versions of dependencies and upgrade them rapidly,
 including automated
-[continuous integration](continuous-integration)
+[continuous integration](/capabilities/continuous-integration)
 (CI) and
-[testing](test-automation)
+[testing](/capabilities/test-automation)
 to discover if new versions of dependencies contain breaking changes), and to
 quickly and simply correlate the versions of dependencies in use with the
 systems that use them.
@@ -156,7 +156,7 @@ article.
 Ninety-five percent of Google's software developers worldwide work on a shared,
 monolithic codebase maintained through a centralized source control system,
 using a
-[trunk-based development](trunk-based-development)
+[trunk-based development](/capabilities/trunk-based-development)
 model.
 [In 2016](http://dl.acm.org/citation.cfm?id=2854146),
 the Google codebase included "approximately one billion files and [had] a
@@ -284,7 +284,7 @@ When considering what to measure, there are three use cases to focus on:
 -   Patching vulnerabilities.
 
 As codebases grow, technical debt is a major concern. It's important to be able
-to refactor and [re-architect code](architecture)
+to refactor and [re-architect code](/capabilities/architecture)
 as organizations and the products they and
 their customers rely on evolve. For large codebases, this can be complex and
 painful without significant tool support. It is also important to be able to
@@ -294,7 +294,7 @@ establish and track metrics that identify areas for improvement and make it
 straightforward to take action safely.
 
 The second step is
-[change management](database-change-management).
+[change management](/capabilities/database-change-management).
 When someone makes a change to part of the codebase,
 to what extent does your tooling help you detect the impact of that change? If
 another team is impacted, how fast can they take action to remedy the problem,

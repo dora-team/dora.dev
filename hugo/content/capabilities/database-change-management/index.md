@@ -8,20 +8,20 @@ headline: "Make sure database changes don't cause problems or slow you down."
 summary: "Make sure database changes don't cause problems or slow you down."
 ---
 
-Note: *Database change management* is one of a set of capabilities that drive
+<blockquote>Note: *Database change management* is one of a set of capabilities that drive
 higher software delivery and organizational performance. These
 capabilities were discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
+[DevOps resources](https://cloud.google.com/devops).</blockquote>
 
 Database changes are often a major source of risk and delay when performing
 deployments. [DevOps Research and Assessment (DORA)](https://cloud.google.com/devops) investigated which database-related practices help during the process of implementing continuous delivery, improving both software delivery performance and availability.
 
 DORA's research found that integrating database work into the software delivery
 process positively contributes to
-[continuous delivery](continuous-delivery).
+[continuous delivery](/capabilities/continuous-delivery).
 But how can your teams improve your database delivery as part of implementing
 continuous delivery? A few practices predict performance outcomes.
 
@@ -77,7 +77,7 @@ change as a migration script which is kept in version control, as shown in
 the following diagram. Each migration script has a unique sequence number,
 so that you know in which order to apply migrations.
 
-![Diagram shows capturing every change to your database as a migration script with a unique sequence number.](images/database-change-management-1.png)
+![Diagram shows capturing every change to your database as a migration script with a unique sequence number.](1.png)
 
 You then ensure that every database instance has a table that records which
 migrations have been run against that particular instance. In this way you version-control the database schema, so you can use a tool to apply the migration scripts to take the
@@ -110,7 +110,7 @@ using a tool or script which executes migrations that have not already been
 applied against the database instance, updating the migrations table after each
 one successfully completes.
 
-![Example of a table that records migrations against an instance.](images/database-change-management-2.png)
+![Example of a table that records migrations against an instance.](2.png)
 
 You can manage database changes in the same way you manage application changes:
 through an automated process that uses version control as its source of truth.
@@ -131,7 +131,7 @@ strategies to make database schema changes without downtime:
     the empty copy, and then incrementally copy data from the original table
     including any updates that happen during the migration. After this process
     is complete, they replace the original table with the ghost. Some
-    databases, for example [Cloud Spanner](/spanner/docs/schema-updates), can perform schema updates with zero downtime.
+    databases, for example [Cloud Spanner](https://draft-dora-dev--pr146-3qb71fd6.web.app/spanner/docs/schema-updates), can perform schema updates with zero downtime.
 -   **Decouple database changes and application changes** with the
     [parallel change pattern](https://medium.com/continuousdelivery/expand-contract-pattern-and-continuous-delivery-of-databases-4cfa00c23d2e).
     In this pattern, you never mutate existing database objects. Instead, you
@@ -180,7 +180,7 @@ strategies to make database schema changes without downtime:
 -   **Use a NoSQL solution.** Some NoSQL databases, such as
     [Firestore](https://firebase.google.com/docs/firestore)
     and
-    [Cloud BigTable](/bigtable),
+    [Cloud BigTable](https://cloud.google.com/bigtable),
     don't suffer from the issue of downtime created by schema changes. Document
     databases like Firestore have an implicit schema, which means that the
     schema is managed at the application layer rather than the database layer.
@@ -189,7 +189,7 @@ strategies to make database schema changes without downtime:
 
 As well as eliminating scheduled downtime, you also want to avoid unscheduled
 downtime. Make sure you test every schema change against a
-[production-like data set](test-data-management)
+[production-like data set](/capabilities/test-data-management)
 (with any personal or confidential information scrubbed, of course) to make sure
 your application behaves the way you expect during and after migration. Some
 organizations create a scrubbed version of their  production database on a daily
@@ -227,7 +227,7 @@ situation. However, it involves careful planning and rollout.
 
 Finally, implementing both migration-based database change management and
 zero-downtime deployments can involve significant
-[architectural change](architecture).
+[architectural change](/capabilities/architecture).
 This should be taken into consideration when estimating the effort required to
 implement these practices.
 
@@ -260,7 +260,7 @@ process. The goal should be that 100% of database changes are made in this way.
 -   Read about
     [zero downtime database migration and replication to and from Cloud Spanner](https://medium.com/@chbussler/zero-downtime-database-migration-and-replication-to-and-from-cloud-spanner-99ad0c654d12)
 -   Find out more about
-    [Google Cloud's database solutions](/solutions/databases/).
+    [Google Cloud's database solutions](https://cloud.google.com/solutions/databases).
 -   Recommended books:
     -   [*Database Reliability Engineering*](http://shop.oreilly.com/product/0636920039761.do) by Laine Campbell and Charity Majors.
     -   [*Refactoring Databases*](https://books.google.com/books/about/Refactoring_Databases.html?id=puBQAAAAMAAJ) by Scott W. Ambler and Pramod J. Sadalage

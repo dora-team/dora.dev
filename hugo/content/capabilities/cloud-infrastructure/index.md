@@ -9,13 +9,13 @@ summary: "Find out how to manage cloud infrastructure effectively so you can ach
 ---
 
 
-Note: *Cloud infrastructure* is one of a set of capabilities that
+<blockquote>Note: *Cloud infrastructure* is one of a set of capabilities that
 drive higher software delivery and organizational performance. These
 capabilities were discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
+[DevOps resources](https://cloud.google.com/devops).</blockquote>
 
 Many organizations are adopting cloud computing. But there's more to cloud than
 buying your infrastructure from a cloud provider. The US National Institute of
@@ -38,7 +38,7 @@ five essential characteristics of cloud computing:
     report resource use based on the type of service such as storage,
     processing, bandwidth, and active user accounts.
 
-The [2019 State of DevOps Report](/devops/state-of-devops) from [DevOps Research and Assessment (DORA)](https://cloud.google.com/devops) found that only 29% of people who claim to have
+The [2019 State of DevOps Report](/publications/pdf/state-of-devops-2019.pdf) from [DevOps Research and Assessment (DORA)](https://cloud.google.com/devops) found that only 29% of people who claim to have
 adopted cloud technologies agreed or strongly agreed that they met all five of
 the characteristics defined above. In both 2018 and 2019, DORA's research found
 that elite performers were more than 23 times more likely to have met all five
@@ -133,11 +133,11 @@ configuration and finance level, applications must often be re-architected to
 reap the benefits of increased stability, reliability, and agility that cloud
 can provide. Re-architecting systems to a cloud-native paradigm is discussed in
 Google Cloud's white paper,
-[Re-architecting to cloud native: an evolutionary approach to increasing developer productivity at scale.](/rearchitecting-to-cloud-native-whitepaper)
+[Re-architecting to cloud native: an evolutionary approach to increasing developer productivity at scale.](https://cloud.google.com/rearchitecting-to-cloud-native-whitepaper)
 
 The most crucial consideration is whether your cloud deployment has actually
 helped your organization achieve more
-[rapid, reliable releases](continuous-delivery),
+[rapid, reliable releases](/capabilities/continuous-delivery),
 and higher levels of availability,
 [velocity, and reliability](/quickcheck/).
 
@@ -183,7 +183,7 @@ There will be many obstacles on this journey to overcome, including:
     non-cloud-based systems, including mainframes and packaged software/COTS
 
 Overcoming these obstacles requires a
-[substantial change program](devops-culture-transform)
+[substantial change program](/capabilities/transform)
 involving sustained investment and collaboration between people at every level
 of the organization.
 
@@ -221,8 +221,8 @@ which a long uptime is an indicator of an unpatched machine.
 
 -  For links to other articles and resources, see the
     [DevOps page](https://cloud.google.com/devops).
--  [White paper: Re-architecting to cloud native: an evolutionary approach to increasing developer productivity at scale](/rearchitecting-to-cloud-native-whitepaper)
--  [Cloud billing concepts in Google Cloud](/billing/docs/concepts/)
+-  [White paper: Re-architecting to cloud native: an evolutionary approach to increasing developer productivity at scale](https://cloud.google.com/rearchitecting-to-cloud-native-whitepaper)
+-  [Cloud billing concepts in Google Cloud](https://cloud.google.com/billing/docs/concepts)
 -   Explore our DevOps
     [research program](/).
 -   Take the

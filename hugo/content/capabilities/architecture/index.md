@@ -8,13 +8,13 @@ headline: "Learn about moving from a tightly coupled architecture to service-ori
 summary: "Learn about moving from a tightly coupled architecture to service-oriented and microservice architectures without re-architecting everything at once"
 ---
 
-Note: *Architecture* is one of a set of capabilities that drive higher software
+<blockquote>Note: *Architecture* is one of a set of capabilities that drive higher software
 delivery and organizational performance. These capabilities were
 discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
+[DevOps resources](https://cloud.google.com/devops).</blockquote>
 
 Research from the DevOps Research and Assessment (DORA) team shows that
 architecture is an important predictor for achieving continuous delivery.
@@ -75,13 +75,13 @@ Consider the major architectural archetypes. Randy Shoup, formerly an
 Engineering Director for App Engine and VP of Engineering at WeWork,
 observed the following:
 
-<blockquote>"There is no one perfect architecture for all products and all
+> "There is no one perfect architecture for all products and all
 scales. Any architecture meets a particular set of goals or range of
 requirements and constraints, such as time to market, ease of developing
 functionality, scaling, etc. The functionality of any product or service will
 almost certainly evolve over time—it should not be surprising that our
 architectural needs will change as well. What works at scale 1x rarely
-works at scale 10x or 100x."</blockquote>
+works at scale 10x or 100x."
 
 Given the pros and cons of architectural archetypes, each fits a different
 evolutionary need for an organization.
@@ -165,7 +165,7 @@ independently and facilitates building around team boundaries. When your teams
 are cross-functional, they can function autonomously,
 [experiment with ideas](/capabilities/team-experimentation),
 and
-[choose their own tools](teams-empowered-to-choose-tools).
+[choose their own tools](/capabilities/teams-empowered-to-choose-tools).
 To help with cross-team communication and testing, it can be helpful to
 have well-defined contracts between services.
 
@@ -183,7 +183,7 @@ tested and deployed from the services it depends on.
 
 To enable deploy-anytime capabilities, consider implementing blue/green or
 rolling deployment models, with high degrees of
-[automation](deployment-automation).
+[automation](/capabilities/deployment-automation).
 With these models, at least two or more versions of the product or service
 are running simultaneously. These deployment models allow teams to validate
 changes and deploy to production with little or no downtime. An important
@@ -243,10 +243,10 @@ patterns for modern web architecture based on these principles is the
 
 Randy Shoup observed the following:
 
-<blockquote>"Organizations with these types of service-oriented
+> "Organizations with these types of service-oriented
 architectures, such as Google and Amazon, have incredible flexibility and
 scalability. These organizations have tens of thousands of developers where
-small teams can still be incredibly productive."</blockquote>
+small teams can still be incredibly productive."
 
 In many organizations, services are distinctly hard to test and deploy. Rather
 than re-architecting everything, we recommend an iterative approach to improving
@@ -295,7 +295,7 @@ Steve Yegge presents several critical lessons learned from moving to a SOA:
 -   Without a universal standard for running a service in a debuggable
     environment, debugging issues in other people's services is much harder.
 
-## Case study: { 
+## Case study: Datastore
 
 A tightly coupled architecture can impede everyone's productivity and ability
 to safely make changes. In contrast, a loosely coupled architecture promotes
@@ -306,11 +306,11 @@ because each service also has a well-defined API, it enables easier testing of
 services and the creation of contracts and service level agreements (SLAs)
 between teams.
 
-![Loosely coupled architecture.](images/loosely-coupled-architecture.svg)
+![Loosely coupled architecture.](./loosely-coupled-architecture.svg)
 
 Randy Shoup describes this architecture as follows:
 
-<blockquote>"This type of architecture has served Google extremely well, for
+> "This type of architecture has served Google extremely well, for
 a service like Gmail, there's five or six other layers of services underneath
 it, each very focused on a very specific function. Each service is
 supported by a small team, who builds it and runs their functionality, with
@@ -318,7 +318,7 @@ each group potentially making different technology choices. Another example
 is the { service, which is one of the largest NoSQL
 services in the world, and yet it is supported by a team of only about
 eight people, largely because it is based on layers upon layers of
-dependable services built upon each other."</blockquote>
+dependable services built upon each other."
 
 This kind of service-oriented architecture allows small teams to work on
 smaller and simpler units of development that each team can deploy
@@ -338,7 +338,7 @@ time for changes to reach production.
 
 Aside from taking these deployment and service measures, teams that operate
 more independently demonstrate improvements in
-[job satisfaction](devops-culture-job-satisfaction)
+[job satisfaction](/capabilities/devops-culture-job-satisfaction)
 and
 [team experimentation](/capabilities/team-experimentation),
 and tend to select different technologies and tools based on their needs.

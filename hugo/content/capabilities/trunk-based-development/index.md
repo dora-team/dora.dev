@@ -8,13 +8,13 @@ headline: "Prevent merge-conflict hassles with trunk-based development practices
 summary: "Prevent merge-conflict hassles with trunk-based development practices."
 ---
 
-Note: *Trunk-based development* is one of a set of capabilities that drive
+<blockquote>Note: *Trunk-based development* is one of a set of capabilities that drive
 higher software delivery and organizational performance.
 These capabilities were discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
+[DevOps resources](https://cloud.google.com/devops).</blockquote>
 
 There are two main patterns for developer teams to work together using version
 control. One is to use *feature branches*, where either a developer or a group
@@ -35,7 +35,7 @@ frequently.
 
 The following diagram shows a typical trunk-based development timeline:
 
-![Timelines for versions 1.0 and 1.1, showing a bug fix merged from version 1.0 into the trunk for version 1.1.](./trunk-based-development-typical-trunk-timeline.svg)
+![Timelines for versions 1.0 and 1.1, showing a bug fix merged from version 1.0 into the trunk for version 1.1.](trunk-based-development-typical-trunk-timeline.svg)
 
 In trunk-based development, developers push code directly into trunk. Changes
 made in the release branches—snapshots of the code when it's ready to be
@@ -52,7 +52,7 @@ doing small and frequent merges.
 In contrast, the following diagram shows a typical non-trunk-based
 development style:
 
-![Timelines for multiple long-lived branches, showing complex merge paths and many points at which merge conflicts can slow product release.](./trunk-based-development-typical-non-trunk-timeline.svg)
+![Timelines for multiple long-lived branches, showing complex merge paths and many points at which merge conflicts can slow product release.](trunk-based-development-typical-non-trunk-timeline.svg)
 
 In this approach, developers make changes to long-lived branches. These changes
 require bigger and more complex merge events when compared to trunk-based
@@ -65,7 +65,7 @@ bug fixes.
 ## How to implement trunk-based development
 
 Trunk-based development is a required practice for
-[continuous integration](continuous-integration).
+[continuous integration](/capabilities/continuous-integration).
 Continuous integration (CI) is the combination of practicing trunk-based
 development and maintaining a suite of fast automated tests that run after each
 commit to trunk to make sure the system is always working.
@@ -150,12 +150,12 @@ improve trunk-based development:
     days, to get merged into trunk.
 -   **Implement comprehensive automated testing**. Make sure that you have a
     comprehensive and meaningful suite of
-    [automated unit tests](test-automation).
+    [automated unit tests](/capabilities/test-automation).
     and that these are run before every
     commit. For example, if you're using GitHub, you can
     [protect branches](https://help.github.com/en/articles/about-protected-branches)
     to only allow pull request merges when all tests have passed. The
-    [Running builds with GitHub Checks](/build/docs/run-builds-with-github-checks)
+    [Running builds with GitHub Checks](https://cloud.google.com/build/docs/run-builds-with-github-checks)
     tutorial shows  how to integrate
     [GitHub Checks](https://developer.github.com/v3/checks/)
     with 
@@ -164,7 +164,7 @@ improve trunk-based development:
     [a few minutes](https://www.infoq.com/presentations/Crazy-Fast-Build-Times-or-When-10-Seconds-Starts-to-Make-You-Nervous/).
     If this seems hard to achieve, it probably indicates opportunities for
     improvement in the
-    [architecture](architecture)
+    [architecture](/capabilities/architecture)
     of the system.
 -   **Create a core group of advocates and mentors**. Trunk-based
     development is a substantial change for many developers, and you should

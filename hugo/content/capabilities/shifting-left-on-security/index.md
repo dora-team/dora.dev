@@ -8,13 +8,13 @@ headline: "Build security into the software development lifecycle without compro
 summary: "Build security into the software development lifecycle without compromising delivery speed."
 ---
 
-Note: *Shifting left on security* is one of a set of capabilities that drive
+<blockquote>Note: *Shifting left on security* is one of a set of capabilities that drive
 higher software delivery and organizational performance. These capabilities were
 discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
+[DevOps resources](https://cloud.google.com/devops).</blockquote>
 
 Security is everyone's responsibility. The
 [2016 State of DevOps Report](/publications/pdf/state-of-devops-2016.pdf)
@@ -92,9 +92,9 @@ typically understaffed compared to developers and testers.
 ### Develop automated testing
 
 Building security tests into the
-[automated testing](test-automation)
+[automated testing](/capabilities/test-automation)
 process means that code can be
-[continuously tested](continuous-integration)
+[continuously tested](/capabilities/continuous-integration)
 at scale without requiring a manual review. Automated testing can identify
 common security vulnerabilities, and it can be applied uniformly as a part of a
 continuous integration pipeline or build process. Automated testing does require

@@ -8,13 +8,13 @@ headline: "Best practices and approaches for deployment automation and reducing 
 summary: "Best practices and approaches for deployment automation and reducing manual intervention in the release process."
 ---
 
-Note: *Deployment automation* is one of a set of capabilities that drive
+<blockquote>Note: *Deployment automation* is one of a set of capabilities that drive
 higher software delivery and organizational performance. These capabilities were
 discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
+[DevOps resources](https://cloud.google.com/devops).</blockquote>
 
 Deployment automation is what enables you to deploy your software to testing
 and production environments with the push of a button. Automation is essential
@@ -33,7 +33,7 @@ An automated deployment process has the following inputs:
 We recommend that you store the scripts and configuration information in
 version control. Your deployment process should download the packages from an
 artifact repository (for example,
-[Artifact Registry](/artifact-registry/),
+[Artifact Registry](https://cloud.google.com/artifact-registry),
 [Nexus](https://www.sonatype.com/nexus-repository-sonatype),
 [Artifactory](https://jfrog.com/artifactory/),
 or your CI tool's built-in repository).
@@ -43,11 +43,11 @@ The scripts usually perform the following tasks:
 1.  Prepare the target environment, perhaps by installing and configuring
     any necessary software, or by starting up a virtual host from a
     pre-prepared image in a cloud provider such as {.
-1.  Deploy the packages.
-1.  Perform any deployment-related tasks such as running database migration
+2.  Deploy the packages.
+3.  Perform any deployment-related tasks such as running database migration
     scripts.
-1.  Perform any required configuration.
-1.  Perform a deployment test to make sure that any necessary external
+4.  Perform any required configuration.
+5.  Perform a deployment test to make sure that any necessary external
     services are reachable, and that the system is functioning.
 
 ## How to implement deployment automation
@@ -94,8 +94,8 @@ and pushing the complexity into the application code and infrastructure
 platform. Look for deployment failure modes and ask how you could avoid them by
 making your services, components, infrastructure platform, and monitoring
 smarter. Cloud-native applications running on a platform-as-a-service such as
-[App Engine](/appengine/),
-[Cloud Run](/run/),
+[App Engine](https://cloud.google.com/appengine),
+[Cloud Run](https://cloud.google.com/run),
 or
 [Pivotal Cloud Foundry](https://cloud.google.com/migrate/kf/docs/2.11/concepts/compare-services)
 can typically be deployed by running a single command, with no deployment

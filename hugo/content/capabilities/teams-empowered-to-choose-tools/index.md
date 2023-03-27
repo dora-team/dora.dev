@@ -8,16 +8,16 @@ headline: "Empower teams to make informed decisions on tools and technologies. L
 summary: "Empower teams to make informed decisions on tools and technologies. Learn how these decisions drive more effective software delivery."
 ---
 
-Note: *Empowering teams to choose tools* is one of a set of capabilities
+<blockquote>Note: *Empowering teams to choose tools* is one of a set of capabilities
 that drive higher software delivery and organizational performance. These
 capabilities were discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
+[DevOps resources](https://cloud.google.com/devops).</blockquote>
 
 If you want to achieve higher software delivery performance and increase the
-[job satisfaction](job-satisfaction)
+[job satisfaction](/capabilities/job-satisfaction)
 of your technical staff, you should empower them to make informed choices about
 the tools and technologies they use to do their work.
 [Research](/publications/pdf/state-of-devops-2017.pdf)

@@ -8,13 +8,13 @@ headline: "Make deploying software a reliable, low-risk process that can be perf
 summary: "Make deploying software a reliable, low-risk process that can be performed on demand at any time."
 ---
 
-Note: *Continuous delivery* is one of a set of capabilities that drive
+<blockquote>Note: *Continuous delivery* is one of a set of capabilities that drive
 higher software delivery and organizational performance. These capabilities were
 discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
+[DevOps resources](https://cloud.google.com/devops).</blockquote>
 
 Continuous delivery is the ability to release changes of all kinds on demand
 quickly, safely, and sustainably. Teams that practice continuous delivery well
@@ -78,20 +78,20 @@ the following benefits:
     pp27-29).
 -   Predicts lower levels of burnout (physical, mental, or emotional
     exhaustion caused by overwork or stress), higher levels of
-    [job satisfaction](devops-culture-job-satisfaction),
+    [job satisfaction](/capabilities/devops-culture-job-satisfaction),
     and better
-    [organizational culture](devops-culture-westrum-organizational-culture).
+    [organizational culture](/capabilities/westrum-organizational-culture).
 -   Reduces deployment pain, a measure of the extent to which deployments
     are disruptive rather than easy and pain-free, as well as the fear and
     anxiety that engineers and technical staff feel when they push code into
     production.
 -   Impacts culture, leading to greater levels of [psychological safety](https://rework.withgoogle.com/print/guides/5721312655835136/) and a
-    more [mission-driven organizational culture](devops-culture-westrum-organizational-culture).
+    more [mission-driven organizational culture](/capabilities/westrum-organizational-culture).
 
 The following diagram shows how a set of technical practices impacts
 continuous delivery, which in turn drives the outcomes listed above:
 
-![Shows how technical practices drive outcomes in other capabilities](images/continuous-delivery-technical-practices.png)
+![Shows how technical practices drive outcomes in other capabilities](./continuous-delivery-technical-practices.png)
 
 
 Continuous delivery is only one aspect of driving the previously discussed
@@ -104,60 +104,60 @@ implementing the technical practices described in this document.
 ## Implementing continuous delivery
 
 DORA research found that the following technical capabilities drive the ability
-to achieve continuous delivery. [Transformational leadership](devops-culture-transformational-leadership) within the
+to achieve continuous delivery. [Transformational leadership](/capabilities/transformational-leadership) within the
 organization also drives the implementation of many of these technical
 capabilities.
 
 To help your team get higher throughput and lower risk releases, implement the
 following continuous delivery practices:
 
--   [Test automation](test-automation/):
+-   [Test automation](/capabilities/test-automation/):
     The use of comprehensive automated test suites primarily created and
     maintained by developers. Effective test suites are reliable—that is, tests
     find real failures and only pass releasable code.
--   [Deployment automation](deployment-automation/):
+-   [Deployment automation](/capabilities/deployment-automation/):
     The degree to which deployments are fully automated and do not require
     manual intervention.
--   [Trunk-based development](trunk-based-development/):
+-   [Trunk-based development](/capabilities/trunk-based-development/):
     Characterized by fewer than three active branches in a code repository;
     branches and forks having very short lifetimes (e.g., less than a day)
     before being merged into mainline; and application teams rarely or never
     having *code lock* periods when no one can check in code or do pull
     requests due to merging conflicts, code freezes, or stabilization phases.
--   [Shift left on security](shifting-left-on-security/):
+-   [Shift left on security](/capabilities/shifting-left-on-security/):
     Integrating security into the design and testing phases of the software
     development process. This process includes conducting security reviews of
     applications, including the information security team in the design and
     demonstration process for
     applications, using pre-approved security libraries and packages, and
     testing security features as a part of the automated test suite.
--   [A loosely coupled architecture](architecture/):
+-   [A loosely coupled architecture](/capabilities/architecture/):
     Architecture that lets teams test and deploy their applications on demand,
     without requiring orchestration with other services. Having a loosely
     coupled architecture allows your teams to work independently without
     relying on other teams for support and services, which in turn enables them
     to work quickly and deliver value to the organization.
--   [Empowering teams to choose tools](teams-empowered-to-choose-tools/):
+-   [Empowering teams to choose tools](/capabilities/teams-empowered-to-choose-tools/):
     Teams that can choose which tools to use do better at continuous delivery.
     No one knows better than practitioners what they need to be effective.
--   [Continuous integration (CI)](continuous-integration/):
+-   [Continuous integration (CI)](/capabilities/continuous-integration/):
     A development practice where code is regularly checked in, and each
     check-in triggers a set of quick tests to discover regressions, which
     developers fix immediately. The CI process creates canonical builds and
     packages that are ultimately deployed and released.
--   [Continuous testing](test-automation/):
+-   [Continuous testing](/capabilities/test-automation/):
     Testing throughout the software delivery lifecycle rather than as a
     separate phase after *dev complete.* With continuous testing, developers
     and testers work side by side. High performers practice test-driven
     development, get feedback from tests in less than ten minutes, and
     continuously review and improve their test suites (for example, to better
     find defects and keep complexity under control).
--   [Version control](version-control/):
+-   [Version control](/capabilities/version-control/):
     The use of a version control system, such as Git or Subversion, for all
     production artifacts, including application code, application
     configurations, system configurations, and scripts for automating build and
     configuration of environments.
--   [Test data management](test-data-management/):
+-   [Test data management](/capabilities/test-data-management/):
     Effective practices include having adequate data to run your test suite,
     the ability to acquire necessary data on demand, and the data not limiting
     the number of tests you can run. We caution that your teams should
@@ -171,14 +171,14 @@ following continuous delivery practices:
 -   [Proactive notifications](/capabilities/proactive-failure-notification/):
     Monitoring system health so that teams can preemptively detect and mitigate
     problems.
--   [Database change management](database-change-management): Database changes don't slow teams down if
+-   [Database change management](/capabilities/database-change-management): Database changes don't slow teams down if
     they follow a few key practices, including storing database changes as
     scripts in version control (and managing these changes the same way as
     production application changes), making database changes visible to
     everyone in the software delivery lifecycle (including engineers), and
     communicating with all parties when changes to the application require
     database changes.
--   [Code maintainability](code-maintainability): Systems and tools that make it easy for developers
+-   [Code maintainability](/capabilities/code-maintainability): Systems and tools that make it easy for developers
     to change code maintained by others, to find examples in the codebase, to
     reuse other people's code, and to add, upgrade, and migrate to new versions
     of dependencies without breaking their code.
@@ -211,7 +211,7 @@ needs to include process redesign and simplification, architectural improvement,
 and capability and skills development, along with automation and tooling.
 
 ![Diagram of the J curve of typical transformations, from the
-2018 State of DevOps Report.](images/continuous-delivery-2.png)
+2018 State of DevOps Report.](./continuous-delivery-2.png)
 
 
 In the diagram, the following stages are labeled:

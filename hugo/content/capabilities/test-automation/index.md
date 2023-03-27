@@ -10,13 +10,13 @@ summary: "Improve software quality by building reliable automated test suites an
 
 
 
-Note: *Continuous testing* is one of a set of capabilities that drive higher
+<blockquote>Note: *Continuous testing* is one of a set of capabilities that drive higher
 software delivery and organizational performance.  These capabilities were
 discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
+[DevOps resources](https://cloud.google.com/devops).</blockquote>
 
 The key to building quality into software is getting fast feedback on the impact
 of changes throughout the software delivery lifecycle. Traditionally, teams
@@ -175,7 +175,7 @@ production, the pipeline must be improved, perhaps by adding or updating tests.
         to decouple your tests from the system under test.
     -   If your tests are expensive to maintain, this could point to problems
         with your software's
-        [architecture](architecture). Make sure
+        [architecture](/capabilities/architecture). Make sure
         you continue to invest in making your software easy to test, including
         incorporating
         [refactoring](https://refactoring.com/)

@@ -9,15 +9,15 @@ summary: "Understand the right strategies for managing test data effectively alo
 ---
 
 
-Note: *Test data management* is one of a set of capabilities that drive higher
+<blockquote>Note: *Test data management* is one of a set of capabilities that drive higher
 software delivery and organizational performance. These capabilities were
 discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
+[DevOps resources](https://cloud.google.com/devops).</blockquote>
 
-[Automated testing](test-automation)
+[Automated testing](/capabilities/test-automation)
 is a key component of modern software delivery practices. The ability to execute
 a comprehensive set of unit, integration, and system tests is essential to
 verify that your app or service behaves as expected, and can be safely deployed
@@ -51,9 +51,9 @@ core principles:
 To improve test data management processes, strive to meet each of these
 conditions in all of your development teams. These practices can also positively
 contribute to your overall
-[test automation](test-automation)
+[test automation](/capabilities/test-automation)
 and
-[continuous integration](continuous-integration)
+[continuous integration](/capabilities/continuous-integration)
 capabilities.
 
 ## Common pitfalls in test data management
@@ -83,7 +83,7 @@ efficiently:
     your unit tests can help minimize your reliance on higher-level tests that
     consume external data.
 
-    ![Test automation pyramid.](./test-automation-pyramid.svg)
+    ![Test automation pyramid.](test-automation-pyramid.svg)
 
 1.  **Minimize reliance on test data**. Test data requires careful and
     ongoing maintenance. As your APIs and interfaces evolve, you must update or

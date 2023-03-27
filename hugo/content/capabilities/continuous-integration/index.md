@@ -8,13 +8,13 @@ headline: "Learn about common mistakes, ways to measure, and how to improve on y
 summary: "Learn about common mistakes, ways to measure, and how to improve on your continuous integration efforts."
 ---
 
-Note: *Continuous integration* is one of a set of capabilities that drive
+<blockquote>Note: *Continuous integration* is one of a set of capabilities that drive
 higher software delivery and organizational performance. These capabilities were
 discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
+[DevOps resources](https://cloud.google.com/devops).</blockquote>
 
 Software systems are complex, and an apparently simple, self-contained change
 to a single file can have unintended side effects on the overall system. When a
@@ -34,9 +34,9 @@ maintenance, and to increase the productivity of the teams.
 
 When your organization practices CI, your developers integrate all their work
 into the
-[main version of the code base](trunk-based-development)
+[main version of the code base](/capabilities/trunk-based-development)
 (known as
-[*trunk*](trunk-based-development),
+[*trunk*](/capabilities/trunk-based-development),
 *main*, or *mainline*) on a regular basis. DevOps Research and Assessment
 (DORA)
 [research](/publications/pdf/state-of-devops-2015.pdf#page=20)
@@ -67,7 +67,7 @@ To implement these elements, you need the following:
     and used by all downstream processes. These builds should be numbered and
     repeatable. You should run your build process successfully at least once a day.
 -   **A suite of
-    [automated tests](test-automation)**.
+    [automated tests](/capabilities/test-automation)**.
     If you don't have any, start by writing a handful of unit and
     [acceptance tests](/publications/pdf/state-of-devops-2014.pdf#page=14)
     (PDF) that cover the high-value functionality of your system. Make sure that
@@ -93,16 +93,16 @@ also includes two further practices, which are also predictive of higher
 software delivery performance:
 
 -   The practice of
-    [trunk-based development](trunk-based-development)
+    [trunk-based development](/capabilities/trunk-based-development)
     in which developers work off trunk/mainline in
     [small batches](/capabilities/working-in-small-batches).
     They merge their work into a shared trunk/mainline at least daily, rather
     than working on long-lived feature branches.
 -   An agreement that when the build breaks, fixing it should
-    [take priority over any other work](trunk-based-development).
+    [take priority over any other work](/capabilities/trunk-based-development).
 
 CI requires
-[automated unit tests](test-automation).
+[automated unit tests](/capabilities/test-automation).
 These tests should be comprehensive enough to give you confidence that the
 software works as expected. The tests must also run in a few minutes or less. If
 the automated unit tests take longer to run, developers won't want to run them
@@ -232,8 +232,8 @@ change.</td>
 ## What's next?
 -   For links to other articles and resources, see the
     [DevOps page](https://cloud.google.com/devops).
--   Read more about {
-    [continuous integration solutions](/solutions/continuous-integration/).
+-   Read more about Google Cloud
+    [continuous integration solutions](https://cloud.google.com/solutions/continuous-integration).
 -   Read the
     [SRE Book](https://landing.google.com/sre/books/),
     in particular
