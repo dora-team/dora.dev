@@ -19,19 +19,26 @@ steps:
       echo "${CHANNEL_DATA##* }" > /workspace/preview-url.txt
       cat /workspace/preview-url.txt
 
-# add preview URL as a status check
-# prereq: a github token exists in Secret manager named with the name specified by `github-token-secret-name`
-# the token must have access: `repo:status` (or `repo:all` for a private repo)
-  - name: 'gcr.io/${PROJECT_ID}/pr-status-poster'
-    env:
-      - "COMMIT_SHA=$COMMIT_SHA"
-      - "REPO_NAME=$REPO_NAME"
-      - "PROJECT_ID=$PROJECT_ID"
+  - name: 'bash'
     script: |
-      python /app/set-check-status.py \
-        --project-id ${PROJECT_ID} \
-        --repo-name dora-team/${REPO_NAME} \
-        --commit-sha ${COMMIT_SHA} \
-        --target-url "$(cat /workspace/preview-url.txt)" \
-        --github-token-secret-name github_token
+      #!/usr/bin/env bash
+      echo "Hello World"
+
+
+
+# # add preview URL as a status check
+# # prereq: a github token exists in Secret manager named with the name specified by `github-token-secret-name`
+# # the token must have access: `repo:status` (or `repo:all` for a private repo)
+#   - name: 'gcr.io/${PROJECT_ID}/pr-status-poster'
+#     env:
+#       - "COMMIT_SHA=$COMMIT_SHA"
+#       - "REPO_NAME=$REPO_NAME"
+#       - "PROJECT_ID=$PROJECT_ID"
+#     script: |
+#       python /app/set-check-status.py \
+#         --project-id ${PROJECT_ID} \
+#         --repo-name dora-team/${REPO_NAME} \
+#         --commit-sha ${COMMIT_SHA} \
+#         --target-url "$(cat /workspace/preview-url.txt)" \
+#         --github-token-secret-name github_token
 
