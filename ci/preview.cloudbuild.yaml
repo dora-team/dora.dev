@@ -27,6 +27,7 @@ steps:
 
       set +x
       echo "$GH_TOKEN" > .githubtoken
+      unset GH_TOKEN
       set -x
       gh auth login --with-token < .githubtoken
     secretEnv: ['GH_TOKEN']
