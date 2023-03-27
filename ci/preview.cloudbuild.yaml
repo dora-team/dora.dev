@@ -25,7 +25,10 @@ steps:
 
       gh version
 
-      gh auth login --with-token < $GH_TOKEN
+      set +x
+      echo "$GH_TOKEN" > .githubtoken
+      set -x
+      gh auth login --with-token < .githubtoken
     secretEnv: ['GH_TOKEN']
 availableSecrets:
   secretManager:
