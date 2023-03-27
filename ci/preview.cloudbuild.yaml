@@ -1,30 +1,28 @@
 steps:
-  - name: gcr.io/$PROJECT_ID/hugo
-    script: |
-      # Build draft site and published site
-      hugo -D -v -s ./hugo -d /workspace/hugo/draft --debug
+  # - name: gcr.io/$PROJECT_ID/hugo
+  #   script: |
+  #     # Build draft site and published site
+  #     hugo -D -v -s ./hugo -d /workspace/hugo/draft --debug
 
-  - name: gcr.io/$PROJECT_ID/firebase
-    env:
-      - "_PR_NUMBER=$_PR_NUMBER"
-    script: |
-      PREVIEW_CHANNEL="PR$_PR_NUMBER"
-      firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=$PROJECT_ID --only draft
+  # - name: gcr.io/$PROJECT_ID/firebase
+  #   env:
+  #     - "_PR_NUMBER=$_PR_NUMBER"
+  #   script: |
+  #     PREVIEW_CHANNEL="PR$_PR_NUMBER"
+  #     firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=$PROJECT_ID --only draft
       
-      # get the url of this preview channel, within the "draft" site
-      # (it returns in format `i  hosting:channel: https://<url>`)
-      CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL --site draft-dora-dev)"
+  #     # get the url of this preview channel, within the "draft" site
+  #     # (it returns in format `i  hosting:channel: https://<url>`)
+  #     CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL --site draft-dora-dev)"
 
-      # extract the URL from the channel data and save it to /workspace
-      echo "${CHANNEL_DATA##* }" > /workspace/preview-url.txt
-      cat /workspace/preview-url.txt
+  #     # extract the URL from the channel data and save it to /workspace
+  #     echo "${CHANNEL_DATA##* }" > /workspace/preview-url.txt
+  #     cat /workspace/preview-url.txt
 
   - name: 'bash'
     script: |
-      # install gh cli (per instructions at https://github.com/cli/cli/blob/trunk/docs/install_linux.md#alpine-linux)
-      echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
-      apk add github-cli@community=2.25.1
-      
+      apk update && apk add github-cli
+
       gh version
 
 
