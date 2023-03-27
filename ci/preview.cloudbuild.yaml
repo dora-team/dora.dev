@@ -23,7 +23,7 @@ steps:
     script: |
       # install gh cli (per instructions at https://github.com/cli/cli/blob/trunk/docs/install_linux.md#alpine-linux)
       echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
-      apk add github-cli@community<=2.25
+      apk add github-cli@community=2.25.1
       
       gh version
 
