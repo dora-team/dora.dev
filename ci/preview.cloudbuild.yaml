@@ -24,7 +24,7 @@ steps:
     - '_PR_NUMBER=$_PR_NUMBER'
     - 'REPO_NAME=$REPO_NAME'
     script: |
-      # install github cli ()`gh`)
+      # install github cli
       apk update && apk add github-cli
 
       gh version
