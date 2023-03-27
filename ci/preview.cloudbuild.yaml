@@ -20,16 +20,23 @@ steps:
   #     cat /workspace/preview-url.txt
 
   - name: 'bash'
+    env: 
+    - 'PR_NUMBER=$_PR_NUMBER'
     script: |
+      # install github cli ()`gh`)
       apk update && apk add github-cli
 
       gh version
 
+      # authenticate
       set +x
       echo "$GH_TOKEN" > .githubtoken
-      unset GH_TOKEN
       set -x
+      unset GH_TOKEN
       gh auth login --with-token < .githubtoken
+
+      # add preview URL as comment
+      gh pr comment $PR_NUMBER --repo=dora-team/$REPO_NAME --body "Posting a thing on a place"
     secretEnv: ['GH_TOKEN']
 availableSecrets:
   secretManager:
