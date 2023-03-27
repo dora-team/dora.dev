@@ -21,7 +21,8 @@ steps:
 
   - name: 'bash'
     env: 
-    - 'PR_NUMBER=$_PR_NUMBER'
+    - '_PR_NUMBER=$_PR_NUMBER'
+    - 'REPO_NAME=$REPO_NAME'
     script: |
       # install github cli ()`gh`)
       apk update && apk add github-cli
@@ -36,7 +37,7 @@ steps:
       gh auth login --with-token < .githubtoken
 
       # add preview URL as comment
-      gh pr comment $PR_NUMBER --repo=dora-team/$REPO_NAME --body "Posting a thing on a place"
+      gh pr comment $_PR_NUMBER --repo=dora-team/$REPO_NAME --body "Posting a thing on a place"
     secretEnv: ['GH_TOKEN']
 availableSecrets:
   secretManager:
