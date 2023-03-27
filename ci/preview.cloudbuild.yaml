@@ -38,6 +38,7 @@ steps:
 
       # add preview URL as comment
       gh pr comment $_PR_NUMBER --repo=dora-team/$REPO_NAME --body "Preview this PR at $(cat /workspace/preview-url.txt)"
+      exit 1
     secretEnv: ['GH_TOKEN']
 availableSecrets:
   secretManager:
