@@ -1,206 +1,172 @@
 ---
-title: "Visibility of work in the value stream"
-titleForHTMLHead: "DevOps Capabilities: Visibility of work in the value stream" # TODO: can we DRY this out?
-date: 2023-03-24T12:54:18Z
+title: "Visual Management"
+titleForHTMLHead: "DevOps Capabilities: Visual Management" # TODO: can we DRY this out?
+date: 2023-03-25T16:35:37Z
 category: process
 draft: true
-headline: "Understand and visualize the flow of work from idea to customer outcome in order to drive higher performance."
-summary: "Understand and visualize the flow of work from idea to customer outcome in order to drive higher performance."
+headline: "Learn about the principles of visual management to promote information sharing, get a common understanding of where the team is, and how to improve."
+summary: "Learn about the principles of visual management to promote information sharing, get a common understanding of where the team is, and how to improve."
 ---
 
-Note: *Visibility of work in the value stream* is one of a set of
-capabilities that drive higher software delivery and organizational
-performance.  These capabilities were discovered by the
+
+Note: *Visual management capabilities* is one of a set of capabilities
+that drive higher software delivery and organizational performance. These
+capabilities were discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
 [DevOps resources](https://cloud.google.com/devops).
 
-*Visibility of work* represents the extent to which teams have a good
-understanding of the flow of work from the business all the way through to
-customers, and whether they have visibility into this flow, including the status
-of products and features. Visibility of work is part of a wider group of
-capabilities that represent lean product management; these capabilities include
-[working in small batches](/capabilities/working-in-small-batches),
-[team experimentation](/capabilities/team-experimentation),
-and
-[visibility into customer feedback](/capabilities/customer-feedback).
-These capabilities predict both software delivery performance and organizational
-performance (which is measured in terms of profitability, market share, and
-productivity).
+It's a common practice for teams that are adopting
+[lean development practices](https://wikipedia.org/wiki/Lean_software_development)
+to display key information about their processes in team areas where everybody
+can see it. Visual management boards can create a shared understanding of where
+the team is in terms of its operational effectiveness. They can also help
+identify and remove obstacles in the path to higher performance.
 
-## How to implement work visibility
+## How to implement visual management
 
-Teams that are proficient at this capability have the following
-characteristics:
+There are many kinds of visual displays and dashboards that are common in the
+context of software delivery:
 
--   The team understands **how work moves** through the business from
-    idea to customer, including products or features.
--   The team has visibility into the **flow of this work**.
--   The flow of work, including its current state, is **shown on visual
-    displays** or dashboards.
--   **Information about the flow** of product development work across the
-    whole value stream is readily available.
+-   **Card walls, storyboards or Kanban boards**, either physical or
+    virtual, with index cards  that represent in-progress work items.
+-   **Dashboards or other visual indicators**, such as continuous
+    integration systems with monitors or traffic lights to show whether the
+    build is passing or failing. Effective visual displays are created,
+    updated, and perhaps discarded by teams in response to issues that the team
+    is currently interested in addressing.
+-   **Burn-up or burn-down charts** (for example, cumulative flow diagrams)
+    showing the cumulative status of all work being done. These allow the team
+    to project how long it will take to complete the current backlog.
+-   **Deployment pipeline monitors** showing what the latest deployable
+    build is, and whether stages in the pipeline are failing, such as
+    acceptance tests or performance tests.
+-   **Monitors showing production telemetry**, such as the number of
+    requests being received, latency statistics, cumulative `404` and `500`
+    errors, and which pages are most popular.
 
-### Use value stream mapping to understand how work flows
-
-Understanding how work moves through the product or feature development value
-stream is an essential step in improving workflow. A useful technique is
-[*value stream mapping*](https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ)
-(VSM). You can create a value stream map by gathering stakeholders from every
-part of the product development value stream: the business line, design,
-testing, QA, operations, and support. You break the value stream into 5 to 15
-process blocks. In each block, you record the activity that's performed, along
-with the team that performs it, as shown in the following diagram:
-
-![Value stream showing 9 stages from customer to product deployment.](./work-visibility-in-value-stream-9-stages.svg)
-
-Source:
-[*Lean Enterprise*](https://www.oreilly.com/library/view/lean-enterprise/9781491946527/)
-(O'Reilly) by Jez Humble, Joanne Molesky, and Barry O'Reilly, 2014
-
-Next, you analyze the state of work within the value stream, gathering the
-information to determine barriers to flow. In particular, for each process
-block, you measure the following key metrics:
-
--   **Lead time**: the time from the point a process accepts a piece of
-    work to the point it hands that work off to the next downstream process.
--   **Process time**: the time it would take to complete a single item of
-    work if the person performing it had all the necessary information and
-    resources to complete it and could work uninterrupted.
--   **Percent complete and accurate (%C/A)**: the proportion of times that a
-    process receives something from an upstream process that it can use without
-    requiring rework.
-
-You always record the state of the processes as they really are on the day the
-exercise is performed. Make sure that you determine the actual metrics, not what
-people would like the metrics to be.
-
-The following diagram shows an example of the final output:
-
-![Value stream stages with notes about each stage and an overall timeline.](./work-visibility-in-value-stream-stages-with-notes-and-timeline.svg)
-
-Source:
-[*Lean Enterprise*](https://www.oreilly.com/library/view/lean-enterprise/9781491946527/)
-(O'Reilly) by Jez Humble, Joanne Molesky, and Barry O'Reilly, O'Reilly, 2014.
-
-Look for process blocks that produce poor quality work, which then require a
-lot of downstream rework (reflected in a low %C/A in the downstream process
-block), and for processes that have long lead times relative to the process
-time.
-
-It's important to work with stakeholders to create a future-state value stream
-map that reflects the optimal state of the value stream at some future date (for
-example, in 6 months to 2 years). Stakeholders should also agree to re-run the
-exercise on a regular schedule (for example, every 6 months) to review the
-current state and to review progress.
-
-A detailed discussion of VSM is out of scope for this document; for more
-information, we recommend
-[*Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation*](https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/)
-by Karen Martin and Mike Osterling.
-
-### Visualize the current state of work
-
-VSM can depict how work moves through the product development value stream from
-idea to customer. But to get ongoing visibility into the flow of this work, you
-need a more dynamic view. For software development, you can use a card wall, a
-storyboard, or a Kanban board like the one shown in the following diagram.
-
-![Kanban board.](./work-visibility-in-value-stream-kanban-board.svg)
-
-Source: "Kanban for Ops" board game, Dominica DeGrandis, 2013.
-
-Using visual displays such as this, and creating of WIP limits to manage flow,
-are detailed in the articles on
+When combined with the use of
 [WIP limits](/capabilities/wip-limits)
-and
-[visual management](/capabilities/visual-management).
+and using feedback from production to make business decisions, visual management
+displays can contribute to
+[higher levels of delivery performance](/publications/pdf/state-of-devops-2015.pdf#page=15)
+(PDF).
 
-Finally, the mapping should include information about the responsibilities of
-each team, along with statistical data on key metrics such as lead time, deploy
-frequency, and %C/A.
+## Common pitfalls with visual management
 
-## Common pitfalls with work visibility
+The most important characteristics of visual management displays are that the
+team cares about and will act upon the information, and that the display is used
+during daily work to identify and remove obstacles to higher performance. Common
+pitfalls when implementing visual management include the following:
 
-Some common obstacles to implementing work visibility include the following:
+-   **Selecting metrics without the involvement of the team**. Visual
+    displays that show metrics that are highly relevant and useful to teams
+    will be used more often. In addition, if teams can have input into the
+    metrics that are displayed on their visual displays by participating in
+    selecting their goals (for example, some teams
+    [use OKRs](/capabilities/transform)),
+    they will be more motivated to drive progress toward those goals.
+-   **Creating displays that are complex, hard to understand, or do not
+    provide actionable information**. It's easy to create displays using tools
+    that allow high levels of modification or that are fun to play with. But
+    changing layouts and color on a custom dashboard isn't helpful if the team
+    is working with the wrong metrics or it takes the team several months to
+    implement. Key metrics or rough graphs drawn on a whiteboard and updated
+    daily can be just as effective to keep the team informed.
+-   **Not evolving visual displays**. Visual management tools should provide
+    teams with information that addresses issues they are facing right now. It
+    doesn't help one team to copy the displays of other teams unless the teams
+    work in the same context, with the same challenges and obstacles. As a
+    team's context evolves, visual displays should change as well. Also note
+    that as teams address obstacles, their visual displays might change to
+    discard old (previously relevant) metrics and highlight new areas of importance.
+-   **Not addressing the underlying problem that the visual display is
+    revealing**. Teams sometimes make quick fixes in an effort to make the
+    display "green" again. Displays should be used to drive improvements (fix
+    the problem), not become a goal in themselves (keep the board green).
+    Focusing on managing the metric alone leads to unintended consequences and
+    technical debt. If the display suggests a problem, teams should not just
+    fix the immediate problem. They should also work to identify the underlying
+    issue or constraint and resolve it, even if it's in another part of the
+    organization. Any inefficiencies will keep showing up, and fixing them
+    earlier will help all teams.
 
--   **Overestimating the state of organizational knowledge**. In any
-    organization, nobody has a good view into the whole value stream. When a
-    company puts together a value stream mapping exercise, it's important to
-    gather people from across the value stream to perform the exercise. There
-    is often surprise as people find out what *actually* goes on in other parts
-    of the organization.
+## Ways to improve visual management
 
--   **Failing to map the entire value stream**. It's important to map the
-    complete value stream from idea (whether that's a line of business, the
-    product marketing department, or internal customers) through to IT
-    operations and the people who support the product or service being mapped.
-    The increased visibility and alignment that results, along with the shared
-    understanding, are extremely valuable. Failure to map the entire value
-    stream can lead to local optimizations and missed opportunities to improve
-    processes in key areas that have an impact on the entire organization.
+The goal of visual management tools is to provide fast, easy-to-understand
+feedback so you can build quality into the product. This feedback helps the team
+identify defects in the product and understand whether some part of the system
+is not performing effectively, which helps them address the problem. In order to
+be effective, such systems must do the following:
 
--   **Focusing on the wrong areas for improvement**. Improving efficiency
-    in areas that aren't bottlenecks won't have much impact on overall lead
-    times, and can make things worse. Companies should of course improve in all
-    areas, but there's no point in investing substantial effort in an effort
-    that won't have organization-level outcomes.
+-   **Reflect information that the team cares about and will act on**.
+    Having build monitors does no good if teams don't care whether the display
+    shows an issue (for example, showing that the build status is red, meaning
+    broken), and won't actually act on this information by swarming to fix the
+    issue.
+-   **Be easy to understand**. It should be possible to tell at a glance
+    from across the room whether something needs attention. If there *is* a
+    problem, teams should know how to perform further diagnosis or fix the problem.
+-   **Give the team information that is relevant to their work**. While it's
+    important to collect as much data as possible about the team's work, the
+    display should present only data that is relevant to the team's goals. In
+    the face of information overload, particularly information that cannot be
+    acted upon, people ignore visual management displays; the displays just
+    become noise. The additional data can be accessed and used by the team when
+    they are swarming to fix the problem.
+-   **Be updated as part of daily work**. If the team lets the data go stale
+    or become inaccurate, they will ignore the visual displays, and the
+    displays will no longer be a useful beacon when important issues arise. If
+    displays are currently displaying stale or inaccurate data, investigate the
+    cause: is the data not related to the team's goals? What data would make
+    the display an important and compelling information source for the team?
 
--   **Not granting authority to make changes**. People involved in the
-    effort must have the authority to make changes to achieve the future state.
-    If these people must try to persuade others in the organization, the
-    exercise is unlikely to succeed.
+Teams shouldn't get caught up in aspects of visual displays that aren't
+critical. For example, visual management displays don't need to be electronic.
+Physical card walls or kanban boards can be easier to manage and understand,
+particularly if the team is all in one location. These displays can also help
+develop valuable team rituals such as physically standing in front of the board
+to pick up work and move it around. A whiteboard with some key project
+information that is updated daily by the team is often preferable to an
+electronic system that's hard to understand, difficult to update, or doesn't
+have necessary information.
 
-In addition, make sure you look at common obstacles in the articles on
-[WIP limits](/capabilities/wip-limits)
-and
-[visual management](/capabilities/visual-management).
-Many of them apply in this context too.
+## Ways to measure visual management
 
-## Ways to improve work visibility
+As with all improvement work, start with the measurable system-level goals that
+the team is working toward. Discover the existing state of the work system.
+Find a way to display the key information about the existing state, as well as
+the state you want. Make sure that this information is displayed only to the
+required precision.
 
--   **Provide tools for visualizing and recording workflow**. Start with
-    making sure the team has
-    [visual management](/capabilities/visual-management)
-    displays that show their work and its flow through the part of the value
-    stream that is closest to them, including both the upstream and downstream
-    parts of the process. Record how long it takes work to get through the
-    process, and how often rework must be performed because the team didn't get
-    it right the first time. This will uncover your early and best
-    opportunities for improvement at the team level.
+Review the visual displays as part of regular retrospectives. Ask these
+questions:
 
--   **Create a value stream map**. Work with other teams to perform a
-    value-stream mapping exercise to discover how work flows from idea to
-    customer outcome, and report the VSM metrics (lead time, process time,
-    %C/A) for each process block. Have the team prepare a future-state value
-    stream map and work to implement it.
+-   Are the displays giving you the information you need?
+-   Is the information up to date?
+-   Are people acting on this information?
+-   Is the information (and the actions people take in response to it)
+    contributing to measurable improvement towards a goal that the team cares about?
+-   Does everybody know what the goals are?
+-   Can you look at your visual management displays and see the key process
+    metrics you care about?
 
--   **Share artifacts**. Make sure the artifacts from these exercises are
-    available to everyone in the organization, and that they are updated at
-    least annually.
+If the answer to any of these questions is no, investigate further:
 
-## Ways to measure work visibility
-
-To determine the effectiveness of the team's visibility to the work in the
-value stream, ask these questions:
-
--   Is there a current or recent value stream map available to anyone in
-    the organization?
--   Does everybody in the organization have access to a visual display that
-    shows what they're working on and the status of their work?
--   Are statistics on metrics such as lead time and %C/A available to the team?
+-   Can you change the information or how it's displayed?
+-   Can you get rid of the display altogether?
+-   Can you create a new display? What would a prototype look like? What are
+    the most important pieces of information to include, and how precise do
+    they need to be to help you solve your problems and achieve your goals?
 
 ## What's next
 
 -   For links to other articles and resources, see the
     [DevOps page](https://cloud.google.com/devops).
 -   Read the book
-    [*Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation*](https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/),
-    by Karen Martin and Mike Osterling.
--   Read the book
-    [*Kanban: Successful Evolutionary Change for Your Technology Business*](https://books.google.com/books/about/Kanban.html?id=RJ0VUkfUWZkC),
-    by David Anderson.
+    [*Making Work Visible*](https://itrevolution.com/book/making-work-visible/),
+    by Dominica DeGrandis.
 -   Explore our DevOps
     [research program](/).
 -   Take the
