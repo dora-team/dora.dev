@@ -25,6 +25,13 @@ steps:
 
       gh version
 
+      gh auth login --with-token=$$GH_TOKEN
+    secretEnv: ['GH_TOKEN']
+availableSecrets:
+  secretManager:
+  - versionName: projects/$PROJECT_ID/secrets/github_token/versions/latest
+    env: 'GH_TOKEN'
+
 
 
 # # add preview URL as a status check
