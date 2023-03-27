@@ -21,8 +21,10 @@ steps:
 
   - name: 'bash'
     script: |
-      apk update && apk add github-cli
-
+      # install gh cli (per instructions at https://github.com/cli/cli/blob/trunk/docs/install_linux.md#alpine-linux)
+      echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
+      apk add github-cli@community
+      
       gh version
 
 
