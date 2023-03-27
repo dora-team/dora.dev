@@ -1,23 +1,23 @@
 steps:
-  # - name: gcr.io/$PROJECT_ID/hugo
-  #   script: |
-  #     # Build draft site and published site
-  #     hugo -D -v -s ./hugo -d /workspace/hugo/draft --debug
+  - name: gcr.io/$PROJECT_ID/hugo
+    script: |
+      # Build draft site and published site
+      hugo -D -v -s ./hugo -d /workspace/hugo/draft --debug
 
-  # - name: gcr.io/$PROJECT_ID/firebase
-  #   env:
-  #     - "_PR_NUMBER=$_PR_NUMBER"
-  #   script: |
-  #     PREVIEW_CHANNEL="PR$_PR_NUMBER"
-  #     firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=$PROJECT_ID --only draft
+  - name: gcr.io/$PROJECT_ID/firebase
+    env:
+      - "_PR_NUMBER=$_PR_NUMBER"
+    script: |
+      PREVIEW_CHANNEL="PR$_PR_NUMBER"
+      firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=$PROJECT_ID --only draft
       
-  #     # get the url of this preview channel, within the "draft" site
-  #     # (it returns in format `i  hosting:channel: https://<url>`)
-  #     CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL --site draft-dora-dev)"
+      # get the url of this preview channel, within the "draft" site
+      # (it returns in format `i  hosting:channel: https://<url>`)
+      CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL --site draft-dora-dev)"
 
-  #     # extract the URL from the channel data and save it to /workspace
-  #     echo "${CHANNEL_DATA##* }" > /workspace/preview-url.txt
-  #     cat /workspace/preview-url.txt
+      # extract the URL from the channel data and save it to /workspace
+      echo "${CHANNEL_DATA##* }" > /workspace/preview-url.txt
+      cat /workspace/preview-url.txt
 
   - name: 'bash'
     env: 
@@ -37,28 +37,9 @@ steps:
       gh auth login --with-token < .githubtoken
 
       # add preview URL as comment
-      gh pr comment $_PR_NUMBER --repo=dora-team/$REPO_NAME --body "Posting a thing on a place"
+      gh pr comment $_PR_NUMBER --repo=dora-team/$REPO_NAME --body "Preview this PR at $(cat /workspace/preview-url.txt)"
     secretEnv: ['GH_TOKEN']
 availableSecrets:
   secretManager:
   - versionName: projects/$PROJECT_ID/secrets/github_token/versions/latest
     env: 'GH_TOKEN'
-
-
-
-# # add preview URL as a status check
-# # prereq: a github token exists in Secret manager named with the name specified by `github-token-secret-name`
-# # the token must have access: `repo:status` (or `repo:all` for a private repo)
-#   - name: 'gcr.io/${PROJECT_ID}/pr-status-poster'
-#     env:
-#       - "COMMIT_SHA=$COMMIT_SHA"
-#       - "REPO_NAME=$REPO_NAME"
-#       - "PROJECT_ID=$PROJECT_ID"
-#     script: |
-#       python /app/set-check-status.py \
-#         --project-id ${PROJECT_ID} \
-#         --repo-name dora-team/${REPO_NAME} \
-#         --commit-sha ${COMMIT_SHA} \
-#         --target-url "$(cat /workspace/preview-url.txt)" \
-#         --github-token-secret-name github_token
-
