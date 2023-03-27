@@ -21,7 +21,7 @@ steps:
 
   - name: 'bash'
     script: |
-      apk add github-cli
+      apk update && apk add github-cli
 
       gh version
 
