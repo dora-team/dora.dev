@@ -19,7 +19,7 @@ steps:
       echo "${CHANNEL_DATA##* }" > /workspace/preview-url.txt
       cat /workspace/preview-url.txt
 
-  - name: 'bash'
+  - name: 'ubuntu'
     script: |
       #!/usr/bin/env bash
       
