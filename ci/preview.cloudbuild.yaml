@@ -25,7 +25,7 @@ steps:
 
       gh version
 
-      $GH_TOKEN | gh auth login --with-token
+      gh auth login --with-token < $GH_TOKEN
     secretEnv: ['GH_TOKEN']
 availableSecrets:
   secretManager:
