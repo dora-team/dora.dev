@@ -21,7 +21,7 @@
                 },
                 {
                     "source": "/research.html",
-                    "destination": "/research/",
+                    "destination": "/",
                     "type": 302
                 },
                 {
@@ -57,7 +57,7 @@
                 },
                 {
                     "source": "/research.html",
-                    "destination": "/research/",
+                    "destination": "/",
                     "type": 302
                 },
                 {
