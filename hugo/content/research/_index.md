@@ -9,7 +9,7 @@ DORA's research program represents over nine years of research and data from ove
 
 Use our [quick check tool](/quickcheck/) to discover how you compare to industry peers, identify specific capabilities you can use to improve performance, and make progress toward your software delivery performance goals.
 
-You can also explore our research program using the diagram below, or browse our [capability catalog](https://bit.ly/dora-capabilities). To learn more about research from a particular year, browse the [research archives](/research/archives/).
+You can also explore our research program using the diagram below, or browse our [capability catalog](/capabilities). To learn more about research from a particular year, browse the [research archives](/research/archives/).
 
 <img src="/img/big_friendly_diagram.png" style="width:100%">
 <div style="text-align:center"><small>Predictive model 2020</small></div>
