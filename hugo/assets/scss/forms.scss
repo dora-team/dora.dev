@@ -53,8 +53,8 @@ input[type="submit"],
     }
 }
 
-button.secondary,
-.button.secondary {
+button.secondary, .button.secondary, 
+button.tertiary, .button.tertiary {
     background-color: white;
     color: #1a73e8;
     border: 1px solid #dadce0;
@@ -62,6 +62,10 @@ button.secondary,
     &:hover {
         background-color: #e1f3fc;
     }
+}
+
+button.tertiary, .button.tertiary {
+    border-color:white;
 }
 
 ::placeholder{

@@ -271,10 +271,18 @@ window.addEventListener('DOMContentLoaded', () => {
         let selectedStepHeight = document.querySelector('#prioritize_' + step).getBoundingClientRect().height;
         document.querySelector('.prioritize_container').style.height = selectedStepHeight + 'px';
         let prioritizeButton = document.querySelector('#prioritize_button');
+        let backButton = document.querySelector('#prioritize_back');
 
-        if (1 <= step && step < 4) {
+        if (step == 0) {
+
+            backButton.style.display = 'none';
+            prioritizeButton.innerText = 'Help Me Prioritize';
+            prioritizeButton.disabled = false;
+
+        } else if (1 <= step && step < 4) {
 
             prioritizeButton.innerText = 'Next';
+            backButton.style.display = 'inline-block';
 
             // remove description of exercise
             document.querySelector('.button_description').style.display = (step == 0) ? 'block' : 'none';
@@ -308,7 +316,7 @@ window.addEventListener('DOMContentLoaded', () => {
             document.querySelector('#culture_score .capabilityScoreData').classList.add('percentile_' + fiveScaleToDecile(culture_average));
             document.querySelector('#culture_score .capabilityScoreData').style.width = culture_average * 2 + 'em';
 
- 
+
         } else if (step > 4) {
             console.log('error: prioritization step out of bounds');
             return;
@@ -316,21 +324,21 @@ window.addEventListener('DOMContentLoaded', () => {
 
         function validateResponse(step) {
 
-            
+
             // determine number of questions (equal to the number of rows in the table, minus one [the header row])
             let numQuestions = document.querySelectorAll('#prioritize_' + step + ' tr').length - 1;
             let questionsWithAnswers = new Array(numQuestions).fill(false);
 
             // confirm that at least one selection in each row is checked
-            for(let i = 1; i < numQuestions+1; i++) {
+            for (let i = 1; i < numQuestions + 1; i++) {
                 let thisQuestionOptions = document.querySelectorAll('input[name="question_' + step + '_' + i + '"]');
                 thisQuestionOptions.forEach((question) => {
                     if (question.checked) {
-                        questionsWithAnswers[i-1] = true;
+                        questionsWithAnswers[i - 1] = true;
                     }
                 });
             }
-            
+
             // if every question has a response, activate the "next" button
             if (questionsWithAnswers.every(Boolean)) {
                 prioritizeButton.disabled = false;
@@ -347,29 +355,35 @@ window.addEventListener('DOMContentLoaded', () => {
         // determine number of questions (equal to the number of rows in the table, minus one [the header row])
         let numQuestions = document.querySelectorAll('#prioritize_' + currentStep + ' tr').length - 1;
 
-        if ( 1 <= currentStep && currentStep <= 3 ) {
+        if (1 <= currentStep && currentStep <= 3) {
             // get values for current step
             let stepValues = new Array();
-            for (let i=1; i < numQuestions+1; i++) {
+            for (let i = 1; i < numQuestions + 1; i++) {
                 let thisQuestion = `question_${currentStep}_${i}`
                 let options = document.querySelectorAll('input[name="' + thisQuestion + '"]');
-                options.forEach( (option) => {
+                options.forEach((option) => {
                     if (option.checked) {
                         stepValues.push(option.value);
                     }
                 });
             }
-            urlParams.append(`step${currentStep}`,stepValues.join(""));
-            window.history.replaceState({step: currentStep+1}, window.title, `?${urlParams.toString()}`);
+            urlParams.append(`step${currentStep}`, stepValues.join(""));
+            window.history.replaceState({ step: currentStep + 1 }, window.title, `?${urlParams.toString()}`);
         }
 
+        // set action of "back" button
+        document.querySelector('#prioritize_back').addEventListener("click", function (event) {
+            let targetStep = currentStep == 0 ? 0 : currentStep -1;
+            document.querySelector('.prioritize_container').dataset.step = targetStep;
+            showPrioritizationStep(targetStep);
+        }, { once: true })
 
         // move onto next step
         showPrioritizationStep(currentStep + 1);
     });
 
-    
-    if(urlParams.has('step1') && urlParams.has('step2') && urlParams.has('step3')) {
+
+    if (urlParams.has('step1') && urlParams.has('step2') && urlParams.has('step3')) {
         // if the URL contains values for the prioritization steps, skip to the results
         showPrioritizationStep(4);
     } else if (urlParams.has('debugPrioritizationStep')) {
