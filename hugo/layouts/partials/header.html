@@ -8,11 +8,11 @@
             <input type="checkbox">
             <span class="menu"> <span class="hamburger"></span> </span>
             <ul>
-                <li><a href="/publications/">Publications</a></li>
-                <li><a href="/research/">Research</a></li>
+                <li><a href="/publications/" {{ if (eq .Section "publications") }}class="active"{{ end }}>Publications</a></li>
+                <li><a href="/research/" {{ if (eq .Section "research") }}class="active"{{ end }}>Research</a></li>
                 <li><a href="https://bit.ly/dora-capabilities" target="_blank">Capabilities</a></li>
-                <li><a href="/quickcheck/">Quick Check</a></li>
-                <li><a href="/resources/">Resources</a></li>
+                <li><a href="/quickcheck/" {{ if (eq .Section "quickcheck") }}class="active"{{ end }}>Quick Check</a></li>
+                <li><a href="/resources/" {{ if (eq .Section "resources") }}class="active"{{ end }}>Resources</a></li>
                 <li><a href="https://dora.community/" target="_blank">Community</a></li>
             </ul>
             <div class="page-overlay"></div>

@@ -16,11 +16,18 @@ header {
                     text-decoration: none;
                     color: rgb(95, 99, 104);
                     white-space:nowrap;
+                    font-weight: 400;
                 }
 
                 a:hover {
                     color: rgb(0, 0, 0);
                 }
+
+                a.active {
+                    color: black;
+                    font-weight: 600;
+                }
+
             }
         }
     }
