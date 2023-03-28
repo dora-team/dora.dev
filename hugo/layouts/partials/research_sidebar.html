@@ -11,7 +11,7 @@
         <ul>
             {{ range (where .Site.RegularPages "Section" "research")}}
                 {{ if strings.Contains .Page "archives" }}
-                    <li><a href="{{ .Page.RelPermalink }}">{{ .Date.Format "2006" }}</a></li>
+                    <li><a href="{{ .Page.RelPermalink }}">{{ .Params.research_year }}</a></li>
                 {{ end }}
             {{ end }}
         </ul>

@@ -27,14 +27,14 @@ stylesheets:
 
 ## Prior State of DevOps Reports
 
-- [![2021 State of DevOps Report](img/sodr-2021.png)](pdf/state-of-devops-2021.pdf)
-  #### [2021 State of DevOps Report](pdf/state-of-devops-2021.pdf)
+- [![2021 Accelerate State of DevOps Report](img/sodr-2021.png)](pdf/state-of-devops-2021.pdf)
+  #### [2021 Accelerate State of DevOps Report](pdf/state-of-devops-2021.pdf)
   [Read PDF](pdf/state-of-devops-2021.pdf)
-- [![2019 State of DevOps Report](img/sodr-2019.png)](pdf/state-of-devops-2019.pdf)
-  #### [2019 State of DevOps Report](pdf/state-of-devops-2019.pdf)
+- [![2019 Accelerate State of DevOps Report](img/sodr-2019.png)](pdf/state-of-devops-2019.pdf)
+  #### [2019 Accelerate State of DevOps Report](pdf/state-of-devops-2019.pdf)
   [Read PDF](pdf/state-of-devops-2019.pdf)
-- [![2018 State of DevOps Report](img/sodr-2018.png)](pdf/state-of-devops-2018.pdf)
-  #### [2018 State of DevOps Report](pdf/state-of-devops-2018.pdf)
+- [![2018 Accelerate State of DevOps Report](img/sodr-2018.png)](pdf/state-of-devops-2018.pdf)
+  #### [2018 Accelerate State of DevOps Report](pdf/state-of-devops-2018.pdf)
   [Read PDF](pdf/state-of-devops-2018.pdf)
 - [![2017 State of DevOps Report](img/sodr-2017.png)](pdf/state-of-devops-2017.pdf)
   #### [2017 State of DevOps Report](pdf/state-of-devops-2017.pdf)
