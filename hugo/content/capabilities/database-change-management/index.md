@@ -8,13 +8,13 @@ headline: "Make sure database changes don't cause problems or slow you down."
 summary: "Make sure database changes don't cause problems or slow you down."
 ---
 
-<blockquote>Note: *Database change management* is one of a set of capabilities that drive
+Note: *Database change management* is one of a set of capabilities that drive
 higher software delivery and organizational performance. These
 capabilities were discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).</blockquote>
+[DevOps resources](https://cloud.google.com/devops).
 
 Database changes are often a major source of risk and delay when performing
 deployments. [DevOps Research and Assessment (DORA)](https://cloud.google.com/devops) investigated which database-related practices help during the process of implementing continuous delivery, improving both software delivery performance and availability.
@@ -103,7 +103,7 @@ database to the schema version you want. Examples of tools include:
 You can also use migrations to
 create empty database schemas for development and testing.
 
-As shown in the following digram, every database instance has a table that
+As shown in the following diagram, every database instance has a table that
 records which migrations you have run against that instance. Then you can perform
 updates automatically
 using a tool or script which executes migrations that have not already been

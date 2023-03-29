@@ -10,13 +10,13 @@ summary: "Improve software quality by building reliable automated test suites an
 
 
 
-<blockquote>Note: *Continuous testing* is one of a set of capabilities that drive higher
+Note: *Continuous testing* is one of a set of capabilities that drive higher
 software delivery and organizational performance.  These capabilities were
 discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).</blockquote>
+[DevOps resources](https://cloud.google.com/devops).
 
 The key to building quality into software is getting fast feedback on the impact
 of changes throughout the software delivery lifecycle. Traditionally, teams
@@ -98,7 +98,7 @@ shows the types of automated and manual tests to run.
 ![image](ta-image1.png)
 
 The automated tests highlighted in the preceding diagram fit in a
-[continuous delivery](continuous-delivery)
+[continuous delivery](/capabilities/continuous-delivery)
 [deployment pipeline](https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline).
 In such pipelines, every change runs a build that creates software packages,
 executes unit tests, and possibly performs other checks, such as static

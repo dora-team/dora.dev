@@ -8,13 +8,13 @@ headline: "Make deploying software a reliable, low-risk process that can be perf
 summary: "Make deploying software a reliable, low-risk process that can be performed on demand at any time."
 ---
 
-<blockquote>Note: *Continuous delivery* is one of a set of capabilities that drive
+Note: *Continuous delivery* is one of a set of capabilities that drive
 higher software delivery and organizational performance. These capabilities were
 discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).</blockquote>
+[DevOps resources](https://cloud.google.com/devops).
 
 Continuous delivery is the ability to release changes of all kinds on demand
 quickly, safely, and sustainably. Teams that practice continuous delivery well
