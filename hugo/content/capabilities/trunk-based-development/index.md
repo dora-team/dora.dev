@@ -1,6 +1,6 @@
 ---
-title: "Trunk-based Development.md"
-titleForHTMLHead: "DevOps Capabilities: Trunk-based Development.md" # TODO: can we DRY this out?
+title: "Trunk-based Development"
+titleForHTMLHead: "DevOps Capabilities: Trunk-based Development" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical 
 draft: true
@@ -8,13 +8,13 @@ headline: "Prevent merge-conflict hassles with trunk-based development practices
 summary: "Prevent merge-conflict hassles with trunk-based development practices."
 ---
 
-<blockquote>Note: *Trunk-based development* is one of a set of capabilities that drive
+Note: *Trunk-based development* is one of a set of capabilities that drive
 higher software delivery and organizational performance.
 These capabilities were discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).</blockquote>
+[DevOps resources](https://cloud.google.com/devops).
 
 There are two main patterns for developer teams to work together using version
 control. One is to use *feature branches*, where either a developer or a group

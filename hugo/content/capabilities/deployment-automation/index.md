@@ -8,13 +8,13 @@ headline: "Best practices and approaches for deployment automation and reducing 
 summary: "Best practices and approaches for deployment automation and reducing manual intervention in the release process."
 ---
 
-<blockquote>Note: *Deployment automation* is one of a set of capabilities that drive
+Note: *Deployment automation* is one of a set of capabilities that drive
 higher software delivery and organizational performance. These capabilities were
 discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).</blockquote>
+[DevOps resources](https://cloud.google.com/devops).
 
 Deployment automation is what enables you to deploy your software to testing
 and production environments with the push of a button. Automation is essential
@@ -42,7 +42,7 @@ The scripts usually perform the following tasks:
 
 1.  Prepare the target environment, perhaps by installing and configuring
     any necessary software, or by starting up a virtual host from a
-    pre-prepared image in a cloud provider such as {.
+    pre-prepared image in a cloud provider such as Google Cloud.
 2.  Deploy the packages.
 3.  Perform any deployment-related tasks such as running database migration
     scripts.
@@ -149,7 +149,7 @@ using the
 A third common pitfall is components that are not designed for automation. Any
 deployment process that requires logging into a console and interacting manually
 by clicking around should be a target for improvement. Today, most platforms
-(including {) offer an API that your deployment script can use. If
+(including Google Cloud) offer an API that your deployment script can use. If
 that's not the case, you need to be creative to avoid such manual intervention,
 perhaps by finding the tool's underlying configuration file or database and
 making changes to it directly, or by replacing it with another tool that does
@@ -206,7 +206,7 @@ Measuring deployment automation is straightforward.
 
 -   For links to other articles and resources, see the
     [DevOps page](https://cloud.google.com/devops).
--   Read more about {'s
+-   Read more about Google Cloud's
     [continuous delivery solutions](https://cloud.google.com/solutions/continuous-delivery).
 -   Read the
     [Site Reliability Engineering (SRE) book](https://landing.google.com/sre/books/),

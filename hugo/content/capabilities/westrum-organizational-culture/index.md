@@ -48,7 +48,7 @@ In his research, he developed the following typology of organizational cultures.
 | Failure leads to scapegoating | Failure leads to justice  | Failure leads to inquiry  |
 | Novelty crushed               | Novelty leads to problems | Novelty implemented       |
 
-<small><strong>Table 1</strong>: The Westrum organizational typology model: How organizations process information (Source: Ron Westrum, "<a href="https://qualitysafety.bmj.com/content/13/suppl_2/ii22.short" target="external" class="external" track-type="article" track-name="externalLink" track-metadata-position="body">A typology of organisation culture</a>", BMJ Quality &amp; Safety 13, no. 2(2004), doi:10.1136/qshc.2003.009522.)</small>
+<small><strong>Table 1</strong>: The Westrum organizational typology model: How organizations process information (Source: Ron Westrum, "<a href="https://qualitysafety.bmj.com/content/13/suppl_2/ii22.short">A typology of organisation culture</a>", BMJ Quality &amp; Safety 13, no. 2(2004), doi:10.1136/qshc.2003.009522.)</small>
 
 Similar to Dr. Westrum's findings, DORA research shows that a high-trust,
 generative culture predicts software delivery and organizational performance in

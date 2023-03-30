@@ -8,13 +8,13 @@ headline: "Learn about moving from a tightly coupled architecture to service-ori
 summary: "Learn about moving from a tightly coupled architecture to service-oriented and microservice architectures without re-architecting everything at once"
 ---
 
-<blockquote>Note: *Architecture* is one of a set of capabilities that drive higher software
+Note: *Architecture* is one of a set of capabilities that drive higher software
 delivery and organizational performance. These capabilities were
 discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).</blockquote>
+[DevOps resources](https://cloud.google.com/devops).
 
 Research from the DevOps Research and Assessment (DORA) team shows that
 architecture is an important predictor for achieving continuous delivery.
@@ -263,7 +263,7 @@ delegate to the system it is replacing. Over time, as more and more
 functionality is performed in the new architecture, the old system is
 "strangled."
 
-![Replacing a monolithic architecture with a more componentized one.](images/strangler-fig-pattern.svg)
+![Replacing a monolithic architecture with a more componentized one.](strangler-fig-pattern.svg)
 
 Product and service architectures continually evolve. There are many ways to
 decide what should be a new module or service, and the process is iterative.
@@ -306,7 +306,7 @@ because each service also has a well-defined API, it enables easier testing of
 services and the creation of contracts and service level agreements (SLAs)
 between teams.
 
-![Loosely coupled architecture.](./loosely-coupled-architecture.svg)
+![Loosely coupled architecture.](loosely-coupled-architecture.svg)
 
 Randy Shoup describes this architecture as follows:
 

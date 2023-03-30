@@ -8,13 +8,13 @@ headline: "Learn about common mistakes, ways to measure, and how to improve on y
 summary: "Learn about common mistakes, ways to measure, and how to improve on your continuous integration efforts."
 ---
 
-<blockquote>Note: *Continuous integration* is one of a set of capabilities that drive
+Note: *Continuous integration* is one of a set of capabilities that drive
 higher software delivery and organizational performance. These capabilities were
 discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).</blockquote>
+[DevOps resources](https://cloud.google.com/devops).
 
 Software systems are complex, and an apparently simple, self-contained change
 to a single file can have unintended side effects on the overall system. When a

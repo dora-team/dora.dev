@@ -8,13 +8,13 @@ headline: "A guide to implementing the right version control practices for repro
 summary: "A guide to implementing the right version control practices for reproducibility and traceability."
 ---
 
-<blockquote>Note: *Version control* is one of a set of capabilities that drive higher
+Note: *Version control* is one of a set of capabilities that drive higher
 software delivery and organizational performance.  These capabilities
 were discovered by the
 [DORA State of DevOps research program](/),
 an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).</blockquote>
+[DevOps resources](https://cloud.google.com/devops).
 
 Version control systems like Git, Subversion, and Mercurial provide a logical
 means to organize files and coordinate their creation, controlled access,
