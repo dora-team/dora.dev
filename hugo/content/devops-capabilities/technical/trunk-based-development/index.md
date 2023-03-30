@@ -25,7 +25,7 @@ merge the feature branch back to trunk.
 
 The second pattern is known as *trunk-based development*, where each developer
 divides their own
-[work into small batches](/devops-capabilities/working-in-small-batches)
+[work into small batches](/devops-capabilities/process/working-in-small-batches)
 and merges that work into trunk at least once (and potentially several times) a
 day. The key difference between these approaches is scope. Feature branches
 typically involve multiple developers and take days or even weeks of work. In
@@ -65,7 +65,7 @@ bug fixes.
 ## How to implement trunk-based development
 
 Trunk-based development is a required practice for
-[continuous integration](/devops-capabilities/continuous-integration).
+[continuous integration](/devops-capabilities/technical/continuous-integration).
 Continuous integration (CI) is the combination of practicing trunk-based
 development and maintaining a suite of fast automated tests that run after each
 commit to trunk to make sure the system is always working.
@@ -83,7 +83,7 @@ to revert the change if it can't be fixed in a few minutes.
 
 Practicing trunk-based development requires in turn that developers understand
 how to
-[break their work up into small batches](/devops-capabilities/working-in-small-batches).
+[break their work up into small batches](/devops-capabilities/process/working-in-small-batches).
 This is a significant change for developers who aren't used to working in this
 way.
 
@@ -142,7 +142,7 @@ improve trunk-based development:
 
 -   **Develop in small batches**. One of the most important enablers of
     trunk-based development is teams learning how to
-    [develop in small batches](/devops-capabilities/working-in-small-batches).
+    [develop in small batches](/devops-capabilities/process/working-in-small-batches).
     This requires training and organizational support for the development team.
 -   **Perform synchronous code review.** As discussed previously, moving to
     synchronous code review, or at least ensuring that developers prioritize
@@ -150,7 +150,7 @@ improve trunk-based development:
     days, to get merged into trunk.
 -   **Implement comprehensive automated testing**. Make sure that you have a
     comprehensive and meaningful suite of
-    [automated unit tests](/devops-capabilities/test-automation).
+    [automated unit tests](/devops-capabilities/technical/test-automation).
     and that these are run before every
     commit. For example, if you're using GitHub, you can
     [protect branches](https://help.github.com/en/articles/about-protected-branches)
@@ -159,12 +159,12 @@ improve trunk-based development:
     tutorial shows  how to integrate
     [GitHub Checks](https://developer.github.com/v3/checks/)
     with 
-    [{](/build/).
+    [Cloud Build](https://cloud.google.com/build/).
 -   **Have a fast build**. The build and test process should execute in
     [a few minutes](https://www.infoq.com/presentations/Crazy-Fast-Build-Times-or-When-10-Seconds-Starts-to-Make-You-Nervous/).
     If this seems hard to achieve, it probably indicates opportunities for
     improvement in the
-    [architecture](/devops-capabilities/architecture)
+    [architecture](/devops-capabilities/technical/loosely-coupled-architecture)
     of the system.
 -   **Create a core group of advocates and mentors**. Trunk-based
     development is a substantial change for many developers, and you should

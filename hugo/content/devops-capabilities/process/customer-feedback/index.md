@@ -22,10 +22,10 @@ building are actually helping users solve their problems, or whether the
 features are being used at all.
 
 Customer feedback is part of a wider group of capabilities, including
-[visibility of work in the value stream](/devops-capabilities/visual-management),
-[working in small batches](/devops-capabilities/working-in-small-batches),
+[visibility of work in the value stream](/devops-capabilities/process/visual-management),
+[working in small batches](/devops-capabilities/process/working-in-small-batches),
 and
-[team experimentation](/devops-capabilities/team-experimentation),
+[team experimentation](/devops-capabilities/process/team-experimentation),
 that together represent a
 [lean approach to product management](https://books.google.com/books/about/Escaping_the_Build_Trap.html?id=PQ8dMQAACAAJ).
 
@@ -138,7 +138,7 @@ following:
 -   **Failing to allow teams to act on feedback**. Delivery teams must be
     empowered to make changes to the design or specification of the system in
     response to feedback, as discussed in the document on
-    [team experimentation](/devops-capabilities/team-experimentation).
+    [team experimentation](/devops-capabilities/process/team-experimentation).
 -   **Measuring success based on the wrong metric**. In some cases,
     solutions without sufficient customer validation are provided to
     development and delivery teams as finalized requirements. In those cases,

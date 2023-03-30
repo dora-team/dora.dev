@@ -26,14 +26,14 @@ process improvement, it focuses primarily on software delivery.
 
 Working in small batches is part of lean product management. Together with
 capabilities like
-[visibility of work in the value stream](/devops-capabilities/work-visibility-in-value-stream),
-[team experimentation](/devops-capabilities/team-experimentation),
+[visibility of work in the value stream](/devops-capabilities/process/work-visibility-in-value-stream),
+[team experimentation](/devops-capabilities/process/team-experimentation),
 and
-[visibility into customer feedback](/devops-capabilities/customer-feedback), working in small batches predicts software
+[visibility into customer feedback](/devops-capabilities/process/customer-feedback), working in small batches predicts software
 delivery performance and organizational performance.
 
 One reason work is done in large batches is because of
-[the large fixed cost of handing off changes](/devops-capabilities/streamlining-change-approval).
+[the large fixed cost of handing off changes](/devops-capabilities/process/streamlining-change-approval).
 In traditional phased approaches to software development, handoffs from
 development to test or from test to IT operations consist of whole releases:
 months worth of work by teams consisting of tens or hundreds of people. With
@@ -88,7 +88,7 @@ When features are of an appropriate size, you can split the development of the
 feature into even smaller batches. This process can be difficult and requires
 experience to develop. Ideally, your developers should be checking multiple
 small releasable changes
-[into trunk at least once per day](/devops-capabilities/trunk-based-development).
+[into trunk at least once per day](/devops-capabilities/technical/trunk-based-development).
 
 The key is to start development at the service or API layer, not at the UI
 layer. In this way, you can make additions to the API that won't initially be
@@ -97,10 +97,10 @@ launch these changes to production without making them visible to users. This
 approach, called _dark launching_, allows developers to check in code for small
 batches that have been completed, but for features that are not yet fully
 complete. You can then run
-[automated tests](/devops-capabilities/test-automation)
+[automated tests](/devops-capabilities/technical/test-automation)
 against these changes to prove that they behave in the expected way. This way,
 teams are still working quickly and
-[developing off of trunk](/devops-capabilities/trunk-based-development)
+[developing off of trunk](/devops-capabilities/technical/trunk-based-development)
 and not long-lived feature branches.
 
 You can also dark launch changes by using a
@@ -158,16 +158,16 @@ following conditions are true:
 
 To become an expert in small batch development, strive to meet each of these conditions in
 all of your development teams. This practice is a necessary condition for both
-[continuous integration](/devops-capabilities/continuous-integration)
+[continuous integration](/devops-capabilities/technical/continuous-integration)
 and
-[trunk-based development](/devops-capabilities/trunk-based-development).
+[trunk-based development](/devops-capabilities/technical/trunk-based-development).
 
 ## Ways to measure the size of work batches
 
 When you understand
-[continuous integration](/devops-capabilities/continuous-integration)
+[continuous integration](/devops-capabilities/technical/continuous-integration)
 and
-[monitoring](/devops-capabilities/monitoring-systems),
+[monitoring](/devops-capabilities/process/monitoring-systems),
 you can outline possible ways to measure small batch development in your systems
 and development environment.
 

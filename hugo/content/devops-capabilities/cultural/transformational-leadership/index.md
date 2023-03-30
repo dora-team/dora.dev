@@ -127,7 +127,7 @@ incidents, and quarter the number of high impact incidents."
 There may be significant obstacles to achieving goals like the ones set by
 Richard Herbert. Again, leaders can use intellectual stimulation to help teams
 identify and remove obstacles to achieving higher performance. Perhaps team
-members believe that implementing [continuous testing](/devops-capabilities/test-automation)
+members believe that implementing [continuous testing](/devops-capabilities/technical/test-automation)
 will help them, but they've
 tried before and failed. Leaders can ask teams questions such as: "Why did it
 fail last time?", "What lessons did you learn?", "What would you do differently
@@ -165,7 +165,7 @@ consistent way without having to look it up.
 -   For links to other articles and resources, see the
     [DevOps page](https://cloud.google.com/devops).
 -   Read [*Leadership and Performance Beyond Expectations*](https://books.google.com/books/about/Leadership_and_Performance_Beyond_Expect.html?id=NCd-QgAACAAJ) by Bernad M. Bass (Free Press, 1985.)
--   Check out the article [How to effectively execute transformations.](/devops-capabilities/transform)
+-   Check out the article [How to effectively execute transformations.](/devops-capabilities/cultural/devops-culture-transform)
 -   Explore our DevOps
     [research program](https://www.devops-research.com/research.html).
 -   Take the

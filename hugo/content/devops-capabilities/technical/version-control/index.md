@@ -20,7 +20,7 @@ Version control systems like Git, Subversion, and Mercurial provide a logical
 means to organize files and coordinate their creation, controlled access,
 updating, and deletion across teams and organizations. Version control is
 closely related to automation. In fact,
-[automation and continuous integration](/devops-capabilities/continuous-integration)
+[automation and continuous integration](/devops-capabilities/technical/continuous-integration)
 rely on these files for the source code of the automation itself, as well as
 the configuration to be automated and the data to be distributed.
 
@@ -172,7 +172,7 @@ control to production? Are your builds too slow? Is it hard to re-create
 deployable packages? Is it difficult to create production-like test
 environments? These constraints can make it hard to achieve your goals, and
 might indicate a problem to work on with your system's
-[architecture](/devops-capabilities/architecture).
+[architecture](/devops-capabilities/technical/loosely-coupled-architecture).
 
 ## Ways to measure version control
 

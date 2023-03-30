@@ -21,10 +21,10 @@ understanding of the flow of work from the business all the way through to
 customers, and whether they have visibility into this flow, including the status
 of products and features. Visibility of work is part of a wider group of
 capabilities that represent lean product management; these capabilities include
-[working in small batches](/devops-capabilities/working-in-small-batches),
-[team experimentation](/devops-capabilities/team-experimentation),
+[working in small batches](/devops-capabilities/process/working-in-small-batches),
+[team experimentation](/devops-capabilities/process/team-experimentation),
 and
-[visibility into customer feedback](/devops-capabilities/customer-feedback).
+[visibility into customer feedback](/devops-capabilities/process/customer-feedback).
 These capabilities predict both software delivery performance and organizational
 performance (which is measured in terms of profitability, market share, and
 productivity).
@@ -113,9 +113,9 @@ Source: "Kanban for Ops" board game, Dominica DeGrandis, 2013.
 
 Using visual displays such as this, and creating of WIP limits to manage flow,
 are detailed in the articles on
-[WIP limits](/devops-capabilities/wip-limits)
+[WIP limits](/devops-capabilities/process/wip-limits)
 and
-[visual management](/devops-capabilities/visual-management).
+[visual management](/devops-capabilities/process/visual-management).
 
 Finally, the mapping should include information about the responsibilities of
 each team, along with statistical data on key metrics such as lead time, deploy
@@ -153,16 +153,16 @@ Some common obstacles to implementing work visibility include the following:
     exercise is unlikely to succeed.
 
 In addition, make sure you look at common obstacles in the articles on
-[WIP limits](/devops-capabilities/wip-limits)
+[WIP limits](/devops-capabilities/process/wip-limits)
 and
-[visual management](/devops-capabilities/visual-management).
+[visual management](/devops-capabilities/process/visual-management).
 Many of them apply in this context too.
 
 ## Ways to improve work visibility
 
 -   **Provide tools for visualizing and recording workflow**. Start with
     making sure the team has
-    [visual management](/devops-capabilities/visual-management)
+    [visual management](/devops-capabilities/process/visual-management)
     displays that show their work and its flow through the part of the value
     stream that is closest to them, including both the upstream and downstream
     parts of the process. Record how long it takes work to get through the

@@ -22,7 +22,7 @@ system to alert you it has already failed — or worse, to find out from custome
 that your application or service is down.
 Using this approach, you can identify and potentially resolve issues before they
 become serious or start to impact your users. The
-[2014 DevOps Research and Assessment (DORA)](publications/pdf/state-of-devops-2014.pdf)
+[2014 DevOps Research and Assessment (DORA)](/publications/pdf/state-of-devops-2014.pdf)
 (PDF) research showed that proactive monitoring is a significant predictor of software
 delivery performance.
 According to DORA research, teams that use proactive notification can diagnose
@@ -37,7 +37,7 @@ suffers.
 specific *alerting rules.* Alerting rules define the conditions under which an
 alert is generated and the notification channel for that alert. Read more about 
 generating alerts in
-[Monitoring and observability](/devops-capabilities/monitoring-and-observability).
+[Monitoring and observability](/devops-capabilities/technical/monitoring-and-observability).
 
 **Use thresholds.** Alerting rules should use thresholds for the metrics you
 monitor that indicate real trouble. Monitoring thresholds trigger alerting
@@ -107,7 +107,7 @@ rate is higher or lower than expected.
 
 -   For links to other articles and resources, see the
     [DevOps page](https://cloud.google.com/devops).
--   Learn more about generating alerts in [Monitoring and observability](/devops-capabilities/monitoring-and-observability).
+-   Learn more about generating alerts in [Monitoring and observability](/devops-capabilities/technical/monitoring-and-observability).
 -   Read the
     [Site Reliability Engineering (SRE) book](https://landing.google.com/sre/books/).
 -   Explore our DevOps

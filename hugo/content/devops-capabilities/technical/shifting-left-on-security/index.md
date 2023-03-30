@@ -47,7 +47,7 @@ into the product throughout the process. As W. Edwards Deming says in his
 inspection on a mass basis by building quality into the product in the first
 place." In this model, rather than taking a purely phased approach, developers
 work with security and testing experts to design and deliver
-[work in small batches](/devops-capabilities/working-in-small-batches)
+[work in small batches](/devops-capabilities/process/working-in-small-batches)
 throughout the product lifecycle.
 
 Research from
@@ -92,9 +92,9 @@ typically understaffed compared to developers and testers.
 ### Develop automated testing
 
 Building security tests into the
-[automated testing](/devops-capabilities/test-automation)
+[automated testing](/devops-capabilities/technical/test-automation)
 process means that code can be
-[continuously tested](/devops-capabilities/continuous-integration)
+[continuously tested](/devops-capabilities/technical/continuous-integration)
 at scale without requiring a manual review. Automated testing can identify
 common security vulnerabilities, and it can be applied uniformly as a part of a
 continuous integration pipeline or build process. Automated testing does require

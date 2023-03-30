@@ -47,7 +47,7 @@ context of software delivery:
     errors, and which pages are most popular.
 
 When combined with the use of
-[WIP limits](/devops-capabilities/wip-limits)
+[WIP limits](/devops-capabilities/process/wip-limits)
 and using feedback from production to make business decisions, visual management
 displays can contribute to
 [higher levels of delivery performance](/publications/pdf/state-of-devops-2015.pdf#page=15)
@@ -65,7 +65,7 @@ pitfalls when implementing visual management include the following:
     will be used more often. In addition, if teams can have input into the
     metrics that are displayed on their visual displays by participating in
     selecting their goals (for example, some teams
-    [use OKRs](/devops-capabilities/transform)),
+    [use OKRs](/devops-capabilities/cultural/devops-culture-transform/)),
     they will be more motivated to drive progress toward those goals.
 -   **Creating displays that are complex, hard to understand, or do not
     provide actionable information**. It's easy to create displays using tools

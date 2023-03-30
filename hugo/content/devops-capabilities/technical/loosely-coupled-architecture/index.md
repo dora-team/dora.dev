@@ -1,6 +1,6 @@
 ---
-title: "Architecture"
-titleForHTMLHead: "DevOps Capabilities: Architecture" # TODO: can we DRY this out?
+title: "Loosely Coupled Architecture"
+titleForHTMLHead: "DevOps Capabilities: Loosely Coupled Architecture" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical
 draft: true
@@ -338,7 +338,7 @@ time for changes to reach production.
 
 Aside from taking these deployment and service measures, teams that operate
 more independently demonstrate improvements in
-[job satisfaction](/devops-capabilities/culture/job-satisfaction)
+[job satisfaction](/devops-capabilities/cultural/job-satisfaction)
 and
 [team experimentation](/devops-capabilities/process/team-experimentation),
 and tend to select different technologies and tools based on their needs.

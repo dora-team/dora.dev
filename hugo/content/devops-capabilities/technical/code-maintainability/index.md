@@ -25,7 +25,7 @@ billion lines of code, and a typical smartphone app has 50,000 lines of code.
 The 2019 State of DevOps Report from [DevOps Research and Assessment (DORA)](https://cloud.google.com/devops) research shows that the ability of teams to maintain their code
 effectively is one of a number of technical practices that contribute positively
 to success with
-[continuous delivery](/devops-capabilities/continuous-delivery).
+[continuous delivery](/devops-capabilities/technical/continuous-delivery).
 
 If your team is doing a good job with code maintainability, the following are true:
 
@@ -94,7 +94,7 @@ maintaining the code in question. Mechanisms such as pull requests, where a
 branch is created in version control and approval results in merging of the
 branch, can minimize the friction of allowing other teams to propose changes,
 while also preventing
-[unauthorized changes](/devops-capabilities/streamlining-change-approval),
+[unauthorized changes](/devops-capabilities/process/streamlining-change-approval),
 and enforcing information security controls such as segregation of duties.
 
 Next, consider dependencies. Making it easy for teams to add and update
@@ -121,9 +121,9 @@ be updated.
 It is essential to adopt and evolve processes and tooling that make it easy for
 teams to consume known-good versions of dependencies and upgrade them rapidly,
 including automated
-[continuous integration](/devops-capabilities/continuous-integration)
+[continuous integration](/devops-capabilities/technical/continuous-integration)
 (CI) and
-[testing](/devops-capabilities/test-automation)
+[testing](/devops-capabilities/technical/test-automation)
 to discover if new versions of dependencies contain breaking changes), and to
 quickly and simply correlate the versions of dependencies in use with the
 systems that use them.
@@ -156,7 +156,7 @@ article.
 Ninety-five percent of Google's software developers worldwide work on a shared,
 monolithic codebase maintained through a centralized source control system,
 using a
-[trunk-based development](/devops-capabilities/trunk-based-development)
+[trunk-based development](/devops-capabilities/technical/trunk-based-development)
 model.
 [In 2016](http://dl.acm.org/citation.cfm?id=2854146),
 the Google codebase included "approximately one billion files and [had] a
@@ -284,7 +284,7 @@ When considering what to measure, there are three use cases to focus on:
 -   Patching vulnerabilities.
 
 As codebases grow, technical debt is a major concern. It's important to be able
-to refactor and [re-architect code](/devops-capabilities/architecture)
+to refactor and [re-architect code](/devops-capabilities/technical/loosely-coupled-architecture/)
 as organizations and the products they and
 their customers rely on evolve. For large codebases, this can be complex and
 painful without significant tool support. It is also important to be able to
@@ -294,7 +294,7 @@ establish and track metrics that identify areas for improvement and make it
 straightforward to take action safely.
 
 The second step is
-[change management](/devops-capabilities/database-change-management).
+[change management](/devops-capabilities/technical/database-change-management/).
 When someone makes a change to part of the codebase,
 to what extent does your tooling help you detect the impact of that change? If
 another team is impacted, how fast can they take action to remedy the problem,

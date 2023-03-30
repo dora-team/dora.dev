@@ -36,9 +36,9 @@ those features more frequently.
 
 Team experimentation is part of lean product management. This approach is often
 used in combination with capabilities like
-[visibility of work in the value stream](/devops-capabilities/work-visibility-in-value-stream),
-[working in small batches](/devops-capabilities/working-in-small-batches),
-and [visibility into customer feedback](/devops-capabilities/customer-feedback).
+[visibility of work in the value stream](/devops-capabilities/process/work-visibility-in-value-stream),
+[working in small batches](/devops-capabilities/process/working-in-small-batches),
+and [visibility into customer feedback](/devops-capabilities/process/customer-feedback).
 These capabilities predict software delivery performance and organizational
 performance.
 
@@ -69,7 +69,7 @@ experimentation:
     Understand and acknowledge that they are the experts, and empower them to
     make the technical decisions necessary to get the work done. In the
     highest-performing teams and organizations, teams are allowed
-    [to make informed decisions about the tools and technologies they use](/devops-capabilities/teams-empowered-to-choose-tools).
+    [to make informed decisions about the tools and technologies they use](/devops-capabilities/technical/teams-empowered-to-choose-tools).
 
 ## Common pitfalls in team experimentation
 

@@ -39,7 +39,7 @@ five essential characteristics of cloud computing:
     report resource use based on the type of service such as storage,
     processing, bandwidth, and active user accounts.
 
-The [2019 State of DevOps Report](/publications/pdf/state-of-devops-2019.pdf) from [DevOps Research and Assessment (DORA)](https://cloud.google.com/devops) found that only 29% of people who claim to have
+The [2019 State of DevOps Report](/publications/pdf/state-of-devops-2019.pdf) found that only 29% of people who claim to have
 adopted cloud technologies agreed or strongly agreed that they met all five of
 the characteristics defined above. In both 2018 and 2019, DORA's research found
 that elite performers were more than 23 times more likely to have met all five
@@ -184,7 +184,7 @@ There will be many obstacles on this journey to overcome, including:
     non-cloud-based systems, including mainframes and packaged software/COTS
 
 Overcoming these obstacles requires a
-[substantial change program](/devops-capabilities/culture/devops-culture-transform)
+[substantial change program](/devops-capabilities/cultural/devops-culture-transform)
 involving sustained investment and collaboration between people at every level
 of the organization.
 

@@ -17,7 +17,7 @@ capabilities that drive high performance. To learn more, read our
 [DevOps resources](https://cloud.google.com/devops).
 
 If you want to achieve higher software delivery performance and increase the
-[job satisfaction](/devops-capabilities/job-satisfaction)
+[job satisfaction](/devops-capabilities/cultural/job-satisfaction)
 of your technical staff, you should empower them to make informed choices about
 the tools and technologies they use to do their work.
 [Research](/publications/pdf/state-of-devops-2017.pdf)
@@ -85,7 +85,7 @@ or giving your engineers too much choice.
 Forcing tools and technologies on practitioners can improve standardization.
 However, what works in some cases is not necessarily the best solution in every
 case. This approach also limits opportunities for
-[experimentation and growth](/devops-capabilities/team-experimentation),
+[experimentation and growth](/devops-capabilities/process/team-experimentation),
 where emerging technologies can be tried and tested. Often, experimenting with
 new technologies and adopting them results in large performance gains. For
 example, if no teams had been allowed to experiment with containerization or

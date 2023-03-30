@@ -49,7 +49,7 @@ win.
 
 The following pitfalls are commonly related to job satisfaction:
 
-- Not giving people the [tools](/devops-capabilities/teams-empowered-to-choose-tools) they need to be successful.
+- Not giving people the [tools](/devops-capabilities/technical/teams-empowered-to-choose-tools) they need to be successful.
 - Not giving people meaningful work.
 
 Practitioners and leaders must remember that technology transformations are
@@ -60,11 +60,11 @@ navigate. If you're trying to institute change, don't forget that you must make
 time and resources available for improvement work. Creating change takes time,
 and people also need time to adjust to the changes, as you build practices such
 as
-[automation](/devops-capabilities/test-automation)
+[automation](/devops-capabilities/technical/test-automation)
 and
-[continuous integration](/devops-capabilities/continuous-integration)
+[continuous integration](/devops-capabilities/technical/continuous-integration)
 into your
-[delivery process](/devops-capabilities/deployment-automation).
+[delivery process](/devops-capabilities/technical/deployment-automation).
 On top of that, improving process is itself a skill that needs to be learned.
 Teams that routinely work on improvement get better at it over time, and are
 more likely to stay with the company.
@@ -76,7 +76,7 @@ DORA research on job satisfaction recommends the following key actions:
 -   **Give employees the tools and resources needed to do their work.**
 
     Employees must have the tools necessary to get their work done, and
-    [teams that can decide which tools they use](/devops-capabilities/teams-empowered-to-choose-tools)
+    [teams that can decide which tools they use](/devops-capabilities/technical/teams-empowered-to-choose-tools)
     do better at continuous delivery. Teams that can choose their own tools
     make these choices based on how they work, and on the tasks they need to
     perform. No one knows better than practitioners what they need to be

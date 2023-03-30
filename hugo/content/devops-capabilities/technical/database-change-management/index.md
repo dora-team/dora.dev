@@ -21,7 +21,7 @@ deployments. [DevOps Research and Assessment (DORA)](https://cloud.google.com/de
 
 DORA's research found that integrating database work into the software delivery
 process positively contributes to
-[continuous delivery](/devops-capabilities/continuous-delivery).
+[continuous delivery](/devops-capabilities/technical/continuous-delivery).
 But how can your teams improve your database delivery as part of implementing
 continuous delivery? A few practices predict performance outcomes.
 
@@ -131,7 +131,7 @@ strategies to make database schema changes without downtime:
     the empty copy, and then incrementally copy data from the original table
     including any updates that happen during the migration. After this process
     is complete, they replace the original table with the ghost. Some
-    databases, for example [Cloud Spanner](https://draft-dora-dev--pr146-3qb71fd6.web.app/spanner/docs/schema-updates), can perform schema updates with zero downtime.
+    databases, for example [Cloud Spanner](https://cloud.google.com/spanner/docs/schema-updates), can perform schema updates with zero downtime.
 -   **Decouple database changes and application changes** with the
     [parallel change pattern](https://medium.com/continuousdelivery/expand-contract-pattern-and-continuous-delivery-of-databases-4cfa00c23d2e).
     In this pattern, you never mutate existing database objects. Instead, you
@@ -189,7 +189,7 @@ strategies to make database schema changes without downtime:
 
 As well as eliminating scheduled downtime, you also want to avoid unscheduled
 downtime. Make sure you test every schema change against a
-[production-like data set](/devops-capabilities/test-data-management)
+[production-like data set](/devops-capabilities/technical/test-data-management)
 (with any personal or confidential information scrubbed, of course) to make sure
 your application behaves the way you expect during and after migration. Some
 organizations create a scrubbed version of their  production database on a daily
@@ -227,7 +227,7 @@ situation. However, it involves careful planning and rollout.
 
 Finally, implementing both migration-based database change management and
 zero-downtime deployments can involve significant
-[architectural change](/devops-capabilities/architecture).
+[architectural change](/devops-capabilities/technical/loosely-coupled-architecture).
 This should be taken into consideration when estimating the effort required to
 implement these practices.
 

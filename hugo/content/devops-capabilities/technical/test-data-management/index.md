@@ -17,7 +17,7 @@ an independent, academically rigorous investigation into the practices and
 capabilities that drive high performance. To learn more, read our
 [DevOps resources](https://cloud.google.com/devops).
 
-[Automated testing](/devops-capabilities/test-automation)
+[Automated testing](/devops-capabilities/technical/test-automation)
 is a key component of modern software delivery practices. The ability to execute
 a comprehensive set of unit, integration, and system tests is essential to
 verify that your app or service behaves as expected, and can be safely deployed
@@ -51,9 +51,9 @@ core principles:
 To improve test data management processes, strive to meet each of these
 conditions in all of your development teams. These practices can also positively
 contribute to your overall
-[test automation](/devops-capabilities/test-automation)
+[test automation](/devops-capabilities/technical/test-automation)
 and
-[continuous integration](/devops-capabilities/continuous-integration)
+[continuous integration](/devops-capabilities/technical/continuous-integration)
 capabilities.
 
 ## Common pitfalls in test data management
