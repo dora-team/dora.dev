@@ -534,7 +534,7 @@
           populateRecommendations();
         }
       }
-      xhr.open("GET", "/js/capabilities.json");
+      xhr.open("GET", "/js/devops-capabilities.json");
       xhr.send();
     
     renderPerformanceComparison('all', 'perf-main-');
