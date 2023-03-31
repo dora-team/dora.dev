@@ -35,39 +35,82 @@
     }
 }
 
-section.hasSidebar {
-
-sidebar {
-    min-width:16em;
-
-    h4 {
-        white-space: nowrap;
-        margin-bottom: 1em;
-    }
-
-    h5 {
-        margin-bottom: 0.25em;
-        border-bottom: 1px solid $border-light;
-    }
-
+article {
     ul {
-        padding: 0;
-        margin-top: 0;
-
         li {
-            display: block;
-            padding: 0;
-            list-style-type: none;
-            line-height: 1.25;
+            margin-bottom: 0.5em;
+        }
+    }
 
-            a {
-                color: $color-text;
+    img {
+        max-width: 100%;
+    }
+
+    code {
+        background-color: $background-medium;
+        border-radius: 0.25em;
+        padding: 0.25em;
+    }
+
+    table {
+        border: 1px solid $border-light;
+        border-collapse: collapse;
+        tr {
+            th,
+            td {
+                margin: 0;
+                padding: 0.25em 0.75em;
+            }
+
+            th {
+                background-color: $background-medium;
+            }
+
+            td {
+                font-family: $font-roboto;
                 font-weight: 300;
-                font-size: 85%;
-                display: inline-block;
-                padding: 6pt 0;
+                font-size: 0.9em;
+            }
+
+            &:nth-child(even) {
+                background-color: $background-light;
             }
         }
     }
 }
+
+section.hasSidebar {
+    sidebar {
+        min-width: 16em;
+
+        h4 {
+            white-space: nowrap;
+            margin-bottom: 1em;
+        }
+
+        h5 {
+            margin-bottom: 0.25em;
+            border-bottom: 1px solid $border-light;
+        }
+
+        ul {
+            padding: 0;
+            margin-top: 0;
+
+            li {
+                display: block;
+                padding: 0;
+                list-style-type: none;
+                line-height: 1.25;
+
+                a {
+                    color: $color-text;
+                    font-weight: 300;
+                    font-size: 85%;
+                    display: inline-block;
+                    padding: 6pt 0;
+                }
+            }
+        }
+    }
 }
