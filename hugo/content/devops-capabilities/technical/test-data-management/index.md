@@ -3,7 +3,7 @@ title: "Test Data Management"
 titleForHTMLHead: "DevOps Capabilities: Test Data Management" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical
-draft: true
+draft: false
 headline: "Understand the right strategies for managing test data effectively along with approaches to provide fast, secure data access for testing."
 summary: "Understand the right strategies for managing test data effectively along with approaches to provide fast, secure data access for testing."
 ---

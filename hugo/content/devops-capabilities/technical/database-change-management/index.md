@@ -3,7 +3,7 @@ title: "Database Change Management"
 titleForHTMLHead: "DevOps Capabilities: Database Change Management" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical
-draft: true
+draft: false
 headline: "Make sure database changes don't cause problems or slow you down."
 summary: "Make sure database changes don't cause problems or slow you down."
 ---

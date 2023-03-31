@@ -3,7 +3,7 @@ title: "Transformational Leadership"
 titleForHTMLHead: "DevOps Capabilities: Transformational Leadership" # TODO: can we DRY this out?
 date: 2023-03-22T13:43:36Z
 category: cultural
-draft: true
+draft: false
 headline: "Learn how effective leaders influence software delivery performance by driving the adoption of technical and product management capabilities."
 summary: "Effective leadership has a measurable, significant impact on software delivery outcomes. However, rather than driving these outcomes directly, effective transformational leaders influence software delivery performance by enabling the adoption of technical and product management capabilities and practices by practitioners, which in turn drives the outcomes leaders care about."
 ---

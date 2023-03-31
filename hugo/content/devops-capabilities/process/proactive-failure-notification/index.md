@@ -3,7 +3,7 @@ title: "Proactive Failure Notification"
 titleForHTMLHead: "DevOps Capabilities: Proactive Failure Notification" # TODO: can we DRY this out?
 date: 2023-03-25T16:35:37Z
 category: process
-draft: true
+draft: false
 headline: "Set proactive failure notifications to identify critical issues and act on problems before they arise."
 summary: "Set proactive failure notifications to identify critical issues and act on problems before they arise."
 ---

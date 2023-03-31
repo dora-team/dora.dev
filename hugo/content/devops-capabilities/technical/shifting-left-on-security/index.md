@@ -3,7 +3,7 @@ title: "Shifting Left on Security"
 titleForHTMLHead: "DevOps Capabilities: Shifting Left on Security" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical
-draft: true
+draft: false
 headline: "Build security into the software development lifecycle without compromising delivery speed."
 summary: "Build security into the software development lifecycle without compromising delivery speed."
 ---
