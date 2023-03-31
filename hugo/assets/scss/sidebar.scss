@@ -32,7 +32,7 @@ section.hasSidebar {
         }
     }
 
-    @include media-small {
+    @include media-medium {
         flex-direction: column;
 
         sidebar {
