@@ -1,12 +1,36 @@
 {{ define "main" }}
+<!-- TODO: #121 make a partial to process scss files and render <link> tags -->
+{{ $stylesheet := printf "scss/devops-capabilities.scss" | resources.Get | toCSS | fingerprint }}
+<link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
+
 <h4><a href="/devops-capabilities">DevOps capabilities</a></h4>
 <h1>{{ .Title }}</h1>
-<section class="hasAside">
+<section class="hasSidebar">
     <article>
         {{ .Content }}
     </article>
-    <aside>
-        TODO: #163 put a new sidebar here listing capabilities
-    </aside>
+    <sidebar>
+        <section>
+            <h4>DevOps Capabilities</h4>
+            <h5>Technical</h5>
+            <ul>
+                {{ range (where (where .Site.RegularPages "Section" .Section) "Params.Category" "technical").ByParam "Title" }}
+                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+            <h5>Process</h5>
+            <ul>
+                {{ range (where (where .Site.RegularPages "Section" .Section) "Params.Category" "process").ByParam "Title" }}
+                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+            <h5>Cultural</h5>
+            <ul>
+                {{ range (where (where .Site.RegularPages "Section" .Section) "Params.Category" "cultural").ByParam "Title" }}
+                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+        </section>
+    </sidebar>
 </section>
 {{ end }}
