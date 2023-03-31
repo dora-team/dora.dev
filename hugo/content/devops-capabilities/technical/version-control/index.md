@@ -3,7 +3,7 @@ title: "Version Control"
 titleForHTMLHead: "DevOps Capabilities: Version Control" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:51+01:00
 category: technical
-draft: true
+draft: false
 headline: "A guide to implementing the right version control practices for reproducibility and traceability."
 summary: "A guide to implementing the right version control practices for reproducibility and traceability."
 ---

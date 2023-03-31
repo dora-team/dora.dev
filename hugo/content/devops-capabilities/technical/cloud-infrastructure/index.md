@@ -3,7 +3,7 @@ title: "Cloud Infrastructure"
 titleForHTMLHead: "DevOps Capabilities: Cloud Infrastructure" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical
-draft: true
+draft: false
 headline: "Find out how to manage cloud infrastructure effectively so you can achieve higher levels of agility, availability, and cost visibility."
 summary: "Find out how to manage cloud infrastructure effectively so you can achieve higher levels of agility, availability, and cost visibility."
 ---

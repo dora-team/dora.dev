@@ -3,7 +3,7 @@ title: "Streamlining Change Approval"
 titleForHTMLHead: "DevOps Capabilities: Streamlining Change Approval" # TODO: can we DRY this out?
 date: 2023-03-22T11:02:58Z
 category: process
-draft: true
+draft: false
 headline: "Replace heavyweight change-approval processes with peer review, to get the benefits of a more reliable, compliant release process without sacrificing speed."
 summary: "Replace heavyweight change-approval processes with peer review, to get the benefits of a more reliable, compliant release process without sacrificing speed."
 ---

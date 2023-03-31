@@ -3,7 +3,7 @@ title: "Monitoring and Observability"
 titleForHTMLHead: "DevOps Capabilities: Monitoring and Observability" # TODO: can we DRY this out?
 date: 2023-03-25T16:35:37Z
 category: technical
-draft: true
+draft: false
 headline: "Learn how to build tooling to help you understand and debug your production systems."
 summary: "Learn how to build tooling to help you understand and debug your production systems."
 ---

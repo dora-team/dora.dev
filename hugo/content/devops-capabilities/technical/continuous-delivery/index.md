@@ -3,7 +3,7 @@ title: "Continuous Delivery"
 titleForHTMLHead: "DevOps Capabilities: Continuous Delivery" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical
-draft: true
+draft: false
 headline: "Make deploying software a reliable, low-risk process that can be performed on demand at any time."
 summary: "Make deploying software a reliable, low-risk process that can be performed on demand at any time."
 ---

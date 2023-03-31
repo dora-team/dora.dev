@@ -3,7 +3,7 @@ title: "Empowering teams to choose tools"
 titleForHTMLHead: "DevOps Capabilities: Empowering teams to choose tools" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical
-draft: true
+draft: false
 headline: "Empower teams to make informed decisions on tools and technologies. Learn how these decisions drive more effective software delivery."
 summary: "Empower teams to make informed decisions on tools and technologies. Learn how these decisions drive more effective software delivery."
 ---

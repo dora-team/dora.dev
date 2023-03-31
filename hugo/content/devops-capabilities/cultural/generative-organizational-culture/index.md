@@ -3,7 +3,7 @@ title: "Generative Organizational Culture"
 titleForHTMLHead: "DevOps Capabilities: Generative Organizational Culture" # TODO: can we DRY this out?
 date: 2023-03-22T13:43:36Z
 category: cultural
-draft: true
+draft: false
 headline: "Discover how growing a generative, high-trust culture drives better organizational and software delivery performance."
 summary: "Measure of organizational culture is based on a typology developed by Ron Westrum, a sociologist who studied safety-critical complex systems in the domains of aviation and healthcare. Our own research has found that this measure of culture is predictive of IT Performance, organizational performance, and decreasing burnout. Hallmarks of this include good information flow, high cooperation and trust, bridging between teams, and embracing novel solutions."
 ---

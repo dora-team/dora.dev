@@ -3,7 +3,7 @@ title: "Monitoring systems to inform business decisions"
 titleForHTMLHead: "DevOps Capabilities: Monitoring systems to inform business decisions" # TODO: can we DRY this out?
 date: 2023-03-25T16:35:37Z
 category: process
-draft: true
+draft: false
 headline: "Improve monitoring across infrastructure platforms, middleware, and the application tier, so you can provide fast feedback to developers."
 summary: "Improve monitoring across infrastructure platforms, middleware, and the application tier, so you can provide fast feedback to developers."
 ---

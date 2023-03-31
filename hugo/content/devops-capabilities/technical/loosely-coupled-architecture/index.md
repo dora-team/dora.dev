@@ -3,7 +3,7 @@ title: "Loosely Coupled Architecture"
 titleForHTMLHead: "DevOps Capabilities: Loosely Coupled Architecture" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical
-draft: true
+draft: false
 headline: "Learn about moving from a tightly coupled architecture to service-oriented and microservice architectures without re-architecting everything at once"
 summary: "Learn about moving from a tightly coupled architecture to service-oriented and microservice architectures without re-architecting everything at once"
 ---
