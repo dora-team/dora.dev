@@ -115,3 +115,15 @@ section.hasSidebar {
         }
     }
 }
+
+@include media-medium {
+    .capabilitiesGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@include media-medium {
+    .capabilitiesGrid {
+        grid-template-columns: 1fr;
+    }
+}
