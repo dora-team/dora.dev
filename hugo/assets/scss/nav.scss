@@ -16,11 +16,26 @@ header {
                     text-decoration: none;
                     color: rgb(95, 99, 104);
                     white-space:nowrap;
+                    font-weight: 400;
+                    font-size:1em;
+                    line-height:1em;
+
+                    span.google-material-icons {
+                        font-size: 1em;
+                        line-height: 1em;
+                        vertical-align:middle;
+                    }
                 }
 
                 a:hover {
                     color: rgb(0, 0, 0);
                 }
+
+                a.active {
+                    color: black;
+                    font-weight: 600;
+                }
+
             }
         }
     }
