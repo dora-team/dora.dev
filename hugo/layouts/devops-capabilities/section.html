@@ -1,0 +1,49 @@
+{{ define "main" }}
+    <!-- TODO: #121 make a partial to process scss files and render <link> tags -->
+    {{ $stylesheet := printf "scss/devops-capabilities.scss" | resources.Get | toCSS | fingerprint }}
+    <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
+    <h2>Technical Capabilities</h2>
+    <section class="capabilitiesGrid">
+        {{ $capabilities := where site.RegularPages "Params.category" "technical" }}
+        {{ range ($capabilities.ByParam "title") }}
+            <article>
+                <a href="{{ .RelPermalink }}">
+                    <h4>{{ .Params.title }}</h4>
+                    <p>{{ .Params.headline }}
+                        <span class="learn_more">Learn&nbsp;more&nbsp;<img src="https://www.gstatic.com/images/icons/material/system_gm/svg/arrow_right_alt_24px.svg"></span>
+                    </p>
+                </a>
+            </article>
+        {{ end }}
+    </section>
+    <h2>Process Capabilities</h2>
+    <section class="capabilitiesGrid">
+        {{ $capabilities := where site.RegularPages "Params.category" "process" }}
+        {{ range ($capabilities.ByParam "title") }}
+            <article>
+                <a href="{{ .RelPermalink }}">
+                    <h4>{{ .Params.title }}</h4>
+                    <p>
+                        {{ .Params.headline }}
+                        <span class="learn_more">Learn&nbsp;more&nbsp;<img src="https://www.gstatic.com/images/icons/material/system_gm/svg/arrow_right_alt_24px.svg"></span>
+                    </p>
+                </a>
+            </article>
+        {{ end }}
+    </section>
+    <h2>Cultural Capabilities</h2>
+    <section class="capabilitiesGrid">
+        {{ $capabilities := where site.RegularPages "Params.category" "cultural" }}
+        {{ range ($capabilities.ByParam "title") }}
+            <article>
+                <a href="{{ .RelPermalink }}">
+                    <h4>{{ .Params.title }}</h4>
+                    <p>
+                        {{ .Params.headline }}
+                        <span class="learn_more">Learn&nbsp;more&nbsp;<img src="https://www.gstatic.com/images/icons/material/system_gm/svg/arrow_right_alt_24px.svg"></span>
+                    </p>
+                </a>
+            </article>
+        {{ end }}
+    </section>
+{{ end }}
