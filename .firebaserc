@@ -1,28 +1,18 @@
 {
-  "projects": {
-    "default": "doradotdev-stanke"
-  },
-  "targets": {
-    "doradotdev": {
-      "hosting": {
-        "prod": [
-          "doradotdev-stanke"
-        ],
-        "draft": [
-          "draft-dora-dev-stanke"
-        ]
+    "projects": {
+      "default": "doradotdev"
+    },
+    "targets": {
+      "doradotdev": {
+        "hosting": {
+          "prod": [
+            "doradotdev"
+          ],
+          "draft": [
+            "draft-dora-dev"
+          ]
+        }
       }
     },
-    "doradotdev-stanke": {
-      "hosting": {
-        "prod": [
-          "doradotdev-stanke"
-        ],
-        "draft": [
-          "draft-dora-dev-stanke"
-        ]
-      }
-    }
-  },
-  "etags": {}
-}
+    "etags": {}
+  }
