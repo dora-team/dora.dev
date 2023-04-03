@@ -1,18 +1,18 @@
 {
-  "projects": {
-    "default": "doradotdev"
-  },
-  "targets": {
-    "doradotdev": {
-      "hosting": {
-        "prod": [
-          "doradotdev"
-        ],
-        "draft": [
-          "draft-dora-dev"
-        ]
+    "projects": {
+      "default": "doradotdev"
+    },
+    "targets": {
+      "doradotdev": {
+        "hosting": {
+          "prod": [
+            "doradotdev"
+          ],
+          "draft": [
+            "draft-dora-dev"
+          ]
+        }
       }
-    }
-  },
-  "etags": {}
-}
+    },
+    "etags": {}
+  }
