@@ -283,6 +283,28 @@
                         ]
                     }
                 ]
+            },
+            {
+                "heading": "Demographics and Firmographics",
+                "question_groups": [
+                    {
+                        "description": "",
+                        "questions": [
+                            "Approximately many people are on your immediate team?",
+                            "Do you identify as a member of an underrepresented group?",
+                            "Do you identify as a person with a disability? This includes disabilities associated with seeing, hearing, walking, remembering/concentrating, self-care, or communication.",
+                            "How many employees work at your organization?",
+                            "How many years of experience do you have in a role similar to your current role?",
+                            "Location",
+                            "Start Date",
+                            "User Language",
+                            "What is your gender?",
+                            "What is the principal industry of your organization?",
+                            "Which most closely describes your work role?|Development or Engineering,DevOps or SRE,I am a C-level executive,I am a consultant, coach, or trainer,I am a student,I do not belong to any department,Information Security,IT Operations or Infrastructure,Manager,Network Operations,Other (please specify),Prefer not to answer,Product Management,Professional Services,Quality Engineering or Assurance,Release Engineering,Sales Engineering,Sales or Marketing,User experience or software analysis",
+                            "With which racial or ethnic groups do you identify? Select all that apply|American Indian or Alaska Native, Asian, Black or African American, Hispanic, Latino, or Spanish origin, Middle Eastern or North African, Native Hawaiian or Pacific Islander, Other (please specify), Prefer not to respond, White"
+                        ]
+                    }
+                ]
             }
         ]
     }
