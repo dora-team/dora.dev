@@ -10,28 +10,18 @@ stylesheets:
 type: quickcheck
 ---
 
-<form action={{% relref "/quickcheck/2022/results.html" %}} method="get">
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const queryParams = new URLSearchParams(window.location.search);
+        if (queryParams.has('year')) {
+            document.querySelector('#quickcheck_form').action = document.querySelector('#quickcheck_form').action.replace('2022',queryParams.get('year'));
+        }
+    });
+</script>
+
+<form action={{% relref "/quickcheck/2022/results.html" %}} method="get" id="quickcheck_form">
 
 <h5>Question 1 of 5</h5>
-<section class="question">
-<aside>
-    <h2>Lead time</h2>
-    <img src="/img/quickcheck/lead_time.svg" class="spot">
-</aside>
-<fieldset class="paragraph">
-    <legend>For the primary application or service you work on, what is your lead time for changes (that is, how long does it take to go from code committed to code successfully running in production)?
-    </legend>
-    <ul>
-        <li><label for="leadtime1"><input type="radio" name="leadtime" id="leadtime1" value="1"> More than six months</label></li>
-        <li><label for="leadtime2"><input type="radio" name="leadtime" id="leadtime2" value="2"> One to six months</label></li>
-        <li><label for="leadtime3"><input type="radio" name="leadtime" id="leadtime3" value="3"> One week to one month</label></li>
-        <li><label for="leadtime4"><input type="radio" name="leadtime" id="leadtime4" value="4"> One day to one week</label></li>
-        <li><label for="leadtime5"><input type="radio" name="leadtime" id="leadtime5" value="5"> Less than one day</label></li>
-        <li><label for="leadtime6"><input type="radio" name="leadtime" id="leadtime6" value="6"> Less than one hour</label></li>
-    </ul>
-    </fieldset>
-</section>
-<h5>Question 2 of 5</h5>
 <section class="question">
 <aside>
     <h2>Deploy frequency</h2>
@@ -51,27 +41,28 @@ type: quickcheck
       </ul>
     </fieldset>
 </section>
-<h5>Question 3 of 5</h5>
+
+<h5>Question 2 of 5</h5>
 <section class="question">
 <aside>
-    <h2>Time to restore</h2>
-    <img src="/img/quickcheck/ttr.svg" class="spot">
+    <h2>Lead time</h2>
+    <img src="/img/quickcheck/lead_time.svg" class="spot">
 </aside>
 <fieldset class="paragraph">
-    <legend>
-        For the primary application or service you work on, how long does it generally take to restore service when a service incident or a defect that impacts users occurs (for example, unplanned outage, service impairment)?
+    <legend>For the primary application or service you work on, what is your lead time for changes (that is, how long does it take to go from code committed to code successfully running in production)?
     </legend>
     <ul>
-        <li><label for="ttr1"><input type="radio" name="ttr" id="ttr1" value="1"> More than six months</label></li>
-        <li><label for="ttr2"><input type="radio" name="ttr" id="ttr2" value="2"> One to six months</label></li>
-        <li><label for="ttr3"><input type="radio" name="ttr" id="ttr3" value="3"> One week to one month</label></li>
-        <li><label for="ttr4"><input type="radio" name="ttr" id="ttr4" value="4"> One day to one week</label></li>
-        <li><label for="ttr5"><input type="radio" name="ttr" id="ttr5" value="5"> Less than one day</label></li>
-        <li><label for="ttr6"><input type="radio" name="ttr" id="ttr6" value="6"> Less than one hour</label></li>
-      </ul>
+        <li><label for="leadtime1"><input type="radio" name="leadtime" id="leadtime1" value="1"> More than six months</label></li>
+        <li><label for="leadtime2"><input type="radio" name="leadtime" id="leadtime2" value="2"> One to six months</label></li>
+        <li><label for="leadtime3"><input type="radio" name="leadtime" id="leadtime3" value="3"> One week to one month</label></li>
+        <li><label for="leadtime4"><input type="radio" name="leadtime" id="leadtime4" value="4"> One day to one week</label></li>
+        <li><label for="leadtime5"><input type="radio" name="leadtime" id="leadtime5" value="5"> Less than one day</label></li>
+        <li><label for="leadtime6"><input type="radio" name="leadtime" id="leadtime6" value="6"> Less than one hour</label></li>
+    </ul>
     </fieldset>
 </section>
-<h5>Question 4 of 5</h5>
+
+<h5>Question 3 of 5</h5>
 <section class="question">
     <aside>
         <h2>Change fail percentage</h2>
@@ -91,6 +82,28 @@ type: quickcheck
         </ul>
     </fieldset>
 </section>
+
+<h5>Question 4 of 5</h5>
+<section class="question">
+<aside>
+    <h2>Time to restore</h2>
+    <img src="/img/quickcheck/ttr.svg" class="spot">
+</aside>
+<fieldset class="paragraph">
+    <legend>
+        For the primary application or service you work on, how long does it generally take to restore service when a service incident or a defect that impacts users occurs (for example, unplanned outage, service impairment)?
+    </legend>
+    <ul>
+        <li><label for="ttr1"><input type="radio" name="ttr" id="ttr1" value="1"> More than six months</label></li>
+        <li><label for="ttr2"><input type="radio" name="ttr" id="ttr2" value="2"> One to six months</label></li>
+        <li><label for="ttr3"><input type="radio" name="ttr" id="ttr3" value="3"> One week to one month</label></li>
+        <li><label for="ttr4"><input type="radio" name="ttr" id="ttr4" value="4"> One day to one week</label></li>
+        <li><label for="ttr5"><input type="radio" name="ttr" id="ttr5" value="5"> Less than one day</label></li>
+        <li><label for="ttr6"><input type="radio" name="ttr" id="ttr6" value="6"> Less than one hour</label></li>
+      </ul>
+    </fieldset>
+</section>
+
 <h5>Question 5 of 5</h5>
 <section class="question">
     <aside>

@@ -9,24 +9,33 @@
     img-stroke -- if this param is present, a stroke will be drawn around image
 -->
 
+{{ $url := .Get "url" }}
+{{ $target := "" }}
+{{ if or (strings.HasPrefix $url "http") (strings.HasPrefix $url "https") (strings.HasPrefix $url "/pdf") }} 
+    {{ $target = "_blank" }}
+{{ end }}
+
 <article class='cols_{{ .Get "columns"}}'>
     <h2>
-        {{- if .Get "url" -}}<a href='{{ .Get "url" }}'>{{- end -}}{{ .Get "title" }}{{- if .Get "url" -}}</a>{{- end -}}
+        {{- if $url -}}<a href='{{ $url }}' target="{{ $target }}">{{- end -}}{{ .Get "title" }}{{- if $url -}}</a>{{- end -}}
     </h2>
     <div class='content image-{{ .Get "img-align" }}'>
         <div class="text">
             <p>
             {{ .Inner | markdownify }}
-            {{- if and (.Get "cta") (.Get "url") -}}
+            {{- if and (.Get "cta") ($url) -}}
               <br>
-              <a href='{{ .Get "url"}}'><button class="secondary">{{ .Get "cta" }}</button></a>
+              <a href='{{ $url}}' target="{{ $target }}"><button class="secondary">{{ .Get "cta" }}</button></a>
+            {{- end -}}
+            {{- if and (.Get "cta_2") (.Get "url_2") -}}
+              <a href='{{ .Get "url_2"}}' target="{{ $target }}"><button class="secondary">{{ .Get "cta_2" }}</button></a>
             {{- end -}}
             </p>
         </div>
         
         {{- if .Get "img-src" -}}
         <div class="image">
-            <a href='{{ .Get "url" }}'><img src='{{ .Get "img-src" }}' alt='{{ .Get "img-alt" }}' class='feature {{ if .Get "img-stroke" }} stroke{{ end }}'></a>
+            <a href='{{ $url }}' target="{{ $target }}"><img src='{{ .Get "img-src" }}' alt='{{ .Get "img-alt" }}' class='feature {{ if .Get "img-stroke" }} stroke{{ end }}'></a>
         </div>
         {{- end -}}
     </div>

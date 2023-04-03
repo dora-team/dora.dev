@@ -1,3 +1,5 @@
+@import "_variables.scss";
+
 @mixin headings {
     h1,
     h2,
@@ -42,6 +44,12 @@ h5 {
     color: #777;
     text-transform: uppercase;
     font-weight: 500;
+}
+
+hr {
+    border:none;
+    border-top:1px solid $border-medium;
+    margin: 2em 0;
 }
 
 @include media-medium {

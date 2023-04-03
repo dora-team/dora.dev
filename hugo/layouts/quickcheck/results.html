@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+    <!-- TODO: #121 make a partial to process scss files and render <link> tags -->
+    {{ $stylesheet := printf "scss/quickcheck.scss" | resources.Get | toCSS | fingerprint }}
+    <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
+
+    <h1 id="results_h1">Your software delivery&nbsp;performance</h1>
+    {{- partial "quickcheck/percentile_graph" . -}}
+
+    {{- partial "tab_navigation"
+        (dict
+            "Titles" "Next steps,Performance comparison"
+            "Controls" "c_capabilities,c_compare" 
+            "Selected" "Next steps" 
+        )
+    -}}
+
+    <section id="c_capabilities" class="tab">
+        {{- partial "quickcheck/prioritize" . -}}
+    </section>
+    <section id="c_compare" class="tab">
+        {{- partial "quickcheck/performance_comparison" . -}}
+    </section>
+
+    {{- partial "pagefooter_gofurther" . -}}
+
+    {{- $helpers := resources.Get "js/helpers.js" -}}
+    {{- $constants := resources.Get "js/constants.js" -}}
+    {{- $results := resources.Get "js/results.js" -}}
+
+    {{- $jsFiles := slice $helpers $constants $results}}
+    {{- $jsBundle := $jsFiles | resources.Concat "js/quickcheck" | fingerprint -}}
+
+    <script defer src="https://www.gstatic.com/charts/loader.js"></script>
+    <script defer src="{{ $jsBundle.RelPermalink }}" integrity="{{ $jsBundle.Data.Integrity }}" defer></script>
+    
+{{ end }}

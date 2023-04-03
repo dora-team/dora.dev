@@ -39,7 +39,11 @@ select {
     font-weight: 300;
     margin: 0;
     margin-bottom: 0.5rem;
-    font-size: 1rem;
+    font-size: 1em;
+
+    @include media-medium {
+        line-height:1.35;
+    }
 }
 
 p > strong {
@@ -143,4 +147,8 @@ section.banner {
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
+
+    &.divider-before {
+        border-left:1px solid $border-light;
+    }
 }

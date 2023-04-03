@@ -19,19 +19,28 @@ steps:
       echo "${CHANNEL_DATA##* }" > /workspace/preview-url.txt
       cat /workspace/preview-url.txt
 
-# add preview URL as a status check
-# prereq: a github token exists in Secret manager named with the name specified by `github-token-secret-name`
-# the token must have access: `repo:status` (or `repo:all` for a private repo)
-  - name: 'gcr.io/${PROJECT_ID}/pr-status-poster'
-    env:
-      - "COMMIT_SHA=$COMMIT_SHA"
-      - "REPO_NAME=$REPO_NAME"
-      - "PROJECT_ID=$PROJECT_ID"
+  - name: 'bash'
+    env: 
+    - '_PR_NUMBER=$_PR_NUMBER'
+    - 'REPO_NAME=$REPO_NAME'
     script: |
-      python /app/set-check-status.py \
-        --project-id ${PROJECT_ID} \
-        --repo-name davidstanke/${REPO_NAME} \
-        --commit-sha ${COMMIT_SHA} \
-        --target-url "$(cat /workspace/preview-url.txt)" \
-        --github-token-secret-name github_token
+      # install github cli
+      apk update && apk add github-cli
 
+      gh version
+
+      # authenticate
+      set +x
+      echo "$GH_TOKEN" > .githubtoken
+      set -x
+      unset GH_TOKEN
+      gh auth login --with-token < .githubtoken
+
+      # add preview URL as comment
+      gh pr comment $_PR_NUMBER --repo=dora-team/$REPO_NAME --body "Preview this PR at $(cat /workspace/preview-url.txt)"
+    secretEnv: ['GH_TOKEN']
+    
+availableSecrets:
+  secretManager:
+  - versionName: projects/$PROJECT_ID/secrets/github_token/versions/latest
+    env: 'GH_TOKEN'
