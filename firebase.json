@@ -12,27 +12,27 @@
                 {
                     "source": "/quickcheck.html",
                     "destination": "/quickcheck/",
-                    "type": 302
+                    "type": 301
                 },
                 {
                     "source": "/performance.html**",
                     "destination": "/quickcheck/2019/results/",
-                    "type": 302
+                    "type": 301
                 },
                 {
                     "source": "/research.html",
                     "destination": "/",
-                    "type": 302
+                    "type": 301
                 },
                 {
                     "source": "/models.html",
                     "destination": "/research/",
-                    "type": 302
+                    "type": 301
                 },
                 {
                     "source": "/faq.html",
                     "destination": "/faq/",
-                    "type": 302
+                    "type": 301
                 },
                 {
                     "source": "/dora-joins-google-cloud.html",
@@ -53,27 +53,27 @@
                 {
                     "source": "/quickcheck.html",
                     "destination": "/quickcheck/",
-                    "type": 302
+                    "type": 301
                 },
                 {
                     "source": "/performance.html**",
                     "destination": "/quickcheck/2019/results/",
-                    "type": 302
+                    "type": 301
                 },
                 {
                     "source": "/research.html",
                     "destination": "/",
-                    "type": 302
+                    "type": 301
                 },
                 {
                     "source": "/models.html",
                     "destination": "/research/",
-                    "type": 302
+                    "type": 301
                 },
                 {
                     "source": "/faq.html",
                     "destination": "/faq/",
-                    "type": 302
+                    "type": 301
                 },
                 {
                     "source": "/dora-joins-google-cloud.html",
