@@ -14,7 +14,6 @@ You can also explore our research program using the diagram below, or browse our
 
 <link href="https://www.gstatic.com/glue/latest/hercules.min.css" rel="stylesheet">
 <link href="https://www.gstatic.com/glue/v21_0/glue.min.css" rel="stylesheet">
-<link href="/css/quickcheck.css" rel="stylesheet">
 <link href="/css/research.css" rel="stylesheet">
 <script src="https://www.gstatic.com/glue/v20_0/glue-detect.min.js"></script>
 <script src="https://d3js.org/d3.v5.min.js"></script>
