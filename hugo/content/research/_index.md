@@ -2,6 +2,7 @@
 title: "Research"
 date: 2023-02-02T18:23:33Z
 draft: false
+type: research_w_bfd
 ---
 
 # Explore DORA's Research Program

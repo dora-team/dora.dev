@@ -1,0 +1,170 @@
+.bfd-circle {
+    stroke: black;
+    stroke-width: 2;
+  }
+  
+  .bfd-text {
+    fill: black;
+    font-size: 12px;
+    text-shadow: 0 2px 0 white, 2px 0 0 white, 0 -2px 0 white, -2px 0 0 white;
+  }
+  
+  .plus {
+    fill: black;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .bfd-title {
+    fill: black;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 0 2px 0 white, 2px 0 0 white, 0 -2px 0 white, -2px 0 0 white;
+  }
+  
+  .bfd-textbox:hover {
+    cursor: pointer;
+  }
+  
+  .link {
+    stroke: black;
+    stroke-width: 2;
+    fill-opacity: 0;
+  }
+  
+  .cultural {
+    fill: #669df6;
+  }
+  
+  .management {
+    fill: #fcc934;
+  }
+  
+  .process {
+    fill: #5bb974;
+  }
+  
+  .outcome {
+    fill: #af5cf7;
+  }
+  
+  .technical {
+    fill: #ee675c;
+  }
+  
+  .transparent {
+    fill-opacity: 0;
+  }
+  
+  .italic {
+    font-style: italic;
+  }
+  
+  .outcome-text {
+    font-weight: bold;
+  }
+  
+  .tile-img {
+    width: 100%;
+  }
+  
+  .hero-p {
+    text-align: left !important;
+  }
+  
+  .h-c-tile-set {
+    display: inline-block;
+    text-align: center !important;
+  }
+  
+  @media (max-width: 600px) {
+    .h-c-tile {
+      width: 100%;
+      min-height: auto !important;
+    }
+  
+    .h-c-tile-set>li {
+      width: 100%;
+    }
+  }
+  
+  ul.h-c-tile-set {
+    max-width: 574px;
+  }
+  
+  @media (min-width: 1024px) {
+    ul.h-c-tile-set {
+      max-width: 654px;
+    }
+  }
+  
+  @media (min-width: 1038px) {
+    ul.h-c-tile-set {
+      max-width: 981px;
+    }
+  }
+  
+  :target::before {
+    content: "";
+    display: block;
+    height: 80px; /* fixed header height*/
+    margin: -80px 0 0; /* negative fixed header height */
+  }
+  
+  .dora-logo {
+    max-height: 80px;
+    margin-bottom: 20px;
+  }
+  
+  .nav-tile p {
+    padding-left: 15px;
+  }
+  
+  .nav-tile {
+    border: 1px solid rgba(60,64,67,.35);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,.15), 0 1px 3px 1px rgba(60,64,67,.25)
+  }
+  
+  .h-c-table {
+    margin-top: 10px;
+    border: 1px solid rgba(60,64,67,.55);
+  }
+  
+  .h-c-table td, .h-c-table th {
+    border-right: 1px solid rgba(60,64,67,.55);
+  }
+  
+  .h-c-table thead th {
+    background-color: rgba(60,64,67,.35);
+  }
+  
+  .row-highlight th, .row-highlight td {
+    background-color: #669df6;
+  }
+  
+  .h-c-table tbody th {
+    vertical-align: middle;
+  }
+  
+  .muted {
+    fill: #dadce0;
+    stroke: #dadce0;
+    transition: fill 0.5s, stroke 0.5s;
+  }
+  
+  .node, .node text {
+    cursor: pointer;
+  }
+  
+  #modal .wrapper p, #modal .wrapper li,
+  #modal .wrapper h3 {
+    max-width: 100%;
+    text-align: left;
+  }
+  
+  .modal-close-wrapper {
+    text-align: center !important;
+    margin-top: 20px;
+  }
