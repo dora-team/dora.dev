@@ -12,13 +12,10 @@ Use our [quick check tool](/quickcheck/) to discover how you compare to industry
 
 You can also explore our research program using the diagram below, or browse our [capability catalog](/devops-capabilities/). To learn more about research from a particular year, browse the [research archives](/research/archives/).
 
-<link href="https://www.gstatic.com/glue/latest/hercules.min.css" rel="stylesheet">
-<link href="https://www.gstatic.com/glue/v21_0/glue.min.css" rel="stylesheet">
 <link href="/css/research.css" rel="stylesheet">
 <script src="https://www.gstatic.com/glue/v20_0/glue-detect.min.js"></script>
 <script src="https://d3js.org/d3.v5.min.js"></script>
-<section class="hero fullbleed-background">
-    <div class="h-c-page text-left">
+    <div class="text-left">
         <div id="bfd"></div>
         <svg id="key" width="100%" height="170">
             <text x="5" y="15" class="bfd-title">Key</text>
@@ -38,7 +35,7 @@ You can also explore our research program using the diagram below, or browse our
             <path id="key-link" class="link" d="M0 150 l20 0 m15 0" marker-end="url(#arrow)"></path>
             <text x="40" y="155" class="bfd-text">Predictive relationship</text>
         </svg>
-        <div id="modal" class="glue-modal text-center" role="dialog" aria-modal="true" aria-labelledby="modal-label"
+        <div id="modal" class="glue-modal" role="dialog" aria-modal="true" aria-labelledby="modal-label"
             aria-describedby="modal-content">
             <div class="wrapper">
                 <h2 id="modal-label" class="glue-headline glue-headline--one"></h2>
@@ -50,7 +47,6 @@ You can also explore our research program using the diagram below, or browse our
             </div>
         </div>
     </div>
-</section>
 <script src="https://www.gstatic.com/external_hosted/hammerjs/v2_0_2/hammer.min.js"></script>
 <script src="https://www.gstatic.com/glue/v21_0/glue-vanilla.min.js"></script>
 <script src="/js/research.js"></script>
