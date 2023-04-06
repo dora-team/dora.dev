@@ -77,8 +77,8 @@ var linkTo;
     }
   }
 
-  const width = Math.min(window.innerWidth - 64, 1280);
-  const height = window.innerHeight - 200;
+  const width = Math.min(window.innerWidth - 64, 1200);
+  const height = 600;
   const columnFactor = width / 12;
   const rowFactor = height / 12;
 
