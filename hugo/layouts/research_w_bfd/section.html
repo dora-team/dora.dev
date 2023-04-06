@@ -1,4 +1,16 @@
 {{ define "main" }}
+<!-- TODO: #121 make a partial to process scss files and render <link> tags -->
+{{ $stylesheet := printf "scss/research.scss" | resources.Get | toCSS | fingerprint }}
+<link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
+
+<script defer src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- TODO: #189 make a partial to process javascript assets and render a `script` tag -->
+{{- $research := resources.Get "js/research.js" -}}
+{{- $jsFiles := slice $research }}
+{{- $jsBundle := $jsFiles | resources.Concat "js/research" | fingerprint -}}
+<script defer src="{{ $jsBundle.RelPermalink }}" integrity="{{ $jsBundle.Data.Integrity }}" defer></script>
+    
+
 <section class="hasSidebar">
     <article>
         {{ .Content }}

@@ -4,6 +4,7 @@
 
     {{- partial "pagefooter_gofurther" . -}}
 
+    <!-- TODO: #189 make a partial to process javascript assets and render a `script` tag -->
     {{- $helpers := resources.Get "js/helpers.js" -}}
     {{- $constants := resources.Get "js/constants_2019.js" -}}
     {{- $results := resources.Get "js/results_2019.js" -}}

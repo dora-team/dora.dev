@@ -1,9 +1,12 @@
+@import "_variables.scss";
+
 .bfd-circle {
     stroke: black;
     stroke-width: 2;
 }
 
 .bfd-text {
+    font-family: $font-roboto;
     fill: black;
     font-size: 12px;
     text-shadow: 0 2px 0 white, 2px 0 0 white, 0 -2px 0 white, -2px 0 0 white;
