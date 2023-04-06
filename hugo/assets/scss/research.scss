@@ -1,5 +1,13 @@
 @import "_variables.scss";
 
+.bfd-container {
+    margin-top:3em;
+
+    @include media-medium {
+        margin-top:1.5em;
+    }
+}
+
 .bfd-circle {
     stroke: black;
     stroke-width: 2;
