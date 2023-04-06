@@ -5,8 +5,8 @@
 
 <script defer src="https://www.gstatic.com/charts/loader.js"></script>
 <!-- TODO: #189 make a partial to process javascript assets and render a `script` tag -->
-{{- $research := resources.Get "js/research.js" -}}
-{{- $jsFiles := slice $research }}
+{{- $bfd := resources.Get "js/bfd.js" -}}
+{{- $jsFiles := slice $bfd }}
 {{- $jsBundle := $jsFiles | resources.Concat "js/research" | fingerprint -}}
 <script defer src="{{ $jsBundle.RelPermalink }}" integrity="{{ $jsBundle.Data.Integrity }}" defer></script>
 
