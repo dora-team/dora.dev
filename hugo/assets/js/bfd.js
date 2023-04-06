@@ -77,10 +77,10 @@ var linkTo;
     }
   }
 
-  const width = Math.min(window.innerWidth - 64, 1200);
+  const width = Math.min(window.innerWidth - 64, 1040);
   const height = 600;
-  const columnFactor = width / 12;
-  const rowFactor = height / 12;
+  const columnFactor = width / 9;
+  const rowFactor = height / 8;
 
   const svg = d3.select('#bfd').append("svg").attr("width", width).attr("height", height)
   const defs = svg.append("defs");

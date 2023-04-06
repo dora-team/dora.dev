@@ -166,6 +166,13 @@ ul.h-c-tile-set {
     right: 0;
     top: 0;
     z-index: 9999;
+    margin:1em;
+    box-shadow: 0 0 1em #666;
+
+    @include media-small {
+        margin:0;
+    }
+
 }
 .glue-modal.glue-modal-closing {
     display: block;
@@ -177,7 +184,7 @@ ul.h-c-tile-set {
     transition: opacity 200ms ease-in;
 }
 .glue-modal__close-btn {
-    background-color: #f1f3f4;
+    background-color: #fff;
     border: none;
     border-radius: 0;
     color: #202124;
@@ -205,15 +212,4 @@ ul.h-c-tile-set {
 }
 .glue-modal__close-btn:after {
     transform: rotate(-45deg);
-}
-.glue-modal__close-btn:hover,
-.glue-modal__close-btn:focus {
-    background-color: #e8eaed;
-    outline: none;
-}
-.glue-modal__close-btn:hover:before,
-.glue-modal__close-btn:hover:after,
-.glue-modal__close-btn:focus:before,
-.glue-modal__close-btn:focus:after {
-    background-color: #174ea6;
 }
