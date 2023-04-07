@@ -8,6 +8,10 @@
 @import "sidebar.scss";
 @import "footer.scss";
 
+html {
+    scrollbar-gutter: stable;
+}
+
 body {
     font-family: $font-google-sans;
     color: $color-text;
@@ -27,7 +31,11 @@ body {
         margin: auto;
 
         @include media-medium {
-            padding: 1em;
+            padding: .75em;
+        }
+
+        @include media-small {
+            padding: .25em;
         }
     }
 }
@@ -152,3 +160,6 @@ section.banner {
         border-left:1px solid $border-light;
     }
 }
+
+// for alpinejs: hide cloaked elements while page is loading
+[x-cloak] { display: none !important; }

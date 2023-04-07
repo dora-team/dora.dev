@@ -1,4 +1,6 @@
 // With thanks to Bryony Miles: https://medium.com/@bryony_17728/d3-js-two-v-4-network-charts-compared-8d3c66b0499c
+// this script assumes Alpinejs is loaded on the calling page
+
 var linkTo;
 (function() {
 
@@ -18,16 +20,12 @@ var linkTo;
 
   function openModal(d, i) {
     let nodeName = d.name.replace(/_[^_]*_/, '');
-    document.getElementById("modal-label").innerHTML = nodeName;
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4 && xhr.status == 200) {
-        document.getElementById("modal-content").innerHTML = xhr.responseText;
-        let modalDiv = document.getElementById("modal");
-        let modal = new glue.ui.Modal(modalDiv, document.getElementById("bfd"));
-        modal.open();
-        modalDiv.scrollTo(0, 0);
-        document.getElementById("modal-close").addEventListener('click', function() { modal.close(); });
+        window.Alpine.store('modal').capability_headline = nodeName;
+        window.Alpine.store('modal').capability_content = xhr.responseText;
+        window.Alpine.store('modal').show();
       }
     }
     xhr.open("GET", "content/" + d.id + ".html");

@@ -17,8 +17,27 @@
     <sidebar>
         {{ partial "research_sidebar.html" . }}
     </sidebar>
-    <div class="double-wide bfd-container">
-        <script src="https://www.gstatic.com/glue/v20_0/glue-detect.min.js"></script>
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('modal', {
+                open: false,
+                capability_headline: 'DevOps Capability',
+                capability_content: 'How to improve',
+
+                show() {
+                    this.open = true;
+                    window.scrollTo(0,0);
+                    document.querySelector('body').classList.add('noscroll');
+                },
+
+                hide() {
+                    this.open = false;
+                    document.querySelector('body').classList.remove('noscroll');
+                }
+            });
+        })
+    </script>
+    <div class="double-wide bfd-container" x-data>
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <div class="text-left">
             <div id="bfd"></div>
@@ -40,25 +59,21 @@
                 <path id="key-link" class="link" d="M0 150 l20 0 m15 0" marker-end="url(#arrow)"></path>
                 <text x="40" y="155" class="bfd-text">Predictive relationship</text>
             </svg>
-            <div id="modal" class="glue-modal" role="dialog" aria-modal="true" aria-labelledby="modal-label"
-                aria-describedby="modal-content">
-                <div class="wrapper">
-                    <h2 id="modal-label" class="glue-headline glue-headline--one"></h2>
-                    <div id="modal-content" class="glue-mod-mt-std"></div>
-                    <p class="modal-close-wrapper">
-                        <button id="modal-close" class="glue-button h-c-button--secondary modal-close">Close</button>
-                    </p>
-                    <button class="glue-modal__close-btn"></button>
-                </div>
+            <div x-cloak class="modal-page-overlay" x-show="$store.modal.open"></div>
+            <div x-cloak class="modal" 
+                x-show="$store.modal.open" 
+                @click.outside="$store.modal.hide()" 
+                x-on:keydown.escape.window="$store.modal.hide()">
+                <article>
+                    <img class="modal-close-x" x-on:click="$store.modal.hide()" aria-controls="modal" src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg" alt="close">
+                    <h2 x-text="$store.modal.capability_headline"></h2>
+                    <div x-html="$store.modal.capability_content"></div>
+                </article>
             </div>
-            <script src="https://www.gstatic.com/external_hosted/hammerjs/v2_0_2/hammer.min.js"></script>
-            <script src="https://www.gstatic.com/glue/v21_0/glue-vanilla.min.js"></script>
-
             <div style="text-align:center"><a href="/pdf/big_friendly_diagram.pdf" target="_blank">
-                <button>View PDF</button></a>
+                    <button>View PDF</button></a>
             </div>
-
-</section>
-</div>
+        </div>
+    </div>
 </section>
 {{ end }}
