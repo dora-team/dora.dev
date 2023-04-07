@@ -1,5 +1,4 @@
 ---
-# These are optional elements. Feel free to remove any of them.
 status: accepted
 date: 2022-02-15
 deciders: @davidstanke
