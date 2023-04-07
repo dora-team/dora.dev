@@ -414,6 +414,13 @@ function createCapabilitiesTable(profile) {
         e.preventDefault();
         document.getElementById('modal').style.display='block';
         createCapabilitiesTable(userProfileAndPercentile.profile);
+
+        //Add event handler if the escape key is pressed
+        document.addEventListener("keydown", (event) => {
+          if (event.key === 'Escape') {
+            document.getElementById('modal').style.display='none';
+          }
+        });
     })
 
     document.getElementById('results').addEventListener('click', function(e) {
