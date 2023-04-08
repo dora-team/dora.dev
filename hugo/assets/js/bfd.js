@@ -76,7 +76,7 @@ var linkTo;
   }
 
   const width = Math.min(window.innerWidth, 1040);
-  const height = Math.min(window.innerHeight, 700);
+  const height = 700;
   const columnFactor = width / 9;
   const rowFactor = height / 8;
 
