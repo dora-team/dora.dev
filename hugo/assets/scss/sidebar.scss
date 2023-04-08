@@ -1,13 +1,12 @@
 @import "_variables.scss";
 
 section.hasSidebar {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 20%;
+    gap: 1em;
 
     sidebar {
-        width: 20%;
         min-width: 200px;
-        margin-left: 1em;
 
         a {
             text-decoration: none;
@@ -32,13 +31,22 @@ section.hasSidebar {
         }
     }
 
+    .double-wide {
+        grid-column: span 2;
+    }
+
     @include media-medium {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+
+        article {
+            width: 100%;
+        }
 
         sidebar {
+            order: 1;
             width: 100%;
-            margin-left:.5em;
-            margin-right:.5em;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
 
             section {
                 padding: 1em 0;
@@ -49,6 +57,10 @@ section.hasSidebar {
                     border-bottom: none;
                 }
             }
+        }
+
+        .double-wide {
+            grid-column: span 1;
         }
     }
 }

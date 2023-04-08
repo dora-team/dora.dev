@@ -1,11 +1,10 @@
 {{ define "main" }}
-<!-- Load Alpine from CDN -->
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     {{ .Content }}
 
     {{- partial "pagefooter_gofurther" . -}}
 
+    <!-- TODO: #189 make a partial to process javascript assets and render a `script` tag -->
     {{- $helpers := resources.Get "js/helpers.js" -}}
     {{- $constants := resources.Get "js/constants_2019.js" -}}
     {{- $results := resources.Get "js/results_2019.js" -}}

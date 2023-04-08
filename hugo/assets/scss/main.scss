@@ -8,6 +8,10 @@
 @import "sidebar.scss";
 @import "footer.scss";
 
+html {
+    scrollbar-gutter: stable;
+}
+
 body {
     font-family: $font-google-sans;
     color: $color-text;
@@ -27,7 +31,11 @@ body {
         margin: auto;
 
         @include media-medium {
-            padding: 1em;
+            padding: .75em;
+        }
+
+        @include media-small {
+            padding: .5em;
         }
     }
 }
@@ -65,7 +73,7 @@ header {
     display: flex;
     align-items: center;
     height: 64px;
-    box-shadow: 0 2px 6px 0 transparentize(#000, 0.88), inset 0 -1px 0 0 #dadce0;
+    @include box-shadow-light;
     z-index: 100;
 
     .dora-logo {
@@ -152,3 +160,6 @@ section.banner {
         border-left:1px solid $border-light;
     }
 }
+
+// for alpinejs: hide cloaked elements while page is loading
+[x-cloak] { display: none !important; }
