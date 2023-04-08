@@ -1,1 +1,0 @@
-These content snippets were in use on the old devops-research.com site, and will likely be put to use here, too. Stashing them here temporarily.

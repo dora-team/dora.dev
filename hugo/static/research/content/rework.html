@@ -3,13 +3,42 @@
 
     The second category is called reactive unplanned work, or rework. Unplanned work includes any break/fix work, emergency software deployments and patches, responding to urgent audit documentation requests, and so on. Rework is fixing things that weren't done right the first time and, like change fail rate, is a proxy measure for quality.</p>
     
-    <p>In the <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf">2016 State of DevOps survey</a>, we asked people about the percentage of time they spent on rework and unplanned work, and on new work such as designing and building new features. High performers reported spending 49 percent of their time on new work and 21 percent on unplanned work or rework. By contrast, low performers spend 38 percent of their time on new work and 27 percent on unplanned work or rework. Thus, high performers spend 29 percent more time on new work than low performers, and 22 percent less time on unplanned work and rework.</p>
+    <p>In the <a href="/publications/pdf/state-of-devops-2016.pdf" target="_blank">2016 State of DevOps survey</a>, we asked people about the percentage of time they spent on rework and unplanned work, and on new work such as designing and building new features. High performers reported spending 49 percent of their time on new work and 21 percent on unplanned work or rework. By contrast, low performers spend 38 percent of their time on new work and 27 percent on unplanned work or rework. Thus, high performers spend 29 percent more time on new work than low performers, and 22 percent less time on unplanned work and rework.</p>
     
     <p><a onclick="linkTo('cd');">Continuous delivery</a> predicts lower levels of unplanned work and rework in a statistically significant way, showing that implementing the <a onclick="linkTo('tech-practices');">technical practices</a> behind continuous delivery drives higher quality.</p>
     
-    <p>In the <a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf">2018 State of DevOps survey</a>, we asked our respondents how they spend their time and found that across the board, elite performers are getting the most value-add time out of their days and are spending the least amount of time doing non-value-add work of all groups, followed by high performers and medium performers. Low performers are doing the worst on all dimensions in terms of value-add vs. non-value-add time, as shown in the table below.</p>
+    <p>In the <a href="/publications/pdf/state-of-devops-2018.pdf" target="_blank">2018 State of DevOps survey</a>, we asked our respondents how they spend their time and found that across the board, elite performers are getting the most value-add time out of their days and are spending the least amount of time doing non-value-add work of all groups, followed by high performers and medium performers. Low performers are doing the worst on all dimensions in terms of value-add vs. non-value-add time, as shown in the table below.</p>
     
-    <table class="h-c-table h-c-table--datatable h-c-table--datatable-altrows">
+    <style>
+        .rework {
+            margin:auto;
+            border:1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        .rework tr:nth-child(even) {
+            background-color: #eee;
+        }
+
+        .rework th, .rework td {
+            padding:.25em;
+        }
+
+        .rework th {
+            text-align: left;
+        }
+
+        .rework td {
+            text-align: right;
+        }
+
+        .rework thead th {
+            background-color:#666;
+            color:white;
+        }
+
+    </style>
+    <table class="rework">
       <thead><tr><th scope="col" class="ranking-key">Time spent</th><th scope="col">Elite</th><th scope="col">High</th><th scope="col">Medium</th><th scope="col">Low</th></tr></thead>
       <tbody>
         <tr class="row-highlight"#669df6><th scope="row">New work</th><td>50%</td><td>50%</td><td>40%</td><td>30%</td></tr>

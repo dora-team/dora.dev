@@ -1,19 +1,17 @@
-<sidebar>
-    <section>
-        <a href="/research/team/">
-            <div class="snipe">
-                Meet DORA's Research Team
-            </div>
-        </a>
-    </section>
-    <section>
-        Research archives:
-        <ul>
-            {{ range (where .Site.RegularPages "Section" "research")}}
-                {{ if strings.Contains .Page "archives" }}
-                    <li><a href="{{ .Page.RelPermalink }}">{{ .Params.research_year }}</a></li>
-                {{ end }}
+<section>
+    <a href="/research/team/">
+        <div class="snipe">
+            Meet DORA's Research Team
+        </div>
+    </a>
+</section>
+<section>
+    Research archives:
+    <ul>
+        {{ range (where .Site.RegularPages "Section" "research")}}
+            {{ if strings.Contains .Page "archives" }}
+                <li><a href="{{ .Page.RelPermalink }}">{{ .Params.research_year }}</a></li>
             {{ end }}
-        </ul>
-    </section>
-</sidebar>
+        {{ end }}
+    </ul>
+</section>
