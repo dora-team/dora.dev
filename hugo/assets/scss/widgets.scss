@@ -6,11 +6,6 @@ styles for UI widgets such as popovers, modals, tabs
 
 @import "_variables.scss";
 
-body.noscroll {
-    overflow:hidden;
-    height:100%;
-}
-
 .popover {
     position: absolute;
     padding: 32px 64px 32px 32px;
@@ -26,74 +21,64 @@ body.noscroll {
     max-width: 400px;
 }
 
-.modal {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -25%);
-    z-index: 9999;
-    margin: 1em;
-    background-color: #fff;
-    max-height:85%;
-    width:100%;
-    max-width: $layout-breakpoint-large;
-    border-radius: 0.5em;
-    display:flex;
-    flex-direction:column;
-    overflow:hidden;
-
-    article {
-        padding: 1.5em 2.5em 1.5em 1.5em; // right padding is slightly larger to allow room for "x" close button
-        height:100%;
-        overflow-y:auto;
-    }
-
-    @include media-medium {
-        transform:none;
-        margin:0;
-        top:5vw;
-        left:5vw;
-        width:90vw;
-        max-height:90vh;
-
-        article {
-            width:80vw !important;
-        }
-    }
-    
-    @include media-small {
-        transform:none;
-        margin:0;
-        top:0;
-        left:0;
-        width:100vw;
-        height:100vh;
-        border-radius: 0;
-
-        article {
-            width:100vw;
-        }
-    }
-}
-
-.modal-page-overlay {
+.modal-container {
     position: fixed;
+    display: flex;
+    justify-content: center;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
-    z-index: 9998;
-}
+    z-index: 9999;
+    padding-top: 10vh;
 
-// the .modal-open and .modal-close classes are also used to identify controls that manipulate modals
+    .modal {
+        position: relative;
+        margin: 1em;
+        background-color: #fff;
+        max-width: $layout-breakpoint-large;
+        border-radius: 0.5em;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        max-height: 80vh;
 
-.modal-open {
-    cursor: pointer;
-}
+        .modal-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5em;
+            border-bottom: 1px solid $border-light;
+            @include box-shadow-light;
 
-.modal-close {
-    cursor: pointer;
+            h2 {
+                padding:.25em;
+            }
+
+            .modal-close-x {
+                border: none;
+                cursor: pointer;
+                border-radius: 0.25em;
+                filter: invert(40%) sepia(3%) saturate(18%) hue-rotate(327deg) brightness(95%) contrast(85%);
+                @include media-small {
+                    width: 1.75em;
+                    height: 1.75em;
+                }
+
+                &:hover {
+                    filter:none;
+                    background-color: #e1f3fc;
+                }
+            }
+        }
+
+        .capability-content {
+            overflow-y: auto;
+            padding: 1em;
+        }
+    }
 }
 
 .popover-more {
@@ -105,21 +90,6 @@ body.noscroll {
     background-size: contain;
     filter: invert(53%) sepia(12%) saturate(175%) hue-rotate(165deg) brightness(97%) contrast(91%);
     border-bottom: 0;
-}
-
-.modal-close-x {
-    margin: 6px;
-    height: 32px;
-    width: 32px;
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    border: none;
-    cursor: pointer;
-
-    &:hover {
-        background-color: #e1f3fc;
-    }
 }
 
 ul.tabs {

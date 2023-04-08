@@ -25,7 +25,7 @@ var linkTo;
       if (xhr.readyState == 4 && xhr.status == 200) {
         window.Alpine.store('modal').capability_headline = nodeName;
         window.Alpine.store('modal').capability_content = xhr.responseText;
-        window.Alpine.store('modal').show();
+        window.Alpine.store('modal').open=true;
       }
     }
     xhr.open("GET", "content/" + d.id + ".html");
@@ -75,7 +75,7 @@ var linkTo;
     }
   }
 
-  const width = Math.min(window.innerWidth, 1040);
+  const width = Math.min(window.innerWidth-64, 1040);
   const height = 500;
   const columnFactor = width / 9;
   const rowFactor = height / 8;
