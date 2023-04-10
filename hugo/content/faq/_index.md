@@ -10,7 +10,7 @@ type: faq
 ## dora.dev
 ### DevOps Quick Check
 - What data are used to calculate my results?
-- Quick Check results are baed on data collected from respondents to the State of DevOps survey (the same survey on which the Accelerate State of DevOps Report is based). Your results are based on findings from the 2022 survey; you can also take the Quick Check based on results from [2019](/quickcheck/?year=2019) or [2021](/quickcheck/?year=2021). <small><em>(There was no Accelerate State of DevOps study in 2020.)</em></small>
+- Quick Check results are based on data collected from respondents to the State of DevOps survey (the same survey on which the Accelerate State of DevOps Report is based). Your results are based on findings from the 2022 survey; you can also take the Quick Check based on results from [2019](/quickcheck/?year=2019) or [2021](/quickcheck/?year=2021). <small><em>(There was no Accelerate State of DevOps study in 2020.)</em></small>
 - Why don't my results include a performance cluster?
 - Prior versions of the Quick Check displayed results including a performance cluster (low, medium, high, elite). Because the number of clusters varies between studies (see below), and in order to focus on ongoing improvement at the level of individual teams, we no longer compute a performance cluster, but rather a percentile based on data from all research participants.
 
