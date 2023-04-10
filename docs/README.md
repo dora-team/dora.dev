@@ -1,5 +1,5 @@
 ### Hugo
-To build and preview the site locally, you'll need [hugo](gohugo.io). 
+To build and preview the site locally, you'll need [hugo](https://gohugo.io/). 
 
 - The recommended command to start the local hugo server is `hugo serve -D -s hugo --disableFastRender --debug --watch`.
   - This will render and live-reload all pages, including drafts. _To suppress rendering of drafts, omit the `-D` flag._
