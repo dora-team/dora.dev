@@ -1,5 +1,5 @@
 ---
-title: "Version Control"
+title: "Version control"
 titleForHTMLHead: "DevOps Capabilities: Version Control" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:51+01:00
 category: technical

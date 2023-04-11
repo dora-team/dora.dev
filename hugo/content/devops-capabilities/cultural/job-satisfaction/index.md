@@ -1,5 +1,5 @@
 ---
-title: "Job Satisfaction"
+title: "Job satisfaction"
 titleForHTMLHead: "DevOps Capabilities: Job Satisfaction" # TODO: can we DRY this out?
 date: 2023-03-22T13:43:36Z
 category: cultural

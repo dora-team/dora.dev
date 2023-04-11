@@ -1,5 +1,5 @@
 ---
-title: "Shifting Left on Security"
+title: "Shifting left on security"
 titleForHTMLHead: "DevOps Capabilities: Shifting Left on Security" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical
