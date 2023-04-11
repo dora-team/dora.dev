@@ -1,5 +1,5 @@
 ---
-title: "Transformational Leadership"
+title: "Transformational leadership"
 titleForHTMLHead: "DevOps Capabilities: Transformational Leadership" # TODO: can we DRY this out?
 date: 2023-03-22T13:43:36Z
 category: cultural

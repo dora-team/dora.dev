@@ -1,5 +1,5 @@
 ---
-title: "Proactive Failure Notification"
+title: "Proactive failure notification"
 titleForHTMLHead: "DevOps Capabilities: Proactive Failure Notification" # TODO: can we DRY this out?
 date: 2023-03-25T16:35:37Z
 category: process
