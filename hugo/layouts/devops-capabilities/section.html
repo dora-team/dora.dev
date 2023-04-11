@@ -2,7 +2,7 @@
     <!-- TODO: #121 make a partial to process scss files and render <link> tags -->
     {{ $stylesheet := printf "scss/devops-capabilities.scss" | resources.Get | toCSS | fingerprint }}
     <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
-    <h2>Technical Capabilities</h2>
+    <h2>Technical capabilities</h2>
     <section class="capabilitiesGrid">
         {{ $capabilities := where site.RegularPages "Params.category" "technical" }}
         {{ range ($capabilities.ByParam "title") }}
@@ -16,7 +16,7 @@
             </article>
         {{ end }}
     </section>
-    <h2>Process Capabilities</h2>
+    <h2>Process capabilities</h2>
     <section class="capabilitiesGrid">
         {{ $capabilities := where site.RegularPages "Params.category" "process" }}
         {{ range ($capabilities.ByParam "title") }}
@@ -31,7 +31,7 @@
             </article>
         {{ end }}
     </section>
-    <h2>Cultural Capabilities</h2>
+    <h2>Cultural capabilities</h2>
     <section class="capabilitiesGrid">
         {{ $capabilities := where site.RegularPages "Params.category" "cultural" }}
         {{ range ($capabilities.ByParam "title") }}

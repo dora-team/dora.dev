@@ -1,5 +1,5 @@
 ---
-title: "Database Change Management"
+title: "Database change management"
 titleForHTMLHead: "DevOps Capabilities: Database Change Management" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical
