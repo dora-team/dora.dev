@@ -1,5 +1,5 @@
 ---
-title: "Streamlining Change Approval"
+title: "Streamlining change approval"
 titleForHTMLHead: "DevOps Capabilities: Streamlining Change Approval" # TODO: can we DRY this out?
 date: 2023-03-22T11:02:58Z
 category: process
