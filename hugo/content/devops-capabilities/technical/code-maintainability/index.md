@@ -1,5 +1,5 @@
 ---
-title: "Code Maintainability"
+title: "Code maintainability"
 titleForHTMLHead: "DevOps Capabilities: Code Maintainability" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical

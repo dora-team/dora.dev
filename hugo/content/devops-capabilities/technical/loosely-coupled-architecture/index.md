@@ -1,5 +1,5 @@
 ---
-title: "Loosely Coupled Architecture"
+title: "Loosely coupled architecture"
 titleForHTMLHead: "DevOps Capabilities: Loosely Coupled Architecture" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical
