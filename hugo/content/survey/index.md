@@ -10,4 +10,4 @@ Over the past eight years, more than 33,000 professionals around the world have 
 In addition to contributing to our collective understanding of software delivery, the survey offers practitioners a time to reflect on challenges and opportunities within their own teams.
 
 ### Participate in the Accelerate State of DevOps Survey
-The 2023 survey will be launching soon! Check back here for more information, or join [dora.community](https://dora.community) for ongoing updates.
+The 2023 survey will be launching soon! Check back here for more information, or [join the DORA Community Google Group](https://dora.community) for ongoing updates. for ongoing updates.
