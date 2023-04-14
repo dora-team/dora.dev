@@ -580,3 +580,18 @@ img.rec-img {
         }
     }
 }
+
+// Issue 214 Add back CSS
+.modal-close.x {
+    margin: 6px;
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border: none;
+
+    &:hover {
+        background-color: #e1f3fc;
+    }
+}
