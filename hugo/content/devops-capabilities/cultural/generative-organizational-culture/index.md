@@ -166,7 +166,7 @@ valid and reliable statistically.
     news.
 -   On my team, responsibilities are shared.
 -   On my team, cross-functional collaboration is encouraged and rewarded.
--   On my team, failure causes inquiry.
+-   On my team, failures are treated primarily as opportunities to improve the system.
 -   On my team, new ideas are welcomed.
 
 Present these measures together—unlabeled and untitled—with responses ranging
