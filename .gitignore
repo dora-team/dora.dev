@@ -18,3 +18,4 @@ hugo.linux
 firebase-debug.log
 firestore-debug.log
 ui-debug.log
+**/firestore-send-email.secret.local
