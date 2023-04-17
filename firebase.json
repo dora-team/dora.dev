@@ -10,6 +10,11 @@
             ],
             "redirects": [
                 {
+                    "source": "/capabilities/",
+                    "destination": "/devops-capabilities/",
+                    "type": 301
+                },
+                {
                     "source": "/quickcheck.html",
                     "destination": "/quickcheck/",
                     "type": 301
@@ -50,6 +55,11 @@
                 "**/node_modules/**"
             ],
             "redirects": [
+                {
+                    "source": "/capabilities/",
+                    "destination": "/devops-capabilities/",
+                    "type": 301
+                },
                 {
                     "source": "/quickcheck.html",
                     "destination": "/quickcheck/",
