@@ -10,7 +10,7 @@
             ],
             "redirects": [
                 {
-                    "source": "/capabilities/",
+                    "source": "/capabilities",
                     "destination": "/devops-capabilities/",
                     "type": 301
                 },
@@ -56,7 +56,7 @@
             ],
             "redirects": [
                 {
-                    "source": "/capabilities/",
+                    "source": "/capabilities",
                     "destination": "/devops-capabilities/",
                     "type": 301
                 },
