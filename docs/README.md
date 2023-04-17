@@ -15,15 +15,17 @@ See `/ci/README.md`
 #### Firebase can be emulated locally, to test the functionality it provides. This requires two terminal windows
 To emulate only firestore (used by the email contact form)  
 - in terminal 1, run `hugo serve -s hugo --disableFastRender --debug --watch`
-- in terminal 2, run `firebase emulators:start`
+- in terminal 2, run `firebase emulators:start --only hosting`
 - access the site at `http://localhost:1313`
 
 To emulate firestore and firebase hosting (to see features like server-side redirects)
   - in terminal 1, run `watch -n 2 hugo -s hugo -e development`
     - _this will continuously rebuild the site and save it to `/public` (which is the firebase hosting serving root)_
-  - in terminal 2, run `firebase emulators:start`
+  - in terminal 2, run `firebase emulators:start --only hosting`
   - access the site at `http://localhost:6001`
     - _in this configuration, the browser will not auto-reload when source files are changed_
+
+To emulate firestore with firebase hosting, funtions, and plugins, you will need access to the Firebase project.  However, for your own development, consider overiding the [.firebaserc](../.firebaserc) file with a project you have appropriate permissions.
 
 *NOTE: Firebase hosting uses non-standard port 6001 because Dave was having trouble with the standard port, 5000. We should figure that out and revert to the standard port.*
 
