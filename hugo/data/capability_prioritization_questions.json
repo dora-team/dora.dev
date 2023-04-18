@@ -86,15 +86,11 @@
             },
             {
                 "number": 5,
-                "question_text": "Failure causes inquiry."
+                "question_text": "Failures are treated primarily as opportunities to improve the system."
             },
             {
                 "number": 6,
                 "question_text": "New ideas are welcomed."
-            },
-            {
-                "number": 7,
-                "question_text": "Failures are treated primarily as opportunities to improve the system."
             }
         ]
     }
