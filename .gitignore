@@ -20,6 +20,7 @@ firestore-debug.log
 ui-debug.log
 **/firestore-send-email.secret.local
 local-dev/**
+**/firebase-config-local.js
 
 # Node mods
 **/node_modules/
