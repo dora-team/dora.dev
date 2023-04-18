@@ -13,12 +13,13 @@ hugo.linux
 # Temporary lock file while building
 /hugo/.hugo_build.lock
 
-# Firebase work directory and local logs
+# Firebase work directory and local logs and development
 .firebase/*
 firebase-debug.log
 firestore-debug.log
 ui-debug.log
 **/firestore-send-email.secret.local
+local-dev/**
 
 # Node mods
 **/node_modules/
