@@ -1,0 +1,18 @@
+{
+    "projects": {
+      "default": "XXXXXXXXXXXX"
+    },
+    "targets": {
+      "XXXXXXXXXXXX": {
+        "hosting": {
+          "prod": [
+            "XXXXXXXXXXXX"
+          ],
+          "draft": [
+            "XXXXXXXXXXXX"
+          ]
+        }
+      }
+    },
+    "etags": {}
+  }
