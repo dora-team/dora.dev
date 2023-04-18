@@ -10,7 +10,8 @@ exports.sendEMailNotification = functions.firestore
     
             let emailInquiry = snap.data();
 
-            // Write to collection as requested
+            // Write to collection as requested according to the plugin detauks
+            // https://firebase.google.com/docs/extensions/official/firestore-send-email
             await admin.firestore().collection("mail-log").add({
                 to: `${process.env.SEND_TO}`,
                 message: {
