@@ -22,7 +22,7 @@ See `/ci/README.md`
     - _in this configuration, the browser will not auto-reload when source files are changed_
 
 
-_**Option 2**_ To emulate _FULL_ Firebase emulation (e.g., hosting, Cloud Functions, and the [Emailer Extention](https://firebase.google.com/docs/extensions/official/firestore-send-email) - for contact form emails), this will require changes to your local emulation environment.  If you do not perform these steos, you may experience Firebase permission errors if you do not have access to the default GCP Firebase project as defined within [firebase.json]('../firebase.json') and [.firebaserc]('../.firebaserc') configurations:
+**Option 2** To emulate _FULL_ Firebase emulation (e.g., hosting, Cloud Functions, and the [Emailer Extention](https://firebase.google.com/docs/extensions/official/firestore-send-email) - for contact form emails), this will require changes to your local emulation environment.  If you do not perform these steos, you may experience Firebase permission errors if you do not have access to the default GCP Firebase project as defined within `../firebase.json` and `../firebaserc` configurations:
 
 1) Firebase Configuraton Object:
 
@@ -30,9 +30,9 @@ _**Option 2**_ To emulate _FULL_ Firebase emulation (e.g., hosting, Cloud Functi
     ```shell
         ./hugo/static/js/firebase-config-local.js
     ```
-2. Install local emulator configurations into local Firebase dev instance folder*: `${GIT_ROOT}/local-dev/` # where GIT_ROOT is the project root from your git clone
+2. Install local emulator configurations into local Firebase dev instance folder*: `${GIT_ROOT}/local-dev/` # where GIT_ROOT is the project root from your `git clone`
 
-    NOTE: If you follow the below recommendations, the local files created will _not_ be checked into source control as they are excluded in the `.gitignore` configuration. Best practice for community development.
+    NOTE: If you follow the below recommendations, the local files created will _not_ be checked into source control as they are excluded in the `.gitignore` configuration; A better practice for shared community development.
 
     If you are unfamilar with the syntax, you may copy `${GIT_ROOT}/local-dev.template` directory or create them via the following:
 
