@@ -21,10 +21,11 @@ To emulate only firestore (used by the email contact form)
 To emulate firestore and firebase hosting (to see features like server-side redirects)
   - in terminal 1, run `watch -n 2 hugo -s hugo -e development`
     - _this will continuously rebuild the site and save it to `/public` (which is the firebase hosting serving root)_
-  - in terminal 2, run `firebase emulators:start --only functions,firestore,hosting,extensions`
+  - in terminal 2, run `firebase emulators:start --only firestore,hosting`
   - access the site at `http://localhost:6001`
     - _in this configuration, the browser will not auto-reload when source files are changed_
 
 _NOTES_:
-1) Other Firebase emulation options are available by passing other `only` options: `firebase emulators:start --only functions,firestore,hosting,extensions`.  If you do not pass in `--only` aruguments, the CLI will attempt to access a hosted/product instance as defined within the `./.firebaserc` file for any configured resources defined within the Firebase config (`firebase.json`)
-2) Firebase hosting uses non-standard port 6001 because Dave was having trouble with the standard port, 5000 (e.g, MacOS now leverages port 5000 for AirPlay).
+1) Other Firebase emulation options are available by passing other `--only` options: `firebase emulators:start --only firestore,hosting,functions,extensions`.  If you do not pass in `--only` aruguments, the CLI will attempt to access a hosted/product instance as defined within the `./.firebaserc` file for any configured resources defined within the Firebase config (`firebase.json`)
+2) If you get permissions error (ie., when using the `extensions` option), you may need to pass in the `--project ` option to a Firebase project you have appropriate permissions. Another option is to hijack the `./.firebaserc` (via `git update-index --assume-unchanged .firebaserc`) and make changes in the Firebase instance configuration.
+3) Firebase hosting uses non-standard port 6001 because Dave was having trouble with the standard port, 5000 (maybe because MacOS now leverages port 5000 for AirPlay).
