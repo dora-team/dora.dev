@@ -1,6 +1,6 @@
 {
-    "name": "email-responder",
-    "description": "Firebase Emailer Function",
+    "name": "dora-inquiry-monitor",
+    "description": "Firebase Function to monitor new DORA Inquiry requests",
     "dependencies": {
       "firebase-admin": "^11.5.0",
       "firebase-functions": "^4.2.0",
