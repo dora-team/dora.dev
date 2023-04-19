@@ -23,6 +23,7 @@ local-dev/**
 # Local instance of FireBase App Config
 # (see: hugo/static/js/firebase-config-local.js)
 **/firebase-config-local.js
+extensions/*.local
 
 # Node mods
 **/node_modules/
