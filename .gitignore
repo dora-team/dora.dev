@@ -18,7 +18,6 @@ hugo.linux
 firebase-debug.log
 firestore-debug.log
 ui-debug.log
-local-dev/**
 
 # Local instance of FireBase App Config
 # (see: hugo/static/js/firebase-config-local.js)
