@@ -14,7 +14,7 @@ See `/ci/README.md`
 ### DEV Misc
 #### Firebase can be emulated locally, to test the functionality it provides. This requires two terminal windows
 
-**Option 1** : _This will meet most development needs._  To emulate Firebase hosting only (to see features like server-side redirects)
+**Option 1** : _This will meet most Firebase development needs._  To emulate Firebase hosting only (to see features like server-side redirects)
   - in terminal 1, run `watch -n 2 hugo -s hugo -e development`
     - _this will continuously rebuild the site and save it to `/public` (which is the firebase hosting serving root)_
   - in terminal 2, run `firebase emulators:start --only hosting`
@@ -30,31 +30,31 @@ See `/ci/README.md`
     ```shell
         ./hugo/static/js/firebase-config-local.js
     ```
-2. Install local emulator configurations into local Firebase dev instance folder*: `${GIT_ROOT}/local-dev/` # where GIT_ROOT is the project root from your `git clone`
+2. Install local emulator configurations into local Firebase dev instance folder*: `${PROJECT_ROOT}/local-dev/` # where PROJECT_ROOT is the project root from your `git clone`
 
     NOTE: If you follow the below recommendations, the local files created will _not_ be checked into source control as they are excluded in the `.gitignore` configuration; A better practice for shared community development.
 
-    If you are unfamilar with the syntax, you may copy `${GIT_ROOT}/local-dev.template` directory or create them via the following:
+    You have options for local development:
 
     ```shell
-    # Option 1 - Copy template ;Please dont rename them as this will remove from Git.
-    cd ${GIT_ROOT}
+    # Option 1 - Copy template ;Please don't rename the the folder as this will remove from Git tracking.
+    cd ${PROJECT_ROOT}
     cp -rp local-dev.template local-dev
 
-    # Option 2 - Install fresh
-    cd ${GIT_ROOT}
+    # Option 2 - Install fresh by the follwing command in your local firebase config directory and follow the prompts
+    cd ${PROJECT_ROOT}
     mkdir local-dev
     firebase ext:install firebase/firestore-send-email
     ```
 
     Review all configs in your `local-dev` for accuracy.
 
-    *WARNING*:  The use of `extentions/firestore-send-email.secret.local` is the value in clear text.  DO NOT check into source control management.
+    *WARNING*:  The use of `extentions/firestore-send-email.secret.local` is the value in clear text.  _DO NOT_ check into source control management.
 
-3. Start Firebase emulators using the new configurations
-    - in terminal 1, run `hugo serve -s hugo --disableFastRender --debug --watch`
+3. Start Firebase emulators using the new configurations from ${PROJECT_ROOT}
+    - in terminal 1, run  `hugo serve -s hugo --disableFastRender --debug --watch`
     - in terminal 2, run `firebase emulators:start --config local-dev/firebase.json`
-    - access the site at `http://localhost:1313`
+    - access the site at `http://localhost:6001`
 
 
   *NOTE:
