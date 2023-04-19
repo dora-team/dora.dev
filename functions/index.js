@@ -5,7 +5,7 @@ const admin = require('firebase-admin');
 // Initialize the Firebase Admin SDK.
 admin.initializeApp();
 
-exports.sendEMailNotification = functions.firestore
+exports.emailInquiryMonitor = functions.firestore
             .document('/email-inquiry/{documentID}').onCreate(async (snap, context) => {
     
             let emailInquiry = snap.data();
