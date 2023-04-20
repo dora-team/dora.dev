@@ -1,30 +1,75 @@
-// Imports
+// Imports and global vars
 const functions = require('firebase-functions');
-const admin = require('firebase-admin');
+var admin = require('firebase-admin');
+
+const REFRESH_INTERVAL = 3600000 ; // 1 hr
+var sendTo;
 
 // Initialize the Firebase Admin SDK.
 admin.initializeApp();
+const remoteConfig = admin.remoteConfig();
 
+//Refresh the "INQUIRY_SEND_TO" value every Xms
+setInterval(refreshRemoteConfig, REFRESH_INTERVAL)
+
+// Export actual Function (as registered in Console)
 exports.emailInquiryMonitor = functions.firestore
-            .document('/email-inquiry/{documentID}').onCreate(async (snap, context) => {
-    
+            .document('/email-inquiry/{documentID}')
+            .onCreate(async (snap, context) => {
+
+            // If empty, we populate as a singleton pattern
+            if (!sendTo){
+                await getSendToEmailInquiry()
+            }
+
+            // Get new document data from
             let emailInquiry = snap.data();
 
             // Write to collection as requested according to the plugin detauks
             // https://firebase.google.com/docs/extensions/official/firestore-send-email
             await admin.firestore().collection("mail-log").add({
-                to: `${process.env.SEND_TO}`,
+                to: sendTo,
                 message: {
-                subject: `DORA.dev Email Inquiry ${emailInquiry.inquiry_type}`,
+                subject: `DORA.dev Email Inquiry: ${emailInquiry.inquiry_type || ""}`,
                 html: `
                     <br>From: ${emailInquiry.from_email || ""}
                     <br>First Name: ${emailInquiry.first_name || ""}
                     <br>Last Name: ${emailInquiry.last_name || ""}
                     <br>Submitted:  ${context.timestamp || ""}
                     <hr>
-                    <br>Message: ${emailInquiry.message || ""}
-    
+                    <br>Message: ${emailInquiry.message || "Check /email-inquiry/{documentID} for valid entry."}
                 `
                 },
             });
 });
+
+// Helper function that calls REST API to get template
+//    If we dont have access to the remote config,
+//    we fall back to environment var
+async function getSendToEmailInquiry() {
+
+    try {
+        let template = await remoteConfig.getTemplate();
+        sendTo = template.parameters.INQUIRY_SEND_TO.defaultValue.value;
+        console.log("Setting sendTo to ",sendTo);
+
+    } catch (error) {
+        console.error(error.message);
+        console.error('Unable to get template from Remote Config. Looking for local environment variable.');
+
+        sendTo = process.env.SEND_TO;
+    }
+
+    // if still null, let someone know. Oppotunity to refresh based upin
+    if (!sendTo) {
+        sendTo = "-"
+        throw new Error('Fatal error:  Unable to identify INQUIRY_SEND_TO value');
+    }
+
+}
+// Wrapper function to act as a callback from REFRESH interval
+async function refreshRemoteConfig(){
+    console.log("Refreshing INQUIRY_SEND_TO value");
+    await getSendToEmailInquiry();
+}
+
