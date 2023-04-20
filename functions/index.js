@@ -17,7 +17,7 @@ exports.emailInquiryMonitor = functions.firestore
             .document('/email-inquiry/{documentID}')
             .onCreate(async (snap, context) => {
 
-            // If empty, we populate as a singleton pattern
+            // If empty, we populate (we dont want to call everytime)
             if (!sendTo){
                 await getSendToEmailInquiry()
             }
@@ -60,7 +60,7 @@ async function getSendToEmailInquiry() {
         sendTo = process.env.SEND_TO;
     }
 
-    // if still null, let someone know. Oppotunity to refresh based upin
+    // If falsy, let someone know. Later, we can refresh based upon REFRESH_INTERVAL
     if (!sendTo) {
         sendTo = "-"
         throw new Error('Fatal error:  Unable to identify INQUIRY_SEND_TO value');
