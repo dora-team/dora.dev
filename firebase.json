@@ -112,6 +112,9 @@
   "extensions": {
     "firestore-send-email": "firebase/firestore-send-email@0.1.25"
   },
+  "firestore": {
+    "rules": "rules/firestore.rules"
+  },
   "functions": {
     "source": "functions"
   }

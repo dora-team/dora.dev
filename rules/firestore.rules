@@ -1,0 +1,12 @@
+rules_version = '2';
+service cloud.firestore {
+ match /databases/{database}/documents {
+   match /email-inquiry/{inquiryEntry} {
+     // Users can create firestore entry (no update/delete)
+     allow create: if true;
+    
+     // reads can be done only via Firebase console or cloud functions
+     allow read: if false;
+   }
+ }
+}
