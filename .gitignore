@@ -23,6 +23,7 @@ ui-debug.log
 # (see: hugo/static/js/firebase-config-local.js)
 **/firebase-config-local.js
 extensions/*.local
+functions/*.env.local
 
 # Node mods
 **/node_modules/

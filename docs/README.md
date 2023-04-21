@@ -13,11 +13,14 @@ See `/ci/README.md`
 
 ### DEV Misc
 #### Firebase can be emulated locally, to test the functionality it provides. This requires two terminal windows
+
+#### **Firestore**
 To emulate only firestore (used by the email contact form)
 - in terminal 1, run `hugo serve -s hugo --disableFastRender --debug --watch`
 - in terminal 2, run `firebase emulators:start --only firestore`
 - access the site at `http://localhost:1313`
 
+#### **Firestore and Hosting**
 To emulate firestore and firebase hosting (to see features like server-side redirects)
   - in terminal 1, run `watch -n 2 hugo -s hugo -e development`
     - _this will continuously rebuild the site and save it to `/public` (which is the firebase hosting serving root)_
@@ -25,7 +28,19 @@ To emulate firestore and firebase hosting (to see features like server-side redi
   - access the site at `http://localhost:6001`
     - _in this configuration, the browser will not auto-reload when source files are changed_
 
+#### **Cloud Functions**
+To emulate Cloud Functions, you will need NodeJS installed locally (see `package.json` for version requirements).
+  - in terminal 1, run `watch -n 2 hugo -s hugo -e development`
+    - _this will continuously rebuild the site and save it to `/public` (which is the firebase hosting serving root)_
+  - in terminal 2, run `firebase emulators:start --only functions`
+  - access the site at `http://localhost:6001`
+
+
 _NOTES_:
-1) Other Firebase emulation options are available by passing other `--only` options: `firebase emulators:start --only firestore,hosting,functions,extensions`.  If you do not pass in `--only` arguments, the CLI will attempt to access a hosted/product instance as defined within the `./.firebaserc` file for any configured resources defined within the Firebase config (`firebase.json`)
-2) If you get a permissions error (ie., when using the `extensions` option), you may need to pass in the `--project ` option to a Firebase project you have appropriate permissions. Another option is to hijack the `./.firebaserc` (via `git update-index --assume-unchanged .firebaserc`) and make changes in the Firebase instance configuration.
-3) Firebase hosting uses non-standard port 6001 because Dave was having trouble with the standard port, 5000 (maybe because MacOS now leverages port 5000 for AirPlay).
+1) Other Firebase emulation options are available by passing other `--only` options: `firebase emulators:start --only firestore,hosting,functions,extensions`.  _If you do not_ pass in `--only` arguments, the CLI will attempt to access the hosted/project instance as defined within `./.firebaserc` due to the `extensions` resources defined within the Firebase config (`firebase.json`).
+    - One should be aware that at the time of this writing, Remote Config is not supported in Firebase emulations.  You may still pass in a local environment option by setting the `SEND_TO=` value within the `functions\.env.local` file.
+2) If you get a permissions error on deployment (ie., when using the `extensions` option):
+    - Option 1: You may need to pass in the `--project ` option to a Firebase project you have appropriate permissions.
+    - Option 2: Hijack the `./.firebaserc` (via `git update-index --assume-unchanged .firebaserc`) and make changes in the Firebase instance configuration.  Just know that doing this will not commmit changed back to source control.
+3) Firebase hosting uses non-standard port 6001 because Dave was having trouble with the standard port, 5000 (it may be because MacOS now leverages port 5000 for AirPlay).
+
