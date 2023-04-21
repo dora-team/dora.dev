@@ -2,15 +2,11 @@
 const functions = require('firebase-functions');
 var admin = require('firebase-admin');
 
-const REFRESH_INTERVAL = 3600000 ; // 1 hr
 var sendTo;
 
 // Initialize the Firebase Admin SDK.
 admin.initializeApp();
 const remoteConfig = admin.remoteConfig();
-
-//Refresh the "INQUIRY_SEND_TO" value every Xms
-setInterval(refreshRemoteConfig, REFRESH_INTERVAL)
 
 // Export actual Function (as registered in Console)
 exports.emailInquiryMonitor = functions.firestore
@@ -51,7 +47,7 @@ async function getSendToEmailInquiry() {
     try {
         let template = await remoteConfig.getTemplate();
         sendTo = template.parameters.INQUIRY_SEND_TO.defaultValue.value;
-        console.log("Setting sendTo to ",sendTo);
+        // console.log("Setting sendTo to ",sendTo);
 
     } catch (error) {
         console.error(error.message);
@@ -66,10 +62,5 @@ async function getSendToEmailInquiry() {
         throw new Error('Fatal error:  Unable to identify INQUIRY_SEND_TO value');
     }
 
-}
-// Wrapper function to act as a callback from REFRESH interval
-async function refreshRemoteConfig(){
-    console.log("Refreshing INQUIRY_SEND_TO value");
-    await getSendToEmailInquiry();
 }
 
