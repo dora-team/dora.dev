@@ -117,5 +117,7 @@
   },
   "functions": {
     "source": "functions"
+  },"remoteconfig": {
+    "template": "remote-cfg/inquiry-monitor-template.json"
   }
 }
