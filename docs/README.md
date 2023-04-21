@@ -11,14 +11,18 @@ The production site (and pre-prod environments) are hosted in Firebase. Some hos
 ### CI/CD
 See `/ci/README.md`
 
-### DEV Misc
-#### Firebase can be emulated locally, to test the functionality it provides. This requires two terminal windows
+### DEV Misc with Firebase
+#### Firebase can be emulated locally.
+This requires two terminal windows to test the functionality it provides.
+
+*NOTE:* re: Firestore. While you may leverage Firestore emulators to test locally, you will still need to create a Firestore Config object in `hugo/static/js/firebase-config-local.js` with values of a Firebase project that you have permissions.
 
 #### **Firestore**
 To emulate only firestore (used by the email contact form)
 - in terminal 1, run `hugo serve -s hugo --disableFastRender --debug --watch`
 - in terminal 2, run `firebase emulators:start --only firestore`
 - access the site at `http://localhost:1313`
+
 
 #### **Firestore and Hosting**
 To emulate firestore and firebase hosting (to see features like server-side redirects)
@@ -30,11 +34,6 @@ To emulate firestore and firebase hosting (to see features like server-side redi
 
 #### **Cloud Functions**
 To emulate Cloud Functions, you will need NodeJS installed locally (see `package.json` for version requirements).
-  - in terminal 1, run `watch -n 2 hugo -s hugo -e development`
-    - _this will continuously rebuild the site and save it to `/public` (which is the firebase hosting serving root)_
-  - in terminal 2, run `firebase emulators:start --only functions`
-  - access the site at `http://localhost:6001`
-
 
 _NOTES_:
 1) Other Firebase emulation options are available by passing other `--only` options: `firebase emulators:start --only firestore,hosting,functions,extensions`.  _If you do not_ pass in `--only` arguments, the CLI will attempt to access the hosted/project instance as defined within `./.firebaserc` due to the `extensions` resources defined within the Firebase config (`firebase.json`).

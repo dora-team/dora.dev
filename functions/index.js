@@ -23,7 +23,7 @@ exports.emailInquiryMonitor = functions.firestore
 
             // Write to collection as requested according to the plugin detauks
             // https://firebase.google.com/docs/extensions/official/firestore-send-email
-            await admin.firestore().collection("mail-log").add({
+            await admin.firestore().collection("email-log").add({
                 to: sendTo,
                 message: {
                 subject: `DORA.dev Email Inquiry: ${emailInquiry.inquiry_type || ""}`,
