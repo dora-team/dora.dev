@@ -45,16 +45,14 @@
             } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js'
 
              // Initialize Firebase
+             import {config} from '/js/firebase-config.js'
              const app = initializeApp(config);
              const db = getFirestore(app);
              {{ if not hugo.IsProduction }}
-                connectFirestoreEmulator(db, 'localhost', 6100);
-                import {config} from '/js/firebase-config-local.js'
-            {{ else }}
-                import {config} from '/js/firebase-config.js'
+                connectFirestoreEmulator(db, 'localhost', 6100);        
             {{ end }}
-
-             const newInquiryRef = doc(collection(db, "email-inquiry"));
+            
+            const newInquiryRef = doc(collection(db, "email-inquiry"));
 
             document.addEventListener('DOMContentLoaded', function() {
 

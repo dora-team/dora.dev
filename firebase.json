@@ -116,7 +116,8 @@
     "rules": "rules/firestore.rules"
   },
   "functions": {
-    "source": "functions"
+    "source": "functions/inquiry-monitor",
+    "codebase": "inquiry-monitor"
   },
   "remoteconfig": {
     "template": "functions/remote-cfg-inquiry-monitor.json"
