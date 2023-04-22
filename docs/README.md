@@ -29,18 +29,20 @@ To emulate firestore and firebase hosting (to see features like server-side redi
   - `cd ${PROJECT_ROOT}`
   - in terminal 1, run `watch -n 2 hugo -s hugo -e development`
     - _this will continuously rebuild the site and save it to `/public` (which is the firebase hosting serving root)_
-  - in terminal 2, run `firebase emulators:start --only firestore,hosting`
+  - in terminal 2, run `firebase emulators:start`
   - access the site at `http://localhost:6001`
     - _in this configuration, the browser will not auto-reload when source files are changed_
 
-### Firebase Platform Administration and Development
-All development and deployment for *Platform capabilities* other than data access to Firestore includes such items as the following:
+### Firebase Platform Development and Administration  
+All development and deployment/administration for *Platform capabilities* other than data access to Firestore includes such items as the following:
  - Firebase Cloud Functions Development and Deployment
  - Firebase Extension Deployment
  - Firebase Remote Configuration
  - Firestore Rules Deployment
 
 **Required** For all of the above Platform component development, you must reference the `platform/firebase-dev.json` configuration file when working with platform features and emulator.  
+
+_NOTE:_ There is a `platform/firebase-deploy.json` configuration available to assist in simplified Continuous Deployment needs.
 
 #### **Cloud Functions**
 To emulate Firestore Cloud Functions, you will need NodeJS installed locally. For version requirements review `platform/functions/{function_name}/package.json` and may start the Functions Emulator (with hosting and firestore) with the following: `firebase --config platform/firebase-dev.json emulators:start --only firestore,hosting,functions`.
