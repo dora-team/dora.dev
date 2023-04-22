@@ -120,6 +120,6 @@
     "codebase": "inquiry-monitor"
   },
   "remoteconfig": {
-    "template": "functions/remote-cfg-inquiry-monitor.json"
+    "template": "functions/inquiry-monitor/remote-cfg-inquiry-monitor.json"
   }
 }
