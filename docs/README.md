@@ -43,7 +43,13 @@ Cloud Function Configuration: The hosted version of the Cloud Function leverages
 #### **Extensions**
 Firebase emulation for extensions is available by adjusting the CLI option (i.e., either with the `--only extensions` or loading all by eliminating the `--only` completely).  However, by (current) [Firebase design](https://github.com/firebase/firebase-tools/issues/5510), _extensions require access to the hosted Firebase project at startup_ as defined within `./.firebaserc`.  This is used for start-up authentication only; If you not have access, this can cause permissions errors and fail to start the emulation (see notes below).
 
-For local development extension configuration, you may be set certain Extension variables by adding them in the following file: `extensions/${EXTENSION_NAME}.env.local` (e.g., `extensions/firestore-send-email.env.local`).
+For local development extension configuration, you may be set certain Extension variables by adding them in the following file: `extensions/${EXTENSION_NAME}.env.local` (e.g., `extensions/firestore-send-email.env.local`).  More specifically, for the Fire Store Send Email extension, you will two files:
+ - `firestore-send-email.env.local` - You can copy keys from the src `firestore-send-email.env.doradotdev`
+ - `firestore-send-email.secret.local` - is a special file used for local development that contains only one entry: 
+ `SMTP_PASSWORD=my_smtp_password_in_clear_text`  
+ This file and value will be used for the local Firebase emulator as a substitute for the Secret Manager reference.
+
+      **_Be sure to not check this file into Git!_**
 
 *Extension Notes*
 1) If you get a permissions error on deployment (ie., when using the `extensions` option):

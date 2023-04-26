@@ -4,7 +4,7 @@
     "parameters": {
       "INQUIRY_SEND_TO": {
         "defaultValue": {
-          "value": "jesseduke@google.com"
+          "value": "dora-advocacy@google.com"
         },
         "description": "Default email address(es) for sending inquiry notifications.",
         "valueType": "STRING"
