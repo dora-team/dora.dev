@@ -49,6 +49,10 @@ For local development extension configuration, you may be set certain Extension 
  `SMTP_PASSWORD=my_smtp_password_in_clear_text`  
  This file and value will be used for the local Firebase emulator as a substitute for the Secret Manager reference.
 
+In a hosted environment:
+1) The Deployer account `${PROJECT_NUMBER}@cloudbuild.gserviceaccount.com` will require the _added_ role of `Secret Manager Viewer`
+2) The Billing API needs to be enabled.
+
       **_Be sure to not check this file into Git!_**
 
 *Extension Notes*
@@ -56,3 +60,13 @@ For local development extension configuration, you may be set certain Extension 
     - Hijack the `./.firebaserc` (via `git update-index --assume-unchanged .firebaserc`) and make changes in the Firebase instance configuration.  Just know that doing this will not commit changed back to source control.
 
 2) To write to the Firestore database, if you change Firebase Projects, either through configuration (e.g., `./.firebaserc`) or command-line argument (`--project `), you may need to modify the Firestore Config object defined in `hugo/static/js/firebase-config.js` to align with the new project configurations.  Otherwise, you will not see Firestore updates.  WARNING: Be sure you _do not_ unintentionally check this change into source control tracking.
+
+
+## Bugs
+When deploying Cloud Functions with Cloud Build, you can encounter the following error:
+```text
+Step #2: functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/artifacts/docker/{....gcf-artifacts}
+
+Apparently, this is a [known issue](https://github.com/firebase/firebase-tools/issues/3404)
+
+```

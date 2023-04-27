@@ -4,12 +4,21 @@ steps:
       # Build draft site and published site
       hugo -D -v -s ./hugo -d /workspace/hugo/draft --debug
 
+  - name: gcr.io/cloud-builders/npm:node-16.18.0
+    entrypoint: npm
+    dir: 'functions/inquiry-monitor'
+    args: ['install']
+
   - name: gcr.io/$PROJECT_ID/firebase
     env:
       - "_PR_NUMBER=$_PR_NUMBER"
     script: |
       PREVIEW_CHANNEL="PR$_PR_NUMBER"
       firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=$PROJECT_ID --only draft
+
+      # Deploy other Firebase components (Skipping Hosting)
+      firebase deploy --non-interactive --force --project=$PROJECT_ID --only functions,firestore,remoteconfig,extensions
+
       
       # get the url of this preview channel, within the "draft" site
       # (it returns in format `i  hosting:channel: https://<url>`)
