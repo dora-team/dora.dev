@@ -57,7 +57,7 @@ exports.emailInquiryMonitor = functions.firestore
             await admin.firestore().collection(MONITOR_EXTENSION_COLLECTION).add({
                 to: sendTo,
                 message: {
-                subject: `DORA.dev Email Inquiry: ${emailInquiry.inquiry_type || ""}`,
+                subject: `DORA.dev inquiry from ${emailInquiry.first_name || ""} ${emailInquiry.last_name || ""}: ${emailInquiry.inquiry_type || ""}`,
                 html: `
                     <br>From: ${emailInquiry.from_email || ""}
                     <br>First Name: ${emailInquiry.first_name || ""}
