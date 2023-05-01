@@ -16,10 +16,6 @@ steps:
       PREVIEW_CHANNEL="PR$_PR_NUMBER"
       firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=$PROJECT_ID --only draft
 
-      # Deploy other Firebase components (Skipping Hosting)
-      firebase deploy --non-interactive --force --project=$PROJECT_ID --only functions,firestore,remoteconfig,extensions
-
-      
       # get the url of this preview channel, within the "draft" site
       # (it returns in format `i  hosting:channel: https://<url>`)
       CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL --site draft-dora-dev)"
