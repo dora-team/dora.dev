@@ -44,24 +44,15 @@
                 serverTimestamp,
             } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js'
 
-            const firebaseConfig = {
-                apiKey: "AIzaSyB8xakcxSGv6Gms7u-Kk21r20h4zRySqh4",
-                authDomain: "doradotdev.firebaseapp.com",
-                projectId: "doradotdev",
-                storageBucket: "doradotdev.appspot.com",
-                messagingSenderId: "712907887884",
-                appId: "1:712907887884:web:a424bce80cf0eabcf56529",
-                measurementId: "G-HWLXSJLRVQ"
-            };
-
              // Initialize Firebase
-             const app = initializeApp(firebaseConfig);
+             import {config} from '/js/firebase-config.js'
+             const app = initializeApp(config);
              const db = getFirestore(app);
              {{ if not hugo.IsProduction }}
-                connectFirestoreEmulator(db, 'localhost', 6100);
+                connectFirestoreEmulator(db, 'localhost', 6100);        
             {{ end }}
-
-             const newInquiryRef = doc(collection(db, "email-inquiry"));
+            
+            const newInquiryRef = doc(collection(db, "email-inquiry"));
 
             document.addEventListener('DOMContentLoaded', function() {
 
