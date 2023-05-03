@@ -33,6 +33,9 @@
 {{ $tab_controls := split .Controls "," }}
 {{ $tab_classes := split .Classes "," }}
 
+<!-- if no tab has been specified as seleted, default to the first tab -->
+{{ $selected := .Selected | default (index $tab_titles 0) }}
+
 <ul class="tabs" id="tabs-sections" role="tablist">
 {{ $counter := 0 }}
 {{ range $tab_titles }}
@@ -40,7 +43,7 @@
     {{ $this_controls := index $tab_controls $counter }}
     {{ $this_class := index $tab_classes $counter }}
     <li>
-        <a href="#{{ $this_controls }}" class="{{ if eq $this_title $.Selected }}selected{{ end }} {{ $this_class }}" role="tab" aria-controls="{{ $this_controls }}" aria-selected="{{ if eq $this_title $.Selected }}true{{ end }}">{{ $this_title }}</a>
+        <a href="#{{ $this_controls }}" class="{{ if eq $this_title $selected }}selected{{ end }} {{ $this_class }}" role="tab" aria-controls="{{ $this_controls }}" aria-selected="{{ if eq $this_title $.Selected }}true{{ end }}">{{ $this_title }}</a>
     </li>
     {{ $counter = add $counter 1 }}
 {{ end }}
