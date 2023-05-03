@@ -38,6 +38,7 @@
             img {
                 max-width:32em;
                 max-height:24em;
+                width: 100%;
             }
 
             a {
@@ -55,6 +56,12 @@
                 text-decoration: none;
                 font-size: 100%;
             }
+        }
+    }
+
+    @include media-large {
+        ul {
+            grid-template-columns: 1fr 1fr;
         }
     }
 
