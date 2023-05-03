@@ -1,21 +1,21 @@
 steps:
 
-  - name: gcr.io/$PROJECT_ID/hugo
-    script: |
-      # Build the draft version of the site (this will include content where the front matter specifies Draft: true)
-      hugo -D -v -s ./hugo -d /workspace/hugo/draft --debug
+  # - name: gcr.io/$PROJECT_ID/hugo
+  #   script: |
+  #     # Build the draft version of the site (this will include content where the front matter specifies Draft: true)
+  #     hugo -D -v -s ./hugo -d /workspace/hugo/draft --debug
 
-      # Build the prod version of the site (this will omit content where the front matter specifies Draft: true)
-      hugo -v -s ./hugo -d /workspace/hugo/public --debug
+  #     # Build the prod version of the site (this will omit content where the front matter specifies Draft: true)
+  #     hugo -v -s ./hugo -d /workspace/hugo/public --debug
 
-  - name: gcr.io/cloud-builders/npm:node-16.18.0
-    entrypoint: npm
-    dir: 'functions/inquiry-monitor'
-    args: ['install']
+  # - name: gcr.io/cloud-builders/npm:node-16.18.0
+  #   entrypoint: npm
+  #   dir: 'functions/inquiry-monitor'
+  #   args: ['install']
 
-  - name: gcr.io/$PROJECT_ID/firebase
-    script: |
-      firebase deploy --only hosting --project=$PROJECT_ID
+  # - name: gcr.io/$PROJECT_ID/firebase
+  #   script: |
+  #     firebase deploy --only hosting --project=$PROJECT_ID
 
   - name: 'bash'
     env: 
@@ -40,7 +40,7 @@ steps:
       -H "X-GitHub-Api-Version: 2022-11-28" \
       /repos/dora-team/dora.dev/deployments \
       -f ref='main' \
-      -f payload='{ "deploy": "$COMMIT_SHA" }' \
+      -f payload='{ "deploy": "(commit)" }' \
       -f description='Deployment initiated by Cloud Build' 
     secretEnv: ['GH_TOKEN']
 
