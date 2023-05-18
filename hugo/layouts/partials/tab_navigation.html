@@ -1,7 +1,7 @@
 <!--  be sure to hide inactive tabs in css or js -->
 <!-- TODO: #54 auto-hide inactive tabs in this module -->
 
-<script>
+<!-- <script>
     window.addEventListener("load", function () {
         if(typeof showTab !== 'function') {
             showTab = function(clickedTab) {
@@ -25,18 +25,18 @@
             });
         })
     })
-</script>
+</script> -->
 
 
 <!-- extract data from params -->
 {{ $tab_titles := split .Titles "," }}
 {{ $tab_controls := split .Controls "," }}
+
+<!-- TODO: let's get rid of this "classes" thing; it's only used on quickcheck 2019 (we can custom code that one) -->
 {{ $tab_classes := split .Classes "," }}
 
-<!-- if no tab has been specified as seleted, default to the first tab -->
-{{ $selected := .Selected | default (index $tab_titles 0) }}
+{{ $selected := .Selected }}
 
-<ul class="tabs" id="tabs-sections" role="tablist">
 {{ $counter := 0 }}
 {{ range $tab_titles }}
     {{ $this_title := index $tab_titles $counter }}
@@ -48,3 +48,15 @@
     {{ $counter = add $counter 1 }}
 {{ end }}
 </ul>
+
+<div x-data="{tabs: '{{ .Titles }}'.split(',')}">
+    <ul class="tabs" id="tabs-sections" role="tablist"
+        x-data="{
+            selectedTab: '{{ .Selected }}' || tabs[0],
+        }">
+        [[[<span x-text="selectedTab"></span>]]]
+        {{ range $tab_titles }}
+            <li><a :class="selectedTab === '{{ . }}' && 'selected'" @click="selectedTab = '{{ . }}'">{{ . }}</a></li>
+        {{ end }}
+    </ul>
+</div>
