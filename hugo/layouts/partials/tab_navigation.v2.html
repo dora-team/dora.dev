@@ -1,0 +1,9 @@
+<ul class="tabs" id="tabs-sections" role="tablist">
+    {{ range . }}
+        <li><a 
+            :class="{ 'selected': tab === '{{ .controls }}' }"
+            @click.prevent="tab = '{{ .controls }}'; window.location.hash = '{{ .controls }}'"
+            href="#"
+            >{{ .title }}</a></li>
+    {{ end }}
+</ul>
