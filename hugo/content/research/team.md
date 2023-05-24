@@ -21,6 +21,10 @@ Dustin Smith is a human factors psychologist and staff research manager at Googl
 ![Kim Castillo](/img/headshots/kim-castillo.jpeg)
 Kim Castillo is a UXR program manager at Google and drives the cross-functional effort behind the Accelerate State of DevOps Report. Kim likewise supports developer experience UX research in Google Cloud. The DORA program combines Kim's passion for research, software delivery practice, and coaching. Prior to Google, Kim worked as a delivery lead/technical program manager for several backend service teams, and as an agile development practices coach.
 
+### Michelle Irvine
+![Michelle Irvine](/img/headshots/michelle-irvine.jpeg)
+Michelle Irvine is a technical writer at Google. She has been part of the DORA project since 2020, and leads research into the impact and production of technical documentation. Before Google, Michelle worked in educational publishing and as a technical writer for physics simulation software. Michelle has a BSc in Physics, and an MA in Rhetoric and Communication Design from the University of Waterloo.
+
 ## Meet the DORA Collective
 The collective includes current and former leaders, researchers, authors, and subject matter experts who have all made significant contributions to the research program.
 
