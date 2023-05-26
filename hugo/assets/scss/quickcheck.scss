@@ -279,42 +279,43 @@ img.rec-img {
     color: #0d652d;
 }
 
-// prioritization modal
-// #modal,
-// #share-modal {
-//     -webkit-text-size-adjust: 100%;
-//     cursor: auto;
-//     margin: 0;
-//     bottom: 0;
-//     height: 100%;
-//     left: 0;
-//     position: fixed;
-//     right: 0;
-//     top: 0;
-//     z-index: 9999;
-//     text-align: center;
-//     overflow-y: scroll;
-//     background: rgba(60, 64, 67, 0.15);
-//     padding: 5% 10%;
-//     display: block;
-//     opacity: 1;
-//     transition: opacity 200ms ease-in;
+// Is this code in use?
+prioritization modal
+#modal,
+#share-modal {
+    -webkit-text-size-adjust: 100%;
+    cursor: auto;
+    margin: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    text-align: center;
+    overflow-y: scroll;
+    background: rgba(60, 64, 67, 0.15);
+    padding: 5% 10%;
+    display: block;
+    opacity: 1;
+    transition: opacity 200ms ease-in;
 
-//     #share-url-container {
-//         display: table;
-//         border: 1px solid $border-medium;
-//         padding: 0.5rem;
-//         margin: auto;
+    #share-url-container {
+        display: table;
+        border: 1px solid $border-medium;
+        padding: 0.5rem;
+        margin: auto;
 
-//         #share-url {
-//             display: table-cell;
-//             vertical-align: middle;
-//             overflow-wrap: break-word;
-//             word-break: break-all;
-//             max-width: 40em;
-//         }
-//     }
-// }
+        #share-url {
+            display: table-cell;
+            vertical-align: middle;
+            overflow-wrap: break-word;
+            word-break: break-all;
+            max-width: 40em;
+        }
+    }
+}
 
 .wrapper {
     text-align: center;
@@ -586,17 +587,6 @@ $spectrum-left-pad: 12px;
                 left: -1.5ch; // "100" is more characters, so shift more
             }
         }
-    }
-}
-
-.prioritize_step {
-
-    .entering {
-        translate: 100%;
-    }
-    
-    .leaving {
-        translate: -100%;
     }
 }
 
