@@ -3,80 +3,64 @@
 <div class="prioritize_container" x-data="{
     currentStep:0,
     currentStepComplete: false,
-    checkComplete() {
-        this.currentStepComplete = this.getStepValues(this.currentStep).every( e => typeof e === 'number')},
-    getStepValues() {
-
-        // TODO: replace all this with Alpine data and use x-model to bind to the radio buttons
-        let numQuestions=document.querySelectorAll(`#prioritize_${this.currentStep} tbody tr`).length;
-    
-        let stepValues = new Array();
-        for (let i=1; i < numQuestions+1; i++) {
-            let thisQuestion = `question_${this.currentStep}_${i}`;
-            let selectedValue = '-';
-    
-            if (document.querySelector(`input[name='${thisQuestion}']:checked`)) {
-                selectedValue = parseInt(document.querySelector(`input[name='${thisQuestion}']:checked`).value);
-            } else {
-                selectedValue = '-';
+    stepValues: {
+        {{ range $index, $element := .Site.Data.capability_prioritization_questions }}
+           {{ add $index 1 }}: new Array({{ len .questions }}).fill(0),
+        {{ end }}
+    },
+    updateStepValues() {
+        // query all of the radio buttons for the current step and save their values to the `stepValues` object
+       for(let i=1; i <= this.stepValues[this.currentStep].length; i++) {
+            for(let j=1; j <=5; j++){
+                let identifier = `#question_${this.currentStep}_${i}_${j}`;
+                let element = document.querySelector(identifier);
+                if(element.checked) {
+                    this.stepValues[this.currentStep][i-1] = parseInt(element.value);
+                } 
             }
-            stepValues.push(selectedValue);
-        }
-        return stepValues;
-        },
+       }
+    },
+    checkComplete() {
+        this.currentStepComplete = this.stepValues[this.currentStep].every( e => e > 0)},
+    nextStep() {
+        // if the user has completed all the questions, put the response data to the URL
+        this.currentStep == 3 && this.pushStepValues();
+
+        // advance to the next step
+        this.currentStep++;
+    },
     pushStepValues() {
         // push step values to the URL
         const url = new URL(window.location.href);
-        url.searchParams.set(`step_${this.currentStep}`, this.getStepValues().join(''));
+        url.searchParams.set(`step1`, this.stepValues[1].join(''));
+        url.searchParams.set(`step2`, this.stepValues[2].join(''));
+        url.searchParams.set(`step3`, this.stepValues[3].join(''));
         history.pushState(null, document.title, url.toString());
         },
-    updateResults() {
-        
-        Array.prototype.average = function() {
-            let sum = this.reduce(function(a, b) {return parseInt(a) + parseInt(b)});
-            return sum / this.length;
-        };  
-
-        function fiveScaleToDecile(input) {
-            return Math.round(((input-1) * 25) / 10) * 10;
-        }        
-
-        const url = new URL(window.location.href);
-        let ci_average = url.searchParams.get('step_1').split('').average();
-        let arch_average = url.searchParams.get('step_2').split('').average();
-        let culture_average = url.searchParams.get('step_3').split('').average();
-
-        document.querySelector('#ci_score .capabilityScoreText').innerText = ci_average.toFixed(1);
-        document.querySelector('#ci_score .capabilityScoreData').classList.add('percentile_' + fiveScaleToDecile(ci_average));
-        document.querySelector('#ci_score .capabilityScoreData').style.width = ci_average * 2 + 'em';
-
-        document.querySelector('#arch_score .capabilityScoreText').innerText = arch_average.toFixed(1);
-        document.querySelector('#arch_score .capabilityScoreData').classList.add('percentile_' + fiveScaleToDecile(arch_average));
-        document.querySelector('#arch_score .capabilityScoreData').style.width = arch_average * 2 + 'em';
-
-        document.querySelector('#culture_score .capabilityScoreText').innerText = culture_average.toFixed(1);
-        document.querySelector('#culture_score .capabilityScoreData').classList.add('percentile_' + fiveScaleToDecile(culture_average));
-        document.querySelector('#culture_score .capabilityScoreData').style.width = culture_average * 2 + 'em';
-    }
 }"
     x-init="
         function() {
 
-            $watch('currentStep', value => {
-                if(value == 4) {
-                    updateResults();
-                }
-            });
+            // helper functions
+            Array.prototype.average = function() {
+                let sum = this.reduce(function(a, b) {return parseInt(a) + parseInt(b)});
+                return sum / this.length;
+            };  
+    
+            Number.prototype.fiveScaleToDecile = function() {
+                return Math.round(((this-1) * 25) / 10) * 10;
+            }
             
             // if the step values are provided in the URL (e.g. if this link has been copied and emailed), skip to the results
             const url = new URL(window.location.href);
-            if (url.searchParams.get('step_1') && url.searchParams.get('step_2') && url.searchParams.get('step_3')) {
+            if (url.searchParams.get('step1') && url.searchParams.get('step2') && url.searchParams.get('step3')) {
+                this.stepValues[1] = url.searchParams.get('step1').split('');
+                this.stepValues[2] = url.searchParams.get('step2').split('');
+                this.stepValues[3] = url.searchParams.get('step3').split('');
                 currentStep=4;
-                updateResults();
             }
         }"
     >
-    <span style="background-color:red;" x-text="'currentStep = ' + currentStep + ' '"></span>
     <div class="prioritize_contents">
         <div class="prioritize_step" id="prioritize_0" x-show="currentStep == 0" x-transition>
             <h2>What's holding you back?</h2>
@@ -96,7 +80,7 @@
             <div class="prioritize_step" id="prioritize_{{ .step}}" x-show="currentStep == {{ .step }}" @click="checkComplete" x-transition>
                 <h2>Capability {{ .step }} of 3: {{ .capability }}</h2>
                 <p>{{ .description }} <a href="{{ .article_url }}" target="_blank">Learn more</a></p>
-                <table class="prioritize_questions">
+                <table class="prioritize_questions" @click="updateStepValues">
                     <thead>
                         <tr>
                             <th>For the primary application or service you work on:</th>
@@ -112,7 +96,11 @@
                             <tr>
                                 <td>{{ .question_text }}</td>
                                 {{ range seq 5 }}
-                                    <td><label for='{{$row_id}}_{{.}}'><input type="radio" name='{{$row_id}}' id='{{$row_id}}_{{.}}' value="{{.}}"> <span>{{ index $Ranks (add . -1) }}</span></label></td>
+                                    <td>
+                                        <label for='{{$row_id}}_{{.}}'>
+                                            <input type="radio" name='{{$row_id}}' id='{{$row_id}}_{{.}}' value="{{.}}"> <span>{{ index $Ranks (add . -1) }}</span>
+                                        </label>
+                                    </td>
                                 {{ end }}
                             </tr>
                         {{ end }}
@@ -120,7 +108,7 @@
                 </table>
                 <button 
                     id="prioritize_button" 
-                    @click="pushStepValues();currentStep++"
+                    @click="nextStep"
                     :disabled="!currentStepComplete"
                 >Next</button>
             </div>
@@ -129,18 +117,21 @@
             <h2>Capabilities analysis</h2>
             <p>Based on your responses, here's how your team is performing:</p>
             <table class="capability_scores">
-                {{ range .Site.Data.capability_prioritization_questions }}
+                {{ range $index, $element := .Site.Data.capability_prioritization_questions }}
                 <tr>
                     <td>
-                        <h2>{{ .capability }}</h2>
-                        <a href="{{.article_url}}">Learn more about {{ .capability }}</a>
+                        <h2>{{ $element.capability }}</h2>
+                        <a href="{{.article_url}}">Learn more about {{ $element.capability }}</a>
                     </td>
-                    <td id="{{.shortname}}_score">
+                    <td id="{{$element.shortname}}_score">
                         <div class="capabilityScoreContainer">
                             <div class="capabilityScoreGraph">
-                                <div class="capabilityScoreData"> </div>
+                                <div class="capabilityScoreData" 
+                                    :class="'percentile_' + stepValues[ {{ add $index 1 }} ].average().fiveScaleToDecile()"
+                                    :style="'width: ' + stepValues[ {{ add $index 1 }} ].average() * 2 + 'em'"
+                                    > </div>
                             </div>
-                            <div class="capabilityScore"><span class="capabilityScoreText"></span> / 5</div>
+                            <div class="capabilityScore"><span class="capabilityScoreText" x-text="stepValues[ {{ add $index 1 }} ].average().toFixed(1)"></span> / 5</div>
                         </div>
                     </td>
                 </tr>
