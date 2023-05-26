@@ -23,7 +23,7 @@ Kim Castillo is a UXR program manager at Google and drives the cross-functional 
 
 ### Michelle Irvine
 ![Michelle Irvine](/img/headshots/michelle-irvine.jpeg)
-Michelle Irvine is a technical writer at Google. She has been part of the DORA project since 2020, and leads research into the impact and production of technical documentation. Before Google, Michelle worked in educational publishing and as a technical writer for physics simulation software. Michelle has a BSc in Physics, and an MA in Rhetoric and Communication Design from the University of Waterloo.
+Michelle Irvine is a technical writer at Google. She has been part of the DORA project since 2020, and leads research into the impact and production of technical documentation. Before Google, Michelle worked in educational publishing and as a technical writer for physics simulation software. Michelle has a BSc in Physics, and a MA in Rhetoric and Communication Design from the University of Waterloo.
 
 ## Meet the DORA Collective
 The collective includes current and former leaders, researchers, authors, and subject matter experts who have all made significant contributions to the research program.
@@ -40,7 +40,6 @@ The collective includes current and former leaders, researchers, authors, and su
   - Jez Humble
   - John Speed Mayers
   - Lolly Chessie
-  - Michelle Irvine
   - Nathen Harvey
   - Nicole Forsgren
   - Todd Kulesza
