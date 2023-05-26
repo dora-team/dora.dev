@@ -29,7 +29,7 @@
     },
     nextStep() {
         // if the user has completed all the questions, put the response data to the URL
-        this.currentStep == 3 && this.pushStepValues();
+       if (this.currentStep == 3) { this.pushStepValues() };
 
         // advance to the next step
         this.currentStep++;
