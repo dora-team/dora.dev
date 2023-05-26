@@ -22,7 +22,10 @@
        }
     },
     checkComplete() {
-        this.currentStepComplete = this.stepValues[this.currentStep].every( e => e > 0)
+        if(this.stepValues[this.currentStep]) {
+            // validate that every question in this step has a non-zero response value
+            this.currentStepComplete = this.stepValues[this.currentStep].every( e => e > 0)
+        }
     },
     nextStep() {
         // if the user has completed all the questions, put the response data to the URL
