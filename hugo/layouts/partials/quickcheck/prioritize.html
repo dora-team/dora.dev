@@ -4,6 +4,7 @@
     currentStep:0,
     currentStepComplete: false,
     stepValues: {
+        {{/* Output the Hugo data to create empty javascript data structure (object containing arrays of numbers) */}}
         {{ range $index, $element := .Site.Data.capability_prioritization_questions }}
            {{ add $index 1 }}: new Array({{ len .questions }}).fill(0),
         {{ end }}
@@ -21,7 +22,8 @@
        }
     },
     checkComplete() {
-        this.currentStepComplete = this.stepValues[this.currentStep].every( e => e > 0)},
+        this.currentStepComplete = this.stepValues[this.currentStep].every( e => e > 0)
+    },
     nextStep() {
         // if the user has completed all the questions, put the response data to the URL
         this.currentStep == 3 && this.pushStepValues();
@@ -62,13 +64,13 @@
         }"
     >
     <div class="prioritize_contents">
-        <div class="prioritize_step" id="prioritize_0" x-show="currentStep == 0" x-transition>
+        <div class="prioritize_step" id="prioritize_0" x-show="currentStep == 0" x-transition.opacity>
             <h2>What's holding you back?</h2>
             <p>
                 In our <a href='{{ "/research/" | relURL }}'>research</a>, DORA has identified several key capabilities which drive higher software delivery and organizational performance. Improving these technical, process, and cultural capabilities can help your team deliver more value to your customers and organization. It's important to focus your efforts on the specific thing that  is currently holding you back. While every team will take a different journey, we have identified three capabilities that are often beneficial to improve: <strong>Continuous Integration</strong>, <strong>Loosely Coupled Architecture</strong>, and <strong>Generative Organizational Culture</strong>. 
             </p>
             <div class="prioritization_control">
-                <button id="prioritize_button" @click="currentStep++">Help Me Prioritize</button>
+                <a href="#c_capabilities"><button id="prioritize_button" @click="currentStep++">Help Me Prioritize</button></a>
                 <div class="button_description">
                     <small>
                         Complete a brief survey for each of these three capabilities to determine how you perform and which to consider focusing on first.
@@ -77,7 +79,7 @@
             </div>
         </div>
         {{ range .Site.Data.capability_prioritization_questions }}
-            <div class="prioritize_step" id="prioritize_{{ .step}}" x-show="currentStep == {{ .step }}" @click="checkComplete" x-transition>
+            <div class="prioritize_step" id="prioritize_{{ .step}}" x-show="currentStep == {{ .step }}" @click="checkComplete" x-transition.opacity>
                 <h2>Capability {{ .step }} of 3: {{ .capability }}</h2>
                 <p>{{ .description }} <a href="{{ .article_url }}" target="_blank">Learn more</a></p>
                 <table class="prioritize_questions" @click="updateStepValues">
@@ -106,14 +108,18 @@
                         {{ end }}
                     </tbody>
                 </table>
-                <button 
-                    id="prioritize_button" 
-                    @click="nextStep"
-                    :disabled="!currentStepComplete"
-                >Next</button>
+                <div class="prioritization_control">
+                    <a href="#c_capabilities">
+                        <button 
+                            id="prioritize_button" 
+                            @click="nextStep"
+                            :disabled="!currentStepComplete"
+                        >Next</button>
+                    </a>
+                </div>
             </div>
         {{ end }}
-        <div class="prioritize_step" id="prioritize_4" x-show="currentStep == 4">
+        <div class="prioritize_step" id="prioritize_4" x-show="currentStep == 4" x-transition.opacity>
             <h2>Capabilities analysis</h2>
             <p>Based on your responses, here's how your team is performing:</p>
             <table class="capability_scores">

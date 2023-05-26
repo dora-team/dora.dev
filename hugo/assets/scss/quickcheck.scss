@@ -589,53 +589,28 @@ $spectrum-left-pad: 12px;
     }
 }
 
-// .prioritize_container {
-//     width: $layout-breakpoint-large;
+.prioritize_step {
 
-//     @include media-medium {
-//         width: 96vw;
-//     }
+    .entering {
+        translate: 100%;
+    }
     
-//     overflow: hidden;
+    .leaving {
+        translate: -100%;
+    }
+}
 
-//     .prioritize_contents {
-//         width: 4 * $layout-breakpoint-large;
+.prioritization_control {
+    margin-top: 2em;
+    text-align: center;
 
-//         @include media-medium {
-//             width: 4 * 96vw;
-//         }
-
-//         position: relative;
-//         left: 0px;
-//         transition: all 250ms ease-out;
-
-//         display: flex;
-//         flex-direction: row;
-
-//         .prioritize_step {
-//             flex-shrink: 0;
-//             width: $layout-breakpoint-large;
-
-//             @include media-medium {
-//                 width:96vw;
-//             }
-
-//             height: min-content;
-//         }
-//     }
-// }
-
-// .prioritization_control {
-//     margin-top: 2em;
-//     text-align: center;
-
-//     .button_description {
-//         width: 40%;
-//         min-width: 300px;
-//         margin: auto;
-//         line-height: 1.1;
-//     }
-// }
+    .button_description {
+        width: 40%;
+        min-width: 300px;
+        margin: auto;
+        line-height: 1.1;
+    }
+}
 
 table.prioritize_questions {
     font-family: $font-roboto;
