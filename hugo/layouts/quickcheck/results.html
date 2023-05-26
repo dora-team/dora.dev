@@ -7,6 +7,7 @@
     <h1 id="results_h1">Your software delivery&nbsp;performance</h1>
     {{- partial "quickcheck/percentile_graph" . -}}
 
+    {{/* TEMPORARILY DISABLE other tabs during alpine refactor
     {{- partial "tab_navigation"
         (dict
             "Titles" "Next steps,Performance comparison"
@@ -14,13 +15,16 @@
             "Selected" "Next steps" 
         )
     -}}
+    */}}
 
     <section id="c_capabilities" class="tab">
         {{- partial "quickcheck/prioritize" . -}}
     </section>
+    {{/* TEMPORARILY DISABLE other tabs during alpine refactor
     <section id="c_compare" class="tab">
         {{- partial "quickcheck/performance_comparison" . -}}
     </section>
+    */}}
 
     {{- partial "pagefooter_gofurther" . -}}
 

@@ -1,6 +1,7 @@
-<!-- Load Alpine from CDN -->
-<script defer src="https://unpkg.com/alpinejs@3.12.x/dist/cdn.min.js"></script>
+<script defer src="/js/alpinejs@3.12.1.min.js"></script>
 
+
+{{ if hugo.IsProduction }}
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWLXSJLRVQ"></script>
 <script>
@@ -10,6 +11,7 @@
 
   gtag('config', 'G-HWLXSJLRVQ');
 </script>
+{{ end }}
 
 <title>DORA | {{ if .Params.TitleForHTMLHead }}{{ .Params.TitleForHTMLHead }}{{ else }}{{ .Title }}{{ end }}</title>
 {{ $options := (dict "targetPath" "css/main.css" "outputStyle" "normal") }}
