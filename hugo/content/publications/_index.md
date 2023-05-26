@@ -29,6 +29,7 @@ stylesheets:
        <a href="https://cloud.google.com/devops/state-of-devops/?hl=pt-br&region=BR" target="_blank"><button class="secondary">Português - Brasil</button></a>
     </article>
 </section>
+
 ## Prior State of DevOps Reports
 
 - [![2021 Accelerate State of DevOps Report](img/sodr-2021.png)](pdf/state-of-devops-2021.pdf)
