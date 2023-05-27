@@ -1,9 +1,62 @@
-<ul class="tabs" id="tabs-sections" role="tablist">
-    {{ range . }}
-        <li><a 
-            :class="{ 'selected': tab === '{{ .controls }}' }"
-            @click.prevent="tab = '{{ .controls }}'; window.location.hash = '{{ .controls }}'"
-            href="#"
-            >{{ .title }}</a></li>
-    {{ end }}
-</ul>
+{{ if len . }}
+
+    <!--- this partial opens a <div> that needs to be closed. So at the end of the last tab content, add a `</div>` tag to the calling template. -->
+
+<!--- TODO: if there are multiple tabsets on a page, the activeTab vars are clobbering each other. We need to use tabset as a top-level identifier 
+        (something like: tabset[tabSetKey] = {tabs: {}, activeTab: ''})
+    --->
+
+
+    <div x-data="{
+        tabs: [],
+        activeTab: '',
+        tabSetKey: '',
+        }"
+        x-init="
+            function() {
+                // push tabs (defined as slice when this partial is invoked) to Alpine
+                {{ range . }}
+                    tabs.push({
+                        name: '{{ . }}',
+                        id: '{{ anchorize . }}'
+                    });
+                {{ end }}
+                
+                // default to first tab
+                activeTab = tabs[0];
+
+                // create a unique ID for this tabset, to be used in the URL
+                tabSetKey = '{{ substr (sha1 (delimit . ',')) 0 6 }}';
+
+                const url = new URL(window.location.href);
+
+                // when active tab changes, push it to the URL
+                $watch('activeTab.id', activeTabId => {
+                    url.searchParams.set(`tab_${tabSetKey}`, activeTabId);
+                    history.pushState(null, document.title, url.toString());
+                })
+
+                // if active tab is specified in URL, activate it
+                if(url.searchParams.get(`tab_${tabSetKey}`)) {
+                    activeTab = tabs.find(tab => {return tab.id === url.searchParams.get(`tab_${tabSetKey}`)});
+                }
+            }
+        ">
+
+    <ul class="tabs" id="tabs-sections" role="tablist" x-show="tabs.length > 1">
+        <template x-for="tab in tabs">
+            <li>
+                <a role="tab" 
+                    x-text="tab.name" 
+                    :class="{'selected': activeTab === tab}" 
+                    @click.prevent="activeTab = tab"
+                    :aria-controls="tab.id"
+                    :aria-selected="{'true': activeTab === tab}"></a>
+            </li>
+        </template>
+    </ul>
+
+{{ else }}
+    <!--- print an opening div tag to match the closing one on the calling template --->
+    <div>
+{{ end }}

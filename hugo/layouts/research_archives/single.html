@@ -20,11 +20,6 @@
         font-size: 85%;
     }
 </style>
-<script>
-    window.addEventListener('load', function(event) {
-        document.querySelector('#questions').style.display='none';
-    })
-</script>
 
 <section class="hasSidebar">
     <div class="mainContent">
@@ -33,62 +28,41 @@
         </article>
 
         {{ if .Params.sections_to_display }}
-            <!-- if there are more than one section to display, show the tab navigation -->
-            {{ if gt (.Params.sections_to_display | len) 1 }}
-                
-                {{ $titles := slice }}
-                {{ $controls := slice }}
+            {{- partial "tab_navigation.v2" .Params.sections_to_display -}}
 
-                {{ if in .Params.sections_to_display "sem" }}
-                    {{ $titles = append "Structural Equation Models" $titles }}
-                    {{ $controls = append "sem" $controls }}
+                {{ if in .Params.sections_to_display "Structural Equation Model" }}
+                    <article id="sem" class="tab" x-show="activeTab.id == 'structural-equation-model'">
+                        <h2>Structural Equation Model</h2>
+                        <p>The DORA research program uses structural equation modeling (SEM), a predictive statistical modeling technique used to test relationships. We utilize PLS-PM (partial least squares path modeling) for our analysis, for several reasons: it does not require assumptions of normality in the data, it is will suited to exploratory and incremental research, and the analysis optimizes for prediction of the dependent variable (vs. testing for model fit of the data). All paths shown in the SEM figures are p &lt; .05.</p>
+                        
+                        <a href="/img/sodr/sem_sodr_{{ .Params.research_year }}.png" target="_blank"><img src="/img/sodr/sem_sodr_{{ .Params.research_year }}.png" style="max-width:100%"></a>
+                    </article>
                 {{ end }}
-
-                {{ if in .Params.sections_to_display "questions" }}
-                    {{ $titles = append "Questions" $titles }}
-                    {{ $controls = append "questions" $controls }}
-                {{ end }}
-
-                {{- partial "tab_navigation"
-                    (dict
-                        "Titles" (delimit $titles ",")
-                        "Controls" (delimit $controls ",")
-                    )
-                -}}
-            {{ end }}
-
-            {{ if in .Params.sections_to_display "sem" }}
-                <article id="sem" class="tab">
-                    <h2>Structural Equation Model</h2>
-                    <p>The DORA research program uses structural equation modeling (SEM), a predictive statistical modeling technique used to test relationships. We utilize PLS-PM (partial least squares path modeling) for our analysis, for several reasons: it does not require assumptions of normality in the data, it is will suited to exploratory and incremental research, and the analysis optimizes for prediction of the dependent variable (vs. testing for model fit of the data). All paths shown in the SEM figures are p &lt; .05.</p>
-                    
-                    <a href="/img/sodr/sem_sodr_{{ .Params.research_year }}.png" target="_blank"><img src="/img/sodr/sem_sodr_{{ .Params.research_year }}.png" style="max-width:100%"></a>
-                </article>
-            {{ end }}
-            {{ if in .Params.sections_to_display "questions" }}
-                <article id="questions" class="tab">
-                    <h2>Survey Questions</h2>
-                    <h4>Responses to the following questions were used in the analysis published in the {{ .Params.research_year }} Accelerate State of DevOps Report</h4>
-                    {{ range where .Site.Data.survey_questions "year" .Params.research_year }}
-                        {{ range sort .categories "heading" }}
-                            <h3>{{ .heading }}</h3>
-                            {{ range sort .question_groups "description" }}
-                                <p class="description">{{ .description }}</p>
-                                <ul>
-                                    {{ range sort .questions }}
-                                        {{ $thisQuestion := split . "|" }}
-                                        <li>
-                                            {{ range $thisQuestion }}
-                                                <div>{{ . }}</div>
-                                            {{ end }}
-                                        </li>
-                                    {{ end }}
-                                </ul>
+                {{ if in .Params.sections_to_display "Questions" }}
+                    <article id="questions" class="tab" x-show="activeTab.id == 'questions'">
+                        <h2>Survey Questions</h2>
+                        <h4>Responses to the following questions were used in the analysis published in the {{ .Params.research_year }} Accelerate State of DevOps Report</h4>
+                        {{ range where .Site.Data.survey_questions "year" .Params.research_year }}
+                            {{ range sort .categories "heading" }}
+                                <h3>{{ .heading }}</h3>
+                                {{ range sort .question_groups "description" }}
+                                    <p class="description">{{ .description }}</p>
+                                    <ul>
+                                        {{ range sort .questions }}
+                                            {{ $thisQuestion := split . "|" }}
+                                            <li>
+                                                {{ range $thisQuestion }}
+                                                    <div>{{ . }}</div>
+                                                {{ end }}
+                                            </li>
+                                        {{ end }}
+                                    </ul>
+                                {{ end }}
                             {{ end }}
                         {{ end }}
-                    {{ end }}
-                </article> 
-            {{ end }}
+                    </article> 
+                {{ end }}
+            </div>
         {{ end }}
     </div>
     <sidebar>

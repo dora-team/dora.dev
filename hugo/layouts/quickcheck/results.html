@@ -7,26 +7,11 @@
     <h1 id="results_h1">Your software delivery&nbsp;performance</h1>
     {{- partial "quickcheck/percentile_graph" . -}}
 
-    {{
-        $tabs := (slice
-                    (dict
-                        "title" "Next steps"
-                        "controls" "c_capabilities"
-                    )
-                    (dict
-                        "title" "Performance comparison"
-                        "controls" "c_compare"
-                    )
-        )
-    }}
-    <div x-data="{ tab: window.location.hash ? window.location.hash.substring(1) : 'c_compare' }">
-       <span x-text="tab" style="color:red"></span>
-        {{- partial "tab_navigation.v2" $tabs -}}
-
-        <section id="c_capabilities" class="tab" x-show="tab == 'c_capabilities'">
+    {{- partial "tab_navigation.v2" (slice "Next Steps" "Performance Comparison") -}}
+        <section class="tab" id="next-steps" x-show="activeTab.id == 'next-steps'" x-transition.opacity>
             {{- partial "quickcheck/prioritize" . -}}
         </section>
-        <section id="c_compare" class="tab" x-show="tab == 'c_compare'">
+        <section class="tab" id="performance-comparison" x-show="activeTab.id == 'performance-comparison'" x-transition.opacity>
             {{- partial "quickcheck/performance_comparison" . -}}
         </section>
     </div>

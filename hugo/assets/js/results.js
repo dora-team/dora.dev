@@ -242,9 +242,6 @@ function renderCapabilityGraph(capability, data, capability_index, focus, profil
                 arr[index + 1] ? false : true // show legend on last graph
             );
         });
-
-        // hide hidden divs until clicked
-        document.getElementById('perf-industry').style.display = 'none';
     })
 
 }());
