@@ -1,0 +1,9 @@
+<!---
+    params:
+    href -- link destination
+    target -- link target
+    ------
+    (link text is specified by .Inner)
+    --->
+
+<a href="{{ .Get `href` }}" target="{{ .Get `target` }}" class="button">{{ .Inner }}</a>

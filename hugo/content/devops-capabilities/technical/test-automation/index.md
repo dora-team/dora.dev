@@ -1,6 +1,6 @@
 ---
-title: "Continuous testing"
-titleForHTMLHead: "DevOps Capabilities: Continuous testing" # TODO: can we DRY this out?
+title: "Test automation"
+titleForHTMLHead: "DevOps Capabilities: Test automation" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical
 draft: false
@@ -10,7 +10,7 @@ summary: "Improve software quality by building reliable automated test suites an
 
 
 
-Note: *Continuous testing* is one of a set of capabilities that drive higher
+Note: *Test automation* is one of a set of capabilities that drive higher
 software delivery and organizational performance.  These capabilities were
 discovered by the
 [DORA State of DevOps research program](/),
@@ -55,7 +55,7 @@ Not only does this help teams build (and learn how to build) high quality
 software faster, DORA's research shows that it also drives improved software
 stability, reduced team burnout, and lower deployment pain.
 
-## How to implement continuous testing
+## How to implement automated testing
 
 To build quality into the software, you must continually run both automated and
 manual tests throughout the delivery process to validate the functionality and
@@ -202,7 +202,7 @@ production, the pipeline must be improved, perhaps by adding or updating tests.
     tests.
     [Read about Google's mitigation strategy for flaky tests](https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html).
 
-## Ways to improve continuous testing
+## Ways to improve test automation
 
 If your organization doesn't yet have a culture of unit testing by developers,
 don't worry. Unit testing wasn't a widespread practice at Google in its early
@@ -234,9 +234,9 @@ afraid to prune it down. A test suite of ten tests that is reliable, fast, and
 trustworthy is much better than a test suite of hundreds of tests that is hard
 to maintain and that nobody trusts.
 
-## Ways to measure continuous testing
+## Ways to measure automated testing
 
-You can measure the results of continuous testing in your environment by doing
+You can measure the results of automated testing in your environment by doing
 the following:
 
 <table>

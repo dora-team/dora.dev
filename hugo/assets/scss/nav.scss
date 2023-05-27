@@ -149,3 +149,17 @@ header > nav > label > input[type="checkbox"] {
         visibility: visible;
     }
 }
+
+.site-banner {
+    background-color:$background-snipe;
+    padding:2pt;
+    text-align: center;
+
+    a {
+        display: inline-block;
+        border-radius: .2em;
+        padding:2pt 6pt;
+        color: $color-text;
+        font-weight: 500;
+    }
+}
