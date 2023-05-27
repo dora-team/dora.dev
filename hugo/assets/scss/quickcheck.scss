@@ -279,7 +279,8 @@ img.rec-img {
     color: #0d652d;
 }
 
-// prioritization modal
+// Is this code in use?
+prioritization modal
 #modal,
 #share-modal {
     -webkit-text-size-adjust: 100%;
@@ -585,42 +586,6 @@ $spectrum-left-pad: 12px;
             .tick {
                 left: -1.5ch; // "100" is more characters, so shift more
             }
-        }
-    }
-}
-
-.prioritize_container {
-    width: $layout-breakpoint-large;
-
-    @include media-medium {
-        width: 96vw;
-    }
-    
-    overflow: hidden;
-
-    .prioritize_contents {
-        width: 4 * $layout-breakpoint-large;
-
-        @include media-medium {
-            width: 4 * 96vw;
-        }
-
-        position: relative;
-        left: 0px;
-        transition: all 250ms ease-out;
-
-        display: flex;
-        flex-direction: row;
-
-        .prioritize_step {
-            flex-shrink: 0;
-            width: $layout-breakpoint-large;
-
-            @include media-medium {
-                width:96vw;
-            }
-
-            height: min-content;
         }
     }
 }
