@@ -5,49 +5,45 @@
         <a href="https://cloud.google.com/devops/state-of-devops/">2022 State of DevOps</a> respondents overall, and to people within the same industry as you.</p>
     </div>
     <div id="perf-comparison">
-        <div>
-            {{- partial "tab_navigation"
-                (dict
-                    "Titles" "All Industries,Your Industry"
-                    "Controls" "perf-all,perf-industry" 
-                    "Selected" "All Industries" 
-                )
-            -}}
-        </div>
-        <div id="perf-all">
-            <div id="perf-all-leadtime-container">
-                <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-leadtime-marker"></div>
-                <div id="perf-all-leadtime"></div>  
+        {{- partial "tab_navigation.v2" (dict 
+            "tabs" (slice "All Industries" "Your Industry") 
+            "tabSet" "industry"
+            ) -}}
+            <div id="all-industries" x-show="activeTabs.industry == 'all-industries'">
+                <div id="perf-all-leadtime-container">
+                    <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-leadtime-marker"></div>
+                    <div id="perf-all-leadtime"></div>  
+                </div>
+                <div id="perf-all-deployfreq-container">
+                    <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-deployfreq-marker"></div>
+                    <div id="perf-all-deployfreq"></div>  
+                </div>
+                <div id="perf-all-ttr-container">
+                    <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-ttr-marker"></div>
+                    <div id="perf-all-ttr"></div>  
+                </div>
+                <div id="perf-all-chgfail-container">
+                    <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-chgfail-marker"></div>
+                    <div id="perf-all-chgfail"></div>  
+                </div>
             </div>
-            <div id="perf-all-deployfreq-container">
-                <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-deployfreq-marker"></div>
-                <div id="perf-all-deployfreq"></div>  
-            </div>
-            <div id="perf-all-ttr-container">
-                <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-ttr-marker"></div>
-                <div id="perf-all-ttr"></div>  
-            </div>
-            <div id="perf-all-chgfail-container">
-                <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-chgfail-marker"></div>
-                <div id="perf-all-chgfail"></div>  
-            </div>
-        </div>
-        <div id="perf-industry">
-            <div id="perf-industry-leadtime-container">
-                <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-leadtime-marker"></div>
-                <div id="perf-industry-leadtime"></div>  
-            </div>
-            <div id="perf-industry-deployfreq-container">
-                <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-deployfreq-marker"></div>
-                <div id="perf-industry-deployfreq"></div>  
-            </div>
-            <div id="perf-industry-ttr-container">
-                <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-ttr-marker"></div>
-                <div id="perf-industry-ttr"></div>  
-            </div>
-            <div id="perf-industry-chgfail-container">
-                <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-chgfail-marker"></div>
-                <div id="perf-industry-chgfail"></div>  
+            <div id="your-industry" x-show="activeTabs.industry == 'your-industry'">
+                <div id="perf-industry-leadtime-container">
+                    <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-leadtime-marker"></div>
+                    <div id="perf-industry-leadtime"></div>  
+                </div>
+                <div id="perf-industry-deployfreq-container">
+                    <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-deployfreq-marker"></div>
+                    <div id="perf-industry-deployfreq"></div>  
+                </div>
+                <div id="perf-industry-ttr-container">
+                    <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-ttr-marker"></div>
+                    <div id="perf-industry-ttr"></div>  
+                </div>
+                <div id="perf-industry-chgfail-container">
+                    <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-chgfail-marker"></div>
+                    <div id="perf-industry-chgfail"></div>  
+                </div>
             </div>
         </div>
     </div>

@@ -1,0 +1,58 @@
+{{/* 
+    partial: tab_navigation 
+    to use this partial, declare an object in the `x-data` attribute at the page level: `x-data="{ activeTabs: {} }"`
+    also: this partial opens a <div> that needs to be closed. So in the template that calls this partial, add a `</div>` tag after the end of the last tab content.
+*/}}
+
+{{ if len .tabs }}
+
+    <div x-data="{
+        tabs: [],
+        tabSet: '{{ .tabSet }}',
+        }"
+        x-init="
+            function() {
+
+                // push tabs (defined as slice when this partial is invoked) to Alpine
+                {{ range .tabs }}
+                    tabs.push({
+                        name: '{{ . }}',
+                        id: '{{ anchorize . }}'
+                    });
+                {{ end }}
+                
+                // default to first tab
+                activeTabs[tabSet] = tabs[0].id;
+
+                // when active tab changes, push it to the URL
+                $watch('activeTabs[tabSet]', activeTab => {
+                    const url = new URL(window.location.href);
+                    url.searchParams.set(`tab_${tabSet}`, activeTabs[tabSet] );
+                    history.pushState(null, document.title, url.toString());
+                })
+
+                // if active tab is specified in URL, activate it
+                const url = new URL(window.location.href);
+                if(url.searchParams.get(`tab_${tabSet}`)) {
+                    activeTabs[tabSet] = url.searchParams.get(`tab_${tabSet}`);
+                }
+            }
+        ">
+
+    <ul class="tabs" id="tabs-sections" role="tablist" x-show="tabs.length > 1" x-cloak>
+        <template x-for="tab in tabs">
+            <li>
+                <a role="tab" 
+                    x-text="tab.name" 
+                    :class="{'selected': activeTabs[tabSet] === tab.id}" 
+                    @click.prevent="activeTabs[tabSet] = tab.id"
+                    :aria-controls="tab.id"
+                    :aria-selected="{'true': activeTabs[tabSet] === tab.id}"></a>
+            </li>
+        </template>
+    </ul>
+
+{{ else }}
+    <!--- print an opening div tag to match the closing one on the calling template --->
+    <div>
+{{ end }}
