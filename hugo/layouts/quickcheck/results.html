@@ -7,11 +7,14 @@
     <h1 id="results_h1">Your software delivery&nbsp;performance</h1>
     {{- partial "quickcheck/percentile_graph" . -}}
 
-    {{- partial "tab_navigation.v2" (slice "Next Steps" "Performance Comparison") -}}
-        <section class="tab" id="next-steps" x-show="activeTab.id == 'next-steps'" x-transition.opacity>
+    {{- partial "tab_navigation.v2" (dict 
+        "tabs" (slice "Next Steps" "Performance Comparison") 
+        "tabSetId" "quickcheck"
+        ) -}}
+        <section class="tab" id="next-steps" x-show="activeTab_quickcheck == 'next-steps'" x-transition.opacity>
             {{- partial "quickcheck/prioritize" . -}}
         </section>
-        <section class="tab" id="performance-comparison" x-show="activeTab.id == 'performance-comparison'" x-transition.opacity>
+        <section class="tab" id="performance-comparison" x-show="activeTab_quickcheck == 'performance-comparison'" x-transition.opacity>
             {{- partial "quickcheck/performance_comparison" . -}}
         </section>
     </div>

@@ -5,8 +5,11 @@
         <a href="https://cloud.google.com/devops/state-of-devops/">2022 State of DevOps</a> respondents overall, and to people within the same industry as you.</p>
     </div>
     <div id="perf-comparison">
-        {{- partial "tab_navigation.v2" (slice "All Industries" "Your Industry") -}}
-            <div id="all-industries" x-show="activeTab.id == 'all-industries'">
+        {{- partial "tab_navigation.v2" (dict 
+            "tabs" (slice "All Industries" "Your Industry") 
+            "tabSetId" "industry"
+            ) -}}
+            <div id="all-industries" x-show="activeTab_industry == 'all-industries'">
                 <div id="perf-all-leadtime-container">
                     <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-all-leadtime-marker"></div>
                     <div id="perf-all-leadtime"></div>  
@@ -24,7 +27,7 @@
                     <div id="perf-all-chgfail"></div>  
                 </div>
             </div>
-            <div id="your-industry" x-show="activeTab.id == 'your-industry'">
+            <div id="your-industry" x-show="activeTab_industry == 'your-industry'">
                 <div id="perf-industry-leadtime-container">
                     <div class="icon-container"><img src="/img/quickcheck/icon_you.svg" class="icon" id="perf-industry-leadtime-marker"></div>
                     <div id="perf-industry-leadtime"></div>  

@@ -28,10 +28,13 @@
         </article>
 
         {{ if .Params.sections_to_display }}
-            {{- partial "tab_navigation.v2" .Params.sections_to_display -}}
+            {{- partial "tab_navigation.v2" (dict 
+                "tabs" .Params.sections_to_display 
+                "tabSetId" "archives"
+                ) -}}
 
                 {{ if in .Params.sections_to_display "Structural Equation Model" }}
-                    <article id="sem" class="tab" x-show="activeTab.id == 'structural-equation-model'">
+                    <article id="sem" class="tab" x-show="activeTab_archives == 'structural-equation-model'">
                         <h2>Structural Equation Model</h2>
                         <p>The DORA research program uses structural equation modeling (SEM), a predictive statistical modeling technique used to test relationships. We utilize PLS-PM (partial least squares path modeling) for our analysis, for several reasons: it does not require assumptions of normality in the data, it is will suited to exploratory and incremental research, and the analysis optimizes for prediction of the dependent variable (vs. testing for model fit of the data). All paths shown in the SEM figures are p &lt; .05.</p>
                         
@@ -39,7 +42,7 @@
                     </article>
                 {{ end }}
                 {{ if in .Params.sections_to_display "Questions" }}
-                    <article id="questions" class="tab" x-show="activeTab.id == 'questions'">
+                    <article id="questions" class="tab" x-show="activeTab_archives == 'questions'">
                         <h2>Survey Questions</h2>
                         <h4>Responses to the following questions were used in the analysis published in the {{ .Params.research_year }} Accelerate State of DevOps Report</h4>
                         {{ range where .Site.Data.survey_questions "year" .Params.research_year }}
