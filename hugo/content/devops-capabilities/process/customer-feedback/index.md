@@ -4,7 +4,7 @@ titleForHTMLHead: "DevOps Capabilities: Customer Feedback" # TODO: can we DRY th
 date: 2023-03-24T12:54:18Z
 category: process
 draft: false
-headline: "Drive better organizational outcomes by gathering cutsomer feedback and incorporating it into product and feature design."
+headline: "Drive better organizational outcomes by gathering customer feedback and incorporating it into product and feature design."
 summary: "A summary (150-250 words) that describes this capability."
 ---
 
