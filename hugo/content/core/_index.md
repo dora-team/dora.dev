@@ -1,7 +1,7 @@
 ---
 title: "Core"
 date: 2023-06-26T09:36:16-04:00
-draft: true
+draft: false
 ---
 
 # DORA Core
