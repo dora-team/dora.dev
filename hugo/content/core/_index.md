@@ -4,6 +4,8 @@ date: 2023-06-26T09:36:16-04:00
 draft: false
 ---
 
+> DORA Core is a work in progress. Read more about it [here](https://github.com/dora-team/dora.dev/discussions/265).
+
 # DORA Core
 DORA’s research program is continuous and ongoing; each year brings new avenues of inquiry, and each analysis yields new insights. At the cutting edge, new concepts are introduced frequently, and artifacts (especially the [Accelerate State of DevOps Reports]({{< relref "/publications" >}})) are continuously released, revealing new insights and dynamics. With each study, some prior findings are reinforced, while others may be called into question. This is a hallmark of good science: any new finding is to be considered suspect—intriguing, but suspect—until it has been validated through replication and application. Meanwhile, practitioners are encouraged to apply the research in their own professional contexts. In such contexts, it can be challenging to keep up with the latest developments from DORA: cultural transformation efforts in a large organization require a steady hand, persistent over stretches of time measured across multiple years. An attempt to update one’s practices to match the pace of the research can lead to counterproductive churn. In these contexts, it’s more practical to rely on “evergreen” artifacts. DORA Core represents a distillation of DORA’s most foundational findings: metrics, capabilities, and outcomes that the research has repeatedly surfaced. It enables teams to focus their improvement efforts even more precisely on what is likely to produce tangible benefits to their organizational goals and quality of life. 
 
