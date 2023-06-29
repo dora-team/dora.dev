@@ -8,14 +8,6 @@ headline: "Drive better organizational outcomes by gathering customer feedback a
 summary: "A summary (150-250 words) that describes this capability."
 ---
 
-Note: *Customer feedback* is one of a set of capabilities that drive higher
-software delivery and organizational performance.  These capabilities were
-discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 In software projects, developers often work on products for months or years,
 sometimes for multiple releases without validating whether the features they're
 building are actually helping users solve their problems, or whether the

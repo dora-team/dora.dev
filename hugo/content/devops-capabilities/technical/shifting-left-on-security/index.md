@@ -8,14 +8,6 @@ headline: "Build security into the software development lifecycle without compro
 summary: "Build security into the software development lifecycle without compromising delivery speed."
 ---
 
-Note: *Shifting left on security* is one of a set of capabilities that drive
-higher software delivery and organizational performance. These capabilities were
-discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 Security is everyone's responsibility. The
 [2016 State of DevOps Report](/publications/pdf/state-of-devops-2016.pdf)
 (PDF) research shows that high-performing teams spend 50 percent less time

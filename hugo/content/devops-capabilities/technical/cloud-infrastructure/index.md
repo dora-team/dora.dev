@@ -8,16 +8,6 @@ headline: "Find out how to manage cloud infrastructure effectively so you can ac
 summary: "Find out how to manage cloud infrastructure effectively so you can achieve higher levels of agility, availability, and cost visibility."
 ---
 
-
-Note: *Cloud infrastructure* is one of a set of capabilities that
-drive higher software delivery and organizational performance. These
-capabilities were discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
-
 Many organizations are adopting cloud computing. But there's more to cloud than
 buying your infrastructure from a cloud provider. The US National Institute of
 Standards and Technologies (NIST)

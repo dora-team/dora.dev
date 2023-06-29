@@ -8,14 +8,6 @@ headline: "Set proactive failure notifications to identify critical issues and a
 summary: "Set proactive failure notifications to identify critical issues and act on problems before they arise."
 ---
 
-Note: *Proactive failure notification* is one of a set of capabilities
-that drive higher software delivery and organizational performance.
-These capabilities were discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 Proactive failure notification is the practice of generating notifications when
 monitored values approach known failure thresholds, and not waiting for the
 system to alert you it has already failed — or worse, to find out from customers

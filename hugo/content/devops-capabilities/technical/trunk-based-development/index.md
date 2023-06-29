@@ -8,14 +8,6 @@ headline: "Prevent merge-conflict hassles with trunk-based development practices
 summary: "Prevent merge-conflict hassles with trunk-based development practices."
 ---
 
-Note: *Trunk-based development* is one of a set of capabilities that drive
-higher software delivery and organizational performance.
-These capabilities were discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 There are two main patterns for developer teams to work together using version
 control. One is to use *feature branches*, where either a developer or a group
 of developers create a branch usually from trunk (also known as *main* or

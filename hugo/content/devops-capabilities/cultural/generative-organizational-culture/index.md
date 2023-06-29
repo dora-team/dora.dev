@@ -8,17 +8,7 @@ headline: "Discover how growing a generative, high-trust culture drives better o
 summary: "Measure of organizational culture is based on a typology developed by Ron Westrum, a sociologist who studied safety-critical complex systems in the domains of aviation and healthcare. Our own research has found that this measure of culture is predictive of IT Performance, organizational performance, and decreasing burnout. Hallmarks of this include good information flow, high cooperation and trust, bridging between teams, and embracing novel solutions."
 ---
 
-<!-- TODO: Add NOTE banner to the below section -->
-
-Note: *Westrum organizational culture* is one of a set of capabilities that
-drive higher software delivery and organizational performance. These
-capabilities were discovered by the
-[DORA State of DevOps research program](https://www.devops-research.com/research.html),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
-According to research by DevOps Research and Assessment (DORA), organizational
+According to research by [DevOps Research and Assessment (DORA)](https://dora.dev), organizational
 culture that is high-trust and emphasizes information flow is predictive of
 software delivery performance and organizational performance in technology. The
 idea that a good culture that optimizes information flow is predictive of good

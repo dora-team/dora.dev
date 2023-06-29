@@ -11,20 +11,8 @@ Where there's job satisfaction, employees bring the best of themselves to work:
 their engagement, their creativity, and their strongest thinking."
 ---
 
-<!-- # DevOps culture: Job satisfaction -->
-
-<!-- TODO: Add NOTE banner to the below section -->
-
-Note: *Job satisfaction* is one of a set of capabilities that drive higher
-software delivery and organizational performance. These capabilities were
-discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 Early analysis performed by
-[DevOps Research and Assessment (DORA)](https://cloud.google.com/devops)
+[DevOps Research and Assessment (DORA)](https://dora.dev)
 found that job satisfaction is a predictor of organizational
 performance. Having engaged employees doing meaningful work drives business
 value.

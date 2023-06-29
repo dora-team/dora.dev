@@ -8,14 +8,6 @@ headline: "Innovate faster by building empowered teams that can try out new idea
 summary: "Innovate faster by building empowered teams that can try out new ideas without approval from people outside the team."
 ---
 
-Note: *Team experimentation* is one of a set of capabilities that drive
-higher software delivery and organizational performance. These
-capabilities were discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 Even in many so-called agile teams, developers can only work on requirements or
 stories that are given to them. And despite the developers’ specialist
 knowledge, or what they discover in the development process, they can’t change

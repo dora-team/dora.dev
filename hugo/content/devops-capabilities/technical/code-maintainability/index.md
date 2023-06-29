@@ -8,14 +8,6 @@ headline: "Make it easy for developers to find, reuse, and change code, and keep
 summary: "Make it easy for developers to find, reuse, and change code, and keep dependencies up-to-date."
 ---
 
-Note: *Code maintainability* is one of a set of capabilities that drive higher
-software delivery and organizational performance. These capabilities were
-discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 It takes
 [a lot of code](https://www.businessinsider.com/how-many-lines-of-code-it-takes-to-run-different-software-2017-2)
 to run the systems we build: The Android operating system runs on 12 to 15

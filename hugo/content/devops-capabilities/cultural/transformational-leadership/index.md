@@ -8,17 +8,7 @@ headline: "Learn how effective leaders influence software delivery performance b
 summary: "Effective leadership has a measurable, significant impact on software delivery outcomes. However, rather than driving these outcomes directly, effective transformational leaders influence software delivery performance by enabling the adoption of technical and product management capabilities and practices by practitioners, which in turn drives the outcomes leaders care about."
 ---
 
-<!-- TODO: Add NOTE banner to the below section -->
-
-Note: *Transformational leadership* is one of a set of capabilities that drive
-higher software delivery and organizational performance.
-These capabilities were discovered by the
-[DORA State of DevOps research program](https://www.devops-research.com/research.html),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
-[DevOps Research and Assessment (DORA)](https://cloud.google.com/devops) research shows that effective leadership has a measurable, significant
+[DevOps Research and Assessment (DORA)](https://dora.dev) research shows that effective leadership has a measurable, significant
 impact on software delivery outcomes. However, rather than driving these
 outcomes directly, effective transformational leaders influence software
 delivery performance by enabling the adoption of technical and product

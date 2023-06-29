@@ -8,15 +8,6 @@ headline: "Understand the right strategies for managing test data effectively al
 summary: "Understand the right strategies for managing test data effectively along with approaches to provide fast, secure data access for testing."
 ---
 
-
-Note: *Test data management* is one of a set of capabilities that drive higher
-software delivery and organizational performance. These capabilities were
-discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 [Automated testing](/devops-capabilities/technical/test-automation)
 is a key component of modern software delivery practices. The ability to execute
 a comprehensive set of unit, integration, and system tests is essential to
