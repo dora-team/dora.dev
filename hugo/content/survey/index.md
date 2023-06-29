@@ -13,4 +13,4 @@ In addition to contributing to our collective understanding of software delivery
 
 **The survey is now open!** Take a moment to reflect on your work, and share your experience to enrich this year's research. Most participants are able to complete the survey in about 15 minutes.
 
-{{< button href="https://google.qualtrics.com/jfe/form/SV_3jHsoEmQR877LW6?source=doradotdev-survey" target="_blank" >}}Take the 2023 State of DevOps Survey now!{{< /button >}}
+{{< button href="https://google.qualtrics.com/jfe/form/SV_3jHsoEmQR877LW6?source=doradotdev-survey" target="_blank" >}}Take the 2023 Accelerate State of DevOps Survey now!{{< /button >}}
