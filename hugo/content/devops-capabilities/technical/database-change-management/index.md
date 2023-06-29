@@ -8,16 +8,8 @@ headline: "Make sure database changes don't cause problems or slow you down."
 summary: "Make sure database changes don't cause problems or slow you down."
 ---
 
-Note: *Database change management* is one of a set of capabilities that drive
-higher software delivery and organizational performance. These
-capabilities were discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 Database changes are often a major source of risk and delay when performing
-deployments. [DevOps Research and Assessment (DORA)](https://cloud.google.com/devops) investigated which database-related practices help during the process of implementing continuous delivery, improving both software delivery performance and availability.
+deployments. [DevOps Research and Assessment (DORA)](https://dora.dev) investigated which database-related practices help during the process of implementing continuous delivery, improving both software delivery performance and availability.
 
 DORA's research found that integrating database work into the software delivery
 process positively contributes to

@@ -8,14 +8,6 @@ headline: "Replace heavyweight change-approval processes with peer review, to ge
 summary: "Replace heavyweight change-approval processes with peer review, to get the benefits of a more reliable, compliant release process without sacrificing speed."
 ---
 
-Note: *Streamlining change approval* is one of a set of capabilities
-that drive higher software delivery and organizational performance.
-These capabilities were discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 Most IT organizations have change management processes to manage the life cycle
 of changes to IT services, both internal and customer-facing. These processes
 are often the primary controls to reduce the operational and security risks of

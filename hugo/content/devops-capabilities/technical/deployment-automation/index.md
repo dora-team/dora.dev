@@ -8,14 +8,6 @@ headline: "Best practices and approaches for deployment automation and reducing 
 summary: "Best practices and approaches for deployment automation and reducing manual intervention in the release process."
 ---
 
-Note: *Deployment automation* is one of a set of capabilities that drive
-higher software delivery and organizational performance. These capabilities were
-discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 Deployment automation is what enables you to deploy your software to testing
 and production environments with the push of a button. Automation is essential
 to reduce the risk of production deployments. It's also essential for providing

@@ -8,14 +8,6 @@ headline: "Create shorter lead times and faster feedback loops by working in sma
 summary: "Create shorter lead times and faster feedback loops by working in small batches. Learn common obstacles to this critical capability and how to overcome them."
 ---
 
-Note: *Working in small batches* is one of a set of capabilities
-that drive higher software delivery and organizational performance.
-These capabilities were discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 Working in small batches is an essential principle in any discipline where
 feedback loops are important, or you want to learn quickly from your
 decisions. Working in small batches allows you to rapidly test hypotheses about

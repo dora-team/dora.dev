@@ -8,14 +8,6 @@ headline:  "Prioritize work, limit the amount of things that people are working 
 summary: "Prioritize work, limit the amount of things that people are working on, and focus on getting a small number of high-priority tasks done."
 ---
 
-Note: *Work in process limits* is one of a set of capabilities that
-drive higher software delivery and organizational performance. These
-capabilities were discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 When faced with too much work and too few people to do it, rookie managers
 assign people to work on multiple tasks in the hope of increasing throughput.
 Unfortunately, the result is that tasks take longer to get done, and the team

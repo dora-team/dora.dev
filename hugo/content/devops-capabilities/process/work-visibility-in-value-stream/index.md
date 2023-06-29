@@ -8,14 +8,6 @@ headline: "Understand and visualize the flow of work from idea to customer outco
 summary: "Understand and visualize the flow of work from idea to customer outcome in order to drive higher performance."
 ---
 
-Note: *Visibility of work in the value stream* is one of a set of
-capabilities that drive higher software delivery and organizational
-performance.  These capabilities were discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 *Visibility of work* represents the extent to which teams have a good
 understanding of the flow of work from the business all the way through to
 customers, and whether they have visibility into this flow, including the status

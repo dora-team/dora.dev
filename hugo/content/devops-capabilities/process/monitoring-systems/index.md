@@ -8,14 +8,6 @@ headline: "Improve monitoring across infrastructure platforms, middleware, and t
 summary: "Improve monitoring across infrastructure platforms, middleware, and the application tier, so you can provide fast feedback to developers."
 ---
 
-Note: *Monitoring systems to inform business decisions* is one of a set of
-capabilities that drive higher software delivery and organizational
-performance.  These capabilities were discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 Monitoring is the process of collecting, analyzing, and using information to
 track applications and infrastructure in order to guide business decisions.
 Monitoring is a key capability because it gives you insight into your systems

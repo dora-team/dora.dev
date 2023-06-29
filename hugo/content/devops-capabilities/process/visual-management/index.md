@@ -8,15 +8,6 @@ headline: "Learn about the principles of visual management to promote informatio
 summary: "Learn about the principles of visual management to promote information sharing, get a common understanding of where the team is, and how to improve."
 ---
 
-
-Note: *Visual management capabilities* is one of a set of capabilities
-that drive higher software delivery and organizational performance. These
-capabilities were discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 It's a common practice for teams that are adopting
 [lean development practices](https://wikipedia.org/wiki/Lean_software_development)
 to display key information about their processes in team areas where everybody

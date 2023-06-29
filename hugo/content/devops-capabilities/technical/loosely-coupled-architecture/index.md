@@ -8,15 +8,7 @@ headline: "Learn about moving from a tightly coupled architecture to service-ori
 summary: "Learn about moving from a tightly coupled architecture to service-oriented and microservice architectures without re-architecting everything at once"
 ---
 
-Note: *Architecture* is one of a set of capabilities that drive higher software
-delivery and organizational performance. These capabilities were
-discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
-Research from the DevOps Research and Assessment (DORA) team shows that
+Research from the [DevOps Research and Assessment (DORA)](https://dora.dev) team shows that
 architecture is an important predictor for achieving continuous delivery.
 Whether you're using Kubernetes or mainframes, your architecture enables teams
 to adopt practices that foster higher levels of software delivery performance.

@@ -8,16 +8,6 @@ headline: "Improve software quality by building reliable automated test suites a
 summary: "Improve software quality by building reliable automated test suites and performing all kinds of testing throughout the software delivery lifecycle."
 ---
 
-
-
-Note: *Test automation* is one of a set of capabilities that drive higher
-software delivery and organizational performance.  These capabilities were
-discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 The key to building quality into software is getting fast feedback on the impact
 of changes throughout the software delivery lifecycle. Traditionally, teams
 relied on manual testing and code inspection to verify systems' correctness.

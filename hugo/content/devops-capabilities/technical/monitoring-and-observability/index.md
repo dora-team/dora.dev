@@ -8,16 +8,8 @@ headline: "Learn how to build tooling to help you understand and debug your prod
 summary: "Learn how to build tooling to help you understand and debug your production systems."
 ---
 
-Note: *Monitoring and observability* is one of a set of capabilities that
-drive higher software delivery and organizational performance. These
-capabilities were discovered by the
-[DORA State of DevOps research program](/),
-an independent, academically rigorous investigation into the practices and
-capabilities that drive high performance. To learn more, read our
-[DevOps resources](https://cloud.google.com/devops).
-
 Good monitoring is a staple of high-performing teams.
-[DevOps Research and Assessment (DORA)](https://cloud.google.com/devops)
+[DevOps Research and Assessment (DORA)](https://dora.dev)
 [research](/publications/pdf/state-of-devops-2018.pdf)
 shows that a comprehensive monitoring and observability solution, along with a
 number of other technical practices, positively contributes to
