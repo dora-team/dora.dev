@@ -34,7 +34,7 @@ Organizations are constantly grappling to quantify the value of technology trans
     url="https://bit.ly/dora-sodr"
     cta="Read the Report"
     img-src="/img/sodr/sodr-2022-thumb.png"  
-    img-alt="The State of DevOps 2022" 
+    img-alt="The Accelerate State of DevOps Report 2022" 
     img-align="right"
     img-stroke="true"
     >}}
