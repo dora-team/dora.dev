@@ -10,7 +10,7 @@ Over the past eight years, more than 33,000 professionals around the world have 
 In addition to contributing to our collective understanding of software delivery, the survey offers practitioners a time to reflect on challenges and opportunities within their own teams.
 
 ### The 2023 Accelerate State of DevOps survey is now closed.
-Thank you to everyone who participated! We plan to publish the 2023 Accelerate State of DevOps Report this fall. To be notified when it's released, [join the DORA community](https://dora.community).
+Thank you to everyone who participated! We plan to publish the 2023 Accelerate State of DevOps Report in the fourth quarter of this year. To be notified when it's released, [join the DORA community](https://dora.community).
 
 <!--
 ## Participate in the Accelerate State of DevOps Survey
