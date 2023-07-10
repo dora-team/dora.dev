@@ -45,52 +45,6 @@
           "type": 301
         }
       ]
-    },
-    {
-      "target": "draft",
-      "public": "hugo/draft",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
-      "redirects": [
-        {
-          "source": "/capabilities",
-          "destination": "/devops-capabilities/",
-          "type": 301
-        },
-        {
-          "source": "/quickcheck.html",
-          "destination": "/quickcheck/",
-          "type": 301
-        },
-        {
-          "source": "/performance.html**",
-          "destination": "/quickcheck/2019/results/",
-          "type": 301
-        },
-        {
-          "source": "/research.html",
-          "destination": "/",
-          "type": 301
-        },
-        {
-          "source": "/models.html",
-          "destination": "/research/",
-          "type": 301
-        },
-        {
-          "source": "/faq.html",
-          "destination": "/faq/",
-          "type": 301
-        },
-        {
-          "source": "/dora-joins-google-cloud.html",
-          "destination": "/news/dora-joins-google-cloud/",
-          "type": 301
-        }
-      ]
     }
   ],
   "firestore": {
