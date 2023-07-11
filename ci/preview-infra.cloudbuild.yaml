@@ -1,0 +1,15 @@
+steps:
+
+  - name: gcr.io/$PROJECT_ID/hugo
+    script: |
+      # Build the prod version of the site (this will omit content where the front matter specifies Draft: true)
+      hugo -v -s ./hugo -d /workspace/hugo/public --debug
+
+  - name: gcr.io/cloud-builders/npm:node-16.18.0
+    entrypoint: npm
+    dir: 'functions/inquiry-monitor'
+    args: ['install']
+
+  - name: gcr.io/$PROJECT_ID/firebase
+    script: |
+      firebase deploy --project=doradotdev-staging
