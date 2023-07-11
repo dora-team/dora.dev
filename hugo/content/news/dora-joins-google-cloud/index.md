@@ -20,3 +20,4 @@ DORA’s leadership in the DevOps space is a natural fit for Google Cloud, as bo
 Many thanks to the DevOps and technical communities who have inspired us at DORA on our journey to understand what makes high performing organizations and technologists. We have loved hearing your stories of success and impact, and are excited to continue our work.
 
 <small>Posted Thursday 20 December 2018 by The DORA Team. Filed under news.</small>
+
