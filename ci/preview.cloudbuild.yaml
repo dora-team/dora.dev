@@ -1,4 +1,7 @@
 steps:
+
+# DEPRECATED: per https://github.com/dora-team/dora.dev/issues/225, there will be separate preview pipelines for content and infra changes
+
   - name: gcr.io/$PROJECT_ID/hugo
     script: |
       # Build draft site and published site
