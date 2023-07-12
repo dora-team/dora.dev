@@ -26,3 +26,4 @@ Chosen option: **Firebase Hosting**, because:
   * SSL cert management
   * Preview channels (used by CI to provide isolated environments for PR review)
 * as part of the larger Firebase suite, other tools are integrated, including [Firestore](store-data-with-firestore.md)
+* 
