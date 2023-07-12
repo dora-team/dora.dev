@@ -20,6 +20,13 @@ steps:
     dir: 'functions/inquiry-monitor'
     args: ['install']
 
-  - name: gcr.io/$PROJECT_ID/firebase
+  - name: 'ubuntu'
     script: |
-      firebase deploy --project=doradotdev-staging
+      apt update && apt install curl sudo -y
+      curl -sL https://firebase.tools | bash
+
+      # BUG: there is a bug in Firebase that is causing issues when installing the extension on staging
+      # see: https://github.com/firebase/firebase-tools/issues/6060
+      # so we'll skip the extension until that's fixed
+
+      firebase deploy --project=doradotdev-staging --except=extensions
