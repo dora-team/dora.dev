@@ -17,12 +17,5 @@
         ]
       }
     }
-  },
-  "etags": {
-    "doradotdev-staging": {
-      "extensionInstances": {
-        "firestore-send-email": "9f1738ca7ee40a71dd2488c529dbbf8de62b13834fdd0ed3db6aa2cd376c2bf6"
-      }
-    }
   }
 }
