@@ -12,3 +12,13 @@ unsafe= true
   changefreq = 'monthly'
   filename = 'sitemap.xml'
   priority = 0.5
+
+DefaultContentLanguage = 'en'
+
+[languages]
+    [languages.en]
+        languageName = "English"
+        weight = 1
+    [languages.fr]
+        languageName = "Français"
+        weight = 2
