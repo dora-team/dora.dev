@@ -1,0 +1,313 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia de DevOps: entrega contínua</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Observação:</strong><span> <em>a entrega contínua</em> faz parte de um conjunto de recursos que aumentam a entrega de software e o desempenho organizacional. Esses recursos foram
+descobertos pelo
+<a href="https://www.devops-research.com/research.html">programa de pesquisa DORA State of DevOps</a>
+(em inglês), uma investigação independente e acadêmica rigorosa sobre as práticas e
+recursos que impulsionam alto desempenho. Para saber mais, leia nossos
+<a href="/devops">recursos de DevOps</a> (em inglês).</span></aside>
+<p>A entrega contínua é a capacidade de lançar alterações de todos os tipos sob demanda
+de maneira rápida, segura e sustentável. As equipes que treinam bem a entrega contínua
+podem lançar softwares e fazer alterações na produção a qualquer momento, correndo poucos riscos,
+inclusive durante o horário comercial, sem afetar os usuários.</p>
+
+<p>É possível aplicar os princípios e as práticas de entrega contínua a qualquer
+contexto de software, incluindo:</p>
+
+<ul>
+<li>atualizar serviços em um sistema distribuído complexo;</li>
+<li>fazer upgrade do software de mainframe;</li>
+<li>fazer alterações na configuração da infraestrutura;</li>
+<li>fazer alterações no esquema do banco de dados;</li>
+<li>atualização automática do firmware;</li>
+<li>lançar novas versões de um app para dispositivos móveis.</li>
+</ul>
+
+<p>Quando a equipe pratica a entrega contínua, é possível responder "sim" às
+seguintes perguntas:</p>
+
+<ul>
+<li>Nosso software está em um estado implantável durante todo o ciclo de vida?</li>
+<li>Priorizamos manter o software implantável em vez de trabalhar em novos
+recursos?</li>
+<li>O feedback rápido sobre a qualidade e a implantação do sistema em que
+estamos trabalhando está disponível para todos na equipe?</li>
+<li>Quando recebemos feedback do sistema que não pode ser implantado (como falhas em
+compilações ou testes), tornamos a correção desses problemas nossa maior prioridade?</li>
+<li>Podemos implantar nosso sistema na produção ou para usuários finais a qualquer momento, sob
+demanda?</li>
+</ul>
+
+<p>A entrega contínua costuma ser conflitante com a implantação contínua, mas são
+práticas separadas. A implantação contínua ocorre quando as equipes tentam implantar todas
+as alterações de código na produção o mais rápido possível. Ela funciona bem
+para serviços da Web, mas não pode ser aplicada a software, como firmware ou apps
+para dispositivos móveis. A entrega contínua é aplicada a todos os tipos de software, incluindo sistemas
+de firmware e de mainframe, e em ambientes altamente regulamentados. É possível e recomendado
+começar com a entrega contínua, mesmo que você nunca pretenda usar a
+implantação contínua.</p>
+
+<p>A entrega contínua e a implantação contínua são vistas por engano como arriscadas
+e inadequadas para domínios regulamentados ou críticos para a segurança. Na verdade, o objetivo da
+entrega contínua é reduzir o risco do software, e a pesquisa da DORA mostrou
+consistentemente que os profissionais com melhor desempenho alcançam níveis mais altos de confiabilidade e
+disponibilidade. As práticas técnicas que impulsionam a entrega contínua (testes
+contínuos, mudança para a segurança e testes e observabilidade
+abrangentes) são ainda mais importantes em domínios altamente regulamentados e críticos para a
+segurança. A entrega contínua foi aplicada com sucesso muitas vezes em domínios
+altamente regulamentados, como serviços financeiros e governamentais.</p>
+
+<p>Embora a entrega contínua seja possível para todos os tipos de software, é uma tarefa difícil. No entanto, ele oferece benefícios significativos. A pesquisa <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> mostra que a entrega contínua bem executada proporciona
+os seguintes benefícios:</p>
+
+<ul>
+<li>Melhora no desempenho da entrega de software, medido em termos das
+<a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">quatro métricas principais</a>
+(em inglês), bem como níveis mais altos de disponibilidade.</li>
+<li>Leva a níveis mais altos de qualidade, medido pela porcentagem do tempo
+que as equipes passam refazendo tarefas ou em tarefas não planejadas, conforme mostrado no
+<a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Relatório State of DevOps de 2016</a>
+págs. 25 e 26 (em inglês) e no
+<a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Relatório State of DevOps de 2018</a>
+págs. 27 a 29 (em inglês).</li>
+<li>Prevê níveis de esgotamento mais baixos (esgotamento físico, mental ou emocional
+causados por excesso de trabalho ou estresse), níveis mais altos de
+<a href="/architecture/devops/devops-culture-job-satisfaction" track-type="article" track-name="internalLink" track-metadata-position="body">satisfação no trabalho</a>
+e melhor
+<a href="/architecture/devops/devops-culture-westrum-organizational-culture" track-type="article" track-name="internalLink" track-metadata-position="body">cultura organizacional</a>.</li>
+<li>Reduz o esforço da implantação, uma medida da extensão em que as implantações
+são interruptivas, em vez de fáceis e sem esforço, bem como o medo e a
+preocupação que os engenheiros e a equipe técnica têm quando enviam o código à
+produção.</li>
+<li>Afeta a cultura, aumentando os níveis de <a href="https://rework.withgoogle.com/print/guides/5721312655835136/">segurança psicológica</a> (em inglês) e de
+<a href="/architecture/devops/devops-culture-westrum-organizational-culture" track-type="article" track-name="internalLink" track-metadata-position="body">cultura organizacional voltada para a missão</a>.</li>
+</ul>
+
+<p>O diagrama a seguir mostra como um conjunto de práticas técnicas afeta a
+entrega contínua, o que, por sua vez, impulsiona os resultados listados acima:</p>
+
+<p><img src="/static/architecture/devops/images/continuous-delivery-technical-practices.png" alt="Como as práticas técnicas geram resultados em outros recursos" width="80%" class="screenshot"/> </p>
+
+<p>A entrega contínua é apenas um aspecto de como impulsionar os resultados discutidos
+anteriormente, embora seja importante. Outros recursos culturais e organizacionais
+discutidos no
+<a href="https://devops-research.com/research.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">programa de pesquisa DORA</a>
+também ajudam a impulsionar esses resultados. Você pode conseguir a entrega contínua
+implementando as práticas técnicas descritas neste documento.</p>
+
+<h2 id="implementing_continuous_delivery" data-text="Como implementar a entrega contínua">Como implementar a entrega contínua</h2>
+
+<p>A pesquisa DORA descobriu que os recursos técnicos a seguir impulsionam a capacidade
+de realizar a entrega contínua. A <a href="/architecture/devops/devops-culture-transformational-leadership" track-type="article" track-name="internalLink" track-metadata-position="body">liderança transformacional</a> na
+organização também impulsiona a implementação de muitos desses recursos
+técnicos.</p>
+
+<p>Para ajudar a equipe a ter maior capacidade e menos riscos, implemente as
+seguintes práticas de entrega contínua:</p>
+
+<ul>
+<li><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Automação de testes</a>:
+o uso de conjuntos de testes automatizados abrangentes criados e
+mantidos pelos desenvolvedores. Os conjuntos de testes eficazes são confiáveis, ou seja, os testes
+encontram falhas reais e passam apenas no código que pode ser lançado.</li>
+<li><a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Automação de implantação</a>:
+o grau em que as implantações são totalmente automatizadas e não exigem
+intervenção manual.</li>
+<li><a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">Desenvolvimento baseado em troncos</a>:
+caracterizado por menos de três ramificações ativas em um repositório de código,
+por ramificações e forks com vida útil muito curta (por exemplo, menos de um dia)
+antes de serem mesclados na linha principal e por equipes de aplicativos que raramente ou nunca
+têm períodos de <em>bloqueio de código</em> em que ninguém pode fazer check-in de código ou fazer solicitações
+pull devido a conflitos de mesclagem, congelamento de código ou fases de estabilização.</li>
+<li><a href="/architecture/devops/devops-tech-shifting-left-on-security" track-type="article" track-name="internalLink" track-metadata-position="body">Mudança para a esquerda na segurança</a>:
+integração da segurança nas fases de design e de teste do processo de
+desenvolvimento de software. Esse processo inclui a análise de segurança de
+aplicativos, incluindo a equipe de segurança de informações no processo de design e
+demonstração para
+aplicativos, usando pacotes e bibliotecas de segurança pré-aprovadas e
+testes de recursos de segurança como uma parte do pacote de testes automatizados.</li>
+<li><a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">Arquitetura levemente acoplada</a>:
+arquitetura que permite que as equipes testem e implantem aplicativos sob demanda,
+sem exigir orquestração com outros serviços. Ter uma arquitetura
+levemente acoplada permite que as equipes trabalhem de forma independente, sem
+precisar de outras equipes para receber suporte e serviços, o que permite que elas
+trabalhem rapidamente e agreguem valor à organização.</li>
+<li><a href="/architecture/devops/devops-tech-teams-empowered-to-choose-tools" track-type="article" track-name="internalLink" track-metadata-position="body">Capacitação de equipes para escolher ferramentas</a>:
+equipes que podem escolher quais ferramentas usar têm melhor desempenho na entrega contínua.
+Ninguém sabe melhor do que os profissionais do que precisam para ser eficazes.</li>
+<li><a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">Integração contínua (CI, na sigla em inglês)</a>:
+uma prática de desenvolvimento em que o código é verificado regularmente, e cada
+check-in aciona um conjunto de testes rápidos para descobrir regressões, que
+os desenvolvedores corrigem imediatamente. O processo de CI cria builds e pacotes
+canônicos que são implantados e lançados.</li>
+<li><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Testes contínuos</a>:
+testes durante todo o ciclo de vida da entrega de software, e não como
+uma fase separada após a <em>conclusão do desenvolvimento</em>. Com os testes contínuos, desenvolvedores
+e testadores trabalham lado a lado. Os profissionais de alto desempenho praticam o desenvolvimento orientado a
+testes, recebem feedback de testes em menos de dez minutos e
+analisam e melhoram continuamente os conjuntos de testes deles, por exemplo, para encontrar
+melhor os defeitos e manter a complexidade sob controle.</li>
+<li><a href="/architecture/devops/devops-tech-version-control" track-type="article" track-name="internalLink" track-metadata-position="body">Controle de versões</a>:
+o uso de um sistema de controle de versões, como Git ou Subversion, para todos
+os artefatos de produção, incluindo código do aplicativo, configurações do
+aplicativo, configurações do sistema e scripts para automatizar a criação e
+a configuração de ambientes.</li>
+<li><a href="/architecture/devops/devops-tech-test-data-management" track-type="article" track-name="internalLink" track-metadata-position="body">Gerenciamento de dados de teste</a>:
+práticas eficazes incluem ter dados adequados para executar o conjunto de testes,
+a capacidade de adquirir os dados necessários sob demanda e os dados que não limitam
+o número de testes que você pode executar. Tenha em mente que as equipes precisam
+minimizar, sempre que possível, a quantidade de dados de teste necessários para executar
+testes automatizados.</li>
+<li><a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="article" track-name="internalLink" track-metadata-position="body">Monitoramento e observabilidade abrangentes</a>: permite que as equipes entendam
+a integridade dos sistemas. As soluções eficazes permitem que as equipes monitorem
+métricas predefinidas, incluindo o estado do sistema conforme a experiência dos usuários, além de
+permitir que os engenheiros depurem sistemas interativamente e explorem propriedades
+e padrões conforme surgem.</li>
+<li><a href="/architecture/devops/devops-measurement-proactive-failure-notification" track-type="article" track-name="internalLink" track-metadata-position="body">Notificações proativas</a>:
+monitoramento da integridade do sistema para que as equipes possam detectar e atenuar problemas de forma
+preemptiva.</li>
+<li><a href="/architecture/devops/devops-tech-database-change-management">Gerenciamento de alterações no banco de dados</a>: as alterações no banco de dados não atrasam as equipes se
+seguirem algumas práticas importantes, incluindo armazenar as alterações no banco de dados como
+scripts no controle de versões (e gerenciar essas alterações da mesma forma que as
+alterações no aplicativo de produção), tornar as alterações do banco de dados visíveis para
+todos no ciclo de vida da entrega de software (incluindo engenheiros) e
+se comunicar com todas as partes quando as alterações no aplicativo exigirem
+alterações no banco de dados.</li>
+<li><a href="/architecture/devops/devops-tech-code-maintainability">Manutenção de código</a>: sistemas e ferramentas que facilitam
+a alteração do código mantido por outros desenvolvedores, a pesquisa de exemplos na base de código, a
+reutilização do código de outras pessoas, assim como adicionar, fazer upgrade e migrar para novas versões de
+dependências sem prejudicar o código.</li>
+</ul>
+
+<p>Embora a entrega contínua seja geralmente combinada com a integração contínua e
+encurtada para <em>CI/CD</em>, a pesquisa mostra que a integração contínua é apenas um
+elemento da implementação da entrega contínua. Para alcançar versões confiáveis e de baixo risco,
+você precisa de uma colaboração próxima entre todos os envolvidos no processo
+de entrega do software, não apenas os desenvolvedores de software, e a equipe precisa adotar novas
+formas de trabalhar e aprender novas habilidades.</p>
+
+<h2 id="common_pitfalls_of_implementing_continuous_delivery" data-text="Armadilhas comuns da implementação da entrega contínua">Armadilhas comuns da implementação da entrega contínua</h2>
+
+<p>Algumas organizações acreditam incorretamente que podem implementar a entrega
+contínua aplicando o processo de implantação existente com mais frequência. No entanto,
+a implementação dos recursos técnicos que impulsionam a entrega contínua normalmente
+exigem mudanças significativas no processo e na arquitetura. Aumentar a frequência
+de implantações sem melhorar os processos e a arquitetura provavelmente levará a
+taxas de falha mais altas e a equipes esgotadas.</p>
+
+<p>Muitas descrições de entrega contínua se concentram nas ferramentas e nos padrões,
+como o pipeline de implantação que utiliza as alterações do controle de versões para
+a produção. No entanto, os benefícios esperados não serão conseguidos apenas com o uso de ferramentas modernas, mas sem a implementação das práticas
+técnicas necessárias e das mudanças de processos descritas
+neste documento.</p>
+
+<p>O diagrama a seguir mostra a curva J que a pesquisa DORA descobriu ser típica dos
+programas de transformação. Para emergir da parte inferior de curva J, a equipe
+precisa incluir reformulação e simplificação de processos, melhoria de arquitetura
+e desenvolvimento de habilidades e recursos, além de automação e ferramentas.</p>
+
+<p><img src="/static/architecture/devops/images/continuous-delivery-2.png" alt="Diagrama de curva J de transformações típicas do
+relatório &amp;quot;State of DevOps de 2018&amp;quot;." width="80%" class="screenshot"/> </p>
+
+<p>No diagrama, as seguintes fases são rotuladas:</p>
+
+<ul>
+<li>No início da curva, as equipes começam a transformação e identificam
+conquistas rápidas.</li>
+<li>Em uma melhoria inicial, a automação ajuda os usuários com baixo desempenho a progredir para os de
+médio desempenho.</li>
+<li>Em uma redução da eficiência (a parte inferior da curva J), a automação
+aumenta os requisitos de teste, que são tratados manualmente. Uma grande quantidade
+de dívida técnica bloqueia o progresso.</li>
+<li>À medida que as equipes começam a sair da curva, a dívida técnica e o aumento
+da complexidade causam mais controles manuais e camadas de processo em torno das
+mudanças, diminuindo o trabalho.</li>
+<li>Na parte superior da curva, o trabalho de aprimoramento contínuo leva a um
+desempenho excelente. Profissionais de alto nível aproveitam a experiência e
+aprendem com os ambientes para aumentar a produtividade.</li>
+</ul>
+
+<p>Uma boa maneira de atenuar o impacto da curva J é concluir um exercício de <em>mapeamento
+de fluxo de valor</em> (VSM, na sigla em inglês) para descobrir e antecipar o efeito dos
+gargalos. Em um exercício VSM, você analisa uma única alteração à medida que ela passa do
+controle de versões para a produção:</p>
+
+<ol>
+<li>Considere os vários processos que cada alteração passa, como
+testes automatizados e manuais, revisão de segurança, gerenciamento de mudanças e
+lançamento para produção.</li>
+<li>Meça o tempo total que a mudança levou para passar do controle de versões para o
+lançamento. Em cada processo, meça o seguinte:
+<ul>
+<li>O tempo decorrido real e o tempo de agregação de valor (o tempo em que o trabalho realmente está sendo feito) envolvido na execução do processo de ponta a ponta.</li>
+<li>A porcentagem de tempo que o trabalho é enviado de volta porque não foi
+feito corretamente na primeira vez. Essa métrica é conhecida como <em>porcentagem concluída
+e precisa</em> ou %C/A.</li>
+</ul></li>
+</ol>
+
+<p>O objetivo do exercício de mapeamento do fluxo de valor é ajudar a encontrar
+ineficiências no processo. Em equipe, crie um diagrama de como você quer que o
+fluxo de valor esteja em seis meses e reserve a capacidade da equipe para
+implementar esse estado futuro. Identifique e remova obstáculos que tenham um
+processo com um longo tempo decorrido em comparação com o tempo de agregação de valor ou que tenham
+uma baixa %C/A.</p>
+
+<p>Geralmente, é necessário lidar com a reformulação do processo e da arquitetura
+como parte da implementação de um pipeline de implantação. Como o pipeline de implantação
+vai do check-in ao lançamento, ele conecta várias equipes. É essencial que
+representantes de todas as equipes concluam um exercício de mapeamento de fluxo de valor
+e concordem com um conjunto de ferramentas e processos comuns (por exemplo, para implantação
+em ambientes de teste e de produção) como parte do estado futuro.</p>
+
+<p>A implementação de entrega contínua é um processo de trabalho de aprimoramento contínuo e
+diário, guiado pelos resultados que você quer alcançar. As ferramentas e os padrões são
+valiosos, mas apenas para atender a esse trabalho de melhoria essencial.</p>
+
+<h2 id="measuring_continuous_delivery" data-text="Medindo a entrega contínua">Como medir a entrega contínua</h2>
+
+<p>Por fim, o objetivo da entrega contínua é garantir que os lançamentos sejam
+executados com baixo risco durante o horário comercial normal. O objetivo é
+que ninguém precise trabalhar fora do horário comercial normal para realizar implantações
+ou lançamentos. Portanto, isso é algo que é importante avaliar.</p>
+
+<p>O desempenho na entrega contínua é refletido nos resultados
+alcançados. É possível fazer a
+<a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">verificação rápida de DevOps da DORA</a> (em inglês) para ver o desempenho com as principais métricas de entrega contínua:</p>
+
+<ul>
+<li>Tempo de lead curto para alterações regulares e de emergência, com o objetivo
+de usar o processo regular para alterações de emergência</li>
+<li>Baixas taxas de falha de mudanças.</li>
+<li>Tempo curto para restaurar o serviço em caso de interrupções ou degradação
+do serviço.</li>
+<li>Frequências de lançamento que garantem que recursos de alta prioridade e correções
+de bugs sejam liberados em tempo hábil.</li>
+</ul>
+
+<p>Conforme discutido no início deste documento, a implementação da entrega contínua
+também precisa reduzir a quantia de tarefas refeitas, reduzir o esforço de implantação e reduzir o tempo gasto com o tarefas não planejadas.
+</p>
+
+<h2 id="whats_next" data-text="A seguir">A seguir</h2>
+
+<ul>
+<li>Consulte links para outros artigos e recursos na
+<a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página do DevOps</a>.</li>
+<li>Saiba mais sobre a entrega contínua no
+<a href="https://martinfowler.com/delivery.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Guia de entrega de software</a> (em inglês) de Martin Fowler.</li>
+<li>Leia <a href="https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>"Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation"</em></a> (em inglês. Tradução: "Mapeamento de streaming de valor: como visualizar o trabalho e alinhar a liderança para transformação organizacional") de Karen Martin e Mike Osterling.</li>
+<li>Explore nosso
+<a href="https://www.devops-research.com/research.html">programa de pesquisa</a> (em inglês) do DevOps.</li>
+<li>Faça a
+<a href="https://www.devops-research.com/quickcheck.html">verificação rápida de DevOps</a>
+para entender sua posição em relação ao restante do setor.</li>
+</ul>
+
+</body></html>

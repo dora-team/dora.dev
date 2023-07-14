@@ -1,0 +1,64 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Mesure du DevOps : notification proactive des échecs</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+<aside class="note"><strong>Remarque</strong> : <span>La <em>notification proactive des échecs</em> figure parmi un ensemble de capacités permettant d'optimiser les performances organisationnelles et de livraison de logiciels.
+Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche sur l'état du DevOps, mené par l'équipe DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les fonctionnalités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>La notification proactive des échecs est une pratique qui consiste à générer des notifications lorsque les valeurs surveillées s'approchent de seuils d'échec connus. Cela vous évite ainsi d'attendre que le système vous avertisse d'un échec ou, pire, d'apprendre par vos clients que votre application ou service ne fonctionne plus.
+Avec cette approche, vous pouvez identifier et éventuellement résoudre les problèmes avant qu'ils ne deviennent sérieux ou qu'ils ne commencent à avoir un impact sur vos utilisateurs. L'étude <a href="https://services.google.com/fh/files/misc/state-of-devops-2014.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">DORA (DevOps Research and Assessment) de 2014</a> (PDF) a montré que la surveillance proactive est un facteur important de prédiction des performances en matière de livraison de logiciels.
+D'après l'étude DORA, les équipes qui mettent en œuvre la notification proactive peuvent diagnostiquer et résoudre les problèmes rapidement. Lorsque les échecs sont principalement signalés par une source externe à l'équipe chargée des opérations, par exemple par le centre d'opérations réseau (ou, pire, par les clients), plutôt que détectés via une surveillance interne, les performances en pâtissent.</p>
+
+<h2 id="how_to_implement_proactive_failure_notification" data-text="Mettre en œuvre la notification proactive des échecs">Mettre en œuvre la notification proactive des échecs</h2>
+
+<p><strong>Utilisez des règles d'alerte.</strong> Vous devez générer des notifications d'échec à l'aide de <em>règles d'alerte</em> spécifiques, lesquelles définissent les conditions de génération et le canal de notification d'une alerte. Pour en savoir plus sur la génération d'alertes, consultez la page <a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="solution" track-name="internalLink" track-metadata-position="body">Surveillance et observabilité</a>.</p>
+
+<p><strong>Utilisez des seuils.</strong> Les règles d'alerte doivent utiliser des seuils qui indiquent un problème réel pour les métriques surveillées. Les seuils de surveillance déclenchent des règles d'alerte, qui génèrent des notifications lorsque les niveaux de métrique dépassent les valeurs de seuil.</p>
+
+<p><strong>Réfléchissez bien avant de choisir les seuils.</strong> Choisissez-les de sorte que des alertes ne soient générées que lorsque le seuil prédit réellement un problème. Autrement dit, ne sélectionnez pas arbitrairement une valeur. En règle générale, vous devez identifier le niveau de valeur à partir duquel le problème a un impact sur les utilisateurs, puis déclencher une notification d'alerte à un certain pourcentage avant que cette valeur ne soit dépassée.</p>
+
+<p>Par exemple, vous pouvez choisir de déclencher une notification d'alerte lorsque le temps de réponse moyen des pages est inférieur à 20 % du seuil auquel vous savez que les utilisateurs commencent à être frustrés et appellent l'assistance.</p>
+
+<p><strong>Effectuez des post-mortems des incidents.</strong> Lorsque vous effectuez un post-mortem à la suite d'un incident, déterminez quels indicateurs auraient pu prédire l'incident et surveillez-les à l'avenir.</p>
+
+<p><strong>Planifiez une stratégie de notification.</strong> Si une notification ne nécessite aucune action ou nécessite la même action à chaque fois, vous devez automatiser la réponse. Vous devez également prendre en compte le volume de notifications pour les événements. Une avalanche de notifications lors d'un événement peut être plus distrayante qu'utile. Lorsque les personnes sont exposées à un grand nombre d'alarmes, elles peuvent y devenir insensibles (un problème appelé "accoutumance aux alertes"), ce qui entraîne des temps de réponse plus longs ou des alarmes manquées.
+Examinez régulièrement les notifications et supprimez celles pour lesquelles aucune action n'est possible.</p>
+
+<h2 id="ways_to_improve_failure_notification" data-text="Méthodes d'amélioration de la notification des échecs">Méthodes d'amélioration de la notification des échecs</h2>
+
+<p>Configurez des alertes pour avertir vos équipes stratégiques dès que quelque chose ne va pas dans vos systèmes, bien avant que le problème ne parvienne au centre d'opérations réseau ou qu'un client ne le remonte. Voici des tactiques possibles :</p>
+
+<ul>
+<li>Configurez des alertes dans les systèmes de journalisation et de surveillance aux niveaux appropriés.</li>
+<li>Configurez des alertes de façon à garantir qu'elles avertissent les personnes et les équipes susceptibles de résoudre le problème.</li>
+<li>Surveillez de manière proactive l'état du système en fonction d'avertissements liés à un seuil avant que des défaillances du système ne se produisent.</li>
+<li>Surveillez de manière proactive l'état du système en fonction d'avertissements liés à un taux d'évolution.</li>
+<li>Assurez-vous que seules les alertes pertinentes sont générées, et que l'équipe ne reçoit pas trop d'alertes. Examinez attentivement les alertes afin d'identifier celles qui ne sont pas pertinentes. Désactivez-les et réactivez les alertes de surveillance pertinentes.
+Il est déconseillé de désactiver toutes les alertes.</li>
+</ul>
+
+<h2 id="ways_to_measure_failure_notifications" data-text="Méthode de mesure des notifications d'échec">Méthode de mesure des notifications d'échec</h2>
+
+<p>Il est facile d'instrumenter la surveillance proactive. Les informations à capturer sont les suivantes :</p>
+
+<ol>
+<li>La mesure dans laquelle les alertes d'échec émises par les systèmes de journalisation et de surveillance sont capturées et utilisées</li>
+<li>La mesure dans laquelle l'état du système est surveillé de manière proactive à l'aide d'avertissements liés à un seuil</li>
+<li>La mesure dans laquelle l'état du système est surveillé de manière proactive à l'aide d'avertissements liés à un taux d'évolution</li>
+</ol>
+
+<p>Pour vous assurer que vous capturez différents aspects de votre système, vous devez surveiller les métriques d'au moins deux manières différentes. Par exemple, vous pouvez définir un seuil de métrique qui déclenche des alertes si une métrique dépasse une valeur ou tombe en dessous pendant une période donnée, ainsi qu'un taux d'évolution qui déclenche des alertes lorsque le taux d'évolution d'une valeur de métrique est plus faible ou plus élevé que prévu.</p>
+
+<h2 id="whats_next" data-text="Étapes suivantes">Étape suivante</h2>
+
+<ul>
+<li>Consultez la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">page DevOps</a> pour obtenir des liens vers d'autres articles et ressources.</li>
+<li>Pour en savoir plus sur la génération d'alertes, consultez la page <a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="solution" track-name="internalLink" track-metadata-position="body">Surveillance et observabilité</a>.</li>
+<li>Consultez la publication <a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Site Reliability Engineering (SRE)</a>.</li>
+<li>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</li>
+<li>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</li>
+</ul>
+
+</body></html>

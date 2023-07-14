@@ -1,0 +1,181 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Misurazione DevOps: monitoraggio e osservabilità</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> <em>il monitoraggio e l'osservabilità</em> sono una delle funzionalità che aumentano la distribuzione del software e le prestazioni dell'organizzazione. Queste funzionalità sono state scoperte dal <a href="https://www.devops-research.com/research.html">programma di ricerca State of DevOps di DORA</a>, un'indagine indipendente e rigorosa sulle accademine sulle pratiche e sulle funzionalità che determinano prestazioni elevate. Per scoprire di più, leggi le nostre <a href="/devops">risorse DevOps</a>.</span></aside>
+<p>Un buon monitoraggio è un punto di riferimento per i team ad alte prestazioni.
+<a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">Una ricerca</a>
+<a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">DevOps Research and Assessment</a> mostra che una soluzione completa di monitoraggio e osservabilità, insieme a una serie di altre pratiche tecniche, contribuisce positivamente alla <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">distribuzione continua.</a> </p>
+
+<p>La ricerca di DORA ha definito questi termini come segue:</p>
+
+<p><strong>Monitoring</strong> è uno strumento o una soluzione tecnica che consente ai team di guardare e comprendere lo stato dei propri sistemi. Monitoring si basa sulla raccolta di insiemi di metriche o log predefiniti.</p>
+
+<p>L'<strong>osservabilità</strong> è uno strumento o una soluzione tecnica che consente ai team di eseguire il debug attivo del sistema. L'osservabilità si basa sull'esplorazione di proprietà e
+pattern non definiti in anticipo.</p>
+
+<p>Per un buon lavoro di monitoraggio e osservabilità, i tuoi team devono disporre di quanto segue:</p>
+
+<ul>
+<li>Report sullo stato generale dei sistemi (i miei sistemi funzionano?
+Le risorse disponibili sono sufficienti per i miei sistemi?).</li>
+<li>Report sullo stato del sistema riscontrati dai clienti (i miei clienti sanno se il mio sistema non è disponibile e offrono un'esperienza negativa?).</li>
+<li>Monitoraggio delle principali metriche aziendali e di sistema.</li>
+<li>Strumenti per aiutarti a comprendere e a eseguire il debug dei tuoi sistemi in produzione.</li>
+<li>Strumenti per trovare informazioni su cose che non sapevi in precedenza
+(ovvero puoi identificare <em>sconosciuti sconosciuti</em>).</li>
+<li>Accesso a strumenti e dati che aiutano a tracciare, comprendere e diagnosticare i problemi dell'infrastruttura nel tuo ambiente di produzione, incluse le interazioni tra i servizi.</li>
+</ul>
+
+<h2 id="how_to_implement_monitoring_and_observability" data-text="Come implementare il monitoraggio e l'osservabilità">Come implementare il monitoraggio e l'osservabilità</h2>
+
+<p>Le soluzioni di monitoraggio e osservabilità sono progettate per:</p>
+
+<ul>
+<li>Fornisci indicatori leader di un'interruzione del servizio o un peggioramento del servizio.</li>
+<li>Rileva interruzioni del servizio, riduzione delle prestazioni, bug e attività non autorizzate.</li>
+<li>Eseguire il debug di interruzioni, malfunzionamenti del servizio, bug e attività non autorizzate.</li>
+<li>Identifica le tendenze a lungo termine per la pianificazione delle capacità e le finalità aziendali.</li>
+<li>Esponi effetti collaterali imprevisti di modifiche o funzionalità aggiuntive.</li>
+</ul>
+
+<p>Come per tutte le funzionalità DevOps, l'installazione di uno strumento non è sufficiente per raggiungere gli obiettivi, ma gli strumenti possono contribuire a ostacolare.  I sistemi di monitoraggio non devono essere limitati a un singolo individuo o team all'interno di un'organizzazione.
+Dare a tutti gli sviluppatori la competenza necessaria per il monitoraggio contribuisce a sviluppare una cultura del processo decisionale basato sui dati, oltre a migliorare il debug in generale nel sistema e ridurre le interruzioni.</p>
+
+<p>Per implementare in modo efficace il monitoraggio e l'osservabilità ci sono alcune chiavi. Innanzitutto, il monitoraggio dovrebbe dirti cosa non funziona e aiutarti a capirne il motivo, prima di causare troppi danni. La metrica principale nel caso
+di interruzione o riduzione del servizio sia il tempo di ripristino (TTR). Un fattore chiave di TTR è la capacità di comprendere rapidamente che cosa non funziona e il percorso più veloce per il ripristino del servizio (che potrebbe non comportare la risoluzione immediata dei problemi sottostanti).</p>
+
+<p>Esistono due metodi principali per esaminare un sistema: il monitoraggio <em>blackbox</em>, per cui non vengono resi noti lo stato e i meccanismi interni del sistema, e il monitoraggio <em>whitebox</em>, ove si trovino.</p>
+
+<p>Per ulteriori informazioni, consulta la sezione "Monitoraggio di sistemi distribuiti" del libro <a href="https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Site Reliability Engineering</a>.</p>
+
+<h3 id="blackbox_monitoring" data-text="Monitoraggio blackbox">Monitoraggio blackbox</h3>
+
+<p>In un sistema di monitoraggio blackbox (o <em>sintetico</em>), l'input viene inviato al sistema
+come previsto per un cliente. Questa opzione potrebbe assumere la forma di chiamate HTTP a un'API pubblica o chiamate RPC a un endpoint esposto oppure potrebbe richiedere la visualizzazione di un'intera pagina web come parte del processo di monitoraggio.</p>
+
+<p>Il monitoraggio blackbox è un metodo basato sul campionamento. Lo stesso sistema responsabile delle richieste degli utenti viene monitorato dal sistema blackbox. Un sistema blackbox può anche fornire la copertura della superficie del sistema di destinazione.  Questo potrebbe significare che ciascun metodo API esterno deve essere sondato. Puoi anche considerare una combinazione rappresentativa di richieste per imitare meglio il comportamento effettivo dei clienti.
+Ad esempio, potresti eseguire 100 letture e 1 sola scrittura di una determinata API.</p>
+
+<p>Puoi governare questo processo con un <em>sistema di pianificazione</em>, per assicurarti che questi input vengano effettuati con una frequenza sufficiente a ottenere fiducia nel loro campionamento. Il sistema deve contenere anche un <em>motore di convalida</em>, che può essere semplice, come verificare i codici di risposta o abbinare l'output a espressioni regolari, fino a visualizzare un sito dinamico in un browser headless e attraversarne l'albero DOM, cercando elementi specifici. Dopo aver preso una decisione (pass,
+failover) su un determinato probe, devi archiviare il risultato e i metadati per scopi di
+reporting e avviso.  L'analisi di uno snapshot di un errore e del relativo contesto può essere utile per diagnosticare un problema.</p>
+
+<h3 id="whitebox_monitoring" data-text="Monitoraggio whitebox">Monitoraggio whitebox</h3>
+
+<p>Il monitoraggio e l'osservabilità si basano sugli indicatori inviati dal carico di lavoro in fase di esame al sistema di monitoraggio. In genere può assumere la forma dei tre componenti più comuni: <em>metriche</em>, <em>log</em> e <em>tracce</em>. Alcuni sistemi di monitoraggio monitorano e segnalano anche <em>eventi</em>, che possono rappresentare le interazioni degli utenti con un intero sistema o le modifiche di stato all'interno del sistema stesso.</p>
+
+<p>Le <em>metriche</em> sono semplicemente misurazioni effettuate all'interno di un sistema e rappresentano lo stato di quel sistema in modo misurabile. Quasi sempre sono numeri e tendono a dare forma di contatori, distribuzioni e indicatori. Esistono alcuni casi in cui le metriche relative alle stringhe abbiano senso, ma in genere vengono utilizzate le metriche numeriche, dovute alla necessità di eseguire calcoli matematici per formare statistiche e disegnare visualizzazioni.</p>
+
+<p>I <em>log</em> possono essere considerati file di tipo append-only che rappresentano lo stato di un singolo thread di lavoro in un dato momento. Questi log possono essere costituiti da una singola stringa, ad esempio " l'utente ha eseguito il push del pulsante X", o una voce di log strutturata che include metadati quali il momento in cui si è verificato l'evento, il server che lo ha elaborato e altri elementi ambientali.  A volte un sistema in grado di scrivere log strutturati non genera una stringa semi-strutturata come <code translate="no" dir="ltr">[timestamp] [server] message
+[code]</code>, che può essere analizzata a seconda delle esigenze. Le voci di log tendono a essere scritte utilizzando una libreria client come log4j, structlog, bunyan, log4net o Nlog.
+L'elaborazione dei log può essere un metodo molto affidabile per produrre statistiche che possono essere considerate attendibili, in quanto possono essere rielaborate in base a log archiviati immutabili, anche se il sistema di elaborazione dei log stesso presenta bug. Inoltre, i log possono essere elaborati in tempo reale per produrre <em>metriche basate su log</em>.</p>
+
+<p>Le <em>tracce</em> sono composte da <em>intervalli</em>, che vengono utilizzati per seguire un evento o un'azione dell'utente tramite un sistema distribuito. Uno span può mostrare il percorso di una richiesta attraverso un server, mentre un altro span potrebbe essere eseguito in parallelo, entrambi con lo stesso span principale. Questi elementi formano inoltre una traccia, spesso visualizzata in un grafico a cascata simile a quelli utilizzati negli strumenti di profilazione. Consente agli sviluppatori di comprendere il tempo impiegato da un sistema, su molti server, code e hop di rete. Un framework comune a questo scopo è <a href="https://opentelemetry.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenTelemetry</a>, formato sia da <a href="https://opencensus.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenCensus</a> che da <a href="https://opentracing.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenTracing</a>.</p>
+
+<p>Le metriche, i log e le tracce possono essere segnalati al sistema di monitoraggio dal server in fase di misurazione o da un <em>agente</em> adiacente che possa registrare o dedurre elementi sul sistema.</p>
+
+<h3 id="instrumentation" data-text="Strumentazione">Strumentazione</h3>
+
+<p>Per utilizzare un sistema di monitoraggio, il sistema deve essere <em>strumentato</em>. Ciò significa che il codice deve essere aggiunto a un sistema per esporne lo stato interno. Ad esempio, se un programma semplice contiene un pool di connessioni a un altro servizio, in qualsiasi momento potresti voler tenere traccia delle dimensioni del pool e del numero di connessioni inutilizzate. A tale scopo, uno sviluppatore deve scrivere del codice nella logica del pool di connessioni per tenere traccia dei casi in cui le connessioni vengono formate o eliminate, quando vengono distribuite e restituite. che possono
+essere sotto forma di voci di log o eventi per ciascuno di essi; può inoltre aumentare
+e diminuire un indicatore per le dimensioni della coda, oppure può aumentare un
+contatore ogni volta che viene creata una connessione o ogni volta che un pool viene espanso.</p>
+
+<h3 id="correlation" data-text="Correlazione">Correlazione</h3>
+
+<p>È possibile raccogliere le metriche dall'applicazione e dai sistemi sottostanti, come JVM, sistema operativo guest, hypervisor, sistema operativo dei nodi e hardware stesso. Tieni presente che quando procedi più in avanti in uno stack, potresti iniziare a unire metriche condivise tra più carichi di lavoro. Ad esempio, se una singola macchina gestisce più applicazioni, la visione dell'utilizzo del disco potrebbe non corrispondere direttamente al sistema in fase di osservazione. La correlazione dei problemi delle applicazioni in un sistema condiviso, tuttavia, può contribuire a determinare un fattore che determina il contributo (ad esempio un disco lento). La visualizzazione in dettaglio da una singola applicazione alle metriche di sistema sottostanti, quindi il pull verso l'alto per mostrare tutte le applicazioni interessate possono essere molto potenti.</p>
+
+<p>Misurare un sistema distribuito significa avere osservabilità in molti punti e poterle visualizzare tutte insieme. Questo può significare sia un frontend che il suo database o un'applicazione per dispositivi mobili in esecuzione su un dispositivo del cliente, un bilanciatore del carico cloud e un set di microservizi. Riuscire a collegare i dati di tutte queste fonti in un unico posto è un requisito fondamentale per gli strumenti di osservabilità moderni.</p>
+
+<h3 id="computation" data-text="Calcolo">Calcolo</h3>
+
+<p>Dopo aver raccolto dati da varie origini per il tuo sistema, devi generare statistiche e aggregare dati in diversi reami. Potrebbero essere coorti di utenti, aree geografiche della tua impronta di calcolo o posizioni geografiche dei tuoi clienti. Riuscire a sviluppare queste statistiche sul momento sulla base di eventi non elaborati è molto vantaggioso, ma può essere costoso sia in termini di archiviazione che di capacità di calcolo in tempo reale richiesta.</p>
+
+<p>Quando scegli gli strumenti e pianifichi la strumentazione, devi considerare
+la cardinalità e la dimensionalità. Questi due aspetti della raccolta delle metriche possono
+influenzare notevolmente la tua capacità di scalare la tua capacità di osservare un sistema.</p>
+
+<p>La <em>cardinalità</em> è la misura dei valori distinti in un sistema. Ad esempio, un campo come <code translate="no" dir="ltr">cpu-utilization</code> tende ad avere un intervallo compreso tra 0 e 100. Tuttavia, se monitori l'identificatore univoco di un utente, tutti saranno distinti, quindi se hai un milione di utenti, hai una cardinalità di 1 milione. È una differenza enorme.</p>
+
+<p>La <em>dimensionalità</em> è la possibilità di registrare più di un singolo valore insieme a un timestamp, come si potrebbe fare in un semplice database di serie temporali che supporta un sistema di monitoraggio. Se registri semplicemente il valore di un contatore, ad esempio
+requests-sent, potrebbe inizialmente registrare solo il valore del numero di richieste
+inviate fino a questo momento come <code translate="no" dir="ltr">{time=x, value=y}</code>. Tuttavia, come per i log strutturati, potresti anche voler registrare alcuni dati ambientali, ottenendo come risultato: <code translate="no" dir="ltr">{time=x, value=y, server=foo, cluster=123,
+environment=prod, service=bar}</code>. La combinazione di elevata cardinalità e elevata
+dimensionalità può portare a requisiti di calcolo e archiviazione
+che aumentano notevolmente, al punto che il monitoraggio potrebbe non funzionare come previsto.  Ciò deve essere inteso dagli sviluppatori che scrivono dati e metadati generati dinamicamente nei sistemi di monitoraggio.</p>
+
+<h3 id="learning_and_improving" data-text="Apprendimento e miglioramento">Apprendimento e miglioramento</h3>
+
+<p>Parte del funzionamento di un sistema è l'apprendimento da interruzioni ed errori. Il processo di scrittura di retrospettive o postmortem con azioni correttive è ben documentato. Uno dei risultati di questo processo è lo sviluppo di un monitoraggio migliorato. Per un'organizzazione in rapida evoluzione è fondamentale consentire ai relativi sistemi di monitoraggio di essere aggiornati in modo rapido ed efficiente da chiunque all'interno dell'organizzazione. Il monitoraggio della configurazione è fondamentale, per cui le modifiche devono essere monitorate tramite <a href="/architecture/devops/devops-process-streamlining-change-approval" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">revisione e approvazione</a>, proprio come per lo sviluppo e la pubblicazione del codice. Mantenere la configurazione di monitoraggio in un <a href="/architecture/devops/devops-tech-version-control" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">sistema di controllo della versione</a> è un buon primo passo per consentire un accesso esteso al sistema, mantenendo al contempo il controllo su questa parte critica del sistema. Lo sviluppo dell'automazione relativo al deployment della configurazione di monitoraggio tramite una pipeline di automazione può anche migliorare la tua capacità di garantire che queste configurazioni siano valide e applicate in modo coerente. Dopo aver trattato la configurazione del monitoraggio come codice, questi miglioramenti possono essere ottenuti tramite un processo di <a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">automazione dell'implementazione</a>, preferibilmente lo stesso sistema utilizzato dal resto del team.</p>
+
+<h2 id="common_pitfalls_of_implementing_monitoring_and_observability" data-text="Insetti comuni nell'implementazione del monitoraggio e dell'osservabilità">Insetti comuni nell'implementazione del monitoraggio e dell'osservabilità</h2>
+
+<p>Quando sviluppi un sistema di monitoraggio e osservabilità per la tua organizzazione, tieni presente che generalmente non esiste una semplice soluzione plug-and-play. Qualsiasi sistema di monitoraggio soddisfacente richiederà una profonda comprensione di ogni componente che vuoi misurare, nonché la manipolazione diretta del codice per dotare tali sistemi. Evita di avere una sola persona di monitoraggio o un team dedicato che è l'unico responsabile del sistema. In questo modo, non solo riuscirai a prevenire un singolo
+errore, ma aumenterai anche la tua capacità di comprendere e migliorare il tuo sistema
+come un'intera organizzazione. Il monitoraggio e l'osservabilità devono essere basati sulle conoscenze di base di tutti i tuoi sviluppatori. Un errore comune è che il team operativo, il certificato di non obiezione o un altro team simile siano gli unici autorizzati ad apportare modifiche a un sistema di monitoraggio. Devono essere evitati e sostituiti con un
+sistema che segue gli schemi CD.</p>
+
+<p>Un anti-pattern comune nella scrittura degli avvisi nei sistemi di monitoraggio consiste nel tentare di enumerare tutte le possibili condizioni di errore e scrivere un avviso per ognuno di essi. Abbiamo chiamato questo tipo di <em>avvisi basati su cause</em> e dovresti evitarlo il più possibile.
+Dovresti concentrarti sull'<em>avviso basato sui sintomi</em>, che ti avvisa solo quando è visibile un sintomo visibile agli utenti o se si prevede che si verificherà presto. Dovresti comunque essere in grado di osservare i sistemi non rivolti agli utenti, ma non devono avvisare direttamente gli ingegneri che si trovano in chiamata se non ci sono sintomi rivolti agli utenti. Tieni presente che il termine <em>rivolto agli utenti</em> può includere anche utenti interni alla tua organizzazione.</p>
+
+<p>Quando generi gli avvisi, considera il modo in cui vengono recapitati. Gli avvisi devono avere più percorsi verso gli ingegneri di assistenza, inclusi, a titolo esemplificativo, la consegna di SMS, le app per dispositivi mobili dedicate, le chiamate automatiche o le email. Un errore comune è l'invio di avvisi via email a un intero team tramite una mailing list.
+Pertanto gli avvisi potrebbero essere ignorati rapidamente a causa della <a href="https://wikipedia.org/wiki/Diffusion_of_responsibility" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">diffusione di responsabilità</a>. Un altro errore comune è semplicemente un <a href="https://wikipedia.org/wiki/Signal-to-noise_ratio" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">rapporto segnale/rumore</a> scadente.
+Se troppi avvisi non sono strategici o non comportano alcun miglioramento, il team
+perderà facilmente gli avvisi significativi e potenzialmente molto importanti, un
+problema noto come
+<a href="https://wikipedia.org/wiki/Alarm_fatigue" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">affaticamento della sveglia</a>.
+Qualsiasi metodo per silenziare o eliminare alcuni avvisi deve essere monitorato con molta attenzione per garantire che non sia troppo ampio o applicato troppo spesso.</p>
+
+<p>Durante la creazione di dashboard di monitoraggio per visualizzare le metriche, un errore comune è quello di trascorrere molto tempo nella selezione della dashboard "Perfect Dashboard". Si tratta di un errore simile a quello dell'avviso basato sulle cause, riportato sopra. In un team altamente funzionante, il sistema sotto osservazione cambia con una tale rapidità che ogni volta che si occupa della selezione di una dashboard non sarà aggiornata. È invece fondamentale concentrarsi sulla capacità dei membri del team di creare rapidamente una dashboard o un altro insieme di visualizzazioni adatto alle proprie esigenze.</p>
+
+<p>Non riuscire a separare le metriche rivolte al prodotto o al dirigente, ad esempio il tasso di acquisizione utenti e il monitoraggio delle entrate, dalle dashboard operative o dell'integrità dei servizi, costituisce un problema comune, in quanto sono entrambe molto importanti, ma distinte. Ti consigliamo di tenerli separati.</p>
+
+<h2 id="how_to_measure_monitoring_and_observability" data-text="Come misurare il monitoraggio e l'osservabilità">Come misurare il monitoraggio e l'osservabilità</h2>
+
+<p>Quando implementi un sistema di monitoraggio e osservabilità nella tua organizzazione, puoi tenere traccia di alcune metriche interne per conoscere il tuo rendimento.  Di seguito sono riportati alcuni esempi da monitorare con un sondaggio mensile o, eventualmente, l'analisi automatica dei log post o degli avvisi.</p>
+
+<ul>
+<li><strong>Modifiche apportate al monitoraggio della configurazione.</strong> Quante richieste di pull o modifiche alla settimana vengono apportate al repository contenente la configurazione di monitoraggio? Con quale frequenza queste modifiche vengono trasferite al sistema di monitoraggio? (Giornaliero? In batch? Subito su PR?)</li>
+<li><strong>"Fuori ore". Avvisi.</strong> Quale percentuale di avvisi viene gestita di notte? Anche se alcune aziende di tutto il mondo hanno un modello di assistenza successivo alla luce, che non lo è, può indicare che non è stata prestata abbastanza attenzione agli indicatori principali di errori. Avvisi notturni regolari
+possono essere causa di affaticamento da parte degli avvisi e team esauriti.</li>
+<li><strong>Bilanciare gli avvisi del team.</strong> Se hai team in località diverse responsabili di un servizio, gli avvisi sono distribuiti in modo equo e gestiti da tutti i team?  Se no, perché?</li>
+<li><strong>Falsi positivi.</strong> Quanti avvisi non hanno portato a un'azione o sono stati contrassegnati come "Funzionano"? Gli avvisi che non possono essere utilizzati e che non ti hanno aiutato a prevedere gli errori dovrebbero essere eliminati.</li>
+<li><strong>Falsi negativi.</strong> Quanti errori di sistema si sono verificati senza avvisi
+o avvisi successivi al previsto? Con quale frequenza vengono incluse le notifiche di avviso post-sintomo?</li>
+<li><strong>Creazione di avvisi.</strong> Quanti avvisi vengono creati a settimana (in totale o raggruppati per gravità, team e così via)?</li>
+<li><strong>Accettazione degli avvisi.</strong> Qual è la percentuale di avvisi riconosciuti entro la scadenza concordata (ad esempio 5 minuti e 30 minuti)? A volte, questo è accoppiato o può essere monitorato da una metrica come <em>avviso di riserva</em> quando una persona secondaria di chiamata riceve una notifica in caso di avviso.</li>
+<li><strong>Silenziamento degli avvisi e durata del silenzio.</strong> Quanti avvisi vengono disattivati o sospesi in una settimana?  Quanti vengono aggiunti a questo pool e quanti sono stati rimossi?  Se il silenziamento dell'avviso include un sistema di scadenza, quanti silenzi possono essere estesi più a lungo del previsto?  Che cos'è il periodo di silenzio medio e massimo? (uno divertente è "quanti silenzi sono effettivamente 'infiniti'"?)</li>
+<li><strong>Avvisi non attuabili.</strong> Quale percentuale di avvisi è stata considerata
+"non sfruttabile"? In altre parole, l'ingegnere ha avvisato non essere in grado di eseguire subito un'azione, in quanto non è in grado di comprendere le implicazioni dell'avviso o a causa di un problema noto. Gli avvisi non sfruttabili sono una fonte molto nota di <a href="https://landing.google.com/sre/sre-book/chapters/eliminating-toil/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">impegno</a>.</li>
+<li><strong>Usabilità: avvisi, runbook, dashboard.</strong> Quanti grafici sono presenti nelle tue dashboard? Quante linee per grafico? I team sono in grado di comprendere i grafici?
+È disponibile una spiegazione per aiutare i nuovi ingegneri? È necessario scorrere e sfogliare molto per trovare le informazioni che servono? Gli ingegneri possono passare da un avviso al playbook alle dashboard in modo efficace? Gli avvisi sono denominati in modo tale da indirizzare gli ingegneri nella direzione giusta? Queste metriche potrebbero
+essere misurate da sondaggi del team nel tempo.</li>
+<li><strong>MTTD, MTTR, impatto</strong>. La punto fondamentale è il tempo di rilevamento,
+la risoluzione e l'impatto. Valuta la possibilità di misurare l'area sotto la curva del tempo in cui l'interruzione ha interessato i clienti per il numero di clienti interessati.
+Queste possono essere stimate o eseguite con maggiore precisione con gli strumenti.</li>
+</ul>
+
+<p>Tracciando alcune o tutte queste metriche, inizierai a comprendere meglio il funzionamento dei sistemi di monitoraggio e osservabilità per la tua organizzazione. Suddividere queste misurazioni in base al prodotto, in base al team operativo o ad altri metodi, offre informazioni non solo sullo stato dei prodotti, ma anche sui processi e sulle persone.</p>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina DevOps</a>.</li>
+<li>Scopri di più sulla generazione di avvisi proattivi con la <a href="/architecture/devops/devops-measurement-proactive-failure-notification" track-type="solution" track-name="internalLink" track-metadata-position="body">notifica proattiva dei guasti</a>.</li>
+<li>Visita le <a href="https://landing.google.com/sre/resources/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">risorse di Site Reliability Engineering di Google</a> per trovare i seguenti libri SRE:
+<ul>
+<li>Site Reliability Engineering</li>
+<li>Foglio di lavoro per la Site Reliability Engineering</li>
+<li>Building Secure &amp; Reliable Systems</li>
+</ul></li>
+<li><a href="/products/operations" track-type="article" track-name="internalLink" track-metadata-position="body">Operazioni di Google Cloud</a> </li>
+<li>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</li>
+<li>Completa il <a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a> per scoprire la tua posizione rispetto al resto del settore.</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,87 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 衡量：进行中工作量限制</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：“进行中工作数限制”<em></em>是一组推动实现更出色的软件交付表现和组织绩效的能力之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>工作太多，人员太少时，菜鸟经理会分配人员处理多项任务，以期提高产量。结果令人遗憾，任务需要更长时间才能完成，而且团队在此过程中会耗尽精力。</p>
+
+<p>这种情况下，您应该这样做：</p>
+
+<ul>
+<li>确定工作的优先级</li>
+<li>限制人员的工作量</li>
+<li>专注于完成少数高优先级任务</li>
+</ul>
+
+<p>制造领域长期以来一直在限制进行中的工作量 (WIP)。工厂没有大量库存。当客户订购产品时，公司会根据需要在内部按需制造组件或者从上游供应商采购，然后及时组装产品。如果正确实现此流程，则可以缩短准备时间、提高质量、降低费用以及减少浪费。</p>
+
+<h2 id="how_to_implement_work_in_process_limits" data-text="如何实现进行中工作量限制">如何实现进行中工作量限制</h2>
+
+<p><strong>使用 Storyboard（故事板）</strong>。在技术方面，我们的库存是看不见的。没有工作堆积如山或安装有组装线的车间，我们看不到工作进展。查看库存的一种简单方法是将团队正在做的所有工作写在索引卡上，然后将索引卡粘在 Storyboard 上。在灵活的方法中，这称为创建 <em>Storyboard</em>。</p>
+
+<p>以下示例 Storyboard 涵盖多个功能（分析、开发、测试、运维），并显示了单个产品的所有工作。</p>
+
+<p><img src="/static/architecture/devops/wip-1.png" alt="图片"/></p>
+
+<p>信息来源：“Kanban for Ops”看板游戏，Dominica DeGrandis，2013<em></em></p>
+
+<p>Storyboard 的一种常见做法是蘸点墨水，在每天处理的卡片上点一个点。团队可以轻松看到哪些工作受阻或耗时过长。</p>
+
+<p><strong>指定限制</strong>。对于 Storyboard 上的每一列，请指定 WIP 限制，或者指定该列中可以同时显示的卡片数。达到 WIP 限制后，就不能再向此列添加卡片了，团队必须等到卡片移到下一列，才能从上一列中拉取优先级最高的卡片。</p>
+
+<p>只有通过实施 WIP 限制并遵循此拉取流程，您才能创建 Kanban（看板）。</p>
+
+<p><strong>按团队容量确定 WIP 限制</strong>。例如，如果您有四对开发者，则“正在开发”列中的卡片不得超过四张。</p>
+
+<p><strong>严格限制</strong>。WIP 限制可能会导致团队处于空闲状态，等待其他任务完成。此时不要提高 WIP 限制。而是着手改进流程，以解决导致此类延迟的因素。例如，如果您正在等待环境测试您的工作，那么您可以主动帮助环境准备工作的团队改进或简化他们的流程。</p>
+
+<h2 id="common_pitfalls_with_work_in_process_limits" data-text="进行中工作量限制的常见问题">进行中工作量限制的常见问题</h2>
+
+<p>实现 WIP 限制的组织通常会遇到以下问题：</p>
+
+<ul>
+<li><strong>无法统计不可见的工作</strong>。一定要直观呈现从创意到客户的整个价值流，而不只是团队负责的那部分工作。如果不这样做，就无法看到实际的瓶颈，而最终解决的问题并不是工作流程中具有实际重要意义的限制。（这也称为局部优化。）</li>
+<li><strong>设置的 WIP 限制太大</strong>。请确保您的 WIP 上限不会过高。如果您的团队将时间分配给多个任务或项目，则表明您的 WIP 限制过高。</li>
+<li><strong>放宽 WIP 限制</strong>。不要在人员闲置时放宽 WIP 限制。在此类情况下，这些人员应该在价值流的其他部分提供帮助，解决在其他位置造成限制的问题。</li>
+<li><strong>领先一步时退出</strong>。减少很容易实现的 WIP 限制。WIP 限制的要点是公开系统中的问题，从而加以解决。另一个需要注意的问题是可视化视图上的列过多。相反，您应该设法简化交付流程并减少交接工作。流程改进工作是提高流程的关键。</li>
+</ul>
+
+<p>DevOps 研究和评估组织 (DORA) 的研究成果表明，WIP 限制有助于推动软件交付性能的提升，尤其是当它们结合<a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">使用可视化显示设备</a>和<a href="/architecture/devops/devops-measurement-monitoring-systems" track-type="solution" track-name="internalLink" track-metadata-position="body">监控的反馈环</a>时。</p>
+
+<h2 id="ways_to_improve_work_in_process_limits" data-text="改善进行中工作量限制的方法">改善进行中工作量限制的方法</h2>
+
+<ul>
+<li><strong>公开展示您的工作</strong>。在此过程中，请尽量向多个团队和利益相关方展示您的所有工作，让他们都可以看到。（如需了解详情，请参阅<a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">可视化显示设备</a>）。</li>
+<li><strong>根据团队的工作能力设置 WIP 限制</strong>。<ul><li>计入生产支持、会议时间和技术债务等活动。</li>
+<li>流程中任何给定部分的 WIP 均不能超出处理任务的人数。</li>
+<li>不要让人员将时间分散到多项任务。</li>
+<li>在特定工作完成后，请将表示该工作的卡片移到下一列，并拉出在队列中等待且具有最高优先级的工作。</li>
+</ul></li>
+<li><strong>每周为利益相关方安排一次会议以确定所有工作的优先处理顺序</strong>。让利益相关方知道，如果不参加，他们的工作就不会完成。</li>
+<li><strong>努力提升流量</strong>。衡量工作通过系统的准备时间。在卡片上记录工作的开始日期和结束日期。根据这些信息，您可以创建一个运行中的频率直方图，以显示工作通过系统所需的天数。此数据可让您计算平均准备时间和波动情况，目标是减少波动：如果波动太大，则表示您无法很好地确定项目范围或在您的团队外部受到重大限制。波动太大还意味着您对未来工作的估算和预测不太可靠。</li>
+<li><strong>改进工作流程</strong>。减少交接工作，进行任务简化和自动化，并思考如何更好地进行协作以完成工作。消除一些障碍以及太容易达成的事项后，请降低您的 WIP 限制，以揭示后续障碍。理想的工作流程是单段流程，这意味着工作只需极少的等待时间或返工，即可从创意转变为客户成果。这种理想情况可能无法实现，但它可以作为“真北方”，一路引导您不断改进。</li>
+</ul>
+
+<h2 id="ways_to_measure_work_in_process_limits" data-text="衡量进行中工作量限制的方法">衡量进行中工作量限制的方法</h2>
+
+<p>目前，WIP 限制是您实施，而非衡量，但不断寻找改进方法很重要。在定期回顾期间，请提出以下问题：</p>
+
+<ul>
+<li>我们是否知道整个价值流（从创意转变为客户成果）的平均提前期和波动情况？</li>
+<li>我们是否在寻找方法来改进流程，从而缩短工作提前期？</li>
+<li>我们的 WIP 限制是否存在障碍，造成我们增加流量？</li>
+<li>我们是否在采取措施消除这些障碍？</li>
+</ul>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

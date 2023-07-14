@@ -1,0 +1,120 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技术：主干开发</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：“主干开发”<em></em>是一组推动实现更出色的软件交付表现和组织绩效的能力之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>开发者团队可以采用两种主要模式来使用版本控制进行协作。一种是使用功能分支，在这种情况下，一位开发者或一组开发者通常通过主干（也称作主实例或主线）创建分支，然后单独处理该分支，直到完成他们要构建的功能<em></em><em></em><em></em>。当团队认为该功能准备就绪时，他们会将功能分支合并回主干。</p>
+
+<p>第二种模式称为主干开发，在这种情况下，每位开发者都将自己的<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">作业分成小批量</a>，然后以至少每天一次（可能多次）的频率将作业合并到主干中<em></em>。这些方法的主要区别在于范围。功能分支通常涉及多位开发者，需要数天甚至数周的工作。相比之下，在主干开发中，分支的处理时间通常不会超过几个小时，许多开发者会频繁地将各自的更改合并到主干中。</p>
+
+<p>下图展示了一个典型的主干开发时间轴：</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-trunk-based-development-typical-trunk-timeline.svg" alt="版本 1.0 和 1.1 的时间轴，显示了一个问题修复从版本 1.0 合并到版本 1.1 的主干。"/></p>
+
+<p>在主干开发中，开发者将代码直接推送到主干。发布分支（代码发布就绪时的快照）中所作的更改通常会尽快合并回主干（由向下箭头表示）。在此方法中，某些情况下必须选出最佳的 bug 修复并将其合并到版本中（由向上箭头表示），但这些情况并不像在主干中开发新功能那样常见。如果每天发布多次，则根本不需要发布分支，因为更改可以直接推送到主干并从中进行部署。主干方法的一个主要优势在于，它可以减少开发线并频繁执行小批量合并，从而简化事件的合并，使代码保持最新。</p>
+
+<p>相比之下，下图则展示了一个典型的非主干开发方式：</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-trunk-based-development-typical-non-trunk-timeline.svg" alt="多个长期分支的时间轴，显示了复杂的合并路径以及可能因合并冲突而拖慢产品发布的许多点。"/></p>
+
+<p>在此方法中，开发者会对长期分支进行更改。与主干开发相比，这些更改需要更大、更复杂的合并事件。此方法还需要额外的稳定工作和“代码锁定”或“代码冻结”期，才能确保软件保持工作状态，因为大型合并经常会引入 bug 或回归。因此，您必须对合并后代码进行全面测试，并且经常需要进行 bug 修复。</p>
+
+<h2 id="how_to_implement_trunk-based_development" data-text="如何实现主干开发">如何实现主干开发</h2>
+
+<p>主干开发是实现<a href="/architecture/devops/devops-tech-continuous-integration" track-type="solution" track-name="internalLink" track-metadata-position="body">持续集成</a>所需的一种做法。进行主干开发和维护一系列快速自动化测试都是持续集成 (CI) 的一部分（每次提交到主干之后，这些测试会运行，以确保系统始终正常工作）。</p>
+
+<p>使用持续集成的关键在于通过频繁集成小批量代码来避免较长的集成和稳定期。通过这种方式，开发者可以确保他们能够就当前的工作情况进行沟通，并且通过集成可以避免那些给其他开发者和测试人员带来大量工作的大型合并。</p>
+
+<p>在 CI 范例中，开发者负责让构建流程保持“绿色”，也就是正常运行<em></em>。这意味着，如果 CI 过程失败，开发者必须停止当前的工作，立即修复问题或还原相关更改（如果在几分钟内无法修复问题）。</p>
+
+<p>在进行主干开发时，开发者需要了解如何<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">将其作业分成小批量</a>。对于不习惯以这种方式工作的开发者而言，这是一个巨大的改变。</p>
+
+<p><a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=31" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2016 年</a> (PDF) 和 <a href="https://services.google.com/fh/files/misc/state-of-devops-2017.pdf#page=40" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2017 年</a> (PDF) 的 DevOps 研究和评估 (DORA) 分析数据表明，如果团队遵循以下做法，会改善软件交付和运营表现（交付速度、稳定性和可用性）：</p>
+
+<ul>
+<li>应用代码库中的活跃分支不超过三个。</li>
+<li>以至少每天一次的频率将分支合并到主干。</li>
+<li>没有代码冻结和集成期。</li>
+</ul>
+
+<h2 id="common_pitfalls" data-text="常见误区">常见误区</h2>
+
+<p>如需全面采用主干开发，需要避免以下常见障碍：</p>
+
+<ul>
+<li><p><strong>繁琐的代码审核流程</strong>。许多组织的代码审核流程都较为繁琐，需要多次审批才能将更改合并到主干中。如果代码审核很费力并且需要数小时或数天才能完成，开发者会避免小批量工作，改为进行大批量更改。因为大批量代码审核十分复杂，因此审核人员的审核时间会延长，进而造成恶性循环。</p>
+
+<p>这样的结果是开发者避免使用合并请求，从而导致合并请求经常受到冷落。由于很难通过检查来推导大规模更改对系统的影响，因此审核人员很可能会忽略缺陷，主干开发的优势也就减弱了。</p></li>
+<li><p><strong>异步执行代码审核</strong>。如果您的团队实行结对编程，那么该代码已由第二个人审核。如果需要进一步审核，则应该同步执行：开发者准备提交代码时，应立即让团队中的其他人员审核代码。开发者不应该要求进行异步审核，例如向工具提交请求，然后在等待审核时启动新任务。合并延迟时间越长，就越有可能发生合并冲突和相关问题。如果执行同步审核，需要团队同意优先审核彼此的代码而不是处理其他工作。</p></li>
+<li><p><strong>在提交代码之前未运行自动化测试</strong>。为了确保主干保持工作状态，在提交前对代码更改运行测试非常重要。此操作可以在开发者工作站完成，许多工具也提供针对本地更改远程运行测试，然后在通过测试后自动提交更改的功能。如果开发者知道自己无需大量繁杂流程即可将代码提交到主干，那么就会小批量更改代码，这些更改易于理解、审核、测试，并且可以更快地迁移到生产环境。</p></li>
+</ul>
+
+<h2 id="ways_to_improve_trunk-based_development" data-text="改进主干开发的方法">改进主干开发的方法</h2>
+
+<p>根据前面的讨论，您可以采用以下做法来改进主干开发：</p>
+
+<ul>
+<li><strong>小批量开发</strong>。主干开发最重要的推动因素之一就是团队学习如何<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">小批量开发</a>。这需要为开发团队提供培训和组织支持。</li>
+<li><strong>执行同步代码审核</strong>。如前所述，转换为同步代码审核或至少确保开发者优先进行代码审核，有助于确保所做的更改不必等待数小时甚至数天即可合并到主干中。</li>
+<li><strong>执行全面的自动化测试</strong>。确保您拥有全面而实用的<a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">自动化单元测试</a>套件，并在每次提交之前运行这些测试工具。例如，如果您使用的是 GitHub，则可以<a href="https://help.github.com/en/articles/about-protected-branches" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">保护分支</a>，仅允许在所有测试通过后才合并拉取请求。<a href="/build/docs/run-builds-with-github-checks" track-type="solution" track-name="internalLink" track-metadata-position="body">使用 GitHub Checks 运行构建</a>教程介绍了如何将 <a href="https://developer.github.com/v3/checks/" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">GitHub Checks</a> 与 <a href="/build" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Build</a> 集成。</li>
+<li><strong>快速构建</strong>。构建和测试过程应在<a href="https://www.infoq.com/presentations/Crazy-Fast-Build-Times-or-When-10-Seconds-Starts-to-Make-You-Nervous/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">几分钟内</a>执行。如果难以实现这一点，则可能表示系统的<a href="/architecture/devops/devops-tech-architecture" track-type="solution" track-name="internalLink" track-metadata-position="body">体系结构</a>有待改进。</li>
+<li><strong>创建一个由推广者和导师组成的核心小组</strong>。对于许多开发者而言，主干开发是一项重大变革，您很可能会遇到一些阻碍。许多开发者根本无法想像如何采用这种方式工作。一项好的做法是找到曾采用这种方式工作的开发者，让他们指导其他开发者。让一些团队转为采用主干开发方式工作也很重要。实现此目标的一种方法是将大量具有主干开发经验的开发者召集到一起，这样至少有一个团队遵循主干开发做法。然后，如果您确信遵循此做法的团队发挥预期的作用，则可以将其他团队转换为这种风格。</li>
+</ul>
+
+<h2 id="ways_to_measure_trunk-based_development" data-text="衡量主干开发的方法">衡量主干开发的方法</h2>
+
+<p>您可以通过执行以下操作来衡量主干开发的效果。</p>
+
+<table>
+  <colgroup>
+    <col width="30%" />
+    <col width="35%" />
+    <col width="35%" />
+  </colgroup>
+<thead>
+<tr>
+<th>测试的因素</th>
+<th>衡量的指标</th>
+<th>目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用代码库中的活跃分支数。</td>
+<td>衡量应用代码库版本控制系统中的活跃分支数，让所有团队都能看到此数字。然后跟踪目标状态的增量式进度。</td>
+<td>不超过三个活跃分支。</td>
+</tr>
+<tr>
+<td>代码冻结期。</td>
+<td>衡量团队的代码冻结数及冻结时长。这些衡量指标还可以对合并冲突、代码冻结、稳定等方面所耗费的时间进行分类。</td>
+<td>无人提交代码时，没有代码会被冻结。</td>
+</tr>
+<tr>
+<td>将分支合并到主干的频率。</td>
+<td>衡量合并的每个分支的二进制（是/否）值，或者衡量每天合并的分支的百分比。</td>
+<td>每天至少合并一次。</td>
+</tr>
+<tr>
+<td>查看审批代码更改所需的时间。</td>
+<td>如果您异步执行代码审核，请衡量审批更改请求所需的平均时间，并特别关注所需时间大大超过平均值的请求。</td>
+<td>设法使代码审核成为在开发过程中执行的同步活动。</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>如需了解如何使用 <a href="https://github.com/marketplace/google-cloud-build" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">Cloud Build 应用</a>将 Google Cloud 连接到 GitHub，请参阅<a href="/build/docs/run-builds-with-github-checks" track-type="solution" track-name="internalLink" track-metadata-position="body">使用 GitHub Checks 运行构建</a>。</li>
+<li><p>查看 Martin Fowler 所写的关于<a href="https://martinfowler.com/bliki/FeatureBranch.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">功能分支</a>的一篇文章。</p></li>
+<li><p>查看 Jez Humble 所写的关于 <a href="https://continuousdelivery.com/2011/07/on-dvcs-continuous-integration-and-feature-branches/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">DVCS 和功能分支</a>的一个帖子。</p></li>
+<li><p>查看 Paul Hammant 的<a href="https://trunkbaseddevelopment.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">专门介绍主干开发的门户</a>。</p></li>
+<li><p>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</p></li>
+<li><p>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</p></li>
+</ul>
+
+</body></html>

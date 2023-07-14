@@ -1,0 +1,113 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps プロセス: 顧客からのフィードバック</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注:</strong><span> 顧客からのフィードバック<em></em>は、ソフトウェア デリバリーと組織のパフォーマンスを改善する機能の一つです。これらの機能は <a href="https://www.devops-research.com/research.html">DORA State of DevOps Research Program</a> で発見されました。これは、高いパフォーマンスを生み出すプラクティスと機能に関する、学術的に厳格で独立した研究調査です。詳細については、<a href="/devops">DevOps のリソース</a>をご覧ください。</span></aside><p>ソフトウェア プロジェクトでは、デベロッパーは多くの場合、数か月または数年にわたって製品を開発し、複数回リリースする場合もあります。その際に、構築する機能が実際にユーザーの問題を解決できているかどうか、その機能自体が使用されているかどうかはまったく検証しません。</p>
+
+<p>お客様からのフィードバックは、<a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">バリュー ストリームでの作業の可視性</a>、<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">小さいバッチ単位の作業</a>、<a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">チームのテスト</a>など、幅広い機能グループの一部です。これらはともに<a href="https://books.google.com/books/about/Escaping_the_Build_Trap.html?id=PQ8dMQAACAAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">製品管理へのリーン アプローチ</a>を表しています。</p>
+
+<p>これらの機能を一緒に使用すると、次の予測を行うことができます。</p>
+
+<ul>
+<li>ソフトウェア配信パフォーマンス。配信の頻度、安定性、リリース時期の観点から測定されます。</li>
+<li>組織のパフォーマンス。収益性、市場シェア、生産性の観点から測定されます。</li>
+</ul>
+
+<p>DevOps の調査と評価（DORA）の調査では、チームはこれらの機能を利用し、また次の作業を行っている組織で働く場合、より高いパフォーマンスを達成することが<a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=35" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">示されています</a>（PDF）。</p>
+
+<ul>
+<li>顧客満足度の指標を定期的に収集する。</li>
+<li>製品および機能の品質に関する顧客からのフィードバックを積極的に入手し、それに対処する。</li>
+<li>このフィードバックに基づいて製品と機能の設計を行う。</li>
+</ul>
+
+<h2 id="how_to_implement_customer_feedback" data-text="お客様からのフィードバックの実装方法">顧客からのフィードバックの実装方法</h2>
+
+<p>製品を開発しているときには、成功を測定する主要な指標を設定することが重要です。これらの指標により、実際の問題が解決されているかどうか、ソリューションが十分迅速に導入されているかどうか、ユーザーがソリューションの利用を継続して他のユーザーにも推奨するかどうかを理解できます。これらの指標は、顧客が製品と対話する方法から明示的に導出する必要があります。これらの指標を使用するには、顧客からのフィードバックを慎重に収集して分析する必要があります。</p>
+
+<p>消費者向け SaaS 製品で一般的な指標のセットの 1 つとして、AARRR があります。AARRR とは、Acquisition（獲得）、Activation（活性化）、Retention（継続）、Referral（紹介）、Revenue（収益）の頭文字を取った用語です（順序は提示する人によって異なる場合があります）。この頭字語は、海賊の呼び声になぞらえて綴られることから、<em></em>海賊指標とも呼ばれることもあります。</p>
+
+<p>この考え方は、次の 5 つの主要な指標に沿って、顧客体験を繰り返して改善するというものです。</p>
+
+<ul>
+<li><strong>ユーザー獲得</strong>: アカウントを作成してサイトにアクセスするユーザーの割合。</li>
+<li><strong>利用の開始</strong>: アカウントの利用を開始してサービスを使用する獲得ユーザーの割合。</li>
+<li><strong>利用の継続</strong>: サービスを再訪する活性化ユーザーの割合。</li>
+<li><strong>紹介</strong>: 他のユーザーにサービスを紹介する継続ユーザーの割合。</li>
+<li><strong>収益の発生</strong>: 実際にサービスに課金している紹介ユーザーの割合。</li>
+</ul>
+
+<p>これらの指標がビジネスや製品に適していない場合、より適切な指標を見つけて定期的にモニタリングし、製品戦略の主要な推進力として使用することが不可欠です。</p>
+
+<p>この記事で説明するアプローチは、外部向け製品だけを対象としているのではありません。組織内の他のユーザー向けに構築された内部製品やサービスにも、同様に適用できます。内部ツールの構築にも、まったく同じアプローチが必要です。構築するツールで実際の問題を解決できるように、実際のユーザーとの早期かつ頻繁なエンゲージメントが必要です。そうでなければ、誰も使用しないツールを構築して使用することになります。このことは、ツール作成に取り組む人員の意欲をなくし、好みではないツールを使用しなければならないユーザーに不満を与えます。また、ユーザーにとって不十分なテクノロジー マッチが構築されるため、会社にとって大きなコストとなります。</p>
+
+<p>顧客の問題を解決する可能性を最大限に高めるには、次のパターンを使用する必要があります。</p>
+
+<ol>
+<li>潜在的な機能を定義する前に、顧客からのフィードバックを収集する。</li>
+<li>実際の問題が解決されているかどうかを検証する。</li>
+<li>その問題を実際に解決するソリューションを繰り返し構築する（それ以外は何もしない）。</li>
+<li>ソリューションが実行可能なビジネスにつながることを確認する（たとえば、コストが予想収益よりも少ないこと）。</li>
+<li>主要な指標を追跡して成功を評価する（たとえば、AARRR）。</li>
+<li>上記を繰り返して、これらの指標を改善する。</li>
+</ol>
+
+<p>成功するには、ソフトウェアを迅速にデプロイおよびリリースするだけでなく、顧客のニーズにより良く、よりスマートに、より迅速に対応する必要があります。これは、競合他社よりも多くのテストを行うことで実現できます。小売業は<a href="https://services.google.com/fh/files/misc/state-of-devops-2019.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">これで特に成功を収めている</a>（PDF）業界の 1 つです。<a href="https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">仮説駆動型開発</a>、顧客獲得のための目標到達プロセスの定義および測定、A/B テストなどの手法により、ユーザーテストを実施できます。これにより、創造性が促進され、イノベーションが加速し、組織学習が生まれます。</p>
+
+<p>顧客とのエンゲージメントの増加と製品管理プロセスへの参加は、組織の<a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=37" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">目標と価値</a>（PDF）をより明確に特定することに寄与します。その結果、組織のパフォーマンス向上につながります。</p>
+
+<h2 id="common_pitfalls" data-text="主な注意点">主な注意点</h2>
+
+<p>顧客からのフィードバックの効果的な使用を阻害する要因としては、一般に次のようなものが挙げられます。</p>
+
+<ul>
+<li><strong>フィードバックの収集に失敗する。</strong>ソフトウェア開発会社は、顧客からのフィードバックをまったく収集しないのが一般的です。</li>
+<li><strong>フィードバックの収集がタイムリーでない。</strong>企業は、ソフトウェア配信ライフサイクルにおいて顧客のフィードバックを収集する時期が遅すぎるため、フィードバックを活用できない場合があります。</li>
+<li><strong>問題を理解していない</strong>（または顧客のフィードバックを誤解している）。企業は、お客様に対して非現実的な期待を抱いている場合や、お客様が製品に何を望んでいるのかを理解できていない場合があります。チームは、お客様からのフィードバックが正確であるにもかかわらず、不便であるという理由から、フィードバックを明示的に無視することさえあります。この状況は、開発チームが現在開発しているソリューションを配信する際のリスクを適切に評価もしくは管理していない場合、または解決するべき問題を単に理解していない場合に発生する可能性があります。開発チームは、問題解決に要する作業の負担を最小限に抑えたいと考えています。問題が、チームが設計した製品の範囲を超えていると、チームはこれに付随する作業を「要件変更」として誤って処理する場合があります。これは、お客様にとって不完全なソリューションをもたらし、最終的には製品の故障につながります。</li>
+<li><strong>チームがフィードバックに基づいて行動できない。</strong><a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">チームのテスト</a>に関するドキュメントで説明するように、フィードバックに応じて、システムの設計または仕様を変更する権限を配信チームに与える必要があります。</li>
+<li><strong>間違った指標に基づいて成功を測定する。</strong>場合によっては、十分に顧客検証を行っていないソリューションが、最終的な要件として開発チームや配信チームに提供されます。そのような場合、配信チームの成功は、チームが実際に問題を解決したか、または顧客のために結果を出したかではなく、仕様どおりの機能を配信したかどうかに基づいて測定されます。</li>
+<li><strong>お客様の問題に対処できない</strong>。A/B テストの<a href="http://ai.stanford.edu/%7Eronnyk/ExPThinkWeek2009Public.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">業界データ</a>（PDF）によると、成功する製品に関して、実際に配信されたときにビジネスの成果を改善できるのは、提案された機能のうち約 3 分の 1 だけです。残りの 3 分の 2 の機能は、ビジネスにまったく寄与しないか、マイナス<em></em>の成果をもたらします。そのため、ユーザー調査を実施していない場合、チームが取り組んでいる作業の少なくとも 3 分の 2 は、望んだ結果を達成できていないか、むしろ事態を悪化させている可能性があります。チームがライフサイクルの初期段階にある製品、特に革新的な製品に取り組んでいる場合、チームが望む結果を達成できる確率はかなり低くなります。</li>
+<li><strong>顧客からのフィードバックに応答するために必要な時間と労力を過小評価している</strong>。チームは、提案するソリューションに問題があることを想定し、少なくとも 3 分の 2 を破棄できるようにしておく必要があります。残りの 3 分の 1 のソリューションについて、チームは顧客からのフィードバックに応じて、それらを大きく進化させられるようにしておく必要があります。</li>
+</ul>
+
+<h2 id="ways_to_improve_customer_feedback" data-text="お客様からのフィードバックの改善方法">顧客からのフィードバックの改善方法</h2>
+
+<p>ユーザー エクスペリエンス デザイン（UX）の分野は、改善を理解するためのフレームワークを提供します。多くの組織は、UX を製品 UI の見栄えを良くするものとして扱います。しかし、UX は、ユーザーの実際の問題を解決するためのものです。より広い意味で、UX とは、ユーザーが組織とやり取りするときに経験するすべてのものを指します。優れた UX が成功する製品とサービスを構築するうえでどれほど重要であるかに留意する必要があります。</p>
+
+<p>配信プロセスに特化した顧客フィードバックを構築することが不可欠です。重要な機能は、解決するべき問題に基づいて構築する必要があります。これには、考えられるソリューションを決定して候補を選択するためのユーザー調査の実施が含まれます。1 行のコードを記述する前に、ユーザー調査を行い、結果を分析する必要があります。</p>
+
+<p>ライフサイクルの初期段階にある製品の場合、チームはコードを記述する前に、<a href="https://wikipedia.org/wiki/Lean_startup" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">リーン スタートアップの動き</a>で提案されたアイデアを導入して、製品の基礎となるビジネスモデルを検証する必要があります。実際の問題を解決しているかどうかを検証してから、問題解決のためのソリューションを繰り返し構築する一方で、実行可能なビジネスモデルを提供する必要があります。</p>
+
+<p>既知のビジネス上の問題に対する新しいソリューションを実装している既存の製品についても、同様のパターンに従う必要があります。ソリューションの設計が検証されたら、さらに調査とテストを実施できるようにプロトタイプを作成する必要があります。機能が目標を達成していることをテストで検証して初めて、完全な本番環境の機能が完成します。</p>
+
+<p>多くの組織は、この作業をすべてスキップして失敗します。ただし、これらの手順を厳密に実施しても、成功が保証されるわけではありません。この取り組みのポイントは、可能な限り障害のリスクを最小限に抑えることです。</p>
+
+<h2 id="ways_to_measure_customer_feedback" data-text="お客様からのフィードバックの測定方法">顧客からのフィードバックの測定方法</h2>
+
+<p>顧客からのフィードバックを収集して可視化し、それに対処することを実現するために、高度なデータ収集は必要ではありません。次の質問により、製品設計のために顧客からのフィードバックをどの程度活用しているかを判断できます。</p>
+
+<ul>
+<li>顧客満足度を測定する指標はありますか？これらは定期的に更新され、チームに定期的に配信されますか？それらに対処していますか？</li>
+<li>すべての機能を構築する前に検証を行い、配信の一環としてプロトタイプを使用してユーザー調査を実施していますか？</li>
+<li>このユーザー調査に基づいて機能に変更を加えていますか？</li>
+<li>ユーザーから積極的かつ定期的にフィードバックを収集し、それに対処していますか？</li>
+</ul>
+
+<h2 id="whats_next" data-text="次のステップ">次のステップ</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps ページ</a>で他の記事やリソースへのリンクを確認する。</li>
+<li>記事 <a href="http://ai.stanford.edu/%7Eronnyk/ExPThinkWeek2009Public.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Online Experimentation at Microsoft</a>（PDF）（Ronny Kohavi）を読む。</li>
+<li>記事 <a href="https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Hypothesis-driven development</a>（Barry O'Reilly）を読む。</li>
+<li>書籍『<a href="http://shop.oreilly.com/product/0636920049166.do" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Lean UX: Designing Great Products with Agile Teams<em></em></a>』（Jeff Gothelf、Josh Seiden）を読む。</li>
+<li>書籍『<a href="http://leananalyticsbook.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Lean Analytics: Use Data to Build a Better Startup Faster<em></em></a>』（Alistair Croll、Benjamin Yoskovitz）を読む。</li>
+<li>書籍『<a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Lean Enterprise: How High Performance Organizations Innovate at Scale<em></em></a>』（Jez Humble、Joanne Molesky、Barry O'Reilly）を読む。</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">研究プログラム</a>を調べる。</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps のクイック チェック</a>を確認する。業界におけるご自身の立ち位置を把握できます。</li>
+</ul>
+
+</body></html>

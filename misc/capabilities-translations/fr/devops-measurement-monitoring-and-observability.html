@@ -1,0 +1,153 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Mesure DevOps : surveillance et observabilité</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Remarque</strong> : <span>La <em>surveillance et l'observabilité</em> est un ensemble de fonctionnalités permettant d'optimiser les performances organisationnelles et de livraison de logiciels. Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche de DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les fonctionnalités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>Pour que les équipes atteignent des niveaux de performance élevés, une bonne surveillance est essentielle.
+Une <a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">étude</a> menée par <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> montre qu'une solution complète de surveillance et d'observabilité, ainsi que plusieurs autres pratiques techniques, contribuent de manière positive à la <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">livraison continue</a>. </p>
+
+<p>L'étude de DORA a défini ces termes comme suit :</p>
+
+<p>La <strong>surveillance</strong> consiste en des outils ou une solution technique permettant aux équipes d'observer et d'évaluer l'état de leurs systèmes. Elle repose sur la collecte d'ensembles prédéfinis de métriques ou de journaux.</p>
+
+<p>L'<strong>observabilité</strong> consiste en des outils ou une solution technique permettant aux équipes de déboguer activement leur système. Elle repose sur l'exploration de propriétés et de modèles non définis à l'avance.</p>
+
+<p>Pour accomplir correctement leurs tâches de surveillance et d'observabilité, vos équipes doivent disposer des éléments suivants :</p>
+
+<ul>
+<li>Des rapports sur l'état général des systèmes (Mes systèmes fonctionnent-ils ?
+Disposent-ils de suffisamment de ressources ?).</li>
+<li>Des rapports sur l'état du système tel qu'il est perçu par les clients (Mes clients savent-ils si mon système est en panne et leur expérience a-t-elle été insatisfaisante ?).</li>
+<li>Une surveillance des métriques clés de l'entreprise et des systèmes.</li>
+<li>Des outils permettant de comprendre et de déboguer vos systèmes en production.</li>
+<li>Des outils permettant de trouver des informations sur des choses que vous ne connaissiez pas (c'est-à-dire, vous permettant d'identifier des <em>inconnus inconnus</em>).</li>
+<li>L'accès à des outils et à des données permettant de suivre, de comprendre et de diagnostiquer les problèmes d'infrastructure dans votre environnement de production, y compris les interactions entre les services.</li>
+</ul>
+
+<h2 id="how_to_implement_monitoring_and_observability" data-text="Mettre en œuvre la surveillance et l'observabilité">Mettre en œuvre la surveillance et l'observabilité</h2>
+
+<p>Les solutions de surveillance et d'observabilité sont conçues pour effectuer les tâches suivantes :</p>
+
+<ul>
+<li>Fournir les principaux indicateurs d'une panne ou d'une dégradation de service.</li>
+<li>Détecter les pannes, dégradations de service, bugs et activités non autorisées.</li>
+<li>Contribuer à résoudre les pannes, les dégradations de service, les bugs et les activités non autorisées.</li>
+<li>Identifier les tendances à long terme à des fins commerciales et de planification des capacités.</li>
+<li>Révéler les effets secondaires inattendus de modifications ou d'ajouts de fonctionnalités.</li>
+</ul>
+
+<p>Comme pour toute capacité DevOps, installer un outil ne suffit pas pour atteindre les objectifs. Cependant, les outils peuvent amplifier ou au contraire nullifier vos efforts.  Les systèmes de surveillance ne doivent pas être limités à une seule personne ou à une seule équipe au sein d'une organisation.
+Aider tous les développeurs à maîtriser la surveillance permet de développer une culture de la prise de décision basée sur les données, et améliore la capacité de débogage du système global, réduisant ainsi les pannes.</p>
+
+<p>Il existe quelques clés pour la mise en œuvre efficace de la surveillance et de l'observabilité. Tout d'abord, votre solution de surveillance doit vous indiquer ce qui est défectueux et vous aider à comprendre pourquoi, avant que les dommages ne soient trop importants. La métrique clé en cas de panne ou de dégradation de service est le délai de restauration (TTR, time-to-restore). L'un des facteurs clés du TTR est la capacité à déterminer rapidement quel a été le dysfonctionnement et quel est le moyen le plus rapide pour restaurer le service (ce qui n'implique pas nécessairement la résolution immédiate des problèmes sous-jacents).</p>
+
+<p>Il existe deux manières générales d'examiner un système : la surveillance par <em>boîte noire</em>, où l'état et les mécanismes internes du système ne sont pas connus, et la surveillance par <em>boîte blanche</em>, où ils le sont.</p>
+
+<p>Pour plus d'informations, consultez la section sur la surveillance des systèmes distribués dans le manuel d'<a href="https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">ingénierie en fiabilité des sites</a>.</p>
+
+<h3 id="blackbox_monitoring" data-text="Surveillance par boîte noire">Surveillance par boîte noire</h3>
+
+<p>Dans un système de surveillance par boîte noire (ou <em>synthétique</em>), des entrées sont envoyées au système examiné de la même manière qu'un client le ferait. Cela peut prendre la forme d'appels HTTP à une API publique ou d'appels RPC à un point de terminaison exposé, ou cela peut consister en l'appel d'une page Web entière à afficher dans le cadre du processus de surveillance.</p>
+
+<p>La surveillance par boîte noire est une méthode basée sur l'échantillonnage. Le système qui est responsable des requêtes des utilisateurs est surveillé par le système de boîte noire. Un système de boîte noire peut également couvrir la surface d'exposition du système cible.  Cela peut impliquer la vérification de chaque méthode d'API externe. Vous pouvez également envisager d'utiliser une combinaison représentative de requêtes pour mieux simuler le comportement réel des clients.
+Par exemple, vous pouvez effectuer 100 lectures et une seule écriture d'une API donnée.</p>
+
+<p>Vous pouvez gérer ce processus à l'aide d'un <em>système de planification</em>, afin de vous assurer que ces entrées sont effectuées à une vitesse suffisante pour garantir la fiabilité de leur échantillonnage. Votre système doit également contenir un <em>moteur de validation</em>, qui peut consister à simplement vérifier des codes de réponse, à déterminer des correspondances entre des sorties et des expressions régulières, ou encore à afficher un site dynamique dans un navigateur sans interface graphique et à balayer son arborescence DOM à la recherche d'éléments spécifiques. Une fois qu'une décision a été prise (réussite, échec) pour une vérification donnée, vous devez stocker le résultat et les métadonnées à des fins de création de rapports et d'alertes.  L'examen d'un instantané d'un échec et de son contexte peut s'avérer utile pour diagnostiquer un problème.</p>
+
+<h3 id="whitebox_monitoring" data-text="Surveillance par boîte blanche">Surveillance par boîte blanche</h3>
+
+<p>La surveillance et l'observabilité reposent sur des signaux envoyés par la charge de travail qui est examinée dans le système de surveillance. Cela peut généralement prendre la forme des trois composants les plus courants : les <em>métriques</em>, les <em>journaux</em> et les <em>traces</em>. Certains systèmes de surveillance suivent et signalent également des <em>événements</em>, qui peuvent représenter les interactions des utilisateurs avec l'ensemble d'un système, ou des changements d'état dans le système proprement dit.</p>
+
+<p>Les <em>métriques</em> sont simplement des mesures effectuées dans un système, qui représentent l'état de ce système de manière mesurable. Elles sont presque toujours numériques et ont tendance à se présenter sous la forme de compteurs, de distributions et de jauges. Dans certains cas, les métriques de type chaîne sont pertinentes. Toutefois, des métriques numériques sont généralement nécessaires, car des calculs mathématiques doivent être réalisés pour produire des statistiques et établir des visualisations.</p>
+
+<p>Les <em>journaux</em> peuvent être considérés comme des fichiers de type "append-only", qui représentent l'état d'un seul thread de travail à un moment donné. Ces journaux peuvent être une chaîne unique telle que "L'utilisateur a appuyé sur le bouton X" ou bien une entrée de journal structurée qui inclut des métadonnées, telles que l'heure à laquelle l'événement s'est produit, le serveur qui l'a traité, ainsi que d'autres éléments environnementaux.  Parfois, un système qui ne peut pas écrire de journaux structurés génère une chaîne semi-structurée telle que <code translate="no" dir="ltr">[timestamp] [server] message
+[code]</code>, qui peut être analysée ultérieurement si nécessaire. Les entrées de journal sont généralement écrites à l'aide d'une bibliothèque cliente telle que log4j, structlog, bunyan, log4net ou Nlog.
+Le traitement des journaux peut être une excellente méthode pour produire des statistiques considérées comme fiables, car elles peuvent être retraitées en fonction de journaux stockés immuables, même si le système de traitement des journaux lui-même rencontre des bugs. De plus, les journaux peuvent être traités en temps réel pour produire des <em>métriques basées sur les journaux</em>.</p>
+
+<p>Les <em>traces</em> sont composées de <em>délais</em> qui permettent de suivre un événement ou une action utilisateur dans un système distribué. Un délai peut indiquer le chemin d'une requête via un serveur, tandis qu'un autre délai peut s'exécuter en parallèle, les deux ayant le même délai parent. Ils forment une trace, qui est souvent visualisée dans un graphique en cascade semblable à ceux utilisés dans les outils de profilage. Cela permet aux développeurs de comprendre le temps passé dans un système, sur plusieurs serveurs, files d'attente et sauts de réseau. <a href="https://opentelemetry.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenTelemetry</a>, un framework formé à partir d'<a href="https://opencensus.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenCensus</a> et d'<a href="https://opentracing.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenTracing</a>, est couramment utilisé à cet effet.</p>
+
+<p>Les métriques, les journaux et les traces peuvent être signalés au système de surveillance par le serveur en cours de mesure, ou par un <em>agent</em> adjacent pouvant détecter ou déduire des éléments concernant le système.</p>
+
+<h3 id="instrumentation" data-text="Instrumentation">Instrumentation</h3>
+
+<p>Pour utiliser un système de surveillance, votre système doit être <em>instrumenté</em>. En d'autres termes, vous devez ajouter du code à un système pour exposer son état interne. Par exemple, si un programme simple contient un pool de connexions à un autre service, vous souhaiterez peut-être effectuer un suivi de la taille de ce pool et du nombre de connexions inutilisées à un moment donné. Pour ce faire, un développeur doit écrire du code dans la logique du pool de connexions afin de suivre quand les connexions sont créées ou détruites, quand elles sont allouées et quand elles sont renvoyées. Chacune de ces informations peut se présenter sous la forme d'entrées de journal ou d'événements. Vous pouvez également incrémenter et diminuer une jauge correspondant à la taille de la file d'attente, ou incrémenter un compteur chaque fois qu'une connexion est créée ou qu'un pool est développé.</p>
+
+<h3 id="correlation" data-text="Corrélation">Corrélation</h3>
+
+<p>Les métriques peuvent être collectées à partir de l'application, ainsi que de ses systèmes sous-jacents, tels que la JVM, l'OS invité, l'hyperviseur, l'OS du nœud et le matériel lui-même. Notez qu'à mesure que vous progressez dans une pile, vous pouvez commencer à confondre des métriques partagées entre plusieurs charges de travail. Par exemple, si une seule machine diffuse plusieurs applications, surveiller l'utilisation du disque peut ne pas correspondre directement au système observé. Toutefois, la mise en corrélation des problèmes entre les applications sur un système partagé peut vous aider à identifier un facteur déterminant (tel qu'un disque lent). Il peut s'avérer très utile de passer d'une application unique à ses métriques système sous-jacentes, puis de remonter pour afficher toutes les applications similaires affectées.</p>
+
+<p>Pour mesurer un système distribué, il est nécessaire de disposer d'une observabilité en de nombreux endroits et de pouvoir les visualiser tous ensemble. Il peut s'agir à la fois d'une interface et de sa base de données, ou d'une application mobile s'exécutant sur l'appareil d'un client, d'un équilibreur de charge cloud et d'un ensemble de microservices. Le fait de pouvoir regrouper des données provenant de toutes ces sources en un seul endroit est une condition essentielle aux outils d'observabilité modernes.</p>
+
+<h3 id="computation" data-text="Calcul">Calcul</h3>
+
+<p>Une fois que vous avez collecté des données issues de différentes sources pour votre système, vous devez générer des statistiques et agréger les données de différents domaines. Il peut s'agir de cohortes d'utilisateurs, des régions concernées par votre empreinte de calcul ou des emplacements géographiques de vos clients. Être en mesure de développer ces statistiques à la volée en fonction d'événements bruts constitue un grand avantage, mais peut s'avérer coûteux en termes de stockage et de capacité de calcul en temps réel requise.</p>
+
+<p>Lorsque vous choisissez vos outils et planifiez votre instrumentation, vous devez tenir compte de la cardinalité et de la dimensionnalité. Ces deux aspects de la collecte de métriques peuvent fortement influer sur votre capacité à observer un système.</p>
+
+<p>La <em>cardinalité</em> est la mesure de valeurs distinctes dans un système. Par exemple, un champ tel que <code translate="no" dir="ltr">cpu-utilization</code> nécessite généralement une plage comprise entre 0 et 100. Toutefois, si vous effectuez le suivi des identifiants uniques des utilisateurs, ils sont tous distincts. Ainsi, si vous avez un million d'utilisateurs, vous obtenez une cardinalité d'un million. Cela fait une grande différence.</p>
+
+<p>La <em>dimensionnalité</em> est la capacité à enregistrer plus qu'une valeur unique dotée d'un horodatage, ce dont vous pouvez disposer par exemple dans une base de données de séries temporelles simple qui appuie un système de surveillance. Si vous enregistrez juste la valeur d'un compteur, par exemple concernant le nombre de requêtes envoyées, il est possible que seule la valeur du nombre de requêtes envoyées jusqu'à ce stade soit enregistrée initialement, comme suit : <code translate="no" dir="ltr">{time=x, value=y}</code>. Toutefois, comme pour les journaux structurés, vous voudrez peut-être également enregistrer certaines données environnementales, ce qui peut donner ceci : <code translate="no" dir="ltr">{time=x, value=y, server=foo, cluster=123,
+environment=prod, service=bar}</code>. Si vous combinez une cardinalité élevée et une dimensionnalité élevée, cela risque d'augmenter considérablement les exigences de calcul et de stockage, au point que la surveillance risque de ne pas fonctionner comme prévu.  Les développeurs qui écrivent des données et des métadonnées générées de manière dynamique dans des systèmes de surveillance doivent le comprendre.</p>
+
+<h3 id="learning_and_improving" data-text="Apprentissage et optimisation">Apprentissage et optimisation</h3>
+
+<p>La gestion efficace d'un système repose en partie sur un apprentissage par la résolution des pannes et des erreurs. L'écriture de rétrospectives ou de post-mortems avec des actions correctives est un processus bien documenté, qui résulte entre autres dans le développement d'une meilleure surveillance. Une organisation qui évolue rapidement doit impérativement permettre la mise à jour rapide et efficace de ses systèmes de surveillance par tous les membres de l'organisation. La configuration de la surveillance est essentielle. Les modifications doivent donc être suivies à l'aide de <a href="/architecture/devops/devops-process-streamlining-change-approval" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">processus d'examen et d'approbation</a>, comme pour le développement et la livraison de code. La conservation de la configuration de surveillance dans un <a href="/architecture/devops/devops-tech-version-control" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">système de contrôle des versions</a> est un bon début pour permettre un accès étendu au système, tout en gardant le contrôle sur cette partie critique de votre système. Le développement de l'automatisation autour du déploiement de la configuration de surveillance via un pipeline d'automatisation peut également vous permettre de vous assurer que ces configurations sont valides et appliquées de manière cohérente. Une fois que vous avez traité votre configuration de surveillance comme du code, ces améliorations peuvent toutes être réalisées à l'aide d'un processus d'<a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">automatisation du déploiement</a>, idéalement le même système que celui utilisé par le reste de votre équipe.</p>
+
+<h2 id="common_pitfalls_of_implementing_monitoring_and_observability" data-text="Problèmes courants liés à la mise en œuvre de la surveillance et de l'observabilité">Principaux pièges à éviter lors de la mise en œuvre de la surveillance et de l'observabilité</h2>
+
+<p>Lorsque vous développez un système de surveillance et d'observabilité pour votre organisation, vous devez savoir qu'il n'existe généralement pas de solution prête à l'emploi simple. Tout système de surveillance de qualité exige une connaissance approfondie de chaque composant que vous souhaitez mesurer, ainsi qu'une manipulation directe du code pour instrumenter ces systèmes. Évitez de confier la surveillance à une seule personne ou à une équipe dédiée. Cela vous permettra non seulement d'éviter un point de défaillance unique, mais également de mieux comprendre et d'améliorer votre système dans son ensemble. La surveillance et l'observabilité doivent être intégrées aux connaissances de base de tous vos développeurs. Un piège courant consiste à n'autoriser que l'équipe chargée des opérations, le NOC ou toute autre équipe similaire à apporter des modifications à un système de surveillance. Ceci doit être évité et laisser place à un système qui suit des modèles CD.</p>
+
+<p>Un antimodèle courant pour l'écriture d'alertes dans les systèmes de surveillance consiste à tenter d'énumérer toutes les conditions d'erreur possibles et à écrire une alerte pour chacune d'elles. Nous les appelons <em>alertes basées sur la cause</em>, et vous devez les éviter autant que possible.
+À la place, vous devez vous concentrer sur les <em>alertes basées sur un symptôme</em>, qui vous avertissent uniquement lorsqu'un symptôme visible par les utilisateurs se produit ou devrait bientôt survenir. Vous devriez toujours être en mesure d'observer des systèmes non visibles par les utilisateurs, mais ceux-ci ne doivent pas envoyer d'alertes directement aux ingénieurs d'astreinte en l'absence de symptômes visibles par les utilisateurs. Notez que le terme <em>visible par les utilisateurs</em> peut également inclure les utilisateurs internes à votre organisation.</p>
+
+<p>Lorsque vous générez des alertes, vous devez réfléchir à la façon dont elles sont envoyées. Vos alertes doivent comporter plusieurs moyens de contacter les ingénieurs d'astreinte, y compris, mais sans s'y limiter : envoi de SMS ou d'e-mails, applications mobiles dédiées ou appels téléphoniques automatisés. Un piège courant consiste à envoyer des alertes par e-mail à toute une équipe via une liste de diffusion électronique.
+Rapidement, des alertes peuvent être ignorées en raison de la <a href="https://wikipedia.org/wiki/Diffusion_of_responsibility" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">diffusion de responsabilité</a>. Un autre problème courant est tout simplement un faible <a href="https://wikipedia.org/wiki/Signal-to-noise_ratio" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">rapport signal sur bruit</a>.
+Si trop d'alertes ne sont pas exploitables ou n'entraînent aucune amélioration, l'équipe passe facilement à côté des alertes pertinentes et potentiellement très importantes, un problème connu sous le nom d'<a href="https://wikipedia.org/wiki/Alarm_fatigue" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">accoutumance aux alarmes</a>
+Toutes les méthodes de mise sous silence ou de suppression d'un ensemble d'alertes doivent être suivies avec soin afin de s'assurer qu'elles ne sont pas trop larges ou appliquées trop souvent.</p>
+
+<p>Si vous créez des tableaux de bord de surveillance pour visualiser les métriques, une erreur courante est de passer beaucoup de temps à imaginer le "tableau de bord idéal". Cette erreur est semblable à celle liée aux alertes basées sur la cause mentionnée ci-dessus. Dans une équipe performante, le système observé change si rapidement que, le temps d'élaborer un tableau de bord, il est déjà obsolète. À la place, il est important de se concentrer sur la capacité des membres de l'équipe à créer rapidement un tableau de bord ou un autre ensemble de visualisations répondant à leurs besoins.</p>
+
+<p>Le fait de ne pas séparer les métriques destinées aux équipes produit ou aux cadres, telles que le taux d'acquisition d'utilisateurs et le suivi des revenus, des tableaux de bord d'état opérationnel ou d'état des services est également un problème courant, car ils sont tous très importants, mais distincts. Nous vous recommandons vivement de les séparer.</p>
+
+<h2 id="how_to_measure_monitoring_and_observability" data-text="Mesurer la surveillance et l'observabilité">Mesurer la surveillance et l'observabilité</h2>
+
+<p>Lorsque vous mettez en œuvre un système de surveillance et d'observabilité au sein de votre organisation, vous pouvez suivre certaines métriques internes pour évaluer vos performances.  Voici certains éléments dont vous pouvez effectuer le suivi au moyen d'une enquête mensuelle, ou en analysant automatiquement vos post-mortems ou journaux d'alertes :</p>
+
+<ul>
+<li><strong>Modifications apportées à la configuration de la surveillance.</strong> Combien de demandes d'extraction ou de modifications par semaine sont effectuées dans le dépôt qui contient la configuration de la surveillance ? À quelle fréquence ces modifications sont-elles transmises au système de surveillance ? (Tous les jours ? Par lots ? Immédiatement via une demande d'extraction ?)</li>
+<li><strong>Alertes en dehors des heures d'ouverture.</strong> Quel est le pourcentage d'alertes traitées la nuit ? Certaines multinationales disposent d'un modèle d'assistance qui suit les fuseaux horaires, ce qui élimine le problème. Toutefois, cela peut indiquer qu'une attention insuffisante a été accordée aux principaux indicateurs d'échecs. Des alertes nocturnes régulières peuvent entraîner une accoutumance aux alarmes et l'épuisement des équipes.</li>
+<li><strong>Équilibrage des alertes entre les équipes.</strong> Si des équipes chargées d'un service travaillent en des lieux différents, les alertes sont-elles équitablement réparties entre toutes ces équipes et traitées par celles-ci ?  Si non, pourquoi ?</li>
+<li><strong>Faux positifs.</strong> Combien d'alertes n'ont donné lieu à aucune action ou ont été marquées comme "Normal" ? Les alertes qui ne sont pas exploitables et qui ne vous ont pas aidé à prédire des échecs doivent être supprimées.</li>
+<li><strong>Faux négatifs.</strong> Combien d'échecs système se sont produits sans déclencher d'alerte, ou en la déclenchant plus tard que prévu ? À quelle fréquence vos post-mortems incluent-ils l'ajout de nouvelles alertes (basées sur un symptôme) ?</li>
+<li><strong>Création d'alertes.</strong> Combien d'alertes sont créées par semaine (au total, ou regroupées par gravité, équipe, etc.) ?</li>
+<li><strong>Confirmation des alertes.</strong> Quel pourcentage d'alertes sont confirmées dans le délai convenu (par exemple, 5 minutes, 30 minutes) ? Parfois, cette mesure peut être associée à une métrique telle que l'<em>échec d'alertes</em> ou être suivie par une telle métrique, lorsqu'une personne d'astreinte secondaire reçoit une notification concernant une alerte.</li>
+<li><strong>Mise sous silence des alertes et durée de la mise sous silence.</strong> Combien d'alertes sont mises sous silence ou supprimées par semaine ?  Combien d'entre elles sont ajoutées à ce pool, combien sont supprimées ?  Si la mise sous silence des alertes comporte un système d'expiration, combien de mises sous silence sont prolongées au-delà de ce qui était prévu initialement ?  Combien de temps dure en moyenne et au maximum la période de mise sous silence ? (Une question amusante : "Combien de mises sous silence sont en réalité "infinies" ?)</li>
+<li><strong>Alertes non exploitables.</strong> Quel pourcentage d'alertes ont été considérées comme "non exploitables" ? En d'autres termes, l'ingénieur qui a reçu l'alerte n'a pas pu agir immédiatement, soit parce qu'il n'est pas parvenu à comprendre ce qu'impliquait l'alerte, soit en raison d'un problème connu. Les alertes non exploitables sont une source bien connue de <a href="https://landing.google.com/sre/sre-book/chapters/eliminating-toil/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">tâches laborieuses</a>.</li>
+<li><strong>Facilité d'utilisation : alertes, runbooks, tableaux de bord.</strong> Combien de graphiques figurent sur vos tableaux de bord ? Combien de lignes y a-t-il par graphique ? Les équipes peuvent-elles comprendre les graphiques ?
+Existe-t-il un texte explicatif pour éclairer les nouveaux ingénieurs ? Les utilisateurs doivent-ils faire défiler et parcourir beaucoup d'informations pour trouver celles dont ils ont besoin ? Les ingénieurs peuvent-ils naviguer entre les alertes, les guides et les tableaux de bord de manière efficace ? Les alertes sont-elles nommées de manière à orienter les ingénieurs dans la bonne direction ? L'équipe peut mesurer tout ceci au fil du temps au moyen d'enquêtes.</li>
+<li><strong>MTTD, MTTR, Impact.</strong> Les aspects les plus importants sont le temps de détection, le temps de résolution et l'impact. Pensez à mesurer "l'aire sous la courbe" du temps pendant lequel la panne a touché les clients, multipliée par le nombre de clients concernés.
+Cette mesure peut être estimée ou réalisée de manière plus précise à l'aide d'outils dédiés.</li>
+</ul>
+
+<p>En suivant une partie ou l'ensemble de ces métriques, vous commencerez à mieux comprendre le fonctionnement des systèmes de surveillance et d'observabilité de votre organisation. Si vous décomposez ces mesures par produit, par équipe opérationnelle ou par d'autres méthodes, vous pourrez obtenir des informations non seulement sur l'état de vos produits, mais également sur vos processus et votre personnel.</p>
+
+<h2 id="whats_next" data-text="Étape suivante">Étape suivante</h2>
+
+<ul>
+<li>Consultez la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">page DevOps</a> pour obtenir des liens vers d'autres articles et ressources.</li>
+<li>En savoir plus sur la génération d'alertes proactives avec la <a href="/architecture/devops/devops-measurement-proactive-failure-notification" track-type="solution" track-name="internalLink" track-metadata-position="body">notification proactive des échecs</a></li>
+<li>Consultez les <a href="https://landing.google.com/sre/resources/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">ressources sur l'ingénierie en fiabilité des sites de Google</a> pour obtenir les ouvrages sur l'ingénierie SRE suivants :
+<ul><li>Ingénierie en fiabilité des sites (SRE)</li>
+<li>Manuel d'ingénierie en fiabilité des sites</li>
+<li>Créer des systèmes sécurisés et fiables</li>
+</ul></li>
+<li><a href="/products/operations" track-type="article" track-name="internalLink" track-metadata-position="body">Suite Google Cloud Operations</a></li>
+<li>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</li>
+<li>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</li>
+</ul>
+
+</body></html>

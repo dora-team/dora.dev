@@ -1,0 +1,164 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 文化: 変革の方法</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<p>あらゆる組織は常に変化する中、次の質問の答えを見つけなければなりません。</p>
+
+<ul>
+<li>変化の方向性は何か。</li>
+<li>システムレベルで目標とする成果はどのようなものか。</li>
+<li>組織はより効率的に顧客を見つけてサービスを提供して、組織の目的を果たせるようになるか。</li>
+<li>組織のビジネスモデルと従業員の管理は長期的な持続可能性をもたらすか。</li>
+</ul>
+
+<p>計画どおりに進んでいないようであれば、通常はリーダーがなんらかの変革プログラムを展開します。しかし、こうしたプログラムで目標を達成できずに、大量のリソースと組織の能力を使い果たしてしまうことは珍しくありません。このドキュメントでは、変革を効果的に実施する方法を検討し、よくある失敗の原因を取り上げます。</p>
+
+<h2 id="how_to_implement_transformation" data-text="変革の実装方法">変革の実装方法</h2>
+
+<p>効果的に展開されている変革には次の 2 つの要素があります。それは、目標を設定してチームをテストできるようにすることで組織の変革を実行するプロセスと、優れたプラクティスを組織に浸透させるための仕組みです。</p>
+
+<h3 id="set_goals_and_enable_team_experimentation" data-text="目標を設定し、チームのテストを可能にする">目標を設定し、チームのテストを可能にする</h3>
+
+<p>組織の変革を実施、測定するフレームワークは、<a href="https://wikipedia.org/wiki/Balanced_scorecard" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">バランス スコアカード</a>、<a href="https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">目標と成果指標（OKR）</a>、<a href="http://www-personal.umich.edu/%7Emrother/The_Improvement_Kata.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">改善の型</a>と<a href="http://www-personal.umich.edu/%7Emrother/The_Coaching_Kata.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">コーチングの型</a>など数多くあります。それぞれ異なるフレームワークのように思えますが、いずれも重要な機能を共有しています。次の図に示す基本的な流れは、改善の型フレームワークに基づくものです。</p>
+
+<p><img src="/static/architecture/devops/images/devops-culture-transform-kata-model.png" alt="4 段階の型モデル。" width="50%"/> </p>
+
+<p>出典: 『<a href="https://www.mheducation.com/highered/product/toyota-kata-practice-guide-practicing-scientific-thinking-skills-superior-results-20-minutes-day-rother/9781259861024.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em></em>Toyota Kata Practice Guide: Practice Scientific Thinking Skills for Superior Results in 20 Minutes a Day</a>（トヨタ方式の実践ガイド: 1 日 20 分、優れた結果を目指した科学的思考スキルの実践）』（Mike Rother 著、McGraw-Hill、2018 年）。著者の了承を得て複製。</p>
+
+<p>すべてのフレームワークは組織レベルまたは部門レベルでの方向性（真に重要な目標）から始まります。これは、<a href="/architecture/devops/devops-culture-transformational-leadership" track-type="article" track-name="internalLink" track-metadata-position="body">リーダー</a>によって設定された野心的なシステムレベルの経営目標です。場合によっては、事故ゼロ（Alcoa 社の CEO、Paul O'Neill 氏が選んだ<a href="https://hbswk.hbs.edu/archive/paul-o-neill-values-into-action" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">最終目標</a>）といった達成できない理想であることもあります。あるいは、生産性を 10 倍にする（Gary Gruver 氏が HP 社で LaserJet ファームウェア部門のエンジニアリング責任者を務めていたときに選んだ<a href="https://continuousdelivery.com/evidence-case-studies/#the-hp-futuresmart-case-study" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">最終目標</a>）というような 1 年から 3 年がかりの難しい目標であることもあります。</p>
+
+<p>次のステップは、現状を把握することです。<a href="https://devops-research.com/quickcheck.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">DORA クイック チェック</a>は、ソフトウェア開発の能力と成果の観点から仕事ぶりを理解するのに役立ちます。また、別の分析手法として、<a href="https://www.google.com/books/edition/Value_Stream_Mapping_How_to_Visualize_Wo/MeFrAAAAQBAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">バリュー ストリーム マッピング</a>またはアクティビティ アカウンティングなどの演習を行うこともできます。肝心なのは、組織の現状を測定可能な項目で把握することです。</p>
+
+<p>3 番目のステップは、測定可能な将来の目標を設定することです。設定する目標は、OKR のような形式で記述できます。OKR では、質的目標を設定してから、測定可能な主要な成果（ターゲット状態）を指定します。たとえば、HSBC の Global Banking and Markets の CIO は、<a href="https://www.linkedin.com/pulse/double-half-quarter-lesson-from-book-richard-david-knott/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">すべてのチームの目標を</a>「毎年倍増、半減、4 分の 1。つまりリリースの頻度を倍に、影響が小さいインシデントを半分に、影響の大きなインシデントを 4 分の 1 に」することに設定しました。</p>
+
+<p>最後に、経営者側の支援の下、チームが予定の日付までに目標を達成するための方法をテストします。チームはこのテストに対し、デミング サイクルとも呼ばれる <a href="https://wikipedia.org/wiki/PDCA" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">PDCA 方式</a>（Plan-Do-Check-Act）を使用した科学的アプローチを取ります。このサイクルは次のステップからなります。</p>
+
+<ul>
+<li>計画（Plan）: 期待する成果を決定します。</li>
+<li>実行（Do）: テストを実施します。</li>
+<li>評価（Check）: 成果を調査します。</li>
+<li>改善（Act）: 次に行うべきことを決定します。</li>
+</ul>
+
+<p>チームはターゲット状態、つまり主要な成果に向けて毎日テストを繰り返します。<a href="http://www-personal.umich.edu/%7Emrother/The_Improvement_Kata.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">改善の型</a>では、チームのメンバー全員が次の 5 つの質問を毎日自問自答する必要があります。</p>
+
+<ol>
+<li>ターゲット状態は何か。</li>
+<li>現状はどうなっているか。</li>
+<li>ターゲット状態を達成する妨げとなっている障害は何か。そのうち、どの障害に現在対処しているのか。</li>
+<li>次の措置は何か。どのような結果を期待するか。</li>
+<li>次の措置を講じて学んだことを確認するには、どのタイミングで成果を評価すればよいか。</li>
+</ol>
+
+<p>成果を理解して次の目標を設定したら、このプロセスを繰り返します。</p>
+
+<p>このプロセスは不確実な条件下で実施されるため、成果を出す方法が常に明らかであるとは限りません。そのため、次の図に示すように非線形のプロセスになることがよくあります。</p>
+
+<p><img src="/static/architecture/devops/images/devops-culture-transform-non-linear-progress.png" alt="業績とイテレーションをマッピングした、非線形の進捗状況を示す図。業績の変化は大きいものの、全体的には上がっています。"/></p>
+
+<p>出典: CC-BY: 『<a href="https://www.google.com/books/edition/Lean_Enterprise/G_ixBQAAQBAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Lean Enterprise: How High Performance Organizations Innovate at Scale<em></em></a>（企業のスリム化: 高パフォーマンスを発揮する組織はどのように大規模な革新を行っているのか）』（Jez Humble、Joanne Molesky、Barry O'Reilly 共著、O'Reilly、2014 年）。</p>
+
+<p>計画のためのミーティングでは、参加者が前回のミーティングで設定したターゲット状態、つまり主要な成果を評価します。その結果に基づいて、次のイテレーションに向けて新しい目標を設定します。評価のためのミーティングでは、チームがイテレーションの目標をどれだけ達成したかを参加者が評価し、目標達成を妨げる障害とその対処方法について話し合います。</p>
+
+<p>このパターンで重要な点は次のとおりです。</p>
+
+<ul>
+<li>チーム独自のターゲット条件または <a href="https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">OKR</a> を設定する必要があります。トップダウン方式で目標が設定されると、チームは目標設定の過程に直接関わっていないため、モチベーションが下がり、目標達成を「操作」する場合があります。つまり、成果を操作して人為的に目標を達成するということです。</li>
+<li>目標達成の失敗を許容します。目標の中には、達成できるレベルよりも意図的に高く設定されたストレッチ目標<em></em>もあります。チームは目標の約 80% を達成することを希望するべきです。文化的な変換から始まって、指定された目標の何も<em></em>達成できないことはよくあります。この場合、チームは次のイテレーションのために 1 つの目標を設定し、それを達成するためにすべてを捧げる必要があります。</li>
+<li>多くの目標や施策は、チームの目標や現状が変化したり、目標に向かって仕事をして学んだりしていく中で、イテレーションによって変化していきます。完璧な目標を設定することに時間をかけすぎず、プロセスを実行することに重点を置いて学習を開始できるようにしましょう。</li>
+<li>チームが改善の取り組みを実施するためには、必要な自律性、キャパシティ、リソース、管理、そして<a href="/architecture/devops/devops-culture-transformational-leadership" track-type="solution" track-name="internalLink" track-metadata-position="body">リーダーによる支援</a>を確保することが重要です。日常の業務によって改善の取り組みがおろそかになるようであってはなりません。改善の取り組みこそが、プロダクトとサービスの提供を遅らせている非効率性の解消につながるからです。</li>
+</ul>
+
+<h3 id="build_community_structures_to_spread_knowledge" data-text="知識を広めるためにコミュニティ構造を構築する">知識を広めるためにコミュニティ構造を構築する</h3>
+
+<p>チームが業務の改善方法を見つけたら、学んだことを組織全体に広めることが次の課題です。広める方法は数多くあります。<a href="https://cloud.google.com/devops/state-of-devops" track-type="article" track-name="internalLink" track-metadata-position="body">2019 年度の DevOps レポート</a>調査では、チームや組織がどのように DevOps やアジャイルといった手法を広めているかを、次の手法から 1 つ以上を選択して共有するよう回答者に求めました。（詳細は、2019 年の State of DevOps Report の付録 B を参照）</p>
+
+<ul>
+<li>トレーニング センター（「道場」<em></em>と呼ぶこともある）</li>
+<li>センター オブ エクセレンス（CoE）</li>
+<li>概念実証（PoC）（ただし行き詰っている）</li>
+<li>テンプレートとしての概念実証</li>
+<li>シードとしての概念実証</li>
+<li>実践的なコミュニティ</li>
+<li>全面変更</li>
+<li>ボトムアップまたは草の根</li>
+<li>マッシュアップ</li>
+</ul>
+
+<p>分析によって、パフォーマンスが高い場合、組織の低レベルと高レベルのコミュニティ構造を作成する戦略が優先され、再編成やプロダクトの変更に対する持続性と復元力が高くなる可能性があります。採用されている主な 2 つの戦略は、実践的コミュニティと草の根コミュニティです。その後、テンプレートとしての概念実証（概念実証が組織内の別の場所で再現されるパターン）が続き、最後にシードとしての概念実証となりました。たとえば、<a href="https://www.youtube.com/watch?v=S4-huVFeQXg" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">実践的コミュニティ</a>がどのように機能するかについて、<a href="https://martinfowler.com/articles/testing-culture.html#google" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">有志グループがどのように Google の包括的な単体テストの文化を推進したのかをご覧ください</a>。</p>
+
+<p>低パフォーマーは、トレーニング センターとセンター オブ エクセレンスを好む傾向があります。これらの戦略は、サイロ化や分離した専門知識を増やすことを意図しています。概念実証も試みていますが、通常は行き詰まり、成功していません。これらの戦略が、効果的な変化を起こさない理由は何でしょうか。</p>
+
+<p>1 つのグループで専門知識を一元化することで、センター オブ エクセレンスは次のような問題を生み出します。まず、CoE は組織に関連する専門知識のボトルネックになっているため、組織の専門知識が増大するのにあわせて規模を拡大することはできません。第 2 に、「エキスパート」という独占的グループが組織に確立されます。これは、互いに学び合い成長することのできる、包括的なグループとは対照的です。このような排他性は、健全な組織文化を損なう恐れがあります。最後に、エキスパートは実作業からは排除されます。助言や、一般的な「ベスト プラクティス」の確立は可能ですが、一般的な学習から実際の作業実施までの道のりは、学習者に委ねられます。たとえば、エキスパートはアプリケーションをコンテナ化する方法についてワークショップを開くことがありますが、実際にアプリケーションをコンテナ化する作業を担当することはめったにありません。このような理論と実践経験の断絶は、最終的にエキスパートの専門技術を脅かします。</p>
+
+<p>一部の学習者はトレーニング センターで成功していますが、元のプログラムと継続的な学習の両方を実施するには、専用のリソースとプログラムが必要です。多くの企業では、トレーニング プログラムの効果を高めるための素晴らしいリソースを確保しています。各企業は、独立した創造的環境を提供することだけを目的とした建物を備え、トレーニング資料の作成と進捗状況の評価を専門に行うスタッフを配置しています。さらに、教訓を組織全体で確実に維持し浸透させるために、追加のリソースが必要となります。組織は、トレーニング センターに参加したチームにサポートを提供し、チームが得たスキルや習慣が通常の職場環境に戻っても持続して、古い作業パターンに戻らないように支援する必要があります。こうしたリソースが準備されていないと、組織は投資の無駄になるリスクがあります。チームが組織全体へ広めるべき新しい技術やプロセスをセンターへ学びに行く一方で、新しい習慣はセンターに留まり、一時的だとしても別のサイロを作ります。CoE にも同様の制限があります。トレーニング センター スタッフ（または、切り離された「エキスパート」）だけがワークショップとトレーニング資料を作成している場合、彼らが実作業を行わなければどうなるでしょうか。</p>
+
+<p>マッシュアップは頻繁に回答に選ばれました（2019 年の調査では回答者の 40% がこの戦略を使用していました）。ただし、特定の投資における十分な資金やリソースが不足しています。テクノロジーの変革を導くための戦略がなければ、組織は多くの場合、投資の分散という間違いを犯し、<em></em>イニシアティブによる死という問題に直面することになります。つまり、イニシアティブをあまりにも多くの分野で特定してしまい、最終的には、重要な業務へ配分するリソースを減少させ、すべて失敗してしまうことになります。代わりに、少なめのイニシアティブを選択して、進行中のリソース（時間、資金、そしてエグゼクティブおよび実務推進者の支援）に注力することが重要です。マッシュアップとは対照的に、全面変更戦略を使用していることはごくわずかです。ただし、低パフォーマーの中では最も頻繁に使用されています。</p>
+
+<p>さらに分析を行うことで、高パフォーマーが使用している 4 つのパターンを特定しました。</p>
+
+<ul>
+<li><strong>コミュニティ ビルダー:</strong> このグループでは、実践的なコミュニティ、草の根、概念実証（前述したように、テンプレートおよびシードとして）に焦点を当てています。このパターンは当時の分析で 46% を占めました。</li>
+<li><strong>大学:</strong> このグループでは、教育とトレーニングを中心に進めており、主にセンター オブ エクセレンス、実践的なコミュニティ、およびトレーニング センターに取り組んでいます。このパターンは、当時わずか 9% しか観察されていません。この戦略は成功できますが、これは一般的ではなく、学習した教訓を組織全体に展開するための大規模な投資と計画を必要とします。</li>
+<li><strong>創発的:</strong> このグループは、草の根活動と実践的なコミュニティにフォーカスしています。これは、最も介入が不要なグループとみなされており、23% のケースで確認されています。</li>
+<li><strong>テスター:</strong> テスターは 22% のケースで確認されています。このグループは、全面変更と道場を除き、あらゆる戦略において高いレベルのアクティビティをもたらしています。すべてのアクティビティはコミュニティと創作に重点が置かれています。ここには行き詰っている高レベルの PoC も含みます。このアクティビティを活用して高パフォーマンスを維持できるという事実は、この戦略を使ってアイデアをすばやく実験的に試すことができることを示唆しています。</li>
+</ul>
+
+<h2 id="principles_of_effective_organizational_change_management" data-text="効果的な「組織変更の管理」の原則">効果的な「組織変更の管理」の原則</h2>
+
+<p>すべての組織は複雑で、組織によって目標や開始点は異なります。また、課題に挑戦する方法もそれぞれで異なります。ある組織では効果的な施策でも、別の組織では同様の成果が見られない場合もあります。ただし、いくつかの一般原則に従うと、組織は成功の可能性を高めることができます。</p>
+
+<h3 id="improvement_work_is_never_done" data-text="改善の取り組みに終止符を打たないこと">改善の取り組みに終止符を打たないこと</h3>
+
+<p>高い成果を上げている組織は、パフォーマンスに満足せず、常に業務改善に努めています。これらの組織の人々は、変革しないことは変革と同じくらい危険なことを理解しており、「それがいつものやりかただ」は変革に抵抗することを正当化する理由して通用しません。ただし、これはむやみに変革を進めればよいというわけではありません。チームまたは組織の測定可能な目標のために科学的な方法で変更管理を行う必要があります。</p>
+
+<h3 id="leaders_and_teams_agree_on_and_communicate_measurable_outcomes_and_teams_determine_how_to_achieve_them" data-text="リーダーとチームが測定可能な改善結果に合意してそれを組織に伝え、チームがその目標を達成する方法を決定すること">リーダーとチームが測定可能な改善結果に合意してそれを組織に伝え、チームがその目標を達成する方法を決定すること</h3>
+
+<p>組織の全員が、自分たちが達成しようと取り組んでいる、ビジネスと組織の測定可能な改善結果を把握することは非常に重要です。組織レベルでは、これらの結果は簡潔に（せいぜい 2、3 文で）記述されていて、組織の目的とミッションに明らかに合致するものでなければなりません。個々のビジネス ユニットレベルでは、結果を 1 ページにまとめます。組織の改善結果は、リーダーとチームが一緒に判断しますが、最終的な権限はリーダーにあります。組織の下位レベルでは、目標を詳しく、短い期間に設定して規定します。</p>
+
+<p>ただし、結果を達成するための方法を決定するのはチームでなければなりません。その理由は次のとおりです。</p>
+
+<ul>
+<li>不確実な条件下では、計画だけで最善の行動指針を決めるのは不可能です。ある程度決めておくことは重要ですが、計画実施の段階で発見したことに基づいて調整や再作成ができるようにする必要があります。</li>
+<li>やるべきことだけでなく、その方法まで指示されると、人は自主性を失くし、創意工夫を発揮するチャンスも逃してしまいます。それでは良い結果を出せないだけでなく、従業員のやる気の喪失にもつながります。</li>
+<li>従業員が新しいスキルと能力を身に付けるうえで欠かせないのは、問題を解決することです。組織はチームに仕事を与えるのではなく、解決すべき問題を提示する必要があります。</li>
+</ul>
+
+<h3 id="large-scale_change_is_achieved_iteratively_and_incrementally" data-text="大規模な変革は繰り返しによって徐々に達成すること">大規模な変革は繰り返しによって徐々に達成すること</h3>
+
+<p>年次予算編成サイクルは、組織をプロジェクト ベースのモデル寄りにする傾向があります。プロジェクト ベースのモデルでは、あらゆる類の作業が、完了するまでに長期間かかる費用の高いプロジェクトに結び付けられます。ほとんど例外なく、作業を分割して徐々に完了できるようにするほうが良策です。
+<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">小さいバッチ単位の作業</a>は、さまざまなメリットをもたらします。特に重要な点は、組織が発見したことに基づいて進路を修正できることです。これにより、期待されるメリットをもたらさない作業に時間とお金を無駄に使うことがなくなります。</p>
+
+<p><a href="https://itrevolution.com/book/project-to-product/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">プロジェクト パラダイムからプロダクト パラダイム</a>への移行は、ほとんどの業界で実施するのに何年もかかる長期傾向ですが、これが将来のパラダイムであることは明らかです。米国連邦政府でも、大規模な取り組みを徐々に完了していく反復型アプローチに従った、<a href="https://18f.gsa.gov/2019/04/09/why-we-love-modular-contracting/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">モジュール単位で切り分けた調達を実験</a>して成功しています。</p>
+
+<p>プロジェクトの実施に関して当てはまる課題は、変革にも当てはまります。組織は、短期間で成果を出し、教訓を共有して、その教訓に基づく新しいアイデアを他のチームも試せるようにする方法を見つけなければなりません。</p>
+
+<h2 id="common_pitfalls_in_transforming_culture" data-text="文化を変革する際によくある落とし穴">文化を変革する際によくある落とし穴</h2>
+
+<p>リーダーが大規模な組織変革を行うときは、次の失敗を犯しがちです。</p>
+
+<ul>
+<li><p><strong>変革を一度限りのプロジェクトとして扱う</strong>。優秀な組織では、改善は継続的な取り組みであり、従業員全員の日常業務の一環となっています。ただし、多くの変革プログラムは大規模な一度限りのイベントとして扱われ、従業員全員が短時間で働き方を変えて、その後は通常の業務を続けることが期待されます。チームには働き方を改善するための人数、リソース、権限が与えられず、進化する仕事の現実にチームのプロセス、スキル、機能が追い付かなくなってくると、業績が次第に低下していきます。テクノロジーの変革は、ビジネスの価値をもたらす重要な部分として捉える必要があります。つまり、投資を終えることのない部分です。顧客獲得やカスタマー サポートへの投資を打ち切ることがないのと同様です。</p></li>
+<li><p><strong>変革をトップダウン方式の取り組みとして扱う</strong>。このモデルでは、組織の指揮命令系統が変更され、チームが異動または再編成されて、新しいプロセスが実装されます。多くの場合、影響を受ける人員は変更をほとんど制御できず、情報提供の機会も与えられません。既存の取り組みを続ける一方で新しい働き方を学ぶ必要があるため、従業員はストレスを感じ、生産性を失ってしまいます。このようなトップダウン方式が、変革イニシアティブでよくありがちなコミュニケーション不足と組み合わさると、従業員の不満とやる気の喪失という結果につながります。また、トップダウン方式の変革を計画して実施するチームがその取り組みの効果に関するフィードバックを収集し、必要に応じて変更を加えることもめったにありません。結果が何であろうと、計画が実施されます。</p></li>
+<li><p><strong>意図する結果に合意することも、組織に伝えることもしない</strong>。目標を明確に定義せずに、あるいは「市場投入までの時間短縮」、「コスト削減」などの（量的目標ではなく）質的目標を定義して変革が実施されることがあります。目標は定義されていても達成できるものでないことや、目標が組織のある部分を別の部分と対抗させるものであることもあります。このような場合、改善の取り組みが意図した効果をもたらしているかどうかを知る術はありません。この失敗がトップダウン方式と組み合わさると、より迅速な、またはよりコストの低い他のアプローチをテストするのが困難になります。この場合、通常は計画の実行に時間を浪費することになります。また、目標を達成したかどうか、またはプログラムが功を奏したかどうかも判断できません。多くの場合、失敗を批判的に分析して学習機会として利用するのではなく、失敗は無視されて新しい大規模な変革イニシアティブが開始されるか、変革方法全体に疑問がもたれます。</p></li>
+</ul>
+
+<p>変革をプロジェクトとして扱うと同時に、トップダウン方式のイニシアティブとして扱うと、次の図に示すパターンになりがちです。業績は徐々に低下していきます。変革プログラムの開始時は、改善を行う前よりも業績が低下します。しかし、その後は通常のビジネスに戻ります。プログラムの実施中は終始、組織全体で不信感が募り、やる気の喪失が目立ってきます。</p>
+
+<p><img src="/static/architecture/devops/images/devops-culture-transform-performance-against-time.png" alt="経時的な業績を示す図。各変革プログラムの実施中は業績が上がりますが、実施後は下がります。全体としては、業績はほぼ変わりません。"/></p>
+
+<p>出典: CC-BY: 『<a href="https://www.google.com/books/edition/Lean_Enterprise/G_ixBQAAQBAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Lean Enterprise: How High Performance Organizations Innovate at Scale<em></em></a>（企業のスリム化: 高パフォーマンスを発揮する組織はどのように大規模な革新を行っているのか）』（Jez Humble、Joanne Molesky、Barry O'Reilly 共著、O'Reilly、2014 年）。</p>
+
+<h2 id="whats_next" data-text="次のステップ">次のステップ</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps ページ</a>で他の記事やリソースへのリンクを確認する。</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">研究プログラム</a>を調べる。</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps のクイック チェック</a>で、業界におけるご自身の立ち位置を確認する。</li>
+</ul>
+
+</body></html>

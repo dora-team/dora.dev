@@ -1,0 +1,114 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技术：向左移动安全性</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：<em></em>“更早将安全性纳入软件开发流程”是一组推动实现更出色的软件交付表现和组织绩效的能力之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>安全是每个人的责任。<a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2016 年 DevOps 状态报告</a> (PDF) 研究表明，与低效团队相比，高效团队花在修复安全问题上的时间要少 50%。通过将信息安全 (InfoSec) 目标更好地整合到日常工作中，团队可以实现更高水平的软件交付性能并构建更安全的系统。这种想法也称为“左移”<em></em>，因为问题（包括安全问题）是在软件开发生命周期的较早阶段（即，在从左到右的时间表图中位于左侧）解决的。</p>
+
+<p>在软件开发中，至少有以下四项活动：设计、开发、测试和发布。在传统的软件开发周期中，测试（包括安全测试）是在开发完成后进行的。这通常意味着，团队会发现一些重大问题（包括架构缺陷），这些问题的解决成本很高。</p>
+
+<p>发现缺陷后，开发者必须找出相应的影响因素以及修复方法。在复杂的生产系统中，影响因素通常不是单一的；相反，影响因素通常是一系列因素，这些因素互相影响，从而导致缺陷。涉及安全性、性能和可用性的缺陷的修复成本高昂且耗时；它们通常需要开发者更改架构来进行修复。找出缺陷、制定解决方案以及全面测试修复所需的时间是无法预测的。这可能会进一步推迟交付日期。</p>
+
+<p>持续交付源于在整个流程中不断提高产品质量这一概念。正如 W. Edwards Deming 在其<a href="https://deming.org/explore/fourteen-points?apartner=aarp" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">《管理转变的 14 个要点》</a>中所说的那样，“不要依赖于检查来确保质量。应该通过一开始就不断提高产品质量来大规模消除检查工作。”在此模型中，开发者与安全和测试专家合作，在整个产品生命周期中设计并交付<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">小批量工作</a>，而不是采用完全分阶段的方法。</p>
+
+<p><a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">DevOps 研究和评估 (DORA)</a> (PDF) 的研究表明，通过将安全问题纳入每个人的日常工作中（而不是在流程结束时测试安全问题），团队可以取得更好的成效。这意味着将安全测试和控制纳入开发、质量检查和运营的日常工作中。理想情况下，大部分工作都可以自动完成，并且可以纳入部署流水线中。通过自动执行这些活动，您可以根据需要生成证据，以证明您的控制措施正在有效运作；此信息对于审核人员、评估人员以及价值流中的其他任何工作人员很有用。</p>
+
+<h2 id="how_to_implement_improved_security_quality" data-text="如何实施改进后的安全质量">如何实施改进后的安全质量</h2>
+
+<p>在软件开发生命周期中将安全审核流程“左”移或移到更早时，需要对传统信息安全方法进行一些更改，但不会偏离传统软件开发方法太远。</p>
+
+<h3 id="get_infosec_involved_in_software_design" data-text="让 InfoSec 团队参与软件设计">让 InfoSec 团队参与软件设计</h3>
+
+<p>InfoSec 团队应该参与所有项目的设计阶段。当项目设计开始时，可以将安全审核添加为门槛因素，以便将设计发布到开发阶段。此审核流程可能代表了开发流程的一个根本性变化。开发者可能需要参加培训来适应此变化。您可能还需要增加 InfoSec 团队的员工，并为此变化提供组织支持。虽然纳入 InfoSec 可能使您的组织发生变化，但在设计阶段纳入新的利益相关方并不是一个新的概念，因此在考虑到其优势时应将其纳入。</p>
+
+<h3 id="develop_security-approved_tools" data-text="开发已通过安全批准的工具">开发已通过安全审核的工具</h3>
+
+<p>为开发者提供预审核的库和工具（包括 InfoSec 团队提供的库和工具）有助于开发者代码实现标准化。使用标准代码可让 InfoSec 团队更轻松地审核代码。标准代码可让自动测试功能检查开发者是否正在使用预批准的库。这还有助于扩大 InfoSec 团队的投入和影响力，因为与开发者和测试人员相比，该团队通常人手不足。</p>
+
+<h3 id="develop_automated_testing" data-text="开发自动化测试功能">开发自动化测试功能</h3>
+
+<p>将安全测试纳入<a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">自动化测试</a>流程意味着可以大规模地<a href="/architecture/devops/devops-tech-continuous-integration" track-type="solution" track-name="internalLink" track-metadata-position="body">持续测试</a>代码，而无需手动审核。自动化测试功能可以识别常见的安全漏洞，并且可以作为持续集成流水线或构建流程的一部分来统一应用。自动化测试功能要求您设计和开发自动化安全测试，包括在最初的阶段以及在确定新的安全测试后从事这方面的工作。这是扩大 InfoSec 团队投入的另一个机会。</p>
+
+<h2 id="common_pitfalls" data-text="常见误区">常见误区</h2>
+
+<p>下面是一些会导致团队无法向左移动安全性的常见误区：</p>
+
+<ul>
+<li><strong>无法与 InfoSec 团队协作</strong>。最严重的错误是其他团队无法与 InfoSec 团队进行协作。在一个威胁无处不在且不断演变的时代，InfoSec 是一项非常重要的功能。</li>
+<li><strong>少量配备 InfoSec 团队员工</strong>。InfoSec 团队的员工人数往往不足。Verica 高级安全工程师 James Wickett <a href="https://blog.xebialabs.com/2017/04/20/10-tips-integrating-security-devops/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">引用</a>说，在大型公司中，InfoSec 员工数:基础架构员工数:开发者数 = 1:10:100。</li>
+<li><strong>与 InfoSec 团队合作的时间太晚</strong>。在许多情况下，InfoSec 团队仅在软件交付生命周期的最后阶段参与，此时，做出改进安全性所必需的更改通常很麻烦且成本高昂。</li>
+<li><strong>不熟悉常见的安全风险</strong>。许多开发者都没有意识到常见的安全风险（例如 <a href="https://owasp.org/www-project-top-ten/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">OWASP 十大安全风险</a>）以及如何防范这些安全风险。</li>
+</ul>
+
+<h2 id="ways_to_improve_security_quality" data-text="提高安全质量的方法">提高安全质量的方法</h2>
+
+<p>您可以通过执行以下操作来提高软件交付性能和安全质量：</p>
+
+<ul>
+<li><strong>进行安全审核</strong>。对所有主要功能进行安全审核，同时确保安全审核流程不会拖慢开发速度。</li>
+<li><strong>构建预批准的代码</strong>。让 InfoSec 团队构建预批准的且易于使用的库、软件包、工具链和流程，以供开发者和 IT 运营人员在工作中使用。</li>
+<li><strong>将安全审核纳入每个阶段中</strong>。将 InfoSec 纳入整个软件交付生命周期的日常工作中。这包括让 InfoSec 团队在应用设计过程中提供意见、参加软件演示活动，以及在演示期间提供反馈。</li>
+<li><strong>测试安全性</strong>。测试安全性要求是自动化测试流程的一部分，包括应使用预批准代码的领域。</li>
+<li><strong>邀请 InfoSec 团队参加演示活动</strong>。如果您邀请 InfoSec 团队参加应用演示活动，他们可以及早发现与安全相关的问题，从而让相关团队有充足的时间来解决问题。</li>
+</ul>
+
+<h2 id="ways_to_measure_security_quality" data-text="衡量安全质量的方法">衡量安全质量的方法</h2>
+
+<p>根据上述改进方法，您可以通过以下方式衡量安全性。</p>
+
+<table>
+  <colgroup>
+    <col width="30%" />
+    <col width="35%" />
+    <col width="35%" />
+  </colgroup>
+<thead>
+<tr>
+<th><strong>测试的因素</strong></th>
+<th><strong>衡量的指标</strong></th>
+<th><strong>目标</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>功能是否经过安全审核</td>
+<td>在设计流程的早期阶段经过安全审核的功能所占的百分比。</td>
+<td>此百分比应该会随着时间的推移而不断上升。</td>
+</tr>
+<tr>
+<td>安全审核是否会拖慢开发周期</td>
+<td>审核为开发流程增加了多少时间。</td>
+<td>在达到规定的最低要求之前，安全审核的时间应该会缩短。</td>
+</tr>
+<tr>
+<td>交付生命周期中的安全程度</td>
+<td>InfoSec 团队参与软件交付生命周期每个步骤的程度。例如，您可以衡量在软件开发生命周期（设计、开发、测试和发布）的每个阶段捕获的安全审核次数。</td>
+<td>此值应一直上升，直到达到某个值，该值表明 InfoSec 已完全纳入软件开发生命周期中。</td>
+</tr>
+<tr>
+<td>自动化测试是否符合安全要求</td>
+<td>InfoSec 团队参与编写自动化测试。随着 InfoSec 团队进一步参与测试流程，自动化测试流程中包含的安全要求的数量或百分比。</td>
+<td>此百分比应该会随着时间的推移而不断上升。</td>
+</tr>
+<tr>
+<td>使用预批准的库、软件包、工具链和流程</td>
+<td>在最初阶段，InfoSec 团队是否参与工具开发。随着工作的进行，可用的且经过 InfoSec 批准的库、软件包和工具链数量，或者开发和运营团队使用的这些资源的数量。</td>
+<td>参与度应随着时间的推移而增加，直到组织认为 InfoSec 团队对工具的监督处于正常级别。同样，在团队使用 InfoSec 创建或批准的所有工具之前，正在使用的预批准工具的百分比或数量应该会增加。</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>如需查看 10 个最重要的 Web 应用安全风险列表，请参阅 <a href="https://owasp.org/www-project-top-ten/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">OWASP 十大安全风险</a>。</li>
+<li>阅读<a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">《站点可靠性工程 (SRE)》一书</a>。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

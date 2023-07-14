@@ -1,0 +1,102 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Processus DevOps : Travailler par petits lots</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Remarque</strong> : <span>Le <em>travail par petits lots</em> fait partie d'un ensemble de critères d'aptitude permettant d'optimiser les performances organisationnelles et celles de la livraison de logiciels.
+Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche sur l'état du DevOps, mené par l'équipe DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les fonctionnalités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>Le travail par petits lots est un principe déterminant dans toute discipline nécessitant des boucles de rétroaction, et lorsque vous voulez recevoir un retour immédiat sur les décisions que vous prenez. Le travail par petits lots vous permet de tester rapidement certaines hypothèses pour savoir si une amélioration donnée aura l'effet souhaité et, à défaut, vous permet de corriger ou de revoir ces hypothèses. Bien que cet article s'applique à tout type de changement impliquant une transformation organisationnelle et une amélioration des processus, il se concentre principalement sur le lancement de logiciels.</p>
+
+<p>Le travail par petits lots s'inscrit dans la pratique du management de produit Lean. Avec les capacités telles que la <a href="/architecture/devops/devops-process-work-visibility-in-value-stream" track-type="article" track-name="internalLink" track-metadata-position="body">visibilité sur le travail dans le flux de valeur</a>, l'<a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">expérimentation en équipe</a> et la <a href="/architecture/devops/devops-process-customer-feedback" track-type="article" track-name="internalLink" track-metadata-position="body">visibilité sur les commentaires clients</a>, le travail par petits lots permet de prédire les performances de distribution des logiciels ainsi que les performances organisationnelles.</p>
+
+<p>Si le travail est effectué par gros lots, c'est en partie dû au <a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">coût fixe élevé associé aux transferts de responsabilité</a>.
+Dans le développement logiciel phasé traditionnel, ce transfert entre les équipes de développement et de test ou entre les équipes de test et équipes informatiques porte sur des versions logicielles entières : il s'agit de plusieurs mois de travail réalisé par des équipes composées de dizaines ou de centaines de personnes. Selon cette approche traditionnelle, recueillir des commentaires sur un changement effectué peut prendre plusieurs semaines voire plusieurs mois.</p>
+
+<p>Par opposition, les pratiques DevOps font appel à des équipes pluridisciplinaires et des approches allégées pour permettre au logiciel de franchir les phases de développement, test, opérations et production en quelques minutes seulement. Cependant, une telle rapidité nécessite de traiter le code par petits lots.</p>
+
+<p>Le travail par petits lots présente de nombreux avantages :</p>
+
+<ul>
+<li>Il réduit le délai d'obtention de commentaires sur les changements apportés, ce qui facilite la classification et la résolution des problèmes.</li>
+<li>Il accroît l'efficacité et la motivation des équipes.</li>
+<li>Il empêche votre organisation de succomber à l'illusion des coûts irrécupérables.</li>
+</ul>
+
+<p>Vous pouvez appliquer l'approche par petits lots au niveau des fonctionnalités du produit, ou du produit lui-même.
+À titre d'exemple, un produit minimum viable (MVP) est un prototype qui contient un nombre limité de fonctionnalités, mais suffisamment pour permettre la validation du produit et de son modèle commercial.</p>
+
+<p>La livraison continue s'appuie sur le modèle de travail par petits lots pour essayer de faire passer chaque changement au stade de contrôle de version le plus tôt possible. L'un des objectifs de la livraison continue est de modifier le modèle économique du processus de livraison de logiciels pour le rendre compatible avec le travail par petits lots. Grâce à cette approche, les équipes reçoivent des commentaires détaillés de manière rapide et peuvent ainsi améliorer leur travail.</p>
+
+<h2 id="how_to_work_in_small_batches" data-text="Comment travailler par petits lots">Comment travailler par petits lots</h2>
+
+<p>Lorsque vous planifiez de nouvelles fonctionnalités, essayez de les décomposer en unités de travail qui pourront être réalisées de façon indépendante et dans de brefs délais. Nous vous recommandons de faire en sorte que chaque fonctionnalité ou lot de travail suive le concept Agile du <a href="https://wikipedia.org/wiki/INVEST_(mnemonic)" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">principe INVEST</a> :</p>
+
+<ul>
+<li><strong>Indépendant</strong>. Faites en sorte que les lots de travail soient aussi indépendants des autres lots que possible afin qu'ils puissent être traités dans n'importe quel ordre, puis déployez-les et validez-les indépendamment des autres lots de travail.</li>
+<li><strong>Négociable</strong>. Chaque lot de travail est itératif et peut être renégocié au fil des commentaires reçus.</li>
+<li><strong>Valorisé</strong>. Les lots de travail discrets sont utiles et apportent de la valeur aux différents acteurs.</li>
+<li><strong>Estimable</strong>. Il existe suffisamment d'informations sur les lots de travail pour vous permettre d'en évaluer facilement le champ d'application.</li>
+<li><strong>Suffisamment petit</strong>. Lors d'un sprint, vous devez être capable d'achever des lots de travail dans des laps de temps relativement petits pouvant aller de quelques heures à quelques jours.</li>
+<li><strong>Testable</strong>. Chaque lot de travail doit pouvoir être testé, surveillé et certifié conforme aux attentes de l'utilisateur.</li>
+</ul>
+
+<p>Lorsque la quantité de fonctionnalités vous le permet, vous pouvez diviser le travail de développement en plus petits lots. Ce processus peut s'avérer difficile et exige l'intervention d'équipes expérimentées. Dans l'idéal, vos développeurs placeraient plusieurs petits changements prêts à être lancés <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">dans la branche principale au moins une fois par jour</a>.</p>
+
+<p>La clé ici est de commencer le développement dans la couche du service ou de l'API, et non pas dans la couche de l'UI. Ainsi, vous pourrez compléter l'API sans que les utilisateurs n'aient initialement accès aux nouveaux éléments, et placer ces changements dans la branche principale. Vous pourrez lancer ces changements en production sans qu'ils ne soient visibles pour les utilisateurs. Cette approche, appelée <em>dark launching</em> en anglais (lancement dans le noir), permet aux développeurs de placer dans la branche principale des petits lots qui ont été achevés mais se rapportent à des fonctionnalités non finalisées. Vous pouvez alors exécuter des <a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">tests automatiques</a> sur ces changements afin de prouver qu'ils se comportent de la manière attendue. De cette manière, les équipes continuent de travailler à un rythme soutenu et à <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">effectuer des développements à partir de la branche unique</a> plutôt qu'à partir de branches de fonctionnalité de longue durée.</p>
+
+<p>Vous pouvez également effectuer un dark launch de vos changements en utilisant un <a href="https://martinfowler.com/bliki/FeatureToggle.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">inverseur de fonctionnalité</a>, qui est en fait une instruction conditionnelle basée sur les paramètres de configuration. Par exemple, vous pouvez rendre des éléments de l'UI visibles ou invisibles, ou activer ou désactiver la logique du service. La configuration de l'inverseur de fonctionnalité peut être lue soit au moment du déploiement, soit au moment de l'exécution. Vous pouvez utiliser ces paramètres de configuration afin de modifier le comportement du nouveau code plus loin dans la pile de développement. Vous pouvez également utiliser une technique similaire appelée <a href="https://continuousdelivery.com/2011/05/make-large-scale-changes-incrementally-with-branch-by-abstraction/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">branchage par abstraction</a> qui permet de faire des changements système à grande échelle tout en poursuivant le développement et la livraison hors de la branche principale, sans utiliser de branches de fonctionnalités de longue durée.</p>
+
+<p>Dans cette approche, les lots de travail ne sont achevés que lorsqu'ils sont déployés en production et que le processus d'envoi des commentaires a été initié pour valider les changements. Les commentaires proviennent de nombreuses sources (utilisateurs, surveillance système, assurance qualité et tests automatisés) et sont donc livrés dans différents formats. Votre objectif est de les passer en revue le plus rapidement possible afin de réduire la durée du cycle qui permettra de mettre ces changements entre les mains des utilisateurs. Ainsi, vous pourrez valider vos hypothèses au plus vite.</p>
+
+<h2 id="common_pitfalls_with_working_in_small_batches" data-text="Principaux pièges à éviter lors du travail par petits lots">Principaux pièges à éviter lors du travail par petits lots</h2>
+
+<p>Lorsque vous décomposez votre travail en petits lots, vous devez éviter de commettre les deux erreurs suivantes :</p>
+
+<ul>
+<li><p><strong>Ne pas décomposer le travail en lots suffisamment petits</strong>. Votre première tâche consiste à décomposer le travail de manière judicieuse. Nous vous recommandons de faire un commit de votre code quel que soit l'état de la fonctionnalité, et de ne passer que quelques jours sur le développement de chaque fonctionnalité. Un lot qui prend plus d'une semaine à finir et à vérifier est trop gros. Tout au long du processus de développement, il est indispensable d'analyser comment décomposer vos idées en petits fragments que vous pourrez développer de manière itérative.</p></li>
+<li><p><strong>Travailler par petits lots, puis regrouper les lots avant de les envoyer aux phases de test ou de lancement</strong>. Regrouper les lots de cette manière entraînera la réception tardive des commentaires destinés à identifier la présence de défauts dans les changements, et le retour tardif de vos utilisateurs et de votre organisation pour confirmer que ces changements étaient bel et bien ceux à effectuer.</p></li>
+</ul>
+
+<h2 id="ways_to_reduce_the_size_of_work_batches" data-text="Méthodes permettant de réduire la taille des lots de travail">Méthodes permettant de réduire la taille des lots de travail</h2>
+
+<p>Lorsque vous découpez votre travail en petits lots pouvant être achevés en quelques heures, vous pouvez généralement <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">tester et déployer ces lots en production en moins d'une heure</a> (PDF). La clé ici consiste à décomposer le travail en petites fonctionnalités pour permettre un développement rapide, plutôt que de développer des fonctionnalités complexes sur des branches avec des lancements peu fréquents.</p>
+
+<p>Afin d'améliorer le développement par petits lots, vérifiez votre environnement et confirmez que les conditions suivantes sont réunies :</p>
+
+<ul>
+<li>Le travail est décomposé de telle sorte que les équipes peuvent procéder à des lancements fréquents en production.</li>
+<li>Les développeurs ont l'habitude de décomposer le travail en petites modifications pouvant être achevées en l'espace de quelques heures, et non pas en quelques jours.</li>
+</ul>
+
+<p>Pour devenir un expert en développement par petits lots, visez à satisfaire chacune des conditions ci-dessus dans toutes vos équipes de développement. Cette pratique est une condition essentielle à l'<a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">intégration continue</a> et au <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">développement à branche unique</a>.</p>
+
+<h2 id="ways_to_measure_the_size_of_work_batches" data-text="Méthodes permettant de mesurer la taille des lots de travail">Méthodes permettant de mesurer la taille des lots de travail</h2>
+
+<p>Dès lors que vous comprenez ce que sont l'<a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">intégration continue</a> et la <a href="/architecture/devops/devops-measurement-monitoring-systems" track-type="article" track-name="internalLink" track-metadata-position="body">surveillance</a>, vous pouvez commencer à identifier différentes manières de mesurer le développement de vos petits lots dans vos systèmes ainsi que dans votre environnement de développement.</p>
+
+<ul>
+<li><strong>Les fonctionnalités d'application sont décomposées d'une manière propice aux lancements fréquents</strong>. Quelle est la fréquence visée des lancements ? Cette cadence des lancements varie-t-elle entre les équipes ? Les délais de production sont-ils rattachés aux plus grosses fonctionnalités ?</li>
+<li><strong>Les fonctionnalités d'application sont décomposées de telle sorte que les développeurs peuvent terminer le travail en une semaine maximum</strong>. Quelle est la proportion des fonctionnalités pouvant être achevées en une semaine maximum ? Quelles fonctionnalités ne pouvez-vous pas achever en une semaine maximum ? Pouvez-vous faire un commit des changements et les délivrer avant que la fonctionnalité ne soit achevée ?</li>
+<li><strong>Les MVPs sont établis et définis comme objectifs pour les équipes</strong>. Le travail est-il décomposé en fonctionnalités pour permettre la livraison de MVP et un développement rapide, plutôt qu'un processus long et complexe ?</li>
+</ul>
+
+<p>Les mesures que vous obtiendrez varieront selon que :</p>
+
+<ul>
+<li>vous connaissez les processus de votre organisation ;</li>
+<li>vous définissez des objectifs afin de réduire le gaspillage ;</li>
+<li>vous cherchez des manières de réduire la complexité au sein de votre processus de développement.</li>
+</ul>
+
+<h2 id="whats_next" data-text="Étape suivante">Étape suivante</h2>
+
+<ul>
+<li>Consultez la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">page DevOps</a> pour obtenir des liens vers d'autres articles et ressources.</li>
+<li>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</li>
+<li>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</li>
+</ul>
+
+</body></html>

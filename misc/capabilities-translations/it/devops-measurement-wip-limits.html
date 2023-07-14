@@ -1,0 +1,97 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Misurazione DevOps: limiti di lavoro nei processi</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> <em>i limiti di lavoro</em> sono una delle serie di funzionalità che aumentano le prestazioni di distribuzione del software e dell'organizzazione. Queste capacità sono state scoperte dal <a href="https://www.devops-research.com/research.html">programma di ricerca DORA State of DevOps</a>, un'indagine accademica indipendente e rigorosa sulle pratiche e sulle capacità che determinano prestazioni elevate. Per saperne di più, leggi le nostre <a href="/devops">risorse DevOps</a>.</span></aside>
+<p>Di fronte a troppo lavoro e a poche persone per svolgere questa operazione, i manager alle prime armi assegnano le persone a più attività nella speranza di aumentare la velocità effettiva.
+Sfortunatamente, il risultato è che le attività richiedono più tempo per essere completate e il team finisce spesso con il processo.</p>
+
+<p>Dovrai invece eseguire le seguenti operazioni:</p>
+
+<ul>
+<li>Assegnare priorità al lavoro</li>
+<li>Limitare il numero di persone che lavorano</li>
+<li>Concentrati sul completamento di un numero ridotto di attività ad alta priorità</li>
+</ul>
+
+<p>Il settore manifatturiero ha una lunga storia di limitazione della quantità di lavoro in corso (WIP). Le fabbriche non hanno grandi quantità di inventario. Quando invece un cliente ordina un prodotto, le parti vengono realizzate internamente, on demand o recuperate dai fornitori a monte, quando necessario, per poi assemblare il prodotto appena in tempo. Se implementi correttamente questa procedura, i tempi di risposta più brevi si traducono in tempi di risposta più brevi, qualità superiore, costi inferiori e sprechi inferiori.</p>
+
+<h2 id="how_to_implement_work_in_process_limits" data-text="Come implementare il lavoro nei limiti di processo">Come implementare il lavoro nei limiti di processo</h2>
+
+<p><strong>Usa uno storyboard.</strong> In tecnologia, il nostro inventario è invisibile. Non c'è nessun piano di produzione con pile di lavori o linee di montaggio dove possiamo vedere lo stato di avanzamento del lavoro. Un modo semplice per vedere l'inventario consiste nel scrivere tutto il lavoro
+del team sulle schede dell'indice e attaccarle su una lavagna. Nei metodi agili, si parla di
+creazione di uno <em>storyboard</em>.</p>
+
+<p>Il seguente storyboard di esempio copre più funzioni (analisi, sviluppo, test, operazioni) e mostra tutto il lavoro per un singolo prodotto.</p>
+
+<p><img src="/static/architecture/devops/wip-1.png" alt="immagine"/></p>
+
+<p><em>(Fonte: "Kanban for Ops" board game, Dominica DeGrandis 2013")</em></p>
+
+<p>Una pratica comune con gli storyboard è inserire un punto su una scheda per ogni giorno in cui hai lavorato la scheda. Il team può vedere facilmente quale lavoro è bloccato o sta richiedendo più tempo del previsto.</p>
+
+<p><strong>Specifica i limiti.</strong> Per ogni colonna nella lavagna, specifica il limite WIP o quante carte possono essere contemporaneamente in quella colonna. Una volta raggiunto il limite WIP, non è possibile aggiungere altre schede alla colonna e il team deve attendere che una scheda venga spostata nella colonna successiva prima di estrarre la priorità più alta dalla colonna precedente.</p>
+
+<p>Solo imponendo i limiti WIP e seguendo questo processo basato su pull si crea in realtà una lavagna kanban.</p>
+
+<p><strong>Determina i limiti WIP in base alla capacità del team.</strong> Ad esempio, se hai quattro coppie
+di sviluppatori, non consentire più di quattro schede nella colonna "in sviluppo".</p>
+
+<p><strong>Rispetta i limiti.</strong> I limiti WIP possono determinare la inattività dei team, in attesa del completamento di altre attività. Per ora, non aumentare i limiti WIP.
+Cerca invece di migliorare i tuoi processi per risolvere i fattori che contribuiscono a questi ritardi. Ad esempio, se sei in attesa di un ambiente in cui testare il tuo lavoro, potresti proporre di aiutare il team che prepara gli ambienti a migliorare o semplificare il processo.</p>
+
+<h2 id="common_pitfalls_with_work_in_process_limits" data-text="Errori comuni nei limiti di lavoro">Errori comuni nei limiti di lavoro</h2>
+
+<p>Le organizzazioni che implementano i limiti WIP spesso riscontrano le seguenti insidie:</p>
+
+<ul>
+<li><strong>Non conta il lavoro invisibile.</strong> È importante visualizzare l'intero flusso del valore dall'idea al cliente, non solo alla parte del lavoro che il team è responsabile. Senza questo risultato è impossibile vedere i colli di bottiglia effettivi e troverete i problemi che non sono vincoli effettivamente significativi al flusso di lavoro. Questa operazione è nota anche come "ottimizzazioni locali".</li>
+<li><strong>Impostazione dei limiti WIP troppo grandi.</strong> Assicurati che i limiti WIP non siano troppo grandi. Se il tuo team divide il tempo tra più attività o progetti, è un buon segno che i limiti WIP sono troppo elevati.</li>
+<li><strong>Rilassare i limiti WIP.</strong> Non ridurre i limiti del WIP quando le persone sono inattive. Piuttosto, queste persone devono aiutare in altre parti del flusso del valore, affrontando i problemi che portano a vincoli altrove.</li>
+<li><strong>Smettila di andare mentre sei avanti.</strong> Se i limiti WIP sono facili da raggiungere, riducili. Lo scopo dei limiti WIP è esporre i problemi nel sistema in modo che possano essere risolti. Un altro aspetto da considerare è la presenza di troppe colonne nel display visivo. Cerca invece modi per semplificare la procedura di pubblicazione e ridurre le consegne. I lavori di miglioramento dei processi sono fondamentali per aumentare il flusso.</li>
+</ul>
+
+<p>La ricerca DevOps Research &amp;Assessment mostra che i limiti WIP aiutano a migliorare i risultati delle prestazioni di distribuzione del software, in particolare quando sono combinati con l'<a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">uso di visualizzazioni visive</a> e <a href="/architecture/devops/devops-measurement-monitoring-systems" track-type="solution" track-name="internalLink" track-metadata-position="body">loop dei feedback dal monitoraggio</a>.</p>
+
+<h2 id="ways_to_improve_work_in_process_limits" data-text="Modi per migliorare il lavoro nei limiti di processo">Modi per migliorare il lavoro nei limiti di processo</h2>
+
+<ul>
+<li><strong>Rendi visibile il tuo lavoro.</strong> Durante l'operazione, cerca di mostrare tutto il tuo lavoro, rendendolo visibile a diversi team e stakeholder. Per ulteriori dettagli, consulta le <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">visualizzazioni visive</a>.</li>
+<li><strong>Imposta limiti WIP corrispondenti alla capacità di lavoro del tuo team.</strong>
+<ul>
+<li>Prendi in considerazione attività come l'assistenza per la produzione, gli orari delle riunioni e i debiti tecnici.</li>
+<li>Non consentire più WIP in una determinata parte del processo rispetto al numero di persone che lavorano alle attività.</li>
+<li>Non richiedere alle persone di suddividere il loro tempo tra più attività.</li>
+<li>Quando viene completato un determinato lavoro, sposta la scheda che lo rappresenta nella colonna successiva e tira il lavoro con la priorità più alta in attesa in coda.</li>
+</ul></li>
+<li><strong>Fissa un incontro settimanale con gli stakeholder per dare priorità a tutto il lavoro in ordine.</strong> Fai sapere agli stakeholder che se non parteciperanno, il loro lavoro non verrà svolto.</li>
+<li><strong>Lavora per aumentare il flusso.</strong> Misurare i tempi di risposta dei dipendenti nel sistema. Registra la data di inizio di una scheda e quella di fine. Da queste informazioni, puoi creare un istogramma di frequenza di esecuzione, che mostra il numero di giorni necessari per completare il sistema. Questi dati ti consentono di calcolare il tempo medio di risposta, nonché la variabilità, con l'obiettivo di avere una bassa variabilità: un'elevata variabilità significa che non hai definito bene l'ambito dei progetti o hai vincoli significativi al di fuori del tuo team. Un'elevata variabilità significa anche che le stime e le previsioni sul lavoro futuro non saranno così affidabili.</li>
+<li><strong>Migliora i processi di lavoro.</strong> Riduci i passaggi, semplifica e automatizza le attività e pensa a come migliorare la collaborazione. Dopo aver rimosso alcuni ostacoli e che ti senti a tuo agio, riduci i limiti WIP per rivelare il prossimo insieme di ostacoli. L'ideale è il flusso in un unico elemento, ovvero significa che il lavoro passa dall'idea al cliente con tempi di attesa minimi o modifiche. Questo ideale potrebbe non essere raggiungibile, ma funge da "vero nord" per guidarti lungo un processo di miglioramento continuo.</li>
+</ul>
+
+<h2 id="ways_to_measure_work_in_process_limits" data-text="Modi per misurare il lavoro nei limiti di processo">Modi per misurare il lavoro nei limiti di processo</h2>
+
+<p>I limiti WIP sono qualcosa che imposti anziché misurare, ma è importante continuare a trovare modi per migliorare. Durante le normali retrospettive, fai le seguenti domande:</p>
+
+<ul>
+<li>Conosciamo il tempo di risposta medio e la variabilità per l'intero flusso di valore (dall'idea al cliente)?</li>
+<li>Stiamo cercando modi per aumentare il flusso e quindi ridurre i tempi di risposta per il lavoro?</li>
+<li>I nostri limiti WIP presentano ostacoli che ci impediscono di aumentare il flusso?</li>
+<li>Stiamo facendo cose su questi ostacoli?</li>
+</ul>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina DevOps</a>.</li>
+<li>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</li>
+<li>Completa il
+<a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a>
+per vedere la tua posizione rispetto al resto del settore.</li>
+</ul>
+
+</body></html>

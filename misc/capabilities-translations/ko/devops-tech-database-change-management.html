@@ -1,0 +1,126 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 기술: 데이터베이스 변경 관리</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>참고:</strong><span> <em>데이터베이스 변경 관리</em>는 소프트웨어 제공과 조직 성과를 향상하는 기능 집합 중 하나입니다. 이러한 기능은 성과 향상을 이끌어내는 관례와 기능을 독립적이자 학술적으로 심층 연구하는 <a href="https://www.devops-research.com/research.html">DORA State of DevOps 연구 프로그램</a>을 통해 개발되었습니다. 자세한 내용은 <a href="/devops">DevOps 리소스</a>를 참조하세요.</span></aside>
+<p>데이터베이스 변경은 배포 수행 시 위험과 지연을 초래하는 주요 원인입니다. <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment(DORA)</a>는 지속적 배포를 구현하는 단계에서 어떤 데이터베이스 관련 권장사항이 도움이 되는지 조사하여 소프트웨어 제공 성능과 가용성을 모두 개선했습니다.</p>
+
+<p>DORA의 연구에 따르면 데이터베이스 작업을 소프트웨어 제공 프로세스에 통합하면 <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">지속적 배포</a>에 긍정적인 영향을 미치는 것으로 확인되었습니다.
+하지만 어떻게 해야 지속적 배포를 구현하는 일환으로 팀이 데이터베이스 전송을 개선할 수 있을까요? 몇 가지 실습을 통해 성능 결과를 예측합니다.</p>
+
+<p>DORA는 적절한 커뮤니케이션과 데이터베이스를 포함하는 포괄적인 구성 관리가 중요하다는 것을 확인했습니다. 지속적 배포를 잘 수행하는 팀은 데이터베이스 변경사항을 버전 제어의 스크립트로 저장하고 프로덕션 애플리케이션 변경 관리 등의 방식으로 이러한 변경사항을 관리합니다. 또한 애플리케이션의 변경이 데이터베이스의 변경을 필요로 하는 경우 이러한 팀은 프로덕션 데이터베이스를 담당하는 구성원과 논의하여 엔지니어팀이 대기 중인 데이터베이스 변경의 진행 상황을 파악할 수 있도록 합니다.</p>
+
+<p>팀이 이러한 권장사항을 따르면 데이터베이스 변경으로 인해 속도가 느려지거나 코드 배포가 수행될 때 문제가 발생하지 않습니다.</p>
+
+<h2 id="how_to_implement_database_change_management" data-text="데이터베이스 변경 관리 구현 방법">데이터베이스 변경 관리 구현 방법</h2>
+
+<p>효과적인 데이터베이스 변경 관리를 구현하는 데 사용되는 두 가지 측면은 문화와 기술입니다. 이 섹션에서는 두 가지를 모두 설명합니다.</p>
+
+<h3 id="establish_effective_communication_of_database_changes" data-text="데이터베이스 변경사항의 효과적인 통신 설정">데이터베이스 변경사항의 효과적인 통신 설정</h3>
+
+<p>연구에 따르면 팀은 프로덕션 데이터베이스 관리 담당자와 변경사항을 논의할 때와 모든 사람이 대기 중인 데이터베이스 변경의 진행 상황을 확인할 수 있을 때 최고의 성과를 냅니다.</p>
+
+<p>프로덕션 데이터베이스 관리자(DBA)와 제안된 변경사항을 의논하는 것은 중요한데 여기에는 몇 가지 이유가 있습니다. 먼저 이러한 전문가는 결과를 가장 효과적으로 달성할 수 있는 방법에 대해 조언하고 성능 문제와 같은 잠재적인 문제를 지적할 수 있습니다.
+(많은 작업은 개발자 워크스테이션과 비교할 때 프로덕션 시스템에서 매우 다른 성능 특성을 갖습니다.) 또한 이 의논 과정을 통해 DBA는 업스트림과 관련된 상황에 대한 유용한 정보를 얻어 예정된 변경사항에 더 효과적으로 대비할 수 있습니다.</p>
+
+<p>DBA를 비롯한 팀이 어떤 변경사항이 예정되었는지, 테스트 상태, 다양한 프로덕션 및 비프로덕션 공유 데이터베이스에 어떤 스키마 변경이 적용되었는지 알 수 있도록 모든 구성원이 변경 진행 상황을 볼 수 있도록 하는 것이 중요합니다. 다음을 통해 가시성을 높일 수 있습니다.</p>
+
+<ul>
+<li>버전 제어의 모든 데이터베이스 스키마 변경사항을 스키마가 속한 애플리케이션 코드와 함께 보관합니다.</li>
+<li>어떤 환경에 대해 어떤 변경사항이 일어났는지 및 실행 결과를 기록하는 도구를 사용합니다.</li>
+</ul>
+
+<p>또한 이러한 권장사항은 모든 변경사항에 대한 표준 소스 정보를 확보하고 변경사항 내역에 감사 목적으로 손쉽게 액세스할 수 있도록 합니다.</p>
+
+<h3 id="treat_all_database_schema_changes_as_migrations" data-text="모든 데이터베이스 스키마 변경사항을 마이그레이션으로 취급">모든 데이터베이스 스키마 변경사항을 마이그레이션으로 취급</h3>
+
+<p>데이터베이스 버전 관리 변경에 널리 사용되는 패턴은 다음 다이어그램과 같이 버전 제어에 유지되는 마이그레이션 스크립트로 모든 변경사항을 캡처하는 것입니다. 각 마이그레이션 스크립트에는 마이그레이션을 적용할 순서를 알 수 있도록 고유한 시퀀스 번호가 있습니다.</p>
+
+<p><img src="/static/architecture/devops/images/database-change-management-1.png" alt="데이터베이스의 모든 변경사항을 고유한 시퀀스 번호가 있는 마이그레이션 스크립트로 캡처하는 방법을 보여주는 다이어그램"/></p>
+
+<p>그런 다음 모든 데이터베이스 인스턴스에 특정 인스턴스에 대해 실행된 마이그레이션이 기록된 테이블이 있는지 확인합니다. 이러한 방식으로 데이터베이스 스키마를 버전 관리하면 도구를 사용하여 마이그레이션 스크립트를 적용하여 데이터베이스를 원하는 스키마 버전으로 가져갈 수 있습니다. 도구 예시는 다음과 같습니다.</p>
+
+<ul>
+<li><a href="https://github.com/golang-migrate/migrate" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">migrate</a>(Go)</li>
+<li><a href="https://pypi.org/project/alembic/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">alembic</a>(Python)</li>
+<li><a href="https://guides.rubyonrails.org/active_record_migrations.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Active Record Migrations</a>(Ruby on Rails)</li>
+<li><a href="https://github.com/dbup/dbup" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">dbup</a>(.NET)</li>
+<li><a href="https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Entity Framework Migrations</a>(.NET)</li>
+<li><a href="https://laravel.com/docs/7.x/migrations" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Laravel Migrations</a>(PHP)</li>
+<li><a href="https://flywaydb.org/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Flyway</a>(플랫폼과 무관)</li>
+<li><a href="https://www.liquibase.org/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Liquibase</a>(플랫폼과 무관)</li>
+</ul>
+
+<p>또한 마이그레이션을 사용하여 개발 및 테스트용으로 빈 데이터베이스 스키마를 만들 수 있습니다.</p>
+
+<p>다음 다이어그램에 표시된 것처럼 모든 데이터베이스 인스턴스에는 해당 인스턴스에 대해 실행한 마이그레이션을 기록하는 테이블이 있습니다. 그런 다음 데이터베이스 인스턴스에 아직 적용되지 않은 마이그레이션을 실행하는 도구 또는 스크립트를 사용하여 업데이트를 자동으로 수행할 수 있으며 각 작업이 성공적으로 완료된 후 마이그레이션 테이블을 업데이트할 수 있습니다.</p>
+
+<p><img src="/static/architecture/devops/images/database-change-management-2.png" alt="인스턴스에 대한 마이그레이션을 기록하는 테이블의 예시"/></p>
+
+<p>버전 제어를 정보 소스로 사용하는 자동화된 프로세스를 통해 애플리케이션 변경을 관리하는 것과 동일한 방식으로 데이터베이스 변경사항을 관리할 수 있습니다.</p>
+
+<h3 id="zero-downtime_database_changes" data-text="다운타임 없는 데이터베이스 변경사항">다운타임 없는 데이터베이스 변경사항</h3>
+
+<p>많은 조직에서는 데이터베이스 스키마를 변경할 때 애플리케이션 배포와의 조율이 필요하거나 변경사항 실행 중 데이터베이스 테이블 잠금으로 인해 서비스의 다운타임을 예약합니다.
+지속적 배포는 배포의 다운타임을 없애는 것을 목표로 합니다. 다음은 다운타임 없이 데이터베이스 스키마를 변경할 수 있는 몇 가지 전략입니다.</p>
+
+<ul>
+<li><a href="https://github.com/github/gh-ost" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">gh-ost</a> 또는 <a href="https://www.percona.com/doc/percona-toolkit/3.0/pt-online-schema-change.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">pt-online-schema-change</a>와 같은 <strong>온라인 스키마 마이그레이션 프레임워크를 사용</strong>합니다.
+이러한 도구는 변경하려는 각 테이블의 '고스트' 복사본을 만들고, 빈 복사본을 마이그레이션한 후 마이그레이션 중에 발생한 업데이트를 포함하여 원래 테이블에서 데이터를 점진적으로 복사합니다. 이 프로세스가 완료되면 원래 테이블이 고스트로 대체됩니다. <a href="/spanner/docs/schema-updates" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud Spanner</a>와 같은 일부 데이터베이스는 다운타임 없이 스키마 업데이트를 수행할 수 있습니다.</li>
+<li><p><a href="https://medium.com/continuousdelivery/expand-contract-pattern-and-continuous-delivery-of-databases-4cfa00c23d2e" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">병렬 변경 패턴</a>을 사용하여 <strong>데이터베이스 변경사항과 애플리케이션 변경사항을 분리</strong>합니다.
+이 패턴에서는 기존 데이터베이스 객체를 변형하지 않습니다. 대신 이전 구조와 함께 새 구조를 추가합니다. 예를 들어 'address' 열을 <code translate="no" dir="ltr">address_1</code> 및 <code translate="no" dir="ltr">address_2</code>의 두 열로 변경해 봅니다.</p>
+
+<p>이전 열을 삭제하고 새 열을 추가하고 동시에 새 버전의 애플리케이션을 출시하는 대신 새 열을 추가하되 이전 열을 유지합니다. 이 작업은 애플리케이션 배포가 발생하기 전에 수행할 수 있습니다. 그런 다음 새 버전의 애플리케이션이 새 열을 찾을 수 있습니다. 이러한 열이 존재하고 null 상태가 아니면 해당 열에서 읽고그렇지 않으면 이전 열에서 읽습니다. 그런 다음 애플리케이션은 이전 열과 새 열 모두에 쓰기 작업을 수행하고, 느리게 데이터를 마이그레이션하고, 데이터베이스 롤백 없이 애플리케이션을 롤백할 수도 있습니다.</p>
+
+<p>이렇게 하면 애플리케이션 배포가 데이터베이스 변경사항과 분리됩니다. 이는 일반적으로 데이터 마이그레이션에 포함되지 않으므로 다운타임없이 수행될 수 있습니다. 배포 부담을 줄이기 위해 애플리케이션의 몇 가지 추가적인 복잡성이 절충되었습니다.
+또는 데이터베이스 트리거를 사용하여 새 열과 이전 열의 데이터를 동기화 상태로 유지할 수 있습니다.</p></li>
+<li><p><strong>데이터 파티션 나누기 및 보관처리 전략을 설계하고 구현합니다</strong>. 많은 수의 행이 포함된 데이터베이스 테이블은 긴 마이그레이션의 주요 원인입니다. 애플리케이션에서 데이터의 파티션 나누기 및 보관처리가 가능하도록 설계되었는지 확인하여 테이블이 너무 커지지 않게 합니다. 분기마다 테이블의 여러 인스턴스를 만들 수 있습니다. 예를 들어 <code translate="no" dir="ltr">survey_answers</code> 테이블 대신 <code translate="no" dir="ltr">survey_answers_2020Q1</code>, <code translate="no" dir="ltr">survey_answers_2020Q2</code> 등이 있을 수 있습니다. 애플리케이션 설계 및 아키텍처 검토에 애플리케이션의 데이터 파티션 나누기 및 보관처리 전략의 검증이 포함되는지 확인합니다.</p></li>
+<li><p><strong>이벤트 소스 아키텍처를 사용합니다</strong>. <a href="https://microservices.io/patterns/data/event-sourcing.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">이벤트 소스 아키텍처</a>에서 데이터베이스가 애플리케이션의 현재 상태를 저장하는 대신 <em>변경사항</em>을 상태에 저장합니다. 그 대신 <em>명령어</em>라는 이벤트 로그 형식으로 저장됩니다. 따라서 고객 세부정보로 테이블을 업데이트하는 대신 고객이 주소를 변경하면 애플리케이션이 데이터베이스에 저장되는 주소 변경 명령어를 실행합니다. 이는 데이터베이스 트랜잭션 로그 및 버전 제어가 작동하는 방식이며 분산 시스템에서 일반적인 패턴입니다. 이벤트 소스 아키텍처에서 이벤트가 큐에 추가되어 큐에 있는 동안 데이터베이스 마이그레이션을 수행하도록 할 수 있습니다. 마이그레이션이 완료되면 큐에 있는 이벤트는 데이터베이스에 플러시될 수 있습니다. 일부 데이터베이스는 스키마 마이그레이션 실행 중에 쿼리를 큐에 추가할 수 있으며, 마이그레이션이 충분히 빠르게 완료되면 효과적일 수 있습니다.</p></li>
+<li><p><strong>NoSQL 솔루션을 사용합니다.</strong> <a href="https://firebase.google.com/docs/firestore" target="firebase" track-type="article" track-name="firebaseLink" track-metadata-position="body">Firestore</a> 및 <a href="/bigtable" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud BigTable</a>과 같은 일부 NoSQL 데이터베이스에는 스키마 변경으로 인한 다운타임 문제가 발생하지 않습니다. Firestore와 같은 문서 데이터베이스에는 암시적 스키마가 있습니다. 즉, 스키마가 데이터베이스 레이어가 아닌 애플리케이션 레이어에서 관리됩니다.
+하지만 NoSQL 데이터베이스의 사용은 모든 애플리케이션에는 적합하지 않다는 단점이 있습니다.</p></li>
+</ul>
+
+<p>예정된 다운타임을 없애는 동시에 예정되지 않은 다운타임이 발생하지 않도록 해야 합니다. 애플리케이션이 마이그레이션 도중 및 완료된 후에 예상되는 방식으로 작동할 수 있도록 <a href="/architecture/devops/devops-tech-test-data-management" track-type="article" track-name="internalLink" track-metadata-position="body">프로덕션과 유사한 데이터 세트</a>(모든 개인 또는 기밀 정보는 스크러빙됨)를 대상으로 모든 스키마 변경을 테스트해야 합니다. 일부 조직에서는 이러한 용도로 사용하기 위해 프로덕션 데이터베이스의 스크러빙된 버전을 매일 만듭니다. 프로덕션에서 노드가 두 개 이상 있는 데이터베이스 관리 시스템을 사용하는 경우 분산 시스템의 문제를 찾아내기 위해 노드가 최소 두 개인 인스턴스를 대상으로 테스트해야 합니다.</p>
+
+<h2 id="common_pitfalls_of_implementing_database_change_management" data-text="데이터베이스 변경 관리 구현의 일반적인 문제">데이터베이스 변경 관리 구현의 일반적인 문제</h2>
+
+<p>여기에 설명된 주요 관행을 구현할 때 알아야 할 몇 가지 일반적인 문제가 있습니다.</p>
+
+<p>먼저 많은 조직은 크게 격리되어 있습니다. DBA는 자체 프로세스를 사용하여 변경사항을 관리하는 별도의 팀에서 작업하는 경우가 많습니다. 소프트웨어 제공팀이 DBA팀에 문의하지 않고 데이터베이스 변경사항을 관리하기 위한 새 프로세스를 구현하면, 새 프로세스를 사용하여 DBA팀에서 관리하는 데이터베이스를 변경하는 데 저항에 직면할 가능성이 큽니다. 이로 인해 새 프로세스로 이전할 때의 이점이 크게 줄어들 수 있습니다.</p>
+
+<p>첫 번째 단계는 이 문서에 나와 있는 목표를 달성하는 방법에 대해 조직과 함께 의논하는 것입니다. 모든 제안된 프로세스 및 기술 변경사항에 대한 동의를 얻는 것이 중요합니다. 이를 위한 가장 좋은 방법은 조직이 겪고 있는 문제를 물어보고 이 문서에 있는 아이디어가 이러한 문제를 해결하는 데 어떻게 도움이 될 수 있는지 알리고 도움을 제공하는 것입니다. 이상적으로 제공팀과 DBA는 상호 운용 가능한 솔루션을 찾을 수 있습니다.</p>
+
+<p>이러한 장애는 여러 애플리케이션이 같은 데이터베이스 스키마를 공유하는 일반적인 상황의 문제로 인해 종종 악화됩니다. 즉, 한 애플리케이션에서 작업하는 팀은 다른 애플리케이션에 영향을 미치지 않고 스키마를 변경할 수 없습니다. 데이터베이스 스키마를 공유하는 모든 애플리케이션의 데이터베이스 변경사항을 관리하기 위한 단일 솔루션을 배치해야 합니다. 이러한 상황에서 데이터베이스 변경사항을 배포하기 위해 버전 제어 방식의 셀프서비스 메커니즘을 구현할 수 있으며 이는 훨씬 더 유용할 수 있습니다. 그러나 계획 및 출시에 세심한 주의가 필요합니다.</p>
+
+<p>마지막으로 마이그레이션 기반 데이터베이스 변경 관리와 제로 다운타임 배포를 모두 구현하면 상당한 <a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">아키텍처 변경</a>이 발생할 수 있습니다.
+이러한 권장사항을 구현하는 데 필요한 노력을 측정할 때 이를 고려해야 합니다.</p>
+
+<h2 id="how_to_measure_database_change_management" data-text="데이터베이스 변경 관리 측정 방법">데이터베이스 변경 관리 측정 방법</h2>
+
+<p>효과적인 데이터베이스 변경 관리 시스템의 목표는 데이터베이스 변경을 통해 배포 속도가 느려지거나 문제가 발생하지 않도록 하는 것입니다. 데이터베이스 변경이 기여 요인으로 작용한 실패 변경사항의 비율과 데이터베이스 변경에 관련된 작업이 버전 제어에서 출시에 이르는 전체 리드 타임에 기여하는 정도를 측정하는 것이 좋습니다.</p>
+
+<p>데이터베이스 변경사항에 예정된 다운타임이 필요한 경우 이 역시 중요한 고려사항입니다. 예정된 다운타임의 경제적 영향을 측정하려면 다운타임으로 인한 잠재적 손실 수익과 배포를 수행하기 위해 정규 시간외 근무로 인해 발생하는 급여를 모두 고려합니다.
+영업시간 외의 배포로 인해 팀의 작업 부담이 가중될 수 있습니다. 이러한 영향을 사용하여 이 문서에서 다룬 다운타임 없는 배포 솔루션을 구현하는 데 필요한 작업을 정당화할 수 있습니다.</p>
+
+<p>자동화 수준을 측정하는 측면에서는 완전 자동화된 프로세스를 사용하여 푸시 버튼 방식으로 수행되는 데이터베이스 변경 비율을 고려합니다. 모든 데이터베이스가 이러한 방식으로 변경되도록 해야 합니다.</p>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li><a href="https://www.martinfowler.com/articles/evodb.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">혁신적인 데이터베이스 설계</a>에 대해 읽어보세요.</li>
+<li><a href="https://medium.com/@chbussler/zero-downtime-database-migration-and-replication-to-and-from-cloud-spanner-99ad0c654d12" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">다운타임이 없는 데이터베이스 마이그레이션 및 Cloud Spanner로 복제</a>에 대해 읽어보세요.</li>
+<li><a href="/solutions/databases" track-type="article" track-name="internalLink" track-metadata-position="body">Google Cloud의 데이터베이스 솔루션</a>에 대해 자세히 알아봅니다.</li>
+<li>추천 도서는 다음과 같습니다.
+<ul><li><a href="http://shop.oreilly.com/product/0636920039761.do" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Database Reliability Engineering(데이터베이스 안정성 엔지니어링)</em></a>, 저자: 레인 캠벨과 차리티 메이저스</li>
+<li><a href="https://books.google.com/books/about/Refactoring_Databases.html?id=puBQAAAAMAAJ" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Refactoring Databases(데이터베이스 리팩터링)</em></a>, 저자: 스콧 W 앰블러와 프라모드 J 사달라지</li>
+</ul></li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

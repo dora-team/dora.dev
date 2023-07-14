@@ -1,0 +1,123 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Tech: Bereitstellung automatisieren</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> Die <em>Automatisierung der Bereitstellung</em> ist eine der Funktionen, die zu einer höheren Softwarebereitstellung und Unternehmensleistung führen. Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">"State of DevOps"-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, wissenschaftlich exakten Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie unter unseren <a href="/devops">DevOps-Ressourcen</a>.</span></aside>
+<p>Mithilfe einer automatisierten Bereitstellung können Sie Software per Knopfdruck in Test- und Produktionsumgebungen bereitstellen. Automatisierung ist ein wesentlicher Bestandteil einer sicheren Produktionsbereitstellung und sie ermöglicht schnelles Feedback zur Qualität Ihrer Software, da Teams nach Änderungen so schnell wie möglich umfassende Tests durchführen können.</p>
+
+<p>Folgende Elemente fließen in eine automatisierte Bereitstellung ein:</p>
+
+<ul>
+<li>Pakete, die durch kontinuierliche Integration (CI) erstellt wurden (diese Pakete sollten in jeder Umgebung, einschließlich der Produktion, bereitgestellt werden können)</li>
+<li>Skripts zum Konfigurieren der Umgebung, Bereitstellen der Pakete und Durchführen eines Bereitstellungstests (auch <em>Smoke Test</em> genannt)</li>
+<li>Umgebungsspezifische Konfigurationsinformationen</li>
+</ul>
+
+<p>Wir empfehlen Skripts und Konfigurationsinformationen in der Versionskontrolle zu speichern. Der Bereitstellungsprozess sollte die Pakete aus einem Artefakt-Repository herunterladen (z. B. aus <a href="/artifact-registry" track-type="article" track-name="internalLink" track-metadata-position="body">Artifact Registry</a>, <a href="https://www.sonatype.com/nexus-repository-sonatype" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Nexus</a>, <a href="https://jfrog.com/artifactory/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Artifactory</a> oder dem integrierten Repository Ihres CI-Tools).</p>
+
+<p>Die Skripts führen normalerweise die folgenden Aufgaben aus:</p>
+
+<ol>
+<li>Vorbereiten der Zielumgebung, z. B. durch Installieren und Konfigurieren der erforderlichen Software, oder Starten eines virtuellen Hosts von einem vorbereiteten Image eines Cloud-Anbieters wie Google Cloud</li>
+<li>Bereitstellen der Pakete</li>
+<li>Durchführen aller bereitstellungsbezogenen Aufgaben, z. B. das Ausführen von Skripts zur Datenbankmigration</li>
+<li>Erforderliche Konfigurationen</li>
+<li>Bereitstellungstest zum Prüfen der Verbindung mit den nötigen Diensten und der Funktion des Systems</li>
+</ol>
+
+<h2 id="how_to_implement_deployment_automation" data-text="Bereitstellungsautomatisierung implementieren">Bereitstellungsautomatisierung implementieren</h2>
+
+<p>Beim Entwerfen Ihres automatisierten Bereitstellungsprozesses empfehlen wir folgende Best Practices:</p>
+
+<ul>
+<li><strong>Verwenden Sie für jede Umgebung, einschließlich der Produktion, denselben Bereitstellungsprozess.</strong> Durch diese Regel wird der Bereitstellungsprozess viele Male getestet, bevor er für die Bereitstellung in der Produktion verwendet wird.</li>
+<li><strong>Ermöglichen Sie allen Benutzern mit den erforderlichen Anmeldedaten, eine beliebige Version des Artefakts bei Bedarf und vollautomatisch in einer beliebigen Umgebung bereitzustellen.</strong>
+Wenn Sie ein Ticket erstellen und auf die Vorbereitung der Umgebung warten müssen, ist der Bereitstellungsprozess nicht vollständig automatisiert.</li>
+<li><strong>Verwenden Sie für jede Umgebung die gleichen Pakete.</strong> Das bedeutet, dass Sie die umgebungsspezifische Konfiguration von Paketen trennen sollten.
+Auf diese Weise können Sie sicher sein, dass die bereitgestellten Pakete den getesteten entsprechen.</li>
+<li><strong>Ermöglichen Sie die Wiederherstellung des Zustands einer Umgebung anhand von Informationen aus der Versionsverwaltung.</strong> Durch diese Regel werden Bereitstellungen wiederholbar und bei einer Notfallwiederherstellung kann der Produktionsstatus auf deterministische Weise wiederhergestellt werden.</li>
+</ul>
+
+<p>Nutzen Sie idealerweise ein autonomes Tool zum Erstellen von Bereitstellungen, das aufzeichnet, welche Builds sich derzeit in den einzelnen Umgebungen befinden, und das die Ausgabe des Bereitstellungsprozesses zu Prüfzwecken protokolliert. Viele CI-Tools verfügen über solche Funktionen.</p>
+
+<h2 id="common_pitfalls_in_deployment_automation" data-text="Häufige Hindernisse bei der Bereitstellungsautomatisierung">Häufige Hindernisse bei der Bereitstellungsautomatisierung</h2>
+
+<p>Bei der Automatisierung eines Bereitstellungsprozesses müssen folgende Hindernisse überwunden werden:</p>
+
+<ul>
+<li>Komplexität des bestehenden Prozesses</li>
+<li>Abhängigkeiten zwischen Diensten</li>
+<li>Komponenten, die nicht auf die Automatisierung ausgelegt sind</li>
+<li>Schlechte Zusammenarbeit zwischen Teams</li>
+</ul>
+
+<h3 id="complexity" data-text="Komplexität">Komplexität</h3>
+
+<p>Das erste Hindernis ist die Komplexität. Die Automatisierung eines komplexen, fragilen manuellen Prozesses führt zu einem komplexen, fragilen automatisierten Prozess. Sie müssen zuerst für eine bereitstellungstaugliche Architektur sorgen. Dies bedeutet, das Bereitstellungsskript so einfach wie möglich zu gestalten und die Komplexität auf den Anwendungscode und die Infrastrukturplattform zu übertragen. Suchen Sie nach Bereitstellungsfehlermodi und überlegen Sie, wie Sie diese vermeiden können, indem Sie Ihre Dienste, Komponenten, Infrastrukturplattform und das Monitoring intelligenter gestalten. Auf einer Platform as a Service (PaaS) wie <a href="/appengine" track-type="article" track-name="internalLink" track-metadata-position="body">App Engine</a>, <a href="/run" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud Run</a> oder <a href="/architecture/cloud-foundry-on-gcp" track-type="article" track-name="internalLink" track-metadata-position="body">Pivotal Cloud Foundry</a> ausgeführte, cloudnative Anwendungen können in der Regel ohne entsprechendes Skript mit einem einzigen Befehl bereitgestellt werden. Dies ist der Idealfall.</p>
+
+<p>Ein zuverlässiger Bereitstellungsprozess muss zwei wichtige Eigenschaften besitzen. Erstens sollten die einzelnen Schritte des Bereitstellungsprozesses so weit wie möglich idempotent sein, damit Sie sie im Fehlerfall so oft wie nötig wiederholen können. Zweitens sollten sie unabhängig von der Reihenfolge sein, was bedeutet, dass Komponenten und Dienste nicht unkontrolliert abstürzen sollten, wenn andere erwartete Dienste oder Komponenten nicht erreichbar sind. Stattdessen sollten die Dienste weiterhin eingeschränkt betrieben werden können, bis ihre Abhängigkeiten wieder verfügbar sind.</p>
+
+<p>Für neue Produkte und Dienste sollten diese Prinzipien von Beginn der Entwurfsphase an als Systemanforderungen gelten. Wenn Sie die Automatisierung für ein vorhandenes System nachrüsten, müssen diese Merkmale möglicherweise gesondert implementiert oder die Telemetrie so integriert werden, dass der Bereitstellungsprozess inkonsistente Zustände erkennen und kontrolliert fehlschlagen lassen kann.</p>
+
+<h3 id="dependencies" data-text="Abhängigkeiten">Abhängigkeiten</h3>
+
+<p>Das zweite Hindernis besteht darin, dass viele Bereitstellungsprozesse, insbesondere in Unternehmensumgebungen, eine Orchestrierung erfordern. Mit anderen Worten: Sie müssen mehrere Dienste in einer bestimmten Reihenfolge gemeinsam bereitstellen, während Sie andere Aufgaben wie Datenbankmigrationen strikt synchronisiert ausführen. Obwohl viele Workflow-Tools für die Bereitstellung in Unternehmen existieren, die in dieser Situation Abhilfe schaffen sollen, handelt es sich dabei im Grunde genommen lediglich um Behelfslösungen für ein Architekturproblem: die enge Kopplung zwischen den verschiedenen Komponenten und Diensten. Mit der Zeit müssen Sie diese enge Kopplung auflösen. Das Ziel ist die unabhängige Bereitstellung von Diensten ohne Orchestrierung.</p>
+
+<p>Dieser Ansatz erfordert in der Regel ein sorgfältiges Design, um jeden Dienst abwärtskompatibel zu gestalten, sodass Clients des Dienstes kein Upgrade im Gleichschritt benötigen, sondern später unabhängig aktualisiert werden können.
+Techniken wie die <a href="/architecture/migrating-a-monolithic-app-to-microservices-gke#api_contracts" track-type="article" track-name="internalLink" track-metadata-position="body">API-Versionsverwaltung</a> können hier Abhilfe schaffen. Es muss auch sichergestellt werden, dass die Dienste weiterhin funktionieren können (möglicherweise im eingeschränkten Zustand), auch wenn sie keine Verbindung zu anderen Abhängigkeiten herstellen können. Dieses Design eignet sich für verteilte Systeme, da es dazu beitragen kann, Fehlerkaskaden zu verhindern. In seinem Buch "Release It!" beschreibt Michael Nygard eine Reihe von Mustern für den Entwurf verteilter Systeme, einschließlich <a href="https://martinfowler.com/bliki/CircuitBreaker.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Leistungsschaltern</a>.
+Mithilfe des <a href="https://martinfowler.com/bliki/ParallelChange.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">parallelen Änderungsmusters</a> können Sie Datenbankaktualisierungen sogar von den Diensten entkoppeln, von denen sie abhängig sind.</p>
+
+<h3 id="not_designed_for_automation" data-text="Nicht auf Automatisierung ausgelegte Komponenten">Nicht auf Automatisierung ausgelegte Komponenten</h3>
+
+<p>Ein drittes häufiges Hindernis sind Komponenten, die nicht auf die Automatisierung ausgelegt sind. Jeder Bereitstellungsprozess, bei dem die Anmeldung in einer Konsole und eine manuelle Interaktion durch ein Anklicken erforderlich sind, sollte verbessert werden. Heute bieten die meisten Plattformen (einschließlich Google Cloud) eine API, die Ihr Skript für die Bereitstellung verwenden kann. Sollte dies nicht der Fall sein, müssen Sie kreativ werden und derartige manuelle Eingriffe vermeiden. Dazu suchen Sie möglicherweise die zugrunde liegende Konfigurationsdatei oder Datenbank des Tools und nehmen daran direkt Änderungen vor oder ersetzen es durch ein anderes Tool mit einer API.</p>
+
+<h3 id="poor_collaboration_between_teams" data-text="Schlechte Zusammenarbeit zwischen Teams">Schlechte Zusammenarbeit zwischen Teams</h3>
+
+<p>Das letzte Hindernis besteht, wenn Entwickler und IT-Betriebsteams nicht synchron am selben Strang ziehen.
+Hierfür kann es mehrere Möglichkeiten geben. Beispiel: Das Entwicklerteam verwendet eine Bereitstellungsmethode als die IT-Abteilung. Oder in einem anderen Beispiel ist bei unterschiedlich konfigurierten Umgebungen das Risiko, dass der Bereitstellungsprozess manuell von der IT-Abteilung ausgeführt wird, deutlich größer, was die Wahrscheinlichkeit von Inkonsistenzen und Fehlern erhöht. Entwickler und IT-Abteilungen müssen die Bereitstellung gemeinsam automatisieren. Mit diesem Ansatz können beide Teams die Automatisierung der Bereitstellung verstehen, warten und weiterentwickeln.</p>
+
+<h2 id="ways_to_improve_deployment_automation" data-text="Möglichkeiten für eine bessere Bereitstellungsautomatisierung">Möglichkeiten für eine bessere Bereitstellungsautomatisierung</h2>
+
+<p>Als erster Schritt muss der vorhandene Bereitstellungsprozess in einem allgemeinen Tool dokumentiert werden, auf das Entwickler und IT-Abteilungen zugreifen können, z. B. in Google Docs oder in einem Wiki.
+Vereinfachen und automatisieren Sie anschließend den Bereitstellungsprozess schrittweise. Dieser Ansatz umfasst normalerweise die folgenden Aufgaben:</p>
+
+<ul>
+<li>Code in einer Weise verpacken, die für die Bereitstellung geeignet ist</li>
+<li>Vorkonfigurierte Images oder Container für virtuelle Maschinen erstellen</li>
+<li>Die Bereitstellung und Konfiguration von Middleware automatisieren</li>
+<li>Pakete oder Dateien in die Produktionsumgebung kopieren</li>
+<li>Server, Anwendungen oder Dienste neu starten</li>
+<li>Konfigurationsdateien aus Vorlagen generieren</li>
+<li>Automatisierte Bereitstellungstests ausführen und überprüfen, dass das System funktioniert und ordnungsgemäß konfiguriert ist</li>
+<li>Testverfahren ausführen</li>
+<li>Skripts für Datenbankmigrationen ausarbeiten und diese automatisieren</li>
+</ul>
+
+<p>Verringern Sie die manuellen Schritte, implementieren Sie nach Möglichkeit Idempotenz und unabhängige Reihenfolgen und nutzen Sie die Funktionen Ihrer Infrastruktur so gut es geht. Denken Sie daran: Die Bereitstellung sollte möglichst einfach automatisiert werden.</p>
+
+<h2 id="ways_to_measure_deployment_automation" data-text="Möglichkeiten, die Bereitstellungsautomatisierung zu messen">Möglichkeiten, die Bereitstellungsautomatisierung zu messen</h2>
+
+<p>Die Bereitstellungsautomatisierung lässt sich unkompliziert messen.</p>
+
+<ul>
+<li><strong>Zählen Sie die Anzahl der manuellen Schritte im Bereitstellungsprozess</strong>. Reduzieren Sie diese Schritte systematisch. Die Anzahl der manuellen Schritte erhöht die Bereitstellungszeit sowie die Fehleranfälligkeit.</li>
+<li><strong>Messen Sie den Grad (oder den Prozentsatz) der Automatisierung in der Bereitstellungspipeline</strong>. Erhöhen Sie den Grad der Automatisierung kontinuierlich.</li>
+<li><strong>Bestimmen Sie den Zeitaufwand für Verzögerungen in der Bereitstellungspipeline</strong>. Wenn Sie Maßnahmen gegen diese Verzögerungen ergreifen, werden Sie auch verstehen, wo und weshalb Code in der Bereitstellungspipeline blockiert wird.</li>
+</ul>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Weitere Informationen</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li><a href="/solutions/continuous-delivery" track-type="solution" track-name="internalLink" track-metadata-position="body">Continuous Delivery-Lösungen</a> von Google Cloud</li>
+<li>E-Book <a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Site Reliability Engineering</a>, insbesondere <a href="https://landing.google.com/sre/sre-book/chapters/release-engineering/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Kapitel 8 – Release Engineering</a></li>
+<li><a href="http://www.informit.com/articles/article.aspx?p=1833567" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Vier Prinzipien für risikoarme Software-Releases</a></li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

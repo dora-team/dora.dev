@@ -1,0 +1,138 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技术：持续交付</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+<aside class="note"><strong>注意</strong><span>：持续交付<em></em>是能够推动实现更出色的软件交付表现和组织绩效的一组功能之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside>
+<p>持续交付是指能够按需快速、安全且可持续地发布各种类型的更改。采取持续交付的团队能够随时（包括正常工作时间）以低风险方式发布软件和更改生产，而不影响用户。</p>
+
+<p>您可以将持续交付的原则和做法应用于任何软件情境，包括：</p>
+
+<ul>
+<li>更新复杂分布式系统中的服务。</li>
+<li>升级主机软件。</li>
+<li>更改基础架构配置。</li>
+<li>更改数据库架构。</li>
+<li>自动更新固件。</li>
+<li>发布新版本的移动应用。</li>
+</ul>
+
+<p>在团队采用持续交付时，您可以针对以下问题回答“是”：</p>
+
+<ul>
+<li>我们的软件在整个生命周期中是否处于可部署状态？</li>
+<li>我们是否优先考虑让软件能够部署，而不是开发新功能？</li>
+<li>对于我们正在努力改进的系统质量和可部署性，是否有任何快速反馈提供给团队的所有人？</li>
+<li>当我们收到系统不可部署的反馈（例如失败的构建或测试）时，是否将这些问题修复为最高优先级？</li>
+<li>我们是否可以随时根据需要将生产系统部署到生产环境，或者为最终用户部署？</li>
+</ul>
+
+<p>持续交付通常与持续部署混淆，但它们是不同的做法。持续部署是指团队尝试尽快将每项代码更改部署到生产环境中。持续部署非常适合 Web 服务，但不适用于固件或移动应用等软件。持续交付适用于各种软件（包括固件和主机系统），以及严格监管的环境。即使您从未打算开始使用持续部署，也可以并且应该开始使用持续交付。</p>
+
+<p>持续交付和持续部署被误认为存在风险，不适合用于监管领域或安全关键领域。事实上，持续交付的目标是降低软件风险，DORA 研究表明，表现较佳者能达到更高级别的可靠性和可用性。提高持续交付的技术做法（持续测试、更早将安全性纳入软件开发流程、综合测试和可观察性）在严格监管领域以及安全关键领域尤为重要。持续交付在金融服务和政府等严格监管领域中已成功应用了很多次。</p>
+
+<p>虽然某些类型的软件可以实现持续交付，但比较困难。不过，这样做有诸多好处。<a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps 研究和评估组织 (DORA)</a> 的研究表明，表现良好的持续交付可提供以下好处：</p>
+
+<ul>
+<li>提升了软件交付性能（以<a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">四个关键指标</a>为衡量依据）以及实现了更高级别的可用性。</li>
+<li>达到更高级别的质量，以团队在重复性工作或计划外工作中花费的时间百分比为衡量依据（如 <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">2016 年 DevOps 现状报告</a> pp25-26 以及 <a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">2018 年 DevOps 现状报告</a> pp27-29 所示）。</li>
+<li>预测较低级别的负担（由工作过度或压力导致的身体、精神或情绪疲惫）、较高级别的<a href="/architecture/devops/devops-culture-job-satisfaction" track-type="article" track-name="internalLink" track-metadata-position="body">作业满意度</a>以及更好的<a href="/architecture/devops/devops-culture-westrum-organizational-culture" track-type="article" track-name="internalLink" track-metadata-position="body">组织文化</a>。</li>
+<li>降低部署难度，用于衡量部署的中断性程度，而不是衡量简单和轻松程度，以及工程师和技术人员在将代码投入生产时所感受到的恐惧和焦虑。</li>
+<li>影响文化，带来更高级别的<a href="https://rework.withgoogle.com/print/guides/5721312655835136/">心理安全</a>，以及更强大的<a href="/architecture/devops/devops-culture-westrum-organizational-culture" track-type="article" track-name="internalLink" track-metadata-position="body">以任务为核心的组织文化</a>。</li>
+</ul>
+
+<p>下图展示了一组技术做法如何影响持续交付，继而产生上述结果：</p>
+
+<p><img src="/static/architecture/devops/images/continuous-delivery-technical-practices.png" alt="展示技术做法如何在其他功能中取得结果" width="80%" class="screenshot"/> </p>
+
+<p>持续交付只是取得前一个讨论结果的其中一个因素，但它是关键因素。<a href="https://devops-research.com/research.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">DORA 研究项目</a>中讨论的其他文化和组织功能也有助于取得这些结果。您可以通过实现本文档中介绍的技术做法来实现持续交付。</p>
+
+<h2 id="implementing_continuous_delivery" data-text="实现持续交付">实现持续交付</h2>
+
+<p>DORA 的研究发现，以下技术功能有助于实现持续交付。组织内的<a href="/architecture/devops/devops-culture-transformational-leadership" track-type="article" track-name="internalLink" track-metadata-position="body">变革型领导力</a>也可以推动以下许多技术功能的实现。</p>
+
+<p>为了帮助您的团队获得更高的吞吐量和更低的风险版本，请实现以下持续交付做法：</p>
+
+<ul>
+<li><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">测试自动化</a>：主要由开发者创建和维护的全面的自动化测试套件的使用情况。有效的测试套件是可靠的，也就是说，测试会发现真正的故障，并且仅传递可发布的代码。</li>
+<li><a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">部署自动化</a>：部署完全自动化而不需要人工干预的程度。</li>
+<li><a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">主干开发</a>：特征是代码库中的活跃分支少于三个；将分支合并到主线之前分支的生命周期都很短（例如，不到一天）；当由于合并冲突、代码冻结或稳定阶段而导致没有人可以签入代码或执行拉取请求时，应用团队极少或从不具有代码锁定期。<em></em></li>
+<li><a href="/architecture/devops/devops-tech-shifting-left-on-security" track-type="article" track-name="internalLink" track-metadata-position="body">提前测试安全性</a>：将安全性集成到软件开发流程的设计和测试阶段。此流程包括对应用进行安全审核，让信息安全团队参与应用的设计和演示流程，使用预先批准的安全库和软件包，并将安全特性作为自动化测试套件的一部分进行测试。</li>
+<li><a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">松散耦合的架构</a>：通过该架构，团队可以按需测试和部署应用，而无需与其他服务编排。通过松散耦合的架构，您的团队可以独立工作，而不必依赖其他团队获享支持和服务，从而可以快速工作并为组织带来价值。</li>
+<li><a href="/architecture/devops/devops-tech-teams-empowered-to-choose-tools" track-type="article" track-name="internalLink" track-metadata-position="body">赋予团队选择工具的能力</a>：可选择使用哪些工具的团队在持续交付方面表现更佳。一线人员比其他人更清楚自己需要什么才能保持效率。</li>
+<li><a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">持续集成 (CI)</a>：一种定期签入代码的开发实践，每次签入都会触发一组快速测试来发现回归（开发者随即便会加以解决）。CI 流程可以创建最终会部署和发布的规范构建和软件包。</li>
+<li><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">连续测试</a>：在整个软件交付生命周期内进行测试，而不是在开发完成<em></em>后进行单独测试。通过持续测试，开发者和测试人员可以并肩工作。表现较佳者负责测试驱动开发，在不到 10 分钟的时间内从测试中获得反馈，持续审核并改进其测试套件（例如，以便更好地找出缺陷并控制复杂性）。</li>
+<li><a href="/architecture/devops/devops-tech-version-control" track-type="article" track-name="internalLink" track-metadata-position="body">版本控制</a>：对所有生产工件（包括应用代码、应用配置、系统配置和脚本）使用版本控制系统（如 Git 或 Subversion）自动执行构建和配置环境。</li>
+<li><a href="/architecture/devops/devops-tech-test-data-management" track-type="article" track-name="internalLink" track-metadata-position="body">测试数据管理</a>：有效做法包括拥有充足的数据来运行测试套件，能够按需获取必要数据，以及数据不会限制可运行的测试数量。请注意，您的团队应尽可能减少运行自动测试所需的测试数据量。</li>
+<li><a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="article" track-name="internalLink" track-metadata-position="body">全面的监控和可观察性</a>：允许团队了解其系统的运行状况。有效的解决方案可让团队监控预定义指标（包括用户遇到的系统状态），并允许工程师以交互方式调试系统，并探索涌现的属性和模式。</li>
+<li><a href="/architecture/devops/devops-measurement-proactive-failure-notification" track-type="article" track-name="internalLink" track-metadata-position="body">主动通知</a>：监控系统运行状况，以便团队可以提前检测并缓解问题。</li>
+<li><a href="/architecture/devops/devops-tech-database-change-management">数据库更改管理</a>：如果数据库遵循一些关键做法，包括以脚本形式在版本控制中存储数据库更改（并采用与生产应用更改相同的方式管理这些更改），将数据库更改显示给软件交付生命周期中的所有人（包括工程师），并在更改应用要求数据库更改时与各方沟通协调，则数据库更改不会减缓团队的进度。</li>
+<li><a href="/architecture/devops/devops-tech-code-maintainability">代码可维护性</a>：通过系统和工具，开发者可以轻松更改由其他人维护的代码、查找代码库中的示例、重复使用其他人的代码，以及添加、升级和迁移到新版本的依赖项，而不破坏其代码。</li>
+</ul>
+
+<p>虽然持续交付通常与持续集成相结合（其简称为 <em>CI/CD</em>），但研究表明，持续集成只是实现持续交付的一个元素。为实现可靠、低风险的发布，软件交付流程中的所有人（而不仅仅是软件开发者）必须密切合作，并且您的团队需要采用新的工作方式并学习新技能。</p>
+
+<h2 id="common_pitfalls_of_implementing_continuous_delivery" data-text="实现持续交付的常见误区">实现持续交付的常见误区</h2>
+
+<p>一些组织错误地认为他们可以通过更频繁地执行现有部署流程来实现持续交付。但是，实现用于进行持续交付的技术功能通常需要对流程和架构进行重大更改。在不改进流程和架构的情况下提高部署频率可能会导致更高的故障率，并让团队精疲力尽。</p>
+
+<p>有关持续交付的许多说明侧重于工具和模式，例如从版本控制更改为生产的部署流水线。但是，如果在不使用本文档中介绍的必要技术做法和流程更改的情况下使用新型工具，则不会获得预期的优势。</p>
+
+<p>下图显示了 DORA 研究判定为典型转型计划的 J 曲线。为了从 J 曲线的底部攀升，您的团队需要添加流程重新设计和简化、架构改进、能力和技能开发，以及自动化和工具。</p>
+
+<p><img src="/static/architecture/devops/images/continuous-delivery-2.png" alt="“2018 年 DevOps 现状报告”中关于典型转型的 J 曲线图。" width="80%" class="screenshot"/> </p>
+
+<p>在上图中，已标记以下阶段：</p>
+
+<ul>
+<li>在曲线的开端，团队开始转型并识别快速胜出。</li>
+<li>在最初的改进过程中，自动化可以帮助表现不佳者逐步提升为表现一般者。</li>
+<li>在效率降低（J 曲线的底部）的情况下，自动化会增加测试要求，这些要求需要手动处理。大量技术债务阻碍了进展。</li>
+<li>随着团队开始走出困境，技术债务和增加的复杂性会增加更改过程的手动控制和层级，从而导致工作速度变慢。</li>
+<li>在曲线的顶部，持续不断的改进工作带来了卓越的性能和高绩效。优秀的表现者利用专业知识从他们的环境中学习，从而看到生产力提高。</li>
+</ul>
+
+<p>为减轻 J 曲线造成的影响，完成<em>价值流映射</em> (VSM) 练习以发现和预测瓶颈效果是一种不错的方法。在 VSM 练习中，您会看到从版本控制进展到正式版时的更改：</p>
+
+<ol>
+<li>请考虑每项更改要经历的各种流程，例如自动和手动测试、安全审核、变更管理以及发布到生产环境。</li>
+<li>衡量更改从版本控制到发布所经历的总时间。在每个过程中，衡量以下内容：<ul>
+<li>从头到尾执行过程所涉及的实际所用时间和增值时间（实际完成工作的时间）。</li>
+<li>由于第一次未正确处理导致发回这项工作的时间百分比。该指标称为“完整准确百分比”<em></em>或 %C/A。</li>
+</ul></li>
+</ol>
+
+<p>价值流映射练习的目的是帮助您找出流程中的低效问题。作为一个团队，您需要创建一个图，说明您希望在六个月内实现价值流，并集中团队力量致力于实现这一未来状态。找出并移除过程中所用时间较长（与增值时间相比）或其 %C/A 不佳的障碍。</p>
+
+<p>在实现部署流水线的过程中，通常需要处理重要的流程并重新设计架构。由于部署流水线经历签入到发布，因此它会涉及多个团队。请务必要求所有团队的代表都完成价值流映射练习，并同意在实现未来状态的过程中使用通用工具链和流程（例如部署到测试和生产环境）。</p>
+
+<p>实现持续交付是一个持续的每日改进工作的过程，以您希望实现的结果作为指导目标。工具和模式很有价值，但仅在这项必要的改进工作中提供。</p>
+
+<h2 id="measuring_continuous_delivery" data-text="衡量持续交付">衡量持续交付</h2>
+
+<p>最终，持续交付的目标是确保发布操作在正常工作时间内以风险较低的方式执行。该目标应该是任何人都无需在正常工作时间以外去执行部署或发布工作，因此请务必衡量这一点。</p>
+
+<p>您在持续交付方面的进展情况将反映在您达成的结果中。您可以进行 <a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">DORA DevOps 快速检查</a>，了解关键持续交付指标的进展情况：</p>
+
+<ul>
+<li>定期更改和紧急更改的准备时间较短，以期将常规流程用于紧急更改。</li>
+<li>更改失败率低。</li>
+<li>在服务中断或服务降级时快速恢复服务。</li>
+<li>能够保证及时发布高优先级功能和问题修复的发布频率。</li>
+</ul>
+
+<p>正如本文开头所述，实现持续交付也应该能够减少重复性工作量、降低部署困难性，以及减少执行重复性工作和计划外工作所需的时间。</p>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>如需详细了解持续交付，请参阅 Martin Fowler 所著的<a href="https://martinfowler.com/delivery.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">软件交付指南</a>。</li>
+<li>阅读 Karen Martin 和 Mike Osterling 所著的<a href="https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>《Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation》</em></a>。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

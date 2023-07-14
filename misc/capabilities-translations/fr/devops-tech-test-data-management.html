@@ -1,0 +1,82 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Technologie DevOps : gestion des données de test</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Remarque</strong> :<span> <em>La gestion des données de test</em> est l'un des ensembles de fonctionnalités permettant d'améliorer
+la livraison de logiciels et les performances organisationnelles. Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les capacités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>Le <a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">test automatisé</a> est un élément clé des pratiques modernes de livraison de logiciels. La capacité à exécuter un ensemble complet de tests unitaires, d'intégration et système est essentielle pour vérifier que votre application ou service fonctionne comme prévu et peut être déployé en toute sécurité. Pour vous assurer que vos tests valident des scénarios réalistes, il est essentiel de leur fournir des données réalistes.</p>
+
+<p>Les données de test sont importantes, car elles sont requises par tous les types de tests de votre suite de tests, y compris les tests manuels et automatisés. Les données de test de bonne qualité vous permettent de valider les parcours utilisateur courants ou à valeur élevée, de tester des cas spéciaux, de reproduire des erreurs et de simuler des erreurs.</p>
+
+<p>Cependant, il est difficile d'utiliser et de gérer efficacement les données de test. Une dépendance excessive aux données définies en dehors du champ d'application du test peut fragiliser vos tests et augmenter les coûts de maintenance. Les dépendances sur des sources de données externes peuvent entraîner des retards et affecter les performances des tests. La copie de données de production présente un risque, car elle peut contenir des informations sensibles. Pour relever ces défis, vous devez gérer vos données de test avec soin et de façon stratégique.</p>
+
+<h2 id="how_to_implement_test_data_management" data-text="Mettre en œuvre la gestion des données de test">Mettre en œuvre la gestion des données de test</h2>
+
+<p>L'analyse réalisée par <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> (Recherche et évaluation) montre que les équipes performantes adoptent la gestion des données de test en suivant les principes fondamentaux suivants :</p>
+
+<ul>
+<li>Des données de test adéquates sont disponibles pour exécuter des ensembles de tests entièrement automatisés.</li>
+<li>Les données de test des ensembles de tests automatisés peuvent être obtenues sur demande.</li>
+<li>Les données de test ne limitent pas le nombre de tests automatisés que les équipes peuvent exécuter ni leurs capacités.</li>
+</ul>
+
+<p>Pour améliorer les processus de gestion des données de test, veillez à ce que toutes vos équipes de développement remplissent chacune de ces conditions. Ces pratiques peuvent également contribuer positivement à vos fonctionnalités globales d'<a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">automatisation des tests</a> et d'<a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">intégration continue</a>.</p>
+
+<h2 id="common_pitfalls_in_test_data_management" data-text="Problèmes courants liés à la gestion des données de test">Problèmes courants liés à la gestion des données de test</h2>
+
+<p>Il peut être difficile de gérer les données de test. Les problèmes suivants sont courants dans la gestion des données de test :</p>
+
+<ul>
+<li>Dépendance excessive aux données lors des tests. Plus particulièrement, les tests unitaires ne doivent pas dépendre de données ou d'états extérieurs au test.</li>
+<li>Utiliser une copie complète de la base de données de production, plutôt que d'identifier les parties pertinentes ou importantes.</li>
+<li>Ne pas masquer ni hacher les données sensibles.</li>
+<li>S'appuyer sur des données obsolètes ou qui ne sont plus pertinentes.</li>
+</ul>
+
+<h2 id="ways_to_improve_test_data_management" data-text="Améliorer la gestion des données de test">Améliorer la gestion des données de test</h2>
+
+<p>Les pratiques suivantes peuvent vous aider à utiliser les données de test plus efficacement :</p>
+
+<ol>
+<li><p><strong>Privilégiez les tests unitaires.</strong> Les tests unitaires doivent être indépendants les uns des autres et de toute autre partie du système, à l'exception du code testé. Les tests unitaires ne doivent pas dépendre de données externes. Comme le définit la <a href="https://martinfowler.com/articles/practical-test-pyramid.html#TheTestPyramid" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">pyramide d'automatisation des tests</a>, les tests unitaires doivent constituer la majorité de vos tests. Les tests unitaires bien rédigés qui s'exécutent sur une base de code bien conçue sont beaucoup plus faciles à trier et moins coûteux à gérer que les tests de niveau supérieur. En augmentant la couverture de vos tests unitaires, vous pouvez réduire votre dépendance à des tests de niveau supérieur qui consomment des données externes.</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-test-automation-pyramid.svg" alt="Pyramide d&amp;#39;automatisation des tests"/></p></li>
+<li><p><strong>Réduisez la dépendance aux données de test.</strong> Les données de test nécessitent une maintenance minutieuse et permanente. Au fur et à mesure de l'évolution de vos API et interfaces, vous devez mettre à jour ou recréer les données de test associées. Ce processus représente un coût qui peut avoir un impact négatif sur la vélocité de l'équipe. Par conséquent, il est recommandé de réduire la quantité de données de test nécessaire pour exécuter des tests automatisés.</p></li>
+<li><p><strong>Isolez vos données de test.</strong> Exécutez vos tests dans des environnements bien définis avec des entrées contrôlées et des sorties attendues pouvant être comparées aux sorties réelles. Assurez-vous que les données consommées par un test particulier sont explicitement associées à ce test et ne sont pas modifiées par d'autres tests ou processus.
+Dans la mesure du possible, vos tests doivent créer eux-mêmes l'état nécessaire dans le cadre de la configuration, à l'aide des API de l'application. L'isolation de vos données de test est également une condition préalable à l'exécution des tests en parallèle.</p></li>
+<li><p><strong>Réduisez la dépendance aux données de test stockées dans des bases de données.</strong> La maintenance des données de test stockées dans des bases de données peut s'avérer particulièrement difficile pour les raisons suivantes :</p>
+
+<ol>
+<li><strong>Mauvaise isolation du test.</strong> Les bases de données stockent les données de manière durable. Les modifications apportées aux données sont conservées entre les tests, sauf si elles sont explicitement réinitialisées.
+Des entrées de test moins fiables rendent l'isolation de test plus difficile et peuvent empêcher la parallélisation.</li>
+<li><strong>Impact sur la performance.</strong> La rapidité d'exécution est une condition essentielle pour les tests automatisés. L'interaction avec une base de données est généralement plus lente et plus fastidieuse que l'interaction avec des données stockées localement. Privilégiez les bases de données en mémoire, le cas échéant.</li>
+</ol></li>
+<li><p><strong>Mettez les données de test à disposition.</strong> L'exécution de tests sur une copie d'une base de données de production complète présente un risque. L'actualisation des données peut s'avérer difficile et lente à obtenir. Par conséquent, les données peuvent devenir obsolètes.
+Les données de production peuvent également contenir des informations sensibles. À la place, identifiez les sections de données pertinentes requises par les tests. Exportez ces sections régulièrement et rendez-les facilement disponibles pour les tests.</p></li>
+</ol>
+
+<h2 id="how_to_measure_test_data_management" data-text="Mesurer la gestion des données de test">Mesurer la gestion des données de test</h2>
+
+<p>Au fur et à mesure que votre approche de la gestion des données de test évolue, il est important de mesurer vos progrès par rapport aux principes de base décrits précédemment.</p>
+
+<ol>
+<li><strong>Des données de test adéquates sont disponibles pour exécuter des ensembles de tests entièrement automatisés.</strong>
+Vous pouvez mesurer cela en suivant le temps que les développeurs et les testeurs consacrent à la gestion et à la manipulation des données à utiliser dans les ensembles de tests. Vous pouvez également capturer cela par des mesures perceptives (c'est-à-dire par des enquêtes) pour demander aux équipes si elles disposent de données adéquates pour leur travail ou si elles estiment que c'est une contrainte pour elles.</li>
+<li><strong>Les données de test des ensembles de tests automatisés peuvent être obtenues sur demande.</strong> Vous pouvez mesurer ce pourcentage comme le pourcentage d'ensembles de données clés disponibles, la fréquence d'accès à ces ensembles de données et la fréquence à laquelle ils sont actualisés.</li>
+<li><strong>Les données de test ne limitent pas le nombre de tests automatisés que les équipes peuvent exécuter ni leurs capacités.</strong> Vous pouvez mesurer ce nombre comme étant le nombre de tests automatisés pouvant être exécutés sans avoir à acquérir de données de test supplémentaires. Vous pouvez également capturer cela avec des mesures perceptives (c'est-à-dire des enquêtes) pour demander aux équipes si elles estiment que les données de test limitent leurs activités de test automatisé.</li>
+</ol>
+
+<h2 id="whats_next" data-text="Étape suivante">Étape suivante</h2>
+
+<ul>
+<li>Consultez la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">page DevOps</a> pour obtenir des liens vers d'autres articles et ressources.</li>
+<li>Découvrez comment les tests et le CI/CD peuvent aider à <a href="/blog/products/application-development/release-with-confidence-how-testing-and-cicd-can-keep-bugs-out-of-production" track-type="article" track-name="internalLink" track-metadata-position="body">corriger les bugs avant la mise en production</a>.</li>
+<li>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</li>
+<li>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</li>
+</ul>
+
+</body></html>

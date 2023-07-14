@@ -1,0 +1,171 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技术：架构</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：架构是<em></em>提升软件交付能力和组织绩效的能力之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>DevOps 研究和评估 (DORA) 团队的研究表明，架构是实现持续交付的重要预测因素。无论您使用的是 Kubernetes 还是大型机，您的架构都可以促成团队采用提升软件交付效能的做法。</p>
+
+<p>当团队采用持续交付做法时，以下架构做法有助于取得成功的结果：</p>
+
+<ul>
+<li>团队可以在无需团队外部人员许可或依赖其他团队的情况下，对其系统设计进行大规模更改。</li>
+<li>团队无需与团队外部人员进行精细的沟通和协调即可完成工作。</li>
+<li>团队按需部署和发布其产品或服务，与团队所依赖的服务或依赖该团队的其他服务无关。</li>
+<li>团队按需执行大部分测试，无需集成式测试环境。</li>
+<li>团队可以在正常工作时间进行部署，且停机时间可以忽略不计。</li>
+</ul>
+
+<p>通过大型机技术有可能实现这些结果。但即使采用最新、最流行的技术，也有可能无法实现这些结果。许多组织在技术采用方面投入了大量的时间和精力，但由于架构造成的限制，未能实现关键的软件交付结果。</p>
+
+<p>如果系统的架构设计旨在让团队能够在不依赖其他团队的情况下测试、部署和更改系统，则团队之间几乎不需要沟通即可完成工作。换句话说，架构和团队都是松散耦合。</p>
+
+<p>沟通的强度与系统架构之间的这一联系最初是由 Melvin Conway 论述的，他提到：“设计系统…的组织受到限制，完成的设计往往是这些组织内部沟通结构的复制”。为抵消紧密耦合的架构并帮助支持更好的沟通模式，团队和组织可以使用<a href="https://medium.com/better-practices/how-to-dissolve-communication-barriers-in-your-api-development-organization-3347179b4ecc" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">反向康威操纵</a>，通过这一技术，团队结构和模式的设计可提升预期的架构状态。这样，团队沟通模式可以支持和实施所构建的架构模式。</p>
+
+<p>如果采用紧密耦合的架构，细微更改可能会导致大规模的级联故障。因此，在系统的某个部门工作的任何人都必须经常性地与在系统其他部门工作的任何其他人协调，包括应付复杂、繁文缛节的变更管理流程。</p>
+
+<p>微服务架构本应该能够实现这些结果，就像任何真正的面向服务的架构一样。但实际上，许多所谓的面向服务的架构不允许相互独立地测试和部署服务，因此不会使团队达到更高的软件交付效能。在实现面向服务的架构和微服务架构时，必须严格要求取得这些结果。</p>
+
+<h2 id="how_to_implement_architectures_for_continuous_delivery" data-text="如何实现持续交付架构">如何实现持续交付架构</h2>
+
+<p>考虑主要的架构原型。Randy Shoup 是 App Engine 前工程总监和 WeWork 前工程副总裁，他注意到以下情况：</p>
+
+<blockquote>“没有一个完美的架构适用于所有产品和所有规模。任何架构都满足特定的一组目标或一系列要求和限制条件，例如产品上市期、易于开发功能、扩缩等。任何产品或服务的功能几乎都必定会随着时间的推移而不断演进，因此我们的架构需求也会随之改变就不足为奇了。架构在规模为 1 倍时适用，但在规模为 10 倍或 100 倍时很少适用”。</blockquote><p>考虑到架构原型的优缺点，每个架构原型都符合组织不同的发展需求。</p>
+
+<table>
+<thead>
+<tr>
+<th width="25%">原型</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>单体式 v1</strong><br />（所有功能在一个应用中）</td>
+<td><ul><li>最初很简单</li>
+<li>进程间延迟低</li>
+<li>单个代码库，一个部署单元</li>
+<li>小规模利用资源，可节省资源</li>
+</ul>
+</td>
+<td><ul><li>随着团队规模的扩大，协调开销会相应增加</li>
+<li>对模块化的实施不当</li>
+<li>扩缩能力不佳</li>
+<li>“一刀切”式部署（停机故障）</li>
+<li>构建时间较长</li>
+</ul>
+</td>
+</tr>
+<tr>
+  <td><strong>单体式 v2</strong><br />（单体层级集合：前端呈现、应用服务器、数据库层）</td>
+<td><ul><li>最初很简单</li>
+<li>联接查询很简单</li>
+<li>单一架构部署</li>
+<li>小规模利用资源，可节省资源</li>
+</ul>
+</td>
+<td><ul><li>随着时间的推移耦合性逐渐增强</li>
+<li>扩缩能力和冗余性不佳（“一刀切”式，仅限纵向）</li>
+<li>很难正确调整</li>
+<li>“一刀切”式架构管理</li>
+</ul>
+</td>
+</tr>
+<tr>
+  <td><strong>微服务</strong><br />（模块化、独立的图表关系或层级，隔离持久性）</td>
+<td><ul><li>每个单元都很简单</li>
+<li>独立的扩缩能力和性能</li>
+<li>独立测试和部署</li>
+<li>可以优化调整性能（缓存、复制等）</li>
+</ul>
+</td>
+<td><ul><li>很多协调单元</li>
+<li>很多小型代码库</li>
+<li>需要更精密的工具和依赖关系管理</li>
+<li>网络延迟</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>如上表所示，支持精简产品开发工作的单体式架构（例如，快速设计新功能原型、潜在策略变化或重大策略变化）不同于需要数百个开发者团队的架构，这些团队必须能够独立为客户带来价值。通过允许架构不断演进，您可以确保架构始终能够满足组织的当前需求。无论原型如何，在设计架构以便于持续交付的过程中，团队都必须有能力实现本文档简介中所述的功能。</p>
+
+<p>打造跨职能团队以及组织中的代表（产品、开发、测试和运营）使团队能够独立开展工作，并有助于围绕团队边界进行构建。如果您的团队是跨职能团队，则团队可以自主行使职责，<a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">发挥创意</a>并<a href="/architecture/devops/devops-tech-teams-empowered-to-choose-tools" track-type="article" track-name="internalLink" track-metadata-position="body">选择自己的工具</a>。为有助于跨团队沟通和测试，最好是明确定义服务之间的合同。</p>
+
+<p>团队独立性很重要，产品和服务的独立性也很重要。服务必须能够根据需要进行测试。采用有关<a href="https://martinfowler.com/bliki/TestDouble.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">模拟外部服务和对外部进行存根</a>的技术有助于减少外部依赖性的影响，并让团队可以快速创建测试环境。此外，实现外部服务的<a href="https://martinfowler.com/bliki/ContractTest.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">合同测试</a>有助于确保对团队服务或其他服务的依赖性仍会得到满足。为真正实现持续交付，单个团队的产品或服务必须独立完成验收测试，并从所依赖的服务中进行部署。</p>
+
+<p>如需启用随时部署功能，请考虑实现蓝绿部署模型或滚动部署模型，并实现高度<a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">自动化</a>。使用这些模型时，至少有两个或更多产品或服务版本同时运行。借助这些部署模型，团队可以验证更改并部署到生产环境，并且停机时间极少甚至没有。一个重要的考虑因素是如何执行数据升级，这意味着数据和架构必须以向后兼容的方式完成。</p>
+
+<p>为有助于独立部署组件，我们建议您创建向后兼容的版本化 API。确保 API 向后兼容增加了系统的复杂性，但是您在简化部署方面获得的灵活性价值要数倍于增加的复杂性。</p>
+
+<p>面向服务的架构和微服务架构能够实现这些功能，因为它们使用<a href="https://martinfowler.com/bliki/BoundedContext.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">有界限上下文</a>和 API 将大型网域分离成更小、更松散的耦合单元，并使用 test doubles 和虚拟化单独测试服务或组件。</p>
+
+<h2 id="common_pitfalls_in_architectures" data-text="常见架构误区">常见架构误区</h2>
+
+<ul>
+<li><p><strong>同时发布多项服务</strong>。在不优先考虑可测试性和可部署性的团队中，大多数测试都需要使用复杂且昂贵的集成环境。在许多情况下，由于复杂的相互依赖性，部署需要同时发布多项服务。这些“一次性”部署需要团队协调安排他们的工作，包括数百个或数千个任务之间的许多交接和依赖关系。一次性部署通常需要数小时甚至数天的时间，并且需要安排较长停机时间。</p></li>
+<li><p><strong>将更改与来自数百个甚至数千个其他开发者的更改集成</strong>。这些开发者反过来可能依赖于数十、数百或数千个互连系统。测试是在稀缺的集成测试环境中完成的，通常需要数周时间来获取和配置。这些环境通常不代表生产环境，降低了测试的价值和准确性。结果不仅变更前的准备时间较长（通常以数周或数月计），并且开发者的工作效率降低，部署结果不佳。</p></li>
+<li><p><strong>在软件交付流程中存在瓶颈</strong>。例如，瓶颈可能是许多其他团队从手动处理角度（测试、部署等）或服务运营角度所依赖的一个团队。在这两个示例中，这些瓶颈会造成单点故障，并需要这些团队或服务能够扩缩以满足众多依赖团队的需求。</p></li>
+</ul>
+
+<h2 id="ways_to_improve_your_architecture" data-text="改进架构的方法">改进架构的方法</h2>
+
+<p>借助可让小型开发者团队独立实现、测试代码并将其安全快速地部署到生产环境的架构，您可以提高开发者的工作效率并改善部署结果。面向服务的架构和微服务架构的一个关键特性是，它们由具有有界限上下文的松散耦合服务组成。基于这些原则的现代 Web 架构的一组常见模式是<a href="https://12factor.net/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">十二要素应用</a>。</p>
+
+<p>Randy Shoup 注意到以下情况：</p>
+
+<blockquote>“具有此类面向服务的架构的组织，如 Google 和 Amazon，具有超高的灵活性和可扩缩性。这些组织中有数以万计的开发者，而小型团队的工作效率仍然非常之高”。</blockquote><p>在许多组织中，测试和部署服务非常困难。我们建议您采用迭代方法来改进企业系统的设计，而不是重新设计所有内容的架构。此方法称为演进式架构<em></em>。在此方法中，假设成功的产品和服务在其生命周期内由于对其需求发生了变化需要重新设计架构。</p>
+
+<p>在此情况下，一种有用的模式是绞杀榕应用<em></em>。在这种模式中，您可以通过确保按照面向服务的架构的原则完成新工作，以迭代方式将单体式架构替换为一个更加组件化的架构。您应接受新的架构可能会完全委托给要替换的系统。随着时间的推移，在新架构中执行的功能越来越多，旧系统会被“绞杀”。</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-strangler-fig-pattern.svg" alt="将单体式架构替换为一个更加组件化的架构。"/></p>
+
+<p>产品和服务架构在不断演进。您可以通过多种方式来决定新模块或服务，并且是一个迭代过程。在决定是否在服务中创建一项功能时，请考虑该服务是否具有以下特征：</p>
+
+<ul>
+<li>可以实现单项业务功能或能力。</li>
+<li>只需与其他服务进行很少的交互即可执行其功能。</li>
+<li>独立于其他服务进行构建、扩缩和部署。</li>
+<li>使用轻量级通信方法（例如消息总线或 HTTP 端点）与其他服务进行交互。</li>
+<li>可以使用不同工具、编程语言、数据存储区等实现。</li>
+</ul>
+
+<p>改用微服务或面向服务的架构还会改变整个组织的许多方面。在 Steve Yegge 的<a href="https://gist.github.com/chitchcock/1281611/9621c8859db00bf08b98212a109fa2dec4c6d601" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">平台吐槽</a>中，他提供了在改用 SOA 过程中学到的一些重要的经验教训：</p>
+
+<ul>
+<li>指标和监控变得更加重要，并且上报变得更加困难，因为一项服务中出现的问题可能来自许多服务调用。</li>
+<li>内部服务可能会产生拒绝服务 (DOS) 类型的问题，因此配额和消息限制在每项服务中都很重要。</li>
+<li>质量检查和监控开始结合执行，因为监控必须全面，并且必须运用服务的业务逻辑和数据。</li>
+<li>如果存在多项服务，则服务发现机制对于系统的高效运行至关重要。</li>
+<li>如果没有在可调试环境中运行服务的通用标准，则调试他人服务中的问题会更加困难。</li>
+</ul>
+
+<h2 id="case-study-datastore" data-text="案例研究：Datastore">案例研究：Datastore</h2>
+
+<p>紧密耦合的架构可能会妨碍每个人的工作效率和安全进行更改的能力。相比之下，松散耦合的架构通过明确定义的接口来强制规定模块相互连接的方式，从而提高工作效率和安全性。松散耦合的架构可让小型高效团队进行可以安全、独立部署的更改。此外，由于每项服务都还有一个明确定义的 API，因此可以更轻松地对服务进行测试，并可以在团队之间创建合同和服务等级协议 (SLA)。</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-loosely-coupled-architecture.svg" alt="松散耦合的架构。"/></p>
+
+<p>Randy Shoup 对该架构的描述如下：</p>
+
+<blockquote>“这种类型的架构为 Google 带来了非常出色的结果，对于 Gmail 这样的服务，它下面还有 5 个或 6 个其他服务层，每个层均针对一个非常具体的功能。每项服务均由小型团队提供支持，团队负责构建服务并运行其功能，每个团队可能会选择不同的技术。另一个例子是数据存储区服务，它是全球最大的 NoSQL 服务之一，但仅由大约 8 人组成的团队支持，这主要是因为该服务是以多层基于彼此而构建的可靠服务为基础”。</blockquote><p>这种面向服务的架构允许小型团队打造更小、更简单的开发单元，每个团队都可以独立、快速、安全地进行部署。</p>
+
+<h2 id="ways_to_measure_architectural_improvement" data-text="衡量架构改进的方法">衡量架构改进的方法</h2>
+
+<p>无论是在大型机上还是在微服务中，促成架构改进所需的做法对于提高软件交付性能（增加部署频率，同时缩短变更前准备时间、恢复服务时间，并降低变更失败率）至关重要。在您的服务和产品的耦合性紧密程度降低时，您的部署频率应该会增加。在衡量改进时，请考虑使用部署速率而不仅仅是计数，因为部署计数自然随着服务的增加而增加。最后，您应该能够看到发现问题并从问题恢复的时间减少，并且更改部署到生产环境的时间减少。</p>
+
+<p>除了采取这些部署和服务措施之外，更独立运营的团队还表现在<a href="/architecture/devops/devops-culture-job-satisfaction" track-type="article" track-name="internalLink" track-metadata-position="body">工作满意度</a>和<a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">团队实验</a>的改进，并且往往根据需要选择不同的技术和工具。</p>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

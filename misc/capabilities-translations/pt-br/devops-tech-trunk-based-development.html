@@ -1,0 +1,246 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia de DevOps: desenvolvimento baseado em troncos</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Observação:</strong><span> o <em>desenvolvimento baseado em troncos</em> é um de um conjunto de recursos que aumentam a entrega de software e o desempenho organizacional.
+Esses recursos foram descobertos pelo
+<a href="https://www.devops-research.com/research.html">programa de pesquisa DORA State of DevOps</a>, uma investigação independente e academicamente rigorosa sobre as práticas e
+os recursos que impulsionam alto desempenho. Para saber mais, leia nossos
+<a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>Equipes de desenvolvedores costumam ter dois padrões principais de trabalho no controle
+de versões. Uma delas é usar <em>ramificações de recursos</em>, em que um desenvolvedor ou um grupo
+de desenvolvedores geralmente cria uma ramificação a partir do tronco (também conhecido como <em>principal</em> ou <em>linha principal</em>) e trabalha isoladamente nesta até que o recurso que ele está
+criando esteja completo. Quando a equipe achar que o recurso está pronto para ser lançado, ela
+implanta a ramificação de volta no tronco.</p>
+
+<p>O segundo padrão é conhecido como <em>desenvolvimento baseado em troncos</em>, em que cada desenvolvedor
+<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">divide o trabalho em lotes menores</a>
+e implanta esse trabalho no tronco pelo menos uma vez (e possivelmente várias vezes)
+por dia. A principal diferença entre esses métodos é o escopo. As ramificações
+de recursos normalmente envolvem vários desenvolvedores e duram dias ou até mesmo semanas. Por
+outro lado, no desenvolvimento baseado em troncos, as ramificações costumam durar só algumas
+horas e vários desenvolvedores implantam as mudanças individuais no tronco
+frequentemente.</p>
+
+<p>O diagrama a seguir mostra uma linha do tempo comum de um desenvolvimento baseado em troncos:</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-trunk-based-development-typical-trunk-timeline.svg" alt="Linhas do tempo para as versões 1.0 e 1.1, mostrando uma correção de bug da versão 1.0 implantada no tronco da versão 1.1."/></p>
+
+<p>No desenvolvimento baseado em troncos, os desenvolvedores enviam código diretamente para o tronco. As alterações
+feitas nas ramificações das versões (snapshots do código pronto para ser lançado) costumam ser
+implantadas de volta no tronco (representadas pelas setas para baixo) assim
+que possível. Nessa abordagem, há casos em que correções de bug precisam ser
+selecionadas a dedo e implantadas nas versões (representadas pelas setas para cima), mas esses
+casos não são tão frequentes quanto o desenvolvimento de novos recursos no tronco. Nos casos
+em que as versões acontecem várias vezes por dia, as ramificações de versão não são necessárias,
+porque as alterações podem ser enviadas diretamente para o tronco e implantadas a partir dele.
+Um dos principais benefícios da abordagem baseada em troncos é que ela simplifica a
+implantação de eventos e mantém o código atualizado, porque há um número menor
+de linhas de desenvolvimento e implantações menores e mais frequentes.</p>
+
+<p>Já o diagrama a seguir mostra um estilo de desenvolvimento padrão que não é
+baseado em troncos:</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-trunk-based-development-typical-non-trunk-timeline.svg" alt="Linhas de tempo de ramificações de longa duração, mostrando caminhos de implantação complexos e vários pontos com potencial de conflitos de implantação, o que pode atrasar o lançamento do produto."/></p>
+
+<p>Nessa abordagem, os desenvolvedores fazem alterações em ramificações de longa duração. Essas alterações
+exigem eventos de implantação maiores e mais complexos do que aquelas de desenvolvimento baseado
+em troncos. Essa abordagem também exige mais esforços de estabilização e
+períodos de "bloqueio de código" ou "congelamento de código" para garantir que o
+software continue em um estado funcional, porque implantações grandes normalmente apresentam bugs ou regressões. Por
+isso, você precisa testar o código depois de implantá-lo e frequentemente é necessário
+corrigir bugs.</p>
+
+<h2 id="how_to_implement_trunk-based_development" data-text="Como implantar o desenvolvimento baseado em troncos">Como implantar o desenvolvimento baseado em troncos</h2>
+
+<p>O desenvolvimento baseado em troncos é uma prática necessária em casos de
+<a href="/architecture/devops/devops-tech-continuous-integration" track-type="solution" track-name="internalLink" track-metadata-position="body">integração contínua</a>.
+A integração contínua (CI, na sigla em inglês) é a combinação do desenvolvimento baseado
+em troncos e a realização de um conjunto de testes rápidos e automatizados que são executados após cada
+implantação no tronco, para garantir que o sistema está funcionando.</p>
+
+<p>Na integração contínua, pequenos lotes de códigos são integrados frequentemente
+para eliminar integrações longas e fases de estabilização. Assim,
+os desenvolvedores garantem que todos saibam o que está sendo feito, enquanto
+a integração elimina grandes implantações que poderiam gerar muito trabalho para outros
+desenvolvedores e testadores.</p>
+
+<p>No paradigma de CI, os desenvolvedores são responsáveis por manter o processo de compilação
+<em>verde</em>, ou seja, funcional. Isso significa que, se o processo de CI falhar,
+os desenvolvedores precisam parar o que estão fazendo para corrigir o problema imediatamente ou
+reverter a mudança caso a correção não possa ser feita em poucos minutos.</p>
+
+<p>Por outro lado, o desenvolvimento baseado em troncos exige que os desenvolvedores saibam
+como
+<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">dividir o trabalho em lotes pequenos</a>.
+Isso é uma mudança significativa para os desenvolvedores não acostumados a trabalhar
+assim.</p>
+
+<p>A análise dos dados do DevOps Research and Assessment (DORA) de
+<a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=31" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2016</a> (PDF) e
+<a href="https://services.google.com/fh/files/misc/state-of-devops-2017.pdf#page=40" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2017</a> (PDF)
+mostra que as equipes atingem níveis mais altos de entrega de software e desempenho operacional
+(estabilidade, disponibilidade e velocidade de entrega) quando seguem estas
+práticas:</p>
+
+<ul>
+<li>Ter três ou menos ramificações ativas no repositório de código do aplicativo.</li>
+<li>Implantar ramificações no tronco pelo menos uma vez por dia.</li>
+<li>Evitar congelamentos de códigos e fases de integração.</li>
+</ul>
+
+<h2 id="common_pitfalls" data-text="Armadilhas comuns">Armadilhas comuns</h2>
+
+<p>Estes são alguns obstáculos comuns para a adoção total de um desenvolvimento baseado
+em troncos:</p>
+
+<ul>
+<li><p><strong>Um processo pesado de revisão de código</strong>. Várias organizações têm um
+processo pesado de revisão de código que exige várias aprovações antes
+da implantação das alterações no tronco. Quando a revisão do código é trabalhosa e leva
+horas ou dias, os desenvolvedores evitam trabalhar em pequenos lotes e, em vez disso, realizam
+várias mudanças de uma só vez. Isso gera uma espiral em que os revisores
+acabam procrastinando para realizar grandes revisões de código, devido à complexidade.</p>
+
+<p>Consequentemente, os desenvolvedores acabam evitando solicitações de implantação e tornando-as
+mais lentas. Como é difícil usar inspeções para racionalizar o impacto de grandes mudanças
+em um sistema, os defeitos acabam passando pelos revisores
+e diminuem os benefícios do desenvolvimento baseado em troncos.</p></li>
+<li><p><strong>Como realizar revisões de código de forma assíncrona</strong>. Se sua equipe programa
+em pares, o código já foi revisado por outra pessoa. Caso
+sejam necessárias mais revisões, elas devem ser realizadas de maneira síncrona: quando
+o desenvolvedor está pronto para implantar o código, ele deve pedir para outra pessoa da
+equipe revisar o código naquele momento. Ele não deve pedir uma
+revisão assíncrona. Por exemplo, enviar uma solicitação por meio de uma ferramenta e
+começar uma nova tarefa enquanto aguarda a revisão. Quanto mais
+uma implantação for adiada, maior é a probabilidade de que ela tenha conflitos e
+problemas associados. Implantar revisões síncronas exige
+que a equipe priorize as revisões em vez de outras tarefas.</p></li>
+<li><p><strong>Não executar testes automatizados antes de implantar o código</strong>. Para garantir
+que o tronco continue funcional, é essencial que as mudanças do código sejam
+testadas antes da implantação. Isso pode ser feito nas estações de trabalho dos desenvolvedores,
+e há várias ferramentas que possibilitam executar testes remotamente
+considerando as mudanças locais e implantar o código automaticamente caso ele seja aprovado. Quando
+os desenvolvedores sabem que podem implantar o código no tronco sem muita
+cerimônia, o resultado acaba sendo pequenas mudanças de código que são fáceis de
+entender, revisar, testar e que podem passar para a produção mais rapidamente.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_trunk-based_development" data-text="Formas de aprimorar o desenvolvimento baseado em troncos">Formas de aprimorar o desenvolvimento baseado em troncos</h2>
+
+<p>Com base no que foi discutido anteriormente, aqui estão algumas práticas para aprimorar
+o desenvolvimento baseado em troncos:</p>
+
+<ul>
+<li><strong>Desenvolva em pequenos lotes</strong>. Uma das habilidades mais valiosas no
+desenvolvimento baseado em troncos é saber
+<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">desenvolver em pequenos lotes</a>.
+Isso exige treinamento e apoio organizacional para a equipe de desenvolvimento.</li>
+<li><strong>Faça revisões síncronas de código.</strong> Conforme discutido anteriormente, realizar
+revisões síncronas de código ou pelo menos garantir que os desenvolvedores priorizem
+as revisões de código ajuda a garantir que as mudanças não precisem de horas ou até mesmo
+dias para serem implantadas no tronco.</li>
+<li><strong>Realize testes automatizados abrangentes</strong>. Verifique se você tem um conjunto abrangente
+e significativo de <a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">testes de unidade automatizados</a>.
+e que eles sejam executados antes de cada
+confirmação. Por exemplo, se você estiver usando o GitHub,
+<a href="https://help.github.com/en/articles/about-protected-branches" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">proteja as ramificações</a>
+de modo que solicitações de envio só sejam implantadas após todos os testes. O tutorial
+<a href="/build/docs/run-builds-with-github-checks" track-type="solution" track-name="internalLink" track-metadata-position="body">Como executar builds com verificações do GitHub</a>
+mostra como integrar
+<a href="https://developer.github.com/v3/checks/" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">Verificações do GitHub</a>
+com o
+<a href="/build" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Build</a>.</li>
+<li><strong>Crie builds rapidamente</strong>. O processo de criação e teste de build deve ser executado em
+<a href="https://www.infoq.com/presentations/Crazy-Fast-Build-Times-or-When-10-Seconds-Starts-to-Make-You-Nervous/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">alguns minutos</a> (link em inglês).
+Se isso parece difícil, provavelmente
+é possível melhorar a
+<a href="/architecture/devops/devops-tech-architecture" track-type="solution" track-name="internalLink" track-metadata-position="body">arquitetura</a>
+do sistema.</li>
+<li><strong>Crie um grupo próximo de defensores e mentores</strong>. O desenvolvimento
+baseado em troncos é bastante diferente para vários desenvolvedores, então é possível
+que você encontre resistência. Vários desenvolvedores simplesmente não conseguem se imaginar
+trabalhando assim. Uma boa prática é encontrar desenvolvedores que trabalharam dessa
+forma e fazer com que eles treinem outros desenvolvedores. Também é importante mudar
+algumas equipes para trabalhar em um estilo baseado em troncos. Uma maneira de fazer isso é
+encontrando um grupo de desenvolvedores experientes com o desenvolvimento baseado em troncos
+para que pelo menos uma equipe esteja seguindo as práticas desse tipo
+de desenvolvimento. Em seguida, transfira outras equipes para esse estilo
+quando se sentir confiante de que a equipe que está seguindo essa prática está tendo o
+desempenho esperado.</li>
+</ul>
+
+<h2 id="ways_to_measure_trunk-based_development" data-text="Formas de medir o desenvolvimento baseado em troncos">Formas de medir o desenvolvimento baseado em troncos</h2>
+
+<p>Siga as dicas abaixo para avaliar a eficácia do desenvolvimento baseado
+em troncos.</p>
+
+<table>
+  <colgroup>
+    <col width="30%" />
+    <col width="35%" />
+    <col width="35%" />
+  </colgroup>
+<thead>
+<tr>
+<th>Fator a testar</th>
+<th>O que medir</th>
+<th>Meta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ramificações ativas no repositório de código do aplicativo.</td>
+<td>Saiba quantas ramificações ativas há nos sistemas de controle de versão dos repositórios
+do seu aplicativo e torne esse número visível para todas as equipes. Em seguida,
+monitore o progresso incremental em direção ao estado buscado.</td>
+<td>Três ou menos ramificações ativas. </td>
+</tr>
+<tr>
+<td>Períodos de congelamento de código.</td>
+<td>Avalie quantos congelamentos de código sua equipe tem e quanto tempo eles duram. Essas
+medições também podem categorizar quanto tempo é gasto em conflitos de implantação, congelamentos
+de código, estabilização e assim por diante.</td>
+<td>Nenhum congelamento de código quando ninguém pode enviar o código.</td>
+</tr>
+<tr>
+<td>Frequência da mesclagem de ramificações e garfos para troncos.</td>
+<td>Mede o valor binário (sim/não) de cada ramificação implantada ou
+a porcentagem de ramificações e garfos implantados por dia.</td>
+<td>Implantação pelo menos uma vez por dia.</td>
+</tr>
+<tr>
+<td>Verifique o tempo necessário para aprovar alterações no código. </td>
+<td>Se você revisa o código de forma assíncrona, calcule o tempo médio
+necessário para aprovar solicitações de mudança e preste atenção especial às solicitações
+que demoram substancialmente mais que a média.</td>
+<td>Encontre formas de revisar de maneira síncrona, como
+parte do desenvolvimento.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="A seguir">A seguir</h2>
+
+<ul>
+<li>Consulte links para outros artigos e recursos na
+<a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página do DevOps</a>.</li>
+<li>Consulte
+<a href="/build/docs/run-builds-with-github-checks" track-type="solution" track-name="internalLink" track-metadata-position="body">Como executar versões com verificações do GitHub</a>
+para saber como conectar o Google Cloud ao GitHub usando o
+<a href="https://github.com/marketplace/google-cloud-build" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">app Cloud Build</a> (em inglês).</li>
+<li><p>Consulte o artigo de Martin Fowler sobre <a href="https://martinfowler.com/bliki/FeatureBranch.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">ramificação de recursos</a> (em inglês).</p></li>
+<li><p>Veja a postagem de Jez Humble sobre <a href="https://continuousdelivery.com/2011/07/on-dvcs-continuous-integration-and-feature-branches/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">DVCS e ramificações de recursos</a> (em inglês).</p></li>
+<li><p>Consulte o portal de Paul Hammant voltado ao <a href="https://trunkbaseddevelopment.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">desenvolvimento baseado em troncos</a> (em inglês).</p></li>
+<li><p>Explore nosso
+<a href="https://www.devops-research.com/research.html">programa de pesquisa</a> (em inglês) do DevOps.</p></li>
+<li><p>Faça a
+<a href="https://www.devops-research.com/quickcheck.html">verificação rápida de DevOps</a>
+para entender sua posição em relação ao restante do setor.</p></li>
+</ul>
+
+</body></html>

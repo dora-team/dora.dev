@@ -1,0 +1,156 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 기술: 지속적 테스트</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>참고:</strong><span> <em>지속적 테스트</em>는 소프트웨어 제공 및 조직 성능 향상을 가져오는 기능 집합 중 하나입니다.  이러한 기능은 성과 향상을 이끌어내는 관례와 기능을 독립적이자 학술적으로 심층 연구하는 <a href="https://www.devops-research.com/research.html">DORA State of DevOps 연구 프로그램</a>을 통해 개발되었습니다. 자세한 내용은 <a href="/devops">DevOps 리소스</a>를 참조하세요.</span></aside>
+<p>우수한 품질의 소프트웨어를 빌드하는 핵심은 소프트웨어 제공 수명 주기 전반에 걸쳐 변경사항이 미치는 영향에 대한 빠른 의견을 받는 것입니다. 기존에는 팀에서 시스템의 정확성을 확인하기 위해 수동으로 테스트 및 코드 검사를 수행했습니다.
+일반적으로 이러한 검사 및 테스트는 '개발 완료' 이후에 진행되었고 다음과 같은 단점이 있었습니다.</p>
+
+<ul>
+<li>수동 회귀 검사를 수행하는 데 많은 시간과 비용이 소요되므로 프로세스에 병목 현상이 발생합니다. 따라서 소프트웨어를 자주 출시할 수 없고 개발자는 빠른 의견을 받을 수 없습니다.</li>
+<li>사람들은 수동 회귀 테스트와 같은 반복 태스크에 적합하지 않고 검사를 통해 변경사항이 복잡한 소프트웨어 시스템에 미치는 영향을 예측하기 어려우므로 수동 테스트와 검사를 신뢰할 수 없습니다.</li>
+<li>소프트웨어가 '개발 완료'되면 개발자는 변경사항에 대한 의견을 받을 때까지 장시간 기다려야 합니다. 이렇게 되면 일반적으로 결함을 발견하여 해결하기가 어려워지게 됩니다. 이 단계에서 결함이 발견되면 성능, 보안, 안정성 문제로 인해 훨씬 더 많은 비용이 드는 설계 변경이 필요한 경우가 많습니다.</li>
+<li>또한 의견 주기가 길면 개발자가 품질 코드를 빌드하는 방법을 파악하기가 더 어려워지고 개발팀은 일정으로 인해 품질을 '남의 책임'으로 전가할 수 있습니다.</li>
+<li>개발자에게 자체 코드를 테스트할 책임이 없으면 테스트 가능한 코드를 작성하는 방법을 학습하기가 어렵습니다.</li>
+<li>시간이 지나면 발전하는 시스템의 경우 테스트 문서를 최신 상태로 유지하려면 상당한 노력이 필요합니다.</li>
+</ul>
+
+<p>대신에 팀은 다음 사항을 충족해야 합니다.</p>
+
+<ul>
+<li>소프트웨어 제공 수명주기 전반에서 모든 유형의 테스트를 지속적으로 수행합니다.</li>
+<li><a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">지속적 배포 파이프 라인</a>의 일부로 실행되는 빠르고 안정적인 자동 테스트 모음을 만들고 선별합니다.</li>
+</ul>
+
+<p>DORA 연구 결과에 따르면 이렇게 하면 팀이 고품질 소프트웨어를 더 빠르게 빌드하고 빌드 방법을 학습할 수 있을 뿐만 아니라 소프트웨어 안정성이 높아지고 팀 작업 부담이 줄어들며 배포 부담이 낮아집니다.</p>
+
+<h2 id="how_to_implement_continuous_testing" data-text="지속적 테스트 구현 방법">지속적 테스트 구현 방법</h2>
+
+<p>고품질 소프트웨어를 빌드하려면 배포 프로세스 전반에 걸쳐 자동 테스트와 수동 테스트 모두 지속적으로 실행하여 개발 중인 시스템의 기능과 아키텍처를 검증해야 합니다. 이 규율에는 조직과 기술 구성요소가 모두 포함됩니다. DORA 연구 결과에 따르면 조직적으로는 다음과 같은 상황일 때 팀 성과가 높아집니다.</p>
+
+<ul>
+<li>테스터가 소프트웨어 개발과 제공 프로세스 전반에 걸쳐 개발자와 함께 작업할 수 있습니다. '테스터'는 역할이며, 비록 아래에 일반적인 패턴으로 논의되긴 하지만 반드시 정규직일 필요는 없습니다.</li>
+<li>배포 프로세스 전반에서 탐색 테스트, 사용성 테스트, 승인 테스트와 같은 수동 테스트 활동을 수행합니다.</li>
+</ul>
+
+<p>주요 기술 활동에서 다음과 같은 자동 테스트 도구 모음을 빌드하고 유지보수합니다.</p>
+
+<ul>
+<li><strong>단위 테스트</strong>. 일반적으로 메서드, 클래스 또는 함수 하나를 개별적으로 테스트하여 개발자에게 코드가 설계된 대로 작동한다는 것을 보증합니다. 코드를 테스트할 수 있고 테스트를 유지보수할 수 있는지 확인하려면 코드를 작성하기 전에 <a href="http://www.jamesshore.com/v2/books/aoad1/test_driven_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">테스트 기반 개발</a>(TDD)이라고 하는 기법으로 단위 테스트를 작성합니다.</li>
+<li><strong>승인 테스트</strong>: 일반적으로 실행 중인 앱이나 서비스(일반적으로 종속 항목을 <a href="https://testing.googleblog.com/2013/07/testing-on-toilet-know-your-test-doubles.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">테스트 더블</a>로 대체해서 테스트)를 테스트하여 상위 수준의 기능이 설계된 대로 작동하고 회귀 오류가 발생하지 않았음을 보증합니다. 예시 승인 테스트에서는 사용자 사례 또는 API의 정확성에 대한 비즈니스 승인 기준을 검사할 수 있습니다. 이러한 테스트를 개발 프로세스의 일부로 제작합니다. 자동 승인 테스트를 통과하지 않으면 작업이 '개발 완료'됐다고 선언할 수 없습니다.</li>
+</ul>
+
+<p><a href="http://www.exampler.com/old-blog/2003/08/22/#agile-testing-project-2" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">브라이언 매릭이 처음 만들고</a> 이후 <a href="https://books.google.com/books/about/Agile_Testing.html?id=68_lhPvoKS8C" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body"><em>Agile Testing: A Practical Guide for Testers and Agile Teams</em></a>라는 서적에서 참조한 다음 다이어그램에서는 실행할 자동 테스트 테스트와 수동 테스트의 유형을 보여줍니다.</p>
+
+<p><img src="/static/architecture/images/ta-image1.png" alt="이미지"/></p>
+
+<p>앞의 다이어그램에 강조 표시된 자동 테스트는 <a href="/architecture/devops/devops-tech-continuous-delivery">지속적 배포</a> <a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">배포 파이프라인</a>에 적합합니다.
+이러한 파이프라인에서 모든 변경사항은 소프트웨어 패키지를 만들고 단위 테스트를 실행하며 정적 분석과 같은 다른 검사를 수행할 수 있는 빌드를 실행합니다. 이러한 패키지가 첫 단계를 통과하면 보다 포괄적인 자동 승인 테스트와 성능 테스트 및 취약점 스캔과 같은 일부 비기능적 테스트가 자동으로 배포된 실행 소프트웨어에 실행됩니다. 일반적으로 승인 단계를 통과한 모든 빌드에 수동 탐색과 사용성 테스트를 수행할 수 있습니다. 마지막으로 이러한 수동 단계에서 오류가 발견되지 않으면 앱이 출시 가능한 것으로 간주합니다.</p>
+
+<p>파이프라인의 일부로 테스트를 지속적으로 실행하면 개발자에게 의견이 빠르게 전달되고 체크인부터 출시까지의 시간이 단축되며 프로덕션 환경에서 오류율이 낮아집니다. 개발자는 며칠 또는 몇 주가 아닌 몇 분 안에 대부분의 작업 유효성을 검사할 수 있으므로 가능한 한 빨리 버그를 수정할 수 있습니다.</p>
+
+<p>다음 다이어그램에서는 간단한 단일 선형 배포 파이프라인의 예시를 보여줍니다.
+이 예시에서 녹색은 문제가 발견되지 않았음을, 빨간색은 문제가 한 개 이상 발견되었음을 의미합니다.</p>
+
+<p><img src="/static/architecture/images/ta-image3.png" alt="이미지"/></p>
+
+<p>배포 파이프라인 패턴에서 모든 변경사항은 출시 후보를 만들고 빠른 피드백 루프는 가능한 빨리 문제를 포착하는 데 유용합니다. 패키지가 파이프라인의 마지막 단계에 도달했지만 여전히 팀에서 패키지를 출시하는 데 확신이 없거나 프로덕션에서 결함이 발견되면 테스트를 추가 또는 업데이트하여 파이프라인을 개선해야 합니다.</p>
+
+<h2 id="common_pitfalls" data-text="일반적인 문제">일반적인 문제</h2>
+
+<ul>
+<li><p><strong>테스트에 관여한 개발자가 없습니다.</strong> DORA 연구 결과에 따르면 개발자에게 자동 테스트 모음을 만들고 유지보수할 책임이 있고 개발자가 승인 테스트 실패를 쉽게 해결할 수 있는 경우에 성능이 향상됩니다. 다른 그룹에 테스트 자동화에 대한 책임이 있으면 두 가지 문제가 발생하는 경우가 많습니다.</p>
+
+<ul>
+<li><strong>테스트 도구 모음에서 빈번하게 문제가 발생합니다</strong>. 코드 변경 시에는 테스트를 업데이트해야 할 수 있습니다. 개발자에게 테스트 자동화에 대한 책임이 없으면 담당팀에서 테스트를 수정할 때까지 빌드 파이프라인이 문제가 발생된 상태로 유지됩니다.</li>
+<li><strong>개발자가 테스트하기 어려운 코드를 작성합니다.</strong> 개발자는 테스트 방법을 고려하지 않고 문제를 해결하려고 합니다.
+이로 인해 코드를 잘못 설계하여 비용이 많이 들고 테스트 도구 모음을 유지보수하기 어려워집니다.</li>
+</ul>
+
+<p>테스터와 QA팀은 이러한 업무 방식에서 중요한 역할을 수행합니다. 테스터는 사용자가 시스템과 상호작용하는 방식을 이해하고 있으므로 시스템에 대한 나름만의 관점을 가지고 있습니다. 팀이 물리적으로 같은 장소에 있지 않으면 화면 공유 도구를 통해 테스터와 개발자가 함께 자동 테스트 모음을 만들고 발전시키는 것이 좋습니다. 이 과정에서 테스터와 개발자는 서로에게 배우고 실시간으로 문제를 해결할 수 있습니다. 또한 테스터는 탐색 테스트와 사용성 테스트 수행에도 필수적인 역할을 하며 테스트 모음 선별을 돕습니다.</p></li>
+<li><p><strong>테스트 도구 모음을 선별하지 못했습니다.</strong> 테스트 도구 모음을 지속적으로 검토하고 개선해야 결함을 빠르게 파악하고 복잡성과 비용을 적절하게 제어할 수 있습니다. 예:</p>
+
+<ul>
+<li>승인 테스트 도구 모음은 일반적으로 자동 승인 기준 컬렉션이 아니라 시스템을 통한 실제 <a href="https://testing.googleblog.com/2016/09/testing-on-toilet-what-makes-good-end.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">엔드 투 엔드</a> 사용자 여정을 반영해야 합니다. 제품이 발전함에 따라 이러한 시나리오와 테스트 도구 모음이 제품 유효성을 검사합니다. 이 프로세스에 대한 자세한 내용은 <a href="https://www.youtube.com/watch?v=qYfI2-bC6LA">성공적인 테스트 자동화를 위한 기반 확립</a>(앤지 존스 제작) 동영상을 시청하세요.</li>
+<li>코드를 변경할 때마다 여러 단위 테스트를 변경해야 하는 경우 <a href="https://martinfowler.com/articles/mocksArentStubs.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">모의 처리에 과도하게 의존하거나</a> 단위 테스트 도구 모음 정리에 프루닝했을 수 있습니다.</li>
+<li>테스트 도구 모음을 올바로 선별해야 합니다. UI 변경으로 인해 여러 승인 테스트가 실패하는 경우 <a href="https://martinfowler.com/bliki/PageObject.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">페이지 객체 패턴</a>을 사용하여 테스트 중인 시스템에서 테스트를 분리합니다.</li>
+<li>테스트를 유지보수하는 데 많은 비용이 드는 경우 소프트웨어의 <a href="/architecture/devops/devops-tech-architecture">아키텍처</a>에 문제가 있음을 나타낼 수 있습니다. 팀의 일상 업무에 <a href="https://refactoring.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">리팩터링</a> 통합 등 소프트웨어를 간편하게 테스트할 수 있도록 계속 투자해야 합니다.</li>
+</ul></li>
+<li><p><strong>단위 및 승인 테스트의 비율이 잘못되었습니다.</strong> 자동 테스트 도구 모음의 구체적인 설계 목표는 가능한 빨리 오류를 찾아내는 것입니다. 이러한 이유로 더 빠르게 실행되는 단위 테스트가 더 느리게 실행되는 승인 테스트보다 앞서 실행되어야 하고 두 테스트 모두 수동 테스트보다 앞서 실행되어야 합니다.</p>
+
+<p>가장 빠른 테스트 카테고리를 통해 오류를 찾아내야 합니다. 승인 테스트에서 또는 탐색 테스트 중에 오류가 발견되면 단위 테스트를 추가하여 이 오류가 다음 번에 더 빠르게, 더 먼저, 더 저렴한 비용으로 포착되는지 확인해야 합니다.
+마이크 콘은 다음 다이어그램에 나와 있는 이상적인 <a href="https://books.google.com.br/books?id=8IglA6i_JwAC&amp;printsec=frontcover&amp;dq=Mike+Cohn+Succeeding+with+Agile&amp;hl=pt-BR&amp;sa=X&amp;ved=0ahUKEwj9x8S8tuTiAhWjGLkGHU0GCxEQ6AEILTAA#v=onepage&amp;q=Mike%20Cohn%20Succeeding%20with%20Agile&amp;f=false" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">테스트 자동화 피라미드</a>를 설명했습니다. 여기서는 대부분의 오류가 단위 테스트를 통해 포착됩니다.</p>
+
+<p><img src="/static/architecture/images/ta-image2.png" alt="이미지"/></p></li>
+<li><p><strong>신뢰할 수 없는 테스트 허용.</strong> 테스트를 신뢰할 수 있어야 합니다. 즉, 테스트를 통과하면 소프트웨어를 출시할 수 있다고 확신해야 하며 테스트 실패는 실제 결함이 있음을 나타내야 합니다. 특히 불안정한 테스트를 허용하면 안 됩니다.
+<a href="https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Google의 불안정 테스트 완화 전략 알아보기</a></p></li>
+</ul>
+
+<h2 id="ways_to_improve_continuous_testing" data-text="지속적 테스트 개선 방법">지속적 테스트 개선 방법</h2>
+
+<p>아직 조직에 개발자에 의한 단위 테스트 문화가 없는 경우 걱정할 필요가 없습니다. 초창기에는 Google의 단위 테스트가 널리 활용되지 않았습니다. 현재의 포괄적인 단위 테스트 문화는 Test Grouplet이라 하는 Google의 한 그룹이 자발적으로 주도했습니다.
+그들이 Google 전체에 테스트 지식을 전파하고 단위 테스트 가치에 대해 개발자를 설득하기 위한 사례 커뮤니티를 만들어 <a href="https://martinfowler.com/articles/testing-culture.html#google" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">어떻게 단위 테스트를 채택하도록 독려했는지 읽어보세요</a>.</p>
+
+<p>테스트 자동화가 충분하지 않으면 스켈레톤 배포 파이프라인을 빌드하여 시작합니다. 예를 들어 단일 단위 테스트, 단일 승인 테스트, 탐색 테스트 환경을 나타내는 자동 배포 스크립트를 만들고 함께 스레드합니다. 그런 다음 제품 또는 서비스 발전에 따라 테스트 적용범위를 점진적으로 늘리고 배포 파이프라인을 확장합니다.</p>
+
+<p>이미 <a href="https://wikipedia.org/wiki/Brownfield_(software_development)" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">브라운필드 시스템</a>을 사용하여 작업하는 경우 이 자료의 안내를 따르고 포괄적인 자동 테스트 도구 모음의 개조를 중단하지 않아야 합니다. 대신 소수의 고부가가치 기능에 대한 승인 테스트를 제작합니다. 그런 다음 개발자가 새로운 기능과 변경 중인 기능에 대한 단위 테스트와 승인 테스트를 제작해야 합니다. 기본 코드와 테스트 코드의 품질과 유지보수 성능을 향상시키려면 TDD를 사용하는 것이 좋습니다. 마지막으로 승인 테스트가 중단되면 향후에 결함을 보다 빠르게 발견하도록 단위 테스트를 제작합니다.</p>
+
+<p>유지 비용이 높고 신뢰할 수 없는 테스트 도구 모음이 있는 경우 과감하게 정리합니다. 안정적이고 빠르며 신뢰할 수 있는 10가지 테스트의 테스트 도구 모음이 유지보수하기가 어렵고 누구도 신뢰하지 않는 수백 가지 테스트의 테스트 도구 모음보다 더 효과적입니다.</p>
+
+<h2 id="ways_to_measure_continuous_testing" data-text="지속적 테스트 측정 방법">지속적 테스트 측정 방법</h2>
+
+<p>해당 환경에서 다음을 수행하여 지속적 테스트 결과를 측정할 수 있습니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>테스트 요소</th>
+<th>측정 항목</th>
+<th>목표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>승인 및 단위 테스트 제작자.</td>
+<td>개발자, 테스터, 회사의 다른 그룹이 제작한 테스트 비율.</td>
+<td>승인 테스트의 주요 제작자와 유지보수 담당자는 개발자입니다.</td>
+</tr>
+<tr>
+<td>승인 테스트, 탐색 테스트, 프로덕션에서 발견된 버그 수</td>
+<td>시간 경과에 따라 발견되는 버그 비율 변화</td>
+<td>'경제적인' 테스트 단계에서 더 많은 버그가 발견되고, 팀은 탐색 테스트 및 프로덕션 중에 발견한 버그에 대한 자동 테스트를 추가하고, 승인 테스트에서 발견되는 버그를 포착하도록 단위 테스트를 추가합니다.</td>
+</tr>
+<tr>
+<td>승인 테스트 실패를 수정하는 데 소요되는 시간</td>
+<td>시간 경과에 따라 테스트 실패를 수정하는 데 소요되는 시간의 변화. (감소해야 함)</td>
+<td>개발자가 승인 테스트 실패를 쉽게 수정할 수 있습니다.</td>
+</tr>
+<tr>
+<td>유의미한 자동 테스트.</td>
+<td>실제 결함을 나타내는 자동 테스트 실패 횟수와 잘못 코딩된 수를 추적합니다.</td>
+<td>테스트 실패는 항상 제품의 실제 결함을 나타냅니다.</td>
+</tr>
+<tr>
+<td>배포 파이프라인에서 실행되는 자동 테스트.</td>
+<td>모든 테스트 도구 모음이 모든 파이프라인 트리거에서 실행되는지 여부(예/아니요)를 확인합니다.</td>
+<td>자동 테스트는 주요 파이프라인 및 워크플로의 일부로 실행됩니다.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li><a href="https://books.google.com/books/about/Software_Engineering_at_Google.html?id=WXTTDwAAQBAJ" track-type="solution" track-name="internalLink" track-metadata-position="body">Google 소프트웨어 엔지니어링</a>에서 Google에서 테스트를 수행하는 방법에 대해 자세히 알아보세요.</li>
+<li><a href="/build/?&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=latam-BR-all-pt-dr-skws-all-all-trial-e-dr-1003997-LUAC0008680&amp;utm_content=text-ad-none-none-DEV_c-CRE_325592090632-ADGP_SKWS+%7C+Multi+%7E+Dev+%7C+Build-KWID_43700040482196107-kwd-471794162766-userloc_1001743&amp;utm_term=KW_cloud%20build-ST_Cloud+Build&amp;gclid=Cj0KCQjw6IfoBRCiARIsAF6q06suRucypheWE5dDKAmsKDZrEVvuY0nDFS0YgbkN5XVmkEzJPl89zIIaAoJcEALw_wcB&amp;gclsrc=aw.ds" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Build</a>를 사용하여 시스템을 지속적으로 빌드, 테스트, 배포하는 방법에 대해 알아보세요.</li>
+<li><a href="/stackdriver" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Monitoring</a>을 사용하여 시스템 및 테스트를 모니터링하는 방법을 알아보세요.</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

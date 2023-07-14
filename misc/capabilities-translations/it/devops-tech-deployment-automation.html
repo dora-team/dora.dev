@@ -1,0 +1,154 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia DevOps: automazione del deployment</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> l'<em>automazione del deployment</em> è una delle funzionalità che consentono
+più elevati livelli di distribuzione del software e prestazioni organizzative. Queste capacità sono state scoperte dal <a href="https://www.devops-research.com/research.html">programma di ricerca DORA State of DevOps</a>, un'indagine indipendente e accademicamente rigorosa sulle pratiche e funzionalità che determinano prestazioni elevate. Per ulteriori informazioni, consulta le nostre
+<a href="/devops">risorse DevOps</a>.</span></aside>
+<p>L'automazione del deployment consente di eseguire il deployment del software negli ambienti di test e produzione
+premendo un solo pulsante. L'automazione è essenziale
+per ridurre il rischio di deployment in produzione. È inoltre essenziale fornire feedback rapidi sulla qualità del software consentendo ai team di eseguire test completi il prima possibile dopo le modifiche.</p>
+
+<p>Un processo di deployment automatizzato ha i seguenti input:</p>
+
+<ul>
+<li>Pacchetti creati dal processo di integrazione continua (CI) (è possibile eseguire il deployment di questi pacchetti in qualsiasi ambiente, inclusa la produzione).</li>
+<li>Script per configurare l'ambiente, eseguire il deployment dei pacchetti ed eseguire un test di deployment (a volte noto come <em>test del fumo</em>).</li>
+<li>Informazioni di configurazione specifiche per l'ambiente.</li>
+</ul>
+
+<p>Consigliamo di archiviare gli script e le informazioni di configurazione nel controllo della versione. Il processo di deployment deve scaricare i pacchetti da un
+repository degli elementi (ad esempio,
+<a href="/artifact-registry" track-type="article" track-name="internalLink" track-metadata-position="body">Artifact Registry</a>,
+<a href="https://www.sonatype.com/nexus-repository-sonatype" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Nexus</a>,
+<a href="https://jfrog.com/artifactory/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Artifactory</a>,
+oppure il repository integrato dello strumento CI).</p>
+
+<p>Gli script di solito eseguono le seguenti attività:</p>
+
+<ol>
+<li>Prepara l'ambiente di destinazione, magari installando e configurando il software necessario oppure avviando un host virtuale da un'immagine preconfigurata in un cloud provider come Google Cloud.</li>
+<li>Esegui il deployment dei pacchetti.</li>
+<li>Eseguire attività di deployment, come l'esecuzione di script di migrazione del database.</li>
+<li>Esegui la configurazione richiesta.</li>
+<li>Esegui un test di deployment per assicurarti che gli eventuali servizi esterni necessari siano raggiungibili e che il sistema funzioni.</li>
+</ol>
+
+<h2 id="how_to_implement_deployment_automation" data-text="Come implementare l'automazione del deployment">Come implementare l'automazione del deployment</h2>
+
+<p>Quando progetti il processo di deployment automatizzato, ti consigliamo di seguire queste best practice:</p>
+
+<ul>
+<li><strong>Utilizza lo stesso processo di deployment per ogni ambiente, compresa la produzione.</strong> Questa regola assicura che tu verifichi il processo di deployment molte volte prima di utilizzarlo per il deployment in produzione.</li>
+<li><strong>Consenti a chiunque abbia le credenziali necessarie di eseguire il deployment di qualsiasi versione
+dell'artefatto in qualsiasi ambiente on demand in modo completamente automatizzato.</strong>
+Se devi creare un ticket e aspettare che qualcuno prepari un ambiente, non disponi di un processo di deployment completamente automatizzato.</li>
+<li><strong>Utilizza gli stessi pacchetti per ogni ambiente.</strong> Questa regola significa che
+tieni separata la configurazione dell'ambiente dai pacchetti.
+In questo modo puoi sapere che i pacchetti di cui esegui il deployment in produzione sono gli stessi che hai testato.</li>
+<li><strong>Consenti di ricreare lo stato di qualsiasi ambiente dalle informazioni archiviate nel controllo della versione.</strong> Questa regola contribuisce a garantire che i deployment siano ripetibili e, in caso di scenario di ripristino di emergenza, puoi ripristinare lo stato di produzione in modo deterministico.</li>
+</ul>
+
+<p>In teoria, hai a disposizione uno strumento che puoi utilizzare in modo autonomo per creare deployment, registrare le build attualmente presenti in ogni ambiente e registrare l'output del processo di deployment ai fini dell'audit. Molti strumenti di CI hanno queste funzionalità.</p>
+
+<h2 id="common_pitfalls_in_deployment_automation" data-text="Errori comuni relativi all'automazione del deployment">Errori comuni relativi all'automazione del deployment</h2>
+
+<p>Quando automatizzi il processo di deployment, devi affrontare i seguenti errori:</p>
+
+<ul>
+<li>Complessità del processo esistente.</li>
+<li>Dipendenze tra i servizi.</li>
+<li>Componenti non progettati per l'automazione.</li>
+<li>Scarsa collaborazione tra i team.</li>
+</ul>
+
+<h3 id="complexity" data-text="Complessità">Complessità</h3>
+
+<p>Il primo errore è la complessità. L'automazione di un processo manuale complesso e fragile
+genera un processo automatizzato complesso e fragile. Devi prima riprogettare l'architettura
+per eseguire il deployment. Ciò significa rendere lo script di deployment il più semplice possibile ed eseguire il push della complessità nel codice dell'applicazione e nella piattaforma dell'infrastruttura. Cerca modalità di errore del deployment e chiedi come potresti evitarle rendendo servizi, componenti, piattaforma dell'infrastruttura e monitoraggio più intelligenti. Il deployment di applicazioni cloud-native in esecuzione su una piattaforma come servizio come
+<a href="/appengine" track-type="article" track-name="internalLink" track-metadata-position="body">App Engine</a>,
+<a href="/run" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud Run</a>
+o
+<a href="/architecture/cloud-foundry-on-gcp" track-type="article" track-name="internalLink" track-metadata-position="body">Pivotal Cloud Foundry</a>
+può essere eseguito eseguendo un unico comando, senza l'utilizzo di script di deployment. Questo è il processo ideale.</p>
+
+<p>Esistono due proprietà importanti per un processo di deployment affidabile. In primo luogo, i singoli passaggi del processo di deployment dovrebbero essere, per quanto possibile, idempotenti, in modo da poterli ripetere tutte le volte necessarie in caso di errore. In secondo luogo, devono essere indipendentemente dall'ordine, ovvero
+componenti e servizi non devono subire arresti anomali in modo incontrollato se altri componenti o
+servizi che si aspettano sono assenti. I servizi dovrebbero continuare a operare in modo degradato fino a quando le dipendenze non diventano disponibili.</p>
+
+<p>Per i nuovi prodotti e servizi, consigliamo di trattare questi principi come requisiti di sistema sin dall'inizio della fase di progettazione. Se stai adattando nuovamente l'automazione a un sistema esistente, potresti dover eseguire alcune operazioni per implementare queste caratteristiche o per realizzare la telemetria in modo che il processo di deployment possa rilevare stati incoerenti e restituire errori.</p>
+
+<h3 id="dependencies" data-text="Dipendenze">Dipendenze</h3>
+
+<p>Il secondo errore è che molti processi di deployment, in particolare negli ambienti aziendali, richiedono l'orchestrazione. In altre parole, devi eseguire il deployment di più servizi insieme in un determinato ordine, mentre esegui altre attività come le migrazioni di database in modalità di sincronizzazione rigorosa. Sebbene esistano molti strumenti per il flusso di lavoro di deployment aziendale per risolvere questa situazione, questi strumenti sono fondamentali per risolvere un problema architettonico: un rigido accoppiamento tra i vari componenti e servizi. Nel tempo, devi risolvere questo problema di accoppiamento. L'obiettivo è che i servizi debbano essere sottoposti a deployment in modo indipendente, senza necessità di orchestrazione.</p>
+
+<p>Questo approccio richiede in genere un'attenta progettazione per garantire che ogni servizio supporti la compatibilità con le versioni precedenti, in modo che i client del servizio non richiedano l'upgrade in fase di blocco, ma che possano essere aggiornati in modo indipendente in un secondo momento.
+Le tecniche come il <a href="/architecture/migrating-a-monolithic-app-to-microservices-gke#api_contracts" track-type="article" track-name="internalLink" track-metadata-position="body">controllo delle versioni delle API</a> possono essere utili. È importante anche garantire che i servizi possano continuare a funzionare (forse con alcune funzionalità non disponibili) anche se non sono in grado di connettersi ad altri servizi da cui dipendono. Si tratta di una soluzione ideale per i sistemi distribuiti, poiché può contribuire a prevenire gli errori di cascata. Il libro di Michael
+Nygard "Release It!" descrive una serie di modelli per aiutarti a progettare sistemi distribuiti, inclusi gli <a href="https://martinfowler.com/bliki/CircuitBreaker.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">interruttori di sicurezza</a>.
+Puoi anche disaccoppiare gli upgrade del database dai servizi da cui dipendono utilizzando il <a href="https://martinfowler.com/bliki/ParallelChange.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">modello di modifica parallela</a>.</p>
+
+<h3 id="not_designed_for_automation" data-text="Non progettato per l'automazione">Non progettato per l'automazione</h3>
+
+<p>Un terzo errore comune è rappresentato dai componenti non progettati per l'automazione. Qualsiasi processo di deployment che richiede l'accesso a una console e l'interazione manuale tramite clic dovrebbe essere un obiettivo di miglioramento. Oggi la maggior parte delle piattaforme (inclusa Google Cloud) offre un'API utilizzabile dallo script di deployment. In caso contrario, devi essere creativo per evitare tali interventi manuali, magari individuando il file o il database di configurazione dello strumento e apportando modifiche direttamente con tale strumento oppure sostituendolo con un altro strumento che dispone di un'API.</p>
+
+<h3 id="poor_collaboration_between_teams" data-text="Scarsa collaborazione tra i team">Scarsa collaborazione tra i team</h3>
+
+<p>L'ultimo errore si verifica quando gli sviluppatori e i team delle operazioni IT non sono sincronizzati.
+Questo può accadere in diversi modi. Ad esempio, gli sviluppatori possono utilizzare un metodo per il deployment e le operazioni IT ne utilizzano un altro. In un altro esempio, se gli ambienti sono configurati in modo diverso, si aumenta notevolmente il rischio che il processo di deployment venga eseguito manualmente dalle operazioni IT, comportando incoerenze ed errori. Il processo di automazione del deployment deve essere
+creato da sviluppatori e operazioni IT. Questo approccio garantisce a entrambi i team la capacità di comprendere, gestire ed evolvere l'automazione del deployment.</p>
+
+<h2 id="ways_to_improve_deployment_automation" data-text="Modi per migliorare l'automazione del deployment">Modi per migliorare l'automazione del deployment</h2>
+
+<p>Il primo passaggio consiste nel documentare il processo di deployment esistente in uno strumento comune a cui gli sviluppatori e le operazioni hanno accesso, come Documenti Google o un wiki.
+Quindi lavora per semplificare e automatizzare in modo incrementale il processo di deployment. Questo approccio
+in genere include le seguenti attività:</p>
+
+<ul>
+<li>Codice di imballaggio in modi adatti per il deployment.</li>
+<li>Creazione di immagini o container di macchine virtuali preconfigurate.</li>
+<li>Automazione del deployment e della configurazione del middleware.</li>
+<li>Copia di pacchetti o file nell'ambiente di produzione.</li>
+<li>Riavvio di server, applicazioni o servizi.</li>
+<li>Generazione dei file di configurazione dai modelli in corso.</li>
+<li>Esecuzione di test di deployment automatizzato per garantire che il sistema funzioni e sia configurato correttamente.</li>
+<li>Esecuzione delle procedure di test.</li>
+<li>Creazione di script e automazione delle migrazioni dei database.</li>
+</ul>
+
+<p>Lavora ai passaggi manuali per rimuovere i passaggi manuali, implementa l'idempotenza e ordina l'indipendenza quando possibile e sfrutta le funzionalità della tua piattaforma di infrastruttura laddove possibile. Ricorda: l'automazione del deployment deve essere il più semplice possibile.</p>
+
+<h2 id="ways_to_measure_deployment_automation" data-text="Modi per misurare l'automazione del deployment">Modi per misurare l'automazione del deployment</h2>
+
+<p>La misurazione dell'automazione del deployment è semplice.</p>
+
+<ul>
+<li><strong>Conta il numero di passaggi manuali nel processo di deployment</strong>. Cerca di
+ridurre questi passaggi in modo sistematico. Il numero di passaggi manuali aumenta il tempo di deployment e l'opportunità di errore.</li>
+<li><strong>Misura il livello (o la percentuale) di automazione nella pipeline di deployment</strong>. Cerca di aumentare costantemente questo livello.</li>
+<li><strong>Determina il tempo dedicato ai ritardi nella pipeline di deployment</strong>. Man mano che
+lavori per ridurre questi ritardi, cerca di capire dove e perché il codice viene inserito nella pipeline nella
+deployment della pipeline.</li>
+</ul>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina per DevOps</a>.</li>
+<li>Ulteriori informazioni sulle <a href="/solutions/continuous-delivery" track-type="solution" track-name="internalLink" track-metadata-position="body">soluzioni di distribuzione continue</a> di Google Cloud.</li>
+<li>Leggi il
+<a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">libro SRE (Site Reliability Engineering)</a>,
+in particolare il
+<a href="https://landing.google.com/sre/sre-book/chapters/release-engineering/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Capitolo 8 - Release Engineering</a>.</li>
+<li>Leggi i <a href="http://www.informit.com/articles/article.aspx?p=1833567" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Quattro principi delle release di software a basso rischio</a>.</li>
+<li>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</li>
+<li>Esegui il
+<a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a>
+per comprendere il tuo rendimento rispetto al resto del settore.</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,59 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 測定: 障害の予兆通知</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注:</strong><span> 障害の予兆通知<em></em>は、ソフトウェア デリバリーと組織のパフォーマンスを改善するための一連の機能の 1 つです。これらの機能は <a href="https://www.devops-research.com/research.html">DORA State of DevOps Research Program</a> で発見されました。これは、高いパフォーマンスを生み出すプラクティスと機能に関する、学術的に厳格で独立した研究調査です。詳細については、<a href="/devops">DevOps のリソース</a>をご覧ください。</span></aside><p>障害の予兆通知とは、障害が発生してシステムから通知を受ける前に、あるいは、より悪い状況としては、顧客からの情報でアプリケーションまたはサービスが停止したことが判明する前に、モニタリング対象の値が既知の障害しきい値に近づいた場合に通知を行うことを指します。このアプローチを使用すると、問題が深刻化したり、ユーザーに影響を与える前に問題を特定し、解決できる可能性があります。<a href="https://services.google.com/fh/files/misc/state-of-devops-2014.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2014 DevOps Research and Assessment（DORA）</a>（PDF）の調査で、積極的なモニタリングがソフトウェア配信パフォーマンスの重要な予測因子であることが明らかとなりました。DORA の調査によると、予兆通知を使用しているチームは、問題を迅速に診断して解決できます。一方、内部モニタリングでなく、主にネットワーク オペレーション センター（NOC）などの運用チーム外の情報源から（さらに悪い場合は顧客から）障害が報告される場合、パフォーマンスが低下します。</p>
+
+<h2 id="how_to_implement_proactive_failure_notification" data-text="障害の予兆通知を実装する方法">障害の予兆通知を実装する方法</h2>
+
+<p><strong>アラートルールを使用する</strong>。特定のアラートルール<em></em>を使用して障害通知を生成します。アラートルールでは、アラートが生成される条件とそのアラートの通知チャネルを定義します。 <a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="solution" track-name="internalLink" track-metadata-position="body">モニタリングとオブザーバビリティ</a>でアラートを生成する方法を確認する。</p>
+
+<p><strong>しきい値を使用する</strong>。アラートルールでは、モニタリングする指標に問題発生の目安となるしきい値を定める必要があります。モニタリングしきい値により、アラートルールがトリガーされ、指標レベルがしきい値を超えた時点で通知が生成されます。</p>
+
+<p><strong>しきい値を慎重に選択する</strong>。しきい値が実際に問題を予測したときにのみアラートが生成されるようにしきい値を選択します。任意の値を選択すべきではありません。通常、ユーザーに影響を与える値のレベルを特定し、その値を超える前に一定の割合でアラート通知をトリガーする必要があります。</p>
+
+<p>たとえば、ページの平均応答時間がしきい値の 20% 以内で、20% になるとユーザーがイライラしてサポートに電話し始めることがわかっている場合、その値でアラート通知がトリガーされるように選択できます。</p>
+
+<p><strong>事後分析を行う</strong>。インシデントの後に事後分析を行う場合、どのインジケーターであればインシデントを予測できたかを見極め、その後はそうしたインジケーターをモニタリングします。</p>
+
+<p><strong>通知戦略を立てる</strong>。通知によりアクションが求められない場合や、毎回同じアクションが求められる場合は、レスポンスを自動化する必要があります。また、イベントに関する通知の量も考慮する必要があります。イベント中に大量の通知が発せられると、有用ではなく邪魔になる可能性があります。アラームがあまりに多いと、ユーザーはアラームに反応しなくなり、アラームへの対応に遅れたり、アラームを見落としたりすることがあります（「アラート疲れ」と称される問題）。通知を定期的に確認し、対処できない通知を削除します。</p>
+
+<h2 id="ways_to_improve_failure_notification" data-text="障害通知を改善する方法">障害通知を改善する方法</h2>
+
+<p>システムで障害が発生した場合に、Network Operations Center（NOC）やお客様に影響が及ぶ前に、早期に主要チームに通知されるようアラートを設定します。戦術は次のとおりです。</p>
+
+<ul>
+<li>ロギングとモニタリング システムのアラートを適切なレベルに構成する。</li>
+<li>問題を解決できるスタッフやチームに通知されるようアラートを設定する。</li>
+<li>システム障害が発生する前に、しきい値の警告に基づいてシステムの健全性を積極的にモニタリングする。</li>
+<li>変化率の警告に基づいて、システムの健全性を積極的にモニタリングする。</li>
+<li>関連するアラートのみが発生し、アラートが多すぎないようにする。どのアラートが無関係であるかをよく調べる。無関係なアラートを無効にし、関連が確認できたモニタリング アラートだけを再びオンにする。アラートをすべて無効にすることはおすすめできません。</li>
+</ul>
+
+<h2 id="ways_to_measure_failure_notifications" data-text="障害通知の判定方法">障害通知の判定方法</h2>
+
+<p>プロアクティブ モニタリングは容易に実現できます。把握すべき要素は次のとおりです。</p>
+
+<ol>
+<li>ロギング システムおよびモニタリング システムからの障害アラートを取得および使用する程度。</li>
+<li>しきい値による警告を使用して、システムの正常性を事前にモニタリングする程度。</li>
+<li>変更率の警告を使用して、システムの健全性を予防的にモニタリングする程度。</li>
+</ol>
+
+<p>システムのさまざまな要素を把握するには、2 つ以上の方法で指標をモニタリングする必要があります。たとえば、指標のしきい値を定めて、所定の期間に指標がその値を上回るまたは下回るとアラートがトリガーされるようにします。また、指標の変化率についてもしきい値を定めて、指標値の変化率が予想よりも高い、または低い場合にアラートがトリガーされるようにします。</p>
+
+<h2 id="whats_next" data-text="次のステップ">次のステップ</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps ページ</a>で他の記事やリソースへのリンクを確認する。</li>
+<li><a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="solution" track-name="internalLink" track-metadata-position="body">モニタリングとオブザーバビリティ</a>でアラートを生成する方法を確認する。</li>
+<li><a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">サイト信頼性工学（SRE）の書籍</a>を読む。</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">研究プログラム</a>を調べる。</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps のクイック チェック</a>を確認する。業界におけるご自身の立ち位置を把握できます。</li>
+</ul>
+
+</body></html>

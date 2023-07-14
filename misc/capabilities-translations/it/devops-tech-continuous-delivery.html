@@ -1,0 +1,162 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia DevOps: distribuzione continua</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> <em>la distribuzione continua</em> è un insieme di funzionalità che aumentano la distribuzione del software e le prestazioni dell'organizzazione. Queste funzionalità sono state scoperte dal <a href="https://www.devops-research.com/research.html">programma di ricerca State of DevOps di DORA</a>, un'indagine indipendente e rigorosamente accademica sulle pratiche e sulle capacità che promuovono prestazioni elevate. Per scoprire di più, leggi le nostre <a href="/devops">risorse DevOps</a>.</span></aside>
+<p>La distribuzione continua è la capacità di rilasciare modifiche di qualsiasi tipo on demand in modo rapido, sicuro e sostenibile. I team che fanno pratica con una distribuzione continua sono in grado di rilasciare software e apportare modifiche alla produzione in modo a basso rischio in qualsiasi momento, anche durante il normale orario di lavoro, senza interferire con gli utenti.</p>
+
+<p>Puoi applicare i principi e le pratiche di distribuzione continua a qualsiasi contesto software, incluso quanto segue:</p>
+
+<ul>
+<li>Aggiornamento dei servizi in un sistema distribuito complesso.</li>
+<li>Upgrade del software del mainframe.</li>
+<li>Apportare modifiche alla configurazione dell'infrastruttura.</li>
+<li>Modifica degli schemi del database.</li>
+<li>Aggiornamento automatico del firmware in corso.</li>
+<li>Rilasciare nuove versioni di un'app per dispositivi mobili.</li>
+</ul>
+
+<p>Quando il tuo team svolge attività di consegna continua, puoi rispondere "sì" alle seguenti domande:</p>
+
+<ul>
+<li>Il nostro software è in uno stato eseguibile di deployment durante il suo intero ciclo di vita?</li>
+<li>Diamo la priorità a mantenere il software di cui è possibile eseguire il deployment piuttosto che a lavorare su nuove funzionalità?</li>
+<li>Un rapido feedback sulla qualità e la deployment del sistema su cui stiamo lavorando è disponibile per tutti i membri del team?</li>
+<li>Quando riceviamo feedback che indicano che non è possibile eseguire il deployment del sistema (come build o test non riusciti), facciamo della massima priorità alla risoluzione di questi problemi?</li>
+<li>Siamo in grado di eseguire il deployment del nostro sistema in produzione o per gli utenti finali, in qualsiasi momento, on demand?</li>
+</ul>
+
+<p>La distribuzione continua in genere è collegata al deployment continuo, ma sono pratiche distinte. Il deployment continuo è quando i team tentano di eseguire il deployment di ogni
+modifica del codice in produzione il prima possibile. Il deployment continuo funziona bene per i servizi web, ma non può essere applicato a software come firmware o app per dispositivi mobili. La distribuzione continua viene applicata a tutti i tipi di software, inclusi firmware e sistemi mainframe, e in ambienti altamente regolamentati. Puoi e devi iniziare con la distribuzione continua, anche se non intendi mai iniziare a utilizzare il deployment continuo.</p>
+
+<p>La distribuzione continua e il deployment continuo vengono erroneamente considerati come rischiosi e non adatti a domini regolamentati o fondamentali per la sicurezza. Infatti, l'obiettivo della distribuzione continua è ridurre il rischio di software e la ricerca DORA ha dimostrato in modo coerente che alte prestazioni raggiungono livelli più elevati di affidabilità e disponibilità. Le pratiche tecniche che favoriscono la distribuzione continua, ovvero i test continui, il passaggio alla sicurezza più ampia e i test e l'osservabilità completi, sono ancora più importanti nei domini altamente regolamentati e fondamentali per la sicurezza. La distribuzione continua è stata applicata molte volte in domini altamente regolamentati, come servizi finanziari e pubblica amministrazione.</p>
+
+<p>Sebbene la distribuzione continua sia possibile per tutti i tipi di software, è difficile. Tuttavia, offre vantaggi significativi. Una ricerca <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DUROps Research and Assessment (DORA)</a> mostra che il buon funzionamento della distribuzione continua offre i seguenti vantaggi:</p>
+
+<ul>
+<li>Migliora le prestazioni di distribuzione del software, misurate in termini di <a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">quattro metriche chiave</a>, nonché livelli di disponibilità più elevati.</li>
+<li>Porta a livelli di qualità più elevati, misurati in base alla percentuale di tempo che i team dedicano al lavoro a ripensamento o al lavoro non pianificato (come mostrato nel <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">report State of DevOps 2016</a>, 25-26 e 2018 <a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Report State of DevOps 2018</a> pp27-29).</li>
+<li>Prevede livelli inferiori di burnout (esaurimento fisico, mentale o emotivo causato da lavoro eccessivo o stress), livelli più alti di <a href="/architecture/devops/devops-culture-job-satisfaction" track-type="article" track-name="internalLink" track-metadata-position="body">soddisfazione del lavoro</a> e migliore <a href="/architecture/devops/devops-culture-westrum-organizational-culture" track-type="article" track-name="internalLink" track-metadata-position="body">cultura organizzativa</a>.</li>
+<li>Riduce i problemi di deployment, ovvero la misura in cui i deployment sono invasivi anziché facili e non problematici, nonché la paura e l'ansia che ingegneri e personale tecnico sentono quando inviano il codice in produzione.</li>
+<li>Influenza la cultura, portando a livelli più elevati di <a href="https://rework.withgoogle.com/print/guides/5721312655835136/">sicurezza psicologica</a> e a una <a href="/architecture/devops/devops-culture-westrum-organizational-culture" track-type="article" track-name="internalLink" track-metadata-position="body">cultura organizzativa più guidata</a>.</li>
+</ul>
+
+<p>Il seguente diagramma mostra in che modo un insieme di pratiche tecniche influisce
+sulla pubblicazione continua, che a sua volta genera i risultati elencati sopra:</p>
+
+<p><img src="/static/architecture/devops/images/continuous-delivery-technical-practices.png" alt="Mostra come le pratiche tecniche generano risultati in altre funzionalità" width="80%" class="screenshot"/> </p>
+
+<p>La distribuzione continua è solo uno degli aspetti che determinano i risultati già discussi, anche se fondamentale. Anche altre capacità culturali e organizzative
+menzionate nel
+<a href="https://devops-research.com/research.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">programma di ricerca DORA</a>
+consentono di ottenere questi risultati. Puoi ottenere una distribuzione continua implementando le pratiche tecniche descritte in questo documento.</p>
+
+<h2 id="implementing_continuous_delivery" data-text="Implementare la distribuzione continua">Implementare la distribuzione continua</h2>
+
+<p>Da una ricerca DORA è emerso che le seguenti capacità tecniche determinano la capacità di ottenere una distribuzione continua. La <a href="/architecture/devops/devops-culture-transformational-leadership" track-type="article" track-name="internalLink" track-metadata-position="body">visione di trasformazione</a> all'interno dell'organizzazione promuove anche l'implementazione di molte di queste capacità tecniche.</p>
+
+<p>Per aiutare il tuo team a ottenere una velocità effettiva più elevata e ridurre i rischi, implementa le seguenti prassi di distribuzione continua:</p>
+
+<ul>
+<li><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Automazione del test</a>:
+l'utilizzo di suite di test automatizzate complete, create e gestite principalmente dagli sviluppatori. Le suite di test efficaci sono affidabili, ovvero i test individuano errori reali e superano solo il codice rilasciabile.</li>
+<li><a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Automazione del deployment</a>: il grado di completa automazione dei deployment e non richiede l'intervento manuale.</li>
+<li><a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">Sviluppo basato su trunk</a>:
+è caratterizzato da meno di tre rami attivi in un repository di codice;
+i rami e le forche hanno una vita molto breve (ad esempio meno di un giorno)
+prima di essere uniti nel mainline; e i team di applicazioni raramente o non hanno mai
+periodi di <em>blocco del codice</em> quando nessuno può controllare il codice o eseguire richieste di pull
+a causa di conflitti di unione, blocchi di codice o stabilizzazioni.</li>
+<li><a href="/architecture/devops/devops-tech-shifting-left-on-security" track-type="article" track-name="internalLink" track-metadata-position="body">Passaggio a sinistra della sicurezza</a>:
+integrazione della sicurezza nelle fasi di progettazione e test del processo di
+sviluppamento del software. Questo processo include l'esecuzione di revisioni della sicurezza delle applicazioni, tra cui il team addetto alla sicurezza delle informazioni nella fase di progettazione e dimostrazione delle applicazioni, l'utilizzo di librerie e pacchetti di sicurezza preapprovati e il test delle funzionalità di sicurezza come parte della suite di test automatizzati.</li>
+<li><a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">Un'architettura a basso accoppiamento</a>:
+l'architettura che consente ai team di testare ed eseguire il deployment delle proprie applicazioni on demand, senza richiedere l'orchestrazione con altri servizi. Avere un'architettura a basso accoppiamento consente ai tuoi team di lavorare in modo indipendente senza fare affidamento su altri team per l'assistenza e i servizi, che a loro volta consentono loro di lavorare rapidamente e di apportare valore all'organizzazione.</li>
+<li><a href="/architecture/devops/devops-tech-teams-empowered-to-choose-tools" track-type="article" track-name="internalLink" track-metadata-position="body">Offrire ai team gli strumenti per scegliere gli strumenti</a>:
+i team che possono scegliere quali strumenti utilizzare al meglio per una distribuzione continua.
+Nessuno sa meglio dei professionisti ciò di cui hanno bisogno per essere efficaci.</li>
+<li><a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">Integrazione continua (CI)</a>: una pratica di sviluppo in cui il codice viene regolarmente registrato e ogni check-in attiva un insieme di test rapidi per scoprire le regressioni, che gli sviluppatori correggono immediatamente. Il processo di CI crea build e pacchetti canonici per cui viene eseguito il deployment e il rilascio.</li>
+<li><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Test continuo</a>:
+test durante il ciclo di vita della distribuzione del software anziché come fase separata dopo il <em>completamento dello sviluppo</em>. Con i test continui, sviluppatori e tester lavorano fianco a fianco. I team con prestazioni elevate esercitano lo sviluppo basato su test, ricevono feedback dai test in meno di dieci minuti e continuano e esaminano costantemente le suite di test (ad esempio, per individuare meglio i difetti e tenere sotto controllo la complessità).</li>
+<li><a href="/architecture/devops/devops-tech-version-control" track-type="article" track-name="internalLink" track-metadata-position="body">Controllo delle versioni</a>: l'utilizzo di un sistema di controllo della versione, come Git o Subversion, per tutti gli artefatti di produzione, inclusi codice di applicazione, configurazioni dell'applicazione, configurazioni di sistema e script per l'automatizzazione della build e della configurazione degli ambienti.</li>
+<li><a href="/architecture/devops/devops-tech-test-data-management" track-type="article" track-name="internalLink" track-metadata-position="body">Gestione dei dati di test</a>: le prassi efficaci includono dati sufficienti per eseguire la suite di test, la possibilità di acquisire i dati necessari on demand e i dati che non limitano il numero di test che è possibile eseguire. Teniamo in grande considerazione che i tuoi team dovrebbero ridurre al minimo, ove possibile, la quantità di dati di test necessaria per eseguire test automatici.</li>
+<li><a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="article" track-name="internalLink" track-metadata-position="body">Monitoraggio completo e osservabilità</a>: consente ai team di comprendere l'integrità dei propri sistemi. Le soluzioni efficaci consentono ai team di monitorare le metriche predefinite, compreso lo stato del sistema, come definito dagli utenti, oltre a consentire agli ingegneri di eseguire il debug interattivo dei sistemi e di esplorare proprietà e pattern man mano che emergono.</li>
+<li><a href="/architecture/devops/devops-measurement-proactive-failure-notification" track-type="article" track-name="internalLink" track-metadata-position="body">Notifiche proattive</a>: monitoraggio dello stato di integrità del sistema in modo che i team possano rilevare e mitigare i problemi in modo preventivo.</li>
+<li><a href="/architecture/devops/devops-tech-database-change-management">Gestione delle modifiche al database</a>: le modifiche al database non rallentano i team se seguono alcune pratiche chiave, tra cui l'archiviazione delle modifiche al database come script nel controllo della versione (e la gestione di tali modifiche allo stesso modo delle modifiche all'applicazione in produzione), la visualizzazione delle modifiche del database a tutti gli utenti nel ciclo di vita della distribuzione del software (inclusi i tecnici) e la comunicazione con tutte le parti quando le modifiche all'applicazione richiedono modifiche al database.</li>
+<li><a href="/architecture/devops/devops-tech-code-maintainability">Gestibilità del codice</a>: sistemi e strumenti che consentono agli sviluppatori di modificare facilmente il codice gestito da altri, trovare esempi nel codebase, riutilizzare il codice di altre persone e aggiungere, eseguire l'upgrade e la migrazione a nuove versioni delle dipendenze senza interrompere il codice.</li>
+</ul>
+
+<p>Sebbene la distribuzione continua venga spesso combinata con l'integrazione continua e abbreviata in <em>CI/CD</em>, la ricerca dimostra che l'integrazione continua è solo un elemento dell'implementazione della distribuzione continua. Per ottenere release affidabili e a basso rischio, è necessaria una stretta collaborazione tra tutti coloro che sono coinvolti nel processo di distribuzione del software, non solo gli sviluppatori di software, e il tuo team deve adottare nuovi modi di lavorare e acquisire nuove competenze.</p>
+
+<h2 id="common_pitfalls_of_implementing_continuous_delivery" data-text="Insetti comuni nell'implementazione della distribuzione continua">Insetti comuni nell'implementazione della distribuzione continua</h2>
+
+<p>Alcune organizzazioni ritengono erroneamente di poter implementare la distribuzione continua eseguendo il processo di deployment esistente più spesso. Tuttavia, l'implementazione delle funzionalità tecniche che promuovono la distribuzione continua richiede in genere modifiche significative a processi e architettura. È probabile che l'aumento della frequenza dei deployment senza migliorare l'architettura e i processi porti a percentuali di errore più elevate e che i team si siano esauriti.</p>
+
+<p>Molte descrizioni della distribuzione continua sono incentrate su strumenti e pattern, ad esempio la pipeline di deployment che apporta modifiche dal controllo delle versioni alla produzione. Tuttavia, l'utilizzo di strumenti moderni senza implementare le pratiche tecniche necessarie e la modifica del processo descritti in questo documento non produrrà i vantaggi previsti.</p>
+
+<p>Il seguente diagramma mostra la curva J che la ricerca DORA ha riscontrato come tipica dei programmi di trasformazione. Per emergere dalla parte inferiore della curva J, il tuo team deve includere riprogettazione e semplificazione dei processi, miglioramento architettonico e sviluppo di competenze e competenze, oltre a automazione e strumenti.</p>
+
+<p><img src="/static/architecture/devops/images/continuous-delivery-2.png" alt="Diagramma della curva J delle trasformazioni tipiche, dal rapporto State of DevOps 2018." width="80%" class="screenshot"/> </p>
+
+<p>Nel diagramma sono etichettate le seguenti fasi:</p>
+
+<ul>
+<li>All'inizio della curva, i team iniziano la trasformazione e identificano
+i risultati rapidi.</li>
+<li>In un miglioramento iniziale, l'automazione aiuta i team a basso rendimento a raggiungere risultati dal rendimento medio.</li>
+<li>Con una diminuzione dell'efficienza, ovvero la parte inferiore della curva J, l'automazione aumenta i requisiti di test, che vengono gestiti manualmente. Una grande quantità
+di debito tecnico blocca l'avanzamento.</li>
+<li>Ora che i team stanno uscendo dalla curva, il debito tecnico e la maggiore complessità comportano controlli manuali aggiuntivi e livelli di processo intorno ai cambiamenti, rallentando il lavoro.</li>
+<li>Nella parte superiore della curva, un incessante miglioramento del lavoro si traduce in eccellenza e prestazioni elevate. Responsabili e alto livello sfruttano le competenze e impara dai loro ambienti per vedere un aumento della produttività.</li>
+</ul>
+
+<p>Un buon modo per attenuare l'impatto della curva J è completare un esercizio di <em>mappatura del flusso del valore</em> (VSM) per scoprire e prevedere l'effetto di colli di bottiglia. In un esercizio VSM, osservi un singolo cambiamento man mano che va dal controllo delle versioni alla produzione:</p>
+
+<ol>
+<li>Considera i vari processi sottoposti a ogni modifica, come i test automatici e manuali, la revisione della sicurezza, la gestione dei cambiamenti e il rilascio in produzione.</li>
+<li>Misura il tempo totale durante il quale il passaggio della versione di controllo passa da una versione all'altra. Per ogni processo, misura quanto segue:
+<ul>
+<li>Il tempo trascorso effettivo e il tempo del valore aggiunto (il tempo durante il quale viene effettivamente svolto il lavoro) coinvolti nell'esecuzione del processo end-to-end.</li>
+<li>La percentuale di tempo in cui il lavoro è stato restituito perché non è stato completato correttamente la prima volta. Questa metrica è nota come <em>percentuale completata e accurata</em> o %C/A.</li>
+</ul></li>
+</ol>
+
+<p>Lo scopo dell'esercizio di mappatura del flusso di valore è aiutarti a trovare le inefficienze nel tuo processo. Insieme al team, crea un diagramma dell'aspetto del flusso di valore in sei mesi e metti da parte la capacità del team di lavorare sull'implementazione di questo stato futuro. Identifica e rimuovi gli ostacoli con un
+processo di lunga durata rispetto al tempo a valore aggiunto o che hanno una %C/A scarsa.</p>
+
+<p>In genere, è necessario affrontare una significativa riprogettazione di processo e architettura nell'ambito dell'implementazione di una pipeline di deployment. Poiché la pipeline di deployment va dal check-in al rilascio, connette più team. È essenziale chiedere ai rappresentanti di tutti i team di completare un esercizio di mappatura del flusso di valore e concordare una procedura e una procedura comuni (ad esempio per il deployment in ambienti di test e produzione) nell'ambito dello stato futuro.</p>
+
+<p>L'implementazione della distribuzione continua è un processo di miglioramento continuo e quotidiano, guidato dai risultati che vuoi raggiungere. Strumenti e pattern sono preziosi, ma soltanto utili per questo lavoro di miglioramento essenziale.</p>
+
+<h2 id="measuring_continuous_delivery" data-text="Misurazione della pubblicazione continua">Misurazione della pubblicazione continua</h2>
+
+<p>Infine, l'obiettivo di pubblicazione continua è garantire che le release vengano eseguite in modo a basso rischio durante il normale orario di lavoro. L'obiettivo dovrebbe essere che nessuno debba lavorare al di fuori del normale orario di lavoro per eseguire deployment o release, quindi è qualcosa che è importante misurare.</p>
+
+<p>Il tuo avanzamento con la distribuzione continua si riflette nei risultati che raggiungi. Puoi eseguire il <a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">controllo rapido DevOps di DORA</a> per verificare l'andamento delle metriche chiave di distribuzione continua:</p>
+
+<ul>
+<li>Tempi di risposta brevi per i cambiamenti normali e di emergenza, con l'obiettivo
+di usare la procedura standard per le modifiche di emergenza.</li>
+<li>Bassa percentuale di modifiche non riuscite.</li>
+<li>Breve tempo per ripristinare il servizio in caso di interruzione del servizio o
+riduzioni del servizio.</li>
+<li>Le frequenze di rilascio assicurano che le funzionalità con priorità elevata e le correzioni di bug vengano rilasciate in modo tempestivo.</li>
+</ul>
+
+<p>Come spiegato all'inizio di questo documento, l'implementazione della distribuzione continua dovrebbe portare a livelli inferiori di rilavorazione, minore difficoltà di deployment e meno tempo da dedicare alle rilavorazioni e ai lavori non pianificati.</p>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina DevOps</a>.</li>
+<li>Scopri di più sulla distribuzione continua nella <a href="https://martinfowler.com/delivery.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">guida alla distribuzione del software</a> di Martin Fowler.</li>
+<li>Leggi <a href="https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Value Stream Mapping: How to Visualize Work and Allinea Leadership for Organization Transformation</em></a> di Karen Martin e Mike Osterling.</li>
+<li>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</li>
+<li>Completa il <a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a> per scoprire la tua posizione rispetto al resto del settore.</li>
+</ul>
+
+</body></html>

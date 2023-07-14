@@ -1,0 +1,183 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Technologies DevOps : Architecture</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+<aside class="note"><strong>Remarque</strong> : <span> L'<em>architecture</em> figure parmi un ensemble de capacités permettant d'optimiser les performances organisationnelles et de livraison de logiciels. Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les capacités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>Les recherches menées par l'équipe DORA (DevOps Research and Assessment ou Recherche et évaluation de DevOps) montrent que l'architecture est un facteur déterminant dans la réussite d'une livraison continue.
+Que vous utilisiez Kubernetes ou des mainframes, votre architecture permet aux équipes d’adopter des pratiques favorisant des performances élevées en matière de livraison de logiciels.</p>
+
+<p>Lorsque les équipes adoptent un mode de livraison continue, les bonnes pratiques suivantes en matière d'architecture permettent d'atteindre de bons résultats :</p>
+
+<ul>
+<li>Les équipes peuvent modifier à grande échelle la conception de leurs systèmes sans dépendre d'autres équipes ni d'autorisations délivrées par quelqu'un d'extérieur à l'équipe.</li>
+<li>Les équipes sont en mesure de réaliser leur travail sans nécessiter de communication ni de coordination ultraprécises avec des personnes extérieures à l'équipe.</li>
+<li>Les équipes déploient et diffusent leur produit ou service à la demande, indépendamment des services dont elles dépendent ou des autres services qui dépendent du produit.</li>
+<li>Les équipes effectuent la majorité de leurs tests à la demande, sans nécessiter un environnement de test intégré.</li>
+<li>Les équipes peuvent réaliser les déploiements pendant les heures ouvrables avec des temps d'arrêt négligeables.</li>
+</ul>
+
+<p>Il est possible d'atteindre ces résultats avec les technologies mainframe. Il est également possible d'échouer à les atteindre, même en utilisant les technologies les plus récentes et les plus en vogue. De nombreuses entreprises investissent beaucoup de temps et d'efforts à adopter de nouvelles technologies, sans pour autant parvenir à atteindre des objectifs critiques en termes de livraison de logiciels, à cause des limitations imposées par l'architecture.</p>
+
+<p>Lorsque l'architecture du système est conçue pour permettre aux équipes de tester, déployer et modifier des systèmes sans dépendre des autres équipes, l'exécution de leur travail ne requiert qu'une communication minimale. En d'autres termes, l'architecture et les équipes sont faiblement couplées.</p>
+
+<p>Melvin Conway a été le premier à évoquer cette connexion entre la bande passante de communication et l’architecture des systèmes : "Les organisations qui conçoivent des systèmes [...] sont contraintes de produire des architectures qui reproduisent leurs propres structures de communication." Pour contrer ces architectures à couplage fort et encourager de meilleurs modèles de communication, les équipes et les organisations peuvent utiliser la <a href="https://medium.com/better-practices/how-to-dissolve-communication-barriers-in-your-api-development-organization-3347179b4ecc" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">manœuvre inversée de Conway</a>, selon laquelle les structures et modèles des équipes sont conçus pour promouvoir l'état architectural attendu. De cette manière, les modèles de communication d’équipe viennent en appui des modèles d'architecture créés et permettent de les appliquer.</p>
+
+<p>Dans le cadre d'une architecture étroitement couplée, des modifications insignifiantes peuvent entraîner des défaillances en cascade à grande échelle. En conséquence, toute personne travaillant sur une partie du système doit constamment se coordonner avec tous les autres employés travaillant sur les autres parties du système, y compris dans la mise en œuvre de processus de gestion du changement complexes et bureaucratiques.</p>
+
+<p>Comme toute architecture orientée services avérée, les architectures à base de microservices doivent en principe permettre d'atteindre ces objectifs. En pratique, de nombreuses architectures dites "orientées services" ne permettent pas de tester et de déployer les services indépendamment les uns des autres, empêchant ainsi les équipes d'améliorer leurs performances en matière de livraison de logiciels.
+Il est essentiel d'être strict sur ces objectifs lors de la mise en œuvre d'architectures orientées services et à base de microservices.</p>
+
+<h2 id="how_to_implement_architectures_for_continuous_delivery" data-text="Mettre en œuvre des architectures pour une livraison continue">Mettre en œuvre des architectures pour une livraison continue</h2>
+
+<p>Considérons les principaux archétypes architecturaux. Randy Shoup, auparavant l'un des directeurs de l'ingénierie pour App Engine et vice-président de l'ingénierie chez WeWork, a fait l'observation suivante :</p>
+
+<blockquote>"Il n’existe pas d'architecture parfaite qui correspondrait à chaque produit et à chaque échelle possibles. Toute architecture répond à un ensemble particulier d'objectifs ou à un éventail d'exigences et de contraintes, telles que le délai de mise sur le marché, la facilité de développement de nouvelles fonctionnalités, la mise à l'échelle, etc. Les fonctionnalités de n'importe quel produit ou service évoluent quasi certainement au fil du temps : il n'est donc pas surprenant que nos besoins architecturaux changent également. Ce qui fonctionne à l'échelle 1:1 fonctionne rarement à l'échelle 1:10 ou 1:100."</blockquote>
+
+<p>Les avantages et inconvénients des archétypes architecturaux montrent que chacun de ces archétypes correspond à un besoin évolutif différent au sein d'une organisation.</p>
+
+<table>
+<thead>
+<tr>
+<th width="25%">Archétype</th>
+<th>Avantages</th>
+<th>Inconvénients</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Monolithique v1</strong><br /> (toutes les fonctionnalités dans une seule application)</td>
+<td><ul><li>Simple dans les premiers temps</li>
+<li>Faibles latences entre processus</li>
+<li>Base de code et unité de déploiement uniques</li>
+<li>Utilisation efficace des ressources à petite échelle</li>
+</ul>
+</td>
+<td><ul><li>La charge de coordination croît à mesure que l'équipe grandit</li>
+<li>Piètre application de la modularité</li>
+<li>Difficultés de mise à l'échelle</li>
+<li>Déploiement "tout ou rien" (pannes entraînant des temps d'arrêt)</li>
+<li>Durées de compilation longues</li>
+</ul>
+</td>
+</tr>
+<tr>
+  <td><strong>Monolithique v2</strong><br /> (ensemble de niveaux monolithiques : présentation via l'interface, serveur d'application, couche de base de données)</td>
+<td><ul><li>Simple dans les premiers temps</li>
+<li>Les requêtes de jointure sont faciles</li>
+<li>Déploiement à schéma unique</li>
+<li>Utilisation efficace des ressources à petite échelle</li>
+</ul>
+</td>
+<td><ul><li>Le couplage a tendance à augmenter au fil du temps</li>
+<li>Difficultés de mise à l'échelle et faible redondance ("tout ou rien", uniquement vertical)</li>
+<li>Difficile à régler correctement</li>
+<li>Gestion de schéma de type "tout ou rien"</li>
+</ul>
+</td>
+</tr>
+<tr>
+  <td><strong>Microservice</strong><br /> (modulaire, indépendant, relation par graphes ou niveaux, persistance isolée)</td>
+<td><ul><li>Chaque unité est simple</li>
+<li>Mise à l'échelle et performances indépendantes</li>
+<li>Tests et déploiement indépendants</li>
+<li>Permet des réglages optimisés pour les performances (mise en cache, réplication, etc.)</li>
+</ul>
+</td>
+<td><ul><li>De nombreuses unités collaborant entre elles</li>
+<li>Beaucoup de dépôts de petite taille</li>
+<li>Nécessite des outils plus sophistiqués et une gestion des dépendances</li>
+<li>Temps de latence du réseau</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>Comme le montre ce tableau, une architecture monolithique en appui d'un effort de développement de produit léger (par exemple, le prototypage rapide de nouvelles fonctionnalités, ou encore d'éventuels pivots ou changements de stratégie majeurs) diffère d'une architecture qui nécessite des centaines d'équipes de développeurs devant chacune être en mesure de fournir indépendamment de la valeur au client. En permettant à votre architecture d'évoluer, vous pouvez vous assurer qu'elle répond toujours aux besoins actuels de l'organisation. Peu importe l'archétype : lors de la conception d'une architecture destinée à faciliter la livraison continue, vous devez donner à vos équipes les moyens d'atteindre les objectifs décrits dans l'introduction de ce document.</p>
+
+<p>La constitution d'équipes pluridisciplinaires, avec des représentants de l'ensemble de l'organisation (produit, développement, test et opérations), permet aux équipes de travailler de manière indépendante et facilite l'interfaçage au niveau de leurs périmètres respectifs. Lorsque vos équipes sont pluridisciplinaires, elles peuvent fonctionner de manière autonome, <a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">faire leurs propres expériences sur certaines idées</a> et <a href="/architecture/devops/devops-tech-teams-empowered-to-choose-tools" track-type="article" track-name="internalLink" track-metadata-position="body">choisir leurs propres outils</a>.
+Pour faciliter la communication et les tests entre les équipes, il peut être utile de disposer de contrats bien définis entre services.</p>
+
+<p>L'indépendance des équipes est importante, de même que l'indépendance de leurs produits et services. Les services doivent pouvoir être testés à la demande. L’adoption de techniques de <a href="https://martinfowler.com/bliki/TestDouble.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">simulation et de bouchons</a> représentant des services externes permet de réduire l’impact des dépendances externes et permet aux équipes de créer rapidement des environnements de test. En outre, la mise en œuvre de <a href="https://martinfowler.com/bliki/ContractTest.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">tests contractuels</a> avec les services externes permet de s'assurer que les dépendances à ces services ou à d'autres services sont toujours satisfaites. Pour que la livraison soit réellement continue, le produit ou le service d'une équipe individuelle doit être testé et accepté indépendamment des services dont il dépend.</p>
+
+<p>Pour permettre des capacités de déploiement à tout moment, envisagez de mettre en œuvre des modèles de déploiement bleu/vert ou progressifs, avec un degré élevé d'<a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">automatisation</a>.
+Dans le cadre de ces modèles, deux versions au moins du produit ou du service s'exécutent simultanément. Ces modèles de déploiement permettent aux équipes de valider les modifications et de déployer en production avec des temps d'arrêt faibles ou nuls. Un point important à prendre en compte est la manière dont sont effectuées les mises à niveau des données, ce qui signifie que les données et le schéma doivent être rétrocompatibles.</p>
+
+<p>Pour faciliter l'indépendance de déploiement des composants, nous vous recommandons de créer des API versionnées et rétrocompatibles. Assurer la compatibilité ascendante des API accroît la complexité des systèmes, mais la flexibilité que cela vous apporte en termes de facilité de déploiement vous rapportera bien davantage que cet investissement initial.</p>
+
+<p>Les architectures orientées services et à base de microservices favorisent ce type de capacités car elles utilisent des API et des <a href="https://martinfowler.com/bliki/BoundedContext.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">contextes bornés</a> pour découpler des domaines volumineux en unités plus petites et plus faiblement couplées, et car elles utilisent également les doublons de test et la virtualisation pour tester des services ou des composants de manière isolée.</p>
+
+<h2 id="common_pitfalls_in_architectures" data-text="Problèmes courants au niveau de l'architecture">Problèmes courants au niveau de l'architecture</h2>
+
+<ul>
+<li><p><strong>Publication simultanée de nombreux services</strong>. Dans les équipes où la testabilité et la déployabilité ne sont pas prioritaires, la plupart des tests nécessitent l'utilisation d'environnements intégrés complexes et coûteux. Dans de nombreux cas, les déploiements nécessitent la publication simultanée de nombreux services en raison d'interdépendances complexes. Ces déploiements dits "big-bang" nécessitent une orchestration fine du travail entre les équipes, avec de nombreux transferts et de nombreuses dépendances entre des centaines, voire des milliers de tâches. Les déploiements big bang prennent généralement entre plusieurs heures et plusieurs jours, et nécessitent un temps d'arrêt important.</p></li>
+<li><p><strong>Intégration des modifications apportées par des centaines, voire des milliers d'autres développeurs</strong>. Ces développements, à leur tour, peuvent présenter des dépendances avec des dizaines, des centaines ou des milliers de systèmes interconnectés.
+Les tests sont réalisés dans des environnements de test d'intégration peu nombreux, dont la création et la configuration nécessitent souvent des semaines. Ces environnements ne sont généralement pas représentatifs de la production, ce qui réduit d'autant la valeur et la précision des tests. Il en résulte non seulement un allongement des délais de livraison des modifications (généralement mesurés en semaines ou en mois), mais également une baisse de la productivité des développeurs et des résultats de déploiement médiocres.</p></li>
+<li><p><strong>Émergence de goulots d'étranglement dans le processus de livraison de logiciels</strong>. Parmi divers exemples de goulots d'étranglement possibles, on peut citer le cas d'une équipe sur laquelle s'appuient de nombreuses autres personnes, que ce soit dans le cadre de processus manuels (test, déploiement, etc.) ou du fonctionnement du service. Dans les deux cas, ces goulots d'étranglement créent des points de défaillance uniques et nécessitent que les équipes ou services concernés s'adaptent aux besoins des nombreuses équipes qui dépendent d'eux.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_your_architecture" data-text="Améliorer votre architecture">Améliorer votre architecture</h2>
+
+<p>Grâce à une architecture permettant à de petites équipes de développeurs de travailler de manière indépendante pour mettre en œuvre, tester et déployer du code en production rapidement et en toute sécurité, vous pouvez augmenter la productivité des développeurs et améliorer les résultats de déploiement. Une caractéristique essentielle des architectures orientées services et à base de microservices est qu’elles sont constituées de services faiblement couplés, avec des contextes bornés. L'<a href="https://12factor.net/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">application douze facteurs</a> est un ensemble populaire de modèles pour l'architecture Web moderne basé sur ces principes.</p>
+
+<p>Randy Shoup a fait l'observation suivante :</p>
+
+<blockquote>"Les organisations dotées de ce type d'architectures orientées services, telles que Google et Amazon, disposent d'une flexibilité et d'une évolutivité incroyables. Ces organisations comptent des dizaines de milliers de développeurs, avec un contexte permettant à de petites équipes de rester incroyablement productives."</blockquote>
+
+<p>Dans de nombreuses organisations, les services sont notoirement difficiles à tester et à déployer. Plutôt que de reconstruire intégralement l'architecture, nous recommandons une approche itérative visant à améliorer la conception de votre système d'entreprise. Cette approche est connue sous le nom d'<em>architecture évolutive</em>. Cette méthode part du principe que les produits et services performants nécessiteront une nouvelle architecture au cours de leur cycle de vie en raison de l'évolution des exigences auxquelles ils sont soumis.</p>
+
+<p>Un modèle intéressant dans ce contexte est celui de l'<em>application de type figuier étrangleur</em>. Dans ce modèle, vous remplacez de manière itérative une architecture monolithique par une architecture à base de composants, en veillant à ce tout nouveau travail soit effectué conformément aux principes d'une architecture orientée services. Vous acceptez le fait que la nouvelle architecture peut être amenée à déléguer au système qu'elle remplace. Au fil du temps, la nouvelle architecture assume davantage de fonctionnalités et l'ancien système se voit "étranglé".</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-strangler-fig-pattern.svg" alt="Remplacer une architecture monolithique par une architecture à base de composants."/></p>
+
+<p>Les architectures de produits et de services évoluent en permanence. Il existe de nombreuses manières de décider si une nouvelle fonctionnalité doit être un module ou un service, et le processus est itératif.
+Lorsque vous décidez si une fonctionnalité doit prendre la forme d'un service, déterminez si elle présente les caractéristiques suivantes :</p>
+
+<ul>
+<li>Elle met en œuvre une fonction ou une capacité métier unique.</li>
+<li>Pour remplir sa fonction, elle requiert des interactions minimales avec d'autres services.</li>
+<li>Elle est construite, mise à l'échelle et déployée indépendamment des autres services.</li>
+<li>Elle interagit avec d'autres services au moyen de méthodes de communication légères, par exemple un bus de messages ou des points de terminaison HTTP.</li>
+<li>Elle peut être mise en œuvre à l'aide de différents outils, langages de programmation, magasins de données, etc.</li>
+</ul>
+
+<p>Le passage à une architecture orientée services ou à base de microservices modifie également de nombreux aspects dans l’ensemble de l’organisation. Dans sa <a href="https://gist.github.com/chitchcock/1281611/9621c8859db00bf08b98212a109fa2dec4c6d601" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">diatribe sur les plates-formes</a>, Steve Yegge présente plusieurs leçons essentielles tirées de son expérience du passage à une architecture SOA :</p>
+
+<ul>
+<li>Les métriques et la surveillance gagnent en importance et les escalades deviennent plus difficiles, car un problème apparaissant dans un service peut avoir son origine dans un autre service situé plusieurs appels en amont.</li>
+<li>Les services internes peuvent générer des problèmes de type déni de service (DOS). Par conséquent, les quotas et la limitation de la bande passante consommée par les messages sont importants pour chaque service.</li>
+<li>L'assurance qualité et la surveillance commencent à se fondre l'une dans l'autre, car la surveillance doit être exhaustive et s'exercer sur la base de la logique métier et des données du service.</li>
+<li>Lorsque le nombre de services est élevé, il est important de mettre en place un mécanisme de découverte de service pour un fonctionnement efficace du système.</li>
+<li>En l'absence d'un standard universel pour l'exécution d'un service dans un environnement permettant le débogage, résoudre les problèmes dans les services créés par d'autres personnes devient beaucoup plus difficile.</li>
+</ul>
+
+<h2 id="case-study-datastore" data-text="Étude de cas : Datastore">Étude de cas : Datastore</h2>
+
+<p>Une architecture à couplage fort peut entraver la productivité et la capacité de chaque employé à apporter des modifications en toute sécurité. En revanche, une architecture faiblement couplée favorise la productivité et la sécurité grâce à des interfaces bien définies qui assurent la connexion entre modules. Une architecture faiblement couplée permet à de petites équipes productives d’apporter des modifications qui peuvent être déployées en toute sécurité et de manière indépendante. Et comme chaque service dispose également d'une API bien définie, cela facilite les tests des services et l'élaboration d'objectifs et de contrats de niveau de service entre équipes.</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-loosely-coupled-architecture.svg" alt="Architecture faiblement couplée."/></p>
+
+<p>Randy Shoup décrit cette architecture en ces termes :</p>
+
+<blockquote>"Ce type d'architecture a été extrêmement utile à Google. Un service tel que Gmail est soutenu par cinq ou six autres couches de services, chacune étant très focalisée sur une fonction bien spécifique. Chaque service est géré par une petite équipe qui le construit et gère ses fonctionnalités, chaque groupe faisant potentiellement des choix technologiques différents. Un autre exemple est le service Datastore qui, bien qu'étant l’un des plus grands services NoSQL au monde, n'est géré que par une équipe d’environ huit personnes, principalement parce qu’il repose sur plusieurs couches de services fiables construits les uns sur les autres."</blockquote>
+
+<p>Ce type d'architecture orientée services permet à de petites équipes de travailler sur des unités de développement plus réduites et plus simples, que chaque équipe peut déployer de manière indépendante, rapidement et en toute sécurité.</p>
+
+<h2 id="ways_to_measure_architectural_improvement" data-text="Mesurer l'amélioration de l'architecture">Mesurer l'amélioration de l'architecture</h2>
+
+<p>Que ce soit dans le cadre d'un mainframe ou de microservices, il est essentiel de faciliter les pratiques d’amélioration architecturale pour accroître les performances en matière de livraison de logiciels (fréquence de déploiement accrue avec réduction des délais d'intégration des modifications, du délai de rétablissement du service et du taux d’échecs liés aux modifications). À mesure que le couplage de vos services et produits s'affaiblit, la fréquence de vos déploiements devrait augmenter. Lorsque vous mesurez l'amélioration, envisagez d'utiliser le taux de déploiement plutôt qu'un simple décompte, car le nombre de déploiements augmente mécaniquement avec l'ajout de services. Enfin, vous devriez observer une réduction des délais nécessaires à la détection et à la résolution des problèmes, ainsi qu'à la propagation des modifications en production.</p>
+
+<p>Outre la capacité à prendre ces mesures en matière de déploiement et de service, les équipes qui fonctionnent avec davantage d'indépendance rapportent des améliorations en termes de <a href="/architecture/devops/devops-culture-job-satisfaction" track-type="article" track-name="internalLink" track-metadata-position="body">satisfaction au travail</a> et d'<a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">expérimentation en équipe</a>, et tendent à choisir des technologies et des outils différents suivant leurs besoins.</p>
+
+<h2 id="whats_next" data-text="Étape suivante">Étape suivante</h2>
+
+<ul>
+<li>Consultez la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">page DevOps</a> pour obtenir des liens vers d'autres articles et ressources.</li>
+<li>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</li>
+<li>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</li>
+</ul>
+
+</body></html>

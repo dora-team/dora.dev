@@ -1,0 +1,93 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Messung: Monitoringsysteme für fundierte Geschäftsentscheidungen</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Monitoring-Systeme für Geschäftsentscheidungen</em> gehört zu einer Reihe von Funktionen, die zu einer höheren Softwarebereitstellung und Unternehmensleistung führen.  Diese Funktionen wurden im Rahmen des <a href="https://www.devops-research.com/research.html">„State of DevOps“-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, akademisch anspruchsvollen Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>Monitoring ist der Vorgang des Erfassens, Analysierens und Nutzens von Informationen aus der Überwachung von Anwendungen und Infrastrukturen, um fundierte Geschäftsentscheidungen zu treffen.
+Monitoring ist eine wichtige Funktion, die Ihnen Einblicke in Ihre Systeme und Arbeitsvorgänge verleiht. Bei ordnungsgemäßer Implementierung gewinnen Sie durch Monitoring schnelles Feedback, um Probleme frühzeitig im Lebenszyklus der Softwareentwicklung ermitteln und beheben zu können.</p>
+
+<p>Monitoring ermöglicht auch die Weitergabe von Systeminformationen an Personen in anderen Bereichen der Pipeline zur Softwareentwicklung und -bereitstellung sowie an andere Teile des Unternehmens. In der Betriebsphase erlangtes Wissen kann von Teams in früheren Phasen der Wertschöpfungskette genutzt werden, wie Entwicklung und Produktmanagement. Beispiel: Aus dem Betrieb einer hochskalierbaren Anwendung, die eine NoSQL-Datenbank als Datenspeicher verwendet, gewonnene Erkenntnisse können von Entwicklern genutzt werden, die eine ähnliche Anwendung entwickeln.</p>
+
+<p>Dieser Wissenstransfer verleiht Teams in kurzer Zeit neue Erkenntnisse, die auf ein Produktionsproblem, einen Bereitstellungsfehler oder die Nutzungsmuster Ihrer Kunden zurückzuführen sind. Diese Erkenntnisse können dann im gesamten Unternehmen veröffentlicht werden, um Mitarbeiter zu unterstützen und Systeme zu optimieren.</p>
+
+<h2 id="how_to_implement_monitoring" data-text="Monitoring implementieren">Monitoring implementieren</h2>
+
+<p>Die folgenden Aspekte bilden die Grundlage eines effektiven Monitoringsystems:</p>
+
+<ul>
+<li>Daten aus Schlüsselbereichen der Wertschöpfungskette erfassen, darunter Anwendungsleistung und -infrastruktur</li>
+<li>Erfasste Daten zum Treffen von Geschäftsentscheidungen nutzen</li>
+</ul>
+
+<h3 id="collecting_data" data-text="Datenerhebung">Datenerfassung</h3>
+
+<p>Eine effektive Datenerfassung erfordert die Implementierung von Monitoringlösungen, entweder als selbst erstellte Dienste oder als verwaltete Dienste, die Einblick in die Entwicklungsarbeit, das Testen, die Qualitätssicherung und den IT-Betrieb geben. Dabei ist es wichtig, dass Messwerte ausgewählt werden, die sowohl für den jeweiligen Funktionsbereich als auch für Ihr Unternehmen geeignet sind.</p>
+
+<h3 id="using_data_to_make_business_decisions" data-text="Daten als Grundlage für Geschäftsentscheidungen">Daten als Grundlage für Geschäftsentscheidungen</h3>
+
+<p>Sie können die erfassten Daten transformieren und visualisieren, um sie verschiedenen Zielgruppen zugänglich zu machen, damit sie diesen als Entscheidungshilfe dienen. In der Betriebsphase erfasste Daten können beispielsweise an Teams in früheren Phasen der Wertschöpfungskette weitergegeben werden. Diese Daten können auch in angemessener Weise in Berichte und Briefings sowie in Besprechungen eingebunden werden, um fundierte Geschäftsentscheidungen zu treffen. <em>Angemessen</em> bedeutet in diesem Fall relevant, aktuell, präzise und leicht verständlich.</p>
+
+<p>In diesen Besprechungen nehmen Sie auch Bezug auf den Kontext, um allen Beteiligten verständlich zu machen, wie diese Daten zur Diskussion beitragen und die Entscheidungsfindung unterstützen. Beispielsweise können Sie sich Antworten auf die folgenden Fragen überlegen:</p>
+
+<ul>
+<li>Sind diese Werte relativ hoch oder niedrig?</li>
+<li>Entsprechen Sie den Erwartungen?</li>
+<li>Sind Änderungen vorhersehbar?</li>
+<li>Wie unterscheiden sich diese Daten von Verlaufsberichten?</li>
+<li>Haben Technologie und Infrastruktur die Zahlen auf relevante oder nicht offensichtliche Weise beeinflusst?</li>
+</ul>
+
+<h2 id="common_pitfalls_in_monitoring" data-text="Stolperfallen in Bezug auf Monitoring">Stolperfallen in Bezug auf Monitoring</h2>
+
+<p>Achten Sie beim Monitoring von Systemen auf folgende Stolperfallen:</p>
+
+<ul>
+<li><p><strong>Monitoring erfolgt reaktiv</strong>. Beispiel: Sie werden nur benachrichtigt, wenn das System ausfällt. Es werden jedoch keine Überwachungsdaten verwendet, um eine Warnung auszugeben, wenn sich das System kritischen Schwellenwerten nähert.</p></li>
+<li><p><strong>Monitoringbereich zu klein</strong>. Beispiel: Sie überwachen einen oder zwei Bereiche und nicht die gesamte Pipeline der Softwareentwicklung und -bereitstellung. Hierbei werden nur Messdaten aus Bereichen hervorgehoben, die möglicherweise nicht optimal für das Monitoring geeignet sind.</p></li>
+<li><p><strong>Fokus liegt auf lokalen Optimierungen</strong>. Beispiel: Sie konzentrieren sich auf die Reduzierung der Antwortzeit für den Speicherbedarf eines Dienstes, ohne zu prüfen, ob die restliche Infrastruktur ebenfalls von dieser Verbesserung profitieren könnte.</p></li>
+<li><p><strong>Monitoring aller Daten</strong>. Wenn sich Datenerfassung und Reporting auf das gesamte System beziehen, riskieren Sie eine Überflutung von Daten und Benachrichtigungen. Mit einem durchdachten Monitoringansatz können Sie die Aufmerksamkeit auf Schlüsselbereiche lenken.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_monitoring" data-text="Möglichkeiten zur Verbesserung Ihrer Monitoringstrategie">Möglichkeiten zur Verbesserung Ihrer Monitoringstrategie</h2>
+
+<p>Für ein effektives Monitoring konzentrieren Sie sich auf zwei Hauptbereiche:</p>
+
+<ol>
+<li><p><strong>Daten aus Schlüsselbereichen entlang der Wertschöpfungskette erheben</strong></p>
+
+<p>Sie analysieren die erfassten Daten und führen eine Lückenanalyse durch, um zu prüfen, ob die Daten für Ihr Unternehmen angemessen sind.</p></li>
+<li><p><strong>Erhobene Daten zum Treffen von Geschäftsentscheidungen nutzen</strong></p>
+
+<p>Die erfassten Daten sollten den Wert im gesamten Unternehmen steigern und die ausgewählten Messwerte müssen für Ihr Unternehmen von Bedeutung sein.
+Relevante Daten können von vielen Teams verwendet werden – von DevOps bis hin zur Finanzabteilung.</p>
+
+<p>Achten Sie auch darauf, ein geeignetes Medium für die Anzeige der Monitoringinformationen auszuwählen. Unterschiedliche Anwendungsfälle für die Informationen erfordern unterschiedliche Darstellungsmöglichkeiten. Echtzeit-Dashboards können für das DevOps-Team nützlich sein. Regelmäßig generierte Geschäftsberichte hingegen können für Messwerte geeignet sein, die über einen längeren Zeitraum gemessen werden.</p>
+
+<p>Das Wichtigste ist, dafür zu sorgen, dass die Daten verfügbar sind, gemeinsam genutzt werden und als Entscheidungshilfe dienen. Wenn für den Anfang eine freigegebene Tabelle ausreichend ist, dann ist dagegen nichts einzuwenden. Sie können später noch zu anspruchsvollen Dashboards übergehen. Es ist besser, unvollkommen anzupacken, als perfekt zu zögern.</p></li>
+</ol>
+
+<h2 id="ways_to_measure_monitoring" data-text="Möglichkeiten zur Monitoringmessung">Möglichkeiten zur Monitoringmessung</h2>
+
+<p>Effektives Monitoring trägt zur Leistungsverbesserung bei der Softwareentwicklung und -bereitstellung bei. Es kann jedoch schwierig sein, die Wirksamkeit des Monitorings in Systemen zu messen. Selbst wenn Sie automatisch messen können, wie viele und welche Daten von Ihren Systemen erfasst werden, ist nicht immer deutlich, ob oder wo diese Daten verwendet werden.</p>
+
+<p>Um die Wirksamkeit der Monitoringstrategie in Ihrem Unternehmen beurteilen zu können, ermitteln Sie beispielsweise, inwieweit Personen den folgenden Aussagen zustimmen bzw. nicht zustimmen:</p>
+
+<ul>
+<li>Daten aus Tools zur Überwachung der Anwendungsleistung werden verwendet, um Geschäftsentscheidungen zu treffen.</li>
+<li>Daten aus Tools zur Infrastrukturüberwachung werden verwendet, um Geschäftsentscheidungen zu treffen.</li>
+</ul>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Weitere Informationen</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu weiteren Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li>E-Book <a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Site Reliability Engineering (SRE)</a></li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

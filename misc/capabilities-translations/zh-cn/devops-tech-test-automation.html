@@ -1,0 +1,150 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技术：持续测试</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：<em></em>“持续测试”是一组推动实现更出色的软件交付表现和组织绩效的功能之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside>
+<p>快速获得反馈以了解在软件交付生命周期内更改所产生的影响，是构建高质量软件的关键。以前，团队依靠人工测试和代码检查来验证系统的正确性。此类检查和测试工作通常在“开发完毕”后的一个单独阶段进行。此方法具有以下缺点：</p>
+
+<ul>
+<li>手动回归测试执行起来既耗时又费用高昂，这使其成为了整个流程中的瓶颈。无法频繁发布软件，开发者无法快速获得反馈。</li>
+<li>人工检查和测试不可靠，原因是人们在手动回归测试等重复性任务中通常表现不佳，并且很难通过检查来预测复杂软件系统的更改会产生什么样的影响。</li>
+<li>软件开发完成后，开发者必须等待很长时间才能获取其更改的相关反馈。通常需要大量工作来对缺陷进行分类和修复。性能、安全性和可靠性问题通常需要进行设计更改，如果在此阶段发现这些问题，费用便会更高。</li>
+<li>较长的反馈周期还让开发者难以了解如何构建质量代码，而开发团队迫于日程压力，质量有时会被视为“其他人的问题”。</li>
+<li>由于开发者不负责测试自己的代码，他们很难了解如何编写可测试的代码。</li>
+<li>对于不断改进的系统，及时更新测试文档需要大量的努力。</li>
+</ul>
+
+<p>相反，团队应该：</p>
+
+<ul>
+<li>在软件交付生命周期内持续执行所有类型的测试。</li>
+<li>创建并定制快速可靠的自动化测试套件，自动测试在<a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">持续交付流水线</a>中运行。</li>
+</ul>
+
+<p>这不仅能帮助团队更快地构建（和了解如何构建）高品质软件，据 DORA 的研究显示，软件的稳定性也因此提高了，而团队负担以及部署困难性都降低了。</p>
+
+<h2 id="how_to_implement_continuous_testing" data-text="如何实现持续测试">如何实现持续测试</h2>
+
+<p>为了构建高质量的软件，您必须在整个交付流程中不断运行自动测试和手动测试，以验证开发中的系统的功能和架构。此学科包含组织和技术组成部分。从组织的角度来说，DORA 的研究发现，团队在以下方面表现更好：</p>
+
+<ul>
+<li>允许测试人员在整个软件开发和交付过程中与开发者开展协作。（请注意，“测试人员”是一个角色，不一定是全职工作，但在下文中是一种常见模式。）</li>
+<li>在整个交付流程中执行手动测试活动，例如探索性测试、易用性测试和验收测试。</li>
+</ul>
+
+<p>关键技术活动是构建和维护一组自动化测试套件，包括：</p>
+
+<ul>
+<li><strong>单元测试</strong>。此类测试通常是单独测试一个方法、类或函数，让开发者确信自己的代码在按预期运行。为确保代码可以测试且测试易于维护，在编写代码之前先编写单元测试，这种方法称为<a href="http://www.jamesshore.com/v2/books/aoad1/test_driven_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">测试驱动开发</a> (TDD)。</li>
+<li><strong>验收测试</strong>：此类测试通常是测试正在运行的应用或服务（通常使用以 <a href="https://testing.googleblog.com/2013/07/testing-on-toilet-know-your-test-doubles.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">test doubles</a> 替换的依赖项），以确保更高层次的功能按预期运行,并且未引入回归错误。例如，验收测试可以针对某个用户案例检查业务上可接受的标准或某个 API 的正确性。此类测试的编写应该作为开发过程的一部分。除非已通过自动验收测试，否则任何人都不能宣布自己的代码已经“开发完毕”。</li>
+</ul>
+
+<p>下图显示了需要运行的自动和手动测试的类型。此图<a href="http://www.exampler.com/old-blog/2003/08/22/#agile-testing-project-2" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">由 Brian Marick 初创</a>，后来在<a href="https://books.google.com/books/about/Agile_Testing.html?id=68_lhPvoKS8C" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body"><em> Agile Testing: A Practical Guide for Testers and Agile Teams</em></a>（《敏捷测试：面向测试人员和敏捷团队的实用指南》）一书中引用。</p>
+
+<p><img src="/static/architecture/images/ta-image1.png" alt="图片"/></p>
+
+<p>上图中突出显示的自动测试适合<a href="/architecture/devops/devops-tech-continuous-delivery">持续交付</a><a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">部署流水线</a>。在此类流水线中，每项更改都会运行构建，以创建软件包、执行单元测试并可能执行其他检查（如静态分析）。在这些软件包顺利通过第一个阶段后，将对自动部署、运行中的软件进行更全面的自动验收测试，并可能进行一些非功能测试，例如性能测试和漏洞扫描。通过验收阶段的任何构建通常都会再进行人工探索和可用性测试。最后，如果在这些人工步骤中未发现任何错误，则应用被视为可以发布。</p>
+
+<p>作为流水线贡献的一部分持续运行测试有助于开发者快速获得反馈，缩短从签入到发布的准备时间，降低生产环境中的错误率。由于开发者的大部分代码只需几分钟（而非数天或数周）即可验证完毕，因此他们可以尽快修复 Bug。</p>
+
+<p>下图展示了一个简单的线性部署流水线示例。
+在此示例中，绿色表示未发现问题，红色表示发现了一个或多个问题。</p>
+
+<p><img src="/static/architecture/images/ta-image3.png" alt="图片"/></p>
+
+<p>在部署流水线模式中，每项更改都会创建一个候选版本，并且快速的反馈循环有助于尽早在相关过程中发现问题。如果在软件包到达流水线的最后时，团队仍然对发布软件包信心不足，或者如果团队在生产环境中发现缺陷，那么必须改进该流水线（可能需要添加或更新测试）。</p>
+
+<h2 id="common_pitfalls" data-text="常见误区">常见误区</h2>
+
+<ul>
+<li><p><strong>开发者未参与测试</strong>。DORA 的研究表明，当开发者主要负责创建和维护自动化测试套件时，如果开发者能够轻松修复验收测试失败问题，则性能会得到提升。如果由其他团队负责测试自动化工作，通常会出现以下两个问题：</p>
+
+<ul>
+<li><strong>测试套件经常处于失效状态</strong>。更改代码后，可能需要更新测试。如果测试自动化工作不是由开发者负责，那么在负责团队修复相关测试之前，构建流水线会一直处于失效状态。</li>
+<li><strong>开发者编写了难以测试的代码。</strong>开发者往往会在不考虑如何测试代码的情况下解决分配给自己的相关问题。这可能会导致测试套件的代码设计不佳、费用不菲且难以维护。</li>
+</ul>
+
+<p>测试人员和 QA 团队继续在工作上发挥重要作用。测试人员能够以独特的视角看待系统，因为他们了解用户如何与系统交互。如果团队并未实际共置，则最好是让测试人员与开发者合作，以使用屏幕共享工具来创建并完善自动测试套件。这样，他们就可以相互学习并实时解决问题。测试人员在开展探索性测试和易用性测试方面也发挥着重要作用，并有助于策划测试套件。</p></li>
+<li><p><strong>未精心安排合适的测试套件。</strong>请务必持续审核并改进测试套件，以更好地找出缺陷并控制复杂性和费用。例如：</p>
+
+<ul>
+<li>验收测试套件通常应体现用户使用系统的实际<a href="https://testing.googleblog.com/2016/09/testing-on-toilet-what-makes-good-end.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">端到端</a>用户历程，而不只是自动验收标准的集合。随着产品的发展，这些情况也会发展，测试套件会对其进行验证。如需详细了解此过程，请观看由 Angie Jones 制作的视频 <a href="https://www.youtube.com/watch?v=qYfI2-bC6LA">Setting a Foundation For Successful Test Automation</a>（为成功实现测试自动化奠定基础）。</li>
+<li>如果您每次更改代码时还必须更改多个单元测试，则说明您可能<a href="https://martinfowler.com/articles/mocksArentStubs.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">过度依赖模拟</a>，或者未优化单元测试套件。</li>
+<li>合理分解 (well-factored) 测试套件。如果对界面的每项更改都会导致多个验收测试失效，那么请使用<a href="https://martinfowler.com/bliki/PageObject.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">页面对象模式</a>将您的测试与受测系统分离。</li>
+<li>如果维护测试的开销很大，这可能表示软件的<a href="/architecture/devops/devops-tech-architecture">架构</a>存在问题。请务必继续投资以让软件可以轻松测试，包括将<a href="https://refactoring.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">重构</a>整合到团队日常工作中。</li>
+</ul></li>
+<li><p><strong>单元测试与验收测试的比例不正确</strong>。自动测试套件的一项具体设计目标是尽早发现错误。因此，应该先运行速度较快的单元测试，然后再运行速度较慢的验收测试，并且应在任何手动测试之前运行这两种测试。</p>
+
+<p>您应通过速度最快的测试来发现错误。如果您在验收测试或探索性测试期间发现某个错误，请增加一个单元测试，以确保下次能够更快、更早、更低成本地发现此错误。Mike Cohn 介绍了一种理想的<a href="https://books.google.com.br/books?id=8IglA6i_JwAC&amp;printsec=frontcover&amp;dq=Mike+Cohn+Succeeding+with+Agile&amp;hl=pt-BR&amp;sa=X&amp;ved=0ahUKEwj9x8S8tuTiAhWjGLkGHU0GCxEQ6AEILTAA#v=onepage&amp;q=Mike%20Cohn%20Succeeding%20with%20Agile&amp;f=false" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">测试自动化金字塔</a>，如下图所示，其中大多数错误是通过单元测试发现的。</p>
+
+<p><img src="/static/architecture/images/ta-image2.png" alt="图片"/></p></li>
+<li><p><strong>容忍不可靠的测试。</strong> 测试应该可靠：也就是说，当测试通过时，我们应该确信软件可以发行，而测试失败应该代表存在实际缺陷。尤其是不要容忍不稳定的测试。<a href="https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">了解 Google 针对不稳定测试的缓解策略</a>。</p></li>
+</ul>
+
+<h2 id="ways_to_improve_continuous_testing" data-text="改进持续测试的方法">改进持续测试的方法</h2>
+
+<p>如果您的组织还没有开发者单元测试方面的文化，请不必担心。早期，Google 并没有全面进行单元测试。当前的全面进行单元测试文化是由 Google 的一群志愿组织（称为 Testing Grouplet）推动的。<a href="https://martinfowler.com/articles/testing-culture.html#google" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">了解他们如何帮助推动单元测试的采用</a>，通过建立一个实践社区，以在整个 Google 范围内宣传测试知识并向开发者宣传单元测试的价值。</p>
+
+<p>如果您没有充分实现测试自动化，可以先构建一个框架部署流水线。例如，创建一个单元测试、一个验收测试以及一个用于建立探索性测试环境的自动化部署脚本，并将它们结合在一起。然后，随着产品或服务的完善逐渐增大测试范围并扩展部署流水线。</p>
+
+<p>如果您已经在改进一个<a href="https://wikipedia.org/wiki/Brownfield_(software_development)" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">棕地 (Brownfield) 系统</a>，请遵循本文中的相关指导，但不要中途停止，试图去完善一个全面的自动测试套件。正确的做法，是先为高价值的功能编写少量验收测试。然后，务必要求开发者为任何新功能以及您要更改的任何功能编写单元测试和验收测试。可以考虑使用 TDD 来改进主代码和测试代码的质量及可维护性。最后，确保将来在验收测试失败时要编写单元测试，以便更快地发现缺陷。</p>
+
+<p>如果测试套件维护费用高昂且不可靠，应果断将其淘汰。如果一个测试套件只包含十项测试，但是可靠、快速、值得信赖，而另一个测试套件包含数百项测试，但是难以维护、无人信任，那么前者要远远优于后者。</p>
+
+<h2 id="ways_to_measure_continuous_testing" data-text="衡量持续测试的方法">衡量持续测试的方法</h2>
+
+<p>您可以执行以下操作来衡量您环境中的连续测试结果：</p>
+
+<table>
+<thead>
+<tr>
+<th>测试的因素</th>
+<th>衡量的指标</th>
+<th>目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>验收测试和单元测试的编写者</td>
+<td>您公司的开发者、测试人员及其他任何团体编写的测试所占的百分比。</td>
+<td>验收测试的主要创建人员和维护人员是开发者。</td>
+</tr>
+<tr>
+<td>在验收测试、探索性测试和生产环境中发现的 Bug 数量。</td>
+<td>所发现的 Bug 的比例随时间的变化。</td>
+<td>在“费用较低”的测试阶段发现更多 Bug，团队可针对在探索性测试期间和生产环境中发现的 Bug 增加自动测试，同时添加单元测试以发现在验收测试中发现的 Bug。</td>
+</tr>
+<tr>
+<td>修复验收测试失败所用的时间。</td>
+<td>修复测试失败所用的时间随时间的变化。（该时间应呈减少趋势）。</td>
+<td>开发者可以轻松地修复验收测试失败。</td>
+</tr>
+<tr>
+<td>自动测试是否有意义。</td>
+<td>跟踪因实际缺陷导致的自动测试失败的数量，以及因编码质量问题导致的自动测试失败的数量。</td>
+<td>测试失败始终代表产品中存在实际缺陷。</td>
+</tr>
+<tr>
+<td>自动测试是否在交付流水线中运行。</td>
+<td>检查是否所有测试套件均在每个流水线触发器中运行（是/否）。</td>
+<td>自动测试在主流水线和主工作流中运行。</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>如需详细了解 Google 的测试，请参阅 <a href="https://books.google.com/books/about/Software_Engineering_at_Google.html?id=WXTTDwAAQBAJ" track-type="solution" track-name="internalLink" track-metadata-position="body">Google 的软件工程</a>。</li>
+<li>了解如何使用 <a href="/build/?&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=latam-BR-all-pt-dr-skws-all-all-trial-e-dr-1003997-LUAC0008680&amp;utm_content=text-ad-none-none-DEV_c-CRE_325592090632-ADGP_SKWS+%7C+Multi+%7E+Dev+%7C+Build-KWID_43700040482196107-kwd-471794162766-userloc_1001743&amp;utm_term=KW_cloud%20build-ST_Cloud+Build&amp;gclid=Cj0KCQjw6IfoBRCiARIsAF6q06suRucypheWE5dDKAmsKDZrEVvuY0nDFS0YgbkN5XVmkEzJPl89zIIaAoJcEALw_wcB&amp;gclsrc=aw.ds" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Build</a> 持续构建、测试和部署系统。</li>
+<li>了解如何使用 <a href="/stackdriver" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Monitoring</a> 监控您的系统和测试。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

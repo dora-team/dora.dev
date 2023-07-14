@@ -1,0 +1,86 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Messung: Vorteile von visuellem Management</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Visuelle Management-Funktionen</em> gehören zu einer Reihe von Funktionen, die zu einer höheren Softwarebereitstellung und Unternehmensleistung führt. Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">"State of DevOps"-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, akademisch anspruchsvollen Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>Teams, die <a href="https://wikipedia.org/wiki/Lean_software_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Lean Software Development</a> einführen, stellen wichtige Prozessinformationen üblicherweise in Teambereichen bereit, die für jeden sichtbar sind. Visuelle Management-Boards können ein gemeinsames Verständnis für die gegenwärtige betriebliche Effizienz des Teams schaffen. Sie helfen auch, Leistungsblockaden zu beseitigen.</p>
+
+<h2 id="how_to_implement_visual_management" data-text="Visuelles Management implementieren">Visuelles Management implementieren</h2>
+
+<p>Es gibt viele Arten von visuellen Darstellungen und Dashboards, die im Bereich der Softwarebereitstellung üblich sind:</p>
+
+<ul>
+<li><strong>Pinnwände, Storyboards oder Kanban-Tafeln</strong>, entweder analog oder digital, mit Karteikarten, die laufende Arbeitselemente darstellen.</li>
+<li><strong>Dashboards oder andere visuelle Anzeigen</strong>, z. B. kontinuierliche Integrationssysteme mit Trackern oder Ampeln, die den Status des Builds darstellen. Effektive visuelle Anzeigen werden von Teams erstellt, aktualisiert und möglicherweise verworfen, um auf aktuelle Problematiken zu reagieren.</li>
+<li><strong>Burn-up- oder Burn-down-Diagramme</strong> (z. B. kumulative Flussdiagramme), die den Gesamtstatus aller laufenden Arbeiten anzeigen. Auf diese Weise kann das Team abschätzen, wie lange es dauern wird, den aktuellen Rückstand aufzuarbeiten.</li>
+<li><strong>Tracker für die Deployment-Pipeline</strong>, die ermitteln, welcher Build aktuell bereitgestellt werden kann und ob Phasen in der Pipeline fehlschlagen, z. B. Akzeptanz- oder Leistungstests.</li>
+<li><strong>Tracker für Telemetriedaten aus der Produktion</strong>, z. B. die Anzahl der eingehenden Anfragen, Latenzstatistiken, kumulative <code translate="no" dir="ltr">404</code>- und <code translate="no" dir="ltr">500</code>-Fehler sowie die beliebtesten Seiten.</li>
+</ul>
+
+<p>Zusammen mit <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">WIP-Limits</a> und Feedback aus der Produktion zur Entscheidungsfindung können visuelle Managementdarstellungen zu einer <a href="https://services.google.com/fh/files/misc/state-of-devops-2015.pdf#page=15" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">höheren Bereitstellungsleistung</a> (PDF) beitragen.</p>
+
+<h2 id="common_pitfalls_with_visual_management" data-text="Häufige Schwierigkeiten beim visuellen Management">Häufige Schwierigkeiten beim visuellen Management</h2>
+
+<p>Die wichtigsten Merkmale von visuellen Managementdarstellungen sind, dass sich das Team um die Informationen kümmern und auf diese reagieren muss und dass die Darstellung täglich verwendet werden muss, um Leistungsblockaden zu identifizieren und zu beseitigen. Dies sind einige häufige Probleme bei der Implementierung von visuellem Management:</p>
+
+<ul>
+<li><strong>Auswahl von Messwerten ohne Beteiligung des Teams</strong>: Visuelle Darstellungen mit Messwerten, die für Teams sehr relevant und nützlich sind, werden häufiger verwendet. Wenn Teams außerdem an der Auswahl ihrer Ziele und damit der Auswahl der anzuzeigenden Messwerte beteiligt sind (<a href="/architecture/devops/devops-culture-transform" track-type="solution" track-name="internalLink" track-metadata-position="body">einige Teams nutzen z. B. OKRs</a>), fördert dies die Motivation, auf diese Ziele hinzuarbeiten.</li>
+<li><strong>Komplexe, unübersichtliche oder nutzlose Darstellungen</strong>: Es ist einfach, Anzeigen mit Tools zu erstellen, die umfangreiche Änderungen ermöglichen oder einen spielerischen Umgang bieten. Das Ändern von Layouts und Farben in einem benutzerdefinierten Dashboard ist jedoch nicht hilfreich, wenn das Team mit den falschen Messwerten arbeitet oder die Implementierung mehrere Monate dauert. Ein Whiteboard mit den wichtigsten Messwerten und groben Grafiken, das täglich aktualisiert wird, kann das Team ebenso auf dem Laufenden halten.</li>
+<li><strong>Stagnierende visuelle Darstellungen</strong>: Visuelle Managementtools sollten Teams mit relevanten Informationen zu ihren aktuellen Problemen versorgen. Es hilft nichts, die Anzeigen anderer Teams zu kopieren, es sei denn, die Teams arbeiten im selben Umfeld mit denselben Herausforderungen und Hindernissen. Wenn sich das Arbeitsumfeld eines Teams ändert, sollten sich auch die visuellen Darstellungen ändern. Beachten Sie auch, dass sich die visuellen Darstellungen von Teams ändern können, wenn sie Hindernisse angehen, und somit (zuvor relevante) Metriken verworfen werden, um neue wichtige Bereiche hervorzuheben.</li>
+<li><strong>Ignorieren des zugrunde liegenden Problems, das die visuelle Darstellung aufdeckt</strong>: Teams greifen manchmal zu schnellen Lösungen, um die Anzeige wieder "in den grünen Bereich zu bringen". Die Anzeigen sollten als Mittel zur Problembehebung dienen und nicht selbst zum Ziel werden (alles im grünen Bereich halten).
+Die alleinige Konzentration auf den Messwert kann unerwünschte Konsequenzen und technische Rückstände nach sich ziehen. Wenn die Anzeige auf ein Problem hinweist, sollten die Teams nicht nur das unmittelbare Problem beheben. Sie sollten auch daran arbeiten, die zugrunde liegende Ursache oder Einschränkung zu identifizieren und zu beheben, auch wenn sie in einer anderen Abteilung liegt. Ineffizienzen treten weiterhin zutage. Eine frühzeitige Behebung kommt allen Teams zugute.</li>
+</ul>
+
+<h2 id="ways_to_improve_visual_management" data-text="Visuelles Management verbessern">Visuelles Management verbessern</h2>
+
+<p>Der Zweck visueller Managementtools ist schnelles, leicht verständliches Feedback zur Verbesserung der Produktqualität. Anhand dieses Feedbacks können Teams Fehler im Produkt erkennen und nachvollziehen, ob ein Teil des Systems nicht effektiv funktioniert, was zur Problembehebung beiträgt. Um effektiv zu sein, müssen solche Systeme folgende Voraussetzungen erfüllen:</p>
+
+<ul>
+<li><strong>Wiedergabe von Informationen, die dem Team wichtig sind und auf die es reagiert</strong>:
+Build-Tracker sind sinnlos, wenn Teams nicht auf die angezeigten Probleme reagieren (z. B. dass der Build-Status rot und damit fehlerhaft ist) und diese nicht umgehend beheben.</li>
+<li><strong>Verständlichkeit</strong>: Handlungsbedarf sollte auf einen Blick erkennbar sein. Wenn <em>tatsächlich</em> ein Problem auftritt, sollten Teams genau wissen, wie es diagnostiziert und behoben werden kann.</li>
+<li><strong>Versorgung mit arbeitsrelevanten Informationen</strong>: Auch wenn es wichtig ist, so viele Daten wie möglich über die Arbeit des Teams zu erfassen, sollten nur jene dargestellt werden, die für die Ziele des Teams relevant sind. Kommt es zu einer Informationsüberflutung, insbesondere mit nicht umsetzbaren Informationen, werden visuelle Managementdarstellungen ignoriert und als irrelevant betrachtet. Sämtliche Zusatzdaten können vom Team bei der Problembehebung abgerufen und genutzt werden.</li>
+<li><strong>Tägliche Aktualisierung</strong>: Veraltete oder ungenaue Daten werden ignoriert und die Anzeige verliert ihren Nutzen als Orientierungshilfe für die Problembehebung. Wenn die Darstellungen derzeit veraltete oder ungenaue Daten zeigen, untersuchen Sie die Ursache: Stimmen die Daten nicht mit den Zielen des Teams überein? Welche Daten würden die Darstellung zu einer wichtigen und überzeugenden Informationsquelle für das Team machen?</li>
+</ul>
+
+<p>Teams sollten sich nicht auf unwichtige Aspekte der visuellen Darstellung konzentrieren. Beispielsweise müssen visuelle Managementdarstellungen nicht digital sein.
+Pinnwände oder Kanban-Tafeln können einfacher zu verwalten und zu verstehen sein, insbesondere wenn sich das Team an einem Ort befindet. Diese Anzeigen tragen auch zur Bildung von Teamritualen bei, z. B. die gemeinsame Verwaltung der Darstellung. Ein Whiteboard mit einigen wichtigen Projektinformationen, die täglich vom Team aktualisiert werden, ist häufig einem elektronischen System vorzuziehen, das schwer zu verstehen und zu aktualisieren ist oder nicht über die erforderlichen Informationen verfügt.</p>
+
+<h2 id="ways_to_measure_visual_management" data-text="Visuelles Management bewerten">Visuelles Management bewerten</h2>
+
+<p>Beginnen Sie wie bei jeder Verbesserungsmaßnahme mit den messbaren Zielen auf Systemebene, auf die das Team hinarbeitet. Ermitteln Sie den gegenwärtigen Status des Arbeitssystems.
+Finden Sie eine Möglichkeit, die wichtigsten Informationen zum gegenwärtigen Status sowie den gewünschten Status anzuzeigen. Vergewissern Sie sich, dass diese Informationen nur mit der erforderlichen Genauigkeit angezeigt werden.</p>
+
+<p>Überprüfen Sie die visuellen Anzeigen im Rahmen regelmäßiger Rückblicke. Stellen Sie diese Fragen:</p>
+
+<ul>
+<li>Werden die erforderlichen Informationen bereitgestellt?</li>
+<li>Sind die Informationen aktuell?</li>
+<li>Reagieren die Mitarbeiter auf diese Informationen?</li>
+<li>Tragen die Informationen (und die Maßnahmen, mit denen die Mitarbeiter darauf reagieren) zur messbaren Verbesserung eines relevanten Ziels bei?</li>
+<li>Weiß jeder, was die Ziele sind?</li>
+<li>Können Sie sich Ihre visuellen Managementdarstellungen ansehen und die für Sie relevanten Prozessmesswerte erkennen?</li>
+</ul>
+
+<p>Wenn die Antwort auf eine dieser Fragen nein lautet, prüfen Sie Folgendes:</p>
+
+<ul>
+<li>Können Sie ändern, wie oder welche Informationen dargestellt werden?</li>
+<li>Können Sie die Darstellung insgesamt verwerfen?</li>
+<li>Können Sie eine neue Darstellung erstellen? Wie würde ein Prototyp aussehen? Was sind die wichtigsten Informationen und wie genau müssen sie sein, damit Sie Ihre Probleme lösen und Ihre Ziele erreichen können?</li>
+</ul>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Weitere Informationen</h2>
+
+<ul>
+<li>Links zu anderen Artikeln und Ressourcen auf der <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps-Seite</a></li>
+<li><a href="https://itrevolution.com/book/making-work-visible/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Making Work Visible</em></a> von Dominica DeGrandis</li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,65 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Messung: Proaktive Fehlerbenachrichtigung</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Proaktive Fehlerbenachrichtigung</em> gehört zu einer Reihe von Funktionen, die zu einer höheren Software-Bereitstellung und Unternehmensleistung führen.
+Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">„State of DevOps“-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, akademisch anspruchsvollen Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>Bei einer proaktiven Fehlerbenachrichtigung werden Benachrichtigungen generiert, wenn sich die beobachteten Werte den bekannten Ausfallschwellenwerten nähern, anstatt zu warten, bis das System einen Ausfall meldet oder Sie gar von Kunden erfahren müssen, dass eine Anwendung oder ein Service ausgefallen ist.
+Mit diesem Ansatz können Sie Probleme erkennen und beheben, bevor sie ernst werden oder sich auf den Nutzer auswirken. Die Studie <a href="https://services.google.com/fh/files/misc/state-of-devops-2014.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">DevOps Research and Assessment (DORA) 2014</a> (PDF) hat gezeigt, dass proaktives Monitoring ein entscheidender Indikator für die Leistung der Softwarebereitstellung ist.
+Laut DORA-Studien können Teams, die mit proaktiver Benachrichtigung arbeiten, Probleme schnell diagnostizieren und lösen. Wenn Fehler nicht vom internen Monitoring, sondern hauptsächlich von einer Quelle außerhalb des Betriebsteams gemeldet werden, z. B. vom Network Operations Center (NOC) oder gar von Kunden, leidet die Leistung.</p>
+
+<h2 id="how_to_implement_proactive_failure_notification" data-text="So implementieren Sie die proaktive Fehlerbenachrichtigung">So implementieren Sie die proaktive Fehlerbenachrichtigung</h2>
+
+<p><strong>Benachrichtigungsrichtlinien verwenden.</strong> Sie sollten Fehlerbenachrichtigungen mit bestimmten <em>Benachrichtigungsrichtlinien</em> generieren. Benachrichtigungsrichtlinien definieren die Bedingungen, unter denen eine Benachrichtigung generiert wird, sowie den Kanal für diese Benachrichtigung. Weitere Informationen zum Generieren von Benachrichtigungen finden Sie unter <a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="solution" track-name="internalLink" track-metadata-position="body">Monitoring und Beobachtbarkeit</a>.</p>
+
+<p><strong>Schwellenwerte verwenden.</strong> Benachrichtigungsrichtlinien sollten Schwellenwerte für die von Ihnen beobachteten Messwerte verwenden, die auf tatsächliche Probleme hinweisen. Monitoring-Schwellenwerte lösen Benachrichtigungsrichtlinien aus, die Benachrichtigungen generieren, wenn Messwerte die Schwellenwerte überschreiten.</p>
+
+<p><strong>Schwellenwerte sorgfältig wählen.</strong> Wählen Sie die Schwellenwerte so, dass Benachrichtigungen nur dann generiert werden, wenn der Schwellenwert tatsächlich ein Problem vorhersagt. Wählen Sie also nicht willkürlich irgendeinen Wert. Im Allgemeinen sollten Sie ermitteln, ab welchen Werten es zu Beeinträchtigungen für den Nutzer kommt. Wählen Sie dann einen bestimmten Prozentsatz vor Überschreiten dieses Werts, bei dem eine Benachrichtigung ausgelöst wird.</p>
+
+<p>Sie können beispielsweise eine Benachrichtigung auslösen, wenn die durchschnittliche Antwortzeit für Seiten 20 % unter einem Schwellenwert liegt, der bekannterweise zur Verärgerung der Nutzer und zu Support-Anrufen führt.</p>
+
+<p><strong>Vorfallanalysen führen.</strong> Wenn Sie nach Vorfällen Analysen aufstellen, ermitteln Sie, welche Indikatoren den Vorfall hätten vorhersagen können. Beobachten Sie diese Indikatoren in Zukunft.</p>
+
+<p><strong>Benachrichtigungsstrategie planen.</strong> Wenn eine Benachrichtigung keine oder jedes Mal dieselbe Aktion erfordert, sollten Sie die Antwort automatisieren. Sie sollten auch die Anzahl der Benachrichtigungen für Ereignisse berücksichtigen. Eine Flut von Benachrichtigungen während eines Ereignisses kann eher ablenken, anstatt nützlich zu sein. Eine Vielzahl von Alarmen kann die Empfänger desensibilisieren. Dies wird als Alarmmüdigkeit bezeichnet und kann zu längeren Reaktionszeiten oder zum Übersehen von Alarmen führen.
+Prüfen Sie Benachrichtigungen regelmäßig und löschen Sie solche, bei denen keine Handlung möglich ist.</p>
+
+<h2 id="ways_to_improve_failure_notification" data-text="Möglichkeiten zur Verbesserung der Fehlerbenachrichtigung">Möglichkeiten zur Verbesserung der Fehlerbenachrichtigung</h2>
+
+<p>Konfigurieren Sie Benachrichtigungen so, dass wichtige Teams frühzeitig benachrichtigt werden, wenn Probleme in Ihren Systemen auftreten. Und zwar lange bevor sie zum Network Operations Center (NOC) oder zum Kunden vordringen. Mögliche Taktiken:</p>
+
+<ul>
+<li>Benachrichtigungen in Logging- und Monitoringsystemen auf angemessene Werte konfigurieren</li>
+<li>Benachrichtigungen so konfigurieren, dass Personen und Teams benachrichtigt werden, die das Problem beheben können</li>
+<li>Proaktives Monitoring des Systemzustands basierend auf Schwellenwertwarnungen, bevor Systemfehler auftreten</li>
+<li>Proaktives Monitoring des Systemzustands basierend auf Warnungen über Änderungsraten</li>
+<li>Dafür sorgen, dass nur relevante Benachrichtigungen ausgegeben werden und das Team nicht zu viele Benachrichtigungen erhält. Überlegen Sie genau, welche Benachrichtigungen irrelevant sind. Deaktivieren Sie irrelevante Benachrichtigungen und aktivieren Sie relevante Monitoring-Benachrichtigungen wieder.
+Es ist nicht empfehlenswert, alle Benachrichtigungen zu deaktivieren.</li>
+</ul>
+
+<h2 id="ways_to_measure_failure_notifications" data-text="Möglichkeiten zum Messen von Fehlerbenachrichtigungen">Möglichkeiten zum Messen der Fehlerbenachrichtigung</h2>
+
+<p>Die Instrumentierung des proaktiven Monitoring ist unkompliziert. Dazu müssen diese Komponenten erfasst werden:</p>
+
+<ol>
+<li>Der Umfang, in dem Fehlerbenachrichtigungen von Logging- und Monitoringsystemen erfasst und verwendet werden</li>
+<li>Der Umfang, in dem der Systemzustand mithilfe von Schwellenwertwarnungen proaktiv beobachtet wird</li>
+<li>Der Umfang, in dem der Systemzustand mithilfe von Änderungswarnungen proaktiv beobachtet wird.</li>
+</ol>
+
+<p>Damit verschiedene Aspekte Ihres Systems erfasst werden, sollten Sie Messwerte auf mindestens zwei verschiedene Arten beobachten. Sie können beispielsweise einen Messwertschwellenwert festlegen, der Benachrichtigungen auslöst, wenn ein Messwert über eine bestimmte Dauer unter oder über einem Wert liegt. In Verbindung damit könnten Sie eine Änderungsrate festlegen, die Benachrichtigungen auslöst, wenn die Änderungsrate eines Messwerts höher oder niedriger als erwartet ausfällt.</p>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Nächste Schritte</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li>Weitere Informationen zum Generieren von Benachrichtigungen finden Sie unter <a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="solution" track-name="internalLink" track-metadata-position="body">Monitoring und Beobachtbarkeit</a>.</li>
+<li>E-Book <a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Site Reliability Engineering (SRE)</a></li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,120 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技術: トランクベース開発</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注:</strong><span> Trunk ベースの開発は、ソフトウェア デリバリーと組織のパフォーマンスを改善する能力の一つです。<em></em>これらの能力は <a href="https://www.devops-research.com/research.html">DORA State of DevOps Research Program</a> で発見されました。これは、高いパフォーマンスを生み出すプラクティスと能力に関する、学術的に厳格で独立した研究調査です。詳細については、<a href="/devops">DevOps のリソース</a>をご覧ください。</span></aside><p>デベロッパー チームがバージョニングを使用して共同作業を行う場合、主に 2 つのパターンがあります。1 つは機能ブランチ<em></em>を使用する方法です。デベロッパーまたはデベロッパー グループは通常、トランク（メイン、メインラインともいいます<em></em><em></em>）からブランチを作成し、構築している機能が完了するまで、そのブランチで分離して作業を行います。機能の準備が整ったと判断したら、機能ブランチをトランクにマージします。</p>
+
+<p>もう一つのパターンはトランクベース開発です。それぞれのデベロッパーが自分の<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">作業を小さなバッチに</a>分割し、その作業を 1 日に少なくとも 1 回（場合によっては数回）トランクにマージします。<em></em>このアプローチの主な違いはスコープです。通常、機能ブランチには複数のデベロッパーが関与し、作業が終わるまでに数日から数週間かかります。対照的に、トランクベース開発のブランチは数時間以内で終わり、多くのデベロッパーが個々の変更を頻繁にトランクにマージします。</p>
+
+<p>次の図は、典型的なトランクベース開発のタイムラインを示しています。</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-trunk-based-development-typical-trunk-timeline.svg" alt="バージョン 1.0 と 1.1 のタイムライン。バグ修正がバージョン 1.0 からバージョン 1.1 のトランクにマージされている。"/></p>
+
+<p>トランクベース開発では、デベロッパーがコードを直接トランクに push します。通常、リリース ブランチで行われた変更（リリースの準備ができたときのコードのスナップショット）はできるだけ早い段階でトランクにマージされます（下向きの矢印で示されています）。このアプローチでは、バグの修正を選択してリリースにマージする場合があります（上向きの矢印で示されています）が、これらのケースはトランクで新機能を開発する場合ほど頻繁ではありません。リリースが 1 日に複数回発生する場合、変更をトランクに直接 push し、そこからデプロイできるため、リリース ブランチはまったく必要ありません。トランクベースのアプローチの重要な利点の 1 つは、イベントをマージする複雑さを解消し、開発行数が少なくなる点です。また、小規模なマージを頻繁に行うことで、コードを常に最新の状態に保つことができます。</p>
+
+<p>次の図は、非トランクベースの典型的な開発スタイルを示しています。</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-trunk-based-development-typical-non-trunk-timeline.svg" alt="複数の長期ブランチのタイムライン。マージパスが複雑になっている。マージの競合でリリースが遅れる可能性があるポイントが複数存在している。"/></p>
+
+<p>このアプローチの場合、デベロッパーは長期間にわたってブランチに変更を加えます。トランクベースの開発と比較すると、これらの変更は、より大きく複雑なマージイベントを必要とします。また、大規模なマージによってバグやリグレッションが頻繁に発生するため、ソフトウェアの状態を安定化する作業を行い、「コードロック」または「コードフリーズ」の期間を用意する必要があります。また、マージ後のコードを徹底的にテストする必要があり、バグの修正も必要になります。</p>
+
+<h2 id="how_to_implement_trunk-based_development" data-text="トランクベース開発の実装方法">トランクベース開発の実装方法</h2>
+
+<p>トランクベース開発は<a href="/architecture/devops/devops-tech-continuous-integration" track-type="solution" track-name="internalLink" track-metadata-position="body">継続的インテグレーション</a>に欠かせない要素です。継続的インテグレーション（CI）を実現するには、トランクベース開発を実践し、トランクに commit するたびに一連の自動テストを迅速に行い、システムを常に稼働させておく必要があります。</p>
+
+<p>継続的インテグレーションを使用するポイントは、コードの小さなバッチを頻繁に統合することで、統合フェーズと安定化フェーズを短縮することにあります。デベロッパーは、他のデベロッパーやテスターと共同作業を進めることができるので、統合フェーズで大規模なマージを行う必要がありません。</p>
+
+<p>CI パラダイムでは、デベロッパーがビルドプロセスに対する責任を負います<em></em>。つまり、CI プロセスが失敗した場合、デベロッパーは問題をすぐに修正するか、数分で修正できない場合は作業を中止し、変更を元に戻す必要があります。</p>
+
+<p>トランクベース開発を実践するには、デベロッパーが<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">作業を小さなバッチに分割する</a>方法を理解する必要があります。この方法で作業することに慣れていないデベロッパーにとって、これは大きな変更です。</p>
+
+<p><a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=31" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2016 年</a>（PDF）と <a href="https://services.google.com/fh/files/misc/state-of-devops-2017.pdf#page=40" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2017 年</a>（PDF）の DevOps Research and Assessment（DORA）の分析結果は、チームが次のプラクティスに従うことで、より高いレベルのソフトウェアを配信し、運用パフォーマンス（配信速度、安定性、可用性）を改善できることを示しています。</p>
+
+<ul>
+<li>アプリケーションのコード リポジトリに 3 つ以下のアクティブなブランチを用意する。</li>
+<li>少なくとも 1 日に 1 回、ブランチにトランクをマージする。</li>
+<li>コードフリーズや統合フェーズをなくす。</li>
+</ul>
+
+<h2 id="common_pitfalls" data-text="主な注意点">主な注意点</h2>
+
+<p>トランクベース開発を完全に導入する場合、次のような課題があります。</p>
+
+<ul>
+<li><p><strong>過剰なコードレビュー プロセス</strong>。多くの組織は、変更をトランクにマージする前に複数の承認を必要とする過剰なコードレビュー プロセスを実施しています。コードレビューが面倒で、数時間から数日かかる場合、デベロッパーは小さなバッチで作業せず、多くの変更を一つにまとめようとする傾向があります。この場合、レビューアが大規模なコードレビューを先延ばしにする可能性があり、下向きのスパイラルにつながります。</p>
+
+<p>結果として、デベロッパーがマージ リクエストを避けるようになり、マージプロセスが遅延する可能性があります。大きな変更がシステムに与える影響を検査から判断することは難しいため、レビューアが欠陥を見逃す可能性が高く、トランクベース開発のメリットは少なくなります。</p></li>
+<li><p><strong>非同期でのコードレビュー</strong>。チームがペア プログラミングを実践している場合、コードは 2 人でレビューされています。さらにレビューが必要な場合は、レビューを同期する必要があります。デベロッパーがコードを commit する準備ができたら、チームの他のメンバーにコードのレビューをすぐに依頼する必要があります。たとえば、ツールにリクエストを送信してレビュー結果を待っている間に別のタスクを始めるなど、非同期のレビューを行わないでください。マージが遅れるほど、競合に関連する問題が発生する可能性が高くなります。同期レビューを実施するには、他の作業よりもお互いのコードのレビューを優先するようにチーム内で合意を形成する必要があります。</p></li>
+<li><p><strong>コードを commit する前に自動テストを実行しない</strong>。トランクの作業状態を維持するには、commit する前にコードの変更をテストすることが重要です。これはデベロッパーのワークステーションで実行できます。また、多くのツールは、ローカルの変更に対してリモートからテストを実行し、合格時に自動的に commit する機能を備えています。デベロッパーが多くの作業を行わなくてもコードをトランクに入れることができれば、その結果は自ずと理解しやすく、レビューやテストも簡単で、本番環境にも迅速に移行できる小さなコード変更になるはずです。</p></li>
+</ul>
+
+<h2 id="ways_to_improve_trunk-based_development" data-text="トランクベース開発の改善方法">トランクベース開発の改善方法</h2>
+
+<p>上記の課題に基づいて、トランクベース開発を改善するために実装できるいくつかの方法についてみてみましょう。</p>
+
+<ul>
+<li><strong>小さなバッチで開発する</strong>。トランクベース開発の最も重要なポイントの 1 つは、<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">小さなバッチで開発する</a>方法をチームで学習しているかどうかです。そのためには、デベロッパー チームでトレーニングを行うだけでなく、組織的なサポートも必要になります。</li>
+<li><strong>コードの同期レビューを行う</strong>。前述のように、コードの同期レビューを行うか、デベロッパーがコードレビューの優先順位を設定することにより、変更がトランクにマージされるまで数時間または数日も待つ必要がなくなります。</li>
+<li><strong>包括的な自動テストを実装する</strong>。<a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">自動化された単体テスト</a>の包括的なスイートを用意し、このテストを commit の前に実行する必要があります。たとえば、GitHub を使用している場合、<a href="https://help.github.com/en/articles/about-protected-branches" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">ブランチを保護</a>して、すべてのテストに合格するまで pull リクエスト マージをブロックできます。<a href="https://developer.github.com/v3/checks/" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">GitHub のチェック</a>と <a href="/build" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Build を統合する方法</a>については、<a href="/build/docs/run-builds-with-github-checks" track-type="solution" track-name="internalLink" track-metadata-position="body">GitHub チェックを使用したビルドの実行</a>チュートリアルをご覧ください。</li>
+<li><strong>ビルドを迅速に実行する</strong>。ビルドとテストプロセスを<a href="https://www.infoq.com/presentations/Crazy-Fast-Build-Times-or-When-10-Seconds-Starts-to-Make-You-Nervous/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">数分で</a>完了する必要があります。この実現が難しいと思われる場合は、システム <a href="/architecture/devops/devops-tech-architecture" track-type="solution" track-name="internalLink" track-metadata-position="body">アーキテクチャ</a>の改善が必要かもしれません。</li>
+<li><strong>チームをリードするコアグループを形成する</strong>。トランクベース開発は、多くのデベロッパーにとって大きな変化であり、ある程度の抵抗が予想されます。多くのデベロッパーは、この新しい開発作業を想像できないかもしれません。この方法で作業を行っているデベロッパーに他のデベロッパーの指導役になってもらうことも検討しましょう。また、一部のチームをトランクベースのスタイルで作業するようにシフトすることも重要です。そのためには、少なくとも 1 つのチームがトランクベース開発を実践できるように、トランクベース開発の経験者を数多く集める必要があります。このチームが期待どおりに機能していることが確認できたら、他のチームもこのスタイルに移行していきます。</li>
+</ul>
+
+<h2 id="ways_to_measure_trunk-based_development" data-text="トランクベース開発の測定方法">トランクベース開発の測定方法</h2>
+
+<p>トランクベース開発の有効性は次の方法で測定できます。</p>
+
+<table>
+  <colgroup>
+    <col width="30%" />
+    <col width="35%" />
+    <col width="35%" />
+  </colgroup>
+<thead>
+<tr>
+<th>テスト要因</th>
+<th>測定データ</th>
+<th>目標</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>アプリケーションのコード リポジトリでアクティブなブランチ。</td>
+<td>アプリケーション リポジトリのバージョニング システムにあるアクティブなブランチ数を測定し、この数をすべてのチームに提示します。次に、目標に対する進捗状況を記録します。</td>
+<td>アクティブなブランチを 3 つ以下にする。</td>
+</tr>
+<tr>
+<td>コードフリーズの期間。</td>
+<td>チームが担当しているコードフリーズの数と、コードの持続時間を測定します。これらの測定値は、マージによる競合、コードのフリーズ、安定化などに費やされる時間を分類することもできます。</td>
+<td>誰もコードを送信していない状態で、コードフリーズがないこと。</td>
+</tr>
+<tr>
+<td>ブランチとフォークをトランクにマージする頻度。</td>
+<td>マージされる各ブランチをバイナリ値（yes / no）で測定するか、毎日マージされるブランチとフォークの割合を測定します。</td>
+<td>少なくとも 1 日 1 回マージします。</td>
+</tr>
+<tr>
+<td>コード変更の承認にかかる時間。</td>
+<td>コードレビューを非同期で実行する場合、変更リクエストの承認にかかる平均時間を測定し、平均よりも大幅に時間がかかるリクエストがあるかどうか確認します。</td>
+<td>開発の一環として実行されるコードレビューを同期アクティビティとして行う方法を見つける。</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="次のステップ">次のステップ</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps ページ</a>で他の記事やリソースへのリンクを確認する。</li>
+<li><a href="/build/docs/run-builds-with-github-checks" track-type="solution" track-name="internalLink" track-metadata-position="body">GitHub チェックを使用したビルドの実行チュートリアル</a>で、<a href="https://github.com/marketplace/google-cloud-build" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">Cloud Build アプリ</a>を使用して Google Cloud を GitHub に接続する方法を学習する。</li>
+<li><p><a href="https://martinfowler.com/bliki/FeatureBranch.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">機能ブランチ</a>に関する Martin Fowler の記事を読む。</p></li>
+<li><p><a href="https://continuousdelivery.com/2011/07/on-dvcs-continuous-integration-and-feature-branches/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">DVCS と機能ブランチ</a>に関する Jez Humble の投稿を読む。</p></li>
+<li><p><a href="https://trunkbaseddevelopment.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">トランクベース開発に特化した Paul Hammant のポータル</a>を見る。</p></li>
+<li><p>DevOps <a href="https://www.devops-research.com/research.html">研究プログラム</a>を調べる。</p></li>
+<li><p><a href="https://www.devops-research.com/quickcheck.html">DevOps のクイック チェック</a>を確認する。業界におけるご自身の立ち位置を把握できます。</p></li>
+</ul>
+
+</body></html>

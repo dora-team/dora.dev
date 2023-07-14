@@ -1,0 +1,98 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps プロセス: 小さいバッチ単位の作業</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注:</strong><span> 小さいバッチ単位の作業は、ソフトウェア デリバリーと組織のパフォーマンスを改善する一連の機能の 1 つです。<em></em>これらの能力は <a href="https://www.devops-research.com/research.html">DORA State of DevOps Research Program</a> で発見されました。これは、高いパフォーマンスを生み出すプラクティスと機能に関する、学術的に厳格で独立した研究調査です。詳細については、<a href="/devops">DevOps のリソース</a>をご覧ください。</span></aside><p>フィードバック ループが重要な場合や、結果をすぐに確認する必要がある場合は、小さなバッチ単位で作業を行うことが重要になります。小さいバッチ単位で作業を行うことで、特定の内容の改善によって期待した効果が得られる見通しであるかどうかについて、仮説のテストを迅速に実施でき、軌道修正または想定内容の見直しを行うことができます。この記事で扱う内容は、組織の変革とプロセスの改善を含め、あらゆる種類の変更に適用できますが、ここでは主にソフトウェア配信に焦点を当てて説明します。</p>
+
+<p>小さなバッチ単位での作業はリーン プロダクト管理の一部です。<a href="/architecture/devops/devops-process-work-visibility-in-value-stream" track-type="article" track-name="internalLink" track-metadata-position="body">バリュー ストリームでの作業の可視化</a>、<a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">チームのテスト</a>、<a href="/architecture/devops/devops-process-customer-feedback" track-type="article" track-name="internalLink" track-metadata-position="body">お客様のフィードバックの把握</a>などと組み合わせることで、ソフトウェア配信と組織のパフォーマンスを予測できます。</p>
+
+<p>大きなバッチ単位で作業を行う理由の 1 つとして<a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">変更のハンドオフにかかる高額な固定費</a>があります。従来のソフトウェア開発で採用されている段階的なアプローチでは、数十人から数百人のチームが数か月をかけて開発からテスト、テストから IT 運用へのハンドオフを行います。この従来型のアプローチでは、変更に対するフィードバックを収集するのに数週間から数か月かかる可能性があります。</p>
+
+<p>一方、機能横断型のチームが簡易的なアプローチを使用する DevOps プラクティスの場合、開発からテスト、運用、本番環境への移行をわずか数分で完了することが可能です。ただし、このプロセスを実現するにはコードを小さいバッチ単位で処理する必要があります。</p>
+
+<p>小さいバッチ単位の作業には多くのメリットがあります。</p>
+
+<ul>
+<li>変更に対するフィードバックを得るまでの時間が短くなり、問題の優先順位付けと修正が容易になります。</li>
+<li>効率と意欲を高めることができます。</li>
+<li>組織が埋没費用効果に陥るのを防ぐことができます。</li>
+</ul>
+
+<p>小さいバッチ単位の作業は、機能レベルとプロダクト レベルで行うことができます。たとえば、MVP（最小実装製品）は、製品とそのビジネスモデルに関する有効な学習を可能にするために最低限必要な機能を備えた製品のプロトタイプです。</p>
+
+<p>継続的デリバリーは、小さなバッチ単位で作業を行ってバージョン管理の変更点を可能な限り早期に取得する手法です。継続的デリバリーの目的は、小さいバッチ単位での作業を可能にすることで、ソフトウェア配信プロセスのコスト効率を改善することにあります。このアプローチでは、包括的なフィードバックが迅速に提供されるため、チームの作業が改善されます。</p>
+
+<h2 id="how_to_work_in_small_batches" data-text="小さなバッチ単位で作業を行う方法">小さなバッチ単位で作業を行う方法</h2>
+
+<p>新しい機能を計画するときは、機能を個別に、短期間で完成できる作業単位に分割します。機能または作業のバッチを分割する際に、<a href="https://wikipedia.org/wiki/INVEST_(mnemonic)" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">INVEST の原則</a>というアジャイル コンセプトに従うことをおすすめします。</p>
+
+<ul>
+<li><strong>独立している</strong>。作業のバッチを他のバッチから可能な限り独立させます。これにより、チームが任意の順序で作業を行い、他の作業バッチとは独立してデプロイと検証を行うことができます。</li>
+<li><strong>交渉できる</strong>。作業の各バッチを反復可能にし、フィードバックに応じて対応できるようにします。</li>
+<li><strong>価値がある</strong>。バッチ単位で利用でき、関係者に価値を提供するものにします。</li>
+<li><strong>見積もりを可能にする</strong>。作業範囲を簡単に見積もることができるように、作業のバッチに関する十分な情報を提供します。</li>
+<li><strong>小さくする</strong>。1 つのスプリントで、わずかな時間（数時間から数日）で作業を完了できるようにします。</li>
+<li><strong>テストできる</strong>。作業の各バッチがユーザーの期待どおりに動作するかどうかテスト、モニタリング、検証を行えるようにします。</li>
+</ul>
+
+<p>機能の規模が適切であれば、機能の開発作業をさらに小さなバッチに分割できます。ただし、このプロセスは難しく、開発経験が必要になります。デベロッパーが、リリース可能な小規模な変更を<a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">少なくとも 1 日に 1 回トランクにチェックイン</a>するのが理想的です。</p>
+
+<p>UI レイヤではなく、サービスまたは API レイヤの開発から始めることが重要です。これにより、初期段階ではアプリのユーザーに提供しない API の変更を行い、トランクにチェックインできます。これらの変更は、ユーザーの目に触れることなく本番環境にリリースできます。<em></em>ダークローンチというこの手法では、作業の完了したコード部分をチェックインできます。これは完成していない機能に使用できるアプローチです。その後、これらの変更に対して<a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">自動テスト</a>を実行し、期待どおりに動作するかどうかを確認できます。この方法では、チームで開発作業を迅速に進めながら<a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">トランクの開発</a>を行うため、機能ブランチが長期にわたることはありません。</p>
+
+<p><a href="https://martinfowler.com/bliki/FeatureToggle.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">機能トグル</a>（構成設定に基づく条件文）を使用して、変更のダークローンチを行うこともできます。たとえば、UI 要素の表示 / 非表示、サービス ロジックの有効 / 無効を切り替えることができます。機能トグルの構成は、デプロイ時またはランタイム時に読み込むことができます。これらの構成設定を使用することで、スタック内の新しいコードの動作を切り替えることができます。類似した手法として<a href="https://continuousdelivery.com/2011/05/make-large-scale-changes-incrementally-with-branch-by-abstraction/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">抽象化による分岐</a>があります。この手法を利用すると、長期的な機能ブランチを使用せずに、開発とトランクへのリリースを継続しながらシステムに大規模な変更を行うことができます。</p>
+
+<p>このアプローチの場合、バッチが本番環境にデプロイされ、フィードバック プロセスで変更の検証が始まるまで作業は完了しません。フィードバックは、ユーザー、システム モニタリング、品質保証、自動テストなど、さまざまなソースから異なる形式で提供されます。ユーザーに変更が届くまでのサイクルタイムを短縮するために速度を最適化しなければなりません。これにより、仮説の検証を可能な限り迅速に行うことができます。</p>
+
+<h2 id="common_pitfalls_with_working_in_small_batches" data-text="小さいバッチ単位で作業を行う場合によくある問題">小さいバッチ単位で作業を行う場合によくある問題</h2>
+
+<p>作業を小さなバッチに分割する場合は、次の 2 つの点に注意する必要があります。</p>
+
+<ul>
+<li><p><strong>作業の細分化が十分に行われていない</strong>。まず考えなければならないことは、意味のある方法で作業を分割することです。機能のステータスに関係なくコードを commit し、個別の機能の開発を数日以内で完了させることをおすすめします。完了して確認を終えるまでに 1 週間を超える期間を要するコードのバッチは大きすぎます。開発プロセスを通じて、繰り返し開発できるようにアイデアを分けていく方法を考えることが重要です。</p></li>
+<li><p><strong>小さいバッチ単位で作業を行っているものの、テストやリリースの工程に送る前にバッチを再編成している</strong>。このように再編成を行うと、変更に問題があるかどうかのフィードバックが遅くなります。また、この変更のビルドの必要性についてユーザーと組織が同意しているかどうかの確認も遅くなります。</p></li>
+</ul>
+
+<h2 id="ways_to_reduce_the_size_of_work_batches" data-text="作業のバッチサイズを小さくする方法">作業のバッチサイズを小さくする方法</h2>
+
+<p>通常、作業を数時間で完了できる小さいバッチに分割した場合、<a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">バッチをテストして本番環境にデプロイするまでを 1 時間未満で行うことが可能です</a>（PDF）。ブランチで複雑な機能を開発してリリースの頻度を低くするのではなく、迅速に開発できるように作業を小さな機能に分解することが重要です。</p>
+
+<p>小さいバッチでの開発作業を改善するには、環境が次の条件を満たしていることを確認します。</p>
+
+<ul>
+<li>チームが本番環境へのリリースを頻繁に行えるように作業が分割されているか。</li>
+<li>デベロッパーに、作業を数日ではなく数時間以内に完了できる小さな単位に分割した経験があるか。</li>
+</ul>
+
+<p>小さいバッチ単位での開発のエキスパートになるには、すべての開発チームがこの条件を満たす必要があります。これは、<a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">継続的インテグレーション</a>と<a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">トランクベースの開発</a>の両方に必要な条件です。</p>
+
+<h2 id="ways_to_measure_the_size_of_work_batches" data-text="作業のバッチサイズを測定する方法">作業のバッチサイズを測定する方法</h2>
+
+<p><a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">継続的インテグレーション</a>と<a href="/architecture/devops/devops-measurement-monitoring-systems" track-type="article" track-name="internalLink" track-metadata-position="body">モニタリング</a>を理解していると、システムや開発環境における小さなバッチ単位での開発作業の評価方法を考えることができます。</p>
+
+<ul>
+<li><strong>アプリケーションの機能が頻繁なリリースに対応できる単位で分割されているか</strong>。次のことを調査します。どの程度の頻度によるリリースが可能であるか。リリース頻度のチーム間における相違はどの程度か。本番環境での遅延は、より大きな機能に関連するのか。</li>
+<li><strong>デベロッパーが 1 週間以内に作業を完了できるようにアプリケーションの機能が分割されているか</strong>。次のことを調査します。1 週間以内に完了できる機能の割合はどの程度か。1 週間以内に完了できない機能はどのようなものか。機能の完成前に変更を commit してリリースできるか。</li>
+<li><strong>チームの目標として MVP が定義され、設定されているか</strong>。次のことを調査します。作業が、複雑で時間がかかるプロセスではなく、MVP と迅速な開発を可能にする機能に分割されているか。</li>
+</ul>
+
+<p>測定結果は次の要素によって異なります。</p>
+
+<ul>
+<li>組織のプロセスを把握しているかどうか。</li>
+<li>無駄をなくすための目標が設定されているかどうか。</li>
+<li>開発プロセスの複雑さを軽減する方法を検討しているかどうか。</li>
+</ul>
+
+<h2 id="whats_next" data-text="次のステップ">次のステップ</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps ページ</a>で他の記事やリソースへのリンクを確認する。</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">研究プログラム</a>を調べる。</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps のクイック チェック</a>を確認する。業界におけるご自身の立ち位置を把握できます。</li>
+</ul>
+
+</body></html>

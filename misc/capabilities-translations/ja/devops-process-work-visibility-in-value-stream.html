@@ -1,0 +1,105 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps プロセス: バリュー ストリームでの作業の可視性</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注:</strong><span> バリュー ストリームでの作業の可視性<em></em>は、ソフトウェア デリバリーと組織のパフォーマンスを改善する一連の能力の 1 つです。これらの能力は <a href="https://www.devops-research.com/research.html">DORA State of DevOps Research Program</a> で発見されました。これは、高いパフォーマンスを生み出すプラクティスと機能に関する、学術的に厳格で独立した研究調査です。詳細については、<a href="/devops">DevOps のリソース</a>をご覧ください。</span></aside><p>作業の可視性<em></em>は、チームがビジネスからお客様に至るまでのすべての作業フローをどの程度適切に理解しているか、またプロダクトや機能の状況など、このフローに対する可視性を持っているかどうかを表します。作業の可視性は、リーンなプロダクト管理を示す、より広範囲にわたる機能グループの一部です。それらの機能には、<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">小さいバッチ単位の作業</a>、<a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">チームのテスト</a>、<a href="/architecture/devops/devops-process-customer-feedback" track-type="solution" track-name="internalLink" track-metadata-position="body">お客様のフィードバックの把握</a>などがあります。これらの機能により、ソフトウェア配信パフォーマンスと組織のパフォーマンス（収益性、市場シェア、生産性の観点から測定）の両方が予測されます。</p>
+
+<h2 id="how_to_implement_work_visibility" data-text="作業の可視性の実装方法">作業の可視性の実装方法</h2>
+
+<p>この機能に精通しているチームには、次のような特徴があります。</p>
+
+<ul>
+<li>プロダクトや機能などに関し、ビジネスを通してアイデアからお客様までの<strong>作業が進行する仕組み</strong>をチームが理解できます。</li>
+<li>チームは、<strong>この作業のフロー</strong>を把握しています。</li>
+<li>現在の状況を含む作業のフローは、<strong>視覚的なディスプレイやダッシュボードに表示</strong>されます。</li>
+<li>バリュー ストリーム全体にわたるプロダクト開発作業の<strong>フローに関する情報</strong>をすぐに利用できます。</li>
+</ul>
+
+<h3 id="use_value_stream_mapping_to_understand_how_work_flows" data-text="バリュー ストリーム マッピングを使用して作業のフローを理解する">バリュー ストリーム マッピングを使用して作業のフローを理解する</h3>
+
+<p>プロダクトや機能開発のバリュー ストリームで作業が進行する仕組みを理解することは、ワークフローの改善において不可欠な作業です。これを行うには、<a href="https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">バリュー ストリーム マッピング</a><em></em>（VSM）が役立ちます。ビジネスライン、設計、テスト、QA、オペレーション、サポートなど、製品開発のバリュー ストリームのあらゆる領域から関係者を集めることで、バリュー ストリーム マップを作成できます。バリュー ストリームを 5 個から 15 個のプロセス ブロックに分割します。次の図に示すように、各ブロックごとに、実行される作業とそれを実行するチームを記録します。</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-9-stages.svg" alt="お客様からプロダクト デプロイまでの 9 つのステージを示すバリュー ストリーム"/></p>
+
+<p>出典: <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Lean Enterprise</a><em></em>（O'Reilly）（Jez Humble、Joanne Molesky、Barry O'Reilly 共著、2014 年）</p>
+
+<p>次に、バリュー ストリーム内の作業の状態を分析し、情報を収集してフローの障害を特定します。具体的には、プロセス ブロックごとに次の主な指標を測定します。</p>
+
+<ul>
+<li><strong>リードタイム</strong>: プロセスで作業が承諾されてから、次のダウンストリーム プロセスにその作業が引き継がれるまでの時間。</li>
+<li><strong>処理時間</strong>: 作業完了までに必要な情報とリソースをすべて備えた作業者が中断なく作業した場合、1 つの作業の完了に要する時間。</li>
+<li><strong>正確率（%C/A）</strong>: プロセスにおいて、再作業の必要なく使用できるものをアップストリーム プロセスから受け取る時間の比率。</li>
+</ul>
+
+<p>演習が行われた日は、実際のプロセスの状態を常に記録します。期待される指標ではなく、実際の指標を割り出す必要があります。</p>
+
+<p>次の図には、最終出力の例が示されています。</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-stages-with-notes-and-timeline.svg" alt="各ステージと全体的なタイムラインについての注記を含む、バリュー ストリームのステージ。"/></p>
+
+<p>出典: <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em></em>Lean Enterprise</a>（O'Reilly）（Jez Humble、Joanne Molesky、Barry O'Reilly、O'Reilly 共著、2014 年）。</p>
+
+<p>後からダウンストリームで多くの再作業を要する、低品質の作業を生み出すプロセス ブロック（ダウンストリーム プロセス ブロックで低い %C/A として示される）および処理時間に対してリードタイムが長いプロセスを探します。</p>
+
+<p>関係者と協力し、将来的な任意の時点（6 か月から 2 年以内など）のバリュー ストリームの最適な状態を反映した、将来の状態のバリュー ストリーム マップを作成することが重要です。関係者は、定期的なスケジュールに沿って（6 か月ごとなど）演習を再実行し、現状を把握して、進捗状況を確認することに同意する必要もあります。</p>
+
+<p>VSM の詳細な説明はこのドキュメントには含まれていません。詳細については、<a href="https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation<em></em></a>（Karen Martin、Mike Osterling 共著）をご覧ください。</p>
+
+<h3 id="visualize_the_current_state_of_work" data-text="作業の現在の状況を可視化する">作業の現在の状況を可視化する</h3>
+
+<p>VSM は、アイデアからお客様までの、プロダクト開発のバリュー ストリーム内で作業がどのように移動するかを表すことができます。ただし、この作業フローを継続的に把握するには、より動的なビューが必要です。ソフトウェア開発では、次の図に示されるカードウォール、ストーリーボード、かんばんを使用できます。</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-kanban-board.svg" alt="かんばん。"/></p>
+
+<p>出典: 「Kanban for Ops」ボードゲーム（Dominica DeGrandis 著、2013 年）。</p>
+
+<p>このようなビジュアル ディスプレイを使用し、WIP 制限を作成してフローを管理する方法については、<a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">WIP 制限</a>と<a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">ビジュアル管理</a>に関する記事で詳細に説明されています。</p>
+
+<p>最後に、マッピングには各チームの責務に関する情報と、リードタイム、デプロイ頻度、%C/A などの主要な指標に関する統計データが含まれている必要があります。</p>
+
+<h2 id="common_pitfalls_with_work_visibility" data-text="作業の可視性でよくある落とし穴">作業の可視性でよくある落とし穴</h2>
+
+<p>作業の可視性を実装する場合、次のような課題がよく見受けられます。</p>
+
+<ul>
+<li><p><strong>組織の知識の状態を過大評価する</strong>。どのような組織でも、バリュー ストリーム全体を適切に把握している人はいません。企業がバリュー ストリームのマッピング演習を作成する場合、バリュー ストリーム全体から人員を集めて、演習を実行することが重要です。組織の他の部門での実際の<em></em>作業内容を知って驚く人もいます。</p></li>
+<li><p><strong>バリュー ストリーム全体をマッピングできない</strong>。アイデア（事業部門、プロダクト マーケティング部門、または内部顧客のいずれであるかに関係なく）から IT オペレーション、マッピングされるプロダクトやサービスをサポートする人にいたるまで、バリュー ストリーム全体をマッピングすることが重要です。その結果として可視性と連携が強化され、共通の理解が深まることは非常に価値のあることです。バリュー ストリーム全体をマッピングできなければ最適化は局所的になり、組織全体に影響を及ぼす主要領域でプロセスを改善する機会が失われることもあります。</p></li>
+<li><p><strong>改善対象として適さない領域に焦点を当てる</strong>。ボトルネックが起きていない領域で効率性を高めても、全体的なリードタイムに大きな影響は及ばず、事態が悪化する可能性もあります。当然、企業はすべての領域を改善する必要がありますが、組織レベルの成果を見込めない取り組みに多大な労力を費やすことに意味はありません。</p></li>
+<li><p><strong>変更の権限を付与しない</strong>。将来的な目標達成のために、この取り組みにかかわる人には変更を行う権限が付与される必要があります。このような人が組織内の他の人を説得しなければならないのであれば、演習が成功する可能性は低くなります。</p></li>
+</ul>
+
+<p>また、<a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">WIP 制限</a>と<a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">ビジュアル管理</a>に関する記事で、よくある問題について確認してください。それらの多くが、この状況にも当てはまります。</p>
+
+<h2 id="ways_to_improve_work_visibility" data-text="作業の可視性を改善する方法">作業の可視性を改善する方法</h2>
+
+<ul>
+<li><p><strong>ワークフローを可視化して記録するためのツールを提供</strong>します。まずは、<a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">ビジュアル管理</a>ディスプレイがチームにあることを確認します。このディスプレイは、プロセスのアップストリームとダウンストリームの両方を含む、バリュー ストリーム内でチームに特に関連する部分を介する作業とそのフローを示します。プロセス内で作業の進行に要する時間と、チームが 1 回で正しく処理できなかったために再作業を実行した回数を記録します。これにより、チームレベルで最適な改善のチャンスを早期に発見できます。</p></li>
+<li><p><strong>バリュー ストリーム マップを作成</strong>します。他のチームと協力してバリュー ストリームのマッピング演習を実行し、アイデアからお客様の成果にいたるまで作業の進行状況を把握します。また、プロセス ブロックごとに VSM 指標（リードタイム、処理時間、%C/A）を報告します。チームに、将来の状態のバリュー ストリーム マップを用意してもらい、それを実行してもらいます。</p></li>
+<li><p><strong>アーティファクトを共有</strong>します。これらの演習から得られるアーティファクトは、組織内のすべての人が入手でき、少なくとも 1 年ごとに更新されるようにします。</p></li>
+</ul>
+
+<h2 id="ways_to_measure_work_visibility" data-text="作業の可視性を測定する方法">作業の可視性を測定する方法</h2>
+
+<p>バリュー ストリーム内の作業に対するチームの可視性の有効性を判別するには、次のことを確認します。</p>
+
+<ul>
+<li>組織内のすべての人が入手できる、現在、または最近のバリュー ストリーム マップはありますか？</li>
+<li>組織内のすべての人が、自分の作業対象と作業の状況が表示されるビジュアル ディスプレイにアクセスできますか？</li>
+<li>チームは、リードタイムや %C/A などの指標に関する統計を入手できますか？</li>
+</ul>
+
+<h2 id="whats_next" data-text="次のステップ">次のステップ</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps ページ</a>で他の記事やリソースへのリンクを確認する。</li>
+<li><a href="https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation<em></em></a>（Karen Martin、Mike Osterling 共著）を読む。</li>
+<li><a href="https://books.google.com/books/about/Kanban.html?id=RJ0VUkfUWZkC" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Kanban: Successful Evolutionary Change for Your Technology Business<em></em></a>（David Anderson 著）を読む。</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">研究プログラム</a>を調べる。</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps のクイック チェック</a>を確認する。業界におけるご自身の立ち位置を把握できます。</li>
+</ul>
+
+</body></html>

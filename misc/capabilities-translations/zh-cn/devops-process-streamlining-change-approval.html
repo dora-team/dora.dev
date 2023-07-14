@@ -1,0 +1,120 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 流程：简化变更审核流程</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：“简化变更审核流程”<em></em>是一组推动实现更出色的软件交付表现和组织绩效的能力之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>大多数 IT 组织都制定有变更管理流程来管理内部和面向客户的 IT 服务的变更生命周期。这些流程通常是降低变更的运营和安全风险的主要控制措施。</p>
+
+<p>变更管理流程通常包括外部审核人员或变更审核委员会 (CAB) 审核以将变更升级到整个系统中。</p>
+
+<p>合规性管理人员和安全管理人员依赖变更管理流程来验证合规性要求，这通常需要有证据证明所有变更均已获得适当授权。</p>
+
+<p>DevOps 研究和评估组织 (DORA) 在 <a href="https://cloud.google.com/devops/state-of-devops" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2019 年 DevOps 现状报告 (PDF)</a> 中的研究表明，变更审核流程最好是在开发流程期间通过代码互审来实现，通过在软件交付生命周期的早期阶段自动检测、预防和纠正错误，以此作为对审核流程的补充。<a href="/architecture/devops/devops-tech-test-automation">持续测试</a>、<a href="/architecture/devops/devops-tech-continuous-integration">持续集成</a>和<a href="/architecture/devops/devops-measurement-monitoring-and-observability">全面监控和可观察性</a>等技术提供早期自动检测、可见性和快速反馈。</p>
+
+<p>此外，组织还可以更好地传达现有流程并帮助团队高效导航，从而提升其性能。如果团队成员清楚了解变更审核流程，则这样做可以提升性能。</p>
+
+<h2 id="how_to_implement_a_change_approval_process" data-text="如何实施变更审核流程">如何实施变更审核流程</h2>
+
+<p>变更审核流程的两个重要目标是降低更改风险和满足监管要求。一种常见的监管要求是职责分离，即要求更改必须由作者以外的其他人审核，从而确保没有人对流程进行端到端控制。</p>
+
+<p>传统上，这些目标已通过涉及审核（由提议更改的下列团队外部人员审核）的重量级流程达成：变更咨询委员会 (CAB) 或高级经理。但是，DORA 的研究表明，这些方法会对软件交付性能产生负面影响。此外，没有任何证据可证明外部审核流程越正式，更改失败率就越低这一假设。</p>
+
+<p>这种重量级方法通常会降低交付流程的速度，导致大型批次的发布频率降低，同时对有可能与更高级别风险相关的生产系统造成更大影响，因此更改失败率也就更高。DORA 的研究发现数据支持这种假设。</p>
+
+<p>相反，团队应该：</p>
+
+<ul>
+<li>使用代码互审达成职责分离的目标，并在开发过程中于团队的<a href="/architecture/devops/devops-tech-code-maintainability">开发平台</a>中获取评价、评论和审核。</li>
+<li>采用<a href="/architecture/devops/devops-tech-test-automation">持续测试</a>、<a href="/architecture/devops/devops-tech-continuous-integration">持续集成</a>和<a href="/architecture/devops/devops-measurement-monitoring-and-observability">全面监控和可观测性</a>快速检测、防止和更正错误的更改。</li>
+<li>您可以将开发平台视为一款产品，以便开发者能够轻松快速获取对多个方面（包括安全性、性能和稳定性）以及缺陷更改带来的影响的反馈。</li>
+</ul>
+
+<p>您的目标是使定期变更管理流程足够快速和可靠，便于您使用它进行紧急更改。</p>
+
+<p>在<a href="/architecture/devops/devops-tech-continuous-delivery">持续交付</a>范式中，CAB 仍然发挥着重要作用，其中包括：</p>
+
+<ul>
+<li>方便通知和团队协作。</li>
+<li>帮助团队进行流程改进以提高软件交付性能。</li>
+<li>权衡重要的业务决策，这些决策需要在较高的业务级别进行权衡和签核，例如在上市时间和业务风险之间作出决策。</li>
+</ul>
+
+<p>CAB 的这个新角色是战略性的。将详细的代码审核转移到从业者和自动化方法后，投入领导和管理职位的时间和注意力就可以得到释放以便专注于更具战略意义的工作。从 gatekeeper 到 Process Architecture 和 Information Beacon 的转变，与软件交付性能表现优异的组织保持一致。</p>
+
+<h2 id="common_pitfalls_in_change_approval_processes" data-text="变更审核流程中的常见问题">变更审核流程中的常见问题</h2>
+
+<p>变更审核流程中通常会出现以下问题：</p>
+
+<p><strong>依靠集中的变更审核委员会 (CAB) </strong>发现错误并审核变更。这种方法会造成延迟，并且经常出错。CAB 擅长宣传变更，但距离变更较远的人可能不了解这些变更背后的意义。</p>
+
+<p><strong>平等对待所有变更。</strong>如果所有变更都遵循相同的审核流程，变更审核就会效率低下，由于风险概况或时间存在差异，人们就无法将时间和精力投在真正需要注意的地方。</p>
+
+<p><strong>无法应用持续改进。</strong>与所有流程一样，关键的性能指标（如准备时间和更改失败率）应以改善更改管理流程的性能为目标，包括为团队提供工具和培训，帮助他们更有效地进行调整。</p>
+
+<p><strong>通过添加更多流程来回复问题。</strong>当生产中遇到稳定性问题时，组织通常会采用额外的流程，并承担更重量级的审核责任。分析表明，此方法会使情况变差，因为这种方法会导致准备时间和批次大小增加，从而形成严格的循环。相反，您应致力于进行更快更安全的更改。</p>
+
+<h2 id="ways_to_improve_your_change_approval_process" data-text="改善变更审核流程的方法">改善变更审核流程的方法</h2>
+
+<p>如需改善您的变更审核流程，请重点实施以下内容：</p>
+
+<ol>
+<li>迁移到基于代码互审的个别更改流程，已在代码检查时强制实施且自动化测试支持该流程。</li>
+<li>在提交更改后，请以自动化方式尽快找出用来发现回归、性能问题和安全问题等问题的各种方法。</li>
+<li>通过不断分析来尽早检测并标记高风险变更，以便对其进行额外的审查。</li>
+<li>以端到端的方式查看变更流程、确定瓶颈，并尝试各种方法以将验证转移到开发平台。</li>
+<li>在平台和基础架构层以及开发工具链中实现信息安全控制，而不是在软件交付过程中手动对其进行检查。</li>
+</ol>
+
+<p><a href="https://cloud.google.com/devops/state-of-devops" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2019 年 DevOps 现状报告 (PDF)</a> 的研究表明，尽管弃用传统的正式变更管理流程是最终目标，但更好地传达现有流程并帮助团队高效导航会对软件交付性能产生积极影响。如果团队成员清楚了解更改获准实施的流程，则这样做可以提升性能。这表示对于团队成员通常执行的所有类型的更改，他们确信更改能够及时通过审核流程，并且了解更改每次从“已提交”变为“已接受”的步骤。</p>
+
+<h2 id="ways_to_measure_change_approval_in_your_systems" data-text="衡量系统中变更审核的方法">衡量系统中变更审核的方法</h2>
+
+<p>现在，您的团队可以列出衡量变更审核的可能方法：</p>
+
+<table>
+<thead>
+<tr>
+<th>测试的因素</th>
+<th>衡量的指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>能否在未经人工变更审核的情况下将变更升级到生产中？
+</td>
+<td>需要（或无需）进行手动变更才能（就能）升级到生产中的变更所占百分比。<br />
+<br />提示：您还可以根据风险概况衡量该因素：多大百分比的低风险、中风险和高风险变更升级到生产中之前需要手动变更？<br />
+</td>
+</tr>
+<tr>
+<td>生产变更在部署或实施之前是否需要外部机构审核？</td>
+<td>变更等待外部机构审核所需时间量。<br />
+<br />提示：随着您将审核权限转移给距离工作较近的人员，请衡量等待本地审核机构或审核人员进行审核所需的时间。<br />
+<br />您还可以按风险概况衡量该因素。衡量需要外部机构审核的变更数量或比例，以及等待审核所花的时间。</td>
+</tr>
+<tr>
+<td>您是否依靠同行评审来管理变更？</td>
+<td>由同行评审管理的变更所占的百分比。<br />
+<br />您还可以按风险概况衡量该因素。</td>
+</tr>
+<tr>
+<td>团队成员是否清楚地了解了更改获准实施的流程？</td>
+<td>对于团队成员通常执行的所有类型的更改，团队成员对于更改能够及时通过审核流程的确信程度，以及对于更改每次从“已提交”变为“已接受”的步骤的了解程度。</td>
+</tr></tbody>
+</table>
+
+<p>考虑我们自己的环境时，您可能会制定自己的措施，以便了解并深入洞察您的变更审核流程。我们建议您不仅要衡量自己的流程，还要努力改善这些流程。</p>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>了解如何使用 Cloud Build、Container Analysis 和 Kritis Signer <a href="/binary-authorization/docs/vulnerability-scanning-kritis" track-type="solution" track-name="internalLink" track-metadata-position="body">在部署流水线中执行漏洞扫描</a>。</li>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,80 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Misurazione DevOps: notifica proattiva dei guasti</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> <em>la notifica proattiva dei guasti</em> è una delle funzionalità che incrementano la distribuzione del software e le prestazioni dell'organizzazione.
+Queste funzionalità sono state scoperte dal <a href="https://www.devops-research.com/research.html">programma di ricerca DORA State of DevOps</a>, un'indagine indipendente e rigorosa sulle pratiche che consentono prestazioni elevate. Per scoprire di più, leggi le nostre <a href="/devops">risorse DevOps</a>.</span></aside>
+<p>La notifica proattiva dei guasti è la pratica di generare notifiche quando i valori monitorati si avvicinano a soglie di errore note e non attendere che il sistema ti avvisi che l'errore è già stato eseguito o, peggio, di rilevare dai clienti che l'applicazione o il servizio non è disponibile.
+Con questo approccio, puoi identificare e risolvere i problemi prima che diventino gravi o inizino a interessare i tuoi utenti. La ricerca <a href="https://services.google.com/fh/files/misc/state-of-devops-2014.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2014 DevOps Research and Assessment (DORA)</a>(PDF) ha dimostrato che il monitoraggio proattivo è un fattore predittivo significativo delle prestazioni di distribuzione del software.
+Secondo una ricerca DORA, i team che utilizzano la notifica proattiva possono diagnosticare e risolvere rapidamente i problemi. Quando gli errori vengono principalmente segnalati da un'origine esterna al team operativo, ad esempio dal centro operativo di rete (noC), o peggio dai clienti, piuttosto che dal monitoraggio interno, dalle prestazioni.</p>
+
+<h2 id="how_to_implement_proactive_failure_notification" data-text="Come implementare la notifica proattiva dei guasti">Come implementare la notifica proattiva dei guasti</h2>
+
+<p><strong>Utilizza le regole di avviso.</strong> Dovresti generare notifiche di errore utilizzando <em>regole di avviso</em> specifiche. Le regole di avviso definiscono le condizioni in base alle quali viene generato
+un avviso e il canale di notifica dell'avviso. Scopri di più sulla
+generazione di avvisi in
+<a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="solution" track-name="internalLink" track-metadata-position="body">Monitoraggio e osservabilità</a>.</p>
+
+<p><strong>Usa le soglie.</strong> Le regole di avviso dovrebbero utilizzare soglie per le metriche
+monitorate che indicano problemi reali. Le soglie di monitoraggio attivano regole di avviso che generano notifiche quando i livelli delle metriche superano i valori delle soglie.</p>
+
+<p><strong>Scegli le soglie con attenzione.</strong> Scegli le soglie solo per generare avvisi quando
+la soglia prevede effettivamente un problema. Vale a dire che non puoi selezionare arbitrariamente un
+valore. In genere, devi identificare i livelli di valore che iniziano a generare un impatto lato utente e poi attivare una notifica di avviso a una certa percentuale prima che venga raggiunto il valore.</p>
+
+<p>Ad esempio, potresti scegliere di attivare una notifica di avviso quando il tempo medio di risposta delle pagine è compreso nel 20% di una soglia che sai che gli utenti iniziano a essere frustrati e chiamano l'assistenza.</p>
+
+<p><strong>Organizzare incidenti dopo la morte.</strong> Se tieni in considerazione gli eventi successivi all'incidente,
+individua gli indicatori che avrebbero potuto prevedere l'incidente e monitorali
+in futuro.</p>
+
+<p><strong>Pianifica una strategia di notifica.</strong> Se una notifica non richiede alcuna azione o
+la stessa azione ogni volta, devi automatizzare la risposta. Dovresti anche prendere in considerazione
+il volume di notifiche per gli eventi. Una serie di notifiche
+durante un evento potrebbe distrarre e non essere utile. Quando le persone sono esposte a un elevato numero di
+sveglie, possono essere desensi sensibili (un problema noto come "stanchezza da allarme") che si traduce in tempi di risposta più lunghi o allarmi mancanti.
+Controlla regolarmente le notifiche ed elimina quelle su cui non è possibile intervenire.</p>
+
+<h2 id="ways_to_improve_failure_notification" data-text="Modi per migliorare la notifica di errore">Modi per migliorare la notifica di errore</h2>
+
+<p>Configura gli avvisi per avvisare i tuoi team chiave quando si verificano problemi
+nei sistemi, molto prima che vengano trasferiti al Network Operations Center (NOC) o
+a un cliente. Le tattiche includono:</p>
+
+<ul>
+<li>Configura gli avvisi nei sistemi di logging e monitoraggio ai livelli appropriati.</li>
+<li>Configura avvisi per assicurarti che avvisino le persone e i team che possono risolvere il problema.</li>
+<li>Monitora proattivamente l'integrità del sistema in base ad avvisi relativi alle soglie prima che si verifichino errori di sistema.</li>
+<li>Monitoraggio proattivo dell'integrità del sistema in base alla frequenza di avviso di modifica.</li>
+<li>Assicurarsi che si verifichino solo avvisi pertinenti e che il team non riceva troppi avvisi. Controlla con attenzione quali avvisi
+non sono pertinenti. Disabilita gli avvisi non pertinenti e riattiva gli avvisi di monitoraggio pertinenti.
+La disattivazione di tutti gli avvisi non è pratica.</li>
+</ul>
+
+<h2 id="ways_to_measure_failure_notifications" data-text="Metodi per misurare le notifiche di errore">Metodi per misurare le notifiche di errore</h2>
+
+<p>Strumentazione del monitoraggio proattivo: è semplice. I componenti da acquisire sono:</p>
+
+<ol>
+<li>La misura in cui gli avvisi di errore dei sistemi di logging e monitoraggio vengono acquisiti e utilizzati.</li>
+<li>La misura in cui l'integrità del sistema viene monitorata in modo proattivo utilizzando gli avvisi di soglia.</li>
+<li>La misura in cui l'integrità del sistema viene monitorata proattivamente mediante la frequenza degli avvisi di modifica.</li>
+</ol>
+
+<p>Per assicurarti di acquisire aspetti diversi del sistema, dovresti monitorare le metriche in almeno due modi diversi. Ad esempio, potresti impostare una soglia di metrica che attiva gli avvisi se una metrica aumenta o scende sotto un valore in un determinato periodo di tempo e un tasso di modifica, che attiva gli avvisi quando una variazione di valore metrica è superiore o inferiore al previsto.</p>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina DevOps</a>.</li>
+<li>Scopri di più sulla generazione di avvisi in <a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="solution" track-name="internalLink" track-metadata-position="body">Monitoraggio e osservabilità</a>.</li>
+<li>Leggi il <a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">libro SRE (Site Reliability Engineering)</a>.</li>
+<li>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</li>
+<li>Completa il <a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a> per scoprire la tua posizione rispetto al resto del settore.</li>
+</ul>
+
+</body></html>

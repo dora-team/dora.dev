@@ -1,0 +1,168 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 文化：如何进行转型</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<p>每个组织都在不断进行变革。因此，有些问题需要考虑：</p>
+
+<ul>
+<li>这种变革的方向是什么？</li>
+<li>您希望取得哪些系统级结果？</li>
+<li>组织能否更好地发现和服务客户，从而实现其目标？</li>
+<li>组织的业务模式和人员管理能否带来长期的可持续发展？</li>
+</ul>
+
+<p>当事情似乎没有按计划进行时，领导者通常会推出转型计划。但是，这些计划往往无法实现其目标，并且耗费了大量的资源和组织能力。
+本文档介绍了如何成功执行转型，并讨论了一些常见的失败原因。</p>
+
+<h2 id="how_to_implement_transformation" data-text="如何实现转型">如何实现转型</h2>
+
+<p>有效、持续的转型有两个关键环节：通过设置目标并启用团队实验来执行组织变更的流程，以及在整个组织传播良好实践的机制。</p>
+
+<h3 id="set_goals_and_enable_team_experimentation" data-text="设置目标并启用团队实验">设置目标并启用团队实验</h3>
+
+<p>有许多用于执行和衡量组织变化的框架，例如<a href="https://wikipedia.org/wiki/Balanced_scorecard" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">平衡计分卡</a>、<a href="https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">目标和主要成果 (OKR)</a> 以及<a href="http://www-personal.umich.edu/%7Emrother/The_Improvement_Kata.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">改进套路</a>和<a href="http://www-personal.umich.edu/%7Emrother/The_Coaching_Kata.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">辅导套路</a>。这些框架看似不同，但都具有相同的关键特性。基本动态如下图所示，该图基于改进套路框架：</p>
+
+<p><img src="/static/architecture/devops/images/devops-culture-transform-kata-model.png" alt="4 阶段套路模型。" width="50%"/> </p>
+
+<p>资料来源：经 Mike Rother 许可，摘自<a href="https://www.mheducation.com/highered/product/toyota-kata-practice-guide-practicing-scientific-thinking-skills-superior-results-20-minutes-day-rother/9781259861024.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">《Toyota Kata Practice Guide: Practice Scientific Thinking Skills for Superior Results in 20 Minutes a Day》</a><em></em>，Mike Rother 著 (McGraw-Hill 2018)。</p>
+
+<p>所有框架都始于一个组织或部门级别的方向（“正北”）。这是由<a href="/architecture/devops/devops-culture-transformational-leadership" track-type="article" track-name="internalLink" track-metadata-position="body">领导层</a>设置的理想系统级业务目标。它可能是一个无法实现的理想目标，例如零伤害（Alcoa 首席执行官 Paul O'Neill 选择的<a href="https://hbswk.hbs.edu/archive/paul-o-neill-values-into-action" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">目标</a>）。或者它也可能是一个艰难的目标，需要一到三年才能实现，例如生产率提高十倍（Gary Gruver 在担任惠普 LaserJet 固件部门工程总监时选择的<a href="https://continuousdelivery.com/evidence-case-studies/#the-hp-futuresmart-case-study" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">目标</a>）。</p>
+
+<p>下一步是了解当前情况。<a href="https://devops-research.com/quickcheck.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">DORA 快速检查</a>有助于您了解自身在软件开发功能和结果方面的表现。另一种分析方法是执行<a href="https://www.google.com/books/edition/Value_Stream_Mapping_How_to_Visualize_Wo/MeFrAAAAQBAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">值流映射</a>或活动记帐等实践。关键在于了解组织在哪些方面是可衡量的。</p>
+
+<p>第三步是为未来日期设定可衡量的目标。这些目标可使用 OKR 等格式来进行描述，该格式以定性目标开始，然后指定可衡量的关键成果（目标状况）。例如，汇丰银行全球银行业务与市场部 CIO <a href="https://www.linkedin.com/pulse/double-half-quarter-lesson-from-book-richard-david-knott/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">为每个团队设定了目标</a>：“将发布频率加倍，将低影响事件减半，将高影响事件降到四分之一。”</p>
+
+<p>最后，在该未来日期到来之前，团队会在管理层的支持下尝试各种方法来实现这些目标。团队采用科学的方法进行实验，即使用 <a href="https://wikipedia.org/wiki/PDCA" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">PDCA 方法</a>（策划-执行-检查-处理），也称为戴明循环。该循环包括以下步骤：</p>
+
+<ul>
+<li>策划：确定预期结果。</li>
+<li>执行：执行实验。</li>
+<li>检查：研究结果。</li>
+<li>处理：决定下一步做什么。</li>
+</ul>
+
+<p>团队应该每天进行实验，以尝试达到目标状况或获得关键成果。在<a href="http://www-personal.umich.edu/%7Emrother/The_Improvement_Kata.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">改进套路</a>中，团队成员每天都应该问自己以下五个问题：</p>
+
+<ol>
+<li>目标状况是什么？</li>
+<li>目前情况如何？</li>
+<li>您认为哪些障碍会阻碍您达到目标状况？您现在正在处理哪个障碍？</li>
+<li>下一步做什么？您期望得到什么结果？</li>
+<li>何时可以评估结果，以了解可以从该步骤中学到什么？</li>
+</ol>
+
+<p>在获得结果并设置新目标后，重复此过程。</p>
+
+<p>由于该过程是在不确定的情况下进行的，因此往往并不清楚如何实现结果。因此，进度通常是非线性的，如下图所示：</p>
+
+<p><img src="/static/architecture/devops/images/devops-culture-transform-non-linear-progress.png" alt="图表显示针对迭代的非线性进度映射绩效；绩效线是尖的，但整体呈上升趋势。"/></p>
+
+<p>资料来源：CC-BY：<a href="https://www.google.com/books/edition/Lean_Enterprise/G_ixBQAAQBAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">《Lean Enterprise: How High Performance Organizations Innovate at Scale》</a><em></em>，Jez Humble、Joanne Molesky 和 Barry O'Reilly 著 (O'Reilly, 2014)。</p>
+
+<p>在计划会议中，参与者会查看上次计划会议中设定的目标状况或关键成果。然后，他们会为下一次迭代设定新的目标。在审核会议中，参与者会查看团队实现迭代目标的情况，并讨论所有障碍及其解决方法。</p>
+
+<p>关于此模式的一些要点如下：</p>
+
+<ul>
+<li>团队必须设置自己的目标状况或 <a href="https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">OKR</a>。如果以自上而下的方式进行设置，团队认为结果与自己没有利害关系，因此不会投入精力去实现它们。相反，团队可能会以“游戏”的态度对待它们，也就是人为操纵结果来达成目标。</li>
+<li>没有达成目标是可以接受的；有些目标是延伸目标，这意味着它们是故意设计的具有挑战性的目标。<em></em>团队应达到约 80% 的目标。从文化转型入手时，通常无法实现任何指定的目标<em></em>。如果发生这种情况，团队需要为下一次迭代设定一个目标，并尽一切努力来实现它。</li>
+<li>随着团队的目标和当前状况变化，并且随着他们在努力实现目标的过程中不断学习，许多目标和衡量指标会随迭代而变化。不要花太多的时间尝试设置理想的目标：专注于执行过程，以便您可以开始学习。</li>
+<li>对于团队来说，拥有必要的自主权、容量、资源以及管理和<a href="/architecture/devops/devops-culture-transformational-leadership" track-type="solution" track-name="internalLink" track-metadata-position="body">领导支持</a>以进行改进非常重要。团队不应让普通的交付工作挤掉改进工作，因为改进工作有助于解决导致产品和服务交付缓慢的低效问题。</li>
+</ul>
+
+<h3 id="build_community_structures_to_spread_knowledge" data-text="构建社区结构以传播知识">构建社区结构以传播知识</h3>
+
+<p>在团队发现更好的工作方法后，下一个任务就是在整个组织中传播经验教训。为此，可以采用多种方法。在 <a href="https://cloud.google.com/devops/state-of-devops" track-type="article" track-name="internalLink" track-metadata-position="body">2019 年 DevOps 现状报告</a>中，研究人员要求受访者分享他们的团队和组织如何通过以下一种或多种方式传播 DevOps 和 Agile 方法（如需详细说明，请参阅 2019 年 DevOps 现状报告的附录 B：</p>
+
+<ul>
+<li>培训中心（有时称为<em>道场</em>）</li>
+<li>卓越中心 (CoE)</li>
+<li>概念验证 (PoC)，但停滞</li>
+<li>概念验证作为模板</li>
+<li>概念验证作为种子</li>
+<li>实践社区</li>
+<li>大爆炸</li>
+<li>自下而上或基层</li>
+<li>混搭</li>
+</ul>
+
+<p>分析表明，高绩效者喜欢在组织的低层和高层都创建社区结构的策略，可能会让社区结构在面临重组和产品变更时更具可持续性和弹性。所用的前两个策略是实践和基层，之后是概念验证作为模板（在组织的其他地方再现概念验证的模式）和概念验证作为种子。有关<a href="https://www.youtube.com/watch?v=S4-huVFeQXg" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">实践社区</a>工作方式的示例，请<a href="https://martinfowler.com/articles/testing-culture.html#google" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">阅读一群志愿者如何推动 Google 的全面单元测试文化</a>。</p>
+
+<p>低绩效者通常更倾向于培训中心和卓越中心：会产生更多孤岛和隔离专业知识的策略。他们还会尝试概念验证，但这些通常停滞不前，并没有获得成功。为什么这些策略可能无法有效实现有效变更？</p>
+
+<p>通过将专业知识集中在一个组中，卓越中心会产生一些问题。首先，CoE 现已成为该组织相关专业知识的瓶颈，且无法随着该组织的专业知识需求增加而扩展。其次，它会在组织内建立排他的“专家”团队，与能够继续学习和共同成长的包容同级组形成对比。这种排他性可能会腐蚀健康的组织文化。最后，专家被排除在工作之外。他们能够提出建议或制定通用的“最佳实践”，但从一般学习到实现实际工作的过程流给学习者来完成。例如，专家会打造一个有关如何容器化应用的研讨会，但它们很少或从未实际容器化应用。理论和实操实践之间的脱钩会最终将掣肘其专业知识。</p>
+
+<p>虽然一些培训中心会取得成功，但他们需要专用资源和计划来执行原始计划和持续学习。许多公司已经投入大量资源来保证其培训计划有效：它们拥有整栋建筑，专门打造单独的创意环境，员工专职负责创建培训材料和评估进度。然后，您需要其他资源来确保学习过程在整个组织内持续传播。组织必须为参加培训中心的团队提供支持，帮助确保他们在日常工作环境中继续使用技能和习惯，而未恢复使用旧的工作模式。如果这些资源未到位，组织就可能会面临浪费所有投资的风险。团队不再需要前往某个中心学习新技术和流程，以传播到组织的其余部门，将新习惯留在中心，从而创建另一个孤岛，尽管是临时孤岛。另外还有与 CoE 相似的限制：如果只有培训中心员工（或其他超然的“专家”）打造研讨会和创建培训材料，而他们从不从事实际工作，将会怎样？</p>
+
+<p>通常会有混搭报告（有 40% 的 2019 年问卷调查受访者使用此策略），但他们对任何特定投资都缺乏足够的资金和资源。如果没有制定指导技术转型的策略，组织通常会犯下两边下注的错误，进而遇到<em>方案难产</em>的情况：确定太多领域的方法，最终会导致重要工作资源不足，最终将全部失败。相反，最好选择一些方案并持续投入资源，以确保成功（时间、金钱、高管和拥护从业者支持）。与混搭相反，极少数人报告使用大爆炸策略，但在低绩效者中却最常见。</p>
+
+<p>进一步分析确定了高绩效者使用的四种模式：</p>
+
+<ul>
+<li><strong>社区构建者</strong>：此组重点关注实践社区、基层和概念验证（作为模板和作为种子，如前所述）。46% 的时间是这种情况。</li>
+<li><strong>大学</strong>：此组重点关注教育和培训，主要工作在于卓越中心、实践社区和培训中心。仅在 9% 的时间观察到这种模式，表明虽然此策略可以成功，但并不常见，且需要大量投资和规划，才能确保在整个组织传播经验教训。</li>
+<li><strong>关注基层者</strong>：此组重点关注基层工作和实践社区。这似乎是最令人放心的组，在 23% 的案例中出现。</li>
+<li><strong>实验者</strong>：实验者出现在 22% 的案例中。此组在所有策略中都具有较高的活动水平，但大爆炸和道场除外，即关注社区和创建的所有活动。他们还包括 PoC 高停滞水平。他们能够利用这一活动并保持高绩效者，表明他们使用此策略快速实验并测试想法。</li>
+</ul>
+
+<h2 id="principles_of_effective_organizational_change_management" data-text="有效的组织变更管理原则">有效的组织变更管理原则</h2>
+
+<p>所有组织都很复杂，每个组织都有不同的目标、不同的起点以及各自的挑战应对方式。在一个组织中有效的方法在另一个组织中可能不会有相同的结果。但是，您的组织可以遵循一些通用原则来提高成功率。</p>
+
+<h3 id="improvement_work_is_never_done" data-text="不断改进">不断改进</h3>
+
+<p>高绩效的组织从不会满足于自己的绩效，而是始终努力提高自己的工作水平。改进工作是持续进行的，并融入到团队的日常工作中。这些组织中的人都知道，墨守成规和作出改变有同样的风险，他们不会以“这是我们一贯的做法”作为抵制改变的理由。但是，这并不意味着采取无计划的改变方法。为了实现可衡量的团队或组织目标，应以科学的方式执行变更管理。</p>
+
+<h3 id="leaders_and_teams_agree_on_and_communicate_measurable_outcomes_and_teams_determine_how_to_achieve_them" data-text="领导者和团队会就可衡量的结果达成一致并加以传达，团队决定这些结果的实现方式">领导者和团队会就可衡量的结果达成一致并加以传达，团队决定这些结果的实现方式</h3>
+
+<p>组织中的每个人都必须知道他们正在努力实现的可衡量的业务和组织结果，这一点至关重要。这些结果在组织级别上应该很简短（最多几句话），并且与组织的目标和使命明显相符。在单个业务部门级别，结果的描述篇幅应在一页以内。虽然领导者拥有最终权力，但组织结果应由领导者和团队共同决定。在组织的较低级别，应更详细地陈述目标，并缩短目标期限。</p>
+
+<p>但是，应该由团队决定如何实现这些结果，原因如下：</p>
+
+<ul>
+<li>在不确定的情况下，仅靠计划无法确定最佳的行动方案。这并不意味着某种程度的计划不重要。但团队应该准备好根据他们在尝试执行计划时发现的情况来更改甚至重写计划。</li>
+<li>当人们被告知该做什么以及如何做时，他们就失去了自主权和利用自己聪明才智的机会。这不仅会产生更糟糕的结果，还会导致员工对工作不上心。</li>
+<li>解决问题对于帮助员工培养新技能和能力至关重要。组织应该让团队解决问题，而不是执行任务。</li>
+</ul>
+
+<h3 id="large-scale_change_is_achieved_iteratively_and_incrementally" data-text="大规模的变化是以迭代方式逐步实现的">大规模的变化是以迭代方式逐步实现的</h3>
+
+<p>年度预算周期往往会促使组织采用基于项目的模式，在这种模式下，各类工作都与费用高昂、需要很长时间才能完成的项目关联。除了少数例外情况，最好将工作细分为较小、可以逐步交付的部分。
+<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">小批量工作方式</a>可以带来很多好处。最重要的是，它可以让组织根据他们发现的情况来纠正行动方向。这样可以避免浪费时间和金钱去做那些无法带来预期收益的工作。</p>
+
+<p>从<a href="https://itrevolution.com/book/project-to-product/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">项目范式转变为产品范式</a>是一个长期趋势，大多数行业需要多年的时间才能实现，但很明显，这就是未来。即便是美国联邦政府也已成功地<a href="https://18f.gsa.gov/2019/04/09/why-we-love-modular-contracting/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">尝试采用模块化合同</a>，以寻求一种更具迭代性的增量方法来交付大型工作。</p>
+
+<p>交付项目过程中出现的问题也会在转型过程中出现。
+组织应该找到实现快速成功的方法，分享经验并帮助其他团队实验这些新想法。</p>
+
+<h2 id="common_pitfalls_in_transforming_culture" data-text="转变文化时易犯的错误">转变文化时易犯的错误</h2>
+
+<p>领导者在尝试对组织进行大规模改变时经常会犯以下错误。</p>
+
+<ul>
+<li><p><strong>将转型视为一次性项目</strong>。在高绩效的组织中，改进是一个持续的过程，也是每个人日常工作的一部分。但是，许多转型计划被视为大规模的一次性活动，在这些活动中，所有人都应迅速改变工作方式，然后继续照常开展业务。团队没有足够的能力、资源或权力来改进他们的工作方式，随着团队的流程、技能和能力越来越不能适应工作的发展，他们的绩效也会逐渐下降。您应该将技术转型视为业务中一个重要的价值交付部分，一个您会不断对其进行投入的部分。毕竟，您打算停止对客户获取或客户支持的投入吗？</p></li>
+<li><p><strong>将转型视为自上向下的工作</strong>。在此模型中，组织汇报关系会改变，团队会发生变动或重组，新流程会实施。通常，受影响的人几乎无法控制这些变化，也没有机会提出意见。这可能会导致压力和工作效率降低，因为人们在学习新的工作方式时，往往还在履行现有承诺。如果加上转型计划中频繁出现的沟通不畅，则自上而下的方法可能会导致员工不满和对工作不上心。计划和执行自上而下转型的团队，通常也不注重收集关于其工作效果的反馈以做出相应的改变，计划会以不考虑后果的方式执行。</p></li>
+<li><p><strong>未能就预期结果达成一致并加以传达</strong>。
+有时，转型会在定义不明确的目标或定性（而非定量）目标的情况下执行，如“更快上市”或“更低的成本”。有时，目标是确定的，但无法实现，或者目标使组织的一个部分与另一个部分产生冲突。在这种情况下，我们无法确定改进工作是否达到了预期效果。如果这种失败是在使用自上而下的方法时出现的，则很难尝试其他可能更快或更便宜的方法。当执行此计划时，结果通常是徒劳的，并且无法确定目标是否实现或计划是否成功。在许多情况下，没有对失败进行严格的分析，当作学习的机会，而是加以忽略，新的大规模改变计划开始启动，或者整个方法受到质疑。</p></li>
+</ul>
+
+<p>如果将转型视为一个项目，并且将其视为一个自上而下的计划，这往往会产生如下图所示的模式。
+绩效逐渐下降。在转型计划开始时，它在改进之前会变得更糟。不过，随后又转变为正常业务状态。在此期间，冷嘲热讽和对工作不上心的情况在整个组织中会不断增加。</p>
+
+<p><img src="/static/architecture/devops/images/devops-culture-transform-performance-against-time.png" alt="绩效随时间变化的图表，显示在每个改变计划期间绩效上升，但随后下降，总体保持大致不变。"/></p>
+
+<p>资料来源：CC-BY：<a href="https://www.google.com/books/edition/Lean_Enterprise/G_ixBQAAQBAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">《Lean Enterprise: How High Performance Organizations Innovate at Scale》</a><em></em>，Jez Humble、Joanne Molesky 和 Barry O'Reilly 著 (O'Reilly, 2014)。</p>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

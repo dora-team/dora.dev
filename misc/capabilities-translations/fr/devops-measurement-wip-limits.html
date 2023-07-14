@@ -1,0 +1,89 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Mesure du DevOps : limites de travail en cours</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+<aside class="note"><strong>Remarque</strong> : <span>Le principe des <em>limites de travail en cours</em> figure parmi un ensemble de capacités permettant d'optimiser les performances organisationnelles et de livraison de logiciels. Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche de DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les fonctionnalités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>Lorsque leur charge de travail augmente et que le personnel à disposition est limité, les gestionnaires débutants ont tendance à attribuer plusieurs tâches à chaque personne dans l'espoir d'augmenter le rendement.
+Résultat : l'exécution des tâches prend plus de temps et l'équipe s'épuise.</p>
+
+<p>Dans de tels cas, la démarche suivante est recommandée :</p>
+
+<ul>
+<li>Définir les priorités des tâches</li>
+<li>Limiter la charge de travail de l'équipe</li>
+<li>Se concentrer sur un nombre réduit de tâches à priorité élevée</li>
+</ul>
+
+<p>Le secteur manufacturier applique depuis longtemps des limites à la quantité de travail en cours. Les usines n'entreposent pas de grandes quantités de stock. Lorsqu'un client commande un produit, les pièces sont fabriquées en interne, à la demande ou sont récupérées auprès des fournisseurs en fonction des besoins, puis l'entreprise assemble le produit en appliquant la méthode "juste-à-temps" (JAT). Si vous suivez correctement cette démarche, vous pouvez réduire les délais de livraison, améliorer la qualité, et limiter les coûts et les pertes.</p>
+
+<h2 id="how_to_implement_work_in_process_limits" data-text="Limiter les travaux en cours">Limiter les travaux en cours</h2>
+
+<p><strong>Utiliser un storyboard.</strong> Dans le domaine de la technologie, il n'existe pas d'inventaire visible. Il n'y a pas de rayon sur lequel sont entreposées des piles de tâches à effectuer ni de chaîne de production permettant de se représenter la progression du travail. Une manière simple de suivre l'inventaire consiste à écrire les tâches à effectuer par l'équipe sur des fiches, puis de les coller sur un tableau. Dans le contexte de la méthodologie Agile, cela s'appelle créer un <em>storyboard</em>.</p>
+
+<p>L'exemple de storyboard suivant couvre plusieurs fonctions (analyse, développement, test, opérations) et illustre toutes les tâches à effectuer pour un seul produit.</p>
+
+<p><img src="/static/architecture/devops/wip-1.png" alt="image"/></p>
+
+<p><em>(Source : Jeu de société "Kanban for Ops", Dominica DeGrandis, 2013).</em></p>
+
+<p>Une pratique courante consiste à marquer d'un point les fiches du storyboard sur lesquelles on a travaillé dans la journée. Cette méthode permet à l'équipe d'identifier les tâches dont la progression est bloquée ou celles qui demandent plus de temps que prévu.</p>
+
+<p><strong>Définir des limites.</strong> Pour chaque colonne du tableau, spécifiez la limite de travaux en cours (TEC) ou le nombre maximum de fiches pouvant intégrer cette colonne à un moment donné. Une fois la limite TEC atteinte, il est impossible d'ajouter des fiches dans la colonne. Pour pouvoir y intégrer la fiche à la priorité la plus élevée de la colonne précédente, l'équipe doit attendre qu'une fiche soit transférée vers la colonne suivante.</p>
+
+<p>La création d'un tableau Kanban n'est possible qu'en imposant des limites TEC et en suivant ce processus par extraction.</p>
+
+<p><strong>Déterminer les limites TEC en fonction des capacités de l'équipe.</strong> Par exemple, si votre équipe est constituée de quatre binômes de développeurs, limitez à quatre le nombre de fiches pouvant intégrer la colonne "en développement".</p>
+
+<p><strong>Respecter ces limites.</strong> Les limites TEC peuvent entraîner des temps d'inactivité au sein des équipes, car elles doivent attendre que les autres tâches soient terminées avant de pouvoir poursuivre leur travail. Dans de tels cas, évitez d'augmenter les limites TEC.
+Veillez plutôt à optimiser vos processus afin d'identifier les facteurs à l'origine de ces délais. Par exemple, lorsque vous attendez qu'un environnement soit prêt pour tester votre travail, vous pouvez proposer votre aide à l'équipe chargée de préparer les environnements en vue d'optimiser ou de simplifier ses processus.</p>
+
+<h2 id="common_pitfalls_with_work_in_process_limits" data-text="Erreurs les plus courantes liées aux limites de travaux en cours">Erreurs les plus courantes liées aux limites de travaux en cours</h2>
+
+<p>Les entreprises qui mettent en place des limites TEC sont souvent susceptibles de commettre les erreurs suivantes :</p>
+
+<ul>
+<li><strong>Faire abstraction du travail dit "invisible".</strong> Il est important de visualiser la chaîne de valeur dans son intégralité (du concept au client), plutôt que de se limiter aux tâches qui incombent à l'équipe. Sans cette vision globale, il est impossible d'identifier les goulots d'étranglement. Vous pouvez ainsi vous retrouver à devoir résoudre des problèmes qui n'affectent pas directement le flux de travail. (Ces problèmes sont également appelés "optima locaux".)</li>
+<li><strong>Définir des limites TEC beaucoup trop élevées.</strong> Veillez à ne pas définir de limites TEC trop élevées. Si les membres de votre équipe partagent leur temps entre plusieurs tâches ou projets, cela signifie probablement que vos limites TEC sont trop hautes.</li>
+<li><strong>Assouplir les limites TEC.</strong> Évitez d'assouplir vos limites TEC lorsque certains membres de l'équipe sont inactifs. Encouragez plutôt ces membres à apporter leur aide dans d'autres secteurs de la chaîne de valeur, en se penchant sur les problèmes à l'origine d'autres contraintes.</li>
+<li><strong>Se reposer sur ses lauriers.</strong> Si vos limites TEC sont faciles à respecter, réduisez-les. Les limites TEC ont pour but de révéler les problèmes au sein du système afin d'y remédier. Veillez également à ce que votre écran de visualisation ne comporte pas trop de colonnes. Essayez plutôt de simplifier le processus de livraison et de réduire les transferts. Le travail d'amélioration du processus est indispensable à l'augmentation du flux de travail.</li>
+</ul>
+
+<p>Les études DORA (DevOps Research &amp; Assessment) révèlent que les limites TEC contribuent à améliorer les performances de livraison des logiciels, en particulier lorsque celles-ci sont combinées à l'utilisation de <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">supports visuels</a> et de <a href="/architecture/devops/devops-measurement-monitoring-systems" track-type="solution" track-name="internalLink" track-metadata-position="body">boucles de rétroaction issues de la surveillance</a>.</p>
+
+<h2 id="ways_to_improve_work_in_process_limits" data-text="Améliorer les limites de travaux en cours">Améliorer les limites de travaux en cours</h2>
+
+<ul>
+<li><strong>Rendre votre travail visible.</strong> Essayez de mettre en avant l'intégralité de votre travail, en le rendant visible aux yeux des différentes équipes et des parties prenantes. (Consultez la section sur les <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">supports visuels</a> pour plus de détails).</li>
+<li><strong>Définir des limites TEC qui correspondent aux capacités de l'équipe.</strong><ul><li>Tenez compte des activités telles que l'assistance à la production, des horaires de réunion, ainsi que des contraintes techniques.</li>
+<li>Dans chaque phase du processus, évitez de définir davantage de limites TEC que vous ne disposez de personnel pour effectuer une tâche donnée.</li>
+<li>Évitez de demander aux membres de l'équipe de partager leur temps de travail entre plusieurs tâches différentes.</li>
+<li>Lorsqu'une tâche spécifique est terminée, déplacez la fiche correspondante vers la colonne suivante, puis remplacez-la par la fiche à la priorité la plus élevée en attente dans la file.</li>
+</ul></li>
+<li><strong>Organiser une réunion hebdomadaire avec les parties prenantes pour définir les tâches prioritaires.</strong> Faites comprendre aux parties prenantes que leur présence est indispensable à la réalisation des tâches.</li>
+<li><strong>Viser l'augmentation du flux de travail.</strong> Mesurez le délai de livraison du travail dans le système. Notez les dates de début et de fin de travail sur une fiche. À l'aide de ces informations, vous pouvez créer un histogramme sur la fréquence d'exécution, illustrant le nombre de jours nécessaire à la réalisation d'une tâche dans le système. Ces données vous permettront de calculer le délai de livraison moyen, ainsi que la variabilité, avec pour objectif d'atteindre une variabilité faible. Une variabilité élevée indique que vous ne définissez pas vos projets de la manière adéquate ou que vous êtes confronté à des contraintes importantes ne relevant pas de votre équipe. Une variabilité élevée signifie également que vos estimations et vos prédictions sur les futurs travaux ne seront pas aussi fiables.</li>
+<li><strong>Optimiser les processus de travail.</strong> Réduisez les transferts, simplifiez et automatisez les tâches, et réfléchissez à la mise en place d'une collaboration plus efficace. Une fois que vous avez éliminé certains obstacles et que le processus de travail semble fluide, réduisez vos limites TEC pour mettre au jour de nouveaux défis. Le processus idéal consiste en un flux "d'une seule traite", ce qui implique que le travail s'effectue depuis le concept initial jusqu'au résultat final pour le client, avec un minimum de temps d'attente ou de modifications à apporter. Même si cet idéal semble difficile à atteindre, il doit représenter l'objectif ultime qui vous guidera dans votre quête d'amélioration continue.</li>
+</ul>
+
+<h2 id="ways_to_measure_work_in_process_limits" data-text="Mesurer les limites de travaux en cours">Mesurer les limites de travaux en cours</h2>
+
+<p>Les limites TEC sont des variables que vous imposez. Elles sont donc difficilement mesurables. Toutefois, il est important de toujours chercher à s'améliorer. Dans le cadre de vos examens rétrospectifs habituels, posez-vous les questions suivantes :</p>
+
+<ul>
+<li>Avons-nous connaissance de notre délai de livraison moyen et des données de variabilité pour l'intégralité de notre chaîne de valeur (du concept au client) ?</li>
+<li>Disposons-nous de méthodes permettant d'augmenter le flux de travail, et ainsi réduire le délai de livraison ?</li>
+<li>Nos limites TEC révèlent-elles des obstacles qui empêchent l'augmentation du flux de travail ?</li>
+<li>Prenons-nous des mesures pour éliminer ces obstacles ?</li>
+</ul>
+
+<h2 id="whats_next" data-text="Étape suivante">Étape suivante</h2>
+
+<ul>
+<li>Consultez la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">page DevOps</a> pour obtenir des liens vers d'autres articles et ressources.</li>
+<li>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</li>
+<li>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</li>
+</ul>
+
+</body></html>

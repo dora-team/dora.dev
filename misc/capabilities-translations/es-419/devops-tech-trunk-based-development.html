@@ -1,0 +1,127 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnología de DevOps: Desarrollo basado en troncos</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> El <em>desarrollo basado en troncos</em> forma parte del conjunto de capacidades que mejoran la entrega de software y el rendimiento de la organización.
+Estas funciones se descubrieron mediante el <a href="https://www.devops-research.com/research.html">programa de investigación de DevOps de DORA</a>, una investigación independiente y rigurosa desde el punto de vista académico sobre las prácticas y las funciones que impulsan el alto rendimiento. Para obtener más información, lee nuestros <a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>Existen dos patrones principales para que los equipos de desarrolladores trabajen juntos mediante el control de versiones. Uno es usar <em>ramas de funciones</em>. En este patrón, el desarrollador o el grupo de desarrolladores crea una rama, en general desde el tronco (también conocido como <em>principal</em> o <em>línea principal</em>), y, luego, trabaja de forma aislada en esa rama hasta que se complete la función que compila. Cuando el equipo considera que la función está lista para usarse, vuelve a fusionar la rama de funciones en el tronco.</p>
+
+<p>El segundo patrón se conoce como <em>desarrollo basado en troncos</em>, en el que cada desarrollador divide su propio <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">trabajo en lotes pequeños</a> y combina ese trabajo con el tronco al menos una vez (incluso varias veces) al día. La diferencia clave entre estos enfoques es el permiso. Por lo general, las ramas de funciones involucran a varios desarrolladores y toman días, o incluso semanas, de trabajo. Por el contrario, las ramas en el desarrollo basado en troncos no suelen durar más de unas horas, y muchos desarrolladores combinan los cambios individuales con el tronco de manera frecuente.</p>
+
+<p>En el siguiente diagrama, se muestra un cronograma de desarrollo típico basado en troncos:</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-trunk-based-development-typical-trunk-timeline.svg" alt="Cronogramas de las versiones 1.0 y 1.1, que muestran una corrección de errores de la versión 1.0 combinada con el tronco de la versión 1.1."/></p>
+
+<p>En el desarrollo basado en troncos, los desarrolladores envían el código directamente al tronco. Los cambios realizados en las ramas de versión (instantáneas del código cuando está listo para la actualización) se suelen combinar de nuevo en el tronco (representado por las flechas descendentes) lo antes posible. En este enfoque, hay casos en los que las correcciones de errores se deben seleccionar con cuidado y fusionar con las versiones (esto está representado por la flecha hacia arriba), pero estos casos no son tan frecuentes como el desarrollo de funciones nuevas en el tronco. En los casos en los que las actualizaciones se realizan varias veces al día, las ramas de actualización no son obligatorias, ya que los cambios se pueden enviar directamente al tronco y se pueden implementar desde allí.
+Un beneficio clave del enfoque basado en troncos es que reduce la complejidad de combinar eventos y mantiene el código actualizado, ya que tiene menos líneas de desarrollo y realiza combinaciones pequeñas y frecuentes.</p>
+
+<p>En cambio, en el siguiente diagrama, se muestra un estilo de desarrollo típico que no se basa en troncos:</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-trunk-based-development-typical-non-trunk-timeline.svg" alt="Cronogramas para varias ramas de larga duración, que muestran rutas de combinación complejas y muchos puntos en los que los conflictos de combinaciones pueden ralentizar la actualización del producto."/></p>
+
+<p>En este enfoque, los desarrolladores realizan cambios en las ramas de larga duración. Estos cambios requieren eventos de combinación más grandes y complejos en comparación con el desarrollo basado en troncos. Este enfoque también requiere esfuerzos de estabilización adicionales y períodos de “bloqueo del código” o “congelación del código” para garantizar que el software se mantenga en funcionamiento, ya que las combinaciones grandes suelen generar errores o regresiones. Como resultado, debes probar el código después de la combinación y, a menudo, debes corregir los errores.</p>
+
+<h2 id="how_to_implement_trunk-based_development" data-text="Cómo implementar el desarrollo basado en troncos">Cómo implementar el desarrollo basado en troncos</h2>
+
+<p>El desarrollo basado en troncos es una práctica necesaria para la <a href="/architecture/devops/devops-tech-continuous-integration" track-type="solution" track-name="internalLink" track-metadata-position="body">integración continua</a>.
+La integración continua (CI) es la combinación del desarrollo basado en troncos y el mantenimiento de un conjunto de pruebas automatizadas rápidas que se ejecutan después de cada confirmación en el tronco para garantizar que el sistema siempre funcione.</p>
+
+<p>El objetivo de usar la integración continua es quitar las fases de integración y estabilización largas mediante la integración frecuente de pequeños lotes de código. De esta manera, los desarrolladores se aseguran de comunicar lo que hacen, y la integración se deshace de las combinaciones grandes que pueden generar trabajo sustancial para otros desarrolladores y verificadores.</p>
+
+<p>En el paradigma de la CI, los desarrolladores son responsables de mantener el proceso de compilación <em>verde</em>, es decir, en funcionamiento. Esto significa que si el proceso de CI falla, los desarrolladores deben dejar de hacer lo que están haciendo para solucionar el problema de inmediato o revertir el cambio si no se puede solucionar en unos minutos.</p>
+
+<p>La práctica del desarrollo basado en troncos requiere que los desarrolladores sepan cómo <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">dividir su trabajo en lotes pequeños</a>.
+Este es un cambio significativo para los desarrolladores que no están acostumbrados a trabajar de esta manera.</p>
+
+<p>El análisis de datos de DevOps Research and Assessment (DORA) de <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=31" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2016</a> (PDF) y <a href="https://services.google.com/fh/files/misc/state-of-devops-2017.pdf#page=40" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2017</a> (PDF) muestra que los equipos alcanzan niveles más altos de entrega de software y rendimiento operativo (velocidad de entrega, estabilidad y disponibilidad) si siguen estas prácticas:</p>
+
+<ul>
+<li>Tener tres ramas activas, o menos, en el repositorio de código de la aplicación</li>
+<li>Combinar las ramas con el tronco al menos una vez al día</li>
+<li>No tener congelación de código ni fases de integración</li>
+</ul>
+
+<h2 id="common_pitfalls" data-text="Errores comunes">Errores comunes</h2>
+
+<p>Algunos de los obstáculos comunes para la adopción completa del desarrollo basado en troncos son los siguientes:</p>
+
+<ul>
+<li><p><strong>Un proceso de revisión de código demasiado pesado</strong>. Muchas organizaciones tienen un proceso de revisión de código pesado que requiere varias aprobaciones antes de que los cambios se puedan combinar con el tronco. Cuando la revisión del código es complicada y lleva horas o días, los desarrolladores evitan trabajar en lotes pequeños y, en su lugar, agrupan muchos cambios. Esto, a su vez, genera una situación difícil de controlar en la que los revisores se demoran con las revisiones de código debido a su complejidad.</p>
+
+<p>En consecuencia, las solicitudes de combinación suelen fallar porque los desarrolladores las evitan. Debido a que es difícil calcular el impacto de grandes cambios en un sistema a través de la inspección, es probable que los revisores no reparen en ciertos defectos y no se aprecien los beneficios del desarrollo basado en troncos.</p></li>
+<li><p><strong>Realizar revisiones de código de manera asíncrona</strong>. Si el equipo practica la programación en pareja, el código ya lo revisó una segunda persona. Si se requieren más revisiones, se deben realizar de forma síncrona: cuando el desarrollador esté listo para confirmar el código, alguien más debe revisar el código en ese momento. No deben solicitar una revisión asíncrona, por ejemplo, mediante el envío de una solicitud a una herramienta y, luego, el inicio de una tarea nueva mientras esperan la revisión. Cuanto más demore una combinación, más probable es que se generen conflictos de combinación y problemas relacionados. La implementación de revisiones síncronas requiere el acuerdo del equipo para priorizar la revisión del código de los demás sobre otros trabajos.</p></li>
+<li><p><strong>No ejecutar pruebas automatizadas antes de confirmar el código</strong>. Para garantizar que el tronco se mantenga en funcionamiento, es esencial que las pruebas se ejecuten con los cambios de código antes de la confirmación. Esto se puede hacer en las estaciones de trabajo para desarrolladores, y muchas herramientas también proporcionan una instalación a fin de ejecutar pruebas de forma remota con los cambios locales y, luego, confirmarlos de forma automática cuando se aprueban. Cuando los desarrolladores saben que pueden colocar el código en el tronco sin demasiado problema, el resultado son pequeños cambios de código fáciles de comprender, revisar, probar y poner en producción más rápido.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_trunk-based_development" data-text="Formas de mejorar el desarrollo basado en troncos">Formas de mejorar el desarrollo basado en troncos</h2>
+
+<p>En función del debate anterior, estas son algunas prácticas que puedes implementar para mejorar el desarrollo basado en troncos:</p>
+
+<ul>
+<li><strong>Desarrolla en lotes pequeños</strong>. Uno de los factores más importantes que hacen posible el desarrollo basado en troncos son los equipos que aprenden a <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">desarrollar en lotes pequeños</a>.
+Esto requiere capacitación y asistencia organizativa para el equipo de desarrollo.</li>
+<li><strong>Revisa el código de forma síncrona.</strong> Como se mencionó antes, pasar a la revisión de código síncrona o, al menos, garantizar que los desarrolladores prioricen la revisión de código ayuda a garantizar que los cambios no tengan que esperar horas, o incluso días, para combinarse en el tronco.</li>
+<li><strong>Implementa pruebas automatizadas integrales</strong>. Asegúrate de tener un conjunto completo y significativo de <a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">pruebas de unidades automatizadas</a> y que se ejecuten antes de cada confirmación. Por ejemplo, si usas GitHub, puedes <a href="https://help.github.com/en/articles/about-protected-branches" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">proteger ramas</a> para permitir solo combinaciones de solicitudes de extracción cuando se pasen todas las pruebas. En el instructivo <a href="/build/docs/run-builds-with-github-checks" track-type="solution" track-name="internalLink" track-metadata-position="body">Ejecuta compilaciones con las verificaciones de GitHub</a>, se muestra cómo integrar las <a href="https://developer.github.com/v3/checks/" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">verificaciones de GitHub</a> a <a href="/build" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Build</a>.</li>
+<li><strong>Realiza una compilación rápida</strong>. El proceso de compilación y prueba debería ejecutarse en <a href="https://www.infoq.com/presentations/Crazy-Fast-Build-Times-or-When-10-Seconds-Starts-to-Make-You-Nervous/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">unos minutos</a>.
+Si esto parece difícil de lograr, es probable que haya mejoras que se puedan implementar en la <a href="/architecture/devops/devops-tech-architecture" track-type="solution" track-name="internalLink" track-metadata-position="body">arquitectura</a> del sistema.</li>
+<li><strong>Crea un grupo principal de capacitadores y mentores</strong>. El desarrollo basado en troncos es un cambio importante para muchos desarrolladores, y se puede esperar un poco de resistencia. Muchos desarrolladores no pueden pensar en trabajar de esta manera. Se recomienda buscar desarrolladores que hayan trabajado de esta manera y pedirles que capaciten a otros desarrolladores. También es importante que algunos equipos adopten un estilo de trabajo basado en troncos. Una forma de hacerlo es obtener una cantidad importante de desarrolladores con experiencia en el desarrollo basado en troncos para que al menos un equipo siga las prácticas de este tipo de desarrollo. Luego, puedes hacer que otros equipos adopten este estilo cuando estés seguro de que el equipo que sigue esta práctica tiene el rendimiento esperado.</li>
+</ul>
+
+<h2 id="ways_to_measure_trunk-based_development" data-text="Formas de medir el desarrollo basado en troncos">Formas de medir el desarrollo basado en troncos</h2>
+
+<p>Puedes medir la eficacia del desarrollo basado en troncos si sigues estos pasos.</p>
+
+<table>
+  <colgroup>
+    <col width="30%" />
+    <col width="35%" />
+    <col width="35%" />
+  </colgroup>
+<thead>
+<tr>
+<th>Factor por probar</th>
+<th>Qué se debe medir</th>
+<th>Objetivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ramas activas en el repositorio de código de la aplicación.</td>
+<td>Mide cuántas ramas activas tienes en los sistemas de control de versiones de los repositorios de aplicaciones y haz que este número sea visible para todos los equipos. Luego, realiza un seguimiento del progreso incremental hacia el estado del objetivo.</td>
+<td>Tres o menos ramas activas.</td>
+</tr>
+<tr>
+<td>Períodos de congelación de código.</td>
+<td>Mide cuántas congelaciones de código tiene tu equipo y cuánto duran. Estas mediciones también pueden categorizar cuánto tiempo se invierte en combinar conflictos, en congelaciones de código, en estabilización, etcétera.</td>
+<td>Sin congelaciones de código cuando nadie puede enviar código.</td>
+</tr>
+<tr>
+<td>Frecuencia de combinación de ramas y bifurcaciones hacia el tronco.</td>
+<td>Mide un valor binario (sí/no) para cada rama combinada o mide un porcentaje de ramas y bifurcaciones que se combinan todos los días.</td>
+<td>Se combina al menos una vez al día.</td>
+</tr>
+<tr>
+<td>Verifica el tiempo necesario para aprobar los cambios de código.</td>
+<td>Si realizas una revisión de código de manera asíncrona, mide el tiempo promedio que toma aprobar solicitudes de cambio y presta especial atención a las solicitudes que llevan mucho más que el promedio.</td>
+<td>Encuentra formas de hacer que la revisión de código se ejecute de forma síncrona y se realice como parte del desarrollo.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="Próximos pasos">Próximos pasos</h2>
+
+<ul>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li>Consulta <a href="/build/docs/run-builds-with-github-checks" track-type="solution" track-name="internalLink" track-metadata-position="body">Ejecuta compilaciones con las verificaciones de GitHub</a> para obtener información sobre cómo conectar Google Cloud a GitHub mediante la <a href="https://github.com/marketplace/google-cloud-build" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">app de Cloud Build</a>.</li>
+<li><p>Consulta un artículo de Martin Fowler sobre las <a href="https://martinfowler.com/bliki/FeatureBranch.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">ramas de funciones</a>.</p></li>
+<li><p>Consulta la publicación de Jez Humble sobre <a href="https://continuousdelivery.com/2011/07/on-dvcs-continuous-integration-and-feature-branches/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">DVCS y ramas de funciones</a>.</p></li>
+<li><p>Consulta el <a href="https://trunkbaseddevelopment.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">portal dedicado al desarrollo basado en troncos</a> de Paul Hammant.</p></li>
+<li><p>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</p></li>
+<li><p>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</p></li>
+</ul>
+
+</body></html>

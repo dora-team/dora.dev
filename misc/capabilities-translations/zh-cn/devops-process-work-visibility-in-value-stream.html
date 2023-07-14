@@ -1,0 +1,105 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 流程：价值流中工作的可视性</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：<em></em>“价值流中工作的可视性”是一组推动实现更出色的软件交付表现和组织绩效的能力之一。 这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>“工作的可视性”<em></em>体现的是团队对从业务到客户的整个工作流程的深入了解程度，以及团队是否能清晰了解此流程，包括产品和功能的状态。“工作的可视性”属于代表精简产品管理的更广泛功能组合；这些功能包括<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">小批量工作方式</a>、<a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">团队实验</a>和<a href="/architecture/devops/devops-process-customer-feedback" track-type="solution" track-name="internalLink" track-metadata-position="body">清晰了解客户反馈</a>。这些功能可以预测软件交付性能和组织绩效（从盈利能力、市场份额和工作效率方面衡量）。</p>
+
+<h2 id="how_to_implement_work_visibility" data-text="如何实现工作可视性">如何实现工作可视性</h2>
+
+<p>精通此功能的团队具有以下特征：</p>
+
+<ul>
+<li>团队了解<strong>工作如何从商业创意转变为客户之所需</strong>，包括产品或功能。</li>
+<li>团队可以清晰了解<strong>此工作流程</strong>。</li>
+<li>工作流程（包括其当前状态）<strong>显示在可视化显示设备</strong>或信息中心上。</li>
+<li>整个价值流中产品开发工作<strong>流程的相关信息</strong>可随时使用。</li>
+</ul>
+
+<h3 id="use_value_stream_mapping_to_understand_how_work_flows" data-text="使用价值流映射来了解工作如何流动">使用价值流映射来了解工作如何流动</h3>
+
+<p>了解工作如何在产品或功能开发价值流中的流动，是改进工作流程的一个重要步骤。一种实用的方法是<a href="https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">价值流映射<em></em></a> (VSM)。您可以通过从产品开发价值流的各个部分（业务线、设计、测试、质量保证、运维和支持）收集利益相关方来创建价值流映射。您可以将价值流拆分为 5 到 15 个流程模块。在每个模块中，您要记录所执行的活动以及执行该活动的团队，如下图所示：</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-9-stages.svg" alt="此价值流显示从客户到产品部署的 9 个阶段。"/></p>
+
+<p>资料来源：<a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>《Lean Enterprise》</em></a>(O'Reilly)，Jez Humble、Joanne Molesky 和 Barry O'Reilly 著 (O'Reilly, 2014)</p>
+
+<p>接下来，您将分析价值流中的工作状态，收集信息以确定流程中的障碍因素。具体而言，对于每个流程模块，您要衡量以下关键指标：</p>
+
+<ul>
+<li><strong>提前期</strong>：从流程接受一项工作，到该工作移交给下一个下游流程之间所经历的时间。</li>
+<li><strong>处理时间</strong>：完成一项工作所需的时间，假设执行该工作的人员拥有完成该工作所需的所有信息和资源，而且可以不间断地工作。</li>
+<li><strong>完成率和准确率 (%C/A)</strong>：流程收到来自上游流程且无需返工即可使用的工作的次数所占的百分比。</li>
+</ul>
+
+<p>您应始终记录这些流程的状态，因为它们实际上是在执行练习的当天。请务必确定实际指标，而不是用户希望达成的指标。</p>
+
+<p>下图展示了最终输出的示例：</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-stages-with-notes-and-timeline.svg" alt="价值流阶段，包含有关各个阶段和整个时间安排的说明。"/></p>
+
+<p>资料来源：<a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>《Lean Enterprise》</em></a>(O'Reilly)，Jez Humble、Joanne Molesky 和 Barry O'Reilly 著 (O'Reilly, 2014)。</p>
+
+<p>查找这样的一些流程模块，它们会产生低质量工作，随后又要求大量的下游返工（下游流程模块的低 %C/A 会反映这一点），而且还查找在流程时间方面具有很长提前期的流程。</p>
+
+<p>请务必与利益相关方合作，共同制定未来状态价值流映射，以反映未来某个日期（例如，6 个月至 2 年内）价值流的最佳状态。利益相关方还应同意定期（例如每 6 个月一次）重新进行练习，以查看当前状态并查看进度。</p>
+
+<p>本文档不详细讨论 VSM；如需了解详情，我们建议阅读 Karen Martin 和 Mike Osterling 所著的<a href="https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>《Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation》</em></a>。</p>
+
+<h3 id="visualize_the_current_state_of_work" data-text="直观呈现工作的当前状态">直观呈现工作的当前状态</h3>
+
+<p>VSM 可以描述工作如何从创意转变为客户之所需的整个产品开发价值流。但是，要持续了解此工作流程，您需要一个更具动态性的视图。对于软件开发，您可以使用卡片墙、故事板或如下图所示的看板 (Kanban)。</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-kanban-board.svg" alt="看板。"/></p>
+
+<p>信息来源：“Kanban for Ops”看板游戏，Dominica DeGrandis，2013。</p>
+
+<p>如需了解如何使用此类可视化显示设备以及创建 WIP 限制来管理流程，请参阅关于 <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">WIP 限制</a>和<a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">目视管理</a>的文章。</p>
+
+<p>最后，映射应包含每个团队的责任信息，以及关键指标（如提前期、部署频率和 %C/A）的统计数据。</p>
+
+<h2 id="common_pitfalls_with_work_visibility" data-text="工作可视性的常见误区">工作可视性的常见误区</h2>
+
+<p>实现工作可视性的一些常见障碍因素包括以下各项：</p>
+
+<ul>
+<li><p><strong>高估组织知识的状态</strong>。在任何组织中，没有人能更好地了解整个价值流。如果公司要实施价值流映射练习，则务必将价值流中的人员聚在一起来执行练习。当价值流中的人员发现组织的其他部分实际上<em></em>发生的情况时，往往会吃惊不已。</p></li>
+<li><p><strong>无法映射整个价值流</strong>。从创意（无论是业务线、产品营销部门还是内部客户）一直到 IT 运维以及支持所映射产品或服务的人员，都必须映射完整的价值流。因此而提升的可视性和一致性，以及达成的共识，都非常宝贵。如果无法映射整个价值流，则可能会导致本地优化，错失改进关键领域流程来影响整个组织的机会。</p></li>
+<li><p><strong>专注于难以改进的领域</strong>。改进非瓶颈领域的效率不会对整体提前期产生多大的影响，只会使情况变得更糟。当然，公司应该在各个领域做出改进，但投入了大量精力却没有达成组织级的成果，就没有任何意义。</p></li>
+<li><p><strong>未授权进行变更</strong>。参与工作的人员必须有权进行变更，才能实现未来目标。如果这些人必须尝试说服组织中的其他人，则此项练习成功的可能性不大。</p></li>
+</ul>
+
+<p>此外，请务必查看有关 <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">WIP 限制</a>和<a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">目视管理</a>的文章中的常见障碍因素。其中许多因素也适用于此环境。</p>
+
+<h2 id="ways_to_improve_work_visibility" data-text="改进工作可视性的方法">改进工作可视性的方法</h2>
+
+<ul>
+<li><p><strong>提供用于直观呈现和录制工作流程的工具</strong>。首先，请确保团队拥有<a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">目视管理</a>显示设备，这样就可以通过最靠近团队的价值流部分（包括流程的上游和下游部分）来展示团队的工作及工作流程。记录完成该流程所花费的时间，以及团队因第一次未能正确完成工作而必须返工的频率。这将为您发掘在团队一级做出早期改进的最佳机会。</p></li>
+<li><p><strong>创建价值流映射</strong>。与其他团队合作，开展价值流映射练习以探索从创意到客户成果的工作流，并报告每个流程模块的 VSM 指标（提前期、处理时间、%C/A）。让团队准备未来的价值流映射，并着手实现。</p></li>
+<li><p><strong>共享工件</strong>。确保这些练习中的工件可供组织中的所有人使用，并且至少每年更新一次。</p></li>
+</ul>
+
+<h2 id="ways_to_measure_work_visibility" data-text="衡量工作可视性的方法">衡量工作可视性的方法</h2>
+
+<p>如需确定团队是否能有效地查看价值流中的工作，请提出以下问题：</p>
+
+<ul>
+<li>组织中的任何人是否都可以使用当前或最近的价值流映射？</li>
+<li>组织中的所有人是否都可以使用可视化显示设备，了解他们正在处理的工作以及工作所处的状态？</li>
+<li>团队是否可以获得提前期和 %C/A 等指标的统计信息？</li>
+</ul>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>阅读 Karen Martin 和 Mike Osterling 所著的<a href="https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>《Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation》</em></a>一书。</li>
+<li>阅读 David Anderson 所著的<a href="https://books.google.com/books/about/Kanban.html?id=RJ0VUkfUWZkC" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>《Kanban: Successful Evolutionary Change for Your Technology Business》</em></a>一书。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

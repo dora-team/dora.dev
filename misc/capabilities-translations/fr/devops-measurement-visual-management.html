@@ -1,0 +1,85 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Mesure du DevOps : Fonctionnalités de gestion visuelle</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+<aside class="note"><strong>Remarque</strong><span> : <em>Les fonctionnalités de gestion visuelle</em> font partie d'un ensemble de fonctionnalités qui permettent d'optimiser les performances organisationnelles et de livraison de logiciels. Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche de DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les fonctionnalités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>Pour les équipes qui adoptent des <a href="https://wikipedia.org/wiki/Lean_software_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">pratiques rationnelles de développement</a> (approche "lean"), il est courant d'afficher les informations clés sur leurs processus dans des espaces partagés accessibles à tous. Les tableaux de bord visuels permettent d'acquérir une compréhension commune de la situation de l'équipe en termes d'efficacité opérationnelle. Ils facilitent également l'identification et l'élimination des obstacles qui freinent l'obtention de meilleurs résultats.</p>
+
+<h2 id="how_to_implement_visual_management" data-text="Mettre en œuvre des outils de gestion visuelle">Mettre en œuvre des outils de gestion visuelle</h2>
+
+<p>Dans le domaine de la livraison de logiciels, les types d'affichages et de tableaux de bord couramment utilisés sont nombreux :</p>
+
+<ul>
+<li><strong>Murs d'affichage, storyboards ou tableaux kanban</strong>, physiques ou virtuels, dotés de fiches portant sur des éléments du travail en cours.</li>
+<li><strong>Tableaux de bord et autres supports visuels</strong> : systèmes d'intégration continue équipés d'écrans ou de feux de signalisation indiquant la réussite ou l'échec du build. Pour traiter les problèmes en cours, des supports visuels efficaces sont créés, actualisés puis supprimés par les équipes.</li>
+<li><strong>Graphiques d'avancement burn-up ou burn-down</strong> (diagrammes de flux cumulés, par exemple) affichant l'état cumulé de toutes les tâches en cours. Ils permettent à l’équipe de prévoir le temps nécessaire au traitement des tâches en attente.</li>
+<li><strong>Déploiement d'écrans de pipeline</strong> indiquant la dernière version déployable et les échecs éventuels des étapes du pipeline, telles que les tests de performances ou de validation.</li>
+<li><strong>Écrans affichant la télémétrie de production</strong>, comme le nombre de requêtes reçues, les statistiques de latence, les erreurs cumulées <code translate="no" dir="ltr">404</code> et <code translate="no" dir="ltr">500</code>, ainsi que les pages les plus visitées.</li>
+</ul>
+
+<p>Combinés à l'utilisation de <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">limites WIP</a> et de commentaires de la production pour éclairer les décisions métier, les supports de gestion visuelle permettent d'atteindre des <a href="https://services.google.com/fh/files/misc/state-of-devops-2015.pdf#page=15" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">performances de livraison de haut niveau</a> (PDF).</p>
+
+<h2 id="common_pitfalls_with_visual_management" data-text="Problèmes courants de la gestion visuelle">Problèmes courants de la gestion visuelle</h2>
+
+<p>L'avantage principal des supports de gestion visuelle est d'appeler l'attention de l'équipe sur les informations et les mesures nécessaires à prendre, et leur utilisation au quotidien facilite l'identification et l'élimination des obstacles qui entravent l'obtention de meilleurs résultats. Voici quelques pièges courants à éviter lors de la mise en œuvre d'une gestion visuelle :</p>
+
+<ul>
+<li><strong>Choisir des métriques sans implication de l'équipe</strong>. Il est préférable de présenter visuellement des métriques véritablement pertinentes et utiles pour les équipes. En outre, dans le cadre de la sélection des objectifs, si les équipes ont leur mot à dire sur les métriques affichées sur leurs supports, elles s'impliqueront davantage dans la réalisation de ces objectifs. C'est le cas, par exemple, des équipes qui <a href="/architecture/devops/devops-culture-transform" track-type="solution" track-name="internalLink" track-metadata-position="body">utilisent la méthode OKR</a> (Objectifs et Key Results).</li>
+<li><strong>Créer des supports visuels complexes, difficiles à comprendre ou ne fournissant pas d'informations exploitables</strong>. Il est facile de créer des affichages dotés de niveaux de modification élevés ou plaisants à manipuler. Toutefois, modifier la mise en page et les couleurs d'un tableau de bord personnalisé n'est d'aucune utilité si les métriques présentées ne sont pas pertinentes pour l'équipe ou si la mise en œuvre prend plusieurs mois. Des indicateurs clés ou des graphiques approximatifs tracés sur un tableau blanc et mis à jour quotidiennement seront tout aussi efficaces pour se tenir à jour.</li>
+<li><strong>Supports visuels non évolutifs</strong>. Les outils de gestion visuelle doivent fournir aux équipes des informations permettant de résoudre les problèmes auxquels elles sont confrontées. Copier les écrans des autres équipes n'aide pas à progresser, à moins de travailler dans le même contexte et de partager les mêmes défis et obstacles. À mesure que le contexte d'une équipe évolue, les supports visuels doivent aussi évoluer. Notez également que lorsqu'il s'agit d'aborder les obstacles, les anciennes métriques auparavant pertinentes doivent être supprimées afin que les supports visuels ne présentent que les nouveaux domaines d'importance.</li>
+<li><strong>Absence d'informations sur le problème sous-jacent révélé par l'écran</strong>. Il arrive que les affichages fassent l'objet d'un nettoyage rapide afin de mettre en avant les points actuels à traiter. Or, ces supports doivent servir à piloter les améliorations (corriger les problèmes) et ne pas devenir un objectif en soi par souci de précision.
+Se focaliser sur la gestion seule des métriques entraîne des conséquences imprévues et augmente les contraintes techniques. Si l'affichage indique un problème, les équipes ne doivent pas simplement se préoccuper de le corriger. Elles doivent également s'employer à en identifier l'origine ou la contrainte sous-jacente et à la résoudre, même si cela concerne une autre partie de l'organisation. Les sources d'inefficacité seront toujours présentes, et les corriger plus tôt soulagera l'ensemble des équipes.</li>
+</ul>
+
+<h2 id="ways_to_improve_visual_management" data-text="Moyens d'améliorer la gestion visuelle">Moyens d'améliorer la gestion visuelle</h2>
+
+<p>Les outils de gestion visuelle ont pour objectif de fournir un retour d'information rapide et facile à comprendre, de façon à pouvoir améliorer la qualité du produit. Ces commentaires aident l'équipe à identifier les défauts du produit et l'orientent sur d'éventuels dysfonctionnements de certaines parties du système, ce qui contribue à résoudre le problème. Pour être efficaces, ces outils doivent présenter les caractéristiques suivantes :</p>
+
+<ul>
+<li><strong>Refléter les informations qui intéressent l'équipe et sur lesquelles elles peuvent agir</strong>.
+Les écrans de surveillance de builds ne servent à rien si les équipes ne se préoccupent pas des problèmes qui sont signalés (par exemple, un indicateur d'état en rouge, signifiant une défaillance), et n'agissent pas réellement sur cette information en tentant de corriger l'incident.</li>
+<li><strong>Être compréhensibles</strong>. Lorsqu'un incident nécessite l'attention, il doit être possible de le détecter d'un coup d'œil. Si incident il y <em>a</em>, l'équipe doit savoir comment effectuer un diagnostic approfondi ou corriger le problème.</li>
+<li><strong>Fournir à l'équipe des informations pertinentes pour son travail</strong>. Bien qu'il soit important de collecter autant de données que possible sur le travail de l'équipe, le support ne doit présenter que des données pertinentes par rapport aux objectifs de l'équipe. En cas de surcharge d'informations, en particulier les informations qui ne peuvent pas être traitées, les utilisateurs ignorent les supports visuels de gestion et ces derniers sont donc inutiles. Les données supplémentaires peuvent être consultées et utilisées par l’équipe lorsqu’elle tente de résoudre le problème.</li>
+<li><strong>Être mis à jour au quotidien</strong>. Si les données deviennent obsolètes ou inexactes, les affichages seront ignorés et leur rôle de balise perdra toute utilité lorsque des problèmes importants se produiront. Si les données actuellement présentées sont obsolètes ou inexactes, recherchez-en la cause : les données sont-elles liées ou pas aux objectifs de l'équipe ? Quelles données doivent être affichées pour constituer une source d'informations importante et convaincante pour l'équipe ?</li>
+</ul>
+
+<p>Les équipes doivent éviter de se concentrer sur des aspects visuels qui ne sont pas réellement importants. Par exemple, les supports visuels de gestion ne doivent pas nécessairement être numériques.
+Les murs d'affichage ou les tableaux kanban sont parfois plus facile à manier et à comprendre, en particulier lorsque l'équipe est réunie au même endroit. Ces supports contribuent également à instaurer des rituels d'équipe intéressants, comme se tenir devant le tableau ou le déplacer pour prendre du travail. Un tableau blanc qui affiche des informations clés sur le projet et actualisé quotidiennement par l'équipe est souvent préférable à un système numérique complexe, difficile à mettre à jour ou ne présentant pas d'informations utiles.</p>
+
+<h2 id="ways_to_measure_visual_management" data-text="Moyens d'évaluer la gestion visuelle">Moyens d'évaluer la gestion visuelle</h2>
+
+<p>Comme pour toute initiative d'amélioration, commencez par des objectifs d'équipe mesurables au niveau du système. Découvrez l'état actuel du système de travail.
+Trouvez un moyen d'afficher les informations clés sur l'état existant, ainsi que sur l'état recherché. Veillez à ne présenter ces informations qu'au niveau de précision requis.</p>
+
+<p>Examinez les supports visuels dans le cadre de vos opérations rétrospectives. Posez-vous ces questions :</p>
+
+<ul>
+<li>Les supports vous procurent-ils les informations dont vous avez besoin ?</li>
+<li>Les informations sont-elles à jour ?</li>
+<li>Les personnes agissent-elles sur ces informations ?</li>
+<li>Les informations (et les actions entreprises en réponse) contribuent-elles à une amélioration mesurable en vue d'atteindre un objectif qui concerne l'équipe ?</li>
+<li>Chacun est-il informé des objectifs ?</li>
+<li>En regardant vos supports de gestion visuelle, pouvez-vous voir les métriques de processus clés qui vous intéressent ?</li>
+</ul>
+
+<p>Si la réponse à l'une de ces questions est non, poursuivez votre enquête :</p>
+
+<ul>
+<li>Pouvez-vous modifier les informations ou leur mode d'affichage ?</li>
+<li>Pouvez-vous vous débarrasser complètement de l'affichage ?</li>
+<li>Pouvez-vous créer un nouvel affichage ? Comment se présenterait le prototype ? Quelles sont les informations les plus importantes à inclure et quelle doit être leur précision pour vous aider à résoudre les problèmes et à atteindre vos objectifs ?</li>
+</ul>
+
+<h2 id="whats_next" data-text="Étape suivante">Étapes suivantes</h2>
+
+<ul>
+<li>Pour obtenir des liens vers d'autres articles et ressources, consultez la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">page DevOps</a>.</li>
+<li>Lisez l'ouvrage <a href="https://itrevolution.com/book/making-work-visible/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Making Work Visible</em></a>, de Dominica DeGrandis.</li>
+<li>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</li>
+<li>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</li>
+</ul>
+
+</body></html>

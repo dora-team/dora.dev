@@ -1,0 +1,102 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Proceso de DevOps: trabaja en lotes pequeños</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> <em>Trabajar en lotes pequeños</em> es una capacidad de varias que potencian la entrega de software y el rendimiento organizativo.
+Estas funciones se descubrieron mediante el <a href="https://www.devops-research.com/research.html">programa de investigación de DevOps de DORA</a>, una investigación independiente y rigurosa desde el punto de vista académico sobre las prácticas y las funciones que impulsan el alto rendimiento. Para obtener más información, lee nuestros <a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>Trabajar en lotes pequeños es un principio esencial en cualquier disciplina en la que los ciclos de comentarios sean importantes, o si quieres aprender de tus decisiones con rapidez. Además, te permite probar con rapidez hipótesis sobre si una mejora en particular puede tener el efecto que deseas y, si no, te permite corregir o revisar las suposiciones. Si bien este artículo se aplica a cualquier tipo de cambio que incluya la transformación organizacional y la mejora de los procesos, se centra sobre todo en la entrega de software.</p>
+
+<p>Trabajar en lotes pequeños es una característica de una administración de productos moderada. Trabajar en lotes pequeños permite predecir el rendimiento del software y de la organización, además de que se cuenta con características como la <a href="/architecture/devops/devops-process-work-visibility-in-value-stream" track-type="article" track-name="internalLink" track-metadata-position="body">visibilidad del trabajo en el flujo del valor</a>, la <a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">experimentación en equipo</a> y la <a href="/architecture/devops/devops-process-customer-feedback" track-type="article" track-name="internalLink" track-metadata-position="body">visibilidad de los comentarios de los clientes</a>.</p>
+
+<p>Una de las razones por las que el trabajo se realiza en lotes grandes es <a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">el gran costo fijo de la transferencia de cambios</a>.
+En los enfoques tradicionales por etapas para el desarrollo de software, las transferencias desde el desarrollo hasta la prueba o desde la prueba hasta las operaciones de TI constan de versiones completas: meses de trabajo de equipos compuestos por decenas o cientos de personas. Con este enfoque tradicional, la recopilación de comentarios sobre un cambio puede llevar semanas o meses.</p>
+
+<p>Por el contrario, las prácticas de DevOps, que implican el uso de equipos multifuncionales y enfoques livianos, permiten que el software avance del desarrollo a la producción, a través de pruebas y operaciones, en cuestión de minutos. Sin embargo, este progreso rápido requiere que se trabaje con código en lotes pequeños.</p>
+
+<p>Trabajar en lotes pequeños tiene los siguientes beneficios:</p>
+
+<ul>
+<li>Reduce el tiempo que implica recibir comentarios sobre los cambios, lo que facilita la clasificación y la solución de problemas.</li>
+<li>Aumenta la eficiencia y la motivación.</li>
+<li>Evita que la organización caiga en la falacia del costo irrecuperable.</li>
+</ul>
+
+<p>Puedes aplicar el enfoque de los lotes pequeños a nivel de la característica y del producto.
+A modo de ejemplo, un producto mínimo viable, o MVP, es un prototipo de un producto que cuenta con las características suficientes para permitir el aprendizaje validado sobre el producto y el respectivo modelo de negocio.</p>
+
+<p>La entrega continua se basa en trabajar en lotes pequeños y se intenta obtener todos los cambios en el control de versión lo antes posible. Un objetivo de la entrega continua consiste en cambiar la economía del proceso de entrega de software a fin de que sea funcional para trabajar en lotes pequeños. Con este enfoque, se proporcionan comentarios completos a los equipos con rapidez para que puedan mejorar su trabajo.</p>
+
+<h2 id="how_to_work_in_small_batches" data-text="Cómo trabajar en lotes pequeños">Cómo trabajar en lotes pequeños</h2>
+
+<p>Cuando planifiques características nuevas, intenta dividirlas en unidades de trabajo que se puedan completar de forma independiente y en períodos cortos. Recomendamos que cada característica o lote de trabajo siga los conceptos ágiles del <a href="https://wikipedia.org/wiki/INVEST_(mnemonic)" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">principio INVEST</a>:</p>
+
+<ul>
+<li><strong>Independiente</strong>. Haz que los lotes de trabajo sean lo más independiente posible entre sí para que los equipos puedan trabajar sin respetar un orden y, luego, implementarlos y validarlos separados de otros lotes de trabajo.</li>
+<li><strong>Negociable</strong>. Los lotes de trabajo son iterables y se pueden renegociar a medida que se reciben los comentarios.</li>
+<li><strong>Valioso</strong>. Se pueden usar lotes de trabajo discretos que proporcionan valor a las partes interesadas.</li>
+<li><strong>Estimable</strong>. Existe información suficiente sobre los lotes de trabajo, por lo que puedes estimar su alcance con facilidad.</li>
+<li><strong>Pequeño</strong>. Durante un sprint, deberías poder completar lotes de trabajo en pequeños incrementos de tiempo, lo que puede significar unas horas o un par de días.</li>
+<li><strong>Verificable</strong>. Los lotes de trabajo se pueden probar, supervisar y verificar para asegurarse de que funcionen como los usuarios desean.</li>
+</ul>
+
+<p>Cuando las características tienen el tamaño adecuado, puedes dividir su desarrollo en lotes aún más pequeños. Este proceso puede ser complejo, y desarrollarlo requiere experiencia. Lo ideal es que los desarrolladores comprueben varios cambios pequeños que se pueden actualizar <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">en el tronco al menos una vez al día</a>.</p>
+
+<p>La clave es comenzar el desarrollo en la capa de la API o el servicio, no en la capa de la IU. De esta manera, puedes hacer adiciones a la API que al comienzo no estarán disponibles para los usuarios de la app y verificar esos cambios en el tronco. Puedes iniciar estos cambios en producción sin hacerlos visibles para los usuarios. Este enfoque, llamado <em>lanzamiento oscuro</em>, permite a los desarrolladores registrar el código de los lotes pequeños que se completaron, pero no de las características que aún no se terminaron. Luego, puedes ejecutar <a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">pruebas automatizadas</a> para estos cambios a fin de comprobar que se comportan acorde a lo esperado. De esta manera, los equipos siguen trabajando con rapidez y <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">se desarrollan a partir del tronco</a> y no de las ramas de características de larga duración.</p>
+
+<p>También puedes iniciar cambios en modo de lanzamiento oscuro mediante la <a href="https://martinfowler.com/bliki/FeatureToggle.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">activación o desactivación de características</a>, que es una declaración condicional basada en parámetros de configuración. Por ejemplo, puedes hacer que los elementos de la IU sean visibles o invisibles, o puedes habilitar o inhabilitar la lógica de servicio. La configuración de activación o desactivación de características puede leerse en el tiempo de implementación o en el entorno de ejecución. Puedes usar estos parámetros de configuración para cambiar el comportamiento del código nuevo más abajo en la pila. También puedes usar una técnica similar conocida como <a href="https://continuousdelivery.com/2011/05/make-large-scale-changes-incrementally-with-branch-by-abstraction/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">rama por abstracción</a> para realizar cambios a mayor escala en el sistema sin dejar de desarrollar y actualizar troncos, y sin usar ramas de características de larga duración.</p>
+
+<p>En este enfoque, los lotes de trabajo no se completan hasta que se implementan en producción y el proceso de comentarios comienza a validar los cambios. Los comentarios provienen de muchas fuentes y en muchos formatos, incluidos los usuarios, la supervisión del sistema, el control de calidad y las pruebas automatizadas. Tu objetivo es optimizar la velocidad para reducir el tiempo del ciclo y poner los cambios al alcance de los usuarios. De esta manera, puedes validar la hipótesis lo más rápido posible.</p>
+
+<h2 id="common_pitfalls_with_working_in_small_batches" data-text="Errores comunes cuando se trabaja en lotes pequeños">Errores comunes cuando se trabaja en lotes pequeños</h2>
+
+<p>Cuando desglosas el trabajo en lotes pequeños, te puedes encontrar con los siguientes dos errores:</p>
+
+<ul>
+<li><p><strong>No dividir el trabajo en piezas tan pequeñas como se debe</strong>. Tu primera tarea es desglosar el trabajo de forma congruente. Se recomienda que confirmes el código sin tener en cuenta el estado de la característica y que el desarrollo de las características individuales no demore más que unos días. Cualquier lote de código que requiera más de una semana para completarse y verificarse es demasiado grande. Durante el proceso de desarrollo, es esencial que analices cómo dividir las ideas en incrementos que puedas desarrollar de manera iterativa.</p></li>
+<li><p><strong>Trabajar en lotes pequeños, pero, luego, reorganizarlos antes de enviarlos para que se realicen pruebas o actualizaciones</strong>. Reorganizar el trabajo de esta manera retrasa los comentarios sobre si los cambios tienen defectos y, antes que nada, sobre si los usuarios y la organización coinciden en que los cambios fueron acertados.</p></li>
+</ul>
+
+<h2 id="ways_to_reduce_the_size_of_work_batches" data-text="Formas de reducir el tamaño de los lotes de trabajo">Formas de reducir el tamaño de los lotes de trabajo</h2>
+
+<p>Cuando divides el trabajo en lotes pequeños que pueden completarse en horas, por lo general, puedes <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">probar y, luego, implementar esos lotes en producción en menos de una hora</a> (PDF). La clave es dividir el trabajo en características pequeñas que permitan un desarrollo rápido, en lugar de desarrollar características complejas en ramas y actualizarlas con poca frecuencia.</p>
+
+<p>Para mejorar el desarrollo de los lotes pequeños, verifica el entorno y confirma que se cumplan las siguientes condiciones:</p>
+
+<ul>
+<li>El trabajo se divide de una manera que permite a los equipos realizar actualizaciones de producción con mayor frecuencia.</li>
+<li>Los desarrolladores tienen experiencia en dividir el trabajo en cambios pequeños que se pueden completar en horas, en lugar de días.</li>
+</ul>
+
+<p>Para convertirte en un experto en el desarrollo de lotes pequeños, esfuérzate por cumplir con cada una de estas condiciones en todos tus equipos de desarrollo. Esta práctica es una condición necesaria para la <a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">integración continua</a> y el <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">desarrollo basado en troncos</a>.</p>
+
+<h2 id="ways_to_measure_the_size_of_work_batches" data-text="Formas de medir el tamaño de los lotes de trabajo">Formas de medir el tamaño de los lotes de trabajo</h2>
+
+<p>Cuando comprendas la <a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">integración continua</a> y la <a href="/architecture/devops/devops-measurement-monitoring-systems" track-type="article" track-name="internalLink" track-metadata-position="body">supervisión</a>, podrás describir en términos generales las formas posibles de medir el desarrollo de lotes pequeños en los sistemas y el entorno de desarrollo.</p>
+
+<ul>
+<li><strong>Las características de la aplicación se dividen de una manera que admite actualizaciones frecuentes</strong>. ¿Con qué frecuencia se pueden realizar actualizaciones? ¿En qué difiere esta cadencia de actualización entre los equipos? ¿Los retrasos en la producción están relacionados con características más grandes?</li>
+<li><strong>Las características de la aplicación se dividen de una manera que permite a los desarrolladores completar el trabajo en una semana o menos</strong>. ¿Qué proporción de características puedes completar en una semana o menos? ¿Qué características no puedes completar en una semana o menos? ¿Puedes confirmar y actualizar los cambios antes de que se complete la característica?</li>
+<li><strong>Los MVP se definen y establecen como objetivos de los equipos</strong>. ¿El trabajo se divide en características que permiten el desarrollo rápido y los MVP, en lugar de procesos complejos y largos?</li>
+</ul>
+
+<p>Las medidas dependen de los siguientes factores:</p>
+
+<ul>
+<li>Se conocen los procesos de la organización.</li>
+<li>Se establecen objetivos para reducir el desperdicio.</li>
+<li>Se buscan maneras de reducir la complejidad en el proceso de desarrollo.</li>
+</ul>
+
+<h2 id="whats_next" data-text="Próximos pasos">¿Qué sigue?</h2>
+
+<ul>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</li>
+<li>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</li>
+</ul>
+
+</body></html>

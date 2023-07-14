@@ -1,0 +1,86 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Medida DevOps: Capacidades de administración visual</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> Las <em>capacidades de administración visual</em> son parte de un conjunto de capacidades que ofrecen una entrega de software y un rendimiento organizativo mayores. Estas funciones se descubrieron mediante el <a href="https://www.devops-research.com/research.html">programa de investigación del estado de DevOps de DORA</a>, una investigación independiente y rigurosa desde el punto de vista académico sobre las prácticas y las funciones que impulsan el alto rendimiento. Para obtener más información, lee nuestros <a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>Es una común que los equipos que adoptan <a href="https://wikipedia.org/wiki/Lean_software_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">prácticas de desarrollo de lean</a> muestren información clave sobre sus procesos en áreas de equipo en las que todos puedan verla. Los consejos de administración visual pueden crear una comprensión compartida de dónde está el equipo en términos de su efectividad operativa. También pueden ayudar a identificar y quitar obstáculos en el camino a un mayor rendimiento.</p>
+
+<h2 id="how_to_implement_visual_management" data-text="Cómo implementar la administración visual">Cómo implementar la administración visual</h2>
+
+<p>Hay muchos tipos de paneles y muestras visuales que son comunes en el contexto de la entrega de software:</p>
+
+<ul>
+<li><strong>Tarjetas en paredes, storyboards o tableros Kanban</strong>, físicos o virtuales, con tarjetas de índice que representan elementos de trabajo en progreso.</li>
+<li><strong>Tableros o cualquier otro indicador visual</strong>, como los sistemas de integración continua con monitores o semáforos para mostrar si la compilación está aprobada o no. Los equipos crean, actualizan y, tal vez, descartan las muestras visuales efectivas en respuesta a los problemas que el equipo desea abordar en un momento determinado.</li>
+<li><strong>Diagramas de quemado</strong> (por ejemplo, diagramas de flujo acumulado) que muestran el estado acumulado de todo el trabajo realizado. Esto permite que el equipo proyecte cuánto tiempo llevará completar el trabajo acumulado actual.</li>
+<li><strong>Monitores de canalizaciones de implementación </strong> que muestran cuál es la última compilación implementable y si las etapas de la canalización presentan errores, como pruebas de aceptación o rendimiento.</li>
+<li><strong>Monitores que muestran telemetría de producción</strong>, como la cantidad de solicitudes recibidas, las estadísticas de latencia, los errores <code translate="no" dir="ltr">404</code> y <code translate="no" dir="ltr">500</code> acumulados, y qué páginas son las más populares.</li>
+</ul>
+
+<p>Cuando se combina con el uso de <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">límites en construcción</a> y se usan comentarios de la producción para tomar decisiones empresariales, las muestras de administración visual pueden contribuir a <a href="https://services.google.com/fh/files/misc/state-of-devops-2015.pdf#page=15" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">niveles más altos de rendimiento de entrega</a> (PDF).</p>
+
+<h2 id="common_pitfalls_with_visual_management" data-text="Errores comunes con la administración visual">Errores comunes con la administración visual</h2>
+
+<p>Las características más importantes de las muestras de administración visual son que el equipo se preocupa por la información y actúa en función de ella, y que la pantalla se usa durante el trabajo diario a fin de identificar y quitar obstáculos que impiden un rendimiento mejor. Estos son algunos de los errores comunes cuando se implementa la administración visual:</p>
+
+<ul>
+<li><strong>Seleccionar métricas sin la participación del equipo</strong>. Se usarán con más frecuencia las muestras visuales que muestran métricas muy relevantes y útiles para los equipos. Además, si los equipos pueden participar de las métricas que se muestran en sus muestras visuales cuando participan en la selección de sus objetivos (por ejemplo, algunos equipos <a href="/architecture/devops/devops-culture-transform" track-type="solution" track-name="internalLink" track-metadata-position="body">usan OKR</a>), estarán más motivados a impulsar el progreso hacia esos objetivos</li>
+<li><strong>Crear muestras complejas, difíciles de entender o que no proporcionan información procesable</strong>. Es fácil crear muestras con herramientas que permitan niveles altos de modificación o divertidas. Pero cambiar los diseños y el color en un panel personalizado no es útil si el equipo trabaja con las métricas incorrectas o les lleva varios meses implementarlas. Las métricas clave o los grafos aproximados dibujados en una pizarra y actualizados a diario pueden ser igual de efectivos para mantener informado al equipo.</li>
+<li><strong>Muestras visuales que no evolucionan</strong>. Las herramientas de administración visual deben proporcionar a los equipos información que aborde los problemas que enfrentan en este momento. Copiar las pantallas de otros equipos no ayuda a un equipo, a menos que ambos trabajen en el mismo contexto, con los mismos desafíos y obstáculos. A medida que evoluciona el contexto de un equipo, las muestras visuales también deberían cambiar. También ten en cuenta que, a medida que los equipos abordan los obstáculos, sus muestras visuales pueden cambiar para descartar métricas anteriores (previamente relevantes) y resaltar áreas nuevas de importancia.</li>
+<li><strong>No abordar el problema subyacente que revela la presentación</strong>. A veces, los equipos hacen correcciones rápidas para volver a poner “verde” la presentación. Las muestras deben usarse para impulsar mejoras (solucionar el problema), no convertirse en un objetivo en sí mismas (mantener el tablero en verde).
+Centrarse solo en la administración de la métrica conlleva consecuencias no deseadas y deudas técnicas. Si en la pantalla se sugiere un problema, los equipos no deberían simplemente solucionar el problema inmediato. También deberían trabajar para identificar el problema o la restricción subyacente y resolverlo, incluso si está en otra parte de la organización. Las ineficiencias seguirán apareciendo y arreglarlas antes ayudará a todos los equipos.</li>
+</ul>
+
+<h2 id="ways_to_improve_visual_management" data-text="Formas de mejorar la administración visual">Formas de mejorar la administración visual</h2>
+
+<p>El objetivo de las herramientas de administración visual es proporcionar comentarios rápidos y fáciles de entender para que puedas incorporar calidad al producto. Estos comentarios ayudan al equipo a identificar defectos en el producto y comprender si alguna parte del sistema no funciona de manera efectiva, lo que los ayuda a resolver el problema. Para que sean eficaces, dichos sistemas deben hacer esto:</p>
+
+<ul>
+<li><strong>Reflejar la información que le interesa al equipo y sobre la que trabajarán</strong>.
+Tener supervisiones de compilación no sirve si a los equipos no les importa si la pantalla muestra un problema (por ejemplo, muestra que el estado de compilación es rojo, que significa que está roto) y no harán nada al respecto para solucionar el problema.</li>
+<li><strong>Ser fáciles de entender</strong>. Debería ser posible ver a simple vista desde el otro lado de la habitación si algo requiere atención. Si <em>hay</em> un problema, los equipos deben saber cómo realizar un diagnóstico adicional o solucionarlo.</li>
+<li><strong>Proporcionar al equipo información relevante para su trabajo</strong>. Si bien es importante recopilar tantos datos como sea posible sobre el trabajo del equipo, la pantalla solo debe presentar datos relevantes para los objetivos del equipo. Ante la sobrecarga de información, en especial la información sobre la que no se puede actuar, las personas ignoran las muestras de administración visual; se vuelven solo ruido. El equipo puede acceder a los datos adicionales y utilizarlos cuando buscan solucionar el problema.</li>
+<li><strong>Actualizarse como parte del trabajo diario</strong>. Si el equipo deja que los datos se vuelvan obsoletos o imprecisos, ignorará las muestras visuales y no serán una baliza útil cuando surjan problemas importantes. Si hay datos obsoletos o imprecisos en las muestras, investiga la causa: ¿los datos no están relacionados con los objetivos del equipo? ¿Qué datos harían de la pantalla una fuente de información importante y convincente para el equipo?</li>
+</ul>
+
+<p>Los equipos no deben enfocarse en aspectos no críticos de las muestras visuales. Por ejemplo, no es necesario que las muestras de administración visual sean electrónicas.
+Las tarjetas en paredes físicas o los tableros Kanban pueden ser más fáciles de administrar y comprender, sobre todo si el equipo está en un solo lugar. Estas muestras también pueden ayudar a desarrollar rituales valiosos de equipo, como estar parado físicamente frente a la pizarra para tomar el trabajo y moverlo. Se prefiere una pizarra con información clave del proyecto que el equipo actualiza a diario antes que un sistema electrónico que es difícil de entender y actualizar o que no tiene la información necesaria.</p>
+
+<h2 id="ways_to_measure_visual_management" data-text="Formas de medir la administración visual">Formas de medir la administración visual.</h2>
+
+<p>Al igual que con todos los trabajos de mejora, comienza con los objetivos medibles a nivel del sistema en los que trabaja el equipo. Descubre el estado actual del sistema de trabajo.
+Encuentra una forma de mostrar la información clave del estado existente y del estado que deseas. Asegúrate de que esta información se muestre solo con la precisión requerida.</p>
+
+<p>Revisa las muestras visuales como parte de retrospectivas regulares. Haz estas preguntas:</p>
+
+<ul>
+<li>¿Las muestras te brindan la información que necesitas?</li>
+<li>¿La información está actualizada?</li>
+<li>¿Las personas actúan en función de esta información?</li>
+<li>¿La información (y las acciones que las personas toman en respuesta a ella) contribuyen a una mejora medible hacia un objetivo que le interesa al equipo?</li>
+<li>¿Todos saben cuáles son los objetivos?</li>
+<li>¿Puedes ver las muestras de administración visual y ver las métricas clave del proceso que te interesan?</li>
+</ul>
+
+<p>Si la respuesta a alguna de estas preguntas es no, investiga más a fondo:</p>
+
+<ul>
+<li>¿Puedes cambiar la información o cómo se muestra?</li>
+<li>¿Puedes deshacerte de la muestra por completo?</li>
+<li>¿Puedes crear una muestra nueva? ¿Cómo se vería un prototipo? ¿Cuáles son los datos más importantes que se deben incluir y qué tan precisos deben ser para ayudarte a resolver tus problemas y alcanzar tus objetivos?</li>
+</ul>
+
+<h2 id="whats_next" data-text="Próximos pasos">¿Qué sigue?</h2>
+
+<ul>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li>Lee el libro <a href="https://itrevolution.com/book/making-work-visible/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Making work visible</em></a> (Visibiliza el trabajo) de Dominica DeGrandis.</li>
+<li>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</li>
+<li>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</li>
+</ul>
+
+</body></html>

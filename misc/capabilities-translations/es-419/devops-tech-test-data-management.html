@@ -1,0 +1,81 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnología de DevOps: Administración de datos de prueba</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> La <em>administración de datos de prueba</em> es una de las siguientes: un conjunto de capacidades que impulsa una entrega de software más alta y un rendimiento organizativo. Estas funciones se descubrieron mediante el <a href="https://www.devops-research.com/research.html">programa de investigación de DevOps de DORA</a>, una investigación independiente y rigurosa desde el punto de vista académico sobre las prácticas y las funciones que impulsan el alto rendimiento. Para obtener más información, lee nuestros <a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>Las <a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">pruebas automatizadas</a> son un componente clave de las prácticas modernas de entrega de software. La capacidad de ejecutar un conjunto completo de pruebas de unidades, integraciones y sistemas es esencial para verificar que tu app o servicio se comporten como se espera y que se puedan implementar en producción de forma segura. Para garantizar que tus pruebas validen situaciones realistas, es fundamental que proporciones datos realistas.</p>
+
+<p>Los datos de prueba son importantes porque son necesarios para todo tipo de pruebas de tu conjunto de prueba, incluidas las pruebas manuales y automatizadas. Los datos de prueba de buena calidad te permiten validar recorridos de usuarios comunes o de alto valor, probar casos extremos, reproducir defectos y simular errores.</p>
+
+<p>Sin embargo, es difícil usar y administrar los datos de prueba de manera eficaz. La dependencia excesiva en los datos definidos fuera del alcance de la prueba puede hacer que tus pruebas sean frágiles y que se aumenten los costos de mantenimiento. Las dependencias en las fuentes de datos externas pueden generar retrasos y afectar el rendimiento de las pruebas. Además, copiar datos de producción genera riesgos porque pueden contener información sensible. Para abordar estos desafíos, debes administrar tus datos de prueba con cuidado y de manera estratégica.</p>
+
+<h2 id="how_to_implement_test_data_management" data-text="Cómo implementar la administración de datos de prueba">Cómo implementar la administración de datos de prueba</h2>
+
+<p>El análisis realizado por <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> muestra que los equipos exitosos abordan la administración de datos de prueba con los siguientes principios básicos:</p>
+
+<ul>
+<li>Existen datos de prueba adecuados disponibles para ejecutar paquetes de prueba automatizados completos.</li>
+<li>Los datos de prueba para paquetes de prueba automatizados se pueden adquirir según demanda.</li>
+<li>Los datos de prueba no limitan las pruebas automatizadas que los equipos pueden ejecutar.</li>
+</ul>
+
+<p>Para mejorar los procesos de administración de datos de prueba, esfuérzate por cumplir con cada una de estas condiciones en todos tus equipos de desarrollo. Estas prácticas también pueden contribuir de manera positiva a tus capacidades generales de <a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">integración continua</a> y <a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">automatización de pruebas</a></p>
+
+<h2 id="common_pitfalls_in_test_data_management" data-text="Problemas comunes en la administración de datos de prueba">Problemas comunes en la administración de datos de prueba</h2>
+
+<p>Administrar los datos de prueba puede ser una tarea difícil. Las siguientes dificultades son comunes en la administración de datos de prueba:</p>
+
+<ul>
+<li>Hay una dependencia excesiva en los datos de las pruebas. En particular, las pruebas de unidades no deben depender de datos o estados externos a la prueba.</li>
+<li>Se usa una copia completa de la base de datos de producción, en lugar de identificar partes relevantes o importantes.</li>
+<li>No se enmascaran los datos sensibles ni se generan valores hash con ellos.</li>
+<li>Hay una dependencia en datos que están desactualizados o que ya no son relevantes.</li>
+</ul>
+
+<h2 id="ways_to_improve_test_data_management" data-text="Formas de mejorar la administración de datos de prueba">Formas de mejorar la administración de datos de prueba</h2>
+
+<p>Las siguientes prácticas pueden ayudarte a usar los datos de prueba de manera más eficaz y eficiente:</p>
+
+<ol>
+<li><p><strong>Prioriza las pruebas de unidades</strong>. Las pruebas de unidades deben ser independientes entre sí y de cualquier otra parte del sistema, excepto el código que se está probando. Las pruebas de unidades no deben depender de datos externos. Como se define en la <a href="https://martinfowler.com/articles/practical-test-pyramid.html#TheTestPyramid" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">pirámide de automatización de pruebas</a>, las pruebas de unidades deben conformar la mayoría de las pruebas. Las pruebas de unidades bien escritas que se ejecutan en una base de código bien diseñada son mucho más fáciles de clasificar y más económicas de mantener que las pruebas de nivel superior. Aumentar la cobertura de las pruebas de unidades puede ayudar a minimizar la dependencia en las pruebas de nivel superior que consumen datos externos.</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-test-automation-pyramid.svg" alt="Pirámide de automatización de pruebas"/></p></li>
+<li><p><strong>Minimiza la dependencia en los datos de prueba</strong>. Los datos de prueba requieren un mantenimiento cuidadoso y continuo. A medida que evolucionan las API y las interfaces, debes actualizar los datos de prueba relacionados o volver a crearlos. Este proceso representa un costo que puede tener un impacto negativo en la velocidad del equipo. Por lo tanto, se recomienda minimizar la cantidad de datos de prueba necesarios para ejecutar pruebas automatizadas.</p></li>
+<li><p><strong>Aísla tus datos de prueba</strong>. Ejecuta tus pruebas en entornos bien definidos con entradas controladas y salidas previstas que se puedan comparar con las salidas reales. Asegúrate de que los datos consumidos por una prueba en particular estén asociados de forma explícita a esa prueba y no se vean modificados por otras pruebas o procesos.
+Siempre que sea posible, tus pruebas deben crear el estado necesario como parte de la configuración mediante las API de la aplicación. El aislamiento de los datos de prueba también es un requisito para que las pruebas se ejecuten en paralelo.</p></li>
+<li><p><strong>Minimiza la dependencia en los datos de prueba almacenados en bases de datos</strong>. Mantener los datos de prueba almacenados en bases de datos puede ser muy difícil por las siguientes razones:</p>
+
+<ol>
+<li><strong>Aislamiento de prueba deficiente</strong>. Las bases de datos almacenan datos de forma duradera. Cualquier cambio en los datos persistirá en todas las pruebas, a menos que se restablezca de forma explícita.
+Las entradas de prueba menos confiables hacen que el aislamiento de prueba sea más complicado y pueden evitar la paralelización.</li>
+<li><strong>Impacto en el rendimiento</strong>. La velocidad de ejecución es un requisito clave para las pruebas automatizadas. Interactuar con una base de datos suele ser más lento y más complejo que interactuar con los datos almacenados de manera local. Cuando sea necesario, prioriza las bases de datos en la memoria.</li>
+</ol></li>
+<li><p><strong>Haz que los datos de prueba estén disponibles</strong>. La ejecución de pruebas en una copia de una base de datos de producción completa genera riesgos. Actualizar los datos puede ser difícil y lento. Como resultado, los datos pueden quedar desactualizados.
+Los datos de producción también pueden contener información sensible. En su lugar, identifica las secciones de datos relevantes que requieren las pruebas. Exporta estas secciones con regularidad y haz que estén disponibles para las pruebas.</p></li>
+</ol>
+
+<h2 id="how_to_measure_test_data_management" data-text="Cómo medir la administración de datos de prueba">Cómo medir la administración de datos de prueba</h2>
+
+<p>A medida que evoluciona tu enfoque para probar la administración de datos, es importante medir tu progreso en función de los principios básicos descritos con anterioridad.</p>
+
+<ol>
+<li><strong>Existen datos de prueba adecuados disponibles para ejecutar paquetes de prueba automatizados completos</strong>.
+Para medir esto, puedes realizar un seguimiento del tiempo que los desarrolladores y verificadores dedican a administrar y manipular datos a fin de usarlos en conjuntos de prueba. También puedes capturar esto mediante medidas perceptivas (es decir, encuestas). Puedes preguntar a los equipos si tienen los datos adecuados para realizar su trabajo o si sienten que es una limitación para ellos.</li>
+<li><strong>Los datos de prueba para paquetes de prueba automatizados se pueden adquirir según demanda</strong>. Puedes medir esto como el porcentaje de los conjuntos de datos clave disponibles, con qué frecuencia se accede a ellos y con qué frecuencia se actualizan.</li>
+<li><strong>Los datos de prueba no limitan las pruebas automatizadas que los equipos pueden ejecutar</strong>. Puedes medir esto como la cantidad de pruebas automatizadas que se pueden ejecutar sin la necesidad de adquirir datos de prueba adicionales. También puede capturar esto con medidas perceptivas (es decir, encuestas). Puedes preguntar a los equipos si consideran que los datos de prueba limitan las actividades de prueba automatizadas.</li>
+</ol>
+
+<h2 id="whats_next" data-text="Próximos pasos">¿Qué sigue?</h2>
+
+<ul>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li>Obtén información sobre cómo las pruebas y la CI/CD pueden ayudar a <a href="/blog/products/application-development/release-with-confidence-how-testing-and-cicd-can-keep-bugs-out-of-production" track-type="article" track-name="internalLink" track-metadata-position="body">mantener la producción libre de errores</a>.</li>
+<li>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</li>
+<li>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</li>
+</ul>
+
+</body></html>

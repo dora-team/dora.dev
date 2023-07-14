@@ -1,0 +1,102 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Medida de DevOps: monitoramento de sistemas para basear decisões de negócios</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Observação:</strong><span> o <em>monitoramento de sistemas para informar decisões de negócios</em> é um dos recursos que aumentam a entrega de software e o desempenho organizacional.  Esses recursos foram descobertos pelo
+<a href="https://www.devops-research.com/research.html">programa de pesquisa DORA State of DevOps</a>
+(em inglês), uma investigação independente e academicamente rigorosa sobre as práticas e
+os recursos que impulsionam alto desempenho. Para saber mais, leia nossos
+<a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>Monitoramento é o processo de coleta, análise e uso de informações para
+acompanhar aplicativos e infraestrutura, para guiar decisões de negócios.
+O monitoramento é um recurso importante, porque fornece informações sobre seus sistemas e trabalho. Implementado de maneira adequada, o monitoramento também fornece um feedback rápido para localizar e corrigir problemas rapidamente no início do ciclo de vida do desenvolvimento de software.</p>
+
+<p>O Monitoring também ajuda a transmitir informações sobre sistemas para pessoas em outras áreas do pipeline de desenvolvimento e entrega de software e para outras partes da empresa. O conhecimento adquirido ao longo das operações pode ser integrado às equipes do início do processo, como desenvolvimento e gerenciamento de produtos. Por exemplo, o conhecimento adquirido ao operar um aplicativo altamente escalonável que usa um banco de dados NoSQL como armazenamento de dados pode ser uma informação valiosa para os desenvolvedores criarem um aplicativo semelhante.</p>
+
+<p>Essa transferência de conhecimento permite que as equipes identifiquem rapidamente os aprendizados, independentemente de terem origem em um problema de produção, um erro de implantação ou nos padrões de uso do cliente. Então, é possível compartilhar esses aprendizados em toda a organização para ajudar a aprimorar as pessoas e os sistemas.</p>
+
+<h2 id="how_to_implement_monitoring" data-text="Como implementar o monitoramento">Como implementar o monitoramento</h2>
+
+<p>Os elementos a seguir são fundamentais para que o monitoramento seja eficaz:</p>
+
+<ul>
+<li>Coletar dados das principais áreas da cadeia de valor, incluindo o desempenho e a infraestrutura do aplicativo.</li>
+<li>Usar os dados coletados para tomar decisões de negócios.</li>
+</ul>
+
+<h3 id="collecting_data" data-text="Como coletar dados">Coleta de dados</h3>
+
+<p>Para coletar dados com mais eficiência, implemente soluções de monitoramento, como serviços internos ou gerenciados, que dão visibilidade ao trabalho de desenvolvimento, teste, controle de qualidade e operações de TI. Escolha métricas adequadas para a função e a empresa.</p>
+
+<h3 id="using_data_to_make_business_decisions" data-text="Como usar dados para tomar decisões de negócios">Como usar dados para tomar decisões de negócios</h3>
+
+<p>Ao transformar e visualizar os dados coletados, você os torna acessíveis a diferentes públicos-alvo e os ajuda a tomar decisões. Por exemplo, talvez você queira compartilhar os dados operacionais com as equipes do início do processo. Esses dados podem ser integrados em relatórios e briefings conforme adequado, além de serem usados em reuniões para tomar decisões de negócios bem fundamentadas. Nesse caso, <em>conforme adequado</em> significa de maneira relevante, oportuna, precisa e fácil de entender.</p>
+
+<p>Nessas reuniões, informe também o contexto, para ajudar as pessoas que não estão familiarizadas com os dados a entender como eles estão relacionados com a discussão e como podem fundamentar as decisões a serem tomadas. Por exemplo, talvez você queira saber como responder às seguintes perguntas:</p>
+
+<ul>
+<li>Esses valores são relativamente altos ou baixos?</li>
+<li>Eles são esperados?</li>
+<li>Você prevê mudanças?</li>
+<li>Como esses dados são diferentes dos relatórios históricos?</li>
+<li>Sua tecnologia ou infraestrutura afetou os números de maneiras interessantes ou não óbvias?</li>
+</ul>
+
+<h2 id="common_pitfalls_in_monitoring" data-text="Dificuldades comuns no monitoramento">Dificuldades comuns no monitoramento</h2>
+
+<p>As armadilhas a seguir são comuns ao monitorar sistemas:</p>
+
+<ul>
+<li><p><strong>Monitoramento reativo</strong>. Por exemplo, só receber alertas quando o sistema estiver inoperante, mas não usar dados de monitoramento para ajudar a alertar quando o sistema estiver próximos de limites críticos.</p></li>
+<li><p><strong>Monitoramento de um escopo muito pequeno</strong>. Por exemplo, o monitoramento de uma ou duas áreas, em vez do desenvolvimento completo do software e do pipeline de entrega. Essa armadilha destaca as métricas, concentrando-se apenas nas áreas medidas, que podem não ser as melhores áreas a serem monitoradas.</p></li>
+<li><p><strong>Foco em otimizações locais</strong>. Por exemplo, concentrar-se na redução do tempo de resposta para as necessidades de armazenamento de um serviço sem avaliar se a infraestrutura mais ampla também se beneficiaria da mesma melhoria.</p></li>
+<li><p><strong>Monitoramento de tudo</strong>. Ao coletar dados e gerar relatórios sobre todo o sistema, você corre o risco de alertar demais ou de se afogar nos dados. Uma abordagem de monitoramento cuidadosa pode ajudar a chamar a atenção para áreas importantes.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_monitoring" data-text="Formas de melhorar o monitoramento">Formas de melhorar o monitoramento</h2>
+
+<p>Para melhorar a eficácia do monitoramento, recomendamos que você concentre seus esforços em duas grandes áreas:</p>
+
+<ol>
+<li><p><strong>Coleta de dados das principais áreas em toda a cadeia de valores.</strong></p>
+
+<p>Ao analisar os dados coletados e fazer uma análise de lacunas, ajude a verificar se foram coletados os dados certos para sua organização.</p></li>
+<li><p><strong>Usar os dados coletados para tomar decisões de negócios.</strong></p>
+
+<p>Os dados coletados devem gerar valor em toda a organização, e as métricas selecionadas precisam ser significativas para a organização.
+Dados significativos podem ser usados por muitas equipes, do DevOps ao Financeiro.</p>
+
+<p>Também é importante encontrar o meio certa para apresentar as informações de monitoramento. Diferentes usos de informações exigem diferentes maneiras de apresentação. Painéis em tempo real podem ser mais úteis para a equipe de DevOps, enquanto relatórios gerados regularmente podem ser úteis para métricas coletadas ao longo de um período maior.</p>
+
+<p>O mais importante é garantir que os dados estejam disponíveis, compartilhados e sejam usados para guiar as decisões. Se o melhor que pode ser feito é usar uma planilha compartilhada, faça isso. Use painéis mais sofisticados posteriormente. Não deixe que a perfeição seja inimiga da praticidade.</p></li>
+</ol>
+
+<h2 id="ways_to_measure_monitoring" data-text="Formas de avaliar o monitoramento">Formas de avaliar o monitoramento</h2>
+
+<p>O monitoramento eficaz ajuda a melhorar o desempenho no desenvolvimento e na entrega de software. No entanto, pode ser difícil medir a eficácia do monitoramento nos sistemas. Embora seja possível medir automaticamente quantos dados estão sendo coletados dos sistemas e quais sãos os tipos desses dados, é mais difícil saber se ou onde esses dados estão sendo usados.</p>
+
+<p>Para ajudar você a avaliar a eficácia do monitoramento na organização, considere até que ponto as pessoas concordam ou discordam das afirmações a seguir:</p>
+
+<ul>
+<li>Os dados das ferramentas de monitoramento de desempenho de aplicativos são usados para tomar decisões de negócios.</li>
+<li>Os dados das ferramentas de monitoramento de infraestrutura são usados para tomar decisões de negócios.</li>
+</ul>
+
+<h2 id="whats_next" data-text="A seguir">A seguir</h2>
+
+<ul>
+<li>Consulte links para outros artigos e recursos na <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página do DevOps</a>.</li>
+<li>Leia o
+<a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">livro Site Reliability Engineering (SRE)</a>, em inglês.</li>
+<li>Explore nosso
+<a href="https://www.devops-research.com/research.html">programa de pesquisa</a> (em inglês) do DevOps.</li>
+<li>Faça a
+<a href="https://www.devops-research.com/quickcheck.html">verificação rápida de DevOps</a>
+para entender sua posição em relação ao restante do setor.</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,153 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Messung: Monitoring und Beobachtbarkeit</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Monitoring und Beobachtbarkeit</em> gehören zu einer Reihe von Fähigkeiten, die zu einer höheren Softwarebereitstellung und Unternehmensleistung führen. Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">"State of DevOps"-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, akademisch anspruchsvollen Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>Ein gutes Monitoring ist Grundbestandteil leistungsstarker Teams.
+Die <a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Studie</a> <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> zeigt, dass sich eine umfassende Monitoring- und Beobachtbarkeitslösung sowie einige weitere technische Praktiken positiv auf <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">Continuous Delivery</a> auswirken. </p>
+
+<p>Für die DORA-Studie wurden diese Begriffe folgendermaßen definiert:</p>
+
+<p><strong>Monitoring</strong> ist ein Tool oder eine technische Lösung, mit der Teams den Zustand ihrer Systeme beobachten und verstehen können. Das Monitoring beruht auf dem Erfassen vordefinierter Messwerte oder Logs.</p>
+
+<p><strong>Beobachtbarkeit</strong> ist ein Tool oder eine technische Lösung, mit der Teams ihr System aktiv debuggen können. Die Beobachtbarkeit beinhaltet die Analyse von Attributen und Mustern, die nicht im Voraus definiert wurden.</p>
+
+<p>Ihre Teams sollten folgende Voraussetzungen erfüllen, um mit Monitoring und Beobachtbarkeit richtig arbeiten zu können:</p>
+
+<ul>
+<li>Berichterstellung zum Gesamtzustand von Systemen (Funktionieren meine Systeme?
+Stehen in meinen Systemen genügend Ressourcen zur Verfügung?)</li>
+<li>Berichterstellung zum Systemstatus, wie er von Kunden wahrgenommen wird. (Wissen meine Kunden, ob mein System ausgefallen ist und die Nutzererfahrung beeinträchtigt wird?)</li>
+<li>Monitoring für wichtige Geschäfts- und Systemmesswerte.</li>
+<li>Tools, die Ihnen helfen, Ihre Systeme in der Produktionsumgebung zu verstehen und Fehler zu beheben</li>
+<li>Tools, mit denen Sie Informationen zu Dingen finden können, die Sie vorher nicht gekannt haben (d. h. Sie können <em>unbekannte Unbekannte</em> erkennen).</li>
+<li>Zugriff auf Tools und Daten, mit denen Sie Infrastrukturprobleme in Ihrer Produktionsumgebung, einschließlich Interaktionen zwischen Diensten, verfolgen, verstehen und diagnostizieren können.</li>
+</ul>
+
+<h2 id="how_to_implement_monitoring_and_observability" data-text="Monitoring und Beobachtbarkeit implementieren">Monitoring und Beobachtbarkeit implementieren</h2>
+
+<p>Monitoring- und Beobachtbarkeitslösungen wurden für folgende Aufgaben entwickelt:</p>
+
+<ul>
+<li>Wichtige Indikatoren für einen Ausfall oder einen Dienstausfall bereitstellen</li>
+<li>Ausfälle, Dienstausfälle, Programmfehler und nicht autorisierte Aktivitäten erkennen</li>
+<li>Behebung von Ausfällen, Dienstausfällen, Programmfehlern und nicht autorisierten Aktivitäten unterstützen</li>
+<li>Langfristige Trends für Kapazitätsplanung und Geschäftszwecke ermitteln</li>
+<li>Unerwartete Nebenwirkungen von Änderungen oder zusätzlichen Funktionen anzeigen</li>
+</ul>
+
+<p>Wie bei allen DevOps-Faktoren reicht die Installation eines Tools nicht aus, um die Ziele zu erreichen. Die Tools können aber den Aufwand unterstützen oder beeinträchtigen.  Monitoringsysteme sollten nicht auf eine einzelne Person oder ein Team innerhalb einer Organisation beschränkt sein.
+Wenn Sie alle Entwickler mit dem Monitoring vertraut machen, können Sie eine datengesteuerte Entscheidungsfindung aufbauen und die Debug-Fähigkeit des gesamten Systems verbessern, um Ausfälle zu reduzieren.</p>
+
+<p>Für eine effektive Implementierung von Monitoring und Beobachtbarkeit gibt es einige Schlüssel. Zuerst sollte das Monitoring zeigen, wo und aus welchen Gründen ein Fehler vorliegt, bevor zu großer Schaden entsteht. Der wichtigste Messwert bei einem Ausfall oder Dienstausfall ist die Zeit zur Wiederherstellung. Ein Hauptfaktor bei der Zeit zur Wiederherstellung ist die Fähigkeit, schnell zu verstehen, wo der Fehler liegt und wie der Dienst schnellstmöglich wiederhergestellt werden kann (wobei unter Umständen die zugrunde liegenden Probleme nicht sofort behoben werden).</p>
+
+<p>Es gibt zwei allgemeine Möglichkeiten zur Betrachtung eines Systems: das <em>Blackbox</em>-Monitoring, bei der der interne Status und die Mechanismen des Systems nicht bekannt sind, und <em>Whitebox</em>-Monitoring, bei dem diese bekannt sind.</p>
+
+<p>Weitere Informationen finden Sie im Buch <a href="https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Site Reliability Engineering</a> unter "Verteilte Systeme überwachen".</p>
+
+<h3 id="blackbox_monitoring" data-text="Blackbox-Monitoring">Blackbox-Monitoring</h3>
+
+<p>In einem Blackbox- (oder <em>synthetischen</em>) Monitoringsystem wird die Eingabe auf dieselbe Weise an das System gesendet, wie es der Kunde tun könnte. Dies können HTTP-Aufrufe an eine öffentliche API oder RPC-Aufrufe an einen freigegebenen Endpunkt sein. Oder es wird eine vollständige Webseite aufgerufen, die als Teil des Monitoringprozesses gerendert wird.</p>
+
+<p>Blackbox-Monitoring ist eine stichprobenbasierte Methode. Das gleiche System, das für Nutzeranfragen zuständig ist, wird vom Blackbox-System überwacht. Ein Blackbox-System kann auch die Oberfläche des Zielsystems abdecken.  Das kann dazu führen, dass jede externe API-Methode geprüft wird. Sie können auch eine repräsentative Mischung von Anfragen in Betracht ziehen, um das tatsächliche Kundenverhalten besser zu imitieren.
+Sie können beispielsweise 100 Lesevorgänge und nur 1 Schreibvorgang einer bestimmten API ausführen.</p>
+
+<p>Sie können diesen Prozess mit einem <em>Planungssystem</em> steuern, um zu gewährleisten, dass diese Eingaben mit einer ausreichenden Quote erfolgen und so Sicherheit bei der Stichprobenerfassung erzielt wird. Das System sollte außerdem eine <em>Validierungs-Engine</em> enthalten, mit der einfach Antwortcodes geprüft oder die Ausgabe mit regulären Ausdrücken abgeglichen werden. Ebenso kann damit eine dynamische Website in einem monitorlosen Browser gerendert und der DOM-Baum auf bestimmte Elemente durchsucht werden. Nachdem für eine bestimmte Prüfung eine Entscheidung (bestanden/nicht bestanden) getroffen wurde, müssen Sie das Ergebnis und die Metadaten zu Berichterstellungs- und Benachrichtigungszwecken speichern.  Die Untersuchung eines Snapshots zu einem Fehler und dessen Kontext kann für die Diagnose eines Problems äußerst nützlich sein.</p>
+
+<h3 id="whitebox_monitoring" data-text="Whitebox-Monitoring">Whitebox-Monitoring</h3>
+
+<p>Monitoring und Beobachtbarkeit beziehen sich auf Signale, die von der zu prüfenden Arbeitslast an das Monitoringsystem gesendet werden. Dies kann im Allgemeinen in Form der drei häufigsten Komponenten erfolgen: <em>Messwerte</em>, <em>Logs</em> und <em>Traces</em>. Einige Monitoringsysteme erfassen und melden auch <em>Ereignisse</em>, die Nutzerinteraktionen mit einem ganzen System oder Statusänderungen innerhalb des Systems selbst darstellen können.</p>
+
+<p><em>Messwerte</em> sind einfach Messungen, die in einem System erfasst werden und den Status dieses Systems auf messbare Weise darstellen. Diese sind fast immer numerisch und werden normalerweise in Form von Zählern, Verteilungen und Messern angegeben. Es gibt einige Fälle, in denen Stringmesswerte sinnvoll sind. Im Allgemeinen werden aber numerische Messwerte verwendet, da mathematische Berechnungen damit ausgeführt werden müssen, um Statistiken zu bilden und Visualisierungen zu erstellen.</p>
+
+<p><em>Logs</em> können als reine Anfügedateien betrachtet werden, die den Status eines einzelnen Threads für einen einzelnen Zeitpunkt darstellen. Bei diesen Logs kann es sich um einen einzelnen String wie "Nutzer hat Schaltfläche X betätigt" oder um einen strukturierten Logeintrag handeln, der Metadaten wie den Zeitpunkt des Ereignisses, den verarbeitenden Server und weitere Elemente der Umgebung enthält.  Manchmal erzeugt ein System, das keine strukturierten Logs schreiben kann, einen semistrukturierten String wie <code translate="no" dir="ltr">[timestamp] [server] message
+[code]</code>, der nach Bedarf geparst werden kann. Logeinträge werden normalerweise mit einer Clientbibliothek wie log4j, structlog, bunyan, log4net oder Nlog geschrieben.
+Die Logverarbeitung kann eine sehr zuverlässige Methode zur Erstellung von Statistiken sein, die als vertrauenswürdig angesehen werden können, da sie anhand unveränderlicher gespeicherter Logs noch einmal verarbeitet werden können, auch wenn das Logverarbeitungssystem selbst fehlerhaft ist. Darüber hinaus können Logs in Echtzeit verarbeitet werden, um <em>logbasierte Messwerte</em> zu erstellen.</p>
+
+<p><em>Traces</em> bestehen aus <em>Spans</em>, die verwendet werden, um ein Ereignis oder eine Nutzeraktion über ein verteiltes System zu verfolgen. Ein Span kann den Pfad einer Anfrage über einen Server anzeigen, während ein anderer Span parallel ausgeführt werden kann, wobei beide den gleichen übergeordneten Span haben. Diese bilden zusammen einen Trace, der häufig in einem Wasserfalldiagramm ähnlich wie in Profiling-Tools dargestellt wird. Auf diese Weise können Entwickler nachvollziehen, wie viel Zeit in einem System auf mehreren Servern, Warteschlangen und Netzwerk-Hops aufgewendet wird. Ein gängiges Framework hierfür ist <a href="https://opentelemetry.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenTelemetry</a>, das sich aus <a href="https://opencensus.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenCensus</a> und <a href="https://opentracing.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenTracing</a> zusammensetzt.</p>
+
+<p>Messwerte, Logs und Traces können dem Monitoringsystem vom Server, der gemessen wird, oder von einem angrenzenden <em>Agent</em> gemeldet werden, der Dinge aus dem System bestätigen oder ableiten kann.</p>
+
+<h3 id="instrumentation" data-text="Instrumentierung">Instrumentierung</h3>
+
+<p>Wenn Sie ein Überwachungssystem verwenden möchten, muss Ihr System <em>instrumentiert</em> sein. Das heißt, einem System muss Code hinzugefügt werden, damit der interne Status angezeigt werden kann. Wenn ein einfaches Programm beispielsweise einen Pool mit Verbindungen zu einem anderen Dienst enthält, können Sie jederzeit die Größe dieses Pools und die Anzahl der ungenutzten Verbindungen zu einem bestimmten Zeitpunkt verfolgen. Dazu muss ein Entwickler Code in die Verbindungspool-Logik schreiben, um zu verfolgen, wann Verbindungen aufgebaut, unterbrochen, übergeben und zurückgegeben werden. Dies kann jeweils in Form von Logeinträgen oder Ereignissen erfolgen. Sie können aber auch einen Messer für die Größe der Warteschlange erhöhen oder verringern oder einen Zähler jedes Mal erhöhen, wenn eine Verbindung hergestellt oder ein Pool erweitert wird.</p>
+
+<h3 id="correlation" data-text="Ergebnisse in Beziehung setzen">Ergebnisse in Beziehung setzen</h3>
+
+<p>Messwerte können aus der Anwendung und aus den zugrunde liegenden Systemen, z. B. JVM, Gastbetriebssystem, Hypervisor, Knotenbetriebssystem und der Hardware selbst, gesammelt werden. Je weiter Sie in einem Stack nach unten gehen, können die Messwerte, die über Arbeitslasten verteilt sind, vermischt werden. Wenn eine einzelne Maschine beispielsweise mehrere Anwendungen bereitstellt, entspricht die Beobachtung der Laufwerksauslastung möglicherweise nicht direkt dem System, das beobachtet wird. Die Korrelation von Problemen über Anwendungen hinweg in einem gemeinsam genutzten System kann jedoch dabei helfen, einen bedeutsamen Faktor zu ermitteln (z. B. ein langsame Festplatte). Wenn Sie von einer einzelnen Anwendung zu deren zugrunde liegenden Systemmesswerten aufschlüsseln möchten, kann es nützlich sein, alle ähnlich betroffenen Anwendungen aufzurufen.</p>
+
+<p>Wenn Sie ein verteiltes System messen, besteht die Beobachtbarkeit an vielen Stellen und Sie können alle gemeinsam betrachten. Dies können ein Front-End und dessen Datenbank, eine auf dem Gerät eines Kunden ausgeführte mobile App, ein Cloud-Load-Balancer und mehrere Mikrodienste sein. Eine zentrale Voraussetzung in modernen Beobachtbarkeitstools besteht darin, Daten aus all diesen Quellen verbinden zu können.</p>
+
+<h3 id="computation" data-text="Verarbeitung">Verarbeitung</h3>
+
+<p>Nachdem Sie Daten aus verschiedenen Quellen für Ihr System erfasst haben, erzeugen Sie Statistiken und aggregieren Daten für verschiedene Bereiche. Das können Kohorten von Nutzern, Regionen Ihrer Computing-Infrastruktur oder geografische Standorte Ihrer Kunden sein. Die Möglichkeit, diese Statistiken spontan auf der Grundlage von Rohereignissen zu entwickeln, ist sehr vorteilhaft, kann aber sowohl aufgrund der Speicherung als auch der erforderlichen Echtzeitrechenkapazität kostspielig sein.</p>
+
+<p>Bei der Auswahl Ihrer Tools und Planung der Instrumentierung müssen Sie die Kardinalität und Dimensionalität berücksichtigen. Diese beiden Aspekte der Messwerterfassung können Ihre Fähigkeit, die Beobachtbarkeit eines Systems zu skalieren, erheblich beeinflussen.</p>
+
+<p><em>Kardinalität</em> ist ein Maß für eindeutige Werte in einem System. Ein Feld wie <code translate="no" dir="ltr">cpu-utilization</code> benötigt beispielsweise einen Bereich zwischen 0 und 100. Wenn Sie jedoch die eindeutige Kennzeichnung eines Nutzers verfolgen, sind alle unterschiedlich. Falls Sie also 1 Million Nutzer haben, haben Sie eine Kardinalität von 1 Million. Das macht einen großen Unterschied.</p>
+
+<p><em>Dimensionalität</em> ist die Möglichkeit, mehr als einen einzelnen Wert zusammen mit einem Zeitstempel zu erfassen, wie etwa in einer einfachen Zeitachsendatenbank, die ein Monitoringsystem unterstützt. Wenn Sie einfach den Wert eines Zählers erfassen, beispielsweise gesendete Anfragen, wird möglicherweise nur der Wert der Anzahl der Anfragen erfasst, die bis zu diesem Zeitpunkt gesendet wurden, z. B. <code translate="no" dir="ltr">{time=x, value=y}</code>. Wie bei strukturierten Logs möchten Sie möglicherweise auch einige Umgebungsdaten aufzeichnen, was in etwa so aussieht: <code translate="no" dir="ltr">{time=x, value=y, server=foo, cluster=123,
+environment=prod, service=bar}</code>. Die Kombination von hoher Kardinalität und hoher Dimensionalität kann zu einem deutlich höheren Rechen- und Speicherbedarf führen, wobei das Monitoring ab einem bestimmten Punkt möglicherweise nicht wie erwartet funktioniert.  Dies muss von den Entwicklern, die dynamisch generierte Daten und Metadaten in Monitoringsysteme schreiben, verstanden werden.</p>
+
+<h3 id="learning_and_improving" data-text="Lernen und verbessern">Lernen und verbessern</h3>
+
+<p>Ein Teil des Betriebs eines Systems ist das Lernen aus Ausfällen und Fehlern. Der Prozess zur Entwicklung von Rückblicken oder Postmortems mit Korrekturmaßnahmen ist umfassend dokumentiert. Ein Ergebnis dieses Prozesses ist die Entwicklung eines verbesserten Monitorings. Für ein agiles Unternehmen ist es äußerst wichtig, dass die Monitoringsysteme von jedem innerhalb des Unternehmens schnell und effizient aktualisiert werden können. Die Monitoringkonfiguration ist wichtig, weshalb Änderungen wie bei der Codeentwicklung und -bereitstellung mithilfe der <a href="/architecture/devops/devops-process-streamlining-change-approval" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Prüfung und Genehmigung</a> verfolgt werden müssen. Die Speicherung Ihrer Monitoringkonfiguration in einem <a href="/architecture/devops/devops-tech-version-control" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Versionsverwaltungssystem</a> ist ein guter erster Schritt, um einen allgemeinen Zugriff auf das System zu ermöglichen, während Sie die Kontrolle über diesen kritischen Teil Ihres Systems behalten. Indem Sie eine Automatisierung zur Bereitstellung der Monitoringkonfiguration mithilfe einer Automatisierungspipeline entwickeln, können Sie außerdem gewährleisten, dass diese Konfigurationen gültig sind und konsistent angewendet werden. Nachdem Sie Ihre Monitoringkonfiguration als Code behandelt haben, können Sie mit einem Prozess zur <a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Bereitstellungsautomatisierung</a> Verbesserungen erreichen, idealerweise im gleichen System, das auch vom restlichen Team verwendet wird.</p>
+
+<h2 id="common_pitfalls_of_implementing_monitoring_and_observability" data-text="Häufige Schwierigkeiten bei der Implementierung von Monitoring und Beobachtbarkeit">Häufige Schwierigkeiten bei der Implementierung von Monitoring und Beobachtbarkeit</h2>
+
+<p>Bei der Entwicklung eines Systems für Monitoring und Beobachtbarkeit für Ihr Unternehmen sollten Sie wissen, dass es keine einfache Plug-and-play-Lösung gibt. Ein angemessenes Monitoringsystem erfordert ein grundlegendes Verständnis der einzelnen Komponenten, die Sie messen möchten, sowie eine direkte Bearbeitung des Codes zur Instrumentierung dieser Systeme. Für das Monitoring sollte keine Einzelperson oder ein spezielles Team zuständig sein, das nur für das System verantwortlich ist. So können Sie nicht nur einen Single Point of Failure vermeiden, sondern auch Ihre Fähigkeit erhöhen, Ihr System als ganze Organisation zu verstehen und zu verbessern. Monitoring und Beobachtbarkeit müssen in das Basiswissen all Ihrer Entwickler integriert werden. Ein häufiges Hindernis ist, wenn nur das Betriebsteam, NOC oder ein ähnliches Team Änderungen an einem Monitoringsystem vornehmen dürfen. Dies sollte vermieden und durch ein System ersetzt werden, das den CD-Mustern entspricht.</p>
+
+<p>Ein häufiges Muster, das beim Schreiben von Benachrichtigungen in Monitoringsystemen nicht verwendet werden sollte, ist, alle möglichen Fehlerbedingungen aufzulisten und für jede davon eine Benachrichtigung zu schreiben. Wir nennen dies <em>ursachenbasierte Benachrichtigungen</em>. Sie sollten diese so weit wie möglich vermeiden.
+Stattdessen sollten Sie sich auf <em>symptombasierte Benachrichtigungen</em> konzentrieren, die Sie nur dann benachrichtigen, wenn ein für den Nutzer sichtbares Symptom erkennbar ist oder voraussichtlich bald auftreten wird. Sie sollten auch weiterhin nicht nutzerbezogene Systeme beobachten können. Diese sollten Bereitschaftsentwickler jedoch nicht direkt benachrichtigen, wenn es keine für Nutzer sichtbare Symptome gibt. Der Begriff <em>für Nutzer sichtbar</em> kann auch Nutzer innerhalb Ihrer Organisation umfassen.</p>
+
+<p>Beim Erstellen von Benachrichtigungen sollten Sie berücksichtigen, wie sie bereitgestellt werden. Ihre Benachrichtigungen sollten mehrere Wege für Bereitschaftsentwickler haben. Dazu gehören unter anderem: SMS-Zustellung, spezielle mobile Apps, automatische Telefonanrufe oder E-Mail. Ein häufiges Problem besteht darin, dass E-Mails über eine E-Mail-Verteilerliste an das gesamte Team gesendet werden.
+Dies kann aufgrund der <a href="https://wikipedia.org/wiki/Diffusion_of_responsibility" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Verantwortungsdiffusion</a> schnell dazu führen, dass Benachrichtigungen ignoriert werden. Ein weiterer häufiger Fehler ist ein schlechtes <a href="https://wikipedia.org/wiki/Signal-to-noise_ratio" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Signal-Rausch-Verhältnis</a>.
+Wenn zu viele Benachrichtigungen nicht umsetzbar sind oder keine Verbesserung bewirken, werden die Benachrichtigungen, die aussagekräftig und möglicherweise besonders wichtig sind, vom Team einfach übersehen. Dieses Problem ist auch als <a href="https://wikipedia.org/wiki/Alarm_fatigue" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Alarmermüdung</a> bekannt.
+Alle Methoden zum Stummschalten oder Unterdrücken einiger Benachrichtigungen sollten genau beobachtet werden, um dafür zu sorgen, dass sie nicht zu allgemein sind oder zu häufig angewendet werden.</p>
+
+<p>Ein häufiger Fehler bei der Erstellung von Monitoring-Dashboards zur Visualisierung von Messwerten ist, dass Sie viel Zeit für die Pflege des "perfekten Dashboards" aufwenden. Dieser Fehler ähnelt den oben beschriebenen ursachenbasierten Benachrichtigungen. In einem leistungsstarken Team ändert sich das zu beobachtende System so schnell, dass die Zeit, die für die Pflege eines Dashboards aufgewendet wird, veraltet ist, bevor die Pflege abgeschlossen ist. Stattdessen sollten Sie sich darauf konzentrieren, dass Teammitglieder schnell ein Dashboard oder andere Visualisierungen erstellen können, die ihren Anforderungen entsprechen.</p>
+
+<p>Ein häufiges Problem ist auch, Produkt- oder für die Geschäftsführung sichtbare Messwerte, z. B. die Nutzergewinnungsrate und die Umsatzverfolgung, von den Dashboards für die betriebliche Integrität und den Dienststatus zu trennen, da beide sehr wichtig, aber unterschiedlich sind. Es wird dringend empfohlen, diese getrennt zu halten.</p>
+
+<h2 id="how_to_measure_monitoring_and_observability" data-text="Monitoring und Beobachtbarkeit messen">Monitoring und Beobachtbarkeit messen</h2>
+
+<p>Wenn Sie ein Monitoring- und Beobachtbarkeitssystem in Ihrer Organisation implementieren, können Sie interne Messwerte erfassen, um Ihren aktuellen Stand zu ermitteln.  Hier sind einige Werte, die Sie mit einer monatlichen Umfrage oder durch eine automatische Analyse Ihrer Postmortems oder Benachrichtigungslogs verfolgen möchten.</p>
+
+<ul>
+<li><strong>Änderungen an der Monitoringkonfiguration.</strong> Wie viele Pull-Anfragen oder Änderungen pro Woche werden an das Repository gesendet, das die Monitoringkonfiguration enthält? Wie häufig werden diese Änderungen in das Monitoringsystem übertragen? (Täglich? In Batches? Sofort bei PR?)</li>
+<li><strong>Benachrichtigungen außerhalb der Arbeitszeiten.</strong> Welcher Prozentsatz der Benachrichtigungen wird nachts ausgeführt? Einige internationale Unternehmen haben ein Follow-the-Sun-Supportmodell, sodass dieses Problem nicht besteht. Es kann jedoch ein Hinweis darauf sein, dass den führenden Indikatoren für Fehler nicht genug Aufmerksamkeit geschenkt wurde. Regelmäßige nächtliche Benachrichtigungen können zu Benachrichtigungsermüdung und ausgebrannten Teams führen.</li>
+<li><strong>Ausgewogene Benachrichtigung der Teams.</strong> Werden die Benachrichtigungen gleichmäßig verteilt und von allen Teams bearbeitet, wenn Sie Teams an verschiedenen Standorten haben, die für einen Dienst zuständig sind?  Falls nicht, warum?</li>
+<li><strong>Falsch positive Ergebnisse.</strong> Wie viele Benachrichtigungen haben zu keiner Aktion geführt oder wurden als "Funktioniert wie vorgesehen" gekennzeichnet? Benachrichtigungen, die nicht umsetzbar sind und mit denen Fehler nicht vorhergesagt werden konnten, sollten gelöscht werden.</li>
+<li><strong>Falsch negative Ergebnisse.</strong> Wie viele Systemfehler sind aufgetreten, für die es keine Benachrichtigungen gab oder die Benachrichtigung später als erwartet erfolgte? Wie häufig werden bei Ihren Postmortems neue (symptombasierte) Benachrichtigungen hinzugefügt?</li>
+<li><strong>Erstellung von Benachrichtigungen.</strong> Wie viele Benachrichtigungen werden pro Woche erstellt (insgesamt oder gruppiert nach Schweregrad, Team usw.)?</li>
+<li><strong>Bestätigung von Benachrichtigungen.</strong> Welcher Prozentsatz der Benachrichtigungen wird innerhalb der vereinbarten Frist (z. B. 5 Minuten, 30 Minuten) bestätigt? In einigen Fällen wird dies mit dem Messwert <em>Benachrichtigungsfehler</em> kombiniert oder verfolgt, wenn ein sekundärer Bereitschaftsdienst über eine Benachrichtigung informiert wird.</li>
+<li><strong>Stummschaltung von Benachrichtigung und Dauer der Stummschaltung.</strong> Wie viele Benachrichtigungen werden pro Woche stummgeschaltet oder unterdrückt?  Wie viele werden diesem Pool hinzugefügt? Wie viele werden entfernt?  Wie viele Stummschaltungen werden verlängert und dauern somit länger als ursprünglich erwartet, wenn die Stummschaltung Ihrer Benachrichtigungen ein Ablaufsystem hat?  Was ist der durchschnittliche und maximale Zeitraum zum Stummschalten? (Eine scherzhaftes Frage ist: "Wie viele Stummschaltungen sind praktisch 'unendlich'"?)</li>
+<li><strong>Nicht umsetzbare Benachrichtigungen.</strong> Welcher Prozentsatz der Benachrichtigungen wurde als "nicht umsetzbar" betrachtet? Das heißt, der benachrichtigte Entwickler konnte nicht sofort Maßnahmen ergreifen – entweder weil er die Benachrichtigung nicht verstehen konnte oder aufgrund eines unbekannten Problems. Nicht umsetzbare Benachrichtigungen sind eine bekannte <a href="https://landing.google.com/sre/sre-book/chapters/eliminating-toil/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Quelle der Mühsal</a>.</li>
+<li><strong>Nutzerfreundlichkeit: Benachrichtigungen, Runbooks, Dashboards.</strong> Wie viele Diagramme befinden sich in den Dashboards? Wie viele Zeilen pro Diagramm? Können Teams die Diagramme verstehen?
+Gibt es Erläuterungen zur Unterstützung neuer Entwickler? Müssen Nutzer viel scrollen und suchen, um die erforderlichen Informationen zu finden? Können Entwickler effektiv von Benachrichtigungen zu Playbooks und Dashboards wechseln? Sind die Benachrichtigungen so benannt, dass sie Entwickler in die richtige Richtung weisen? Diese können im Lauf der Zeit durch Umfragen des Teams gemessen werden.</li>
+<li><strong>Mittlere Diagnosezeit (Mean Time To Diagnosis, MTTD), durchschnittliche Zeit der Problembehebung (Mean Time To Resolution, MTTR), Auswirkung.</strong> Das Ergebnis sind die Zeit zur Erkennung und zur Behebung sowie die Auswirkungen. Sie sollten den "Bereich unter der Kurve" der Zeit messen, in der sich der Ausfall auf die Kunden ausgewirkt hat x die Anzahl der betroffenen Kunden.
+Dies kann mithilfe von Tools geschätzt oder genauer ermittelt werden.</li>
+</ul>
+
+<p>Wenn Sie einige oder alle dieser Messwerte verfolgen, können Sie besser verstehen, wie gut Ihre Monitoring- und Beobachtbarkeitssysteme für Ihr Unternehmen funktionieren. Wenn Sie diese Messungen nach Produkt, Betriebsteam oder anderen Methoden aufschlüsseln, gewinnen Sie nicht nur wichtige Erkenntnisse über die Integrität Ihrer Produkte, sondern auch über die Prozesse und Ihre Mitarbeiter.</p>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Nächste Schritte</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li>Weitere Informationen zum Erstellen proaktiver Benachrichtigungen mit <a href="/architecture/devops/devops-measurement-proactive-failure-notification" track-type="solution" track-name="internalLink" track-metadata-position="body">proaktiver Fehlerbenachrichtigung</a>.</li>
+<li>Besuchen Sie die <a href="https://landing.google.com/sre/resources/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Google Site Reliability Engineering Resources</a>, um folgende SRE-Bücher zu finden:
+<ul><li>Site Reliability Engineering</li>
+<li>Site Reliability Engineering Workbook</li>
+<li>Sichere und zuverlässige Systeme aufbauen</li>
+</ul></li>
+<li><a href="/products/operations" track-type="article" track-name="internalLink" track-metadata-position="body">Google Cloud-Vorgänge</a></li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

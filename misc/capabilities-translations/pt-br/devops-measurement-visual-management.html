@@ -1,0 +1,181 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Medição do DevOps: recursos de gerenciamento visual</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Observação:</strong><span> <em>recursos de gerenciamento visual</em> são um dos conjuntos de recursos
+que aumentam o fornecimento de software e o desempenho organizacional. Esses
+recursos foram descobertos pelo
+<a href="https://www.devops-research.com/research.html">programa de pesquisa DORA State of DevOps</a>
+(em inglês), uma investigação independente e academicamente rigorosa sobre as práticas e
+recursos que impulsionam alto desempenho. Para saber mais, leia nossos
+<a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>É uma prática comum para as equipes que estão adotando
+<a href="https://wikipedia.org/wiki/Lean_software_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">padrões de desenvolvimento enxutos</a>
+exibir informações importantes sobre os processos nas áreas das equipes em que todos possam vê-los. Os conselhos de gerenciamento visual podem criar uma perspectiva
+compartilhada do progresso da equipe em termos de eficácia operacional. Eles também podem
+ajudar a identificar e eliminar obstáculos no caminho para um melhor desempenho.</p>
+
+<h2 id="how_to_implement_visual_management" data-text="Como implementar o gerenciamento visual">Como implementar o gerenciamento visual</h2>
+
+<p>Há muitos tipos de monitores visuais e painéis que
+são comuns no contexto da entrega de software:</p>
+
+<ul>
+<li><strong>Murais de anotações, storyboards ou quadros Kanban</strong>, físicos ou
+virtuais, com fichas que representam itens de trabalho em andamento.</li>
+<li><strong>Painéis ou outros indicadores visuais</strong>, como sistemas de integração contínua
+com monitores ou luzes indicativas para mostrar se o build está
+sendo aprovado ou passando por falhas. Os monitores visuais eficazes são criados,
+atualizados e talvez descartados pelas equipes como resposta aos problemas que
+elas têm interesse em resolver no momento.</li>
+<li><strong>Gráficos de burnup e burndown</strong>, por exemplo, diagramas de fluxos cumulativos,
+que mostram o status cumulativo de todo o trabalho que está sendo feito. Isso permite que a equipe projete
+quanto tempo levará para concluir o backlog atual.</li>
+<li><strong>Monitores do pipeline de implantação</strong>, que mostram o build mais recente
+que pode ser implantado e se há falhas nos estágios do pipeline,
+como testes de aceitação ou de desempenho.</li>
+<li><strong>Monitores que mostram a telemetria de produção</strong>,
+como o número de solicitações recebidas, as estatísticas de latência,
+os erros <code translate="no" dir="ltr">404</code> e <code translate="no" dir="ltr">500</code> cumulativos e as páginas que são mais conhecidas.</li>
+</ul>
+
+<p>Quando combinados com o uso dos
+<a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">limites do WIP</a>
+e do feedback da produção para tomar decisões de negócios, os monitores de gerenciamento visual podem contribuir para
+<a href="https://services.google.com/fh/files/misc/state-of-devops-2015.pdf#page=15" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">elevar os níveis de desempenho da entrega</a>
+(PDF em inglês).</p>
+
+<h2 id="common_pitfalls_with_visual_management" data-text="Dificuldades comuns no gerenciamento visual">Dificuldades comuns no gerenciamento visual</h2>
+
+<p>As características mais importantes dos monitores de gerenciamento visual são as informações
+relevantes à equipe e como aproveitá-las durante o trabalho diário para identificar e eliminar
+obstáculos para melhorar o desempenho. Veja a seguir
+algumas das dificuldades comuns ao implementar o gerenciamento visual:</p>
+
+<ul>
+<li><strong>Seleção das métricas sem o envolvimento da equipe</strong>. Os monitores
+visuais que mostram as métricas altamente relevantes e úteis para as equipes
+serão usados com mais frequência. Se as equipes puderem contribuir com as métricas exibidas nos monitores
+visuais participando da seleção das respectivas
+metas (por exemplo, algumas equipes <a href="/architecture/devops/devops-culture-transform" track-type="solution" track-name="internalLink" track-metadata-position="body">usam OKRs</a>),
+elas estarão mais
+motivadas a atingi-las.</li>
+<li><strong>Criação de monitores complexos, difíceis de entender ou que
+não fornecem informações úteis</strong>. É fácil criar monitores usando ferramentas que permitem
+altos níveis de modificação ou que sejam divertidas. No entanto,
+alterar layouts e cores em um painel personalizado não
+será útil se a equipe estiver trabalhando com as métricas erradas
+ou se levar vários meses para implementá-lo. Métricas importantes ou gráficos aproximados desenhados em um quadro
+branco e atualizados diariamente podem apresentar a mesma eficácia para manter a equipe informada.</li>
+<li><strong>Monitores visuais obsoletos</strong>. As ferramentas de gerenciamento visual
+devem fornecer às equipes informações que resolvam os problemas que elas enfrentam no momento. Não
+ajuda em nada uma equipe copiar os monitores de outras equipes,
+a menos que elas trabalhem no mesmo contexto, com os mesmos desafios e obstáculos. À medida
+que o contexto de uma equipe se transforma, os monitores visuais também devem mudar. Conforme as
+equipes superam os obstáculos, os monitores visuais podem mudar para descartar
+métricas antigas (que antes eram relevantes) e destacar novas áreas de importância.</li>
+<li><strong>Não resolver o problema real que
+o monitor visual revela</strong>. Às vezes, as equipes fazem correções rápidas na tentativa de mudar o status
+do monitor para aprovado (verde) novamente. Os monitores devem ser usados para gerar melhorias
+(corrigir o problema), e não para serem uma meta (manter o status aprovado).
+Concentrar-se apenas no gerenciamento da métrica acaba levando
+a consequências não intencionais e deficiências técnicas. Se o monitor sugerir um problema, as equipes não devem
+apenas corrigi-lo de imediato. Elas devem também trabalhar para identificar o problema
+ou a restrição real e resolvê-lo, mesmo se estiver
+em outra parte da organização. Todas as ineficiências continuarão aparecendo,
+e corrigi-las logo no início ajudará a todas as equipes.</li>
+</ul>
+
+<h2 id="ways_to_improve_visual_management" data-text="Maneiras de melhorar o gerenciamento visual">Maneiras de melhorar o gerenciamento visual</h2>
+
+<p>O objetivo das ferramentas de gerenciamento visual é fornecer
+feedback rápido e fácil de entender para que você possa agregar qualidade ao produto. Esse feedback ajuda
+a equipe a identificar defeitos no produto e a entender se alguma parte
+do sistema não está funcionando de maneira eficaz, o que ajuda a resolver o problema. Para ser eficaz,
+esse tipo de sistema precisa fazer o seguinte:</p>
+
+<ul>
+<li><strong>Refletir as informações relevantes e úteis para a equipe</strong>.
+Os monitores de build não serão úteis se as equipes não se importarem se o monitor mostra um problema
+(por exemplo, mostrar o status vermelho, o que significa que está com defeito) e não reagirem
+efetivamente para corrigir
+o problema com base nessas informações.</li>
+<li><strong>Ser fácil de entender</strong>. É necessário detectar rapidamente
+quando algo precisa de atenção. Se <em>houver</em> um
+problema, as equipes precisarão saber como realizar mais diagnósticos ou corrigi-lo.</li>
+<li><strong>Fornecer à equipe informações relevantes ao trabalho dela</strong>. É importante
+coletar o máximo de dados possível sobre o trabalho da equipe,
+mas o monitor deve apresentar apenas os dados relevantes
+às metas da equipe. Devido à sobrecarga de informações,
+principalmente as que não podem ser usadas, as pessoas
+ignoram os monitores de gerenciamento visual, que acabam se tornando inconvenientes. A equipe pode acessar e usar outros dados quando
+está trabalhando para corrigir o problema.</li>
+<li><strong>Ser atualizado como parte do trabalho diário</strong>. Se a equipe deixar que os dados fiquem
+desatualizados ou imprecisos, ela ignorará os monitores visuais, e eles não
+serão mais um sensor útil quando surgirem problemas importantes. Se
+os monitores estiverem exibindo dados desatualizados ou imprecisos, investigue
+a causa: os dados não estão relacionados às metas da equipe? Que dados tornam
+o monitor uma fonte de informações importante e sólida para a equipe?</li>
+</ul>
+
+<p>As equipes não devem se envolver em aspectos
+dos monitores visuais que não sejam críticos. Por exemplo, os monitores de gerenciamento visual não precisam ser eletrônicos.
+Os murais de anotações físicos ou os quadros kanban
+podem ser mais fáceis de gerenciar e entender, especialmente se a equipe estiver em um único local. Esses monitores também podem ajudar
+a desenvolver rotinas valiosas para a equipe, como ficar de pé na frente do quadro para
+escolher o trabalho e mudá-lo de lugar. Um quadro branco com algumas informações importantes do projeto
+que são atualizadas diariamente pela equipe costuma ser a preferência
+do que um sistema eletrônico difícil de entender,
+de atualizar ou que não tem as informações necessárias.</p>
+
+<h2 id="ways_to_measure_visual_management" data-text="Maneiras de avaliar o gerenciamento visual">Maneiras de avaliar o gerenciamento visual</h2>
+
+<p>Assim como em qualquer trabalho de melhoria, comece com metas mensurávei
+no nível do sistema que orientem o trabalho da equipe. Descubra o estado atual do sistema de trabalho.
+Encontre uma maneira de exibir as informações principais sobre o estado
+atual e aquele que você quer. Garanta que essas informações sejam exibidas
+somente com a precisão necessária.</p>
+
+<p>Revise os monitores visuais como parte das retrospectivas regulares. Faça estas
+perguntas:</p>
+
+<ul>
+<li>Os monitores estão fornecendo as informações necessárias?</li>
+<li>As informações estão atualizadas?</li>
+<li>As pessoas usam essas informações para tomar medidas?</li>
+<li>As informações (e as ações que as pessoas realizam em resposta a elas)
+contribuem para uma melhoria mensurável em direção a uma meta importante para a equipe?</li>
+<li>Todos sabem quais são as metas?</li>
+<li>É possível analisar os monitores de gerenciamento visual e ver
+as principais métricas de processo do seu interesse?</li>
+</ul>
+
+<p>Se a resposta a qualquer uma dessas perguntas for "não", investigue melhor:</p>
+
+<ul>
+<li>É possível alterar as informações ou como elas são exibidas?</li>
+<li>É possível eliminar todo o monitor?</li>
+<li>É possível criar um novo monitor? Como é a aparência de um protótipo? Quais são
+as informações mais importantes a serem incluídas e qual é a precisão delas para ajudar você a resolver seus problemas e atingir suas metas?</li>
+</ul>
+
+<h2 id="whats_next" data-text="A seguir">A seguir</h2>
+
+<ul>
+<li>Consulte links para outros artigos e recursos na
+<a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página do DevOps</a>.</li>
+<li>Leia o livro
+<a href="https://itrevolution.com/book/making-work-visible/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Making Work Visible</em></a>
+(em inglês), por Dominica DeGrandis.</li>
+<li>Explore nosso
+<a href="https://www.devops-research.com/research.html">programa de pesquisa</a> (em inglês) do DevOps.</li>
+<li>Faça a
+<a href="https://www.devops-research.com/quickcheck.html">verificação rápida de DevOps</a>
+para entender sua posição em relação ao restante do setor.</li>
+</ul>
+
+</body></html>

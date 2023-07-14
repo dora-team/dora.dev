@@ -1,0 +1,181 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia DevOps: test continui</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> <em>il test continuo</em> è una delle funzionalità che incrementano la distribuzione del software e le prestazioni dell'organizzazione.  Queste funzionalità sono state scoperte dal <a href="https://www.devops-research.com/research.html">programma di ricerca State of DevOps di DORA</a>, un'indagine indipendente e rigorosamente accademica sulle pratiche e sulle capacità che promuovono prestazioni elevate. Per scoprire di più, leggi le nostre <a href="/devops">risorse DevOps</a>.</span></aside>
+<p>Per creare qualità nel software, è importante ricevere rapidamente un feedback sull'impatto delle modifiche che si verificano durante il ciclo di vita della distribuzione del software. Tradizionalmente, i team si affidavano a test manuali e ispezioni di codici per verificare la correttezza dei sistemi.
+Queste ispezioni e questi test generalmente si sono verificati in una fase a parte dopo il completamento di "dev." Questo approccio presenta i seguenti svantaggi:</p>
+
+<ul>
+<li>I test di regressione manuale richiedono molto tempo per l'esecuzione e sono costosi da eseguire, il che rende questo processo un collo di bottiglia. Il software non può essere rilasciato di frequente e gli sviluppatori non possono ricevere feedback rapidi.</li>
+<li>I test e le ispezioni manuali non sono affidabili, poiché le persone hanno scarse attività ripetitive, come i test di regressione manuale, ed è difficile prevedere l'impatto delle modifiche su un sistema software complesso tramite ispezioni.</li>
+<li>Una volta che il software è stato completato, gli sviluppatori devono attendere a lungo prima di ricevere feedback sulle modifiche. Ciò comporta in genere una lavoro sostanziale per correggere i difetti e risolverli. I problemi di prestazioni, sicurezza e affidabilità spesso richiedono modifiche alla progettazione che sono ancora più costose da risolvere in questa fase.</li>
+<li>Cicli di feedback lunghi rendono anche più difficile per gli sviluppatori imparare a creare codice di qualità; inoltre, i team di sviluppo sotto pressione possono a volte trattare la qualità come un problema di qualcun altro.</li>
+<li>Quando gli sviluppatori non sono responsabili del test del proprio codice, è difficile imparare a scrivere codice testabile.</li>
+<li>Per i sistemi che si evolvono nel tempo, mantenere la documentazione di test aggiornata richiede un notevole impegno.</li>
+</ul>
+
+<p>I team dovrebbero invece:</p>
+
+<ul>
+<li>Esegui continuamente tutti i tipi di test durante il ciclo di vita della distribuzione del software.</li>
+<li>Crea e organizza suite veloci e affidabili di test automatici eseguiti come parte delle tue <a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body"> pipeline di distribuzione continua</a>.</li>
+</ul>
+
+<p>Non solo questo aiuta i team a creare (e scoprire come creare) software di alta qualità più velocemente, oltre a una ricerca di DORA che mostra anche una migliore stabilità del software, un burnout ridotto e una minore difficoltà di deployment.</p>
+
+<h2 id="how_to_implement_continuous_testing" data-text="Come implementare i test continui">Come implementare i test continui</h2>
+
+<p>Per integrare la qualità nel software, devi eseguire continuamente test sia automatici che manuali durante il processo di distribuzione, per convalidare la funzionalità e l'architettura del sistema in fase di sviluppo. Questa disciplina ha una componente sia organizzativa sia tecnica. A livello organizzativo, la ricerca di DORA scopre che i team funzionano meglio quando:</p>
+
+<ul>
+<li>Consenti ai tester di lavorare insieme agli sviluppatori durante tutto il processo di sviluppo e distribuzione del software. (Nota: "tester", è un ruolo, non è necessariamente un lavoro a tempo pieno, anche se questo è un modello frequente discusso di seguito).</li>
+<li>Esegui attività di test manuali come test di esplorazione, test di usabilità e test di accettazione durante il processo di pubblicazione.</li>
+</ul>
+
+<p>Un'attività tecnica chiave è la creazione e la gestione di un insieme di suite di test automatizzate, tra cui:</p>
+
+<ul>
+<li><strong>Test delle unità</strong>. In genere, testano un singolo metodo, una classe o una funzione isolata, per garantire agli sviluppatori che il loro codice funziona come
+progettato. Per assicurarti che il codice sia testabile e che i test siano gestibili,
+scrivi i test delle unità prima di scrivere il codice, una tecnica nota come
+<a href="http://www.jamesshore.com/v2/books/aoad1/test_driven_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">sviluppo basato su test</a>.</li>
+<li><strong>Test di accettazione</strong>: in genere, testano un'app o un servizio in esecuzione (di solito con dipendenze sostituite da <a href="https://testing.googleblog.com/2013/07/testing-on-toilet-know-your-test-doubles.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">doppio di prova</a>) per garantire che un livello superiore di funzionalità funzioni come previsto e che non siano stati introdotti errori di regressione. I test di accettazione di esempio potrebbero verificare la presenza dei criteri di accettazione dell'attività per una storia utente o la correttezza di un'API. Scrivi questi test come parte del
+processo di sviluppo. Nessuno deve poter dichiarare il proprio lavoro "dev
+complete" se non vengono superati i test di accettazione automatici.</li>
+</ul>
+
+<p>Il seguente diagramma,
+<a href="http://www.exampler.com/old-blog/2003/08/22/#agile-testing-project-2" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">inizialmente creato da Brian Marick</a> e poi riportato nel libro
+<a href="https://books.google.com/books/about/Agile_Testing.html?id=68_lhPvoKS8C" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body"><em>Agile Testing: A Practical Guide for Testers and Agile Teams</em></a>,
+mostra i tipi di test automatici e manuali da eseguire.</p>
+
+<p><img src="/static/architecture/images/ta-image1.png" alt="immagine"/></p>
+
+<p>I test automatici evidenziati nel diagramma precedente si inseriscono in una <a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body"> pipeline di deployment</a> <a href="/architecture/devops/devops-tech-continuous-delivery">di distribuzione continua</a>.
+In tali pipeline, ogni modifica esegue una build che crea pacchetti software, esegue i test delle unità ed eventualmente esegue altri controlli, come l'analisi statica. Dopo che questi pacchetti hanno superato la prima fase, vengono eseguiti test di accettazione automatici più completi e probabilmente alcuni test non funzionali come i test sulle prestazioni e le analisi delle vulnerabilità, vengono eseguiti rispetto al software eseguito automaticamente. In genere, qualsiasi build che supera la fase di accettazione viene resa disponibile per l'esplorazione manuale e i test di usabilità. Infine, se non vengono rilevati errori in questi passaggi manuali, l'app viene considerata rilasciabile.</p>
+
+<p>L'esecuzione continua dei test come parte di una pipeline contribuisce a fornire un rapido feedback agli sviluppatori, un breve tempo di risposta dal check-in al rilascio e una bassa percentuale di errore negli ambienti di produzione. La maggior parte del lavoro viene convalidata dagli sviluppatori in pochi minuti, anziché giorni o settimane, in modo da poter correggere i bug non appena possibile.</p>
+
+<p>Il seguente diagramma mostra un esempio di una pipeline di deployment lineare semplice.
+In questo esempio, il verde indica che non sono stati rilevati problemi, mentre il rosso indica che sono stati rilevati uno o più problemi.</p>
+
+<p><img src="/static/architecture/images/ta-image3.png" alt="immagine"/></p>
+
+<p>Nel pattern della pipeline di deployment, ogni modifica crea un candidato per la release e
+il loop di feedback rapido consente di individuare i problemi il prima possibile durante
+il processo. Quando un pacchetto raggiunge la fine della pipeline e il team continua a
+non essere in grado di rilasciarlo, o se rileva difetti in
+produzione, la pipeline deve essere migliorata, ad esempio aggiungendo o aggiornando test.</p>
+
+<h2 id="common_pitfalls" data-text="Insetti comuni">Insetti comuni</h2>
+
+<ul>
+<li><p><strong>Non sono coinvolti sviluppatori nel test.</strong> Le ricerche di DORA dimostrano che, quando gli sviluppatori sono responsabili principalmente di creare e gestire suite di test automatici e quando è facile per gli sviluppatori correggere gli errori di test di accettazione, questo migliora le prestazioni. Quando altri gruppi sono proprietari dell'automazione dei test, si verificano spesso due problemi:</p>
+
+<ul>
+<li><strong>Le suite di test si trovano spesso in uno stato non funzionante</strong>. Le modifiche al codice potrebbero richiedere l'aggiornamento dei test. Se gli sviluppatori non sono responsabili dell'automazione dei test, la pipeline di compilazione rimane interrotta fino a quando il team responsabile non risolve i test.</li>
+<li><strong>Gli sviluppatori scrivono un codice difficile da testare.</strong> Gli sviluppatori tendono a risolvere
+il problema che hanno riscontrato senza pensare a come verrà testato.
+Ciò può generare codice dal design scadente e suite di test costose e difficili da gestire.</li>
+</ul>
+
+<p>I tester e i team addetto al QA continuano a svolgere un ruolo importante in questo modo di lavorare. I tester hanno una prospettiva univoca del sistema, in quanto comprendono il modo in cui gli utenti vi interagiscono. È buona norma abbinare i tester agli sviluppatori per creare ed evolvere le suite di test automatici, utilizzando gli strumenti di condivisione schermo se i team non si trovano fisicamente. In questo modo, possono imparare gli uni dagli altri e risolvere i problemi in tempo reale. I tester svolgono anche un ruolo essenziale nell'esecuzione di test esplorativi e di usabilità, oltre ad essere utile per curare le suite di test.</p></li>
+<li><p><strong>Non hai selezionato le tue suite di test.</strong> Assicurati di esaminare e migliorare continuamente le suite di test per individuare meglio i difetti e tenere sotto controllo la complessità e i costi. Ad esempio:</p>
+
+<ul>
+<li>Le suite di test di accettazione dovrebbero rappresentare in genere i percorsi reali <a href="https://testing.googleblog.com/2016/09/testing-on-toilet-what-makes-good-end.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">end-to-end</a> dell'utente attraverso il sistema, anziché solo raccolte di criteri di accettazione automatici. Man mano che il prodotto si evolve, questi scenari e le suite di test li convalidano. Per ulteriori informazioni su questa procedura, guarda il video <a href="https://www.youtube.com/watch?v=qYfI2-bC6LA">Impostare una base per l'automazione di test</a> di Angie Jones.</li>
+<li>Se ogni volta che modifichi il codice devi modificare anche più test delle unità, <a href="https://martinfowler.com/articles/mocksArentStubs.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">non fare affidamento sulla simulazione della simulazione</a> o non riuscire ad eliminare la suite di test dell'unità.</li>
+<li>Assicurati che le tue suite di test siano ben studiate. Se ogni modifica alla tua interfaccia utente non consente più test di accettazione, utilizza il <a href="https://martinfowler.com/bliki/PageObject.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">pattern di oggetti pagina</a> per disaccoppiare i test dal sistema in corso di test.</li>
+<li>Se i test sono costosi da gestire, potrebbero esserci problemi con l'<a href="/architecture/devops/devops-tech-architecture">architettura</a> del software. Assicurati di continuare a investire per semplificare il test del tuo software, ad esempio incorporando il <a href="https://refactoring.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">refactoring</a> nel lavoro quotidiano del tuo team.</li>
+</ul></li>
+<li><p><strong>Disporre di una proporzione errata di test di unità e accettazione.</strong> Un obiettivo di progettazione specifico di una suite di test automatizzati consiste nel trovare gli errori il prima possibile. Ecco perché i test delle unità a esecuzione più rapida vengono eseguiti prima dei test di accettazione con esecuzione più lenta ed entrambi vengono eseguiti prima di qualsiasi test manuale.</p>
+
+<p>Dovresti trovare gli errori con la categoria di test più veloce. Quando trovi un errore in un test di accettazione o durante un test di esplorazione, aggiungi un test dell'unità per assicurarti che l'errore venga individuato più rapidamente, prima e più economico la prossima volta.
+Mike Cohn ha descritto la
+<a href="https://books.google.com.br/books?id=8IglA6i_JwAC&amp;printsec=frontcover&amp;dq=Mike+Cohn+Succeeding+with+Agile&amp;hl=pt-BR&amp;sa=X&amp;ved=0ahUKEwj9x8S8tuTiAhWjGLkGHU0GCxEQ6AEILTAA#v=onepage&amp;q=Mike%20Cohn%20Succeeding%20with%20Agile&amp;f=false" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">piramida di automazione di test</a> ideale,
+mostrata nel diagramma seguente, in cui la maggior parte degli errori viene rilevata utilizzando
+il test delle unità.</p>
+
+<p><img src="/static/architecture/images/ta-image2.png" alt="immagine"/></p></li>
+<li><p><strong>Tollera test inaffidabili.</strong> I test devono essere affidabili, vale a dire che quando il test ha esito positivo, dobbiamo avere la certezza che il software sia rilasciabile e che gli errori durante il test debbano indicare un reale difetto. In particolare, non tollerare test irregolari.
+<a href="https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Scopri di più sulla strategia di mitigazione di Google per i test irregolari</a>.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_continuous_testing" data-text="Metodi per migliorare i test continui">Metodi per migliorare i test continui</h2>
+
+<p>Se la tua organizzazione non ha ancora una cultura di test delle unità eseguita da sviluppatori,
+non ti preoccupare. La verifica delle unità non è stata una pratica diffusa in Google nei suoi primi anni. L'attuale cultura dei test completi delle unità è stata guidata da un gruppo di volontari
+di Google, chiamato Test Grouplet.
+<a href="https://martinfowler.com/articles/testing-culture.html#google" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Leggi come l'azienda ha contribuito all'adozione del test delle unità</a>
+creando una community di esperti che si dedicano alla propagazione delle conoscenze per i test
+in Google e a convincere gli sviluppatori del valore del test.</p>
+
+<p>Se non disponi di un livello sufficiente di automazione dei test, inizia creando una pipeline di deployment scheletro. Ad esempio, crea un singolo test dell'unità, un singolo
+test di accettazione e uno script di deployment automatico che costituisca un
+ambiente di test esplorativo, quindi raggruppali. Successivamente, puoi aumentare in modo incrementale la copertura dei test ed estendere la pipeline di deployment man mano che il prodotto o servizio si evolve.</p>
+
+<p>Se stai già lavorando a un <a href="https://wikipedia.org/wiki/Brownfield_(software_development)" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">sistema brawfield</a>, segui le istruzioni riportate in questo articolo, ma non smettere di personalizzare una suite completa di test automatici. Scrivi invece un numero limitato di test di accettazione per la funzionalità di valore elevato. Assicurati quindi di richiedere agli sviluppatori di scrivere
+test dell'unità e di accettazione per ogni nuova funzionalità e
+ogni funzionalità che modifichi. Valuta la possibilità di utilizzare la tecnologia TDD per migliorare la qualità e la manutenibilità del codice principale e di test e, infine, assicurati che, quando i test di accettazione non funzionano, scrivi i test delle unità per individuare il difetto più rapidamente in futuro.</p>
+
+<p>Se hai una suite di test che è costosa da mantenere e inaffidabile, non
+devi avere paura di eliminarla. Una suite di test da dieci test che è affidabile, veloce e affidabile è molto meglio di una suite di test molto complessa da mantenere e di cui nessuno si fida.</p>
+
+<h2 id="ways_to_measure_continuous_testing" data-text="Metodi per misurare i test continui">Metodi per misurare i test continui</h2>
+
+<p>Puoi misurare i risultati dei test continui nel tuo ambiente procedendo come segue:</p>
+
+<table>
+<thead>
+<tr>
+<th>Fattore di verifica</th>
+<th>Cosa misurare</th>
+<th>Obiettivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Autori dell'accettazione e test delle unità.</td>
+<td>Percentuale di test scritti da sviluppatori, tester e da qualsiasi altro gruppo della tua azienda.</td>
+<td>Gli autori principali e i gestori dei test di accettazione sono gli sviluppatori.</td>
+</tr>
+<tr>
+<td>Numero di bug rilevati durante i test di accettazione, i test esplorativi e in produzione.</td>
+<td>Variazione della proporzione di bug rilevati nel tempo.</td>
+<td>Vengono trovati più bug nelle fasi di test più economiche, i team aggiungono test automatizzati per individuare i bug rilevati durante i test di esplorazione e produzione e aggiungono test delle unità per individuare i bug rilevati nei test di accettazione.</td>
+</tr>
+<tr>
+<td>Tempo impiegato per correggere gli errori di test di accettazione.</td>
+<td>Modifica del tempo trascorso nella risoluzione degli errori del test nel tempo. Dovrebbe essere ridotto.</td>
+<td>Gli sviluppatori possono risolvere facilmente gli errori di test di accettazione.</td>
+</tr>
+<tr>
+<td>I test automatici sono significativi.</td>
+<td>Monitora la quantità di errori di test automatici che rappresentano un difetto reale e la quantità codificata in modo errato.</td>
+<td>Gli errori di verifica indicano sempre un difetto reale del prodotto.</td>
+</tr>
+<tr>
+<td>I test automatici vengono eseguiti sulla pipeline di distribuzione.</td>
+<td>Controlla (sì/no) se tutte le suite di test vengono eseguite in ogni attivatore della pipeline.</td>
+<td>I test automatici vengono eseguiti come parte della pipeline e del flusso di lavoro principali.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina DevOps</a>.</li>
+<li>Scopri di più sui test in Google leggendo l'articolo <a href="https://books.google.com/books/about/Software_Engineering_at_Google.html?id=WXTTDwAAQBAJ" track-type="solution" track-name="internalLink" track-metadata-position="body">Software Engineering di Google</a>.</li>
+<li>Scopri come creare, testare ed eseguire il deployment di sistema in modo continuo con <a href="/build/?&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=latam-BR-all-pt-dr-skws-all-all-trial-e-dr-1003997-LUAC0008680&amp;utm_content=text-ad-none-none-DEV_c-CRE_325592090632-ADGP_SKWS+%7C+Multi+%7E+Dev+%7C+Build-KWID_43700040482196107-kwd-471794162766-userloc_1001743&amp;utm_term=KW_cloud%20build-ST_Cloud+Build&amp;gclid=Cj0KCQjw6IfoBRCiARIsAF6q06suRucypheWE5dDKAmsKDZrEVvuY0nDFS0YgbkN5XVmkEzJPl89zIIaAoJcEALw_wcB&amp;gclsrc=aw.ds" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Build</a>.</li>
+<li>Scopri come monitorare il tuo sistema e i tuoi test utilizzando <a href="/stackdriver" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Monitoring</a>.</li>
+<li>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</li>
+<li>Completa il <a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a> per scoprire la tua posizione rispetto al resto del settore.</li>
+</ul>
+
+</body></html>

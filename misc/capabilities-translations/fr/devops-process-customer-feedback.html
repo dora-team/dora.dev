@@ -1,0 +1,121 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Processus DevOps : Commentaires des clients</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Remarque</strong> :<span> <em>Les commentaires des clients</em> font partie d'un ensemble de fonctionnalités permettant d'améliorer
+les performances organisationnelles et celles de la livraison de logiciels.  Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les capacités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>Dans les projets logiciels, les développeurs travaillent souvent sur des produits pendant des mois ou des années. Ils publient parfois plusieurs versions sans vérifier si les fonctionnalités qu'ils créent aident réellement les utilisateurs à résoudre leurs problèmes, ou même si elles sont utilisées.</p>
+
+<p>Les commentaires des clients font partie d'un ensemble plus large de "capacités" dont disposent les développeurs, lequel comprend également la <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">visibilité du travail dans le flux de valeur</a>, le <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">travail par petits lots</a> et l'<a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">expérimentation en équipe</a>. Cet ensemble de capacités représente une <a href="https://books.google.com/books/about/Escaping_the_Build_Trap.html?id=PQ8dMQAACAAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">approche simplifiée de la gestion des produits</a>.</p>
+
+<p>Lorsque ces capacités sont appliquées ensemble, elles permettent de prédire les éléments suivants :</p>
+
+<ul>
+<li>Performances de diffusion des logiciels, mesurées en termes de vitesse de diffusion, de stabilité et de disponibilité</li>
+<li>Performances organisationnelles, mesurées en termes de rentabilité, de part de marché et de productivité</li>
+</ul>
+
+<p>Une <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=35" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">étude</a> (document au format PDF) menée par DevOps Research and Assessment (DORA) montre que les équipes obtiennent de meilleures performances lorsqu'elles travaillent dans des organisations qui utilisent ces capacités et procèdent comme suit :</p>
+
+<ul>
+<li>Collecte régulière des statistiques de satisfaction client</li>
+<li>Recueil des commentaires des clients sur la qualité des produits et des fonctionnalités</li>
+<li>Utilisation de ces commentaires pour la conception de produits et fonctionnalités adaptés</li>
+</ul>
+
+<h2 id="how_to_implement_customer_feedback" data-text="Comment mettre en œuvre les commentaires des clients">Comment mettre en œuvre les commentaires des clients</h2>
+
+<p>Lorsque vous développez un produit, il est important d'établir des statistiques clés pour évaluer sa réussite. Ces statistiques vous permettent de savoir si vous résolvez un problème réel, si votre solution est adoptée suffisamment rapidement et si les utilisateurs continuent de l'utiliser et la recommandent à d'autres personnes. Ces statistiques doivent être explicitement dérivées de la façon dont les clients interagissent avec le produit. Pour exploiter efficacement ces statistiques, vous devez recueillir et analyser avec soin les commentaires des clients.</p>
+
+<p>L'un des ensembles de statistiques les plus populaires dans les produits SaaS destinés aux consommateurs est le rapport AARRR : acquisition, activation, fidélisation, recommandation et revenus. Notez que l'ordre est parfois différent selon la personne qui présente ce concept. Ces métriques sont parfois appelées <em>statistiques pirates</em>, car l'acronyme représente un mot qui est associé à la façon dont les pirates parlent.</p>
+
+<p>L'idée est de prendre en compte cinq statistiques clés pour jauger l'amélioration de l'expérience client offerte par les différentes itérations de votre solution :</p>
+
+<ul>
+<li><strong>Acquisition</strong> : pourcentage d'utilisateurs qui visitent votre site et créent un compte.</li>
+<li><strong>Activation</strong> : pourcentage d'utilisateurs acquis qui activent leur compte et utilisent le service.</li>
+<li><strong>Fidélisation</strong> : pourcentage d'utilisateurs ayant activé leur compte qui réutilisent le service.</li>
+<li><strong>Recommandation</strong> : pourcentage d'utilisateurs fidélisés qui recommandent le service à d'autres personnes.</li>
+<li><strong>Revenus</strong> : pourcentage d'utilisateurs référents qui dépensent réellement de l'argent pour le service.</li>
+</ul>
+
+<p>Si ces statistiques ne sont pas adaptées à votre entreprise ou à votre produit, il est essentiel pour vous d'identifier d'autres métriques correspondant à votre situation, de les surveiller régulièrement et de les utiliser comme facteur clé de votre stratégie produit.</p>
+
+<p>L'approche décrite dans cet article ne concerne pas uniquement les produits externes. Elle s'applique également aux produits et services internes conçus pour les autres utilisateurs de votre organisation. La création d'outils internes nécessite exactement la même approche : un engagement régulier dès le départ avec des utilisateurs réels pour vous assurer que votre produit permet de résoudre leur problème. Sinon, vous risquez de créer et d'utiliser des outils que personne n'utilise. C'est décourageant pour ceux qui travaillent sur les outils et frustrant pour ceux qui doivent utiliser des outils qu'ils n'aiment pas. En outre, cela représente des coûts importants et inutiles pour l'entreprise, car vous créez une solution technologique inadaptée aux attentes des utilisateurs.</p>
+
+<p>Votre équipe doit utiliser le schéma suivant afin de maximiser ses chances de résoudre efficacement les problèmes des clients :</p>
+
+<ol>
+<li>Recueillez d'abord les commentaires des clients, avant même de définir les fonctionnalités potentielles de votre solution.</li>
+<li>Assurez-vous que votre objectif est de résoudre un problème réel.</li>
+<li>Effectuez des itérations sur une solution qui résout réellement ce problème (et rien de plus).</li>
+<li>Assurez-vous que la solution génère une activité rentable (par exemple, le coût doit être inférieur aux revenus attendus).</li>
+<li>Effectuez le suivi des statistiques clés pour évaluer les performances (par exemple, AARRR).</li>
+<li>Répétez les étapes ci-dessus pour améliorer ces statistiques.</li>
+</ol>
+
+<p>Pour réussir, vous devez non seulement déployer et diffuser des logiciels rapidement, mais également répondre aux besoins des clients de manière plus efficace et plus rapide. Pour ce faire, vous devez effectuer des tests plus approfondis que vos concurrents. Le commerce de détail est un secteur qui <a href="https://services.google.com/fh/files/misc/state-of-devops-2019.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">a connu un succès particulier grâce à cela</a> (PDF).
+Des techniques telles que le <a href="https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">développement basé sur des hypothèses</a>, la définition et la mesure de votre entonnoir d'acquisition de clients et les tests A/B vous permettent de réaliser des expérimentations vis-à-vis des utilisateurs. Cela peut favoriser la créativité, accélérer l'innovation et développer l'apprentissage dans votre organisation.</p>
+
+<p>L'augmentation de l'engagement envers les clients et de la participation aux processus de gestion des produits permet de mieux identifier les <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=37" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">objectifs et valeurs</a> de votre organisation (PDF). Cela contribue à améliorer les performances organisationnelles.</p>
+
+<h2 id="common_pitfalls" data-text="Écueils les plus courants">Écueils les plus courants</h2>
+
+<p>Voici quelques-uns des obstacles les plus courants à une utilisation efficace des commentaires des clients :</p>
+
+<ul>
+<li><strong>Aucune collecte de commentaires</strong>. Il est fréquent que les sociétés de développement de logiciels ne recueillent pas du tout les commentaires des clients.</li>
+<li><strong>Collecte trop tardive des commentaires</strong>. Parfois, les entreprises recueillent les commentaires des clients si tard dans le cycle de livraison des logiciels qu'elles ne peuvent pas les prendre en compte.</li>
+<li><strong>Aucune compréhension du problème</strong> (ou mauvaise interprétation des commentaires des clients). Les entreprises peuvent avoir des attentes irréalistes vis-à-vis de leurs clients ou ne pas comprendre ce que les clients attendent du produit. L'équipe peut même ignorer explicitement les commentaires des clients, qui peuvent être gênants, mais sont en général précis.
+Cette situation peut se produire lorsqu'une équipe de développement n'a pas correctement évalué ou géré le risque de fournir la solution telle quelle, ou ne comprend tout simplement pas le problème à résoudre. Une équipe de développement souhaite limiter la portée de son travail au minimum requis pour résoudre un problème.
+Dans certains cas, si le problème nécessite un effort plus important que celui prévu par l'équipe, celle-ci peut rejeter à tort le travail supplémentaire en arguant du fait qu'il s'agit d'une "dérive des objectifs".  Cela se traduit par le développement d'une solution incomplète du point de vue du client, le résultat final étant un échec du produit.</li>
+<li><strong>Aucune autorisation pour les équipes à donner suite aux commentaires</strong>. Les équipes de diffusion doivent être habilitées à modifier la conception ou les spécifications du système en réponse aux commentaires, comme indiqué dans le document sur l'<a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">expérimentation en équipes</a>.</li>
+<li><strong>Mesure des performances en fonction d'une mauvaise statistique</strong>. Parfois, les solutions qui ne sont validées que superficiellement par les clients sont soumises aux équipes de développement et de diffusion en tant que "conditions finalisées". En pareil cas, le succès de l'équipe de diffusion est ensuite mesuré en fonction de la spécification de la fonctionnalité, et non de la résolution du problème ou du résultat pour les clients.</li>
+<li><strong>Échec de la résolution du problème du client</strong>.
+Les <a href="http://ai.stanford.edu/%7Eronnyk/ExPThinkWeek2009Public.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">données du secteur</a> (PDF) issues des tests A/B montrent que, dans les produits performants, environ un tiers des fonctionnalités proposées améliorent les résultats commerciaux lorsqu'elles sont réellement diffusées. Les deux tiers restants n'offrent aucun résultat, voire un résultat <em>négatif</em> pour les entreprises. Par conséquent, si vous n'effectuez pas de recherches sur l'expérience utilisateur, il est probable qu'au moins deux tiers des travaux réalisés par les équipes n'offrent pas le résultat escompté ou empirent activement la situation. Si une équipe travaille sur le début du cycle de vie de produits (particulièrement pour les plus innovants d'entre eux), il y a peu de chances qu'elle parvienne au résultat escompté.</li>
+<li><strong>Sous-estimation du temps et des efforts nécessaires pour répondre aux commentaires des clients</strong>. Les équipes doivent s'attendre à ce que les solutions qu'elles proposent ne conviennent pas et se préparer à en supprimer au moins deux tiers. En ce qui concerne le tiers restant des solutions, les équipes doivent être préparées à les faire évoluer de manière significative en réponse aux commentaires des clients.</li>
+</ul>
+
+<h2 id="ways_to_improve_customer_feedback" data-text="Méthodes d'amélioration des commentaires des clients">Méthodes d'amélioration des commentaires des clients</h2>
+
+<p>Le domaine de la conception de l'expérience utilisateur fournit un cadre pour comprendre l'amélioration. De nombreuses organisations considèrent qu'une bonne interface produit suffit pour obtenir une expérience utilisateur satisfaisante.
+Cependant, l'expérience utilisateur consiste à déterminer si vous résolvez un problème réel pour les utilisateurs. Plus largement, l'expérience utilisateur concerne toutes les expériences des utilisateurs lorsqu'ils interagissent avec votre organisation. On ne peut pas trop insister sur l'importance de l'expérience utilisateur pour créer des produits et services performants.</p>
+
+<p>Il est essentiel d'intégrer les commentaires des clients au processus de diffusion.
+Pour chaque fonctionnalité importante que vous créez, vous devez commencer par prendre en compte le problème à résoudre. Vous devez donc effectuer une étude sur les attentes des utilisateurs pour déterminer les solutions possibles et sélectionner le "candidat idéal". Vous devez analyser les résultats de cette étude avant d'écrire la moindre ligne de code.</p>
+
+<p>Pour les produits en début de cycle de vie, les équipes doivent adopter les idées mises en avant dans le <a href="https://wikipedia.org/wiki/Lean_startup" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">mouvement Lean Start-up</a> afin de valider le modèle économique sous-jacent du produit avant l'écriture du code. Vous devez vérifier que vous résolvez un problème réel, puis effectuer des itérations sur une solution qui résout le problème tout en développant un modèle économique durable.</p>
+
+<p>Vous devez suivre un modèle similaire pour les produits existants qui mettent en œuvre une nouvelle solution à un problème commercial connu. Une fois la conception de la solution validée, vous devez créer un prototype afin de pouvoir effectuer d'autres recherches et tests. La mise en production définitive de votre solution doit être effectuée uniquement lorsque le test confirme que la fonctionnalité atteint l'objectif défini.</p>
+
+<p>De nombreuses organisations ignorent tout ce travail et échouent. Toutefois, le simple fait de suivre ces étapes ne garantit pas le succès. L'objectif est de réduire au maximum le risque d'échec.</p>
+
+<h2 id="ways_to_measure_customer_feedback" data-text="Méthodes d'évaluation des commentaires des clients">Méthodes d'évaluation des commentaires des clients</h2>
+
+<p>Il n'est pas nécessaire de collecter des données sophistiquées pour déterminer si les commentaires des clients sont recueillis, visibles et pris en compte. Les questions suivantes peuvent vous aider à déterminer dans quelle mesure vous tirez parti des commentaires des clients pour la conception de vos produits :</p>
+
+<ul>
+<li>Disposez-vous de statistiques qui mesurent la satisfaction des clients ? Ces éléments sont-ils mis à jour et transmis régulièrement aux équipes ? Agissez-vous en conséquence ?</li>
+<li>Validez-vous toutes les fonctionnalités avant de les créer et effectuez-vous des recherches sur l'expérience utilisateur avec des prototypes dans le cadre de la diffusion ?</li>
+<li>Apportez-vous des modifications aux fonctionnalités selon les résultats de cette recherche sur l'expérience utilisateur ?</li>
+<li>Recueillez-vous activement et régulièrement les commentaires des utilisateurs et agissez-vous en conséquence ?</li>
+</ul>
+
+<h2 id="whats_next" data-text="Étapes suivantes">Étape suivante</h2>
+
+<ul>
+<li>Consultez la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">page DevOps</a> pour obtenir des liens vers d'autres articles et ressources.</li>
+<li>Lisez l'article <a href="http://ai.stanford.edu/%7Eronnyk/ExPThinkWeek2009Public.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Online Experimentation at Microsoft</a> (Test en ligne chez Microsoft, au format PDF) de Ronny Kohavi.</li>
+<li>Lisez l'article <a href="https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Hypothesis-driven development</a> (développement basé sur des hypothèses) de Barry O'Reilly.</li>
+<li>Lisez le livre <a href="http://shop.oreilly.com/product/0636920049166.do" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean UX: Designing Great Products with Agile Teams</em></a> (Expérience utilisateur Lean : conception de produits incroyables avec des équipes agiles) de Jeff Gothelf et Josh Seiden.</li>
+<li>Lisez le livre <a href="http://leananalyticsbook.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Analytics: Use Data to Build a Better Startup Faster</em></a> (Analyses Lean : utiliser des données pour concevoir plus rapidement une meilleure start-up) de Alistair Croll et Ben Yoskovitz.</li>
+<li>Lisez le livre <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise: How High Performance Organizations Innovate at Scale</em></a> (Entreprise Lean : comment les entreprises hautes performances innovent à grande échelle) de Jez Humble, Joanne Molesky et Barry O'Reilly.</li>
+<li>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</li>
+<li>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</li>
+</ul>
+
+</body></html>

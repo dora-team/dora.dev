@@ -1,0 +1,140 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Technologies DevOps : livraison continue</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Remarque</strong> : <span>La <em>livraison continue</em> fait partie d'un ensemble de critères d'aptitude permettant d'optimiser les performances organisationnelles et celles de la livraison de logiciels. Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les capacités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>La livraison continue est la capacité à apporter des modifications de tous types à la demande de manière rapide, sécurisée et durable. Les équipes qui appliquent la livraison continue sont en mesure de délivrer des logiciels et d'apporter des modifications à la production de manière peu risquée, y compris pendant les heures ouvrables, sans aucune incidence sur les utilisateurs.</p>
+
+<p>Vous pouvez appliquer les principes et les pratiques de la livraison continue à n'importe quel contexte logiciel, y compris lors des opérations suivantes :</p>
+
+<ul>
+<li>Mettre à jour des services dans un système distribué complexe</li>
+<li>Mettre à niveau un logiciel mainframe</li>
+<li>Effectuer des modifications de configuration d'une infrastructure</li>
+<li>Effectuer des modifications de schéma d'une base de données</li>
+<li>Mettre à jour automatiquement le micrologiciel</li>
+<li>Diffuser de nouvelles versions d'une application mobile</li>
+</ul>
+
+<p>Si votre équipe utilise la livraison continue, vous pouvez répondre "oui" aux questions suivantes :</p>
+
+<ul>
+<li>Notre logiciel peut-il être déployé tout au long de son cycle de vie ?</li>
+<li>Préférons-nous garantir le déploiement du logiciel plutôt que d'élaborer de nouvelles fonctionnalités ?</li>
+<li>Les retours rapides sur la qualité et le déploiement du système sur lequel nous travaillons sont-ils accessibles à tous les membres de l'équipe ?</li>
+<li>Lorsque nous recevons des commentaires indiquant que le système ne peut pas être déployé (par exemple, en raison d'une défaillance au niveau du build ou des tests), considérons-nous la correction de ces problèmes comme notre priorité ?</li>
+<li>Pouvons-nous déployer notre système vers l'environnement de production ou les utilisateurs finaux, à tout moment, à la demande ?</li>
+</ul>
+
+<p>La livraison continue et le déploiement continu sont souvent confondus, mais il s'agit de pratiques distinctes. Dans le cas du déploiement continu, les équipes essaient de déployer le plus rapidement chaque modification de code en production. Le déploiement continu est parfaitement adapté pour les services Web, mais ne peut pas être appliqué à des logiciels tels que les micrologiciels ou les applications mobiles. La livraison continue s'applique à tous les types de logiciels, y compris les micrologiciels et les systèmes mainframe. Elle fonctionne également dans les environnements hautement réglementés. Vous pouvez (et devez) commencer par la livraison continue, même si vous n'avez pas l'intention d'utiliser le déploiement continu.</p>
+
+<p>La livraison continue et le déploiement continu sont considérés à tort comme étant à risque et non adaptés aux domaines réglementés ou essentiels à la sécurité. En réalité, l'objectif de la livraison continue consiste à réduire les risques logiciels. Les recherches de DORA ont démontré que les équipes performantes obtiennent généralement des niveaux de fiabilité et de disponibilité plus élevés. Les pratiques techniques permettant la livraison continue (tests continus, virage à gauche pour la sécurité, exhaustivité en termes de tests et d'observabilité) sont encore plus importantes dans les domaines hautement réglementés et essentiels à la sécurité. La livraison continue a été correctement appliquée dans des domaines très réglementés, tels que les services financiers et les administrations publiques.</p>
+
+<p>Bien que la livraison continue soit possible pour toutes sortes de logiciels, elle demande beaucoup d'efforts. Néanmoins, elle présente des avantages considérables. Une étude menée par <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> démontre qu'une livraison continue performante offre les avantages suivants :</p>
+
+<ul>
+<li>Amélioration des performances de livraison de logiciels, mesurées à l'aide des <a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">quatre métriques clés</a>, et augmentation du niveau de disponibilité.</li>
+<li>Augmentation du niveau de qualité, mesuré par le pourcentage de temps passé par les équipes sur le retraitement ou sur des tâches non planifiées, comme indiqué dans le <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">rapport sur l'état du DevOps en 2016</a> (p. 25-26) et le <a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">rapport sur l'état du DevOps en 2018</a> (p. 27-29).</li>
+<li>Réduction des risques de surmenage (épuisement physique, mental ou émotionnel dû à la surcharge de travail ou au stress), augmentation de la <a href="/architecture/devops/devops-culture-job-satisfaction" track-type="article" track-name="internalLink" track-metadata-position="body">satisfaction au travail</a> et optimisation de la <a href="/architecture/devops/devops-culture-westrum-organizational-culture" track-type="article" track-name="internalLink" track-metadata-position="body">culture organisationnelle</a>.</li>
+<li>Réduction des contraintes liées au déploiement, une mesure qui permet d'évaluer si les déploiements engendrent des perturbations ou s'ils se déroulent plutôt de manière simple et fluide. Cela permet également de déterminer le niveau de peur et d'anxiété que les ingénieurs et le personnel technique peuvent ressentir lorsqu'ils transfèrent du code en production.</li>
+<li>Impact sur la culture, ce qui entraîne des niveaux de <a href="https://rework.withgoogle.com/print/guides/5721312655835136/">sécurité psychologique</a> plus élevés et une <a href="/architecture/devops/devops-culture-westrum-organizational-culture" track-type="article" track-name="internalLink" track-metadata-position="body">culture organisationnelle plus axée sur la mission</a>.</li>
+</ul>
+
+<p>Le schéma suivant montre l'impact d'un ensemble de pratiques techniques sur la livraison continue, qui génère à son tour les résultats répertoriés ci-dessus :</p>
+
+<p><img src="/static/architecture/devops/images/continuous-delivery-technical-practices.png" alt="Montre comment les pratiques techniques génèrent des résultats dans d&amp;#39;autres fonctionnalités" width="80%" class="screenshot"/> </p>
+
+<p>La livraison continue ne représente qu'un aspect permettant d'obtenir les résultats précédemment évoqués, bien qu'il soit essentiel. D'autres fonctionnalités culturelles et organisationnelles présentées dans le <a href="https://devops-research.com/research.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">programme de recherche de DORA</a> contribuent également à l'obtention de ces résultats. Vous pouvez assurer la livraison continue à l'aide des pratiques techniques décrites dans ce document.</p>
+
+<h2 id="implementing_continuous_delivery" data-text="Mettre en œuvre la livraison continue">Mettre en œuvre la livraison continue</h2>
+
+<p>Selon une étude menée par le programme de recherche de DORA, les fonctionnalités techniques suivantes permettent d'assurer la livraison continue. Le <a href="/architecture/devops/devops-culture-transformational-leadership" track-type="article" track-name="internalLink" track-metadata-position="body">leadership transformationnel</a> au sein de l'organisation permet également la mise en œuvre de la plupart de ces fonctionnalités techniques.</p>
+
+<p>Pour aider votre équipe à obtenir un débit plus élevé et des lancements moins risqués, mettez en œuvre les pratiques de livraison continue suivantes :</p>
+
+<ul>
+<li>L'<a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">automatisation des tests</a> : l'utilisation d'ensembles de tests automatisés complets principalement créés et gérés par les développeurs. Les ensembles de tests efficaces sont fiables, c'est-à-dire que les tests identifient des défaillances réelles et ne transmettent que du code diffusable.</li>
+<li>L'<a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">automatisation des déploiements</a> : le degré selon lequel les déploiements sont entièrement automatisés et ne nécessitent aucune intervention manuelle.</li>
+<li>Le <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">développement à branche unique</a> : caractérisé par moins de trois branches actives dans un dépôt de code (les branches et les fourches ayant des durées de vie très courtes, telles qu'inférieures à un jour) avant d'être fusionné avec le dépôt de code principal. Les équipes dédiées aux applications ont rarement ou jamais de périodes de <em>verrouillage du code</em> lorsqu'aucun utilisateur ne peut enregistrer le code, ni effectuer de demandes d'extraction en raison de conflits de fusion, au gel du code ou aux phases de stabilisation.</li>
+<li>Le <a href="/architecture/devops/devops-tech-shifting-left-on-security" track-type="article" track-name="internalLink" track-metadata-position="body">virage à gauche pour la sécurité</a> : l'intégration de la sécurité dès les phases de conception et de test du processus de développement logiciel. Ce processus comprend la réalisation d'examens de sécurité des applications, l'intégration de l'équipe chargée de la sécurité des informations dans le processus de conception et de démonstration des applications, l'utilisation de bibliothèques et de packages de sécurité pré-approuvés, et le lancement de tests des fonctionnalités de sécurité dans le cadre de l'ensemble de tests automatisés.</li>
+<li>Une <a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">architecture faiblement couplée</a> : une architecture qui permet aux équipes de tester et de déployer leurs applications à la demande, sans nécessiter d'orchestration avec d'autres services. Avec une architecture faiblement couplée, vos équipes peuvent travailler indépendamment sans avoir à se soucier de la compatibilité et des services des autres équipes, ce qui leur permet de travailler rapidement et d'apporter de la valeur au sein de l'organisation.</li>
+<li>Le <a href="/architecture/devops/devops-tech-teams-empowered-to-choose-tools" track-type="article" track-name="internalLink" track-metadata-position="body">fait de donner le choix des outils aux équipes</a> : les équipes qui peuvent choisir leurs outils sont les plus performantes sur le plan de la livraison continue.
+Personne ne sait mieux que les spécialistes ce dont ils ont besoin pour être efficaces.</li>
+<li>L'<a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">intégration continue (CI)</a> : une pratique de développement qui implique l'enregistrement régulier du code. Chaque enregistrement déclenche un ensemble de tests rapides pour détecter les régressions, que les développeurs corrigent immédiatement. Le processus CI crée des builds et des packages canoniques qui finissent par être déployés et diffusés.</li>
+<li>Les <a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">tests continus</a> : les tests sont effectués tout au long du cycle de livraison des logiciels plutôt que sous la forme d'une phase distincte une fois le <em>développement terminé</em>. Avec les tests continus, les développeurs et les testeurs travaillent côte à côte. Les équipes performantes pratiquent le développement piloté par les tests, reçoivent les commentaires de tests en moins de 10 minutes, et examinent et améliorent en permanence leurs suites de tests (par exemple, pour mieux détecter les défauts et maintenir la complexité sous contrôle).</li>
+<li>Le <a href="/architecture/devops/devops-tech-version-control" track-type="article" track-name="internalLink" track-metadata-position="body">contrôle des versions</a> : l'utilisation d'un système de contrôle des versions, tel que Git ou Subversion, pour tous les artefacts de production, y compris le code d'application, les configurations d'application, les configurations système et les scripts permettant d'automatiser le build et la configuration des environnements.</li>
+<li>La <a href="/architecture/devops/devops-tech-test-data-management" track-type="article" track-name="internalLink" track-metadata-position="body">gestion des données de test</a> : les bonnes pratiques incluent la capacité à disposer de données adéquates pour exécuter votre suite de tests, la capacité à acquérir les données nécessaires à la demande, et le fait que les données ne limitent pas le nombre de tests que vous pouvez exécuter. Dans la mesure du possible, vos équipes doivent minimiser la quantité de données de test nécessaire pour exécuter des tests automatisés.</li>
+<li>La <a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="article" track-name="internalLink" track-metadata-position="body">surveillance et l'observabilité complètes</a> : permet aux équipes de comprendre l'état de leurs systèmes. Les solutions efficaces permettent aux équipes de surveiller les métriques prédéfinies, y compris l'état du système tel qu'il est perçu par les utilisateurs. Elles permettent également aux ingénieurs de déboguer les systèmes de manière interactive et d'explorer des propriétés et des modèles dès leur première apparition.</li>
+<li>Les <a href="/architecture/devops/devops-measurement-proactive-failure-notification" track-type="article" track-name="internalLink" track-metadata-position="body">notifications proactives</a> : permettent de surveiller l'état du système de sorte que les équipes puissent détecter et limiter les problèmes de manière préemptive.</li>
+<li>La <a href="/architecture/devops/devops-tech-database-change-management">gestion des modifications des bases de données</a> : les modifications de bases de données ne ralentissent pas les équipes si elles suivent certaines pratiques clés, y compris le stockage de ces modifications sous forme de scripts dans le contrôle des versions (et la gestion de ces modifications de la même manière que celles apportées aux applications de production), l'accessibilité de ces modifications pour tous les utilisateurs impliqués dans le cycle de livraison des logiciels (y compris les ingénieurs) et la communication avec toutes les parties lorsque les modifications de l'application nécessitent des modifications de bases de données.</li>
+<li>La <a href="/architecture/devops/devops-tech-code-maintainability">gestion du code</a> : les systèmes et les outils qui aident les développeurs à modifier le code géré par d'autres utilisateurs, à trouver des exemples dans le codebase, à réutiliser le code d'autres personnes et à ajouter, mettre à niveau et migrer vers des nouvelles versions de dépendances sans interrompre leur code.</li>
+</ul>
+
+<p>Même si la livraison continue est souvent associée à l'intégration continue et comprise dans le raccourci <em>CI/CD</em>, les recherches démontrent que l'intégration continue ne constitue qu'un élément de la mise en œuvre de la livraison continue. Pour obtenir des versions fiables et sans risque, vous avez besoin d'une collaboration étroite entre toutes les personnes impliquées dans la livraison de logiciels, et pas seulement les développeurs de logiciels. De même, votre équipe doit adopter de nouvelles méthodes de travail et acquérir de nouvelles compétences.</p>
+
+<h2 id="common_pitfalls_of_implementing_continuous_delivery" data-text="Problèmes courants liés à la mise en œuvre de la livraison continue">Problèmes courants liés à la mise en œuvre de la livraison continue</h2>
+
+<p>Certaines entreprises pensent à tort qu'elles peuvent mettre en œuvre la livraison continue en réalisant plus souvent leur processus de déploiement existant. Cependant, la mise en œuvre des fonctionnalités techniques qui assurent la livraison continue nécessite généralement des processus et des modifications d'architecture conséquents. Augmenter la fréquence des déploiements sans améliorer les processus et l'architecture est susceptible d'entraîner des taux de défaillance plus élevés et de provoquer le surmenage de vos équipes.</p>
+
+<p>De nombreuses descriptions de la livraison continue se concentrent sur les outils et les modèles, tels que le pipeline de déploiement qui transfère les modifications depuis le contrôle des versions vers l'environnement de production. Toutefois, vous n'atteindrez pas les résultats escomptés si vous vous contentez d'utiliser des outils modernes sans mettre en œuvre les pratiques techniques nécessaires et le changement de processus décrit dans ce document.</p>
+
+<p>Le schéma suivant illustre la courbe en J qui serait typique des programmes de transformation, d'après les recherches de DORA. Pour quitter le bas de la courbe en J, votre équipe doit envisager la reconception et la simplification du processus, l'amélioration de l'architecture, le développement des capacités et des compétences, ainsi que l'intégration de l'automatisation et des outils.</p>
+
+<p><img src="/static/architecture/devops/images/continuous-delivery-2.png" alt="Schéma de la courbe en J affichant les transformations types, issu du rapport sur l&amp;#39;état du DevOps en 2018" width="80%" class="screenshot"/> </p>
+
+<p>Sur le schéma, on peut distinguer les étapes suivantes :</p>
+
+<ul>
+<li>Au début de la courbe, les équipes commencent la transformation et identifient les résultats rapides.</li>
+<li>Dans le cadre d'une amélioration initiale, l'automatisation aide les équipes peu performantes à progresser.</li>
+<li>En raison de la diminution de l'efficacité (le bas de la courbe en J), l'automatisation augmente les exigences des tests, qui sont traitées manuellement. Une grande partie de la dette technique empêche le progrès.</li>
+<li>À mesure que les équipes commencent à sortir de la courbe, la dette technique et la complexité accrue entraînent une augmentation des contrôles manuels et des couches de processus en cas de modifications, ce qui ralentit le travail.</li>
+<li>En haut de la courbe, le travail d'amélioration continu mène à l'excellence et à des niveaux de performances élevés. Les équipes performantes et ultraperformantes se servent de leur expertise et apprennent de leurs environnements pour augmenter la productivité.</li>
+</ul>
+
+<p>Un moyen efficace de limiter l'impact de la courbe en J consiste à effectuer une <em>cartographie de flux de valeur</em> pour détecter et anticiper l'effet des goulots d'étranglement. Lors de la réalisation d'une cartographie de flux de valeur, vous examinez une seule modification pendant son transfert du contrôle des versions vers l'environnement de production :</p>
+
+<ol>
+<li>Tenez compte des différents processus par lesquels passe chaque modification, tels que les tests automatisés et manuels, l'examen de sécurité, la gestion du changement et la diffusion en production.</li>
+<li>Mesurez le temps total que met la modification à être publiée à partir du contrôle des versions. Pour chaque processus, mesurez les éléments suivants :<ul>
+<li>Le temps écoulé réel et le temps à valeur ajoutée (le temps pendant lequel le travail est effectué) impliqués dans l'exécution du processus de bout en bout.</li>
+<li>Il s'agit de la durée exprimée en pourcentage pendant laquelle le travail est renvoyé car il n'a pas été effectué correctement la première fois. Cette métrique est connue sous le nom de <em>pourcentage complet et exact</em> ou %C/A.</li>
+</ul></li>
+</ol>
+
+<p>Le but de la cartographie de flux de valeur est de vous aider à identifier les éléments inefficaces au sein de votre processus. En équipe, créez un schéma représentant l'aspect du flux de valeur que vous souhaitez atteindre dans six mois, puis attribuez les capacités nécessaires à l'obtention de ce résultat. Identifiez et supprimez les obstacles avec un processus dont le temps écoulé est élevé par rapport au temps à valeur ajoutée ou qui présente un taux %C/A faible.</p>
+
+<p>En règle générale, la mise en œuvre d'un pipeline de déploiement nécessite des processus et des modifications d'architecture conséquents. Comme le pipeline de déploiement passe de la phase d'enregistrement à la phase de diffusion, il connecte plusieurs équipes entre elles. Il est essentiel que les représentants de toutes les équipes effectuent un exercice de cartographie de flux de valeur, et qu'ils s'accordent sur une chaîne d'outils et des processus communs (par exemple, pour le déploiement des environnements de test et de production) afin d'atteindre l'état futur.</p>
+
+<p>La mise en œuvre de la livraison continue consiste en un travail d'amélioration constant et quotidien, dans le but d'atteindre les résultats escomptés. Les outils et les modèles sont utiles, mais uniquement pour étayer ce travail d'amélioration, qui reste essentiel.</p>
+
+<h2 id="measuring_continuous_delivery" data-text="Mesurer la livraison continue">Mesurer la livraison continue</h2>
+
+<p>En fin de compte, l'objectif de la livraison continue consiste à s'assurer que les versions sont exécutées de manière peu risquée pendant les heures ouvrables. Idéalement, aucun employé ne doit travailler en dehors des heures ouvrables pour lancer des déploiements ou des versions. Il s'agit donc d'un élément important à mesurer.</p>
+
+<p>Vos performances en termes de livraison continue sont reflétées dans les résultats que vous obtenez. Vous pouvez effectuer l'<a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">évaluation DevOps rapide de DORA</a> pour mesurer vos performances par rapport aux métriques clés de la livraison continue :</p>
+
+<ul>
+<li>Des délais de livraison courts pour les modifications standards et urgentes, avec l'objectif d'utiliser votre processus habituel pour les modifications urgentes</li>
+<li>Des taux d'échec liés aux modifications faibles</li>
+<li>Un délai de restauration rapide du service en cas de pannes ou de dégradations</li>
+<li>Des fréquences de publication qui garantissent la disponibilité rapide des fonctionnalités à priorité élevée et des corrections de bugs.</li>
+</ul>
+
+<p>Comme indiqué au début de ce document, la mise en œuvre de la livraison continue doit également contribuer à réduire les niveaux de retraitement, les contraintes liées au déploiement, et le temps passé par les équipes sur le retraitement ou sur des tâches non planifiées.</p>
+
+<h2 id="whats_next" data-text="Étape suivante">Étape suivante</h2>
+
+<ul>
+<li>Consultez la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">page DevOps</a> pour obtenir des liens vers d'autres articles et ressources.</li>
+<li>Apprenez-en plus sur la livraison continue dans le <a href="https://martinfowler.com/delivery.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">guide sur la livraison de logiciels</a> de Martin Fowler.</li>
+<li>Lisez <a href="https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation</em></a>, de Karen Martin et Mike Osterling.</li>
+<li>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</li>
+<li>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</li>
+</ul>
+
+</body></html>

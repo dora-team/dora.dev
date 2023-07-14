@@ -1,0 +1,127 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Tech: Continuous Integration</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Kontinuierliche Integration</em> ist eine der Funktionen, die zu einer höheren Softwarebereitstellung und Unternehmensleistung führen. Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">"State of DevOps"-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, wissenschaftlich exakten Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>Softwaresysteme sind komplex und eine scheinbar einfache, eigenständige Änderung an einer einzelnen Datei kann unbeabsichtigte Auswirkungen auf das Gesamtsystem haben. Wenn eine große Zahl von Entwicklern an ähnlichen Systemen arbeitet, ist die Koordinierung von Code-Updates ein schwieriges Problem und Änderungen von verschiedenen Entwicklern können inkompatibel sein.</p>
+
+<p>Zur Lösung dieser Probleme wurde die Continuous Integration (CI) entwickelt. CI <a href="https://martinfowler.com/articles/originalContinuousIntegration.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">folgt dem Prinzip</a>, dass etwas, das viel Zeit und Energie in Anspruch nimmt, häufiger durchgeführt werden muss, damit der Druck entsteht, es besser zu machen. Durch schnelle Feedback-Loops und dadurch, dass eine Aufgabenteilung zwischen Entwicklern gewährleistet ist, ermöglicht CI den Teams, hochwertige Software zu erstellen, die Kosten für laufende Softwareentwicklung und -wartung zu senken und die Produktivität der Teams zu steigern.</p>
+
+<h2 id="how_to_implement_ci" data-text="CI implementieren">CI implementieren</h2>
+
+<p>Wenn Ihre Organisation CI anwendet, binden Ihre Entwickler ihre gesamte Arbeit regelmäßig in die <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="solution" track-name="internalLink" track-metadata-position="body">Hauptversion der Codebasis</a> (<a href="/architecture/devops/devops-tech-trunk-based-development" track-type="solution" track-name="internalLink" track-metadata-position="body"><em>Hauptentwicklungszweig</em></a>, <em>Hauptversion</em> oder <em>Mainline</em> genannt) ein. <a href="https://services.google.com/fh/files/misc/state-of-devops-2015.pdf#page=20" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Studien von DevOps Research and Assessment (DORA)</a> (PDF) zeigen, dass Teams eine bessere Leistung erzielen, wenn Entwickler ihre Arbeit mindestens einmal täglich im Hauptentwicklungszweig zusammenführen. Vor und nach der Zusammenführung wird eine Reihe automatisierter Tests ausgeführt, um zu prüfen, ob die Änderungen keine Regressionsfehler verursachen. Wenn diese automatisierten Tests fehlschlagen, unterbricht das Team seine Arbeit, um das Problem sofort zu beheben.</p>
+
+<p>Durch CI ist die Software immer in einem funktionsfähigen Zustand und Entwicklerzweige weichen nicht wesentlich vom Hauptentwicklungszweig ab. Die Vorteile von CI sind erheblich: <a href="https://services.google.com/fh/files/misc/state-of-devops-2015.pdf#page=16" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Studien</a> (PDF) zeigen, dass es zu einer höheren Bereitstellungshäufigkeit, stabileren Systemen und höherwertiger Software führt.</p>
+
+<p>Die Schlüsselelemente für die erfolgreiche Implementierung von Continuous Integration sind:</p>
+
+<ul>
+<li>Jedes Commit sollte einen Build der Software auslösen.</li>
+<li>Jedes Commit sollte eine Reihe automatisierter Tests auslösen, die innerhalb weniger Minuten Feedback geben.</li>
+</ul>
+
+<p>Zur Implementierung dieser Elemente benötigen Sie Folgendes:</p>
+
+<ul>
+<li><strong>Einen automatisierten Build-Prozess</strong>. Der erste Schritt in CI besteht in einem automatisierten Skript, das Pakete erstellt, die in jeder Umgebung bereitgestellt werden können. Die vom CI-Build erstellten Pakete sollten autoritativ sein und von allen nachgelagerten Prozessen verwendet werden. Diese Builds sollten nummeriert und wiederholbar sein. Sie sollten Ihren Build-Prozess mindestens einmal täglich erfolgreich ausführen.</li>
+<li><strong>Eine Reihe <a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">automatisierter Tests</a></strong>.
+Falls noch keine vorhanden sind, schreiben Sie zuerst einige Einheiten- und <a href="https://services.google.com/fh/files/misc/state-of-devops-2014.pdf#page=14" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Akzeptanztests</a> (PDF), die diejenigen Funktionen Ihres Systems abdecken, die für die Wertschöpfung zentral sind. Die Tests müssen zuverlässig sein. Auf diese Weise verfügen Sie bei Auftreten eines Fehlers über das Wissen, dass ein echtes Problem vorliegt. Umgekehrt können Sie, wenn die Tests erfolgreich sind, sicher sein, dass es keine ernsthaften Probleme mit dem System gibt. Sorgen Sie dann dafür, dass alle neuen Funktionen durch Tests abgedeckt sind. Diese Tests sollten schnell ausgeführt werden, damit Entwickler so schnell wie möglich Feedback erhalten. Ihre Tests sollten mindestens einmal täglich erfolgreich ausgeführt werden.
+Bei Leistungs- und Akzeptanztests sollten die Entwickler durch die Tests täglich Feedback erhalten.</li>
+<li><strong>Ein CI-System, das die Build-Tests und automatisierten Tests bei jedem Check-in ausführt.</strong> Das System sollte den Status auch für das Team sichtbar machen. Sie können das System unterhaltsam gestalten und beispielsweise Hupen oder Ampeln verwenden, um einen fehlerhaften Build anzuzeigen. Verwenden Sie keine E-Mail-Benachrichtigungen. Viele Nutzer ignorieren E-Mail-Benachrichtigungen oder erstellen einen Filter zum Ausblenden von Benachrichtigungen. Benachrichtigungen in einem Chatsystem sind hierfür eine bessere und beliebtere Methode.</li>
+</ul>
+
+<p>Continuous Integration <a href="https://www.martinfowler.com/articles/continuousIntegration.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">gemäß der Definition von Kent Beck und der Extreme Programming-Community</a>, von der der Begriff stammt, umfasst zwei weitere Vorgehensweisen, die es ebenfalls wahrscheinlicher machen, dass die Leistung bei der Softwarebereitstellung zunimmt:</p>
+
+<ul>
+<li>Die <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="solution" track-name="internalLink" track-metadata-position="body">Entwicklung nach Hauptentwicklungszweig</a>, bei der Entwickler gemäß Hauptentwicklungszweig/Mainline <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">kleine Batches</a> abarbeiten.
+Sie führen ihre Arbeit mindestens einmal täglich in einem gemeinsam genutzten Hauptentwicklungszweig/Mainline zusammen, anstatt an langlebigen Feature-Zweigen zu arbeiten.</li>
+<li>Eine Vereinbarung, dass bei einem Fehlschlagen des Builds dessen Reparatur <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="solution" track-name="internalLink" track-metadata-position="body">Vorrang vor allen anderen Arbeiten</a> haben sollte.</li>
+</ul>
+
+<p>CI erfordert <a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">automatisierte Einheitentests</a>.
+Diese Tests sollten umfassend genug sein, dass Sie sicher sein können, dass die Software wie erwartet funktioniert. Die Tests müssen in wenigen Minuten ausgeführt werden. Wenn die automatisierten Einheitentests länger dauern, neigen Entwickler dazu, sie nicht häufig auszuführen. Wenn die Tests selten ausgeführt werden, kann ein Testfehler aus vielen verschiedenen Änderungen resultieren, was das Debuggen erschwert. Tests, die selten ausgeführt werden, lassen sich nur schwer verwalten.</p>
+
+<p>Die Erstellung verwaltbarer Reihen automatisierter Einheitentests ist komplex. Eine gute Möglichkeit, dieses Problem zu lösen, ist die <a href="https://wikipedia.org/wiki/Test-driven_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">testgetriebene Entwicklung</a> (Test-Driven Development, TDD), bei der Entwickler automatisierte Tests schreiben, die erst einmal fehlschlagen, bevor sie den Code implementieren, der die Tests besteht. TDD hat mehrere Vorteile. Einer ist, dass Entwickler modularen und einfach zu testenden Code schreiben können, wodurch die Wartungskosten der resultierenden automatisierten Testreihen reduziert werden.
+Viele Organisationen haben keine verwaltbaren Reihen automatisierter Einheitentests und wenden trotzdem keine TDD an.</p>
+
+<h3 id="objections_to_ci" data-text="Einwände gegen CI">Einwände gegen CI</h3>
+
+<p>Wie bereits erwähnt, wird CI manchmal als kontroverses Verfahren betrachtet. CI erfordert, dass Ihre Entwickler umfangreiche Features und andere Änderungen in <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">kleinere inkrementelle Schritte</a> aufteilen, die häufig in den Hauptentwicklungszweig integriert werden können. Für Entwickler, die diese Arbeitsweise nicht gewohnt sind, bedeutet dies eine Umstellung. Wenn Teams zu kleinen Schritten wechseln, kann es außerdem länger dauern, bis umfangreiche Features abgeschlossen sind. Im Allgemeinen sollten Sie jedoch nicht versuchen, die Entwicklungsarbeit auf die Geschwindigkeit hin zu optimieren, mit der Entwickler ein umfangreiches Feature in einem Zweig für abgeschlossen erklären können. Ihr Ziel sollte vielmehr sein, Änderungen so schnell wie möglich zu prüfen, zu integrieren, zu testen und bereitzustellen. Dieser Prozess führt zu einer Softwareentwicklung und -bereitstellung, die <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=35" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">schneller und stabiler</a> (PDF) ist, wenn die Änderungen klein und unabhängig sind und die Zweige, in denen sie gespeichert sind, nur kurzlebig sind. Durch aufgeteilte Arbeit erhalten Entwickler außerdem von anderen Entwicklern, Testern und Kunden sowie von automatisierten Leistungs- und Sicherheitstests regelmäßig Feedback zu den Auswirkungen ihrer Arbeit auf das System als Ganzes. Dadurch lassen sich Probleme einfacher und schneller erkennen und beheben.</p>
+
+<p>Trotz dieser Einwände sollte die Unterstützung von Softwareentwicklungsteams bei der Implementierung von Continuous Integration die oberste Priorität für jede Organisation sein, die den Weg zu Continuous Delivery beginnen möchte.</p>
+
+<h2 id="common_pitfalls" data-text="Häufige Stolperfallen">Häufige Stolperfallen</h2>
+
+<p>Einige häufige Probleme, die eine breite Akzeptanz von CI verhindern, sind:</p>
+
+<ul>
+<li><strong>Nicht alles wird im Code-Repository gespeichert.</strong> Alles, was zum Erstellen und Konfigurieren der Anwendung und des Systems erforderlich ist, sollte sich in Ihrem Repository befinden. Dies mag außerhalb des Bereichs von CI erscheinen, ist aber eine wichtige Grundlage.</li>
+<li><strong>Der Build-Prozess wird nicht automatisiert.</strong> Bei manuellen Schritten können Fehler auftreten und die Schritte nicht dokumentiert werden.</li>
+<li><strong>Nicht bei jeder Änderung werden Schnelltests ausgelöst.</strong> Es sind vollständige End-to-End-Tests erforderlich, aber auch Schnelltests (normalerweise Einheitentests) sind wichtig, um schnelles Feedback zu ermöglichen.</li>
+<li><strong>Fehlerhafte Builds werden nicht sofort behoben.</strong> Ein Hauptziel von CI ist ein stabiler Build, aus dem jeder die Entwicklungsarbeit fortsetzen kann. Wenn der Fehler im Build nicht innerhalb weniger Minuten behoben werden kann, sollte die Änderung identifiziert und zurückgesetzt werden.</li>
+<li><strong>Tests, deren Ausführung zu lange dauert.</strong> Die Tests sollten nicht länger als ein paar Minuten dauern. Die Obergrenze beträgt <a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf#page=56" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">laut der Studie von DORA</a> (PDF) etwa zehn Minuten. Wenn Ihr Build länger dauert, sollten Sie die Effizienz Ihrer Tests verbessern, zusätzliche Rechenressourcen hinzufügen, damit Sie sie parallel ausführen können, oder längere Tests mithilfe des <a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Deployment-Pipeline-Musters</a> unterteilen.</li>
+<li><strong>Zu seltene Zusammenführung im Hauptentwicklungszweig.</strong> Viele Organisationen verfügen über automatisierte Tests und Builds, achten aber auf keine tägliche Zusammenführung im Hauptentwicklungszweig.
+Dies führt zu langlebigen Zweigen, die viel schwieriger zu integrieren sind, und zu langen Feedback-Loops für die Entwickler.</li>
+</ul>
+
+<h2 id="ways_to_measure_ci" data-text="Möglichkeiten zur Messung von CI">Möglichkeiten zur Messung von CI</h2>
+
+<p>Die oben erläuterten CI-Konzepte beschreiben Möglichkeiten zur Messung der Effektivität von CI in Ihren Systemen und Ihrer Entwicklungsumgebung, wie in der folgenden Tabelle dargestellt.
+Durch die Erfassung dieser Messwerte können Sie Ihre Prozesse und Tools dafür optimieren. Dies führt zu besseren CI-Verfahren und kürzeren Feedback Loops für Ihre Entwickler.</p>
+
+<table>
+  <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+  </colgroup>
+<thead>
+<tr>
+<th><strong>Faktor zum Testen</strong></th>
+<th><strong>Geeignete Messwerte</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code-Commits lösen einen Build der Software aus.</td>
+<td>Der Prozentsatz der Code-Commits, die zu einem Software-Build ohne manuelles Eingreifen führen.</td>
+</tr>
+<tr>
+<td>Code-Commits lösen eine Reihe automatisierter Tests aus.</td>
+<td>Der Prozentsatz der Code-Commits, die dazu führen, dass eine Reihe automatisierter Tests ohne manuelles Eingreifen ausgeführt wird.</td>
+</tr>
+<tr>
+<td>Automatisierte Builds und Tests werden täglich erfolgreich ausgeführt.</td>
+<td>Der Prozentsatz der automatisierten Builds und der Prozentsatz der automatisierten Tests, die täglich erfolgreich ausgeführt werden.</td>
+</tr>
+<tr>
+<td>Aktuelle Builds stehen Testern für explorative Tests zur Verfügung.</td>
+<td>Die Verfügbarkeit von Builds für Tester oder das Gegenteil, nämlich die Nichtverfügbarkeit von Builds für Tester.</td>
+</tr>
+<tr>
+<td>Entwickler erhalten täglich Feedback zu den Akzeptanz- und Leistungstests.</td>
+<td>Die Verfügbarkeit von Feedback für Entwickler zu Akzeptanz- und Leistungstests, d. h. der Prozentsatz der Tests, die den Entwicklern innerhalb eines Tages zur Verfügung stehen.</td>
+</tr>
+<tr>
+<td>Fehlerhafte Builds werden sofort behoben.</td>
+<td>Die Zeit, die zwischen dem Auftreten und dem Beheben des Build-Fehlers erforderlich ist, entweder mit einem Check-in, der das Problem behebt, oder durch die funktionsgefährdende Änderung.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Nächste Schritte</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li><a href="/solutions/continuous-integration" track-type="solution" track-name="internalLink" track-metadata-position="body">Continuous Integration-Lösungen von Google Cloud</a></li>
+<li><a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">E-Book "Site Reliability Engineering (SRE)"</a>, insbesondere <a href="https://landing.google.com/sre/sre-book/chapters/release-engineering/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Kapitel 8 – Release Engineering</a></li>
+<li>Artikel <a href="https://www.jamesshore.com/Blog/Continuous-Integration-on-a-Dollar-a-Day.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">CI on a dollar a day</a> von James Shore</li>
+<li>Mehr von John Penix von Google darüber erfahren, <a href="https://www.infoq.com/presentations/Continuous-Testing-Build-Cloud/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">wie Google CI in großem Maßstab anwendet</a></li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,118 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技术：持续集成</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+<aside class="note"><strong>注意</strong><span>：持续集成<em></em>是能够推动实现更出色的软件交付表现和组织绩效的一组功能之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>软件系统非常复杂，对一个文件进行明显简单、独立的更改可能会对整个系统造成意外的影响。当大量开发者处理相关系统时，协调代码更新是个难题，而且不同开发者所做的更改可能并不兼容。</p>
+
+<p>持续集成 (CI) 这一做法就是为了解决这些问题。持续集成遵循以下<a href="https://martinfowler.com/articles/originalContinuousIntegration.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">原则</a>：如果某个操作需要花费大量时间和精力，您应该更频繁地执行此操作，使这个过程不那么痛苦。持续集成可创建快速反馈环并确保开发者以小批量方式工作，能够让团队开发高质量的软件、降低软件开发和维护费用，并提高团队工作效率。</p>
+
+<h2 id="how_to_implement_ci" data-text="如何实现持续集成">如何实现持续集成</h2>
+
+<p>当您的组织开始实现持续集成时，开发者会定期将其所有作业集成到<a href="/architecture/devops/devops-tech-trunk-based-development" track-type="solution" track-name="internalLink" track-metadata-position="body">代码库的主版本</a>（称为<a href="/architecture/devops/devops-tech-trunk-based-development" track-type="solution" track-name="internalLink" track-metadata-position="body">主干</a><em></em>、主版本<em></em>或主线<em></em>）中。DevOps 研究和评估组织 (DORA) 的<a href="https://services.google.com/fh/files/misc/state-of-devops-2015.pdf#page=20" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">研究</a> (PDF) 表明，如果开发者以至少每天一次的频率将其作业合并到主干中，团队的表现会更好。合并之前和合并之后，系统都会运行一组自动化测试，用于验证更改不会引入回归错误。如果这些自动化测试失败，团队会立即停止正在进行的工作来解决此问题。</p>
+
+<p>持续集成可确保软件始终处于正常运行状态，还可确保开发者分支不会大幅度偏离主干。持续集成的优势非常明显：<a href="https://services.google.com/fh/files/misc/state-of-devops-2015.pdf#page=16" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">研究</a> (PDF) 显示，它可以提高部署频率、系统稳定性和软件质量。</p>
+
+<p>成功实现持续集成的关键要素包括以下几项：</p>
+
+<ul>
+<li>每次提交都应触发软件的构建。</li>
+<li>每次提交都应触发一系列可在几分钟内提供反馈的自动测试。</li>
+</ul>
+
+<p>要实现这些元素，您需要以下几项：</p>
+
+<ul>
+<li><strong>自动构建流程</strong>。持续集成的第一步是拥有一个自动脚本，它能够创建可部署到任何环境的软件包。由持续集成构建创建的软件包应具有权威性，并可供所有下游流程使用。这些构建应进行编号且可重复。每天应至少成功运行一次构建流程。</li>
+<li><strong>一套<a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">自动化测试</a></strong>。如果没有，请先编写少量涵盖系统高价值功能的单元测试和<a href="https://services.google.com/fh/files/misc/state-of-devops-2014.pdf#page=14" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">验收测试</a> (PDF)。确保测试可靠。这样一来，当测试失败时，您就会知道存在实际问题；当测试通过时，您便可放心 - 系统没有严重问题。然后，确保测试涵盖所有新功能。这些测试应该能够快速运行，以便尽快为开发者提供反馈。您的测试每天应至少成功运行一次。归根结底，如果您有性能和验收测试，开发者应该每天都获得反馈。</li>
+<li><strong>在每次签入时运行构建和自动化测试的持续集成系统</strong>。该系统还应向团队显示状态。您可以采用有趣的方式来显示状态 - 例如，当构建中断时，您可以使用电喇叭或红绿灯来指示。请勿使用电子邮件通知；许多人会忽略电子邮件通知或创建隐藏通知的过滤条件。聊天系统中的通知是更好且更常用的通知方式。</li>
+</ul>
+
+<p>根据 Kent Beck 和极限编程社区（该术语的发源地）的<a href="https://www.martinfowler.com/articles/continuousIntegration.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">定义</a>，持续集成还包含两种可提高软件交付性能的拓展做法：</p>
+
+<ul>
+<li><a href="/architecture/devops/devops-tech-trunk-based-development" track-type="solution" track-name="internalLink" track-metadata-position="body">主干开发</a>做法，即开发者以<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">小批量</a>的方式处理主干/主线。他们以至少每天一次的频率将其工作合并到共享主干/主线中，而不是处理生命周期较长的功能分支。</li>
+<li>设置一份协议，规定当构建中断时，构建修复工作应该<a href="/architecture/devops/devops-tech-trunk-based-development" track-type="solution" track-name="internalLink" track-metadata-position="body">优于任何其他工作</a>。</li>
+</ul>
+
+<p>持续集成需要<a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">自动化单元测试</a>。这些测试应足够全面，让您有信心确定软件可按预期运行。测试还必须在几分钟或更短的时间内运行。如果自动化单元测试的运行时间较长，开发者就不会愿意频繁运行它们。如果测试不频繁运行，则测试失败可能是许多不同的更改所致，导致难以调试。不频繁运行的测试很难维护。</p>
+
+<p>创建可维护的自动化单元测试套件非常复杂。解决此问题的一个好方法是采用<a href="https://wikipedia.org/wiki/Test-driven_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">测试驱动开发</a> (TDD)，即开发者在实现让测试通过的代码之前，先编写最初失败的自动化测试。TDD 具有若干优势，其中一个优势是确保开发者能够编写出易于测试的模块化代码，从而降低生成的自动化测试套件的维护费用。许多组织都没有可维护的自动化单元测试套件，尽管如此，他们仍未采用 TDD。</p>
+
+<h3 id="objections_to_ci" data-text="关于持续集成的争议">关于持续集成的争议</h3>
+
+<p>如前所述，有时持续集成会被视作一种有争议的做法。持续集成需要开发者将大型功能和其他更改拆分为可频繁集成到主干中的<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">小型增量步骤</a>。对于不习惯以这种方式工作的开发者而言，这是一个改变。此外，当团队改用小步骤时，完成大型功能可能需要更长的时间。但总的来说，您不希望优化开发人员在分支上声明一个大型功能的速度，而是希望能尽快审核、集成、测试和部署更改。如果是独立的小型更改，并且它们所在的分支只在短时间内存在，则此流程会使软件的开发和交付<a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=35" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">更快且更稳定</a> (PDF)。小批量工作还可以确保开发者定期获得来自其他开发者、测试人员、客户以及自动化性能和安全测试的关于工作对系统总体影响的反馈。这可以进而帮助您更轻松、更快速地检测、分类和修复任何问题。</p>
+
+<p>尽管存在这些争议，但对于希望开始持续交付之旅的任何组织来说，帮助软件开发团队实现持续集成应该是首要任务。</p>
+
+<h2 id="common_pitfalls" data-text="常见误区">常见误区</h2>
+
+<p>以下是阻碍持续集成广泛采用的常见误区：</p>
+
+<ul>
+<li><strong>未将所有资源放入代码库中</strong>。构建和配置应用及系统所需的一切资源都应放入代码库中。这似乎不在持续集成的涵盖范围内，但它是重要的基础步骤。</li>
+<li><strong>未自动化构建流程</strong>。手动执行步骤可能会导致错误，并且不记录某些步骤。</li>
+<li><strong>未在每次更改时触发快速测试</strong>。全面的端到端测试是必要的，但快速测试（通常是单元测试）对于获得快速反馈也很重要。</li>
+<li><strong>未立即修复中断的构建</strong>。持续集成的一个关键目标是得到让每个人都可以开发的稳定构建。如果无法在几分钟内修复构建，则应确定并还原导致构建中断的更改。</li>
+<li><strong>测试的运行时间过长</strong>。测试的运行时间不应超过几分钟，<a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf#page=56" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">根据 DORA 的研究</a> (PDF)，上限应为 10 分钟左右。如果构建花费的时间超过此值，您应该提高测试效率，添加更多计算资源以便并行运行它们，或者使用<a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">部署流水线模式</a>将运行较长时间的测试拆分为单独的构建。</li>
+<li><strong>未频繁合并到主干</strong>。许多组织都有自动化测试和构建，但并未要求每天都要合并到主干。这会导致更难集成生命周期较长的分支，并延长开发者的反馈环。</li>
+</ul>
+
+<h2 id="ways_to_measure_ci" data-text="衡量持续集成的方法">衡量持续集成的方法</h2>
+
+<p>前面讨论的持续集成概念概述了衡量系统和开发环境中持续集成效果的方法，如下表所示。通过收集这些指标，您可以针对它们优化流程和工具。这样可以得到更好的持续集成做法，并缩短开发者的反馈环。</p>
+
+<table>
+  <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+  </colgroup>
+<thead>
+<tr>
+<th><strong>测试的因素</strong></th>
+<th><strong>衡量的指标</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>代码提交触发软件的构建</td>
+<td>导致在没有人工干预的情况下软件构建的代码提交的百分比。</td>
+</tr>
+<tr>
+<td>代码提交触发一系列自动测试</td>
+<td>导致在没有人工干预的情况下运行一套自动化测试的代码提交的百分比。</td>
+</tr>
+<tr>
+<td>每天成功执行自动构建和测试</td>
+<td>每天成功执行的自动化构建的百分比和每天成功执行的自动化测试的百分比。</td>
+</tr>
+<tr>
+<td>测试人员可使用当前构建进行探索性测试</td>
+<td>构建对测试人员的可用性或不可用性。</td>
+</tr>
+<tr>
+<td>开发者每天都收到来自验收和性能测试的反馈</td>
+<td>来自验收和性能测试的反馈对开发者的可用性，即在一天之内为开发者提供反馈的测试所占的百分比。</td>
+</tr>
+<tr>
+<td>中断的构建立即得到修复</td>
+<td>从构建中断到修复（通过检查解决问题或还原破坏性更改）的时间。</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>详细了解 Google Cloud <a href="/solutions/continuous-integration" track-type="solution" track-name="internalLink" track-metadata-position="body">持续集成解决方案</a>。</li>
+<li>阅读 <a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">SRE 一书</a>，尤其是<a href="https://landing.google.com/sre/sre-book/chapters/release-engineering/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">第 8 章“发布工程”</a>。</li>
+<li>阅读 James Shore 的《<a href="https://www.jamesshore.com/Blog/Continuous-Integration-on-a-Dollar-a-Day.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">持续集成：每天只需一美元</a>》(CI on a dollar a day) 一文。</li>
+<li>观看 Google 的 John Penix 介绍 <a href="https://www.infoq.com/presentations/Continuous-Testing-Build-Cloud/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Google 如何大规模采用持续集成</a>。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

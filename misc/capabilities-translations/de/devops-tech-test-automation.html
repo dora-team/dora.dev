@@ -1,0 +1,157 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Technologie: Kontinuierliche Tests</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Kontinuierliche Tests</em> gehören zu einer Reihe von Funktionen, die die Softwarebereitstellung und
+Leistung verbessern.  Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">"State of DevOps"-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, wissenschaftlich exakten Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>Der Schlüssel für Qualität im Softwaredesign ist ein schnelles Feedback zu den Auswirkungen von Änderungen während des Lebenszyklus der Softwarebereitstellung. In der Vergangenheit verwendeten Teams manuelle Tests und Codeprüfungen, um die korrekte Funktionsweise von Systemen zu überprüfen.
+Diese Prüfungen und Tests erfolgten in der Regel in einer separaten Phase nach Abschluss der Entwicklungsphase. Dieser Ansatz hat folgende Nachteile:</p>
+
+<ul>
+<li>Manuelle Regressionstests sind zeitaufwendig und kostenintensiv, was sie zu einem Engpass im Prozess macht. Software kann nicht häufig veröffentlicht werden und Entwickler erhalten kein schnelles Feedback.</li>
+<li>Manuelle Tests und Prüfungen sind nicht zuverlässig, da sich Routineaufgaben wie manuelle Regressionstests nur unzureichend ausführen lassen und es schwierig ist, die Auswirkungen von Änderungen auf ein komplexes Softwaresystem durch Prüfungen vorherzusagen.</li>
+<li>Wenn die Entwicklung der Software abgeschlossen ist, müssen Entwickler lange warten, bis sie Feedback zu ihren Änderungen erhalten. In der Regel ist anschließend ein erheblicher Aufwand nötig, um Fehler zu untersuchen und zu beheben. Leistungs-, Sicherheits- und Zuverlässigkeitsprobleme erfordern häufig Designänderungen, deren Umsetzung in dieser Phase noch teurer ist.</li>
+<li>Lange Feedback-Zyklen erschweren es Entwicklern auch, das Erstellen von qualitativ hochwertigem Code zu erlernen, und unter Zeitdruck kann es sein, dass Entwicklungsteams Qualität hin und wieder als "das Problem von jemand anderem" ansehen.</li>
+<li>Wenn Entwickler nicht für das Testen ihres eigenen Codes verantwortlich sind, können sie schwer lernen, testbaren Code zu schreiben.</li>
+<li>Bei Systemen, die sich im Laufe der Zeit weiterentwickeln, erfordert das Aktualisieren der Testdokumentation einen erheblichen Aufwand.</li>
+</ul>
+
+<p>Stattdessen sollten Teams:</p>
+
+<ul>
+<li>Alle Testarten kontinuierlich während des gesamten Lebenszyklus der Softwarebereitstellung durchführen</li>
+<li>Schnelle, zuverlässige Suiten von automatisierten Tests erstellen und auswählen, die als Teil Ihrer <a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Continuous-Delivery-Pipelines</a> ausgeführt werden</li>
+</ul>
+
+<p>Dies hilft Teams nicht nur dabei, qualitativ hochwertige Software schneller zu erstellen (und zu lernen, wie man sie erstellt), sondern die Untersuchungen von DORA zeigen auch, dass dies zu einer verbesserten Softwarestabilität, einem geringeren Burnout im Team und geringeren Deployment-Problemen führt.</p>
+
+<h2 id="how_to_implement_continuous_testing" data-text="Kontinuierliche Tests implementieren">Kontinuierliche Tests implementieren</h2>
+
+<p>Um die Qualität der Software zu verbessern, müssen Sie während des gesamten Bereitstellungsprozesses kontinuierlich sowohl automatisierte als auch manuelle Tests durchführen, um die Funktionalität und Architektur des in der Entwicklung befindlichen Systems zu prüfen. Diese Disziplin umfasst sowohl eine organisatorische als auch eine technische Komponente. Die Untersuchungen von DORA haben ergeben, dass Teams effektiver sind, wenn sie:</p>
+
+<ul>
+<li>Testern ermöglichen, während des gesamten Entwicklungs- und Bereitstellungsprozesses der Software mit Entwicklern zusammenzuarbeiten. (Beachten Sie, dass "Tester" eine Rolle ist, nicht unbedingt ein Vollzeitjob, obwohl dies ein gängiges Muster ist, das unten erörtert wird.)</li>
+<li>Während des gesamten Bereitstellungsprozesses manuelle Testaktivitäten wie explorative Tests, Akzeptanztests und Abnahmetests durchführen.</li>
+</ul>
+
+<p>Eine wichtige technische Aktivität besteht darin, eine Reihe von automatisierten Testsuiten zu erstellen und zu pflegen, darunter:</p>
+
+<ul>
+<li><strong>Einheitentests:</strong> Hierbei wird normalerweise eine einzelne Methode, Klasse oder Funktion isoliert getestet, um Entwicklern die Gewissheit zu geben, dass ihr Code wie geplant funktioniert. Die Einheitentests müssen erstellt werden, bevor der Code geschrieben wird, um sicherzustellen, dass der Code testbar und die Tests wartbar sind. Dieses Verfahren wird als <a href="http://www.jamesshore.com/v2/books/aoad1/test_driven_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">testgetriebene Entwicklung</a> (Test-Driven Development, TDD) bezeichnet.</li>
+<li><strong>Akzeptanztests:</strong> Hierbei wird normalerweise eine laufende Anwendung oder ein laufender Dienst getestet. In der Regel werden dabei Abhängigkeiten durch <a href="https://testing.googleblog.com/2013/07/testing-on-toilet-know-your-test-doubles.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Test-Doubles</a> ersetzt. So wird sichergestellt, dass eine höhere Funktionalitätsebene wie geplant funktioniert und keine Regressionsfehler eingeführt wurden. Mit Akzeptanztests können beispielsweise Geschäftsakzeptanzkriterien für eine User Story oder die korrekte Funktionsweise einer API geprüft werden. Schreiben Sie diese Tests im Rahmen des Entwicklungsprozesses. Niemand sollte in der Lage sein, seine Entwicklungsarbeit für abgeschlossen zu erklären, ohne einen automatisierten Akzeptanztest bestanden zu haben.</li>
+</ul>
+
+<p>Das folgende Diagramm wurde <a href="http://www.exampler.com/old-blog/2003/08/22/#agile-testing-project-2" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">ursprünglich von Brian Marick erstellt</a> und später im Buch <a href="https://books.google.com/books/about/Agile_Testing.html?id=68_lhPvoKS8C" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body"><em>Agile Testing: A Practical Guide for Testers and Agile Teams</em></a> referenziert und zeigt die verschiedenen Arten von automatisierten und manuellen Tests.</p>
+
+<p><img src="/static/architecture/images/ta-image1.png" alt="Bild"/></p>
+
+<p>Die im vorherigen Diagramm hervorgehobenen automatisierten Tests passen in eine <a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Deployment-Pipeline</a> für <a href="/architecture/devops/devops-tech-continuous-delivery">Continuous Delivery</a>.
+In solchen Pipelines führt jede Änderung einen Build aus, der Softwarepakete erstellt und Einheitentests sowie möglicherweise andere Prüfungen durchführt, z. B. statische Analysen. Nachdem diese Pakete die erste Phase durchlaufen haben, werden umfassendere automatisierte Akzeptanztests und möglicherweise auch einige nicht-funktionale Tests wie Leistungstests und Scans auf Sicherheitslücken von automatisch bereitgestellter laufender Software ausgeführt. Jeder Build, der die Akzeptanzphase durchläuft, wird dann in der Regel für manuelle explorative Tests und Tests zur Nutzerfreundlichkeit zur Verfügung gestellt. Wenn in diesen manuellen Schritten keine Fehler gefunden werden, gilt die Anwendung als für die Veröffentlichung geeignet.</p>
+
+<p>Das kontinuierliche Ausführen von Tests als Teil einer Pipeline trägt zu einem schnellen Feedback für Entwickler, einer kurzen Vorlaufzeit vom Check-in bis zur Veröffentlichung und einer geringen Fehlerrate in Produktionsumgebungen bei. Entwickler haben den größten Teil ihrer Arbeit statt in Tagen oder Wochen bereits in wenigen Minuten validiert. Fehler können somit schnellstmöglich behoben werden.</p>
+
+<p>Das folgende Diagramm zeigt ein Beispiel für eine einfache lineare Deployment-Pipeline.
+In diesem Beispiel bedeutet Grün, dass keine Probleme gefunden wurden. Rot bedeutet, dass ein oder mehrere Probleme festgestellt wurden.</p>
+
+<p><img src="/static/architecture/images/ta-image3.png" alt="Bild"/></p>
+
+<p>Im Deployment-Pipeline-Muster wird durch jede Änderung ein Release-Kandidat erstellt und der schnelle Feedback Loop hilft, Probleme so früh wie möglich im Prozess zu erkennen. Wenn ein Paket das Ende der Pipeline erreicht hat, das Team aber immer noch Bedenken bezüglich dessen Veröffentlichung hat, oder wenn Produktionsfehler erkannt werden, muss die Pipeline verbessert werden. Dies kann beispielsweise durch zusätzliche Tests oder eine Aktualisierung vorhandener Tests erreicht werden.</p>
+
+<h2 id="common_pitfalls" data-text="Häufige Schwierigkeiten">Häufige Schwierigkeiten</h2>
+
+<ul>
+<li><p><strong>Keine Entwickler in der Testphase involviert.</strong> Untersuchungen von DORA zeigen, dass die Leistung verbessert wird, wenn Entwickler in erster Linie für die Erstellung und Wartung automatisierter Testsuiten verantwortlich sind und es für Entwickler einfach ist, Fehler bei den Akzeptanztests zu beheben. Wenn andere Gruppen für die Testautomatisierung zuständig sind, treten häufig zwei Probleme auf:</p>
+
+<ul>
+<li><strong>Testsuiten befinden sich häufig in einem defekten Zustand</strong>. Bei Codeänderungen müssen die Tests möglicherweise aktualisiert werden. Wenn Entwickler nicht für die Testautomatisierung verantwortlich sind, bleibt die Build-Pipeline solange unterbrochen, bis das zuständige Team die Tests repariert hat.</li>
+<li><strong>Entwickler schreiben Code, der schwer zu testen ist.</strong> Entwickler neigen dazu, das Problem zu lösen, ohne darüber nachzudenken, wie der Code getestet werden soll.
+Dies kann zu schlechtem Code und teuren, schwer zu pflegenden Testsuiten führen.</li>
+</ul>
+
+<p>Tester und QA-Teams spielen weiterhin eine wichtige Rolle bei dieser Arbeitsweise. Tester haben eine einzigartige Perspektive auf das System, weil sie verstehen, wie Nutzer damit interagieren. Es wird empfohlen, Tester mit Entwicklern zusammenarbeiten zu lassen, um die Suiten automatisierter Tests zu entwickeln und weiterzuentwickeln. Dabei werden Tools zur Bildschirmfreigabe verwendet, wenn die Teams sich nicht am selben Standort befinden. Auf diese Weise können sie voneinander lernen und Probleme in Echtzeit lösen. Tester spielen auch eine wichtige Rolle bei der Durchführung von explorativen Tests und Nutzerfreundlichkeitstests sowie bei der Auswahl von Testsuiten.</p></li>
+<li><p><strong>Testsuiten werden nicht bereinigt.</strong> Prüfen und verbessern Sie Ihre Testsuiten kontinuierlich, um Fehler besser zu finden und die Komplexität und Kosten unter Kontrolle zu halten. Beispiel:</p>
+
+<ul>
+<li>Akzeptanztestsuiten sollten in der Regel eine echte <a href="https://testing.googleblog.com/2016/09/testing-on-toilet-what-makes-good-end.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">End-to-End</a>-Nutzernavigation durch das System vorführen, statt nur Sammlungen automatisierter Akzeptanzkriterien zu sein. Mit der Weiterentwicklung Ihres Produkts werden sich auch diese Szenarien und die Testsuiten, durch die sie validiert werden, entsprechend weiterentwickeln. Weitere Informationen zu diesem Prozess finden Sie im Video <a href="https://www.youtube.com/watch?v=qYfI2-bC6LA">Setting a Foundation For Successful Test Automation</a> von Angie Gibson.</li>
+<li>Wenn Sie bei jeder Codeänderung auch mehrere Einheitentests ändern müssen, <a href="https://martinfowler.com/articles/mocksArentStubs.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">verlassen Sie sich entweder zu sehr auf Simulationen</a> oder versäumen es, Ihre Einheitentestsuite zu bereinigen.</li>
+<li>Sie sollten Ihre Testsuiten regelmäßig optimieren. Wenn bei jeder Änderung der Benutzeroberfläche mehrere Akzeptanztests fehlschlagen, entkoppeln Sie Ihre Tests <a href="https://martinfowler.com/bliki/PageObject.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">mithilfe des Seitenobjektmusters</a> vom zu testenden System.</li>
+<li>Wenn Ihre Tests teuer sind, kann dies auf Probleme mit der <a href="/architecture/devops/devops-tech-architecture">Architektur</a> Ihrer Software hinweisen. Achten Sie darauf, dass Sie fortlaufend in die Software investieren, sodass sie sich leicht testen lässt, einschließlich der Einbindung von <a href="https://refactoring.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Refaktorierung</a> in die tägliche Arbeit Ihres Teams.</li>
+</ul></li>
+<li><p><strong>Ein falsches Verhältnis von Einheiten- und Akzeptanztests.</strong> Eines der Entwicklungsziele für automatisierte Testsuiten besteht darin, Fehler so früh wie möglich zu erkennen. Aus diesem Grund werden Einheitentests, die eine kürzere Ausführungszeit haben, zeitlich vor Akzeptanztests ausgeführt, die eine längere Ausführungszeit haben. Erst nach Ausführung dieser beiden Tests werden manuelle Tests vorgenommen.</p>
+
+<p>Fehler sollten mit der schnellsten Testkategorie gefunden werden. Wenn Sie einen Fehler in einem Akzeptanztest oder während eines explorativen Tests finden, fügen Sie einen Einheitentest hinzu. Damit sorgen Sie dafür, dass dieser Fehler beim nächsten Mal schneller, früher und kostengünstiger erkannt wird.
+Mike Cohn hat die <a href="https://books.google.com.br/books?id=8IglA6i_JwAC&amp;printsec=frontcover&amp;dq=Mike+Cohn+Succeeding+with+Agile&amp;hl=pt-BR&amp;sa=X&amp;ved=0ahUKEwj9x8S8tuTiAhWjGLkGHU0GCxEQ6AEILTAA#v=onepage&amp;q=Mike%20Cohn%20Succeeding%20with%20Agile&amp;f=false" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">ideale Testautomatisierungspyramide</a> beschrieben, die in der folgenden Abbildung dargestellt ist und bei der die meisten Fehler mithilfe von Einheitentests erkannt werden.</p>
+
+<p><img src="/static/architecture/images/ta-image2.png" alt="Bild"/></p></li>
+<li><p><strong>Unzuverlässige Tests tolerieren.</strong> Tests sollten zuverlässig sein: Das heißt, wenn die Tests bestanden werden, sollten wir sicher sein können, dass die Software zur Veröffentlichung bereit ist. Fehler beim Testen sollten auf ein echtes Problem hindeuten. Akzeptieren Sie insbesondere keine unklaren Tests.
+<a href="https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Hier finden Sie Informationen zur Google-Strategie zur Vermeidung unklarer Tests.</a></p></li>
+</ul>
+
+<h2 id="ways_to_improve_continuous_testing" data-text="Möglichkeiten zur Verbesserung kontinuierlicher Tests">Möglichkeiten zur Verbesserung kontinuierlicher Tests</h2>
+
+<p>Machen Sie sich keine Sorgen, wenn Ihre Organisation noch nicht standardmäßig Einheitentests von Entwicklern durchführen lässt. Einheitentests waren in den Anfangsjahren bei Google keine allgemein übliche Praxis. Der aktuelle gängige Ansatz umfassender Einheitentests wurde von einer Gruppe von Freiwilligen bei Google namens "Testing Grouplet" vorangetrieben.
+<a href="https://martinfowler.com/articles/testing-culture.html#google" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Hier erfahren Sie, wie sie zur Einführung von Einheitentests beitrugen</a>, indem sie eine sogenannte Community of Practice aufbauten, die sich auf die Verbreitung von Testwissen bei Google konzentrierte und Entwickler vom Nutzen von Einheitentests überzeugte.</p>
+
+<p>Wenn Sie nicht über genügend Testautomatisierung verfügen, erstellen Sie zuerst eine Skeleton-Deployment-Pipeline. Erstellen Sie beispielsweise einen einzigen Einheitentest, einen einzigen Akzeptanztest und ein automatisiertes Deployment-Skript, das eine explorative Testumgebung bereitstellt. Verknüpfen Sie die einzelnen Elemente dann miteinander. Erhöhen Sie anschließend schrittweise die Testabdeckung und erweitern Sie Ihre Deployment-Pipeline, wenn sich Ihr Produkt oder Ihre Dienstleistung weiterentwickelt.</p>
+
+<p>Wenn Sie bereits an einem <a href="https://wikipedia.org/wiki/Brownfield_(software_development)" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Brownfield-System</a> arbeiten, befolgen Sie die Anleitungen in diesem Artikel, ohne jedoch die Nachrüstung einer umfassenden Suite automatisierter Tests zu unterbrechen. Schreiben Sie stattdessen eine kleine Anzahl von Akzeptanztests für wichtige Funktionen. Sorgen Sie dann dafür, dass Entwickler Einheiten- und Akzeptanztests für neue und geänderte Funktionen schreiben. Erwägen Sie die Verwendung von TDD, um die Qualität und Wartung von Haupt- und Testcode zu verbessern. Wenn die Akzeptanztests fehlschlagen, schreiben Sie Einheitentests, um den Fehler in Zukunft schneller zu erkennen.</p>
+
+<p>Wenn Sie eine Testsuite haben, deren Wartung teuer und unzuverlässig ist, bereinigen Sie sie. Eine Testsuite mit zehn Tests, die zuverlässig, schnell und vertrauenswürdig ist, ist viel besser als eine Testsuite mit Hunderten von Tests, die schwer zu warten ist und der niemand vertraut.</p>
+
+<h2 id="ways_to_measure_continuous_testing" data-text="Möglichkeiten zum Messen bei kontinuierlichen Tests">Möglichkeiten zum Messen bei kontinuierlichen Tests</h2>
+
+<p>So können Sie die Ergebnisse kontinuierlicher Tests in Ihrer Umgebung messen:</p>
+
+<table>
+<thead>
+<tr>
+<th>Faktor zum Testen</th>
+<th>Geeignete Messwerte</th>
+<th>Ziel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Autoren von Akzeptanz- und Einheitentests.</td>
+<td>Prozentsatz der Tests, die von Entwicklern, Testern und anderen Gruppen in Ihrem Unternehmen geschrieben wurden.</td>
+<td>Die Hauptautoren und Betreiber von Akzeptanztests sind Entwickler.</td>
+</tr>
+<tr>
+<td>Anzahl der Fehler, die bei Akzeptanztests, explorativen Tests und in der Produktion gefunden wurden.</td>
+<td>Änderung des Anteils der gefundenen Fehler im Zeitverlauf.</td>
+<td>Mehr Fehler werden in "billigeren" Testphasen gefunden. Teams fügen automatisierte Tests für die Fehler hinzu, die Sie während explorativer Tests und der Produktion finden, und fügen Einheitentests hinzu, um Fehler zu erkennen, die bei Akzeptanztests gefunden wurden.</td>
+</tr>
+<tr>
+<td>Zeitaufwand für die Behebung von Fehlern in Akzeptanztests.</td>
+<td>Zeitliche Änderung bei der Behebung von Testfehlern im Zeitverlauf. (Sollte sich verringern.)</td>
+<td>Entwickler können Fehler bei Akzeptanztests problemlos beheben.</td>
+</tr>
+<tr>
+<td>Automatisierte Tests sind aussagekräftig.</td>
+<td>Verfolgung der Anzahl automatisierter Testfehler, die echte Fehler sind, und die Anzahl der Fehler, die auf eine schlechte Codierung zurückzuführen sind.</td>
+<td>Testfehler deuten immer auf einen echten Produktfehler hin.</td>
+</tr>
+<tr>
+<td>Automatisierte Tests werden in der Bereitstellungs-Pipeline ausgeführt.</td>
+<td>Überprüfung (Ja/Nein), ob alle Testsuiten in jedem Pipeline-Trigger ausgeführt werden.</td>
+<td>Automatisierte Tests werden im Rahmen der Haupt-Pipeline und des Workflows ausgeführt.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="Nächste Schritte">Weitere Informationen</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li>Mehr zum Testen bei Google erfahren Sie im Buch <a href="https://books.google.com/books/about/Software_Engineering_at_Google.html?id=WXTTDwAAQBAJ" track-type="solution" track-name="internalLink" track-metadata-position="body">Software Engineering at Google</a>.</li>
+<li><a href="/build/?&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=latam-BR-all-pt-dr-skws-all-all-trial-e-dr-1003997-LUAC0008680&amp;utm_content=text-ad-none-none-DEV_c-CRE_325592090632-ADGP_SKWS+%7C+Multi+%7E+Dev+%7C+Build-KWID_43700040482196107-kwd-471794162766-userloc_1001743&amp;utm_term=KW_cloud%20build-ST_Cloud+Build&amp;gclid=Cj0KCQjw6IfoBRCiARIsAF6q06suRucypheWE5dDKAmsKDZrEVvuY0nDFS0YgbkN5XVmkEzJPl89zIIaAoJcEALw_wcB&amp;gclsrc=aw.ds" track-type="solution" track-name="internalLink" track-metadata-position="body">System mithilfe von Cloud Build kontinuierlich erstellen, testen und bereitstellen</a></li>
+<li><a href="/stackdriver" track-type="solution" track-name="internalLink" track-metadata-position="body">System überwachen und mit Cloud Monitoring testen</a>.</li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,116 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技術: データベースのチェンジ マネジメント</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注: </strong><span><em></em>データベースのチェンジ マネジメントは、ソフトウェア デリバリーと組織のパフォーマンスを改善する一連の機能の一つです。これらの能力は <a href="https://www.devops-research.com/research.html">DORA State of DevOps Research Program</a> で発見されました。これは、高いパフォーマンスを生み出すプラクティスと能力に関する、学術的に厳格で独立した研究調査です。詳細については、<a href="/devops">DevOps のリソース</a>をご覧ください。</span></aside><p>多くの場合、データベースの変更はデプロイ時のリスクと遅延の主要な原因となります。<a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment（DORA）</a>では、継続的デリバリーの実装プロセス中にどのデータベース関連のプラクティスが役に立っているかを調べることで、ソフトウェア配信のパフォーマンスと可用性の両方を向上させました。</p>
+
+<p>DORA の研究では、データベース作業をソフトウェア配信プロセスに統合することにより、<a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">継続的デリバリー</a>を改善できることがわかりました。しかし、継続的デリバリーの実装の一部として、データベースの配信はどのように改善できるでしょうか。パフォーマンスの結果を予測するいくつかの手法があります。</p>
+
+<p>DORA において、優れたコミュニケーションと包括的な構成管理がデータベースの課題に関連することを見いだしました。継続的デリバリーで成果を上げているチームは、データベースの変更をバージョン管理のスクリプトとして保存することで、本番環境のアプリケーションの変更と同じ方法で管理しています。さらに、アプリケーションの変更でデータベースの変更が必要な場合は、本番環境のデータベースを担当しているグループと協議し、エンジニアリング チームが保留中のデータベースの変更の進行状況について把握できるようにしています。</p>
+
+<p>チームがこれらのプラクティスを実行すると、データベースの変更によってスローダウンが生じたり、コードのデプロイ時に問題が発生したりすることはありません。</p>
+
+<h2 id="how_to_implement_database_change_management" data-text="データベースのチェンジ マネジメントの実装方法">データベースのチェンジ マネジメントの実装方法</h2>
+
+<p>効果的なデータベースのチェンジ マネジメントを実現するには、文化的な側面と技術的な側面の 2 つがあります。このセクションでは、両方の点について説明します。</p>
+
+<h3 id="establish_effective_communication_of_database_changes" data-text="データベース変更の効果的なコミュニケーションを確立する">データベース変更の効果的なコミュニケーションを確立する</h3>
+
+<p>調査によると、チームは本番環境のデータベースを管理するスタッフと変更について話し合う際、また、メンバー全員に保留中のデータベース変更の処理が可視化されている際に、最も良い成果を上げることがわかっています。</p>
+
+<p>いくつかの理由で、本番環境のデータベース管理者（DBA）と提案された変更について検討することは非常に重要です。まず、これらのエキスパートからは、結果を得るための最適な方法のアドバイスや、パフォーマンスの問題などの潜在的な問題の指摘を得られます（多くのオペレーションにおいて、本番環境におけるパフォーマンス特性は、デベロッパー ワークステーションと比較して大きく異なります）。また、この協議により、DBA は、上流プロセスで起こっていることについての情報を得ることができ、将来の変更による影響に備えることができます。</p>
+
+<p>変更の進捗状況を全員に可視化することはとても重要です。それにより、DBA を含む全チームが、今後の変更、そのテスト結果、さまざまな本番環境と非本番環境の共有データベースに対して影響を与えるスキーマ変更について把握できます。次の方法で可視化できます。</p>
+
+<ul>
+<li>すべてのデータベース スキーマの変更を、スキーマが属するアプリケーション コードとともに、バージョン管理に保持する。</li>
+<li>どの変更がどの環境で実行され、どのような結果であったかを記録するツールを使用する。</li>
+</ul>
+
+<p>これらのプラクティスでは、すべての変更が正当な情報源であることが保証され、監査目的のために変更履歴を簡単に確認できるようにします。</p>
+
+<h3 id="treat_all_database_schema_changes_as_migrations" data-text="すべてのデータベース スキーマの変更を移行として扱う">すべてのデータベース スキーマの変更を移行として扱う</h3>
+
+<p>データベース変更のバージョニングに広く使用されているパターンは、次の図に示すように、すべての変更をバージョン管理において保持されている移行スクリプトとしてキャプチャすることです。各移行スクリプトには、固有のシーケンス番号があるため、移行へ適用する順序がわかります。</p>
+
+<p><img src="/static/architecture/devops/images/database-change-management-1.png" alt="図は、固有のシーケンス番号を持つ移行スクリプトとして、データベースに対する変更をすべてキャプチャする方法を示しています。"/></p>
+
+<p>次に、すべてのデータベース インスタンスに、特定のインスタンスに対してどの移行が実行されたかを記録したテーブルがあることを確認します。このようにデータベース スキーマをバージョン管理することで、移行スクリプトを適用するツールを使用して、データベースを目的のスキーマ バージョンに移行させることができます。ツールの例は次のとおりです。</p>
+
+<ul>
+<li><a href="https://github.com/golang-migrate/migrate" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">migrate</a>（Go）</li>
+<li><a href="https://pypi.org/project/alembic/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">alembic</a>（Python）</li>
+<li><a href="https://guides.rubyonrails.org/active_record_migrations.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Active Record Migrations</a>（Ruby on Rails）</li>
+<li><a href="https://github.com/dbup/dbup" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">dbup</a>（.NET）</li>
+<li><a href="https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Entity Framework Migrations</a>（.NET）</li>
+<li><a href="https://laravel.com/docs/7.x/migrations" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Laravel Migrations</a>（PHP）</li>
+<li><a href="https://flywaydb.org/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Flyway</a>（プラットフォームに依存しない）</li>
+<li><a href="https://www.liquibase.org/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Liquibase</a>（プラットフォームに依存しない）</li>
+</ul>
+
+<p>移行を使用して、開発とテスト用に空のデータベース スキーマを作成することもできます。</p>
+
+<p>次の図に示すように、すべてのデータベース インスタンスには、そのインスタンスに対して実行した移行を記録するテーブルがあります。その後、データベース インスタンスに対してまだ適用されていない移行を実行するツールまたはスクリプトを使用して自動的に更新を実行し、各更新が正常に完了した後に移行テーブルを更新できます。</p>
+
+<p><img src="/static/architecture/devops/images/database-change-management-2.png" alt="インスタンスへの移行を記録するテーブルの例。"/></p>
+
+<p>データベースの変更を管理する場合は、アプリケーションの変更を管理するプロセスと同様に、バージョン管理を信頼できる情報源として使用する自動化されたプロセスを使用します。</p>
+
+<h3 id="zero-downtime_database_changes" data-text="ダウンタイムが発生しないデータベースの変更">ダウンタイムが発生しないデータベースの変更</h3>
+
+<p>多くの組織は、データベース スキーマの変更時にサービスのダウンタイムのスケジュールを立てています。これは、アプリケーションのデプロイとの調整や、このような変更の実行中にデータベース テーブルのロックをする必要があるためです。継続的デリバリーでは、デプロイのダウンタイムの排除が目標となっています。次に、ダウンタイムなしにデータベース スキーマを変更する戦略をいくつか紹介します。</p>
+
+<ul>
+<li><a href="https://github.com/github/gh-ost" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">gh-ost</a> や <a href="https://www.percona.com/doc/percona-toolkit/3.0/pt-online-schema-change.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">pt-online-schema-change</a> などの<strong>オンライン スキーマ移行フレームワークを使用する</strong>。これらのツールでは、変更する各テーブルの「ゴースト」コピーを作成し、空のコピーを移行してから、移行中に発生する更新を含むデータを元のテーブルから段階的にコピーします。この処理が完了すると、元のテーブルはゴーストに置き換えられます。<a href="/spanner/docs/schema-updates" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud Spanner</a> などの一部のデータベースでは、ダウンタイムなしでスキーマ更新を実行できます。</li>
+<li><p><a href="https://medium.com/continuousdelivery/expand-contract-pattern-and-continuous-delivery-of-databases-4cfa00c23d2e" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">並列変更パターン</a>を使用して、<strong>データベースの変更とアプリケーションの変更を分離</strong>する。このパターンでは、既存のデータベース オブジェクトが変更されることはありません。代わりに、古い構造に併せて新しい構造を追加します。たとえば、「address」列を「<code translate="no" dir="ltr">address_1</code>」と「<code translate="no" dir="ltr">address_2</code>」という 2 つの列に変更することを検討します。</p>
+
+<p>古い列を削除して新しい列を追加してアプリケーションの新しいバージョンを同時にロールアウトするのではなく、新しい列を追加して古い列を残します。これは、アプリケーションのデプロイの前に行えます。次に、アプリケーションの新しいバージョンは新しい列を探し、null ではなく新しい列が存在する場合にはそこから読み取り、存在しない場合は古い列から読み取ります。アプリケーションはその後、古い列と新しい列の両方に書き込み、データを必要に応じて移行します。また、データベースのロールバックを行わずにアプリケーションをロールバックすることもできます。</p>
+
+<p>このようにして、アプリケーションのデプロイはデータベースの変更から切り離すことができます。これは、通常はデータの移行は伴わないため、ダウンタイムを発生させずに実施できます。デプロイの問題を軽減するために、アプリケーションをさらに複雑しないようにしました。または、データベース トリガーを使用して、新しい列と古い列でのデータの同期を保つこととができます。</p></li>
+<li><p><strong>データのパーティショニングとアーカイブ戦略を設計して実装する</strong>。移行に時間がかかる主な原因としては、多数の行を含むデータベース テーブルが挙げられます。データが大きくなりすぎないように、アプリケーションがデータのパーティショニングとアーカイブを行えるように設計されていることを確認してください。たとえば、四半期ごとにテーブルの複数のインスタンスを作成する場合などです。たとえば、<code translate="no" dir="ltr">survey_answers</code> テーブルの代わりに、<code translate="no" dir="ltr">survey_answers_2020Q1</code> と <code translate="no" dir="ltr">survey_answers_2020Q2</code> がある場合などです。アプリケーションの設計とアーキテクチャのレビューで、アプリケーションのデータ パーティショニングとアーカイブ戦略の検証が行われるようにします。</p></li>
+<li><p><strong>イベント ソーシング アーキテクチャを使用する</strong>。<a href="https://microservices.io/patterns/data/event-sourcing.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">イベント ソーシング アーキテクチャ</a>では、アプリケーションの現在の状態を保存しているデータベースを使用するのではなく、代わりに、コマンドと呼ばれるイベントのログの形式で、その状態への変更を保存します。<em></em><em></em>したがって、顧客の住所が変更された際には、顧客情報を使用してテーブルを更新するのではなく、アプリケーションによりデータベースに格納されている住所変更コマンドが発行されます。これが、データベース トランザクション ログとバージョン管理の仕組みであり、分散システムにおける一般的なパターンです。イベントソース アーキテクチャでは、イベントをキューに追加して、イベントのキューの実行中にデータベースの移行を行うことができます。移行が完了したら、キュー内のイベントをデータベースにフラッシュできます。一部のデータベースでは、スキーマの移行の実行中にクエリをキューに入れることができます。これは、移行が短時間で完了する場合に効果的です。</p></li>
+<li><p><strong>NoSQL ソリューションを使用する</strong>。<a href="https://firebase.google.com/docs/firestore" target="firebase" track-type="article" track-name="firebaseLink" track-metadata-position="body">Firestore</a> や <a href="/bigtable" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud Bigtable</a> などの一部の NoSQL データベースは、スキーマ変更によって作成されたダウンタイムの問題の影響を受けません。Firestore などのドキュメント データベースには暗黙のスキーマがあります。つまり、スキーマはデータベース レイヤではなくアプリケーション レイヤで管理されます。ただし、NoSQL データベースの使用に関してはトレードオフがあり、すべてのアプリケーションに最適とは限りません。</p></li>
+</ul>
+
+<p>計画的なダウンタイムを排除するだけでなく、スケジュール外のダウンタイムも回避する必要があります。<a href="/architecture/devops/devops-tech-test-data-management" track-type="article" track-name="internalLink" track-metadata-position="body">本番環境に似たデータセット</a>（すべての個人情報や機密情報がスクラブされた状態）に対するすべてのスキーマ変更をテストし、アプリケーションが移行中と移行後に想定通りに動作していることを確認します。一部の組織では、この目的での使用のために、本番環境データベースのスクラブされたバージョンを毎日作成しています。本番環境に複数のノードを持つデータベース管理システムを使用している場合は、少なくとも 2 つのノードを持つインスタンスでテストし、分散システムの問題を解消してください。</p>
+
+<h2 id="common_pitfalls_of_implementing_database_change_management" data-text="データベースのチェンジ マネジメントを実装する際のよくある問題">データベースのチェンジ マネジメントを実装する際のよくある問題</h2>
+
+<p>以下で説明する主要な方法を実装する場合に注意すべき点がいくつかあります。</p>
+
+<p>まず、多くの組織ではかなりのサイロ化が生じています。多くの場合、DBA は独自の個別のチームとして動いており、変更の管理のために独自のプロセスを使用しています。ソフトウェア デリバリー チームが DBA チームに相談せずにデータベースの変更を管理する新しいプロセスを実装した場合、DBA チームは管理しているデータベースを変更するためにその新しいプロセスを利用することに抵抗があるかもしれません。これにより、新しいプロセスに移行するメリットが大幅に減少する可能性があります。</p>
+
+<p>最初にするべきことは、この記事で示したように目的を達成するための方法を両チームで協議することです。提案したプロセスや技術変更について同意を得ることが重要です。最善の方法は、どのような問題に直面しているかを尋ね、この記事で紹介しているアイデアがそうした問題に対処できるかを確認し、解決を手助けすることです。デリバリー チームと DBA が相互に許容できるソリューションを見つけることが理想的です。</p>
+
+<p>この障害は、多くの場合、別の問題により悪化します。複数のアプリケーションが同じデータベース スキーマを共有しているという一般的な状況です。つまり、あるアプリケーションを使用しているチームは、他のアプリケーションに影響を与えることなくスキーマを変更できません。そのため、データベース スキーマを共有するすべてのアプリケーション用のデータベース変更を管理する単一のソリューションが必要になります。このような状況でデータベースの変更をデプロイするために、バージョン管理されたセルフサービス メカニズムを実装することは、正に可能で、間違いなく有益なことです。ただし、入念な計画とロールアウトが必要です。</p>
+
+<p>最後に、移行ベースのデータベースのチェンジ マネジメントとゼロ ダウンタイム デプロイの両方を実装すると、かなりの<a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">アーキテクチャ上の変更</a>が必要になります。これらの手法の実装に必要な作業を見積もる際は、この点を考慮してください。</p>
+
+<h2 id="how_to_measure_database_change_management" data-text="データベースのチェンジ マネジメントを測定する方法">データベースのチェンジ マネジメントを測定する方法</h2>
+
+<p>効果的なデータベース チェンジ マネジメント システムの目的は、データベースの変更によるデプロイの遅延や問題の発生を防ぐことです。データベースの変更が原因となった変更のうち、失敗した変更の割合と、データベースの変更に関連した作業がバージョン管理からリリースまでの全体的なリードタイムにどの程度寄与しているかを測定することは意味があることです。</p>
+
+<p>データベースの変更でスケジュール設定されたダウンタイムが必要な場合は、この点も重要です。計画的ダウンタイムによる経済的影響を測定するには、ダウンタイムによって生じる可能性のある収益の損失と、デプロイを実行するための時間外勤務の労務費を考慮します。営業時間外でのデプロイは、チームが疲弊する原因にもなります。これらの影響は、このドキュメントで説明しているゼロ ダウンタイム デプロイのためのソリューションの実装に必要な作業について説明するために使用できます。</p>
+
+<p>自動化のレベルの検討に際しては、完全に自動化されたプロセスを使用するプッシュボタン方式で行われるデータベース変更の割合を考慮します。目標は、100% のデータベース変更をこの方法で行うことです。</p>
+
+<h2 id="whats_next" data-text="次のステップ">次のステップ</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps ページ</a>で他の記事やリソースへのリンクを確認する。</li>
+<li><a href="https://www.martinfowler.com/articles/evodb.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">データベース設計の進化</a>を確認する。</li>
+<li><a href="https://medium.com/@chbussler/zero-downtime-database-migration-and-replication-to-and-from-cloud-spanner-99ad0c654d12" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">ダウンタイムのないデータベースの移行と Cloud Spanner 間のレプリケーション</a>を確認する。</li>
+<li><a href="/solutions/databases" track-type="article" track-name="internalLink" track-metadata-position="body">Google Cloud のデータベース ソリューション</a>の詳細を確認する。</li>
+<li>おすすめの書籍
+<ul><li><a href="http://shop.oreilly.com/product/0636920039761.do" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Database Reliability Engineering</a><em></em>（Laine Campbell、Charity Majors）</li>
+<li><a href="https://books.google.com/books/about/Refactoring_Databases.html?id=puBQAAAAMAAJ" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Refactoring Databases</a><em></em>（Scott W.）Ambler、Pramod J. Sadalage）</li>
+</ul></li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">研究プログラム</a>を調べる。</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps のクイック チェック</a>を確認する。業界におけるご自身の立ち位置を把握できます。</li>
+</ul>
+
+</body></html>

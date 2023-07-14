@@ -1,0 +1,99 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技术：云基础架构</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：<em></em>云基础架构一组推动实现更出色的软件交付表现和组织绩效的能力之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>许多组织都采用云计算。但在云技术方面，它提供的远不止从云服务商那里购买的基础架构。美国国家标准与技术研究院 (NIST) <a href="https://csrc.nist.gov/publications/detail/sp/800-145/final" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">定义</a>了云计算的五个基本特征：</p>
+
+<ul>
+<li><strong>按需自助</strong>：使用方可以根据需要预配计算资源，而无需与提供商进行人工互动。</li>
+<li><strong>广泛的网络访问</strong>：可以通过各种平台（如手机、平板电脑、笔记本电脑和工作站）访问各种功能。</li>
+<li><strong>资源池</strong>：提供商资源汇集在多租户模型中，且按需动态分配物理资源和虚拟资源。客户可以在更高的抽象层（如国家/地区，州或数据中心）指定位置。</li>
+<li><strong>快速灵活</strong>：您可以灵活预配并发布功能以便按需进行快速扩缩或缩减，看似不限量并且能够随时因应任何数量。</li>
+<li><strong>衡量的服务</strong>：云系统会根据服务类型（例如存储、处理、带宽和活跃用户帐号）自动控制、优化和报告资源使用情况。</li>
+</ul>
+
+<p>由 <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps 研究和评估组织 (DORA)</a> 发布的 <a href="/devops/state-of-devops">2019 年 DevOps 现状报告</a>发现，在声称已采用云技术的用户中，仅有 29% 的人员赞同或非常赞同他们满足上述定义的全部五项特征。在 2018 年和 2019 年，DORA 的研究发现，将表现较佳者与表现不佳者相比，前者满足全部五个基本云特征的可能性是后者的 23 倍以上。这可以解释为什么声称已采用云计算技术的团队和高管们也对无法实现预期效果感到不快。</p>
+
+<p>由于许多组织仍在使用传统数据中心做法和流程来管理其云基础架构，因此这些组织可能无法实现预期效果，根据 DORA 的研究，包括：</p>
+
+<ul>
+<li>提升了软件交付性能：更快的吞吐量和更高级别的稳定性</li>
+<li>服务可用性更好</li>
+<li>改进了费用可见性：在 2019 年，我们发现满足所有基本云特征的受访者能够准确估算软件运营费用的可能性是其他人的 2.6 倍。此外，他们能够轻松找到运营费用最高的应用的可能性是其他人的两倍。</li>
+</ul>
+
+<p>例如，许多拥有云基础架构的组织都不允许开发者按需对其环境进行自治：组织要求开发者开出工单或发送电子邮件，并等待几天以便预配环境或进行配置更改。在这种情况下，尽管组织可能会为云服务付费，但它们不具备 NIST 的定义提供的云。</p>
+
+<p>迁移到云端后，组织必须重新设计他们在使用传统数据中心时执行的流程和做法。它们必须采用云原生模式和做法，以实现云计算的灵活性、稳定性、可用性和费用透明度。如果底层技术位于云中，但从业者的结果保持不变（获取测试环境、预配新基础架构或进行配置更改需要几天或几周），则组织不会获得所需的结果。</p>
+
+<h2 id="how_to_implement_cloud_infrastructure" data-text="如何实现云基础架构">如何实现云基础架构</h2>
+
+<p>要采用云原生流程和做法来实现 NIST 的五项特征，需要多个 IT 职能（包括开发者、运营团队、信息安全、采购和财务）联合进行重大变革。这些变革需要各职能之间密切协作，以便找出并解决冲突的目标。</p>
+
+<p>例如，许多开发者都希望在使用云平台时完全控制生产基础架构。信息安全专业人员反对采取这种做法且有充分的理由 - 在没有严格的<a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">变革管理</a>的情况下，云基础架构
+可能会变成一件脆弱的艺术品，其难以管理，容易受到外部威胁，而且不符合监管要求。</p>
+
+<p>但是，开发者能够在满足这些要求的同时预配所需的资源。许多组织都采用了“基础架构即代码”范式。<em></em>（GitOps 是一个示例。）基础架构配置会签入版本控制，开发者可以预配环境、进行配置更改，并通过自动化机制执行部署。该机制从版本控制中获取代码，并通过云端的 API 按需执行操作，无需人工干扰。使用版本控制和自动化功能时，系统会记录所有操作及其输出，以便为每个环境的每个更改提供可跟踪性和可审核性。</p>
+
+<p>通过“基础架构即代码”，您可以有效地管理更改并应用信息安全控制。例如，您可以要求对版本控制中指定的配置进行的所有更改都必须<a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">由一组指定人员批准</a>，从而实现职责分离。（与在 Google 中的操作相同）。但是，改用“基础架构即代码”需要执行大量的工程工作和流程变更，包括更改用于实现信息安全控制的政策。</p>
+
+<p>来看另一个示例。虽然云服务商通常仅在基础架构使用期间（满足 NIST 的第 5 个特性，衡量的服务）计费，但是从固定费用基础架构到非固定费用基础架构这种变更可能会对采购和财务产生重大影响。如 2019 年 DevOps 现状报告中所述：</p>
+
+<p>“一些财务人员可能认为，云技术在短期内实现了成本节省，但我们知道它可提供更高的信息透明度。为何会这样？虽然云会向系统所有者提供有关费用的透明信息，但除非有退款模式或类似机制，否则用户无需支付这些费用。这可能会导致大量非固定费用不经过检查，从而造成云费用无法预测。在这些情况下，支付基础架构费用的团队可能更倾向于使用数据中心，因为它们是可预测的，即使它们的可见性不利于系统用户构建更高效的系统。我们建议组织更好地调整激励措施，让系统所有者具有可见性和激励措施，能够通过使用退款或类似机制来构建更高效的系统。”</p>
+
+<p>除了考虑如何在配置和财务级别管理基础架构之外，应用通常还必须重新设计架构，以利用云提供的提高的稳定性、可靠性和敏捷性的优点。Google Cloud 的白皮书<a href="/rearchitecting-to-cloud-native-whitepaper" track-type="article" track-name="internalLink" track-metadata-position="body">根据云原生的特点重新设计架构：一种大规模提高开发者工作效率的演进式方法</a>中讨论了根据云原生的特点范式重新设计架构</p>
+
+<p>最重要的事项是，您的云部署是否真的帮助组织实现了<a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">更快速、更可靠的发布</a>以及更高级别的可用性、<a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">速度和可靠性</a>。</p>
+
+<h2 id="common_pitfalls_of_implementing_cloud_infrastructure" data-text="实现云基础架构的常见误区">实现云基础架构的常见误区</h2>
+
+<p>符合 NIST 定义的五个特征的最大障碍是：</p>
+
+<ul>
+<li>组织函数之间的协调性和协作性太差，必须紧密合作才能实现它们；</li>
+<li>对技术、流程和组织改变方面的投资不足。</li>
+</ul>
+
+<p>许多组织开始使用直接原样迁移方法将应用迁移到云端。<em></em>这样做几乎不需要更改应用以及建立的云基础架构管理流程，并且完成速度相对较快。不过，它提供的优势也最少。针对新软件以及将继续发展的现有策略系统制定计划时，请务必抛开“直接原样迁移”而迈向云原生范式</p>
+
+<p>迁移到云是一项需要花费数年时间的工作。与所有中断性更改一样，请务必从小规模开始，快速进行实验以便发现哪些做法有效以及哪些无效，然后坚持不懈，严格要求在组织中扩展学习以及有效的模式和做法。</p>
+
+<p>此过程需要克服重重障碍，包括：</p>
+
+<ul>
+<li>重新设计流程、架构和治理以满足云原生方面的监管要求</li>
+<li>设计多租户基础架构，使团队能够进行自助部署和配置更改，同时确保环境之间实现逻辑分离、启用退款功能，并防止出现云扩张基础架构和孤立的基础架构</li>
+<li>为您的云基础架构平台构建产品开发功能</li>
+<li>协助将采购作为一种计量服务（而非资金投资）向基础架构过渡</li>
+<li>帮助开发者了解如何构建云原生应用</li>
+<li>启用操作以改用新型<a href="https://landing.google.com/sre/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">网站可靠性工程</a> (SRE) 做法，包括将“基础架构即代码”部署为替换基于手动填写工单的配置管理</li>
+<li>规划和执行云原生系统和基于非云的系统之间的集成，包括主机和打包的软件/COTS</li>
+</ul>
+
+<p>克服这些障碍需要制定<a href="/architecture/devops/devops-culture-transform" track-type="article" track-name="internalLink" track-metadata-position="body">重大变革计划</a>，其中涉及组织内每级人员之间的持续投资和协作。</p>
+
+<h2 id="how_to_measure_cloud_infrastructure" data-text="如何衡量云基础架构">如何衡量云基础架构</h2>
+
+<p>为了确定要测量的具体指标，首先考虑您希望通过实现云基础架构获得哪些好处。然后开始衡量这些好处的实现程度。</p>
+
+<p>例如，如果您的目标是提高费用的可见度，则可以跟踪自己的表现，以确保基础架构的费用能够正确记入相关业务线、团队、产品或环境。</p>
+
+<p>您还可以直接衡量自己是否充分满足 NIST 的基本特征：询问您的团队对本文档开头列出的这些特征的认可程度。赞同或非常赞同的团队表现良好；持中立或不赞同意见的团队需要帮助和支持才能消除障碍以实现这些结果。然后考虑有多少团队表示他们使用的云可以真正满足 NIST 的条件。</p>
+
+<p>您还可以通过检测您的流程来直接测量基本特征的某些方面。例如，如果您有一个管理基础架构更改的流程，则可以衡量进行端到端更改所需的时间。您还可以查看云原生技术在组织中的普遍性：例如，使用 Kubernetes 或自动扩缩组（而不是手动预配）管理的集群或机器所占的比例，或者主机的存留时间。在数据中心中，正常运行时间较长通常表示高可靠性；在云原生范式中，配置更改通常是通过启动具有新配置的新虚拟主机而不是更改现有主机进行的。这种做法称为临时基础架构<em></em>，其中正常运行时间较长表示机器未经修补。</p>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li><a href="/rearchitecting-to-cloud-native-whitepaper" track-type="article" track-name="internalLink" track-metadata-position="body">白皮书：根据云原生的特点重新设计架构：一种大规模提高开发者工作效率的演进式方法</a> </li>
+<li><a href="/billing/docs/concepts" track-type="article" track-name="internalLink" track-metadata-position="body">Google Cloud 中的 Cloud 结算概念</a> </li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

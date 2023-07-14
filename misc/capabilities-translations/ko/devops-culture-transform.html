@@ -1,0 +1,175 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 문화: 혁신 방법</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<p>모든 조직은 끊임없이 변화하고 있습니다. 따라서 다음과 같은 질문을 물어볼 수 있습니다.</p>
+
+<ul>
+<li>그 변화가 어느 방향으로 향하나요?</li>
+<li>얻고자 하는 시스템 수준의 결과는 무엇인가요?</li>
+<li>조직이 고객을 더 잘 발견하고 서비스를 제공하여 목적을 달성할 수 있나요?</li>
+<li>조직의 비즈니스 모델과 직원 관리가 장기적인 지속 가능성을 제공하나요?</li>
+</ul>
+
+<p>리더는 일반적으로 상황이 계획에 맞게 돌아가지 않는 것처럼 보일 때 혁신 프로그램을 발표합니다. 그러나 이러한 프로그램은 리소스와 조직 역량만 대량으로 소모하고 목표를 달성하지 못하는 경우가 많습니다.
+이 문서에서는 혁신을 성공적으로 실행하는 방법을 살펴보고 일반적인 실패 시 해결 방법을 알아봅니다.</p>
+
+<h2 id="how_to_implement_transformation" data-text="혁신을 구현하는 방법">혁신을 구현하는 방법</h2>
+
+<p>효과적이고 지속적인 혁신에는 두 가지 핵심 요소가 있습니다. 즉, 목표를 설정하고 팀 실험을 지원하여 조직 변화를 실행하는 프로세스와 조직을 통해 권장사항을 전파하는 메커니즘입니다.</p>
+
+<h3 id="set_goals_and_enable_team_experimentation" data-text="목표 설정 및 팀 실험 지원">목표 설정 및 팀 실험 지원</h3>
+
+<p><a href="https://wikipedia.org/wiki/Balanced_scorecard" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">균형성과표</a>, <a href="https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">목표 및 핵심결과지표(OKR)</a>, <a href="http://www-personal.umich.edu/%7Emrother/The_Improvement_Kata.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">개선 방식</a>, <a href="http://www-personal.umich.edu/%7Emrother/The_Coaching_Kata.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">코칭 방식</a> 등 조직의 변화를 수행하고 측정하는 여러 프레임워크가 있습니다.
+이러한 프레임워크는 다르게 보일 수 있지만 모두 핵심적인 특징을 공유하고 있습니다. 기본 원리는 개선 방식 프레임워크에 기반을 둔 다음 그림에 나와 있습니다.</p>
+
+<p><img src="/static/architecture/devops/images/devops-culture-transform-kata-model.png" alt="4단계 방식 모델" width="50%"/> </p>
+
+<p>출처: <a href="https://www.mheducation.com/highered/product/toyota-kata-practice-guide-practicing-scientific-thinking-skills-superior-results-20-minutes-day-rother/9781259861024.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Toyota Kata Practice Guide: Practice Scientific Thinking Skills for Superior Results in 20 Minutes a Day</em></a>(마이크 로더 저, McGraw-Hill 2018) - 마이크 로더의 허락을 받아 복제함</p>
+
+<p>모든 프레임워크는 조직 또는 부서 수준에서 특정 방향('진북')을 향해 시작합니다. 이는 <a href="/architecture/devops/devops-culture-transformational-leadership" track-type="article" track-name="internalLink" track-metadata-position="body">리더십</a>에서 설정한 시스템 수준의 실질적인 목표입니다.
+Alcoa의 CEO 폴 오닐이 선택한 부상자 0명과 같은 <a href="https://hbswk.hbs.edu/archive/paul-o-neill-values-into-action" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">목표</a>처럼 이룰 수 없는 이상일 수도 있고, 개리 그루버가 HP의 레이저젯 펌웨어 부서 엔지니어링 책임자였을 때 선택한 생산성 10배 증대와 같은 <a href="https://continuousdelivery.com/evidence-case-studies/#the-hp-futuresmart-case-study" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">목표</a>처럼 1~3년이 소요되는 힘든 목표일 수도 있습니다.</p>
+
+<p>다음 단계는 현재 상태를 이해하는 것입니다. <a href="https://devops-research.com/quickcheck.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">DORA 빠른 점검</a>을 사용하면 소프트웨어 개발 기능과 결과 측면에서 현재 상태를 파악하는 데 도움이 됩니다. 또 다른 분석 방법은 <a href="https://www.google.com/books/edition/Value_Stream_Mapping_How_to_Visualize_Wo/MeFrAAAAQBAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">가치 흐름 매핑</a> 또는 활동 회계와 같은 연습을 수행하는 것입니다. 요점은 조직의 현재 상태를 측정 가능한 용어로 이해하는 것입니다.</p>
+
+<p>세 번째 단계는 미래의 측정 가능한 목표를 설정하는 것입니다. 이러한 목표는 정성적 목표로 시작하여 측정 가능한 주요 결과(목표 조건)를 지정하는 OKR과 같은 형식을 사용하여 설명할 수 있습니다. 예를 들어 HSBC의 글로벌 뱅킹 및 마켓 부문 CIO는 <a href="https://www.linkedin.com/pulse/double-half-quarter-lesson-from-book-richard-david-knott/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">모든 팀의 목표</a>를 '매년 2배, 1/2배, 1/4배 달성: 출시 빈도를 2배로 늘리되 낮은 수준의 영향을 미치는 이슈의 수를 절반으로 줄이고 높은 영향의 이슈의 수를 4분의 1로 줄이는 것'으로 설정했습니다.</p>
+
+<p>마지막으로 팀은 경영진의 지원을 받아 이러한 목표를 기한 전까지 달성하는 방법을 실험합니다. 데밍 주기라고도 하는 <a href="https://wikipedia.org/wiki/PDCA" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">PDCA 방법</a>(Plan-Do-Check-Act)을 사용하여 과학적인 방식으로 실험합니다. 이 주기는 다음 단계로 구성됩니다.</p>
+
+<ul>
+<li>Plan(계획): 원하는 결과를 결정합니다.</li>
+<li>Do(실행): 실험을 수행합니다.</li>
+<li>Check(검증): 결과를 연구합니다.</li>
+<li>Act(개선): 이후에 해야 할 일을 결정합니다.</li>
+</ul>
+
+<p>팀은 매일 실험을 진행하여 목표 조건이나 핵심 결과로 나아가야 합니다. <a href="http://www-personal.umich.edu/%7Emrother/The_Improvement_Kata.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">개선 방식</a>에서는 모든 팀원이 매일 다음과 같은 5개 질문을 자문해야 합니다.</p>
+
+<ol>
+<li>목표 조건은 무엇인가?</li>
+<li>현재 상태는 어떠한가?</li>
+<li>목표 조건에 도달하는 데 방해가 되는 장애물은 무엇인가? 지금 어떤 문제를 해결하고 있는가?</li>
+<li>다음 단계는 무엇인가? 어떤 결과를 기대하는가?</li>
+<li>언제 결과를 평가하여 해당 단계로 무엇을 배울 수 있는지 알 수 있는가?</li>
+</ol>
+
+<p>결과를 얻은 후 새 목표를 설정했으면 이 프로세스를 반복합니다.</p>
+
+<p>이 프로세스는 불확실한 조건에서 수행되기 때문에 어떤 결과가 나올지 항상 확실히 알 수 있는 것은 아닙니다. 따라서 다음 다이어그램과 같이 진행률이 비선형인 경우가 많습니다.</p>
+
+<p><img src="/static/architecture/devops/images/devops-culture-transform-non-linear-progress.png" alt="반복 대비 성과에 대한 비선형 진행을 보여주는 그래프로, 성과 선이 들쑥날쑥하지만 전체적으로 올라가고 있음"/></p>
+
+<p>출처: CC-BY: <a href="https://www.google.com/books/edition/Lean_Enterprise/G_ixBQAAQBAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise: How High Performance Organizations Innovate at Scale</em></a>(제즈 험블, 조앤 몰스키, 배리 오라일리 공저(O'Reilly, 2014))</p>
+
+<p>계획 회의에서 참여자는 마지막 계획 회의에서 설정한 목표 조건 또는 주요 결과를 검토합니다. 그리고 다음 반복에 대한 새로운 목표를 설정합니다. 검토 회의에서 참여자는 팀이 반복 목표를 얼마나 잘 달성하고 있는지 확인하고 장애물과 해결 방법을 논의합니다.</p>
+
+<p>이 패턴의 몇 가지 중요한 사항은 다음과 같습니다.</p>
+
+<ul>
+<li>팀의 자체 목표 조건 또는 <a href="https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">OKR</a>은 팀이 설정해야 합니다. 하향식으로 설정될 경우 팀과 결과의 이해관계가 사라져서 목표 달성에 기여하지 않은 것처럼 되어 버립니다.
+대신 팀이 목표를 가지고 '게임'을 할 수 있습니다. 즉, 결과를 조작하여 인위적으로 목표를 달성할 수 있습니다.</li>
+<li>목표를 달성하지 않아도 됩니다. 고의로 어렵게 설계된 <em>도전적 목표</em>도 있습니다. 팀은 목표의 약 80%를 달성해야 합니다. 문화 혁신을 시작할 때는 지정된 목표를 <em>하나도</em> 달성하지 못하는 것이 일반적입니다. 이 경우 팀은 다음 반복을 위한 단일 목표를 설정하고 목표를 달성하기 위해 모든 노력을 다해야 합니다.</li>
+<li>팀의 목표와 현재 조건이 변화하고 목표 달성을 위해 노력하고 있으므로 반복을 거치면서 여러 목표와 척도가 바뀔 것입니다. 완벽한 목표를 설정하기 위해 너무 많은 시간을 소비하지 마세요. 학습을 시작할 수 있도록 프로세스를 실행하는 데 집중하세요.</li>
+<li>팀이 개선 작업을 수행하는 데 필요한 자율성, 역량, 리소스, 관리, <a href="/architecture/devops/devops-culture-transformational-leadership" track-type="solution" track-name="internalLink" track-metadata-position="body">리더십 지원</a>이 반드시 있어야 합니다. 개선 작업은 제품 및 서비스 제공 속도를 늦추는 비효율성을 해결하는 데 도움이 되기 때문에 팀이 일상적인 작업으로 인해 개선 작업을 소홀히 하게 해서는 안 됩니다.</li>
+</ul>
+
+<h3 id="build_community_structures_to_spread_knowledge" data-text="지식을 보급하기 위한 커뮤니티 구성">지식을 보급하기 위한 커뮤니티 구성</h3>
+
+<p>팀이 보다 효율적인 작업 방식을 발견했다면 다음 작업은 학습을 통해 얻은 교훈을 조직 전체에 보급하는 것입니다. 지식을 보급하는 방법에는 여러 가지가 있습니다. <a href="https://cloud.google.com/devops/state-of-devops" track-type="article" track-name="internalLink" track-metadata-position="body">2019 State of DevOps Report</a>에서 연구원들은 응답자들에게 팀 구성원과 조직이 다음 방법 중 하나 이상을 선택하여 DevOps와 애자일 방법론을 보급한 방법을 공유하도록 요청했습니다(자세한 내용은 2019 State of DevOps Report의 부록 B 참조).</p>
+
+<ul>
+<li>교육 센터(<em>dojo</em>라고도 함)</li>
+<li>핵심 전략팀(CoE)</li>
+<li>개념 증명(PoC), 중단</li>
+<li>개념 증명(PoC), 템플릿</li>
+<li>개념 증명(PoC), 시드</li>
+<li>실천 커뮤니티</li>
+<li>빅뱅(Big Bang)</li>
+<li>상향식 또는 풀뿌리</li>
+<li>매쉬업</li>
+</ul>
+
+<p>분석 결과에 따르면 실적이 양호한 기업은 조직 내 하위 수준과 상위 수준 모두에서 커뮤니티 구조를 만드는 전략을 선호하므로 조직 재구성 및 제품 변경에 대해 지속적으로 복원력을 강화할 수 있습니다. 가장 많이 사용된 두 가지 전략은 실천 커뮤니티와 풀뿌리 전략이며, 템플릿으로서의 개념 증명(개념 증명이 조직 내 다른 곳에서 재현되는 패턴)과 시드로서의 개념 증명이 그 뒤를 따릅니다. <a href="https://www.youtube.com/watch?v=S4-huVFeQXg" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">실천 커뮤니티</a>가 운영되는 방식에 대한 예시는 <a href="https://martinfowler.com/articles/testing-culture.html#google" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">자원봉사자들이 Google의 포괄적인 단위 테스트 문화를 주도한 방법</a>에 대해 읽어보세요</p>
+
+<p>실적이 저조한 기업은 더 많은 사일로와 고립된 전문성을 만들어 내는 교육 센터와 핵심 전략팀을 선호하는 경향이 있습니다. 또한 개념 증명을 시도하지만 일반적으로 성장 시동이 꺼지므로 성공하지 못합니다. 이러한 전략이 효과적인 변화를 달성하지 못하는 이유는 무엇일까요?</p>
+
+<p>핵심 전략팀은 전문성을 한 그룹에 중앙 집중화하므로 몇 가지 문제가 발생할 수 있습니다. 첫 번째로, CoE는 조직의 관련 전문성이 한 곳으로 몰리는 병목 현상의 요인이 되고 있어 조직의 전문성에 대한 요구가 증가해도 확장될 수 없습니다. 두 번째로, 지속적으로 학습하고 함께 성장할 수 있는 포괄적인 피어 그룹과는 대조적으로 조직에 배타적인 '전문가'그룹을 조직합니다. 이러한 배타성은 건강한 조직 문화를 갉아먹을 수 있습니다. 마지막으로 전문가들이 작업에서 배제됩니다.
+이들은 추천을 하거나 일반적인 '권장사항'을 수립할 수 있지만 일반적인 학습부터 실제 작업 구현까지의 경로는 학습자가 결정합니다. 예를 들어 전문가들은 애플리케이션을 컨테이너화하는 방법에 대한 워크숍을 진행하지만 애플리케이션을 실제로 컨테이너화하는 경우는 드물거나 거의 없습니다. 이론과 실행 사이의 단절은 결국 그들의 전문성을 위협할 것입니다.</p>
+
+<p>교육 센터에서 성공을 거두는 경우에도 원래의 프로그램과 지속적인 학습을 모두 수행하기 위한 전용 리소스와 프로그램이 필요합니다. 많은 기업이 효과적인 교육 프로그램을 만들기 위해 놀라운 리소스를 마련했습니다. 즉, 창의적인 환경을 조성하기 위해 전체 빌딩을 탈바꿈하거나 교육 자료를 제작하고 진행 상황 평가를 전담하는 직원을 배치했습니다. 그리고 조직 전체에서 학습이 지속되고 전파되도록 하려면 추가 리소스가 필요합니다. 조직은 교육 센터에 참석한 팀을 지원하여 이들의 역량과 습관이 정규 직장 환경에서는 계속 유지되도록 하되 오래된 작업 패턴은 재개되지 않도록 해야 합니다. 이러한 리소스가 마련되지 않으면 조직은 모든 투자의 낭비 위험을 감수해야 합니다. 팀이 나머지 조직에 보급할 새로운 기술과 프로세스를 배우러 가는 센터 대신 임시 방편이지만 센터에 있는 새로운 습관이 또 다른 사일로를 만들어 냅니다. CoE와 유사한 제한사항이 있습니다. 교육 센터 담당자(또는 독립적인 '전문가')가 워크숍과 교육 자료만 제작하고 실제 작업에 참여하지 않으면 어떻게 될까요?</p>
+
+<p>일반적으로 매쉬업이 보고(2019년 설문조사 응답자 중 40%)되었지만 특정 투자에 대한 자금과 리소스가 부족한 실정입니다. 기술 혁신을 주도할 전략이 없는 경우 조직은 종종 위험 부담을 피하기 위해 <em>이니셔티브를 종료</em>하는 실수를 저지르는 경우가 많습니다. 즉, 상당히 많은 분야의 이니셔티브를 식별하지만 결국 중요한 작업에 대한 리소스 부족으로 실패하게 됩니다. 대신 몇 가지 이니셔티브를 선택하고 리소스를 지속적으로 집중 투입하여 성공을 보장하는 것이 가장 좋습니다(시간, 비용, 경영진, 최고 실무자 후원). 매쉬업과는 달리 빅뱅 전략은 극소수 집단에서만 사용하는 것으로 보고되었으며, 실적이 저조한 팀에서 가장 일반적으로 채택하는 전략입니다.</p>
+
+<p>추가 분석 결과 실적이 우수한 팀이 사용하는 4가지 패턴이 확인되었습니다.</p>
+
+<ul>
+<li><strong>커뮤니티 빌더:</strong> 이 그룹은 실천 커뮤니티, 풀뿌리, 개념 증명(앞서 설명한 대로 템플릿 또는 시드) 전략에 초점을 맞춥니다. 전체 시간의 46%에 해당합니다.</li>
+<li><strong>유니버시티:</strong> 이 그룹은 교육 및 훈련에 초점을 맞추고 있으며, 대부분의 노력은 핵심 전략팀, 실천 커뮤니티 및 교육 센터로 이어집니다. 이 패턴은 전체 시간의 9%에만 해당되며, 이는 이 전략이 성공을 거둘 수는 있지만 일반적인 전략은 아니며 학습을 통해 얻은 결과를 조직 전반에 적용하려면 상당한 투자와 계획이 수반되어야 한다는 것을 의미합니다.</li>
+<li><strong>이머전트:</strong> 이 그룹은 풀뿌리 그룹의 노력과 실천 커뮤니티에 초점을 맞추고 있습니다. 개입 수준이 가장 낮은 것으로 나타나는 이 그룹은 전체 사례의 23%에서 나타납니다.</li>
+<li><strong>실험자:</strong> 실험자는 전체 사례의 22%에 나타납니다. 이 그룹은 빅뱅과 dojo를 제외한 모든 전략에서 높은 수준의 활동을 수행하며, 모든 활동은 커뮤니티와 생성에 초점을 맞춥니다. 또한 중단된 PoC에서 높은 수준을 보입니다. 이러한 활동을 통해 우수한 실적을 달성할 수 있다는 사실은 아이디어를 신속하게 실험하고 테스트하기 위해 이 전략을 사용한다는 것을 의미합니다.</li>
+</ul>
+
+<h2 id="principles_of_effective_organizational_change_management" data-text="효과적인 조직 변경 관리 원칙">효과적인 조직 변경 관리 원칙</h2>
+
+<p>모든 조직은 복잡하고 목표와 시작점이 서로 다르며 자체 방식으로 해당 과제를 처리합니다.
+한 조직에서 효과적인 처방이 다른 조직에서 동일한 결과를 보여주지 않을 수 있습니다. 그러나 조직에서는 성공 가능성을 높이기 위해 몇 가지 일반적인 원칙을 따를 수 있습니다.</p>
+
+<h3 id="improvement_work_is_never_done" data-text="개선 작업에는 끝이 없음">개선 작업에는 끝이 없음</h3>
+
+<p>성과가 좋은 조직은 결코 성과에 만족하지 않으며 항상 자신이 하는 일을 더 잘하려고 노력합니다. 개선 작업은 지속적이며 이미 팀의 일상 업무에 반영되어 있습니다. 이러한 조직의 사람들은 변화에 실패하는 것이 변화만큼 위험하다는 것을 이해하고 '우리가 항상 해왔던 방식'으로 변화에 대한 저항을 정당화하지 않습니다. 그렇다고 해서 변화에 미숙하게 대처하는 것은 아닙니다. 변경 관리는 측정 가능한 팀 또는 조직 목표에 따라 과학적으로 수행되어야 합니다.</p>
+
+<h3 id="leaders_and_teams_agree_on_and_communicate_measurable_outcomes_and_teams_determine_how_to_achieve_them" data-text="리더와 팀이 측정 가능한 결과에 동의하고 소통하며 목표 달성 방법을 팀이 결정함">리더와 팀이 측정 가능한 결과에 동의하고 소통하며 목표 달성 방법을 팀이 결정함</h3>
+
+<p>조직의 모든 사람은 자신이 비즈니스 및 조직의 어떤 측정 가능한 결과를 얻기 위해 일하고 있는지 알아야 합니다. 조직 수준의 결과는 짧아야 하며(최대 몇 문장) 조직의 목적 및 사명과 명확하게 일치해야 합니다. 개별 사업부 수준의 결과는 한 페이지 분량이어야 합니다. 조직의 결과는 리더와 팀이 함께 결정해야 하지만 최종 권한은 리더에게 있습니다. 조직의 하위 수준에서는 목표가 더 좁은 범위에서 더 자세하게 기술됩니다.</p>
+
+<p>이러한 결과를 달성하는 방법은 팀이 결정해야 합니다. 그 이유는 다음과 같습니다.</p>
+
+<ul>
+<li>불확실한 상황에서는 계획만으로 최선의 행동을 결정할 수 없습니다. 그렇다고 해서 일정 수준의 계획이 중요하지 않다는 의미는 아닙니다. 그러나 팀은 계획을 실행하려고 할 때 발견한 사실에 따라 계획을 변경하거나 다시 작성할 준비를 해야 합니다.</li>
+<li>사람들에게 무엇을, 어떻게 해야 하는지 말해 주면 사람들이 자유 의지를 잃고 독창성을 발휘할 기회를 잃게 됩니다. 그러면 결과가 악화될 뿐만 아니라 직원들이 회사에 마지못해 다니게 됩니다.</li>
+<li>문제 해결은 직원들이 새로운 기술과 능력을 개발하도록 돕는 데 중요합니다. 조직은 팀에게 할 일을 주는 것이 아니라 해결해야 할 문제를 주어야 합니다.</li>
+</ul>
+
+<h3 id="large-scale_change_is_achieved_iteratively_and_incrementally" data-text="대규모 변경사항이 반복적이고 점진적으로 구현됨">대규모 변경사항이 반복적이고 점진적으로 구현됨</h3>
+
+<p>연간 예산 책정 주기는 모든 유형의 작업이 대규모 장기 프로젝트에 묶여 있는 프로젝트 기반 모델로 조직을 이끄는 경향이 있습니다. 몇 가지 예외가 있지만 점진적으로 전달할 수 있는 작은 조각으로 작업을 나누는 것이 좋습니다.
+<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">소규모 배치로 작업</a>하면 많은 이점이 있습니다. 가장 중요한 것은 조직이 발견한 사실에 따라 코스를 수정할 수 있다는 것입니다. 따라서 원하는 이점을 제공하지 않는 작업에 시간과 돈을 낭비하지 않아도 됩니다.</p>
+
+<p><a href="https://itrevolution.com/book/project-to-product/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">프로젝트 패러다임에서 제품 패러다임으로의 이전</a>은 장기적인 추세로, 대부분의 업계에서 이행하는 데 수년이 걸리지만 앞으로는 대세가 될 것입니다. 미국 연방 정부도 대규모 작업 납품 시 보다 반복적이고 점진적인 접근법을 추구하기 위해 <a href="https://18f.gsa.gov/2019/04/09/why-we-love-modular-contracting/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">모듈식 계약을 사용한 실험</a>을 성공적으로 마쳤습니다.</p>
+
+<p>프로젝트 납품에 적용되는 문제는 혁신에도 적용됩니다.
+조직은 단기 성과를 달성하고, 학습 결과를 공유하며, 다른 팀이 이러한 새 아이디어로 실험할 수 있게 도울 수 있는 방법을 찾아야 합니다.</p>
+
+<h2 id="common_pitfalls_in_transforming_culture" data-text="문화 혁신의 일반적인 단점">문화 혁신의 일반적인 단점</h2>
+
+<p>리더는 조직에 대규모 변화를 시도할 때 다음과 같은 실수를 하는 경우가 많습니다.</p>
+
+<ul>
+<li><p><strong>혁신을 일회성 프로젝트로 취급</strong>. 성과가 높은 조직에서는 개선을 위해 지속적으로 노력하고 모든 사람의 일상 업무에 개선이 포함되어 있습니다. 그러나 여러 혁신 프로그램은 대규모의 일회성 이벤트로 취급되므로 모든 사람이 업무 방식을 신속하게 변경한 다음 평소대로 비즈니스를 계속해야 합니다. 팀이 작업 방식을 개선하는 데 필요한 역량, 리소스 또는 권한을 부여받지 못하고 팀의 프로세스, 기술, 역량이 진화하는 작업 현실에 맞지 않아 팀의 성과가 점차 저하됩니다.
+기술 혁신은 비즈니스에서 중요한 가치를 제공하는 부분으로, 투자를 멈추지 않아야 합니다. 결국 고객 유치나 고객 지원에 대한 투자를 중단할 계획인가요?</p></li>
+<li><p><strong>혁신을 하향식 활동으로 취급</strong>. 이 모델에서는 조직의 보고 라인이 변경되고 팀이 이동되거나 재구성되며 새로운 프로세스가 구현됩니다. 관련된 사람들에게 변경사항에 대한 제어권이 조금 부여되며 의견을 제시할 수 있는 기회는 주어지지 않습니다. 이로 인해 사람들이 기존 약정을 이행하는 동안 새로운 작업 방식을 배우면서 스트레스를 받고 생산성이 저하될 수 있습니다. 하향식 접근법이 혁신 이니셔티브에서 자주 볼 수 있는 불통 문제와 합쳐지면 직원이 불만을 느끼고 이탈할 수 있습니다. 또한 하향식 혁신을 계획하고 실행하는 팀이 작업의 영향에 대한 피드백을 수집하고 적절히 변경사항을 적용하는 경우는 드뭅니다. 대신 결과에 관계없이 계획이 실행됩니다.</p></li>
+<li><p><strong>원하는 결과에 동의하고 소통하지 못함</strong>.
+'TTM(time to market) 단축' 또는 '비용 절감'과 같은 정성적(정량적 아님) 목표나 잘못 정의된 목표 하에 혁신이 수행되는 경우가 있습니다. 이룰 수 없는 목표가 정의되거나 목표가 조직에 내분을 초래하는 경우도 있습니다.
+이 경우 개선 작업이 원하는 효과를 가져다 줄지 알 수 없습니다. 이 실패가 하향식 접근법과 결합되면 더 빠르거나 저렴한 다른 접근법을 실험하기가 어려워집니다. 그 결과 일반적으로 계획이 실행될 때 낭비가 발생하며 목표 달성 여부 또는 프로그램의 효과를 판단할 수 없습니다. 대부분의 경우 실패가 비판적으로 분석되고 학습 기회로 사용되는 대신 실패가 무시되고 새로운 전면 변경 이니셔티브가 시작되거나 전체 방법론이 불일치합니다.</p></li>
+</ul>
+
+<p>혁신을 프로젝트로 취급함과 동시에 하향식 이니셔티브로 취급할 경우 다음 다이어그램에 표시되는 패턴이 발생하는 경향이 있습니다.
+성과는 점차 저하됩니다. 혁신 프로그램을 시작하는 초기에는 성과가 악화된 후 개선됩니다. 하지만 그후에는 혁신이 정상적으로 이루어집니다. 그 동안 조직 전체에서 냉소주의와 이탈이 증가합니다.</p>
+
+<p><img src="/static/architecture/devops/images/devops-culture-transform-performance-against-time.png" alt="시간 대비 성과 그래프. 각 변경 프로그램 중에 성과가 높아졌다가 낮아지면서 전반적으로 동일하게 유지됨"/></p>
+
+<p>출처: CC-BY: <a href="https://www.google.com/books/edition/Lean_Enterprise/G_ixBQAAQBAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise: How High Performance Organizations Innovate at Scale</em></a>(제즈 험블, 조앤 몰스키, 배리 오라일리 공저(O'Reilly, 2014))</p>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

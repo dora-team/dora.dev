@@ -1,0 +1,120 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 프로세스: 고객 의견</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>참고:</strong><span> <em>고객 의견</em>은 소프트웨어 제공과 조직 성과를 향상하는 기능 집합 중 하나입니다.  이러한 기능은 성과 향상을 이끌어내는 관례와 기능을 독립적이자 학술적으로 심층 연구하는 <a href="https://www.devops-research.com/research.html">DORA State of DevOps 연구 프로그램</a>을 통해 개발되었습니다. 자세한 내용은 <a href="/devops">DevOps 리소스</a>를 참조하세요.</span></aside>
+<p>소프트웨어 프로젝트에서는 흔히 개발자가 몇 달 또는 몇 년 동안 제품 작업을 하면서도 빌드 중인 기능이 실제로 사용자의 문제 해결에 도움이 되는지 아니면 기능이 전혀 사용되지 않는지 확인 없이 여러 차례 출시가 이루어지는 경우가 있습니다.</p>
+
+<p>고객 의견은 <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">가치 흐름에서 작업 가시성</a>, <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">소규모 일괄 작업</a>, <a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">팀 실험</a>을 포함하는 광범위한 기능 그룹의 일부입니다. 이 모두는 <a href="https://books.google.com/books/about/Escaping_the_Build_Trap.html?id=PQ8dMQAACAAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">제품 관리에 대한 lean 접근 방식</a>에 해당합니다.</p>
+
+<p>이러한 기능이 함께 적용되면 다음을 예측하는 데 도움이 됩니다.</p>
+
+<ul>
+<li>제공 속도, 안정성, 가용성을 기준으로 측정되는 소프트웨어 제공 성과.</li>
+<li>수익, 시장 점유율, 생산성을 기준으로 측정되는 조직 성과.</li>
+</ul>
+
+<p>DORA(DevOps Research and Assessment) 연구(PDF)는 팀이 이러한 기능을 활용하고 다음을 수행하는 조직에서 일할 때 더 높은 성과를 달성함을 <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=35" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">보여줍니다</a>.</p>
+
+<ul>
+<li>고객 만족도 측정항목을 정기적으로 수집합니다.</li>
+<li>제품 및 기능 품질에 대한 고객 의견을 구하고 처리합니다.</li>
+<li>이 의견을 참고하여 제품 및 기능을 설계합니다.</li>
+</ul>
+
+<h2 id="how_to_implement_customer_feedback" data-text="고객 의견을 구현하는 방법">고객 의견을 구현하는 방법</h2>
+
+<p>제품을 개발할 때는 성공 여부를 측정하기 위한 주요 측정항목을 설정하는 것이 중요합니다. 이러한 측정항목은 실제 문제를 해결하고 있는지, 솔루션이 충분히 빨리 채택되고 있는지, 사용자가 계속 사용하고 다른 사용자에게 추천할지 파악하는 데 도움이 됩니다. 이러한 측정항목은 고객이 제품과 상호작용하는 방식에서 명시적으로 파생되어야 합니다. 이러한 측정항목을 사용하려면 고객 의견을 신중하게 수집하고 분석해야 합니다.</p>
+
+<p>소비자 대상 SaaS 제품에서 많이 사용되는 측정항목 세트는 AARRR(획득, 활성화, 유지, 추천, 수익)입니다. (설명하는 사람에 따라 순서가 달라지는 경우가 있습니다.) 이를 종종 <em>해적 측정항목</em>이라고도 하는데, 이 머리글자어를 풀어쓰면 전형적으로 해적들이 이야기하는 방식과 관련된 단어가 되기 때문입니다.</p>
+
+<p>목적은 5가지 주요 측정항목을 살펴보고 고객 환경을 반복하여 해당 측정항목을 개선하는 것입니다.</p>
+
+<ul>
+<li><strong>획득</strong>: 사이트 방문자 중 계정을 만드는 사용자의 비율입니다.</li>
+<li><strong>활성화</strong>: 계정을 활성화하고 서비스를 사용하는 획득 사용자의 비율입니다.</li>
+<li><strong>유지</strong>: 서비스로 돌아오는 활성화된 사용자의 비율입니다.</li>
+<li><strong>추천</strong>: 다른 사용자에게 서비스를 추천하는 유지 사용자의 비율입니다.</li>
+<li><strong>수익</strong>: 서비스 비용을 실제로 지불하는 추천 사용자의 비율입니다.</li>
+</ul>
+
+<p>이러한 측정항목이 비즈니스 또는 제품에 적합하지 않은 경우 적합한 측정항목을 찾고 정기적으로 모니터링하여 제품 전략의 핵심 요인으로 활용해야 합니다.</p>
+
+<p>이 문서에서 설명하는 접근 방식은 외부에 공개되는 제품에만 적용되는 것은 아닙니다. 조직의 다른 사용자를 위해 만들어진 내부 제품 및 서비스에도 동일하게 적용됩니다. 내부 도구를 빌드하려면 정확히 동일한 접근 방식이 필요합니다. 즉, 실제 사용자가 조기에 빈번히 참여하여 빌드 중인 도구가 실제로 사용자의 문제를 해결하는지 확인해야 합니다. 그렇지 않으면 아무도 사용하지 않는 도구를 빌드하고 사용하게 될 수 있습니다. 도구를 만드는 사람에게는 맥이 빠지는 일이고, 마음에 들지 않는 도구를 사용해야 하는 사람에게는 짜증나는 일입니다. 사용자에게 맞지 않는 기술을 빌드하는 회사에게도 상당한 비용이 됩니다.</p>
+
+<p>고객 문제를 성공적으로 해결할 가능성을 극대화하려면 팀은 다음 패턴을 사용해야 합니다.</p>
+
+<ol>
+<li>잠재적 기능을 정의하기 전에 고객 의견을 먼저 수집하세요.</li>
+<li>실제 문제를 해결하고 있는지 확인합니다.</li>
+<li>해당 문제만을 실제로 해결하는 솔루션을 반복합니다.</li>
+<li>솔루션이 실행 가능한 비즈니스로 연결되는지 확인합니다(예를 들어 비용이 예상 수익보다 적게 듦).</li>
+<li>주요 측정항목을 추적하여 성공 여부를 측정합니다(예: AARRR).</li>
+<li>위 과정을 반복하여 이러한 측정항목을 개선합니다.</li>
+</ol>
+
+<p>성공하려면 소프트웨어를 신속하게 배포하고 출시해야 할 뿐 아니라 고객 요구 처리가 개선되고 더 스마트하고 빨라져야 합니다. 경쟁사보다 더 철저한 실험을 통해 이를 달성할 수 있습니다. 소매업은 <a href="https://services.google.com/fh/files/misc/state-of-devops-2019.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">이를 통해 특별한 성공을 거둔</a>(PDF) 업종입니다.
+<a href="https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">가설 기반 개발</a>, 고객 획득 유입경로 정의 및 측정, A/B 테스트와 같은 기술을 통해 사용자 실험을 수행할 수 있습니다. 이를 통해 창의력을 키우고 혁신 속도를 높이며 조직 학습을 만들 수 있습니다.</p>
+
+<p>고객 참여도를 높이고 제품 관리 프로세스에 대한 참여를 늘리면 조직의 <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=37" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">목표 및 가치</a>(PDF)와 더 강력한 일체감을 갖는 데 도움이 됩니다. 이를 통해 조직의 성과에 기여할 수 있습니다.</p>
+
+<h2 id="common_pitfalls" data-text="일반적인 문제">일반적인 문제</h2>
+
+<p>고객 의견을 효과적으로 사용하는 데 있어 일반적인 문제는 다음과 같습니다.</p>
+
+<ul>
+<li><strong>의견 수집하지 않음</strong>. 소프트웨어 개발 회사들은 고객 의견을 전혀 수집하지 않는 경우가 흔합니다.</li>
+<li><strong>너무 늦게 의견 수집</strong>. 종종 회사가 소프트웨어 제공 수명 주기에서 너무 늦게 고객 의견을 수집하여 활용할 수 없는 경우가 있습니다.</li>
+<li><strong>문제를 이해 못 함</strong>(또는 고객 의견을 잘못 해석). 회사는 고객에 대한 비현실적인 기대치를 갖거나 고객이 제품에서 무엇을 원하는지 이해하지 못할 수 있습니다. 또한 팀은 불편하지만 정확한 고객 의견을 명시적으로 무시할 수 있습니다.
+이러한 상황은 개발팀이 당장의 솔루션 제공에 따르는 위험을 충분히 평가 또는 관리하지 못하거나 해결할 문제를 이해하지 못하는 경우에 발생할 수 있습니다. 개발팀은 문제 해결에 필요한 최소한으로 작업 범위를 유지하려고 합니다.
+경우에 따라 문제가 팀이 설계한 것보다 크면 팀은 추가 작업을 '범위 추가(scope creep)'로 인식하고 묵살하는 잘못을 저지를 수 있습니다.  이로 인해 고객의 관점에서 솔루션이 불완전해지고 결국 제품은 실패합니다.</li>
+<li><strong>팀이 의견에 따른 조치를 취하도록 허용하지 않음</strong>. 제공팀에게는 <a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">팀 실험</a>에 대한 문서에 설명된 대로 의견에 따라 시스템의 설계 또는 사양을 변경할 권한이 주어져야 합니다.</li>
+<li><strong>잘못된 측정항목을 기준으로 성공 여부 측정</strong>. 충분한 고객 검증이 없는 솔루션이 개발팀과 제공팀에게 확정된 요구사항으로 제공되는 경우가 있습니다. 이 경우 제공팀의 성공 여부는 팀이 실제로 문제를 해결했는지 아니면 고객을 위한 결과를 달성했는지가 아니라 지정된 기능을 제공했는지에 따라 측정됩니다.</li>
+<li><strong>고객의 문제를 해결하지 못함</strong>.
+A/B 테스트의 <a href="http://ai.stanford.edu/%7Eronnyk/ExPThinkWeek2009Public.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">업계 데이터</a>(PDF)에 따르면 성공적인 제품의 경우 제안된 기능 중 실제로 제공될 때 비즈니스 결과를 개선하는 기능은 약 3분의 1에 불과합니다. 나머지 3분의 2의 기능이 비즈니스에 제공하는 결과는 0 또는 <em>마이너스</em>입니다. 따라서 사용자 조사를 수행하지 않는다면 팀이 수행하는 작업의 3분의 2 이상은 원하는 결과를 얻지 못하거나 상황을 악화시킬 가능성이 높습니다. 수명 주기 초기 제품, 특히 혁신적 제품을 개발하는 팀은 원하는 결과를 달성할 가능성이 상당히 낮습니다.</li>
+<li><strong>고객 의견에 응답하는 데 필요한 시간과 노력 과소평가</strong>. 팀은 제안된 솔루션이 잘못될 것으로 예상하고 그중 3분의 2 이상을 버릴 준비를 해야 합니다. 솔루션의 나머지 3분의 1에 대해서는 고객 의견에 따라 솔루션을 대폭 발전시킬 준비를 해야 합니다.</li>
+</ul>
+
+<h2 id="ways_to_improve_customer_feedback" data-text="고객 의견을 개선하는 방법">고객 의견을 개선하는 방법</h2>
+
+<p>사용자 환경 디자인(UX) 분야는 개선을 위한 프레임워크를 제공합니다. 많은 조직에서 UX를 제품 UI를 보기 좋게 만드는 것으로만 취급합니다.
+하지만 UX에서 중요한 것은 사용자의 실제 문제를 해결하는지 여부입니다. 더 넓게 보면 UX에서 중요한 것은 사용자가 조직과 상호작용할 때 하는 모든 경험입니다. 성공적인 UX가 성공적인 제품 및 서비스 빌드에 얼마나 중요한지는 아무리 강조해도 지나치지 않습니다.</p>
+
+<p>반드시 고객의 의견을 수집해 제공 프로세스에 포함해야 합니다.
+빌드하는 모든 중요한 기능은 해결할 문제를 고려하는 데서 시작해야 합니다. 여기에는 가능한 솔루션을 결정하고 후보를 선택하기 위한 사용자 조사 수행이 포함되어야 합니다. 코드를 작성하기 전에 사용자 조사를 분석해야 합니다.</p>
+
+<p>수명 주기 초기 제품의 경우 팀은 코드를 작성하기 전에 <a href="https://wikipedia.org/wiki/Lean_startup" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">lean 스타트업 운동</a>에 제시된 아이디어를 채택하여 제품의 기본 비즈니스 모델을 검증해야 합니다. 실제 문제를 해결하고 있는지 확인한 다음 실행 가능한 비즈니스 모델을 제공하면서 문제를 해결하는 솔루션을 반복해야 합니다.</p>
+
+<p>알려진 비즈니스 문제에 대한 새로운 솔루션을 구현하는 기존 제품의 경우 유사한 패턴을 따라야 합니다. 솔루션 설계가 검증되면 추가 조사 및 테스트를 수행할 수 있도록 프로토타입을 만들어야 합니다. 테스트를 통해 기능이 목표를 달성하는 것이 검증된 경우에만 전체 프로덕션 기능을 완성해야 합니다.</p>
+
+<p>많은 조직이 이 모든 작업을 건너뛰며, 실패합니다. 그러나 이 단계를 엄격하게 따른다고 해서 반드시 성공할 수 있는 것도 아닙니다. 이러한 노력의 핵심은 실패의 위험을 최소화하기 위해 최선을 다하는 것입니다.</p>
+
+<h2 id="ways_to_measure_customer_feedback" data-text="고객 의견을 측정하는 방법">고객 의견을 측정하는 방법</h2>
+
+<p>고객의 의견을 수집해 공개하고 그에 따른 조치를 취하는지 확인하는 데는 정교한 데이터 수집이 필요하지 않습니다. 다음 질문은 제품 설계에 고객 의견을 얼마나 잘 활용하고 있는지 판단하는 데 도움이 됩니다.</p>
+
+<ul>
+<li>고객 만족도를 측정하는 측정항목이 있나요? 팀원에게 고객 만족도를 정기적으로 업데이트하고 알리나요? 고객 만족도에 따른 조치를 취하나요?</li>
+<li>모든 기능을 빌드 전에 검증하고 제공의 일환으로 프로토타입을 사용하여 사용자 조사를 수행하나요?</li>
+<li>이 사용자 조사에 따라 기능을 변경하나요?</li>
+<li>사용자의 의견을 적극적, 정기적으로 수집하고 그에 따라 조치를 취하나요?</li>
+</ul>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li>Rony Kohavi의 <a href="http://ai.stanford.edu/%7Eronnyk/ExPThinkWeek2009Public.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Online Experimentation at Microsoft</a> 문서(PDF)를 읽어보세요.</li>
+<li>Barry O'Reilly의 <a href="https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Hypothesis-driven development</a> 문서를 읽어보세요.</li>
+<li>Jeff Gothelf와 Josh Seiden의 책 <a href="http://shop.oreilly.com/product/0636920049166.do" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean UX: Designing Great Products with Agile Teams</em></a>를 읽어보세요.</li>
+<li>Alistair Croll과 Benjamin Yoskovitz의 책 <a href="http://leananalyticsbook.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Analytics: Use Data to Build a Better Startup Faster</em></a>를 읽어보세요.</li>
+<li>Jez Humble, Joanne Molesky, Barry O'Reilly의 책 <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise: How High Performance Organizations Innovate at Scale</em></a>을 읽어보세요.</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,81 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 衡量：目视管理能力</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong>：<span><em></em>“目视管理能力”是一组推动实现更出色的软件交付表现和组织绩效的能力之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>对于采用<a href="https://wikipedia.org/wiki/Lean_software_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">精益开发做法</a>的团队来说，在每个人都可以看到的团队区域中展示其流程关键信息是一种常见做法。目视管理板让大家都能了解团队当前的运营效率如何，还有助于找出并消除提升绩效过程中所面临的阻碍。</p>
+
+<h2 id="how_to_implement_visual_management" data-text="如何实现目视管理">如何实现目视管理</h2>
+
+<p>在软件交付情境中，通常有多种目视展示板和信息中心：</p>
+
+<ul>
+<li>实体或虚拟形式的<strong>卡片墙、故事板或看板</strong>（附带表示正在进行的工作项目的索引卡）。</li>
+<li><strong>信息中心或其他指示图标</strong>，例如配有监控或红绿灯的持续集成系统（用于显示构建是通过还是失败）。团队根据目前希望解决的问题创建、更新（也可能需要舍弃）有效的目视展示板。</li>
+<li><strong>燃起图或燃尽图</strong>（例如累积流程图），可显示所有工作的累积状态。通过这类图，团队可以预测完成当前积压工作需要多长时间。</li>
+<li><strong>部署流水线监控</strong>，可显示最新的可部署构建是什么，以及流水线中的各个阶段（例如验收测试或性能测试）是否失败。</li>
+<li><strong>显示生产遥测数据的监控</strong>，例如收到的请求数量、延迟时间统计信息、累积的 <code translate="no" dir="ltr">404</code> 和 <code translate="no" dir="ltr">500</code> 错误以及哪些页面最受欢迎。</li>
+</ul>
+
+<p>如果结合使用 <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">WIP 限制</a>和来自生产环境的反馈做出业务决策，目视管理展示板还可以<a href="https://services.google.com/fh/files/misc/state-of-devops-2015.pdf#page=15" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">提高交付绩效水平</a> (PDF)。</p>
+
+<h2 id="common_pitfalls_with_visual_management" data-text="目视管理的常见误区">目视管理的常见误区</h2>
+
+<p>目视管理展示板最重要的特性是：团队关注信息并据此采取行动，展示板用于在日常工作中找出和消除绩效提升障碍。实现目视管理时的常见误区如下：</p>
+
+<ul>
+<li><strong>在未经团队讨论的情况下选择指标</strong>。应更频繁地使用可显示与团队密切相关且实用的指标的目视展示板。此外，如果团队能够参与目标的选择（例如，一些团队<a href="/architecture/devops/devops-culture-transform" track-type="solution" track-name="internalLink" track-metadata-position="body">使用 OKR</a>），对目视展示板上显示的指标提出意见，那么他们将更有动力朝着这些目标努力。</li>
+<li><strong>创建复杂、难以理解或未提供切实可行的信息的展示板</strong>。您可以使用支持概略修改的或有趣的工具来轻松创建展示板。但如果团队使用错误的指标或需要数月时间来实现，在自定义信息中心上更改布局和颜色则没有帮助。在白板上绘制关键指标或概略图并每天更新一次同样可以有效地让团队了解最新情况。</li>
+<li><strong>目视展示板没有变化</strong>。目视管理工具应向团队提供能够解决他们当前面临的问题的信息。复制其他团队的展示板内容没有任何帮助，除非该团队也在处理相同的工作，面临同样的挑战和阻碍。随着团队的工作不断推进，目视展示板内容也应随之改变。另请注意，当团队解决各项问题时，他们的目视展示板内容可能会发生变化，旧的（以前相关的）指标会被舍弃，而新的重要方面会突出显示。</li>
+<li><strong>未解决目视展示板呈现的根本问题</strong>。团队有时为了让展示板再次变“绿”而一味追求速度。展示板应该用于推动改进（解决问题），展示板本身不应该成为目标（让展示板保持绿色）。只专注于管理指标会导致意外后果和技术债务。如果展示板显示出问题，团队不应只解决眼前的问题。还应努力找出根本问题或约束条件并加以解决，即使该问题属于组织的其他部门也应如此。任何效率低下问题会不断出现，尽早解决问题对所有团队都有帮助。</li>
+</ul>
+
+<h2 id="ways_to_improve_visual_management" data-text="改进目视管理的方法">改进目视管理的方法</h2>
+
+<p>目视管理工具的目标是提供快速、易于理解的反馈，使您可以提高产品质量。该反馈有助于团队发现产品中的缺陷，了解系统的某些部分是否无法有效地运行，从而帮助团队解决问题。为了实现有效性，此类系统必须满足以下条件：</p>
+
+<ul>
+<li><strong>反映团队关注的信息，使团队可以据此采取行动</strong>。如果团队并不关心展示板是否呈现出问题（例如，显示构建状态为红色表示已损坏），也没有通过积极解决问题来针对这类信息采取实际措施，使用构建监控就没有什么用处。</li>
+<li><strong>易于理解</strong>。应该让人站在房间的另一头就能一眼看出是否有需要注意的地方。如果存在问题，团队应知道如何进一步诊断或解决问题<em></em>。</li>
+<li><strong>向团队提供与其工作相关的信息</strong>。虽然收集尽可能多的团队工作数据非常重要，但展示板应仅呈现与团队目标相关的数据。如果信息过多（尤其是无法处理的信息），人们就会忽略目视管理展示板的内容；展示板只会变得杂乱无章。当团队积极解决问题时，可以访问和使用其他数据。</li>
+<li><strong>将更新作为一项日常工作</strong>。如果数据过时或不准确，团队将忽视目视展示板，当出现重大问题时，这些展示板将不再提供有用的指标。如果展示板当前显示的数据过时或不准确，请调查原因：这些数据是否与团队的目标无关？哪些数据可以让展示板成为团队的重要且具有吸引力的信息来源？</li>
+</ul>
+
+<p>团队不应该关注目视展示板中无关紧要的部分。例如，目视管理展示板无需是电子设备。实体卡片墙或看板更易于管理和理解，当团队成员都在同一个地点的情况下尤其如此。这些展示板还有助于形成有价值的团队仪式，例如，站在展示板前分配工作并进行探讨。可以让团队每天更新标有一些关键项目信息的白板往往比不易理解、难以更新或没有必要信息的电子系统更好。</p>
+
+<h2 id="ways_to_measure_visual_management" data-text="衡量目视管理的方法">衡量目视管理的方法</h2>
+
+<p>与所有改进工作一样，首先应从团队正努力实现的可衡量的系统级目标着手。发现工作系统的现有状态。找到一种方法来呈现现有状态的关键信息以及您所需状态的关键信息。确保这些信息仅按所需的精确度显示。</p>
+
+<p>在定期回顾期间查看目视展示板。询问以下问题：</p>
+
+<ul>
+<li>展示板是否为您提供了所需信息？</li>
+<li>信息是否是最新的？</li>
+<li>大家是否会根据这些信息采取行动？</li>
+<li>这些信息（以及大家据此采取的相应措施）是否可以朝着团队目标推动可衡量的改进？</li>
+<li>是否每个人都知道目标是什么？</li>
+<li>你会查看目视管理展示板以及你关心的关键流程指标吗？</li>
+</ul>
+
+<p>如果以上任何一个问题的答案是“否”，请进一步调查：</p>
+
+<ul>
+<li>您能否修改信息或展示方式？</li>
+<li>您能否彻底清除展示板内容？</li>
+<li>您能否创建新的展示板？原型是怎样的？需要包含哪些最重要的信息？这些信息需要达到什么样的精确度才能帮助您解决问题和实现目标？</li>
+</ul>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>阅读 Dominica DeGrandis 的《<a href="https://itrevolution.com/book/making-work-visible/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">让工作有形</a>》(Making Work Visible) 一书<em></em>。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,99 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Technologies DevOps : le contrôle des versions</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Remarque</strong> :<span> <em>Le contrôle de version</em> fait partie d'un ensemble de fonctionnalités permettant d'améliorer
+les performances organisationnelles et de livraison des logiciels.  Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche sur l'état du DevOps, mené par l'équipe DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les fonctionnalités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>Les systèmes de gestion des versions, tels que Git, Subversion et Mercurial, proposent un moyen logique d'organiser les fichiers et de coordonner leur création, le contrôle des accès, leur mise à jour et leur suppression entre les équipes et les organisations. Le contrôle des versions est étroitement lié à l'automatisation. En fait, <a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">l'automatisation et l'intégration continue</a> reposent sur ces fichiers pour le code source de l'automatisation elle-même, ainsi que pour la configuration de l'automatisation et des données à distribuer.</p>
+
+<p>Afin d'améliorer la livraison des logiciels, les équipes doivent utiliser le contrôle des versions pour le code source, les scripts de test et de déploiement, les informations de configuration de l'infrastructure et de l'application, ainsi que pour les nombreuses bibliothèques et packages dont elles dépendent.
+Le système de contrôle des versions permet aux équipes de pouvoir interroger l'état actuel (et historique) de leurs environnements. Le contrôle des versions offre également des avantages directs, tels que la reprise après sinistre et la possibilité de réaliser des audits.</p>
+
+<p>Des études montrent que l'utilisation complète du contrôle des versions, parmi d'autres fonctionnalités, permet de prédire une livraison continue. Par exemple, le contrôle des versions vous permet de répondre aux exigences critiques suivantes :</p>
+
+<ul>
+<li><p><strong>Reproductibilité.</strong> Les équipes doivent être en mesure de provisionner tous les environnements de manière entièrement automatisée et de savoir que tout nouvel environnement reproduit à partir de la même configuration est identique. Pour atteindre cet objectif, il est indispensable de disposer des scripts et des informations de configuration nécessaires pour provisionner un environnement stocké dans un système accessible et partagé.</p></li>
+<li><p><strong>Traçabilité.</strong> Les équipes doivent pouvoir choisir n'importe quel environnement, et déterminer rapidement et précisément les versions de chaque dépendance utilisée pour créer cet environnement. Elles doivent également être en mesure de comparer deux versions d'un environnement et d'identifier les différences entre elles.</p></li>
+</ul>
+
+<p>Ces fonctionnalités offrent plusieurs avantages importants aux équipes :</p>
+
+<ul>
+<li><p><strong>Reprise après sinistre.</strong> Lorsqu'un problème survient dans un environnement (par exemple, une panne matérielle ou une violation de sécurité), les équipes doivent pouvoir reproduire cet environnement dans un laps de temps déterminant afin de pouvoir restaurer le service.</p></li>
+<li><p><strong>Possibilité de réaliser des audits.</strong> Pour démontrer l'intégrité du processus de livraison, les équipes doivent être en mesure d'indiquer l'historique de chaque déploiement vers les éléments dont il est issu, y compris leur version. Vous pouvez activer cette fonctionnalité à l'aide d'outils de gestion de configuration complets associés à des pipelines de déploiement.</p></li>
+<li><p><strong>Qualité supérieure.</strong> Le processus de livraison d'un logiciel est souvent soumis à de longs délais d'attente compte tenu de la préparation des environnements de développement, de test et de production. Lorsque les équipes peuvent effectuer cette préparation automatiquement à partir du contrôle des versions, elles peuvent obtenir un retour plus rapidement sur l'impact de leurs modifications, leur permettant ainsi d'améliorer la qualité de leur logiciel.</p></li>
+<li><p><strong>Gestion de la capacité.</strong> Lorsque les équipes souhaitent augmenter la capacité de leurs environnements, il est essentiel de créer des reproductions des serveurs existants. Cette fonctionnalité permet d'effectuer un scaling horizontal des systèmes distribués modernes basés sur le cloud.</p></li>
+<li><p><strong>Réponse aux défaillances.</strong> Lorsque les équipes identifient une défaillance critique ou la vulnérabilité de certains composants de leur système, elles doivent publier une nouvelle version de leurs logiciels le plus vite possible. Le stockage de tous les artefacts dans le contrôle des versions permet aux équipes de pouvoir effectuer un rollback rapidement et de manière fiable à un état de fonctionnement déjà validé.</p></li>
+</ul>
+
+<p>À mesure que les environnements deviennent plus complexes et hétérogènes, il est de plus en plus difficile d'atteindre ces objectifs. Il est impossible d'obtenir une reproductibilité et une traçabilité parfaites pour un système d'entreprise complexe (chaque système réel ayant au moins un état). Ainsi, un élément clé de la gestion de la configuration consiste à simplifier l'architecture, les environnements et les processus afin de réduire les investissements nécessaires pour obtenir les avantages escomptés.</p>
+
+<h2 id="how_to_implement_version_control" data-text="Mettre en œuvre le contrôle des versions">Mettre en œuvre le contrôle des versions</h2>
+
+<p>Lors de la mise en œuvre du contrôle des versions, nous vous recommandons de commencer par définir les objectifs que vous souhaitez atteindre en termes mesurables. Cela vous permet, à vous et à vos équipes, de déterminer la meilleure manière d'y parvenir. Cette approche vous permet également de réorienter ou de réévaluer ces objectifs si la méthode que vous choisissez est trop coûteuse ou chronophage.</p>
+
+<p>Un système de contrôle des versions enregistre les modifications apportées aux fichiers stockés dans le système. Ces fichiers peuvent être du code source, des ressources ou d'autres documents pouvant faire partie d'un projet de développement logiciel. Les équipes apportent des modifications dans des groupes appelés <em>commits</em> ou <em>révisions</em>. Les révisions et leurs métadonnées associées (par exemple, l'auteur et l'heure de la modification) sont stockées dans le système. Cela permet aux équipes d'effectuer un commit, de comparer, de fusionner et de restaurer les révisions précédentes. Vous minimisez également les risques en établissant un moyen de rétablir les versions précédentes des objets en production.</p>
+
+<p>Les équipes doivent pouvoir restaurer les services de production de façon répétée et prévisible (et, idéalement, de manière rapide), même en cas d'événements catastrophiques. Elles doivent donc enregistrer les ressources suivantes dans leur dépôt partagé du contrôle des versions :</p>
+
+<ul>
+<li>Le code d'application et les dépendances (par exemple, les bibliothèques et le contenu statique)</li>
+<li>Tous les scripts utilisés pour créer des schémas de base de données, les données de référence d'une application, etc.</li>
+<li>L'ensemble des outils et des artefacts de création d'environnement décrits à l'étape précédente (par exemple, les scripts de création d'images VMware ou AMI, ou les recettes Chef)</li>
+<li>Tous les fichiers utilisés pour créer et configurer des conteneurs (par exemple, des fichiers et des packs de création Docker)</li>
+<li>Tous les tests automatisés compatibles et tous les scripts de test manuels</li>
+<li>Tous les scripts compatibles avec le packaging de code, le déploiement, la migration de base de données et le provisionnement de l'environnement</li>
+<li>Les artefacts de projet compatibles (par exemple, documentation relative aux exigences, procédures de déploiement et notes de version)</li>
+<li>Orchestration de conteneurs (par exemple, configuration Kubernetes, configuration Mesos et configuration Docker Swarm)</li>
+<li>Tous les fichiers de configuration cloud (par exemple, modèles AWS CloudFormation, configuration Cloud Deployment Manager, fichiers Microsoft Azure Stack DSC, OpenStack HEAT, fichiers Terraform et piles Pulumi)</li>
+<li>Tout autre script ou information de configuration nécessaire pour créer une infrastructure compatible avec plusieurs services (par exemple, architecture ESB, système de gestion de base de données, fichiers de zone DNS, règles de configuration des pare-feu et autres périphériques de mise en réseau)</li>
+</ul>
+
+<p>Le contrôle des versions peut prendre plusieurs formes, hormis les systèmes de contrôle des versions traditionnels basés sur des fichiers, comme Git. Les équipes peuvent avoir plusieurs dépôts pour différents types d'objets et de services ayant des versions gérées, des libellés et des tags avec leur code source. Par exemple, elles peuvent stocker des images volumineuses de machine virtuelle, des fichiers ISO, des fichiers binaires compilés, etc. dans des dépôts d'artefacts, tels que Nexus ou Artifactory. Elles peuvent également placer des objets dans des magasins d'objets blob, tels que Cloud Storage ou Amazon S3, ou des images Docker dans des registres Docker. Ces approches répondent aux exigences de reproductibilité et de traçabilité, tout en offrant les mêmes avantages.</p>
+
+<p>En plus de rétablir tout état précédent de l'environnement de production, les équipes doivent également pouvoir recréer les processus de préproduction et de compilation.
+Par conséquent, elles doivent vérifier tous les éléments sur lesquels leurs processus de compilation s'appuient dans le contrôle des versions, y compris les outils et les environnements dont ils dépendent.</p>
+
+<h2 id="common_pitfalls_in_version_control" data-text="Problèmes courants du contrôle des versions">Problèmes courants du contrôle des versions</h2>
+
+<p>Le problème le plus courant du contrôle des versions est <strong>son application ou son utilisation limitée</strong>. Autrement dit, n'appliquez le contrôle des versions qu'au code de l'application logicielle. Les bonnes pratiques requièrent de pouvoir reproduire de manière entièrement automatisée tous les environnements de test et de production, y compris les logiciels qui y sont déployés, à l'aide de scripts, du code source et des informations de configuration stockés dans le contrôle des versions.</p>
+
+<h2 id="ways_to_improve_version_control" data-text="Méthodes pour améliorer le contrôle des versions">Méthodes pour améliorer le contrôle des versions</h2>
+
+<p>Vous pouvez améliorer le contrôle des versions de différentes manières. Voici quelques recommandations :</p>
+
+<ul>
+<li>Assurez-vous que chaque commit du contrôle des versions déclenche la création automatisée de packages pouvant être déployés dans n'importe quel environnement, en utilisant <em>uniquement</em> les informations du contrôle des versions.</li>
+<li>Faites en sorte de créer des environnements de test de type production à la demande en utilisant uniquement les scripts et les informations de configuration du contrôle des versions, et des packages à l'aide du processus automatisé décrit dans l'approche précédente.</li>
+<li>Une infrastructure de test et de production de scripts permettant aux équipes d'ajouter de la capacité ou d'effectuer une reprise après sinistre de manière entièrement automatisée.</li>
+</ul>
+
+<p>Lorsque vous mettez en œuvre un système de contrôle des versions, concentrez-vous sur vos contraintes. Par exemple, quel est le principal obstacle au flux rapide des modifications du contrôle des versions à la production ? Vos builds sont-ils trop lents ? Est-il difficile de recréer des packages déployables ? Rencontrez-vous des difficultés lors de la création d'environnements de test de type production ? Ces contraintes peuvent compliquer la réalisation de vos objectifs et indiquer un problème sur lequel travailler avec l'<a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">architecture</a> de votre système.</p>
+
+<h2 id="ways_to_measure_version_control" data-text="Méthodes pour évaluer le contrôle des versions">Méthodes pour évaluer le contrôle des versions</h2>
+
+<p>Pour évaluer l'efficacité avec laquelle vos équipes utilisent le contrôle des versions dans leurs systèmes, essayez les recommandations suivantes :</p>
+
+<ul>
+<li><p><strong>Code d'application.</strong> Utilisez-vous le contrôle des versions pour le code d'application ?
+Quel pourcentage de code d'application stockez-vous dans le contrôle des versions ? L'équipe peut-elle récupérer facilement et rapidement le code d'application à partir du système de contrôle des versions ?</p></li>
+<li><p><strong>Configurations système.</strong> Utilisez-vous le contrôle des versions pour les configurations système ? Quel pourcentage de configurations système stockez-vous dans le contrôle des versions ? Les équipes peuvent-elle reconfigurer facilement et rapidement des systèmes à partir du contrôle des versions ?</p></li>
+<li><p><strong>Configuration de l'application.</strong> Utilisez-vous le contrôle des versions pour les configurations d'application ? Quel pourcentage de configurations d'application stockez-vous dans le contrôle des versions ? Les équipes peuvent-elle reconfigurer facilement et rapidement des applications à partir du système de contrôle des versions ?</p></li>
+<li><p><strong>Scripts permettant d'automatiser la compilation et la configuration.</strong> Conservez-vous des scripts pour automatiser le build et la configuration dans le contrôle des versions ? Quel pourcentage stockez-vous dans le contrôle des versions ? Pouvez-vous provisionner de nouveau des systèmes, de manière simple et rapide, à l'aide de scripts à partir du contrôle des versions ?</p></li>
+</ul>
+
+<p>Ces recommandations ne sont qu'un début, mais elles sont importantes. Nous vous recommandons donc de commencer à en prendre connaissance et d'apprendre à bien les mettre en pratique. Consultez ensuite cet article et identifiez d'autres artefacts que vous utilisez dans le développement et la livraison de logiciels. Posez-vous ensuite les questions suivantes : quel pourcentage de ces artefacts se trouvent dans le contrôle des versions ? Votre équipe peut-elle déployer facilement et rapidement de nouveaux systèmes ou configurations à l'aide des ressources du contrôle des versions ?</p>
+
+<h2 id="whats_next" data-text="Étape suivante">Étape suivante</h2>
+
+<ul>
+<li>Consultez la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">page DevOps</a> pour obtenir des liens vers d'autres articles et ressources.</li>
+<li>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</li>
+<li>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,187 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Technologie: Architektur</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> Die <em>Architektur</em> gehört zu einer Reihe von Funktionen, die zu einer höheren Software-Bereitstellung und Unternehmensleistung führt. Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">"State of DevOps"-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, wissenschaftlich exakten Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>Studien des DevOps Research and Assessment-Teams (DORA) haben ergeben, dass die Architektur für die erfolgreiche Umsetzung von Continuous Delivery eine entscheidende Rolle spielt.
+Unabhängig davon, ob Sie Kubernetes oder Mainframes verwenden, ermöglicht Ihre Architektur Ihren Teams, Verfahren anzuwenden, die zu einer höheren Leistung bei der Softwarebereitstellung führen.</p>
+
+<p>Wenn Teams Continuous Delivery-Verfahren übernehmen sollen, sind die folgenden Architekturpraktiken für gute Ergebnisse empfehlenswert:</p>
+
+<ul>
+<li>Teams können umfangreiche Änderungen am Design ihrer Systeme vornehmen, ohne dass jemand außerhalb des Teams dies genehmigen muss oder sie auf andere Teams angewiesen sind.</li>
+<li>Teams können Aufgaben erledigen, ohne dass eine umfangreiche Kommunikation und Koordination mit Personen außerhalb des Teams erforderlich ist.</li>
+<li>Teams können ihre Produkte oder Dienste bei Bedarf  bereitstellen und veröffentlichen und zwar unabhängig von den Diensten, von denen es bzw. er abhängig ist, und von anderen Diensten, die davon abhängen.</li>
+<li>Teams führen die meisten Tests bei Bedarf durch, ohne dass eine integrierte Testumgebung erforderlich ist.</li>
+<li>Teams können Bereitstellungen während der normalen Geschäftszeiten vornehmen, ohne dass es zu nennenswerten Ausfallzeiten kommt.</li>
+</ul>
+
+<p>Es ist möglich, diese Ergebnisse mit Mainframe-Technologien zu erzielen. Es kann aber auch vorkommen, dass sie selbst dann nicht erzielt werden, wenn die neuesten und gängigsten Technologien verwendet werden. Viele Organisationen investieren viel Zeit und Mühe in die Einführung von Technologien, erreichen dann jedoch aufgrund von architekturbezogenen Einschränkungen nicht ihre kritischen Ziele bei der Softwarebereitstellung.</p>
+
+<p>Wenn die Architektur des Systems so konzipiert ist, dass die Teams Systeme testen, bereitstellen und ändern können, ohne von anderen Teams abhängig zu sein, müssen sie wenig kommunizieren, um ihre Aufgaben zu erfüllen. Sowohl innerhalb der Architektur als auch zwischen den Teams bestehen also lockere Verbindungen.</p>
+
+<p>Diese Verbindung zwischen der Kommunikationsbandbreite und der Systemarchitektur wurde erstmals von Melvin Conway erörtert, der sagte: "Organisationen, die Systeme entwerfen, ... sind auf das Entwickeln von Designs beschränkt, die die Kommunikationsstrukturen dieser Organisationen abbilden." Um eng gekoppelten Architekturen entgegenzuwirken und bessere Kommunikationsmuster zu schaffen, können Teams und Organisationen das <a href="https://medium.com/better-practices/how-to-dissolve-communication-barriers-in-your-api-development-organization-3347179b4ecc" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Inverse Conway Maneuver</a> verwenden, bei dem Teamstrukturen und -muster so gestaltet werden, dass der erwartete Architekturzustand begünstigt wird. Auf diese Weise unterstützen und erzwingen die Kommunikationsmuster der Teams die Architekturmuster, die erstellt werden.</p>
+
+<p>Bei einer eng gekoppelten Architektur können kleine Änderungen zu umfangreichen, kaskadierenden Fehlern führen. Daher muss sich jeder, der in einem Teil des Systems arbeitet, ständig mit allen anderen abstimmen, die in einem anderen Teil des Systems arbeiten. Außerdem müssen komplexe und bürokratische Änderungsmanagementprozesse bewältigt werden.</p>
+
+<p>Mikrodienstarchitekturen sollen diese Art von Ergebnissen fördern, genau wie dienstorientierte Architekturen. In der Praxis ist es bei vielen sogenannten dienstorientierten Architekturen jedoch nicht möglich, Dienste unabhängig voneinander zu testen und bereitzustellen, sodass Teams keine höhere Softwarebereitstellungsleistung erzielen können.
+Die Implementierung von dienstorientierten und Mikrodienstarchitekturen sollte so geschehen, dass diese Ergebnisse erzielt werden können.</p>
+
+<h2 id="how_to_implement_architectures_for_continuous_delivery" data-text="Architekturen für die Continuous Delivery implementieren">Architekturen für die Continuous Delivery implementieren</h2>
+
+<p>Führen Sie sich die wichtigsten Architektur-Typen vor Augen. Randy Shoup, ehemals Engineering Director für App Engine und VP Engineering bei WeWork, hat Folgendes gesagt:</p>
+
+<blockquote>"Es gibt keine Architektur, die für alle Produkte und Skalierungen perfekt geeignet ist. Jede Architektur ist auf das Erreichen bestimmter Ziele ausgelegt oder erfüllt eine Reihe von Anforderungen und Einschränkungen, wie z. B. die Produkteinführungszeit, wie leicht Funktionen entwickelt oder die Skalierung vorgenommen werden kann usw. Die Funktion eines Produkts oder Dienstes wird sich mit der Zeit vermutlich ändern. Daher sollte es niemanden überraschen, dass sich auch unsere Anforderungen an Architekturen ändern werden. Was bei der 1x-Skalierung funktioniert, funktioniert selten bei der 10x- oder 100x-Skalierung."</blockquote>
+
+<p>Jeder der Architekturarchetypen hat Vor- und Nachteile und eignet sich daher für eine bestimmte Anforderung einer Organisation.</p>
+
+<table>
+<thead>
+<tr>
+<th width="25%">Archetyp</th>
+<th>Vorteile</th>
+<th>Nachteile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Monolithisch v1</strong><br />
+(alle Funktionen in einer Anwendung)</td>
+<td><ul><li>Zu Beginn einfach</li>
+<li>Niedrige Interprozesslatenzen</li>
+<li>Einzelne Codebasis, eine Bereitstellungseinheit</li>
+<li>Ressourceneffizient im kleinen Maßstab</li>
+</ul>
+</td>
+<td><ul><li>Der Koordinationsaufwand steigt, wenn das Team wächst</li>
+<li>Erzwingen von Modularität schwer möglich</li>
+<li>Schlechte Skalierungsmöglichkeiten</li>
+<li>Es wird immer alles oder nichts bereitgestellt (Fehler aufgrund von Ausfallzeiten)</li>
+<li>Lange Build-Dauer</li>
+</ul>
+</td>
+</tr>
+<tr>
+  <td><strong>Monolithisch v2</strong><br />
+(Satz monolithischer Ebenen: Front-End, Anwendungsserver, Datenbankebene)</td>
+<td><ul><li>Zu Beginn einfach</li>
+<li>Join-Abfragen sind ganz einfach</li>
+<li>Bereitstellung eines einzelnen Schemas</li>
+<li>Ressourceneffizient im kleinen Maßstab</li>
+</ul>
+</td>
+<td><ul><li>Neigung zu zunehmender Kopplung im Laufe der Zeit</li>
+<li>Schlechte Skalierung und Redundanz ("alles oder nichts", nur vertikal)</li>
+<li>Richtiges Abstimmen schwierig</li>
+<li>Alles-oder-Nichts-Schemaverwaltung</li>
+</ul>
+</td>
+</tr>
+<tr>
+  <td><strong>Mikrodienst</strong><br />
+(modular, unabhängig, Diagrammbeziehung oder -ebenen, isolierte Persistenz)</td>
+<td><ul><li>Jede Einheit ist einfach aufgebaut</li>
+<li>Unabhängige Skalierung und Leistung</li>
+<li>Unabhängige Tests und Bereitstellungen</li>
+<li>Leistung kann optimiert werden (Caching, Replikation usw.)</li>
+</ul>
+</td>
+<td><ul><li>Viele zusammenarbeitende Einheiten</li>
+<li>Viele kleine Repositories</li>
+<li>Erfordert komplexere Tools und komplexeres Abhängigkeitsmanagement</li>
+<li>Netzwerklatenzen</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>Wie die Tabelle zeigt, unterscheidet sich eine monolithische Architektur, die eine unkomplizierte Produktentwicklung unterstützt (z. B. schnelles Prototyping neuer Funktionen und potenzieller Pivots oder großer Strategieänderungen), von einer Architektur, die Hunderte von Entwicklerteams erfordert, und dennoch müssen beide dem Kunden einen Mehrwert bieten. Wenn Sie es so einrichten, dass die Architektur weiterentwickelt werden kann, können Sie sicherstellen, dass die Architektur immer den aktuellen Anforderungen der Organisation entspricht. Unabhängig vom Archetyp müssen Teams bei der Erstellung von Architekturen zum Ermöglichen der Continuous Delivery die Befugnisse haben, das in der Einführung zu diesem Dokument beschriebene Leistungsspektrum zu erzielen.</p>
+
+<p>Durch den Aufbau funktionsübergreifender Teams mit Vertretern aus der gesamten Organisation (Produktion, Entwicklung, Testbetrieb und laufender Betrieb) können Teams unabhängig voneinander arbeiten und leichter ihrer Arbeit nachgehen, ohne auf Teameinteilungen achten zu müssen. Wenn Ihre Teams funktionsübergreifend sind, können sie eigenständig arbeiten, <a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">Ideen testen</a> und <a href="/architecture/devops/devops-tech-teams-empowered-to-choose-tools" track-type="article" track-name="internalLink" track-metadata-position="body">ihre eigenen Tools auswählen</a>.
+Zur Unterstützung der teamübergreifenden Kommunikation und der Testdurchführung kann es hilfreich sein, zwischen den Diensten klar formulierte Verträge zu haben.</p>
+
+<p>Die Unabhängigkeit der Teams ist ebenso wichtig wie die Unabhängigkeit ihrer Produkte und Dienste. Dienste müssen bei Bedarf getestet werden können. Die Anwendung von Techniken des <a href="https://martinfowler.com/bliki/TestDouble.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Mocking und Stubbing</a> externer Dienste hilft, die Auswirkungen externer Abhängigkeiten zu reduzieren, und ermöglicht es Teams, schnell Testumgebungen zu erstellen. Außerdem wird durch die Implementierung von <a href="https://martinfowler.com/bliki/ContractTest.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Contract Testing</a> von externen Diensten sichergestellt, dass die Abhängigkeiten von deren Dienst oder anderen Diensten weiterhin erfüllt werden. Damit Sie die Continuous Delivery wirklich erreichen können, muss das Produkt oder der Dienst einzelner Teams unabhängig von den Diensten auf Akzeptanz getestet und bereitgestellt werden, von denen es bzw. er abhängt.</p>
+
+<p>Wenn Sie die Funktion der "Bereitstellung zu jeder Zeit" aktivieren möchten, sollten Sie Blau/Grün-Bereitstellungen oder rollierende Bereitstellungen mit hohem <a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Automatisierungsgrad</a> implementieren.
+Bei diesen Bereitstellungsmodellen werden mindestens zwei oder mehr Versionen des Produkts oder Dienstes gleichzeitig ausgeführt. Diese Bereitstellungsmodelle ermöglichen es Teams, Änderungen zu validieren und ohne oder mit nur geringen Ausfallzeiten in der Produktion bereitzustellen. Eine wichtige Überlegung ist, wie Datenaktualisierungen durchgeführt werden, d. h. Daten und Schemas müssen abwärtskompatibel sein.</p>
+
+<p>Wir empfehlen Ihnen, abwärtskompatible versionierte APIs zu erstellen, um die unabhängige Bereitstellung von Komponenten zu unterstützen. Wenn Sie für die Abwärtskompatibilität von APIs sorgen, erhöht das zwar die Komplexität der Systeme, aber die Flexibilität, die Sie bei der Bereitstellung erhalten, zahlt sich um ein Vielfaches aus.</p>
+
+<p>Dienstorientierte Architekturen und Mikrodienstarchitekturen ermöglichen diese Funktionen, da sie <a href="https://martinfowler.com/bliki/BoundedContext.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Bounded Contexts</a> und APIs verwenden, um aus großen Domains kleinere, locker gekoppelte Einheiten zu erstellen und Test-Doubles und die Virtualisierung nutzen, um Dienste und Komponenten isoliert zu testen.</p>
+
+<h2 id="common_pitfalls_in_architectures" data-text="Häufige Schwierigkeiten bei Architekturen">Häufige Schwierigkeiten bei Architekturen</h2>
+
+<ul>
+<li><p><strong>Gleichzeitiges Einführen vieler Dienste.</strong> Bei Teams, von denen die Testbarkeit und die Bereitstellungstauglichkeit nicht priorisiert werden, sind für die meisten Tests komplexe und teure integrierte Umgebungen erforderlich. In vielen Fällen müssen Sie bei Bereitstellungen aufgrund komplexer Abhängigkeiten viele Dienste gleichzeitig veröffentlichen. Diese "Big-Bang"-Bereitstellungen erfordern, dass Teams ihre Arbeit umfassend koordinieren, weshalb es zu vielen Übergaben kommt und sich viele Abhängigkeiten zwischen Hunderten oder Tausenden von Aufgaben ergeben. Big-Bang-Bereitstellungen dauern in der Regel viele Stunden oder sogar Tage und erfordern das Einplanen erheblicher Ausfallzeiten.</p></li>
+<li><p><strong>Einbinden von Änderungen in die Änderungen von Hunderten oder sogar Tausenden von Entwicklern.</strong> Diese Entwickler wiederum arbeiten möglicherweise mit Abhängigkeiten von einer zweistelligen Anzahl von verbundenen Systemen oder von Hunderten oder Tausenden von solchen Systemen.
+Die Tests werden in begrenzt verfügbaren Integrationstestumgebungen durchgeführt, für die das Erwerben und Konfigurieren oft mehrere Wochen in Anspruch nimmt. Diese Umgebungen sind in der Regel nicht repräsentativ für die Produktionsumgebung, was den Wert und die Genauigkeit der Tests verringert. Das Ergebnis sind nicht nur lange Vorlaufzeiten für Änderungen (normalerweise in Wochen oder Monaten gemessen), sondern auch eine niedrige Entwicklerproduktivität und schlechte Bereitstellungsergebnisse.</p></li>
+<li><p><strong>Verursachen von Engpässen im Softwarebereitstellungsprozess.</strong> Engpässe können beispielsweise durch ein einzelnes Team entstehen, auf das viele Teams angewiesen sind, entweder hinsichtlich des manuellen Prozesses (Tests, Bereitstellungen usw.) oder des Dienstbetriebs. In beiden Beispielen entstehen durch diese Engpässe Single Points Of Failure und es ist erforderlich, dass diese Teams bzw. Dienste skaliert werden, um die Anforderungen der vielen abhängigen Teams zu erfüllen.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_your_architecture" data-text="Möglichkeiten zum Verbessern der Architektur">Möglichkeiten zum Verbessern der Architektur</h2>
+
+<p>Mit einer Architektur, die es kleinen Entwicklerteams ermöglicht, Code unabhängig, sicher und schnell in der Produktionsumgebung zu implementieren, zu testen und bereitzustellen, können Sie die Entwicklerproduktivität steigern und die Bereitstellungsergebnisse verbessern. Ein Hauptmerkmal von dienstorientierten Architekturen und Mikrodienstarchitekturen besteht darin, dass sie aus locker gekoppelten Diensten mit Bounded Contexts bestehen. Eine gängige Gruppe von Mustern für moderne Webarchitektur, die auf diesen Prinzipien basiert, ist die <a href="https://12factor.net/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Zwölf-Faktoren-Anwendung</a>.</p>
+
+<p>Randy Shoup hat dazu Folgendes festgestellt:</p>
+
+<blockquote>"Organisationen mit dienstorientierten Architekturen wie Google und Amazon verfügen über hohe Flexibilität und Skalierbarkeit. Bei diesen Organisationen gibt es Zehntausende von Entwicklern, aber selbst kleine Teams können dort unglaublich produktiv sein."</blockquote>
+
+<p>In vielen Organisationen ist es sehr schwierig, Dienste zu testen und bereitzustellen. Anstatt die Architektur komplett neu aufzubauen, empfehlen wir einen iterativen Ansatz, um das Design Ihres Unternehmenssystems zu verbessern. Dieser Ansatz wird als <em>evolutionäre Architektur</em> bezeichnet. Bei dieser Methode ist von Anfang an klar, dass die Architektur für erfolgreiche Produkte und Dienste im Laufe ihres Lebenszyklus angepasst werden muss, da sich die Anforderungen an sie verändern werden.</p>
+
+<p>Ein hilfreiches Muster in diesem Kontext ist die <em>Strangler Fig Application</em>. Bei diesem Muster ersetzen Sie eine monolithische Architektur iterativ durch eine mehr auf Komponenten basierende Architektur, indem Sie sicherstellen, dass neue Aufgaben nach den Prinzipien einer dienstorientierten Architektur ausgeführt werden. Sie akzeptieren dabei, dass die neue Architektur möglicherweise Aufgaben an das System delegiert, das sie ersetzen soll. Im Laufe der Zeit wird das alte System "stranguliert" (strangled), da immer mehr Funktionen auf der neuen Architektur ausgeführt werden.</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-strangler-fig-pattern.svg" alt="Diagramm: monolithische Architektur durch eine verstärkt komponentenbasierte Architektur ersetzen"/></p>
+
+<p>Produkt- und Dienstarchitekturen werden ständig weiterentwickelt. Es gibt viele Möglichkeiten, zu entscheiden, welche Funktion als neues Modul oder neuer Dienst erstellt werden sollte, und der Prozess ist iterativ.
+Bei der Entscheidung, ob Sie eine Funktionsweise in einen Dienst umwandeln möchten, sollten Sie berücksichtigen, ob sie die folgenden Merkmale aufweist:</p>
+
+<ul>
+<li>Implementiert eine einzige Geschäftsfunktion</li>
+<li>Führt seine Funktion mit minimaler Interaktion mit anderen Diensten aus</li>
+<li>Wird unabhängig von anderen Diensten erstellt, skaliert und bereitgestellt</li>
+<li>Interagiert mit anderen Diensten mithilfe von einfachen Kommunikationsmethoden, z. B. ein Nachrichtenbus oder HTTP-Endpunkte</li>
+<li>Kann mit verschiedenen Tools, Programmiersprachen, Datenspeichern usw. implementiert werden</li>
+</ul>
+
+<p>Der Wechsel zu Mikrodiensten oder einer dienstorientierten Architektur bringt auch viele Veränderungen in der gesamten Organisation mit sich. In seinem <a href="https://gist.github.com/chitchcock/1281611/9621c8859db00bf08b98212a109fa2dec4c6d601" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">Platform Rant</a> erläutert Steve Yegge einige wichtige Erkenntnisse aus der Umstellung auf eine serviceorientierte Architektur (SOA):</p>
+
+<ul>
+<li>Messwerte und Monitoring werden wichtiger und Eskalationen werden schwieriger, da ein Problem mit einem Dienst von einem anderen Dienst verursacht werden kann, der viele Dienstaufrufe entfernt ist.</li>
+<li>Interne Dienste können Denial of Service-Probleme (DoS) verursachen, daher sind Kontingente und Nachrichtenbeschränkungen bei jedem Dienst wichtig.</li>
+<li>QA und Monitoring wachsen zusammen, da das Monitoring umfassend und auf die Geschäftslogik und die Daten des Dienstes ausgerichtet sein muss.</li>
+<li>Wenn viele Dienste vorhanden sind, ist für einen effizienten Betrieb des Systems ein Diensterkennungsmechanismus wichtig.</li>
+<li>Ohne einen universellen Standard für das Ausführen eines Dienstes in einer Debug-fähigen Umgebung ist das Debugging von Diensten anderer Leute viel schwieriger.</li>
+</ul>
+
+<h2 id="case-study-datastore" data-text="Fallstudie: Datastore">Fallstudie: Datastore</h2>
+
+<p>Eine eng gekoppelte Architektur kann die Fähigkeit der Nutzer beeinträchtigen, Änderungen sicher vorzunehmen, sowie deren Produktivität. Im Gegensatz dazu fördert eine lose gekoppelte Architektur die Produktivität und Sicherheit mithilfe von gut definierten Schnittstellen, die eine definierte Art des Verbindungsaufbaus zwischen Modulen erzwingen. Mit einer locker gekoppelten Architektur können kleine, produktive Teams Änderungen vornehmen, die sicher und unabhängig voneinander bereitgestellt werden können. Und da jeder Dienst auch über eine klar definierte API verfügt, können Dienste einfacher getestet sowie Verträge und Service Level Agreements (SLAs) zwischen Teams erstellt werden.</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-loosely-coupled-architecture.svg" alt="Lose gekoppelte Architektur"/></p>
+
+<p>Randy Shoup beschreibt diese Art von Architektur so:</p>
+
+<blockquote>"Dieser Architekturtyp hat sich für Google als sehr geeignet erwiesen. Unter einem Dienst wie Gmail liegen noch fünf oder sechs weitere Dienstebenen, die jeweils auf eine ganz bestimmte Funktion ausgerichtet sind. Jeder Dienst wird von einem kleinen Team betrieben, das ihn erstellt und dafür sorgt, dass seine Funktion ausgeführt wird, wobei jedes Team möglicherweise unterschiedliche Technologieentscheidungen trifft. Ein weiteres Beispiel ist der Datastore-Dienst, der zu den größten NoSQL-Diensten der Welt zählt. Dennoch wird er von nur ca. acht Mitarbeitern betrieben. Dies ist vor allem deshalb möglich, weil er auf mehreren aufeinander aufbauenden Ebenen von zuverlässigen Diensten basiert."</blockquote>
+
+<p>Diese Art einer dienstorientierten Architektur ermöglicht es kleinen Teams, an kleineren und einfacheren Entwicklungseinheiten zu arbeiten, die jedes Team unabhängig voneinander, schnell und sicher bereitstellen kann.</p>
+
+<h2 id="ways_to_measure_architectural_improvement" data-text="Möglichkeiten zum Messen der architekturbezogenen Verbesserungen">Möglichkeiten zum Messen der architekturbezogenen Verbesserungen</h2>
+
+<p>Unabhängig davon, ob ein Mainframe oder Mikrodienste verwendet werden, ist es zum Verbessern der Leistung der Softwarebereitstellung (erhöhte Bereitstellungshäufigkeit mit geringerer Vorlaufzeit für Änderungen, Zeit für die Wiederherstellung eines Dienstes und Änderungsfehlerquote) entscheidend, die Praktiken zu fördern, die zum Optimieren der Architektur erforderlich sind. Je weniger eng Ihre Dienste und Produkte gekoppelt sind, desto stärker sollte sich die Bereitstellungsfrequenz erhöhen. Wenn Sie die Verbesserungen messen möchten, sollten Sie die Bereitstellungsrate verwenden und nicht nur die Anzahl der Bereitstellungen, da die Anzahl automatisch steigt, wenn Dienste hinzugefügt werden. Außerdem sollten Sie bemerken, dass weniger Zeit für das Erkennen und Beheben von Problemen benötigt wird und weniger Zeit vergeht, bis Änderungen die Produktion erreichen.</p>
+
+<p>Abgesehen von den Vorteilen dieser Bereitstellungs- und Dienstmaßnahmen sind Teams, die voneinander unabhängiger sind, <a href="/architecture/devops/devops-culture-job-satisfaction" track-type="article" track-name="internalLink" track-metadata-position="body">mehr mit ihrer Arbeit zufrieden</a>, führen mehr <a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">Experimente im Team</a> durch und tendieren dazu, entsprechend ihren Anforderungen mit unterschiedlichen Technologien und Tools zu arbeiten.</p>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Nächste Schritte</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

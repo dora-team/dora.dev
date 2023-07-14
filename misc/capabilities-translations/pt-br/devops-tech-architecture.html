@@ -1,0 +1,196 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia DevOps: arquitetura</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Observação:</strong><span> <em>a arquitetura</em> faz parte de um conjunto de recursos que aumentam a entrega de software e o desempenho organizacional. Esses recursos foram
+descobertos pelo
+<a href="https://www.devops-research.com/research.html">programa de pesquisa DORA State of DevOps</a>
+(em inglês), uma investigação independente e acadêmica rigorosa sobre as práticas e
+recursos que impulsionam alto desempenho. Para saber mais, leia nossos
+<a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>Pesquisas da equipe da DevOps Research and Assessment (DORA) mostram que
+a arquitetura é um elemento de previsão importante para alcançar a entrega contínua.
+A arquitetura permite que as equipes adotem práticas que promovam níveis mais altos de desempenho de entrega de software, quer você esteja usando o Kubernetes ou mainframes.</p>
+
+<p>Quando as equipes adotam métodos de entrega contínua, seguir as seguintes práticas de arquitetura gera bons resultados:</p>
+
+<ul>
+<li>As equipes podem fazer mudanças em larga escala no design dos sistemas sem a permissão de alguém de fora da equipe ou dependendo de outras equipes.</li>
+<li>As equipes podem concluir o trabalho sem precisar de uma comunicação e uma coordenação refinadas com pessoas de fora da equipe.</li>
+<li>As equipes implantam e lançam o produto ou serviço sob demanda, separadamente dos serviços de que dependem ou de outros serviços que dependem dele.</li>
+<li>As equipes fazem a maioria dos testes sob demanda, sem exigir um ambiente de teste integrado.</li>
+<li>As equipes podem realizar a implantação durante o horário comercial normal com tempo de inatividade insignificante.</li>
+</ul>
+
+<p>É possível alcançar esses resultados com tecnologias de mainframe. Também é possível não alcançá-los, mesmo ao usar as tecnologias mais recentes e modernas. Várias organizações investem muito tempo e esforço na admissão de tecnologias, mas não conseguem atingir resultados críticos de entrega de software devido às limitações impostas pela arquitetura.</p>
+
+<p>Quando a arquitetura do sistema é projetada para permitir que as equipes testem, implantem e mudem sistemas sem dependências de outras equipes, é necessária pouca comunicação para que o trabalho seja feito. Em outras palavras, a arquitetura e as equipes são levemente associadas.</p>
+
+<p>Essa conexão entre a largura de banda de comunicação e a arquitetura de sistemas foi discutida pela primeira vez por Melvin Conway, que disse: "Organizações que projetam sistemas se limitam a produzir designs que são cópias das estruturas de comunicação dessas organizações". Para compensar arquiteturas fortemente acopladas e ajudar a oferecer suporte a melhores padrões de comunicação, equipes e organizações podem usar a <a href="https://medium.com/better-practices/how-to-dissolve-communication-barriers-in-your-api-development-organization-3347179b4ecc" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Manobra inversa de Conway</a> (em inglês), em que as estruturas e os padrões de equipe são projetados para promover o estado de arquitetura esperado. Dessa forma, os padrões de comunicação da equipe suportam e impõem os padrões de arquitetura que são criados.</p>
+
+<p>Com uma arquitetura fortemente acoplada, pequenas mudanças podem resultar em falhas em larga escala e em cascata. Como resultado, qualquer pessoa que trabalhe em uma parte do sistema precisa se coordenar constantemente com qualquer outra pessoa que trabalhe em outra parte do sistema, incluindo a navegação em processos de gestão de mudança complexos e burocráticos.</p>
+
+<p>As arquiteturas de microsserviços são compatíveis com a ativação desses resultados, assim como qualquer arquitetura orientada a serviços. Na prática, muitas arquiteturas chamadas de orientada a serviços não permitem testar e implantar serviços de forma independente e, assim, não permitem que as equipes alcancem um desempenho de entrega de software mais alto.
+É essencial ser rigoroso sobre esses resultados ao implementar arquiteturas de microsserviços e orientadas a serviços.</p>
+
+<h2 id="how_to_implement_architectures_for_continuous_delivery" data-text="Como implementar arquiteturas para entrega contínua">Como implementar arquiteturas para entrega contínua</h2>
+
+<p>Considere os principais arquétipos de arquitetura. Randy Shoup, ex-diretor de engenharia
+do App Engine e vice-presidente de engenharia da WeWork,
+observou o seguinte:</p>
+
+<blockquote>"Não há uma arquitetura perfeita para todos os produtos e todas as escalas. Qualquer arquitetura atende a um conjunto específico de metas ou intervalo de requisitos e restrições, como tempo de lançamento, facilidade de desenvolvimento de funcionalidades, dimensionamento etc. A funcionalidade de qualquer produto ou serviço quase certamente crescerá ao longo do tempo e nossas necessidades na arquitetura também mudarão. O que funciona na escala 1:X raramente funciona na escala 10:X ou 100:X."</blockquote>
+
+<p>Devido aos prós e contras dos arquétipos de arquitetura, cada um deles se encaixa em uma necessidade evolutiva diferente para uma organização.</p>
+
+<table>
+<thead>
+<tr>
+<th width="25%">Arquétipo</th>
+<th>Prós</th>
+<th>Contras</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Monolítico v1</strong><br /> (todas as funcionalidades em um aplicativo)</td>
+<td><ul><li>Simples no início</li>
+<li>Baixa latência entre processos</li>
+<li>Codebase única, uma unidade de implantação</li>
+<li>Eficiente com recursos em pequenas escalas</li>
+</ul>
+</td>
+<td><ul><li>A sobrecarga de coordenação aumenta à medida que a equipe cresce</li>
+<li>Aplicação inadequada da modularidade</li>
+<li>Dimensionamento inadequado</li>
+<li>Implantação de efeito tudo ou nada (falhas de tempo de inatividade)</li>
+<li>Tempos de compilação longos</li>
+</ul>
+</td>
+</tr>
+<tr>
+  <td><strong>Monolítico v2</strong><br /> (conjunto de níveis monolíticos: apresentação de front-end, servidor de aplicativos, camada de banco de dados)</td>
+<td><ul><li>Simples no início</li>
+<li>Consultas de junções são fáceis</li>
+<li>Implantação de apenas um esquema</li>
+<li>Eficiente com recursos em pequenas escalas</li>
+</ul>
+</td>
+<td><ul><li>Tendência para aumentar o acoplamento ao longo do tempo</li>
+<li>Dimensionamento e redundância inadequados (tudo ou nada, apenas vertical)</li>
+<li>Difícil de ajustar corretamente</li>
+<li>Gerenciamento de esquema tudo ou nada</li>
+</ul>
+</td>
+</tr>
+<tr>
+  <td><strong>Microsserviço</strong><br /> (modular, independente, relacionamento gráfico ou por níveis, persistência isolada)</td>
+<td><ul><li>Cada unidade é simples</li>
+<li>Dimensionamento e desempenho independentes</li>
+<li>Teste e implantação independentes</li>
+<li>Pode ajustar o desempenho de maneira otimizada (armazenamento em cache, replicação etc.)</li>
+</ul>
+</td>
+<td><ul><li>Muitas unidades colaboradoras</li>
+<li>Muitos repositórios pequenos</li>
+<li>Exige ferramentas mais sofisticadas e gerenciamento de dependências</li>
+<li>Latências de rede</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>Como a tabela mostra, uma arquitetura monolítica que dá suporte a um esforço de desenvolvimento de produto simples (como uma rápida prototipagem de novos recursos, e possíveis pivôs ou grandes mudanças nas estratégias) é diferente de uma arquitetura que precisa de centenas de equipes de desenvolvedores. Essas equipes precisam ser capazes de agregar valor para o cliente de forma independente. Ao permitir que a arquitetura evolua, você garante que ela sempre atenda às necessidades atuais da organização. Independentemente do arquétipo, ao fazer a arquitetura para facilitar a entrega contínua, as equipes precisam ter autonomia para alcançar os recursos discutidos na introdução deste documento.</p>
+
+<p>A criação de equipes multifuncionais, com representação de toda a organização (como dos setores de produto, desenvolvimento, testes e operações), permite que as equipes trabalhem de forma independente e facilita a criação de limites de equipe. Quando suas equipes são multifuncionais, elas podem fazer o trabalho de forma autônoma, <a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">testar ideias</a> e <a href="/architecture/devops/devops-tech-teams-empowered-to-choose-tools" track-type="article" track-name="internalLink" track-metadata-position="body">escolher as próprias ferramentas dela</a>.
+Ter contratos bem definidos entre os serviços pode ser útil para ajudar na comunicação e nos testes entre equipes.</p>
+
+<p>A independência da equipe é importante, assim como a dos seus produtos e serviços. Os serviços precisam ser testados sob demanda. Adotar técnicas sobre <a href="https://martinfowler.com/bliki/TestDouble.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">simulação e fragmentação</a> (em inglês) de serviços externos ajuda a reduzir o impacto das dependências externas e permite que as equipes criem rapidamente ambientes de teste. Além disso, implementar <a href="https://martinfowler.com/bliki/ContractTest.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">testes de contrato</a> (em inglês) de serviços externos ajuda a garantir que as dependências desses ou de outros serviços ainda sejam atendidas. Para alcançar uma entrega contínua, o produto ou serviço de uma equipe individual precisa ser aprovado, testado e implantado independentemente dos serviços de que depende.</p>
+
+<p>Para ativar os recursos de implantação a qualquer momento, considere implantar modelos de implantação azul-verde ou gradual, com altos graus de <a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">automação</a>.
+Com esses modelos, pelo menos duas versões do produto ou serviço são executadas simultaneamente. Esses modelos de implantação permitem que as equipes validem mudanças e façam a implantação em produção com pouco ou nenhum tempo de inatividade. Uma consideração importante é como os upgrades de dados são realizados, o que significa que os dados e o esquema precisam ser feitos de maneira compatível com versões anteriores.</p>
+
+<p>Para ajudar na implantação independente de componentes, recomendamos que você crie APIs com controle de versões compatível com versões anteriores. Garantir a compatibilidade com versões anteriores das APIs aumenta a complexidade dos sistemas, mas a flexibilidade que você ganha em termos de facilidade de implantação compensa a complexidade adicionada muitas vezes.</p>
+
+<p>As arquiteturas de microsserviços e orientadas a serviços ativam esses recursos porque usam <a href="https://martinfowler.com/bliki/BoundedContext.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">contextos limitados</a> (em inglês) e APIs como uma forma de separar domínios grandes em unidades menores e mais levemente acopladas e o uso de duplas de teste e virtualização como uma maneira de testar serviços ou componentes isoladamente.</p>
+
+<h2 id="common_pitfalls_in_architectures" data-text="Dificuldades comuns nas arquiteturas">Dificuldades comuns nas arquiteturas</h2>
+
+<ul>
+<li><p><strong>Lançamento simultâneo de muitos serviços</strong>. Nas equipes em que a capacidade de teste e implantação não são priorizadas, a maioria dos testes exige o uso de ambientes integrados, complexos e caros. Em muitos casos, as implantações exigem que você lance muitos serviços simultaneamente devido a interdependências complexas. Essas implantações "big-bang" exigem que as equipes orquestrem o trabalho, com muitas entregas e dependências entre centenas ou milhares de tarefas. As implantações big-bang normalmente levam muitas horas ou até mesmo dias e exigem uma programação de inatividade significativa.</p></li>
+<li><p><strong>Integração de mudanças com as alterações de centenas ou até milhares de outros desenvolvedores</strong>. Por sua vez, esses desenvolvedores podem ter dependências em dezenas, centenas ou milhares de sistemas interconectados.
+Os testes são feitos em ambientes de teste de integração escassos, que geralmente só são conseguidos e configurados depois de algumas semanas. Esses ambientes geralmente não são uma representação da produção, reduzindo o valor e a acurácia do teste. O resultado não é apenas longos tempos de lead para mudanças (normalmente medidas em semanas ou meses), mas também baixa produtividade do desenvolvedor e resultados de implantação insatisfatórios.</p></li>
+<li><p><strong>Como criar gargalos no processo de entrega de software</strong>. Os gargalos de exemplo podem ser uma equipe de que muitos outros dependem do ponto de vista do processo manual (teste, implantação etc.) ou do ponto de vista da operação de serviços. Nos dois exemplos, esses gargalos criam pontos únicos de falha e demanda que essas equipes ou serviços escalonam para atender às demandas das muitas equipes dependentes.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_your_architecture" data-text="Formas de melhorar sua arquitetura">Formas de melhorar sua arquitetura</h2>
+
+<p>Com uma arquitetura que permite que pequenas equipes de desenvolvedores implementem, testem e implantem código na produção de maneira independente, rápida e segura, é possível aumentar a produtividade do desenvolvedor e melhorar os resultados da implantação. Um recurso importante das arquiteturas orientadas a serviços e de microsserviços é que são compostas por serviços levemente acoplados com contextos limitados. Um conjunto conhecido de padrões para a arquitetura moderna da Web com base nesses princípios é o <a href="https://12factor.net/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">app de 12 fatores</a> (em inglês).</p>
+
+<p>Randy Shoup observou o seguinte:</p>
+
+<blockquote>"As organizações com esses tipos de arquiteturas orientadas a serviços, como o Google e a Amazon, têm flexibilidade e escalonabilidade incríveis. Elas têm dezenas de milhares de desenvolvedores, em que pequenas equipes ainda podem ser incrivelmente produtivas."</blockquote>
+
+<p>Em muitas organizações, os serviços são muito difíceis de serem testados e implantados. Em vez de reestruturar tudo, é recomendável o uso de uma abordagem iterativa para melhorar o design do seu sistema empresarial. Essa abordagem é conhecida como <em>arquitetura evolucionária</em>. Nesse método, os produtos e serviços bem-sucedidos exigem uma nova arquitetura durante o ciclo de vida devido às mudanças nos requisitos.</p>
+
+<p>Um padrão valioso nesse contexto é o <em>aplicativo strangler fig</em>. Nesse padrão, você substitui iterativamente uma arquitetura monolítica por uma dividida em componentes, o que permite que novos trabalhos sejam feitos seguindo os princípios de uma arquitetura orientada a serviços. Você aceita que a nova arquitetura possa delegar ao sistema que está substituindo. Com o tempo, à medida que cada vez mais funcionalidades são executadas na nova arquitetura, o sistema antigo é substituído.</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-strangler-fig-pattern.svg" alt="Substituir uma arquitetura monolítica por uma mais dividida em componentes."/></p>
+
+<p>As arquiteturas de produtos e serviços evoluem continuamente. Há muitas maneiras de decidir o que precisa ser um novo módulo ou serviço, e o processo é iterativo.
+Ao decidir se uma parte da funcionalidade será transformada em um serviço, considere se ela tem as seguintes características:</p>
+
+<ul>
+<li>Implementa uma função ou capacidade comercial.</li>
+<li>Executa a função com interação mínima com outros serviços.</li>
+<li>É construída, escalonada e implantada independentemente de outros serviços.</li>
+<li>Interage com outros serviços usando métodos de comunicação leves, por exemplo, um barramento de mensagens ou endpoints de HTTP.</li>
+<li>Pode ser implementada com diferentes ferramentas, linguagens de programação, armazenamentos de dados e assim por diante.</li>
+</ul>
+
+<p>Migrar para uma arquitetura orientada a serviços ou de microsserviços também acarreta várias mudanças por meio da organização como um todo. No <a href="https://gist.github.com/chitchcock/1281611/9621c8859db00bf08b98212a109fa2dec4c6d601" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">discurso sobre plataformas</a> (em inglês), Steve Yegge apresenta várias lições importantes aprendidas com a mudança para uma SOA:</p>
+
+<ul>
+<li>As métricas e o monitoramento se tornam mais importantes, e os encaminhamentos se tornam mais difíceis porque um problema pode vir a ser identificado em um serviço somente após várias chamadas.</li>
+<li>Os serviços internos podem produzir problemas do tipo negação de serviço (DoS), portanto, limitação de mensagens e cotas são importantes em todos os serviços.</li>
+<li>O monitoramento e o controle de qualidade começam a se misturar, porque o monitoramento precisa ser abrangente e ter a lógica de negócios e os dados do serviço.</li>
+<li>Quando há muitos serviços, ter um mecanismo de descoberta de serviços se torna importante para uma operação eficiente do sistema.</li>
+<li>Sem um padrão universal para executar um serviço em um ambiente depurável, depurar problemas em serviços de outras pessoas é muito mais difícil.</li>
+</ul>
+
+<h2 id="case-study-datastore" data-text="Estudo de caso: armazenamento de dados">Estudo de caso: armazenamento de dados</h2>
+
+<p>Uma arquitetura altamente associada pode impedir a produtividade de todos e a capacidade de fazer mudanças com segurança. Por outro lado, uma arquitetura levemente acoplada promove produtividade e segurança com interfaces bem definidas que impõem como os módulos se conectam uns com os outros. Uma arquitetura levemente acoplada permite que equipes pequenas e produtivas façam mudanças que possam ser implantadas de forma segura e independente. Além disso, como cada serviço também tem uma API bem definida, ele facilita o teste de serviços e a criação de contratos de nível de serviço (SLAs) e de outros tipos entre equipes.</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-loosely-coupled-architecture.svg" alt="Arquitetura levemente acoplada."/></p>
+
+<p>Randy Shoup descreve essa arquitetura da seguinte maneira:</p>
+
+<blockquote>"Esse tipo de arquitetura foi muito útil para o Google. Para um serviço como o Gmail, há cinco ou seis camadas de serviços abaixo dele, cada uma focada em uma função muito específica. Cada serviço é compatível com uma pequena equipe, que o cria e executa a funcionalidade, com cada grupo possivelmente fazendo escolhas tecnológicas diferentes. Outro exemplo é o serviço Datastore, que é um dos maiores serviços NoSQL do mundo. No entanto, ele é compatível com uma equipe de apenas oito pessoas, em grande parte porque se baseia em camadas sobre camadas de serviços dependentes construídas uma em cima da outra."</blockquote>
+
+<p>Esse tipo de arquitetura orientada a serviços permite que pequenas equipes trabalhem em unidades de desenvolvimento menores e mais simples que cada equipe pode implantar de forma independente, rápida e segura.</p>
+
+<h2 id="ways_to_measure_architectural_improvement" data-text="Maneiras de avaliar a melhoria da arquitetura">Maneiras de avaliar a melhoria da arquitetura</h2>
+
+<p>Seja em um mainframe ou em microsserviços, facilitar as práticas necessárias para melhoria da arquitetura é essencial para aumentar o desempenho da entrega de software, o que resultaria em maior frequência de implantação com tempo de lead reduzido para mudanças, tempo para restaurar o serviço e taxa de falha. À medida que seus serviços e produtos se tornarem menos acoplados, a frequência de implantação precisará aumentar. Ao avaliar a melhoria, use a taxa de implantação em vez de apenas contar, porque a contagem de implantação aumenta naturalmente conforme os serviços são adicionados. Por fim, você verá uma redução no tempo de detecção e recuperação de problemas e no tempo para as mudanças atingirem a produção.</p>
+
+<p>Além das medidas de implantação e serviço, as equipes que trabalham de forma mais independente demonstram melhorias na <a href="/architecture/devops/devops-culture-job-satisfaction" track-type="article" track-name="internalLink" track-metadata-position="body">satisfação no trabalho</a> e <a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">experiência da equipe</a>. Elas tendem a selecionar diferentes tecnologias e ferramentas com base no que a equipe precisa.</p>
+
+<h2 id="whats_next" data-text="A seguir">A seguir</h2>
+
+<ul>
+<li>Consulte links para outros artigos e recursos na
+<a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página do DevOps</a>.</li>
+<li>Explore nosso
+<a href="https://www.devops-research.com/research.html">programa de pesquisa</a> (em inglês) do DevOps.</li>
+<li>Faça a
+<a href="https://www.devops-research.com/quickcheck.html">verificação rápida de DevOps</a>
+para entender sua posição em relação ao restante do setor.</li>
+</ul>
+
+</body></html>

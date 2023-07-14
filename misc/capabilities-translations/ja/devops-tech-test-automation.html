@@ -1,0 +1,148 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技術: 継続的テスト</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注:</strong><span> 継続的テスト<em></em>は、ソフトウェア デリバリーと組織のパフォーマンスを改善する一連の仕組みの 1 つです。これらの機能は <a href="https://www.devops-research.com/research.html">DORA State of DevOps Research Program</a> で発見されました。これは、高いパフォーマンスを生み出すプラクティスと機能に関する、学術的に厳格で独立した研究調査です。詳細については、<a href="/devops">DevOps のリソース</a>をご覧ください。</span></aside><p>ソフトウェアの品質を高める鍵は、ソフトウェア デリバリー ライフサイクル全体にわたる変更の影響を迅速に把握することです。従来は、手動でのテストとコード検査を使用して、システムの正確性を検証していました。通常、こうした検査とテストは、「開発完了」後に別のフェーズで行われていました。この手法には、次のデメリットがあります。</p>
+
+<ul>
+<li>手動による回帰テストは実行するのに時間もコストもかかるため、プロセスのボトルネックとなります。ソフトウェアを頻繁にリリースできず、フィードバックを入手するにも時間がかかります。</li>
+<li>手動のテストと検査には信頼性がありません。人は手動による回帰テストのような繰り返しの作業を得意としないためです。また、複雑なソフトウェア システムに変更が与える影響を検査によって予測するのは困難であることも信頼性に欠ける理由です。</li>
+<li>ソフトウェアが「開発完了」になると、デベロッパーは変更についてのフィードバックを受け取るまでしばらく待つ必要があります。これは通常、不具合に優先順位を付け修正する大きな作業になります。パフォーマンス、セキュリティ、信頼性の問題がこの段階で検出されると、多くの場合、対処により大きなコストを要する設計変更が必要になります。</li>
+<li>また、フィードバック サイクルが長いほど、デベロッパーが品質コードを作成する方法を学びにくくなり、スケジュール上のプレッシャーの中で、開発チームが品質を「他人事」として扱う場合があります。</li>
+<li>デベロッパーに自分のコードをテストする責任がなければ、テストしやすいコードの作成方法を習得するのは困難です。</li>
+<li>時間が経つにつれ進化していくシステムの場合、テストのドキュメントを最新の状態に維持するには、かなりの作業が必要になります。</li>
+</ul>
+
+<p>代わりに、チームは次のことを行う必要があります。</p>
+
+<ul>
+<li>ソフトウェア デリバリー ライフサイクル全体にわたって、全種類のテストを継続的に実施します。</li>
+<li><a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">継続的デリバリー パイプライン</a>の一部として実行される、高速で信頼性の高い一連の自動テストを作成して取りまとめます。</li>
+</ul>
+
+<p>DORA の調査では、チームは高品質のソフトウェアをより迅速に構築（および構築する方法）するだけでなく、ソフトウェアの安定性の向上、チームの心身の疲労の軽減、デプロイの問題解決の負担も軽減されています。</p>
+
+<h2 id="how_to_implement_continuous_testing" data-text="継続的テストの実装方法">継続的テストの実装方法</h2>
+
+<p>ソフトウェアの品質を高めるには、デリバリー プロセス全体で自動テストと手動テストを継続的に実行し、開発中のシステムの機能とアーキテクチャを検証する必要があります。この規範には、組織的な要素と技術的な要素の両方が含まれます。DORA による調査の結果、チームは次の作業を行うと、より優れた成果を上げることがわかっています。</p>
+
+<ul>
+<li>テスターがソフトウェア開発とデリバリーのプロセス全体でデベロッパーと連携できるようにします（以下では一般的な例を説明しますが、「テスター」は専業である必要はなく 1 つの役割です）。</li>
+<li>探索的テスト、ユーザビリティ テスト、承認テストなどの手動テスト アクティビティを配信プロセス全体で実施します。</li>
+</ul>
+
+<p>重要な技術アクティビティには、以下を含む一連の自動テストスイートの構築、維持があります。</p>
+
+<ul>
+<li><strong>単体テスト</strong>。通常、単体テストでは 1 つのメソッド、クラス、または関数を単独でテストして、デベロッパーに対し、作成したコードが意図どおりに機能することを保証します。テスト可能なコードとメンテナンスしやすいテストにするために、コードを作成する前に単体テストを作成します。これは、<a href="http://www.jamesshore.com/v2/books/aoad1/test_driven_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">テスト駆動型開発</a>（TDD）と呼ばれる手法です。</li>
+<li><strong>承認テスト</strong>: 通常、実行中のアプリまたはサービス（通常は依存関係は<a href="https://testing.googleblog.com/2013/07/testing-on-toilet-know-your-test-doubles.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">テストダブル</a>に置き換えられます）をテストし、上位レベルの機能が設計通りに機能すること、回帰エラーが発生していないことを保証します。承認テストのサンプルで、ユーザー ストーリーに対するビジネス上の承認基準や API の正確性を確認できます。こうしたテストは、開発プロセスの一環として作成します。自動承認テストに合格するまでは、成果物を「開発完了」として宣言することはできません。</li>
+</ul>
+
+<p>次の図（<a href="http://www.exampler.com/old-blog/2003/08/22/#agile-testing-project-2" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">当初、Brian Marick により作成</a>され、のちに『<a href="https://books.google.com/books/about/Agile_Testing.html?id=68_lhPvoKS8C" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Agile Testing: A Practical Guide for Testers and Agile Teams</a>』という本の中で引用されています）は、実行する自動テストと手動テストのタイプを示しています。<em></em></p>
+
+<p><img src="/static/architecture/images/ta-image1.png" alt="画像"/></p>
+
+<p>上の図で強調表示されている自動テストは、<a href="/architecture/devops/devops-tech-continuous-delivery">継続的デリバリー</a>の<a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">デプロイ パイプラン</a>に組み込まれます。このようなパイプラインでは、すべての変更でビルドを実行してソフトウェア パッケージを作成し、単体テストを実行します。また、場合によっては静的解析などの他のチェックが行われることもあります。これらのパッケージが最初のステージに合格すると、より包括的に自動化された承認テストと、たいていパフォーマンス テストや脆弱性スキャンなどの非機能的なテストの一部は、自動的にデプロイされた実行中のソフトウェアで実行されます。通常、承認ステージを合格したビルドはすべて、手動の探索とユーザビリティ テストで使用できるようになります。これらの手動ステップでエラーが 1 つも見つからなければ、アプリはリリース可能とみなされます。</p>
+
+<p>パイプラインの一部として継続的にテストを行うと、デベロッパーへの迅速なフィードバック、チェックインからリリースまでのリードタイムの短縮、本番環境でのエラー率の低下につながります。デベロッパーは、成果物の大半を数日や数週間ではなく数分で検証してもらえるため、バグをすぐに修正できるようになります。</p>
+
+<p>次の図は、単純な線形デプロイ パイプラインの例を示しています。この例では、緑色は問題が検出されなかったということを意味し、赤色は 1 つ以上の問題が検出されたことを示しています。</p>
+
+<p><img src="/static/architecture/images/ta-image3.png" alt="画像"/></p>
+
+<p>デプロイ パイプラインのパターンでは、すべての変更によってリリース候補が作成されます。そしてすばやいフィードバック ループによって、プロセスのできるだけ早い段階で問題を捕捉できます。パイプラインの最後に到達したパッケージでも、チームがそれをリリースするのに不安を感じる場合、あるいは本番環境で欠陥が見つかった場合は、テストを追加または更新してパイプラインを改善する必要があります。</p>
+
+<h2 id="common_pitfalls" data-text="主な注意点">主な注意点</h2>
+
+<ul>
+<li><p><strong>テストにデベロッパーを関与させること。</strong>DORA の調査では、デベロッパーが一連の自動テストの作成と保守を主に担当し、デベロッパーが承認テストの失敗を簡単に修正できる場合に、パフォーマンスが向上しています。他のグループがテスト自動化を所有していると、多くの場合、次の 2 つの問題が生じます。</p>
+
+<ul>
+<li><strong>頻繁にテストスイートが破損した状態になる</strong>。コードを変更すると、テストの更新が必要になることがあります。デベロッパーがテスト自動化を担当していなければ、担当のチームがテストを修正するまで、ビルド パイプラインが破損した状態になります。</li>
+<li><strong>デベロッパーが、テストしにくいコードを生成している。</strong>デベロッパーが、与えられた問題をコードのテスト方法を考慮せずに解決しがちになります。その結果、コードの設計が不十分で、費用とメンテナンスの手間がかかるテストスイートになる可能性があります。</li>
+</ul>
+
+<p>テスターと QA チームは、このような作業で重要な役割を果たします。テスターはユーザーがどのようにシステムを操作するかを把握しているため、システムに対して独自の視点を持っています。チームが物理的に離れた場所にいる場合でも、テスターとデベロッパーがペアになり、画面共有ツールを使用して一連の自動テストを作成し発展させることをおすすめします。この方法より、お互いから学び、リアルタイムで問題を解決できます。また、テスターは、探索的テストとユーザビリティ テストの実施に加え、一連のテストの取りまとめをサポートするうえでも不可欠な役割を担います。</p></li>
+<li><p><strong>テストスイートをキュレートすること。</strong>テストスイートを継続的に見直して、不具合の発見および複雑性とコストの管理に努めてください。次に例を示します。</p>
+
+<ul>
+<li>通常、承認テストスイートは、自動承認基準の集合ではなく、システムでの実際の<a href="https://testing.googleblog.com/2016/09/testing-on-toilet-what-makes-good-end.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">エンドツーエンド</a>のユーザー操作全体を表すものでなければなりません。プロダクトが進化するにつれ、こうしたシナリオも、テストスイートで検証されるようになります。このプロセスについて詳しくは、Angie Jones による<a href="https://www.youtube.com/watch?v=qYfI2-bC6LA">テスト自動化を成功させる基盤の設定</a>に関する動画をご覧ください。</li>
+<li>コードを変更するたびに複数の単体テストも変更しなければならない場合、<a href="https://martinfowler.com/articles/mocksArentStubs.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">モックに頼りすぎている</a>か、単体テストスイートの無駄を取り除けていないことが考えられます。</li>
+<li>テストスイートをうまく分解できる状態にします。UI に変更を加えると、必ず複数の承認テストが失敗する場合は、<a href="https://martinfowler.com/bliki/PageObject.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">ページ オブジェクト パターン</a>を使用して、テストをテスト対象のシステムから切り離してください。</li>
+<li>テストの維持に多くの費用がかかる場合、ソフトウェアの<a href="/architecture/devops/devops-tech-architecture">アーキテクチャ</a>に問題がある可能性があります。チームの日々の作業に<a href="https://refactoring.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">リファクタリング</a>を組み込むなど、ソフトウェアのテストを容易にするための投資を続けます。</li>
+</ul></li>
+<li><p><strong>単体テストと承認テストを誤った比率で使用しないこと。</strong>自動テストスイートに固有の設計目標は、できるだけ早くエラーを見つられるようにすることです。この理由から、実行に時間のかかる承認テストよりも前に、すばやく実行できる単体テストを実行します。さらに、この両方のテストを手動テストの前に実行します。</p>
+
+<p>最も速いテストのカテゴリでエラーを見つける必要があります。承認テストまたは探索的テストでエラーを見つけた場合、次回はそのエラーをよりすばやく、より低コストで捕捉できるようにする単体テストを追加します。Mike Cohn は、次の図に示されている<a href="https://books.google.com.br/books?id=8IglA6i_JwAC&amp;printsec=frontcover&amp;dq=Mike+Cohn+Succeeding+with+Agile&amp;hl=pt-BR&amp;sa=X&amp;ved=0ahUKEwj9x8S8tuTiAhWjGLkGHU0GCxEQ6AEILTAA#v=onepage&amp;q=Mike%20Cohn%20Succeeding%20with%20Agile&amp;f=false" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">テスト自動化ピラミッド</a>が理想的だと説明しています。このピラミッドでは、単体テストによってエラーのほとんどを捕捉します。</p>
+
+<p><img src="/static/architecture/images/ta-image2.png" alt="画像"/></p></li>
+<li><p><strong>信頼性の低いテストの容認。</strong>テストは信頼できる必要があります。つまり、テストに合格したら、ソフトウェアが信頼できることを保証し、テストの失敗は実際の欠陥を示す必要があります。特に、不安定なテストを容認してはいけません。<a href="https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Google での不安定なテストの削減策をご覧ください</a>。</p></li>
+</ul>
+
+<h2 id="ways_to_improve_continuous_testing" data-text="継続的テストの改善方法">継続的テストの改善方法</h2>
+
+<p>組織の中でデベロッパーによる単体テストが確立されていなくても、心配はいりません。単体テストは、Google の初期の頃は広く行われていませんでした。現在の包括的な単体テストは、Google のボランティア グループ「Testing Grouplet」によって普及されました。単体テストの知識を Google 全体に広め、その重要性をデベロッパーに周知することに焦点を当てた実践のコミュニティを構築することで、<a href="https://martinfowler.com/articles/testing-culture.html#google" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">単体テストの導入を推進してきた彼らの功績をご覧ください</a>。</p>
+
+<p>テストを十分に自動化していない場合、まずはスケルトン デプロイ パイプラインの構築に取り掛かってください。たとえば、単体テストと承認テストをそれぞれ 1 つ作成し、探索的テスト環境を立ち上げる自動デプロイ スクリプトを作成して、テストとスクリプトをつなぎ合わせます。その後は、プロダクトまたはサービスの進化に併せて徐々にテスト カバレッジを増やし、デプロイ パイプラインを拡張します。</p>
+
+<p>すでに<a href="https://wikipedia.org/wiki/Brownfield_(software_development)" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">既存のシステム</a>に取り組んでいる場合、この記事のガイダンスに従うとしても、包括的な自動テストスイートの改良を続けてください。代わりに、価値の高い機能を対象とした少数の承認テストを作成します。そのうえで、新しい機能を作成する場合でも、機能を変更する場合でも、必ずその機能を対象とした単体テストと承認テストを作成するようにデベロッパーに要請します。メインのコードとテストコードの両方の品質と保守性を改善するために、TDD の採用を検討してください。最後に、承認テストが破損した場合は、将来その欠陥をより迅速に検出することを目的とした単体テストを作成します。</p>
+
+<p>保守にコストがかかり、信頼できないテストスイートがある場合、恐れずにそのテストスイートを取り除いてください。確実性が高く高速に実施でき、信頼できる 10 個のテストで構成されるテストスイートが、保守が困難であり、誰も信頼していない何百ものテストで構成されるテストスイートよりもはるかに高い価値を有します。</p>
+
+<h2 id="ways_to_measure_continuous_testing" data-text="継続的テストの測定方法">継続的テストの測定方法</h2>
+
+<p>ご利用の環境における継続的テストの結果は、次のように測定できます。</p>
+
+<table>
+<thead>
+<tr>
+<th>テスト対象の要因</th>
+<th>測定データ</th>
+<th>目標</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>承認テストと単体テストの作成者</td>
+<td>デベロッパー、テスト担当者、会社内のその他のグループが作成したテストの割合</td>
+<td>デベロッパーを承認テストのメインの作成者と保守担当者にする。</td>
+</tr>
+<tr>
+<td>承認テスト、探索的テスト、本番環境で検出されたバグの数</td>
+<td>一定の期間にわたる、検出されたバグの比率の変化</td>
+<td>「低コスト」のテストフェーズでより多くのバグが検出される。チームは探索的テストと本番環境で検出されたバグの自動テストを追加し、承認テストで検出されたバグを検出するための単体テストを追加する。</td>
+</tr>
+<tr>
+<td>承認テストの失敗を修正するためにかかった時間</td>
+<td>一定の期間にわたる、テストの失敗を修正するためにかかった時間の変化（短縮されていなければなりません）</td>
+<td>デベロッパーが承認テストの失敗を簡単に修正できるようになる。</td>
+</tr>
+<tr>
+<td>自動テストの有意性</td>
+<td>実際の欠陥を表す自動テストの失敗の数量と、適切にコーディングされていなかった自動テストの数量を追跡する</td>
+<td>テストの失敗が、常にプロダクトの実際の欠陥を示すようにする。</td>
+</tr>
+<tr>
+<td>デリバリー パイプラインでの自動テストの実行</td>
+<td>パイプライン トリガーで常にすべてのテストスイートが実行されるかどうか確認する（はい / いいえ）</td>
+<td>メインのパイプラインとワークフローの一環として自動テストが実行されるようにする。</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="次のステップ">次のステップ</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps ページ</a>で他の記事やリソースへのリンクを確認する。</li>
+<li><a href="https://books.google.com/books/about/Software_Engineering_at_Google.html?id=WXTTDwAAQBAJ" track-type="solution" track-name="internalLink" track-metadata-position="body">Google でのソフトウェア エンジニアリング</a>を読んで、Google でのテストの詳細について確認する。</li>
+<li><a href="/build/?&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=latam-BR-all-pt-dr-skws-all-all-trial-e-dr-1003997-LUAC0008680&amp;utm_content=text-ad-none-none-DEV_c-CRE_325592090632-ADGP_SKWS+%7C+Multi+%7E+Dev+%7C+Build-KWID_43700040482196107-kwd-471794162766-userloc_1001743&amp;utm_term=KW_cloud%20build-ST_Cloud+Build&amp;gclid=Cj0KCQjw6IfoBRCiARIsAF6q06suRucypheWE5dDKAmsKDZrEVvuY0nDFS0YgbkN5XVmkEzJPl89zIIaAoJcEALw_wcB&amp;gclsrc=aw.ds" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Build</a> を使用して継続的にシステムをビルド、テスト、デプロイする方法を確認する。</li>
+<li><a href="/stackdriver" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Monitoring</a> を使用してシステムとテストをモニタリングする方法を確認する。</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">研究プログラム</a>を調べる。</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps のクイック チェック</a>を確認する。業界におけるご自身の立ち位置を把握できます。</li>
+</ul>
+
+</body></html>

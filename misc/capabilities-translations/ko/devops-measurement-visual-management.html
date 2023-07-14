@@ -1,0 +1,86 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 측정: 시각적 관리 기능</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>참고:</strong><span> <em>시각적 관리 기능</em>은 소프트웨어 제공 및 조직 실적을 향상하는 기능 집합 중 하나입니다. 이러한 기능은 성과 향상을 이끌어내는 관례와 기능을 독립적이자 학술적으로 심층 연구하는 <a href="https://www.devops-research.com/research.html">DORA State of DevOps 연구 프로그램</a>을 통해 개발되었습니다. 자세한 내용은 <a href="/devops">DevOps 리소스</a>를 참조하세요.</span></aside>
+<p>일반적으로 <a href="https://wikipedia.org/wiki/Lean_software_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">린 개발 방식</a>을 채택한 팀은 자신들이 맡은 업무의 프로세스에 대한 핵심 정보를 누구나 볼 수 있도록 공개합니다. 시각적 관리 보드를 사용하면 팀 운영 효율성 측면에 대한 공통된 이해를 도출할 수 있습니다. 또한 성과 개선의 장애물을 식별하고 제거할 수 있습니다.</p>
+
+<h2 id="how_to_implement_visual_management" data-text="시각적 관리 구현 방법">시각적 관리 구현 방법</h2>
+
+<p>소프트웨어 제공과 관련하여 일반적으로 다양한 종류의 시각적 디스플레이와 대시보드가 사용됩니다.</p>
+
+<ul>
+<li><strong>카드 월, 스토리보드 또는 Kanban 보드</strong>: 진행 중인 작업 항목을 나타내는 색인 카드가 있는 물리적 보드 또는 가상 보드입니다.</li>
+<li><strong>대시보드 또는 기타 시각적 표시기</strong>: 빌드 통과 여부를 보여주는 모니터 또는 신호등이 있는 지속적인 통합 시스템이 여기에 해당됩니다. 팀이 현재 해결하려는 문제에 대응하는 데 효과적인 시각적 디스플레이를 생성, 업데이트, 삭제할 수 있습니다.</li>
+<li><strong>번업(Burn-up) 또는 번다운(Burn-down) 차트</strong>: 수행 중인 모든 작업의 누적 상태를 보여줍니다(예: 누적 흐름도). 팀은 이러한 차트를 통해 현재 백로그를 완료하는 데 걸리는 시간을 예상할 수 있습니다.</li>
+<li><strong>배포 파이프라인 모니터</strong>: 배포 가능한 최신 빌드가 무엇인지, 오류가 발생한 파이프라인 단계가 무엇인지 보여줍니다(예: 수락 테스트 또는 성능 테스트).</li>
+<li><strong>프로덕션 원격 분석을 보여주는 모니터</strong>: 수신 요청 수, 지연 시간 통계, <code translate="no" dir="ltr">404</code> 및 <code translate="no" dir="ltr">500</code> 누적 오류, 가장 인기 있는 페이지 등이 여기에 해당됩니다.</li>
+</ul>
+
+<p><a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">WIP 한도</a>와 프로덕션 피드백을 같이 사용하여 비즈니스 의사 결정을 내릴 때 시각적 관리 디스플레이를 통해 <a href="https://services.google.com/fh/files/misc/state-of-devops-2015.pdf#page=15" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">더욱 우수한 수준의 전송 성능</a>(PDF)을 사용할 수 있습니다.</p>
+
+<h2 id="common_pitfalls_with_visual_management" data-text="시각적 관리의 일반적인 문제">시각적 관리의 일반적인 문제</h2>
+
+<p>시각적 관리 디스플레이의 가장 중요한 특성은 팀이 정보에 관심을 가지고 있고 정보에 따라 조치한다는 점입니다. 또한 일상 업무 시 디스플레이를 사용하여 성능 개선 장애물을 식별하여 제거하는 것도 중요 특성 중 하나입니다. 시각적 관리를 구현할 때 일반적으로 발생하는 문제는 다음과 같습니다.</p>
+
+<ul>
+<li><strong>팀의 참여 없이 측정항목 선택</strong>: 팀과 관련성이 높고 팀에 유용한 측정항목을 보여주는 시각적 디스플레이가 더 자주 사용됩니다. 또한 팀이 목표 선정 과정에 참여하여 시각적 디스플레이에 표시되는 측정항목에 대해 의견을 개진할 수 있으면(예: 일부 팀에서는 <a href="/architecture/devops/devops-culture-transform" track-type="solution" track-name="internalLink" track-metadata-position="body">OKR 사용</a>) 목표 추진에 대한 더 많은 동기 부여를 제공할 수 있습니다.</li>
+<li><strong>복잡하거나 이해하기 어렵거나 조치 가능한 정보를 제공하지 않는 디스플레이 생성</strong>: 개략적인 수정이 가능하거나 흥미를 유발하는 도구를 사용하여 디스플레이를 간편하게 만들 수 있습니다. 하지만 팀이 잘못된 측정항목으로 작업하거나 구현하는 데 수 개월이 걸린다면 커스텀 대시보드에서 레이아웃과 색상을 변경하더라도 도움이 되지 않습니다. 반면, 화이트보드에 핵심 측정항목이나 대략적인 그래프를 그리고 매일 업데이트하면 꾸준하게 팀에 효과적으로 정보를 제공할 수 있습니다.</li>
+<li><strong>발전하지 않는 시각적 디스플레이</strong>: 시각적 관리 도구는 팀에게 현재 직면한 문제를 해결할 수 있는 정보를 제공해야 합니다. 여러 팀이 동일한 상황에서 작업하고 동일한 과제와 장애물에 직면한 경우가 아니라면 한 팀이 다른 팀의 디스플레이를 복사하는 것은 의미가 없습니다. 팀 상황이 발전함에 따라 시각적 디스플레이도 함께 변해야 합니다. 또한 팀이 장애물을 처리함에 따라 관련된 이전 측정항목을 삭제하고 새로운 중요 부분을 강조표시하도록 시각적 디스플레이를 바꿀 수도 있습니다.</li>
+<li><strong>시각적 디스플레이가 보여주는 기본 문제 미해결</strong>: 팀이 디스플레이를 '정상' 상태로 되돌리기 위해 임시 방편을 사용하는 경우도 있습니다. 디스플레이 그 자체가 목표가 아니라(보드를 정상 상태로 유지) 개선을 이끌어내도록(문제 해결) 디스플레이를 사용해야 합니다.
+측정항목 관리에만 집중하면 의도하지 않은 결과와 기술적 채무가 발생하게 됩니다. 디스플레이에서 문제가 발견되면 팀은 당면 문제만 해결해서는 안 됩니다. 또한 기본적인 문제나 제약을 식별하고 해결하기 위해 노력해야 하며, 이는 이러한 문제나 제약이 조직의 다른 부분에서 발생하는 경우도 마찬가지입니다. 비효율성은 계속 나타나기 마련이지만 이를 조기에 해결하면 모든 팀에 도움이 됩니다.</li>
+</ul>
+
+<h2 id="ways_to_improve_visual_management" data-text="시각적 관리 개선 방법">시각적 관리 개선 방법</h2>
+
+<p>시각적 관리 도구의 목표는 이해하기 쉬운 피드백을 신속하게 제공하여 제품의 품질을 향상시키는 것입니다. 이러한 피드백을 통해 팀은 제품 결함을 식별하고 시스템 일부가 효과적으로 작동하지 않는지 여부를 파악하여 문제를 해결할 수 있습니다. 효과적인 시스템은 다음과 같아야 합니다.</p>
+
+<ul>
+<li><strong>팀에서 관심을 가지고 조치할 수 있는 정보 반영</strong>:
+팀이 디스플레이에서 문제를 보여주는지(예: 빌드 상태가 빨간색(오류 발생)으로 표시) 관심을 갖지 않고 함께 문제를 해결하기 위해 이 정보에 따라 조치를 취하지 않는다면 빌드 모니터를 사용할 이유가 없습니다.</li>
+<li><strong>이해하기 쉬움</strong>: 어떤 사안에 주의가 필요한지 여부를 사무실 전체에서 한 눈에 파악할 수 있어야 합니다. 문제가 <em>있는</em> 경우 팀은 추가 진단을 수행하거나 문제를 해결하는 방법을 알고 있어야 합니다.</li>
+<li><strong>작업과 관련된 정보를 팀에게 제공</strong>: 팀 작업에 대한 데이터를 최대한 많이 수집하는 것도 중요하지만 디스플레이에서 팀 목표와 관련된 데이터만 표시되는 것이 중요합니다. 과다한 정보, 특히, 조치를 취할 수 없는 정보에 직면한 사용자는 시각적 관리 디스플레이를 무시하고 거의 활용하지 않게 됩니다. 하지만 팀이 함께 문제를 해결하기 위해 노력할 때는 추가 데이터에 액세스하여 사용할 수 있습니다.</li>
+<li><strong>일상 업무의 일환으로 업데이트</strong>: 팀의 데이터가 오래되거나 부정확해지면 팀은 시각적 디스플레이를 무시하게 되고 중요한 문제 발생 시 디스플레이가 더 이상 유용한 표지 역할을 수행하지 못하게 됩니다. 디스플레이에 현재 오래되거나 부정확한 데이터가 표시되면 원인을 조사해야 합니다. 데이터가 팀 목표와 관련이 없나요? 디스플레이에서 팀에게 유용한 중요 정보를 제공할 수 있는 데이터는 무엇인가요?</li>
+</ul>
+
+<p>팀은 시각적 디스플레이의 중요하지 않은 측면에 얽매이지 않아야 합니다. 예를 들어 시각적 관리 디스플레이가 반드시 전자식일 필요는 없습니다.
+특히 팀 전체가 한 곳에 있는 경우 물리적 카드 월 또는 Kanban 보드를 사용하면 보다 쉽게 관리하고 파악할 수 있습니다. 또한 이러한 디스플레이는 실제로 보드 앞에 서서 작업을 선택하고 이동하는 등 중요한 팀 정신을 키우는 데 유용할 수 있습니다. 팀에서 매일 업데이트하는 몇 가지 주요 프로젝트 정보가 기재된 화이트보드가 이해하고 업데이트하기 어렵고 필요한 정보를 제공하지 않는 전자 시스템보다 나은 경우가 종종 있습니다.</p>
+
+<h2 id="ways_to_measure_visual_management" data-text="시각적 관리 측정 방법">시각적 관리 측정 방법</h2>
+
+<p>다른 모든 개선 작업과 마찬가지로 팀이 달성하기 위해 노력하고 있는 측정 가능한 시스템 수준 목표부터 시작합니다. 업무 시스템의 기존 상태를 탐색합니다.
+기존 상태와 원하는 상태에 대한 핵심 정보를 표시하는 방법을 찾습니다. 이 정보는 필요한 세부 수준으로만 표시되어야 합니다.</p>
+
+<p>일반적인 소급 조사의 일환으로 시각적 디스플레이를 검토합니다. 다음과 같은 질문에 답해야 합니다.</p>
+
+<ul>
+<li>디스플레이에서 필요한 정보를 제공하는가?</li>
+<li>최신 정보인가?</li>
+<li>팀원이 이 정보에 따라 조치를 취하고 있는가?</li>
+<li>정보(및 그에 따라 팀원이 취하는 조치)가 팀에서 관심을 가지고 있는 목표의 측정 가능한 개선에 기여하는가?</li>
+<li>목표가 무엇인지 모든 팀원이 알고 있는가?</li>
+<li>시각적 관리 디스플레이를 보고 관심 있는 핵심 프로세스 측정항목을 확인할 수 있는가?</li>
+</ul>
+
+<p>위 질문에 대한 답변 중 '아니요'가 있다면 다음과 같은 추가 조사가 필요합니다.</p>
+
+<ul>
+<li>정보 또는 정보 표시 방법을 변경할 수 있는가?</li>
+<li>디스플레이를 모두 삭제할 수 있는가?</li>
+<li>새로운 디스플레이를 만들 수 있는가? 프로토타입은 어떤 형태인가? 포함시킬 가장 중요한 정보는 무엇이고, 문제 해결 및 목표 달성에 필요한 정보 세부 수준은 어떻게 되는가?</li>
+</ul>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li>도미니카 드그랜디스가 저술한 <a href="https://itrevolution.com/book/making-work-visible/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Making Work Visible</em></a>을 읽어보세요.</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,65 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 측정: 오류 사전 알림</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>참고:</strong><span> <em>사전 실패 알림</em>은 소프트웨어 제공 및 조직 성과 향상을 가져오는 기능 집합 중 하나입니다.
+이러한 기능은 성과 향상을 이끌어내는 관례와 기능을 독립적이면서 학술적으로 심층 연구하는 <a href="https://www.devops-research.com/research.html">DORA State of DevOps 연구 프로그램</a>을 통해 개발되었습니다. 자세한 내용은 <a href="/devops">DevOps 리소스</a>를 참조하세요.</span></aside>
+<p>오류 사전 알림은 모니터링 값이 알려진 오류 기준에 근접할 때 알림을 생성하는 방식으로, 시스템에서 이미 실패했음을 알릴 때까지 기다리거나 최악의 경우 애플리케이션이나 서버가 중단된 사실을 고객이 먼저 발견하는 일이 없도록 하는 방식입니다.
+이 접근 방식을 사용하면 문제가 악화되거나 사용자에게 영향을 미치기 전에 문제를 식별하고 해결할 수 있습니다. <a href="https://services.google.com/fh/files/misc/state-of-devops-2014.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2014년 DevOps Research and Assessment(DORA)</a>(PDF) 연구 결과에 따르면 소프트웨어 성능의 중요한 예측 지표는 사전 모니터링입니다.
+DORA 연구에 따르면 팀에서 사전 알림을 사용할 경우 문제 진단과 해결이 신속하게 이루어지는 것으로 나타났습니다. 하지만 오류가 내부 모니터링 결과가 아닌 네트워크 운영 센터(NOC)나 최악의 경우 고객에 의해 먼저 보고되면 성능에 타격을 줍니다.</p>
+
+<h2 id="how_to_implement_proactive_failure_notification" data-text="오류 사전 알림 구현 방법">오류 사전 알림 구현 방법</h2>
+
+<p><strong>알림 규칙을 사용합니다.</strong> 구체적인 <em>알림 규칙</em>을 사용하여 오류 알림을 생성해야 합니다. 알림 규칙은 알림이 생성되는 조건과 해당 알림의 알림 채널을 정의합니다. <a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="solution" track-name="internalLink" track-metadata-position="body">모니터링 및 관측 가능성</a>에서 알림 생성에 대해 자세히 알아보세요.</p>
+
+<p><strong>기준을 사용합니다.</strong> 알림 규칙은 모니터링 대상 측정항목에 실제 문제를 나타내는 기준을 사용해야 합니다. 모니터링 기준은 측정항목이 기준값을 초과할 때 알림을 생성하는 알림 규칙을 트리거합니다.</p>
+
+<p><strong>기준을 신중하게 선택합니다.</strong> 문제를 실제로 예측할 때만 알림을 생성하도록 기준을 선택합니다. 즉, 임의로 값을 선택하면 안 됩니다. 일반적으로 사용자에게 직접 영향을 미치기 시작하는 값 수준을 파악한 다음 해당 값에 도달하기 일정 수준 전에 알림을 트리거해야 합니다.</p>
+
+<p>예를 들어 페이지의 평균 응답 시간이 사용자가 불만을 느껴 지원을 요청하기 시작하는 기준값의 20% 이내일 때 알림을 트리거하도록 선택할 수 있습니다.</p>
+
+<p><strong>이슈에 대한 사후 분석을 수행합니다.</strong> 이슈 이후 사후 분석을 수행하면 이슈를 예측할 수 있는 지표를 파악하여 향후 모니터링의 기준으로 사용할 수 있습니다.</p>
+
+<p><strong>알림 전략을 계획합니다.</strong> 알림에 별도의 조치 필요하지 않거나 매번 동일한 조치를 취할 필요가 없으면 응답을 자동화해야 합니다. 이벤트별 알림 횟수도 고려해야 합니다. 이벤트 발생 시 쇄도하는 알림은 집중력을 분산시킬 수 있습니다. 과도한 알림에 노출될 경우 '알림 피로'와 같이 알림에 점점 더 둔감해지므로 응답 시간이 길어지거나 알림을 놓치는 경우가 발생할 수 있습니다.
+정기적으로 알림을 검토하고 조치를 취할 수 없는 알림은 삭제합니다.</p>
+
+<h2 id="ways_to_improve_failure_notification" data-text="오류 알림을 개선하는 방법">오류 알림을 개선하는 방법</h2>
+
+<p>시스템에 문제가 발생할 경우 네트워크 운영 센터(NOC)나 고객이 문제를 발견하기 훨씬 전에 주요 팀에게 알리도록 알림을 구성합니다. 전술은 다음과 같습니다.</p>
+
+<ul>
+<li>로깅 및 모니터링 시스템에서 적절한 수준으로 알림을 구성합니다.</li>
+<li>알림이 문제를 해결할 수 있는 개발자나 팀에게 전달되도록 알림을 구성합니다.</li>
+<li>시스템 오류가 발생하기 전에 임곗값 경고를 기준으로 시스템 상태를 사전에 모니터링합니다.</li>
+<li>변환율 경고에 따라 시스템 상태를 사전에 모니터링합니다.</li>
+<li>팀에 너무 많은 알림이 쇄도하지 않도록 관련된 알림만 전송하도록 해야 합니다. 관련성이 낮은 알림도 면밀히 살펴볼 필요가 있습니다. 관련이 없는 알림은 사용 중지하고 관련 모니터링 알림을 다시 사용 설정합니다.
+모든 알림을 사용 중지하는 것은 좋지 않습니다.</li>
+</ul>
+
+<h2 id="ways_to_measure_failure_notifications" data-text="오류 알림을 측정하는 방법">오류 알림을 측정하는 방법</h2>
+
+<p>사전 모니터링을 측정하는 방법은 간단합니다. 캡처할 구성요소는 다음과 같습니다.</p>
+
+<ol>
+<li>로깅 및 모니터링 시스템에서 오류 알림을 캡처하고 사용할 범위</li>
+<li>기준 경고를 사용하여 시스템 상태를 사전에 모니터링할 범위</li>
+<li>변환율 경로를 사용하여 시스템 상태를 사전에 모니터링할 범위</li>
+</ol>
+
+<p>시스템의 여러 측면을 캡처하려면 두 가지 이상의 다른 방법으로 측정항목을 모니터링해야 합니다. 예를 들어 주어진 기간 동안 측정항목이 특정한 값을 기준으로 오르내리는 경우 알림을 트리거하는 측정항목 기준을 설정할 수 있습니다. 또한 측정항목 값 변환율이 예상보다 높거나 낮을 때 알림을 트리거하는 변환율도 설정할 수 있습니다.</p>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li><a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="solution" track-name="internalLink" track-metadata-position="body">모니터링 및 관측 가능성</a>에서 알림 생성에 대해 자세히 알아보세요.</li>
+<li><a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">사이트 안정성 엔지니어링(SRE) 도서</a>를 읽어보세요.</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,110 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Prozess: Sichtbarkeit der Arbeit im Wertstrom</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Sichtbarkeit der Arbeit im Wertstrom</em> ist eine von mehreren Funktionen, die zu einer höheren Softwarebereitstellung und Unternehmensleistung führen.  Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">„State of DevOps“-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, akademisch anspruchsvollen Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p><em>Die Sichtbarkeit der Arbeit</em> steht für das Ausmaß, in dem Teams den Arbeitsablauf vom Unternehmen bis zum Kunden gut nachvollziehen können. Darüber hinaus spielt der Einblick in diesen Ablauf eine Rolle. Dazu zählt zum Beispiel der Status der Produkte und Features. Die Sichtbarkeit der Arbeit ist Teil einer größeren Gruppe von Merkmalen, die für ein schlankes Produktmanagement stehen. Zu diesen Merkmalen gehören das <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">Arbeiten in kleinen Mengen</a>, <a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">Experimente im Team</a> und der <a href="/architecture/devops/devops-process-customer-feedback" track-type="solution" track-name="internalLink" track-metadata-position="body">Einblick in das Kundenfeedback</a>.
+Anhand dieser Merkmale lassen sich sowohl die von der Software erbrachte Leistung als auch die organisatorische Leistung gemessen an Rentabilität, Marktanteil und Produktivität einordnen.</p>
+
+<h2 id="how_to_implement_work_visibility" data-text="So erreichen Sie die Sichtbarkeit der Arbeit">So erreichen Sie die Sichtbarkeit der Arbeit</h2>
+
+<p>Teams, die über diese Fähigkeit verfügen, weisen die folgenden Eigenschaften auf:</p>
+
+<ul>
+<li>Das Team versteht, <strong>wie sich die Arbeit im Unternehmen fortsetzt</strong>, vom Konzept bis zum Kunden, einschließlich der Produkte oder Features.</li>
+<li>Das Team hat Einblick in den <strong>Ablauf dieser Arbeit</strong>.</li>
+<li>Der Arbeitsablauf, einschließlich des aktuellen Status, wird <strong>auf visuellen Anzeigen</strong> oder Dashboards dargestellt.</li>
+<li>Es stehen <strong>Informationen zum Ablauf</strong> der Produktentwicklungsarbeit über den gesamten Wertstrom zur Verfügung.</li>
+</ul>
+
+<h3 id="use_value_stream_mapping_to_understand_how_work_flows" data-text="Mit der Wertstromanalyse lassen sich Arbeitsabläufe besser verstehen">Mit der Wertstromanalyse lassen sich Arbeitsabläufe besser verstehen</h3>
+
+<p>Ein wesentlicher Schritt zur Verbesserung des Workflows besteht im Verständnis dafür, wie sich die Arbeit im Verlauf des Wertstroms der Entwicklungsarbeit für das Produkt oder Feature fortsetzt. Eine nützliche Methode ist die <a href="https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Wertstromanalyse</em></a> (Value stream mapping, VSM). Eine Wertstromanalyse erhalten Sie durch Zusammenführen aller Beteiligten am Wertstrom der Produktentwicklung: Geschäftsbereich, Design, Test, Qualitätssicherung, Betrieb und Support. Der Wertstrom lässt sich in 5 bis 15 Prozessblöcke unterteilen. In jedem Block werden, wie im folgenden Diagramm dargestellt, die ausgeführte Aktivität sowie das ausführende Team erfasst:</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-9-stages.svg" alt="Wertstrom mit 9 Phasen vom Kunden bis zur Produktbereitstellung."/></p>
+
+<p>Quelle: <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise</em></a> (O'Reilly) von Jez Humble, Joanne Molesky und Barry O'Reilly, 2014.</p>
+
+<p>Analysieren Sie als Nächstes den Status der Arbeit innerhalb des Wertstroms und sammeln Sie Informationen, um Hindernisse für den Strom zu bestimmen. Erfassen Sie für jeden Prozessblock insbesondere die folgenden wichtigen Messwerte:</p>
+
+<ul>
+<li><strong>Vorlaufzeit:</strong> Die Zeit von dem Punkt, an dem ein Prozess eine Arbeit aufnimmt, bis zu dem Punkt, an dem die Arbeit an den nächsten nachgelagerten Prozess abgegeben wird.</li>
+<li><strong>Bearbeitungszeit:</strong> Die Zeit, die zur Fertigstellung eines einzelnen Arbeitsgegenstandes benötigt wird, wenn die ausführende Person über alle erforderlichen Informationen und Ressourcen verfügt, um den Vorgang abzuschließen, und ohne Unterbrechung arbeiten kann.</li>
+<li><strong>Anteil vollständig und genau (%C/A):</strong> Der Anteil der Zeit, in der ein Prozess etwas von einem vorgelagerten Prozess erhält, das ohne Nacharbeit verwendet werden kann.</li>
+</ul>
+
+<p>Der Status der Prozesse wird immer so erfasst, wie sie an dem Tag, an dem die Erfassung erfolgt, tatsächlich ablaufen. Ermitteln Sie unbedingt die tatsächlichen, nicht die gewünschten Messwerte.</p>
+
+<p>Das folgende Diagramm zeigt ein Beispiel für die abschließende Ausgabe:</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-stages-with-notes-and-timeline.svg" alt="Wertstromphasen mit Anmerkungen zu jeder Phase und einem allgemeinen Zeitplan."/></p>
+
+<p>Quelle: <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise</em></a> (O'Reilly) von Jez Humble, Joanne Molesky und Barry O'Reilly, O'Reilly, 2014.</p>
+
+<p>Suchen Sie nach Prozessblöcken, bei denen minderwertige Arbeit entsteht, die eine Menge Nacharbeit erfordert (was sich in einem niedrigen Anteil %C/A im nachgelagerten Prozessblock niederschlägt), und nach Prozessen mit langen Vorlaufzeiten im Verhältnis zur Prozessdauer.</p>
+
+<p>Es ist wichtig, mit den Beteiligten zusammenzuarbeiten, um für die Zukunft eine Wertstromanalyse zu erstellen, die den optimalen Zustand des Wertstroms zu einem späteren Zeitpunkt (z. B. in 6 Monaten bis 2 Jahren) wiedergibt. Die Beteiligten sollten sich auch darauf einigen, diese Analyse regelmäßig (z. B. alle 6 Monate) zu wiederholen, um den aktuellen Stand und die Fortschritte zu überprüfen.</p>
+
+<p>Eine ausführliche Beschreibung der VSM ist in diesem Dokument nicht enthalten. Für weitere Informationen empfehlen wir das Buch <a href="https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation</em></a> von Karen Martin und Mike Osterling.</p>
+
+<h3 id="visualize_the_current_state_of_work" data-text="Aktuellen Stand der Arbeit visualisieren">Aktuellen Stand der Arbeit visualisieren</h3>
+
+<p>Mit der VSM kann dargestellt werden, wie sich die Arbeit durch den Wertstrom der Produktentwicklung vom Konzept bis zum Kunden fortsetzt. Für einen fortlaufenden Einblick in den Ablauf dieser Arbeit ist eine dynamischere Anzeige erforderlich. Für die Softwareentwicklung können Sie eine Kartenwand, ein Storyboard oder ein Kanban-Brett wie im folgenden Diagramm dargestellt verwenden.</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-kanban-board.svg" alt="Kanban-Brett."/></p>
+
+<p>Quelle: Brettspiel "Kanban for Ops", Dominica DeGrandis, 2013.</p>
+
+<p>Der Einsatz solcher visueller Darstellungen und das Erstellen von WIP-Limits zur Verwaltung des Wertstroms sind in den Artikeln zu <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">WIP-Limits</a> und <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">visuellem Management</a> beschrieben.</p>
+
+<p>Schließlich sollte die Analyse Informationen zu den Verantwortlichkeiten der einzelnen Teams sowie statistische Daten zu wichtigen Messwerten wie Vorlaufzeit, Bereitstellungshäufigkeit und %C/A umfassen.</p>
+
+<h2 id="common_pitfalls_with_work_visibility" data-text="Häufige Probleme mit der Sichtbarkeit der Arbeit">Häufige Probleme mit der Sichtbarkeit der Arbeit</h2>
+
+<p>Zu den üblichen Hindernissen bei der Umsetzung der Sichtbarkeit der Arbeit zählen:</p>
+
+<ul>
+<li><p><strong>Die Überschätzung des Wissens im Unternehmen:</strong> In einem Unternehmen hat niemand einen guten Überblick über den gesamten Wertstrom. Wenn in einem Unternehmen eine Wertstromanalyse durchgeführt wird, sollten daran Personen aus dem gesamten Wertstrom beteiligt sein. Es gibt oft Überraschungen, wenn sich herausstellt, was in anderen Teilen des Unternehmens <em>tatsächlich</em> vor sich geht.</p></li>
+<li><p><strong>Fehler bei der Analyse des gesamten Wertstroms:</strong> Unabhängig davon, ob es sich um einen Geschäftsbereich, die für das Produkt zuständige Marketingabteilung oder interne Kunden handelt, es ist immer wichtig, den gesamten Wertstrom vom Konzept bis zum IT-Betrieb und den Personen, die das analysierte Produkt oder die analysierte Dienstleistung unterstützen, zu untersuchen.
+Die daraus resultierende erhöhte Sichtbarkeit und Ausrichtung sowie das gemeinsame Verständnis sind äußerst wertvoll. Wird nicht der gesamte Wertstrom analysiert, kann dies zu lokalen Optimierungen und verpassten Gelegenheiten für die Verbesserung von Prozessen in Schlüsselbereichen führen, die Auswirkungen auf das gesamte Unternehmen haben.</p></li>
+<li><p><strong>Der Schwerpunkt für Verbesserungen liegt auf den falschen Bereichen:</strong> Eine Verbesserung der Effizienz in Bereichen, in denen es keine Probleme gibt, hat keinen großen Einfluss auf die allgemeinen Vorlaufzeiten und kann dazu führen, dass sich die Situation verschlimmert. Unternehmen sollten sich natürlich in allen Bereichen verbessern, aber es ergibt keinen Sinn, erheblichen Aufwand zu betreiben, um etwas zu verbessern, das auf Unternehmensebene keine Auswirkungen hat.</p></li>
+<li><p><strong>Fehlende Berechtigungen zum Vornehmen von Änderungen:</strong> Die an den Maßnahmen beteiligten Personen müssen befugt sein, Änderungen vorzunehmen, um den künftig gewünschten Zustand zu erreichen.
+Wenn sie erst andere Personen im Unternehmen davon überzeugen müssen, ist die Maßnahme wenig erfolgversprechend.</p></li>
+</ul>
+
+<p>Beachten Sie unbedingt auch die in den Artikeln zu <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">WIP-Limits</a> und <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">visuellem Management</a> aufgeführten üblichen Hindernisse.
+Viele davon sind auch in diesem Zusammenhang zutreffend.</p>
+
+<h2 id="ways_to_improve_work_visibility" data-text="Möglichkeiten zur Verbesserung der Sichtbarkeit der Arbeit">Möglichkeiten zur Verbesserung der Sichtbarkeit der Arbeit</h2>
+
+<ul>
+<li><p><strong>Bereitstellung von Tools zur Visualisierung und Erfassung von Workflows:</strong> Sorgen Sie zuerst dafür, dass das Team über Darstellungsformen für das <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">visuelle Management</a> verfügt, mit denen die Arbeit und der Ablauf in dem Teil des Wertstroms veranschaulicht werden, der das Team am ehesten betrifft. Dazu gehören auch der vor- und nachgelagerte Teil des Prozesses. Erfassen Sie, wie lange es dauert, bis der Arbeitsprozess abgeschlossen ist, und wie häufig Nacharbeit erforderlich ist, weil das Team es beim ersten Mal nicht richtig gemacht hat. So lassen sich die frühesten und besten Möglichkeiten für Verbesserungen auf Teamebene ermitteln.</p></li>
+<li><p><strong>Eine Wertstromanalyse erstellen:</strong> Arbeiten Sie mit anderen Teams zusammen, um eine Wertstromanalyse zu erstellen und so herauszufinden, wie die Arbeit vom Konzept zum Ergebnis für den Kunden abläuft. Erfassen Sie die VSM-Messwerte (Vorlaufzeit, Prozesszeit, %C/A) für jeden Prozessblock. Das Team sollte eine Wertstromanalyse für den künftig gewünschten Zustand erstellen und an deren Umsetzung arbeiten.</p></li>
+<li><p><strong>Werkzeuge teilen:</strong> Sorgen Sie dafür, dass die Werkzeuge aus diesen Analysen allen Beteiligten im Unternehmen zur Verfügung stehen und dass sie mindestens einmal im Jahr aktualisiert werden.</p></li>
+</ul>
+
+<h2 id="ways_to_measure_work_visibility" data-text="Möglichkeiten zum Messen der Sichtbarkeit der Arbeit">Möglichkeiten zum Messen der Sichtbarkeit der Arbeit</h2>
+
+<p>Stellen Sie sich die folgenden Fragen. So können Sie ermitteln, wie wirksam die Sichtbarkeit der Arbeit des Teams im Wertstrom ist:</p>
+
+<ul>
+<li>Steht jedem im Unternehmen eine aktuelle Wertstromanalyse zur Verfügung?</li>
+<li>Hat jeder im Unternehmen Zugriff auf eine visuelle Anzeige, an der sich ablesen lässt, woran die Person arbeitet und welchen Status die Arbeit hat?</li>
+<li>Stehen dem Team Statistiken zu Messwerten wie Vorlaufzeit und %C/A zur Verfügung?</li>
+</ul>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Weitere Informationen</h2>
+
+<ul>
+<li>Links zu weiteren Artikeln und Ressourcen finden Sie auf der <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps-Seite</a>.</li>
+<li>Das Buch <a href="https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation</em></a> von Karen Martin und Mike Osterling</li>
+<li>Das Buch <a href="https://books.google.com/books/about/Kanban.html?id=RJ0VUkfUWZkC" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Kanban: Successful Evolutionary Change for Your Technology Business</em></a> von David Anderson</li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

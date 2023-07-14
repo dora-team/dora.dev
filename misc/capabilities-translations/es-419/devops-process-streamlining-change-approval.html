@@ -1,0 +1,125 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Proceso de DevOps: Optimiza la aprobación de cambios</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+<aside class="note"><strong>Nota:</strong><span> La <em>optimización de la aprobación de cambios</em> es una función de un conjunto de capacidades que ofrecen una mejor entrega de software y un mejor rendimiento organizativo.
+Estas funciones se descubrieron mediante el <a href="https://www.devops-research.com/research.html">programa de investigación de DevOps de DORA</a>, una investigación independiente y rigurosa desde el punto de vista académico sobre las prácticas y las funciones que impulsan el alto rendimiento. Para obtener más información, lee nuestros <a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>La mayoría de las organizaciones de TI tienen procesos de administración de cambios con el fin de administrar el ciclo de vida de los servicios de TI, tanto internos como para el cliente. Estos procesos suelen ser los controles principales para reducir los riesgos operativos y de seguridad del cambio.</p>
+
+<p>Los procesos de administración de cambios suelen incluir aprobaciones de revisores externos o consejos de aprobación de cambios (CAB) para promover cambios a través del sistema.</p>
+
+<p>Los administradores de cumplimiento y los de seguridad confían en los procesos de administración de cambios para validar los requisitos de cumplimiento, que, en general, requieren evidencia de que todos los cambios estén autorizados de forma adecuada.</p>
+
+<p>La investigación de DevOps Research and Assessment (DORA), presentada en el <a href="https://cloud.google.com/devops/state-of-devops" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Informe del estado de DevOps de 2019 (PDF)</a>, se analiza que las aprobaciones de cambios se implementan mejor a través de la revisión entre pares durante el proceso de desarrollo, complementada con la automatización para detectar, prevenir y corregir cambios incorrectos en una etapa temprana del ciclo de vida de entrega de software. Técnicas como <a href="/architecture/devops/devops-tech-test-automation">pruebas continuas</a>, <a href="/architecture/devops/devops-tech-continuous-integration">integración continua</a>, y <a href="/architecture/devops/devops-measurement-monitoring-and-observability">observabilidad y supervisión integrales</a> proporcionan comentarios rápidos, visibilidad y una detección temprana y automatizada.</p>
+
+<p>Además, las organizaciones pueden mejorar su rendimiento si comunican mejor el proceso existente y ayudan a los equipos a navegarlo de manera eficiente.
+Cuando los miembros del equipo entienden en profundidad el proceso de aprobación de cambios, esto impulsa un mayor rendimiento.</p>
+
+<h2 id="how_to_implement_a_change_approval_process" data-text="Cómo implementar un proceso de aprobación de cambios">Cómo implementar un proceso de aprobación de cambios</h2>
+
+<p>Dos objetivos importantes del proceso de aprobación de cambios son disminuir el riesgo de realizar cambios y satisfacer los requisitos reguladores. Un requisito regulador común es la división de tareas que establece que los cambios deben ser aprobados por una persona distinta del autor, lo que garantiza que ninguna persona tiene control completo sobre un proceso.</p>
+
+<p>Estos objetivos solían cumplirse mediante un proceso pesado que involucraba la aprobación de personas externas al equipo que proponía el cambio: un consejo de aprobación de cambios (CAB) o un gerente ejecutivo. Sin embargo, la investigación de DORA demuestra que estos enfoques tienen un resultado negativo en el rendimiento de la entrega de software. Además, no se encontró ninguna evidencia que respalde la hipótesis de que un proceso de revisión externo más formal se asociaba con tasas de error de cambios más bajas.</p>
+
+<p>Estos enfoques pesados tienden a ralentizar el proceso de entrega, lo que genera un envío de lotes más grandes con menor frecuencia. Esto causa un gran impacto en el sistema de producción que tal vez se asocie con niveles superiores de riesgo y, por lo tanto, con tasas de error de cambios más altas. En las investigaciones de DORA, se descubrió que esta hipótesis está respaldada en los datos.</p>
+
+<p>En su lugar, los equipos deben hacer lo siguiente:</p>
+
+<ul>
+<li>Usar la revisión de los pares para cumplir con el objetivo de división de tareas, con opiniones, comentarios y aprobaciones capturadas en la <a href="/architecture/devops/devops-tech-code-maintainability">plataforma de desarrollo</a> del equipo como parte del proceso de desarrollo</li>
+<li>Realizar <a href="/architecture/devops/devops-tech-test-automation">pruebas continuas</a>, <a href="/architecture/devops/devops-tech-continuous-integration">integración continua</a> y <a href="/architecture/devops/devops-measurement-monitoring-and-observability">supervisión y observabilidad integrales</a> para detectar, prevenir y corregir con rapidez los cambios incorrectos</li>
+<li>Tratar a la plataforma de desarrollo como un producto que permite que los desarrolladores obtengan comentarios con rapidez sobre el impacto de los cambios (también de sus defectos) en varios recursos, como la seguridad, el rendimiento y la estabilidad</li>
+</ul>
+
+<p>Tu objetivo debería ser que el proceso de administración de cambios regular sea rápido y confiable, y que puedas usarlo para realizar cambios en casos de emergencia.</p>
+
+<p>En el paradigma de <a href="/architecture/devops/devops-tech-continuous-delivery">entrega continua</a>, el CAB todavía tiene una función vital, que incluye lo siguiente:</p>
+
+<ul>
+<li>Facilitar la notificación y la coordinación entre los equipos</li>
+<li>Ayudar a los equipos con el trabajo de mejora de procesos para aumentar el rendimiento de entrega de software</li>
+<li>Investigar las decisiones empresariales importantes que requieren compensaciones y aprobaciones en los niveles más altos de la empresa, como la decisión entre el tiempo de salida al mercado y el riesgo empresarial</li>
+</ul>
+
+<p>Esta nueva función del CAB es estratégica. Si los profesionales están a cargo de la revisión de código detallada y se realiza con métodos automatizados, las personas con cargos administrativos y de liderazgo tendrán más tiempo para enfocarse en el trabajo más estratégico.
+Esta transición, de encargados a arquitectos de procesos e informantes, es coherente con las prácticas de las organizaciones que se destacan en el rendimiento de la entrega de software.</p>
+
+<h2 id="common_pitfalls_in_change_approval_processes" data-text="Errores comunes en los procesos de aprobación de cambios">Errores comunes en los procesos de aprobación de cambios</h2>
+
+<p>Los siguientes errores son comunes en los procesos de aprobación:</p>
+
+<p><strong>Basarse en un consejo de aprobación de cambios (CAB) centralizado</strong> para detectar errores y aprobar cambios. Este enfoque puede generar retrasos y, a menudo, errores. Los CAB son buenos para transmitir cambios, pero es posible que las personas ajenas al cambio no comprendan lo que implica.</p>
+
+<p><strong>Tratar a todos los cambios por igual.</strong> Cuando todos los cambios están sujetos al mismo proceso de aprobación, la revisión de los cambios es ineficiente y no se les puede dedicar tiempo y atención a los que requieren verdadera concentración debido a las diferencias en el perfil de riesgo o el tiempo.</p>
+
+<p><strong>No poder aplicar la mejora continua.</strong> Al igual que con todos los procesos, se deben orientar métricas de rendimiento clave, como el plazo de entrega y la tasa de error de cambio, con el objetivo de mejorar el rendimiento del proceso de administración de cambios. Para ello, se deben incluir herramientas y capacitaciones a fin de que los equipos puedan realizar sus tareas con mayor eficacia.</p>
+
+<p><strong>Agregar más procesos para responder a los problemas.</strong> A menudo, las organizaciones usan procesos adicionales y aprobaciones más importantes cuando se enfrentan a problemas de estabilidad en la producción. En el análisis, se sugiere que este enfoque empeorará los procesos porque aumentan los plazos de entrega y los tamaños de los lotes, lo que crea un ciclo vicioso.
+En su lugar, se debe dedicar más trabajo a que los cambios sean más rápidos y seguros.</p>
+
+<h2 id="ways_to_improve_your_change_approval_process" data-text="Formas de mejorar el proceso de aprobación de cambios">Formas de mejorar el proceso de aprobación de cambios</h2>
+
+<p>Para mejorar los procesos de aprobación de cambios, debes hacer lo siguiente:</p>
+
+<ol>
+<li>Cambia a un proceso basado en revisiones de pares para hacer cambios individuales, aplicados en el momento del registro de código y compatibles con las pruebas automatizadas.</li>
+<li>Encuentra formas de descubrir problemas (como regresiones, problemas de rendimiento y de seguridad) de manera automatizada lo antes posible luego de la confirmación de los cambios.</li>
+<li>Realiza análisis continuos para detectar y marcar los cambios de alto riesgo en etapas tempranas, a fin de que estén sujetos a una investigación adicional.</li>
+<li>Observa el proceso de cambios completo para identificar cuellos de botella y experimenta con formas de reflejar las validaciones en la plataforma de desarrollo.</li>
+<li>Implementa controles de seguridad de la información en la capa de la infraestructura y plataforma, y en la cadena de herramientas de desarrollo, en lugar de revisarlos de forma manual como parte del proceso de entrega de software.</li>
+</ol>
+
+<p>En la investigación del <a href="https://cloud.google.com/devops/state-of-devops" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Informe del estado de DevOps de 2019 (PDF)</a>, se muestra que, si bien el objetivo final es alejarse de los procesos de administración de cambios tradicionales y formales, el simple hecho de hacer un mejor trabajo de comunicación del proceso existente y ayudar a los equipos a navegarlo de manera eficiente tiene un resultado positivo en el rendimiento de la entrega de software. Cuando los miembros del equipo comprenden en profundidad el proceso y obtienen la aprobación de los cambios para la implementación, se genera un alto rendimiento. Esto significa que están seguros de que pueden realizar cambios a tiempo durante el proceso de aprobación y que conocen los pasos necesarios para que todos los tipos de cambios que suelen hacer pasen siempre de “enviados” a “aceptados”.</p>
+
+<h2 id="ways_to_measure_change_approval_in_your_systems" data-text="Formas de medir la aprobación de cambios en los sistemas">Formas de medir la aprobación de cambios en los sistemas</h2>
+
+<p>Ahora los equipos pueden enumerar posibles maneras de medir la aprobación de cambios:</p>
+
+<table>
+<thead>
+<tr>
+<th>Factor por probar</th>
+<th>Qué se debe medir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>¿Se pueden promover los cambios a producción sin la aprobación manual?</td>
+<td>El porcentaje de cambios que sí (o no) requieren un cambio manual para que se los promueva a producción. <br /><br />Sugerencia: También puedes medir este factor según el perfil de riesgo: ¿qué porcentaje de cambios de riesgo bajo, medio y alto requieren un cambio manual para que se los promueva a producción? <br />
+</td>
+</tr>
+<tr>
+<td>¿Es necesario que una entidad externa apruebe los cambios de producción antes de la implementación?</td>
+<td>La cantidad de tiempo que le toma a las entidades externas aprobar los cambios.<br />
+<br />
+Sugerencia: A medida que acerques las aprobaciones al trabajo, mide la cantidad de tiempo que se espera la aprobación de las entidades de aprobación o revisores locales. <br />
+<br />
+También puedes medir este factor por perfil de riesgo. Mide la cantidad o la proporción de los cambios que requieren la aprobación de entidades externas, así como el tiempo de espera de esas aprobaciones.</td>
+</tr>
+<tr>
+<td>¿Confías en la revisión entre pares para administrar los cambios?</td>
+<td>Porcentaje de cambios administrados por la revisión entre pares <br />
+<br />
+También puedes medir este factor por perfil de riesgo.</td>
+</tr>
+<tr>
+<td>¿Los miembros del equipo comprenden en profundidad el proceso y obtienen la aprobación de los cambios para la implementación?</td>
+<td>La medida en la que los miembros del equipo se sienten seguros de que pueden realizar cambios a tiempo durante el proceso de aprobación y que conocen los pasos necesarios para que todos los tipos de cambios que suelen hacer pasen siempre de “enviados” a “aceptados”.</td>
+</tr></tbody>
+</table>
+
+<p>Si bien consideras tu propio entorno, es probable que desarrolles medidas propias para comprender y obtener estadísticas sobre los procesos de aprobación de cambios. Te sugerimos que las uses para medir tu proceso y mejorarlo.</p>
+
+<h2 id="whats_next" data-text="Próximos pasos">¿Qué sigue?</h2>
+
+<ul>
+<li>Consulta cómo <a href="/binary-authorization/docs/vulnerability-scanning-kritis" track-type="solution" track-name="internalLink" track-metadata-position="body">realizar el análisis de vulnerabilidades como parte de la canalización de implementación</a> con Cloud Build, Container Analysis y Kritis Signer.</li>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</li>
+<li>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</li>
+</ul>
+
+</body></html>
