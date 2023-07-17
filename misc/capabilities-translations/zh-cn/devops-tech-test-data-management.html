@@ -1,0 +1,77 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技术：测试数据管理</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：<em>测试数据管理</em>提升软件交付和组织绩效的能力之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">自动化测试</a>是现代软件交付实践的一个重要组成部分。能够执行一系列全面的单元、集成和系统测试对于验证应用或服务的行为是否符合预期以及是否能够安全地部署到生产环境至关重要。为确保测试能够验证实际情况，请务必为测试提供实际数据。</p>
+
+<p>测试数据很重要，因为整个测试套件（包括手动测试和自动化测试）中的各种测试都需要测试数据。良好的测试数据可让您验证常见或高价值用户转化历程、测试边缘用例、重现缺陷以及模拟错误。</p>
+
+<p>但是，测试数据很难有效地使用和管理。过度依赖在测试范围以外定义的数据可能会导致您的测试容易出错，并增加维护费用。对外部数据源的依赖可能会导致延迟并影响测试性能。复制生产数据会带来风险，因为其中可能包含敏感信息。要应对这些挑战，您需要仔细且有策略地管理测试数据。</p>
+
+<h2 id="how_to_implement_test_data_management" data-text="如何实现测试数据管理">如何实现测试数据管理</h2>
+
+<p><a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps 研究和评估 (DORA)</a> 团队进行的分析表明，成功的团队遵循以下核心原则来实现测试数据管理：</p>
+
+<ul>
+<li>有足够的测试数据可用于运行完整的自动化测试套件。</li>
+<li>用于自动化测试套件的测试数据可按需获取。</li>
+<li>测试数据不会限制或约束团队可以运行的自动化测试。</li>
+</ul>
+
+<p>要改进测试数据管理流程，请确保您的所有开发团队都能满足上述条件。这些做法还有助于改进您的整体<a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">测试自动化</a>和<a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">持续集成</a>功能。</p>
+
+<h2 id="common_pitfalls_in_test_data_management" data-text="测试数据管理中的常见问题">测试数据管理中的常见问题</h2>
+
+<p>管理测试数据可能非常困难。以下是测试数据管理中的常见误区：</p>
+
+<ul>
+<li>过于依赖测试数据。具体而言，单元测试不应依赖于测试外部的数据或状态。</li>
+<li>使用生产数据库的完整副本，而不是标识出相关或重要部分。</li>
+<li>不对敏感数据进行遮盖或哈希处理。</li>
+<li>依赖已过时或不再相关的数据。</li>
+</ul>
+
+<h2 id="ways_to_improve_test_data_management" data-text="改进测试数据管理的方法">改进测试数据管理的方法</h2>
+
+<p>以下做法可帮助您更高效地使用测试数据：</p>
+
+<ol>
+<li><p><strong>首选单元测试</strong>。单元测试应该相互独立，除了被测试的代码之外，单元测试应独立于系统的任何其他部分。单元测试不应依赖于外部数据。根据<a href="https://martinfowler.com/articles/practical-test-pyramid.html#TheTestPyramid" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">测试自动化金字塔</a>的定义，大部分测试应由单元测试构成。在精心设计的代码库上运行的编写良好的单元测试比更高级层的测试更易于分类，维护费用也更低。扩大单元测试的覆盖范围有助于最大限度地减少对使用外部数据的更高级层测试的依赖。</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-test-automation-pyramid.svg" alt="测试自动化金字塔。"/></p></li>
+<li><p><strong>最大限度地减少对测试数据的依赖</strong>。测试数据需要仔细且持续的维护。随着 API 和接口的不断完善，您必须更新或重新创建相关测试数据。此过程所产生的费用会对团队速度产生负面影响。因此，最好尽量减少运行自动化测试所需的测试数据量。</p></li>
+<li><p><strong>隔离测试数据</strong>。使用可控的输入和可与实际输出相比较的预期输出在具有明确定义的环境中运行测试。确保特定测试使用的数据与该测试明确关联，且未被其他测试或进程修改。
+您的测试应尽可能在设置过程中使用应用的 API 自行创建必要的状态。隔离测试数据也是并行运行测试的前提条件。</p></li>
+<li><p><strong>尽可能减少对数据库中存储的测试数据的依赖</strong>。维护存储在数据库中的测试数据可能会极具挑战性，原因如下：</p>
+
+<ol>
+<li><strong>测试隔离性差</strong>。数据库会持久地存储数据；除非明确重置，否则对数据的任何更改都将在测试中保留。不太可靠的测试输入会使测试隔离变得更加困难，并且可能会妨碍并行运行测试。</li>
+<li><strong>性能影响</strong>。执行速度是自动化测试的关键要求。与数据库进行交互通常比与本地存储的数据交互更慢且更麻烦。在适当的情况下，应首选内存数据库。</li>
+</ol></li>
+<li><p><strong>确保测试数据随时可用</strong>。使用完整生产数据库的副本运行测试会带来风险。刷新数据可能非常困难且速度缓慢，数据可能会过时失效。生产数据还可能包含敏感信息。因此，您应改为确定测试所需的相关数据部分。定期导出这部分数据，使其便于供测试使用。</p></li>
+</ol>
+
+<h2 id="how_to_measure_test_data_management" data-text="如何衡量测试数据管理效果">如何衡量测试数据管理效果</h2>
+
+<p>随着测试数据管理方法的不断完善，请务必根据上文所述的核心原则衡量您的进度。</p>
+
+<ol>
+<li><strong>有足够的测试数据可用于运行完整的自动化测试套件</strong>。您可以跟踪开发者和测试人员用于管理和处理测试套件所用数据的时间来进行衡量。您也可以通过感知型措施（即调查）来获取此信息，例如询问团队是否有充足的数据来开展工作，或者是否认为在这方面存在限制。</li>
+<li><strong>用于自动化测试套件的测试数据可按需获取</strong>。您可以通过可用的关键数据集所占百分比、这些数据集的访问频率以及刷新频率来衡量这一点。</li>
+<li><strong>测试数据不会限制或约束团队可以运行的自动化测试</strong>。您可以通过无需获取其他测试数据即可运行的自动化测试的数量来衡量这一点。您也可以通过感知型措施（即调查）来获取此信息，例如询问团队是否认为测试数据限制了其自动化测试活动。</li>
+</ol>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>了解测试和持续集成/持续交付如何<a href="/blog/products/application-development/release-with-confidence-how-testing-and-cicd-can-keep-bugs-out-of-production" track-type="article" track-name="internalLink" track-metadata-position="body">防止生产环境中出现 bug</a>。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

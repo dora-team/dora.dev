@@ -1,0 +1,207 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia DevOps: architettura</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> <em>l'architettura</em> è un insieme di funzionalità che aumentano la distribuzione del software e le prestazioni dell'organizzazione. Queste funzionalità sono state scoperte dal <a href="https://www.devops-research.com/research.html">programma di ricerca State of DevOps di DORA</a>, un'indagine indipendente e rigorosamente accademica sulle pratiche e sulle capacità che promuovono prestazioni elevate. Per scoprire di più, leggi le nostre <a href="/devops">risorse DevOps</a>.</span></aside>
+<p>Una ricerca del team DORA (DevOps Research and Assessment) dimostra che l'architettura è un importante predittore per la distribuzione continua.
+Sia che utilizzi Kubernetes o mainframe, la tua architettura consente ai team di adottare pratiche che promuovono livelli più elevati di prestazioni di distribuzione del software.</p>
+
+<p>Quando i team adottano pratiche di distribuzione continua, l'adozione delle seguenti pratiche architettoniche porta a risultati ottimali:</p>
+
+<ul>
+<li>I team possono apportare modifiche su larga scala alla progettazione dei loro sistemi
+senza l'autorizzazione di qualcuno esterno al team o a seconda degli altri team.</li>
+<li>I team possono completare il lavoro senza bisogno di una comunicazione granulare e di coordinamento con le persone esterne al team.</li>
+<li>I team eseguono il deployment e il rilascio del loro prodotto o servizio on demand, indipendentemente dai servizi che dipendono da o da altri servizi che dipendono da esso.</li>
+<li>I team eseguono la maggior parte dei test on demand, senza il bisogno di un ambiente di test integrato.</li>
+<li>I team possono eseguire il deployment durante il normale orario di lavoro con un tempo di inattività trascurabile.</li>
+</ul>
+
+<p>È possibile ottenere questi risultati con le tecnologie di mainframe. È inoltre possibile non riuscire a raggiungerli anche quando si utilizzano le tecnologie più di tendenza. Molte organizzazioni investono molto tempo e impegno nell'adozione delle tecnologie, ma non riescono a ottenere risultati cruciali per la distribuzione del software a causa delle limitazioni imposte dall'architettura.</p>
+
+<p>Quando l'architettura del sistema è progettata per consentire ai team di testare, sottoporre a deployment e cambiare i sistemi senza dipendenze da altri team, i team richiedono poca comunicazione per svolgere il lavoro. In altre parole, sia l'architettura sia i team sono a basso accoppiamento.</p>
+
+<p>La connessione tra larghezza di banda di comunicazione e architettura dei sistemi è stata discussa per la prima volta da Melvin Conway, che ha dichiarato che le organizzazioni che progettano sistemi sono vincolate a produrre progetti che sono copie delle strutture di comunicazione di tali organizzazioni. Per contrastare le architetture strettamente combinate e contribuire a supportare modelli di comunicazione migliori, i team e le organizzazioni possono utilizzare <a href="https://medium.com/better-practices/how-to-dissolve-communication-barriers-in-your-api-development-organization-3347179b4ecc" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">l'Inverse Conway Maneuver</a>, per cui le strutture e i pattern dei team sono progettati per promuovere lo stato architettonico previsto. In questo modo, i modelli di comunicazione del team supportano e implementano i modelli architettonici,</p>
+
+<p>Con un'architettura strettamente associata, piccole modifiche possono comportare errori a cascata su larga scala. Di conseguenza, chiunque lavori in una parte del sistema deve coordinarsi costantemente con chiunque lavori in un'altra parte del sistema, inclusi i processi di gestione dei cambiamenti complessi e burocratici.</p>
+
+<p>Le architetture basate su microservizi dovrebbero consentire questi risultati, come dovrebbero fare
+qualsiasi architettura basata su servizi reali. In pratica, molte architetture cosiddette orientate ai servizi non consentono di testare ed eseguire il deployment di servizi in modo indipendente l'uno dall'altro e non consentono ai team di ottenere prestazioni di distribuzione del software più elevate.
+È essenziale essere rigorosi in merito a questi risultati quando si implementano architetture basate su microservizi e orientate ai servizi.</p>
+
+<h2 id="how_to_implement_architectures_for_continuous_delivery" data-text="Come implementare le architetture per la distribuzione continua">Come implementare le architetture per la distribuzione continua</h2>
+
+<p>Considera i principali architetture architettoniche. Randy Shoup, in precedenza
+Direttore tecnico per App Engine e Vicepresidente di Engineering di WeWork,
+ha osservato quanto segue:</p>
+
+<blockquote>"Non esiste un'architettura perfetta per tutti i prodotti e le scale. Qualsiasi architettura soddisfa una particolare serie di obiettivi o intervalli di requisiti e vincoli, come il time to market, la facilità di sviluppo, la scalabilità, ecc. La funzionalità di qualsiasi prodotto o servizio si evolverà quasi certamente nel tempo; non dovrebbe sorprendere che anche le nostre esigenze architettoniche cambieranno. Cosa funziona nella scala 1x raramente
+funziona nella scala 10x o 100x.</blockquote>
+
+<p>Considerati i pro e i contro degli architetture, ognuna ha un'esigenza evolutiva diversa per un'organizzazione.</p>
+
+<table>
+<thead>
+<tr>
+<th width="25%">Tipo di arco</th>
+<th>Vantaggi</th>
+<th>Svantaggi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Monolithic v1</strong><br />
+(tutte le funzionalità in un'unica applicazione)</td>
+<td><ul><li>Semplice all'inizio</li>
+<li>Bassa latenza tra processi</li>
+<li>Codebase singolo, unità di deployment</li>
+<li>Efficienza delle risorse su piccola scala</li>
+</ul>
+</td>
+<td><ul><li>L'overhead di coordinamento aumenta con la crescita del team</li>
+<li>Applicazione scadente della modularità</li>
+<li>Ridimensionamento errato</li>
+<li>Deployment di tutto o niente (errori di inattività)</li>
+<li>Tempi di compilazione lunghi</li>
+</ul>
+</td>
+</tr>
+<tr>
+  <td><strong>Monolithic v2</strong><br />
+(insieme di livelli monolitici: presentazione frontend,
+server dell'applicazione, livello database)</td>
+<td><ul><li>Semplice all'inizio</li>
+<li>È facile semplificare la query</li>
+<li>Deployment di un singolo schema</li>
+<li>Efficienza delle risorse su piccola scala</li>
+</ul>
+</td>
+<td><ul><li>Tendenza per un maggiore accoppiamento nel tempo</li>
+<li>Scalabilità e ridondanza scadenti (tutte o nessuna, solo verticale)</li>
+<li>È difficile sintonizzarsi correttamente</li>
+<li>Gestione schema tutto o niente</li>
+</ul>
+</td>
+</tr>
+<tr>
+  <td><strong>Microservizio</strong><br />
+(modulare, indipendente, relazione grafico o livelli, persistenza isolata)</td>
+<td><ul><li>Ogni unità è semplice</li>
+<li>Scalabilità e prestazioni indipendenti</li>
+<li>Test e deployment indipendenti</li>
+<li>Può ottimizzare le prestazioni in modo ottimale (memorizzazione nella cache, replica e così via)</li>
+</ul>
+</td>
+<td><ul><li>Molte unità che collaborano</li>
+<li>Molti piccoli repository</li>
+<li>Richiede strumenti più sofisticati e una gestione delle dipendenze</li>
+<li>latenze di rete</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>Dalla tabella Se consenti l'evoluzione dell'architettura, puoi assicurarti che soddisfi sempre le esigenze attuali dell'organizzazione. Indipendentemente dall'architettura, quando si progettano per semplificare la distribuzione continua, i team devono essere in grado di raggiungere le capacità descritte nell'introduzione a questo documento.</p>
+
+<p>La creazione di team interfunzionali, con rappresentanza all'interno dell'organizzazione (prodotto, sviluppo, test e operazioni) consente ai team di lavorare in modo indipendente e facilitano la creazione di confini intorno ai team. Quando i tuoi team sono interfunzionali, possono lavorare in maniera autonoma, <a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">sperimentare con le idee</a> e <a href="/architecture/devops/devops-tech-teams-empowered-to-choose-tools" track-type="article" track-name="internalLink" track-metadata-position="body">scegliere i propri strumenti</a>.
+Per facilitare la comunicazione e i test tra team, può essere utile avere contratti ben definiti tra i servizi.</p>
+
+<p>L'indipendenza di team è importante, così come l'indipendenza dei loro prodotti e servizi. I servizi devono essere testabili on demand. Adottare le tecniche
+per il <a href="https://martinfowler.com/bliki/TestDouble.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">mock e il spoofing</a>
+dei servizi esterni aiuta a ridurre l'impatto delle dipendenze esterne e
+consente ai team di creare rapidamente ambienti di test. Inoltre, l'implementazione del <a href="https://martinfowler.com/bliki/ContractTest.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">test del contratto</a> dei servizi esterni assicura che le dipendenze sul loro servizio o su altri servizi vengano comunque rispettate. Per ottenere davvero una distribuzione continua, un singolo prodotto o servizio di un team deve essere accettato e testato in modo indipendente dai servizi da cui dipende.</p>
+
+<p>Per abilitare le funzionalità di deployment in qualsiasi momento, valuta la possibilità di implementare modelli di deployment blu/verde o in sequenza, con elevati livelli di <a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">automazione</a>.
+Con questi modelli, almeno due o più versioni del prodotto o del servizio sono in esecuzione contemporaneamente. Questi modelli di deployment consentono ai team di convalidare le modifiche ed eseguirne il deployment in produzione con tempi di inattività minimi o nulli. Un'importante considerazione è il modo in cui vengono eseguiti gli upgrade dei dati, il che significa che i dati e lo schema devono essere eseguiti in modo compatibile con le versioni precedenti.</p>
+
+<p>Per facilitare il deployment indipendente di componenti, ti consigliamo di creare API compatibili con le versioni precedenti. Assicurare la compatibilità con le versioni precedenti delle API aggiunge complessità ai sistemi, ma la flessibilità che ottieni in termini di facilità di deployment paga per la maggiore complessità più volte.</p>
+
+<p>Le architetture basate su servizi e microservizi consentono queste funzionalità perché utilizzano <a href="https://martinfowler.com/bliki/BoundedContext.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">contesti limitati</a> e API per disaccoppiare domini di grandi dimensioni in unità più piccole e più lente e l'uso di doppi test e virtualizzazione come prova di servizi o componenti in modo isolato.</p>
+
+<h2 id="common_pitfalls_in_architectures" data-text="Insidie comuni nelle architetture">Insidie comuni nelle architetture</h2>
+
+<ul>
+<li><p><strong>Rilascio simultaneo di numerosi servizi</strong>. Nei team in cui non è possibile dare priorità a testabilità e deployment, la maggior parte dei test richiede l'uso di ambienti integrati complessi e costosi. In molti casi, i deployment richiedono il rilascio simultaneo di numerosi servizi a causa di interdipendenze complesse. Questi deployment "bang" consentono ai team di orchestrare il loro lavoro, con numerosi passaggi e dipendenze tra centinaia o migliaia di attività. In genere, i deployment big-bang richiedono molte ore o persino giorni e richiedono tempi di inattività significativi.</p></li>
+<li><p><strong>Integrare le modifiche con le modifiche di centinaia o persino migliaia di altri sviluppatori</strong>. Questi sviluppatori, a loro volta, potrebbero avere dipendenze su decine, centinaia o migliaia di sistemi interconnessi.
+Il test viene eseguito in ambienti di test di integrazione scarsi, che spesso richiedono settimane per essere ottenuti e configurati. Questi ambienti in genere non sono rappresentativi della produzione, riducendo il valore e l'accuratezza del test. Il risultato non è solo tempi di risposta lunghi per le modifiche (generalmente misurate in settimane o mesi), ma anche in termini di produttività degli sviluppatori e risultati di deployment scarsi.</p></li>
+<li><p><strong>Creazione di colli di bottiglia nel processo di distribuzione del software</strong>. Ad esempio, i colli di bottiglia potrebbero essere un singolo team su cui molti si affidano sia dal punto di vista dei processi manuali (test, deployment e così via) sia dal punto di vista delle operazioni del servizio. In entrambi gli esempi, i colli di bottiglia creano single point of failure e domanda che tali team o servizi scalano per soddisfare le esigenze dei molti team dipendenti.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_your_architecture" data-text="Modi per migliorare l'architettura">Modi per migliorare l'architettura</h2>
+
+<p>Con un'architettura che consente a piccoli team di sviluppatori di implementare, testare ed eseguire il deployment del codice in produzione in modo sicuro e rapido, puoi aumentare la produttività degli sviluppatori e migliorare i risultati del deployment. Una
+funzionalità chiave delle architetture orientate ai servizi e ai microservizi è che sono
+composti da servizi a basso accoppiamento con contesti limitati. Un insieme popolare di pattern per l'architettura web moderna basata su questi principi è l'<a href="https://12factor.net/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">app a dodici fattori</a>.</p>
+
+<p>Randy Shoup ha osservato quanto segue:</p>
+
+<blockquote>"Le organizzazioni con questi tipi di architetture orientate ai servizi, come Google e Amazon, hanno un'incredibile flessibilità e scalabilità. Queste organizzazioni hanno decine di migliaia di sviluppatori, dove i piccoli team possono essere ancora incredibilmente produttivi.</blockquote>
+
+<p>In molte organizzazioni, è difficile eseguire servizi di test e deployment. Invece di riprogettare tutto, ti consigliamo un approccio iterativo per migliorare la progettazione del sistema aziendale. Questo approccio è noto come <em>architettura
+evolutiva</em>. In questo metodo, dato che i prodotti e i servizi di successo richiedono una nuova architettura durante il loro ciclo di vita a causa dei requisiti di modifica modificati.</p>
+
+<p>Un pattern redditizio in questo contesto è l'<em>applicazione di Strangler Fig</em>. In questo
+modello, sostituirai in modo iterativo un'architettura monolitica con una
+più complessa, assicurando che il nuovo lavoro venga svolto seguendo i
+principi di un'architettura basata su servizi. Accetti che la nuova architettura possa essere collegata correttamente al sistema che sta sostituendo. Nel tempo, man mano che vengono ampliate le funzionalità nella nuova architettura, il vecchio sistema viene strangolato.</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-strangler-fig-pattern.svg" alt="Sostituisci l&amp;#39;architettura monolitica con una più componentizzata."/></p>
+
+<p>Le architetture di prodotti e servizi evolvono continuamente. Esistono molti modi per decidere quale può essere un nuovo modulo o servizio e il processo è iterativo.
+Quando decidi di trasformare una funzionalità in un servizio, valuta se presenta le seguenti caratteristiche:</p>
+
+<ul>
+<li>Implementa una singola funzione o funzionalità aziendale.</li>
+<li>Svolge la sua funzione con l'interazione minima con altri servizi.</li>
+<li>Viene creato, scalato e implementato in modo indipendente dagli altri servizi.</li>
+<li>Interazione con altri servizi utilizzando metodi di comunicazione leggeri, ad esempio un bus messaggi o endpoint HTTP.</li>
+<li>Può essere implementato con diversi strumenti, linguaggi di programmazione, datastore e così via.</li>
+</ul>
+
+<p>Il passaggio ai microservizi o a un'architettura orientata ai servizi cambia anche molte cose nell'intera organizzazione. Nel suo
+<a href="https://gist.github.com/chitchcock/1281611/9621c8859db00bf08b98212a109fa2dec4c6d601" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">ranteggio della piattaforma</a>,
+Steve Yegge presenta diverse lezioni critiche apprese dal passaggio a un SOA:</p>
+
+<ul>
+<li>Le metriche e il monitoraggio diventano più importanti e le riassegnazioni diventano più difficili, perché un problema rilevato in un servizio potrebbe provenire da un servizio a cui sono associate molte chiamate.</li>
+<li>I servizi interni possono produrre problemi di tipo denial of service (DOS), pertanto le quote e la limitazione dei messaggi sono importanti in ogni servizio.</li>
+<li>QA e monitoraggio iniziano a confondersi, perché il monitoraggio deve essere
+comprensibile e deve esercitare la logica di business e i dati del servizio.</li>
+<li>Quando ci sono molti servizi, avere un meccanismo di rilevamento dei servizi diventa importante per un funzionamento efficiente del sistema.</li>
+<li>Senza uno standard universale per l'esecuzione di un servizio in un ambiente di cui è possibile eseguire il debug, risolvere i problemi di altri servizi è molto più difficile.</li>
+</ul>
+
+<h2 id="case-study-datastore" data-text="Case study: Datastore">Case study: Datastore</h2>
+
+<p>Un'architettura strettamente associata può impedire la produttività di tutti e la capacità di apportare modifiche in sicurezza. Al contrario, un'architettura a basso accoppiamento promuove la produttività e la sicurezza con interfacce ben definite che applicano il modo in cui i moduli si connettono tra loro. Un'architettura a basso accoppiamento consente ai team piccoli e produttivi di apportare modifiche di cui è possibile eseguire il deployment in modo sicuro e indipendente. Inoltre, poiché ogni servizio ha anche un'API ben definita, consente di testare più facilmente i servizi e di creare contratti e accordi sul livello del servizio (SLA) tra i team.</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-loosely-coupled-architecture.svg" alt="Architettura a basso accoppiamento."/></p>
+
+<p>Randy Shoup descrive questa architettura come segue:</p>
+
+<blockquote>"Questo tipo di architettura è adatto a Google e, per un servizio come Gmail, comprende altri cinque o sei livelli di servizi sottostanti, ciascuno incentrato su una funzione molto specifica. Ogni servizio è supportato da un piccolo team, che lo crea ed esegue le sue funzionalità, con la possibilità che ogni gruppo effettui scelte tecnologiche diverse. Un altro esempio è il servizio Datastore, che è uno dei più grandi servizi NoSQL al mondo, eppure è supportato da un team di circa otto persone, principalmente perché si basa su livelli su livelli di servizi affidabili integrati gli uni dagli altri."</blockquote>
+
+<p>Questo tipo di architettura orientata ai servizi consente ai piccoli team di lavorare
+su unità di sviluppo più piccole e semplici, il cui deployment può essere eseguito
+in modo indipendente, veloce e sicuro.</p>
+
+<h2 id="ways_to_measure_architectural_improvement" data-text="Modi per misurare il miglioramento dell'architettura">Modi per misurare il miglioramento dell'architettura</h2>
+
+<p>Su un mainframe o in microservizi, agevolare le pratiche richieste per il miglioramento dell'architettura è essenziale per migliorare le prestazioni della distribuzione del software (maggiore frequenza di deployment con tempi di risposta ridotti per le modifiche, tempo di ripristino del servizio e percentuale di errori di modifica). Man mano che i servizi e i prodotti diventano meno accoppiati, la frequenza di deployment dovrebbe aumentare. Quando vuoi misurare il miglioramento, considera la possibilità di utilizzare la percentuale di deployment anziché solo il conteggio, perché il conteggio dei deployment aumenta naturalmente man mano che vengono aggiunti servizi. Infine, dovresti notare una riduzione del tempo necessario per rilevare e recuperare dai problemi e nel tempo necessario per permettere alle modifiche di raggiungere la produzione.</p>
+
+<p>Oltre ad adottare queste misure di deployment e servizio, i team che operano in modo più indipendente dimostrano miglioramenti nella <a href="/architecture/devops/devops-culture-job-satisfaction" track-type="article" track-name="internalLink" track-metadata-position="body">soddisfazione del lavoro</a> e nella <a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">sperimentazione del team</a> e tendono a selezionare tecnologie e strumenti diversi in base alle loro esigenze.</p>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina DevOps</a>.</li>
+<li>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</li>
+<li>Completa il <a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a> per scoprire la tua posizione rispetto al resto del settore.</li>
+</ul>
+
+</body></html>

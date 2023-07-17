@@ -1,0 +1,179 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Cultura de DevOps: hacer transformaciones</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<p>Todas las organizaciones experimentan cambios constantes. Por lo tanto, estas son algunas de las preguntas que se deben hacer:</p>
+
+<ul>
+<li>¿En qué dirección apunta ese cambio?</li>
+<li>¿Cuáles son los resultados a nivel de sistema que buscas obtener?</li>
+<li>¿La organización está en mejores condiciones para detectar y atender a sus clientes y, por lo tanto, lograr su propósito?</li>
+<li>¿El modelo de negocios de la organización y la administración de sus miembros proporcionan sustentabilidad a largo plazo?</li>
+</ul>
+
+<p>Cuando parece que el plan no está funcionando, es normal que los líderes lancen un programa de transformación. Sin embargo, a menudo no se logran los objetivos de estos programas, ya que consumen grandes cantidades de recursos y requieren mucha capacidad organizativa.
+En este documento, se examina cómo ejecutar con éxito una transformación y se abordan algunas causas usuales por las que esta puede fallar.</p>
+
+<h2 id="how_to_implement_transformation" data-text="Cómo implementar una transformación">Cómo implementar una transformación</h2>
+
+<p>Existen dos elementos clave para lograr una transformación efectiva y continua: los procesos a fin de ejecutar el cambio organizacional mediante la preparación de objetivos y la habilitación de la experimentación en equipo, y los mecanismos para extender las prácticas recomendadas en la organización.</p>
+
+<h3 id="set_goals_and_enable_team_experimentation" data-text="Establece objetivos y habilita la experimentación en equipo">Establece objetivos y habilita la experimentación en equipo</h3>
+
+<p>Existen muchos marcos de trabajo para ejecutar y medir los cambios organizacionales, como el <a href="https://wikipedia.org/wiki/Balanced_scorecard" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">cuadro de mando integral</a>, los <a href="https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">objetivos y resultados clave (OKR)</a>, y el <a href="http://www-personal.umich.edu/%7Emrother/The_Improvement_Kata.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">kata de mejora</a> y <a href="http://www-personal.umich.edu/%7Emrother/The_Coaching_Kata.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">kata de asesoramiento</a>.
+Estos marcos de trabajo pueden parecer diferentes, pero todos comparten características fundamentales. La dinámica básica se muestra en la siguiente figura, que se basa en el marco de trabajo del kata de mejora:</p>
+
+<p><img src="/static/architecture/devops/images/devops-culture-transform-kata-model.png" alt="El modelo Kata de 4 etapas" width="50%"/> </p>
+
+<p>Fuente: Extraído de <a href="https://www.mheducation.com/highered/product/toyota-kata-practice-guide-practicing-scientific-thinking-skills-superior-results-20-minutes-day-rother/9781259861024.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Toyota Kata Practice Guide: Practicing Scientific Thinking Skills for Superior Results in 20 Minutes a Day</em></a> (Toyota Kata: Guía práctica, 20 minutos al día de práctica para mejorar los resultados) con el permiso de su autor, Mike Rother (McGraw-Hill 2018).</p>
+
+<p>Todos los frameworks comienzan con una dirección (un “norte real”) a nivel de organización o división. Este es un objetivo comercial ambicioso a nivel de sistema que establece el <a href="/architecture/devops/devops-culture-transformational-leadership" track-type="article" track-name="internalLink" track-metadata-position="body">liderazgo</a>.
+Puede tratarse de un ideal inalcanzable, como lograr cero lesiones (el <a href="https://hbswk.hbs.edu/archive/paul-o-neill-values-into-action" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">objetivo</a> que eligió el director general de Alcoa, Paul O'Neill). También puede ser un objetivo difícil que tome de uno a tres años lograr, como aumentar diez veces la productividad (el <a href="https://continuousdelivery.com/evidence-case-studies/#the-hp-futuresmart-case-study" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">objetivo</a> que eligió Gary Gruver cuando era director de ingeniería del departamento Firmware de LaserJet de HP).</p>
+
+<p>El siguiente paso es comprender el estado actual. La <a href="https://devops-research.com/quickcheck.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">verificación rápida de DORA</a> puede ayudarte a comprender cómo te encuentras en términos de las capacidades y los resultados del desarrollo de software. Otro método de análisis consiste en realizar ejercicios como el <a href="https://www.google.com/books/edition/Value_Stream_Mapping_How_to_Visualize_Wo/MeFrAAAAQBAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">mapeo del flujo de valor</a> o la contabilidad de actividades. Con esto, se busca comprender la posición de la organización en cuanto a aspectos medibles.</p>
+
+<p>El tercer paso es establecer objetivos medibles para una fecha futura. Estos objetivos se pueden describir en un formato como OKR, que comienza con un objetivo cualitativo y, luego, especifica resultados clave medibles (estado meta). Por ejemplo, el director general de información de banca global y mercados de HSBC <a href="https://www.linkedin.com/pulse/double-half-quarter-lesson-from-book-richard-david-knott/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">establece en cada equipo el objetivo</a> de “duplicar, reducir a la mitad y reducir a un cuarto todos los años: duplicar la frecuencia de los lanzamientos, reducir a la mitad la cantidad de incidentes de bajo impacto y reducir a un cuarto la cantidad de incidentes de alto impacto”.</p>
+
+<p>Por último, los equipos experimentan con las alternativas para alcanzar estos objetivos hasta que llega la fecha establecida, con el respaldo de la administración. Los equipos adoptan un enfoque científico para la experimentación. Usan el <a href="https://wikipedia.org/wiki/PDCA" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">método PDCA</a> (Planificar-Hacer-Verificar-Actuar), también conocido como el ciclo de Deming. Este ciclo consta de los siguientes pasos:</p>
+
+<ul>
+<li>Planificar: determinar el resultado deseado.</li>
+<li>Hacer: realizar el experimento.</li>
+<li>Verificar: analizar los resultados.</li>
+<li>Actuar: decidir qué hacer a continuación</li>
+</ul>
+
+<p>Los equipos deben realizar experimentos todos los días para intentar acercarse al estado meta o los resultados clave. Durante el <a href="http://www-personal.umich.edu/%7Emrother/The_Improvement_Kata.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">kata de mejora</a>, cada miembro del equipo debe hacerse estas cinco preguntas todos los días:</p>
+
+<ol>
+<li>¿Cuál es el estado meta?</li>
+<li>¿Cuál es el estado actual?</li>
+<li>¿Cuáles crees que son los obstáculos que te impiden alcanzar el estado meta? ¿Cuál de esos obstáculos abordarás ahora?</li>
+<li>¿Cuál es el próximo paso que darás? ¿Qué resultado esperas?</li>
+<li>¿Cuándo se pueden evaluar los resultados para identificar qué se puede aprender de ese paso?</li>
+</ol>
+
+<p>Cuando se hayan registrado los resultados y establecido objetivos nuevos, repite el proceso.</p>
+
+<p>Debido a que el proceso se realiza en condiciones de incertidumbre, no siempre está claro cómo se lograrán los resultados. Por lo tanto, el progreso suele ser no lineal, como se muestra en el siguiente diagrama:</p>
+
+<p><img src="/static/architecture/devops/images/devops-culture-transform-non-linear-progress.png" alt="Gráfico que muestra el progreso no lineal y esquematiza la relación entre el rendimiento y las iteraciones; la línea de rendimiento muestra ascensos bruscos, pero, en general, sube."/></p>
+
+<p>Fuente: CC-BY:
+<a href="https://www.google.com/books/edition/Lean_Enterprise/G_ixBQAAQBAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise: How High Performance Organizations Innovate at Scale</em></a>
+(Lean Enterprise: cómo las organizaciones de alto rendimiento innovan a gran escala) de Jez Humble, Joanne Molesky y Barry O'Reilly (O'Reilly, 2014).</p>
+
+<p>En las reuniones de planificación, los participantes revisan el estado meta o los resultados clave que se establecieron en la última reunión de planificación. Luego, establecen objetivos nuevos para la siguiente iteración. En las reuniones de revisión, los participantes se concentran en qué tan bien los equipos están logrando los objetivos para la iteración, y discuten los posibles obstáculos y cómo los abordarán.</p>
+
+<p>A continuación, se detallan algunos aspectos importantes sobre este patrón:</p>
+
+<ul>
+<li>El equipo debe establecer su <a href="https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">OKR</a> o estado meta. Si se establece de acuerdo con un organigrama vertical, los equipos no tendrán interés en el resultado y, por lo tanto, no se involucrarán tanto para lograrlo.
+En cambio, el equipo podría “arreglar” el resultado, es decir, manipularlo para cumplir el objetivo de forma artificial.</li>
+<li>No lograr los objetivos es aceptable; algunos de ellos son <em>objetivos ambiciosos</em>, lo que significa que están diseñados con el propósito de representar un desafío. Los equipos deben aspirar a alcanzar alrededor del 80% de sus objetivos. Cuando se comienza con la transformación cultural, es normal que no se alcance <em>ninguno</em> de los objetivos especificados. Si esto sucede, el equipo debe establecer un objetivo único para la siguiente iteración y dedicar todos sus recursos a lograrlo.</li>
+<li>Muchos objetivos y medidas cambian de iteración a iteración a medida que cambian los objetivos y las condiciones actuales del equipo, y a medida que se aprende de los objetivos. No inviertas demasiado tiempo en tratar de establecer los objetivos perfectos: concéntrate en llevar a cabo el proceso para que puedas aprender a través de este.</li>
+<li>Es importante que los equipos tengan la autonomía, la capacidad, los recursos, la administración y la <a href="/architecture/devops/devops-culture-transformational-leadership" track-type="solution" track-name="internalLink" track-metadata-position="body">asistencia de liderazgo</a> necesarios para realizar trabajos de mejora. Los equipos no deben permitir que el trabajo de entrega habitual se interponga en el trabajo de mejora, ya que este último ayudará a corregir las ineficiencias que hacen que la entrega de productos y servicios sea tan lenta.</li>
+</ul>
+
+<h3 id="build_community_structures_to_spread_knowledge" data-text="Crea estructuras de comunidad para difundir el conocimiento">Crea estructuras de comunidad para difundir el conocimiento</h3>
+
+<p>Una vez que los equipos hayan descubierto mejores formas de trabajar, la siguiente tarea es difundir las lecciones aprendidas en toda la organización. Existen muchas maneras de hacerlo. En el <a href="https://cloud.google.com/devops/state-of-devops" track-type="article" track-name="internalLink" track-metadata-position="body">Informe State of DevOps del 2019</a>, los investigadores pidieron a los encuestados que compartan la forma en que sus equipos y organizaciones difundían los métodos de DevOps y Agile mediante la selección de uno o más de los siguientes enfoques (consulta el Apéndice B del Informe State of DevOps del 2019 para obtener descripciones detalladas):</p>
+
+<ul>
+<li>Centro de capacitación (también conocido como <em>dojo</em>)</li>
+<li>Centro de excelencia (CoE)</li>
+<li>Prueba de concepto (PoC) detenida</li>
+<li>Prueba de concepto como una plantilla</li>
+<li>Prueba de concepto como propagador</li>
+<li>Comunidades de práctica</li>
+<li>Big Bang</li>
+<li>Ascendente o de origen</li>
+<li>Combinación</li>
+</ul>
+
+<p>El análisis demuestra que las organizaciones que tienen un alto rendimiento priorizan las estrategias que crean estructuras de comunidad en niveles bajos y altos de la organización, lo que los hace más sustentables y resistentes frente a las reorganizaciones y los cambios de productos. Las dos estrategias principales empleadas son las de comunidades de práctica y orígenes, seguidas de la de prueba de concepto como una plantilla (un patrón en el que la prueba de concepto se produce en otra parte de la organización) y la de prueba de concepto como propagador. Para ver un ejemplo sobre cómo funciona la estrategia de <a href="https://www.youtube.com/watch?v=S4-huVFeQXg" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">comunidades de práctica</a> <a href="https://martinfowler.com/articles/testing-culture.html#google" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">obtén información sobre cómo un grupo de voluntarios impulsó la cultura de pruebas de unidades integrales de Google</a>.</p>
+
+<p>Las organizaciones que tienen un bajo rendimiento tienden a favorecer las estrategias de centros de capacitación y centros de excelencia, que generan más experiencia y entornos aislados. También intentan usar las pruebas de conceptos, pero, por lo general, estas se detienen y no alcanzan a ver resultados exitosos. ¿Por qué estas estrategias no pueden generar un cambio efectivo?</p>
+
+<p>Los centros de excelencia generan varios problemas debido a la centralización de la experiencia en un grupo. En primer lugar, el CoE genera un cuello de botella para la experiencia relevante de la organización y no se puede escalar a medida que crece la demanda de experiencia en la organización. En segundo lugar, establece un grupo exclusivo de “expertos” en la organización, en contraste con un grupo inclusivo de pares que pueden seguir aprendiendo y creciendo en conjunto. Esta exclusividad puede fragmentarse en culturas organizacionales saludables. Por último, los expertos no realizan el trabajo.
+Pueden dar recomendaciones o establecer “prácticas recomendadas” genéricas, pero el proceso del aprendizaje genérico a la implementación del trabajo real queda en manos de los aprendices. Por ejemplo, los expertos crearán un taller con el fin de generar contenedores para una aplicación, pero rara vez lo llevarán a la práctica. Esta desconexión entre la teoría y la práctica terminará afectando su experiencia.</p>
+
+<p>Si bien algunos tienen éxito en los centros de capacitación, necesitan recursos y programas exclusivos para ejecutar el programa original y el aprendizaje continuo. Muchas empresas establecen recursos increíbles para hacer que sus programas de capacitación sean eficaces: tienen edificios enteros dedicados a un entorno independiente y creativo, y personal dedicado a la creación de material de capacitación y evaluación del progreso. Por lo tanto, se requieren recursos adicionales para garantizar que el aprendizaje sea continuo y que se propague por toda la organización. La organización debe brindar asistencia a los equipos que asistieron al centro de capacitación para garantizar que sus habilidades y hábitos se mantengan en los entornos de trabajo habituales, y que no vuelvan los patrones de trabajo anteriores. Si no se aplican estos recursos, las organizaciones corren el riesgo de perder todo lo que invirtieron. En lugar de un centro en el que los equipos aprenden a usar tecnologías y procesos nuevos para propagarlos por el resto de la organización, los hábitos nuevos permanecen en el centro y se genera otro aislamiento, aunque es temporal. También existen limitaciones similares a las del CoE: Si solo el personal del centro de capacitación (o “expertos” que no están involucrados con las tareas) crean talleres y materiales de capacitación, ¿qué sucede si nunca hacen el trabajo?</p>
+
+<p>Las estrategias de combinación fueron registradas con frecuencia (el 40% de las personas que respondieron la encuesta de 2019 usaron esta estrategia), pero carecen de financiación y recursos suficientes en alguna inversión específica. Sin una estrategia para guiar una transformación tecnológica, las organizaciones suelen cometer el error de minimizar los riesgos y se ven perjudicadas por el <em>fracaso por iniciativas</em>: identifican iniciativas en demasiadas áreas, que finalmente conducen a la falta de recursos para un trabajo importante y esto las lleva al fracaso. En cambio, es mejor seleccionar algunas iniciativas y dedicar recursos continuos para garantizar su éxito (tiempo, dinero y patrocinio ejecutivo profesional). A diferencia de lo que ocurre con las estrategias de combinación, muy pocas personas informan sobre el uso de una estrategia de Big Bang, aunque es la más común entre las organizaciones que tienen un bajo rendimiento.</p>
+
+<p>Los análisis adicionales identificaron cuatro patrones que usan las organizaciones que tienen un alto rendimiento:</p>
+
+<ul>
+<li><strong>Creadores de comunidades:</strong> Este grupo se enfoca en estrategias de comunidades de práctica, de origen y de prueba de concepto (como una plantilla y como propagador, como se describió antes). Esto ocurre en el 46% de los casos.</li>
+<li><strong>Universidad</strong>: Este grupo se centra en la educación y la capacitación, por lo que destinan la mayor parte de sus esfuerzos a las estrategias de centros de excelencia, comunidades de práctica y centros de capacitación. Este patrón solo se observó en el 9% del tiempo, lo que sugiere que, aunque esta estrategia puede ser exitosa, no es común y requiere una inversión y una planificación significativas para garantizar que las lecciones aprendidas se escalen en toda la organización.</li>
+<li><strong>Emergente:</strong> Este grupo se concentra en los esfuerzos de estrategias de origen y comunidades de práctica. Este parece ser el grupo que menos interviene y se da en el 23% de los casos.</li>
+<li><strong>Experimentadores:</strong> Los experimentadores aparecieron en el 22% de los casos. Este grupo tiene altos niveles de actividad en todas las estrategias, excepto en las de Big Bang y dojos, es decir, en todas las actividades que se enfocan en la comunidad y la creación. También se incluyen niveles altos en las estrategias de PoC que se detienen. El hecho de que puedan aprovechar esta actividad y mantener un alto rendimiento sugieren que usan esta estrategia para experimentar y probar ideas con rapidez.</li>
+</ul>
+
+<h2 id="principles_of_effective_organizational_change_management" data-text="Principios para lograr una administración de cambios organizacionales efectiva">Principios para lograr una administración de cambios organizacionales efectiva</h2>
+
+<p>Todas las organizaciones son complejas, y cada organización tiene objetivos diferentes, un punto de partida distinto y sus propias formas de abordar los desafíos.
+Las fórmulas que funcionan en una organización pueden no mostrar los mismos resultados en otra. Sin embargo, tu organización puede seguir algunos principios generales para aumentar las posibilidades de alcanzar el éxito.</p>
+
+<h3 id="improvement_work_is_never_done" data-text="El trabajo de mejora nunca termina">El trabajo de mejora nunca termina</h3>
+
+<p>Las organizaciones de alto rendimiento nunca están satisfechas y siempre intentan mejorar lo que hacen. El trabajo de mejora es continuo y es parte del trabajo diario de los equipos. Las personas en estas organizaciones entienden que no realizar cambios es tan riesgoso como los cambios mismos y no usan frases como “esta es la forma en la que siempre lo hicimos” para justificar su resistencia al cambio. Sin embargo, esto no significa que hay que adoptar un método indisciplinado para abordar los cambios. La administración de cambios debe realizarse de manera científica en pos de un equipo medible o un objetivo organizacional.</p>
+
+<h3 id="leaders_and_teams_agree_on_and_communicate_measurable_outcomes_and_teams_determine_how_to_achieve_them" data-text="Los líderes y equipos llegan a un acuerdo con respecto a los resultados cuantificables y los dan a conocer. Luego, los equipos determinan cómo lograrlos.">Los líderes y equipos llegan a un acuerdo con respecto a los resultados medibles y los dan a conocer; luego, los equipos determinan cómo lograrlos</h3>
+
+<p>Es esencial que todos los miembros de la organización conozcan los resultados empresariales y organizacionales cuantificables en los que están trabajando. Estos resultados se deben expresar de forma concisa (algunas oraciones como máximo) a nivel organizacional, y deben estar en consonancia con el propósito y la misión de la organización de manera explícita. En el nivel de una unidad de negocios individual, los resultados deben caber en una página. Los líderes y los equipos en conjunto deben establecer los resultados organizacionales, pero los líderes tienen la última palabra. En los niveles inferiores de la organización, los objetivos se establecen de forma más detallada y con plazos más cortos.</p>
+
+<p>Sin embargo, deben ser los equipos quienes decidan cómo van a alcanzar estos resultados, por las siguientes razones:</p>
+
+<ul>
+<li>En condiciones de incertidumbre, es imposible decidir cuál es la mejor forma de proceder basándose solo en la planificación. Esto no significa que la planificación no es importante para nada. Pero los equipos deben estar preparados para modificar o incluso reescribir el plan en función de lo que descubran al momento de intentar ejecutarlo.</li>
+<li>Cuando a las personas se les dice qué hacer y cómo hacerlo, pierden su autonomía y la oportunidad de sacar provecho de su ingenio. Esto no solo produce peores resultados, sino que también genera que los empleados no se involucren.</li>
+<li>La resolución de problemas es fundamental para ayudar a los empleados a desarrollar habilidades y capacidades nuevas. Las organizaciones deberían darles a los equipos problemas que resolver, no tareas que ejecutar.</li>
+</ul>
+
+<h3 id="large-scale_change_is_achieved_iteratively_and_incrementally" data-text="Los cambios a gran escala se logran de forma iterativa e incremental">Los cambios a gran escala se logran de forma iterativa e incremental</h3>
+
+<p>El ciclo de presupuesto anual tiende a inclinar a las organizaciones hacia un modelo basado en proyectos en el que todo tipo de trabajo está vinculado a proyectos costosos cuya realización lleva mucho tiempo. Con algunas excepciones, es mejor dividir el trabajo en partes más pequeñas que se puedan entregar de manera incremental.
+<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">Trabajar en lotes pequeños</a> produce una gran cantidad de beneficios. El más importante de ellos es que trabajar de este modo les permite a las organizaciones corregir el rumbo en función de lo que van descubriendo. Así, se evita perder tiempo y dinero en un trabajo que no genera los beneficios deseados.</p>
+
+<p>Pasar de un <a href="https://itrevolution.com/book/project-to-product/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">modelo de proyecto a un modelo de producto</a> es una proceso a largo plazo cuya ejecución le tomará años a la mayoría de los sectores. Sin embargo, queda claro que este enfoque es el futuro. Incluso el Gobierno federal de EE.UU. logró <a href="https://18f.gsa.gov/2019/04/09/why-we-love-modular-contracting/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">probar el aprovisionamiento fragmentado</a> con el fin de lograr un método más iterativo y, también, incremental para entregar cantidades grandes de trabajo.</p>
+
+<p>Las cuestiones que se aplican a la entrega de proyectos también se aplican a la transformación.
+Las organizaciones deben encontrar la manera de lograr beneficios rápidos y aprendizaje mutuo, a la vez que ayudan a otros equipos a experimentar con estas ideas nuevas.</p>
+
+<h2 id="common_pitfalls_in_transforming_culture" data-text="Errores frecuentes en la transformación de la cultura">Errores frecuentes en la transformación de la cultura</h2>
+
+<p>Los líderes suelen cometer los errores que se detallan a continuación cuando intentan implementar cambios a gran escala en una organización.</p>
+
+<ul>
+<li><p><strong>Tratan la transformación como un proyecto que se hace una sola vez</strong>. En las organizaciones de alto rendimiento, mejorar es un esfuerzo continuo y forma parte del trabajo diario de todos. Sin embargo, muchos programas de transformación se tratan como eventos únicos a gran escala en los que se espera que todos cambien con rapidez su forma de trabajar y, luego, continúen con sus actividades habituales. No se les proporciona a los equipos la capacidad, la autoridad ni los recursos requeridos para mejorar su forma de trabajar, y su rendimiento se degrada de forma gradual a medida que los procesos, habilidades y capacidades del equipo se vuelven cada vez menos adecuadas a la realidad cambiante del trabajo.
+Debes pensar en la transformación tecnológica como una parte importante de la entrega de valor del negocio, en la que no dejarás de invertir. Después de todo, ¿planeas dejar de invertir en la captación de clientes o la asistencia al cliente?</p></li>
+<li><p><strong>Tratan la transformación como un esfuerzo vertical</strong>. En este modelo, se cambian las vías jerárquicas organizacionales, se desplazan y reestructuran equipos y se implementan procesos nuevos. Por lo general, quienes se ven afectados no tienen mucho control sobre los cambios y no reciben oportunidades de aportar sus ideas. Esto puede causar estrés y pérdida de la productividad, ya que los miembros de la organización aprenden formas nuevas de trabajar, a la vez que cumplen con sus compromisos existentes. Cuando se lo combina con la mala comunicación que suele existir en las iniciativas de transformación, el enfoque vertical puede hacer que los empleados se sientan descontentos y no involucrados. Además, el equipo a cargo de la planificación y ejecución de la transformación vertical no suele recopilar comentarios sobre los efectos del trabajo y realizar los cambios correspondientes. En cambio, el plan se ejecuta sin tener en cuenta las consecuencias.</p></li>
+<li><p><strong>No llegan a un acuerdo y no dan a conocer el resultado deseado</strong>.
+En ocasiones, las transformaciones se ejecutan con objetivos mal definidos o con objetivos cualitativos (en lugar de cuantitativos), como “tiempos de salida al mercado más rápidos” o “costos más bajos”. A veces, se definen los objetivos, pero no se pueden lograr, o generan un enfrentamiento entre una parte de la organización y otra.
+En estos casos, es imposible determinar si el trabajo de mejora está generando el efecto deseado. Cuando esta imposibilidad se combina con un enfoque vertical, se vuelve difícil experimentar con otros enfoques que podrían ser más rápidos o más económicos. El resultado de esto suelen ser pérdidas cuando se ejecuta el plan y la incapacidad de determinar si se logró el objetivo o si el programa funcionó. En muchos casos, en lugar de analizar el error de forma crítica y usarlo como una oportunidad de aprendizaje, este se ignora y se inicia una iniciativa de cambio integral nueva o se refutan metodologías completas.</p></li>
+</ul>
+
+<p>La combinación de tratar la transformación como un proyecto y tratarla como una iniciativa vertical tiende a conducir al patrón que se muestra en el siguiente diagrama.
+El rendimiento se degrada de forma gradual. Cuando se inicia un programa de transformación, al principio suele empeorar antes de mejorar. Luego de esto, se realiza una transición a los negocios usuales. Mientras tanto, el cinismo y la falta de compromiso aumentan en toda la organización.</p>
+
+<p><img src="/static/architecture/devops/images/devops-culture-transform-performance-against-time.png" alt="Gráfico que relaciona el rendimiento con el tiempo, en el que se muestra que el rendimiento sube durante cada programa de cambios, pero luego disminuye y, en general, se mantiene casi igual."/></p>
+
+<p>Fuente: CC-BY:
+<a href="https://www.google.com/books/edition/Lean_Enterprise/G_ixBQAAQBAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise: How High Performance Organizations Innovate at Scale</em></a>
+(Lean Enterprise: cómo las organizaciones de alto rendimiento innovan a gran escala) de Jez Humble, Joanne Molesky y Barry O'Reilly (O'Reilly, 2014).</p>
+
+<h2 id="whats_next" data-text="Próximos pasos">¿Qué sigue?</h2>
+
+<ul>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</li>
+<li>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,132 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Processo do DevOps: feedback dos clientes</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Observação:</strong><span> <em>o feedback do cliente</em> é faz parte de um conjunto de recursos que aumentam a entrega de software e o desempenho organizacional.  Esses recursos foram
+descobertos pelo
+<a href="https://www.devops-research.com/research.html">programa de pesquisa DORA State of DevOps</a>
+(em inglês), uma investigação independente e acadêmica rigorosa sobre as práticas e
+recursos que impulsionam alto desempenho. Para saber mais, leia nossos
+<a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>Nos projetos de software, os desenvolvedores costumam trabalhar nos produtos por meses ou anos.
+Às vezes, eles desenvolvem várias versões desses produtos sem determinar se os
+recursos que estão criando são utilizados ou realmente ajudam os
+usuários a resolver problemas.</p>
+
+<p>O feedback dos clientes faz parte de um grupo maior de recursos, incluindo a <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">visibilidade do trabalho no stream de valor</a>, o <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">trabalho em lotes pequenos</a> e a <a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">experimentação da equipe</a>. Juntos, esses recursos representam uma <a href="https://books.google.com/books/about/Escaping_the_Build_Trap.html?id=PQ8dMQAACAAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">abordagem enxuta ("lean", em inglês) de gerenciamento de produtos</a>.</p>
+
+<p>Quando esses recursos são aplicados juntos, você consegue estimar o seguinte:</p>
+
+<ul>
+<li>O desempenho da entrega de softwares, avaliado em termos de disponibilidade, estabilidade e velocidade de fornecimento.</li>
+<li>O desempenho organizacional, avaliado em termos de lucratividade, participação de mercado e produtividade.</li>
+</ul>
+
+<p>A <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=35" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">pesquisa do DevOps Research and Assessment (DORA)</a> [PDF em inglês] mostra que as equipes garantem o melhor desempenho quando trabalham em organizações que utilizam esses recursos e fazem o seguinte:</p>
+
+<ul>
+<li>Coletar métricas de satisfação dos clientes com frequência.</li>
+<li>Coletar e seguir o feedback dos clientes quanto a qualidade dos produtos e dos recursos.</li>
+<li>Usar esse feedback para projetar produtos e recursos.</li>
+</ul>
+
+<h2 id="how_to_implement_customer_feedback" data-text="Como implementar o feedback dos clientes">Como implementar o feedback dos clientes</h2>
+
+<p>Quando você desenvolve um produto, é importante estabelecer métricas principais para avaliar seu sucesso. Com elas, você descobre se está resolvendo um problema real, se a solução está sendo adotada com rapidez suficiente, e se os usuários continuam a usá-la e recomendá-la a outras pessoas. Essas métricas precisam ser baseadas explicitamente na forma como os clientes interagem com o produto. Elas exigem que você colete e analise o feedback dos clientes com atenção.</p>
+
+<p>O AARRR é um conjunto de métricas muito usado nos produtos de SaaS voltados ao consumidor. Essas métricas incluem aquisição, ativação, retenção, indicação e receita (em inglês, formam o nome AARRR). Às vezes, a ordem delas pode ser diferente dependendo da pessoa que as menciona. Elas também costumam ser conhecidas como <em>métricas pirata</em>, porque a sigla "AARRR", em inglês, é uma onomatopeia relacionada à forma de falar dos piratas.</p>
+
+<p>A ideia é analisar cinco métricas principais e repetir a experiência do cliente para aprimorá-las:</p>
+
+<ul>
+<li><strong>Aquisição</strong>: a porcentagem de usuários que acessam seu site e criam uma conta.</li>
+<li><strong>Ativação</strong>: a porcentagem de usuários adquiridos que ativam as contas e usam o serviço.</li>
+<li><strong>Retenção</strong>: a porcentagem de usuários ativados que usam o serviço novamente.</li>
+<li><strong>Indicação</strong>: a porcentagem de usuários retidos que indicam o serviço a outras pessoas.</li>
+<li><strong>Receita</strong>: a porcentagem de usuários de referência que realmente pagam pelo serviço.</li>
+</ul>
+
+<p>Se essas métricas não são adequadas para seus negócios ou produto, é essencial que você descubra outras que sejam. Além disso, você precisará monitorá-las com frequência e usá-las para orientar a estratégia do seu produto.</p>
+
+<p>A abordagem descrita neste artigo não é apenas para produtos externos. Ela também se aplica a produtos e serviços internos criados para outros usuários da sua organização. Para desenvolver ferramentas internas, é necessário seguir exatamente a mesma abordagem: fazer o engajamento antecipado e frequente com usuários reais para garantir que a ferramenta que você está criando realmente resolva o problema deles. Caso contrário, talvez você crie e adote ferramentas que ninguém usa. Isso é terrível para quem desenvolve as ferramentas e frustrante para quem não gosta delas e precisa usá-las. Além disso, sua empresa faz gastos desnecessários ao criar tecnologia inadequada aos usuários.</p>
+
+<p>Para garantir ainda mais a solução dos problemas dos clientes, as equipes precisam seguir estes padrões:</p>
+
+<ol>
+<li>Coletar o feedback dos clientes antes de definir qualquer recurso em potencial.</li>
+<li>Confirmar que um problema real esteja sendo resolvido.</li>
+<li>Repetir uma solução que realmente resolva esse problema e nada mais.</li>
+<li>Garantir que a solução gere possíveis negócios (por exemplo, o custo é menor que a receita estimada).</li>
+<li>Acompanhar as principais métricas para avaliar o sucesso (por exemplo, AARRR).</li>
+<li>Repetir o procedimento acima para melhorar essas métricas.</li>
+</ol>
+
+<p>Para garantir o sucesso, além de implantar e lançar software com rapidez, é necessário atender às necessidades dos clientes de forma rápida, inteligente e aprimorada. Para isso, basta fazer mais experimentações do que a concorrência. Essa estratégia <a href="https://services.google.com/fh/files/misc/state-of-devops-2019.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">está dando muito certo</a> (PDF em inglês) no setor de varejo.
+Técnicas como o <a href="https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">desenvolvimento orientado por hipóteses</a> (em inglês), a definição e avaliação do funil de aquisição de clientes e testes A/B possibilitam que você faça experimentações com os usuários. Isso incentiva a criatividade, acelera a inovação e gera aprendizado organizacional.</p>
+
+<p>Engajar mais com os clientes e participar mais dos processos de gerenciamento de produtos aumenta a identificação com as <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=37" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">metas e valores</a> (PDF em inglês) da sua organização. Por sua vez, isso contribui para o desempenho organizacional.</p>
+
+<h2 id="common_pitfalls" data-text="Armadilhas comuns">Dificuldades comuns</h2>
+
+<p>Estas são algumas dificuldades comuns no uso efetivo do feedback dos clientes:</p>
+
+<ul>
+<li><strong>Falha ao coletar feedback</strong>. É comum que as empresas de desenvolvimento de software não coletem o feedback dos clientes.</li>
+<li><strong>Coletar feedback tarde demais</strong>. Às vezes, as empresas coletam o feedback dos clientes muito tarde no ciclo de entrega do software e, por isso, não conseguem agir com base nele.</li>
+<li><strong>Não entender o problema</strong> (ou interpretar errado o feedback dos clientes). As empresas podem ter a ideia errada dos clientes ou não entender o que eles querem do produto. E a equipe pode até mesmo ignorar o feedback negativo, mas que é correto.
+Isso acontece quando a equipe de desenvolvimento não avalia ou gerencia apropriadamente o risco de entregar uma solução ou simplesmente não entende o problema a ser resolvido. As equipes de desenvolvimento costumam incluir no escopo do trabalho o mínimo possível para resolver um problema.
+Em alguns casos, se o problema é maior do que a capacidade da equipe, ela pode descartar incorretamente o trabalho extra por se tratar de "scope creep".  Isso resulta em uma solução incompleta na perspectiva do cliente e em um produto com falha.</li>
+<li><strong>Não permitir que as equipes atuem com base no feedback</strong>. É necessário capacitar as equipes de entrega para fazer alterações no projeto ou nas especificações do sistema em resposta ao feedback, conforme abordado no documento sobre a <a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">experimentação em equipe</a>.</li>
+<li><strong>Avaliar o sucesso com base na métrica errada</strong>. Em alguns casos, as equipes de desenvolvimento e entrega recebem como finalizadas soluções sem validação suficiente dos clientes. Dessa forma, o sucesso da equipe de entrega é avaliado de acordo com o fornecimento do recurso conforme especificado, e não se o problema foi realmente resolvido, ou se os resultados dos clientes foram alcançados.</li>
+<li><strong>Falha ao resolver o problema do cliente</strong>.
+<a href="http://ai.stanford.edu/%7Eronnyk/ExPThinkWeek2009Public.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Dados da indústria</a> (PDF) coletados em testes A/B mostram que, em produtos bem-sucedidos, apenas um terço dos recursos propostos melhoram os resultados dos negócios quando fornecidos. Os dois terços restantes têm resultados nulos ou <em>negativos</em> para os negócios. Por isso, se você não faz pesquisas de usuários, é provável que pelo menos dois terços do trabalho das equipes não alcancem o resultado pretendido ou estejam piorando as coisas. Se a equipe trabalha em produtos de ciclo de vida antecipado, principalmente em projetos inovadores, as chances de alcançar o resultado pretendido são ainda menores.</li>
+<li><strong>Subestimar o tempo e o esforço necessários para responder ao feedback dos clientes</strong>. As equipes precisam ter consciência de que as soluções propostas podem estar erradas e se preparar para descartar pelo menos dois terços delas. Quanto ao restante das soluções, ou seja, um terço delas, as equipes precisam saber transformá-las sempre de acordo com o feedback dos clientes.</li>
+</ul>
+
+<h2 id="ways_to_improve_customer_feedback" data-text="Formas de melhorar o feedback dos clientes">Formas de melhorar o feedback dos clientes</h2>
+
+<p>O setor de desenvolvimento de experiências do usuário (UXs, na sigla em inglês) fornece um framework para o entendimento das melhorias. Muitas organizações acham que a UX é apenas fornecer uma boa IU do produto.
+No entanto, ela é a solução de um problema real dos usuários. De modo geral, a UX se refere a todas as experiências que um usuário tem ao interagir com sua organização. É muito importante fornecer uma ótima UX para criar produtos e serviços de sucesso.</p>
+
+<p>É essencial incorporar a coleta de feedback dos clientes ao processo de entrega.
+A cada recurso importante que você cria, comece considerando o problema a ser resolvido. Isso precisa incluir a realização de pesquisas de usuários para determinar possíveis soluções e selecionar a melhor delas. É necessário analisá-las antes de gravar uma linha de código sequer.</p>
+
+<p>Com relação aos produtos de ciclo de vida antecipado, as equipes precisam seguir as ideias do <a href="https://wikipedia.org/wiki/Lean_startup" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">movimento "lean startup"</a> para validar o modelo de negócios subjacente antes de gravar códigos. É necessário confirmar se você está resolvendo um problema real e repetir essa solução enquanto fornece um modelo de negócios viável.</p>
+
+<p>Siga um padrão similar nos produtos atuais em que você está implementando uma nova solução para um problema de negócios conhecido. Depois de validar o design da solução, você precisa criar um protótipo para poder realizar mais pesquisas e testes. Conclua o processo de produção somente quando os testes validarem que o recurso alcança suas metas.</p>
+
+<p>Muitas organizações ignoram todo esse trabalho e falham. No entanto, até mesmo seguir essas etapas à risca não garante o sucesso. O objetivo de todo esse processo é fazer o máximo possível para diminuir o risco de falhas.</p>
+
+<h2 id="ways_to_measure_customer_feedback" data-text="Formas de avaliar o feedback dos clientes">Formas de avaliar o feedback dos clientes</h2>
+
+<p>Não é necessário ter uma coleta de dados avançada para coletar, ver e usar o feedback dos clientes. Com as perguntas a seguir, você determina se está aproveitando bem o feedback dos clientes no design do seu produto:</p>
+
+<ul>
+<li>Você tem métricas que avaliam a satisfação do cliente? Elas são atualizadas e fornecidas às equipes com frequência? Você age com base nelas?</li>
+<li>Você valida todos os recursos antes de desenvolvê-los, além de realizar pesquisas de usuários com protótipos como parte da entrega?</li>
+<li>Você altera os recursos com base nessa pesquisa de usuários?</li>
+<li>Você coleta o feedback dos usuários com frequência, além de agir com base nele?</li>
+</ul>
+
+<h2 id="whats_next" data-text="A seguir">A seguir</h2>
+
+<ul>
+<li>Para links para outros artigos e recursos, consulte a <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página do DevOps</a>.</li>
+<li>Leia o artigo <a href="http://ai.stanford.edu/%7Eronnyk/ExPThinkWeek2009Public.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Online Experimentation at Microsoft</a> (PDF em inglês), escrito por Ronny Kohavi.</li>
+<li>Leia o artigo <a href="https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Hypothesis-driven development</a> (em inglês), escrito por Barry O'Reilly.</li>
+<li>Leia o livro <a href="http://shop.oreilly.com/product/0636920049166.do" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean UX: Designing Great Products with Agile Teams</em></a> (em inglês), escrito por Jeff Gothelf e Josh Seiden.</li>
+<li>Leia o livro <a href="http://leananalyticsbook.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Analytics: Use Data to Build a Better Startup Faster</em></a> (em inglês), escrito por Alistair Croll e Benjamin Yoskovitz.</li>
+<li>Leia o livro <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise: How High Performance Organizations Innovate at Scale</em></a> (em inglês),
+escrito por Jez Humble, Joanne Molesky e Barry O'Reilly.</li>
+<li>Explore nosso
+<a href="https://www.devops-research.com/research.html">programa de pesquisa</a> (em inglês) do DevOps.</li>
+<li>Faça a
+<a href="https://www.devops-research.com/quickcheck.html">verificação rápida de DevOps</a>
+para entender sua posição em relação ao restante do setor.</li>
+</ul>
+
+</body></html>

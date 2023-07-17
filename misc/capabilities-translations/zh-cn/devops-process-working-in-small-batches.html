@@ -1,0 +1,98 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 流程：以小批量方式工作</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：以小批量方式工作<em></em>以提升软件交付和组织绩效的功能。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>在任何领域中，如果您很重视反馈循环或者希望从自己所做的决策中快速获得有用信息，都必须遵循以小批量方式工作的原则。采用小批量工作方式时，您不但可以通过快速测试假设条件了解特定改进措施能否产生预期效果，还可以在未达到预期效果的情况下采取纠正措施或重新审视假设条件。本文中的说明适用于包括组织转型和流程改进在内的任何类型的变更，但主要侧重于软件交付。</p>
+
+<p>小批量工作方式已成为精益产品管理的一部分。如果结合<a href="/architecture/devops/devops-process-work-visibility-in-value-stream" track-type="article" track-name="internalLink" track-metadata-position="body">掌握价值流中的工作</a>、<a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">团队实验</a>和<a href="/architecture/devops/devops-process-customer-feedback" track-type="article" track-name="internalLink" track-metadata-position="body">清晰了解客户反馈</a>等功能，小批量工作方式可预测软件交付性能和组织绩效。</p>
+
+<p>如果<a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">交付变更具有很高的固定成本</a>，那么此时就需要采用大批量工作方式。在传统的分阶段软件开发方法中，从开发到测试或从测试到 IT 运营的交付会涉及整个发布流程，也就是说，需要由数十人或数百人组成的团队进行数月的工作。采用这种传统方法时，收集有关某项变更的反馈可能需要数周或数月的时间。</p>
+
+<p>相比之下，DevOps 做法利用跨职能团队和轻量级方法，使软件只需几分钟即可从开发环境推进到测试和运营环境，从而快速投入生产环境。但是，这种快速推进需要以小批量方式处理代码。</p>
+
+<p>小批量工作方式具有很多优势：</p>
+
+<ul>
+<li>可让您更快速地获取有关变更的反馈，从而更轻松地对问题进行分类和修复。</li>
+<li>可提升工作效率和动力。</li>
+<li>可防止您的组织屈服于沉没成本谬论。</li>
+</ul>
+
+<p>您可以在特性和产品级层应用小批量方法。举例来说，最简可行产品（英文简称为 MVP）是指产品的原型，它仅具备向人们有效展示该产品及其商业模式所需的特性。</p>
+
+<p>持续交付以小批量工作为基础，并会尝试尽快获取版本控制中的所有变更。持续交付的目标是改变软件交付流程的经济性，使小批量工作方式具有可行性。这种方法可以为团队提供快速、全面的反馈，让他们得以改善自己的工作。</p>
+
+<h2 id="how_to_work_in_small_batches" data-text="如何以小批量方式工作">如何以小批量方式工作</h2>
+
+<p>当您规划新的特性时，可尝试将这些特性分解为若干可在短时间内独立完成的工作单元。我们建议确保每项特性或每批次工作都遵循下列 <a href="https://wikipedia.org/wiki/INVEST_(mnemonic)" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">INVEST 原则</a>这一敏捷概念：</p>
+
+<ul>
+<li><strong>独立性</strong>。尽量使特定批次的工作独立于其他批次，让团队可以按任意顺序处理这些特定工作，并独立于其他批次的工作进行部署和验证。</li>
+<li><strong>可协商性</strong>。每批次工作都是可迭代的，并且可以在收到反馈后重新进行协商。</li>
+<li><strong>有价值</strong>。每批次工作都有一定的作用，并且都会为利益相关者带来价值。</li>
+<li><strong>可估算性</strong>。各批次工作都可提供足够的相关信息，让您可以轻松估算范围。</li>
+<li><strong>规模小</strong>。在 Sprint 期间，您应该能够以较短的时间增量（即数小时到数天）完成各批次工作。</li>
+<li><strong>可测试性</strong>。每批次工作都可以按照用户期望的方式进行测试、监控和验证。</li>
+</ul>
+
+<p>如果特性具有适当的规模，您可以将特性的开发工作拆分成更小的批次。这个过程可能很难完成，并且需要经验才能取得进展。理想情况下，您的开发者应该<a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">每天至少一次</a>将多个小规模可发布变更整合到主干中。</p>
+
+<p>为了实现此目标，关键在于在服务或 API 层（而不是界面层）开始进行开发。这样，您就可以向 API 添加一些最初对应用用户并不可用的特性，并将这些变更整合到主干中。您可以将这些变更发布到生产环境，而不提供给用户。这种<em></em>方法称为“暗发布”，旨在使开发者能够签入已完成小批次的代码，而不能签入尚未完全完成的特性的代码。之后，您可以针对这些变更运行<a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">自动化测试</a>，以此证明其行为符合预期。这样一来，团队就仍然可以高效工作，同时进行<a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">主干开发</a>（而非长期特性分支开发）。</p>
+
+<p>此外，您还可以利用<a href="https://martinfowler.com/bliki/FeatureToggle.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">特性开关</a>（这是一个基于配置设置的条件语句）对变更进行暗发布。例如，您可以决定是否显示界面元素，或者是否启用服务逻辑。特性开关配置可以在部署或运行时读取。您可以使用这些配置设置在堆栈中进一步切换新代码的行为。您也可以使用类似技术（称为<a href="https://continuousdelivery.com/2011/05/make-large-scale-changes-incrementally-with-branch-by-abstraction/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">抽象分支</a>）对系统进行大规模更改，同时继续开发和发布主干，而无需使用长期特性分支。</p>
+
+<p>采用这种方法时，只有在各批次工作部署到生产环境中并且反馈流程已开始验证变更后，这些工作才能完成。反馈渠道的来源和形式多样，包括用户、系统监控、质量保证和自动化测试。您的目标是优化速度，从而缩短将变更交付到用户手中的周期时间。这样，您就能够以最快的速度验证您的假设条件。</p>
+
+<h2 id="common_pitfalls_with_working_in_small_batches" data-text="小批量工作方式中常见的隐患">小批量工作方式中常见的隐患</h2>
+
+<p>将工作分解成若干小批次时，通常存在以下两种隐患：</p>
+
+<ul>
+<li><p><strong>未将工作分解成多个足够小的部分</strong>。您的首要任务是以有意义的方式分解工作。我们建议您提交与特性状态无关的代码，并确保各个特性的开发时间不超过数天。任何需要一周以上时间才能完成和签入的代码批次都违反了“规模小 (Small)”的原则。在整个开发过程中，您必须分析如何将想法分解为可迭代开发的增量，这一点至关重要。</p></li>
+<li><p><strong>采用小批量工作方式，但在将各批次发送到下游进行测试或发布之前，对其进行重新整理</strong>。以这种方式重新整理工作会使您无法及时了解变更是否存在缺陷，以及您的用户和您的组织是否同意先构建这些变更。</p></li>
+</ul>
+
+<h2 id="ways_to_reduce_the_size_of_work_batches" data-text="减小工作批次规模的方法">减小工作批次规模的方法</h2>
+
+<p>将工作分割成若干只需数小时即可完成的小批次后，您通常可以<a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">在一小时内测试这些批次并将其部署到生产环境</a> (PDF)。关键在于应将工作分解为若干可快速开发的小规模特性，而不要在分支上开发复杂且不常发布的特性。</p>
+
+<p>为了改善小批次开发的表现，请检查您的环境并确认满足以下条件：</p>
+
+<ul>
+<li>工作的分解方式支持团队更频繁地进行生产发布。</li>
+<li>开发者在将工作分解为可在数小时（而非数天）内完成的小规模变更方面拥有丰富的经验。</li>
+</ul>
+
+<p>要成为小批量开发的专家，请确保您的所有开发团队都能满足这些条件。这一做法对于<a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">持续集成</a>和<a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">主干开发</a>来说都是一个必不可少的条件。</p>
+
+<h2 id="ways_to_measure_the_size_of_work_batches" data-text="衡量工作批次规模的方法">衡量工作批次规模的方法</h2>
+
+<p>如果您了解<a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">持续集成</a>和<a href="/architecture/devops/devops-measurement-monitoring-systems" track-type="article" track-name="internalLink" track-metadata-position="body">监控</a>，就应该能够大致描述出在系统和开发环境中适用于小批次开发的几种衡量方法。</p>
+
+<ul>
+<li><strong>应用特性的分解方式支持频繁发布</strong>。可行的发布频率如何？各团队的发布节奏有何不同？生产延迟是否与规模较大的特性有关？</li>
+<li><strong>应用特性的分解方式使开发者能够在一周或更短时间内完成工作</strong>。您可以在一周或更短时间内完成的特性占多大比例？哪些特性需要一周以上时间才能完成？您能否在特性完成之前提交并发布变更？</li>
+<li><strong>已定义 MVP 并将其设定为团队目标</strong>。工作是否已分解为若干遵循 MVP 原则并可快速开发的特性，而不是多个复杂而冗长的流程？</li>
+</ul>
+
+<p>您的衡量结果取决于以下几个方面：</p>
+
+<ul>
+<li>了解您组织的流程。</li>
+<li>制定减少浪费的目标。</li>
+<li>设法降低开发流程的复杂性。</li>
+</ul>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

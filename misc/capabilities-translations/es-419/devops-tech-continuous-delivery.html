@@ -1,0 +1,140 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnología de DevOps: Entrega continua</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> La <em>entrega continua</em> es una de las de las capacidades que permite una entrega de software más alta y un rendimiento organizativo. Estas funciones se descubrieron mediante el <a href="https://www.devops-research.com/research.html">programa de investigación de DevOps de DORA</a>, una investigación independiente y rigurosa desde el punto de vista académico sobre las prácticas y las funciones que impulsan el alto rendimiento. Para obtener más información, lee nuestros <a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>La entrega continua es la capacidad de actualizar cambios de todo tipo a pedido de manera rápida, segura y sustentable. Los equipos que practican la entrega continua pueden lanzar software y realizar cambios en la producción de forma segura y en cualquier momento, incluso durante el horario de atención habitual, sin afectar a los usuarios.</p>
+
+<p>Puedes aplicar los principios y las prácticas de la entrega continua a cualquier contexto de software, incluidos los siguientes:</p>
+
+<ul>
+<li>Actualizar servicios en un sistema distribuido complejo.</li>
+<li>Actualizar el software de la unidad central.</li>
+<li>Realizar cambios en la configuración de la infraestructura.</li>
+<li>Realizar cambios en el esquema de la base de datos.</li>
+<li>Actualizar el firmware de forma automática.</li>
+<li>Lanzar versiones nuevas de una app para dispositivos móviles.</li>
+</ul>
+
+<p>Cuando tu equipo practica la entrega continua, puedes responder "sí" a las siguientes preguntas:</p>
+
+<ul>
+<li>¿Se encuentra nuestro software en un estado que permita la implementación durante su ciclo de vida?</li>
+<li>¿Priorizamos que el software se pueda implementar por sobre trabajar en funciones nuevas?</li>
+<li>¿Están los comentarios rápidos sobre la calidad y la capacidad de implementación del sistema en el que trabajamos disponibles para todos los miembros del equipo?</li>
+<li>Cuando recibimos comentarios que indican que el sistema no se puede implementar (por ejemplo, las compilaciones de errores o las pruebas), ¿convertimos la corrección de estos problemas en nuestra prioridad más alta?</li>
+<li>¿Podemos implementar nuestro sistema en producción o en los usuarios finales en cualquier momento a pedido?</li>
+</ul>
+
+<p>La entrega continua suele combinarse con la implementación continua, pero son prácticas independientes. La implementación continua se produce cuando los equipos intentan implementar todos los cambios de códigos en la producción lo antes posible. La implementación continua funciona bien para los servicios web, pero no se puede aplicar a software como, por ejemplo, firmware o apps para dispositivos móviles. La entrega continua se aplica a todo tipo de software, esto incluye firmware y sistemas de la unidad central, y en entornos altamente regulados. Puedes y debes comenzar con la entrega continua, incluso si nunca comienzas a usar la implementación continua.</p>
+
+<p>La entrega continua y la implementación continua se consideran erróneamente riesgosas y no son adecuadas para dominios regulados o de seguridad. De hecho, el objetivo de la investigación continua es reducir el riesgo de software, y la investigación de DORA demostró de forma coherente que los expertos en la materia alcanzan niveles más altos de confiabilidad y disponibilidad. Las prácticas técnicas que impulsan la entrega continua (pruebas continuas, desplazamiento a la izquierda en seguridad, y pruebas y observabilidad integrales) son aún más importantes en dominios altamente regulados y de seguridad. La entrega continua se aplicó correctamente muchas veces en dominios altamente regulados como, por ejemplo, servicios financieros y el Gobierno.</p>
+
+<p>Aunque la entrega continua es posible para todo tipo de software, es un trabajo arduo. Sin embargo, proporciona beneficios importantes. La investigación del equipo de <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">Investigación y evaluación de DevOps (DORA)</a> demuestra que tener un buen rendimiento en la entrega continua brinda los siguientes beneficios:</p>
+
+<ul>
+<li>Mejora el rendimiento de la entrega de software, medido en términos de las <a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">cuatro métricas clave</a>, así como los niveles más altos de disponibilidad.</li>
+<li>Genera niveles más altos de calidad, medidos por el porcentaje de tiempo que los equipos emplean en la repetición del trabajo o el trabajo no planificado (como se muestra en el <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Informe del estado de DevOps de 2016,</a> págs. 25-26, y el <a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Informe del estado de DevOps de 2018,</a> págs. 27-29).</li>
+<li>Predice niveles más bajos de agotamiento (cansancio físico, mental o emocional causado por trabajo excesivo o estrés), niveles más altos de <a href="/architecture/devops/devops-culture-job-satisfaction" track-type="article" track-name="internalLink" track-metadata-position="body">satisfacción laboral</a>, y mejor <a href="/architecture/devops/devops-culture-westrum-organizational-culture" track-type="article" track-name="internalLink" track-metadata-position="body">cultura organizativa</a>.</li>
+<li>Reduce la dificultad de implementación, una medición del grado en el que las implementaciones son disruptivas en lugar de ser sencillas y fáciles, así como el miedo y la ansiedad que los ingenieros y el personal técnico experimentan cuando envían el código a producción.</li>
+<li>Afecta a la cultura, lo que lleva a niveles más altos de <a href="https://rework.withgoogle.com/print/guides/5721312655835136/">seguridad psicológica</a> y a una mayor <a href="/architecture/devops/devops-culture-westrum-organizational-culture" track-type="article" track-name="internalLink" track-metadata-position="body">cultura organizativa orientada a misiones</a>.</li>
+</ul>
+
+<p>En el siguiente diagrama, se muestra cómo un conjunto de prácticas técnicas afecta la entrega continua, lo que, a su vez, impulsa los resultados mencionados anteriormente:</p>
+
+<p><img src="/static/architecture/devops/images/continuous-delivery-technical-practices.png" alt="Muestra cómo las prácticas técnicas impulsan resultados en otras capacidades" width="80%" class="screenshot"/> </p>
+
+<p>La entrega continua es solo un aspecto de la generación de los resultados analizados anteriormente, aunque uno fundamental. Otras capacidades culturales y organizativas analizadas en el <a href="https://devops-research.com/research.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">programa de investigación de DORA</a> también ayudan a impulsar estos resultados. Puedes lograr una entrega continua mediante la implementación de las prácticas técnicas que se describen en este documento.</p>
+
+<h2 id="implementing_continuous_delivery" data-text="Implementa la entrega continua">Implementa la entrega continua</h2>
+
+<p>En la investigación de DORA, se descubrió que las siguientes capacidades técnicas impulsan la habilidad para lograr la entrega continua. El <a href="/architecture/devops/devops-culture-transformational-leadership" track-type="article" track-name="internalLink" track-metadata-position="body">liderazgo transformador</a> dentro de la organización también impulsa la implementación de muchas de estas capacidades técnicas.</p>
+
+<p>Para ayudar a tu equipo a obtener una mayor capacidad de procesamiento y versiones de menor riesgo, implementa las siguientes prácticas de entrega continua:</p>
+
+<ul>
+<li><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Automatización de pruebas</a>: El uso de paquetes de pruebas automatizados integrales que principalmente crean y mantienen los desarrolladores. Los paquetes de pruebas eficaces son confiables, es decir, las pruebas encuentran fallas reales y solo pasan códigos que se pueden lanzar.</li>
+<li><a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Automatización de la implementación</a>: El grado en el que las implementaciones están completamente automatizadas y no requieren intervención manual.</li>
+<li><a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">Desarrollo basado en troncos</a>: Se caracteriza por tener menos de tres ramas activas en un repositorio de código; ramas y bifurcaciones con tiempos de actividad muy cortos (p. ej., menos de un día) antes de que se combinen en una línea principal; y los equipos de aplicaciones rara vez o nunca tienen períodos de <em>bloqueo de código</em> cuando nadie puede verificar el código o realizar solicitudes de extracción debido a conflictos de fusión, congelaciones de código o fases de estabilización.</li>
+<li><a href="/architecture/devops/devops-tech-shifting-left-on-security" track-type="article" track-name="internalLink" track-metadata-position="body">Aumentar las medidas de seguridad</a>: La integración de la seguridad en las fases de diseño y pruebas del proceso de desarrollo de software. Este proceso incluye realizar revisiones de seguridad de las aplicaciones, incluido el equipo de seguridad de la información en el proceso de diseño y demostración para aplicaciones, usar bibliotecas y paquetes de seguridad aprobados de forma previa, y probar las funciones de seguridad como parte del paquete de pruebas automatizadas.</li>
+<li><a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">Una arquitectura vinculada de forma flexible</a>: Es la arquitectura que permite a los equipos implementar y probar las aplicaciones a pedido, sin que se requiera una organización con otros servicios. Tener una arquitectura vinculada de forma flexible permite que los equipos trabajen de forma independiente sin depender de otros equipos para recibir asistencia y servicios, lo que, a su vez, les permite trabajar con rapidez y ofrecer valor a la organización.</li>
+<li><a href="/architecture/devops/devops-tech-teams-empowered-to-choose-tools" track-type="article" track-name="internalLink" track-metadata-position="body">Brinda a los equipos libertad para elegir herramientas</a>: Los equipos que pueden elegir qué herramientas usar tienen un mejor rendimiento en la entrega continua.
+Nadie sabe mejor que los profesionales lo que necesitan para ser eficaces.</li>
+<li><a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">Integración continua (CI)</a>: Una práctica de desarrollo en la que se verifica regularmente el código y cada registro activa un conjunto de pruebas rápidas para descubrir regresiones, que los desarrolladores corrigen inmediatamente. El proceso de CI crea compilaciones y paquetes canónicos que se implementan y lanzan en última instancia.</li>
+<li><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Pruebas continuas</a>: Realizar las pruebas durante el ciclo de vida de la entrega del software en lugar de como una fase independiente después de que se <em>completa el desarrollo.</em> Con las pruebas continuas, los desarrolladores y los verificadores trabajan juntos. Los expertos en la materia practican el desarrollo basado en pruebas, reciben comentarios de las pruebas en menos de diez minutos, y revisan y mejoran de forma continua los paquetes de pruebas (por ejemplo, para encontrar mejor los defectos y mantener la complejidad bajo control).</li>
+<li><a href="/architecture/devops/devops-tech-version-control" track-type="article" track-name="internalLink" track-metadata-position="body">Control de versión</a>: El uso de un sistema de control de versión, como Git o Subversion, para todos los artefactos de producción, incluidos el código de la aplicación, la configuración de la aplicación, la configuración del sistema, y las secuencias de comandos para automatizar la compilación y la configuración de los entornos.</li>
+<li><a href="/architecture/devops/devops-tech-test-data-management" track-type="article" track-name="internalLink" track-metadata-position="body">Administración de datos de pruebas</a>: Las prácticas eficaces incluyen tener datos adecuados para ejecutar el paquete de pruebas, la habilidad para adquirir los datos necesarios a pedido y los datos que no limitan la cantidad de pruebas que puedes ejecutar. Ten en cuenta que los equipos deben minimizar, cuando sea posible, la cantidad de datos de prueba necesarios para ejecutar las pruebas automatizadas.</li>
+<li><a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="article" track-name="internalLink" track-metadata-position="body">Supervisión y observabilidad integrales</a>: Permite a los equipos entender el estado de los sistemas. Las soluciones efectivas permiten a los equipos supervisar las métricas predefinidas, incluido el estado del sistema según la experiencia de los usuarios, además de permitir a los ingenieros depurar de forma interactiva los sistemas y explorar las propiedades y los patrones a medida que surgen.</li>
+<li><a href="/architecture/devops/devops-measurement-proactive-failure-notification" track-type="article" track-name="internalLink" track-metadata-position="body">Notificaciones proactivas</a>: La supervisión del estado del sistema para que los equipos puedan detectar y mitigar los problemas de forma interrumpible.</li>
+<li><a href="/architecture/devops/devops-tech-database-change-management">Administración de cambios en las bases de datos</a>: Los cambios en las bases de datos no ralentizan los equipos si siguen algunas prácticas claves, lo que incluye almacenar los cambios en las bases de datos como secuencias de comandos en el control de versión (y administrar estos cambios de la misma manera a medida que cambia la aplicación de producción), hacer que los cambios en las bases de datos sean visibles para todos en el ciclo de vida de entrega del software (incluidos los ingenieros) y comunicarse con todas las partes cuando los cambios en la aplicación requieran cambios en las bases de datos.</li>
+<li><a href="/architecture/devops/devops-tech-code-maintainability">Capacidad de mantenimiento del código</a>: Los sistemas y las herramientas que simplifican la tarea de los desarrolladores de cambiar el código que otros mantienen, encontrar ejemplos en la base de código, volver a usar el código de otras personas, y agregar, actualizar y migrar a versiones nuevas de dependencias sin romper el código.</li>
+</ul>
+
+<p>Si bien la entrega continua a menudo se combina con la integración continua y se abrevia como <em>CI/CD</em>, la investigación muestra que la integración continua es solo un elemento de la implementación de la entrega continua. Para lograr versiones confiables y de bajo riesgo, necesitas estrecha colaboración entre todas las personas involucradas en el proceso de entrega de software, no solo los desarrolladores de software, y el equipo debe adoptar nuevas formas de trabajo y aprender nuevas habilidades.</p>
+
+<h2 id="common_pitfalls_of_implementing_continuous_delivery" data-text="Errores comunes de la implementación de la entrega continua">Errores comunes de la implementación continua</h2>
+
+<p>Algunas organizaciones creen erróneamente que pueden implementar la entrega continua si llevan a cabo el proceso de implementación existente con más frecuencia. Sin embargo, la implementación de las capacidades técnicas que impulsan la entrega continua normalmente requiere de cambios importantes en la arquitectura y los procesos. Es probable que aumentar la frecuencia de las implementaciones sin mejorar los procesos ni la arquitectura genere tasas de fallas más altas y equipos agotados.</p>
+
+<p>Muchas descripciones de entrega continua se enfocan en las herramientas y los patrones, como la canalización de implementación que lleva los cambios del control de versión a la producción. Sin embargo, el uso de herramientas modernas sin implementar las prácticas técnicas y el cambio de proceso necesarios que se describen en este documento no producirá los beneficios esperados.</p>
+
+<p>En el siguiente diagrama, se muestra la curva J que, según la investigación de DORA, suele encontrarse en los programas de transformación. Para emerger de la parte inferior de la curva J, el equipo debe incluir el rediseño y la simplificación del proceso, la mejora de la arquitectura, y el desarrollo de capacidades y habilidades, junto con la automatización y las herramientas.</p>
+
+<p><img src="/static/architecture/devops/images/continuous-delivery-2.png" alt="Diagrama de la curva J de las transformaciones típicas del Informe de estado de DevOps de 2018." width="80%" class="screenshot"/> </p>
+
+<p>En el diagrama, se etiquetan las siguientes etapas:</p>
+
+<ul>
+<li>Al comienzo de la curva, los equipos comienzan la transformación y, a continuación, identifican beneficios rápidos.</li>
+<li>En una mejora inicial, la automatización ayuda a las organizaciones que tienen un bajo rendimiento a convertirse en organizaciones de rendimiento medio.</li>
+<li>En una disminución de la eficiencia, la parte inferior de la curva J, la automatización aumenta los requisitos de prueba, que se abordan de forma manual. Una gran parte de la deuda técnica bloquea el progreso.</li>
+<li>A medida que los equipos comienzan a salir de la curva, la deuda técnica y el aumento de la complejidad generan controles manuales adicionales y capas de proceso en torno a los cambios, lo que ralentiza el trabajo.</li>
+<li>En la parte superior de la curva, el trabajo tenaz de mejora genera excelencia y alto rendimiento. Los expertos en la materia y las empresas con un rendimiento superior aprovechan la experiencia y aprenden de los entornos para ver los aumentos en la productividad.</li>
+</ul>
+
+<p>Una buena manera de mitigar el impacto de la curva J es completar un ejercicio de <em>asignación del flujo de valor</em> (VSM) para descubrir y anticipar el efecto de los cuellos de botella. En un ejercicio de VSM, se observa un solo cambio a medida que se avanza del control de versión a la producción:</p>
+
+<ol>
+<li>Considera los diversos procesos que atraviesa cada cambio, como las pruebas automáticas y manuales, la revisión de seguridad, la administración de cambios y el lanzamiento en producción.</li>
+<li>Mide el tiempo total para que el cambio pase de control de versión a lanzado. Para cada proceso, mide los siguientes aspectos: <ul>
+<li>El tiempo real transcurrido y el tiempo de valor agregado (el tiempo durante el cual se realiza el trabajo) empleados en la ejecución del proceso completo.</li>
+<li>El porcentaje de tiempo con el que se devuelve el trabajo porque no se realizó de manera correcta la primera vez. Esta métrica se conoce como <em>porcentaje completo y preciso</em>, o %C/A.</li>
+</ul></li>
+</ol>
+
+<p>El propósito del ejercicio de asignación del flujo de valor es ayudarte a encontrar ineficiencias en el proceso. Como equipo, crea un diagrama de cómo deseas que el flujo de valor se vea en seis meses y emplea la capacidad del equipo para trabajar en la implementación de este estado futuro. Identifica y quita los obstáculos que existen en un proceso con un tiempo prolongado transcurrido en comparación con el tiempo de valor agregado o que tiene un %C/A deficiente.</p>
+
+<p>Por lo general, es necesario abordar un proceso significativo y un rediseño de la arquitectura como parte de la aplicación de una canalización de implementación. Debido a que la canalización de implementación pasa del registro al lanzamiento, conecta a varios equipos. Es esencial que los representantes de todos los equipos completen un ejercicio de asignación del flujo de valor y acepten una cadena de herramientas y procesos comunes (por ejemplo, para la implementación en entornos de pruebas y producción) como parte del estado futuro.</p>
+
+<p>La implementación de la entrega continua es un proceso de trabajo de mejora continuo y diario, guiado por los resultados que deseas obtener. Las herramientas y los patrones son valiosos, pero solo están disponibles para este trabajo de mejora esencial.</p>
+
+<h2 id="measuring_continuous_delivery" data-text="Mide la entrega continua">Mide la entrega continua</h2>
+
+<p>En última instancia, el objetivo de la entrega continua es garantizar que los lanzamientos se realicen de un modo seguro durante el horario de atención habitual. El objetivo debe ser que nadie tenga que trabajar fuera del horario de atención habitual para realizar implementaciones o lanzamientos, por lo que es importante tener en cuenta este factor.</p>
+
+<p>El nivel de rendimiento en la entrega continua se refleja en los resultados que obtienes. Puedes realizar la <a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">revisión rápida sobre DevOps de DORA</a> para conocer tu progreso con las métricas clave de entrega continua:</p>
+
+<ul>
+<li>Plazos de entrega cortos para los cambios regulares y de emergencia, con el objetivo de usar el proceso habitual para los cambios de emergencia.</li>
+<li>Tasas de error de cambios bajas</li>
+<li>Breve plazo para restablecer el servicio en caso de interrupciones o degradaciones de servicios.</li>
+<li>Frecuencias de los lanzamientos que garantizan que las funciones de prioridad alta y las correcciones de errores se publiquen de manera oportuna.</li>
+</ul>
+
+<p>Como se mencionó al comienzo de este documento, la implementación de la entrega continua también debe generar niveles más bajos de repetición del trabajo, dificultad de implementación reducida, y menos tiempo empleado en la repetición del trabajo y el trabajo no planificado.</p>
+
+<h2 id="whats_next" data-text="Próximos pasos">¿Qué sigue?</h2>
+
+<ul>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li>Obtén más información sobre la entrega continua en la <a href="https://martinfowler.com/delivery.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">guía de entrega de software</a> de Martin Fowler.</li>
+<li>Lee <a href="https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation</em></a> de Karen Martin y Mike Osterling.</li>
+<li>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</li>
+<li>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</li>
+</ul>
+
+</body></html>

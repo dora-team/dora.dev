@@ -1,0 +1,114 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技術: セキュリティのシフトレフト</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注:</strong><span> セキュリティのシフトレフト<em></em>はソフトウェア デリバリーと組織のパフォーマンスを改善する一連の機能の 1 つです。これらの機能は <a href="https://www.devops-research.com/research.html">DORA State of DevOps Research Program</a> で発見されました。これは、高いパフォーマンスを生み出すプラクティスと機能に関する、学術的に厳格で独立した研究調査です。詳細については、<a href="/devops">DevOps のリソース</a>をご覧ください。</span></aside><p>セキュリティは全員の責任です。<a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2016 年度の DevOps レポート</a>（PDF）によると、パフォーマンスの高いチームは、パフォーマンスの低いチームよりもセキュリティ問題の修正に要する時間が 50% 少ないことが示されています。情報セキュリティ（InfoSec）の目標を日々の業務にうまく統合することにより、より高いレベルのソフトウェア配信パフォーマンスを達成し、より安全なシステムを構築できます。この考え方は、「シフトレフト」<em></em>とも呼ばれます。これは、セキュリティに関する問題がソフトウェア開発ライフサイクルの早い段階で対処されることを意味します（左から右のスケジュール図で左側に位置します）。</p>
+
+<p>ソフトウェア開発では、設計、開発、テスト、リリースの少なくとも 4 つのアクティビティがあります。従来のソフトウェア開発サイクルでは、テスト（セキュリティ テストを含む）は開発の完了後に行われます。これは通常、多くの修正コストがかかるアーキテクチャ上の欠陥など、重大な問題が見つかったことを意味します。</p>
+
+<p>欠陥が発見された後、デベロッパーはその原因と修正方法を見つける必要があります。複雑な本番環境システムの場合、原因が 1 つということはまずありません。多くの場合、一連の要因が相互に作用して、欠陥となっています。セキュリティ、パフォーマンス、可用性に関連する欠陥は、修復にコストと時間がかかります。アーキテクチャの変更が必要になることも少なくありません。欠陥を見つけて解決策を作成し、修正結果のテストを完了するまでにかかる時間は予測不能です。これにより、納期の変更がさらに必要になる可能性があります。</p>
+
+<p>継続的デリバリーでは、プロセス全体を通して製品の品質を向上させるというコンセプトをリーン思考から借用しています。W. Edwards Deming 氏は『<a href="https://deming.org/explore/fourteen-points?apartner=aarp" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Fourteen Points for the Transformation of Management</a>』の中で、「品質を達成するために検査への依存をやめるべきだ。最初の段階から品質を考慮することで、大量の検査を行う必要性を排除すべきだ」と指摘しています。このモデルでは、デベロッパーは単純な段階的アプローチをとるのではなく、セキュリティやテストの専門家と協力して、作業全体を通して<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">小規模な単位</a>で設計と提供を行うことを推奨しています。</p>
+
+<p><a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">DevOps Research and Assessment（DORA）</a>（PDF）の調査では、プロセスの最後にセキュリティの問題をテストするのではなく、セキュリティを日常業務の一部に組み込むことで、より良い結果を達成できることが示されています。これは、セキュリティ テストとコントロールを開発、QA、運用の日常業務に統合することを意味します。この作業の多くを自動化し、デプロイ パイプラインに組み込むのが理想的です。これらのアクティビティを自動化することにより、オンデマンドでエビデンスを生成し、コントロールが効果的に機能していることを実証できます。これは、監査人、評価者、バリュー ストリームで携わる担当者にとって有益な情報となります。</p>
+
+<h2 id="how_to_implement_improved_security_quality" data-text="セキュリティ品質の改善を組み込む方法">セキュリティ品質の改善を組み込む方法</h2>
+
+<p>ソフトウェア開発ライフサイクルでセキュリティ レビュー プロセスを「左」に配置するには、従来の情報セキュリティ手法の変更が必要になります。しかし、厳密な検査を行うという点では、従来のソフトウェア開発手法からの大きな逸脱はありません。</p>
+
+<h3 id="get_infosec_involved_in_software_design" data-text="ソフトウェア設計に InfoSec を組み込む">ソフトウェア設計に InfoSec を組み込む</h3>
+
+<p>InfoSec チームは、すべてのプロジェクトで設計段階から関与する必要があります。プロジェクトの設計を始める際に、設計を開発段階に渡す条件としてセキュリティ レビューを追加します。このレビュー プロセスで、開発プロセスの根本的な変更が必要になることもあります。この変更を行うため、デベロッパーのトレーニングが必要になることもあります。また、InfoSec チームのスタッフを増員し、変更に対する組織的なサポートを提供しなければならない場合もあります。InfoSec を組み込むことで組織の変更が必要になる可能性もありますが、設計に新しい関係者を入れることは新しいコンセプトではありません。利点を検討するために、必要な場合もあります。</p>
+
+<h3 id="develop_security-approved_tools" data-text="セキュリティ検証済みのツールを開発する">セキュリティ検証済みのツールを開発する</h3>
+
+<p>InfoSec チームによる検証済みのライブラリとツールをデベロッパーに提供するっことで、デベロッパー コードの標準化を進めることができます。標準コードを使用するとで、InfoSec チームによるコードの検証時間を短縮できます。また、デベロッパーが事前に承認されたライブラリを使用していることを自動的にテストできます。これは、InfoSec の評価結果を徹底させる際にも役立ちます。InfoSec チームは通常、デベロッパーやテスターと比較して人員が不足しています。</p>
+
+<h3 id="develop_automated_testing" data-text="テストを自動化する">テストを自動化する</h3>
+
+<p><a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">自動化されたテスト</a>プロセスにセキュリティ テストを組み込むと、個別審査が不要になり、多くのコードを<a href="/architecture/devops/devops-tech-continuous-integration" track-type="solution" track-name="internalLink" track-metadata-position="body">継続的にテスト</a>できます。自動化されたテストにより、一般的なセキュリティの脆弱性を特定できます。また、このようなテストは、継続的インテグレーションのパイプラインまたはビルドプロセスの一部として組み込むことができます。テストの自動化は継続的に取り組む必要があります。最初の段階だけでなく、新しいセキュリティが見つかった場合、自動テストの設計と開発を行う必要があります。これは、InfoSec チームの評価を組み込むもう 1 つの機会となります。</p>
+
+<h2 id="common_pitfalls" data-text="主な注意点">主な注意点</h2>
+
+<p>セキュリティのシフトレフトを阻害する要因としては、次のものがあります。</p>
+
+<ul>
+<li><strong>InfoSec チームとの連携に失敗した</strong>。最大の阻害要因は、InfoSec チームとの連携失敗です。脅威が常に存在する状況では、InfoSec は不可欠な機能です。</li>
+<li><strong>InfoSec チームの人員が不足している</strong>。どの InfoSec チームも人員不足に悩んでいます。Verica のシニア セキュリティ エンジニアである James Wickett 氏の<a href="https://blog.xebialabs.com/2017/04/20/10-tips-integrating-security-devops/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">話</a>によると、大企業の場合、InfoSec の人員はデベロッパー 100 人あたり 1 人で、1 人が 10 のインフラストラクチャを担当しています。</li>
+<li><strong>InfoSec チームの参加が遅すぎる</strong>。多くの場合、InfoSec はソフトウェア配信ライフサイクルの最後にのみ関与しています。この段階では、セキュリティの改善に必要な変更を行うために多くの労力とコストを要します。</li>
+<li><strong>一般的なセキュリティ リスクを理解していない</strong>。多くのデベロッパーは、<a href="https://owasp.org/www-project-top-ten/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">OWASP Top 10</a> などの一般的なセキュリティ リスクとその対策を認識していません。</li>
+</ul>
+
+<h2 id="ways_to_improve_security_quality" data-text="セキュリティ品質の改善方法">セキュリティ品質の改善方法</h2>
+
+<p>以下を行うことにより、ソフトウェア配信のパフォーマンスとセキュリティ品質を改善できます。</p>
+
+<ul>
+<li><strong>セキュリティ レビューを実施する</strong>。主要な機能のセキュリティ レビューを実施します。ただし、セキュリティ レビュー プロセスによって開発作業が遅れないようにする必要があります。</li>
+<li><strong>事前に承認されたコードをビルドする</strong>。InfoSec チームが、ライブラリ、パッケージ、ツールチェーン、プロセスを検証し、承認済みのものとしてデベロッパーや IT オペレーションに提供します。</li>
+<li><strong>すべてのフェーズにセキュリティ レビューを統合する</strong>。InfoSec をソフトウェア配信ライフサイクル全体の日常業務に統合します。たとえば、アプリケーションの設計中に InfoSec チームから情報を取得します。InfoSec がソフトウェアのデモに参加し、デモ中にフィードバックを提供します。</li>
+<li><strong>セキュリティをテストする</strong>。自動化されたテストプロセスの一部としてセキュリティ要件をテストします。事前に承認されたコードを使用する必要がある領域もテストの対象になります。</li>
+<li><strong>InfoSec をデモに招待する</strong>。アプリケーションのデモに InfoSec チームを招待します。これにより、セキュリティ関連の欠陥を早期に発見し、問題の修正に時間をかけることができます。</li>
+</ul>
+
+<h2 id="ways_to_measure_security_quality" data-text="セキュリティ品質の測定方法">セキュリティ品質の測定方法</h2>
+
+<p>上記の改善方法を実施し、次の方法でセキュリティを測定します。</p>
+
+<table>
+  <colgroup>
+    <col width="30%" />
+    <col width="35%" />
+    <col width="35%" />
+  </colgroup>
+<thead>
+<tr>
+<th><strong>テスト項目</strong></th>
+<th><strong>測定データ</strong></th>
+<th><strong>目標</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>機能にセキュリティ レビューが実施されているかどうか</td>
+<td>設計プロセスの初めにセキュリティ レビューを受けた機能の割合。</td>
+<td>この割合は、時間の経過とともに増加します。</td>
+</tr>
+<tr>
+<td>セキュリティ レビューにより開発サイクルが遅くなるかどうか</td>
+<td>レビューによる開発プロセスの遅延時間。</td>
+<td>セキュリティ レビューの時間は、合意された最小時間に達するまで短くする必要があります。</td>
+</tr>
+<tr>
+<td>セキュリティが配信ライフサイクルにどの程度統合されているか</td>
+<td>ソフトウェア配信ライフサイクルの各ステップにおける InfoSec の関与の度合い。たとえば、ソフトウェア開発ライフサイクルの各段階（設計、開発、テスト、リリース）で実施されたセキュリティ レビューの数を測定します。</td>
+<td>この値は、InfoSec がライフサイクルに完全に統合されていることを示す値に達するまで上昇します。</td>
+</tr>
+<tr>
+<td>自動テストがセキュリティ要件を網羅しているかどうか</td>
+<td>自動テストの作成における InfoSec チームの関与。テストプロセスへの InfoSec の関与が増えるにつれ、自動テストプロセスに含まれるセキュリティ要件の数または割合が増えていきます。</td>
+<td>この割合は、時間の経過とともに増加します。</td>
+</tr>
+<tr>
+<td>事前承認されたライブラリ、パッケージ、ツールチェーン、プロセスの使用</td>
+<td>初期の段階では、InfoSec がツールの開発に従事しているかどうか。作業が進むにつれて、利用可能な InfoSec 承認ライブラリ、パッケージ、ツールチェーンの数、開発 / 運用チームで使用されているリソースの数で測定します。</td>
+<td>InfoSec によるツールのモニタリングが適切なレベルにあることに組織が同意するまで、時間とともにエンゲージメントが増加します。同様に、InfoSec が作成または承認したすべてのツールをチームが使用するまで、事前承認ツールの割合または数を増やす必要があります。</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="次のステップ">次のステップ</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps ページ</a>で他の記事やリソースへのリンクを確認する。</li>
+<li>ウェブ アプリケーションで最も重大の 10 個のセキュリティ リスクについて、<a href="https://owasp.org/www-project-top-ten/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">OWASP Top 10</a> を確認する。</li>
+<li><a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">サイト信頼性エンジニアリング（SRE）の書籍</a>を読む。</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">研究プログラム</a>を調べる。</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps のクイック チェック</a>を確認する。業界におけるご自身の立ち位置を把握できます。</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,65 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Medición de DevOps: notificación proactiva de fallas</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> La <em>notificación proactiva de fallas</em> forma parte del conjunto de capacidades que mejoran la entrega de software y el rendimiento de la organización.
+Estas funciones se descubrieron mediante el <a href="https://www.devops-research.com/research.html">programa de investigación de DevOps de DORA</a>, una investigación independiente y rigurosa desde el punto de vista académico sobre las prácticas y las funciones que impulsan el alto rendimiento. Para obtener más información, lee nuestros <a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>La notificación proactiva de fallas consiste en generar notificaciones cuando los valores supervisados se acercan a los umbrales de fallas conocidos y no esperar a que el sistema avise que ya falló o, lo que es peor, descubrir por los clientes que la aplicación o el servicio se encuentran inactivos.
+Con este enfoque, puedes identificar y resolver problemas antes de que sean graves o comiencen a afectar a los usuarios. Con la <a href="https://services.google.com/fh/files/misc/state-of-devops-2014.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2014 DevOps Research and Assessment (DORA)</a> (Investigación y evaluación de DevOps de 2014 (DORA) (PDF), se demostró que la supervisión proactiva es un predictor importante del rendimiento de la entrega de software.
+Según la investigación de DORA, los equipos que usan notificaciones proactivas pueden diagnosticar y resolver problemas con rapidez. Cuando las fallas se informan mediante una fuente externa al equipo de operaciones, como el centro de operaciones de red (NOC) o, peor aún, por parte de los clientes y no mediante la supervisión interna, el rendimiento se ve afectado.</p>
+
+<h2 id="how_to_implement_proactive_failure_notification" data-text="Cómo implementar la notificación proactiva de fallas">Cómo implementar la notificación proactiva de fallas</h2>
+
+<p><strong>Usa reglas de alerta.</strong> Debes generar notificaciones de fallas mediante <em>reglas de alerta</em> específicas. Las reglas de alerta definen las condiciones en las que se genera una alerta y su canal de notificaciones. Obtén más información sobre cómo generar alertas en <a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="solution" track-name="internalLink" track-metadata-position="body">Supervisión y observabilidad</a>.</p>
+
+<p><strong>Usa umbrales.</strong> Las reglas de alerta deben usar umbrales para las métricas que supervisas que indican problemas reales. Los umbrales de supervisión activan reglas de alerta, que generan notificaciones cuando los niveles de las métricas superan los valores de los umbrales.</p>
+
+<p><strong>Elige los umbrales con cuidado.</strong> Elige umbrales para generar alertas solo cuando el umbral en verdad prediga un problema. Es decir, no selecciones un valor de forma arbitraria. En general, debes identificar qué niveles de valores comienzan a causar un impacto en el usuario y, luego, activar una notificación de alerta en algún porcentaje inferior a ese valor.</p>
+
+<p>Por ejemplo, puedes elegir activar una notificación de alerta cuando el tiempo de respuesta promedio de las páginas se encuentre dentro del 20% de un umbral en el que sabes que los usuarios comenzarán a sentirse frustrados y a llamar al servicio de asistencia.</p>
+
+<p><strong>Realiza análisis retrospectivos de incidentes.</strong> Cuando realizas un análisis retrospectivo después de incidentes, debes determinar qué indicadores podrían haber predicho el incidente y supervisarlos en el futuro.</p>
+
+<p><strong>Planifica una estrategia de notificación.</strong> Si una notificación no requiere ninguna acción o requiere siempre la misma, debes automatizar la respuesta. También debes tener en cuenta el volumen de notificaciones de los eventos. Un exceso de notificaciones durante un evento puede resultar molesto en lugar de útil. Cuando las personas están expuestas a una gran cantidad de alarmas, puede que dejen de reaccionen a ellas (un problema conocido como “fatiga de alertas”), lo que genera tiempos de respuesta más prolongados o alarmas perdidas.
+Revisa las notificaciones con regularidad y borra aquellas sobre las que no se puede actuar.</p>
+
+<h2 id="ways_to_improve_failure_notification" data-text="Formas de mejorar la notificación de fallas">Formas de mejorar la notificación de fallas</h2>
+
+<p>Configura alertas para notificar a los equipos clave sobre fallas en los sistemas con anticipación, mucho antes de que se trasladen al centro de operaciones de red (NOC) o a un cliente. Estas son algunas de las tácticas:</p>
+
+<ul>
+<li>Configurar alertas en los sistemas de registro y supervisión en los niveles adecuados</li>
+<li>Configurar alertas para asegurarse de que notifiquen a las personas y los equipos que pueden solucionar el problema</li>
+<li>Supervisar el estado del sistema de manera proactiva según las advertencias del umbral antes de que ocurran fallas en el sistema.</li>
+<li>Supervisar de forma proactiva el estado del sistema en función de la tasa de advertencias de cambios</li>
+<li>Asegurarse de que solo se produzcan alertas relevantes y de que el equipo no reciba demasiadas alertas. Analiza con atención qué alertas son irrelevantes. Inhabilita las alertas irrelevantes y vuelve a activar las alertas de supervisión relevantes.
+No se recomienda inhabilitar todas las alertas</li>
+</ul>
+
+<h2 id="ways_to_measure_failure_notifications" data-text="Formas de medir las notificaciones de fallas">Formas de medir las notificaciones de fallas</h2>
+
+<p>La instrumentación de la supervisión proactiva es sencilla. Los componentes que se deben capturar son los siguientes:</p>
+
+<ol>
+<li>En qué medida se capturan y usan las alertas de fallas de los sistemas de registro y supervisión</li>
+<li>En qué medida el estado del sistema se supervisa de forma proactiva mediante advertencias de umbrales</li>
+<li>En qué medida el estado del sistema se supervisa de forma proactiva mediante la tasa de advertencias de cambios</li>
+</ol>
+
+<p>Para asegurarte de capturar diferentes aspectos del sistema, debes supervisar las métricas al menos de dos maneras. Por ejemplo, puedes establecer un umbral de métricas que active alertas si una métrica aumenta o cae por debajo de un valor durante un período determinado, y una tasa de cambios que active alertas cuando una tasa de cambios de valores de métricas sea mayor o menor que lo previsto.</p>
+
+<h2 id="whats_next" data-text="Próximos pasos">Próximos pasos</h2>
+
+<ul>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li>Obtén más información sobre cómo generar alertas en <a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="solution" track-name="internalLink" track-metadata-position="body">Supervisión y observabilidad</a>.</li>
+<li>Lee el <a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">libro sobre ingeniería de confiabilidad de sitios (SRE)</a>.</li>
+<li>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</li>
+<li>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</li>
+</ul>
+
+</body></html>

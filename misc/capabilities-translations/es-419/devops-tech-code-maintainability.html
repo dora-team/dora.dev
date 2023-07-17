@@ -1,0 +1,146 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnología de DevOps: Capacidad de mantenimiento del código</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> La <em>capacidad de mantenimiento del código</em> es uno de los conjuntos de capacidades que impulsa una entrega de software y un rendimiento organizativo mayores. Estas funciones se descubrieron mediante el <a href="https://www.devops-research.com/research.html">programa de investigación de DevOps de DORA</a>, una investigación independiente y rigurosa desde el punto de vista académico sobre las prácticas y las funciones que impulsan el alto rendimiento. Para obtener más información, lee nuestros <a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>Se necesita <a href="https://www.businessinsider.com/how-many-lines-of-code-it-takes-to-run-different-software-2017-2" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">mucho código</a> para ejecutar los sistemas que compilamos: el sistema operativo Android se ejecuta en 12 a 15 millones de líneas de código, el repositorio de código monolítico de Google contiene más de mil millones de líneas de código y una app de smartphone típica tiene 50,000 líneas de código.</p>
+
+<p>En el informe de estado de DevOps de 2019 de <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a>, se demuestra que la capacidad de los equipos para mantener su código de manera eficaz es una de las prácticas técnicas que contribuyen positivamente a lograr el éxito con la <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">entrega continua</a>.</p>
+
+<p>Si tu equipo desempeña un buen trabajo con la capacidad de mantenimiento del código, sucede lo siguiente:</p>
+
+<ul>
+<li>El equipo puede encontrar ejemplos con facilidad en la base de código, reutilizar el código de otras personas y cambiar el código que mantienen otros equipos si es necesario.</li>
+<li>Es fácil para el equipo agregar dependencias nuevas a su proyecto y migrar a una versión nueva de una dependencia.</li>
+<li>Las dependencias del equipo son estables, y el código se rompe con muy poca frecuencia.</li>
+</ul>
+
+<p>En estas conclusiones, se destaca la importancia de hacer que los desarrolladores puedan encontrar, reutilizar y cambiar con facilidad el código en toda la base de código de la organización y, además, de implementar prácticas y herramientas para ayudar en la administración de dependencias.</p>
+
+<p>La capacidad de mantenimiento del código es una competencia que requiere coordinación de toda la organización, ya que se basa en la posibilidad de buscar, reutilizar y cambiar el código de otros equipos. Administrar las dependencias de manera efectiva suele ser un gran desafío cuando se trabaja con bases de código y organizaciones grandes. Gracias a las herramientas que permiten evitar problemas con dependencias o aclarar las consecuencias de los cambios de código, se pueden mejorar las decisiones de diseño y la calidad del código de todos los ingenieros, lo que, a su vez, les permite trabajar más rápido y crear software más estable y confiable.</p>
+
+<h2 id="how_to_implement_code_maintainability" data-text="Cómo implementar la capacidad de mantenimiento del código">Cómo implementar la capacidad de mantenimiento del código</h2>
+
+<p>En términos de implementación, es conveniente gestionar la administración del código fuente y la administración de dependencias por separado, aunque es posible que una solución (como el repositorio monolítico o el patrón <em>monorepo</em> que usa Google) pueda abordar ambos procesos.</p>
+
+<p>Primero, se abordará la administración del código fuente. Si se permite que todos busquen, reutilicen y propongan cambios con facilidad en cualquier parte de la base de código, se logra lo siguiente:</p>
+
+<ul>
+<li><strong>Entrega más rápida:</strong> para entregar software con rapidez, los equipos deben poder ver y proponer cambios en el código de los demás. Hacer que este proceso sea lo más sencillo posible ayuda a que se transmita el conocimiento en toda la organización y ayuda a habilitar equipos que necesitan realizar cambios en otras partes de la base de código para poder realizar su trabajo.</li>
+<li><strong>Niveles más altos de estabilidad y disponibilidad:</strong> en caso de un incidente, es esencial poder encontrar y proponer cambios con rapidez en cualquier parte de la base de código.</li>
+<li><strong>Mayor calidad de código:</strong> la refactorización de código para mejorar su calidad interna a menudo implica realizar cambios en varias partes de la base de código. Si esto resulta difícil, se reduce la probabilidad de que las personas hagan refactorizaciones, y aumenta el costo de estas. Algunas organizaciones, incluido Google, ejecutan proyectos de mantenimiento de código en varios equipos, en los que los miembros corrigen los elementos de nivel de mantenimiento en la base de código; esto depende de la posibilidad de acceder al código y cambiarlo con facilidad en toda la organización.</li>
+</ul>
+
+<p>La posibilidad de encontrar ejemplos y reutilizar el código de otras personas depende de la habilidad de buscar y acceder con facilidad al código fuente de toda la organización. La forma más sencilla de implementar este requisito es usar una sola plataforma de control de versión para el código de toda la organización, incluso si ese código se divide entre varios repositorios dentro de la plataforma. Cuantos más plataformas de control de versión estén en uso, más difícil será encontrar código.</p>
+
+<p>Algunas organizaciones querrán mantener partes de la base de código bloqueadas, de modo que solo las personas que lo necesiten puedan ver esa parte de la base de código (Google es una de las organizaciones que lo hace). Lo ideal sería que esta sea la excepción en lugar de la regla y, además, el software debería diseñarse para minimizar el área de superficie del código fuente confidencial. En muchos casos, la separación lógica del código confidencial mediante el mecanismo de control de acceso del sistema de control de versión es suficiente.</p>
+
+<p>También debería ser posible cambiar el código que mantienen otros equipos. Por lo general, para realizar estos cambios, se requiere la aprobación del equipo responsable de mantener el código en cuestión. Los mecanismos como las solicitudes de extracción, en los que se crea una rama en el control de versión y la aprobación provoca la combinación de la rama, pueden reducir los inconvenientes que causa permitir que otros equipos propongan cambios y, también, evitan <a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">cambios no autorizados</a> y aplican controles de seguridad de la información, como la división de tareas.</p>
+
+<p>Luego, considera las dependencias. Facilitar que los equipos agreguen y actualicen las dependencias, y garantizar que estas sean estables y rara vez afecten el código implica lo siguiente:</p>
+
+<ul>
+<li><strong>Mejor seguridad:</strong> a medida que las dependencias quedan desactualizadas, es más probable que se descubran vulnerabilidades en ellas. Es esencial que las dependencias se mantengan actualizadas, en especial, después de que se detecten vulnerabilidades y se apliquen parches.</li>
+<li><strong>Entrega más rápida:</strong> si usas bibliotecas desarrolladas por otras organizaciones o equipos, no tienes que escribir tu propio código para realizar ese trabajo.
+Cuando tienes mecanismos para asegurarte de que las dependencias sean estables y rara vez afecten el código, puedes dedicar más tiempo a la codificación y menos al mantenimiento.</li>
+</ul>
+
+<p>La administración de dependencias es un desafío común para los equipos de desarrollo de software.
+Mantener las dependencias actualizadas y coherentes en las aplicaciones es complejo, costoso y lleva mucho tiempo. Muchas organizaciones no pueden asignar los recursos adecuados a esta tarea. Este es un problema que se manifiesta en procesos y herramientas inapropiados. Esto puede representar un riesgo de seguridad importante cuando se descubren vulnerabilidades en las dependencias, y las aplicaciones que las usan se deben actualizar.</p>
+
+<p>Es fundamental adoptar y desarrollar procesos y herramientas que faciliten a los equipos consumir versiones de dependencias conocidas y actualizarlas con rapidez, incluida la <a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">integración continua</a> (CI) y las <a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">pruebas</a> automatizadas, a fin de descubrir si las versiones nuevas de las dependencias contienen cambios rotundos y para correlacionar con facilidad y rapidez las versiones de las dependencias en uso con los sistemas que las usan.</p>
+
+<p>Hay dos modelos comunes para incluir las dependencias en el software: el vendoring y los manifiestos declarativos. En vendoring, el código fuente o el objeto binario de cada dependencia se incluyen en el control de versión junto con la aplicación. Como alternativa, la mayoría de las plataformas modernas tienen una herramienta de administración de dependencias que administra las dependencias especificadas en los archivos de manifiesto declarativos verificados en el control de versión (por ejemplo, pip de Python, npm de Node.js, CRAN de R y NuGet de .NET).</p>
+
+<p>Ya sea que uses manifiestos o el método vendoring, las consideraciones más importantes son las siguientes:</p>
+
+<ul>
+<li><strong>Rastreabilidad:</strong> asegúrate de que puedes realizar un seguimiento de cualquier implementación o paquete determinado hasta la versión exacta de cada dependencia usada para compilarlos.
+Sin esto, es imposible depurar problemas causados por los cambios en las dependencias.</li>
+<li><strong>Reproducibilidad:</strong> el proceso de compilación debe ser lo más determinista posible. Intentar depurar problemas causados por un proceso de compilación que se comporta de manera diferente en distintas máquinas es muy difícil.</li>
+</ul>
+
+<h3 id="implementing_code_maintainability_at_google" data-text="Implementa la capacidad de mantenimiento del código en Google">Implementa la capacidad de mantenimiento del código en Google</h3>
+
+<p>Google implementa la capacidad de mantenimiento del código a través de un enfoque que es bastante inusual. Si bien nuestro enfoque tiene ventajas y desventajas y no sirve para todos, permite que los equipos cumplan con los objetivos descritos en este artículo.</p>
+
+<p>El noventa y cinco por ciento de los desarrolladores de software de Google en todo el mundo trabajan en una base de código monolítica compartida que se mantiene mediante un sistema de control de fuente centralizado con un modelo de <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">desarrollo basado en troncos</a>.
+<a href="http://dl.acm.org/citation.cfm?id=2854146" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">En 2016</a>, la base de código de Google incluía “una cantidad aproximada de mil millones de archivos y [tenía] un historial de más o menos 35 millones de confirmaciones que abarcan la existencia total de 18 años de Google. El repositorio contiene 86 TB de datos, que incluyen alrededor de dos mil millones de líneas de código en nueve millones de archivos de origen únicos”.</p>
+
+<p>Dado que todo el código de Google se guarda en un solo repositorio, es sencillo encontrar y cambiar el código de otros equipos. Google proporciona un motor de búsqueda interno que permite realizar búsquedas con facilidad en toda la base de código. Los desarrolladores tienen una variedad de herramientas que les permiten crear listas de cambios para realizar revisiones y aprobaciones. Las pruebas se ejecutan en todas las listas de cambios, y estas listas se pueden actualizar y comentar.
+Las herramientas de revisión de código de Google, al igual que muchas otras plataformas, pueden sugerir a los revisores cambios determinados. Cada directorio en el repositorio de Google contiene un archivo OWNERS en el que se enumeran las personas o los grupos que pueden aprobar cambios en los archivos de ese directorio (existen funciones similares disponibles en <a href="https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">GitHub</a>, <a href="https://docs.gitlab.com/ee/user/project/code_owners.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">GitLab</a> y <a href="https://marketplace.atlassian.com/apps/1218598/code-owners-for-bitbucket-server?hosting=server&amp;tab=overview" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Bitbucket</a>).
+La búsqueda rápida, las sugerencias de los responsables de aprobación y las pruebas automatizadas facilitan y mejoran la proposición de cambios, la revisión y la colaboración.</p>
+
+<p>Con estas herramientas, las refactorizaciones a gran escala que modifican varias partes de la base de código son bastante fáciles de ejecutar y se pueden realizar de forma atómica. Google compiló herramientas que simplifican y automatizan aún más el proceso de realizar cambios que afectan a secciones importantes de la base de código. Las herramientas de Google incluyen un sistema de compilación llamado Blaze que se usa para compilar y probar cualquier cambio, incluidas las dependencias, de la fuente (algunas partes de Blaze se lanzaron en el formato de la herramienta de código abierto <a href="https://bazel.build/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Bazel</a>).
+Cualquier persona en Google puede descubrir y proponer cambios con facilidad en cualquier parte de Google, incluida su configuración de infraestructura, que también se mantiene en el mismo repositorio monolítico. Compartir y reutilizar el código es sencillo.</p>
+
+<p>Google también tiene controles para administrar dependencias en software de código abierto. En primer lugar, todo el software de código abierto que se usa en Google debe registrar su fuente en el repositorio monolítico de Google. En segundo lugar, se puede registrar solo una versión de una biblioteca determinada en el control de código fuente en cualquier momento. Además, todo el software está vinculado de forma estática y se compila a partir del código fuente. Por último, cada vez que haya un cambio en el código fuente de una biblioteca, se volverá a compilar y se realizarán pruebas automatizadas para todo el software que consume esa dependencia.</p>
+
+<p>Estos controles, combinados con la potente infraestructura de CI de Google, facilitan la actualización de nuestros sistemas de producción con versiones nuevas de dependencias. También ayudan a garantizar que todos los sistemas usen versiones coherentes de una biblioteca determinada (esto quita la posibilidad de que se produzca la complicada “dependencia de diamante”, en la que un producto depende de dos componentes en los que cada uno, a su vez, depende de <em>diferentes versiones</em> de una biblioteca común, lo que hace imposible compilar el producto).</p>
+
+<p>La desventaja del enfoque de Google para administrar dependencias en el código externo es que es más difícil agregar dependencias nuevas (uno de los resultados clave de la capacidad de mantenimiento del código). Cualquier dependencia nueva debe tener su código fuente registrado en el repositorio monolítico de Google, lo que significa que el código debe revisarse y someterse a pruebas cuando se inicia y en cualquier actualización. Sin embargo, este nivel de rigor ayuda a evitar que el código con vulnerabilidades de seguridad se extienda a los productos de Google y garantiza que todas las dependencias tengan encargados de mantenimiento asignados.</p>
+
+<h2 id="common_pitfalls_of_implementing_code_maintainability" data-text="Errores comunes de la implementación de la capacidad de mantenimiento del código">Errores comunes de la implementación de la capacidad de mantenimiento del código</h2>
+
+<p>El respaldo de las herramientas y la cultura organizacional son los principales obstáculos para hacer que cualquier persona pueda buscar y cambiar todo código de forma universal.</p>
+
+<p>La primera dificultad común es tener varios repositorios de control de versión o repositorios de control de versión que tienen una configuración de acceso restrictiva. Lo ideal es que las organizaciones tengan una única plataforma de control de versión en la que se guarde todo el código.
+Además, el acceso predeterminado debería permitir que cualquier persona de la organización vea todos los archivos de origen, con la posibilidad de restringir el acceso a archivos sensibles. También debería haber una forma de buscar el control de versión.</p>
+
+<p>En cambio, las organizaciones suelen restringir quién puede realizar cambios en el control de versión. Debido a esto se produce la segunda dificultad: una falta de herramientas y procesos para que las personas realicen cambios en las partes de la base de código a las que no tienen acceso de escritura. Esto puede ser un obstáculo importante para corregir problemas causados (por lo general, de forma involuntaria) por otros equipos de cuyo código dependes. También evita la refactorización que afecta varias partes de la base de código.</p>
+
+<p>Para mitigar este problema, algunas herramientas modernas de control de versión proporcionan una forma de enviar, revisar, aprobar y auditar las solicitudes de cambio de partes de la base de código a las que los usuarios no tienen acceso de escritura.</p>
+
+<p>Incluso con el respaldo de las herramientas, las organizaciones deben sentirse cómodas con el hecho de que las bases de código estén disponibles y se puedan buscar dentro de la organización y, quizás, por parte de terceros, como los proveedores y contratistas. Puede que esto no sea posible para las organizaciones cuyos repositorios de control de versión contienen cantidades significativas de código y de información confidenciales que no se pueden compartir entre equipos.</p>
+
+<p>El uso de dependencias binarias es mucho más frecuente, pero cada lenguaje tiene su propia cadena de herramientas para administrar estas dependencias. Es muy complejo crear una estrategia y convenciones estándar que permitan que las dependencias se administren y se registren de manera eficaz en estas cadenas de herramientas mediante toda la cartera de software de la organización. La inversión significativa en la infraestructura de CI que permite que las versiones nuevas de las bibliotecas se prueben con facilidad para verificar la compatibilidad con los sistemas existentes (y la presencia de vulnerabilidades) es necesaria a fin de lograr que el proceso de actualización de bibliotecas de terceros sea fácil de manejar.</p>
+
+<p>En la práctica, la mayoría de las organizaciones deja en manos de los equipos la administración de sus dependencias, con resultados muy variables. Como resultado, suele ser muy difícil responder rápido y de manera previsible en el caso de que se descubra una vulnerabilidad en una biblioteca: incluso encontrar los servicios afectados suele constituir un proyecto de arqueología importante.</p>
+
+<h2 id="how_to_measure_code_maintainability" data-text="Cómo medir la capacidad de mantenimiento del código">Cómo medir la capacidad de mantenimiento del código</h2>
+
+<p>Aquí te ofrecemos algunas ideas simples para comenzar a medir la capacidad de mantenimiento del código:</p>
+
+<ul>
+<li>¿Qué porcentaje de la base de código de tu organización se puede buscar?</li>
+<li>¿Cuál es el plazo promedio para realizar un cambio en una parte de la base de código si no se tiene acceso de escritura?</li>
+<li>¿Qué porcentaje de nuestra base de código es código duplicado? ¿Qué porcentaje no se usa?</li>
+<li>¿Qué porcentaje de las aplicaciones no usa la versión estable más reciente de todas las bibliotecas que consumen?</li>
+<li>¿Cuántas versiones diferentes de cada biblioteca tenemos en producción?
+¿Cuál es la mediana? ¿Qué objetivo es adecuado? ¿Cuántas versiones tienen más de 1 año de antigüedad?</li>
+<li>¿Con qué frecuencia los equipos actualizan sus bibliotecas? ¿Cuánto tiempo se necesita para hacerlo?</li>
+</ul>
+
+<p>Cuando se considera qué medir, existen tres casos de uso en los que hay que enfocarse:</p>
+
+<ul>
+<li>Administración de la deuda técnica y de diseño</li>
+<li>Administración de cambios (incluidos los cambios de emergencia)</li>
+<li>Aplicación de parches para vulnerabilidades</li>
+</ul>
+
+<p>A medida que aumenta el tamaño de las bases de código, la deuda técnica se convierte en una de las preocupaciones principales. Es importante poder refactorizar y <a href="/architecture/devops/devops-tech-architecture">volver a diseñar la arquitectura del código</a> a medida que evolucionan las organizaciones y los productos de los que dependen sus clientes. Para bases de código grandes, esto puede ser complejo y difícil sin un respaldo significativo de las herramientas. También es importante poder identificar el código que no se usa, está duplicado, tiene cobertura de pruebas deficiente o contiene vulnerabilidades. El primer paso es asegurarte de que tus herramientas te permitan establecer y hacer un seguimiento de las métricas que identifiquen áreas que se deben mejorar y faciliten la toma de medidas segura.</p>
+
+<p>El segundo paso es la <a href="/architecture/devops/devops-tech-database-change-management">administración de cambios</a>.
+Cuando una persona realiza un cambio en una parte de la base de código, ¿en qué medida tus herramientas te ayudan a detectar el impacto de ese cambio? Si otro equipo se ve afectado, ¿qué tan rápido pueden tomar medidas para resolver el problema, sobre todo si la solución se encuentra en un área diferente de la base de código? Cuando se debe realizar un cambio de emergencia, ¿cuánto tiempo toma aplicar, probar y lanzar los cambios de código necesarios en la base de código?</p>
+
+<p>Establece las métricas y haz un seguimiento de ellas para examinar el tiempo que tardan los cambios en propagarse a través de los procesos. Luego, identifica los cuellos de botella, trabaja para mejorar los procesos y agrega respaldo de herramientas cuando sea necesario. Ten cuidado con los procesos de “emergencia” en los que se omiten las validaciones y las aprobaciones a fin de lograr mayor velocidad. El objetivo debe ser que tu proceso habitual sea tan confiable y rápido como para ser efectivo en caso de una emergencia.</p>
+
+<p>La aplicación de parches para vulnerabilidades es un aspecto de la administración de cambios muy importante. Cuando se descubre una vulnerabilidad en una biblioteca, ¿cuánto tiempo toma descubrir y aplicar parches al software que usa las versiones vulnerables de la biblioteca?
+Si no estás seguro, es conveniente medirlo con regularidad. Dado el enorme costo que puede implicar el manejo de incumplimientos y el robo de datos y códigos, y la frecuencia con la que ocurren estos ataques, por lo general, es conveniente usar recursos significativos para garantizar que el software de terceros del que dependes esté actualizado y que se puede actualizar con facilidad en caso de que se detecten vulnerabilidades.</p>
+
+<h2 id="whats_next" data-text="Próximos pasos">¿Qué sigue?</h2>
+
+<ul>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li><a href="https://research.google/pubs/pub45424/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">¿Por qué Google almacena miles de millones de líneas de código en un solo repositorio?</a></li>
+<li><a href="https://www.youtube.com/watch?v=W71BTkUbdqE" target="youtube" track-type="article" track-name="youtubeLink" track-metadata-position="body">Presentación de Rachel Potvin sobre el repositorio de código monolítico de Google</a></li>
+<li>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</li>
+<li>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</li>
+</ul>
+
+</body></html>

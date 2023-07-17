@@ -1,0 +1,79 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 프로세스: 팀 실험</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>참고:</strong><span> <em>팀 실험</em>은 소프트웨어 제공 및 조직 성능 향상을 가져오는 기능 집합 중 하나입니다. 이러한 기능은 성과 향상을 이끌어내는 관례와 기능을 독립적이자 학술적으로 심층 연구하는 <a href="https://www.devops-research.com/research.html">DORA State of DevOps 연구 프로그램</a>을 통해 개발되었습니다. 자세한 내용은 <a href="/devops">DevOps 리소스</a>를 참조하세요.</span></aside>
+<p>소위 민첩한 팀에서도 개발자는 주어진 요구사항이나 스토리에 대해서만 작업할 수 있습니다. 또한 개발자의 전문 지식이나 개발 과정에서 발견한 사실에도 불구하고 개발자는 이러한 요구사항과 스토리를 변경할 수 없습니다. 민첩한 팀에서는 스토리 카드에 기록된 내용이 고객과 팀 간의 대화를 보여줍니다.
+스토리는 달성하려는 비즈니스 성과 또는 해결하려는 문제부터 시작됩니다. 그러면 팀에서 수행해야 할 작업을 결정하고 이 작업을 통해 성과를 달성할 수 있는지 아니면 문제를 해결할 수 있는지 여부를 테스트합니다.</p>
+
+<p>조직에서 최신 소프트웨어 개발 기술을 최대한 활용하려면 팀이 실제 사용자를 대상으로 실험하여 합의된 비즈니스 성과를 달성할 수 있도록 해야 합니다. 이 패러다임에서는 개발자가 사용자와 문제, 디자인 솔루션에 대해 더 많은 사실을 발견함에 따라 신속하게 아이디어를 프로토타입으로 제작하고 테스트할 수 있습니다. 그러면 팀에서 학습한 내용을 제품 또는 서비스의 디자인에 통합합니다. 이러한 권장사항에서는 린(lean) 제품 개발 방법을 사용하여 팀에서 조직에 부가 가치가 있는 기능을 제공하고 이러한 기능을 더 자주 제공할 수 있습니다.</p>
+
+<p>팀 실험은 린(lean) 제품 관리의 한 방식입니다. 이 접근 방식은 <a href="/architecture/devops/devops-process-work-visibility-in-value-stream" track-type="article" track-name="internalLink" track-metadata-position="body">가치 흐름에서 작업 가시성</a>, <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="article" track-name="internalLink" track-metadata-position="body">소규모 일괄 작업</a>, <a href="/architecture/devops/devops-process-customer-feedback" track-type="article" track-name="internalLink" track-metadata-position="body">고객 의견에 대한 가시성</a>과 같은 기능과 함께 사용됩니다.
+이러한 기능을 통해 소프트웨어 제공 성능과 조직 성능을 예측할 수 있습니다.</p>
+
+<h2 id="how_to_implement_team_experimentation" data-text="팀 실험 구현 방법">팀 실험 구현 방법</h2>
+
+<p><a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment(DORA) 연구</a>는 팀 실험에서 소프트웨어 제공 성능을 높이는 3가지 핵심 구성요소를 식별합니다.</p>
+
+<ul>
+<li>팀 외부의 허가 없이 독립적으로 새로운 아이디어를 도출할 수 있는 기능.</li>
+<li>개발 중에 사양을 작성하고 변경할 수 있는 기능.</li>
+<li>팀 외부의 허가 없이 스토리와 사양을 변경할 수 있는 기능.</li>
+</ul>
+
+<p>이러한 기능을 바탕으로 팀 실험 개선을 위해 구현할 수 있는 몇 가지 방법이 있습니다.</p>
+
+<ul>
+<li><strong>팀 역량 강화</strong>. 중요한 문제를 해결하는 비즈니스 목표를 추구하기 위해 새로운 아이디어를 도출할 수 있도록 팀의 역량을 강화할 수 있습니다.</li>
+<li><strong>정보 및 컨텍스트 제공</strong>. 올바른 작업에 대해 정보에 입각한 결정을 내릴 수 있도록 팀에게 정보와 컨텍스트를 제공할 수 있습니다. 조직 성과를 측정하면 최선의 결정을 내리는 데 중요한 정보를 제공하므로, 팀은 원하는 성과를 달성하고 문제를 해결할 수 있습니다.</li>
+<li><strong>작업 수행자에게 세부정보 제공</strong>. 팀에서 적절하다고 판단되면 스토리, 사양, 기술을 변경할 수 있습니다.
+전문가라는 것을 이해하고 인정하며, 작업을 완료하는 데 필요한 기술적 결정을 내리도록 역량을 강화할 수 있습니다. 실적이 가장 우수한 팀과 조직에서 팀은 <a href="/architecture/devops/devops-tech-teams-empowered-to-choose-tools" track-type="article" track-name="internalLink" track-metadata-position="body">사용하는 도구와 기술에 대해 정보에 입각한 결정을 내릴 수 있습니다</a>.</li>
+</ul>
+
+<h2 id="common_pitfalls_in_team_experimentation" data-text="팀 실험의 일반적인 문제">팀 실험의 일반적인 문제</h2>
+
+<p>조직에서 팀 실험을 구현하면 다음과 같은 일반적인 문제가 발생합니다.</p>
+
+<ul>
+<li><strong>실험의 중요성을 무시합니다</strong>. 기술 담당자를 주문 담당자로 취급하지 마세요. 팀에 작업을 수행하는 방법에 대한 구체적인 지침이 주어지면 상황이 더 악화됩니다. 기술 담당자는 전문가이므로 작업을 완료하는 데 필요한 기술적 결정을 내릴 수 있습니다.</li>
+<li><strong>기술 담당자에게 빠르고 쉽게 실험을 설계하고 수행할 수 있는 기회를 제공하지 않습니다</strong>. 신속하게 아이디어를 프로토타입으로 제작하고 테스트할 수 있도록 개발자의 역량을 강화합니다.</li>
+</ul>
+
+<h2 id="ways_to_improve_team_experimentation" data-text="팀 실험 개선 방법">팀 실험 개선 방법</h2>
+
+<p>팀에서 가장 적합한 솔루션을 찾을 수 있도록 다음 추천 항목을 사용해보세요.</p>
+
+<ul>
+<li><strong>일반 해커톤을 개최합니다</strong>. 해커톤은 팀에서 실험하고 아이디어를 도출하여 공유할 수 있는 기회입니다. 또한 팀에서 새로운 기술과 도구를 사용할 수 있다는 추가적인 이점도 있습니다.</li>
+<li><strong>팀에서 실험을 촉진하기 위해 솔루션을 반복하고 지속적으로 개선하도록 유도합니다</strong>. 문제에 대한 첫 번째 솔루션은 최선의 방법이 아닌 경우가 많습니다. 하나의 서비스 또는 기능을 개선하면 다른 서비스 또는 기능이 개선되는 경우가 있습니다.</li>
+<li><strong>개발자와 운영자가 고객과 대화하고 관찰하도록 허용합니다</strong>.
+이러한 상호작용은 팀에서 문제를 해결하고 새로운 아이디어를 개발하는 데 사용할 수 있는 더 많은 컨텍스트와 정보를 제공합니다.</li>
+</ul>
+
+<h2 id="ways_to_measure_team_experimentation" data-text="팀 실험 측정 방법">팀 실험 측정 방법</h2>
+
+<p>스토리 또는 사양을 변경하기 위한 권한 요청을 추적하는 등 시스템에서 팀 실험의 증거를 포착할 수 있습니다. 하지만 설문조사를 사용하여 실험을 측정하는 것이 좋습니다.
+핵심 아이디어는 이러한 작업을 수행하고 문제를 해결할 수 있는 최선의 방법을 찾는 것입니다.</p>
+
+<p>DORA 연구 결과에 따르면 실적이 우수한 팀은 다음과 같은 조치를 통해 운영되는 것으로 나타납니다.</p>
+
+<ul>
+<li>팀이 새로운 아이디어를 도출할 수 있습니다.</li>
+<li>팀이 권한을 요청하지 않고도 작업을 수행할 수 있습니다.</li>
+<li>팀이 개발 중에 스토리와 사양을 변경할 수 있습니다.</li>
+<li>팀이 권한을 요청하지 않고도 변경할 수 있습니다.</li>
+</ul>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

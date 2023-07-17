@@ -1,0 +1,118 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Procedura DevOps: utilizzo in piccoli batch</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> <em>la possibilità di lavorare in piccoli batch</em> è un insieme di funzionalità che
+consente di potenziare la distribuzione del software e le prestazioni dell'organizzazione.
+Queste funzionalità sono state scoperte dal <a href="https://www.devops-research.com/research.html">programma di ricerca DORA State of DevOps</a>, un'indagine indipendente e rigorosa sulle pratiche che consentono prestazioni elevate. Per scoprire di più, leggi le nostre <a href="/devops">risorse DevOps</a>.</span></aside>
+<p>Lavoro in piccoli batch è un principio essenziale in qualsiasi disciplina in cui i cicli di feedback sono importanti, o vuoi imparare rapidamente dalle tue decisioni. L'utilizzo di piccoli gruppi consente di verificare rapidamente le ipotesi, in base alla probabilità che un determinato miglioramento abbia l'effetto desiderato e, in caso contrario, consente di correggere o rivedere le ipotesi. Questo articolo si applica a qualsiasi tipo di modifica che includa la trasformazione dell'organizzazione e il miglioramento dei processi, ma si concentra principalmente sulla distribuzione del software.</p>
+
+<p>Lavoro in piccoli batch fa parte della gestione snella dei prodotti. Insieme a funzionalità come la <a href="/architecture/devops/devops-process-work-visibility-in-value-stream" track-type="article" track-name="internalLink" track-metadata-position="body">visibilità del lavoro nel flusso del valore</a>, <a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">la sperimentazione del team</a> e la <a href="/architecture/devops/devops-process-customer-feedback" track-type="article" track-name="internalLink" track-metadata-position="body">visibilità nel feedback dei clienti</a>, lavorare in piccoli gruppi prevede le prestazioni di distribuzione del software e le prestazioni dell'organizzazione.</p>
+
+<p>Uno dei motivi per cui il lavoro viene svolto in grandi batch è dovuto al <a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">grande costo fisso di gestione delle modifiche</a>.
+Nell'approccio graduale tradizionale allo sviluppo di software, i rilasci da
+sviluppo a test o da test a operazioni IT sono costituiti da intere release:
+mesi di lavoro effettuati da team composti da decine o centinaia di persone. Con questo approccio tradizionale, raccogliere feedback su una modifica può richiedere settimane o mesi.</p>
+
+<p>Al contrario, le pratiche DevOps, che utilizzano team interfunzionali e approcci leggeri, consentono al software di avanzare dallo sviluppo attraverso test e operazioni fino alla produzione in pochi minuti. Tuttavia, questa rapida avanzamento richiede l'utilizzo del codice in piccoli batch.</p>
+
+<p>L'utilizzo di piccoli gruppi offre molti vantaggi:</p>
+
+<ul>
+<li>In questo modo si riduce il tempo necessario per ricevere feedback sulle modifiche, semplificando
+la valutazione e la risoluzione dei problemi.</li>
+<li>Aumenta l'efficienza e la motivazione.</li>
+<li>Impedisce alla tua organizzazione di soffrire la fallacia dei costi sommersi.</li>
+</ul>
+
+<p>Puoi applicare l'approccio per piccoli batch a livello di funzionalità e a livello di prodotto.
+Come esempio, un prodotto minimo redditizio, o MVP, è un prototipo di un prodotto con funzionalità sufficienti per consentire una convalidazione dell'apprendimento su un prodotto e il suo modello di business.</p>
+
+<p>La distribuzione continua si basa sul lavoro in piccoli batch e tenta di ottenere il prima possibile ogni modifica del controllo della versione. L'obiettivo della distribuzione continua è modificare l'economia del processo di distribuzione del software, rendendolo possibile in piccoli batch. Questo approccio fornisce feedback rapidi e completi ai team in modo che possano migliorare il loro lavoro.</p>
+
+<h2 id="how_to_work_in_small_batches" data-text="Come lavorare in batch">Come lavorare in batch</h2>
+
+<p>Quando pianifichi le nuove funzionalità, prova a suddividerle in unità di lavoro che possono essere completate in modo indipendente e in brevi periodi di tempo. Consigliamo che ogni funzionalità o gruppo di lavoro segua il concetto agile del <a href="https://wikipedia.org/wiki/INVEST_(mnemonic)" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">principio INVEST</a>:</p>
+
+<ul>
+<li><strong>Indipendente</strong>. Fare in modo che i gruppi di lavoro siano il più indipendenti possibile dagli altri gruppi, in modo che i team possano lavorarci in qualsiasi ordine ed eseguirne il deployment e la convalida indipendentemente da altri gruppi di lavoro.</li>
+<li><strong>Negoziabili</strong>. Ogni lavoro è ripetibile e può essere rinegoziato
+alla ricezione del feedback.</li>
+<li><strong>Utile</strong>. Sono utilizzabili e offrono valore aggiunto agli stakeholder.</li>
+<li><strong>Stimabile</strong>. Sono disponibili informazioni sufficienti sui gruppi di lavoro
+che puoi stimare facilmente l'ambito.</li>
+<li><strong>Piccola</strong>. Durante uno sprint, dovresti essere in grado di completare gruppi di lavoro in piccoli incrementi di tempo, ovvero orari per un paio di giorni.</li>
+<li><strong>Testabile</strong>. Ogni lavoro può essere testato, monitorato e verificato
+come funziona come previsto.</li>
+</ul>
+
+<p>Quando le funzionalità hanno dimensioni appropriate, puoi suddividerne lo sviluppo in batch ancora più piccoli. Questo processo può essere difficile e richiede sviluppo. In teoria, gli sviluppatori devono controllare più
+piccole modifiche rilasciabili
+<a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">in trunk almeno una volta al giorno</a>.</p>
+
+<p>La chiave è iniziare a sviluppare a livello di servizio o di API, non a livello di UI. In questo modo puoi aggiungere aggiunte all'API che inizialmente non saranno disponibili per gli utenti dell'app e controllare queste modifiche in trunk. Puoi lanciare queste modifiche in produzione senza renderle visibili agli utenti. Questo approccio, chiamato <em>lancio scuro</em>, consente agli sviluppatori di controllare il codice per verificare la presenza di piccoli batch completati, ma anche per funzionalità non ancora complete. Puoi quindi eseguire
+<a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">test automatici</a>
+contro queste modifiche per dimostrare che si comportano nel modo previsto. In questo modo, i team continuano a lavorare rapidamente e a <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">sviluppare i trunk</a> e non a rami delle funzionalità di lunga durata.</p>
+
+<p>Puoi anche applicare modifiche scure utilizzando un <a href="https://martinfowler.com/bliki/FeatureToggle.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">pulsante di attivazione/disattivazione della funzionalità</a>, che è un'istruzione condizionale basata sulle impostazioni di configurazione. Ad esempio,
+puoi rendere visibili o invisibili gli elementi dell'interfaccia utente oppure puoi abilitare o disabilitare
+la logica di servizio. La configurazione di attivazione/disattivazione della funzionalità potrebbe essere letta al momento del deployment o al momento dell'esecuzione. Puoi utilizzare queste impostazioni di configurazione per modificare ulteriormente il comportamento del nuovo codice. Puoi anche utilizzare una tecnica simile, nota come <a href="https://continuousdelivery.com/2011/05/make-large-scale-changes-incrementally-with-branch-by-abstraction/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">ramo per astrazione</a>, per apportare modifiche su larga scala al sistema continuando a sviluppare e rilasciare off-trunk senza l'uso di rami di funzionalità di lunga durata.</p>
+
+<p>In questo approccio, i gruppi di lavoro non vengono completati finché non ne viene eseguito il deployment in produzione e il processo di feedback non ha iniziato a convalidare le modifiche. Il feedback proviene da molte fonti e in molte forme, tra cui utenti, monitoraggio del sistema, controllo qualità e test automatici. Il tuo obiettivo è ottimizzare la velocità per ridurre il tempo di ciclo e ricevere modifiche nelle mani degli utenti. In questo modo, puoi convalidare le tue ipotesi il più rapidamente possibile.</p>
+
+<h2 id="common_pitfalls_with_working_in_small_batches" data-text="Insetti comuni nell'utilizzare piccoli gruppi">Insetti comuni nell'utilizzare piccoli gruppi</h2>
+
+<p>Quando suddividi il lavoro in piccoli batch, si verificano due inconvenienti:</p>
+
+<ul>
+<li><p><strong>Non suddividere il lavoro in elementi sufficientemente piccoli</strong>. La prima attività è suddividere il lavoro in modo significativo. Ti consigliamo di accettare il codice indipendentemente dallo stato della funzionalità e che lo sviluppo di singole funzionalità non richieda alcuni giorni. Qualsiasi gruppo di codice che richiede più di una settimana per il completamento e il controllo è troppo grande. Durante il processo di sviluppo, è essenziale analizzare come suddividere le idee in incrementi che puoi sviluppare in modo iterativo.</p></li>
+<li><p><strong>Lavorare in batch di piccole dimensioni, ma raggrupparli successivamente prima di inviarli a valle per i test o il rilascio</strong>. Il raggruppamento di lavoro in questo modo ritarda il feedback sull'eventuale presenza di difetti nelle modifiche e sul fatto che gli utenti e la tua organizzazione concordino che le modifiche siano la cosa giusta da fare prima di tutto.</p></li>
+</ul>
+
+<h2 id="ways_to_reduce_the_size_of_work_batches" data-text="Modi per ridurre le dimensioni dei batch di lavoro">Modi per ridurre le dimensioni dei batch di lavoro</h2>
+
+<p>Quando suddividi il lavoro in batch che puoi completare in poche ore, puoi in genere
+<a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">testare ed eseguire il deployment di tali batch in produzione in meno di un'ora</a>
+(PDF). La chiave è scomporre il lavoro in piccole caratteristiche che consentono uno sviluppo rapido, invece di sviluppare funzionalità complesse sui rami e rilasciarle raramente.</p>
+
+<p>Per migliorare lo sviluppo dei batch di piccole dimensioni, controlla il tuo ambiente e verifica che siano soddisfatte le seguenti condizioni:</p>
+
+<ul>
+<li>Il lavoro viene scomposto in modo da consentire ai team di rilasciare release di produzione più frequenti.</li>
+<li>Gli sviluppatori hanno esperienza nella suddivisione del lavoro in piccole modifiche che possono essere completate nell'arco di poche ore, non di giorni.</li>
+</ul>
+
+<p>Per diventare un esperto nello sviluppo di piccoli gruppi, cerca di soddisfare tutte queste condizioni in tutti i tuoi team di sviluppo. Questa pratica è una condizione necessaria sia per l'<a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">integrazione continua</a> che per lo <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">sviluppo basato su trunk</a>.</p>
+
+<h2 id="ways_to_measure_the_size_of_work_batches" data-text="Modalità di misurazione delle dimensioni dei batch di lavoro">Modalità di misurazione delle dimensioni dei batch di lavoro</h2>
+
+<p>Quando comprendi l'<a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">integrazione continua</a> e il <a href="/architecture/devops/devops-measurement-monitoring-systems" track-type="article" track-name="internalLink" track-metadata-position="body">monitoraggio</a>, puoi delineare possibili modi per misurare lo sviluppo di piccoli batch nei tuoi sistemi e nel tuo ambiente di sviluppo.</p>
+
+<ul>
+<li><strong>Le funzionalità dell'applicazione vengono scomposte in modo da supportare le release frequenti</strong>. Con quale frequenza è possibile uscire? Come cambia questa cadenza di rilascio tra i team? La produzione presenta ritardi relativi a funzionalità più grandi?</li>
+<li><strong>Le funzionalità delle applicazioni vengono analizzate in modo da consentire agli sviluppatori di completare il lavoro in una settimana o meno</strong>. Quale proporzione di funzionalità puoi
+completare in una settimana o meno? Quali funzionalità non riesci a completare in una settimana o meno? Puoi eseguire il commit e rilasciare le modifiche prima del completamento della funzionalità?</li>
+<li><strong>Gli MVP sono definiti e definiti come obiettivi per i team</strong>. Il lavoro è scomposto in funzionalità che consentono i modelli MVP e lo sviluppo rapido, piuttosto che processi complessi e lunghi?</li>
+</ul>
+
+<p>Le misurazioni dipendono da quanto segue:</p>
+
+<ul>
+<li>Conoscere i processi della tua organizzazione.</li>
+<li>Stabilire obiettivi per ridurre gli sprechi.</li>
+<li>Cercare modi per ridurre la complessità del processo di sviluppo.</li>
+</ul>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina DevOps</a>.</li>
+<li>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</li>
+<li>Completa il <a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a> per scoprire la tua posizione rispetto al resto del settore.</li>
+</ul>
+
+</body></html>

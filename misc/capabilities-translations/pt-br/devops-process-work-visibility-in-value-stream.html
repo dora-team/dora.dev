@@ -1,0 +1,120 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Processo do DevOps: visibilidade do trabalho no stream de valor</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Observação:</strong><span> <em>a visibilidade do trabalho no fluxo de valor</em> faz parte de um conjunto de
+recursos que aumentam a entrega de software e o desempenho
+organizacional.  Esses recursos foram descobertos pelo
+<a href="https://www.devops-research.com/research.html">programa de pesquisa DORA State of DevOps</a>, uma investigação independente e academicamente rigorosa sobre as práticas e
+os recursos que impulsionam alto desempenho. Para saber mais, leia nossos
+<a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>A <em>visibilidade do trabalho</em> representa até que ponto as equipes entendem o fluxo de trabalho, da empresa até chegar aos clientes, e se elas têm visibilidade desse fluxo, incluindo o status dos produtos e recursos. A visibilidade do trabalho faz parte de um grupo maior de recursos que representa o gerenciamento enxuto de produtos. Esses recursos incluem o <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">trabalho em lotes pequenos</a>, a <a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">experimentação em equipe</a> e a <a href="/architecture/devops/devops-process-customer-feedback" track-type="solution" track-name="internalLink" track-metadata-position="body">visibilidade do feedback dos clientes</a>.
+Com eles, é possível estimar o desempenho organizacional, avaliado em termos de lucratividade, participação de mercado e produtividade, e o desempenho da entrega de softwares.</p>
+
+<h2 id="how_to_implement_work_visibility" data-text="Como implementar a visibilidade do trabalho">Como implementar a visibilidade do trabalho</h2>
+
+<p>As equipes que são especialistas nesse recurso têm estas características:</p>
+
+<ul>
+<li>Elas entendem <strong>como o trabalho percorre</strong> a empresa, da ideia inicial até os clientes, incluindo os produtos ou recursos.</li>
+<li>Elas têm visibilidade sobre o <strong>fluxo desse trabalho</strong>.</li>
+<li>O fluxo de trabalho, incluindo o estado atual dele, é <strong>mostrado em visualizações</strong> ou painéis.</li>
+<li>As <strong>informações sobre o fluxo</strong> do trabalho de desenvolvimento de produtos em todo o stream de valor estão disponíveis na hora.</li>
+</ul>
+
+<h3 id="use_value_stream_mapping_to_understand_how_work_flows" data-text="Usar o mapeamento do stream de valor para entender o fluxo do trabalho">Usar o mapeamento do stream de valor para entender o fluxo do trabalho</h3>
+
+<p>Para aprimorar o fluxo do trabalho, é essencial entender como ele percorre o stream de valor de desenvolvimento de produtos ou recursos. Uma técnica muito útil é o <a href="https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>mapeamento de stream de valor</em></a> (VSM, na sigla em inglês) [página em inglês]. Para mapear o stream de valor do desenvolvimento de produtos, basta reunir os stakeholders de todas as etapas dele: linha de negócios, design, teste, controle de qualidade, operações e suporte. Depois, divida o stream de valor em cinco a 15 blocos de processo. Em cada bloco, registre a atividade executada, além da equipe responsável por ela, conforme mostrado no diagrama a seguir:</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-9-stages.svg" alt="Stream de valor que mostra nove estágios, do cliente à implantação do produto."/></p>
+
+<p>Fonte (em inglês): <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise</em></a> (O'Reilly) por Jez Humble, Joanne Molesky e Barry O'Reilly, 2014</p>
+
+<p>Depois, analise o estado do trabalho no stream de valor, coletando informações para determinar obstáculos. Especificamente, para cada bloco de processos, avalie estas métricas principais:</p>
+
+<ul>
+<li><strong>Tempo de lead</strong>: o momento em que uma parte do trabalho é aceita em um processo até o momento em que ela é transferida ao próximo processo downstream.</li>
+<li><strong>Tempo de processo</strong>: o tempo necessário para concluir um único item de trabalho. A pessoa responsável por ele tem todas as informações e recursos necessários e pode trabalhar sem interrupções.</li>
+<li><strong>Porcentagem de conclusão e precisão (%C/A, na sigla em inglês)</strong>: a proporção de vezes em que um processo recebe algo de outro processo upstream e pode usá-lo sem exigir retrabalho.</li>
+</ul>
+
+<p>Sempre faça o registro dos processos usando o estado deles no dia da realização dessa técnica. Não deixe de determinar as métricas reais, e não o que as pessoas têm como meta para elas.</p>
+
+<p>Veja no diagrama a seguir um exemplo do resultado final:</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-stages-with-notes-and-timeline.svg" alt="Estágios do stream de valor com anotações e uma linha do tempo geral."/></p>
+
+<p>Fonte (em inglês): <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise</em></a> (O'Reilly) por Jez Humble, Joanne Molesky e Barry O'Reilly, O'Reilly, 2014.</p>
+
+<p>Fique de olho nos blocos de processos com trabalho de baixa qualidade e, portanto, muito retrabalho downstream (determinado por uma baixa %C/A). Procure também aqueles que tenham tempos de lead longos com relação ao tempo de processo.</p>
+
+<p>É importante trabalhar com os stakeholders para mapear o estado ideal do stream de valor em uma data futura. Por exemplo, de seis meses a dois anos. Os stakeholders também precisam concordar em executar essa técnica novamente com frequência (por exemplo, a cada seis meses) para analisar o estado atual e o andamento.</p>
+
+<p>Este documento não inclui uma discussão detalhada sobre o VSM. Para mais informações, leia o livro <a href="https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation</em></a> (em inglês) por Karen Martin e Mike Osterling.</p>
+
+<h3 id="visualize_the_current_state_of_work" data-text="Visualizar o estado atual do trabalho">Visualizar o estado atual do trabalho</h3>
+
+<p>Com o VSM, você vê como o trabalho percorre o stream de valor do desenvolvimento de produtos, da ideia inicial até o cliente. No entanto, para ter visibilidade contínua sobre o fluxo desse trabalho, você precisa de uma visualização mais dinâmica. Para desenvolver softwares, use um mural de anotações, um storyboard ou um quadro Kanban, como mostrado no diagrama a seguir.</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-kanban-board.svg" alt="Quadro Kanban."/></p>
+
+<p>Fonte: jogo de tabuleiro "Kanban for Ops", Dominica DeGrandis, 2013.</p>
+
+<p>Nos artigos <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">Limites do WIP</a> e <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">Gerenciamento visual</a> (em inglês), você vê detalhes sobre o uso de monitores visuais como este e a criação de limites do WIP para gerenciar o fluxo.</p>
+
+<p>Por fim, o mapeamento precisa incluir informações sobre as responsabilidades de cada equipe, além de dados estatísticos sobre as métricas principais, como tempo de lead, frequência de implantação e %C/A.</p>
+
+<h2 id="common_pitfalls_with_work_visibility" data-text="Dificuldades comuns da visibilidade do trabalho">Dificuldades comuns da visibilidade do trabalho</h2>
+
+<p>Estas são algumas dificuldades comuns na implementação da visibilidade do trabalho:</p>
+
+<ul>
+<li><p><strong>Superestimar o estado do conhecimento organizacional</strong>. Em qualquer organização, é comum que as pessoas não tenham visibilidade sobre todo o stream de valor. Quando uma empresa executa a técnica de mapeamento do stream de valor, é importante reunir todas as pessoas envolvidas nele. Muitas vezes, as pessoas ficam até surpresas quando descobrem o que <em>realmente</em> acontece em outras partes da organização.</p></li>
+<li><p><strong>Falha ao mapear todo o stream de valor</strong>. É importante mapear todo o stream de valor. Isso inclui a ideia inicial (seja uma linha de negócios, o departamento de marketing de produtos ou clientes internos), as operações de TI e as pessoas que oferecem suporte ao produto ou serviço que está sendo mapeado.
+O aumento da visibilidade, o alinhamento que ela gera e o conhecimento compartilhado são extremamente valiosos. Quando o stream de valor não é mapeado por completo, isso pode gerar otimizações isoladas, e você não aproveitará oportunidades para melhorar processos nas principais áreas que têm impacto em toda a organização.</p></li>
+<li><p><strong>Fazer melhorias nas áreas erradas</strong>. Quando você aumenta a eficiência das áreas que não sejam gargalos, isso não melhora os tempos de lead gerais e pode piorar os processos. É claro que as empresas precisam melhorar todas as áreas, mas não faz sentido se dedicar a um trabalho que não trará resultados no nível da organização.</p></li>
+<li><p><strong>Não conceder autorização para fazer alterações</strong>. As pessoas responsáveis pelo trabalho precisam ter autorização para fazer alterações e alcançar o estado futuro.
+Se elas precisam pedir permissão a outras pessoas na organização para fazer isso, é muito provável que a técnica não seja bem-sucedida.</p></li>
+</ul>
+
+<p>Além disso, avalie os obstáculos comuns mencionados nos artigos <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">Limites do WIP</a> e <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">Gerenciamento visual</a> (em inglês).
+Muitos deles também se aplicam a esse contexto.</p>
+
+<h2 id="ways_to_improve_work_visibility" data-text="Maneiras de melhorar a visibilidade do trabalho">Formas de melhorar a visibilidade do trabalho</h2>
+
+<ul>
+<li><p><strong>Forneça ferramentas de visualização e registro do fluxo de trabalho</strong>. Comece verificando se a equipe tem monitores de <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">gerenciamento visual</a> que mostram o trabalho dela e o fluxo relacionado à parte do stream de valor mais próxima dela. Isso inclui as partes tanto de upstream quanto de downstream do processo. Faça o registro do tempo necessário para concluir o processo e de quantas vezes o retrabalho precisa ser realizado quando a equipe erra em algo. Assim, você terá suporte desde o início e aproveitará as melhores oportunidades de melhorias no nível da equipe.</p></li>
+<li><p><strong>Crie um mapa do stream de valor</strong>. Trabalhe com outras equipes para executar a técnica de mapeamento do stream de valor. Assim, você analisa o fluxo de trabalho, da ideia inicial ao resultado do cliente, e adquire as métricas do VSM (tempo de lead, tempo de processo, %C/A) para cada bloco de processos. Peça à equipe para mapear o estado futuro do stream de valor e para trabalhar na implementação dele.</p></li>
+<li><p><strong>Compartilhe artefatos</strong>. Verifique se os artefatos dessas técnicas estão disponíveis para todos na organização e se eles são atualizados pelo menos anualmente.</p></li>
+</ul>
+
+<h2 id="ways_to_measure_work_visibility" data-text="Maneiras de avaliar a visibilidade do trabalho">Formas de avaliar a visibilidade do trabalho</h2>
+
+<p>Para determinar a eficácia da visibilidade da equipe sobre o trabalho no stream de valor, faça estas perguntas a si mesmo:</p>
+
+<ul>
+<li>Há um mapa atual ou recente do stream de valor disponível para as pessoas na organização?</li>
+<li>Todos na organização têm acesso a uma visualização que mostra o trabalho deles e seu respectivo fluxo?</li>
+<li>As estatísticas de métricas como tempo de lead e %C/A estão disponíveis para a equipe?</li>
+</ul>
+
+<h2 id="whats_next" data-text="A seguir">A seguir</h2>
+
+<ul>
+<li>Para links para outros artigos e recursos, consulte a <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página do DevOps</a>.</li>
+<li>Leia o livro <a href="https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation</em></a> (em inglês), por Karen Martin e Mike Osterling.</li>
+<li>Leia o livro
+<a href="https://books.google.com/books/about/Kanban.html?id=RJ0VUkfUWZkC" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Kanban: Successful Evolutionary Change for Your Technology Business</em></a>
+(em inglês), de David Anderson.</li>
+<li>Explore nosso
+<a href="https://www.devops-research.com/research.html">programa de pesquisa</a> (em inglês) do DevOps.</li>
+<li>Faça a
+<a href="https://www.devops-research.com/quickcheck.html">verificação rápida de DevOps</a>
+para entender sua posição em relação ao restante do setor.</li>
+</ul>
+
+</body></html>

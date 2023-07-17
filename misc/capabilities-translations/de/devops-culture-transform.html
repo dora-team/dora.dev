@@ -1,0 +1,175 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Kultur: Transformation</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<p>Jede Organisation unterliegt einem ständigen Wandel. Daher sind einige grundlegende Fragen zu stellen:</p>
+
+<ul>
+<li>Welche Richtung haben diese Änderungen?</li>
+<li>Auf welche Ergebnisse auf Systemebene arbeiten Sie hin?</li>
+<li>Ist die Organisation besser in der Lage, Kunden zu ermitteln und zu betreuen und damit ihren Zweck zu erfüllen?</li>
+<li>Bringen das Geschäftsmodell und die Personalpolitik der Organisation langfristige Nachhaltigkeit mit sich?</li>
+</ul>
+
+<p>Wenn die Dinge anscheinend nicht nach Plan laufen, stellen Führungskräfte im Allgemeinen ein Transformationsprogramm auf. Derartige Programme verfehlen jedoch häufig ihre Ziele und sie binden viele Ressourcen und umfassende Kapazitäten der Organisation.
+In diesem Dokument wird das erfolgreiche Umsetzen einer Transformation erläutert und es werden einige häufige Fehlerquellen angesprochen.</p>
+
+<h2 id="how_to_implement_transformation" data-text="Transformation implementieren">Transformation implementieren</h2>
+
+<p>Es gibt zwei Hauptbestandteile für eine effektive, fortlaufende Transformation: Prozesse zur Durchführung organisatorischer Veränderungen durch Festlegung von Zielen und Ermöglichung von Teamexperimenten sowie Mechanismen zur Verbreitung bewährter Verfahren in der Organisation.</p>
+
+<h3 id="set_goals_and_enable_team_experimentation" data-text="Ziele festlegen und Teamexperimente ermöglichen">Ziele festlegen und Teamexperimente ermöglichen</h3>
+
+<p>Es gibt eine Vielzahl von Frameworks zum Ausführen und Bewerten des Wandels von Organisationen, z. B. <a href="https://wikipedia.org/wiki/Balanced_scorecard" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Balanced Scorecard</a>, <a href="https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Objectives and Key Results (OKRs)</a>, sowie die <a href="http://www-personal.umich.edu/%7Emrother/The_Improvement_Kata.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Verbesserungs-Kata</a> und die <a href="http://www-personal.umich.edu/%7Emrother/The_Coaching_Kata.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Coaching-Kata</a>.
+Diese Frameworks mögen sich unterscheiden, sie alle haben jedoch die gleichen Schlüsselfeatures. Die grundlegende Dynamik wird in der folgenden Abbildung veranschaulicht, die auf dem Verbesserungs-Kata-Framework basiert:</p>
+
+<p><img src="/static/architecture/devops/images/devops-culture-transform-kata-model.png" alt="Das vierstufige Kata-Modell." width="50%"/> </p>
+
+<p>Quelle: Reproduziert mit Genehmigung von Mike Rother, aus <a href="https://www.mheducation.com/highered/product/toyota-kata-practice-guide-practicing-scientific-thinking-skills-superior-results-20-minutes-day-rother/9781259861024.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Toyota Kata Practice Guide: Practice Scientific Thinking Skills for Superior Results in 20 Minutes a Day</em></a> von Mike Rother (McGraw-Hill, 2018).</p>
+
+<p>Alle Frameworks beginnen mit einer Richtung (dem "geografischen Norden") auf der Organisations- oder Abteilungsebene. Dies ist ein ambitioniertes Geschäftsziel auf Systemebene, das von der <a href="/architecture/devops/devops-culture-transformational-leadership" track-type="article" track-name="internalLink" track-metadata-position="body">Unternehmensführung</a> festgelegt wird.
+Dabei kann es sich um ein Ideal handeln, das nie erreicht werden kann, z. B. eine Verletzungsquote von null (das vom Alcoa-CEO Paul O'Neill gewählte <a href="https://hbswk.hbs.edu/archive/paul-o-neill-values-into-action" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Ziel</a>). Dies kann aber auch ein hochgestecktes Ziel mit einer Frist von einem bis drei Jahren sein, z. B. die Steigerung der Produktivität um das Zehnfache (das <a href="https://continuousdelivery.com/evidence-case-studies/#the-hp-futuresmart-case-study" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">gewählte Ziel</a> von Gary Gruver, als dieser Director of Engineering in der LaserJet Firmware-Abteilung von HP war).</p>
+
+<p>Der nächste Schritt besteht im Verstehen des aktuellen Zustands. Der <a href="https://devops-research.com/quickcheck.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">DORA-Schnelltest</a> kann Ihnen Aufschluss über die Leistung Ihrer Möglichkeiten und Ergebnisse bei der Softwareentwicklung liefern. Ein weiterer Analyseansatz ist die Ausführung von Übungen wie <a href="https://www.google.com/books/edition/Value_Stream_Mapping_How_to_Visualize_Wo/MeFrAAAAQBAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Wertstromanalyse</a> oder Abteilungserfolgsrechnung. Zentral ist dabei das Verständnis, in welchen Bereichen im Unternehmen messbare Kennzahlen vorhanden sind.</p>
+
+<p>Im dritten Schritt werden messbare Ziele für einen zukünftigen Zeitpunkt aufgestellt. Diese Ziele können in einem Format wie OKRs beschrieben werden. Dabei werden ausgehend von einem qualitativen Ziel messbare Schlüsselergebnisse (Zielbedingungen) angegeben. Zum Beispiel hat der CIO von HSBC für Global Banking and Markets <a href="https://www.linkedin.com/pulse/double-half-quarter-lesson-from-book-richard-david-knott/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">jedem Team das Ziel gesetzt</a>, "jedes Jahr zu verdoppeln, zu halbieren und zu vierteln: jedes Jahr die Anzahl der Releases zu verdoppeln, die Anzahl der Vorfälle mit geringen Auswirkungen zu halbieren und die Anzahl der Vorfälle mit hohen Auswirkungen zu vierteln."</p>
+
+<p>Schließlich experimentieren Teams mit Möglichkeiten, diese Ziele zu erreichen, bis der zukünftige Zeitpunkt erreicht ist. Die Teams werden dabei vom Management unterstützt. Bei den Experimenten verfolgen die Teams einen wissenschaftlichen Ansatz. Sie verwenden die <a href="https://wikipedia.org/wiki/PDCA" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">PDCA-Methode</a> (Plan-Do-Check-Act), die auch als Deming-Kreis bezeichnet wird. Der Deming-Kreis umfasst die folgenden Schritte:</p>
+
+<ul>
+<li>Plan: Bestimmen des erwarteten Ergebnisses.</li>
+<li>Do: Ausführen des Experiments.</li>
+<li>Check: Untersuchen der Ergebnisse.</li>
+<li>Act: Entscheiden über die nächsten Maßnahmen.</li>
+</ul>
+
+<p>Teams sollten täglich Experimente ausführen, um zu versuchen, Fortschritte hinsichtlich der Zielbedingungen oder Schlüsselergebnisse zu erzielen. In der <a href="http://www-personal.umich.edu/%7Emrother/The_Improvement_Kata.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Verbesserungs-Kata</a> muss sich jedes Teammitglied täglich die folgenden fünf Fragen stellen:</p>
+
+<ol>
+<li>Wie lautet der Zielzustand?</li>
+<li>Wie ist der aktuelle Zustand?</li>
+<li>Welche Hürden verhindern Ihrer Meinung nach, dass Sie den Zielzustand erreichen? Welche davon gehen Sie jetzt an?</li>
+<li>Worin besteht Ihr nächster Schritt? Welches Ergebnis erwarten Sie?</li>
+<li>Wann können die Ergebnisse ausgewertet werden, um festzustellen, welche Lehren aus dem durchgeführten Schritt gezogen werden können?</li>
+</ol>
+
+<p>Wenn die Ergebnisse erfasst und neue Ziele aufgestellt wurden, wiederholen Sie den Prozess.</p>
+
+<p>Da der Prozess unter unsicheren Bedingungen ausgeführt wird, ist nicht immer klar, auf welche Weise die Ergebnisse erreicht werden. Daher ist die Fortschrittskurve oft nicht linear, wie im folgenden Diagramm veranschaulicht:</p>
+
+<p><img src="/static/architecture/devops/images/devops-culture-transform-non-linear-progress.png" alt="Diagramm, das nicht linearen Fortschritt für die Leistung in Abhängigkeit von Iterationen zeigt; die Leistungskurve weist Spitzen auf, steigt jedoch insgesamt an."/></p>
+
+<p>Quelle: CC-BY: <a href="https://www.google.com/books/edition/Lean_Enterprise/G_ixBQAAQBAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise: How High Performance Organizations Innovate at Scale</em></a> von Jez Humble, Joanne Molesky und Barry O'Reilly (O'Reilly, 2014).</p>
+
+<p>In den Planungsbesprechungen untersuchen die Teilnehmer die Zielzustände oder Schlüsselergebnisse, die in der jeweils vorherigen Planungsbesprechung festgelegt wurden. Anschließend setzen sie neue Ziele für den nächsten Durchlauf. In Überprüfungsbesprechungen untersuchen die Teilnehmer, wie gut die Teams die Ziele des Durchlaufs erreicht haben. Außerdem werden etwaige Schwierigkeiten und deren künftige Überwindung besprochen.</p>
+
+<p>Einige wichtige Aspekte dieses Musters:</p>
+
+<ul>
+<li>Die Zielzustände oder <a href="https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">OKRs</a> eines Teams müssen vom Team festgelegt werden. Werden Ziele von einer höheren Instanz in der Hierarchie festgelegt, haben Teams keinen Anteil am Ergebnis und arbeiten nicht engagiert an ihrer Realisierung.
+Stattdessen kann das Team versucht sein, "Kreativität" zu zeigen, d. h. das Ergebnis zu manipulieren und so das Ziel vorgeblich zu erreichen.</li>
+<li>Ziele nicht zu erreichen, ist akzeptabel. Einige Ziele sind sogenannte <em>Stretch Goals</em>, die absichtlich als Herausforderung definiert wurden. Die Teams sollten davon ausgehen, etwa 80 % der Ziele zu erreichen. Es ist üblicherweise so, dass zu Beginn der kulturellen Transformation überhaupt <em>keines</em> der aufgestellten Ziele erreicht wird. In diesem Fall sollte sich das Team ein einzelnes Ziel für den nächsten Durchlauf stecken und alles daran setzen, dieses zu erreichen.</li>
+<li>Viele Ziele und Maßnahmen ändern sich von Durchlauf zu Durchlauf, wenn sich die Ziele und aktuellen Bedingungen des Teams ändern und wenn die Teammitglieder lernen, auf ihre Ziele hinzuarbeiten. Verbringen Sie nicht zu viel Zeit damit, die perfekten Ziele festzulegen: Konzentrieren Sie sich auf die Ausführung des Prozesses, damit Sie Erfahrungen sammeln können.</li>
+<li>Für Teams ist es wichtig, über die erforderliche Autonomie, Kapazität, Ressourcen sowie Management- und <a href="/architecture/devops/devops-culture-transformational-leadership" track-type="solution" track-name="internalLink" track-metadata-position="body">Führungsunterstützung</a> zu verfügen, um Verbesserungsarbeiten durchführen zu können. Die reguläre Produktionsarbeit der Teams sollte die Verbesserungsarbeit nicht in den Hintergrund drängen, da die Verbesserungsarbeit dazu beiträgt, Ineffizienzen zu überwinden, die das Tempo beim Bereitstellen von Waren und Erbringen von Dienstleistungen drosseln.</li>
+</ul>
+
+<h3 id="build_community_structures_to_spread_knowledge" data-text="Community-Strukturen aufbauen, um Wissen zu verbreiten">Community-Strukturen aufbauen, um Wissen zu verbreiten</h3>
+
+<p>Nachdem die Teams bessere Arbeitsmethoden entdeckt haben, besteht die nächste Aufgabe darin, die gewonnenen Erkenntnisse im gesamten Unternehmen zu verbreiten. Dazu gibt es mehrere Vorgehensweisen. Im <a href="https://cloud.google.com/devops/state-of-devops" track-type="article" track-name="internalLink" track-metadata-position="body">Bericht: Accelerate State of DevOps 2019</a> baten die Forscher die Befragten, mitzuteilen, wie ihre Teams und Organisationen DevOps- und Agile-Methoden verbreiten. Dazu sollten sie einen oder mehrere der folgenden Ansätze auswählen (detaillierte Beschreibungen finden Sie in Anhang B des Berichts: Accelerate State of DevOps 2019):</p>
+
+<ul>
+<li>Trainingszentrum (manchmal auch als <em>Dojo</em> bezeichnet)</li>
+<li>Kompetenzzentrum (Center of excellence – CoE)</li>
+<li>Proof of Concept (PoC), jedoch erfolglos</li>
+<li>Proof of Concept als Vorlage</li>
+<li>Proof of Concept als Seed</li>
+<li>Community of Practice</li>
+<li>Big-Bang</li>
+<li>Bottom-up oder Grassroots</li>
+<li>Mashup</li>
+</ul>
+
+<p>Die Analyse zeigt, dass Leistungsträger Strategien bevorzugen, die Community-Strukturen sowohl auf niedriger als auch auf hoher Ebene in der Organisation schaffen, was sie wahrscheinlich nachhaltiger und widerstandsfähiger gegenüber Reorganisationen und Produktänderungen macht. Die beiden wichtigsten Strategien sind Communitys of Practice und Grassroots, gefolgt von Proof of Concept als Vorlage (ein Muster, bei dem der Proof of Concept an anderer Stelle in der Organisation reproduziert wird) und Proof of Concept als Seed. Für ein Beispiel, wie eine <a href="https://www.youtube.com/watch?v=S4-huVFeQXg" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Community of Practice</a> funktioniert, <a href="https://martinfowler.com/articles/testing-culture.html#google" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">lesen Sie, wie bei Google der Ansatz umfassender Einheitentests von einer Gruppe von Freiwilligen vorangetrieben wurde</a>.</p>
+
+<p>Leistungsschwache Unternehmen bevorzugen in der Regel Schulungszentren und Kompetenzzentren: Strategien, die mehr Silos und isoliertes Fachwissen schaffen. Sie versuchen sich auch an Proof of Concept, aber diese bleiben im Allgemeinen ohne Erfolg. Warum können diese Strategien keine effektive Änderung liefern?</p>
+
+<p>Durch die Zentralisierung von Fachkompetenzen in einer Gruppe entstehen verschiedene Probleme. Erstens ist das Kompetenzzentrum jetzt ein Engpass für das relevante Fachwissen für die Organisation, und dies kann nicht skaliert werden, wenn die Nachfrage nach Fachwissen in der Organisation wächst. Zweitens wird eine exklusive Gruppe von "Experten" in der Organisation eingerichtet, im Gegensatz zu einer integrativen Gruppe von Kollegen, die weiter lernen und zusammenwachsen können. Diese Exklusivität kann gesunde Organisationskulturen zerstören. Und als letztes werden die Experten aus dem Arbeitsprozess herausgenommen.
+Sie sind in der Lage, Empfehlungen abzugeben oder generische "Best Practices" festzulegen, aber der Weg vom generischen Lernen zur Umsetzung realer Arbeit bleibt den Lernenden überlassen. Zum Beispiel werden Experten einen Workshop zum Containerisieren einer Anwendung erstellen, aber sie werden Anwendungen selten oder nie tatsächlich containerisieren. Diese Trennung zwischen Theorie und Praxis wird letztendlich ihr Fachwissen gefährden.</p>
+
+<p>Einige erzielen zwar in Schulungszentren Erfolge, aber sie benötigen eigene Ressourcen und Programme, um sowohl das ursprüngliche Programm als auch langfristiges Lernen umzusetzen. Viele Unternehmen stellen unglaubliche Ressourcen bereit, um ihre Schulungsprogramme effektiv zu gestalten: Sie verfügen über ganze Gebäude, die einem separaten, kreativen Umfeld gewidmet sind, und Mitarbeiter, die Schulungsmaterialien erstellen und den Fortschritt bewerten. In diesem Fall werden zusätzliche Ressourcen benötigt, um sicherzustellen, dass das Lernen im gesamten Unternehmen aufrechterhalten und verbreitet wird. Die Organisation muss die Teams, die das Schulungszentrum besucht haben, unterstützen, damit ihre Fähigkeiten und Gewohnheiten im normalen Arbeitsumfeld fortgesetzt werden und alte Arbeitsmuster nicht wieder aufgenommen werden. Wenn diese Ressourcen nicht vorhanden sind, riskieren Unternehmen, dass ihre Investitionen verschwendet werden. Anstelle eines Zentrums, in dem Teams neue Technologien und Prozesse erlernen, um sie auf den Rest des Unternehmens auszudehnen, bleiben neue Gewohnheiten im Zentrum und schaffen ein weiteres Silo, allerdings nur vorübergehend. Es gibt außerdem ähnliche Einschränkungen wie im Kompetenzzentrum: Was geschieht, wenn nur die Mitarbeiter des Schulungszentrums (oder andere, unabhängige "Experten") Workshops und Schulungsmaterialien erstellen, die die eigentliche Arbeit nicht kennen?</p>
+
+<p>Häufig wurden Mashups gemeldet (40 % der Befragten, die an der Umfrage von 2019 teilnahmen, verwendeten diese Strategie), aber es fehlen ausreichende Finanzmittel und Ressourcen für eine bestimmte Investition. Ohne eine Strategie zur Steuerung einer Technologietransformation machen Unternehmen häufig den Fehler, auf Nummer sicher zu gehen und <em>zu viel gleichzeitig wollen</em>: Sie identifizieren Initiativen in zu vielen Bereichen, was letztendlich dazu führt, dass wichtige Arbeiten nicht ausreichend finanziert werden und alle scheitern. Stattdessen ist es am besten, einige Initiativen auszuwählen und fortlaufend Ressourcen bereitzustellen, um ihren Erfolg zu gewährleisten (Zeit, Geld und Unterstützung durch Führungskräfte und die besten Fachkräfte). Im Gegensatz zu Mashups geben nur sehr wenige Personen an, eine Big-Bang-Strategie zu verwenden, obwohl dies bei leistungsschwachen Teams am häufigsten der Fall war.</p>
+
+<p>Zusätzliche Analysen identifizierten vier Muster, die von Leistungsträgern verwendet wurden:</p>
+
+<ul>
+<li><strong>Community Builders:</strong> Diese Gruppe konzentriert sich auf Communities of Practice, Grassroots und Proofs of Concept (als Vorlage und als Seed, wie zuvor beschrieben). Dies tritt in 46 % der Fälle auf.</li>
+<li><strong>Universität:</strong> Diese Gruppe konzentriert sich auf Bildung und Ausbildung, wobei der Großteil ihrer Bemühungen in Kompetenzzentren, Communities of Practice und Ausbildungszentren geht. Dieses Muster wurde nur in 9 % der Fälle beobachtet, was darauf hindeutet, dass diese Strategie zwar erfolgreich sein kann, jedoch nicht üblich ist und erhebliche Investitionen und Planungen erfordert, um sicherzustellen, dass die gewonnenen Erkenntnisse im gesamten Unternehmen skaliert werden.</li>
+<li><strong>Zusammenführung:</strong> Diese Gruppe hat sich auf Projekte nach dem Grassroots-Prinzip und Communities of Practice konzentriert. Dies scheint die wichtigste Gruppe von Mitarbeitern zu sein und tritt in 23 % der Fälle auf.</li>
+<li><strong>Vordenker:</strong> In 22 % der Fälle traten Vordenker auf. Diese Gruppe engagiert sich in hohem Maß in allen Strategien außer bei Big-Bang und Dojos, d. h. allen Aktivitäten, die sich auf die Community und das Erstellen konzentrieren. Sie sind auch in hohem Maße in erfolglosen PoCs enthalten. Die Tatsache, dass sie diese Aktivität nutzen und leistungsstark bleiben können, legt nahe, dass sie diese Strategie dazu verwenden, schnell mit Ideen zu experimentieren und diese zu testen.</li>
+</ul>
+
+<h2 id="principles_of_effective_organizational_change_management" data-text="Grundsätze des effektiven Änderungsmanagements in der Organisation">Grundsätze des effektiven Änderungsmanagements in der Organisation</h2>
+
+<p>Alle Organisationen sind komplex und jede Organisation hat unterschiedliche Ziele, einen anderen Ausgangspunkt und ihre eigenen Herangehensweisen an Herausforderungen.
+Mit Vorschriften, die sich für eine Organisation empfehlen, werden in einer anderen vollkommen andere Ergebnisse erzielt. In Ihrer Organisation können Sie jedoch einige allgemeine Grundsätze befolgen, die Ihre Erfolgschancen steigern.</p>
+
+<h3 id="improvement_work_is_never_done" data-text="Der Verbesserungsprozess ist nie abgeschlossen">Der Verbesserungsprozess ist nie abgeschlossen</h3>
+
+<p>Leistungsstarke Organisationen sind nie mit ihrer Performance zufrieden und versuchen kontinuierlich, ihre Geschäftstätigkeit weiter zu verbessern. Mitarbeitern dieser Organisationen ist bewusst, dass unterlassene Änderungen ebenso Risiken bergen wie vorgenommene Änderungen, und sie sperren sich nicht mit Entschuldigungen wie "so haben wir es aber immer gemacht" gegen Änderungen. Eine ungeregelte Vorgehensweise in Bezug auf Änderungen ist jedoch nicht angebracht. Änderungsmanagement muss beim Umsetzen eines messbaren Ziels für Teams oder die Organisation eine wissenschaftliche Grundlage haben.</p>
+
+<h3 id="leaders_and_teams_agree_on_and_communicate_measurable_outcomes_and_teams_determine_how_to_achieve_them" data-text="Führungskräfte und Teams vereinbaren und kommunizieren messbare Ergebnisse und Teams stellen fest, wie diese zu realisieren sind">Führungskräfte und Teams vereinbaren und kommunizieren messbare Ergebnisse und Teams stellen fest, wie diese zu realisieren sind</h3>
+
+<p>Es ist unverzichtbar, dass alle Mitarbeiter der Organisation die messbaren Organisations- und Geschäftsergebnisse kennen, die erreicht werden sollen. Diese Ergebnisse sollten auf der Organisationsebene kurz formuliert sein (höchstens einige Sätze) und sich eindeutig an Zweck und Anliegen der Organisation orientieren. Auf der Ebene einer einzelnen Geschäftseinheit sollten die Ergebnisse auf höchstens einer Seite ausgeführt sein. Die Organisationsergebnisse müssen von Führungskräften und Teams in Zusammenarbeit bestimmt werden, wobei die letztendliche Entscheidungsbefugnis bei den Führungskräften liegt. Auf den unteren Ebenen der Organisation werden Ziele ausführlicher und mit kürzeren Fristen dargelegt.</p>
+
+<p>Die Entscheidung, wie diese Ergebnisse erreicht werden, sollte jedoch aus folgenden Gründen bei den Teams selbst liegen:</p>
+
+<ul>
+<li>Angesichts diverser Unsicherheitsfaktoren ist es unmöglich, anhand der Planung allein die beste Vorgehensweise zu bestimmen. Das heißt nicht, dass Planung in einem gewissen Umfang überflüssig ist. Teams sollten jedoch bereit sein, den Plan entsprechend den bei seiner Durchführung gewonnenen Erkenntnissen zu ändern oder sogar umzuschreiben.</li>
+<li>Werden Mitarbeiter angewiesen, was sie zu tun und wie sie dabei vorzugehen haben, werden sie ihrer Eigenverantwortung entbunden und können ihren Einfallsreichtum nicht einbringen. Dies zieht nicht nur schlechtere Ergebnisse nach sich – auch das Engagement der Mitarbeiter sinkt.</li>
+<li>Das Bewältigen von Problemen ist für Mitarbeiter unverzichtbar, um neue Kenntnisse zu gewinnen und Fähigkeiten zu erwerben. Organisationen sollten Teams mit der Lösung von Problemen und nicht mit der Ausführung von Aufgaben betrauen.</li>
+</ul>
+
+<h3 id="large-scale_change_is_achieved_iteratively_and_incrementally" data-text="Umfassende Änderungen werden sowohl iterativ als auch inkrementell umgesetzt">Umfassende Änderungen werden sowohl iterativ als auch inkrementell umgesetzt</h3>
+
+<p>Aufgrund der Jahreshaushaltsplanung verfolgen Organisationen tendenziell ein projektbasiertes Modell, bei dem Arbeiten jeglicher Art an aufwändige Projekte gebunden sind, deren Abschluss lange dauert. Mit nur wenigen Ausnahmen empfiehlt es sich, Arbeiten in kleinere Segmente aufzuteilen, die inkrementell abgeschlossen werden können.
+Das <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">Aufteilen von Arbeiten in kleinere Abschnitte</a> bietet eine Vielzahl von Vorteilen. Der wichtigste besteht darin, dass Organisationen die Vorgehensweise entsprechend den jeweiligen Erkenntnissen korrigieren können. Dadurch werden weder Zeit noch Geld mit Arbeiten vergeudet, die nicht die erwarteten Vorteile liefern.</p>
+
+<p>Die Umstellung von einem <a href="https://itrevolution.com/book/project-to-product/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Projektparadigma auf ein Produktparadigma</a> ist zwar ein langfristiger Trend, dessen Abschluss in den meisten Branchen Jahre dauert. Doch ohne jeden Zweifel: Dies wird die Zukunft sein. Selbst die US-Bundesregierung hat erfolgreich mit der <a href="https://18f.gsa.gov/2019/04/09/why-we-love-modular-contracting/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">modularen Auftragsvergabe experimentiert</a>, um einen stärker iterativ und inkrementell ausgerichteten Ansatz bei der Ausführung umfassender Arbeiten zu verfolgen.</p>
+
+<p>Die mit dem Abschluss von Projekten verbundenen Probleme gelten auch für die Transformation.
+Organisationen müssen Wege erschließen, um schnell Erfolge zu erzielen, Erkenntnisse zu teilen und andere Teams dabei zu unterstützen, mit diesen neuen Ideen zu experimentieren.</p>
+
+<h2 id="common_pitfalls_in_transforming_culture" data-text="Häufige Schwierigkeiten bei der kulturellen Transformation">Häufige Schwierigkeiten bei der kulturellen Transformation</h2>
+
+<p>Führungskräften unterlaufen oft die folgenden Fehler, wenn sie versuchen, umfassende Änderungen in der Organisation umzusetzen.</p>
+
+<ul>
+<li><p><strong>Behandeln der Transformation als einmaliges Projekt</strong>. In leistungsstarken Organisationen werden Verbesserungen als kontinuierliches Bestreben und Teil der tagtäglichen Arbeit jedes Mitarbeiters angesehen. Viele Transformationsprogramme werden hingegen als umfassende, einmalige Ereignisse angesehen, bei denen von allen Mitarbeitern erwartet wird, dass sie ihre Arbeitsweise umgehend ändern und dann in den gewohnten Bahnen weiterarbeiten. Teams werden die Kapazitäten, Ressourcen oder Befugnisse verwehrt, die sie zum Verbessern ihrer Arbeitsweise benötigen. Ihre Leistung sinkt schrittweise, während die Prozesse, Kenntnisse und Fertigkeiten des Teams die sich weiterentwickelnde reale Arbeitswelt immer schlechter widerspiegeln.
+Stellen Sie sich die technologische Transformation als wichtigen wertschöpfenden Faktor des Unternehmens vor, in den kontinuierlich investiert werden muss. Würden Sie jemals Ihre Investitionen in Kundenakquise oder Kundensupport einstellen?</p></li>
+<li><p><strong>Transformation als hierarchische Maßnahme behandeln</strong>. In diesem Modell werden hierarchische Strukturen der Organisation geändert, Teams werden verschoben oder umstrukturiert und neue Prozesse werden implementiert. Häufig wird den betroffenen Personen kaum Einfluss auf die Änderungen gewährt und sie haben keine Möglichkeit, sich einzubringen. Dies kann zu Stress und Produktivitätseinbußen führen, wenn Mitarbeiter neue Arbeitsweisen kennenlernen, während sie gleichzeitig bestehende Vorgaben erfüllen müssen. Einhergehend mit einer schlechten Kommunikation, die in Transformationsinitiativen häufig anzutreffen ist, kann der hierarchische Ansatz unzufriedene und demotivierte Mitarbeiter produzieren. Und in den seltensten Fällen holt das mit der Planung und Ausführung der hierarchischen Transformation befasste Team Feedback zu den Auswirkungen seiner Arbeit ein und nimmt ggf. Anpassungen vor. Stattdessen wird der Plan ungeachtet seiner Konsequenzen ausgeführt.</p></li>
+<li><p><strong>Fehlende Abstimmung und Kommunikation des gewünschten Ergebnisses</strong>.
+Transformationen werden gelegentlich mit mangelhaft definierten Zielen oder mit qualitativen (anstelle von quantitativen) Zielen ausgeführt, z. B. "schnellere Markteinführung" oder "niedrigere Kosten". Gelegentlich werden unerreichbare Ziele definiert oder die Ziele bewirken die Konkurrenz verschiedener Organisationsbereiche untereinander.
+In diesen Fällen kann nicht festgestellt werden, ob die Verbesserungsarbeit die beabsichtigte Wirkung hat. Wird dieser Fehler von einem hierarchischen Ansatz begleitet, wird es schwieriger, mit anderen, möglicherweise schnelleren oder kostengünstigeren Ansätzen zu experimentieren. Im Allgemeinen führt dies bei der Ausführung des Plans zu Verschwendung. Außerdem kann nicht festgestellt werden, ob das Ziel erreicht wurde und das Programm funktioniert hat. In vielen Fällen werden Fehler nicht kritisch analysiert und als Erkenntnismöglichkeit genutzt. Stattdessen werden Fehler ignoriert und eine neue groß angelegte Änderungsinitiative wird gestartet oder ganze Methodologien werden verworfen.</p></li>
+</ul>
+
+<p>Die Behandlung der Transformation als Projekt und ihre Abwicklung im Rahmen einer hierarchischen Initiative führen tendenziell zu dem Muster, das im untenstehenden Diagramm veranschaulicht wird.
+Die Leistung verschlechtert sich allmählich. Zu Beginn eines Transformationsprogramms nimmt sie zuerst einmal ab, bevor sie sich verbessert. Anschließend folgt jedoch ein Wechsel zurück zum "business as usual". Und Demotivation und Zynismus breiten sich immer mehr in der gesamten Organisation aus.</p>
+
+<p><img src="/static/architecture/devops/images/devops-culture-transform-performance-against-time.png" alt="Diagramm der Leistung in Abhängigkeit von der Zeit; dieses zeigt einen Anstieg der Leistung während jedes Transformationsprogramms, anschließend nimmt sie jedoch ab und bleibt annähernd gleich."/></p>
+
+<p>Quelle: CC-BY: <a href="https://www.google.com/books/edition/Lean_Enterprise/G_ixBQAAQBAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise: How High Performance Organizations Innovate at Scale</em></a> von Jez Humble, Joanne Molesky und Barry O'Reilly (O'Reilly, 2014).</p>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Nächste Schritte</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren Sie, wo Sie im Vergleich zum Rest der Branche stehen.</li>
+</ul>
+
+</body></html>

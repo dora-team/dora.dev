@@ -1,0 +1,110 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 프로세스: 가치 흐름에서의 작업 가시성</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>참고:</strong><span> <em>가치 흐름에서의 작업 가시성</em>은 더 나은 소프트웨어 제공 및 조직 성과를 향상하는 여러 기능 중 하나입니다.  이러한 기능은 성과 향상을 이끌어내는 관례와 기능을 독립적이면서 학술적으로 심층 연구하는 <a href="https://www.devops-research.com/research.html">DORA State of DevOps 연구 프로그램</a>을 통해 개발되었습니다. 자세한 내용은 <a href="/devops">DevOps 리소스</a>를 참조하세요.</span></aside>
+<p><em>작업의 가시성</em>은 비즈니스부터 고객에 이르기까지의 작업 흐름을 잘 이해하고 있는 팀과 이러한 팀이 제품 상태, 기능 등 흐름의 가시성을 가지는지에 대한 범위를 표현합니다. 작업의 가시성은 린 제품 관리를 나타내는 더 광범위한 기능의 일부입니다. 이러한 기능에는 <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">소규모 배치로 작업</a>, <a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">팀 실험</a>, <a href="/architecture/devops/devops-process-customer-feedback" track-type="solution" track-name="internalLink" track-metadata-position="body">고객 의견에 대한 가시성</a>이 포함됩니다.
+이러한 기능은 수익, 시장점유율, 생산성 측면에서 측정되는 조직 성과와 소프트웨어 제공 성과를 모두 예측합니다.</p>
+
+<h2 id="how_to_implement_work_visibility" data-text="작업 가시성 구현 방법">작업 가시성 구현 방법</h2>
+
+<p>이 기능에 능숙한 팀은 다음과 같은 특징을 갖습니다.</p>
+
+<ul>
+<li>팀은 제품 또는 기능을 비롯하여 아이디어부터 고객에 이르기까지 작업이 비즈니스를 <strong>어떻게 거치는지</strong>를 이해합니다.</li>
+<li>팀은 <strong>이 작업의 흐름</strong>을 파악할 수 있습니다.</li>
+<li>현재 상태를 포함한 작업 흐름이 <strong>시각적 디스플레이</strong> 또는 대시보드에 표시됩니다.</li>
+<li>전체 가치 흐름에서 제품 개발 작업의 <strong>흐름에 대한 정보</strong>를 쉽게 확인할 수 있습니다.</li>
+</ul>
+
+<h3 id="use_value_stream_mapping_to_understand_how_work_flows" data-text="가치 흐름 매핑을 사용하여 작업 흐름 이해">가치 흐름 매핑을 사용하여 작업 흐름 이해</h3>
+
+<p>워크플로를 개선하려면 작업이 제품 또는 기능 개발 가치 흐름을 거치는 방식을 이해해야 합니다. 유용한 기술은 <a href="https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>가치 흐름 매핑</em></a>(VSM)입니다. 비즈니스 분야, 디자인, 테스트, 품질보증, 운영, 지원 등 모든 제품 개발 가치 흐름에서 이해관계자를 모아 가치 흐름 맵을 만들 수 있습니다. 가치 흐름을 5~15개의 프로세스 블록으로 나눕니다. 다음 다이어그램과 같이 각 블록에 수행된 활동과 이를 수행하는 팀을 기록합니다.</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-9-stages.svg" alt="고객에서 제품 배포까지의 9단계를 보여주는 가치 흐름"/></p>
+
+<p>출처: <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise</em></a>(O'Reilly)(제즈 험블, 조앤 몰스키, 배리 오라일리 공저, 2014)</p>
+
+<p>다음으로 가치 흐름 내의 작업 상태를 분석함으로써 정보를 수집하여 흐름에 대한 장벽을 확인합니다. 특히 각 프로세스 블록에 대해 다음과 같은 주요 측정항목을 측정합니다.</p>
+
+<ul>
+<li><strong>리드 타임</strong>: 프로세스가 작업을 수락한 시점부터 해당 작업이 다음 다운스트림 프로세스에 전달되는 시점까지의 시간입니다.</li>
+<li><strong>프로세스 타임</strong>: 작업을 완료하는 데 필요한 모든 정보와 리소스가 있고 중단 없이 수행할 수 있는 경우, 단일 작업 항목을 완료하는 데 걸리는 시간입니다.</li>
+<li><strong>완전하고 정확한 비율(%C/A)</strong>: 프로세스가 업스트림 프로세스로부터 다시 작업하지 않고 사용할 수 있는 무언가를 수신하는 횟수의 비율입니다.</li>
+</ul>
+
+<p>실습이 진행되는 날에는 항상 프로세스의 상태를 기록합니다. 사람들이 원하는 측정항목이 아닌 실제 측정항목을 결정해야 합니다.</p>
+
+<p>다음 다이어그램은 최종 출력의 예시를 보여줍니다.</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-stages-with-notes-and-timeline.svg" alt="각 단계 및 전체 타임라인에 대한 메모가 있는 가치 흐름 단계"/></p>
+
+<p>출처: <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise</em></a>(제즈 험블, 조앤 몰스키, 배리 오라일리 공저(O'Reilly, 2014))</p>
+
+<p>다운스트림 프로세스 블록에서 낮은 %C/A에 반영되는 많은 다운스트림 재작업이 필요한 프로세스 블록(품질이 낮은 작업 생성)을 찾고, 프로세스 타임에 비해 리드 타임이 긴 프로세스를 찾습니다.</p>
+
+<p>이해관계자와 협력하여 향후(예: 6개월~2년 이내)에 가치 흐름의 최적 상태를 반영하는 미래 상태 가치 흐름 맵을 만드는 것이 중요합니다. 또한 이해관계자는 정기적으로(예: 6개월마다) 실습을 다시 실행하여 현재 상태를 검토하고 진행 상황을 검토하는 데 동의해야 합니다.</p>
+
+<p>VSM에 대한 자세한 설명은 이 문서에서 다루지 않습니다. 자세한 내용은 <a href="https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation</em></a>(캐런 마틴, 마이크 오스터링 공저)을 참조하세요.</p>
+
+<h3 id="visualize_the_current_state_of_work" data-text="현재 작업 상태 시각화">현재 작업 상태 시각화</h3>
+
+<p>VSM은 아이디어부터 고객에 이르기까지 제품 개발 가치 흐름을 통해 작업이 어떻게 진행되는지 보여줍니다. 하지만 이 작업의 흐름을 지속적으로 파악하려면 동적 뷰가 더 필요합니다. 소프트웨어 개발의 경우 다음 다이어그램과 같이 카드 벽, 스토리보드 또는 Kanban 보드를 사용할 수 있습니다.</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-kanban-board.svg" alt="Kanban 보드"/></p>
+
+<p>출처: 'Kanban for Ops' 보드 게임(도미니카 데그란디스, 2013)</p>
+
+<p>이와 같은 시각적 디스플레이를 사용하고 흐름을 관리하기 위한 WIP 한도를 만드는 방법은 <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">WIP 한도</a> 및 <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">시각적 관리</a>에 대한 문서를 참조하세요.</p>
+
+<p>마지막으로 매핑에는 리드 타임, 배포 빈도, %C/A 등의 주요 측정항목에 대한 통계 데이터와 함께 각 팀의 책임에 대한 정보가 포함되어야 합니다.</p>
+
+<h2 id="common_pitfalls_with_work_visibility" data-text="작업 가시성의 일반적인 문제">작업 가시성의 일반적인 문제</h2>
+
+<p>작업 가시성을 구현할 때 일반적으로 발생하는 문제는 다음과 같습니다.</p>
+
+<ul>
+<li><p><strong>조직이 보유한 지식 상태 과대평가</strong>. 모든 조직에서 전체 가치 흐름을 제대로 파악할 수 있는 사람은 없습니다. 회사가 가치 흐름 매핑 실습을 준비할 때 가치 흐름 전체에서 조직원을 모아 실습을 수행하는 것이 중요합니다. 사람들이 조직의 다른 부분에서 <em>실제로</em> 어떤 일을 하는지 알면 놀라울 때가 많습니다.</p></li>
+<li><p><strong>전체 가치 흐름 매핑 실패</strong>. 비즈니스 분야, 제품 마케팅 부서 또는 내부 고객이든지 아이디어에서 IT 운영 및 매핑되는 제품 또는 서비스를 지원하는 조직원에 이르기까지 전체 가치 흐름을 매핑하는 것이 중요합니다.
+공유된 이해와 함께 결과로서 나타나는 향상된 가시성과 정렬은 매우 유용합니다. 전체 가치 흐름을 매핑하는 데 실패하면 로컬 최적화 및 전체 조직에 영향을 미치는 주요 영역의 프로세스를 개선할 기회를 놓칠 수 있습니다.</p></li>
+<li><p><strong>개선이 필요한 잘못된 영역에 주력</strong>. 병목 현상이 없는 영역의 효율성을 높이면 전반적인 리드 타임에 큰 영향을 미치지 않으며 상황이 더 나빠질 수 있습니다. 물론 회사는 모든 영역에서 개선되어야 하지만 조직 수준의 결과를 얻을 수 없는 노력에 큰 공을 들일 필요는 없습니다.</p></li>
+<li><p><strong>변경 권한을 부여하지 않음</strong>. 노력하는 사람들에게는 미래의 상태를 달성하기 위해 변화할 수 있는 권한을 부여해야 합니다.
+이러한 사람들이 조직 내 다른 사람을 설득하려고 하면, 성공할 가능성이 낮습니다.</p></li>
+</ul>
+
+<p>또한 <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">WIP 한도</a> 및 <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">시각적 관리</a>에 대한 문서에서 일반적인 장애물을 살펴보세요.
+대부분의 경우 이러한 상황에서도 적용됩니다.</p>
+
+<h2 id="ways_to_improve_work_visibility" data-text="작업 가시성 개선 방법">작업 가시성 개선 방법</h2>
+
+<ul>
+<li><p><strong>워크플로 시각화 및 기록을 위한 도구를 제공합니다</strong>. 먼저 팀에 작업의 업스트림과 다운스트림 부분을 포함히여 가장 가까운 가치 흐름의 부분과 작업 흐름을 보여주는 <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">시각적 관리</a> 디스플레이가 있는지 확인합니다. 프로세스를 완료하는 데 걸리는 시간과 팀이 첫 시도에 제대로 하지 못했으므로 다시 작업을 수행해야 하는 빈도를 기록합니다. 이렇게 하면 팀 수준에서 개선할 수 있는 가장 빠른 최적의 기회를 발견할 수 있습니다.</p></li>
+<li><p><strong>가치 흐름 맵을 만듭니다</strong>. 다른 팀과의 협력을 통해 작업 흐름 매핑 실습을 수행하여 아이디어 구상부터 고객 결과까지의 작업 흐름을 파악하고 각 프로세스 블록의 VSM 측정항목(리드 타임, 프로세스 타임, %C/A)을 보고합니다. 팀이 향후 상태 가치 흐름 맵을 준비하여 구현하도록 합니다.</p></li>
+<li><p><strong>아티팩트를 공유합니다</strong>. 이 실습의 아티팩트는 조직의 모든 사람이 사용할 수 있도록 하고 적어도 매년 업데이트되도록 합니다.</p></li>
+</ul>
+
+<h2 id="ways_to_measure_work_visibility" data-text="작업 가시성 측정 방법">작업 가시성 측정 방법</h2>
+
+<p>가치 흐름에서 작업에 대한 팀의 가시성의 효과를 확인하려면 다음을 질문합니다.</p>
+
+<ul>
+<li>조직의 모든 사람이 사용할 수 있는 현재 또는 최근의 가치 흐름 맵이 있나요?</li>
+<li>조직의 모든 사람이 작업 중인 작업과 작업 상태를 보여주는 시각적 디스플레이에 액세스할 수 있나요?</li>
+<li>리드 타임 및 %C/A와 같은 측정항목에 대한 통계를 팀이 사용할 수 있나요?</li>
+</ul>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li><a href="https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation</em></a>(카렌 마틴, 마이크 오스터링 공저)을 읽어보세요.</li>
+<li><a href="https://books.google.com/books/about/Kanban.html?id=RJ0VUkfUWZkC" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Kanban: Successful Evolutionary Change for Your Technology Business</em></a>(데이비드 앤더슨 공저)를 읽어보세요.</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

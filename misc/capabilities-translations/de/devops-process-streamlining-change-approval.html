@@ -1,0 +1,129 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Prozess: Änderungsgenehmigung optimieren</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Änderungsgenehmigung optimieren</em> ist eine von mehreren Funktionen, mit denen die Softwarebereitstellung beschleunigt und eine höhere organisatorische Leistung erzielt werden kann.
+Diese Funktionen wurden im Rahmen des <a href="https://www.devops-research.com/research.html">"State of DevOps"-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, akademisch anspruchsvollen Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>In den meisten IT-Organisationen werden Prozesse für das Änderungsmanagement angewendet, die zur Verwaltung des Lebenszyklus von Änderungen an IT-Diensten auf interner und Kundenseite dienen. Diese Prozesse sind häufig die wichtigsten Kontrollmittel, um das Risiko von Änderungen für den Betrieb und die Sicherheit zu reduzieren.</p>
+
+<p>Beim Änderungsmanagement werden oft Genehmigungen durch externe Prüfer oder Änderungsgenehmigungsgremien (Change Approval Boards, CABs) verwendet, damit Änderungen im System verbreitet werden können.</p>
+
+<p>Compliance- und Sicherheitsmanager verwenden die Prozesse für das Änderungsmanagement, wenn sie Compliance-Anforderungen validieren müssen. Dabei muss in der Regel der Nachweis erbracht werden, dass alle Änderungen korrekt autorisiert wurden.</p>
+
+<p>Untersuchungen von DevOps Research and Assessment (DORA), die im <a href="https://cloud.google.com/devops/state-of-devops" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2019 State of DevOps Report (PDF)</a> vorgestellt wurden, zeigen, dass Änderungsgenehmigungen am besten im Rahmen einer Begutachtung durch Kollegen während des Entwicklungsprozesses durchgeführt werden, ergänzt durch Automatisierung, um unerwünschte Änderungen frühzeitig im Lebenszyklus der Softwarebereitstellung zu erkennen, zu verhindern und zu korrigieren. Verfahren wie <a href="/architecture/devops/devops-tech-test-automation">kontinuierliche Tests</a>, <a href="/architecture/devops/devops-tech-continuous-integration">Continuous Integration</a> und <a href="/architecture/devops/devops-measurement-monitoring-and-observability">umfassendes Monitoring und Beobachtbarkeit</a> ermöglichen frühes und automatisiertes Erkennen, Sichtbarkeit und schnelles Feedback.</p>
+
+<p>Darüber hinaus können Organisationen ihre Leistung verbessern, indem sie den vorhandenen Prozess besser kommunizieren und Teams dabei unterstützen, ihm effizient zu folgen.
+Wenn Teammitglieder das Genehmigungsverfahren für Änderungen genau verstehen, führt das zu einer höheren Leistung.</p>
+
+<h2 id="how_to_implement_a_change_approval_process" data-text="Genehmigungsverfahren für Änderungen implementieren">Genehmigungsverfahren für Änderungen implementieren</h2>
+
+<p>Zwei wichtige Ziele des Änderungsgenehmigungsverfahrens sind, das Risiko beim Vornehmen von Änderungen zu verringern und die regulatorischen Anforderungen zu erfüllen. Eine gängige regulatorische Anforderung ist die Trennung von Aufgaben. Das bedeutet, dass Änderungen von einer anderen Person als dem Autor genehmigt werden müssen. So wird sichergestellt, dass keine Person vollständige Kontrolle über einen Prozess hat.</p>
+
+<p>Traditionell wurden diese Ziele durch einen komplexen Prozess umgesetzt, bei dem Personen außerhalb des Teams, das die Änderung vorgeschlagen hatte, in das Genehmigungsverfahren einbezogen wurden, nämlich ein Change Advisory Board (CAB) oder ein leitender Manager. Die Studien von DORA zeigen jedoch, dass sich diese Ansätze negativ auf die Softwarebereitstellung auswirken. Außerdem wurde kein Beweis für die Hypothese gefunden, dass ein formaler, externer Prüfungsprozess mit niedrigeren Änderungsfehlerquoten verbunden ist.</p>
+
+<p>Solche komplexen Ansätze verlangsamen den Bereitstellungsprozess eher, was dazu führt, dass größere Batches seltener veröffentlicht werden und das Produktionssystem stärker beeinträchtigt wird. Dies ist mit höheren Risiken und somit höheren Änderungsfehlerquoten verbunden. Die Studie von DORA zeigt, dass diese Hypothese von den Daten gestützt wird.</p>
+
+<p>Stattdessen sollten Teams:</p>
+
+<ul>
+<li>Setzen Sie die Begutachtung durch Kollegen ein, um das Ziel der Aufgabentrennung zu erreichen. Dabei werden während des Entwicklungsprozesses auf der <a href="/architecture/devops/devops-tech-code-maintainability">Entwicklungsplattform</a> des Teams Überprüfungsergebnisse, Kommentare und Genehmigungen gesammelt.</li>
+<li>Nutzen Sie <a href="/architecture/devops/devops-tech-test-automation">kontinuierliche Tests</a>, <a href="/architecture/devops/devops-tech-continuous-integration">Continuous Integration</a> und <a href="/architecture/devops/devops-measurement-monitoring-and-observability">umfassendes Monitoring und Beobachtbarkeit</a> zur schnellen Erkennung, Verhinderung und Korrektur ungünstiger Änderungen.</li>
+<li>Behandeln Sie Ihre Entwicklungsplattform als ein Produkt, mit dem Entwickler schnelles Feedback zu den Auswirkungen ihrer Änderungen in verschiedenen Bereichen erhalten können, darunter Sicherheit, Leistung und Stabilität sowie Fehler.</li>
+</ul>
+
+<p>Ziel ist es, Ihren üblichen Änderungsmanagementprozess so schnell und zuverlässig zu gestalten, dass Sie auch Notfalländerungen vornehmen können.</p>
+
+<p>Beim <a href="/architecture/devops/devops-tech-continuous-delivery">Continuous-Delivery-Ansatz</a> hat das CAB weiterhin eine wichtige Rolle, die Folgendes umfasst:</p>
+
+<ul>
+<li>Kommunikation und Koordination zwischen Teams erleichtern</li>
+<li>Teams bei Prozessverbesserungen unterstützen, mit denen die Leistung der Softwarebereitstellung erhöht werden soll</li>
+<li>Beratung bei wichtigen Geschäftsentscheidungen bieten, bei denen ein Kompromiss und eine Genehmigung höherer Unternehmensebenen erforderlich sind, z. B. beim Abwägen von Produkteinführungszeit und Geschäftsrisiko</li>
+</ul>
+
+<p>Diese neue Rolle für das CAB ist strategisch. Durch die Migration detaillierter Codeprüfungen zu Fachleuten und automatisierten Methoden können sich Führungskräfte voll und ganz auf die strategischen Aufgaben konzentrieren.
+Diese Umstellung vom Gatekeeper zum Prozessarchitekten und Informationsverteiler entspricht den Praktiken von Organisationen, die bei der Softwarebereitstellung sehr erfolgreich sind.</p>
+
+<h2 id="common_pitfalls_in_change_approval_processes" data-text="Häufige Probleme bei Genehmigungsverfahren für Änderungen">Häufige Probleme bei Genehmigungsverfahren für Änderungen</h2>
+
+<p>Die folgenden Probleme können bei Genehmigungsprozessen für Änderungen auftreten:</p>
+
+<p>Das Erkennen von Fehlern und die Änderungsgenehmigung wird ganz <strong>einem zentralen Änderungsgenehmigungsgremium (CAB) überlassen</strong>. Dieser Ansatz kann zu Verzögerungen und häufig zu Fehlern führen. CABs eignen sich gut für die Übertragung von Änderungen, aber Personen, die so weit von einer Änderung entfernt sind, erkennen möglicherweise nicht deren gesamtes Ausmaß.</p>
+
+<p><strong>Die undifferenzierte Behandlung von Änderungen.</strong> Wenn alle Änderungen demselben Genehmigungsprozess unterliegen, ist die Änderungsprüfung ineffizient und die Mitarbeiter können den Änderungen, die aufgrund von unterschiedlichen Risikoprofilen oder Zeitplänen wirkliche Konzentration erfordern, nicht genug Zeit und Aufmerksamkeit widmen.</p>
+
+<p><strong>Kontinuierliche Verbesserung nicht umsetzen.</strong> Wie bei allen Prozessen sollten Leistungsmesswerte wie Durchlaufzeit und Änderungsfehlerquote bei der Verbesserung des Änderungsmanagementprozesses berücksichtigt werden. Dazu gehört auch die Bereitstellung von Tools und Schulungen für Teams, damit diese dem Prozess effektiver folgen können.</p>
+
+<p><strong>Als Reaktion auf Probleme dem Prozess weitere Schritte hinzufügen.</strong> Häufig setzen Organisationen zusätzliche Prozesse und komplexere Genehmigungsverfahren ein, wenn es in der Produktion zu Stabilitätsproblemen kommt. Die Analyse deutet darauf hin, dass dieser Ansatz die Lage allerdings verschlimmert, da dadurch Durchlaufzeiten und Batchgrößen zunehmen und so ein Teufelskreis entsteht.
+Ermöglichen Sie es stattdessen, Änderungen schneller und sicherer vorzunehmen.</p>
+
+<h2 id="ways_to_improve_your_change_approval_process" data-text="Möglichkeiten zur Verbesserung von Genehmigungsverfahren für Änderungen">Möglichkeiten zur Verbesserung von Genehmigungsverfahren für Änderungen</h2>
+
+<p>Mit folgenden Implementierungen können Sie Ihre Genehmigungsverfahren für Änderungen verbessern:</p>
+
+<ol>
+<li>Umstellung auf einen Prozess, der auf einer Begutachtung einzelner Änderungen durch Kollegen beruht, zum Zeitpunkt des Code-Check-in erzwungen und von automatisierten Tests unterstützt wird</li>
+<li>Finden von Möglichkeiten, auf automatisierte Weise Probleme wie Regressionen, Leistungsprobleme und Sicherheitsprobleme so schnell wie möglich zu erkennen, nachdem Änderungen übernommen wurden</li>
+<li>Kontinuierliche Durchführung von Analysen, um frühzeitig risikoreiche Änderungen zu erkennen und zu melden, damit sie einer zusätzlichen Prüfung unterzogen werden können</li>
+<li>Prüfung des gesamten Änderungsprozesses von Anfang bis Ende, Identifizierung von Engpässen und Experimentieren mit Möglichkeiten, die Validierung in die Entwicklungsplattform zu integrieren</li>
+<li>Implementierung von Funktionen für die Informationssicherheit auf Plattform- und Infrastrukturebene und in der Entwicklungstoolkette, statt sie manuell im Rahmen der Softwarebereitstellung zu prüfen</li>
+</ol>
+
+<p>Die im <a href="https://cloud.google.com/devops/state-of-devops" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2019 State of DevOps Report (PDF)</a> vorgestellte Studie zeigt: Auch wenn es letztlich das Ziel ist, herkömmliche, formale Änderungsmanagementprozesse umzustellen, hat bereits die bessere Kommunikation des bestehenden Prozesses und die Unterstützung der Teams für einen effektiven Umgang mit dem Prozess positive Auswirkungen auf die Leistung bei der Softwarebereitstellung. Wenn Teammitglieder genau wissen, wie der Prozess zur Genehmigung von Implementierungen abläuft, lässt sich dadurch die Leistung steigern. Sie gewinnen an Sicherheit durch das Wissen, dass Änderungen den Genehmigungsprozess rechtzeitig durchlaufen können und sie die Schritte kennen, die nötig sind, damit Änderungen aller Art, die sie typischerweise einreichen, auch akzeptiert werden.</p>
+
+<h2 id="ways_to_measure_change_approval_in_your_systems" data-text="Möglichkeiten zum Messen von Änderungsgenehmigungen in Ihren Systemen">Möglichkeiten zum Messen von Änderungsgenehmigungen in Ihren Systemen</h2>
+
+<p>Jetzt können Ihre Teams mögliche Methoden zum Messen der Änderungsgenehmigung auflisten:</p>
+
+<table>
+<thead>
+<tr>
+<th>Faktor zum Testen</th>
+<th>Geeignete Messwerte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Können Änderungen ohne manuelle Änderungsgenehmigung zur Produktion hochgestuft werden?
+</td>
+<td>Der Prozentsatz der Änderungen, bei denen eine manuelle Änderung erforderlich ist bzw. nicht erforderlich ist, um sie zur Produktion hochzustufen. <br />
+<br />
+Tipp: Sie können diesen Faktor auch anhand des Risikoprofils messen: Welcher Prozentsatz von Änderungen mit geringem, mittlerem und hohem Risiko erfordert eine manuelle Änderung für die Übernahme in die Produktion? <br />
+</td>
+</tr>
+<tr>
+<td>Müssen Produktionsänderungen vor der Bereitstellung oder Implementierung von einer externen Stelle genehmigt werden? </td>
+<td>Die Wartezeit für die Genehmigung von Änderungen durch externe Stellen.<br />
+<br />
+Tipp: Wenn Sie Genehmigungen näher an die Arbeit verschieben, messen Sie die Wartezeit für die Genehmigung von Änderungen durch lokale Genehmigungsstellen oder Prüfer. <br />
+<br />
+Sie können diesen Faktor auch anhand des Risikoprofils messen. Messen Sie die Anzahl oder den Anteil der Änderungen, die von externen Stellen genehmigt werden müssen, sowie die Wartezeit für diese Genehmigungen.</td>
+</tr>
+<tr>
+<td>Verlassen Sie sich beim Änderungsmanagement auf die Begutachtung durch Kollegen?</td>
+<td>Prozentsatz der Änderungen, die von Kollegen begutachtet werden. <br />
+<br />
+Sie können diesen Faktor auch anhand des Risikoprofils messen.</td>
+</tr>
+<tr>
+<td>Haben die Teammitglieder ein klares Verständnis des Prozesses, mit dem die Implementierung von Änderungen genehmigt wird?</td>
+<td>Wie sicher sind sich die Teammitglieder, dass Änderungen den Genehmigungsprozess rechtzeitig durchlaufen werden und sie die Schritte kennen, die nötig sind, damit Änderungen aller Art, die sie typischerweise einreichen, auch akzeptiert werden.</td>
+</tr></tbody>
+</table>
+
+<p>Bei der Auseinandersetzung mit Ihrem System werden Sie wahrscheinlich eigene Messwerte entwickeln, um Ihre Genehmigungsprozesse für Änderungen zu verstehen und Informationen aus ihnen zu gewinnen. Wir empfehlen, Ihren Prozess damit nicht nur zu messen, sondern auch zu verbessern.</p>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Nächste Schritte</h2>
+
+<ul>
+<li>Mehr zum <a href="/binary-authorization/docs/vulnerability-scanning-kritis" track-type="solution" track-name="internalLink" track-metadata-position="body">Scannen auf Sicherheitslücken als Teil Ihrer Bereitstellungspipeline</a> mit Cloud Build, Container Analysis und Kritis Signer</li>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

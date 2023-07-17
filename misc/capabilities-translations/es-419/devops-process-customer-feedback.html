@@ -1,0 +1,120 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Proceso DevOps: Comentarios de los clientes</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> Los <em>comentarios de los clientes</em> son un elemento del conjunto de capacidades que impulsan una entrega de software más alta y un rendimiento organizativo.  Estas funciones se descubrieron mediante el <a href="https://www.devops-research.com/research.html">programa de investigación de DevOps de DORA</a>, una investigación independiente y rigurosa desde el punto de vista académico sobre las prácticas y las funciones que impulsan el alto rendimiento. Para obtener más información, lee nuestros <a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>En los proyectos de software, los desarrolladores suelen trabajar en los productos durante meses o años, a veces para varias versiones sin validar si las funciones que compilan de verdad ayudan a los usuarios a resolver sus problemas o si las usan.</p>
+
+<p>Los comentarios de los clientes forman parte de un conjunto más amplio de funciones, incluida la <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">visibilidad del trabajo en el flujo de valor</a>, el <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">trabajo en lotes pequeños</a> y la <a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">experimentación en equipo</a>, que juntos representan un <a href="https://books.google.com/books/about/Escaping_the_Build_Trap.html?id=PQ8dMQAACAAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">enfoque optimizado para la administración de productos</a>.</p>
+
+<p>Cuando estas funciones se aplican en conjunto, ayudan a realizar las siguientes predicciones:</p>
+
+<ul>
+<li>El rendimiento de la entrega de software, que se mide en términos de velocidad de entrega, estabilidad y disponibilidad</li>
+<li>El rendimiento de la organización, que se mide en términos de rentabilidad, participación de mercado y productividad</li>
+</ul>
+
+<p>La investigación del equipo de investigación y evaluación de DevOps (DORA) <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=35" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">muestra</a> (PDF) que los equipos obtienen un mayor rendimiento cuando trabajan en organizaciones que usan esas funciones y, además, hacen lo siguiente:</p>
+
+<ul>
+<li>Recopilan métricas de satisfacción del cliente con regularidad.</li>
+<li>Buscan y atienden los comentarios de los clientes sobre la calidad de los productos y las características.</li>
+<li>Usan estos comentarios para ayudar a diseñar productos y características.</li>
+</ul>
+
+<h2 id="how_to_implement_customer_feedback" data-text="Cómo implementar los comentarios de los clientes">Cómo implementar los comentarios de los clientes</h2>
+
+<p>Cuando desarrollas un producto, es importante establecer métricas clave para medir su éxito. Estas métricas te ayudan a comprender si estás resolviendo un problema real, si la solución se adopta de forma rápida y si los usuarios continúan usándola y la recomiendan a otros. Estas métricas se deben derivar de forma explícita de la manera en que los clientes interactúan con el producto. El uso de estas métricas requiere recopilar y analizar los comentarios de los clientes con cuidado.</p>
+
+<p>Un conjunto de métricas que es popular en los productos SaaS orientados al consumidor es AARRR: adquisición, activación, retención, referencia y recaudación (el orden puede variar a veces, según quién las presente). En ocasiones, estas se conocen como <em>métricas pirata</em> porque el acrónimo deletrea una palabra que está relacionada con el estereotipo de la forma en que hablan los piratas.</p>
+
+<p>La idea es analizar cinco métricas clave e iterar la experiencia del cliente para mejorarlas:</p>
+
+<ul>
+<li><strong>Adquisición</strong>: El porcentaje de usuarios que visitan el sitio y crean una cuenta</li>
+<li><strong>Activación</strong>: El porcentaje de usuarios adquiridos que activan su cuenta y usan el servicio</li>
+<li><strong>Retención</strong>: El porcentaje de usuarios activados que regresan al servicio</li>
+<li><strong>Referencia</strong>: El porcentaje de usuarios retenidos que derivan a otros usuarios al servicio</li>
+<li><strong>Recaudación</strong>: El porcentaje de usuarios derivados que pagan dinero por el servicio</li>
+</ul>
+
+<p>Si estas métricas no son adecuadas para tu empresa o producto, es fundamental descubrir algunas que lo sean, supervisarlas de forma periódica y usarlas como un impulsor clave de la estrategia de producto.</p>
+
+<p>El enfoque que se describe en este artículo no es solo para productos externos. Se aplica de igual manera a los productos y servicios internos compilados para otros usuarios de la organización. Compilar herramientas internas requiere el mismo enfoque: la interacción temprana y frecuente con usuarios reales para garantizar que lo que compilas de verdad resuelva los problemas. De lo contrario, podrías terminar compilando y usando herramientas que nadie usa. Esto es desalentador para quienes trabajan en las herramientas y frustra a quienes tienen que usar herramientas que no les gustan. También representa costos significativos para la empresa por la compilación de una herramienta de tecnológica deficiente para los usuarios.</p>
+
+<p>Un equipo debe usar el siguiente patrón para maximizar sus posibilidades de resolver los problemas de los clientes de forma correcta:</p>
+
+<ol>
+<li>Recopilar los comentarios de los clientes antes de definir las características posibles</li>
+<li>Validar que se está resolviendo un problema real.</li>
+<li>Iterar en una solución que resuelva ese problema (y nada más)</li>
+<li>Asegurar que la solución dé como resultado una empresa viable (por ejemplo, el costo es menor que la recaudación prevista)</li>
+<li>Realizar un seguimiento de las métricas clave para medir el éxito (por ejemplo, AARRR)</li>
+<li>Iterar los pasos anteriores para mejorar esas métricas.</li>
+</ol>
+
+<p>Para alcanzar el éxito, debes implementar y lanzar software con rapidez, y abordar las necesidades de los clientes de forma inteligente y rápida. Para ello, deberás experimentar más a fondo que la competencia. El sector de venta minorista es una industria que <a href="https://services.google.com/fh/files/misc/state-of-devops-2019.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">tuvo un éxito particular con esto</a> (PDF).
+Las técnicas como el <a href="https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">desarrollo impulsado por hipótesis</a>, la definición y la medición del embudo de adquisición de clientes y las pruebas A/B te permiten realizar experimentos de usuarios. Esto puede fomentar la creatividad, acelerar la innovación y crear aprendizaje organizacional.</p>
+
+<p>El aumento de la interacción con los clientes y la participación en los procesos de administración de productos contribuyen a una identificación más sólida con los <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=37" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">objetivos y valores</a> (PDF) de la organización. Esto, a su vez, contribuye al rendimiento de la organización.</p>
+
+<h2 id="common_pitfalls" data-text="Errores comunes">Errores comunes</h2>
+
+<p>Algunos de los errores comunes del uso de los comentarios de los clientes son los siguientes:</p>
+
+<ul>
+<li><strong>No se recopilan comentarios</strong>. Es común que las empresas de desarrollo de software no recopilen comentarios de los clientes.</li>
+<li><strong>Se recopilan comentarios demasiado tarde</strong>. A veces, las empresas recopilan comentarios de los clientes tan tarde en el ciclo de vida de la entrega de software que no pueden actuar en consecuencia.</li>
+<li><strong>No se comprende el problema</strong> (o se malinterpretan los comentarios de los clientes). Las empresas pueden tener expectativas poco realistas de sus clientes o no comprender lo que los clientes quieren del producto. El equipo incluso puede ignorar de forma explícita los comentarios de los clientes que sean precisos, pero poco convenientes.
+Esta situación puede surgir cuando un equipo de desarrollo no evaluó o no administró de forma adecuada el riesgo de entregar la solución en cuestión o no comprende el problema que debe resolver. Un equipo de desarrollo quiere mantener el alcance de su trabajo al mínimo necesario para resolver un problema.
+En algunos casos, si el problema se extiende más de lo el equipo diseñó, es posible que el equipo descarte el trabajo adicional de forma incorrecta como “desplazamiento del alcance”.  Esto da como resultado una solución incompleta desde la perspectiva del cliente y, en última instancia, un producto con errores.</li>
+<li><strong>No permitir que los equipos actúen según los comentarios</strong>. Los equipos de entrega deben tener la capacidad de realizar cambios en el diseño o la especificación del sistema en respuesta a los comentarios, como se explica en el documento sobre la <a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">experimentación en equipo</a>.</li>
+<li><strong>Se mide el éxito en función de la métrica incorrecta</strong>. En algunos casos, se proporcionan soluciones sin una validación suficiente del cliente a los equipos de desarrollo y entrega como requisitos finales. En esos casos, el éxito del equipo de entrega se mide en función de si entregó la función según lo especificado, no si el equipo resolvió el problema o si logró el resultado para los clientes.</li>
+<li><strong>No abordar el problema del cliente</strong>.
+Los <a href="http://ai.stanford.edu/%7Eronnyk/ExPThinkWeek2009Public.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">datos de la industria</a> (PDF) de las pruebas A/B muestran que, en productos exitosos, solo alrededor de un tercio de las funciones propuestas mejoran los resultados comerciales cuando se entregan. Los dos tercios restantes de las funciones ofrecen resultados <em>negativos</em>, o ningún resultado, para las empresas. Por lo tanto, si no realizas una investigación sobre usuarios, es probable que al menos dos tercios del trabajo que realizan los equipos no logren el resultado deseado o empeore la situación. Si un equipo está trabajando en el ciclo de vida inicial de un producto, en especial aquellos que son innovadores, las probabilidades de que el equipo alcance el resultado que desea son mucho más bajas.</li>
+<li><strong>Se subestima el tiempo y el esfuerzo necesarios para responder a los comentarios de los clientes</strong>. Los equipos deben esperar que las soluciones propuestas sean incorrectas y prepararse para descartar al menos dos tercios de ellas. En cuanto al tercio restante de las soluciones, los equipos deben estar preparados para evolucionarlas de manera significativa en respuesta a los comentarios de los clientes.</li>
+</ul>
+
+<h2 id="ways_to_improve_customer_feedback" data-text="Formas de mejorar los comentarios de los clientes">Formas de mejorar los comentarios de los clientes</h2>
+
+<p>El campo de diseño de experiencia del usuario (UX) proporciona un framework para comprender las mejoras. Muchas organizaciones consideran a la UX como la tarea de hacer que una IU de productos se vea bien.
+Sin embargo, la UX se trata de resolver un problema real para los usuarios. En términos más generales, la UX se trata de cada experiencia que tiene un usuario cuando interactúa con la organización. No se puede cuantificar la importancia de una buena UX a la hora de compilar productos y servicios exitosos.</p>
+
+<p>Es fundamental reunir los comentarios de los clientes en el proceso de entrega.
+Cada vez que se compila una función importante, hay que comenzar por considerar el problema que se debe resolver. Esto debe incluir la investigación sobre usuarios para determinar posibles soluciones y seleccionar un candidato. La investigación sobre usuarios debe analizarse antes de escribir la primera línea de código.</p>
+
+<p>En el caso de los productos en el ciclo de vida inicial, los equipos deben adoptar las ideas expuestas en el <a href="https://wikipedia.org/wiki/Lean_startup" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">movimiento Lean Startup</a> para validar el modelo empresarial subyacente del producto antes de escribir el código. Debes validar que se resuelve un problema real y, luego, iterar sobre una solución que resuelva el problema y proporcione un modelo comercial factible.</p>
+
+<p>Debes seguir un patrón similar para los productos existentes que se usan a fin de implementar una solución nueva a un problema empresarial conocido. Una vez que se valide el diseño de la solución, deberás crear un prototipo para poder realizar más investigaciones y pruebas. Solo cuando las pruebas validan que la función cumple con el objetivo, se debe completar toda la función de producción.</p>
+
+<p>Muchas organizaciones omiten todo este trabajo y fallan. Sin embargo, seguir estos pasos de forma rigurosa no garantiza el éxito. El objetivo de estos esfuerzos es hacer todo lo posible para minimizar el riesgo de falla.</p>
+
+<h2 id="ways_to_measure_customer_feedback" data-text="Formas de medir los comentarios de los clientes">Formas de medir los comentarios de los clientes</h2>
+
+<p>No es necesario realizar una recopilación sofisticada de los datos para determinar si los comentarios de los clientes se recopilan, son visibles y se toman medidas al respecto. Las siguientes preguntas pueden ayudarte a determinar qué tanto aprovechas los comentarios de los clientes para el diseño de producto:</p>
+
+<ul>
+<li>¿Tienes métricas que miden la satisfacción del cliente? ¿Se actualizan y se transmiten a los equipos con frecuencia? ¿Actúas en consecuencia?</li>
+<li>¿Validas todas las funciones antes de compilarlas y realizas la investigación sobre usuarios con prototipos como parte de la entrega?</li>
+<li>¿Realizas cambios en las características en función de esta investigación sobre usuarios?</li>
+<li>¿Recopilas comentarios de los usuarios de forma activa y periódica y actúas en consecuencia?</li>
+</ul>
+
+<h2 id="whats_next" data-text="Próximos pasos">¿Qué sigue?</h2>
+
+<ul>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li>Lee el artículo <a href="http://ai.stanford.edu/%7Eronnyk/ExPThinkWeek2009Public.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Online Experimentation at Microsoft</a> (Experimentos en línea en Microsoft) (PDF), de Ronny Kohavi.</li>
+<li>Lee el artículo <a href="https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Hypothesis-driven development</a> (Desarrollo basado en hipótesis), de Barry O'Reilly.</li>
+<li>Lee el libro <a href="http://shop.oreilly.com/product/0636920049166.do" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean UX: Designing Great Products with Agile Teams</em></a> (UX optimizada: Diseño de productos excelentes con equipos ágiles), de Jeff Gothelf y Josh Seiden.</li>
+<li>Lee el libro <a href="http://leananalyticsbook.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Analytics: Use Data to Build a Better Startup Faster</em></a> (Estadísticas optimizadas: Uso de datos para crear una mejor startup más rápido), de Alistair Croll y Benjamin Yoskovitz.</li>
+<li>Lee el libro <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise: How High Performance Organizations Innovate at Scale</em></a> (Empresa optimizada: Cómo las organizaciones de alto rendimiento innovan a gran escala), de Jez Humble, Joanne Molesky y Barry O'Reilly.</li>
+<li>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</li>
+<li>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</li>
+</ul>
+
+</body></html>

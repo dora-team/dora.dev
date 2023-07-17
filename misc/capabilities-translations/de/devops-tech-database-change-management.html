@@ -1,0 +1,126 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Technologie: Änderungsmanagement für Datenbanken</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Änderungsmanagement für Datenbanken</em> ist eine von eine Reihe von Funktionen, die die Softwarebereitstellung und die Leistung verbessern. Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">"State of DevOps"-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, akademisch anspruchsvollen Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>Datenbankänderungen sind bei der Bereitstellung oft eine große Risiko- und Verzögerungsquelle. <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> hat untersucht, welche datenbankbezogenen Praktiken bei der Implementierung von Continuous Delivery hilfreich sind und dadurch die Softwarebereitstellung, und die Verfügbarkeit verbessern.</p>
+
+<p>Die DORA-Studie hat ergeben, dass sich die Einbindung der Datenbankarbeit in den Softwarebereitstellungsprozess positiv auf <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">Continuous Delivery</a> auswirkt.
+Aber wie können Ihre Teams die Datenbankbereitstellung im Rahmen von Continuous Delivery verbessern? Einigen Vorgehensweisen werden Leistungsergebnisse zugesprochen.</p>
+
+<p>DORA hat festgestellt, dass eine gute Kommunikation und umfassende Konfigurationsverwaltung auch von Datenbanken wichtig sind. Teams, die Continuous Delivery gut einsetzen, speichern ihre Datenbankänderungen als Skripts in der Versionsverwaltung und verwalten diese Änderungen genauso wie Änderungen der Produktionsanwendung. Wenn Änderungen an der Anwendung Datenbankänderungen erfordern, sprechen diese Teams auch mit den Verantwortlichen für die Produktionsdatenbank und sorgen dafür, dass das Entwicklerteam Einblick in den Fortschritt ausstehender Datenbankänderungen erhält.</p>
+
+<p>Wenn Teams sich an diese Richtlinien halten, entstehen durch Änderungen an der Datenbank keine Performance-Beeinträchtigungen oder Probleme bei der Codebereitstellung.</p>
+
+<h2 id="how_to_implement_database_change_management" data-text="Änderungsmanagement für Datenbanken implementieren">Änderungsmanagement für Datenbanken implementieren</h2>
+
+<p>Die Implementierung eines effektiven Änderungsmanagements für Datenbanken umfasst sowohl kulturelle als auch technische Aspekte. In diesem Abschnitt werden beide behandelt.</p>
+
+<h3 id="establish_effective_communication_of_database_changes" data-text="Effektive Kommunikation von Datenbankänderungen festlegen">Effektive Kommunikation von Datenbankänderungen festlegen</h3>
+
+<p>Untersuchungen zeigen, dass Teams am besten funktionieren, wenn sie mit den Verantwortlichen für die Verwaltung der Produktionsdatenbank kommunizieren und wenn jeder Einblick in den Fortschritt von ausstehenden Datenbankänderungen hat.</p>
+
+<p>Es ist aus verschiedenen Gründen wichtig, mit Datenbankadministratoren über geplante Änderungen zu sprechen. Erstens können diese Experten Ihnen sagen, wie sie am besten Ergebnisse erzielen und potenzielle Probleme wie Leistungsprobleme aufzeigen können.
+Viele Vorgänge haben in Produktionssystemen sehr unterschiedliche Leistungsmerkmale im Vergleich zu Entwickler-Workstations. In solchen Gesprächen erhalten Datenbankadministratoren auch einen Einblick in vorgelagerte Vorgänge, was ihnen die Vorbereitung auf bevorstehende Änderungen erleichtert.</p>
+
+<p>Es ist wichtig, dass alle immer über den Fortschritt von Änderungen informiert sind: So wissen Teams, auch Datenbankadministratoren, Bescheid über die geplanten Änderungen, ihren Teststatus und welche Schemaänderungen in den verschiedenen freigegebenen Produktions- und Nicht-Produktionsdatenbanken erfolgen. Die Sichtbarkeit kann so optimiert werden:</p>
+
+<ul>
+<li>Alle Änderungen des Datenbankschemas zusammen mit dem Anwendungscode, zu dem das Schema gehört, in der Versionsverwaltung speichern</li>
+<li>Ein Tool verwenden, mit dem aufgezeichnet wird, welche Änderungen in welchen Umgebungen ausgeführt wurden und welche Ergebnisse erzielt wurden</li>
+</ul>
+
+<p>Diese Verfahren sorgen auch dafür, dass für alle Änderungen eine kanonische "Source of Truth" vorhanden ist, und der Verlauf der Änderungen für Prüfungszwecke einfach zugänglich ist.</p>
+
+<h3 id="treat_all_database_schema_changes_as_migrations" data-text="Alle Änderungen des Datenbankschemas als Migration behandeln">Alle Änderungen des Datenbankschemas als Migration behandeln</h3>
+
+<p>Ein weitverbreitetes Muster für die Versionsverwaltung von Datenbankänderung besteht darin, jede Änderung als Migrationsskript zu erfassen, das in der Versionsverwaltung gespeichert wird, wie im folgenden Diagramm dargestellt. Jedes Migrationsskript hat eine eindeutige Sequenznummer, damit Sie wissen, in welcher Reihenfolge Migrationen angewendet werden sollen.</p>
+
+<p><img src="/static/architecture/devops/images/database-change-management-1.png" alt="Das Diagramm zeigt alle Änderungen an Ihrer Datenbank als Migrationsskript mit einer eindeutigen Sequenznummer."/></p>
+
+<p>Anschließend prüfen Sie, ob jede Datenbankinstanz eine Tabelle hat, die protokolliert, welche Migrationen für diese bestimmte Instanz durchgeführt wurden. Auf diese Weise verwenden Sie die Versionsverwaltung des Datenbankschemas. Sie nutzen also ein Tool, mit dem Sie mithilfe der Migrationsskripts die Datenbank in die gewünschte Schemaversion bringen. Beispiele des Tools:</p>
+
+<ul>
+<li><a href="https://github.com/golang-migrate/migrate" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">migrate</a> (Go)</li>
+<li><a href="https://pypi.org/project/alembic/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">alembic</a> (Python)</li>
+<li><a href="https://guides.rubyonrails.org/active_record_migrations.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Active Record Migrations</a> (Ruby on Rails)</li>
+<li><a href="https://github.com/dbup/dbup" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">dbup</a> (.NET)</li>
+<li><a href="https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Entity Framework Migrations</a> (.NET)</li>
+<li><a href="https://laravel.com/docs/7.x/migrations" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Laravel Migrations</a> (PHP)</li>
+<li><a href="https://flywaydb.org/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Flyway</a> (plattformunabhängig)</li>
+<li><a href="https://www.liquibase.org/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Liquibase</a> (plattformunabhängig)</li>
+</ul>
+
+<p>Sie können auch Migrationen verwenden, um leere Datenbankschemas für Entwicklung und Tests zu erstellen.</p>
+
+<p>Wie im folgenden Diagramm dargestellt, hat jede Datenbankinstanz eine Tabelle, in der aufgezeichnet wird, welche Migrationen Sie für diese Instanz ausgeführt haben. Anschließend können Sie automatisch Aktualisierungen mit einem Tool oder Skript vornehmen, das Migrationen ausführt, die noch nicht auf die Datenbankinstanz angewendet wurden. Dabei wird die Migrationstabelle nach jeder erfolgreichen Ausführung aktualisiert.</p>
+
+<p><img src="/static/architecture/devops/images/database-change-management-2.png" alt="Beispiel für eine Tabelle, die Migrationen zu einer Instanz aufzeichnet."/></p>
+
+<p>Sie können Datenbankänderungen genauso verwalten wie Anwendungsänderungen, und zwar über einen automatisierten Prozess, bei dem die Versionsverwaltung als "Source of Truth" verwendet wird.</p>
+
+<h3 id="zero-downtime_database_changes" data-text="Datenbankänderungen ohne Ausfallzeiten">Datenbankänderungen ohne Ausfallzeiten</h3>
+
+<p>Viele Organisationen planen Ausfallzeiten für ihre Dienste, wenn Datenbankschema-Änderungen vorgenommen werden, da sie sie mit Anwendungsbereitstellungen oder aufgrund von Sperrungen der Datenbanktabelle während der Ausführung solcher Änderungen koordinieren müssen.
+Bei Continuous Delivery sollen Ausfallzeiten für Bereitstellungen vermieden werden. Es gibt einige Strategien, um Datenbankschema-Änderungen ohne Ausfallzeiten vorzunehmen:</p>
+
+<ul>
+<li><strong>Framework für Onlineschemas verwenden</strong> wie <a href="https://github.com/github/gh-ost" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">gh-ost</a> oder <a href="https://www.percona.com/doc/percona-toolkit/3.0/pt-online-schema-change.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">pt-online-schema-change</a>.
+Mit diesen Tools werden eine "ghost"-Kopie jeder zu ändernden Tabelle erstellt, die leere Kopie migriert und dann schrittweise Daten aus der ursprünglichen Tabelle kopiert, einschließlich der während der Migration vorgenommenen Aktualisierungen. Nach Abschluss dieses Vorgangs wird die ursprüngliche Tabelle durch den "ghost" ersetzt. Einige Datenbanken wie <a href="/spanner/docs/schema-updates" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud Spanner</a> können Schemaaktualisierungen ohne Ausfallzeiten durchführen.</li>
+<li><p><strong>Datenbankänderungen und Anwendungsänderungen entkoppeln</strong> mit dem <a href="https://medium.com/continuousdelivery/expand-contract-pattern-and-continuous-delivery-of-databases-4cfa00c23d2e" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">parallelen Änderungsmuster</a>.
+Bei diesem Muster werden vorhandene Datenbankobjekte nicht mutiert. Stattdessen fügen Sie zu alten Strukturen neue hinzu. Beispielsweise könnten Sie eine Spalte für "Adresse" in zwei Spalten ändern: <code translate="no" dir="ltr">address_1</code> und <code translate="no" dir="ltr">address_2</code>.</p>
+
+<p>Statt die alte Spalte zu löschen und die neue hinzuzufügen und eine neue Version der Anwendung gleichzeitig bereitzustellen, fügen Sie die neuen Spalten hinzu, behalten die alten Spalten aber bei. Dies ist vor der Anwendungsbereitstellung möglich. Die neue Version der Anwendung kann dann nach den neuen Spalten suchen und aus ihnen lesen, wenn sie vorhanden und nicht null sind. Andernfalls liest sie aus der alten Spalte. Die Anwendung kann dann in alte und neue Spalten schreiben und die Migration der Daten verzögert ausführen. Auch ein Rollback der Anwendung ohne ein Datenbank-Rollback ist möglich.</p>
+
+<p>Auf diese Weise wird die Anwendungsbereitstellung von der Datenbankänderung entkoppelt, die in der Regel ohne Ausfallzeiten erfolgen kann, da sie keine Datenmigration umfasst. Wir haben zusätzliche Komplexität in der Anwendung beseitigt, um Bereitstellungsprobleme zu reduzieren.
+Alternativ können Datenbank-Trigger verwendet werden, um die Daten in neuen und alten Spalten zu synchronisieren.</p></li>
+<li><p><strong>Strategie zur Datenpartitionierung und -archivierung festlegen</strong>. Eine Hauptursache für lange Migrationen sind Datenbanktabellen mit einer großen Anzahl von Zeilen. Achten Sie darauf, dass Ihre Anwendungen Daten partitionieren und archivieren können, damit Tabellen nicht zu groß werden. Ein Beispiel dafür wäre die Erstellung mehrerer Instanzen einer Tabelle für jedes Quartal. Statt einer Tabelle <code translate="no" dir="ltr">survey_answers</code> wären beispielsweise auch <code translate="no" dir="ltr">survey_answers_2020Q1</code> und <code translate="no" dir="ltr">survey_answers_2020Q2</code> möglich. Anwendungsdesign und Architekturüberprüfungen müssen die Validierung der Strategie für die Datenpartitionierung und -archivierung der Anwendung umfassen.</p></li>
+<li><p><strong>Ereignisbasierte Architektur verwenden</strong>. In einer <a href="https://microservices.io/patterns/data/event-sourcing.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">ereignisbasierten Architektur</a> speichert die Datenbank nicht den aktuellen Status der Anwendung, sondern <em>Änderungen</em> an ihrem Status in Form eines Logs von Ereignissen, die als <em>Befehle</em> bezeichnet werden. Wenn also ein Kunde seine Adresse ändert, aktualisiert die Anwendung nicht eine Tabelle mit den Kundendetails, sondern gibt einen Befehl zur Adressänderung aus, der in der Datenbank gespeichert ist. So funktionieren Datenbanktransaktionslogs und Versionsverwaltung, die ein gängiges Muster in verteilten Systemen sind. In einer ereignisbasierten Architektur können Ereignisse in die Warteschlange gestellt werden, während Datenbankmigrationen stattfinden. Ereignisse in der Warteschlange können dann nach Abschluss der Migration in die Datenbank geleert werden. Einige Datenbanken können Abfragen in die Warteschlange stellen, während Schemamigrationen ausgeführt werden. Diese können effektiv sein, wenn Migrationen schnell genug ausgeführt werden können.</p></li>
+<li><p><strong>NoSQL-Lösung verwenden</strong>. Einige NoSQL-Datenbanken, z. B. <a href="https://firebase.google.com/docs/firestore" target="firebase" track-type="article" track-name="firebaseLink" track-metadata-position="body">Firestore</a> und <a href="/bigtable" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud Bigtable</a>, sind nicht von Ausfallzeiten betroffen, die durch Schemaänderungen auftreten. Dokumentdatenbanken wie Firestore haben ein implizites Schema, d. h. das Schema wird auf Anwendungsebene und nicht auf der Datenbankebene verwaltet.
+Bei der Verwendung von NoSQL-Datenbanken gibt es jedoch auch Nachteile. Sie sind nicht für jede Anwendung optimal.</p></li>
+</ul>
+
+<p>Sie sollten sowohl geplante Ausfallzeiten als auch ungeplante Ausfallzeiten vermeiden. Testen Sie jede Schemaänderung anhand eines <a href="/architecture/devops/devops-tech-test-data-management" track-type="article" track-name="internalLink" track-metadata-position="body">produktionsähnlichen Datasets</a> (natürlich ohne personenbezogene oder vertrauliche Informationen), um zu prüfen, ob Ihre Anwendung sich während und nach der Migration auf die erwartete Weise verhält. Einige Organisationen erstellen für diesen Zweck täglich eine bereinigte Version ihrer Produktionsdatenbank. Wenn Sie ein Datenbankverwaltungssystem mit mehr als einem Knoten in der Produktion verwenden, testen Sie alle Instanzen mit mindestens zwei Knoten, um Probleme bei verteilten System zu finden.</p>
+
+<h2 id="common_pitfalls_of_implementing_database_change_management" data-text="Häufige Schwierigkeiten bei der Implementierung eines Änderungsmanagements für Datenbanken">Häufige Schwierigkeiten bei der Implementierung eines Änderungsmanagements für Datenbanken</h2>
+
+<p>Beim Implementieren der hier beschriebenen Best Practices gibt es eine Reihe häufig auftretender Fehler, die Sie vermeiden sollten.</p>
+
+<p>Viele Organisationen sind z. B. sehr isoliert. Datenbankadministratoren (DBAs) arbeiten häufig mit einem eigenen Team, das einen eigenen Prozess zur Verwaltung von Änderungen nutzt. Wenn Software-Bereitstellungsteams einen neuen Prozess für die Verwaltung von Datenbankänderungen implementieren, ohne sich an das DBA-Team wenden zu müssen, besteht die Wahrscheinlichkeit, dass sie mit dem neuen Prozess Änderungen an den vom DBA-Team verwalteten Datenbanken vornehmen. Dies kann die Vorteile eines Umstiegs auf einen neuen Prozess erheblich reduzieren.</p>
+
+<p>Als Erstes sollten die Teams miteinander besprechen, wie sie die in diesem Artikel vorgestellten Ziele erreichen können. Es ist wichtig, für jeden vorgeschlagenen Prozess und alle technologischen Veränderungen die jeweilige Zustimmung zu erhalten. Die Teams sollten möglichst erklären, auf welche Probleme sie stoßen, und wie die in diesem Artikel vorgestellten Ideen ihnen bei deren Lösung helfen können. Im Idealfall liefern Bereitstellungsteams und DBAs eine für beide Seiten geeignete Lösung.</p>
+
+<p>Das Problem wird oft durch eine andere Schwierigkeit vergrößert: Es tritt häufig die Situation auf, dass mehrere Anwendungen das gleiche Datenbankschema gemeinsam nutzen. Das bedeutet, dass Teams, die an einer Anwendung arbeiten, das Schema nicht ändern können, ohne dass dies Auswirkungen auf andere Anwendungen hat. Dies erfordert, dass eine einzige Lösung für die Verwaltung von Datenbankänderungen für alle Anwendungen, die das Datenbankschema nutzen, bereitgestellt wird. Es ist definitiv möglich und sogar sinnvoller, einen versionsgesteuerten Self-Service-Mechanismus zu implementieren, um Datenbankänderungen in dieser Situation bereitzustellen. Dies erfordert jedoch eine sorgfältige Planung und ein sorgfältiges Rollout.</p>
+
+<p>Die Implementierung von migrationsbasierten Änderungsmanagement und Bereitstellungen ohne Ausfallzeiten kann sich erheblich auf <a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">Architekturänderungen</a> auswirken.
+Dies sollte bei der Schätzung des Aufwands berücksichtigt werden, der für die Implementierung dieser Maßnahmen erforderlich ist.</p>
+
+<h2 id="how_to_measure_database_change_management" data-text="Änderungsmanagement für Datenbanken messen">Änderungsmanagement für Datenbanken messen</h2>
+
+<p>Das Ziel eines effektiven Systems für das Änderungsmanagement von Datenbanken besteht darin, dass durch Datenbankänderungen Bereitstellungen nicht verlangsamt oder Probleme verursacht werden. Es lohnt sich, den Prozentsatz der fehlgeschlagenen Änderungen zu messen, bei denen Datenbankänderungen eine Auswirkung hatten, sowie inwieweit sich Datenbankänderungen auf die Gesamtvorlaufzeit von der Versionskontrolle bis zur Veröffentlichung auswirken.</p>
+
+<p>Wenn Datenbankänderungen eine geplante Ausfallzeit erfordern, ist dies auch eine wichtige Überlegung. Zur Ermittlung der wirtschaftlichen Auswirkungen von geplanten Ausfallzeiten berücksichtigen Sie die potenziellen entgangenen Umsätze aufgrund von Ausfallzeiten und die Gehaltskosten aus Überstunden, die erforderlich waren, um Bereitstellungen auszuführen.
+Eine Bereitstellung außerhalb der Geschäftszeiten kann auch zu einem Burnout der Teammitglieder beitragen. Mit diesen Auswirkungen kann der Aufwand gerechtfertigt werden, der zur Implementierung der in diesem Dokument beschriebenen Lösungen für Bereitstellungen ohne Ausfallzeiten erforderlich ist.</p>
+
+<p>Berücksichtigen Sie bei der Messung des Automatisierungsgrads den Anteil der Datenbankänderungen, die mithilfe eines vollständig automatisierten Prozesses erfolgen. Dabei sollten 100 % der Datenbankänderungen auf diese Weise vorgenommen werden.</p>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Nächste Schritte</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li>Weitere Informationen zu <a href="https://www.martinfowler.com/articles/evodb.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">evolutionärem Datenbankdesign</a></li>
+<li>Weitere Informationen zu <a href="https://medium.com/@chbussler/zero-downtime-database-migration-and-replication-to-and-from-cloud-spanner-99ad0c654d12" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Datenbankmigration und -replikation ohne Ausfallzeiten in und aus Cloud Spanner</a></li>
+<li>Weitere Informationen zu <a href="/solutions/databases" track-type="article" track-name="internalLink" track-metadata-position="body">Datenbanklösungen von Google Cloud</a></li>
+<li>Empfohlene Bücher:
+<ul><li><a href="http://shop.oreilly.com/product/0636920039761.do" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Database Reliability Engineering</em></a> von Laine Campbell und Charity Majors.</li>
+<li><a href="https://books.google.com/books/about/Refactoring_Databases.html?id=puBQAAAAMAAJ" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Refactoring Databases</em></a> von Scott W. Ambler und Pramod J. Sadalage</li>
+</ul></li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

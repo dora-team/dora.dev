@@ -1,0 +1,144 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia do DevOps: automação de implantação</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Observação:</strong><span> o <em>escalonamento de implantação</em> é um dos conjunto de recursos que aumentam a entrega do software e o desempenho organizacional. Esses recursos foram
+descobertos pelo
+<a href="https://www.devops-research.com/research.html">programa de pesquisa DORA State of DevOps</a>
+(em inglês), uma investigação independente e acadêmica rigorosa sobre as práticas e
+recursos que impulsionam alto desempenho. Para saber mais, leia nossos
+<a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>A automação de implantação é o que permite implantar software em ambientes de teste
+e produção com apenas um clique. A automação é essencial para reduzir o risco de implantações de produção. Também é essencial para fornecer feedback rápido sobre a qualidade do software, permitindo que as equipes realizem testes abrangentes o mais rápido possível após as alterações.</p>
+
+<p>Um processo de implantação automatizada tem as seguintes entradas:</p>
+
+<ul>
+<li>Pacotes criados pelo processo de integração contínua (CI, na sigla em inglês), que devem ser implantáveis em qualquer ambiente, incluindo produção.</li>
+<li>Scripts para configurar o ambiente, implantar os pacotes e executar um teste de implantação, às vezes conhecido como <em>teste preliminar</em>.</li>
+<li>Informações de configuração específicas do ambiente.</li>
+</ul>
+
+<p>Recomendamos armazenar os scripts e informações de configuração no controle de versão. Seu processo de implantação deve fazer o download dos pacotes de um
+repositório de artefatos (por exemplo,
+<a href="/artifact-registry" track-type="article" track-name="internalLink" track-metadata-position="body">Artifact Registry</a>,
+<a href="https://www.sonatype.com/nexus-repository-sonatype" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Nexus</a>,
+<a href="https://jfrog.com/artifactory/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Artifactory</a>
+ou o repositório integrado da ferramenta de CI).</p>
+
+<p>Os scripts geralmente executam as seguintes tarefas:</p>
+
+<ol>
+<li>Preparar o ambiente de destino, talvez instalando e configurando software que seja necessário ou iniciando um host virtual a partir de uma imagem pré-preparada em um provedor de nuvem como o Google Cloud.</li>
+<li>Implantar os pacotes.</li>
+<li>Executar quaisquer tarefas relacionadas à implantação, como a execução de scripts de migração de banco de dados.</li>
+<li>Executar configuração que seja necessária.</li>
+<li>Executar um teste de implantação para garantir que todos os serviços externos necessários estejam acessíveis e que o sistema esteja funcionando.</li>
+</ol>
+
+<h2 id="how_to_implement_deployment_automation" data-text="Como implementar a automação de implantação">Como implementar a automação de implantação</h2>
+
+<p>Quando você projeta o processo de implantação automatizada, é recomendável seguir estas práticas recomendadas:</p>
+
+<ul>
+<li><strong>Usar o mesmo processo de implantação para todos os ambientes, incluindo produção.</strong> Essa regra garante que você teste o processo de implantação várias vezes antes de usá-lo para implantar na produção.</li>
+<li><strong>Permitir que qualquer pessoa com as credenciais necessárias implante qualquer versão do artefato em qualquer ambiente sob demanda de modo totalmente automatizado.</strong>
+Se você precisar criar um tíquete e esperar que alguém prepare um ambiente, não terá um processo de implantação totalmente automatizado.</li>
+<li><strong>Usar os mesmos pacotes para todos os ambientes.</strong> Esta regra significa que você deve manter a configuração específica do ambiente separada dos pacotes.
+Dessa forma, você sabe que os pacotes que está implantando na produção são os mesmos que testou.</li>
+<li><strong>Possibilitar a recriação do estado de qualquer ambiente a partir das informações armazenadas no controle de versão.</strong> Essa regra garante que as implantações sejam repetíveis e, no caso de um cenário de recuperação de desastres, o estado da produção possa ser restaurado de maneira determinista.</li>
+</ul>
+
+<p>O ideal é ter uma ferramenta que possa ser usada de forma autônoma para fazer implantações, que registre quais versões estão atualmente em cada ambiente e registre a saída do processo de implantação para fins de auditoria. Muitas ferramentas de CI têm esses recursos.</p>
+
+<h2 id="common_pitfalls_in_deployment_automation" data-text="Dificuldades comuns na automação de implantação">Dificuldades comuns na automação de implantação</h2>
+
+<p>Ao automatizar o processo de implantação, você enfrenta as seguintes dificuldades:</p>
+
+<ul>
+<li>complexidade do processo atual</li>
+<li>dependências entre serviços</li>
+<li>componentes que não foram projetados para automação</li>
+<li>colaboração ruim entre equipes</li>
+</ul>
+
+<h3 id="complexity" data-text="Complexidade">Complexidade</h3>
+
+<p>A primeira dificuldade é a complexidade. Automatizar um processo manual, complexo e frágil produz um processo automatizado, complexo e frágil. Você primeiro precisa remodelar a arquitetura para fins de implantação. Isso significa tornar o script de implantação o mais simples possível e inserir a complexidade no código do aplicativo e na plataforma da infraestrutura. Procure os modos de falha de implantação e pergunte como evitá-los, tornando seus serviços, componentes, plataforma da infraestrutura e monitoramento mais inteligentes. Aplicativos nativos da nuvem em execução em uma plataforma como serviço, como <a href="/appengine" track-type="article" track-name="internalLink" track-metadata-position="body">App Engine</a>, <a href="/run" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud Run</a> ou <a href="/architecture/cloud-foundry-on-gcp" track-type="article" track-name="internalLink" track-metadata-position="body">Pivotal Cloud Foundry,</a> geralmente podem ser implantados com a execução de um único comando, sem a necessidade de nenhum script de implantação, o que é o processo ideal.</p>
+
+<p>Há duas propriedades importantes de um processo de implantação confiável. Primeiro, as etapas individuais do processo de implantação devem ser, na medida do possível, idempotentes, para que você possa repeti-las quantas vezes forem necessárias em caso de falha. Segundo, elas devem ser independentes da ordem, ou seja, componentes e serviços não devem falhar de modo descontrolado se algum outro componente ou serviço que eles esperam estiver ausente. Em vez disso, os serviços devem continuar funcionando de forma degradada até que suas dependências fiquem disponíveis.</p>
+
+<p>Para novos produtos e serviços, recomendamos tratar esses princípios como requisitos do sistema desde o início da fase de design. Se você estiver adaptando a automação de um sistema atual, talvez precise fazer algo para implementar essas características ou criar na telemetria, de modo que o processo de implantação possa detectar estados inconsistentes e falhar de forma suave.</p>
+
+<h3 id="dependencies" data-text="Dependências">Dependências</h3>
+
+<p>A segunda dificuldade é que muitos processos de implantação, especialmente em ambientes corporativos, exigem orquestração. Em outras palavras, você precisa implantar vários serviços juntos em uma ordem específica, enquanto realiza outras tarefas, como migrações de banco de dados em sincronização estrita. Existem muitas ferramentas de fluxo de trabalho de implantação corporativa para ajudar nessa situação, mas elas são basicamente paliativos para um problema de arquitetura: a estrita associação entre vários componentes e serviços. Com o tempo, você precisa resolver essa associação estrita. A meta é que os serviços sejam implantáveis de forma independente, sem necessidade de orquestração.</p>
+
+<p>Essa abordagem costuma exigir um design cuidadoso para garantir que cada serviço aceite a compatibilidade com versões anteriores, de modo que os clientes do serviço não precisem de upgrade na etapa de bloqueio, mas possam ser receber upgrade de forma independente em uma data posterior.
+Técnicas como <a href="/architecture/migrating-a-monolithic-app-to-microservices-gke#api_contracts" track-type="article" track-name="internalLink" track-metadata-position="body">controle de versões de API</a> podem ajudar nessa tarefa. Também é importante garantir que os serviços continuem funcionando (talvez com algumas funcionalidades indisponíveis), mesmo que não consigam se conectar a outros serviços de que dependem. Esse design é bom para sistemas distribuídos, porque ajuda a evitar falhas em cascata. O livro "Release It!", de Michael Nygard, descreve vários padrões para ajudar no projeto de sistemas distribuídos, incluindo <a href="https://martinfowler.com/bliki/CircuitBreaker.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">disjuntores</a>.
+É possível até desassociar upgrades de banco de dados dos serviços de que dependem usando o <a href="https://martinfowler.com/bliki/ParallelChange.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">padrão de alteração paralela</a>.</p>
+
+<h3 id="not_designed_for_automation" data-text="Não projetado para automação">Não projetado para automação</h3>
+
+<p>Uma terceira dificuldade comum são os componentes que não são projetados para automação. Qualquer processo de implantação que exija login em um console e interação manual por meio de cliques deve ser alvo de aprimoramento. Hoje, a maioria das plataformas (incluindo o Google Cloud) oferece uma API que o script de implantação pode usar. Se esse não for o caso, será preciso ser criativo para evitar essa intervenção manual, talvez encontrando o arquivo de configuração ou banco de dados subjacente da ferramenta e fazendo alterações diretamente nele ou substituindo-o por outra ferramenta que tenha uma API.</p>
+
+<h3 id="poor_collaboration_between_teams" data-text="Colaboração ruim entre equipes">Colaboração ruim entre equipes</h3>
+
+<p>A última dificuldade ocorre quando desenvolvedores e equipes de operações de TI não estão sincronizados.
+Isso pode acontecer de algumas maneiras. Por exemplo: os desenvolvedores podem usar um método para
+implantar que seja diferente do método usado pelas operações de TI. Ou então, em outro exemplo, se os ambientes forem configurados de formas diferentes, você aumentará substancialmente o risco de que o processo de implantação seja realizado manualmente pelas operações de TI, o que introduz inconsistências e erros. O processo de automação de implantação precisa ser criado por desenvolvedores e operações de TI em trabalho conjunto. Essa abordagem garante que ambas as equipes possam entender, manter e evoluir a automação de implantação.</p>
+
+<h2 id="ways_to_improve_deployment_automation" data-text="Formas de melhorar a automação de implantação">Formas de melhorar a automação de implantação</h2>
+
+<p>A primeira etapa é documentar o processo de implantação atual em uma ferramenta comum à qual desenvolvedores e operações tenham acesso, como o Documentos Google ou um wiki.
+Em seguida, busque simplificar e automatizar incrementalmente o processo de implantação. Essa abordagem normalmente inclui as seguintes tarefas:</p>
+
+<ul>
+<li>empacotar o código de modo adequado para implantação;</li>
+<li>criar imagens ou contêineres de máquinas virtuais pré-configuradas;</li>
+<li>automatizar a implantação e a configuração de middleware;</li>
+<li>copiar pacotes ou arquivos no ambiente de produção;</li>
+<li>reiniciar servidores, aplicativos ou serviços;</li>
+<li>gerar arquivos de configuração a partir de modelos;</li>
+<li>executar testes automatizados de implantação para garantir o funcionamento e a correta configuração do sistema;</li>
+<li>executar procedimentos de teste;</li>
+<li>criar script e automatização de migrações de banco de dados.</li>
+</ul>
+
+<p>Busque remover etapas manuais e implementar idempotência e independência de ordem
+sempre que possível, bem como aproveitar os recursos da sua plataforma de infraestrutura
+sempre que possível. Lembre-se: a automação de implantação deve ser o mais simples possível.</p>
+
+<h2 id="ways_to_measure_deployment_automation" data-text="Formas de medir a automação de implantação">Formas de medir a automação de implantação</h2>
+
+<p>A medição da automação de implantação é simples.</p>
+
+<ul>
+<li><strong>Conte o número de etapas manuais no seu processo de implantação</strong>. Busque
+reduzir essas etapas sistematicamente. O número de etapas manuais aumenta o tempo de implantação e a oportunidade de erro.</li>
+<li><strong>Avalie o nível (ou porcentagem) de automação no pipeline de implantação</strong>. Busque aumentar esse nível continuamente.</li>
+<li><strong>Determine o tempo gasto em atrasos no pipeline de implantação</strong>. Enquanto você busca reduzir esses atrasos, entenda onde e por que o código é interrompido no pipeline de implantação.</li>
+</ul>
+
+<h2 id="whats_next" data-text="A seguir">A seguir</h2>
+
+<ul>
+<li>Consulte links para outros artigos e recursos na
+<a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página do DevOps</a>.</li>
+<li>Leia mais sobre as
+<a href="/solutions/continuous-delivery" track-type="solution" track-name="internalLink" track-metadata-position="body">soluções de entrega contínua</a> do Google Cloud.</li>
+<li>Leia o <a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">manual sobre engenharia de confiabilidade do site (SRE, na sigla em inglês)</a> (em inglês), especificamente o <a href="https://landing.google.com/sre/sre-book/chapters/release-engineering/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">capítulo 8 - engenharia de versão</a>.</li>
+<li>Leia
+<a href="http://www.informit.com/articles/article.aspx?p=1833567" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Four Principles of Low-Risk Software Releases</a> (em inglês).</li>
+<li>Explore nosso
+<a href="https://www.devops-research.com/research.html">programa de pesquisa</a> (em inglês) do DevOps.</li>
+<li>Faça a
+<a href="https://www.devops-research.com/quickcheck.html">verificação rápida de DevOps</a>
+para entender sua posição em relação ao restante do setor.</li>
+</ul>
+
+</body></html>

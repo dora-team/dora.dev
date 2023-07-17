@@ -1,0 +1,117 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技术：部署自动化</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：<em></em>部署自动化是一组推动实现更出色的软件交付表现和组织绩效的能力之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside>
+<p>部署自动化使您能够一键式将软件部署到测试和生产环境。自动化对于降低生产部署的风险至关重要。在更改后，团队需要尽快进行全面测试以提供有关软件质量的快速反馈。</p>
+
+<p>自动部署流程需要输入以下信息：</p>
+
+<ul>
+<li>由持续集成 (CI) 流程创建的软件包（这些软件包应可部署到任何环境，包括生产环境）。</li>
+<li>用于配置环境、部署软件包和执行部署测试（有时称为冒烟测试<em></em>）的脚本。</li>
+<li>特定于环境的配置信息。</li>
+</ul>
+
+<p>我们建议您将脚本和配置信息存储在版本控制中。开始部署前，您需要从工件代码库（例如 <a href="/artifact-registry" track-type="article" track-name="internalLink" track-metadata-position="body">Artifact Registry</a>、<a href="https://www.sonatype.com/nexus-repository-sonatype" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Nexus</a>、<a href="https://jfrog.com/artifactory/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Artifactory</a> 或持续集成工具的内置代码库）中下载软件包。</p>
+
+<p>这些脚本通常执行以下任务：</p>
+
+<ol>
+<li>准备目标环境。您可以通过安装和配置任何必要的软件，或者是从云提供商（例如 Google Cloud）中预先准备好的映像启动虚拟主机来准备目标环境。</li>
+<li>部署软件包。</li>
+<li>执行任何与部署相关的任务，例如运行数据库迁移脚本。</li>
+<li>执行任何必需的配置。</li>
+<li>执行部署测试，以确保所有必要的外部服务均可用，并且系统可以正常运行。</li>
+</ol>
+
+<h2 id="how_to_implement_deployment_automation" data-text="如何实施部署自动化">如何实施部署自动化</h2>
+
+<p>在设计自动化部署流程时，我们建议您遵循以下最佳做法：</p>
+
+<ul>
+<li><strong>对每个环境（包括生产环境）使用相同的部署流程。</strong>此规则有助于确保您将部署流程部署到生产环境之前先对其进行多次测试。</li>
+<li><strong>允许任何具有必要凭据的人以完全自动化的方式根据需要将任意版本的工件部署到任何环境。</strong>如果必须创建工单并等待他人准备环境，则此部署流程不属于完全自动化。</li>
+<li><strong>对每个环境使用相同的软件包。</strong>此规则意味着您应将特定于环境的配置与软件包分离开来。这样，您就知道要部署到生产环境的软件包与您测试的软件包相同。</li>
+<li><strong>使用版本控制中存储的信息可以重新创建任何环境的状态。</strong>该规则有助于确保部署是可重复执行的，并且在发生灾难恢复的场景中，您可以以确定性的方式恢复生产环境的状态。</li>
+</ul>
+
+<p>理想情况下，您拥有一个可以自主进行部署的工具，该工具可以记录每个环境中当前存在的构建，并记录部署流程的输出以进行审核。许多持续集成工具都具备此类功能。</p>
+
+<h2 id="common_pitfalls_in_deployment_automation" data-text="部署自动化中常见的隐患">部署自动化中常见的隐患</h2>
+
+<p>在实现部署流程自动化的过程中，您会遇到以下各类隐患：</p>
+
+<ul>
+<li>现有流程的复杂性。</li>
+<li>服务之间的依赖项。</li>
+<li>非专为自动化设计的组件。</li>
+<li>团队之间的协作不佳。</li>
+</ul>
+
+<h3 id="complexity" data-text="复杂性">复杂性</h3>
+
+<p>第一个隐患是复杂性。将复杂的、脆弱的手动流程自动化会产生复杂的、脆弱的自动化流程。首先，您需要重构架构以实现可部署性。这意味着部署脚本尽可能简单，并将复杂性转移到应用代码和基础架构平台中。寻找部署失败模式，并思考如何通过更智能的服务、组件、基础架构平台和监控来避免此类失败。在平台即服务上运行的云原生应用（例如 <a href="/appengine" track-type="article" track-name="internalLink" track-metadata-position="body">App Engine</a>、<a href="/run" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud Run</a> 或 <a href="/architecture/cloud-foundry-on-gcp" track-type="article" track-name="internalLink" track-metadata-position="body">Pivotal Cloud Foundry</a>）通常只需单个命令就可部署，完全无需部署脚本：这才是理想的流程。</p>
+
+<p>可靠的部署流程具有两个重要的属性。首先，部署流程中的各个步骤应尽可能保持幂等，以便在发生故障时能够根据需要重复执行多次。其次，这些步骤应该是顺序独立的，这意味着如果缺少预期的其他组件或服务，当前组件和服务不应以不受控制的方式崩溃。相反，服务应以降级的方式继续运行，直到缺失的依赖项可用为止。</p>
+
+<p>对于新产品和服务，我们建议您从设计阶段开始就将这些原则视为系统要求。如需对现有系统进行自动化改造，则您可能需要执行一些操作以实现这些特征或构建遥测功能，以使部署流程可以检测不一致的状态并正常失败。</p>
+
+<h3 id="dependencies" data-text="依赖项">依赖项</h3>
+
+<p>第二个隐患是，许多部署流程需要编排，特别是在企业环境中。换句话说，在执行其他任务（如严格同步的数据库迁移）时，您需要以特定的顺序一起部署多个服务。尽管已有许多企业部署工作流工具可以解决这种问题，但是这些工具从根本上说是用于解决架构问题：各个组件和服务之间的紧密耦合。随着时间的推移，您必须解决这种紧密的耦合。目标是服务应可独立部署，而无需编排。</p>
+
+<p>此方法通常需要仔细设计，以确保每个服务都支持向后兼容性，从而使服务的客户端不需要锁步升级，而是可以稍后独立升级。<a href="/architecture/migrating-a-monolithic-app-to-microservices-gke#api_contracts" track-type="article" track-name="internalLink" track-metadata-position="body">API 版本控制</a>等技术可以帮助解决这一问题。确保服务在即使无法连接到其依赖的其他服务的情况下依然可以继续运行（也许某些功能不可用）也很重要。此设计对分布式系统很有用，因为它可以防止级联故障。Michael Nygard 撰写的《Release It!》一书描述了许多设计分布式系统的模式，包括<a href="https://martinfowler.com/bliki/CircuitBreaker.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">断路器</a>。您甚至可以使用<a href="https://martinfowler.com/bliki/ParallelChange.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">并行更改模式</a>将数据库升级与其依赖的服务分离开来。</p>
+
+<h3 id="not_designed_for_automation" data-text="非专为自动化而设计">非专为自动化而设计</h3>
+
+<p>第三个常见的隐患是非专为自动化设计的组件。任何需要登录到控制台并通过点击来手动交互的部署流程都是向自动化部署演进的目标。如今，大多数平台（包括 Google Cloud）都提供了部署脚本可以使用的 API。如果工具不支持这样的 API，则您需要发挥创造力来避免这种人工干预，方法可能是找到该工具的底层配置文件或数据库并直接对其进行更改，或者将其替换为另一个具有 API 的工具。</p>
+
+<h3 id="poor_collaboration_between_teams" data-text="团队之间的协作不佳">团队之间的协作不佳</h3>
+
+<p>最后一个隐患发生在开发者和 IT 运营团队不处于同步状态时。这一问题可能在几种情况下发生。例如，开发者和 IT 运营团队使用的部署方法不同。另一个例子是，如果环境配置不同，则将大大增加 IT 运营团队手动执行部署流程的风险，造成不一致和错误。开发者和 IT 运营团队必须共同创建部署自动化流程。此方法可确保两个团队都能理解、维护和改进部署自动化。</p>
+
+<h2 id="ways_to_improve_deployment_automation" data-text="改进部署自动化的方法">改进部署自动化的方法</h2>
+
+<p>第一步是使用开发者和运营者都可以访问的通用工具（例如 Google 文档或 wiki）记录现有的部署流程。然后逐步简化和自动化部署流程。此方法通常包括以下任务：</p>
+
+<ul>
+<li>以适合部署的方式封装代码。</li>
+<li>创建预配置的虚拟机映像或容器。</li>
+<li>自动化中间件的部署和配置。</li>
+<li>将软件包或文件复制到生产环境中。</li>
+<li>重新启动服务器、应用或服务。</li>
+<li>使用模板生成配置文件。</li>
+<li>运行自动化部署测试以确保系统正常运行并正确配置。</li>
+<li>运行测试过程。</li>
+<li>脚本化和自动化数据库迁移。</li>
+</ul>
+
+<p>着眼于移除手动步骤，尽可能地实现幂等性和顺序独立性，并充分利用基础架构平台的功能。请记住：部署自动化应该尽可能简单。</p>
+
+<h2 id="ways_to_measure_deployment_automation" data-text="衡量部署自动化效果的方法">衡量部署自动化效果的方法</h2>
+
+<p>衡量部署自动化效果的方法很简单：</p>
+
+<ul>
+<li><strong>计算部署流程中的手动步骤的数目</strong>。系统地减少这些步骤。手动步骤的数目增加会延长部署时间以及增加出错的机会。</li>
+<li><strong>衡量部署流水线中的自动化水平（或百分比）</strong>。您应不断提高这一水平。</li>
+<li><strong>确定花费在部署流水线中延迟上的时间</strong>。在减少这些延迟的同时，了解代码在部署流水线中停顿的位置和原因。</li>
+</ul>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>详细了解 Google Cloud 的<a href="/solutions/continuous-delivery" track-type="solution" track-name="internalLink" track-metadata-position="body">持续交付解决方案</a>。</li>
+<li>阅读<a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">《站点可靠性工程 (SRE)》一书</a>中<a href="https://landing.google.com/sre/sre-book/chapters/release-engineering/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">第 8 章“发布工程”</a>。</li>
+<li>阅读<a href="http://www.informit.com/articles/article.aspx?p=1833567" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">低风险软件版本的四项原则</a>。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

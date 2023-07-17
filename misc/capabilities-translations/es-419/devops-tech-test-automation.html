@@ -1,0 +1,156 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnología de DevOps: Pruebas continuas</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> Las <em>pruebas continuas</em> forman parte del conjunto de capacidades que mejoran la entrega de software y el rendimiento de las organizaciones.  Estas funciones se descubrieron mediante el <a href="https://www.devops-research.com/research.html">programa de investigación de DevOps de DORA</a>, una investigación independiente y rigurosa desde el punto de vista académico sobre las prácticas y las funciones que impulsan el alto rendimiento. Para obtener más información, lee nuestros <a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>La clave para mejorar la calidad del software es recibir con rapidez comentarios sobre el impacto de los cambios durante el ciclo de vida de la entrega de software. Tradicionalmente, los equipos recurrían a inspecciones de código y pruebas manuales para verificar la precisión de los sistemas.
+Estas inspecciones y pruebas se realizaban en una fase separada después de “finalizar el desarrollo”. Este enfoque tiene las siguientes desventajas:</p>
+
+<ul>
+<li>Las pruebas manuales de regresión son lentas y costosas, lo que las convierte en un cuello de botella del proceso. El software no se puede actualizar con frecuencia, y los desarrolladores no reciben los comentarios con rapidez.</li>
+<li>Las inspecciones y pruebas manuales no son confiables porque las personas no realizan de forma eficiente las tareas repetitivas como las pruebas de regresión manuales, y es difícil predecir el impacto de los cambios en un sistema de software complejo mediante la inspección.</li>
+<li>Una vez que se “completa el desarrollo” del software, los desarrolladores deben esperar mucho tiempo para recibir comentarios sobre los cambios. Por lo general, esto hace que clasificar los defectos y solucionarlos sea muy laborioso. Los problemas de rendimiento, seguridad y confiabilidad a menudo requieren cambios de diseño que son aún más costosos de solucionar cuando se descubren en esta etapa.</li>
+<li>Los ciclos de comentarios extensos también hacen que sea más difícil para los desarrolladores aprender a compilar código de calidad y, a veces, presionados por los tiempos, los equipos de desarrollo tratan a la calidad como “el problema de otra persona”.</li>
+<li>Cuando los desarrolladores no se encargan de probar su propio código, es difícil que aprendan a escribir código que puede probarse.</li>
+<li>En los sistemas que evolucionan con el tiempo, mantener actualizada la documentación de prueba requiere un esfuerzo considerable.</li>
+</ul>
+
+<p>En su lugar, los equipos deben hacer lo siguiente:</p>
+
+<ul>
+<li>Realizar todos los tipos de pruebas de forma continua durante todo el ciclo de vida de la entrega de software</li>
+<li>Crear y seleccionar paquetes rápidos y confiables de pruebas automatizadas que se ejecuten como parte de las <a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">canalizaciones de entrega continua</a>.</li>
+</ul>
+
+<p>La investigación de DORA ayuda a los equipos a compilar (y aprender a compilar) software de alta calidad más rápido y, además, mejora la estabilidad del software, reduce el agotamiento del equipo y disminuye los problemas de implementación.</p>
+
+<h2 id="how_to_implement_continuous_testing" data-text="Cómo implementar pruebas continuas">Cómo implementar pruebas continuas</h2>
+
+<p>Para mejorar la calidad del software, debes ejecutar de manera continua pruebas automatizadas y manuales durante todo el proceso de entrega para validar la funcionalidad y la arquitectura del sistema en desarrollo. Esta disciplina tiene un componente organizacional y uno técnico. En cuanto a lo organizacional, según la investigación de DORA, los equipos funcionan mejor cuando sucede lo siguiente:</p>
+
+<ul>
+<li>Se permite que los verificadores trabajen junto con los desarrolladores a lo largo del proceso de desarrollo y entrega de software. (Ten en cuenta que “verificador” es una función, no necesariamente un trabajo de tiempo completo, aunque es un patrón común que se analiza más adelante).</li>
+<li>Se realizan actividades de prueba manuales, como pruebas de exploración, pruebas de usabilidad y pruebas de aceptación a lo largo del proceso de entrega.</li>
+</ul>
+
+<p>Una actividad técnica clave consiste en compilar y mantener un conjunto de paquetes de pruebas automatizadas, incluidas las siguientes:</p>
+
+<ul>
+<li><strong>Pruebas de unidades</strong>. Por lo general, se prueba un método, una clase o una función de forma aislada, de modo que los desarrolladores tienen la certeza de que el código funciona según lo previsto. Para asegurarte de que el código se pueda probar y las pruebas se puedan mantener, escribe tus pruebas de unidades antes de escribir el código, una técnica conocida como <a href="http://www.jamesshore.com/v2/books/aoad1/test_driven_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">desarrollo basado en pruebas</a> (TDD).</li>
+<li><strong>Pruebas de aceptación</strong>. Por lo general, se prueba una app o un servicio en ejecución (que suelen tener dependencias reemplazadas por <a href="https://testing.googleblog.com/2013/07/testing-on-toilet-know-your-test-doubles.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">dobles de prueba</a>) para garantizar que el nivel más alto de funcionalidad opere según lo previsto y que no haya errores de regresión. Las pruebas de aceptación de ejemplo pueden verificar los criterios de aceptación empresariales de una historia de usuario o la precisión de una API. Escribe estas pruebas como parte del proceso de desarrollo. Nadie debería poder declarar que “el desarrollo se completó” en su trabajo, a menos que las pruebas de aceptación automatizadas estén aprobadas.</li>
+</ul>
+
+<p>En el siguiente diagrama, <a href="http://www.exampler.com/old-blog/2003/08/22/#agile-testing-project-2" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">que creó Brian Marick</a> y que más adelante se menciona en el libro <a href="https://books.google.com/books/about/Agile_Testing.html?id=68_lhPvoKS8C" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body"><em>Agile Testing: A Practical Guide for Testers and Agile Teams</em></a> (Pruebas ágiles: una guía práctica para los verificadores y equipos ágiles), se muestran los tipos de pruebas automatizadas y manuales que se deben ejecutar.</p>
+
+<p><img src="/static/architecture/images/ta-image1.png" alt="image"/></p>
+
+<p>Las pruebas automatizadas destacadas en el diagrama anterior se ajustan a una <a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">canalización de implementación</a> de <a href="/architecture/devops/devops-tech-continuous-delivery">entrega continua</a>.
+En esas canalizaciones, cada cambio ejecuta una compilación que crea paquetes de software, ejecuta pruebas de unidades y, quizá, realiza otras verificaciones, como el análisis estático. Una vez que estos paquetes pasan la primera etapa, se ejecutan pruebas de aceptación automatizadas más completas y, quizá, algunas pruebas no funcionales, como pruebas de rendimiento y análisis de vulnerabilidades, en el software en ejecución implementado de forma automática. Por lo general, las compilaciones que pasan la etapa de aceptación luego están disponibles para la exploración manual y las pruebas de usabilidad. Por último, si no se encuentran errores en estos pasos manuales, se considera que la app se puede lanzar.</p>
+
+<p>La ejecución de pruebas de forma continua como parte de una canalización contribuye a que se proporcionen comentarios para los desarrolladores con rapidez, un tiempo de entrega corto desde el registro hasta el lanzamiento y una tasa de error baja en los entornos de producción. La mayor parte del trabajo de los desarrolladores se valida en cuestión de minutos, en lugar de días o semanas, para que puedan corregir errores lo antes posible.</p>
+
+<p>En el siguiente diagrama, se muestra un ejemplo de una canalización de implementación lineal simple.
+En este ejemplo, el verde significa que no se encontró ningún problema y el rojo significa que se encontraron uno o más problemas.</p>
+
+<p><img src="/static/architecture/images/ta-image3.png" alt="imagen"/></p>
+
+<p>En el patrón de canalización de implementación, cada cambio crea un candidato de lanzamiento, y el ciclo de comentarios rápidos ayuda a detectar problemas lo antes posible. Cuando un paquete llega al final de la canalización y el equipo aún no está convencido de realizar el lanzamiento, o si se descubren defectos en la producción, es posible que se deba mejorar la canalización, tal vez mediante el agregado o la actualización de pruebas.</p>
+
+<h2 id="common_pitfalls" data-text="Errores comunes">Errores comunes</h2>
+
+<ul>
+<li><p><strong>Que los desarrolladores no participen en las pruebas.</strong> Según la investigación de DORA, cuando los desarrolladores son los principales responsables de crear y mantener conjuntos de pruebas automatizadas, y cuando resulta sencillo para los desarrolladores corregir las fallas de las pruebas de aceptación, el rendimiento mejora. Cuando otros grupos son propietarios de la automatización de pruebas, suelen surgir dos problemas:</p>
+
+<ul>
+<li><strong>Los paquetes de pruebas suelen estar en mal estado</strong>. Es posible que los cambios de código requieran que se actualicen las pruebas. Si los desarrolladores no se encargan de la automatización de las pruebas, la canalización de compilación permanece interrumpida hasta que el equipo responsable corrige las pruebas.</li>
+<li><strong>Los desarrolladores escriben código que resulta difícil de probar.</strong> Los desarrolladores tienden a resolver el problema que se les presenta sin pensar en cómo se probará.
+Esto puede ocasionar un código mal diseñado y conjuntos de pruebas costosos y difíciles de mantener.</li>
+</ul>
+
+<p>Los verificadores y equipos de control de calidad aún tienen una función importante en este modo de trabajo. Los verificadores tienen una perspectiva única del sistema porque comprenden cómo los usuarios interactúan con él. Se recomienda que los verificadores y los desarrolladores trabajen juntos a fin de crear y desarrollar los paquetes de pruebas automatizadas mediante herramientas para compartir pantallas, si los equipos no se encuentran en la misma ubicación física. De esta manera, pueden aprender unos de otros y solucionar problemas en tiempo real. Los verificadores también desempeñan una función esencial: realizan pruebas de exploración y usabilidad, y ayudan a seleccionar paquetes de pruebas.</p></li>
+<li><p><strong>No se pueden seleccionar los paquetes de pruebas.</strong> Asegúrate de revisar y mejorar de forma continua tus paquetes de pruebas para encontrar mejor los defectos y mantener la complejidad y el costo bajo control. Por ejemplo:</p>
+
+<ul>
+<li>Por lo general, los paquetes de pruebas de aceptación deben representar recorridos del usuario reales <a href="https://testing.googleblog.com/2016/09/testing-on-toilet-what-makes-good-end.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">de extremo a extremo</a> a través del sistema, en lugar de solo colecciones de criterios de aceptación automatizados. A medida que tu producto evolucione, también cambiarán estas situaciones, y los conjuntos de pruebas que las validan. Para obtener más información sobre este proceso, mira el video <a href="https://www.youtube.com/watch?v=qYfI2-bC6LA">Setting a Foundation For Successful Test Automation</a> (Establece una base para la automatización exitosa de pruebas) de Angie Jones.</li>
+<li>Si cada vez que cambias el código debes cambiar varias pruebas de unidades, es probable que <a href="https://martinfowler.com/articles/mocksArentStubs.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">dependas demasiado de la simulación</a> o no puedas reducir el paquete de pruebas de unidades.</li>
+<li>Mantén los paquetes de pruebas bien definidos. Si cada cambio en la IU hace que varias pruebas de aceptación fallen, usa el <a href="https://martinfowler.com/bliki/PageObject.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">patrón de objeto de página</a> para separar las pruebas del sistema a prueba.</li>
+<li>Si las pruebas son costosas, esto puede causar problemas con la <a href="/architecture/devops/devops-tech-architecture">arquitectura</a> del software. Asegúrate de seguir invirtiendo para que tu software sea fácil de probar; incorpora la <a href="https://refactoring.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">refactorización</a> en el trabajo diario de tu equipo.</li>
+</ul></li>
+<li><p><strong>Tener una proporción incorrecta de pruebas de aceptación y de unidades.</strong> Un objetivo de diseño específico de un paquete de pruebas automatizadas consiste en encontrar los errores lo antes posible. Esta es la razón por la que las pruebas de unidades de ejecución más rápida se ejecutan antes que las pruebas de aceptación de ejecución más lenta, y ambas se ejecutan antes que cualquier prueba manual.</p>
+
+<p>Deberías encontrar errores con la categoría de prueba más rápida. Cuando encuentres un error en una prueba de aceptación o de exploración, agrega una prueba de unidades para asegurarte de que la próxima vez este error se detecte más rápido, más temprano y a un costo menor.
+Mike Cohn describió la <a href="https://books.google.com.br/books?id=8IglA6i_JwAC&amp;printsec=frontcover&amp;dq=Mike+Cohn+Succeeding+with+Agile&amp;hl=pt-BR&amp;sa=X&amp;ved=0ahUKEwj9x8S8tuTiAhWjGLkGHU0GCxEQ6AEILTAA#v=onepage&amp;q=Mike%20Cohn%20Succeeding%20with%20Agile&amp;f=false" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">pirámide de automatización de pruebas</a> ideal, en la que la mayoría de los errores se detectan mediante la prueba de unidades. Esta pirámide se muestra en el siguiente diagrama:</p>
+
+<p><img src="/static/architecture/images/ta-image2.png" alt="image"/></p></li>
+<li><p><strong>Tolerancia de pruebas poco confiables.</strong> Las pruebas deben ser confiables: cuando se aprueban, debemos poder confiar en que el software está listo para lanzarse; y las fallas deben indicar un defecto real. En particular, no debes tolerar pruebas poco confiables.
+<a href="https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Obtén información sobre la estrategia de mitigación de Google para las pruebas poco confiables</a>.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_continuous_testing" data-text="Formas de mejorar las pruebas continuas">Formas de mejorar las pruebas continuas</h2>
+
+<p>Si tu organización aún no tiene una cultura de pruebas de unidades de desarrolladores, no te preocupes. La prueba de unidades no fue una práctica generalizada en Google en sus primeros años. Un grupo de voluntarios de Google llamado Testing Grouplet impulsó la cultura actual de la realización de pruebas de unidades integrales.
+<a href="https://martinfowler.com/articles/testing-culture.html#google" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Descubre cómo ayudaron a impulsar la adopción de pruebas de unidades</a> mediante la creación de una comunidad de práctica enfocada en propagar el conocimiento sobre las pruebas en Google y convencer a los desarrolladores del valor de las pruebas de unidades.</p>
+
+<p>Si no tienes suficiente automatización de pruebas, comienza con la compilación de una canalización de implementación de esquema básico. Por ejemplo, crea una sola prueba de unidades, una sola prueba de aceptación y una secuencia de comandos de implementación automatizada que haga funcionar un entorno de prueba de exploración, y agrúpalas. Luego, aumenta de forma gradual la cobertura de la prueba y amplía la canalización de implementación a medida que el producto o el servicio evolucionen.</p>
+
+<p>Si ya estás trabajando en un <a href="https://wikipedia.org/wiki/Brownfield_(software_development)" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">sistema brownfield</a>, sigue las instrucciones de este artículo, pero no te detengas a actualizar un paquete completo de pruebas automatizadas. En su lugar, escribe una cantidad pequeña de pruebas de aceptación para la funcionalidad de valor alto. Luego, asegúrate de pedir a los desarrolladores que escriban pruebas de unidades y aceptación para cualquier funcionalidad nueva o que desees cambiar. Se recomienda que uses el TDD a fin de mejorar la calidad y el mantenimiento del código principal y de prueba. Luego, asegúrate de que, cuando las pruebas de aceptación presenten fallas, escribirás pruebas de unidades para detectar el error más rápido.</p>
+
+<p>Si tienes un paquete de pruebas poco confiable y con mantenimiento costoso, puedes reducirlo sin problemas. Un paquete de diez pruebas rápido y confiable es mucho mejor que uno de cientos de pruebas difícil de mantener y en el que nadie confía.</p>
+
+<h2 id="ways_to_measure_continuous_testing" data-text="Formas de medir las pruebas continuas">Formas de medir las pruebas continuas</h2>
+
+<p>Puedes medir los resultados de las pruebas continuas en tu entorno de la siguiente manera:</p>
+
+<table>
+<thead>
+<tr>
+<th>Factor por probar</th>
+<th>Qué se debe medir</th>
+<th>Objetivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Escritores de pruebas de unidades y aceptación.</td>
+<td>Porcentaje de pruebas que escriben los desarrolladores, los verificadores y cualquier otro grupo de la empresa.</td>
+<td>Los autores y encargados principales del mantenimiento de las pruebas de aceptación son los desarrolladores.</td>
+</tr>
+<tr>
+<td>Cantidad de errores detectados en pruebas de aceptación, de exploración y en producción.</td>
+<td>Cambio en la proporción de errores con el tiempo.</td>
+<td>Se detectan más errores en las fases de prueba “más económicas”, los equipos agregan pruebas automatizadas para los errores que se encuentran durante las pruebas de exploración y en producción, y se agregan pruebas de unidades para detectar los errores que se descubren en las pruebas de aceptación.</td>
+</tr>
+<tr>
+<td>Tiempo dedicado a solucionar errores de las pruebas de aceptación.</td>
+<td>Cambio en el tiempo dedicado a corregir errores de pruebas a lo largo del tiempo (debe reducirse).</td>
+<td>Los desarrolladores pueden corregir con facilidad los errores de las pruebas de aceptación.</td>
+</tr>
+<tr>
+<td>Las pruebas automatizadas son significativas.</td>
+<td>Realiza un seguimiento de la cantidad de errores de pruebas automatizadas que representan un defecto real y de la cantidad de pruebas que estaban mal codificadas.</td>
+<td>Los errores de pruebas siempre indican un defecto real en el producto.</td>
+</tr>
+<tr>
+<td>Las pruebas automatizadas se ejecutan en la canalización de entrega.</td>
+<td>Verifica (sí/no) si todos los paquetes de pruebas se ejecutan en todos los activadores de canalización.</td>
+<td>Las pruebas automatizadas se ejecutan como parte de la canalización principal y el flujo de trabajo.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="Próximos pasos">¿Qué sigue?</h2>
+
+<ul>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li>Para obtener más información sobre las pruebas en Google, lee <a href="https://books.google.com/books/about/Software_Engineering_at_Google.html?id=WXTTDwAAQBAJ" track-type="solution" track-name="internalLink" track-metadata-position="body">Ingeniería de software en Google</a>.</li>
+<li>Aprende a compilar, probar y, también, implementar el sistema de forma continua mediante <a href="/build/?&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=latam-BR-all-pt-dr-skws-all-all-trial-e-dr-1003997-LUAC0008680&amp;utm_content=text-ad-none-none-DEV_c-CRE_325592090632-ADGP_SKWS+%7C+Multi+%7E+Dev+%7C+Build-KWID_43700040482196107-kwd-471794162766-userloc_1001743&amp;utm_term=KW_cloud%20build-ST_Cloud+Build&amp;gclid=Cj0KCQjw6IfoBRCiARIsAF6q06suRucypheWE5dDKAmsKDZrEVvuY0nDFS0YgbkN5XVmkEzJPl89zIIaAoJcEALw_wcB&amp;gclsrc=aw.ds" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Build</a>.</li>
+<li>Aprende a supervisar el sistema y las pruebas mediante <a href="/stackdriver" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Monitoring</a>.</li>
+<li>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</li>
+<li>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</li>
+</ul>
+
+</body></html>

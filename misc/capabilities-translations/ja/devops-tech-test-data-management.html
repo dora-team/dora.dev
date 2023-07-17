@@ -1,0 +1,76 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技術: テストデータの管理</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注:</strong><span> <em></em>テストデータ管理は、ソフトウェア配信と組織のパフォーマンスを改善する一連の機能の 1 つです。これらの機能は <a href="https://www.devops-research.com/research.html">DORA State of DevOps Research Program</a> で発見されました。これは、高いパフォーマンスを生み出すプラクティスと機能に関する、学術的に厳格で独立した研究調査です。詳細については、<a href="/devops">DevOps のリソース</a>をご覧ください。</span></aside><p><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">自動テスト</a>は、最新のソフトウェア配信手法の重要な要素です。単体テスト、統合テスト、システムテストを一連の包括的なセットとして実行できることは、アプリが想定どおりに動作し、本番環境に安全にデプロイできることを確認するうえで非常に重要です。テストで現実的なシナリオを検証するには、現実的なデータをテストに提供することが重要です。</p>
+
+<p>手動テストや自動テストなど、テストスイート全体のあらゆる種類のテストでテストデータが必要となるため、これは非常に重要です。良いテストデータを使用すると、一般的または高価値のユーザー ジャーニーの検証、エッジケースのテスト、欠陥の再現、エラーのシミュレーションを行うことができます。</p>
+
+<p>ただし、テストデータを効果的に使用、管理することは簡単ではありません。テストの範囲外で定義されたデータに過度に依存すると、テストの安定性が低下し、メンテナンス費用が増加する可能性があります。外部データソースへの依存により、遅延が発生しテストのパフォーマンスに影響する場合があります。本番環境データには機密情報が含まれる可能性があるため、本番環境データのコピーにはリスクが伴います。これらの課題に対処するには、テストデータの慎重かつ戦略的な管理が求められます。</p>
+
+<h2 id="how_to_implement_test_data_management" data-text="テストデータ管理の実装方法">テストデータ管理の実装方法</h2>
+
+<p><a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment（DORA）</a>の分析によると、成功したチームは次の基本原則に基づいてテストデータ管理に取り組んでいます。</p>
+
+<ul>
+<li>完全な自動テストスイートを実行するための十分なテストデータが利用可能である。</li>
+<li>自動テストスイート用のテストデータをオンデマンドで取得できる。</li>
+<li>チームが実行できる自動テストが、テストデータによる制限または制約を受けない。</li>
+</ul>
+
+<p>テストデータの管理プロセスを改善するには、すべての開発チームでこれらの条件をすべて満たすようにしてください。これらを実践することは、全般的な<a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">テストの自動化</a>と<a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">継続的インテグレーション</a>の機能にも好影響を与える可能性があります。</p>
+
+<h2 id="common_pitfalls_in_test_data_management" data-text="テストデータ管理の一般的な注意点">テストデータ管理の一般的な注意点</h2>
+
+<p>テストデータの管理は困難な場合があります。テストデータの管理に関する一般的な問題には、次のようなものがあります。</p>
+
+<ul>
+<li>テストでのデータへの過度の依存。特に、単体テストではテスト外部のデータや状態に依存しないようにしてください。</li>
+<li>テストに関連する部分や重要な部分を特定するのではなく、本番環境データベース全体のコピーを使用する。</li>
+<li>機密データのマスキングやハッシュ化を行わない。</li>
+<li>古いデータや関連性がなくなったデータに依存する。</li>
+</ul>
+
+<h2 id="ways_to_improve_test_data_management" data-text="テストデータ管理の改善方法">テストデータ管理の改善方法</h2>
+
+<p>テストデータをより効果的かつ効率的に使用する方法は、次のとおりです。</p>
+
+<ol>
+<li><p><strong>単体テストを優先する</strong>。単体テストはテスト対象のコードを除き、互いに、またシステム内の他の部分から独立して行われる必要があります。単体テストでは外部データに依存しないでください。<a href="https://martinfowler.com/articles/practical-test-pyramid.html#TheTestPyramid" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">テスト自動化ピラミッド</a>で定義されているように、テストの大部分は単体テストで構成する必要があります。適切に設計されたコードベースに対して実行される適切な単体テストは、上位レベルのテストよりもはるかに簡単に優先順位を決定でき、メンテナンス費用も大幅に抑えられます。単体テストの範囲を広げると、外部データを消費する上位レベルのテストへの依存を最小限に抑えることができます。</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-test-automation-pyramid.svg" alt="テスト自動化ピラミッド。"/></p></li>
+<li><p><strong>テストデータへの依存を最小限に抑える</strong>。テストデータには注意深い継続的なメンテナンスが必要です。API とインターフェースの進化に合わせて、関連するテストデータを更新または再作成する必要があります。このプロセスは、チーム ベロシティに悪影響を与える可能性がある費用の一部を占めています。そのため、自動テストの実行に必要なテストデータの量を最小限に抑えることをおすすめします。</p></li>
+<li><p><strong>テストデータを分離する</strong>。入力が制御され、想定した出力と実際の出力との比較が可能な、明確に定義された環境でテストを実行します。特定のテストで使用されるデータが対象テストに明示的に関連付けられており、他のテストまたはプロセスによって変更されないようにします。可能な限り、テストではアプリケーションの API を使用して、テストの設定の一環として必要な状態を作成する必要があります。テストデータを分離することも、テストを並行して実行するための前提条件です。</p></li>
+<li><p><strong>データベースに保存されているテストデータへの依存を最小限に抑える</strong>。次の理由から、データベースに保存されたテストデータを維持することが特に難しい場合があります。</p>
+
+<ol>
+<li><strong>テストの独立性が不十分</strong>。データは、データベースによって永続的に保存されます。データへの変更は、明示的にリセットされない限り、テストすべてにわたって保持されます。テスト入力の信頼性が低いと、テストの独立性の維持がさらに難しくなり、並行できなくなります。</li>
+<li><strong>パフォーマンスへの影響</strong>。実行速度は、自動テストの重要な要件です。通常、データベースの操作は、ローカルに保存されたデータを操作するよりも時間がかかり、煩雑です。必要に応じて、インメモリ データベースを優先してください。</li>
+</ol></li>
+<li><p><strong>テストデータをすぐに利用できるようにする</strong>。完全な本番環境データベースのコピーに対してテストを実行すると、リスクが生じます。データの更新は困難かつ処理速度の低下を伴う場合があります。その結果、データが古くなる可能性があります。本番環境データには機密情報が含まれる場合もあります。代わりに、テストに必要な関連するデータのセクションを特定します。これらのセクションを定期的にエクスポートして、簡単にテストで使用できるようにします。</p></li>
+</ol>
+
+<h2 id="how_to_measure_test_data_management" data-text="テストデータ管理の測定方法">テストデータ管理の測定方法</h2>
+
+<p>テストデータ管理方法が改善されるにつれて、前述の基本原則に照らして進捗状況を測定することが重要になります。</p>
+
+<ol>
+<li><strong>完全な自動テストスイートを実行するための十分なテストデータが利用可能である</strong>。これは開発者とテスト担当者が、テストスイートで使用するデータの管理と操作に費やす時間をトラッキングすることで測定できます。また、業務に十分なデータがあるか、あるいはデータ量が業務の妨げとなっていると感じているかどうかをチームに尋ねて、知覚的尺度（つまり、アンケート）として把握することもできます。</li>
+<li><strong>自動テストスイート用のテストデータをオンデマンドで取得できる</strong>。これは、使用可能な主要なデータセットの割合、データセットへのアクセス頻度、データセットの更新頻度として測定できます。</li>
+<li><strong>チームが実行できる自動テストが、テストデータによる制限または制約を受けない</strong>。これは、追加のテストデータを取得することなく実行できる自動テストの数として測定できます。また、テストデータによって自動テストに関する取り組みが制限されていると感じているかどうかをチームに尋ねて、知覚的尺度（つまり、アンケート）として把握することもできます。</li>
+</ol>
+
+<h2 id="whats_next" data-text="次のステップ">次のステップ</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps ページ</a>で他の記事やリソースへのリンクを確認する。</li>
+<li>テストと CI / CD を使用して<a href="/blog/products/application-development/release-with-confidence-how-testing-and-cicd-can-keep-bugs-out-of-production" track-type="article" track-name="internalLink" track-metadata-position="body">本番環境からバグを排除する</a>方法を確認する。</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">研究プログラム</a>を調べる。</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps のクイック チェック</a>を確認する。業界におけるご自身の立ち位置を把握できます。</li>
+</ul>
+
+</body></html>

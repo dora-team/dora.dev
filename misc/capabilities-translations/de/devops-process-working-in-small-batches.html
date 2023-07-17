@@ -1,0 +1,102 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Prozess: Arbeitsaufteilung</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Die Arbeit in kleinen Batches</em> gehört zu einer Reihe von Funktionen, die die Softwareleistung und die Unternehmensleistung verbessern.
+Diese Funktionen wurden im Rahmen des <a href="https://www.devops-research.com/research.html">"State of DevOps"-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, akademisch anspruchsvollen Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>Die Arbeitsaufteilung ist ein wesentliches Prinzip in jeder Disziplin, in der Feedback-Loops wichtig sind oder Sie schnell aus Ihren Entscheidungen lernen möchten. Durch die Arbeitsaufteilung können Sie schnell Hypothesen darüber testen, ob eine bestimmte Verbesserung wahrscheinlich den gewünschten Effekt hat. Andernfalls können Sie Annahmen korrigieren oder noch einmal bearbeiten. Dieser Artikel lässt sich zwar auf jede Art von Änderung einschließlich der organisatorischen Transformation und Prozessverbesserung anwenden, doch der Schwerpunkt liegt hauptsächlich auf der Softwarebereitstellung.</p>
+
+<p>Die Arbeitsaufteilung ist Teil des schlanken Produktmanagements. Neben Kompetenzen wie <a href="/architecture/devops/devops-process-work-visibility-in-value-stream" track-type="article" track-name="internalLink" track-metadata-position="body">Sichtbarkeit der Arbeit im Wertstrom</a>, <a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">Teamexperimente</a> und <a href="/architecture/devops/devops-process-customer-feedback" track-type="article" track-name="internalLink" track-metadata-position="body">Einblick in das Kundenfeedback</a> kann die Arbeitsaufteilung die Leistung der Softwarebereitstellung und der Organisation vorhersagen.</p>
+
+<p>Ein Grund dafür, in großen Batches zu arbeiten, sind die <a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">hohen Fixkosten für die Übergabe von Änderungen</a>.
+Bei traditionellen gestaffelten Ansätzen der Softwareentwicklung bestehen Handoffs von der Entwicklung zum Test oder vom Test bis hin zum IT-Betrieb aus ganzen Releases, d. h. aus monatelanger Arbeit von Teams aus zehn oder Hunderten von Mitarbeitern. Bei diesem herkömmlichen Ansatz kann das Erfassen von Feedback zu einer Änderung Wochen oder Monate dauern.</p>
+
+<p>Im Gegensatz dazu kann Software dank der DevOps-Praktiken, die funktionsübergreifende Teams und einfache Ansätze verwenden, innerhalb von wenigen Minuten von der Entwicklung über Tests und den Betrieb in die Produktion gelangen. Diese schnelle Entwicklung erfordert jedoch eine Arbeitsaufteilung mit Code.</p>
+
+<p>Die Arbeitsaufteilung hat viele Vorteile:</p>
+
+<ul>
+<li>Sie erhalten schneller Feedback zu Änderungen und können Probleme leichter erkennen und beheben.</li>
+<li>Effizienz und Motivation werden erhöht.</li>
+<li>Es wird verhindert, dass Ihre Organisation dem Irrtum der gesunkener Kosten erliegt.</li>
+</ul>
+
+<p>Sie können den Ansatz für kleine Batches auf Funktions- und Produktebene anwenden.
+Zur Veranschaulichung: Ein Minimum Viable Product (MVP) ist ein Prototyp eines Produkts mit gerade genügend Funktionen, um geprüftes Lernen über das Produkt und sein Geschäftsmodell zu ermöglichen.</p>
+
+<p>Die kontinuierliche Bereitstellung basiert auf der Arbeitsaufteilung und versucht, jede Änderung in der Versionsverwaltung so früh wie möglich zu erhalten. Ein Ziel der kontinuierlichen Bereitstellung besteht darin, die Wirtschaftlichkeit des Softwarebereitstellungsprozesses so zu ändern, dass eine Arbeitsaufteilung möglich ist. Mit diesem Ansatz erhalten die Teams schnelles und umfassendes Feedback, um ihre Arbeit verbessern zu können.</p>
+
+<h2 id="how_to_work_in_small_batches" data-text="So kann die Arbeit aufgeteilt werden">Möglichkeiten der Arbeitsaufteilung</h2>
+
+<p>Wenn Sie neue Funktionen planen, versuchen Sie, diese in Arbeitseinheiten aufzuteilen, die unabhängig voneinander und innerhalb kurzer Zeit abgeschlossen werden können. Wir empfehlen, dass jede Funktion oder jeder Batch dem agilen Konzept des <a href="https://wikipedia.org/wiki/INVEST_(mnemonic)" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">INVEST-Prinzips</a> folgt:</p>
+
+<ul>
+<li><strong>Independent (unabhängig)</strong>. Gestalten Sie Batches so unabhängig wie möglich von anderen Batches, damit Teams sie in beliebiger Reihenfolge bearbeiten und unabhängig von anderen Batches bereitstellen und prüfen können.</li>
+<li><strong>Negotiable (verhandelbar)</strong>. Jeder Batch ist iterierbar und kann aufgrund von Feedback neu verhandelt werden.</li>
+<li><strong>Valuable (nützlich)</strong>. Diskrete Batches sind nutzbar und bieten den Beteiligten einen Mehrwert.</li>
+<li><strong>Estimable (schätzbar)</strong>. Es sind genügend Informationen zu den Batches vorhanden, um ihren Umfang abschätzen zu können.</li>
+<li><strong>Small (klein)</strong>. Während eines Sprints sollten Sie Batches in kleinen Zeitabständen wie Stunden oder einigen Tagen erledigen können.</li>
+<li><strong>Testable (testbar)</strong>. Jeder Batch kann getestet, überwacht und daraufhin überprüft werden, ob er wie erwartet funktioniert.</li>
+</ul>
+
+<p>Wenn Funktionen eine geeignete Größe haben, können Sie die Entwicklung der Funktion in noch kleinere Batches aufteilen. Dieser Prozess kann schwierig sein und erfordert Erfahrung. Idealerweise sollten Ihre Entwickler <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">mindestens einmal pro Tag</a> mehrere kleine freigabefähige Änderungen in den Hauptentwicklungszweig aufnehmen.</p>
+
+<p>Es ist wichtig, die Entwicklung auf der Dienst- oder API-Ebene zu starten, nicht auf der UI-Ebene. So können Sie der API Erweiterungen hinzufügen, die Nutzern der App anfangs nicht zur Verfügung stehen, und diese Änderungen in den Hauptentwicklungszweig aufnehmen. Sie können diese Änderungen für die Produktion starten, ohne sie für Nutzer sichtbar zu machen. Mit diesem Ansatz, der als <em>Dark Launch</em> bezeichnet wird, können Entwickler Code für kleine Batches prüfen, die abgeschlossen wurden, jedoch zu Funktionen gehören, die noch nicht vollständig sind. Sie können dann <a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">automatisierte Tests</a> für diese Änderungen ausführen, um nachzuweisen, dass sie sich wie erwartet verhalten. So arbeiten Teams immer noch schnell und <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">entwickeln sich aus dem Baumschema heraus</a> anstatt aus langlebigen Feature-Zweigen.</p>
+
+<p>Sie können auch einen Dark Launch für Änderungen durchführen, indem Sie einen <a href="https://martinfowler.com/bliki/FeatureToggle.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Funktionsumschalter</a> verwenden, eine bedingte Anweisung, die auf Konfigurationseinstellungen basiert. Sie können beispielsweise die Elemente der Nutzeroberfläche ein- oder ausblenden oder die Dienstlogik aktivieren oder deaktivieren. Die Konfiguration des Funktionsumschalters kann entweder während der Bereitstellungs- oder der Laufzeit gelesen werden. Mit diesen Konfigurationseinstellungen können Sie das Verhalten des neuen Codes weiter unten im Stack ändern. Sie können auch ein ähnliches Verfahren verwenden, das als <a href="https://continuousdelivery.com/2011/05/make-large-scale-changes-incrementally-with-branch-by-abstraction/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Branch-by-abstraction</a> bezeichnet wird, um größere Änderungen am System vorzunehmen und gleichzeitig die Entwicklung und Freigabe außerhalb des Hauptentwicklungszweigs ohne die Verwendung langlebiger Feature-Zweige fortzusetzen.</p>
+
+<p>Bei diesem Ansatz werden Batches erst abgeschlossen, wenn sie für die Produktion bereitgestellt wurden und der Feedbackprozess die Änderungen überprüft hat. Das Feedback stammt aus vielen Quellen und in vielen verschiedenen Formen, z. B. von Nutzern, der Systemüberwachung, Qualitätssicherung und von automatisierten Tests. Ihr Ziel ist es, die Geschwindigkeit so zu optimieren, dass Sie die Taktzeit reduzieren, in der Sie Änderungen an die Nutzer weitergeben. So können Sie Ihre Hypothese so schnell wie möglich prüfen.</p>
+
+<h2 id="common_pitfalls_with_working_in_small_batches" data-text="Häufige Probleme bei der Arbeitsaufteilung">Häufige Probleme bei der Arbeitsaufteilung</h2>
+
+<p>Wenn Sie die Arbeit in kleine Batches aufteilen, können zwei Hindernisse auftreten:</p>
+
+<ul>
+<li><p><strong>Die Arbeit wurde in zu große Batches aufgeteilt</strong>. Ihre erste Aufgabe besteht darin, die Arbeit sinnvoll aufzuteilen. Wir empfehlen, Code unabhängig vom Status der Funktion zuzuweisen und für die Entwicklung einzelner Funktionen nicht mehr als ein paar Tage vorzusehen. Alle Code-Batches, deren Erledigung und Überprüfung mehr als eine Woche benötigen, sind zu groß. Während des gesamten Entwicklungsprozesses ist es wichtig, zu analysieren, wie Ideen in Schritte aufgeteilt werden können, die Sie iterativ entwickeln können.</p></li>
+<li><p><strong>Die Arbeit wird aufgeteilt, doch die Batches werden vor der Weiterleitung zum Testen oder zur Freigabe neu gruppiert</strong>. Durch die Umgruppierung verzögert sich das Feedback, ob die Änderungen fehlerhaft sind, und ob Ihre Nutzer und Ihre Organisation der Meinung sind, dass die Änderungen von Anfang an richtig waren.</p></li>
+</ul>
+
+<h2 id="ways_to_reduce_the_size_of_work_batches" data-text="Möglichkeiten, um die Größe von Arbeitspaketen zu verringern">Größe von Arbeitspaketen verringern</h2>
+
+<p>Wenn Sie Aufgaben in kleine Batches aufteilen, die innerhalb von Stunden abgeschlossen werden können, lassen sich diese Batches normalerweise <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">in weniger als einer Stunde testen und für die Produktion bereitstellen</a> (PDF). Es ist wichtig, die Arbeit in kleine Funktionen zu unterteilen, die eine schnelle Entwicklung ermöglichen, anstatt komplexe Funktionen für Zweige zu entwickeln, die dann nur selten freigegeben werden.</p>
+
+<p>Wenn Sie die Entwicklung kleiner Batches verbessern möchten, prüfen Sie Ihre Umgebung und bestätigen Sie, dass die folgenden Bedingungen erfüllt sind:</p>
+
+<ul>
+<li>Die Arbeit ist so aufgeteilt, dass Teams häufigere Produktionsfreigaben erteilen können.</li>
+<li>Entwickler können die Arbeit in kleine Änderungen unterteilen, die sich innerhalb von Stunden und nicht innerhalb von Tagen abschließen lassen.</li>
+</ul>
+
+<p>Wenn Sie Experte bei der Entwicklung der Arbeitsaufteilung werden möchten, müssen alle diese Bedingungen in allen Entwicklungsteams erfüllt sein. Diese Vorgehensweise ist für die <a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">kontinuierliche Integration</a> und die <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">Entwicklung nach Baumschema</a> erforderlich.</p>
+
+<h2 id="ways_to_measure_the_size_of_work_batches" data-text="Möglichkeiten, um die Größe von Arbeitspaketen zu messen">Größe von Arbeitspaketen messen</h2>
+
+<p>Wenn Sie sich mit der <a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">kontinuierlichen Integration</a> und dem <a href="/architecture/devops/devops-measurement-monitoring-systems" track-type="article" track-name="internalLink" track-metadata-position="body">Monitoring</a> auskennen, können Sie Möglichkeiten zur Messung kleiner Batchentwicklungen in Ihren Systemen und Ihrer Entwicklungsumgebung beschreiben.</p>
+
+<ul>
+<li><strong>Anwendungsfunktionen werden so aufgeteilt, dass häufige Releases unterstützt werden.</strong> Wie oft sind Releases möglich? Wie unterscheidet sich dieser Releaserhythmus zwischen den Teams? Sind die Verzögerungen in der Produktion auf Funktionen zurückzuführen, die größer sind?</li>
+<li><strong>Anwendungsfunktionen werden so aufgeteilt, dass Entwickler die Arbeit in maximal einer Woche erledigen können.</strong> Welchen Anteil an Funktionen können Sie innerhalb einer Woche fertigstellen? Welche Funktionen können Sie nicht innerhalb einer Woche fertigstellen? Können Sie Änderungen übernehmen und freigeben, bevor die Funktion fertiggestellt ist?</li>
+<li><strong>MVPs werden als Ziele für Teams definiert und festgelegt.</strong> Wird die Arbeit in Funktionen aufgeteilt, die MVPs und eine schnelle Entwicklung ermöglichen anstatt zu komplexen und langwierigen Prozessen führen?</li>
+</ul>
+
+<p>Ihre Beurteilung hängt von folgenden Faktoren ab:</p>
+
+<ul>
+<li>Kenntnis der Prozesse Ihrer Organisation</li>
+<li>Festlegung von Zielen für die Reduzierung von Verschwendung</li>
+<li>Suche nach Möglichkeiten, die Komplexität im Entwicklungsprozess zu reduzieren</li>
+</ul>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Nächste Schritte</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

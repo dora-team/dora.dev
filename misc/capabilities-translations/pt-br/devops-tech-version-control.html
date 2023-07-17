@@ -1,0 +1,130 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia de DevOps: controle de versão</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Observação:</strong><span> <em>o controle de versão</em> é um dos conjuntos de recursos que aumentam o
+fornecimento de software e o desempenho organizacional.  Esses recursos
+foram descobertos pelo
+<a href="https://www.devops-research.com/research.html">programa de pesquisa DORA State of DevOps</a>,
+uma investigação independente e academicamente rigorosa sobre as práticas e
+recursos que impulsionam o alto desempenho. Para saber mais, leia nossos
+<a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>Sistemas de controle de versão, como Git, Subversion e Mercurial, fornecem um meio lógico
+para organizar arquivos e coordenar a criação, o acesso controlado,
+a atualização e a exclusão entre equipes e organizações. O controle de versão está intimamente relacionado à automação. Na verdade, <a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">automação e integração contínua</a> dependem desses arquivos para o código-fonte da automação, bem como a configuração a ser automatizada e os dados a serem distribuídos.</p>
+
+<p>Para melhorar a entrega de software, as equipes precisam usar o controle de versão do código-fonte, scripts de teste e implantação, informações de configuração de infraestrutura e aplicativo e as muitas bibliotecas e pacotes de que dependem.
+No sistema de controle de versão, as equipes precisam ser capazes de consultar o estado atual (e histórico) do próprio ambiente. O controle de versão também oferece benefícios diretos, como recuperação de desastres e auditabilidade.</p>
+
+<p>Na pesquisa, veja que o uso abrangente do controle de versão, entre outros recursos, prevê a entrega contínua. Especificamente, o controle de versão ajuda
+a atender a estes requisitos essenciais:</p>
+
+<ul>
+<li><p><strong>Reprodutibilidade</strong>. As equipes precisam ser capazes de provisionar qualquer ambiente de forma totalmente automatizada e saber que qualquer ambiente novo reproduzido a partir da mesma configuração é idêntico. Um pré-requisito para atingir essa meta é ter os scripts e as informações de configuração necessários para provisionar um ambiente armazenado em um sistema compartilhado e acessível.</p></li>
+<li><p><strong>Rastreabilidade</strong>. As equipes devem ser capazes de escolher qualquer ambiente e determinar de forma rápida e precisa as versões de cada dependência usada para criar esse ambiente. Eles também devem ser capazes de comparar duas
+versões de um ambiente e ver o que mudou entre elas.</p></li>
+</ul>
+
+<p>Esses recursos oferecem vários benefícios importantes para as equipes:</p>
+
+<ul>
+<li><p><strong>Recuperação de desastres</strong>. Quando acontece algum erro em um ambiente, por exemplo, uma falha de hardware ou uma violação de segurança, as equipes precisam ser capazes de reproduzir esse ambiente em um período determinístico para conseguirem restaurar o serviço.</p></li>
+<li><p><strong>Auditoria</strong>. Para demonstrar a integridade do processo de entrega, as equipes precisam ser capazes de exibir o caminho inverso de cada implantação para os elementos de origem, incluindo a versão. Você permite isso por meio de um gerenciamento de configuração abrangente combinado com pipelines de implantação.</p></li>
+<li><p><strong>Qualidade superior</strong>. O processo de entrega de software geralmente está sujeito a longos atrasos durante a preparação dos ambientes de desenvolvimento, teste e produção. Quando essa preparação pode ser feita automaticamente a partir do controle de versão, as equipes podem receber feedback sobre o impacto das alterações mais rapidamente, permitindo que as equipes criem software de qualidade.</p></li>
+<li><p><strong>Gerenciamento de capacidade</strong>. Quando as equipes querem adicionar mais recursos a seus ambientes, a capacidade de criar reproduções de servidores atuais é essencial. Esse recurso permite o escalonamento horizontal de sistemas distribuídos modernos baseados em nuvem.</p></li>
+<li><p><strong>Resposta a defeitos</strong>. Quando descobrem um defeito crítico ou uma vulnerabilidade em algum componente do sistema, as equipes precisam lançar uma nova versão do software o mais rápido possível. Armazenar todos os artefatos no
+controle de versão significa que as equipes podem reverter para um estado de trabalho
+verificado anteriormente de forma rápida e confiável.</p></li>
+</ul>
+
+<p>À medida que os ambientes se tornam mais complexos e heterogêneos, é cada vez mais
+difícil atingir essas metas. É impossível conseguir reprodutibilidade e rastreabilidade perfeitas
+para um sistema empresarial complexo
+(no mínimo, todo sistema real tem estado). Assim, uma parte importante do gerenciamento de configuração é trabalhar para simplificar a arquitetura, os ambientes e os processos para reduzir o investimento necessário para alcançar os benefícios esperados.</p>
+
+<h2 id="how_to_implement_version_control" data-text="Como implementar o controle de versões">Como implementar o controle de versão</h2>
+
+<p>Ao implementar o controle de versão, recomendamos que você comece definindo em termos mensuráveis as metas que pretende atingir. Isso permite que você e suas equipes determinem o melhor caminho para atingi-las. Essa abordagem também permite alterar a direção ou reavaliar essas metas caso o caminho escolhido seja muito caro ou demorado.</p>
+
+<p>Um sistema de controle de versão registra alterações nos arquivos armazenados no sistema. Esses arquivos podem ser código-fonte, recursos ou outros documentos que possam fazer parte de um projeto de desenvolvimento de software. As equipes fazem alterações nos grupos denominadas <em>confirmações</em> ou <em>revisões</em>. Cada revisão, junto com os metadados relacionados à revisão (como quem fez a alteração e quando), é armazenada no sistema. Isso permite que as equipes confirmem, comparem, mesclem e restaurem as revisões anteriores. Além disso, minimiza os riscos estabelecendo uma maneira de reverter objetos em produção para versões anteriores.</p>
+
+<p>As equipes precisam ser capazes de restaurar serviços de produção de modo repetido e previsível
+(e, de preferência, com rapidez), mesmo quando eventos catastróficos ocorrem. Por isso, eles precisam
+inserir os seguintes recursos no repositório de controle da versão compartilhada:</p>
+
+<ul>
+<li>Todo o código e as dependências do aplicativo (por exemplo, bibliotecas e
+conteúdo estático)</li>
+<li>qualquer script usado para criar esquemas de banco de dados, dados de referência de aplicativos e assim por diante;</li>
+<li>todas as ferramentas e artefatos de criação do ambiente descritos na etapa anterior (por exemplo, scripts de criação de imagem VMware ou AMI ou receitas do Chef);</li>
+<li>qualquer arquivo usado para criar e escrever contêineres (por exemplo, arquivos do Docker e pacotes de versão);</li>
+<li>todos os testes automatizados de apoio e todos os scripts de teste manual;</li>
+<li>qualquer script compatível com empacotamento de código, implantação, migração de banco de dados e provisionamento de ambiente;</li>
+<li>compatibilidade com artefatos do projeto (por exemplo, documentação de requisitos, procedimentos de implantação e Notas de lançamento);</li>
+<li>orquestração do contêiner (por exemplo, configuração do Kubernetes, configuração do Mesos e configuração do Docker Swarm);</li>
+<li>todos os arquivos de configuração da nuvem (por exemplo, modelos do AWS Cloudformation, configuração do Cloud Deployment Manager, arquivos DSC do Microsoft Azure Stack, OpenStack HEAT, arquivos Terraform e pilhas do Pulumi);</li>
+<li>Qualquer outro script ou informação de configuração necessária para criar
+infraestrutura compatível com vários serviços (por exemplo, barramentos de
+serviços empresariais, sistemas de gerenciamento de banco de dados, arquivos de zona DNS, regras de configuração
+para firewalls e outros dispositivos de rede)</li>
+</ul>
+
+<p>O controle de versão pode ter várias formas, além dos tradicionais sistemas de controle de versão
+baseados em arquivos, como o Git. As equipes podem ter vários repositórios para diferentes tipos de objetos e serviços com controle de versão, rótulo e tag ao longo do código-fonte. Por exemplo, eles podem armazenar grandes imagens de máquinas virtuais, arquivos ISO, binários compilados e assim por diante em repositórios de artefatos como Nexus ou Artifactory. Como alternativa, eles podem colocar objetos em armazenamentos de blob, como o Cloud Storage ou o Amazon S3, ou podem colocar imagens do Docker em registros do Docker. Essas abordagens atendem aos requisitos de reprodutibilidade e rastreabilidade e fornecem os mesmos benefícios.</p>
+
+<p>Mais do que recriar qualquer estado anterior do ambiente de produção, as equipes também precisam ser capazes de recriar os processos de pré-produção e criação.
+Consequentemente, eles também precisam controlar a versão de tudo que estiver envolvido nos processos de criação, incluindo ferramentas e os ambientes de que dependem.</p>
+
+<h2 id="common_pitfalls_in_version_control" data-text="Armadilhas comuns no controle de versões">Dificuldades comuns no controle de versão</h2>
+
+<p>A dificuldade mais comum no uso de controle de versão é <strong>limitação de aplicação ou uso</strong>, ou seja, aplicar o controle de versão somente ao código do aplicativo de software. A prática recomendada exige a capacidade de reproduzir todos os ambientes de teste e produção, incluindo o software implantado neles de forma totalmente automatizada com o uso de scripts, código-fonte e informações de configuração armazenadas no controle de versão.</p>
+
+<h2 id="ways_to_improve_version_control" data-text="Formas de melhorar o controle de versões">Formas de melhorar o controle de versão</h2>
+
+<p>É possível melhorar o controle de versão de várias maneiras. Veja a seguir algumas recomendações:</p>
+
+<ul>
+<li>Cada confirmação do controle de versão precisa acionar a criação automatizada
+de pacotes que podem ser implantados em qualquer ambiente usando <em>somente</em>
+as informações no controle de versão.</li>
+<li>Possibilite a criação sob demanda de ambientes semelhantes aos de produção usando apenas scripts e informações de configuração do controle de versão, além de criar pacotes usando o processo automatizado descrito na abordagem anterior.</li>
+<li>Crie scripts dos testes e da infraestrutura de produção para que as equipes possam adicionar
+capacidade ou se recuperar de desastres de forma totalmente automatizada.</li>
+</ul>
+
+<p>Ao implementar um sistema de controle de versão, concentre-se nas restrições. Por exemplo, qual é o maior obstáculo ao fluxo rápido de alterações do controle de versão à produção? Suas versões estão muito lentas? É difícil recriar pacotes implantáveis? É difícil criar ambientes de teste semelhantes aos de produção? Essas restrições podem dificultar a conquista das suas metas e indicar um problema a ser resolvido na <a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">arquitetura</a> do seu sistema.</p>
+
+<h2 id="ways_to_measure_version_control" data-text="Formas de medir o controle de versões">Formas de medir o controle de versão</h2>
+
+<p>Para avaliar a eficiência das equipes no uso do controle de versão nos
+sistemas, tente estas recomendações:</p>
+
+<ul>
+<li><p><strong>Código do aplicativo</strong>. Você usa o controle de versão no código do aplicativo?
+Qual porcentagem do código do aplicativo você armazena no controle de versão? Com que facilidade e rapidez uma equipe pode recuperar o código do aplicativo do sistema de controle de versão?</p></li>
+<li><p><strong>Configurações do sistema</strong>. Você usa o controle de versão em configurações do sistema? Qual porcentagem de configurações do sistema você armazena no controle de versão? Com que facilidade e rapidez as equipes podem reconfigurar sistemas a partir do controle de versão?</p></li>
+<li><p><strong>Configuração do aplicativo</strong>. Você usa o controle de versão em configurações de aplicativo? Qual porcentagem de configurações de aplicativo você armazena no controle de versão? Com que facilidade e rapidez as equipes podem reconfigurar aplicativos a partir do código no sistema de controle de versão?</p></li>
+<li><p><strong>Scripts para automatizar a criação e a configuração.</strong> Você mantém scripts para automatizar a criação e a configuração no controle de versão? Qual porcentagem você armazena no controle de versão? Com que rapidez e facilidade você consegue reprovisionar
+sistemas usando scripts do controle de versão?</p></li>
+</ul>
+
+<p>Essas recomendações são apenas o começo, mas são essenciais. Por isso,
+sugerimos que você comece com elas e aprenda a fazê-las bem. Em seguida, releia este artigo e identifique outros artefatos usados no desenvolvimento e fornecimento de software, além de perguntas semelhantes: qual porcentagem desses artefatos está no controle de versão? Com que rapidez e facilidade sua equipe pode implantar novos sistemas ou configurações usando recursos do controle de versão?</p>
+
+<h2 id="whats_next" data-text="A seguir">A seguir</h2>
+
+<ul>
+<li>Consulte links para outros artigos e recursos na
+<a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página do DevOps</a>.</li>
+<li>Explore nosso
+<a href="https://www.devops-research.com/research.html">programa de pesquisa</a> (em inglês) do DevOps.</li>
+<li>Faça a
+<a href="https://www.devops-research.com/quickcheck.html">verificação rápida de DevOps</a>
+para entender sua posição em relação ao restante do setor.</li>
+</ul>
+
+</body></html>

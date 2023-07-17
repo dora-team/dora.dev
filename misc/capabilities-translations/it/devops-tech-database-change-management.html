@@ -1,0 +1,148 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia DevOps: gestione dei cambiamenti del database</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> <em>gestione delle modifiche al database</em> è un insieme di funzionalità che incrementano la distribuzione del software e le prestazioni dell'organizzazione. Queste funzionalità sono state scoperte dal <a href="https://www.devops-research.com/research.html">programma di ricerca State of DevOps di DORA</a>, un'indagine indipendente e rigorosa sulle accademine sulle pratiche e sulle funzionalità che determinano prestazioni elevate. Per scoprire di più, leggi le nostre <a href="/devops">risorse DevOps</a>.</span></aside>
+<p>Le modifiche al database sono spesso un'importante fonte di rischio e ritardo quando si eseguono i deployment. <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> ha esaminato le pratiche relative ai database utili durante il processo di implementazione della distribuzione continua, migliorando sia le prestazioni che la disponibilità del software.</p>
+
+<p>La ricerca di DORA ha rilevato che l'integrazione del lavoro sul database nel processo di distribuzione del software contribuisce positivamente alla <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">distribuzione continua</a>.
+In che modo i tuoi team possono migliorare la distribuzione del database nell'ambito dell'implementazione della distribuzione continua? Alcune prassi prevedono i risultati delle prestazioni.</p>
+
+<p>DORA ha scoperto che una buona comunicazione e una gestione completa della configurazione che include la pratica del database. I team che funzionano bene durante la distribuzione continua archiviano le modifiche al database come script nel controllo della versione e gestiscono queste modifiche nello stesso modo in cui gestiscono le modifiche all'applicazione in produzione. Inoltre, quando le modifiche all'applicazione richiedono modifiche al database, queste team parlano con le persone responsabili del database di produzione e assicurano che il team di tecnici abbia visibilità sull'avanzamento delle modifiche in attesa.</p>
+
+<p>Quando i team seguono queste pratiche, le modifiche al database non le rallentano o causano problemi quando eseguono deployment di codice.</p>
+
+<h2 id="how_to_implement_database_change_management" data-text="Come implementare la gestione dei cambiamenti del database">Come implementare la gestione dei cambiamenti del database</h2>
+
+<p>L'implementazione di una gestione efficace dei cambiamenti nei database è costituita da due aspetti: culturale e tecnico. Questa sezione illustra entrambi.</p>
+
+<h3 id="establish_effective_communication_of_database_changes" data-text="Stabilisci una comunicazione efficace delle modifiche al database">Stabilisci una comunicazione efficace delle modifiche al database</h3>
+
+<p>Le ricerche dimostrano che i team funzionano meglio quando discutono delle modifiche con le persone responsabili della gestione del database di produzione e quando tutti hanno visibilità sull'avanzamento delle modifiche in sospeso.</p>
+
+<p>La discussione delle modifiche proposte con gli amministratori di database di produzione (DBA) è importante per diversi motivi. In primo luogo, questi esperti possono consigliarti il modo migliore per ottenere i risultati e segnalare potenziali problemi come l' rendimento.
+Molte operazioni hanno caratteristiche di prestazioni molto diverse nei sistemi di produzione rispetto alle workstation di sviluppo. Fornisce inoltre informazioni approfondite su cosa sta accadendo a monte, il che aiuta a prepararsi meglio all'impatto delle modifiche imminenti.</p>
+
+<p>Anche garantire a tutti la visibilità dello stato di avanzamento delle modifiche è fondamentale per consentire ai team, inclusi i database, di comprendere quali modifiche sono imminenti, lo stato dei test e quali modifiche allo schema sono state apportate ai vari database condivisi di produzione e non. Puoi facilitare la visibilità
+tramite:</p>
+
+<ul>
+<li>Mantenere tutte le modifiche allo schema del database nel controllo della versione, insieme al codice dell'applicazione a cui appartiene lo schema.</li>
+<li>L'utilizzo di uno strumento che registra le modifiche apportate in determinati ambienti e i risultati che ne sono derivati.</li>
+</ul>
+
+<p>Queste procedure assicurano inoltre che esista una fonte attendibile per tutte le modifiche e consentano di accedere facilmente alla cronologia delle modifiche per eseguire il controllo.</p>
+
+<h3 id="treat_all_database_schema_changes_as_migrations" data-text="Trattare tutte le modifiche dello schema del database come migrazioni">Trattare tutte le modifiche dello schema del database come migrazioni</h3>
+
+<p>Un pattern ampiamente utilizzato per il controllo delle versioni delle modifiche al database è acquisire ogni modifica come script di migrazione che viene mantenuto nel controllo della versione, come mostrato nel diagramma seguente. Ogni script di migrazione ha un numero di sequenza univoco,
+così puoi sapere in quale ordine applicare le migrazioni.</p>
+
+<p><img src="/static/architecture/devops/images/database-change-management-1.png" alt="Il diagramma mostra l&amp;#39;acquisizione di ogni modifica al database come script di migrazione con un numero di sequenza univoco."/></p>
+
+<p>Assicurati quindi che ogni istanza del database disponga di una tabella che registri le migrazioni eseguite in base a quella particolare istanza. In questo modo puoi controllare la versione dello schema del database, quindi puoi utilizzare uno strumento per applicare gli script di migrazione per portare il database sulla versione dello schema che preferisci. Esempi di strumenti includono:</p>
+
+<ul>
+<li><a href="https://github.com/golang-migrate/migrate" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">migrate</a>
+(Go)</li>
+<li><a href="https://pypi.org/project/alembic/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">alembico</a>
+(Python)</li>
+<li><a href="https://guides.rubyonrails.org/active_record_migrations.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Migrazione di record attivi</a>
+(Ruby su Rails)</li>
+<li><a href="https://github.com/dbup/dbup" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">dbup</a> (.NET)</li>
+<li><a href="https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Migrazione dei framework di entità</a>
+(.NET)</li>
+<li><a href="https://laravel.com/docs/7.x/migrations" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Migrazioni Laravel</a>
+(PHP)</li>
+<li><a href="https://flywaydb.org/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Flyway</a>
+(indipendente dalla piattaforma)</li>
+<li><a href="https://www.liquibase.org/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Liquibase</a>
+(indipendente dalla piattaforma)</li>
+</ul>
+
+<p>Puoi anche usare le migrazioni per creare schemi di database vuoti per lo sviluppo e i test.</p>
+
+<p>Come mostrato nel diagramma seguente, ogni istanza di database contiene una tabella che registra le migrazioni eseguite su quell'istanza. Puoi quindi eseguire gli aggiornamenti automaticamente utilizzando uno strumento o uno script che esegue le migrazioni che non sono già state applicate all'istanza di database, aggiornando la tabella delle migrazioni al termine di ogni comando.</p>
+
+<p><img src="/static/architecture/devops/images/database-change-management-2.png" alt="Esempio di tabella che registra le migrazioni in base a un&amp;#39;istanza."/></p>
+
+<p>Puoi gestire le modifiche del database nello stesso modo in cui gestisci le modifiche dell'applicazione: tramite un processo automatizzato che utilizza il controllo delle versioni come fonte di riferimento.</p>
+
+<h3 id="zero-downtime_database_changes" data-text="Modifiche al database senza tempo di inattività">Modifiche al database senza tempo di inattività</h3>
+
+<p>Molte organizzazioni programmano tempi di inattività per i propri servizi quando effettuano modifiche allo schema del database a causa della necessità di coordinarli con i deployment delle applicazioni o a causa del blocco della tabella di database durante l'esecuzione di tali modifiche.
+La distribuzione continua mira a eliminare il tempo di inattività per i deployment, quindi ecco alcune strategie per apportare modifiche allo schema del database senza tempi di inattività:</p>
+
+<ul>
+<li><strong>Utilizza un framework di migrazione degli schemi online</strong> come
+<a href="https://github.com/github/gh-ost" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">gh-ost</a>
+o
+<a href="https://www.percona.com/doc/percona-toolkit/3.0/pt-online-schema-change.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">pt-online-schema-change</a>.
+Questi strumenti creano una copia "ghost" di ogni tabella da modificare, esegui la migrazione della copia vuota e, quindi, copia in modo incrementale i dati dalla tabella originale, inclusi eventuali aggiornamenti che si verificano durante la migrazione. Al termine della procedura, sostituiscono la tabella originale con il ghost. Alcuni
+database, ad esempio <a href="/spanner/docs/schema-updates" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud Spanner</a>, possono eseguire aggiornamenti dello schema senza tempi di inattività.</li>
+<li><p><strong>Integra le modifiche al database e alle applicazioni</strong> con il <a href="https://medium.com/continuousdelivery/expand-contract-pattern-and-continuous-delivery-of-databases-4cfa00c23d2e" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">pattern di modifica parallela</a>.
+In questo pattern, non si modifica mai gli oggetti del database esistenti. ma aggiungerai nuove strutture insieme a quelle vecchie. Ad esempio, valuta la possibilità di modificare una colonna per "indirizzo" in due colonne: <code translate="no" dir="ltr">address_1</code> e <code translate="no" dir="ltr">address_2</code>.</p>
+
+<p>Invece di eliminare la vecchia colonna e aggiungere quella nuova e implementare una nuova versione dell'applicazione contemporaneamente, aggiungi le nuove colonne, ma mantieni quelle precedenti. Puoi farlo prima che venga eseguito il deployment dell'applicazione. In questo modo, la nuova versione dell'applicazione può ricercare le nuove colonne, leggerle se sono presenti e non essere nulle, in caso contrario vengono lette dalla colonna precedente. L'applicazione può quindi scrivere sia nella colonna precedente sia in quella nuova, eseguendo la migrazione lento dei dati e consentendo inoltre il rollback di applicazioni senza richiedere il rollback di un database.</p>
+
+<p>In questo modo il deployment dell'applicazione viene disaccoppiato dalla modifica del database, che in genere può essere eseguito senza incorrere in tempi di inattività, in quanto non prevede la migrazione dei dati. Abbiamo compromesso una maggiore complessità nell'applicazione per ridurre la complessità del deployment.
+In alternativa, puoi utilizzare gli attivatori del database per mantenere sincronizzati i dati nelle colonne nuove e vecchie.</p></li>
+<li><p><strong>Progetta e implementa una strategia di partizionamento e archiviazione dei dati</strong>. La causa principale di migrazioni lunghe sono le tabelle di database con un numero elevato di righe. Assicurati che le tue applicazioni siano progettate per consentire il partizionamento e l'archiviazione dei dati in modo da evitare che le tabelle diventino troppo grandi. Ad esempio, potresti creare più istanze di una tabella per ogni trimestre: ad esempio, anziché una tabella <code translate="no" dir="ltr">survey_answers</code> potresti avere <code translate="no" dir="ltr">survey_answers_2020Q1</code>, <code translate="no" dir="ltr">survey_answers_2020Q2</code> e così via. Assicurati che le revisioni della progettazione e dell'architettura delle applicazioni includano la convalida della strategia di partizionamento / archiviazione dei dati dell'applicazione.</p></li>
+<li><p><strong>Utilizza un'architettura di origine degli eventi</strong>. In un'<a href="https://microservices.io/patterns/data/event-sourcing.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">architettura di origine degli eventi</a>, anziché avere il database che archivia lo stato attuale dell'applicazione, memorizziamo le <em>modifiche</em> allo stato, sotto forma di un log di eventi noti come <em>comandi</em>. Di conseguenza, quando il cliente cambia l'indirizzo, anziché aggiornare una tabella con i dettagli del cliente, l'applicazione invia un comando di modifica dell'indirizzo che viene memorizzato nel database. Ecco come funzionano i log delle transazioni di database e il controllo delle versioni
+ed è un pattern comune nei sistemi distribuiti. In un'architettura basata su eventi, gli eventi possono essere messi in coda, consentendo le migrazioni dei database, mentre gli eventi vengono messi in coda. Gli eventi in coda possono quindi essere eliminati dal database al termine della migrazione. Alcuni database sono in grado di mettere in coda le query durante l'esecuzione delle migrazioni di schemi, il che può essere efficace se le migrazioni vengono completate abbastanza rapidamente.</p></li>
+<li><p><strong>Utilizza una soluzione NoSQL.</strong> Alcuni database NoSQL, come <a href="https://firebase.google.com/docs/firestore" target="firebase" track-type="article" track-name="firebaseLink" track-metadata-position="body">Firestore</a> e <a href="/bigtable" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud BigTable</a>, non soffrono del problema del tempo di inattività creato dalle modifiche dello schema. I database di documenti come Firestore hanno uno schema implicito, il che significa che lo schema viene gestito a livello di applicazione anziché a livello di database.
+Esistono però dei compromessi nell'utilizzo dei database NoSQL: non sono ottimali per ogni applicazione.</p></li>
+</ul>
+
+<p>Oltre a eliminare i tempi di inattività programmati, puoi anche evitare tempi di inattività non pianificati. Assicurati di testare ogni modifica dello schema rispetto a un <a href="/architecture/devops/devops-tech-test-data-management" track-type="article" track-name="internalLink" track-metadata-position="body">set di dati simile a una produzione</a> (con qualsiasi informazione personale o riservata eliminata, ovviamente) per assicurarti che l'applicazione si comporti come previsto durante e dopo la migrazione. Alcune organizzazioni creano una versione standardizzata del loro database di produzione in base a una pianificazione giornaliera da utilizzare a questo scopo. Se utilizzi un sistema di gestione di database con più di un nodo in produzione, assicurati di eseguire un test su un'istanza con almeno due nodi per facilitare il rilevamento dei problemi di sistema distribuiti.</p>
+
+<h2 id="common_pitfalls_of_implementing_database_change_management" data-text="Insetti comuni dell'implementazione della gestione dei cambiamenti del database">Insetti comuni dell'implementazione della gestione dei cambiamenti del database</h2>
+
+<p>Quando si implementano le pratiche chiave descritte di seguito, è necessario tenere presenti alcuni errori comuni.</p>
+
+<p>Innanzitutto, molte organizzazioni sono fortemente isolate. Spesso i database alternativi lavorano in un team separato che utilizza una propria procedura per gestire i cambiamenti. Quando i team di distribuzione del software implementano un nuovo processo per la gestione delle modifiche al database senza consultare il team DBA, potrebbero dover affrontare una resistenza all'utilizzo del nuovo processo per apportare modifiche ai database gestiti dal team DBA. Questo può ridurre notevolmente i vantaggi del passaggio a un nuovo processo.</p>
+
+<p>Il primo passo consiste nel incontrarli per discutere su come raggiungere
+gli obiettivi presentati in questo articolo. È importante convincerli a qualsiasi modifica
+proposta alle procedure e alle tecnologie. Il modo migliore per farlo è chiedere loro quali problemi stanno affrontando, vedere come le idee presentate in questo articolo possono aiutarli a risolvere questi problemi e proporre loro di aiutarti. Idealmente, i team di distribuzione e i database possono trovare una soluzione reciprocamente accettabile.</p>
+
+<p>Questo ostacolo è spesso aggravato da un'altra insidie: la situazione comune in cui più applicazioni condividono lo stesso schema di database. Ciò significa che i team che lavorano a un'applicazione non possono modificare lo schema senza influire sulle altre. Per gestire le modifiche del database
+tutte le applicazioni che condividono lo schema di database è necessario implementare una singola soluzione. Di certo è possibile, e persino più vantaggioso, implementare un meccanismo self-service controllato dalla versione per eseguire il deployment delle modifiche al database in questa situazione. Tuttavia, sono necessari una pianificazione e un'implementazione accurate.</p>
+
+<p>Infine, l'implementazione sia della gestione dei cambiamenti del database basata sulla migrazione che dei deployment senza tempi di inattività può comportare significative <a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">modifiche architettoniche</a>.
+Questo fattore deve essere preso in considerazione nella stima dell'impegno necessario per implementare queste pratiche.</p>
+
+<h2 id="how_to_measure_database_change_management" data-text="Come misurare la gestione dei cambiamenti del database">Come misurare la gestione dei cambiamenti del database</h2>
+
+<p>L'obiettivo di un sistema di gestione delle modifiche al database efficace è che le modifiche al database non rallentano i deployment o causano problemi. Ciò vale la misurazione della percentuale di modifiche non riuscite in cui le modifiche al database sono state un fattore determinante e della misura in cui il lavoro relativo alle modifiche al database ha contribuito ai tempi di risposta complessivi, dal controllo della versione al rilascio.</p>
+
+<p>Se le modifiche al database richiedono un tempo di inattività pianificato, anche questo è un aspetto importante. Per misurare l'impatto economico del tempo di inattività pianificato, considera sia le potenziali perdite di tempo derivanti dai tempi di inattività sia i costi salariali delle persone che pagano per lavorare ed essere fuori orario.
+L'implementazione al di fuori dell'orario di apertura può contribuire al burnout del team. Questi
+effetti possono essere utilizzati per giustificare il lavoro necessario per implementare le soluzioni per
+i deployment senza tempo di inattività descritti in questo documento.</p>
+
+<p>In termini di misurazione del livello di automazione, considera la proporzione di modifiche del database apportate in modalità push utilizzando un processo completamente automatizzato. L'obiettivo deve essere apportare le modifiche al database in questo modo.</p>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina DevOps</a>.</li>
+<li>Scopri di più sulla
+<a href="https://www.martinfowler.com/articles/evodb.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">progettazione evolutiva dei database</a>.</li>
+<li>Scopri di più sulla
+<a href="https://medium.com/@chbussler/zero-downtime-database-migration-and-replication-to-and-from-cloud-spanner-99ad0c654d12" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">migrazione e replica dei database con tempi di inattività zero da e verso Cloud Spanner</a> </li>
+<li>Scopri di più sulle <a href="/solutions/databases" track-type="article" track-name="internalLink" track-metadata-position="body">soluzioni di database di Google Cloud</a>.</li>
+<li>Libri consigliati:
+<ul>
+<li><a href="http://shop.oreilly.com/product/0636920039761.do" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Database Reliability Engineering</em></a> di Laine Campbell e Charity Majors.</li>
+<li><a href="https://books.google.com/books/about/Refactoring_Databases.html?id=puBQAAAAMAAJ" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Refactoring databases</em></a> di Scott W. Ambler e Pramod J. Sadalage</li>
+</ul></li>
+<li>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</li>
+<li>Completa il <a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a> per scoprire la tua posizione rispetto al resto del settore.</li>
+</ul>
+
+</body></html>

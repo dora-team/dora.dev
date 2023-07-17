@@ -1,0 +1,126 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Technologies DevOps : le développement à branche unique</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+<aside class="note"><strong>Remarque</strong> : <span>Le <em>développement basé sur Trompk</em> figure parmi un ensemble de capacités permettant d'optimiser les performances organisationnelles et de livraison de logiciels.
+Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche sur l'état du DevOps, mené par l'équipe DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les fonctionnalités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>Il existe deux principaux modèles de collaboration entre équipes de développement à l'aide du contrôle de version. Le premier consiste à utiliser des <em>branches de fonctionnalités</em> : un développeur ou un groupe de développeurs crée une branche, généralement à partir de la branche principale (également appelée <em>branche maître</em> ou <em>branche maîtresse</em>), puis travaille isolément sur cette branche jusqu'à la finalisation de la fonctionnalité en développement. Lorsque l'équipe considère que la fonctionnalité est prête à être diffusée, elle fusionne la branche de fonctionnalité avec la branche principale.</p>
+
+<p>Le second modèle est connu sous le nom de <em>développement à branche unique</em> : chaque développeur divise son propre <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">travail en petits lots</a> et fusionne ce travail avec la branche principale au moins une fois par jour (et éventuellement plusieurs fois). La principale différence entre ces approches est leur portée. Les branches de fonctionnalités impliquent généralement plusieurs développeurs et nécessitent des jours, voire des semaines de travail. En revanche, dans le cadre du développement à branche unique, les branches ne durent généralement que quelques heures puisque les nombreux développeurs fusionnent fréquemment leurs modifications individuelles avec la branche maîtresse.</p>
+
+<p>Le diagramme suivant illustre un scénario classique de développement à branche unique :</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-trunk-based-development-typical-trunk-timeline.svg" alt="Chronologie des versions 1.0 et 1.1 illustrant la fusion d&amp;#39;un correctif de bug vers la version 1.0 dans la branche principale de la version 1.1."/></p>
+
+<p>Dans le développement à branche unique, les développeurs envoient leur code directement dans la branche principale. Les modifications apportées dans les branches de publication ou "release" (qui sont des instantanés du code une fois que celui-ci est prêt à être publié) sont généralement fusionnées avec la branche principale (processus représenté par les flèches dirigées vers le bas) dès que possible. Dans cette approche, il existe des cas où les corrections de bugs doivent être individuellement sélectionnées et fusionnées dans des versions de publication (processus illustré par la flèche dirigée vers le haut), mais ces cas ne sont pas aussi fréquents que le développement de nouvelles fonctionnalités dans la branche principale. Dans les cas où la publication a lieu plusieurs fois par jour, aucune branche de release n'est requise car les modifications peuvent être envoyées directement dans la branche principale et déployées à partir de celle-ci.
+L'un des principaux avantages de l'approche à branche unique est qu'elle réduit la complexité de la fusion d'événements et maintient le code à jour en réduisant le nombre de branches de développement et en reposant sur des fusions modestes mais fréquentes.</p>
+
+<p>Par opposition, le diagramme suivant illustre un style de développement classique avec branches multiples :</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-trunk-based-development-typical-non-trunk-timeline.svg" alt="Chronologie de plusieurs branches à longue durée de vie, indiquant des chemins de fusion complexes et de nombreux points de conflit de fusion potentiels pouvant ralentir la publication du produit."/></p>
+
+<p>Dans cette approche, les développeurs intègrent leurs modifications dans des branches de longue durée. Ces modifications nécessitent des événements de fusion plus importants et plus complexes par rapport au développement à branche unique. Cette approche requiert également des efforts de stabilisation supplémentaires et des périodes de "verrouillage du code" ou de "gel du code" pour garantir le bon fonctionnement du logiciel, car les fusions de grande envergure introduisent fréquemment des bugs ou des régressions. En conséquence, il est indispensable de tester minutieusement le code après toute fusion et, bien souvent, de corriger les bugs identifiés.</p>
+
+<h2 id="how_to_implement_trunk-based_development" data-text="Mettre en œuvre le développement à branche unique">Mettre en œuvre le développement à branche unique</h2>
+
+<p>Le développement à branche unique est une pratique requise pour <a href="/architecture/devops/devops-tech-continuous-integration" track-type="solution" track-name="internalLink" track-metadata-position="body">l'intégration continue</a>.
+L'intégration continue (CI) combine la pratique du développement à branche unique et la gestion d'un ensemble de tests automatisés rapides qui s'exécutent après chaque commit dans la branche principale afin de s'assurer que le système fonctionne toujours.</p>
+
+<p>L’intégration continue a pour objectif d’éliminer les longues phases d’intégration et de stabilisation en intégrant fréquemment de petits lots de code. De cette manière, les développeurs s'assurent de communiquer leur travail et l'intégration est préservée des fusions de grande envergure qui peuvent générer un travail considérable pour les autres développeurs et pour les testeurs.</p>
+
+<p>Dans le paradigme de l'intégration continue, les développeurs sont tenus de maintenir le processus de compilation en état <em>vert</em>, c'est-à-dire opérationnel. Cela signifie que si le processus d'intégration continue échoue, les développeurs doivent interrompre leurs activités soit pour résoudre le problème immédiatement, soit pour annuler la modification fautive si le problème ne peut pas être résolu en quelques minutes.</p>
+
+<p>En conséquence, la pratique du développement à branche unique nécessite que les développeurs comprennent comment <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">diviser leur travail en petits lots</a>.
+Cela peut représenter un changement important pour les développeurs qui n’ont pas l’habitude de travailler de cette manière.</p>
+
+<p>Les analyses réalisées sur les données DORA (DevOps Research and Assessment) de <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=31" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2016</a> (PDF) et <a href="https://services.google.com/fh/files/misc/state-of-devops-2017.pdf#page=40" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2017</a> (PDF) montrent que les équipes atteignent des niveaux de performance plus élevés en termes de livraison de logiciels et de gestion opérationnelle (rapidité de publication, stabilité et disponibilité) lorsqu'elles respectent les pratiques suivantes :</p>
+
+<ul>
+<li>Elles ont au maximum trois branches actives dans le dépôt de code de l'application.</li>
+<li>Elles fusionnent les branches avec la branche principale au moins une fois par jour.</li>
+<li>Elles ne font pas appel au gel de code ni ne requièrent de phases d'intégration.</li>
+</ul>
+
+<h2 id="common_pitfalls" data-text="Écueils les plus courants">Problèmes les plus courants</h2>
+
+<p>Parmi les obstacles courants à une adoption totale du développement à branche unique, citons :</p>
+
+<ul>
+<li><p><strong>Un processus de révision du code trop lourd</strong>. De nombreuses organisations ont mis en place un processus de révision du code très lourd, qui requiert plusieurs approbations avant d'autoriser la fusion des modifications avec la branche principale. Lorsque la révision du code est laborieuse et prend des heures, voire des jours, les développeurs évitent de travailler par petits lots et préfèrent regrouper de nombreuses modifications dans un lot plus conséquent. Cela aboutit à un cercle vicieux dans lequel les employés chargés de l'examen du code procrastinent sur des révisions volumineuses en raison de leur complexité.</p>
+
+<p>Par conséquent, le retard s'accumule souvent sur les demandes de fusion car les développeurs évitent tout simplement de les traiter. Comme il est difficile d'identifier l'impact de modifications importantes sur un système par le biais d'une inspection, il est probable que certains défauts échappent à l'attention des examinateurs : les avantages du développement à branche unique s'en trouvent alors amoindris.</p></li>
+<li><p><strong>Des révisions de code asynchrones</strong>. Si votre équipe pratique la programmation en binôme, le code a déjà été examiné par une deuxième personne. Si d'autres révisions sont nécessaires, elles doivent être effectuées de manière synchrone : lorsque le développeur est prêt à envoyer son code, il ou elle doit demander à quelqu'un de l'équipe d'examiner le code immédiatement. Les développeurs ne doivent pas avoir à demander une révision asynchrone, par exemple en envoyant une demande via un outil, ce qui les conduit généralement à démarrer une nouvelle tâche pendant qu'ils attendent la révision. Plus une fusion est retardée, plus elle est susceptible de créer des conflits de fusion et autres problèmes liés. La mise en œuvre de révisions synchrones nécessite l'accord de l'équipe pour faire passer en priorité l'examen mutuel du code devant toute autre tâche.</p></li>
+<li><p><strong>L'omission des tests automatisés avant tout commit de code</strong>. Afin de maintenir le bon fonctionnement de la branche principale, il est essentiel d'exécuter les tests sur les modifications de code avant tout commit. Cela peut être réalisé directement sur les postes de travail des développeurs. De nombreux outils offrent également la possibilité d'exécuter à distance des tests sur les modifications locales, puis de lancer automatiquement le commit lorsqu'elles sont validées. Lorsque les développeurs savent qu'ils peuvent intégrer leur code dans la branche principale en toute simplicité, il en résulte des changements de code succincts, faciles à comprendre, à réviser et à tester, et pouvant être mis en production plus rapidement.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_trunk-based_development" data-text="Améliorer le développement à branche unique">Améliorer le développement à branche unique</h2>
+
+<p>Sur la base de la discussion précédente, voici quelques recommandations que vous pouvez mettre en œuvre pour améliorer votre pratique du développement à branche unique :</p>
+
+<ul>
+<li><strong>Développer sur de petits volumes</strong>. L'un des principaux éléments catalysant le développement à branche unique est la formation des équipes au <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">développement par petits lots</a>.
+Cela nécessite un apprentissage et un soutien organisationnel pour l'équipe de développement.</li>
+<li><strong>Effectuer les révisions de code de manière synchrone.</strong> Comme discuté ci-dessus, passer à des révisions de code synchrones ou, a minima, s'assurer que les développeurs accordent la priorité aux révisions de code, permet d'éviter que les modifications doivent attendre des heures, voire des jours, avant d'être fusionnées avec la branche principale.</li>
+<li><strong>Mettre en œuvre des tests automatisés exhaustifs</strong>. Assurez-vous que vous disposez d'un ensemble exhaustif et significatif de <a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">tests unitaires automatisés</a>, et veillez à ce que ceux-ci soient exécutés avant chaque commit. Par exemple, si vous utilisez GitHub, vous pouvez <a href="https://help.github.com/en/articles/about-protected-branches" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">protéger les branches</a> pour exiger la réussite de tous les tests avant d'autoriser la fusion par demande d'extraction. Le tutoriel <a href="/build/docs/run-builds-with-github-checks" track-type="solution" track-name="internalLink" track-metadata-position="body">Lancer des compilations avec les vérifications GitHub</a> montre comment intégrer <a href="https://developer.github.com/v3/checks/" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">GitHub Checks</a> à <a href="/build" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Build</a>.</li>
+<li><strong>Assurer une compilation rapide</strong>. Le processus de compilation et de test doit s'exécuter en <a href="https://www.infoq.com/presentations/Crazy-Fast-Build-Times-or-When-10-Seconds-Starts-to-Make-You-Nervous/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">quelques minutes</a>.
+Si cet objectif semble difficile à atteindre, cela indique l'existence probable d'axes d'amélioration au niveau de l'<a href="/architecture/devops/devops-tech-architecture" track-type="solution" track-name="internalLink" track-metadata-position="body">architecture</a> du système.</li>
+<li><strong>Créer un noyau de porte-paroles et de mentors</strong>. Le développement à branche unique représente un changement substantiel pour beaucoup de développeurs et vous devez vous attendre à une certaine résistance. De nombreux développeurs ne peuvent tout simplement pas imaginer travailler de cette manière. Une bonne pratique consiste à rechercher des développeurs ayant déjà pratiqué ce type de développement et à leur demander d'accompagner les autres développeurs dans cette démarche. Il est également important de faire basculer certaines équipes vers le développement à branche unique. Une solution consiste à assembler une masse critique de développeurs ayant l'expérience de ce mode de développement, de manière à ce qu'au moins une équipe en respecte les pratiques. Vous pouvez ensuite faire basculer les autres équipes vers le développement à branche unique une fois certain que l'équipe pilote de ces pratiques fonctionne comme attendu.</li>
+</ul>
+
+<h2 id="ways_to_measure_trunk-based_development" data-text="Mesurer le développement à branche unique">Mesurer le développement à branche unique</h2>
+
+<p>Vous pouvez mesurer l'efficacité du développement à branche unique à l'aide des approches suivantes.</p>
+
+<table>
+  <colgroup>
+    <col width="30%" />
+    <col width="35%" />
+    <col width="35%" />
+  </colgroup>
+<thead>
+<tr>
+<th>Facteur à tester</th>
+<th>Métriques à évaluer</th>
+<th>Objectif</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Branches actives dans le dépôt de code de l'application.</td>
+<td>Mesurez le nombre de branches actives figurant dans les systèmes de gestion des versions de vos dépôts d'applications et rendez ce nombre visible par toutes les équipes. Suivez ensuite les progrès incrémentiels réalisés vers l’état cible.</td>
+<td>Au maximum trois branches actives.</td>
+</tr>
+<tr>
+<td>Périodes de gel de code.</td>
+<td>Mesurez le nombre et la durée des gels de code réalisés par votre équipe. Ces métriques permettent également de déterminer le temps consacré aux conflits de fusion, au gel du code, à la stabilisation, etc.</td>
+<td>Aucun gel de code quand personne ne peut envoyer de code.</td>
+</tr>
+<tr>
+<td>Fréquence de fusion des branches et fourches avec la branche principale.</td>
+<td>Utilisez comme métrique soit une valeur binaire (oui/non) pour chaque branche fusionnée, soit un pourcentage de branches et de fourches fusionnées chaque jour.</td>
+<td>Fusion au moins une fois par jour.</td>
+</tr>
+<tr>
+<td>Temps nécessaire pour approuver les modifications de code.</td>
+<td>Si vous effectuez vos révisions de code de manière asynchrone, mesurez le temps moyen nécessaire pour approuver les demandes de modification et prêtez une attention particulière aux délais largement supérieurs à la moyenne.</td>
+<td>Faites en sorte que la révision de code soit une activité synchrone exécutée dans le cadre du développement.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="Étapes suivantes">Étape suivante</h2>
+
+<ul>
+<li>Consultez la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">page DevOps</a> pour obtenir des liens vers d'autres articles et ressources.</li>
+<li>Consultez la page <a href="/build/docs/run-builds-with-github-checks" track-type="solution" track-name="internalLink" track-metadata-position="body">Lancer des compilations avec les vérifications GitHub</a> pour découvrir comment connecter Google Cloud à GitHub à l'aide de l'<a href="https://github.com/marketplace/google-cloud-build" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">application Cloud Build</a>.</li>
+<li><p>Consultez un article de Martin Fowler sur les <a href="https://martinfowler.com/bliki/FeatureBranch.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">branches de fonctionnalités</a> (en anglais).</p></li>
+<li><p>Consultez l'article de Jez Humble sur <a href="https://continuousdelivery.com/2011/07/on-dvcs-continuous-integration-and-feature-branches/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">systèmes de gestion de versions décentralisée et branches de fonctionnalités</a> (en anglais).</p></li>
+<li><p>Consultez le portail consacré par Paul Hammant au <a href="https://trunkbaseddevelopment.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">développement à branche unique</a>.</p></li>
+<li><p>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</p></li>
+<li><p>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</p></li>
+</ul>
+
+</body></html>

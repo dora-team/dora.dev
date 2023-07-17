@@ -1,0 +1,90 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia de DevOps: gerenciamento de dados de teste</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Observação:</strong><span> o <em>gerenciamento de dados de teste</em> é um dos um conjunto de recursos que aumentam o fornecimento de software e o desempenho organizacional. Esses recursos foram
+descobertos pelo
+<a href="https://www.devops-research.com/research.html">programa de pesquisa DORA State of DevOps</a>
+(em inglês), uma investigação independente e acadêmica rigorosa sobre as práticas e
+recursos que impulsionam alto desempenho. Para saber mais, leia nossos
+<a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>O <a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">teste automatizado</a> é um componente essencial das práticas modernas de entrega de software. A capacidade de executar um conjunto abrangente de testes de unidade, integração e sistema é essencial para verificar se seu aplicativo ou serviço se comporta conforme o esperado e se pode ser implantado com segurança na produção. Para garantir que seus testes estejam validando cenários realistas, é essencial fornecer dados realistas aos testes.</p>
+
+<p>Os dados de teste são importantes porque são exigidos por todos os tipos de testes em todo o conjunto de testes, incluindo os manuais e automatizados. Bons dados de teste permitem validar jornadas comuns ou de alto valor, testar casos extremos, reproduzir defeitos e simular erros.</p>
+
+<p>No entanto, é difícil usar e gerenciar dados de teste com eficiência. O excesso de confiança nos dados definidos fora do escopo do teste pode tornar seus testes frágeis e aumentar os custos de manutenção. Depender de fontes de dados externas podem gerar atrasos e afetar o desempenho do teste. A cópia dos dados de produção apresenta riscos, já que eles podem conter informações confidenciais. Para enfrentar esses desafios, você precisa gerenciar seus dados de teste com cuidado e estratégia.</p>
+
+<h2 id="how_to_implement_test_data_management" data-text="Como implementar o gerenciamento de dados de teste">Como implementar o gerenciamento de dados de teste</h2>
+
+<p>A análise feita pelo <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> mostra que as equipes de sucesso abordam o gerenciamento de dados de teste com os seguintes princípios básicos:</p>
+
+<ul>
+<li>Os dados de teste adequados estão disponíveis para executar conjuntos de testes automatizados completos.</li>
+<li>Os dados de teste para conjuntos de testes automatizados podem ser adquiridos sob demanda.</li>
+<li>Os dados de teste não limitam ou restringem os testes automatizados que as equipes podem executar.</li>
+</ul>
+
+<p>Para melhorar os processos de gerenciamento de dados de teste, esforce-se para atender cada uma dessas condições em todas as suas equipes de desenvolvimento. Essas práticas também podem contribuir positivamente para a <a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">automação de teste</a> geral e os recursos de <a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">integração contínua</a>.</p>
+
+<h2 id="common_pitfalls_in_test_data_management" data-text="Armadilhas comuns no gerenciamento de dados de teste">Armadilhas comuns no gerenciamento de dados de teste</h2>
+
+<p>Gerenciar dados de teste pode ser difícil. As armadilhas a seguir são comuns no gerenciamento de dados de teste:</p>
+
+<ul>
+<li>Depender de dados de forma excessiva em testes. Em particular, os testes de unidade não devem depender de dados ou estado externo ao teste.</li>
+<li>Usar uma cópia completa do banco de dados de produção, em vez de identificar partes relevantes ou importantes.</li>
+<li>Não mascarar ou gerar hash de dados confidenciais.</li>
+<li>Confiar em dados desatualizados ou que não são mais relevantes.</li>
+</ul>
+
+<h2 id="ways_to_improve_test_data_management" data-text="Formas de melhorar o gerenciamento de dados de teste">Formas de melhorar o gerenciamento de dados de teste</h2>
+
+<p>As práticas a seguir podem ajudá-lo a usar os dados de teste com mais eficácia e eficiência:</p>
+
+<ol>
+<li><p><strong>Favoreça testes de unidade</strong>. Os testes de unidade devem ser independentes entre si e com qualquer outra parte do sistema, exceto com o código que está sendo testado. Os testes de unidade não devem depender de dados externos. Conforme definido pela <a href="https://martinfowler.com/articles/practical-test-pyramid.html#TheTestPyramid" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">pirâmide de automação de teste</a>, os testes de unidade devem compor a maioria dos seus testes. Testes de unidade bem escritos executados em uma base de código bem projetada são muito mais fáceis de serem triados e mais baratos de manter do que os testes de nível superior. Aumentar a cobertura dos testes de unidade pode ajudar a minimizar sua dependência de testes de nível superior que consomem dados externos.</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-test-automation-pyramid.svg" alt="Pirâmide de automação de teste."/></p></li>
+<li><p><strong>Minimize a dependência de dados de teste</strong>. Os dados de teste requerem manutenção cuidadosa e contínua. À medida que suas APIs e interfaces evoluem, é preciso atualizar ou recriar dados de teste relacionados. Esse processo representa um custo que pode afetar negativamente a velocidade da equipe. Portanto, é recomendável minimizar a quantidade de dados de teste necessários para executar testes automatizados.</p></li>
+<li><p><strong>Isole seus dados de teste</strong>. Execute seus testes em ambientes bem definidos com entradas controladas e saídas esperadas que podem ser comparadas às saídas reais. Verifique se os dados consumidos por um teste específico estão explicitamente associados a esse teste e não são modificados por outros testes ou processos.
+Sempre que possível, os testes devem criar o estado necessário como parte da configuração, usando as APIs do aplicativo. O isolamento dos dados de teste também é um pré-requisito para que os testes sejam executados em paralelo.</p></li>
+<li><p><strong>Minimize a confiança nos dados de teste armazenados nos bancos de dados</strong>. Manter os dados de teste armazenados nos bancos de dados pode ser particularmente desafiador pelos motivos a seguir:</p>
+
+<ol>
+<li><strong>Mau isolamento de teste</strong>. Bancos de dados armazenam dados de forma durável. Quaisquer alterações nos dados persistirão nos testes, a menos que sejam redefinidas explicitamente.
+Entradas de teste menos confiáveis dificultam o isolamento do teste e podem impedir a paralelização.</li>
+<li><strong>Impacto no desempenho</strong>. A velocidade de execução é um requisito essencial para testes automatizados. A interação com um banco de dados é geralmente mais lenta e mais complicada do que a interação com dados armazenados localmente. Favoreça bancos de dados na memória, quando apropriado.</li>
+</ol></li>
+<li><p><strong>Torne os dados de teste prontamente disponíveis</strong>. A execução de testes em uma cópia de um banco de dados de produção completo apresenta riscos. Pode ser desafiador e lento manter os dados atualizados. Como resultado, os dados podem ficar desatualizados.
+Os dados de produção também podem conter informações confidenciais. Em vez disso, identifique seções relevantes de dados exigidas pelos testes. Exporte essas seções regularmente e facilite o acesso a elas para testes.</p></li>
+</ol>
+
+<h2 id="how_to_measure_test_data_management" data-text="Como medir o gerenciamento de dados de teste">Como medir o gerenciamento de dados de teste</h2>
+
+<p>À medida que sua abordagem para gerenciamento de dados de teste evolui, é importante avaliar seu progresso em relação aos princípios básicos descritos anteriormente.</p>
+
+<ol>
+<li><strong>Os dados de teste adequados estão disponíveis para executar conjuntos de testes automatizados completos</strong>.
+É possível medir isso rastreando quanto tempo os desenvolvedores e testadores gastam gerenciando e manipulando dados para uso em conjuntos de teste. Também é possível capturar isso por meio de medidas perceptivas (ou seja, pesquisas) para perguntar às equipes se elas têm dados adequados para o trabalho ou se sentem que isso é uma restrição para elas.</li>
+<li><strong>Os dados de teste para conjuntos de testes automatizados podem ser adquiridos sob demanda</strong>. É possível medir isso como a porcentagem de conjuntos de dados principais disponíveis, com que frequência esses conjuntos de dados são acessados e com que frequência são atualizados.</li>
+<li><strong>Os dados de teste não limitam ou restringem os testes automatizados que as equipes podem executar</strong>. É possível medir isso como o número de testes automatizados que podem ser executados sem a necessidade de adquirir dados de teste adicionais. Também é possível capturar isso com medidas perceptivas (ou seja, pesquisas) para perguntar às equipes se elas sentem que os dados do teste limitam as atividades de teste automatizados.</li>
+</ol>
+
+<h2 id="whats_next" data-text="A seguir">A seguir</h2>
+
+<ul>
+<li>Consulte links para outros artigos e recursos na <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página do DevOps</a> (em inglês).</li>
+<li>Veja como os testes e o CI/CD podem ajudar a
+<a href="/blog/products/application-development/release-with-confidence-how-testing-and-cicd-can-keep-bugs-out-of-production" track-type="article" track-name="internalLink" track-metadata-position="body">manter os bugs fora da produção</a>.</li>
+<li>Explore nosso
+<a href="https://www.devops-research.com/research.html">programa de pesquisa</a> (em inglês) do DevOps.</li>
+<li>Faça a
+<a href="https://www.devops-research.com/quickcheck.html">verificação rápida de DevOps</a>
+para entender sua posição em relação ao restante do setor.</li>
+</ul>
+
+</body></html>

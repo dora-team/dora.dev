@@ -1,0 +1,113 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 流程：客户反馈</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：<em>客户反馈</em>是一组推动实现更出色的软件交付表现和组织绩效的能力之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请参阅我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>在软件项目中，开发者通常会在产品上花费数月或数年的时间，有时还要处理多个版本，但没有验证所构建的功能是否实际帮助用户解决了问题，或者这些功能是否得到了使用。</p>
+
+<p>客户反馈方面的能力从属于一个更广泛的能力组合，其中包括<a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">价值流中工作的可视性</a>、<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">小批量工作方式</a>和<a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">团队实验</a>，它们共同体现了一种<a href="https://books.google.com/books/about/Escaping_the_Build_Trap.html?id=PQ8dMQAACAAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">精益的产品管理方法</a>。</p>
+
+<p>组合运用这些能力有助于您预测以下方面的表现：</p>
+
+<ul>
+<li>软件交付性能，以交付速度、稳定性和可用性为衡量依据。</li>
+<li>组织绩效，以盈利能力、市场份额和工作效率为衡量依据。</li>
+</ul>
+
+<p>DevOps 研究和评估组织 (DORA) 的<a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=35" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">研究成果</a> (PDF) 表明，如果团队所在的组织能够恰当运用这些能力并遵循下列做法，团队将能取得更出色的绩效：</p>
+
+<ul>
+<li>定期收集客户满意度指标。</li>
+<li>获取并处理客户对产品和功能质量的反馈。</li>
+<li>使用这些反馈来帮助设计产品和功能。</li>
+</ul>
+
+<h2 id="how_to_implement_customer_feedback" data-text="如何实现客户反馈">如何实现客户反馈机制</h2>
+
+<p>在开发产品时，请务必建立关键指标来衡量其成功与否。这些指标有助于了解您是否解决了实际问题、您的解决方案是否得到了足够快的采用，以及用户是否继续使用该解决方案并推荐给其他人。这些指标必须明确源于客户与产品的互动方式。为了利用这些指标，您需要仔细收集和分析客户反馈。</p>
+
+<p>在面向消费者的 SaaS 产品中，一组常用指标是 AARRR：获取 (Acquisition)、激活 (Activation)、留存 (Retention)、引荐 (Referral) 和收入 (Revenue)。（指标的顺序有时会因展示者而异。）这些指标有时也称为<em></em>“海盗指标”，因为人们一见到该首字母缩写词，就会想到海盗的那种说话方式。</p>
+
+<p>要点在于，您要跟踪这 5 个关键指标，并反复改进客户体验以提升这些指标：</p>
+
+<ul>
+<li><strong>获取</strong>：在访问您网站的用户中，创建帐号的用户所占的百分比。</li>
+<li><strong>激活</strong>：在已获取的用户中，激活帐号并使用服务的用户所占的百分比。</li>
+<li><strong>留存</strong>：在已激活的用户中，一再重返服务的用户所占的百分比。</li>
+<li><strong>引荐</strong>：在留存的用户中，向其他用户引荐该服务的用户所占的百分比。</li>
+<li><strong>收入</strong>：在有引荐行为的用户中，实际为服务付费的用户所占的百分比。</li>
+</ul>
+
+<p>如果这些指标不适合您的业务或产品，请务必找出一些合适的指标，定期监控这些指标，并将其用作产品策略的关键驱动因素。</p>
+
+<p>本文介绍的方法不仅仅适用于面向外部的产品。它同样适用于为组织中的其他用户构建的内部产品和服务。构建内部工具时，所采用的方法完全相同：尽早地与实际用户频繁互动，以确保您构建的工具能实际解决问题。否则，您构建和使用的工具最终可能面临无人问津的窘境。工具用起来不顺手，会让用户感到不快，但有时候又必须使用，就让人头疼不已了。这还意味着，公司构建的技术如果不符合用户的需求，将会徒增大量成本。</p>
+
+<p>团队应采用以下模式，以便最大限度地提高成功解决客户问题的可能性：</p>
+
+<ol>
+<li>在定义任何潜在功能之前，请先收集客户反馈。</li>
+<li>验证您是否解决了实际问题。</li>
+<li>反复试验可实际解决该问题的解决方案（不要分心于其他问题）。</li>
+<li>确保解决方案能够带来具备可行性的业务（例如，成本低于预期收入）。</li>
+<li>跟踪关键指标以衡量成功与否（例如 AARRR）。</li>
+<li>反复试验上述各项以改善这些指标。</li>
+</ol>
+
+<p>为了取得成功，您不仅需要快速部署和发布软件，还要更好、更智能、更快地满足客户需求。这一目标可以实现，只要您比竞争对手做出更全面的试验。零售行业<a href="https://services.google.com/fh/files/misc/state-of-devops-2019.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">已见证由此取得的成功</a> (PDF)。<a href="https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">假设驱动开发</a>等方法定义并衡量客户获取渠道和 A/B 测试，可让您进行用户体验。这可提升创造力、加速创新并打造组织学习。</p>
+
+<p>提高与客户的互动度以及参与产品管理流程，有助于更好地识别组织的<a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=37" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">目标和价值</a> (PDF)。这反过来又有助于提高组织的绩效。</p>
+
+<h2 id="common_pitfalls" data-text="常见误区">常见误区</h2>
+
+<p>有效利用客户反馈的一些常见误区包括下列各项：</p>
+
+<ul>
+<li><strong>未收集反馈</strong>。软件开发公司通常根本不会收集客户反馈。</li>
+<li><strong>收集反馈的时间太晚</strong>。有时，公司在软件交付生命周期中收集客户反馈的时间太晚，以至于无法处理反馈。</li>
+<li><strong>不理解问题所在</strong>（或误会了客户反馈）。公司对客户的期望可能不切实际，或者可能不了解客户对产品的需求。团队甚至可能明确忽略会造成不便但准确的客户反馈。如果开发团队尚未充分评估或管理交付当前解决方案的风险，或者干脆不了解要解决的问题，就可能发生这种情况。开发团队希望将工作范围控制在解决问题所需的最低限度内。在某些情况下，如果问题超出了团队的设计预期，该团队可能会错误地将额外工作作为“范围蔓延”而忽略。这样产生的解决方案在客户看来是不完整的，而且最终会导致产品失败。</li>
+<li><strong>未允许团队回应反馈</strong>。如<a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">团队实验</a>文档中所述，交付团队必须有权根据反馈对系统的设计或规格进行更改。</li>
+<li><strong>根据错误指标衡量成功与否</strong>。在某些情况下，我们会向开发和交付团队提供未经客户充分验证的解决方案作为最终要求。在这些情况下，衡量交付团队成功与否，便基于交付团队是否按规定提供了功能，而不是基于团队是否实际解决了问题或是否为客户取得了成果。</li>
+<li><strong>未解决客户的问题</strong>。来自 A/B 测试的<a href="http://ai.stanford.edu/%7Eronnyk/ExPThinkWeek2009Public.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">行业数据</a> (PDF) 表明，在成功的产品中，所提出的功能在实际交付后，大约只有三分之一会改善业务成果。其余三分之二的功能对于业务成果的影响为零或者是负面的。<em></em>因此，如果您没有开展用户调查，则可能至少有三分之二的团队工作无法实现预期成果，或者让事情变得更糟。如果团队正在着手处理还处在生命周期早期阶段的产品（尤其是创新型产品），则该团队实现预期成果的几率就会大大降低。</li>
+<li><strong>低估响应客户反馈所需的时间和工作量</strong>。团队不能指望他们提出的解决方案都是对的，并准备至少弃用其中的三分之二。对于其余三分之一的解决方案，团队应准备根据客户反馈，对解决方案进行重大改进。</li>
+</ul>
+
+<h2 id="ways_to_improve_customer_feedback" data-text="改进客户反馈的方法">改进客户反馈的方法</h2>
+
+<p>用户体验 (UX) 设计领域为了解改进提供了一个框架。许多组织都将用户体验视为只是让产品界面看起来很美观。不过，用户体验是指您是否在为用户解决实际问题；从更广泛的角度来说，用户体验是指用户在与您的组织进行互动时获得的每一种体验。良好的用户体验对于构建成功的产品和服务有多么重要，这一点再怎么强调也不过分。</p>
+
+<p>一定要将客户反馈收集功能构建到交付流程中。您构建的每项重要功能都应首先考虑要解决的问题。这应包括执行用户调查以确定可能的解决方案并选择候选方案。必须分析用户调查，即使只编写一行代码也一样。</p>
+
+<p>对于处在生命周期早期阶段的产品，团队应采用<a href="https://wikipedia.org/wiki/Lean_startup" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">精益创业运动</a>中提出的理念，在编写任何代码之前都验证产品的基本业务模式。您应该验证是否解决了实际问题，然后反复试验解决方案来解决问题，同时提供可行的业务模式。</p>
+
+<p>对于要实现新解决方案来解决已知业务问题的现有产品，您应该遵循类似的模式。解决方案设计通过验证后，您应该创建一个原型，以便进一步进行调查和测试。只有经过测试，验证功能实现了您的目标后，才能完成完整生产功能。</p>
+
+<p>许多组织都会完全跳过这类工作，结果失败。但是，即使严格执行这些步骤，也不能保证一定成功。这项工作的重点是尽可能地减少失败风险。</p>
+
+<h2 id="ways_to_measure_customer_feedback" data-text="衡量客户反馈的方法">衡量客户反馈的方法</h2>
+
+<p>无需收集复杂的数据，即可确定客户反馈是否已收集、可见以及得到处理。以下问题可帮助您确定您在产品设计中利用客户反馈的程度：</p>
+
+<ul>
+<li>您是否有用于衡量客户满意度的指标？这些指标是否会定期更新并向团队广播？您会进行处理吗？</li>
+<li>您是否在构建所有功能之前对其进行验证，并在交付过程中使用原型进行用户调查？</li>
+<li>您是否根据此用户调查对功能进行更改？</li>
+<li>您是否主动定期收集用户反馈并进行处理？</li>
+</ul>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>阅读 Ronny Kohavi 所著的<a href="http://ai.stanford.edu/%7Eronnyk/ExPThinkWeek2009Public.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">《Online Experimentation at Microsoft》</a>(PDF) 一文。</li>
+<li>阅读 Barry O'Reilly 所著的<a href="https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">《Hypothesis-driven development》</a>一文。</li>
+<li>阅读 Jeff Gothelf 和 Josh Seiden 合著的书籍<a href="http://shop.oreilly.com/product/0636920049166.do" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>《Lean UX: Designing Great Products with Agile Teams》</em></a>。</li>
+<li>阅读 Alistair Croll 和 Benjamin Yoskovitz 合著的书籍<a href="http://leananalyticsbook.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>《Lean Analytics: Use Data to Build a Better Startup Faster》</em></a>。</li>
+<li>阅读 Jez Humble、Joanne Molesky 和 Barry O'Reilly 合著的书籍<a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>《Lean Enterprise: How High Performance Organizations Innovate at Scale》</em></a>。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

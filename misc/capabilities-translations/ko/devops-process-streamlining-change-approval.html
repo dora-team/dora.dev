@@ -1,0 +1,128 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 프로세스: 변경 승인 간소화</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>참고:</strong><span> <em>스트리밍 변경 승인</em>은 소프트웨어 제공 및 조직 성과 향상을 가져오는 기능 집합 중 하나입니다.
+이러한 기능은 성과 향상을 이끌어내는 관례와 기능을 독립적이면서 학술적으로 심층 연구하는 <a href="https://www.devops-research.com/research.html">DORA State of DevOps 연구 프로그램</a>을 통해 개발되었습니다. 자세한 내용은 <a href="/devops">DevOps 리소스</a>를 참조하세요.</span></aside>
+<p>대부분의 IT 조직에는 내부 부문과 고객 대면 부문 모두에서 IT 서비스 변경 수명 주기를 관리하는 변경 관리 프로세스가 있습니다. 이러한 프로세스는 변경으로 인한 운영 위험과 보안 위험을 줄이기 위한 기본적인 통제 장치입니다.</p>
+
+<p>시스템을 통한 변경을 승격하기 위해 변경 관리 프로세스에는 종종 외부 검토자 또는 변경 승인 위원회(CAB)의 승인이 포함됩니다.</p>
+
+<p>규정 준수 관리자와 보안 관리자는 변경 관리 프로세스를 활용하여 규정 준수 요구사항을 확인합니다. 규정 준수 요구사항에는 일반적으로 각 변경이 적절하게 승인되었다는 증빙이 필요합니다.</p>
+
+<p><a href="https://cloud.google.com/devops/state-of-devops" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2019 State of DevOps 보고서(PDF)</a>에 나와 있는 DevOps Research and Assessment(DORA)의 연구에 따르면 변경 승인은 개발 과정에서 동료 검토를 받고, 소프트웨어 제공 수명 주기 초반에 잘못된 변경을 감지, 방지 및 수정할 수 있도록 이를 자동화로 보완하는 것이 가장 효과적입니다. <a href="/architecture/devops/devops-tech-test-automation">지속적 테스트</a>, <a href="/architecture/devops/devops-tech-continuous-integration">지속적 통합</a>, <a href="/architecture/devops/devops-measurement-monitoring-and-observability">포괄적인 모니터링 및 관측 가능성</a> 등의 기법을 통해 자동으로 조기에 감지하고, 가시성을 확보하고, 신속하게 의견을 제공받을 수 있습니다.</p>
+
+<p>또한 조직은 기존 프로세스를 더 효과적으로 전달하고 팀이 효율적으로 이를 활용할 수 있도록 지원하여 성과를 개선할 수 있습니다.
+팀 구성원이 변경 승인 프로세스를 명확하게 이해하면 성과를 개선할 수 있습니다.</p>
+
+<h2 id="how_to_implement_a_change_approval_process" data-text="변경 승인 프로세스 구현 방법">변경 승인 프로세스 구현 방법</h2>
+
+<p>변경 승인 프로세스의 두 가지 중요한 목표는 변경에 따른 위험을 줄이고 규제 요건을 충족하는 것입니다. 일반적인 규제 요건 중 하나는 업무의 분담으로, 작성자가 아닌 다른 사람이 변경을 승인해야 한다는 것을 전제로 합니다. 따라서 누구도 프로세스에 대한 포괄적인 통제권을 갖지 않습니다.</p>
+
+<p>기존에 이러한 목표는 변경을 요청하는 팀에 속하지 않는 사람(변경 자문 위원회(CAB) 또는 고위 관리자 등)의 승인이 수반되는 엄격한 프로세스를 통해 달성되었습니다. 그러나 DORA의 연구에 따르면 이러한 접근 방식은 소프트웨어 제공 성과에 부정적인 영향을 미칩니다. 또한 외부 검토 프로세스가 더 공식화될수록 변경 실패율이 낮다는 가설을 뒷받침하는 증거가 없었습니다.</p>
+
+<p>이렇게 엄격한 방식은 제공 프로세스를 지연시켜 긴 주기로 대규모 배치를 배포하게 되는 경향이 있으며, 고위험군에 속해 변경 실패율이 높을 수 있는 프로덕션 시스템에 더 큰 영향을 미칩니다. DORA의 연구에 따르면 이 가설은 데이터로 뒷받침되었습니다.</p>
+
+<p>대신에 팀은 다음 사항을 충족해야 합니다.</p>
+
+<ul>
+<li>개발 프로세스의 일환으로 팀의 <a href="/architecture/devops/devops-tech-code-maintainability">개발 플랫폼</a>에서 취합한 검토사항, 의견, 승인 내용을 활용한 동료 검토를 통해 업무 분담 목표를 달성합니다.</li>
+<li><a href="/architecture/devops/devops-tech-test-automation">지속적 테스트</a>, <a href="/architecture/devops/devops-tech-continuous-integration">지속적 통합</a>, <a href="/architecture/devops/devops-measurement-monitoring-and-observability">포괄적인 모니터링 및 관측 가능성</a>을 활용하여 잘못된 변경사항을 신속하게 감지, 방지 및 수정합니다.</li>
+<li>개발 플랫폼을 보안, 성능, 안정성, 결함 등 여러 측면에 미치는 변경사항의 영향에 대한 의견을 신속하게 받을 수 있는 제품으로 취급합니다.</li>
+</ul>
+
+<p>목표는 정규 변경 관리 프로세스를 급하게 변경할 때도 사용할 수 있을 만큼 빠르고 신뢰할 수 있도록 만드는 것입니다.</p>
+
+<p><a href="/architecture/devops/devops-tech-continuous-delivery">지속적 배포</a> 패러다임에서 CAB는 다음과 같은 중요한 역할을 수행합니다.</p>
+
+<ul>
+<li>팀 간 알림 및 조정이 원활하게 이루어지도록 지원합니다.</li>
+<li>팀이 프로세스 개선을 통해 소프트웨어 제공 성과를 높일 수 있도록 지원합니다.</li>
+<li>TTM(time to market)과 비즈니스 위험 간 결정과 같이 고위 경영진의 절충과 승인이 필요한 중요 비즈니스 의사결정을 내립니다.</li>
+</ul>
+
+<p>CAB의 새로운 역할은 전략적입니다. 세부적인 코드 검토 업무를 실무자에게 이관하고 자동화된 방법으로 전환하면 부서장 및 경영진은 시간과 노력을 더 전략적인 업무에 투입할 수 있습니다.
+따라서 결재자에서 프로세스 설계자 및 정보 전문가로의 전환이 이루어지면 소프트웨어 제공 성과 측면에서 탁월성을 발휘하는 조직 관행을 갖출 수 있습니다.</p>
+
+<h2 id="common_pitfalls_in_change_approval_processes" data-text="변경 승인 프로세스의 일반적인 문제">변경 승인 프로세스의 일반적인 문제</h2>
+
+<p>변경 승인 프로세스와 관련하여 일반적으로 발생하는 문제는 다음과 같습니다.</p>
+
+<p>오류 포착과 변경 승인에 <strong>중앙 집중식 변경 승인 위원회(CAB) 의존</strong>: 이 접근법은 지연 시간을 유발하며 종종 오류를 일으키기도 합니다. CAB는 변경을 널리 알리는 일을 잘 수행하지만 변경과 직접적인 관련이 없으므로 변경이 미치는 영향을 잘 이해하지 못할 수 있습니다.</p>
+
+<p><strong>모든 변경을 동일하게 취급:</strong> 모든 변경에 동일한 승인 프로세스를 적용하면 변경 검토가 비효율적으로 진행되고 위험 프로필 또는 타이밍의 차이로 인해 사용자가 실제로 집중해야 하는 변경에 시간과 주의를 기울이지 못하게 됩니다.</p>
+
+<p><strong>지속적인 개선을 적용할 수 없음:</strong> 모든 프로세스와 마찬가지로 리드 타임 및 변경 실패율과 같은 핵심 성과 지표도 변경 관리 프로세스의 성과 향상을 목표로 삼아야 합니다. 예를 들면 팀이 변경 관리 프로세스를 보다 효과적으로 활용할 수 있도록 도구와 교육을 제공하는 것입니다.</p>
+
+<p><strong>프로세스를 추가하여 문제에 대응:</strong> 프로덕션 환경에서 안정성 문제가 발생할 경우 조직은 추가 프로세스 및 더 엄격한 승인을 활용하기도 합니다. 분석 결과, 이 접근 방식은 리드 타임과 배치 크기가 늘어나 상황을 더 어렵게 만드는 악순환을 초래합니다.
+이 대신 더 빠르고 안전하게 변경할 수 있도록 조치하는 데 투자하세요.</p>
+
+<h2 id="ways_to_improve_your_change_approval_process" data-text="변경 승인 프로세스 개선 방법">변경 승인 프로세스 개선 방법</h2>
+
+<p>변경 승인 프로세스를 개선하려면 다음을 집중적으로 구현하세요.</p>
+
+<ol>
+<li>개별 변경사항에 대한 동료 검토 기반 프로세스로 이전합니다. 이 프로세스는 코드 체크인 시 적용되고 자동 테스트로 지원됩니다.</li>
+<li>변경사항이 커밋된 후 최대한 빨리 회귀, 성능 문제, 보안 문제 등의 문제를 자동화된 방식으로 발견할 수 있는 방법을 찾습니다.</li>
+<li>위험도가 높은 변화를 초기에 감지하기 보고하기 위해 추가 분석을 수행하여 추가적인 검토를 받을 수 있도록 합니다.</li>
+<li>변경 프로세스를 전반적으로 살펴보고 병목 현상을 식별하며 검증을 개발 플랫폼으로 전환하는 방법을 실험합니다.</li>
+<li>소프트웨어 제공 프로세스의 일부로 이를 직접 검토하는 대신 플랫폼 및 인프라 레이어와 개발 도구 체인에서 정보 보안 제어를 구현합니다.</li>
+</ol>
+
+<p><a href="https://cloud.google.com/devops/state-of-devops" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2019 State of DevOps 보고서(PDF)</a>의 연구에 따르면 기존의 공식적인 변경 관리 프로세스를 벗어나는 것이 궁극적인 목표이며, 기존 프로세스를 더 효과적으로 전달하고 팀이 효율적으로 이를 활용할 수 있도록 지원하면 소프트웨어 제공 성과에 긍정적인 영향을 미칩니다. 팀 구성원이 구현에 대한 변경 승인 프로세스를 명확하게 이해하면 성과를 높일 수 있습니다. 즉, 승인 프로세스를 통해 적시에 변경할 수 있으며 일반적으로 변경되는 모든 유형에 대해 '제출'에서 '수락'으로 바뀌는 단계를 매번 알 수 있습니다.</p>
+
+<h2 id="ways_to_measure_change_approval_in_your_systems" data-text="시스템의 변경 승인 측정 방법">시스템의 변경 승인 측정 방법</h2>
+
+<p>이제 팀은 가능한 변경 승인 측정 방법을 나열할 수 있습니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>테스트 요소</th>
+<th>측정 항목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>수동 변경 승인 없이 변경을 프로덕션으로 승급시킬 수 있는가?</td>
+<td>프로덕션으로 승급되기 위해 수동 변경이 필요하거나 필요하지 않은 변경의 비율 <br />
+<br />
+팁: 프로덕션으로 승급되려면 수동 변경이 필요한 저위험, 중간 위험, 고위험의 비율과 같은 위험 프로필을 기준으로 이 요소를 측정할 수도 있습니다. <br />
+</td>
+</tr>
+<tr>
+<td>프로덕션 변경을 배포 또는 구현하기 전에 외부 기관의 승인을 받아야 하나요? </td>
+<td>변경이 외부 기관의 승인을 기다리는 데 소요되는 시간<br />
+<br />
+팁: 승인을 작업과 더 가깝게 이동하면서 현지 승인 기관 또는 검토자의 승인을 기다리는 데 소요된 시간을 측정하세요. <br />
+<br />
+이 요소를 위험 프로필 기준으로 측정할 수도 있습니다. 외부 기관의 승인이 필요한 변경 횟수 또는 비율, 이러한 승인을 기다리는 데 소요된 시간을 측정합니다.</td>
+</tr>
+<tr>
+<td>동료 검토를 사용하여 변경을 관리하는가?</td>
+<td>동료 검토를 통해 관리되는 변경의 비율 <br />
+<br />
+이 요소를 위험 프로필 기준으로 측정할 수도 있습니다.</td>
+</tr>
+<tr>
+<td>팀 구성원이 구현에 대한 승인을 받는 프로세스를 명확하게 이해하고 있는가?</td>
+<td>승인 프로세스를 통해 적시에 변경할 수 있으며 일반적으로 변경되는 모든 유형에 대해 '제출'에서 '수락'으로 바뀌는 단계를 매번 알 수 있음을 나타내는 정도</td>
+</tr></tbody>
+</table>
+
+<p>자신의 환경을 고려하면서 변경 승인 프로세스를 이해하고 유용한 정보를 얻을 수 있는 자신만의 대책을 개발할 수 있습니다. 이렇게 하면 프로세스 측정뿐만 아니라 개선도 가능해집니다.</p>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>Cloud Build, 컨테이너 분석, Kritis Signer로 <a href="/binary-authorization/docs/vulnerability-scanning-kritis" track-type="solution" track-name="internalLink" track-metadata-position="body">배포 파이프라인의 일환으로 취약점 스캔을 수행</a>하는 방법을 참조하세요.</li>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

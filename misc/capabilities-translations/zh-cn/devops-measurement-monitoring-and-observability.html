@@ -1,0 +1,140 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 衡量：监控和可观测性</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：<em></em>监控和可监测性是一组推动实现更出色的软件交付表现和组织绩效的能力之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>出色的监控是高绩效团队的支柱。<a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps 研究和评估 (DORA)</a> <a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">研究</a>表明，全面的监控和可观测性解决方案以及许多其他技术实践有助于<a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">持续交付</a>。</p>
+
+<p>DORA 的研究定义了以下术语：</p>
+
+<p><strong>监控</strong>是可帮助团队观察和了解其系统状态的工具或技术解决方案。监控基于收集一组预定义的指标或日志。</p>
+
+<p><strong>可观测性</strong>是可帮助团队有效调试其系统的工具或技术解决方案。可观测性基于对事先未定义的属性和模式的探索。</p>
+
+<p>为了在监控和可观测性方面表现出色，您的团队应具备：</p>
+
+<ul>
+<li>系统整体运行状况报告（我的系统是否正常运行？我的系统是否有足够的可用资源？）。</li>
+<li>客户遇到的系统状态报告（我的客户是否知道我的系统是否停机，以及是否有糟糕的体验？）。</li>
+<li>监控关键业务和系统指标。</li>
+<li>可帮助您了解和调试生产环境中的系统的工具。</li>
+<li>可用于查找您先前不知道的事情的相关信息的工具（即您可以识别<em>未知的未知信息</em>）。</li>
+<li>访问有助于跟踪、了解和诊断生产环境中的基础架构问题的工具和数据（包括服务之间的互动）的权限。</li>
+</ul>
+
+<h2 id="how_to_implement_monitoring_and_observability" data-text="如何实施监控和可观测性">如何实施监控和可观测性</h2>
+
+<p>监控和可观测性解决方案旨在实现以下目标：</p>
+
+<ul>
+<li>提供中断或服务降级的主要指示因素。</li>
+<li>检测中断、服务降级、错误和未经授权的活动。</li>
+<li>帮助调试中断、服务降级、错误和未经授权的活动。</li>
+<li>确定容量规划和业务目标的长期趋势。</li>
+<li>揭示更改或添加的功能的意外副作用。</li>
+</ul>
+
+<p>与所有 DevOps 功能一样，安装工具并不足以实现目标，但工具可以帮助或妨碍这项工作。监控系统不应局限于组织内的单个人或团队使用。授权所有开发者熟练掌握监控工作，有助于发展数据驱动型决策文化并改进整体系统可调试性，从而减少中断。</p>
+
+<p>有效实施监控和可观测性有几个要点。首先，您的监控应告诉您中断情况，并帮助您在造成太大破坏之前就了解原因。发生中断或服务降级时的关键指标是恢复时间 (TTR)。TTR 的重要影响因素是能够快速了解什么发生了中断，以及恢复服务的最快途径（这可能不涉及立即解决底层问题）。</p>
+
+<p>您可以通过两种简要方式查看系统：<em>黑盒</em>监控（系统的内部状态和机制未知）和<em>白盒</em>监控（系统的内部状态和机制已知）。</p>
+
+<p>如需了解详情，请参阅<a href="https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">站点可靠性工程</a>一书中的“监控分布式系统”。</p>
+
+<h3 id="blackbox_monitoring" data-text="黑盒监控">黑盒监控</h3>
+
+<p>在黑盒（或<em>合成</em>）监控系统中，输入以客户可能采用的方式发送至接受检查的系统。在监控过程中，这可能会采取公共 API HTTP 调用或公开端点 RPC 调用的形式，也可能会调用要渲染的整个网页。</p>
+
+<p>黑盒监控是一种基于采样的方法。黑盒系统将监控负责用户请求的同一系统。黑盒系统还可以提供目标系统表面的覆盖范围。这可能意味着探测每个外部 API 方法。您还可以考虑代表性的请求混合，以更好地模拟实际的客户行为。例如，您可以对给定 API 执行 100 次读取和仅 1 次写入。</p>
+
+<p>您可以通过<em>计划系统</em>控制此过程，以确保以足够的速率进行这些输入，以便保证其采样置信度。您的系统还应包含<em>验证引擎</em>，该引擎可以很简单，只需检查响应代码或使用正则表达式匹配输出；也可以很复杂，例如在无头浏览器中渲染动态网站并遍历其 DOM 树，从而查找特定元素。针对给定探测进行决策（通过、失败）后，您必须存储结果和元数据，以用于报告和提醒。检查故障快照及其上下文会对诊断问题很有用。</p>
+
+<h3 id="whitebox_monitoring" data-text="白盒监控">白盒监控</h3>
+
+<p>监控和可观测性依赖于从处于监控的工作负载发送到监控系统中的信号。这通常可以采用三个最常见组件的形式：<em>指标</em>、<em>日志</em>和<em>跟踪记录</em>。某些监控系统还会跟踪和报告<em></em>事件，这些事件可以表示用户与整个系统的互动，或系统本身的状态变化。</p>
+
+<p><em>指标</em>是在系统内部测量的结果，以可衡量的方式表示系统的状态。它们几乎都是数值，通常采用计数器、分布情况和测量值的形式。在某些情况下适合使用字符串指标，但通常需会使用数字指标，因为需要对其执行数学计算，以形成统计信息并进行可视化。</p>
+
+<p><em>日志</em>可被视为表示单个工作线程在单个时间点的状态的仅附加 (append-only) 文件。这些日志可以是单个字符串（如“User pushed button X”），也可以是结构化日志条目，其中包含元数据（如事件发生时间、处理事件的服务器和其他环境元素）。有时，无法写入结构化日志的系统会生成类似于 <code translate="no" dir="ltr">[timestamp] [server] message
+[code]</code> 的半结构化字符串，您可以根据需要在事后对其进行解析。日志条目往往使用客户端库（如 log4j、structlog、bunyan、log4net 或 Nlog）写入。日志处理是生成可被视为可信的统计信息的非常可靠方法，因为即使日志处理系统本身存在错误，也可以根据存储的不可变日志重新处理它们。此外，还可以实时处理日志以生成<em>基于日志的指标</em>。</p>
+
+<p><em>跟踪记录</em>由 <em>span</em> 组成，用于通过分布式系统跟踪事件或用户操作。span 可以通过一个服务器显示请求的路径，而另一个 span 可以并行运行，两者具有相同的父级 span。这些一起构成一个跟踪记录，跟踪记录通常显示在与剖析工具中使用的类似的瀑布图中。这样，开发者就可以了解系统在各种服务器、队列和网络跃点中花费的时间。其中一个常见的框架是 <a href="https://opentelemetry.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenTelemetry</a>，这是由 <a href="https://opencensus.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenCensus</a> 和 <a href="https://opentracing.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenTracing</a> 构成的。</p>
+
+<p>指标、日志和跟踪记录可以由被衡量的服务器报告给监控系统，也可以由可以见证或推断系统相关信息的相邻代理<em></em>报告。</p>
+
+<h3 id="instrumentation" data-text="插桩">插桩</h3>
+
+<p>要使用监控系统，您的系统必须进行<em>插桩</em>。也就是说，必须将代码添加到系统中，以便公开其内部状态。例如，如果一个简单的程序包含与另一个服务的连接池，则可能需要跟踪该池的大小和在任何给定时间未使用的连接数量。为此，开发者必须在连接池逻辑中编写一些代码，以便跟踪何时形成或销毁连接、何时分发连接以及何时返回连接。这可以采用日志条目或每个条目的事件形式，或者您可以递增或递减队列大小的标准规格，也可以在每次创建连接或每次扩展池时都递增计数器。</p>
+
+<h3 id="correlation" data-text="相关性">相关性</h3>
+
+<p>可以从应用及其底层系统（例如 JVM、访客操作系统、Hypervisor、节点操作系统和硬件本身）收集指标。请注意，随着深入堆栈，您可能会开始合并在多个工作负载之间共享的指标。例如，如果一个机器提供多个应用，则观察磁盘用量可能无法与所观测系统直接对应。但是，在共享系统上的各应用之间关联问题可以帮助您确定产生因素（例如缓慢的磁盘）。从单个应用展开细目到底层系统指标，然后提取以显示所有受到类似影响的应用，会很有帮助。</p>
+
+<p>衡量分布式系统意味着在许多地方具有可观测性，并且能够同时查看所有位置。这可能指前端及其数据库，也可能指在客户设备上运行的移动应用、云端负载平衡器和一组微服务。能够将来自所有这些来源的数据集中到一个地方是现代可观测性工具的基本要求。</p>
+
+<h3 id="computation" data-text="计算">计算</h3>
+
+<p>从系统的各种来源收集数据后，会生成统计信息并汇总来自各种大区的数据。这可能是用户、您的计算空间地区或客户地理位置的同类群组。能够根据原始事件动态开发这些统计信息非常有优势，但在存储以及所需的实时计算容量方面会产生很高费用。</p>
+
+<p>选择工具并规划插桩时，您必须考虑基数和维度。这两个方面的指标收集会极大地影响您扩缩以观测系统的能力。</p>
+
+<p><em>基数</em>是衡量系统中不同值的指标。例如，<code translate="no" dir="ltr">cpu-utilization</code> 等字段通常需要介于 0 到 100 之间的范围。但是，如果您跟踪用户的唯一标识符，则所有标识符都各不相同，因此，如果有 1M 个用户，则基数为 1M。这将带来巨大的改变。</p>
+
+<p><em>维度</em>是指能够记录多个值以及时间戳，如同您可能在支持监控系统的简单时间序列数据库中拥有的能力一样。仅记录计数器（例如 requests-sent）的值时，可能最初仅记录到此时间点（如 <code translate="no" dir="ltr">{time=x, value=y}</code>）发送的请求数值。但是，与结构化日志一样，您可能还需要记录一些环境数据，结果如下所示：<code translate="no" dir="ltr">{time=x, value=y, server=foo, cluster=123,
+environment=prod, service=bar}</code>。结合使用高基数和高维度可能会导致计算和存储要求大幅增加到监控功能可能无法按预期运行的点！将动态生成的数据和元数据写入监控系统的开发者需要了解这一点。</p>
+
+<h3 id="learning_and_improving" data-text="学习和改进">学习和改进</h3>
+
+<p>系统运行的一部分是从中断和错误中学习。书面记录回顾或事后分析以及纠正措施的过程得到很好记录。此过程的一个结果是开发改进的监控。对于快速发展的组织来说，让组织内的任何人都能快速、高效地更新其监控系统至关重要。监控配置至关重要，因此应利用<a href="/architecture/devops/devops-process-streamlining-change-approval" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">审核和审批</a>跟踪更改，就像代码开发和交付一样。将监控配置保留在<a href="/architecture/devops/devops-tech-version-control" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">版本控制系统</a>中是允许广泛访问系统的很好第一步，同时维持对系统这一关键部分的控制。围绕通过自动化流水线部署监控配置来开发自动化，也可以提升您确保这些配置有效且应用一致的能力。将监控配置视为代码后，这些改进都可以通过<a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">部署自动化</a>过程来实现，最好是团队其余人员使用同一系统。</p>
+
+<h2 id="common_pitfalls_of_implementing_monitoring_and_observability" data-text="实施监控和可观测性的常见误区">实施监控和可观测性的常见误区</h2>
+
+<p>在为组织开发监控和可观测性系统时，您应注意通常没有简单的即插即用解决方案。任何正规监控系统都需要您深入了解要衡量的每个组件，以及直接操控代码以对这些系统进行插桩。避免让单个监控人员或专职团队单独负责系统。这不仅将帮助您防止单点故障，还会提升整个组织了解和改进系统的能力。需要将监控和可观测性纳入所有开发者的基准知识中。此处的一个常见隐患是仅允许运营团队、NOC 或其他类似团队对监控系统进行更改。应避免这么做，并将其替换为遵循 CD 模式的系统。</p>
+
+<p>在监控系统中编写提醒的常见反模式是尝试枚举所有可能的错误情况，并为每个条件编写提醒。我们将这称为<em>基于原因的提醒</em>，您应该尽可能避免这种情况。相反，您应该专注于<em>基于症状的提醒</em>，即仅当面向用户的症状可见或预计即将发生时才向您发出提醒。您仍应该能够观察非面向用户的系统，但如果没有面向用户的症状，它们不应直接提醒值班工程师。请注意，<em></em>“面向用户”一词还可能包括您组织内部的用户。</p>
+
+<p>生成提醒时，您应该考虑其传送方式。您的提醒应该有多条发给值班工程师的途径，包括但不限于短信传送、专用移动应用、自动电话呼叫或电子邮件。一个常见的隐患是通过电子邮件分发列表向整个团队发送提醒电子邮件。这可能会因<a href="https://wikipedia.org/wiki/Diffusion_of_responsibility" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">责任混淆</a>而导致提醒快速被忽略。另一个常见的故障是<a href="https://wikipedia.org/wiki/Signal-to-noise_ratio" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">信杂比</a>不理想。如果太多提醒不实用或不会产生任何改进，团队会很容易错过有意义和可能非常重要的提醒，这是一个称为<a href="https://wikipedia.org/wiki/Alarm_fatigue" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">警报疲劳</a>的问题。应非常仔细地跟踪任何将某组提醒静音或抑制的方法，以确保不会过于广泛或过于频繁地应用。</p>
+
+<p>在构建监控信息中心以直观显示指标时，一个常见的错误是花费很长时间来挑选“完美信息中心”。这类似于上述基于原因的提醒错误。在高效团队中，所观察系统会快速更改，以致用于选择信息中心的任何时间在完成之前都已过时。相反，专注于团队成员快速创建信息中心或可满足需求的其他可视化的能力非常重要。</p>
+
+<p>未能将面向产品或面向高管的指标（如用户获取率和收入跟踪）与运营或服务运行状况信息中心分开也是一个常见问题，因为它们既非常重要，但又不同。强烈建议将这些分开。</p>
+
+<h2 id="how_to_measure_monitoring_and_observability" data-text="如何衡量监控和可观测性">如何衡量监控和可观测性</h2>
+
+<p>在组织中实施监控和可观测性系统时，您可以跟踪一些内部指标，以了解自己的表现。以下是您可能希望使用每月调查问卷或者可能希望通过自动分析事后分析或提醒日志来跟踪的一些示例。</p>
+
+<ul>
+<li><strong>对监控配置所做的更改。</strong>每周向包含监控配置的代码库发出多少次拉取请求或做了多少次更改？这些更改多久推送到监控系统一次？（每天？批处理？在 PR 上立即推送？）</li>
+<li><strong>“非工作时间”提醒。</strong>夜间处理提醒的百分比是多少？虽然一些全球企业都具有全天候支持模型，因此这并非问题，但这可能表明，未充分注意故障的主要指标。定期夜间提醒有助于提醒疲劳和筋疲力尽的团队。</li>
+<li><strong>团队提醒平衡。</strong>如果您有其他位置的团队负责某项服务，则所有团队都会合理地分配和解决提醒吗？如果不会，原因是什么？</li>
+<li><strong>假正例。</strong>有多少提醒未采取措施，或者被标记为“按预期执行”？应删除不实用和无助于预测故障的提醒。</li>
+<li><strong>假负例。</strong>有多少系统故障没有提醒或提醒迟于预期？您的事后分析多久会添加一次新的（基于症状的）提醒？</li>
+<li><strong>提醒创建。</strong>每周创建多少个提醒（总计或按严重性、团队等分组）？</li>
+<li><strong>提醒确认。</strong>在商定的截止时间（如 5 分钟、30 分钟）内，确认的提醒百分比是多少？有时，当通知辅助值班人员有提醒时，这将与<em></em>提醒失败等指标结合使用，也可以使用此类指标进行跟踪。</li>
+<li><strong>提醒静音和静音时长。</strong>每周有多少条提醒处于静音或抑制状态？将多少个提醒添加到此池中，又从中移除多少个？如果您的提醒静音具有过期系统，那么将多少静音提醒延期超过最初预期时长？平均和最大静音期限是多少？（一个非常有趣的问题是，“有多少个静音提醒实际上‘无限’？”）</li>
+<li><strong>不实用的提醒。</strong>有多少百分比的提醒被视为“不实用”？也就是说，收到提醒的工程师无法立即采取某种措施，要么无法理解提醒的意思，要么是已知问题。不实用提醒是常见的<a href="https://landing.google.com/sre/sre-book/chapters/eliminating-toil/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">工作量</a>来源。</li>
+<li><strong>易用性：提醒、Runbook、信息中心。</strong>您的信息中心上有多少图表？每个图表的行数是多少？团队能否理解图表？是否提供解释性文字来帮助新工程师？用户是否需要大量滚动和浏览才能找到所需信息？工程师能否实际从提醒导航到剧本再到信息中心？提醒命名方式是否让工程师可朝着正确的方向前进？这些可随着时间推移通过团队调查问卷来衡量。</li>
+<li><strong>MTTD、MTTR、影响</strong>。底线是检测时间、解决时间和影响。考虑测量中断影响客户的时间的“曲线下方面积”乘以受影响的客户数量。这可以通过工具更精确地估算或完成。</li>
+</ul>
+
+<p>通过跟踪其中部分或全部指标，您可以更好地了解您的监控和可观测性系统对您组织的效果。通过按产品、运营团队或其他方法细分这些衡量指标，您不仅可以深入了解产品的运行状况，还可以深入了解流程和人员。</p>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>详细了解如何通过<a href="/architecture/devops/devops-measurement-proactive-failure-notification" track-type="solution" track-name="internalLink" track-metadata-position="body">主动式故障通知</a>生成主动提醒。</li>
+<li>访问 <a href="https://landing.google.com/sre/resources/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Google 站点可靠性工程资源</a>，查找以下 SRE 图书：<ul><li>网站可靠性工程</li>
+<li>站点可靠性工程工作簿</li>
+<li>构建安全可靠的系统</li>
+</ul></li>
+<li><a href="/products/operations" track-type="article" track-name="internalLink" track-metadata-position="body">Google Cloud 操作</a></li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

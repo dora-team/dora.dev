@@ -1,0 +1,127 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 기술: 지속적 통합</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>참고:</strong><span> <em>지속적 통합</em>은 소프트웨어 제공 및 조직 성과 향상을 가져오는 기능 집합 중 하나입니다. 이러한 기능은 성과 향상을 이끌어내는 관례와 기능을 독립적이자 학술적으로 심층 연구하는 <a href="https://www.devops-research.com/research.html">DORA State of DevOps 연구 프로그램</a>을 통해 개발되었습니다. 자세한 내용은 <a href="/devops">DevOps 리소스</a>를 참조하세요.</span></aside>
+<p>소프트웨어 시스템은 복잡하며, 간단해 보이는 단일 파일에 대한 독립 실행형 변경사항으로 인해 전체 시스템에 의도치 않은 부작용이 발생할 수 있습니다. 관련 시스템에서 작업하는 개발자가 많을 경우 코드 업데이트를 조정하는 것은 어려운 문제이며 다른 개발자의 변경사항이 호환되지 않을 수 있습니다.</p>
+
+<p>이러한 문제를 해결하기 위해 지속적 통합(CI) 방식을 만들었습니다. CI는 시간과 에너지가 많이 소모되는 작업을 더 자주 수행해서 고통을 경감하는 <a href="https://martinfowler.com/articles/originalContinuousIntegration.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">원칙</a>을 따릅니다. CI는 빠른 피드백 루프를 만들고 개발자가 소규모 배치로 작업할 수 있도록 하여 팀이 고품질 소프트웨어를 제작하고, 지속적인 소프트웨어 개발 및 유지보수 비용을 절감하고, 팀의 생산성을 높일 수 있게 해줍니다.</p>
+
+<h2 id="how_to_implement_ci" data-text="CI 구현 방법">CI 구현 방법</h2>
+
+<p>CI를 실행하는 조직에서는 개발자가 <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="solution" track-name="internalLink" track-metadata-position="body"><em>트렁크</em></a>, <em>기본</em> 또는 <em>기본 라인</em>이라고 하는 <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="solution" track-name="internalLink" track-metadata-position="body">코드베이스의 주 버전</a>에 모든 작업을 정기적으로 통합합니다. DORA(DevOps Research and Assessment) <a href="https://services.google.com/fh/files/misc/state-of-devops-2015.pdf#page=20" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">연구</a>(PDF)에서는 개발자가 하루에 한 번 이상 작업을 트렁크에 병합하는 팀의 실적이 더 우수한 것으로 나타났습니다. 변경사항이 회귀 버그를 발생시키지 않는지 확인하기 위해 병합 전후에 자동화된 테스트 세트가 실행됩니다. 이러한 자동화된 테스트가 실패하면 팀에서 문제를 즉시 해결하기 위해 수행 중이던 작업을 중지합니다.</p>
+
+<p>CI를 사용하면 소프트웨어가 항상 작동 상태가 되고 개발자 분기가 트러스트에서 크게 벗어나지 않습니다. CI의 이점은 상당합니다. <a href="https://services.google.com/fh/files/misc/state-of-devops-2015.pdf#page=16" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">연구</a> 결과(PDF)에 따르면 배포 빈도가 증가하고 시스템 안정성이 증가하며 소프트웨어 품질이 향상됩니다.</p>
+
+<p>지속적 통합을 성공적으로 구현하는 데 핵심적인 요소는 다음과 같습니다.</p>
+
+<ul>
+<li>각 커밋은 소프트웨어 빌드를 트리거해야 합니다.</li>
+<li>각 커밋은 몇 분 내에 피드백을 제공하는 일련의 자동화된 테스트를 트리거해야 합니다.</li>
+</ul>
+
+<p>이러한 요소를 구현하려면 다음이 필요합니다.</p>
+
+<ul>
+<li><strong>자동화된 빌드 프로세스</strong>. CI의 첫 번째 단계는 모든 환경에 배포할 수 있는 패키지를 만드는 자동화된 스크립트를 사용하는 것입니다. CI 빌드로 생성된 패키지는 신뢰할 수 있어야 하며 모든 다운스트림 프로세스에서 사용해야 합니다. 이러한 빌드는 번호가 매겨지고 반복 가능해야 합니다. 빌드 프로세스를 하루에 한 번 이상 성공적으로 실행해야 합니다.</li>
+<li><strong><a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">자동 테스트</a> 제품군</strong>.
+아무것도 없는 경우 먼저 시스템의 고가치 기능을 다루는 약간의 단위 및 <a href="https://services.google.com/fh/files/misc/state-of-devops-2014.pdf#page=14" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">승인 테스트</a>(PDF)를 작성합니다. 테스트는 신뢰할 수 있어야 합니다. 이렇게 하면 실패 시 실제 문제가 있음을 알 수 있으며 통과 시 시스템에 심각한 문제가 없음을 확신할 수 있습니다. 그런 다음 테스트에서 완전히 새로운 기능을 다루는지 확인합니다. 이러한 테스트는 개발자에게 가능한 한 빨리 피드백을 제공하기 위해 빠르게 실행되어야 합니다. 테스트는 하루에 한 번 이상 성공적으로 실행되어야 합니다.
+최종적으로 성능 및 승인 테스트가 구현되면 개발자는 매일 피드백을 받아야 합니다.</li>
+<li><strong>모든 체크인을 대상으로 빌드 및 자동화된 테스트를 실행하는 CI 시스템</strong>. 또한 시스템이 팀에게 상태를 표시해야 합니다. 이 기능은 재미있는 방식으로 구현할 수 있습니다. 예를 들어 빌드가 손상되었을 때 경적이나 신호등을 사용하여 알릴 수 있습니다. 이메일 알림은 사용하지 마세요. 대다수의 사용자는 이메일 알림을 무시하거나 알림을 숨기는 필터를 만듭니다. 따라서 채팅 시스템의 알림을 사용하는 것이 좋으며, 이는 상태를 표시하는 더 보편적인 방식입니다.</li>
+</ul>
+
+<p>또한 켄트 벡과 지속적 통합이라는 용어를 만든 Extreme Programming 커뮤니티에서 <a href="https://www.martinfowler.com/articles/continuousIntegration.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">정의한 대로</a>, 지속적 통합에는 소프트웨어 제공 성능 향상을 예측할 수 있는 두 가지 추가 방식이 포함됩니다.</p>
+
+<ul>
+<li>개발자가 <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">소규모 배치</a>로 트렁크/기본 라인을 작업하는 <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="solution" track-name="internalLink" track-metadata-position="body">트렁크 기반 개발</a> 방식
+개발자가 장기 기능 분기를 작업하지 않고 공유 트렁크/기본 라인에 자신의 작업을 하루에 한 번 이상 병합합니다.</li>
+<li>빌드가 손상되었을 때 이를 수정하는 것이 <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="solution" track-name="internalLink" track-metadata-position="body">다른 작업보다 우선</a>해야 한다는 합의</li>
+</ul>
+
+<p>CI에는 <a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">자동 단위 테스트</a>가 필요합니다.
+이러한 테스트는 소프트웨어가 예상대로 작동하는지 확인할 수 있도록 포괄적이어야 합니다. 테스트는 몇 분 내에 실행되어야 합니다. 자동화된 단위 테스트를 실행하는 데 이보다 오랜 시간이 걸리는 경우 개발자가 테스트를 자주 실행하지 않을 것입니다. 테스트가 자주 실행되지 않으면 다양한 변경사항으로 인해 테스트 실패가 발생할 수 있으므로 디버깅하기가 어렵습니다. 자주 실행되지 않는 테스트는 유지관리가 어렵습니다.</p>
+
+<p>유지관리 가능한 자동화된 단위 테스트 도구 모음을 만드는 것은 복잡합니다. 이 문제를 해결하는 좋은 방법은 개발자가 테스트를 통과하는 코드를 구현하기 전에 초기에 실패한 자동화된 테스트를 작성하는 <a href="https://wikipedia.org/wiki/Test-driven_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">테스트 기반 개발</a>(TDD)을 실행하는 것입니다. TDD는 몇 가지 이점이 있는데, 그 중 하나는 개발자가 쉽게 테스트할 수 있는 모듈식 코드를 작성하여 자동화된 테스트 모음의 유지보수 비용을 절감할 수 있다는 것입니다.
+대부분의 조직은 유지관리 가능한 자동화된 단위 테스트 모음을 보유하고 있지 않음에도 불구하고 TDD를 실행하지 않습니다.</p>
+
+<h3 id="objections_to_ci" data-text="CI의 난점">CI의 난점</h3>
+
+<p>앞에서 설명한 것처럼 CI는 종종 논란의 여지가 있는 방식으로 간주됩니다. CI를 사용하려면 개발자가 대규모 기능 및 기타 변경사항을 트렁크에 자주 통합할 수 있는 <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">더 작은 증분 단계</a>로 분할해야 합니다. 이는 이런 식으로 작업하는 데 익숙하지 않은 개발자에게 변화로 다가옵니다. 또한 팀이 작은 단계를 사용하도록 전환하면 대규모 기능을 완료하는 데 시간이 더 걸릴 수 있습니다. 그러나 일반적으로 개발자가 분기에서 대규모 기능이 완료되었다고 선언하는 속도에 최적화하지 않는 것이 좋습니다. 대신 변경사항 검토, 통합, 테스트, 배포 시간을 최대한 단축하는 것이 좋습니다. 이 프로세스는 변경사항이 소규모이고 독립 실행형이며 해당 분기에 짧게 머문 경우 소프트웨어 개발 및 전송 <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=35" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">속도와 안정성을 높여줍니다</a>(PDF). 또한 소규모 배치로 작업하면 개발자가 다른 개발자, 테스터, 고객뿐 아니라 자동화된 성능 및 보안 테스트로부터 자신의 작업이 시스템 전체에 미치는 영향에 대한 정기적인 피드백을 받을 수 있습니다. 이렇게 하면 문제를 더 쉽고 빠르게 감지하고, 분류하고, 수정할 수 있습니다.</p>
+
+<p>이러한 난점에도 불구하고 소프트웨어 개발팀이 지속적 통합을 구현하도록 지원하는 것은 지속적 배포 여정을 시작하려는 모든 조직의 최우선 과제입니다.</p>
+
+<h2 id="common_pitfalls" data-text="일반적인 문제">일반적인 문제</h2>
+
+<p>CI의 광범위한 채택을 방해하는 일반적인 문제는 다음과 같습니다.</p>
+
+<ul>
+<li><strong>모든 항목을 코드 저장소에 저장하지 않음</strong> 애플리케이션과 시스템을 빌드하고 구성하는 데 필요한 모든 항목이 저장소에 있어야 합니다. 이는 CI의 범위를 벗어나는 것처럼 보일 수 있지만 중요한 기초입니다.</li>
+<li><strong>빌드 프로세스를 자동화하지 않음</strong>. 수동 단계를 사용하면 실수가 발생할 수 있고 단계가 문서화되지 않습니다.</li>
+<li><strong>모든 변경사항에 대해 빠른 테스트를 트리거하지 않음</strong> 전체 엔드 투 엔드 테스트가 필요하지만 빠른 테스트(일반적으로 단위 테스트)도 빠른 피드백을 받는 데 중요합니다.</li>
+<li><strong>손상된 빌드를 즉시 수정하지 않음</strong> CI의 핵심 목표는 모든 사람이 개발할 수 있는 안정적인 빌드를 만드는 것입니다. 몇 분 내에 빌드를 수정할 수 없는 경우 빌드 손상을 유발한 변경사항을 식별하고 되돌려야 합니다.</li>
+<li><strong>테스트를 실행하는 데 너무 오래 걸림</strong>. 테스트를 실행하는 데 몇 분 넘게 걸릴 수 있으며, 최대 한도는 약 10분입니다(<a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf#page=56" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">DORA 연구 결과</a>(PDF)). 빌드를 테스트하는 데 이보다 오래 걸리는 경우 테스트의 효율성을 높이거나, 동시에 실행할 수 있도록 컴퓨팅 리소스를 추가하거나, <a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">배포 파이프라인 패턴</a>을 사용하여 실행하는 데 오래 걸리는 테스트를 별도의 빌드로 분할해야 합니다.</li>
+<li><strong>트렁크에 자주 병합되지 않음</strong>. 많은 조직에서 자동화된 테스트와 빌드를 사용하지만 매일 트렁크에 병합하도록 강요하지는 않습니다.
+이로 인해 통합하기 어려운 장기 분기가 생기고 개발자의 피드백 루프가 길어집니다.</li>
+</ul>
+
+<h2 id="ways_to_measure_ci" data-text="CI 측정 방법">CI 측정 방법</h2>
+
+<p>앞에서 설명한 CI 개념은 다음 표와 같이 시스템 및 개발 환경에서 CI의 효과를 측정하는 방법을 설명합니다.
+이러한 측정항목을 수집하면 프로세스와 관련 도구를 최적화할 수 있습니다. 그러면 CI 방식이 개선되고 개발자의 피드백 루프가 짧아집니다.</p>
+
+<table>
+  <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+  </colgroup>
+<thead>
+<tr>
+<th><strong>테스트 요소</strong></th>
+<th><strong>측정 항목</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>코드 커밋이 소프트웨어 빌드를 트리거하는지 여부</td>
+<td>수동 개입 없이 소프트웨어 빌드로 이어지는 코드 커밋의 비율</td>
+</tr>
+<tr>
+<td>코드 커밋이 일련의 자동화된 테스트를 트리거하는지 여부</td>
+<td>수동 개입 없이 일련의 자동화된 테스트로 이어지는 코드 커밋의 비율</td>
+</tr>
+<tr>
+<td>자동화된 빌드 및 테스트가 매일 성공적으로 실행되는지 여부</td>
+<td>매일 성공적으로 실행되는 자동화된 빌드의 비율과 자동화된 테스트의 비율</td>
+</tr>
+<tr>
+<td>테스터가 현재 빌드를 탐색적 테스트에 사용할 수 있는지 여부</td>
+<td>테스터가 빌드를 사용할 수 있는지 여부</td>
+</tr>
+<tr>
+<td>개발자가 매일 승인 및 성능 테스트를 통해 피드백을 받는지 여부</td>
+<td>승인 및 성능 테스트를 통해 개발자에게 피드백이 제공되는지 여부. 즉, 하루 동안 개발자가 볼 수 있는 피드백을 제공하는 테스트의 비율</td>
+</tr>
+<tr>
+<td>손상된 빌드가 즉시 수정되는지 여부</td>
+<td>빌드가 중단되고 문제를 해결하는 체크인 또는 브레이킹 체인지 복구를 통해 수정되는 데 걸리는 시간</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li>Google Cloud <a href="/solutions/continuous-integration" track-type="solution" track-name="internalLink" track-metadata-position="body">지속적 통합 솔루션</a>에 대해 자세히 알아보기</li>
+<li><a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">SRE 도서</a>, 특히 <a href="https://landing.google.com/sre/sre-book/chapters/release-engineering/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">8장 - 출시 엔지니어링</a> 읽어보기</li>
+<li>제임스 쇼어의 <a href="https://www.jamesshore.com/Blog/Continuous-Integration-on-a-Dollar-a-Day.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">CI on a dollar a day</a> 문서 읽어보기</li>
+<li>Google의 존 피닉스가 설명하는 <a href="https://www.infoq.com/presentations/Continuous-Testing-Build-Cloud/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Google의 CI 대규모 활용 사례</a> 시청하기</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

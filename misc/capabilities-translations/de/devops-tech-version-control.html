@@ -1,0 +1,99 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Tech: Versionsverwaltung</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Versionsverwaltung</em> ist eine der folgenden Funktionen, die die Softwarebereitstellung und
+Leistung verbessern.  Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">„State of DevOps“-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, akademisch anspruchsvollen Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>Versionsverwaltungssysteme wie Git, Subversion und Mercurial bieten eine logische Möglichkeit, Dateien zu organisieren und deren Erstellung, Zugriffssteuerung, Aktualisierung und Löschung über Teams und Organisationen hinweg zu koordinieren. Die Versionsverwaltung ist eng mit der Automatisierung verbunden. Tatsächlich hängen <a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">Automatisierung und kontinuierliche Integration</a> von diesen Dateien ab, sowohl vom Quellcode der Automatisierung als auch von der zu automatisierenden Konfiguration und den zu verteilenden Daten.</p>
+
+<p>Zur Verbesserung der Softwarebereitstellung müssen Teams die Versionsverwaltung für Quellcodes, Test- und Bereitstellungsskripts, Informationen zur Infrastruktur und Anwendungskonfiguration sowie die vielen Bibliotheken und Pakete verwenden, von denen sie abhängig sind.
+Im Versionsverwaltungssystem müssen Teams den aktuellen (und vergangenen) Status ihrer Umgebungen abfragen können. Die Versionsverwaltung bietet auch direkte Vorteile wie Notfallwiederherstellung und Überprüfbarkeit.</p>
+
+<p>Untersuchungen haben ergeben, dass eine umfassende Nutzung der Versionsverwaltung unter anderem eine Voraussetzung für die kontinuierliche Bereitstellung ist. Die Versionsverwaltung hilft Ihnen insbesondere dabei, die folgenden kritischen Anforderungen zu erfüllen:</p>
+
+<ul>
+<li><p><strong>Reproduzierbarkeit</strong>: Teams müssen jede Umgebung vollautomatisch bereitstellen können und wissen, dass jede neue Umgebung, die aus derselben Konfiguration reproduziert wird, identisch ist. Voraussetzung für die Erreichung dieses Ziels ist die Speicherung der Skripts und Konfigurationsinformationen, die zur Bereitstellung einer Umgebung in einem gemeinsam genutzten, zugänglichen System erforderlich sind.</p></li>
+<li><p><strong>Rückverfolgbarkeit</strong>: Die Teams sollten jede Umgebung auswählen sowie schnell und genau die Versionen aller Abhängigkeiten ermitteln können, die zum Erstellen dieser Umgebung verwendet werden. Sie sollten außerdem in der Lage sein, zwei Versionen einer Umgebung miteinander zu vergleichen und festzustellen, was sich zwischen ihnen geändert hat.</p></li>
+</ul>
+
+<p>Diese Funktionen bieten den Teams mehrere wichtige Vorteile:</p>
+
+<ul>
+<li><p><strong>Notfallwiederherstellung</strong>: Wenn in einer Umgebung ein Fehler auftritt (z. B. ein Hardwarefehler oder eine Sicherheitsverletzung), müssen die Teams diese Umgebung in einem bestimmten Zeitraum reproduzieren können, um den Dienst wiederherstellen zu können.</p></li>
+<li><p><strong>Nachvollziehbarkeit</strong>: Zur Demonstration der Integrität des Bereitstellungsprozesses müssen die Teams in der Lage sein, den Pfad von jeder Bereitstellung zu den Elementen, von denen sie stammten, einschließlich ihrer Version, rückwärts anzuzeigen. Sie ermöglichen dies durch ein umfassendes Konfigurationsmanagement in Kombination mit Bereitstellungspipelines.</p></li>
+<li><p><strong>Höhere Qualität</strong>: Der Software-Bereitstellungsprozess ist häufig mit langen Verzögerungen verbunden, die auf die Vorbereitung der Entwicklungs-, Test- und Produktionsumgebungen zurückgehen. Wenn diese Vorbereitung automatisch über die Versionsverwaltung durchgeführt werden kann, können die Teams schneller Feedback zu den Auswirkungen ihrer Änderungen erhalten und so die Qualität ihrer Software verbessern.</p></li>
+<li><p><strong>Kapazitätsverwaltung</strong>: Wenn Teams ihrer Umgebung mehr Kapazität hinzufügen möchten, ist die Möglichkeit, Reproduktionen vorhandener Server zu erstellen, von entscheidender Bedeutung. Diese Funktion ermöglicht die horizontale Skalierung moderner cloudbasierter verteilter Systeme.</p></li>
+<li><p><strong>Reaktion auf Mängel</strong>: Wenn Teams einen kritischen Fehler oder eine Sicherheitslücke in einer Komponente ihres Systems entdecken, müssen sie so schnell wie möglich eine neue Version ihrer Software veröffentlichen. Durch das Speichern aller Artefakte in der Versionsverwaltung können Teams schnell und zuverlässig in einen zuvor überprüften Arbeitszustand zurückkehren.</p></li>
+</ul>
+
+<p>Je komplexer und heterogener Umgebungen werden, desto schwieriger wird es, diese Ziele zu erreichen. Es ist unmöglich, eine perfekte Reproduzierbarkeit und Rückverfolgbarkeit für ein komplexes Unternehmenssystem zu erreichen (zumindest hat jedes reale System einen Status). Ein wesentlicher Bestandteil der Konfigurationsverwaltung ist daher die Vereinfachung der Architektur, der Umgebungen und der Prozesse, um die Investitionen zu reduzieren, die zum Erreichen der erwarteten Vorteile erforderlich sind.</p>
+
+<h2 id="how_to_implement_version_control" data-text="So implementieren Sie die Versionsverwaltung">So implementieren Sie die Versionsverwaltung</h2>
+
+<p>Wir empfehlen Ihnen, bei der Implementierung der Versionsverwaltung zuerst messbar zu definieren, welche Ziele Sie erreichen möchten. Auf diese Weise können Sie und Ihre Teams den besten Weg finden, um diese Ziele zu erreichen. Mit diesem Ansatz können Sie auch die Richtung ändern oder diese Ziele neu bewerten, wenn der von Ihnen gewählte Weg zu teuer ist oder zu lange dauert.</p>
+
+<p>Ein Versionsverwaltungssystem zeichnet Änderungen für die im System gespeicherten Dateien auf. Diese Dateien können Quellcode, Assets oder andere Dokumente sein, die Teil eines Softwareentwicklungsprojekts sein können. Teams nehmen Änderungen in Gruppen vor, die als <em>Commits</em> oder <em>Revisions</em> bezeichnet werden. Jede Revision wird zusammen mit Metadaten, die sich auf die Revision beziehen (z. B. wer die Änderung vorgenommen hat und wann), im System gespeichert. Auf diese Weise können Teams frühere Revisionen festschreiben, vergleichen, zusammenführen und wiederherstellen. Dadurch werden auch Risiken minimiert. Es wird eine Möglichkeit geboten, Objekte in der Produktion auf frühere Versionen zurückzusetzen.</p>
+
+<p>Teams müssen Produktionsservices wiederholt und vorhersehbar (und im Idealfall schnell) wiederherstellen können, selbst wenn katastrophale Ereignisse auftreten. Daher müssen sie die folgenden Assets in ihr freigegebenes Versionsverwaltungs-Repository aufnehmen:</p>
+
+<ul>
+<li>Alle Anwendungscodes und Abhängigkeiten (z. B. Bibliotheken und statische Inhalte)</li>
+<li>Alle Skripts, die zum Erstellen von Datenbankschemas, Anwendungsreferenzdaten usw. verwendet werden</li>
+<li>Alle Tools und Artefakte zur Umgebungserstellung, die im vorherigen Schritt beschrieben wurden (z. B. VMware- oder AMI-Image-Erstellungsskripts oder Chef-Anleitungen)</li>
+<li>Alle Dateien, die zum Erstellen und Zusammenstellen von Containern verwendet werden (z. B. Docker-Dateien und Buildpacks)</li>
+<li>Alle unterstützenden automatisierten Tests und alle manuellen Testskripts</li>
+<li>Alle Skripts, die Codepaketierung, Bereitstellung, Datenbankmigration und Umgebungsbereitstellung unterstützen</li>
+<li>Unterstützende Projektartefakte (z. B. Anforderungsdokumentation, Bereitstellungsverfahren und Versionshinweise)</li>
+<li>Container-Orchestrierung (z. B. Kubernetes-Konfiguration, Mesos-Konfiguration und Docker Swarm-Konfiguration)</li>
+<li>Alle Cloud-Konfigurationsdateien (z. B. AWS Cloudformation-Vorlagen, Cloud Deployment Manager-Konfiguration, Microsoft Azure Stack-DSC-Dateien, OpenStack HEAT, Terraform-Dateien und Pulumi-Stacks)</li>
+<li>Alle anderen Skript- oder Konfigurationsinformationen, die zum Erstellen einer Infrastruktur erforderlich sind, die mehrere Dienste unterstützt (z. B. Unternehmensdienstbusse, Datenbankverwaltungssysteme, DNS-Zonendateien, Konfigurationsregeln für Firewalls und andere Netzwerkgeräte)</li>
+</ul>
+
+<p>Die Versionsverwaltung kann, abgesehen von herkömmlichen dateibasierten Versionsverwaltungssystemen wie Git, viele Formen annehmen. Teams haben möglicherweise mehrere Repositories für verschiedene Arten von Objekten und Diensten neben ihrem Quellcode, die versioniert und mit Labels und Tags versehen werden. Beispielsweise können sie große Images virtueller Maschinen, ISO-Dateien, kompilierte Binärdateien usw. in Artefakt-Repositories wie Nexus oder Artifactory speichern. Alternativ können sie Objekte in Blob-Stores wie Cloud Storage oder Amazon S3 ablegen oder Docker-Images in Docker-Registries ablegen. Diese Ansätze erfüllen die Anforderungen an Reproduzierbarkeit und Rückverfolgbarkeit und bieten dieselben Vorteile.</p>
+
+<p>Die Teams müssen nicht nur einen früheren Zustand der Produktionsumgebung wiederherstellen, sondern auch in der Lage sein, die Vorproduktions- und Erstellungsprozesse neu zu erstellen.
+Folglich müssen sie auch alles, wovon ihre Erstellungsprozesse abhängen, in die Versionsverwaltung aufnehmen, einschließlich Tools und Umgebungen, von denen sie abhängen.</p>
+
+<h2 id="common_pitfalls_in_version_control" data-text="Häufige Probleme bei der Versionsverwaltung">Häufige Probleme bei der Versionsverwaltung</h2>
+
+<p>Das häufigste Problem bei der Verwendung der Versionsverwaltung ist die <strong>eingeschränkte Anwendung oder Verwendung</strong>, das heißt, die Versionsverwaltung sollte nur auf Software-Anwendungscode angewendet werden. Best Practice erfordert die Fähigkeit, alle Test- und Produktionsumgebungen, einschließlich der darauf bereitgestellten Software, mithilfe von Skripts, Quellcode und Konfigurationsinformationen, die in der Versionsverwaltung gespeichert sind, vollautomatisch zu reproduzieren.</p>
+
+<h2 id="ways_to_improve_version_control" data-text="Möglichkeiten zur Verbesserung der Versionsverwaltung">Möglichkeiten zur Verbesserung der Versionsverwaltung</h2>
+
+<p>Sie können die Versionsverwaltung auf viele Arten verbessern. Hier einige unserer Empfehlungen:</p>
+
+<ul>
+<li>Sorgen Sie dafür, dass bei jedem Commit zur Versionsverwaltung automatisch Pakete erstellt werden, die in jeder Umgebung bereitgestellt werden können, wobei <em>nur</em> Informationen in der Versionsverwaltung verwendet werden.</li>
+<li>Ermöglichen Sie es, produktionsähnliche Testumgebungen bei Bedarf nur mit Skripts und Konfigurationsinformationen aus der Versionsverwaltung und Pakete mit dem im vorherigen Ansatz beschriebenen automatisierten Prozess zu erstellen.</li>
+<li>Erstellen Sie Skripts für Test- und Produktionsinfrastruktur, damit Teams Kapazitäten hinzufügen oder diese nach Notfällen vollautomatisch wiederherstellen können.</li>
+</ul>
+
+<p>Konzentrieren Sie sich bei der Implementierung eines Versionsverwaltungssystems auf Ihre Einschränkungen. Was ist beispielsweise das größte Hindernis für den schnellen Wechsel von der Versionsverwaltung zur Produktion? Sind Ihre Builds zu langsam? Ist es schwierig, bereitstellbare Pakete neu zu erstellen? Ist es schwierig, produktionsähnliche Testumgebungen zu erstellen? Diese Einschränkungen können das Erreichen Ihrer Ziele erschweren und auf ein Problem hinweisen, an dem Sie mit der <a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">Architektur</a> Ihres Systems arbeiten müssen.</p>
+
+<h2 id="ways_to_measure_version_control" data-text="Möglichkeiten zur Messung der Versionsverwaltung">Möglichkeiten zur Messung der Versionsverwaltung</h2>
+
+<p>Probieren Sie die folgenden Empfehlungen aus, um zu messen, wie effektiv Ihre Teams die Versionsverwaltung in ihren Systemen einsetzen:</p>
+
+<ul>
+<li><p><strong>Anwendungscode</strong>: Verwenden Sie die Versionsverwaltung für den Anwendungscode?
+Wie viel Prozent des Anwendungscodes speichern Sie in der Versionsverwaltung? Wie schnell und einfach kann ein Team Anwendungscode aus dem Versionsverwaltungssystem wiederherstellen?</p></li>
+<li><p><strong>Systemkonfigurationen</strong>: Verwenden Sie die Versionsverwaltung für Systemkonfigurationen? Wie viel Prozent der Systemkonfigurationen speichern Sie in der Versionsverwaltung? Wie schnell und einfach können Teams Systeme über die Versionsverwaltung neu konfigurieren?</p></li>
+<li><p><strong>Anwendungskonfiguration</strong>: Verwenden Sie die Versionsverwaltung für Anwendungskonfigurationen? Wie viel Prozent der Anwendungskonfigurationen speichern Sie in der Versionsverwaltung? Wie schnell und einfach können Teams Anwendungen aus Code im Versionsverwaltungssystem neu konfigurieren?</p></li>
+<li><p><strong>Skripts zur Automatisierung von Build und Konfiguration:</strong> Behalten Sie Skripts zur Automatisierung von Build und Konfiguration in der Versionsverwaltung? Wie viel Prozent speichern Sie in der Versionsverwaltung? Wie schnell und einfach können Sie Systeme mithilfe von Skripts aus der Versionsverwaltung erneut bereitstellen?</p></li>
+</ul>
+
+<p>Diese Empfehlungen sind nur der Anfang, aber sie sind von wesentlicher Bedeutung. Wir empfehlen Ihnen, mit ihnen zu beginnen und zu lernen, wie Sie sie richtig anwenden. Lesen Sie dann diesen Artikel, identifizieren Sie zusätzliche Artefakte, die Sie bei der Entwicklung und Bereitstellung von Software verwenden, und stellen Sie ähnliche Fragen: Wie viel Prozent dieser Artefakte befinden sich in der Versionsverwaltung? Wie schnell und einfach kann Ihr Team neue Systeme oder Konfigurationen mithilfe von Assets aus der Versionsverwaltung bereitstellen?</p>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Weitere Informationen</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

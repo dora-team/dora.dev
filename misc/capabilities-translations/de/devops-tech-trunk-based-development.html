@@ -1,0 +1,127 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Tech: Entwicklung nach Baumschema</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Trunk-basierte Entwicklung</em> gehört zu einer Reihe von Funktionen, die zu einer höheren Software-Bereitstellung und Unternehmensleistung führen.
+Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">„State of DevOps“-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, akademisch anspruchsvollen Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>Die Zusammenarbeit von Entwicklerteams über die Versionskontrolle lässt sich in zwei Hauptverfahrensweisen unterteilen. Eine davon ist die Verwendung von <em>Feature-Zweigen</em>, wobei entweder ein Entwickler oder eine Gruppe von Entwicklern einen Zweig in der Regel aus dem Hauptentwicklungsbaum (auch als <em>Main</em> oder <em>Mainline</em> bezeichnet) erstellt und dann alleine an diesem Zweig arbeitet, bis das Feature fertiggestellt ist. Wenn das Team das Feature als fertig ansieht, wird der Feature-Zweig wieder mit dem Hauptentwicklungszweig zusammengeführt.</p>
+
+<p>Das zweite Verfahren wird als <em>Entwicklung nach Baumschema</em> bezeichnet, wobei jeder Entwickler sein eigenes Projekt <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">in kleine Batches aufteilt</a> und dieses mindestens einmal (möglicherweise auch mehrmals) am Tag wieder im Hauptentwicklungszweig zusammenführt. Der Hauptunterschied zwischen diesen Ansätzen ist der Umfang. Feature-Zweige umfassen in der Regel mehrere Entwickler und es wird Tage oder sogar Wochen an ihnen gearbeitet. Im Gegensatz dazu wird an Zweigen in der Entwicklung nach Baumschema in der Regel nicht mehr als ein paar Stunden gearbeitet, da viele Entwickler ihre individuellen Änderungen häufig im Hauptentwicklungszweig zusammenführen.</p>
+
+<p>Das folgende Diagramm zeigt eine typische Zeitachse bei der Entwicklung nach Baumschema:</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-trunk-based-development-typical-trunk-timeline.svg" alt="Zeitachsen für Version 1.0 und 1.1, die eine Fehlerkorrektur von Version 1.0 in den Hauptentwicklungszweig für Version 1.1 enthalten."/></p>
+
+<p>Bei der Entwicklung nach Baumschema übertragen Entwickler Code direkt in den Hauptentwicklungszweig. Änderungen, die in den Release-Zweigen vorgenommen wurden – Snapshots des Codes, wenn er veröffentlicht werden kann – werden so schnell wie möglich wieder mit dem Hauptentwicklungszweig zusammengeführt (dargestellt durch die Abwärtspfeile). Bei diesem Ansatz gibt es Fälle, in denen Fehlerkorrekturen per Makro ausgewählt und mit Freigaben verbunden werden müssen (dargestellt durch den Aufwärtspfeil), aber diese Fälle sind nicht so häufig wie die Entwicklung neuer Features im Hauptentwicklungszweig. In Fällen, in denen Releases mehrmals am Tag stattfinden, sind Release-Zweige nicht erforderlich, da Änderungen direkt in den Baum übertragen und von dort bereitgestellt werden können.
+Ein wichtiger Vorteil des Baumschemaansatzes ist, dass er die Komplexität der Zusammenführung von Ereignissen reduziert und den Code auf dem neuesten Stand hält. Das wird durch weniger Entwicklungslinien sowie durch kleinere und häufigere Zusammenführungen erreicht.</p>
+
+<p>Im Gegensatz dazu zeigt das folgende Diagramm einen typischen Entwicklungsstil, der keinem Baumschema folgt:</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-trunk-based-development-typical-non-trunk-timeline.svg" alt="Zeitachsen für mehrere langlebige Zweige, die komplexe Zusammenführungspfade und viele Punkte haben, an denen Zusammenführungskonflikte die Produktfreigabe verlangsamen können."/></p>
+
+<p>Bei diesem Ansatz führen Entwickler Änderungen an langlebigen Zweigen durch. Diese Änderungen erfordern im Vergleich zur Entwicklung nach Baumschema größere und komplexere Zusammenführungsereignisse. Dieser Ansatz erfordert auch zusätzliche stabilisierende Maßnahmen und Perioden, in denen der Code gesperrt oder fixiert wird. Auf diese Weise wird sichergestellt, dass die Software in einem funktionsfähigen Zustand bleibt, da große Zusammenführungen häufig Fehler oder Regressionen verursachen können. Daher müssen Sie den Code nach der Zusammenführung gründlich testen und häufig Fehlerkorrekturen vornehmen.</p>
+
+<h2 id="how_to_implement_trunk-based_development" data-text="Entwicklung nach Baumschema umsetzen">Entwicklung nach Baumschema umsetzen</h2>
+
+<p>Die Entwicklung nach Baumschema ist für die <a href="/architecture/devops/devops-tech-continuous-integration" track-type="solution" track-name="internalLink" track-metadata-position="body">Continuous Integration</a> erforderlich.
+Continuous Integration (CI) ist die Kombination aus Entwicklung nach Baumschema und einer Reihe schneller, automatisierter Tests, die nach jedem Commit im Hauptentwicklungszweig ausgeführt werden, um sicherzustellen, dass das System immer funktioniert.</p>
+
+<p>Der Zweck der Continuous Integration besteht darin, lange Einbindungs- und Stabilisierungsphasen durch die häufige Einbindung kleiner Code-Batches zu vermeiden. Auf diese Weise stellen Entwickler sicher, dass sie ihre Arbeit kommunizieren. Außerdem werden durch die Einbindung große Zusammenführungen vermieden, was für die anderen Entwickler und Tester eine erhebliche Arbeitserleichterung darstellt.</p>
+
+<p>Im CI-Paradigma sind Entwickler dafür verantwortlich, dass der Build-Prozess im <em>grünen</em> bleibt – also aktiv ist. Wenn der CI-Prozess fehlschlägt, müssen Entwickler somit entweder die Ausführung des Vorgangs stoppen, um das Problem sofort zu beheben, oder die Änderung rückgängig machen, wenn es nicht innerhalb weniger Minuten behoben werden kann.</p>
+
+<p>Bei der Entwicklung nach Baumschema müssen die Entwickler verstehen, wie sie <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">ihre Arbeit in kleine Batches aufteilen</a>.
+Dies ist eine erhebliche Umstellung für Entwickler, die es nicht gewohnt sind, auf diese Weise zu arbeiten.</p>
+
+<p>Die Analyse der DORA-Daten (DevOps Research and Assessment) aus den Jahren <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=31" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2016</a> (PDF) und <a href="https://services.google.com/fh/files/misc/state-of-devops-2017.pdf#page=40" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2017</a> (PDF) zeigt, dass Teams ein höheres Maß an Softwarebereitstellung und Betriebsleistung (Bereitstellungsgeschwindigkeit, Stabilität und Verfügbarkeit) erreichen, wenn folgende Voraussetzungen erfüllt sind:</p>
+
+<ul>
+<li>Drei oder weniger aktive Zweige im Code-Repository der Anwendung haben.</li>
+<li>Mindestens einmal am Tag die Zweige in den Hauptentwicklungszweig zusammenführen.</li>
+<li>Code nicht fixieren und keine Einbindungsphasen haben.</li>
+</ul>
+
+<h2 id="common_pitfalls" data-text="Häufige Schwierigkeiten">Häufige Schwierigkeiten</h2>
+
+<p>Folgende Hindernisse gehören zu den gängigsten Gründen, die einen vollständigen Umstieg auf eine Entwicklung nach Baumschema verhindern:</p>
+
+<ul>
+<li><p><strong>Einen zu umfangreichen Codeprüfungsprozess</strong>. Viele Organisationen haben einen umfangreichen Codeprüfungsprozess, der mehrere Genehmigungen erfordert, bevor Änderungen im Hauptentwicklungszweig zusammengeführt werden können. Bei einer umständlichen Codeprüfung, die Stunden oder Tage in Anspruch nimmt, arbeiten die Entwickler nicht in kleinen Batches und sammeln stattdessen viele Änderungen an. Dies führt wiederum zu einer Abwärtsspirale, bei der die Prüfer aufgrund ihrer Komplexität mit umfangreichen Codeprüfungen zögern.</p>
+
+<p>Folglich werden Zusammenführungsanfragen häufig abgelehnt, weil Entwickler sie vermeiden. Da es schwer ist, die Auswirkungen großer Änderungen auf ein System durch Prüfungen einzuordnen, entgehen Fehler häufig der Aufmerksamkeit der Prüfer und die Vorteile der Entwicklung nach Baumschema werden beeinträchtigt.</p></li>
+<li><p><strong>Codeprüfungen asynchron durchführen</strong>. Wenn Ihr Team gemeinsam programmiert, wurde der Code bereits von einer zweiten Person überprüft. Wenn weitere Überprüfungen erforderlich sind, sollten diese synchron durchgeführt werden: Wenn der Entwickler der Meinung ist, dass der Code zum Commit bereit ist, sollte er eine andere Person im Team bitten, den Code zu prüfen. Sie sollten keine asynchrone Überprüfung anfordern, wenn Sie z. B. eine Anfrage an ein Tool senden und dann mit einer neuen Aufgabe beginnen, während sie auf die Überprüfung warten. Je länger eine Zusammenführung verzögert wird, desto wahrscheinlicher ist es, dass Zusammenführungskonflikte und damit verbundene Probleme auftreten. Für die Implementierung von synchronen Überprüfungen muss das Team zustimmen, dass der Code der jeweils anderen vor anderen Überprüfungen bevorzugt wird.</p></li>
+<li><p><strong>Es werden keine automatischen Tests vor dem Commit des Codes ausgeführt</strong>. Damit der Hauptentwicklungszweig in einem funktionierenden Zustand bleibt, ist es wichtig, dass Tests vor dem Commit gegen Codeänderungen ausgeführt werden. Dies kann auf Entwickler-Workstations durchgeführt werden. Viele Tools bieten außerdem die Möglichkeit, Tests per Remotezugriff gegen lokale Änderungen auszuführen und beim Bestehen automatisch per Commit zu übergeben. Wenn Entwickler wissen, dass sie ihren Code sehr einfach in den Hauptentwicklungszweig bekommen können, entstehen kleine Codeänderungen, die leicht zu verstehen, zu prüfen und zu testen sind und schneller in die Produktion überführt werden können.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_trunk-based_development" data-text="Möglichkeiten zur Verbesserung der Entwicklung nach Baumschema">Möglichkeiten zur Verbesserung der Entwicklung nach Baumschema</h2>
+
+<p>Basierend auf der vorangegangenen Diskussion können Sie folgende Vorgehensweisen implementieren, um die Entwicklung nach Baumschema zu verbessern:</p>
+
+<ul>
+<li><strong>Entwicklung in kleinen Batches</strong>. Eine der wichtigsten Voraussetzungen für die Entwicklung nach Baumschema ist, dass Teams lernen, <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">in kleinen Batches zu entwickeln</a>.
+Dies erfordert Schulungen und organisatorische Unterstützung für das Entwicklerteam.</li>
+<li><strong>Codeprüfungen synchron durchführen.</strong> Wie bereits erwähnt, wird durch die Umstellung auf synchrone Codeprüfung oder zumindest eine Priorisierung der Codeprüfung sichergestellt, dass es nicht stunden- oder sogar tagelang dauert, bis Änderungen in den Hauptentwicklungszweig zusammengeführt werden.</li>
+<li><strong>Umfassende automatisierte Tests einbinden</strong>. Sorgen Sie dafür, dass Sie eine umfassende und sinnvolle Suite von <a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">automatisierten Einheitentests</a> haben und diese vor jedem Commit ausgeführt werden. Wenn Sie beispielsweise GitHub verwenden, können Sie <a href="https://help.github.com/en/articles/about-protected-branches" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">Zweige schützen</a>, sodass Zusammenführungen durch Pull-Anfragen nur dann zugelassen werden, wenn alle Tests bestanden wurden. Die Anleitung <a href="/build/docs/run-builds-with-github-checks" track-type="solution" track-name="internalLink" track-metadata-position="body">Builds mit GitHub-Prüfungen ausführen</a> zeigt, wie <a href="https://developer.github.com/v3/checks/" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">GitHub-Prüfungen</a> in <a href="/build" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Build</a> eingebunden werden.</li>
+<li><strong>Für schnelle Build-Prozesse sorgen.</strong> Der Build- und Testprozess sollte in <a href="https://www.infoq.com/presentations/Crazy-Fast-Build-Times-or-When-10-Seconds-Starts-to-Make-You-Nervous/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">wenigen Minuten</a> ausgeführt werden.
+Wenn dies schwer zu erreichen ist, deutet dies wahrscheinlich auf Verbesserungsmöglichkeiten in der <a href="/architecture/devops/devops-tech-architecture" track-type="solution" track-name="internalLink" track-metadata-position="body">Architektur</a> des Systems hin.</li>
+<li><strong>Sammeln Sie eine Kerngruppe von Fürsprechern und Mentoren</strong>. Die Entwicklung nach Baumschema stellt für viele Entwickler eine erhebliche Veränderung dar und Sie sollten mit etwas Widerstand rechnen. Viele Entwickler können sich einfach nicht vorstellen, so zu arbeiten. Eine gute Vorgehensweise besteht darin, Entwickler zu finden, die auf diese Weise gearbeitet haben und andere Entwickler von ihnen schulen zu lassen. Außerdem ist es wichtig, einige Teams in einem Baumschema arbeiten zu lassen. Eine Möglichkeit besteht darin, eine kritische Masse von Entwicklern zusammenzubringen, die Erfahrung in der Entwicklung nach Baumschema haben, damit mindestens ein Team nach diesem Entwicklungsprozess arbeitet. Sie können dann andere Teams auf diese Arbeitsweise umstellen, wenn das auf diese Weise arbeitende Team die erwartete Leistung erzielt.</li>
+</ul>
+
+<h2 id="ways_to_measure_trunk-based_development" data-text="Möglichkeiten zur Messung der Entwicklung nach Baumschema">Möglichkeiten zur Messung der Entwicklung nach Baumschema</h2>
+
+<p>Sie können die Effektivität der Entwicklung nach Baumschema messen, wenn Sie die folgenden Schritte ausführen.</p>
+
+<table>
+  <colgroup>
+    <col width="30%" />
+    <col width="35%" />
+    <col width="35%" />
+  </colgroup>
+<thead>
+<tr>
+<th>Faktor zum Testen</th>
+<th>Geeignete Messwerte</th>
+<th>Ziel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aktive Zweige im Code-Repository der Anwendung.</td>
+<td>Messen Sie, wie viele aktive Zweige Sie in den Versionsverwaltungssystemen Ihrer Anwendungs-Repositories haben, und machen Sie diese Anzahl für alle Teams sichtbar. Erfassen Sie dann den inkrementellen Fortschritt zum Zielstatus.</td>
+<td>Drei oder weniger aktive Zweige.</td>
+</tr>
+<tr>
+<td>Zeiten der Code-Fixierungen.</td>
+<td>Messen Sie, wie oft in Ihrem Team eine Code-Fixierung vorkommt und wie lange diese dauern. Diese Messungen können auch kategorisieren, wie viel Zeit für Konflikte beim Zusammenführen, für Code-Fixierungen, für die Stabilisierung usw. aufgewendet wird.</td>
+<td>Code wird nicht fixiert, wenn niemand Code einreichen kann.</td>
+</tr>
+<tr>
+<td>Häufigkeit der Zusammenführung von Zweigen und Forks zum Baum.</td>
+<td>Messen Sie entweder einen binären Wert (ja/nein) für jeden Zweig, der zusammengeführt wird, oder messen Sie einen Prozentsatz der Zweige und Forks, die täglich zusammengeführt werden.</td>
+<td>Zusammenführung mindestens einmal pro Tag.</td>
+</tr>
+<tr>
+<td>Prüfen Sie die Zeit, bis Codeänderungen genehmigt werden.</td>
+<td>Wenn Sie die Codeprüfung asynchron durchführen, messen Sie die durchschnittliche Zeit, die für die Genehmigung von Änderungsanfragen benötigt wird, und achten Sie besonders auf Anfragen, die wesentlich länger als der Durchschnitt dauern.</td>
+<td>Suchen Sie nach Möglichkeiten, die Codeprüfung zu einer synchronen Aktivität zu machen, die im Rahmen der Entwicklung durchgeführt wird.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Nächste Schritte</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li>Unter <a href="/build/docs/run-builds-with-github-checks" track-type="solution" track-name="internalLink" track-metadata-position="body">Builds mit GitHub-Prüfungen ausführen</a> erfahren Sie, wie Sie Google Cloud mit GitHub mithilfe der <a href="https://github.com/marketplace/google-cloud-build" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">Cloud Build-App</a> verbinden.</li>
+<li><p>Sehen Sie sich einen Artikel von Martin Fowler zum <a href="https://martinfowler.com/bliki/FeatureBranch.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Feature-Branching</a> an.</p></li>
+<li><p>Lesen Sie sich Jez Humbles Beitrag zu <a href="https://continuousdelivery.com/2011/07/on-dvcs-continuous-integration-and-feature-branches/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">DVCS und Feature-Branches</a> durch.</p></li>
+<li><p>Sehen Sie sich Paul Hammants <a href="https://trunkbaseddevelopment.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Portal zur Entwicklung nach Baumschema</a> an.</p></li>
+<li><p><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></p></li>
+<li><p>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</p></li>
+</ul>
+
+</body></html>

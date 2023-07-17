@@ -1,0 +1,81 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 기술: 테스트 데이터 관리</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>참고:</strong><span> <em>테스트 데이터 관리</em>는 소프트웨어 제공 및 조직 성과 향상을 가져오는 기능 집합 중 하나입니다. 이러한 기능은 성과 향상을 이끌어내는 관례와 기능을 독립적이자 학술적으로 심층 연구하는 <a href="https://www.devops-research.com/research.html">DORA State of DevOps 연구 프로그램</a>을 통해 개발되었습니다. 자세한 내용은 <a href="/devops">DevOps 리소스</a>를 참조하세요.</span></aside>
+<p><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">자동 테스트</a>는 현대식 소프트웨어 제공 방식에서 중요한 구성요소입니다. 앱 또는 서비스가 예상대로 작동하며 프로덕션 환경에 안전하게 배포 가능한지 확인하려면 단위 테스트, 통합 테스트, 시스템 테스트를 포함하는 포괄적인 테스트 세트를 실행할 수 있어야 합니다. 테스트에서 실제 시나리오를 검증하려면 테스트에 실제 데이터를 제공하는 것이 중요합니다.</p>
+
+<p>테스트 데이터는 수동 및 자동 테스트를 포함하여 테스트 도구 모음 전체에서 모든 종류의 테스트에 필요하므로 중요합니다. 적절한 테스트 데이터를 사용하면 일반적이거나 가치 있는 사용자 여정을 검증하고, 특이 사례를 테스트하고, 오류를 시뮬레이션할 수 있습니다.</p>
+
+<p>하지만 테스트 데이터를 효과적으로 사용하고 관리하기란 어렵습니다. 테스트 범위를 벗어난 데이터에 대한 의존도가 높으면 테스트가 취약해져 유지보수 비용이 증가할 수 있습니다. 외부 데이터 소스에 대한 종속성은 지연을 유발하고 테스트 성능에 영향을 줄 수 있습니다. 프로덕션 데이터를 복사하면 민감한 정보가 포함될 수 있으므로 위험합니다. 이러한 과제를 해결하려면 테스트 데이터를 신중하고도 전략적으로 관리해야 합니다.</p>
+
+<h2 id="how_to_implement_test_data_management" data-text="테스트 데이터 관리 구현 방법">테스트 데이터 관리 구현 방법</h2>
+
+<p><a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment(DORA)</a>의 분석에 따르면 성공적인 팀의 테스트 데이터 관리 접근 방식은 다음과 같은 핵심 원칙을 따릅니다.</p>
+
+<ul>
+<li>적절한 테스트 데이터를 사용하여 자동 테스트 도구 모음 전체를 실행할 수 있습니다.</li>
+<li>필요 시 자동 테스트 도구 모음의 테스트 데이터를 가져올 수 있습니다.</li>
+<li>테스트 데이터에 따라 팀이 실행할 수 있는 자동 테스트가 제한 또는 제약되지 않습니다.</li>
+</ul>
+
+<p>테스트 데이터 관리 프로세스를 개선하려면 모든 개발팀에서 이러한 각 조건을 충족하도록 노력해야 합니다. 이러한 관행은 전반적인 <a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">테스트 자동화</a> 및 <a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">지속적 통합</a> 기능에도 긍정적으로 기여할 수 있습니다.</p>
+
+<h2 id="common_pitfalls_in_test_data_management" data-text="테스트 데이터 관리의 일반적인 문제">테스트 데이터 관리의 일반적인 문제</h2>
+
+<p>테스트 데이터는 관리하기 어려울 수 있습니다. 테스트 데이터 관리에서 일반적으로 발생하는 문제는 다음과 같습니다.</p>
+
+<ul>
+<li>테스트 시 데이터에 대한 의존도가 높습니다. 특히 단위 테스트는 테스트 범위를 벗어난 데이터 또는 상태에 의존해서는 안 됩니다.</li>
+<li>관련이 있거나 중요한 부분을 식별하지 않고 프로덕션 데이터베이스의 전체 사본을 사용합니다.</li>
+<li>민감한 정보를 마스킹하거나 해싱하지 않습니다.</li>
+<li>오래되었거나 더 이상 관련이 없는 데이터에 의존합니다.</li>
+</ul>
+
+<h2 id="ways_to_improve_test_data_management" data-text="테스트 데이터 관리를 개선하는 방법">테스트 데이터 관리를 개선하는 방법</h2>
+
+<p>다음과 같은 방법으로 테스트 데이터를 보다 효과적이고 효율적으로 사용할 수 있습니다.</p>
+
+<ol>
+<li><p><strong>단위 테스트를 선호합니다</strong>. 단위 테스트는 서로 독립적이면서 테스트 중인 코드를 제외한 시스템의 다른 부분과도 독립적이어야 합니다. 단위 테스트는 외부 데이터에 의존해서는 안 됩니다. <a href="https://martinfowler.com/articles/practical-test-pyramid.html#TheTestPyramid" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">테스트 자동화 피라미드</a>에 정의된 대로 단위 테스트는 테스트의 대부분을 구성해야 합니다. 잘 설계된 코드베이스에 대해 실행되는 잘 작성된 단위 테스트는 상위 수준 테스트보다 훨씬 더 분류하기 쉽고 유지보수 비용이 저렴합니다. 단위 테스트의 범위를 늘리면 외부 데이터를 사용하는 상위 수준 테스트에 대한 의존도를 최소화할 수 있습니다.</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-test-automation-pyramid.svg" alt="테스트 자동화 피라미드"/></p></li>
+<li><p><strong>테스트 데이터에 대한 의존도를 최소화합니다</strong>. 테스트 데이터는 신중하고 지속적인 유지보수가 필요합니다. API와 인터페이스가 발전함에 따라 관련 테스트 데이터를 업데이트하거나 다시 만들어야 합니다. 이러한 프로세스는 팀의 작업 속도에 부정적인 영향을 미칠 수 있어 비용으로 인식됩니다. 따라서 자동 테스트를 실행하는 데 필요한 테스트 데이터의 양을 최소화하는 것이 좋습니다.</p></li>
+<li><p><strong>테스트 데이터를 격리합니다</strong>. 입력을 제어하고 실제 출력과 비교 가능한 예상 출력으로 잘 정의된 환경에서 테스트를 실행합니다. 특정 테스트에 사용되는 데이터가 해당 테스트와 명백하게 연관되어 있고 다른 테스트나 프로세스에 의해 수정되지 않는지 확인합니다.
+가급적 테스트는 설정 과정에서 애플리케이션의 API를 사용하여 필요한 상태를 만들어야 합니다. 또한 테스트 데이터 격리는 여러 테스트를 동시에 실행하기 위한 기본 요건입니다.</p></li>
+<li><p><strong>데이터베이스에 저장된 테스트 데이터에 대한 의존도를 최소화합니다</strong>. 데이터베이스에 저장된 테스트 데이터를 유지하는 것은 다음과 같은 이유로 특히 어려울 수 있습니다.</p>
+
+<ol>
+<li><strong>테스트 격리 상태가 좋지 않음</strong>. 데이터베이스는 데이터를 지속적으로 저장합니다. 명시적으로 재설정하지 않는 한 모든 데이터 변경사항은 테스트 간에 유지됩니다.
+테스트 입력의 안정성이 낮으면 테스트 격리가 더 어려워지고 동시 로드가 되지 않을 수 있습니다.</li>
+<li><strong>성능에 영향을 미침</strong>. 실행 속도는 자동 테스트의 핵심 요구사항입니다. 데이터베이스와의 상호작용은 일반적으로 로컬에 저장된 데이터와의 상호작용보다 느리고 번거롭습니다. 가급적이면 인메모리 데이터베이스를 사용하세요.</li>
+</ol></li>
+<li><p><strong>테스트 데이터의 가용성을 높입니다</strong>. 전체 프로덕션 데이터베이스의 사본에 대해 테스트를 실행하면 위험할 수 있습니다. 데이터를 새로 고치기가 까다롭고 느릴 수 있습니다. 따라서 데이터가 오래될 수 있습니다.
+또한 프로덕션 데이터에는 민감한 정보도 포함될 수 있습니다. 그보다는 테스트에 필요한 관련성 높은 데이터 부분을 식별하고 해당 부분을 정기적으로 내보내 테스트에 쉽게 사용할 수 있도록 하는 것이 좋습니다.</p></li>
+</ol>
+
+<h2 id="how_to_measure_test_data_management" data-text="테스트 데이터 관리 측정 방법">테스트 데이터 관리 측정 방법</h2>
+
+<p>테스트 데이터의 관리 방법이 발전함에 따라 앞서 설명한 핵심 원칙에 따라 진행 상황을 측정하는 것이 중요합니다.</p>
+
+<ol>
+<li><strong>적절한 테스트 데이터를 사용하여 자동 테스트 도구 모음 전체를 실행할 수 있습니다</strong>.
+개발자와 테스터가 테스트 도구 모음에서 사용할 데이터를 관리하고 조작하는 데 소요한 시간을 추적하여 이를 측정할 수 있습니다. 또한 지각적 척도(즉, 설문조사)를 통해 팀에 작업에 적절한 데이터가 있는지 또는 데이터로 인한 제약이 있는지 질문함으로써 이를 캡처할 수도 있습니다.</li>
+<li><strong>필요 시 자동 테스트 도구 모음의 테스트 데이터를 가져올 수 있습니다</strong>. 사용 가능한 주요 데이터 세트의 비율, 데이터 세트의 액세스 빈도, 새로고침 빈도로 이를 측정할 수 있습니다.</li>
+<li><strong>테스트 데이터에 따라 팀이 실행할 수 있는 자동 테스트가 제한 또는 제약되지 않습니다</strong>. 추가 테스트 데이터를 확보할 필요 없이 실행할 수 있는 자동 테스트의 수로 이를 측정할 수 있습니다. 또한 지각적 척도(즉, 설문조사)를 통해 팀에 테스트 데이터로 인한 자동 테스트 활동의 제한이 있는지 질문함으로써 이를 캡처할 수도 있습니다.</li>
+</ol>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li>테스트와 CI/CD로 <a href="/blog/products/application-development/release-with-confidence-how-testing-and-cicd-can-keep-bugs-out-of-production" track-type="article" track-name="internalLink" track-metadata-position="body">프로덕션에서 버그를 제거</a>하는 방법을 알아보세요.</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

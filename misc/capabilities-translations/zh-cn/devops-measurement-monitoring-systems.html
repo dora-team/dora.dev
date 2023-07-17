@@ -1,0 +1,92 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>开发运营测量：监控系统以做出明智的业务决策</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：“监控系统以做出明智的业务决策”<em></em>是一组推动实现更出色的软件交付表现和组织绩效的能力之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>监控是收集、分析和使用信息跟踪应用和基础架构以指导业务决策的过程。
+监控是一项关键功能，因为它可以让您深入了解您的系统和工作。 正确实施的监控还可以为您提供快速反馈，以便您在软件开发生命周期的早期阶段快速发现并解决问题。</p>
+
+<p>监控还可以帮助您将有关您系统的信息传达给软件开发和交付流水线的其他领域人员以及其他业务部门。在运营的下游获取的知识可能会传达到开发和产品管理团队之类的上游团队。例如，相关人员可以通过运营使用 NoSQL 数据库作为数据存储空间的高可扩缩性应用获得一些知识，这些知识对于构建类似应用的开发者来说可能是很有价值的信息。</p>
+
+<p>通过这种知识传递，团队可以快速获取知识，不论这些知识是来自于生产问题、部署错误还是来自于客户使用模式。随后，您可以在整个组织中分享这些知识，以帮助人们提高水平、改进系统。</p>
+
+<h2 id="how_to_implement_monitoring" data-text="如何实施监控">如何实施监控</h2>
+
+<p>以下几点是实施有效监控的关键：</p>
+
+<ul>
+<li>从整个价值链的关键方面（包括应用性能和基础架构）收集数据。</li>
+<li>利用收集到的数据做出业务决策。</li>
+</ul>
+
+<h3 id="collecting_data" data-text="收集数据">收集数据</h3>
+
+<p>如需更有效地收集数据，您应该实施监控解决方案作为本地服务或代管式服务），用于了解开发工作、测试、质量检查和 IT 运营。请务必选择适合功能和业务的指标。</p>
+
+<h3 id="using_data_to_make_business_decisions" data-text="利用数据做出业务决策">利用数据做出业务决策</h3>
+
+<p>当您将收集到的数据进行转换和呈现时，不同的受众群体可以访问这些数据，从而做出决策。例如，您可能想在上游分享运营数据。您还可以将这些数据适当地集成到报告和简报中，并在会议中使用这些数据做出明智的业务决策。这里所说的“适当”<em></em>是指“相关、及时、准确、易于理解”。</p>
+
+<p>在此类会议中，请务必提供相关信息，以帮助可能不熟悉这些数据的人员了解这些数据与讨论话题的关系，以及这些数据如何帮助人们做出明智的决策。例如，您可能想知道如何回答以下问题：</p>
+
+<ul>
+<li>这些价值是相对较高还是较低？</li>
+<li>它们是预期的吗？</li>
+<li>您预计会发生变化吗？</li>
+<li>这些数据与历史报告有何不同？</li>
+<li>您的技术或基础架构是否以有趣或不明显的方式影响了相关数字？</li>
+</ul>
+
+<h2 id="common_pitfalls_in_monitoring" data-text="监控中的常见误区">监控中的常见误区</h2>
+
+<p>下面列出了监控系统时的常见误区：</p>
+
+<ul>
+<li><p><strong>反应性监控</strong>。例如，相关人员仅在系统出现故障时才收到提醒通知，而没有事先使用监控数据在系统接近临界阈值时主动发出提醒通知。</p></li>
+<li><p><strong>监控范围太小</strong>。例如，相关人员仅监控一个或两个方面，而没有监控整个软件开发和交付流水线。此误区注重指标，仅关注所衡量的方面，而该方面可能不是要监控的最佳方面。</p></li>
+<li><p><strong>专注于局部优化</strong>。例如，相关人员专注于减少某项服务的存储需求的响应时间，而没有评估更广泛的基础架构是否也可以从相同的改进措施中受益。</p></li>
+<li><p><strong>监控一切</strong>。通过收集系统上的所有数据以及报告系统上的所有信息，您可能会面临系统过度提醒或数据过度庞杂的风险。采取明智的监控方法有助于关注关键方面。</p></li>
+</ul>
+
+<h2 id="ways_to_improve_monitoring" data-text="改进监控的方法">改进监控的方法</h2>
+
+<p>为了提高监控效果，我们建议您重点关注两个主要方面：</p>
+
+<ol>
+<li><p><strong>从整个价值链的关键方面收集数据。</strong></p>
+
+<p>通过分析收集到的数据并进行差距分析，您可以确保为组织收集到合适的数据。</p></li>
+<li><p><strong>利用收集到的数据做出业务决策。</strong></p>
+
+<p>您收集到的数据应该为整个组织带来价值，而且您选择的指标必须对您的组织有意义。
+有意义的数据可以供许多团队（从 DevOps 团队到财务团队）使用。</p>
+
+<p>找到合适的媒介来显示监控信息也很重要。您需要为信息的不同用途选择不同的表示方式。对于开发运营团队而言，实时信息中心可能最有用；对于较长时期测量的指标而言，定期生成的业务报告可能会很有用。</p>
+
+<p>最重要的是，务必要确保数据可用、共享并且有助于指导决策。如果共享电子表格是能够帮助您初期启动的最好方式，那就使用它，以后再升级为高级的信息中心。不要让完美主义阻碍了您的步伐，足够好就可以了。</p></li>
+</ol>
+
+<h2 id="ways_to_measure_monitoring" data-text="衡量监控效果的方法">衡量监控效果的方法</h2>
+
+<p>有效的监控有助于在软件开发和交付过程中提高性能。不过，衡量监控的效果可能难以在系统中实现。尽管您也许能够自动测量从系统中收集了多少数据以及这些数据的类型，但是要知道系统是否正在使用这些数据或者系统正在何处使用这些数据却比较困难。</p>
+
+<p>为了帮助您衡量组织中的监控效果，请考虑人们对以下陈述的同意或不同意的程度：</p>
+
+<ul>
+<li>人们利用来自应用性能监控工具的数据做出业务决策。</li>
+<li>人们利用来自基础架构监控工具的数据做出业务决策。</li>
+</ul>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需查看其他文章和资源的链接，请参阅<a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">“开发运营”页面</a>。</li>
+<li>阅读<a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">《站点可靠性工程 (SRE)》一书</a>。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

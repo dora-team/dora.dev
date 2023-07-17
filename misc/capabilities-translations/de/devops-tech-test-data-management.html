@@ -1,0 +1,81 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Technologie: Testdatenverwaltung</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> Die <em>Verwaltung von Testdaten</em> gehört zu einer Reihe von Funktionen, die zu einer höheren Softwarebereitstellung und Unternehmensleistung führen. Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">"State of DevOps"-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, wissenschaftlich exakten Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Automatisierte Tests</a> sind ein wichtiger Bestandteil moderner Softwarebereitstellungspraktiken. Die Möglichkeit zum Ausführen umfassender Einheiten-, Integrations- und Systemtests ist für den Nachweis unerlässlich, dass sich Ihre Anwendung oder Ihr Dienst erwartungsgemäß verhält und sicher in der Produktion bereitgestellt werden kann. Damit Ihre Tests realistische Szenarien validieren, ist es von entscheidender Bedeutung, den Tests realistische Daten zur Verfügung zu stellen.</p>
+
+<p>Testdaten sind wichtig, da sie für alle Arten von Tests in der gesamten Testsuite erforderlich sind, einschließlich manueller und automatisierter Tests. Mit guten Testdaten können Sie gängiges oder wichtiges Nutzerverhalten validieren, auf Grenzfälle testen, Mängel reproduzieren und Fehler simulieren.</p>
+
+<p>Allerdings ist die effektive Nutzung und Verwaltung von Testdaten kein Kinderspiel. Eine übermäßige Abhängigkeit von Daten, die außerhalb des Testumfangs definiert sind, kann Ihre Tests problemanfällig machen und die Kosten für die Pflege der Daten erhöhen. Abhängigkeiten von externen Datenquellen können zu Verzögerungen führen und die Testleistung beeinträchtigen. Das Kopieren von Produktionsdaten birgt Risiken, da sie möglicherweise vertrauliche Informationen enthalten. Damit Sie diese Herausforderungen bewältigen können, müssen Sie Ihre Testdaten umsichtig und strategisch verwalten.</p>
+
+<h2 id="how_to_implement_test_data_management" data-text="Testdatenverwaltung implementieren">Testdatenverwaltung implementieren</h2>
+
+<p>Eine von <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> durchgeführte Analyse zeigt, dass erfolgreiche Teams die Testdatenverwaltung mit den folgenden Grundprinzipien angehen:</p>
+
+<ul>
+<li>Für die Ausführung vollständig automatisierter Testsuiten sind ausreichend Testdaten verfügbar.</li>
+<li>Testdaten für automatisierte Testsuiten können bei Bedarf abgerufen werden.</li>
+<li>Testdaten schränken die automatisierten Tests nicht ein, die Teams ausführen können.</li>
+</ul>
+
+<p>Zum Verbessern von Prozessen zur Testdatenverwaltung sollten Sie möglichst jede dieser Bedingungen in allen Entwicklungsteams erfüllen. Diese Praktiken können auch einen positiven Beitrag zu Ihren allgemeinen <a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Testautomatisierungs-</a> und <a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">Continuous-Integration</a>-Funktionen leisten.</p>
+
+<h2 id="common_pitfalls_in_test_data_management" data-text="Häufige Probleme bei der Testdatenverwaltung">Häufige Probleme bei der Testdatenverwaltung</h2>
+
+<p>Das Verwalten von Testdaten kann schwierig sein. Die folgenden Probleme treten häufig bei der Testdatenverwaltung auf:</p>
+
+<ul>
+<li>Übermäßige Abhängigkeit von Daten beim Testen. Insbesondere sollten Einheitentests nicht von testexternen Daten oder Zuständen abhängen.</li>
+<li>Verwendung einer vollständigen Kopie der Produktionsdatenbank, anstatt relevante oder wichtige Teile zu identifizieren.</li>
+<li>Kein Maskieren oder Hashing von sensiblen Daten.</li>
+<li>Abhängigkeit von Daten, die veraltet oder nicht mehr relevant sind.</li>
+</ul>
+
+<h2 id="ways_to_improve_test_data_management" data-text="Möglichkeiten zum Verbessern der Testdatenverwaltung">Möglichkeiten zum Verbessern der Testdatenverwaltung</h2>
+
+<p>Die folgenden Praktiken können Ihnen dabei helfen, Testdaten effektiver und effizienter zu nutzen:</p>
+
+<ol>
+<li><p><strong>Verwenden Sie bevorzugt Einheitentests.</strong> Einheitentests sollten voneinander und von allen anderen Teilen des Systems außer dem zu testenden Code unabhängig sein. Einheitentests sollten nicht von externen Daten abhängig sein. Wie in der <a href="https://martinfowler.com/articles/practical-test-pyramid.html#TheTestPyramid" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Testautomatisierungspyramide</a> definiert, sollten Einheitentests den Großteil Ihrer Tests ausmachen. Gut geschriebene Einheitentests, die auf einer gut durchdachten Codebasis ausgeführt werden, sind viel leichter zu sichten und kostengünstiger zu pflegen als Tests auf höherer Ebene. Wenn Sie mehr Bereiche mit Einheitentests abdecken, können Sie die Abhängigkeit von Tests minimieren, die auf höherer Ebene angesiedelt sind und externe Daten nutzen.</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-test-automation-pyramid.svg" alt="Grafik: Testautomatisierungspyramide"/></p></li>
+<li><p><strong>Minimieren Sie die Abhängigkeit von Testdaten.</strong> Testdaten erfordern sorgfältige und kontinuierliche Pflege. Wenn sich Ihre APIs und Schnittstellen weiterentwickeln, müssen Sie zugehörige Testdaten aktualisieren oder neu erstellen. Dieser Prozess stellt einen Kostenfaktor dar, der sich negativ auf die Teamgeschwindigkeit auswirken kann. Daher empfiehlt es sich, die Menge der Testdaten zu minimieren, die zum Ausführen automatisierter Tests erforderlich sind.</p></li>
+<li><p><strong>Isolieren Sie die Testdaten.</strong> Führen Sie die Tests in klar definierten Umgebungen mit kontrollierten Eingaben und erwarteten Ausgaben aus, die mit tatsächlichen Ausgaben verglichen werden können. Achten Sie darauf, dass die von einem bestimmten Test verwendeten Daten explizit mit diesem Test verknüpft sind und nicht durch andere Tests oder Prozesse geändert werden.
+Nach Möglichkeit sollten die Tests den erforderlichen Zustand im Rahmen der Einrichtung selbst erstellen und dabei die APIs der Anwendung verwenden. Das Isolieren der Testdaten ist außerdem eine Voraussetzung für die parallele Ausführung von Tests.</p></li>
+<li><p><strong>Minimieren Sie die Abhängigkeit von Testdaten, die in Datenbanken gespeichert sind.</strong> Die Pflege von Testdaten, die in Datenbanken gespeichert sind, kann aus folgenden Gründen besonders schwierig sein:</p>
+
+<ol>
+<li><strong>Schlechte Testisolierung.</strong> Datenbanken speichern Daten dauerhaft. Alle Änderungen an den Daten bestehen testübergreifend fort, sofern sie nicht explizit zurückgesetzt werden.
+Weniger zuverlässige Testeingaben erschweren die Testisolation und können die Parallelisierung verhindern.</li>
+<li><strong>Leistungsbeeinträchtigung.</strong> Eine schnelle Ausführung ist eine wichtige Voraussetzung für automatisierte Tests. Die Interaktion mit einer Datenbank ist normalerweise langsamer und umständlicher als die Interaktion mit lokal gespeicherten Daten. Bevorzugen Sie daher nach Möglichkeit In-Memory-Datenbanken.</li>
+</ol></li>
+<li><p><strong>Machen Sie Testdaten leicht verfügbar.</strong> Das Ausführen von Tests auf Basis einer Kopie einer vollständigen Produktionsdatenbank ist mit Risiken verbunden. Das Aktualisieren der Daten kann eine echte Herausforderung sein und langsam vonstattengehen. Deshalb sind die Daten möglicherweise nicht auf dem neuesten Stand.
+Außerdem können Produktionsdaten vertrauliche Informationen enthalten. Identifizieren Sie also stattdessen relevante Datenbereiche, die für die Tests erforderlich sind. Exportieren Sie diese Bereiche regelmäßig und machen Sie sie für Tests leicht verfügbar.</p></li>
+</ol>
+
+<h2 id="how_to_measure_test_data_management" data-text="Testdatenverwaltung messen">Testdatenverwaltung messen</h2>
+
+<p>Im Zuge der Weiterentwicklung Ihrer Testdatenverwaltung ist es wichtig, den Fortschritt anhand der zuvor beschriebenen Grundprinzipien zu messen.</p>
+
+<ol>
+<li><strong>Für die Ausführung vollständig automatisierter Testsuiten sind ausreichend Testdaten verfügbar.</strong>
+Für diese Messung können Sie die Zeit erfassen, die Entwickler und Tester mit dem Verwalten und Bearbeiten von Daten für die Verwendung in Testsuiten verbringen. Sie können dafür auch wahrnehmungsbasierte Messungen (d. h. Umfragen) durchführen und Teams fragen, ob sie adäquate Daten für ihre Arbeit haben oder der Meinung sind, dass dieser Punkt für sie eine Einschränkung darstellt.</li>
+<li><strong>Testdaten für automatisierte Testsuiten können bei Bedarf abgerufen werden.</strong> Sie können dies als Prozentsatz der verfügbaren Schlüssel-Datasets und als Anzahl der Zugriffs- und Aktualisierungsvorgänge für diese Datasets messen.</li>
+<li><strong>Testdaten schränken die automatisierten Tests nicht ein, die Teams ausführen können.</strong> Für diese Messung können Sie die Anzahl der automatisierten Tests erfassen, die ausgeführt werden können, ohne dass zusätzliche Testdaten erforderlich sind. Sie können dafür auch wahrnehmungsbasierte Messungen (d. h. Umfragen) durchführen und Teams fragen, ob sie das Gefühl haben, dass ihre automatisierten Testaktivitäten durch Testdaten eingeschränkt werden.</li>
+</ol>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Nächste Schritte</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li>Mithilfe von Tests und CI/CD <a href="/blog/products/application-development/release-with-confidence-how-testing-and-cicd-can-keep-bugs-out-of-production" track-type="article" track-name="internalLink" track-metadata-position="body">Programmfehler in der Produktion vermeiden</a></li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

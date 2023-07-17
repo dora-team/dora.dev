@@ -1,0 +1,141 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 기술: 지속적 배포(continuous delivery)</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>참고:</strong><span> <em>지속적 배포</em>는 소프트웨어 제공 및 조직 성능 향상을 가져오는 기능 집합 중 하나입니다. 이러한 기능은 성과 향상을 이끌어내는 관례와 기능을 독립적이자 학술적으로 심층 연구하는 <a href="https://www.devops-research.com/research.html">DORA State of DevOps 연구 프로그램</a>을 통해 개발되었습니다. 자세한 내용은 <a href="/devops">DevOps 리소스</a>를 참조하세요.</span></aside>
+<p>지속적 배포는 모든 종류의 주문형 변경사항을 빠르고 안전하고 지속 가능하게 출시할 수 있는 기능입니다. 지속적 배포를 담당하는 팀은 사용자에게 영향을 주지 않고 일반적인 업무 시간을 포함하여 언제든지 위험도가 낮은 방식으로 소프트웨어를 출시하고 프로덕션을 변경할 수 있습니다.</p>
+
+<p>다음을 포함하여 모든 소프트웨어 컨텍스트에 지속적 배포의 원칙과 관행을 적용할 수 있습니다.</p>
+
+<ul>
+<li>복잡한 분산형 시스템에서 서비스 업데이트</li>
+<li>메인프레임 소프트웨어 업그레이드</li>
+<li>인프라 구성 변경</li>
+<li>데이터베이스 스키마 변경</li>
+<li>펌웨어 자동 업데이트</li>
+<li>모바일 앱의 새 버전 출시</li>
+</ul>
+
+<p>팀에서 지속적 배포를 수행하면 다음 조건을 충족할 수 있습니다.</p>
+
+<ul>
+<li>소프트웨어가 수명 주기 전체에 걸쳐 배포 가능한 상태로 유지합니다.</li>
+<li>새로운 기능에 대한 작업보다 소프트웨어를 배포 가능한 상태로 유지하는 것이 우선시됩니다.</li>
+<li>작업 대상 시스템의 품질과 배포 가능성에 대한 신속한 의견이 모든 팀원에게 제공됩니다.</li>
+<li>시스템을 배포할 수 없다는 의견을 받으면(예: 빌드 실패 또는 테스트 실패) 이 문제를 최우선적으로 해결합니다.</li>
+<li>언제든지 필요할 때마다 시스템을 프로덕션 또는 최종 사용자에게 배포할 수 있습니다.</li>
+</ul>
+
+<p>지속적 배포는 일반적으로 지속적 배포(continuous deployment)와 같은 것으로 취급되지만 실제로는 서로 다른 관행입니다. 지속적 배포(continuous deployment)는 팀이 모든 코드 변경사항을 프로덕션에 가능한 빨리 배포하려고 시도하는 경우를 말합니다. 지속적 배포(continuous deployment)는 웹 서비스에서 잘 작동하지만 펌웨어나 모바일 앱과 같은 소프트웨어에 적용될 수 없습니다. 지속적 배포는 엄격한 규제 환경에서 펌웨어와 메인프레임 시스템을 포함한 모든 종류의 소프트웨어에 적용됩니다. 지속적 배포(continuous deployment)를 시작할 의사가 없더라도 지속적 배포를 시작할 수 있으며 그렇게 해야 합니다.</p>
+
+<p>지속적 배포와 지속적 배포(continuous deployment)는 위험하므로 규제를 받거나 안전이 중요한 영역에 적합하지 않은 것으로 잘못 알려져 있습니다. 하지만 지속적 배포의 목표는 소프트웨어 위험을 줄이는 것입니다. DORA 연구 결과에 따르면 잘 구현된 경우 높은 수준의 안정성과 가용성을 일관성 있게 달성합니다. 지속적 테스트, 개발 초기부터 보안 문제 반영, 포괄적인 테스트, 관측 가능성 등 지속적 배포를 도출하는 기술 관행은 엄격하게 규제되고 안전이 우선시되는 영역에서 더욱 중요합니다. 지속적 배포는 금융 서비스 및 정부와 같은 엄격한 규제 영역에서 수차례 성공적으로 적용되어 왔습니다.</p>
+
+<p>지속적 배포는 모든 종류의 소프트웨어에 수행될 수 있지만 까다로운 작업입니다. 그럼에도 불구하고 큰 이점이 있습니다. <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment(DORA)</a> 연구 결과에 따르면 지속적 배포를 잘 수행하면 다음과 같은 이점이 있습니다.</p>
+
+<ul>
+<li><a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">4가지 주요 측정항목</a>을 기준으로 측정되는 소프트웨어 제공 실적이 향상되고 가용성이 높아집니다.</li>
+<li>팀이 개선 작업 또는 계획되지 않은 작업에 소비하는 시간의 비율을 기준으로 측정되는 품질이 향상됩니다(<a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">2016 State of DevOps Report</a> 25~26페이지 및 <a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">2018 State of DevOps Report</a> 27~29페이지 참조).</li>
+<li>업무로 인한 부담(과로 또는 스트레스로 인한 물리적, 정신적 또는 감정적 소진)이 줄어들고 <a href="/architecture/devops/devops-culture-job-satisfaction" track-type="article" track-name="internalLink" track-metadata-position="body">직무 만족도</a>가 높아지며 <a href="/architecture/devops/devops-culture-westrum-organizational-culture" track-type="article" track-name="internalLink" track-metadata-position="body">조직 문화</a>가 향상됩니다.</li>
+<li>엔지니어와 기술 직원이 코드를 프로덕션에 푸시할 때 겪는 두려움과 불안뿐만 아니라 배포의 어려움과 부담이 줄어듭니다.</li>
+<li>문화에 영향을 미쳐 <a href="https://rework.withgoogle.com/print/guides/5721312655835136/">심리적 안정감</a>이 높아지고 <a href="/architecture/devops/devops-culture-westrum-organizational-culture" track-type="article" track-name="internalLink" track-metadata-position="body">업무 우선의 조직 문화</a>가 고취됩니다.</li>
+</ul>
+
+<p>다음 다이어그램에서는 일련의 기술 관행이 지속적 배포에 어떻게 영향을 미쳐 위에 나열된 성과를 이끌어내는지 보여줍니다.</p>
+
+<p><img src="/static/architecture/devops/images/continuous-delivery-technical-practices.png" alt="기술 관행이 다른 기능의 성과에 미치는 영향" width="80%" class="screenshot"/> </p>
+
+<p>지속적 배포는 앞에서 논의한 성과를 도출하는 여러 가지 기능 중 하나에 불과합니다. <a href="https://devops-research.com/research.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">DORA 연구 프로그램</a>에서 논의된 기타 문화와 조직 기능도 이러한 성과를 이끌어냅니다. 이 문서에 설명된 기술 관행을 구현하면 지속적 배포를 달성할 수 있습니다.</p>
+
+<h2 id="implementing_continuous_delivery" data-text="지속적 배포 구현">지속적 배포 구현</h2>
+
+<p>DORA 연구에 따르면 다음의 기술적 기능을 사용하면 지속적 배포가 달성되는 것으로 밝혀졌습니다. 조직 내 <a href="/architecture/devops/devops-culture-transformational-leadership" track-type="article" track-name="internalLink" track-metadata-position="body">혁신적 리더십</a>도 이러한 여러 가지 기술적 기능을 구현합니다.</p>
+
+<p>다음의 지속적 배포 관행을 구현하면 팀이 처리량을 높이고 출시 위험을 줄일 수 있습니다.</p>
+
+<ul>
+<li><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">테스트 자동화</a>: 개발자가 만들고 유지보수하는 포괄적인 자동 테스트 모음을 사용합니다. 효과적인 테스트 도구 모음을 신뢰할 수 있습니다. 즉, 테스트를 통해 실제 오류를 찾고 출시 가능한 코드만 전달합니다.</li>
+<li><a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">배포 자동화</a>: 배포가 완전히 자동화되고 수동 개입이 필요 없는 정도입니다.</li>
+<li><a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">트렁크 기반 개발</a>: 코드 저장소에서 활성 브랜치가 세 개 미만이고, 메인라인에 병합되기 전에 브랜치와 포크의 수명이 짧으며(예: 1일 미만), 병합 충돌, 코드 동결 또는 안정화 단계 등으로 인해 애플리케이션팀이 코드를 체크인하거나 pull 요청을 할 수 없을 때 <em>코드 잠금</em> 기간이 드물게 발생하거나 절대 발생하지 않는 것이 특징입니다.</li>
+<li><a href="/architecture/devops/devops-tech-shifting-left-on-security" track-type="article" track-name="internalLink" track-metadata-position="body">개발 초기부터 보안 문제 반영</a>: 소프트웨어 개발 프로세스의 설계 및 테스트 단계에 보안을 통합합니다. 이 프로세스에는 애플리케이션의 보안 검토 실시, 애플리케이션의 설계 및 데모 프로세스에 정보 보안 팀 포함, 사전 승인된 보안 라이브러리와 패키지 사용, 자동 테스트 모음의 일부로 보안 기능 테스트 등이 포함됩니다.</li>
+<li><a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">느슨하게 연결된 아키텍처</a>: 팀이 다른 서비스와 조정하지 않고도 필요에 따라 애플리케이션을 테스트하고 배포할 수 있는 아키텍처입니다. 느슨하게 연결된 아키텍처를 사용하면 팀이 다른 팀의 지원과 서비스를 받지 않고도 독립적으로 작업할 수 있으므로 작업을 빠르게 수행하고 조직에 가치를 부여할 수 있습니다.</li>
+<li><a href="/architecture/devops/devops-tech-teams-empowered-to-choose-tools" track-type="article" track-name="internalLink" track-metadata-position="body">팀에게 도구 선택 권한 부여</a>: 사용할 도구를 선택할 수 있는 팀이 지속적 배포를 더욱 효과적으로 수행합니다.
+효과적인 업무 수행에 무엇이 필요한지에 대해 실무자보다 더 잘 아는 사람은 없습니다.</li>
+<li><a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">지속적 통합(CI)</a>: 코드가 정기적으로 체크인되고 체크인할 때마다 일련의 간단한 테스트를 트리거하여 회귀 문제를 발견하고 개발자가 이를 바로 해결할 수 있습니다. CI 프로세스에서는 최종적으로 배포되고 출시되는 정규 빌드와 패키지를 만듭니다.</li>
+<li><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">지속적 테스트</a>: <em>개발 완료</em> 후에 별도의 단계가 아닌 소프트웨어 제공 수명 주기 전반에 걸쳐 테스트합니다. 지속적 테스트에서는 개발자와 테스터가 함께 작업합니다. 잘 구현된 경우 테스트 기반 개발을 수행하고 10분 안에 테스트를 통해 의견을 받으며 테스트 모음을 지속적으로 검토 및 개선할 수 있습니다(예: 결함을 더욱 효율적으로 찾고 복잡성을 지속적으로 제어하기 위해).</li>
+<li><a href="/architecture/devops/devops-tech-version-control" track-type="article" track-name="internalLink" track-metadata-position="body">버전 제어</a>: 애플리케이션 코드, 애플리케이션 구성, 시스템 구성, 환경 빌드 및 구성 자동화용 스크립트를 비롯한 모든 프로덕션 아티팩트에 Git 또는 Subversion과 같은 버전 제어 시스템을 사용합니다.</li>
+<li><a href="/architecture/devops/devops-tech-test-data-management" track-type="article" track-name="internalLink" track-metadata-position="body">테스트 데이터 관리</a>: 테스트 모음을 실행할 수 있는 적절한 데이터, 필요 시 필요한 데이터 획득 기능, 실행 가능한 테스트 수를 제한하지 않는 데이터 등이 확보되면 효과적인 구현이 가능합니다. 팀은 자동화된 테스트를 실행하는 데 필요한 테스트 데이터의 양을 가능한 한 최소화해야 합니다.</li>
+<li><a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="article" track-name="internalLink" track-metadata-position="body">포괄적인 모니터링 및 관측 가능성</a>: 팀이 시스템 상태를 파악할 수 있습니다. 효과적인 솔루션을 갖추면 팀이 사용자가 경험한 시스템 상태를 포함하여 사전 정의된 측정항목을 모니터링할 수 있으며 엔지니어가 대화형 방식으로 시스템을 디버깅하고 발생하는 속성과 패턴을 파악할 수 있습니다.</li>
+<li><a href="/architecture/devops/devops-measurement-proactive-failure-notification" track-type="article" track-name="internalLink" track-metadata-position="body">사전 알림</a>: 팀이 사전에 문제를 감지하고 완화할 수 있도록 시스템 상태를 모니터링합니다.</li>
+<li><a href="/architecture/devops/devops-tech-database-change-management">데이터베이스 변경 관리</a>: 데이터베이스 변경사항을 버전 제어되는 스크립트로 저장하고 이러한 변경사항을 프로덕션 애플리케이션 변경사항과 동일한 방식으로 관리하며, 데이터베이스 변경사항을 소프트웨어 제공 수명 주기 전반에 걸쳐 모든 사람(엔지니어 포함)이 볼 수 있도록 만들고, 애플리케이션 변경으로 인해 데이터베이스를 변경해야 하는 경우 모든 당사자가 이를 알리는 등 몇 가지 주요 관행을 따르면 데이터베이스를 변경하더라도 팀의 업무 처리 속도는 느려지지 않습니다.</li>
+<li><a href="/architecture/devops/devops-tech-code-maintainability">코드 유지보수성</a>: 개발자가 다른 사람이 유지보수하는 코드를 쉽게 변경하고, 코드베이스에서 예시를 찾을 수 있고, 다른 사람의 코드를 재사용하고, 코드를 훼손하지 않고 새로운 버전의 종속 항목을 추가, 업그레이드, 마이그레이션할 수 있는 시스템과 도구를 가리킵니다.</li>
+</ul>
+
+<p>지속적 배포는 지속적 통합과 결합되어 <em>CI/CD</em>라는 약어로 불리우는 경우가 많지만 연구 결과에 따르면 지속적 통합은 지속적 배포를 구현하는 한 가지 요소에 불과합니다. 출시 안정성을 높이고 위험을 낮추려면 소프트웨어 개발자뿐만 아니라 소프트웨어 제공 프로세스에 참여하는 모든 사람 간의 긴밀한 공동작업이 필요합니다. 또한 팀은 새로운 업무 방식을 채택하고 새로운 기술을 습득해야 합니다.</p>
+
+<h2 id="common_pitfalls_of_implementing_continuous_delivery" data-text="지속적 배포 구현 시의 일반적인 문제">지속적 배포 구현 시의 일반적인 문제</h2>
+
+<p>일부 조직에서는 기존 배포 프로세스를 더 자주 수행하면 지속적 배포를 구현할 수 있다고 생각합니다. 그러나 지속적 배포를 이끌어내는 기술적 기능을 구현하려면 일반적으로 상당한 프로세스 및 아키텍처 변경이 필요합니다. 프로세스와 아키텍처를 개선하지 않은 채로 배포 빈도를 높이기만 하면 실패율이 높아지고 팀이 과중한 작업 부담에 놓이게 될 가능성이 높습니다.</p>
+
+<p>지속적 배포는 버전 제어에서 프로덕션까지 변경되는 배포 파이프라인과 같은 도구와 패턴에 중점을 두는 경우가 많습니다. 그러나 이 문서에 설명된 필수 기술 관행과 프로세스 변경을 구현하지 않고 최신 도구를 사용하면 예상되는 이점이 도출되지 않습니다.</p>
+
+<p>다음 다이어그램에서는 DORA 연구 결과 일반적인 변환 단계로 밝혀진 J 곡선을 보여줍니다. J 곡선의 하단에서 상승하려면 팀은 자동화 및 도구 사용과 함께 프로세스 재설계 및 단순화, 아키텍처 개선, 기능 및 기술 개발에 힘써야 합니다.</p>
+
+<p><img src="/static/architecture/devops/images/continuous-delivery-2.png" alt="일반적인 변환의 J 곡선 다이어그램(출처: 2018 State of DevOps Report)" width="80%" class="screenshot"/> </p>
+
+<p>위 다이어그램에서 단계별 설명은 다음과 같습니다.</p>
+
+<ul>
+<li>곡선이 시작되면 팀은 변환을 시작하고 단기 성과를 파악합니다.</li>
+<li>초기 개선 시 자동화를 수행하면 실적이 낮은 수준에서 중간 수준으로 향상됩니다.</li>
+<li>J 곡선 하단 부분의 효율성 저하 구간에서는 자동화로 인해 테스트 요구사항이 높아지며 이는 수동으로 처리됩니다. 다량의 기술적 부채 블록이 진행됩니다.</li>
+<li>팀이 곡선에서 빠져나오기 시작하면 기술적 채무와 복잡성 증가로 인해 변경과 관련된 프로세스 레이어와 수동 제어가 추가로 발생하여 작업 속도가 느려집니다.</li>
+<li>곡선 상단에서는 끊임없는 개선 작업으로 인해 실적이 향상되고 우수성이 달성됩니다. 높은 수준의 우수한 실적을 내려면 생산성이 향상되도록 전문성을 활용하고 환경을 학습합니다.</li>
+</ul>
+
+<p>J 곡선의 영향을 완화할 수 있는 한 가지 좋은 방법은 <em>값 스트림 매핑</em>(VSM) 연습을 수행하여 병목 현상이 미치는 영향을 파악하고 예상하는 것입니다. VSM 연습에서는 버전 제어부터 프로덕션까지 진행되는 한 가지 변경사항을 살펴봅니다.</p>
+
+<ol>
+<li>자동 테스트와 수동 테스트, 보안 검토, 변경 관리, 프로덕션 출시 등 각 변경사항이 거치게 되는 다양한 프로세스를 고려합니다.</li>
+<li>변경사항이 버전 제어에서 출시로 전환되는 데 걸리는 총 시간을 측정합니다. 프로세스별로 다음을 측정합니다.
+<ul>
+<li>실제 경과 시간 및 프로세스 엔드 투 엔드 실행과 관련된 가치 부가 시간(작업이 실제로 수행되는 시간)</li>
+<li>작업이 처음에 제대로 완료되지 않아 다시 반송된 시간의 비율. 이 측정항목을 <em>정확한 완료 비율</em>(%C/A)이라고 합니다.</li>
+</ul></li>
+</ol>
+
+<p>가치 흐름 매핑을 연습하는 목적은 프로세스에서 비효율성을 찾는 데 있습니다. 팀은 가치 흐름이 6개월 후에 어떻게 변해있는지에 대한 다이어그램을 만들고 이 미래 상태를 구현하는 데 필요한 팀 역량을 배정합니다. 가치 부가 시간과 비교할 때 경과 시간이 긴 프로세스가 있거나 %C/A가 나쁜 장애물을 식별하고 삭제합니다.</p>
+
+<p>일반적으로 배포 파이프라인 구현의 일환으로 상당한 프로세스와 아키텍처 재설계를 처리해야 합니다. 배포 파이프라인은 체크인에서 출시까지 이어지므로 이 과정에 여러 팀이 관여합니다. 모든 팀의 담당자가 가치 흐름 매핑을 연습하고 미래 상태의 일환으로 공통의 도구 모음과 프로세스(예: 테스트 환경과 프로덕션 환경에 배포용)에 합의해야 합니다.</p>
+
+<p>지속적 배포 구현은 달성하려는 성과에 따라 지속적으로 매일 개선 작업을 수행하는 프로세스입니다. 도구와 패턴은 매우 중요하지만 이 필수 개선 작업의 보조 수단에 불과합니다.</p>
+
+<h2 id="measuring_continuous_delivery" data-text="지속적 배포 측정">지속적 배포 측정</h2>
+
+<p>궁극적으로 지속적 배포 목표는 정상 영업시간 중에 출시가 낮은 위험도로 수행되도록 보장하기 위함입니다. 정상 영업시간을 벗어나서 배포 또는 출시를 수행하는 사람이 없도록 하는 것이 목표이므로 이는 중요 측정 기준이 됩니다.</p>
+
+<p>지속적 배포를 얼마나 잘 수행했는지는 달성 성과에 반영됩니다. <a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">DORA DevOps 빠른 점검</a>을 통해 다음과 같은 지속적 배포의 주요 측정항목 상태를 확인할 수 있습니다.</p>
+
+<ul>
+<li>정기적 변경 및 긴급한 변경의 리드 시간 단축. 여기에는 긴급한 변경에 정기 프로세스 사용이라는 목표가 포함됩니다.</li>
+<li>낮은 변경 실패율</li>
+<li>서비스 중단 또는 서비스 저하 발생 시 서비스 복원 시간 단축</li>
+<li>우선순위가 높은 기능과 버그 수정이 제때에 출시되도록 출시 빈도 조절</li>
+</ul>
+
+<p>이 문서의 시작 부분에서 설명된 바와 같이 지속적 배포를 구현하면 재작업과 배포 부담이 줄어들고 재작업 및 계획되지 않은 작업에 소요하는 시간이 단축됩니다.</p>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li>Martin Fowler의 <a href="https://martinfowler.com/delivery.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">소프트웨어 제공 가이드</a>에서 지속적 배포에 대해 자세히 알아보세요.</li>
+<li><a href="https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation</em></a>(캐런 마틴, 마이크 오스터링 공저)을 읽어보세요.</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

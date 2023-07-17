@@ -1,0 +1,105 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Misurazione di DevOps: capacità di gestione visiva</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> le <em>funzionalità di gestione visuale</em> fanno parte di una serie di funzionalità
+che consentono una distribuzione del software e prestazioni dell'organizzazione superiori. Queste
+funzionalità sono state scoperte dal
+<a href="https://www.devops-research.com/research.html">programma di ricerca DORA State of DevOps</a>,
+un'indagine indipendente e accademicamente rigorosa sulle pratiche e
+funzionalità che generano prestazioni elevate. Per ulteriori informazioni, consulta le nostre
+<a href="/devops">risorse DevOps</a>.</span></aside>
+<p>È una pratica comune per i team che adottano <a href="https://wikipedia.org/wiki/Lean_software_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">pratiche di sviluppo ridotte</a> per mostrare informazioni chiave sui propri processi nelle aree del team in cui tutti possono vederla. I consiglio di gestione visuale possono creare una comprensione condivisa della posizione
+del team in termini di efficacia operativa. Può anche aiutare a identificare e rimuovere gli ostacoli nel percorso verso le prestazioni migliori.</p>
+
+<h2 id="how_to_implement_visual_management" data-text="Come implementare la gestione visiva">Come implementare la gestione visiva</h2>
+
+<p>Esistono diverse tipologie di visualizzazioni e dashboard comuni nel contesto della distribuzione del software:</p>
+
+<ul>
+<li><strong>Barriere di schede, storyboard o tavole di Kanban</strong>, fisiche o
+virtuali, con schede indice che rappresentano gli elementi di lavoro in corso.</li>
+<li><strong>Dashboard o altri indicatori visivi</strong>, come sistemi di integrazione continua con monitor o semafori per mostrare se la build ha esito negativo o negativo. Le visualizzazioni visive efficaci vengono create, aggiornate e forse eliminate dai team in risposta a problemi che il team è attualmente interessato ad affrontare.</li>
+<li><strong>Grafici ad esplosione o burn-down</strong> (ad esempio, diagrammi di flusso cumulativi) che mostrano lo stato cumulativo di tutti i lavori in corso. che consentono al team
+di prevedere il tempo necessario per completare il backlog corrente.</li>
+<li><strong>Monitor di pipeline di deployment</strong> che mostrano l'ultima build di cui è possibile
+eseguire il deployment e indicano se le fasi della pipeline non funzionano, ad esempio
+i test di accettazione o i test delle prestazioni.</li>
+<li><strong>Monitor che mostrano la telemetria di produzione</strong>, come il numero di richieste ricevute, statistiche di latenza, errori cumulativi di <code translate="no" dir="ltr">404</code> e <code translate="no" dir="ltr">500</code> e le pagine più popolari.</li>
+</ul>
+
+<p>Se utilizzati in combinazione con l'utilizzo di <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">limiti di rete Wi-Fi</a> e i feedback della produzione per prendere decisioni aziendali, le visualizzazioni relative alla gestione visiva possono contribuire a <a href="https://services.google.com/fh/files/misc/state-of-devops-2015.pdf#page=15" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">prestazioni più elevate delle prestazioni</a> (PDF).</p>
+
+<h2 id="common_pitfalls_with_visual_management" data-text="Errori comuni relativi alla gestione visiva">Errori comuni relativi alla gestione visiva</h2>
+
+<p>Le caratteristiche più importanti degli schermi per la gestione visiva sono che il team si occupa delle informazioni e agirà di conseguenza, e che il display viene utilizzato per svolgere operazioni quotidiane per identificare e rimuovere gli ostacoli che determinano un miglioramento delle prestazioni. Gli errori più comuni durante l'implementazione della gestione visiva sono i seguenti:</p>
+
+<ul>
+<li><strong>Selezione delle metriche senza il coinvolgimento del team</strong>. Gli elementi visivi che mostrano metriche altamente pertinenti e utili ai team verranno utilizzati più spesso. Inoltre, se i team sono in grado di immettere i dati delle metriche che vengono mostrate sui display, partecipando alla selezione dei loro obiettivi (ad esempio, alcuni team <a href="/architecture/devops/devops-culture-transform" track-type="solution" track-name="internalLink" track-metadata-position="body">utilizzano OKR</a>), saranno più motivati a guidare i progressi verso questi obiettivi.</li>
+<li><strong>Creazione di display complessi, difficili da capire o che non forniscono informazioni strategiche</strong>. È facile creare display usando strumenti che consentono di apportare alti livelli di modifica o che sono divertenti con cui giocare. Tuttavia, modificare il layout e il colore di una dashboard personalizzata non è utile se il team lavora con metriche errate o impiega diversi team per implementarle. Metriche chiave o grafici non elaborati tracciati su una lavagna e aggiornate quotidianamente possono essere efficaci per tenere informato il team.</li>
+<li><strong>Display visivi in continua evoluzione</strong>. Gli strumenti di gestione visiva devono fornire ai team informazioni sui problemi che devono affrontare al momento. Non
+
+può aiutare un team a copiare le visualizzazioni di altri team, a meno che i team non lavorino nello stesso contesto, con le stesse sfide e gli stessi ostacoli. Mano a mano che il contesto del team si evolve, anche le visualizzazioni visive dovrebbero cambiare. Inoltre, tieni presente che, poiché i team affrontano gli ostacoli, le loro visualizzazioni potrebbero diventare metriche obsolete (precedentemente pertinenti) ed evidenziare nuove aree di importanza.</li>
+<li><strong>Il problema non è risolto dalla visualizzazione visiva.</strong> I team a volte apportano rapide correzioni per far sì che il display sia di nuovo verde. I display devono essere utilizzati per promuovere i miglioramenti (risolvere il problema), non diventare un obiettivo (mantieni il tabellone verde).
+Concentrarsi sulla sola gestione della metrica comporta conseguenze indesiderate e debiti tecnici. Se il display suggerisce un problema, i team non dovrebbero solo risolverlo subito. Devono inoltre identificare il problema o il vincolo sottostante e risolverlo, anche se si trova in un'altra parte dell'organizzazione. Qualsiasi inefficienza continuerà a essere visualizzata e la loro correzione precedente aiuterà tutti i team.</li>
+</ul>
+
+<h2 id="ways_to_improve_visual_management" data-text="Modi per migliorare la gestione visiva">Modi per migliorare la gestione visiva</h2>
+
+<p>L'obiettivo degli strumenti di gestione visiva è fornire un feedback rapido e facile da capire, in modo da poter integrare la qualità nel prodotto. Il feedback aiuta il team a identificare i difetti del prodotto e a capire se una parte del sistema non funziona efficacemente, aiutandoli a risolvere il problema. Per essere efficaci, tali sistemi devono:</p>
+
+<ul>
+<li><strong>Rifletti sulle informazioni che il team è importante e su cui agirà</strong>.
+I monitor delle build non hanno alcun effetto se i team non si preoccupano se il display mostra un problema (ad esempio, perché mostra che lo stato della build è rosso, ovvero interrotto) e non agiscono effettivamente su queste informazioni correggendo il problema.</li>
+<li><strong>Comprendi bene</strong>. Conviene vedere a colpo d'occhio se ci sono oggetti che richiedono attenzione. Se <em>c'è</em> un problema, i team devono sapere come eseguire un'ulteriore diagnostica o risolvere il problema.</li>
+<li><strong>Fornisci al team informazioni pertinenti al suo lavoro</strong>. Sebbene sia importante raccogliere quanti più dati possibili sul lavoro del team, il display dovrebbe presentare solo dati pertinenti agli obiettivi del team. A causa del sovraccarico di informazioni, in particolare delle informazioni su cui non è possibile intervenire, le persone ignorano le visualizzazioni della gestione visiva; i display diventano solo rumore. Il team può accedere ai dati aggiuntivi e utilizzarli per risolvere il problema.</li>
+<li><strong>Essere aggiornati nell'ambito del lavoro quotidiano</strong>. Se il team lascia i dati inattivi o inaccurati, ignorano le visualizzazioni visive e i display non sono più un beacon utile quando si verificano problemi importanti. Se i display mostrano dati inattivi o imprecisi, esamina la causa: i dati non sono correlati agli obiettivi del team? Quali dati renderebbero la visualizzazione una fonte di informazioni importante e convincente per il team?</li>
+</ul>
+
+<p>I team non devono essere coinvolti in aspetti di immagini che non sono di importanza critica. Ad esempio, i display per la gestione visiva non devono essere necessariamente elettronici.
+Le pareti delle carte fisiche o i tabelloni per kanban possono essere gestiti e trattati più facilmente, in particolare se il team si trova in un'unica posizione. Questi display possono anche aiutare a sviluppare pregevoli rituali di squadra, ad esempio stando in piedi davanti alla tavola per riprendere il lavoro e spostarlo. Una lavagna con alcune informazioni chiave di progetto aggiornate quotidianamente dal team è spesso preferibile a un sistema elettronico difficile da capire, difficile da aggiornare o che non dispone delle informazioni necessarie.</p>
+
+<h2 id="ways_to_measure_visual_management" data-text="Metodi per misurare la gestione visiva">Metodi per misurare la gestione visiva</h2>
+
+<p>Come per tutti i lavori di miglioramento, inizia con gli obiettivi misurabili a livello di sistema su cui
+il team sta lavorando. Scoprire lo stato esistente del sistema di lavoro.
+Trova un modo per visualizzare le informazioni principali sullo stato esistente e
+sullo stato desiderato. Assicurati che queste informazioni vengano visualizzate solo con la precisione richiesta.</p>
+
+<p>Esamina le visualizzazioni visive nell'ambito di regolari retrospettive. Fai le seguenti domande:</p>
+
+<ul>
+<li>I display ti forniscono le informazioni di cui hai bisogno?</li>
+<li>Le informazioni sono aggiornate?</li>
+<li>Le persone agiscono su queste informazioni?</li>
+<li>Le informazioni (e le azioni intraprese dagli utenti in risposta) contribuiscono al miglioramento misurabile di un obiettivo che sta a cuore al team?</li>
+<li>Tutti sanno quali sono gli obiettivi?</li>
+<li>Puoi visualizzare le schermate di gestione visiva e vedere le metriche chiave dei processi che ti interessano?</li>
+</ul>
+
+<p>Se la risposta a ognuna di queste domande è no, approfondisci l'argomento:</p>
+
+<ul>
+<li>Puoi cambiare le informazioni o come vengono visualizzate?</li>
+<li>È possibile sbarazzarsi del display?</li>
+<li>Puoi creare una nuova visualizzazione? Che aspetto avrebbe un prototipo? Quali sono le informazioni più importanti da includere e quanto devono essere utili per risolvere i tuoi problemi e raggiungere i tuoi obiettivi?</li>
+</ul>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina per DevOps</a>.</li>
+<li>Leggi il libro
+<a href="https://itrevolution.com/book/making-work-visible/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Rendere visibile il lavoro</em></a>,
+di Dominica DeGrandis.</li>
+<li>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</li>
+<li>Esegui il
+<a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a>
+per comprendere il tuo rendimento rispetto al resto del settore.</li>
+</ul>
+
+</body></html>

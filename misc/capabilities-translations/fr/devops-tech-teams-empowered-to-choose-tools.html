@@ -1,0 +1,62 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps tech : Permettre aux équipes de choisir leurs outils</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Remarque</strong> : <span><em>Permettre aux équipes de choisir leurs outils</em> fait partie d'un ensemble de critères d'aptitude permettant d'optimiser les performances organisationnelles et celles de la livraison de logiciels. Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche de DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les fonctionnalités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>Si vous souhaitez obtenir de meilleures performances de livraison de logiciels et augmenter la <a href="/architecture/devops/devops-culture-job-satisfaction" track-type="solution" track-name="internalLink" track-metadata-position="body">satisfaction au travail</a> de votre personnel technique, vous devez lui donner la possibilité de choisir en connaissance de cause les outils et les technologies qu’il utilise pour accomplir les tâches.
+Une <a href="https://services.google.com/fh/files/misc/state-of-devops-2017.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">étude</a> (PDF) de DORA (DevOps Research and Assessment) montre que cette approche contribue à améliorer la livraison continue ainsi que les performances de livraison de logiciels. Les équipes qui ont la possibilité de choisir leurs propres outils sont à même de faire leur choix en fonction de leur travail et des tâches à accomplir. Personne ne sait mieux que les spécialistes ce dont ils ont besoin pour être efficaces. Il n’est donc pas surprenant que le choix de l’outil permette à ces professionnels d'obtenir de meilleurs résultats.</p>
+
+<p>Habiliter les équipes à choisir des outils ne signifie pas que chaque équipe est libre de sélectionner l’outil de son choix. L'introduction de technologies sans restrictions peut accroître les contraintes techniques et la fragilité des systèmes. Toutefois, la possibilité de choisir les outils combinée à d'autres capacités (visibilité complète sur le système, retours rapides et responsabilisation vis-à-vis du code qu'ils écrivent) permet à vos techniciens de choisir en connaissance de cause les outils qu'ils utiliseront et qu'ils devront superviser. Cette tendance a été observée dans des entreprises comme Google et Netflix, où une pile technique est sélectionnée par défaut en fonction des préférences. Mais si une équipe est convaincue qu'un outil ou une technologie différente convient mieux à son cas, elle est libre de la choisir. Les équipes comprennent qu'en faisant ce choix, elles devront également assurer le soutien de cette nouvelle pile technique.</p>
+
+<h2 id="how_to_empower_teams_to_choose_tools" data-text="Comment habiliter les équipes à choisir des outils">Comment habiliter les équipes à choisir des outils</h2>
+
+<p>Lorsque votre organisation autorise les équipes à sélectionner des outils, il est important de trouver un équilibre entre la liberté de choisir et le coût d'acquisition et d'assistance. Il convient également de prendre en compte le surcroît de complexité potentiel lié à la communication entre des équipes utilisant différents outils. Voici quelques suggestions quant à la manière de permettre aux équipes de choisir leurs propres outils.</p>
+
+<ul>
+<li><p><strong>Établir une base de référence inter-équipes</strong>. En collaboration avec les représentants des différentes équipes et des domaines pluridisciplinaires (chefs de produit, développeurs, testeurs, opérateurs), mettez en place un référentiel des outils approuvés. Nous recommandons de sélectionner un éventail d'outils de base suffisamment large et diversifié pour répondre à la majorité des besoins de votre organisation. Les langages de programmation et les bibliothèques, les outils de test et de déploiement, l'infrastructure de surveillance et les backends de données sont des exemples d'outils à inclure dans la base de référence.</p></li>
+<li><p><strong>Passer régulièrement en revue les outils</strong>. À intervalles réguliers ou dans le cadre de rétrospectives de sprint, examinez de manière critique l'ensemble d'outils de base pour évaluer leur efficacité. Ces examens offrent également l’occasion de discuter et de présenter de nouvelles technologies.</p></li>
+<li><p><strong>Définir un processus pour les exceptions</strong>. Créez un processus clairement défini pour gérer les exceptions par rapport à l'ensemble d’outils de base. Lorsqu'une nouvelle technologie en dehors de la base de référence est utilisée dans un projet, expliquez en quoi elle consiste et pourquoi elle a été choisie. Ces informations sont essentielles pour documenter les opérations de dépannage et de maintenance au cours du projet. De plus, cette documentation intégrée aux projets permettra ultérieurement de justifier l'ajout de l'outil à la base de référence.</p></li>
+</ul>
+
+<p>Une autre approche consiste à laisser les équipes choisir leurs outils. Avec cette stratégie, chaque équipe exécute autant de processus de livraison de logiciels (exigences métier, développement, opérations) que nécessaire, en utilisant sa propre chaîne d’outils. Cependant, veillez à prendre en compte l'impact sur la communication entre les équipes et les domaines de produits lorsqu'il existe des ressources partagées.</p>
+
+<h2 id="common_pitfalls" data-text="Écueils les plus courants">Écueils les plus courants</h2>
+
+<p>L'erreur la plus courante lorsque vous permettez à vos équipes de choisir des outils consiste à adopter une position extrême, par exemple, ne donner à vos ingénieurs aucun choix ou leur donner trop de choix.</p>
+
+<p>Imposer des outils et des technologies aux techniciens améliore sans doute la normalisation.
+Cependant, ce qui fonctionne dans certains cas n'est pas nécessairement la meilleure solution dans tous les cas. Cette approche limite également les possibilités d'<a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">expérimentation et de croissance</a> à travers l'exploration et le test de technologies émergentes. L'expérimentation et l'adoption de nouvelles technologies se traduisent souvent par des gains importants de performances. Par exemple, si aucune équipe n’avait été autorisée à expérimenter les nouvelles technologies de conteneurisation ou de plate-forme en tant que service, leurs organisations n’auraient pas réalisé les gains de performances qui en ont résulté.</p>
+
+<p>À l'inverse, choisir différents outils et technologies pour chaque projet ou service peut accroître les contraintes techniques et la fragilité des systèmes. Chaque fois qu'un élément est ajouté à la chaîne d'outils, les frais de maintenance et d'exploitation augmentent. Avec le temps, ces dépenses peuvent réduire à néant les gains de performances obtenus avec la nouvelle technologie.</p>
+
+<h2 id="ways_to_improve_tool_choice_in_teams" data-text="Moyens d'améliorer le choix des outils au sein des équipes">Moyens d'améliorer le choix des outils au sein des équipes</h2>
+
+<p>L'élément clé d'un choix d'outils efficace est de permettre aux équipes qui effectuent le travail de sélectionner les meilleurs outils pour ce travail. Sur cette base, voici quelques suggestions :</p>
+
+<ul>
+<li><strong>Évaluer périodiquement la pile technologique</strong>. Pendant la discussion, invitez les membres de l’équipe à évaluer de manière critique la façon dont les outils actuels répondent aux exigences. Discutez également des problèmes rencontrés avec les outils existants et proposez d'expérimenter de nouveaux outils selon un calendrier établi.</li>
+<li><strong>Explorer de manière proactive de nouveaux outils pour de nouveaux projets</strong>. Demandez aux équipes d'étudier et d’expérimenter de nouveaux outils pour déterminer s'il convient de les adopter. Mettez en œuvre un élément clé du nouveau système en utilisant les technologies existantes et envisagées pour vérifier la réalité des avantages attendus. Lorsque vous sélectionnez des technologies, assurez-vous de bien comprendre les coûts associés.
+Examinez les frais liés aux licences, à l'assistance et à l'infrastructure requises pour utiliser les outils. Vous devrez peut-être aussi engager davantage de personnes pour soutenir l'adoption et la gestion de la technologie.</li>
+<li><strong>Prévoir du temps pour expérimenter de nouveaux outils</strong>. Organisez régulièrement des événements (tels que les hackathons) où les équipes peuvent se familiariser avec de nouveaux projets et technologies en mode collaboratif. Les outils ne seront pas tous conservés à l'issue de ces expériences, mais, pour certains, vous faciliterez leur intégration dans votre pile et, pour les autres, vous déciderez de ne pas les adopter en toute connaissance de cause.</li>
+<li><strong>Organisez des présentations régulières pour discuter de nouveaux outils</strong>. Soutenez l'organisation de réunions (des déjeuners-débats, par exemple) où de nouvelles technologies sont présentées et discutées. Au cours de ces réunions informelles, une personne présente un nouvel outil qu'elle est en train d'explorer ou qu'elle utilise dans un projet. Ce genre de réunions informelles est un bon moyen pour le groupe d'échanger sur les nouvelles technologies et de se tenir au courant. Une bonne approche consiste à alterner les présentations, les membres de l’équipe intervenant à tour de rôle. Vous pouvez également inviter des personnes extérieures à l'équipe ou à l'entreprise à présenter leurs exposés. L'intervention de personnes extérieures à l'entreprise qui ont une bonne expérience d’un outil est particulièrement utile, car elles peuvent informer des coûts cachés et des difficultés éventuelles qui ne se manifestent souvent qu'après une longue période d'utilisation.</li>
+</ul>
+
+<p>L'objectif est de trouver des moyens d'introduire des technologies dans la discussion et de s'assurer que l'équipe est habilitée à décider des outils et des technologies qui lui conviennent. Il peut ainsi être décidé, au terme de la discussion, qu'il est préférable de s'en tenir aux outils existants.</p>
+
+<h2 id="ways_to_measure_if_teams_are_empowered_to_choose_tools" data-text="Moyens de mesurer si les équipes sont habilitées à choisir les outils">Moyens de mesurer si les équipes sont habilitées à choisir les outils</h2>
+
+<p>Le meilleur moyen de déterminer si les équipes se sentent en capacité de choisir les outils est de leur poser la question. Vous n'allez certainement pas compter le nombre d'outils utilisés par l'équipe ou la fréquence à laquelle elles en changent, car si l'équipe est fidèle au même outil ou est en train d'en changer, c'est parce qu'on lui dit qu'elle doit le faire.</p>
+
+<h2 id="whats_next" data-text="Étape suivante">Étape suivante</h2>
+
+<ul>
+<li>Consultez la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">page DevOps</a> pour obtenir des liens vers d'autres articles et ressources.</li>
+<li>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</li>
+<li>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</li>
+</ul>
+
+</body></html>

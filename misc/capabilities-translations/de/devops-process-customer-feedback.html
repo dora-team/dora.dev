@@ -1,0 +1,120 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Prozess: Kundenfeedback</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Kundenfeedback</em> gehört zu einer Reihe von Funktionen, die zu einer höheren Softwarebereitstellung und Unternehmensleistung führt.  Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">"State of DevOps"-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, wissenschaftlich exakten Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>In Softwareprojekten arbeiten Entwickler oft monate- oder jahrelang an Produkten, manchmal für mehrere Releases, ohne zu validieren, ob die von ihnen erstellten Features den Nutzern bei der Lösung ihrer Probleme tatsächlich helfen oder ob die Features überhaupt verwendet werden.</p>
+
+<p>Das Kundenfeedback ist Teil einer größeren Gruppe von Funktionen, einschließlich der <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">Sichtbarkeit der Arbeit im Wertstrom</a>, der <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">Arbeit in kleinen Mengen</a> und <a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">Experimenten im Team</a>, die zusammen einen <a href="https://books.google.com/books/about/Escaping_the_Build_Trap.html?id=PQ8dMQAACAAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">schlanken Ansatz für das Produktmanagement</a> darstellen.</p>
+
+<p>Wenn diese Funktionen zusammen angewendet werden, können sie Folgendes vorhersagen:</p>
+
+<ul>
+<li>Die Leistung der Softwarebereitstellung, die anhand der Bereitstellungsgeschwindigkeit, -stabilität und -verfügbarkeit gemessen wird.</li>
+<li>Die Leistung der Organisation, die anhand der Rentabilität, des Marktanteils und der Produktivität gemessen wird.</li>
+</ul>
+
+<p>Studien von DevOps Research and Assessment (DORA) <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=35" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">zeigen</a> (PDF), dass Teams eine höhere Leistung erzielen, wenn sie in Organisationen arbeiten, die diese Funktionen nutzen und daneben Folgendes tun:</p>
+
+<ul>
+<li>Regelmäßig Messwerte zur Kundenzufriedenheit erfassen</li>
+<li>Kundenfeedback zur Produkt- und Featurequalität einholen und ihm nachgehen</li>
+<li>Mit diesem Feedback beim Entwurf von Produkten und Features helfen</li>
+</ul>
+
+<h2 id="how_to_implement_customer_feedback" data-text="Kundenfeedback implementieren">Kundenfeedback implementieren</h2>
+
+<p>Wenn Sie ein Produkt entwickeln, ist es wichtig, Schlüsselmesswerte festzulegen, um den Erfolg zu messen. Anhand dieser Messwerte können Sie nachvollziehen, ob Sie ein echtes Problem lösen, ob Ihre Lösung ausreichend schnell übernommen wird und ob Nutzer sie weiterhin verwenden und anderen empfehlen. Diese Messwerte müssen explizit davon abgeleitet werden, wie Kunden mit dem Produkt interagieren. Um diese Messwerte verwenden zu können, müssen Sie Kundenfeedback sorgfältig erfassen und analysieren.</p>
+
+<p>Ein Satz von Messwerten, die in SaaS-Produkten für Verbraucher beliebt sind, ist AARRR: Acquisition (Akquise), Activation (Aktivierung), Retention (Loyalität), Referral (Empfehlung) und Revenue (Umsatz). Die Reihenfolge ist manchmal unterschiedlich, je nachdem, wer sie präsentiert. Diese werden manchmal als <em>Pirate Metrics</em> bezeichnet, da das Akronym ein Wort ergibt, das mit der stereotypen Art und Weise in Verbindung gebracht wird, wie Piraten sprechen.</p>
+
+<p>Die Idee ist, sich fünf Schlüsselmesswerte anzusehen und Ihre Kundenerfahrungswerte zu iterieren, um sie zu verbessern:</p>
+
+<ul>
+<li><strong>Akquise</strong>: Der Prozentsatz der Nutzer, die auf Ihre Website gelangen und ein Konto erstellen.</li>
+<li><strong>Aktivierung</strong>: Der Prozentsatz der akquirierten Nutzer, die ihr Konto aktivieren und den Dienst nutzen.</li>
+<li><strong>Loyalität</strong>: Der Prozentsatz der aktivierten Nutzer, die zum Dienst zurückkehren.</li>
+<li><strong>Empfehlung</strong>: Der Prozentsatz der loyalen Nutzer, die andere Nutzer auf den Dienst verweisen.</li>
+<li><strong>Umsatz</strong>: Der Prozentsatz der verweisenden Nutzer, die tatsächlich Geld für den Dienst bezahlen.</li>
+</ul>
+
+<p>Wenn diese Messwerte für Ihr Unternehmen oder Ihr Produkt nicht geeignet sind, müssen Sie unbedingt geeignete Messwerte ermitteln, diese regelmäßig überwachen und als treibende Kraft für Ihre Produktstrategie verwenden.</p>
+
+<p>Der in diesem Artikel beschriebene Ansatz gilt nicht nur für nach außen gerichtete Produkte. Er ist gleichermaßen auf interne Produkte und Dienste anwendbar, die für andere Nutzer in Ihrer Organisation erstellt wurden. Das Erstellen interner Tools erfordert genau den gleichen Ansatz: frühzeitige und häufige Zusammenarbeit mit echten Nutzern, um dafür zu sorgen, dass das, was Sie erstellen, das Problem tatsächlich löst. Andernfalls kann es passieren, dass Sie Tools erstellen und nutzen, die niemand verwendet. Das ist entmutigend für die, die an den Tools arbeiten, und frustrierend für diejenigen, die Tools verwenden müssen, die ihnen nicht zusagen. Es stellt auch erhebliche Kosten für das Unternehmen dar, wenn es eine schlecht passende Technologie für seine Nutzer erstellt.</p>
+
+<p>Ein Team sollte das folgende Muster verwenden, um die Chancen für die erfolgreiche Lösung von Kundenproblemen zu maximieren:</p>
+
+<ol>
+<li>Erfassen Sie zuerst Kundenfeedback, bevor Sie potenzielle Features definieren.</li>
+<li>Überprüfen Sie, ob Sie ein echtes Problem lösen.</li>
+<li>Iterieren Sie über eine Lösung, die dieses Problem tatsächlich löst (und nicht mehr).</li>
+<li>Sorgen Sie dafür, dass die Lösung wirtschaftlich tragfähig ist (z. B. liegen die Kosten unter dem erwarteten Umsatz).</li>
+<li>Verfolgen Sie Schlüsselwerte, um den Erfolg zu messen (z. B. AARRR).</li>
+<li>Wiederholen Sie die obigen Schritte, um diese Messwerte zu verbessern.</li>
+</ol>
+
+<p>Um erfolgreich zu sein, müssen Sie nicht nur Software schnell bereitstellen und veröffentlichen, sondern auch auf die Bedürfnisse Ihrer Kunden besser, intelligenter und schneller eingehen. Dies kann durch gründlicheres Experimentieren als Ihre Konkurrenz erreicht werden. Der Einzelhandel ist eine Branche, die <a href="https://services.google.com/fh/files/misc/state-of-devops-2019.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">hier besondere Erfolge erzielt hat</a> (PDF).
+Mithilfe von Techniken wie <a href="https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">hypothesenbasierter Entwicklung</a>, Definition und Messung Ihres Akquisetrichters sowie A/B-Tests können Sie Nutzerexperimente durchführen. Dies kann Kreativität fördern, Innovationen beschleunigen und für organisatorisches Lernen sorgen.</p>
+
+<p>Eine verstärkte Kundeninteraktion und die Teilnahme an Produktmanagementprozessen tragen zu einer stärkeren Identifikation mit den <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=37" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Zielen und Werten</a> Ihres Unternehmens bei (PDF). Dies wiederum trägt zur organisatorischen Leistung bei.</p>
+
+<h2 id="common_pitfalls" data-text="Häufige Stolperfallen">Häufige Schwierigkeiten</h2>
+
+<p>Einige häufige Schwierigkeiten bei der effektiven Nutzung des Kundenfeedbacks sind:</p>
+
+<ul>
+<li><strong>Das Feedback wird nicht eingeholt</strong>. Häufig holen Unternehmen in der Softwareentwicklung überhaupt kein Kundenfeedback ein.</li>
+<li><strong>Das Feedback wird zu spät eingeholt</strong>. Manchmal holen Unternehmen Kundenfeedback in einer so späten Phase des Lebenszyklus der Softwarebereitstellung ein, dass sie nicht darauf reagieren können.</li>
+<li><strong>Das Problem wird nicht verstanden</strong> (oder das Kundenfeedback falsch interpretiert). Unternehmen können unrealistische Erwartungen an ihre Kunden haben oder nicht verstehen, was Kunden von dem Produkt erwarten. Es ist sogar möglich, dass das Team unbequemes, aber zutreffendes Kundenfeedback explizit ignoriert.
+Diese Situation kann auftreten, wenn ein Entwicklungsteam das Risiko der Bereitstellung der vorliegenden Lösung nicht angemessen bewertet oder verwaltet hat oder das zu lösende Problem einfach nicht versteht. Ein Entwicklungsteam möchte den Umfang seiner Arbeit auf das geringste Maß beschränken, das für die Lösung eines Problems erforderlich ist.
+In einigen Fällen kann es vorkommen, dass das Team die zusätzliche Arbeit fälschlicherweise als "Scope Creep" abweist, wenn das Problem größer ist als im Entwurf des Teams vorgesehen.  Dies führt aus Kundensicht zu einer unvollständigen Lösung und letztendlich zu einem fehlerhaften Produkt.</li>
+<li><strong>Den Teams wird nicht erlaubt, auf Feedback zu reagieren.</strong> Bereitstellungsteams müssen die Befugnis erhalten, Änderungen an dem Entwurf oder der Spezifikation des Systems in Reaktion auf das Feedback vorzunehmen, wie im Dokument <a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">Experimente im Team</a> behandelt.</li>
+<li><strong>Der Erfolg wird anhand des falschen Messwerts bemessen</strong>. In einigen Fällen werden den Entwicklungs- und Bereitstellungsteams Lösungen ohne ausreichende Kundenvalidierung als endgültige Anforderungen zur Verfügung gestellt. In diesen Fällen wird der Erfolg des Bereitstellungsteams dann daran gemessen, ob das Feature wie angegeben bereitgestellt wurde, und nicht daran, ob das Team das Problem tatsächlich gelöst oder das Ergebnis für die Kunden erzielt hat.</li>
+<li><strong>Das Problem des Kunden wird nicht angegangen</strong>.
+<a href="http://ai.stanford.edu/%7Eronnyk/ExPThinkWeek2009Public.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Branchendaten</a> (PDF) aus A/B-Tests zeigen, dass in erfolgreichen Produkten nur etwa ein Drittel der vorgeschlagenen Features die Geschäftsergebnisse verbessern, wenn sie tatsächlich bereitgestellt werden. Die restlichen zwei Drittel der Features liefern für Unternehmen null oder <em>negative</em> Ergebnisse. Wenn Sie also keine Nutzerstudien durchführen, besteht die Wahrscheinlichkeit, dass mindestens zwei Drittel der von den Teams geleisteten Arbeit entweder nicht zum gewünschten Ergebnis führen oder die Situation aktiv verschlechtern. Wenn ein Team an Produkten in einer frühen Phase des Lebenszyklus arbeitet, insbesondere an innovativen, sind die Chancen des Teams, das gewünschte Ergebnis zu erzielen, erheblich schlechter.</li>
+<li><strong>Der erforderliche Zeit- und Arbeitsaufwand, um auf Kundenfeedback zu reagieren, wird unterschätzt</strong>. Die Teams sollten darauf gefasst sein, dass ihre Lösungsvorschläge falsch sind, und sich darauf vorbereiten, mindestens zwei Drittel von ihnen zu verwerfen. Was das verbleibende Drittel der Lösungen betrifft, sollten die Teams darauf vorbereitet sein, sie als Reaktion auf Kundenfeedback erheblich weiterzuentwickeln.</li>
+</ul>
+
+<h2 id="ways_to_improve_customer_feedback" data-text="Möglichkeiten zur Verbesserung des Kundenfeedbacks">Möglichkeiten zur Verbesserung des Kundenfeedbacks</h2>
+
+<p>Der Bereich der Gestaltung der Nutzererfahrungswerte (User Experience Design, UX) bietet einen Rahmen für das Verständnis von Verbesserungen. Viele Unternehmen behandeln UX so, als würde dadurch einfach die Benutzeroberfläche (User Interface, UI) eines Produkts gut aussehen.
+Bei UX geht es jedoch darum, ob Sie ein echtes Problem für Nutzer lösen. Im weiteren Sinne handelt es sich bei UX um jeden Erfahrungswert, den ein Nutzer bei der Interaktion mit Ihrer Organisation erhält. Es kann nicht genug betont werden, wie wichtig eine gute UX für den Aufbau erfolgreicher Produkte und Dienste ist.</p>
+
+<p>Es ist wichtig, das Einholen von Kundenfeedback in den Bereitstellungsprozess einzubeziehen.
+Jedes wichtige Feature, das Sie erstellen, sollte zuerst das zu lösende Problem berücksichtigen. Dies sollte die Durchführung von Nutzerstudien einschließen, um mögliche Lösungen zu ermitteln und einen Kandidaten auszuwählen. Nutzerstudien sollten analysiert werden, bevor eine einzige Codezeile geschrieben wird.</p>
+
+<p>Für Produkte in einer frühen Phase des Lebenszyklus sollten Teams die in der <a href="https://wikipedia.org/wiki/Lean_startup" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Lean Startup-Bewegung</a> vorgebrachten Ideen übernehmen, um das zugrunde liegende Geschäftsmodell des Produkts zu validieren, bevor Code geschrieben wird. Sie sollten überprüfen, ob Sie ein echtes Problem lösen, und dann über eine Lösung iterieren, die das Problem löst und gleichzeitig ein tragfähiges Geschäftsmodell bereitstellt.</p>
+
+<p>Sie sollten einem ähnlichen Muster für vorhandene Produkte folgen, die eine neue Lösung für ein bekanntes Geschäftsproblem implementieren. Wenn der Lösungsentwurf validiert wurde, sollten Sie einen Prototyp erstellen, damit Sie weitere Untersuchungen und Tests durchführen können. Nur wenn die Tests bestätigen, dass das Feature Ihr Ziel erreicht, sollte das vollständige Produktionsfeature abgeschlossen werden.</p>
+
+<p>Viele Organisationen überspringen all diese Aufgaben und scheitern. Jedoch garantiert auch das strikte Befolgen dieser Schritte keinen Erfolg. Ziel dieser Bemühungen ist es, so viel wie möglich zu tun, um das Risiko des Scheiterns zu verringern.</p>
+
+<h2 id="ways_to_measure_customer_feedback" data-text="Möglichkeiten zur Messung des Kundenfeedbacks">Möglichkeiten zur Messung des Kundenfeedbacks</h2>
+
+<p>Eine ausgeklügelte Datenerfassung ist nicht erforderlich, um festzustellen, ob Kundenfeedback erfasst wird, sichtbar ist und diesem nachgegangen wird. Mithilfe der folgenden Fragen können Sie ermitteln, wie gut Sie das Kundenfeedback für Ihr Produktdesign nutzen:</p>
+
+<ul>
+<li>Haben Sie Messwerte, die die Kundenzufriedenheit messen? Werden diese regelmäßig aktualisiert und an die Teams gesendet? Reagieren Sie darauf?</li>
+<li>Validieren Sie alle Features, bevor Sie sie erstellen, und führen Sie im Rahmen der Bereitstellung Nutzerstudien mit Prototypen durch?</li>
+<li>Nehmen Sie Änderungen an Features vor, die auf diesen Nutzerstudien aufbauen?</li>
+<li>Erfassen Sie aktiv und regelmäßig Feedback von Nutzern und reagieren darauf?</li>
+</ul>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Weitere Informationen</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu weiteren Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li>Lesen Sie den Artikel <a href="http://ai.stanford.edu/%7Eronnyk/ExPThinkWeek2009Public.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Online Experimentation at Microsoft</a> (PDF) von Ronny Kohavi.</li>
+<li>Lesen Sie den Artikel <a href="https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Hypothesis-driven Development</a> von Barry O'Reilly.</li>
+<li>Lesen Sie das Buch <a href="http://shop.oreilly.com/product/0636920049166.do" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean UX: Designing Great Products with Agile Teams</em></a> von Jeff Gothelf und Josh Seiden.</li>
+<li>Lesen Sie das Buch <a href="http://leananalyticsbook.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Analytics: Use Data to Build a Better Startup Faster</em></a> von Alistair Croll und Benjamin Yoskovitz.</li>
+<li>Lesen Sie das Buch <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise: How High Performance Organizations Innovate at Scale</em></a> von Jez Humble, Joanne Molesky und Barry O'Reilly.</li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

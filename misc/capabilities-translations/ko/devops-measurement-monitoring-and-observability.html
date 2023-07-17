@@ -1,0 +1,153 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 측정: 모니터링 및 관측 가능성</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>참고:</strong><span> <em>모니터링 및 관찰 기능</em>은 소프트웨어 제공 및 조직 성과 향상을 가져오는 기능 집합 중 하나입니다. 이러한 기능은 성과 향상을 이끌어내는 관례와 기능을 독립적이자 학술적으로 심층 연구하는 <a href="https://www.devops-research.com/research.html">DORA State of DevOps 연구 프로그램</a>을 통해 개발되었습니다. 자세한 내용은 <a href="/devops">DevOps 리소스</a>를 참조하세요.</span></aside>
+<p>우수한 모니터링은 실적이 우수한 팀의 필수 요소입니다.
+<a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DORA(DevOps Research and Assessment)</a>의 <a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">연구</a>에서는 <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">지속적 배포</a>의 성공에 긍정적으로 기여하는 여러 기술 방식과 함께 포괄적인 모니터링 및 관측 솔루션을 보여줍니다. </p>
+
+<p>DORA의 연구에서는 관련 용어를 다음과 같이 정의했습니다.</p>
+
+<p><strong>모니터링은</strong>은 팀이 시스템 상태를 파악할 수 있게 해주는 도구 또는 기술 솔루션입니다. 모니터링은 사전 정의된 측정항목 또는 로그 세트를 기반으로 합니다.</p>
+
+<p><strong>관측 가능성</strong>은 팀이 시스템을 수시로 디버깅할 수 있게 해주는 도구 또는 기술 솔루션입니다. 관측 가능성은 사전 정의되지 않은 속성 및 패턴 탐색을 기반으로 합니다.</p>
+
+<p>모니터링과 관측 가능성을 잘 활용하려면 팀에 다음이 있어야 합니다.</p>
+
+<ul>
+<li>시스템의 전반적인 상태 보고(시스템이 작동하는지,
+시스템에서 충분한 리소스를 사용할 수 있는지)</li>
+<li>고객이 경험한 시스템 상태 보고(시스템 다운으로 좋지 않은 경험을 한 적이 있는지)</li>
+<li>핵심 비즈니스 및 시스템 측정항목 모니터링</li>
+<li>프로덕션에서 시스템을 이해하고 디버깅하는 데 도움이 되는 도구</li>
+<li>이전에는 알지 못했던 정보를 찾는 도구(즉, <em>알 수 없는 항목</em> 식별)</li>
+<li>서비스 간 상호작용을 포함하여 프로덕션 환경에서 인프라 문제를 추적, 이해, 진단하는 데 도움이 되는 도구 및 데이터에 액세스</li>
+</ul>
+
+<h2 id="how_to_implement_monitoring_and_observability" data-text="모니터링 및 관측 가능성을 구현하는 방법">모니터링 및 관측 가능성을 구현하는 방법</h2>
+
+<p>모니터링 및 관측 솔루션을 사용하면 다음을 수행할 수 있습니다.</p>
+
+<ul>
+<li>서비스 중단 또는 서비스 품질 저하를 나타내는 주요 지표 제공</li>
+<li>서비스 중단, 서비스 품질 저하, 버그, 미승인 활동 감지</li>
+<li>서비스 중단, 서비스 품질 저하, 버그, 미승인 활동 디버깅 지원</li>
+<li>용량 계획 및 비즈니스 목적의 장기 트렌드 파악</li>
+<li>변경 또는 추가된 기능의 예상치 못한 부작용 노출</li>
+</ul>
+
+<p>모든 DevOps 기능과 마찬가지로 도구 설치만으로는 목표를 달성할 수 없지만 도구는 이러한 노력을 돕거나 방해할 수 있습니다.  모니터링 시스템은 조직 내 개인 또는 팀으로 제한되어서는 안 됩니다.
+모든 개발자가 모니터링 기능을 능숙하게 사용할 수 있도록 지원함으로써 데이터 중심의 의사 결정 문화를 개발하고 전반적인 시스템 디버깅을 개선하여 서비스 중단을 줄일 수 있습니다.</p>
+
+<p>모니터링 및 관측 가능성을 효과적으로 구현하는 데 필요한 몇 가지 핵심 사항이 있습니다. 우선 모니터링을 통해 손상된 항목이 무엇인지 파악하고 과도한 손상이 발생하기 전에 손상 원인을 파악할 수 있어야 합니다. 서비스 중단 또는 서비스 품질 저하 시 주요 측정항목은 복원 시간(TTR)입니다. TTR의 주요 요소는 손상된 항목과 서비스를 복원하는 가장 빠른 경로를 신속하게 파악할 수 있는 능력(즉, 근본적인 문제를 즉시 해결할 필요는 없음)입니다.</p>
+
+<p>시스템을 모니터링하는 두 가지 방법으로는 시스템의 내부 상태와 메커니즘을 알 수 없는 <em>블랙박스</em> 모니터링과 그 반대 개념인 <em>화이트박스</em> 모니터링이 있습니다.</p>
+
+<p>자세한 내용은 <a href="https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">사이트 안정성 엔지니어링</a> 도서에서 '분산 시스템 모니터링'을 참조하세요.</p>
+
+<h3 id="blackbox_monitoring" data-text="블랙박스 모니터링">블랙박스 모니터링</h3>
+
+<p>블랙박스(또는 <em>합성</em>) 모니터링 시스템에서 입력은 고객과 동일한 방식으로 검사 중인 시스템에 전송됩니다. 이 입력은 공용 API에 대한 HTTP 호출 또는 노출된 엔드포인트에 대한 RPC 호출 형식을 취하거나 모니터링 프로세스의 일부로 전체 웹페이지를 렌더링해야 할 수도 있습니다.</p>
+
+<p>블랙박스 모니터링은 샘플링을 기반으로 합니다. 사용자 요청을 처리하는 동일한 시스템은 블랙박스 시스템에 의해 모니터링됩니다. 블랙박스 시스템은 대상 시스템 노출 영역 범위를 제공할 수도 있습니다.  즉, 각 외부 API 메서드를 프로브해야 할 수 있습니다. 또한 실제 고객 행동을 보다 효과적으로 모방하기 위해 요청을 혼합한 대표 샘플을 고려할 수도 있습니다.
+예를 들어 특정 API에 대해 100회의 읽기와 1회의 쓰기만 수행할 수 있습니다.</p>
+
+<p><em>예약 시스템</em>에서 이 프로세스를 제어하여 이러한 입력이 샘플링에 대한 확신을 얻기에 충분한 비율로 이루어지게 할 수 있습니다. 또한 시스템에는 응답 코드 확인이나 출력과 정규식의 일치 여부 확인과 같이 간단한 확인을 수행하는 <em>검증 엔진</em>이 있어야 합니다. 이 엔진은 헤드리스 브라우저에서 동적 사이트를 렌더링하거나 해당하는 DOM 트리를 통과하여 특정 요소를 찾을 수 있습니다. 지정된 프로브에 대한 의사 결정(성공 또는 실패)을 내린 후에는 보고 및 알림을 목적으로 결과와 메타데이터를 저장해야 합니다.  장애 스냅샷과 해당 컨텍스트를 검사하면 문제를 진단하는 데 매우 유용할 수 있습니다.</p>
+
+<h3 id="whitebox_monitoring" data-text="화이트박스 모니터링">화이트박스 모니터링</h3>
+
+<p>모니터링 및 관측 가능성은 모니터링 시스템을 정밀 조사 중인 워크로드에서 전송되는 신호에 따라 결정됩니다. 이러한 신호는 가장 일반적인 세 가지 구성요소인 <em>측정항목</em>, <em>로그</em>, <em>trace</em>의 형태를 취합니다. 일부 모니터링 시스템은 전체 시스템과의 사용자 상호작용을 나타내거나 시스템 내부의 상태 변경을 나타낼 수 있는 <em>이벤트</em>도 추적하고 보고합니다.</p>
+
+<p><em>측정항목</em>은 시스템 내부에서 수행한 측정에 대한 지표로, 해당 시스템의 상태를 측정 가능한 방식으로 나타냅니다. 측정항목은 거의 숫자로 표현되며 카운터, 분포, 게이지의 형태를 취하는 경향이 있습니다. 문자열 측정항목이 적합한 경우도 있지만, 통계 산출이나 시각화를 위해 수학적 계산을 수행해야 하기 때문에 숫자로 된 측정항목이 일반적으로 사용됩니다.</p>
+
+<p><em>로그</em>는 단일 시점에 단일 스레드 작업의 상태를 나타내는, 추가만 가능한 파일입니다. 이러한 로그는 '사용자 푸시 버튼 X'와 같은 단일 문자열이거나 이벤트가 발생한 시점, 처리 중인 서버, 기타 환경 요소와 같은 메타데이터를 포함하는 구조화된 로그 항목일 수 있습니다.  경우에 따라 구조화된 로그를 작성할 수 없는 시스템에서 <code translate="no" dir="ltr">[timestamp] [server] message
+[code]</code>와 같은 반구조화된 문자열을 생성할 수 있는데, 이러한 문자열은 필요에 따라 나중에 파싱될 수 있습니다. 로그 항목을 작성할 때는 log4j, structlog, bunyan, log4net, Nlog와 같은 클라이언트 라이브러리를 사용하는 경우가 많습니다.
+로그 처리는 신뢰할 수 있는 매우 안정적인 통계 생성 방법이 될 수 있는데, 로그 처리 시스템 자체에 버그가 있는 경우에도 불변성의 저장된 로그를 기반으로 통계를 재처리할 수 있기 때문입니다. 또한 실시간으로 로그를 처리하여 <em>로그 기반 측정항목</em>을 생성할 수 있습니다.</p>
+
+<p><em>trace</em>는 분산 시스템을 통해 이벤트 또는 사용자 작업을 따르는 데 사용되는 <em>스팬</em>으로 구성됩니다. 스팬은 한 서버를 통해 요청 경로를 표시할 수 있으며, 상위 스팬이 동일한 다른 스팬의 동시 실행이 가능합니다. 이 두 스팬이 하나의 trace를 형성하는데, 이는 종종 프로파일링 도구에 사용되는 것과 유사한 폭포식 구조 그래프에서 시각화됩니다. 이를 통해 개발자는 시스템, 여러 서버, 큐, 네트워크 홉에서 소요되는 시간을 파악할 수 있습니다. 이를 위한 공통 프레임워크는 <a href="https://opencensus.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenCensus</a> 및 <a href="https://opentracing.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenTracing</a>을 기반으로 구성된 <a href="https://opentelemetry.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenTelemetry</a>입니다.</p>
+
+<p>측정항목, 로그, trace는 측정 대상 서버 또는 시스템에 대한 정보를 관찰하거나 추론할 수 있는 인접 <em>에이전트</em>를 통해 모니터링 시스템에 보고할 수 있습니다.</p>
+
+<h3 id="instrumentation" data-text="계측">계측</h3>
+
+<p>모니터링 시스템을 사용하려면 시스템을 <em>계측</em>해야 합니다. 즉, 내부 상태를 노출하기 위해 시스템에 코드를 추가해야 합니다. 예를 들어 간단한 프로그램에 다른 서비스에 대한 연결 풀이 포함된 경우 언제든지 해당 풀의 크기와 사용되지 않은 연결 수를 추적할 수 있습니다. 이를 위해 개발자는 연결 풀 로직으로 코드를 작성하여 연결이 구성되거나 끊어진 시점, 연결이 전달된 시점, 연결이 반환된 시점을 추적해야 합니다. 이러한 코드는 각 항목에 대한 로그 항목이나 이벤트 형식을 취할 수 있습니다. 또한 큐 크기에 대한 게이지를 증감시키고, 연결을 만들거나 풀을 확장할 때마다 카운터를 증가시킬 수 있습니다.</p>
+
+<h3 id="correlation" data-text="상관관계">상관관계</h3>
+
+<p>측정항목은 애플리케이션은 물론 JVM, 게스트 OS, 하이퍼바이저, 노드 OS, 하드웨어와 같은 기본 시스템에서 수집할 수 있습니다. 스택에서 아래 방향으로 이동하면서 워크로드 간에 공유된 측정항목을 결합할 수 있습니다. 예를 들어 하나의 머신에서 여러 애플리케이션을 지원하는 경우 디스크 사용량 감시 결과는 관찰 대상 시스템과 직접적인 관계가 없을 수 있습니다. 그러나 공유 시스템에서 애플리케이션 간 문제의 상관관계를 파악하면 느린 디스크와 같은 기여 요인을 정의하는 데 도움이 될 수 있습니다. 단일 애플리케이션에서 해당하는 기본 시스템 측정항목으로 드릴다운한 다음 비슷한 영향을 받는 애플리케이션을 모두 표시하는 것은 성능이 매우 강력합니다.</p>
+
+<p>분산 시스템을 측정한다는 것은 여러 위치에서 관측 가능성을 확보하여 이를 함께 볼 수 있다는 의미입니다. 이는 프런트엔드와 관련 데이터베이스를 모두 의미하거나 고객의 기기에서 실행되는 모바일 애플리케이션, 클라우드 부하 분산기, 마이크로서비스 세트를 의미할 수 있습니다. 이러한 모든 소스의 데이터를 한 곳에 연결하는 기능은 현대의 관측 도구에서 기본적인 요구사항입니다.</p>
+
+<h3 id="computation" data-text="계산">계산</h3>
+
+<p>시스템의 다양한 소스에서 데이터를 수집한 후에는 여러 렐름에서 통계를 생성하고 데이터를 집계합니다. 이는사용자 집단, 컴퓨팅 공간의 리전, 고객의 지리적 위치일 수 있습니다. 이러한 통계를 원시 이벤트 기반으로 즉시 개발할 수 있는 기능은 매우 유용하지만 실시간으로 필요한 컴퓨팅 용량은 물론 스토리지 측면에서도 비용이 많이 들 수 있습니다.</p>
+
+<p>도구를 선택하고 계측을 계획할 때는 카디널리티와 차원을 고려해야 합니다. 측정항목 수집의 이 두 가지 측면은 시스템을 관찰하는 기능을 확대하는 데 큰 영향을 미칠 수 있습니다.</p>
+
+<p><em>카디널리티</em>는 시스템 내 고유한 값의 척도입니다. 예를 들어 <code translate="no" dir="ltr">cpu-utilization</code>과 같은 필드의 값은 0~100 범위에 속해야 하는 경향이 있습니다. 그러나 사용자의 고유 식별자를 추적하는 경우 이러한 식별자는 모두 고유하므로 사용자 수가 100만이면 카디널리티도 100만이 됩니다. 이는 큰 차이를 만듭니다.</p>
+
+<p><em>차원</em>은 단순히 단일 값을 기록하는 것은 물론 모니터링 시스템을 지원하는 단순 시계열 데이터베이스에서와 같이 타임스탬프를 함께 기록할 수 있는 기능입니다. 예를 들어 요청 전송의 경우 카운터 값만 기록하면 처음에는 <code translate="no" dir="ltr">{time=x, value=y}</code>와 같이 이 시점까지 전송된 요청 횟수의 값만 기록할 수 있습니다. 그러나 구조화된 로그와 마찬가지로 일부 환경 데이터를 기록해야 할 수 있습니다(예: <code translate="no" dir="ltr">{time=x, value=y, server=foo, cluster=123,
+environment=prod, service=bar}</code>). 높은 카디널리티와 높은 차원을 결합하면 컴퓨팅과 스토리지 요구사항이 크게 증가하여 모니터링이 예상대로 작동하지 않을 수 있습니다.  동적으로 생성된 데이터와 메타데이터를 모니터링 시스템에 쓰는 개발자는 이 개념을 이해해야 합니다.</p>
+
+<h3 id="learning_and_improving" data-text="학습 및 개선">학습 및 개선</h3>
+
+<p>시스템 운영은 서비스 중단과 실수로부터 학습하는 것입니다. 수정 조치를 통해 회고 분석 또는 사후 분석에 적용하는 과정은 잘 정리되어 있습니다. 이 프로세스를 통해 얻은 한 가지 결과는 개선된 모니터링 개발입니다. 이는 조직 내 모든 사용자가 모니터링 시스템을 빠르고 효율적으로 업데이트해야 하는 빠르게 변화하는 조직에 매우 중요합니다. 모니터링 구성은 매우 중요하므로 코드 개발 및 제공과 마찬가지로 <a href="/architecture/devops/devops-process-streamlining-change-approval" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">검토 및 승인</a>을 통해 변경사항을 추적해야 합니다. <a href="/architecture/devops/devops-tech-version-control" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">버전 제어 시스템</a>에서 모니터링 구성을 유지하는 것은 시스템에서 이 중요한 부분을 제어하는 동시에 시스템에 대한 광범위한 액세스를 허용할 때 유용한 첫 번째 단계입니다. 자동화 파이프라인을 통해 모니터링 구성을 배포하는 과정을 자동화하면 이러한 구성이 유효하고 일관되게 적용되도록 보장하는 기능도 개선할 수 있습니다. 모니터링 구성을 코드로 처리한 후에는 <a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">배포 자동화</a> 프로세스(이상적으로는 나머지 팀에서 사용하는 것과 동일한 시스템)를 통해 이러한 개선사항을 모두 수행할 수 있습니다.</p>
+
+<h2 id="common_pitfalls_of_implementing_monitoring_and_observability" data-text="모니터링 및 관측 가능성 구현 시의 일반적인 문제">모니터링 및 관측 가능성 구현 시의 일반적인 문제</h2>
+
+<p>조직에 적합한 모니터링 및 관측 가능성 시스템을 개발하는 경우 일반적으로 플러그 앤 플레이 방식의 간단한 솔루션이 없다는 점을 고려해야 합니다. 제대로 된 모니터링 시스템은 측정하려는 각 구성요소를 깊이 있게 이해하는 것은 물론 해당 시스템을 계측하기 위한 코드를 직접 조작할 수 있어야 합니다. 단, 시스템만 전담하는 모니터링 담당자나 전담팀은 두지 마세요. 이렇게 하면 단일 장애점을 차단하는 데 도움이 될 뿐만 아니라 전체 조직으로서의 시스템을 이해하고 개선할 수 있는 역량도 향상됩니다. 모니터링 및 관측 가능성은 모든 개발자가 기본적으로 알고 있어야 하는 기본 지식입니다. 여기에서 일반적인 문제는 운영팀, NOC 또는 기타 유사한 팀만 모니터링 시스템을 변경할 수 있다는 점입니다. 이 문제는 피해야 하며 CD 패턴을 따르는 시스템으로 교체해야 합니다.</p>
+
+<p>모니터링 시스템에서 알림을 작성할 때 일반적으로 피해야 할 패턴은 가능한 모든 오류 조건을 열거하고 각각의 조건에 대한 알림을 작성하는 것입니다. 이러한 알림은 <em>원인 기반 알림</em>이라고도 하며 가급적 피해야 합니다.
+대신 사용자에게 직접 영향을 미치는 증상이 표시되거나 예측되는 경우에만 알림을 보내는 <em>증상 기반 알림</em>에 초점을 맞춰야 합니다. 비사용자 대상 시스템도 관찰할 수 있어야 하지만 사용자 대상 증상이 없는 경우 긴급 대기 엔지니어에게 직접 알림을 전송해서는 안 됩니다. <em>사용자 대상</em>이라는 개념에는 조직 내부의 사용자도 포함될 수 있습니다.</p>
+
+<p>알림을 생성할 때는 전송 방식도 고려해야 합니다. 알림은 SMS 전송, 전용 모바일 앱, 자동 전화, 이메일을 포함하여 여러 가지 경로를 통해 긴급 대기 엔지니어에게 전송되어야 합니다. 여기에서 일반적인 문제는 이메일 배포 목록을 통해 전체 팀에 이메일 알림을 보내는 것입니다.
+이 경우 <a href="https://wikipedia.org/wiki/Diffusion_of_responsibility" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">책임 소재가 분산</a>되어 무시되는 알림이 발생할 수 있습니다. 또 다른 일반적인 문제는 <a href="https://wikipedia.org/wiki/Signal-to-noise_ratio" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">신호 대 잡음비</a>가 저조하다는 것입니다.
+조치를 취할 수 없는 알림이 너무 많거나 개선 효과가 없다면 팀은 유의미하고 중요도가 매우 높은 알림을 쉽게 놓칠 수 있습니다. 이 문제를 <a href="https://wikipedia.org/wiki/Alarm_fatigue" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">알림 피로도</a>라고도 합니다.
+알림을 차단하거나 제한하는 방법은 너무 광범위하거나 자주 적용되지 않도록 주의 깊게 추적해야 합니다.</p>
+
+<p>측정항목을 시각화하기 위해 모니터링을 빌드할 때 자주 범하는 실수는 완벽한 대시보드를 선별하기 위해 너무 많은 시간을 할애한다는 것입니다. 이는 위에서 설명한 원인 기반 알림 문제와 비슷합니다. 고성능 팀의 경우 관측 대상 시스템이 매우 빠르게 변경되므로 대시보드를 선별하기도 전에 시스템이 변경되는 경우가 많습니다. 대신 팀 구성원의 역량을 본인의 요구사항에 적합한 대시보드 또는 다른 시각화 세트를 신속하게 만드는 데 초점을 맞추는 것이 중요합니다.</p>
+
+<p>사용자 획득 비율 및 수익 추적과 같은 제품 또는 경영진 대상 측정항목을 운영 또는 서비스 상태 대시보드에서 분리하지 못하는 것도 일반적인 문제입니다. 이 두 측정항목은 매우 중요하므로 반드시 구별해야 합니다. 이러한 측정항목은 별도로 관리하는 것이 좋습니다.</p>
+
+<h2 id="how_to_measure_monitoring_and_observability" data-text="모니터링 및 관측 가능성을 측정하는 방법">모니터링 및 관측 가능성을 측정하는 방법</h2>
+
+<p>조직에서 모니터링 및 관측 시스템을 구현할 때는 내부 측정항목 중 일부를 추적하여 성능을 확인할 수 있습니다.  다음은 월별 설문조사를 수행하거나 사후 분석 또는 알림 로그를 자동으로 분석하여 추적할 수 있는 측정항목의 예시입니다.</p>
+
+<ul>
+<li><strong>모니터링 구성 변경사항.</strong> 모니터링 구성을 포함하는 저장소에 주당 적용되는 pull 요청 또는 변경사항은 얼마나 되나요? 이러한 변경사항은 얼마나 자주 모니터링 시스템에 푸시되나요? (매일, 일괄 처리, PR에서 즉시)</li>
+<li><strong>'업무 시간 외' 알림.</strong> 야간에 처리되는 알림의 비율은 얼마인가요? 일부 글로벌 기업에서는 24시간 연중무휴 지원을 제공하고 있기 때문에 문제가 되지 않지만, 주요 실패 지표에 대한 무관심을 나타내는 지표가 될 수 있습니다. 정기적인 야간 시간대 알림은 알림 피로도를 유발하며 팀이 과중한 작업 부담에 놓이게 될 수 있습니다.</li>
+<li><strong>팀 알림 균형 조정.</strong> 서로 다른 지역에 있는 팀이 특정 서비스를 처리하는 경우 모든 팀에서 공정하게 알림을 배포하고 처리하나요?  아니라면 그 이유는 무엇인가요?</li>
+<li><strong>거짓양성.</strong> 별도의 조치가 없거나 '의도한 대로 작동'한다고 표시된 알림은 얼마나 되나요? 조치를 취할 수 없고 오류를 예측하는 데 도움이 되지 않는 알림은 삭제해야 합니다.</li>
+<li><strong>거짓음성.</strong> 알림 없이 시스템 장애가 발생하거나 예상보다 늦게 발생하는 알림 횟수는 얼마나 되나요? 사후 분석에 새로운 (증상 기반) 알림이 얼마나 자주 포함되나요?</li>
+<li><strong>알림 생성.</strong> 매주 얼마나많은 알림이 생성되나요(총 알림 횟수, 심각도별 알림 횟수 등)?</li>
+<li><strong>알림 확인.</strong> 합의된 기한(예: 5분, 30분 등) 내에 확인되는 알림의 비율은 얼마나 되나요? 경우에 따라 이 측정항목은 보조 긴급 대기 엔지니어가 알림을 받을 때 <em>알림 실패</em>와 같은 측정항목과 결합되거나 이를 통해 추적할 수 있습니다.</li>
+<li><strong>알림 차단 및 차단 기간.</strong> 차단되거나 제한되는 알림은 매주 얼마나 되나요?  이 풀에 추가되거나 삭제된 알림은 얼마나 되나요?  알림 차단에 유효 기간 체계가 적용된 경우 차단 기간이 초기 예상보다 얼마나 더 길게 연장되나요?  평균 차단 기간과 최대 차단 기간은 얼마인가요? (혹시 '알림을 무한정 차단할 수 있나요?')</li>
+<li><strong>조치할 수 없는 알림.</strong> '조치할 수 없음'으로 처리되는 알림의 비율은 얼마인가요? 즉, 알림을 받은 엔지니어가 알림으로 인한 영향을 이해하지 못했거나 알려진 문제로 인해 즉시 조치를 취할 수 없었습니다. 조치를 취할 수 없는 알림은 잘 알려진 <a href="https://landing.google.com/sre/sre-book/chapters/eliminating-toil/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">과중한 업무</a>의 원인입니다.</li>
+<li><strong>사용성: 알림, 런북, 대시보드.</strong> 대시보드에 얼마나 많은 그래프가 있나요? 그래프당 몇 개의 선이 있나요? 팀이 그래프를 이해할 수 있나요?
+신규 엔지니어에게 유용한 설명 텍스트가 있나요? 필요한 정보를 찾기 위해 여러 번 스크롤하고 탐색해야 하나요? 엔지니어가 알림에서 플레이북과 대시보드까지 효과적으로 이동할 수 있나요? 알림의 제목이 엔지니어가 올바른 방향을 향하도록 지정되었나요? 이러한 측정항목은 시간 경과에 따라 팀 설문조사를 통해 측정할 수 있습니다.</li>
+<li><strong>MTTD, MTTR, 영향.</strong> 핵심은 탐지 시간, 해결 시간, 영향입니다. 서비스 중단이 고객에게 영향을 미치는 시간에 영향을 받는 고객 수를 곱한 '곡선 아래 면적(AUC)'을 측정하는 것을 고려하세요.
+이렇게 하면 도구를 사용해 보다 정확하게 계산하거나 예측할 수 있습니다.</li>
+</ul>
+
+<p>이러한 측정항목의 일부 또는 전체를 추적하면 조직의 모니터링 및 관측 시스템이 제 기능을 발휘하고 있는지 효과적으로 파악할 수 있습니다. 이러한 측정을 제품, 운영팀, 다른 방법을 기준으로 분류하면 제품 상태뿐만 아니라 프로세스와 인력에 대한 유용한 정보도 얻을 수 있습니다.</p>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li><a href="/architecture/devops/devops-measurement-proactive-failure-notification" track-type="solution" track-name="internalLink" track-metadata-position="body">오류 사전 알림</a>을 사용하여 사전 알림 생성에 대해 자세히 알아보기</li>
+<li><a href="https://landing.google.com/sre/resources/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Google 사이트 안정성 엔지니어링 리소스</a>를 방문하여 다음 SRE 도서를 찾아보세요.
+<ul><li>사이트 안정성 엔지니어링</li>
+<li>사이트 안정성 엔지니어링 워크북</li>
+<li>안전하고 안정적인 시스템 구축</li>
+</ul></li>
+<li><a href="/products/operations" track-type="article" track-name="internalLink" track-metadata-position="body">Google Cloud 운영</a></li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

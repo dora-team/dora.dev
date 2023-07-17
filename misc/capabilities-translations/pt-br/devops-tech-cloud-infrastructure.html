@@ -1,0 +1,236 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia de DevOps: infraestrutura em nuvem</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Observação:</strong><span> a <em>infraestrutura em nuvem</em> é um dos conjunto de recursos que aumentam a entrega do software e o desempenho organizacional. Esses
+recursos foram descobertos pelo
+<a href="https://www.devops-research.com/research.html">programa de pesquisa DORA State of DevOps</a>
+(em inglês), uma investigação independente e academicamente rigorosa sobre as práticas e
+recursos que impulsionam alto desempenho. Para saber mais, leia nossos
+<a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>Muitas organizações estão adotando a computação em nuvem. Mas há mais na nuvem além de
+comprar sua infraestrutura de um provedor de nuvem. O Instituto Nacional de
+Padrões e Tecnologia (NIST, na sigla em inglês) dos EUA
+<a href="https://csrc.nist.gov/publications/detail/sp/800-145/final" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">define</a>
+cinco características essenciais da computação em nuvem (link em inglês):</p>
+
+<ul>
+<li><strong>Autoatendimento sob demanda:</strong> os consumidores podem provisionar recursos de computação
+conforme necessário, sem interação humana do provedor.</li>
+<li><strong>Acesso à rede amplo:</strong> os recursos podem ser acessados por meio de várias
+plataformas, como smartphones, tablets, laptops e estações de trabalho.</li>
+<li><strong>Pooling de recursos:</strong> os recursos do provedor são agrupados em um modelo
+multilocatário, com recursos físicos e virtuais atribuídos dinamicamente sob demanda.
+O cliente pode especificar o local em um nível mais alto de abstração, como
+país, estado ou data center.</li>
+<li><strong>Elasticidade rápida:</strong> os recursos podem ser provisionados de maneira flexível e
+liberados para aumentar ou diminuir rapidamente sob demanda, parecendo
+ilimitados e apropriados em qualquer quantidade a qualquer momento.</li>
+<li><strong>Serviço medido:</strong> os sistemas em nuvem controlam, otimizam e
+informam automaticamente o uso de recursos com base no tipo de serviço, como armazenamento,
+processamento, largura de banda e contas de usuário ativas.</li>
+</ul>
+
+<p>O <a href="/devops/state-of-devops">relatório State of DevOps 2019</a> da <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> descobriu que apenas 29% das pessoas que alegam
+ter adotado tecnologias de nuvem concordaram ou concordaram totalmente que atenderam todas as cinco
+características definidas acima. Em 2018 e 2019, a pesquisa da DORA descobriu
+que as equipes de alto nível eram 23 vezes mais propensas a ter atingido as cinco
+características essenciais da nuvem do que as de baixo desempenho.  Isso pode explicar por que equipes
+e executivos que alegam ter adotado tecnologias de computação em nuvem também
+expressam frustração por não conseguir os resultados esperados.</p>
+
+<p>Como muitas organizações ainda usam as práticas e os
+processos tradicionais do data center para gerenciar a infraestrutura de nuvem, eles não conseguem alcançar os benefícios
+esperados, que, de acordo com a pesquisa DORA, incluem:</p>
+
+<ul>
+<li>Melhor desempenho de entrega de software: capacidade mais rápida e níveis mais altos
+de estabilidade.</li>
+<li>Melhor disponibilidade de serviço</li>
+<li>Visibilidade de custo aprimorada: em 2019, descobrimos que os entrevistados que atenderam a todas
+as características essenciais da nuvem tinham 2,6 mais chances de
+estimar com precisão o custo de operação do software. Eles também são 2 vezes mais
+propensos a identificar facilmente os aplicativos mais caros em termos
+operacionais.</li>
+</ul>
+
+<p>Por exemplo, muitas organizações com infraestrutura em nuvem não permitem
+que os desenvolvedores autoatendam os ambientes sob demanda: elas exigem que eles
+aumentem tíquetes ou enviem e-mails e aguardem dias para que os ambientes sejam provisionados ou
+para que as alterações de configuração sejam feitas. Nesse caso, mesmo que a organização
+possa pagar por um serviço de nuvem, ela não tem uma nuvem de acordo com a definição do NIST.</p>
+
+<p>Ao migrar para a nuvem, as organizações precisam investir na reformulação dos
+processos e práticas que implementaram quando usavam data centers
+tradicionais. Eles precisam adotar padrões e práticas nativas da nuvem para alcançar a
+agilidade, a estabilidade, a disponibilidade e a transparência de custos da computação em nuvem. Se
+a tecnologia subjacente estiver na nuvem, mas os resultados para os profissionais
+permanecerem inalterados (dias ou semanas para conseguir ambientes de teste, provisionar nova infraestrutura ou receber alterações de configuração), as organizações não
+terão os resultados pretendidos.</p>
+
+<h2 id="how_to_implement_cloud_infrastructure" data-text="Como implementar a infraestrutura em nuvem">Como implementar a infraestrutura em nuvem</h2>
+
+<p>A adoção de processos e práticas nativas da nuvem para implementar as cinco
+características do NIST envolve mudanças significativas por várias funções de TI, incluindo
+desenvolvedores, equipes de operações, segurança das informações, compras e finanças.
+As alterações exigem uma estreita colaboração entre essas funções para
+identificar e resolver objetivos conflitantes.</p>
+
+<p>Por exemplo, muitos desenvolvedores esperam ter controle total sobre a infraestrutura
+de produção ao usar plataformas de nuvem. Profissionais de segurança da informação
+se opõem a essa prática por um bom motivo, sem
+<a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">gestão da mudança</a>
+com disciplina, a infraestrutura de nuvem se transforma em uma obra de arte frágil de gerenciamento,
+vulnerável para ameaças externas e que não atende aos requisitos regulamentares.</p>
+
+<p>No entanto, os desenvolvedores podem ser capacitados para provisionar os recursos necessários
+enquanto atendem a esses requisitos. Muitas organizações adotaram o paradigma de
+<em>infraestrutura como código</em>. O GitOps é um exemplo. A configuração
+da infraestrutura é verificada no controle de versões, e os desenvolvedores podem provisionar
+ambientes, fazer alterações de configuração e executar implantações por meio de um
+mecanismo automatizado. O mecanismo extrai o código do controle de versão e
+executa operações por meio da API da nuvem sob demanda, sem intervenção
+humana. Com o controle e a automação de versões, todas as ações e os resultados
+delas são registrados para fornecer capacidade de rastreamento completa e auditoria de cada alteração
+em cada ambiente.</p>
+
+<p>A infraestrutura como código permite que você gerencie as alterações com eficiência e aplique
+os controles de segurança da informação. Por exemplo, é possível implementar a segregação de
+tarefas exigindo que todas as alterações na configuração especificada no controle de versões
+sejam
+<a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">aprovadas por alguém de um grupo específico de pessoas</a>
+(como é feito no Google). No entanto, a mudança para a infraestrutura como código requer
+um esforço significativo de engenharia e alteração de processos, incluindo a alteração de políticas
+para implementar controles de segurança das informações.</p>
+
+<p>Considere outro exemplo. Os provedores de nuvem costumam cobrar por
+infraestrutura enquanto ela está em uso (atendendo a quinta característica de serviço de medição
+do NIST), mas essa mudança da infraestrutura de custo fixo para custo variável pode ter
+implicações significativas para a aquisição e o financeiro. Conforme descrito no
+relatório State of DevOps 2019:</p>
+
+<p>"Algumas pessoas nas finanças podem dizer que a nuvem não aumentou a economia
+em curto prazo, mas sabemos que ela oferece mais transparência na
+informação. Como isso é possível? Ainda que a nuvem forneça informações transparentes
+sobre os custos aos proprietários do sistema, os usuários não pagam por
+eles, a menos que haja um modelo de estorno ou mecanismo semelhante.
+Isso pode levar a custos muito variáveis que não são checados, tornando os custos
+de nuvem imprevisíveis. Nesses cenários, as equipes que pagam por infraestrutura
+podem preferir data centers porque são previsíveis, mesmo que
+a visibilidade incentive os usuários do sistema a criar sistemas mais
+eficientes. Sugerimos que as organizações alinhem melhor os incentivos para que
+os proprietários do sistema tenham visibilidade para criar sistemas mais eficientes e
+para que os incentivos façam isso, usando estorno ou mecanismos semelhantes."</p>
+
+<p>Além de considerar como a infraestrutura é gerenciada no nível de
+configuração e finanças, os aplicativos geralmente precisam ser reprojetados para
+aproveitar os benefícios da maior estabilidade, confiabilidade e agilidade que a nuvem
+fornece. A reestruturação de sistemas em um modelo de nuvem nativa é discutida no
+artigo do Google Cloud
+<a href="/rearchitecting-to-cloud-native-whitepaper" track-type="article" track-name="internalLink" track-metadata-position="body">Nova arquitetura para a nuvem nativa: uma abordagem evolutiva para aumentar a produtividade do desenvolvedor em escala</a>. </p>
+
+<p>A consideração mais importante é se a implantação na nuvem
+ajudou sua organização a alcançar
+<a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">versões mais seguras e confiáveis</a>
+e níveis mais altos de disponibilidade,
+<a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">velocidade e confiabilidade</a> (em inglês).</p>
+
+<h2 id="common_pitfalls_of_implementing_cloud_infrastructure" data-text="Dificuldades comuns da implementação da infraestrutura em nuvem">Dificuldades comuns da implementação da infraestrutura em nuvem</h2>
+
+<p>Os maiores obstáculos para atender às cinco características definidas pelo NIST
+são:</p>
+
+<ul>
+<li>alinhamento e colaboração insuficientes entre as funções
+organizacionais que precisam trabalhar juntas para implementá-las;</li>
+<li>investimento insuficiente em mudanças técnicas, de processos e organizacionais.</li>
+</ul>
+
+<p>Muitas organizações começam com uma abordagem de <em>migração lift-and-shift</em> para mover
+aplicativos para a nuvem. Ela requer uma alteração mínima nos aplicativos e nos processos
+estabelecidos para gerenciar a infraestrutura de nuvem e pode ser feita
+de maneira relativamente rápida. Mas também oferece benefícios mínimos. É importante
+planejar além da migração lift-and-shift para um paradigma nativo da nuvem para novos
+softwares, bem como para os sistemas estratégicos atuais que continuarão a evoluir.</p>
+
+<p>A migração para a nuvem é uma jornada de vários anos. Como todas as mudanças que causam interrupção, é
+importante começar devagar e testar rapidamente para descobrir o que funciona ou não,
+e ser persistente e disciplinado sobre os aprendizados de escalonamento horizontal e
+padrões e práticas eficazes em toda a organização.</p>
+
+<p>Haverá muitos obstáculos nesta jornada, incluindo:</p>
+
+<ul>
+<li>redefinição de processos, arquitetura e governança para atender aos requisitos
+regulamentares, de maneira nativa da nuvem;</li>
+<li>planejamento da arquitetura de infraestrutura de vários locatários, para que as equipes possam
+fazer implantações de autoatendimento e alterações de configuração, garantindo separação
+lógica entre ambientes, possibilitando estornos e impedindo a expansão
+da nuvem e infraestrutura órfã;</li>
+<li>criação de um recurso de desenvolvimento de produtos para sua plataforma de infraestrutura em
+nuvem;</li>
+<li>ajuda na transição de compras para a infraestrutura como um serviço limitado
+em vez de um investimento em capital;</li>
+<li>ajuda para os desenvolvedores entenderem a criação de aplicativos nativos da nuvem;</li>
+<li>permitir que as operações mudem para as práticas modernas de
+<a href="https://landing.google.com/sre/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">engenharia de confiabilidade do site</a>
+(SRE), incluindo a implantação de infraestrutura como código como
+substituto para o gerenciamento manual de configurações baseadas em tíquetes (link em inglês);</li>
+<li>planejamento e execução da integração entre sistemas nativos da nuvem e
+sistemas não baseados na nuvem, incluindo mainframes e software empacotado/COTS.</li>
+</ul>
+
+<p>Para superar esses obstáculos, é necessário um
+<a href="/architecture/devops/devops-culture-transform" track-type="article" track-name="internalLink" track-metadata-position="body">programa de mudança substancial</a>
+que envolva investimento e colaboração contínuos entre pessoas de todos os níveis
+da organização.</p>
+
+<h2 id="how_to_measure_cloud_infrastructure" data-text="Como avaliar a infraestrutura em nuvem">Como avaliar a infraestrutura em nuvem</h2>
+
+<p>Para decidir o que avaliar, comece considerando os benefícios que você espera
+ganhar com a implementação da infraestrutura em nuvem. Em seguida, comece a avaliar
+até que ponto esses benefícios estão sendo realizados.</p>
+
+<p>Por exemplo, se sua meta é melhorar a visibilidade dos custos, é possível acompanhar
+o desempenho da infraestrutura para garantir que o custo dela seja cobrado corretamente
+para a linha de negócios, a equipe, o produto ou o ambiente relevante.</p>
+
+<p>Você também pode avaliar diretamente se foi ou não um bom trabalho
+implementar as características essenciais do NIST: pergunte às equipes até que ponto
+elas concordam com as declarações dessas características listadas no
+início deste documento. Equipes que concordam ou concordam totalmente estão indo bem. As equipes
+neutras ou que discordam precisam de ajuda e suporte para remover obstáculos
+e atingir os resultados. Depois, pense em quantas equipes que usam
+a nuvem podem realmente atender aos critérios do NIST.</p>
+
+<p>Alguns aspectos das características essenciais também podem ser medidos diretamente por
+meio da instrumentação dos processos. Por exemplo, se você tem um processo para gerenciar
+alterações de infraestrutura, é possível medir o tempo necessário para fazer uma
+alteração. Você também pode ver como as tecnologias nativas da nuvem são comuns na sua
+organização: por exemplo, a proporção de clusters ou máquinas gerenciadas usando
+o Kubernetes ou grupos de escalonamento automático em vez do provisionamento manual ou o
+tempo de vida dos hosts. Em data centers, longos tempos de atividade geralmente indicam alta
+confiabilidade. No paradigma nativo da nuvem, geralmente são feitas alterações de configuração
+iniciando novos hosts virtuais com a nova configuração, em vez de
+alterar os atuais. Essa prática é conhecida como <em>infraestrutura temporária</em>, em que
+um longo tempo de atividade é um indicador de uma máquina sem patch.</p>
+
+<h2 id="whats_next" data-text="A seguir">A seguir</h2>
+
+<ul>
+<li>Consulte links para outros artigos e recursos na
+<a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página do DevOps</a>.</li>
+<li><a href="/rearchitecting-to-cloud-native-whitepaper" track-type="article" track-name="internalLink" track-metadata-position="body">Artigo "Como arquitetar de maneira nativa na nuvem: uma abordagem evolutiva para aumentar a produtividade do desenvolvedor em escala"</a>. </li>
+<li><a href="/billing/docs/concepts" track-type="article" track-name="internalLink" track-metadata-position="body">Conceitos de faturamento do Cloud no Google Cloud</a>. </li>
+<li>Explore nosso
+<a href="https://www.devops-research.com/research.html">programa de pesquisa</a> (em inglês) do DevOps.</li>
+<li>Faça a
+<a href="https://www.devops-research.com/quickcheck.html">verificação rápida de DevOps</a>
+para entender sua posição em relação ao restante do setor.</li>
+</ul>
+
+</body></html>

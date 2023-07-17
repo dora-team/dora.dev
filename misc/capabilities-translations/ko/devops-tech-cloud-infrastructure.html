@@ -1,0 +1,102 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 기술: 클라우드 인프라</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>참고:</strong><span> <em>클라우드 인프라</em>는 소프트웨어 제공 및 조직 성과 향상을 가져오는 기능 집합 중 하나입니다. 이러한 기능은 성과 향상을 이끌어내는 관례와 기능을 독립적이자 학술적으로 심층 연구하는 <a href="https://www.devops-research.com/research.html">DORA State of DevOps 연구 프로그램</a>을 통해 개발되었습니다. 자세한 내용은 <a href="/devops">DevOps 리소스</a>를 참조하세요.</span></aside>
+<p>많은 조직이 클라우드 컴퓨팅을 채택하고 있습니다. 하지만 클라우드 제공업체에서 인프라를 구매하는 것보다 더 많은 것이 있습니다. 미국 국립표준기술연구소(NIST)는 클라우드 컴퓨팅의 다섯 가지 핵심 특성을 다음과 같이 <a href="https://csrc.nist.gov/publications/detail/sp/800-145/final" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">정의</a>합니다.</p>
+
+<ul>
+<li><strong>수요에 따른 셀프서비스:</strong> 소비자가 제공업체와 인적 상호작용 없이 필요에 따라 컴퓨팅 리소스를 프로비저닝할 수 있습니다.</li>
+<li><strong>광역 네트워크 액세스:</strong> 휴대전화, 태블릿, 노트북, 워크스테이션과 같은 다양한 플랫폼을 통해 기능에 액세스할 수 있습니다.</li>
+<li><strong>리소스 풀링:</strong> 제공업체 리소스는 멀티 테넌트 모델에서 풀링되고, 물리적 리소스와 가상 리소스가 수요에 따라 동적으로 할당됩니다.
+고객은 국가, 주 또는 데이터 센터와 같은 상위 수준의 추상화 위치를 지정할 수 있습니다.</li>
+<li><strong>빠른 탄력성:</strong> 기능이 탄력적인 방식으로 프로비저닝되고 수요에 따라 빠르게 수평으로 확장 또는 축소될 수 있으므로 항상 무제한이며 어떤 볼륨에도 적합합니다.</li>
+<li><strong>측정되는 서비스:</strong> 클라우드 시스템에서는 스토리지, 처리, 대역폭, 활성 사용자 계정과 같은 서비스 유형에 따라 리소스 사용을 자동으로 제어, 최적화, 보고합니다.</li>
+</ul>
+
+<p><a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment(DORA)</a>의 <a href="/devops/state-of-devops">2019 State of DevOps Report</a>에 따르면 클라우드 기술을 채택한 것으로 간주되는 사용자 중 29%만이 자신의 클라우드가 위에서 정의한 다섯 가지 특성에 모두 부합한다고 동의 또는 강력히 동의했습니다. 2018년과 2019년도의 DORA 연구에 따르면 성과가 우수한 답변자는 성과가 낮은 답변자보다 클라우드의 핵심 다섯 가지 특성에 모두 부합한다고 답할 가능성이 23배 높았습니다. 이러한 결과는 클라우드 컴퓨팅 기술을 채택했다고 말하는 팀과 경영진이 기대했던 결과를 얻지 못했다고 실망하는 이유가 될 수 있습니다.</p>
+
+<p>많은 조직에서는 여전히 기존 데이터 센터 관행과 프로세스를 사용하여 클라우드 인프라를 관리하므로, DORA의 연구에 따르면 다음과 같은 예상되는 이점을 얻을 수 없습니다.</p>
+
+<ul>
+<li>소프트웨어 제공 성과 개선: 더 빠른 처리량과 높은 안정성</li>
+<li>더 나은 서비스 가용성</li>
+<li>비용 가시성 개선: 2019년에는 핵심 클라우드 특성에 모두 부합한다고 답한 응답자가 소프트웨어 운영 비용을 정확하게 예측할 수 있는 가능성이 2.6배 더 높았습니다. 또한 운영비가 비싼 애플리케이션을 쉽게 식별할 수 있는 가능성도 두 배나 높습니다.</li>
+</ul>
+
+<p>예를 들어 클라우드 인프라를 갖춘 많은 조직이 개발자가 수요에 따라 자신의 환경을 셀프서비스하도록 허용하지 않습니다. 조직에서는 개발자에게 티켓을 발행하거나 이메일을 발송하도록 요구하며 환경이 프로비저닝되거나 구성 변경사항이 구현되려면 며칠을 기다려야 합니다. 이 경우 조직에서 클라우드 서비스 비용을 지불할 수 있지만 NIST의 정의에 따른 클라우드는 아닙니다.</p>
+
+<p>클라우드로 이전하는 조직은 기존 데이터 센터를 사용하면서 구현했던 프로세스 및 관행을 반드시 다시 설계해야 합니다. 클라우드 컴퓨팅의 유연성, 안정성, 가용성, 비용 투명성을 활용하려면 클라우드 기반 패턴과 방식을 채택해야 합니다. 기반 기술은 클라우드에 있지만 테스트 환경, 새 인프라 프로비저닝, 구성 변경 구현에 며칠이나 몇 주가 걸리는 등 실무자 측면의 결과는 바뀌지 않는다면 조직은 원하는 결과를 얻을 수 없을 것입니다.</p>
+
+<h2 id="how_to_implement_cloud_infrastructure" data-text="클라우드 인프라 구현 방법">클라우드 인프라 구현 방법</h2>
+
+<p>클라우드 기반 프로세스 및 방식을 채택하여 NIST의 다섯 가지 특성을 구현하려면 개발자, 운영팀, 정보보안, 조달, 재무를 비롯한 여러 IT 부서의 상당한 변화가 필요합니다.
+상충되는 목표를 식별하고 해결하는 등 변화를 위해서는 이들 부서 간의 긴밀한 협력이 필요합니다.</p>
+
+<p>예를 들어 많은 개발자는 클라우드 플랫폼을 사용할 때 프로덕션 인프라를 완전히 제어하길 원합니다. 정보보안 전문가는 엄격한 <a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">변경 관리</a> 없이 나름의 합당한 이유로 이러한 방식에 반대합니다. 클라우드 인프라는 관리가 어렵고 외부 위협에 취약하며 규제 요건에 부합하지 않는 불안한 환경이 될 수 있습니다.</p>
+
+<p>그러나 개발자는 이러한 요구사항을 충족하는 동시에 필요한 리소스를 프로비저닝할 수 있습니다. 많은 조직이 <em>코드형 인프라</em> 패러다임을 채택했습니다. GitOps가 그 예시입니다. 인프라 구성은 버전 제어에 체크인되며, 개발자는 환경을 프로비저닝하고, 구성을 변경하고, 자동화된 메커니즘을 통해 배포를 실행할 수 있습니다. 이 메커니즘은 버전 제어에서 코드를 받아 사용자 개입 없이 클라우드 API를 통해 수요에 따라 작업을 수행합니다. 버전 제어 및 자동화를 사용하면 모든 작업과 출력이 로깅되어 각 환경의 모든 변경사항을 완전히 추적하고 감사할 수 있습니다.</p>
+
+<p>코드형 인프라를 사용하면 변경사항을 효과적으로 관리하고 정보보안 제어를 적용할 수 있습니다. 예를 들어 버전 제어에 명시된 구성에 대한 모든 변경사항이 <a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">특정 집단의 구성원에게 승인</a>을 받도록 하여(Google의 방식) 직무를 분리할 수 있습니다. 하지만 코드형 인프라로 이전하려면 상당한 엔지니어링과 프로세스 변경, 그리고 정보보안 제어 구현을 위한 정책 변경이 필요합니다.</p>
+
+<p>또 다른 예시를 살펴보겠습니다. 클라우드 제공업체는 보통 사용하는 인프라에 대해 비용을 청구합니다(NIST의 다섯 가지 특성에 부합, 측정되는 서비스). 고정 비용 인프라에서 가변 비용 인프라로의 변화는 조직의 조달 및 재무 부문 모두에 큰 영향을 미칠 수 있습니다. 2019 State of DevOps Report의 설명은 다음과 같습니다.</p>
+
+<p>'재무 전문가 중 일부는 클라우드가 보다 나은 정보 투명성을 제공하면서도 단기적으로 비용을 절감시키지는 않는다고 말할 수 있습니다. 왜 그럴까요? 클라우드 시스템 소유자에게 비용 정보를 투명하게 공개하는 반면, 사용자는 지불 거절 모델이나 이와 유사한 메커니즘이 있지 않는 한 이 비용을 지불하지 않습니다.
+결과적으로 확인되지 않은 다양한 비용이 발생하게 되며 클라우드 비용을 예측하기 힘들어집니다. 이러한 시나리오에서 인프라 비용을 지불하는 팀은 가시성으로 인해 시스템 사용자들이 보다 효율적인 시스템을 구축할 의욕이 꺾인다 해도 예측이 가능한 데이터 센터를 선호할 수 있습니다. 당사는 지불 거절이나 유사한 메커니즘을 사용하여 시스템 소유자가 더 효율적인 시스템을 구축할 수 있는 가시성과 효율적인 시스템 구축에 대한 인센티브를 모두 갖도록 조직이 인센티브를 조정할 것을 제안합니다.</p>
+
+<p>클라우드가 제공하는 안정성, 신뢰성, 유연성 향상의 이점을 얻기 위해서는 구성 수준과 재무 수준 모두에서 인프라 관리 방식을 고려하는 것은 물론 애플리케이션을 다시 설계해야 할 때도 있습니다. 클라우드 기반 패러다임으로 시스템을 재설계하는 일은 Google Cloud 백서 <a href="/rearchitecting-to-cloud-native-whitepaper" track-type="article" track-name="internalLink" track-metadata-position="body">클라우드 기반으로 재설계: 규모에 맞춘 개발자 생산성 향상을 위한 혁신적인 접근 방식</a>에서 논의합니다. </p>
+
+<p>가장 중요하게 고려할 점은 조직이 보다 <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">신속하게 안정적으로 출시</a>하고 더 높은 수준의 가용성, <a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">속도, 안정성</a>을 달성하는 데 클라우드 개발이 실질적인 도움이 되는지 여부입니다.</p>
+
+<h2 id="common_pitfalls_of_implementing_cloud_infrastructure" data-text="클라우드 인프라 구현의 일반적인 문제">클라우드 인프라 구현의 일반적인 문제</h2>
+
+<p>NIST가 정의한 다섯 가지 특성에 부합하는 데 있어 가장 큰 장애물은 다음과 같습니다.</p>
+
+<ul>
+<li>이러한 환경을 구현하기 위해 반드시 협력해야 하는 조직의 부서 간 조정 및 협업이 부족합니다.</li>
+<li>기술, 프로세스, 조직적 변화에 대한 투자가 부족합니다.</li>
+</ul>
+
+<p>많은 조직이 애플리케이션을 클라우드로 이전할 때 <em>리프트 앤 시프트</em> 접근법으로 시작합니다. 이 방식에서는 클라우드 인프라를 관리하기 위해 애플리케이션과 기존에 확립된 절차를 최소한만 변경하며 상대적으로 빠르게 이전할 수 있습니다. 하지만 최소한의 이점만 얻을 수 있습니다. 리프트 앤 시프트 이상으로 새로운 소프트웨어뿐만 아니라 계속 진화하길 원하는 기존의 전략적 시스템도 클라우드 기반 패러다임으로 이전할 계획을 세우는 것이 중요합니다.</p>
+
+<p>클라우드로의 이전은 수 년이 걸리는 일입니다. 모든 혁신적인 변화가 그러하듯 작은 것부터 시작하여 신속하게 실험하고 가능한 것과 불가능한 것을 확인한 후, 알게 된 효과적인 패턴 및 방식을 지속적으로 통제하에 확장하는 것이 중요합니다.</p>
+
+<p>이 과정에서 극복해야 할 장애물은 다음과 같습니다.</p>
+
+<ul>
+<li>클라우드 기반 방식에서 요구되는 규제 요건을 충족하기 위해 프로세스, 아키텍처, 통제 방식을 재설계해야 합니다.</li>
+<li>팀이 셀프서비스를 개발하고 구성을 변경할 수 있게 허용하는 동시에 환경 간 논리적으로 분리하고, 지불 거절을 가능하게 하면서, 클라우드의 무질서한 확대 및 고아 인프라를 방지할 수 있도록 멀티 테넌트 인프라 아키텍처를 설계해야 합니다.</li>
+<li>클라우드 인프라 플랫폼을 위한 제품 개발 역량 구축</li>
+<li>자본 투자가 아닌 측정된 서비스로서 인프라 이전 자금 조달 지원</li>
+<li>개발자가 클라우드 기반 애플리케이션 구축을 이해하도록 교육</li>
+<li>수동 티켓 기반 구성 관리를 코드형 인프라로 대체하는 등 최신 <a href="https://landing.google.com/sre/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">사이트 안정성 엔지니어링</a>(SRE) 방식으로 작업을 이전해야 합니다.</li>
+<li>메인프레임과 패키징된 소프트웨어/COTS를 비롯하여 클라우드 기반 시스템과 클라우드 외 시스템 간 통합을 계획하고 시행해야 합니다.</li>
+</ul>
+
+<p>이러한 장애물을 극복하려면 지속적인 투자와 조직 내 모든 수준의 사람들 간 협업을 수반하는 <a href="/architecture/devops/devops-culture-transform" track-type="article" track-name="internalLink" track-metadata-position="body">대규모 변화 프로그램</a>이 필요합니다.</p>
+
+<h2 id="how_to_measure_cloud_infrastructure" data-text="클라우드 인프라 측정 방법">클라우드 인프라 측정 방법</h2>
+
+<p>특정할 대상을 결정하려면 먼저 클라우드 인프라를 구현하여 얻고자 하는 이점을 고려해야 합니다. 그런 다음 이러한 이점이 실현된 정도를 측정합니다.</p>
+
+<p>예를 들어 비용 가시성을 개선하는 것이 목표라면 해당 사업 부문, 팀, 제품, 환경에 인프라 비용이 정확하게 청구되었는지 확인함으로써 목표 달성 정도를 추적할 수 있습니다.</p>
+
+<p>또는 NIST의 핵심 특성이 얼마나 잘 구현되었는지 직접 측정할 수도 있습니다. 팀에게 이 문서의 초반부에 기재된 다섯 가지 특성에 관한 서술을 보여주고 얼마나 동의하는지 물어보면 됩니다. 동의하거나 강력히 동의하는 팀은 잘 하고 있는 것이며 중간이거나 동의하지 않는 팀은 장애물을 극복하고 원하는 결과를 얻기 위해 도움과 지원이 필요한 것입니다. 그런 다음 실제로 NIST의 기준에 부합하는 클라우드를 사용하고 있다고 말하는 팀이 얼마나 되는지 알아봅니다.</p>
+
+<p>핵심 특성 중 일부는 프로세스를 구현하여 직접 측정할 수도 있습니다. 예를 들어 인프라 변경사항을 관리하는 프로세스가 있다면 변경사항의 엔드 투 엔드 시간을 측정할 수 있습니다. 조직에 클라우드 기반 기술이 얼마나 보편적인지 살펴볼 수도 있습니다. 예를 들면 수동 프로비저닝이나 호스트 수명이 아니라 Kubernetes 또는 자동 확장 그룹으로 관리되는 클러스터나 머신의 비율을 측정하면 됩니다. 데이터 센터에서 긴 업타임은 보통 높은 안정성을 나타냅니다. 클라우드 기반 패러다임에서는 기존 호스트에 변경사항을 구현하는 것이 아니라 새 구성으로 새로운 가상 호스트를 시작하여 구성을 변경하곤 합니다. 이러한 방식을 <em>임시 인프라</em>라고 하며, 긴 업타임은 패치가 적용되지 않은 머신을 나타내는 지표입니다.</p>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li><a href="/rearchitecting-to-cloud-native-whitepaper" track-type="article" track-name="internalLink" track-metadata-position="body">백서: 클라우드 기반으로 재설계: 규모에 맞춘 개발자 생산성 향상을 위한 혁신적인 접근 방식</a></li>
+<li><a href="/billing/docs/concepts" track-type="article" track-name="internalLink" track-metadata-position="body">Google Cloud의 Cloud Billing 개념</a></li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

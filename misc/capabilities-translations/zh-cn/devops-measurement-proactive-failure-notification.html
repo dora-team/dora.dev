@@ -1,0 +1,59 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 衡量：主动式故障通知</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：<em>主动式故障通知</em>是可提升软件交付和组织绩效的能力之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>主动式故障通知是在受监控的值接近已知故障阈值时生成通知，而不用等待系统提醒您发生故障（或更糟糕的情况是让客户发现您的应用或服务已中断）的做法。借助此方法，您可以在问题变得严重或开始影响用户之前发现问题，可能还可以解决问题。<a href="https://services.google.com/fh/files/misc/state-of-devops-2014.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2014 年 DevOps 研究和评估 (DORA)</a> (PDF) 研究表明，主动监控是软件交付性能的重要预测指标。DORA 研究表明，使用主动通知的团队可以快速诊断和解决问题。如果故障主要由运营团队以外的来源报告，比如由网络运营中心 (NOC) 报告，或者更糟糕的是由客户报告，而不是由内部监控，性能就会受到影响。</p>
+
+<h2 id="how_to_implement_proactive_failure_notification" data-text="如何实现主动式故障通知">如何实现主动式故障通知</h2>
+
+<p><strong>使用提醒规则。</strong>您应该使用特定的提醒规则<em></em>生成故障通知。提醒规则定义了哪些条件下会生成提醒以及该提醒所用的通知渠道。 如需详细了解如何生成提醒，请参阅<a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="solution" track-name="internalLink" track-metadata-position="body">监控和可观测性</a>。</p>
+
+<p><strong>使用阈值。</strong>提醒规则应针对您监控的用于指示实际问题的指标使用阈值。监控阈值会触发提醒规则，从而在指标级别超过阈值时生成通知。</p>
+
+<p><strong>请谨慎选择阈值。</strong>选择阈值，仅在根据实际情况预测阈值会引发问题时生成提醒。也就是说，不要随意选择一个值。通常，您应该确定哪些值级别会开始对用户产生影响，然后在达到该值的某个百分比时触发警报通知。</p>
+
+<p>例如，您可以选择在网页的平均响应时间达到阈值的 80% 时触发提醒通知，因为您知道用户会在这个点开始感到沮丧并呼叫支持。</p>
+
+<p><strong>进行事后分析。</strong>对突发事件进行事后分析时，请确定哪些指标可以预测突发事件并在将来对其进行监控。</p>
+
+<p><strong>规划通知策略。</strong>如果通知不需要执行任何操作或每次都执行同一操作，您应该让响应自动化。您还应该考虑事件的通知数量。大量的事件通知可能会分散注意力，用处并不大。当人们接触到大量的警报时，他们可能会对警报变得不敏感（这个问题被称为“警报疲劳”），从而导致响应时间延长或错过提醒。定期审核通知并删除那些无法采取行动的通知。</p>
+
+<h2 id="ways_to_improve_failure_notification" data-text="改进故障通知的方法">改进故障通知的方法</h2>
+
+<p>您可以配置提醒，抢在网络运营中心 (NOC) 或客户之前主动发现问题，在系统出现问题之前提醒您的关键团队。策略包括：</p>
+
+<ul>
+<li>将日志记录和监控系统中的提醒配置到适当的级别。</li>
+<li>配置提醒，以确保它们通知可解决问题的人员和团队。</li>
+<li>根据发生系统故障之前的阈值警告来主动监控系统运行状况。</li>
+<li>根据变化率警告主动监测系统运行状况。</li>
+<li>确保只出现相关的提醒，并且团队不会收到过多的提醒。仔细查看哪些提醒是不相关的。停用不相关的提醒，并重新启用相关监控提醒。停用所有提醒是一种不恰当的做法。</li>
+</ul>
+
+<h2 id="ways_to_measure_failure_notifications" data-text="衡量故障通知的方法">衡量故障通知的方法</h2>
+
+<p>主动监控插桩 (instrumentation) 的过程非常简单。要捕获的组成部分包括：</p>
+
+<ol>
+<li>日志记录和监控系统发出的故障提醒被捕获和使用的程度。</li>
+<li>使用阈值警告主动监控系统运行状况的程度。</li>
+<li>使用变化率警告主动监控系统运行状况的程度。</li>
+</ol>
+
+<p>为了确保捕获系统方方面面的状况，您应该至少通过两种方式监控指标。例如，您可以设置一个指标阈值，当指标在指定时间范围内上升或下降到某个值时触发警报；同时设置一个变化率，在指标值的变化率高于或低于预期时触发警报。</p>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>如需详细了解如何生成提醒，请参阅<a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="solution" track-name="internalLink" track-metadata-position="body">监控和可观测性</a>。</li>
+<li>阅读<a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">《站点可靠性工程 (SRE)》一书</a>。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

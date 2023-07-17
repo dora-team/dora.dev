@@ -1,0 +1,127 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnología de DevOps: Administración de cambios en la base de datos</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> La <em>administración de cambios en la base de datos</em> es un conjunto de capacidades que ofrecen una entrega de software y un rendimiento organizativo mayores. Estas funciones se descubrieron mediante el <a href="https://www.devops-research.com/research.html">programa de investigación del estado de DevOps de DORA</a>, una investigación independiente y rigurosa desde el punto de vista académico sobre las prácticas y las funciones que impulsan el alto rendimiento. Para obtener más información, lee nuestros <a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>Los cambios en la base de datos suelen ser una fuente importante de riesgo y retraso cuando se realizan implementaciones. <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> investigó qué prácticas relacionadas con la base de datos ayudan durante el proceso de implementación de la entrega continua, lo que mejora el rendimiento y la disponibilidad de la entrega de software.</p>
+
+<p>La investigación de DORA descubrió que integrar el trabajo de la base de datos en el proceso de entrega de software contribuye de manera positiva a la <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">entrega continua</a>.
+Pero ¿cómo pueden los equipos mejorar la entrega de la base de datos como parte de la implementación de la entrega continua? Algunas prácticas predicen los resultados del rendimiento.</p>
+
+<p>DORA descubrió que es importante tener una buena comunicación y administración integral de configuración que incluya la base de datos. Los equipos que trabajan bien en la entrega continua almacenan los cambios de la base de datos como secuencias de comandos en el control de versión y administran estos cambios de la misma manera en que administran los cambios de la aplicación de producción. Además, cuando los cambios en la aplicación requieren cambios en la base de datos, estos equipos los analizan con las personas responsables de la base de datos de producción y se aseguran de que el equipo de ingeniería tenga visibilidad del progreso de los cambios pendientes de la base de datos.</p>
+
+<p>Cuando los equipos siguen estas prácticas, los cambios en la base de datos no los ralentizan ni generan problemas cuando realizan implementaciones de código.</p>
+
+<h2 id="how_to_implement_database_change_management" data-text="Cómo implementar la administración de cambios en la base de datos">Cómo implementar la administración de cambios en la base de datos</h2>
+
+<p>Existen dos aspectos relacionados con la implementación de la administración eficaz de cambios de bases de datos: cultural y técnico. En esta sección, se analizan ambos.</p>
+
+<h3 id="establish_effective_communication_of_database_changes" data-text="Establece una comunicación eficaz de los cambios de la base de datos">Establece una comunicación eficaz de los cambios de la base de datos</h3>
+
+<p>Las investigaciones demuestran que los equipos funcionan mejor cuando analizan los temas con las personas responsables de administrar la base de datos de producción, y cuando todos tienen visibilidad del progreso de los cambios pendientes de la base de datos.</p>
+
+<p>Analizar los cambios propuestos con los administradores de bases de datos de producción (DBA) es importante por varios motivos. En primer lugar, estos expertos pueden asesorarte sobre cuál es la mejor manera de alcanzar los resultados y señalar posibles problemas, como los de rendimiento.
+Muchas operaciones tienen características de rendimiento muy diferentes en los sistemas de producción en comparación con las estaciones de trabajo para desarrolladores. Este debate también brinda información a los DBA sobre lo que sucede en sentido ascendente, lo que los ayuda a prepararse mejor para el impacto de los próximos cambios.</p>
+
+<p>Asegurarse de que todos tengan visibilidad sobre el progreso de los cambios también es crucial para que los equipos, incluidos los DBA, puedan comprender qué cambios se aproximan, su estado de prueba y qué cambios de esquema llegaron a las distintas bases de datos compartidas de producción y de no producción. Para facilitar la visibilidad, puedes hacer lo siguiente:</p>
+
+<ul>
+<li>Mantener todos los cambios en el esquema de la base de datos en el control de versión, junto con el código de la aplicación al que pertenece el esquema</li>
+<li>Usar una herramienta que registre qué cambios se ejecutaron en qué entornos y cuáles fueron los resultados</li>
+</ul>
+
+<p>Estas prácticas también garantizan que haya una fuente de información canónica destinada a todos los cambios y facilitan el acceso al historial de cambios para fines de auditoría.</p>
+
+<h3 id="treat_all_database_schema_changes_as_migrations" data-text="Considera todos los cambios en el esquema de la base de datos como migraciones">Considera todos los cambios en el esquema de la base de datos como migraciones</h3>
+
+<p>Un patrón muy usado para el control de versiones de los cambios de base de datos es capturar cada cambio como una secuencia de comandos de migración que se mantiene en el control de versión, como se muestra en el siguiente diagrama. Cada secuencia de comandos de migración tiene un número de secuencia único para que sepas en qué orden aplicar las migraciones.</p>
+
+<p><img src="/static/architecture/devops/images/database-change-management-1.png" alt="En el diagrama, se muestra la captura de cada cambio en la base de datos como una secuencia de comandos de migración con un número de secuencia único."/></p>
+
+<p>Luego, te aseguras de que cada instancia de base de datos tenga una tabla que registre las migraciones que se ejecutaron en esa instancia en particular. De esta manera, manejas el control de versiones del esquema de la base de datos, de modo que puedas usar una herramienta para aplicar las secuencias de comandos de migración y llevar la base de datos a la versión de esquema que desees. Los siguientes son algunos ejemplos de herramientas:</p>
+
+<ul>
+<li><a href="https://github.com/golang-migrate/migrate" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">migrate</a> (Go)</li>
+<li><a href="https://pypi.org/project/alembic/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">alembic</a> (Python)</li>
+<li><a href="https://guides.rubyonrails.org/active_record_migrations.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Active Record Migrations</a> (Ruby on Rails)</li>
+<li><a href="https://github.com/dbup/dbup" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">dbup</a> (.NET)</li>
+<li><a href="https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Entity Framework Migrations</a> (.NET)</li>
+<li><a href="https://laravel.com/docs/7.x/migrations" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Laravel Migrations</a> (PHP)</li>
+<li><a href="https://flywaydb.org/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Flyway</a> (independiente de la plataforma)</li>
+<li><a href="https://www.liquibase.org/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Liquibase</a> (independiente de la plataforma)</li>
+</ul>
+
+<p>También puedes usar las migraciones a fin de crear esquemas de bases de datos vacíos para el desarrollo y las pruebas.</p>
+
+<p>Como se muestra en el siguiente diagrama, cada instancia de base de datos tiene una tabla que registra las migraciones que ejecutaste en esa instancia. Luego, puedes realizar actualizaciones de forma automática mediante una herramienta o secuencia de comandos que ejecute migraciones que aún no se aplicaron a la instancia de base de datos y que actualice la tabla de migraciones una vez que cada una se completa de manera correcta.</p>
+
+<p><img src="/static/architecture/devops/images/database-change-management-2.png" alt="Ejemplo de una tabla que registra migraciones en una instancia."/></p>
+
+<p>Puedes administrar los cambios en la base de datos de la misma manera en que administras los cambios de la aplicación: a través de un proceso automatizado que usa el control de versión como la fuente de información.</p>
+
+<h3 id="zero-downtime_database_changes" data-text="Cambios en la base de datos sin tiempo de inactividad">Cambios en la base de datos sin tiempo de inactividad</h3>
+
+<p>Muchas organizaciones programan el tiempo de inactividad para sus servicios cuando realizan cambios en el esquema de la base de datos debido a la necesidad de coordinarlos con implementaciones de la aplicación o debido a un bloqueo de la tabla de la base de datos durante la ejecución de dichos cambios.
+La entrega continua tiene como objetivo eliminar el tiempo de inactividad de las implementaciones, por lo que te presentamos algunas estrategias para realizar cambios en el esquema de la base de datos sin tiempo de inactividad:</p>
+
+<ul>
+<li><strong>Usa un framework de migración de esquemas en línea</strong> como <a href="https://github.com/github/gh-ost" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">gh-ost</a> o <a href="https://www.percona.com/doc/percona-toolkit/3.0/pt-online-schema-change.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">pt-online-schema-change</a>.
+Estas herramientas crean una copia “fantasma” de cada tabla que deseas cambiar, migran la copia vacía y, luego, copian de forma incremental los datos de la tabla original, lo que incluye cualquier actualización que ocurra durante la migración. Después de completar este proceso, reemplazan la tabla original con la fantasma. Algunas bases de datos, como <a href="/spanner/docs/schema-updates" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud Spanner</a>, pueden realizar actualizaciones del esquema sin tiempo de inactividad.</li>
+<li><p><strong>Desvincula los cambios de la base de datos y los cambios de las aplicaciones</strong> mediante el <a href="https://medium.com/continuousdelivery/expand-contract-pattern-and-continuous-delivery-of-databases-4cfa00c23d2e" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">patrón de cambio paralelo</a>.
+En este patrón, nunca haces mutar objetos de bases de datos existentes. En su lugar, agregas estructuras nuevas junto a las antiguas. Por ejemplo, considera cambiar una columna “dirección” a dos columnas: <code translate="no" dir="ltr">address_1</code> (dirección 1) y <code translate="no" dir="ltr">address_2</code> (dirección 2).</p>
+
+<p>En lugar de borrar la columna anterior y agregar la nueva, y lanzar una versión nueva de la aplicación al mismo tiempo, debes agregar las columnas nuevas, pero conservar las anteriores. Puedes hacerlo antes de que se lleve a cabo la implementación de la aplicación. Así, la versión nueva de la aplicación puede buscar las columnas nuevas, leerlas si están presentes y no son nulas; de lo contrario, leerá la columna anterior. Luego, la aplicación puede escribir en las columnas antiguas y las nuevas, migrar los datos de manera diferida y permitir la reversión de la aplicación sin requerir una reversión de la base de datos.</p>
+
+<p>De esta manera, la implementación de la aplicación se desacopla del cambio de la base de datos, que se suele realizar sin incurrir en tiempo de inactividad, ya que no implica la migración de datos. Para reducir la dificultad de implementación, intercambiamos la complejidad adicional en la aplicación.
+Como alternativa, se pueden usar activadores de bases de datos para mantener sincronizados los datos de las columnas nuevas y anteriores.</p></li>
+<li><p><strong>Diseña e implementa una estrategia de partición y archivo de datos</strong>. Una causa principal de migraciones largas son las tablas de base de datos con una gran cantidad de filas. Asegúrate de que las aplicaciones estén diseñadas para permitir la partición y el archivo de datos a fin de evitar que las tablas crezcan demasiado. Un ejemplo de esto sería crear varias instancias de una tabla para cada trimestre, por ejemplo, en lugar de una tabla <code translate="no" dir="ltr">survey_answers</code>, podrías tener <code translate="no" dir="ltr">survey_answers_2020Q1</code>, <code translate="no" dir="ltr">survey_answers_2020Q2</code> etcétera. Asegúrate de que el diseño de la aplicación y las revisiones de arquitectura incluyan la validación de la estrategia de partición o archivo de datos de la aplicación.</p></li>
+<li><p><strong>Usa una arquitectura de secuencias de eventos</strong>. En una <a href="https://microservices.io/patterns/data/event-sourcing.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">arquitectura de secuencias de eventos</a>, en lugar de que la base de datos almacene el estado actual de la aplicación, almacena los <em>cambios</em> en su estado en forma de un registro de eventos conocidos como <em>comandos</em>. Por lo tanto, cuando el cliente cambia su dirección, en lugar de actualizar una tabla con los detalles del cliente, la aplicación emite un comando de cambio de dirección que se almacena en la base de datos. Así funcionan los registros de transacciones de la base de datos y el control de versión, y es un patrón común en los sistemas distribuidos. En una arquitectura basada en secuencias de eventos, los eventos se pueden poner en cola para que las migraciones de la base de datos ocurran mientras los eventos se encuentran en la cola. Los eventos en la cola se pueden pasar a la base de datos una vez que se completa la migración. Algunas bases de datos pueden poner en cola las consultas mientras se ejecutan las migraciones de esquema, lo que puede ser eficaz si las migraciones se completan con rapidez.</p></li>
+<li><p><strong>Usa una solución NoSQL.</strong> Algunas bases de datos NoSQL, como <a href="https://firebase.google.com/docs/firestore" target="firebase" track-type="article" track-name="firebaseLink" track-metadata-position="body">Firestore</a> y <a href="/bigtable" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud Bigtable</a>, no se ven afectadas por el tiempo de inactividad que crean los cambios de esquema. Las bases de datos de documentos como Firestore tienen un esquema implícito, lo que significa que el esquema se administra en la capa de la aplicación y no en la capa de la base de datos.
+Sin embargo, hay compensaciones asociadas con el uso de bases de datos NoSQL: no son óptimas para todas las aplicaciones.</p></li>
+</ul>
+
+<p>Además de eliminar el tiempo de inactividad programado, también debes evitar el tiempo de inactividad no programado. Asegúrate de probar todos los cambios de esquema con respecto a un <a href="/architecture/devops/devops-tech-test-data-management" track-type="article" track-name="internalLink" track-metadata-position="body">conjunto de datos similar a la producción</a> (sin ningún tipo de información personal o confidencial depurada, por supuesto) para asegurarte de que la aplicación se comporte como se espera durante la migración y después de ella. Algunas organizaciones crean una versión depurada de la base de datos de producción según una programación diaria para usar con este propósito. Si usas un sistema de administración de bases de datos con más de un nodo en producción, asegúrate de realizar la prueba en una instancia con al menos dos nodos para ayudar a detectar problemas del sistema distribuido.</p>
+
+<h2 id="common_pitfalls_of_implementing_database_change_management" data-text="Errores comunes de la implementación de la administración de cambios de las bases de datos">Errores comunes de la implementación de la administración de cambios de las bases de datos</h2>
+
+<p>Hay algunos errores comunes que se deben tener en cuenta cuando se implementan las prácticas clave que se describen aquí.</p>
+
+<p>Primero, muchas organizaciones están muy aisladas. A menudo, los DBA trabajan en su propio equipo independiente, que usa su propio proceso para administrar los cambios. Cuando los equipos de entrega de software implementan un proceso nuevo para administrar los cambios en la base de datos sin consultar al equipo de DBA, es probable que enfrenten una resistencia al uso de su proceso nuevo para realizar cambios en las bases de datos que administra el equipo de DBA. Esto puede reducir de forma sustancial los beneficios de pasar a un proceso nuevo.</p>
+
+<p>El primer paso es reunirse con ellos para hablar sobre cómo lograr los objetivos que se presentan en este artículo. Es importante conseguir su aprobación para cualquier proceso propuesto y cambio tecnológico. La mejor manera de hacer esto es preguntarles qué problemas enfrentan, ver cómo las ideas que se presentan en este artículo pueden ayudarlos a abordar estos problemas y ofrecer asistencia. Lo ideal sería que los equipos de entrega y los DBA puedan encontrar una solución aceptable para ambos.</p>
+
+<p>Por lo general, este obstáculo se ve agravado por otro error: la situación común en la que varias aplicaciones comparten el mismo esquema de base de datos. Esto significa que los equipos que trabajan en una aplicación no pueden alterar el esquema sin afectar de forma potencial otras aplicaciones. Esto requiere que se aplique una sola solución para administrar los cambios de la base de datos de todas las aplicaciones que comparten el esquema de la base de datos. Es posible, y, aún más beneficioso, implementar un mecanismo de autoservicio con control de versiones para implementar cambios de bases de datos en esta situación. Sin embargo, implica una planificación y una implementación minuciosa.</p>
+
+<p>Por último, implementar la administración de cambios de la base de datos basada en la migración y las implementaciones sin tiempo de inactividad puede implicar un <a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">cambio arquitectónico</a> importante.
+Esto se debe tener en cuenta cuando se estima el esfuerzo necesario para implementar estas prácticas.</p>
+
+<h2 id="how_to_measure_database_change_management" data-text="Cómo medir la administración de cambios de la base de datos">Cómo medir la administración de cambios de la base de datos</h2>
+
+<p>El objetivo de un sistema eficaz de administración de cambios de bases de datos es que los cambios en la base de datos no ralenticen las implementaciones ni causen problemas. Vale la pena medir el porcentaje de cambios con errores en el que los cambios de la base de datos fueron un factor de contribución, y el grado en el que el trabajo relacionado con los cambios en la base de datos contribuye al plazo de entrega general desde el control de versión hasta el lanzamiento.</p>
+
+<p>Si los cambios de la base de datos requieren tiempo de inactividad programado, esto también es una consideración importante. Para medir el impacto económico del tiempo de inactividad programado, considera la posible pérdida de ingresos que causa el tiempo de inactividad y los costos salariales de pagar a las personas para que trabajen más de las horas normales a fin de realizar implementaciones.
+La implementación fuera del horario de trabajo también puede contribuir al agotamiento del equipo. Estos impactos se pueden usar con el propósito de justificar el trabajo que se requiere a fin de implementar las soluciones para las implementaciones sin tiempo de inactividad que se analizan en este documento.</p>
+
+<p>En cuanto a la medida del nivel de automatización, considera la proporción de cambios de la base de datos que se realizan con botón de envío por medio de un proceso completamente automatizado. El objetivo debe ser que el 100% de los cambios de la base de datos se realicen de esta manera.</p>
+
+<h2 id="whats_next" data-text="Próximos pasos">¿Qué sigue?</h2>
+
+<ul>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li>Obtén más información sobre el <a href="https://www.martinfowler.com/articles/evodb.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">diseño de bases de datos de evolución</a>.</li>
+<li>Lee sobre la <a href="https://medium.com/@chbussler/zero-downtime-database-migration-and-replication-to-and-from-cloud-spanner-99ad0c654d12" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">migración y replicación de base de datos sin tiempo de inactividad desde Cloud Spanner y hacia Cloud Spanner</a>.</li>
+<li>Obtén más información sobre las <a href="/solutions/databases" track-type="article" track-name="internalLink" track-metadata-position="body">soluciones de bases de datos de Google Cloud</a>.</li>
+<li>Libros recomendados:
+<ul>
+<li><a href="http://shop.oreilly.com/product/0636920039761.do" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Database Reliability Engineering</em></a> de Laine Campbell y Charity Majors.</li>
+<li><a href="https://books.google.com/books/about/Refactoring_Databases.html?id=puBQAAAAMAAJ" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Refactoring Databases</em></a> de Scott W. Amber y Pramod J. Sadalage.</li>
+</ul></li>
+<li>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</li>
+<li>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</li>
+</ul>
+
+</body></html>

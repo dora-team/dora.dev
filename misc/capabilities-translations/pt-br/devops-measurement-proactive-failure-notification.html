@@ -1,0 +1,76 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Medição do DevOps: notificação proativa de falhas</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Observação:</strong><span> <em>a notificação de falha proativa</em> é parte de um conjunto de recursos que aumentam a entega de software e o desempenho organizacional.
+Esses recursos foram descobertos pelo
+<a href="https://www.devops-research.com/research.html">programa de pesquisa DORA State of DevOps</a>, uma investigação independente e academicamente rigorosa sobre as práticas e
+os recursos que impulsionam alto desempenho. Para saber mais, leia nossos
+<a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>A notificação proativa de falhas é a prática de gerar notificações quando os valores monitorados se aproximam dos limites conhecidos de falha em vez de esperar o alerta do sistema. Ou pior, descobrir pelos clientes que o aplicativo ou serviço está inoperante.
+Com essa abordagem, é possível identificar e potencialmente resolver problemas antes que eles se tornem graves ou comecem a afetar os usuários. A pesquisa <a href="https://services.google.com/fh/files/misc/state-of-devops-2014.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">DevOps Research and Assessment (DORA) de 2014</a> (PDF) (em inglês) mostrou que o monitoramento proativo é um preditor significativo do desempenho de fornecimento do software.
+De acordo com a pesquisa DORA, as equipes que usam notificação proativa conseguem diagnosticar e resolver problemas rapidamente. Quando as falhas são relatadas principalmente por uma fonte externa à equipe de operações, como pelo centro de operações de rede (NOC, na sigla em inglês), ou pior, pelos clientes, em vez de pelo monitoramento interno, o desempenho é prejudicado.</p>
+
+<h2 id="how_to_implement_proactive_failure_notification" data-text="Como implementar a notificação proativa de falhas">Como implementar a notificação proativa de falhas</h2>
+
+<p><strong>Use regras de alerta.</strong> É preciso gerar notificações de falha usando <em>regras de alerta</em> específicas. Elas definem as condições em que um alerta é gerado e o canal de notificação para esse alerta. Leia mais sobre
+como gerar alertas em
+<a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="solution" track-name="internalLink" track-metadata-position="body">Monitoramento e observabilidade</a>.</p>
+
+<p><strong>Use limites.</strong> As regras de alerta precisam usar limites para as métricas monitoradas que indicam problemas reais. Os limites de monitoramento acionam regras de alerta, que geram notificações quando os níveis de métrica ultrapassam os valores limite.</p>
+
+<p><strong>Escolha os limites com cuidado.</strong> Faça com que os alertas sejam gerados apenas quando o limite realmente previr um problema. Ou seja, não selecione um valor arbitrário. Geralmente, é preciso identificar quais níveis de valor começam a afetar o usuário e acionar uma notificação de alerta com base em uma porcentagem antes que ele seja ultrapassado.</p>
+
+<p>Por exemplo, a notificação de alerta pode ser acionada quando o tempo médio de resposta das páginas estiver dentro de 20% do limite em que os usuários começam a ficar frustrados e entrar em contato com o suporte.</p>
+
+<p><strong>Faça um post-mortem dos incidentes.</strong> Ao fazer um post-mortem, determine quais indicadores poderiam ter previsto o incidente e monitore-os no futuro.</p>
+
+<p><strong>Planeje uma estratégia de notificação.</strong> Automatize a resposta caso uma notificação não exija ação alguma ou exija a mesma ação todas as vezes. Também considere o volume de notificações para os eventos. Uma avalanche de notificações durante um evento pode atrapalhar em vez de ajudar. Ao serem expostas a um grande número de alarmes, as pessoas podem não dar a devida importância a eles (um problema conhecido como "fadiga de alerta"). Isso pode gerar tempos de resposta mais longos ou alarmes perdidos.
+Revise regularmente as notificações e exclua as que não podem ser resolvidas.</p>
+
+<h2 id="ways_to_improve_failure_notification" data-text="Maneiras de melhorar a notificação de falhas">Maneiras de melhorar a notificação de falhas</h2>
+
+<p>Configure alertas para notificar as equipes principais quando algo der errado nos sistemas, muito antes da falha chegar ao centro de operações de notificações ou a um cliente. Estas são algumas das táticas:</p>
+
+<ul>
+<li>Configurar alertas nos sistemas de registro e monitoramento para os níveis apropriados.</li>
+<li>Configurar alertas para garantir que eles notifiquem pessoas e equipes que possam resolver o problema.</li>
+<li>Monitorar proativamente a integridade do sistema com base nos avisos
+de limite antes que ocorram falhas no sistema.</li>
+<li>Monitorar proativamente a integridade do sistema com base nos avisos de taxa de alteração.</li>
+<li>Garantir que a equipe receba poucos alertas e que eles sejam relevantes. Observar quais deles são irrelevantes. Desativar os alertas irrelevantes e reativar os alertas de monitoramento relevantes.
+Não é recomendado desativar todos os alertas.</li>
+</ul>
+
+<h2 id="ways_to_measure_failure_notifications" data-text="Maneiras de medir notificações de falha">Maneiras de medir notificações de falha</h2>
+
+<p>A instrumentação do monitoramento proativo é simples. Os componentes a serem capturados são os seguintes:</p>
+
+<ol>
+<li>Até que ponto os alertas de falha dos sistemas de registro e monitoramento são capturados e usados.</li>
+<li>Até que ponto a integridade do sistema é monitorada proativamente usando avisos de limite.</li>
+<li>Até que ponto a integridade do sistema é proativamente monitorada usando avisos de taxa de alteração.</li>
+</ol>
+
+<p>Para ter certeza que está capturando aspectos diferentes do sistema, monitore as métricas de, pelo menos, duas maneiras diferentes. Por exemplo, é possível definir um limite de métrica que aciona alertas caso uma métrica seja maior ou menor que um valor em uma determinada janela de tempo. Também é possível determinar uma taxa de alteração que aciona alertas quando a alteração de valor de uma métrica for maior ou menor que o esperado.</p>
+
+<h2 id="whats_next" data-text="A seguir">A seguir</h2>
+
+<ul>
+<li>Consulte links para outros artigos e recursos na
+<a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página do DevOps</a>.</li>
+<li>Saiba mais sobre como gerar alertas em <a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="solution" track-name="internalLink" track-metadata-position="body">Monitoramento e observabilidade</a>.</li>
+<li>Leia o
+<a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">livro Site Reliability Engineering (SRE)</a>, em inglês.</li>
+<li>Explore nosso
+<a href="https://www.devops-research.com/research.html">programa de pesquisa</a> (em inglês) do DevOps.</li>
+<li>Faça a
+<a href="https://www.devops-research.com/quickcheck.html">verificação rápida de DevOps</a>
+para entender sua posição em relação ao restante do setor.</li>
+</ul>
+
+</body></html>

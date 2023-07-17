@@ -1,0 +1,123 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Processus DevOps : rationaliser l'approbation des changements</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Remarque</strong> : <span>La <em>rationalisation de l'approbation des changements</em> est un ensemble de fonctionnalités permettant d'optimiser les performances organisationnelles et de livraison de logiciels.
+Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche sur l'état du DevOps, mené par l'équipe DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les fonctionnalités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>La plupart des entreprises informatiques disposent de processus de gestion du changement pour gérer le cycle de vie des modifications apportées aux services informatiques, à la fois internes et destinés aux clients. Ces processus constituent souvent les principaux contrôles permettant de réduire les risques opérationnels et de sécurité liés au changement.</p>
+
+<p>Les processus de gestion du changement comprennent souvent des approbations délivrées par des examinateurs externes ou des comités d'approbation des changements ayant pour fonction de promouvoir les changements dans le système.</p>
+
+<p>Les responsables de la conformité et ceux chargés de la sécurité s'appuient sur des processus de gestion du changement pour valider les exigences de conformité, lesquelles requièrent généralement que soit apportée la preuve que toutes les modifications sont correctement autorisées.</p>
+
+<p>Une étude menée par DevOps Research and Assessment (DORA), présentée dans le <a href="https://cloud.google.com/devops/state-of-devops" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Rapport sur l'état du DevOps en 2019 (PDF)</a>, montre que les approbations de changements sont mieux mises en œuvre via un examen par des pairs au cours du processus de développement, avec en complément une automatisation permettant de détecter, d'éviter et de corriger les mauvaises modifications dès le début du cycle de livraison des logiciels. Des techniques telles que les <a href="/architecture/devops/devops-tech-test-automation">tests continus</a>, l'<a href="/architecture/devops/devops-tech-continuous-integration">intégration continue</a> et <a href="/architecture/devops/devops-measurement-monitoring-and-observability">la surveillance et l'observabilité complètes</a> offrent une détection précoce et automatisée, ainsi qu'une visibilité et des retours rapides.</p>
+
+<p>En outre, les entreprises peuvent accroître leurs performances en améliorant la façon dont elles communiquent sur le processus existant et en aidant les équipes à appliquer celui-ci efficacement.
+Lorsque les membres des équipes comprennent bien le processus d'approbation des changements, les performances s'améliorent.</p>
+
+<h2 id="how_to_implement_a_change_approval_process" data-text="Mettre en œuvre un processus d'approbation des changements">Mettre en œuvre un processus d'approbation des changements</h2>
+
+<p>Le processus d'approbation des changements a deux objectifs importants, la réduction du risque lié aux modifications et la conformité aux exigences réglementaires. Une exigence réglementaire courante est la séparation des tâches, qui stipule que les changements doivent être approuvés par une personne autre que leur auteur, permettant ainsi de s'assurer qu'aucune personne n'exerce un contrôle de bout en bout sur un processus.</p>
+
+<p>Traditionnellement, ces objectifs ont été réalisés via un processus lourd impliquant l'approbation par des personnes extérieures à l'équipe qui propose le changement : un comité d'approbation des changements (CAB, Change Advisory Board) ou un responsable senior. Cependant, l'étude de DORA montre que cette approche a un impact négatif sur les performances de livraison de logiciels. En outre, aucune preuve n'est venue étayer l'hypothèse selon laquelle un processus d'examen externe plus formel serait associé à des taux plus faibles d'échecs liés aux changements.</p>
+
+<p>Ce type d'approche lourde a tendance à ralentir le processus de livraison, ce qui entraîne une publication moins fréquente de lots plus volumineux. Cela a également un impact plus fort sur le système de production qui est susceptible d'être soumis à des niveaux de risque plus importants et donc à des taux plus élevés d'échecs liés aux changements. L'étude de DORA a révélé que les données appuient cette hypothèse.</p>
+
+<p>Les équipes doivent plutôt :</p>
+
+<ul>
+<li>recourir à un examen par des pairs pour atteindre l'objectif de séparation des tâches, avec des avis, des commentaires et des approbations capturés dans la <a href="/architecture/devops/devops-tech-code-maintainability">plate-forme de développement</a> de l'équipe dans le cadre du processus de développement ;</li>
+<li>exploiter les <a href="/architecture/devops/devops-tech-test-automation">tests continus</a>, l'<a href="/architecture/devops/devops-tech-continuous-integration">intégration continue</a> et <a href="/architecture/devops/devops-measurement-monitoring-and-observability">la surveillance et l'observabilité complètes</a> pour détecter, éviter et corriger les mauvais changements ;</li>
+<li>considérer votre plate-forme de développement comme un produit permettant aux développeurs d'obtenir rapidement des retours sur l'impact de leurs changements sur plusieurs axes tels que la sécurité, les performances, la stabilité et les défaillances.</li>
+</ul>
+
+<p>Votre objectif doit être de rendre votre processus standard de gestion du changement suffisamment rapide et fiable pour pouvoir vous en servir afin d'effectuer des changements urgents.</p>
+
+<p>Dans le paradigme de <a href="/architecture/devops/devops-tech-continuous-delivery">livraison continue</a>, le CAB joue toujours un rôle crucial, à savoir :</p>
+
+<ul>
+<li>Faciliter la notification des équipes et la coordination entre celles-ci.</li>
+<li>Aider les équipes à améliorer le processus afin d'accroître les performances de livraison de logiciels.</li>
+<li>Intervenir pour les décisions commerciales importantes qui nécessitent un compromis et une approbation à des niveaux supérieurs de l'entreprise, comme par exemple le choix entre temps de production et risque commercial.</li>
+</ul>
+
+<p>Ce nouveau rôle du CAB est stratégique. Le fait d'affecter les révisions de code détaillées aux professionnels et à des méthodes automatisées permet aux dirigeants et gestionnaires de se consacrer pleinement aux décisions stratégiques.
+Cette transition d'un rôle de contrôleur vers un rôle d'architecte de processus et de rapporteur d'informations est conforme aux pratiques des entreprises qui affichent d'excellentes performances de livraison de logiciels.</p>
+
+<h2 id="common_pitfalls_in_change_approval_processes" data-text="Principaux pièges à éviter lors de la mise en œuvre d'un processus d'approbation des changements">Principaux pièges à éviter lors de la mise en œuvre d'un processus d'approbation des changements</h2>
+
+<p>Les principaux pièges à éviter lors de la mise en œuvre d'un processus d'approbation des changements sont les suivants :</p>
+
+<p><strong>Recourir à un comité d'approbation des changements centralisé</strong> pour détecter les erreurs et approuver les changements. Cette approche peut occasionner des retards et entraîne souvent des erreurs. Ces comités sont efficaces quand il s'agit d'œuvrer à la diffusion du changement, mais des personnes si peu concernées par les modifications risquent de ne pas en comprendre les implications.</p>
+
+<p><strong>Traiter tous les changements de la même façon.</strong> Lorsque tous les changements sont soumis au même processus d'approbation, l'examen est inefficace et le personnel ne peut pas se consacrer pleinement aux changements qui nécessitent une plus grande attention du fait de leurs spécificités telles que le niveau de risque ou le timing.</p>
+
+<p><strong>Ne pas appliquer l'amélioration continue.</strong> Comme pour tous les processus, les métriques de performances clés telles que le délai de livraison et le taux d'échecs liés aux changements doivent être ciblées afin d'améliorer les performances du processus de gestion du changement, y compris en fournissant aux équipes des outils et des formations qui les aideront à appliquer celui-ci plus efficacement.</p>
+
+<p><strong>Répondre aux problèmes en ajoutant des processus.</strong> Les entreprises utilisent souvent des processus supplémentaires et des méthodes d'approbation plus lourdes lorsqu'elles sont confrontées à des problèmes de stabilité en production. L'analyse suggère que cette approche va aggraver la situation, car elle augmente les délais de livraison et la taille des lots, ce qui résulte en un cercle cycle vicieux.
+Nous vous recommandons plutôt d'accélérer et de sécuriser la réalisation des changements.</p>
+
+<h2 id="ways_to_improve_your_change_approval_process" data-text="Améliorer votre processus d'approbation des changements">Améliorer votre processus d'approbation des changements</h2>
+
+<p>Pour améliorer vos processus d'approbation des changements, concentrez-vous sur les actions suivantes :</p>
+
+<ol>
+<li>Passer à un processus basé sur un examen par des pairs pour les changements individuels, ledit processus étant appliqué au moment de l'insertion du code et compatible avec les tests automatisés.</li>
+<li>Trouver des moyens pour détecter de manière automatisée des problèmes tels que les régressions, ou des problèmes de performances et de sécurité, dès que possible après la validation des changements.</li>
+<li>Effectuer des analyses en continu afin de détecter et de signaler au plus vite les changements à haut risque afin qu'ils soient soumis à des vérifications supplémentaires.</li>
+<li>Examiner le processus de modification de bout en bout, identifier les goulots d'étranglement et tester différentes manières de transférer les validations vers la plate-forme de développement.</li>
+<li>Mettre en œuvre des contrôles de sécurité des informations au niveau de l'infrastructure et de la plate-forme, ainsi que dans la chaîne d'outils de développement, au lieu de les examiner manuellement dans le cadre du processus de livraison de logiciels.</li>
+</ol>
+
+<p>Une étude présentée dans le <a href="https://cloud.google.com/devops/state-of-devops" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Rapport sur l'état du DevOps en 2019 (PDF)</a> montre que, même si l'objectif ultime est d'abandonner les processus traditionnels et formels de gestion du changement, le simple fait de mieux communiquer sur le processus existant et d'aider les équipes à appliquer celui-ci efficacement a un impact positif sur les performances de livraison de logiciels. Lorsque les membres de l'équipe comprennent bien le processus d'approbation des changements, les performances s'améliorent. Cela signifie qu'ils sont sûrs de pouvoir effectuer des changements en temps voulu via le processus d'approbation et qu'ils savent comment procéder pour que tous les types de changements qu'ils soumettent généralement soient acceptés à chaque fois.</p>
+
+<h2 id="ways_to_measure_change_approval_in_your_systems" data-text="Évaluer l'approbation des changements dans vos systèmes">Évaluer l'approbation des changements dans vos systèmes</h2>
+
+<p>Vos équipes peuvent maintenant répertorier les différentes façons d'évaluer l'approbation des changements :</p>
+
+<table>
+<thead>
+<tr>
+<th>Facteur à tester</th>
+<th>Données à évaluer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Les changements peuvent-ils être promus en production sans approbation manuelle ?
+</td>
+<td>Le pourcentage des changements devant (ou ne devant pas) être approuvés manuellement pour être promus en production. <br /><br />Conseil : Vous pouvez également évaluer ce facteur en fonction du profil de risque, c'est-à-dire sur la base des pourcentages des changements à risque faible, moyen et élevé devant être approuvés manuellement pour être promus en production. <br />
+</td>
+</tr>
+<tr>
+<td>Les changements de production doivent-ils être approuvés par un organisme ou un intervenant externe avant le déploiement ou la mise en œuvre ? </td>
+<td>Le temps passé à attendre l'approbation d'organismes ou d'intervenants externes pour les modifications concernées.<br />
+<br />
+Conseil : Lorsque vous rapprochez les approbations des travaux, évaluez le temps passé à attendre l'approbation d'examinateurs ou d'organismes locaux. <br /><br />Vous pouvez également évaluer ce facteur en fonction du profil de risque, c'est-à-dire sur la base du nombre ou de la proportion de changements devant être approuvés par des organismes externes, ainsi que du temps passé à attendre ces approbations.</td>
+</tr>
+<tr>
+<td>Avez-vous recours à un examen par des pairs pour gérer les changements ?</td>
+<td>Le pourcentage des changements qui sont gérés sur la base d'un examen par des pairs. <br /><br />Vous pouvez également évaluer ce facteur en fonction du profil de risque.</td>
+</tr>
+<tr>
+<td>Les membres de l'équipe comprennent-ils bien le processus d'approbation des changements ?</td>
+<td>Mesure dans laquelle les membres de l'équipe sont sûrs de pouvoir effectuer des changements via le processus d'approbation en temps voulu, et dans laquelle ils savent comment procéder pour que tous les types de changements qu'ils soumettent généralement soient acceptés à chaque fois.</td>
+</tr></tbody>
+</table>
+
+<p>L'étude de votre environnement vous conduira probablement à développer vos propres critères d'évaluation pour comprendre et analyser vos processus d'approbation des changements. Nous vous suggérons de ne pas seulement les utiliser pour évaluer vos processus, mais également pour les améliorer.</p>
+
+<h2 id="whats_next" data-text="Étape suivante">Étape suivante</h2>
+
+<ul>
+<li>Découvrez comment <a href="/binary-authorization/docs/vulnerability-scanning-kritis" track-type="solution" track-name="internalLink" track-metadata-position="body">effectuer une analyse des failles dans le cadre de votre pipeline de déploiement</a> avec Cloud Build, Container Analysis et Kritis Signer.</li>
+<li>Consultez la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">page DevOps</a> pour obtenir des liens vers d'autres articles et ressources.</li>
+<li>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</li>
+<li>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</li>
+</ul>
+
+</body></html>

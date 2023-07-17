@@ -1,0 +1,172 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps tecnologico: gestibilità del codice</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> la <em>manutenibilità del codice</em> è una delle funzionalità che favoriscono la distribuzione
+del software e le prestazioni dell'organizzazione. Queste capacità sono state scoperte dal <a href="https://www.devops-research.com/research.html">programma di ricerca DORA State of DevOps</a>, un'indagine indipendente e accademicamente rigorosa sulle pratiche e funzionalità che determinano prestazioni elevate. Per ulteriori informazioni, consulta le nostre
+<a href="/devops">risorse DevOps</a>.</span></aside>
+<p>Per eseguire i sistemi che creiamo sono necessari <a href="https://www.businessinsider.com/how-many-lines-of-code-it-takes-to-run-different-software-2017-2" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">molti codici</a>: il sistema operativo Android è eseguito su 12-15 milioni di righe di codice, il repository di codice monolitico di Google contiene oltre 1 miliardo di righe di codice e un'app per smartphone tipica ha 50.000 righe di codice.</p>
+
+<p>Il rapporto 2019 State of DevOps della ricerca <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> dimostra che la capacità dei team di gestire in modo efficace il codice è una delle numerose pratiche tecniche che contribuiscono in modo positivo al successo con la <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">distribuzione continua</a>.</p>
+
+<p>Se il tuo team sta facendo un buon lavoro con la manutenzione del codice, si applica quanto segue:</p>
+
+<ul>
+<li>È facile per il team trovare esempi nel codebase, riutilizzare il codice di altre persone e modificare il codice mantenuto da altri team, se necessario.</li>
+<li>È facile per il team aggiungere nuove dipendenze al progetto ed eseguire la migrazione a una nuova versione di una dipendenza.</li>
+<li>Le dipendenze del team sono stabili e raramente interrompono il codice.</li>
+</ul>
+
+<p>Questi risultati evidenziano l'importanza di semplificare per gli sviluppatori la ricerca, il riutilizzo e la modifica del codice in tutto il codebase dell'organizzazione, oltre all'implementazione di pratiche e strumenti per la gestione delle dipendenze.</p>
+
+<p>La gestibilità del codice è una funzionalità che richiede coordinazione a livello di organizzazione, poiché si basa sulla capacità di cercare, riutilizzare e modificare altri team. Gestire in modo efficace le dipendenze è spesso una delle principali cause di difficoltà
+quando si lavora con codebase di grandi dimensioni e grandi organizzazioni. Strumenti che possono evitare problemi con le dipendenze o evidenziare le conseguenze di modifiche al codice possono migliorare le decisioni di progettazione e la qualità del codice per tutti gli ingegneri, che a loro volta consentono loro di lavorare più velocemente e di creare un software più stabile e affidabile.</p>
+
+<h2 id="how_to_implement_code_maintainability" data-text="Come implementare la gestibilità del codice">Come implementare la gestibilità del codice</h2>
+
+<p>In termini di implementazione, vale la pena affrontare separatamente la gestione del codice sorgente e la gestione della dipendenza, sebbene sia possibile una soluzione (come il repository monolitico o il pattern <em>monorepo</em> utilizzato da Google) per risolvere entrambi i problemi.</p>
+
+<p>Innanzitutto, gestisci il codice sorgente. Consentire a tutti di trovare, riutilizzare e proporre con facilità le modifiche a qualsiasi parte del codebase offre:</p>
+
+<ul>
+<li><strong>Pubblicazione più veloce:</strong> per distribuire rapidamente il software, i team devono essere in grado di visualizzare e proporre modifiche al codice dell'altro interlocutore. Semplificare il più possibile questa funzionalità consente di trasferire le conoscenze all'interno dell'organizzazione e di facilitare i team che devono apportare modifiche ad altre parti del codebase per poter svolgere il proprio lavoro.</li>
+<li><strong>Maggiore livello di stabilità e disponibilità:</strong> in caso di incidente, è essenziale poter trovare e proporre rapidamente modifiche a qualsiasi parte del codebase.</li>
+<li><strong>Qualità del codice superiore:</strong> il refactoring del codice per migliorare la sua qualità interna spesso comporta modifiche a più parti del codebase. Se
+questo diventa difficile, riduce la probabilità che le persone eseguano il refactoring
+e ne aumenti il costo. Alcune organizzazioni, tra cui Google, eseguono progetti di manutenzione del codice tra team in cui gli utenti passano attraverso il codebase per correggere gli elementi a livello di manutenzione, che si basano sulla capacità di accedere e modificare facilmente il codice in tutta l'organizzazione.</li>
+</ul>
+
+<p>Riuscire a trovare esempi e riutilizzare il codice di altre persone dipende dalla possibilità di accedere e cercare facilmente il codice sorgente dell'intera organizzazione. Il modo più semplice per implementare questo requisito consiste nell'utilizzare una singola piattaforma di controllo delle versioni per l'intera organizzazione, anche se tale codice è suddiviso tra più repository all'interno della piattaforma. Più sono utilizzate piattaforme di controllo delle versioni separate, più è difficile trovare il codice.</p>
+
+<p>Alcune organizzazioni vorranno mantenere bloccate parte del codebase, in modo
+che solo le persone che ne hanno bisogno possano visualizzare la parte del codebase (Google
+è un esempio di tale organizzazione). Idealmente questa dovrebbe essere l'eccezione
+della regola e il software dovrebbe essere progettato per ridurre al minimo l'area
+di codice sorgente riservata. In molti casi, la segregazione logica del codice riservato mediante il meccanismo di controllo dell'accesso del sistema di controllo delle versioni è sufficiente.</p>
+
+<p>Dovrebbe anche essere possibile modificare il codice gestito da altri team. In genere,
+tali modifiche richiedono l'approvazione del team responsabile della
+gestione del codice in questione. Meccanismi come le richieste di pull, quando un ramo viene creato nel controllo della versione e nell'approvazione comporta l'unione del ramo, possono ridurre al minimo l'attrito di consentire ad altri team di proporre modifiche, impedendo anche <a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">modifiche non autorizzate</a> e applicando controlli di sicurezza delle informazioni come la separazione dei compiti.</p>
+
+<p>Quindi, considera le dipendenze. Semplificando l'aggiunta e l'aggiornamento delle dipendenze da parte dei team e garantendo che siano stabili e che interrompano raramente il codice, significa che:</p>
+
+<ul>
+<li><strong>Maggiore sicurezza:</strong> con l'età delle dipendenze è più probabile che al loro interno vengano rilevate vulnerabilità. È essenziale che le dipendenze vengano mantenute aggiornate, in particolare dopo il rilevamento e l'applicazione delle patch alle vulnerabilità.</li>
+<li><strong>Pubblicazione più veloce:</strong> se utilizzi librerie sviluppate da altri team o organizzazioni, non devi scrivere il tuo codice per svolgere quel lavoro.
+Se disponi di meccanismi in grado di garantire che le dipendenze siano stabili e rompano raramente il codice, puoi dedicare più tempo alla programmazione e meno alla manutenzione.</li>
+</ul>
+
+<p>La gestione delle dipendenze è un punto critico comune per i team di sviluppo software.
+Mantenere le dipendenze aggiornate e coerenti tra le applicazioni è complesso, costoso e dispendioso in termini di tempo. Molte organizzazioni non riescono ad allocare risorse adeguate a questa attività, un problema amplificato da processi e strumenti inadeguati. Ciò può rappresentare un rischio significativo per la sicurezza quando le vulnerabilità vengono inevitabilmente rilevate nelle dipendenze e le applicazioni che le utilizzano devono essere aggiornate.</p>
+
+<p>È essenziale adottare e sviluppare i processi e gli strumenti che favoriscono i team nell'utilizzo di versioni note delle dipendenze note e aggiornarle rapidamente, tra cui l'<a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">integrazione automatica</a> (CI) e la <a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">verifica</a> per scoprire se le nuove versioni delle dipendenze contengono modifiche che provocano errori e per collegare rapidamente e semplicemente le versioni delle dipendenze in uso con i sistemi che le utilizzano.</p>
+
+<p>Esistono due modelli di uso comune per includere le dipendenze nel software:
+fornitore e manifest manifest. In vendoring, il codice sorgente o la binaria di ogni dipendenza viene controllato nel controllo della versione insieme all'applicazione. In alternativa, la maggior parte delle piattaforme moderne dispone di uno strumento di gestione delle dipendenze che gestisce le dipendenze specificate nei file manifest dichiarativi controllati nel controllo della versione (ad esempio pip di Node.js, npm R&amp;R di Node.js, CRAN e NuGet di .NET).</p>
+
+<p>A prescindere dal fatto che il fornitore o i file manifest si utilizzino, le considerazioni più importanti sono:</p>
+
+<ul>
+<li><strong>Tracciabilità:</strong> assicurati di tenere traccia di qualsiasi pacchetto o deployment alla versione esatta di ogni dipendenza utilizzata per crearlo.
+Senza questo approccio, è impossibile eseguire il debug dei problemi causati dalle modifiche alle dipendenze.</li>
+<li><strong>Riproducibilità</strong>:il processo di compilazione deve essere il più possibile deterministico. Tentare di eseguire il debug dei problemi causati da un processo di compilazione che si comporta in modo diverso su macchine diverse è estremamente complicato.</li>
+</ul>
+
+<h3 id="implementing_code_maintainability_at_google" data-text="Implementare la gestibilità del codice in Google">Implementare la gestibilità del codice in Google</h3>
+
+<p>Google implementa la manutenibilità del codice con un approccio relativamente insolito. Sebbene il nostro approccio abbia dei compromessi e non sia per tutti, fa un lavoro efficace per consentire ai team di raggiungere gli obiettivi descritti in questo articolo.</p>
+
+<p>Il novantacinque percento degli sviluppatori di software di Google di tutto il mondo lavora su un codebase monolitico condiviso gestito tramite un sistema di controllo dei sorgenti centralizzato, utilizzando un modello di <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">sviluppo basato su trunk</a>.
+<a href="http://dl.acm.org/citation.cfm?id=2854146" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Nel 2016</a>, il codebase di Google includeva circa un miliardo di file e aveva una storia di circa 35 milioni di impegni per l'intera durata di 18 anni di Google. Il repository contiene 86 TB di dati, tra cui circa due
+miliardi di righe di codice in nove milioni di file sorgente univoci."</p>
+
+<p>Poiché tutto il codice di Google è archiviato in un unico repository, è facile trovare e modificare il codice degli altri team. Google fornisce un motore di ricerca interno che consente di eseguire facilmente ricerche nell'intero codebase. Gli sviluppatori dispongono di una serie di strumenti che consentono loro di creare elenchi di modifiche per la revisione e l'approvazione. I test vengono eseguiti su ciascun elenco modifiche e gli elenchi modifiche possono essere aggiornati e commentati.
+Gli strumenti di revisione del codice di Google, come molte altre piattaforme, possono suggerire
+revisori per qualsiasi modifica. Ogni directory nel repository Google contiene un file OWNERS che elenca le persone o i gruppi che possono approvare le modifiche ai file in tale directory (funzionalità simili sono disponibili in <a href="https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">GitHub</a>, <a href="https://docs.gitlab.com/ee/user/project/code_owners.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">GitLab</a> e <a href="https://marketplace.atlassian.com/apps/1218598/code-owners-for-bitbucket-server?hosting=server&amp;tab=overview" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Bitbucket</a>).
+Ricerca rapida, suggerimenti di approvatori e test automatizzati consentono di proporre modifiche, revisioni e collaborazioni, sia semplici che efficaci.</p>
+
+<p>Con questi strumenti, i refactoring su larga scala che cambiano più parti del codebase sono relativamente facili da eseguire e possono essere eseguiti in modo atomico. Google ha creato strumenti che semplificano e automatizzano ulteriormente il processo di modifica che interessa sezioni significative del codebase. Gli strumenti Google
+comprendono un sistema di compilazione chiamato Blaze che viene utilizzato per creare e testare eventuali modifiche,
+incluse le dipendenze, dall'origine. Alcune parti di Blaze sono state rilasciate sotto forma di strumento open source <a href="https://bazel.build/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Bazel</a>.
+È facile per chiunque di Google scoprire e proporre modifiche a qualsiasi parte di Google, inclusa la configurazione dell'infrastruttura che viene conservata nello stesso repository monolitico. La condivisione e il riutilizzo del codice sono semplicissimi.</p>
+
+<p>Google dispone inoltre di controlli per gestire le dipendenze dal software open source. Innanzitutto, è necessario che il software open source di Google utilizzato per l'origine abbia eseguito il check-in del repository monolitico di Google. In secondo luogo, può essere registrata una sola versione di una data libreria per il controllo del codice sorgente in qualsiasi momento. Infine, tutto il software è collegato in modo statico e creato da codice sorgente. Infine, ogni volta che viene apportata una modifica al codice sorgente di una libreria, vengono attivate ricostruzioni e test automatici per tutto il software che consuma tale dipendenza.</p>
+
+<p>Questi controlli, combinati con la potente infrastruttura CI di Google, semplificano
+l'aggiornamento dei sistemi di produzione con le nuove versioni delle
+dipendenze. Inoltre, aiutano a garantire che tutti i sistemi utilizzino versioni coerenti di una determinata libreria (rimuovendo la possibilità di dipendenza da diamanti), per cui un prodotto si basa su due componenti che ciascuno, a sua volta, si basa su <em>versioni diverse</em> di una libreria comune, rendendo il prodotto impossibile da creare.</p>
+
+<p>L'approccio di Google alla gestione delle dipendenze dal codice esterno è che diventa più difficile aggiungere nuove dipendenze (uno dei risultati chiave relativi alla manutenibilità del codice). Il nuovo codice della dipendenza deve essere verificato nel repository monolitico di
+Google, il che significa che il codice deve essere esaminato e testato
+inizialmente e come parte di qualsiasi upgrade. Tuttavia, questo livello di rigore aiuta a prevenire il codice con vulnerabilità di sicurezza che ne fanno parte dei prodotti Google e assicura che tutte le dipendenze abbiano chiaramente manutentori designati.</p>
+
+<h2 id="common_pitfalls_of_implementing_code_maintainability" data-text="Errori comuni di implementazione della manutenibilità del codice">Errori comuni di implementazione della manutenibilità del codice</h2>
+
+<p>I principali ostacoli a rendere tutti i codici universalmente disponibili per la ricerca e modificabili sono l'assistenza per gli strumenti e la cultura organizzativa.</p>
+
+<p>Il primo errore comune è rappresentato da più repository di controllo della versione o repository di controllo della versione che hanno impostazioni di accesso restrittive. Idealmente, le organizzazioni devono disporre di un'unica piattaforma di controllo delle versioni in cui è riportato tutto il codice.
+L'accesso predefinito dovrebbe consentire a chiunque nell'organizzazione di visualizzare qualsiasi file di origine, con la possibilità di limitare l'accesso ai file sensibili. Dovrebbe
+anche essere disponibile un modo per cercare il controllo della versione.</p>
+
+<p>Al contrario, in genere le organizzazioni limitano chi può apportare modifiche al controllo
+delle versioni. Questo porta alla seconda insidia: una mancanza di strumenti e procedure per consentire alle persone di apportare modifiche a parti del codebase alle quali non hanno accesso in scrittura. Questo può rappresentare un ostacolo significativo sia alla risoluzione dei problemi causati, spesso inavvertitamente, da altri team da cui dipende il codice. Inibisce anche i refactoring che interessano più parti del codebase.</p>
+
+<p>Per mitigare questo problema, alcuni strumenti di controllo delle versioni moderni forniscono un modo per inviare, esaminare, approvare e controllare le richieste di modifica per parti del codebase a cui gli utenti non hanno accesso in scrittura.</p>
+
+<p>Anche se viene fornito un supporto per gli strumenti, le organizzazioni devono avere familiarità con rendere i codebase disponibili e disponibili per la ricerca all'interno dell'organizzazione, nonché potenzialmente per fornitori e collaboratori a contratto. Potrebbe non essere possibile per le organizzazioni i cui repository di controllo della versione contengono quantità significative di informazioni riservate e codice che non possono essere condivisi tra team.</p>
+
+<p>L'utilizzo delle dipendenze binarie è molto più comune, ma ogni linguaggio ha la propria toolchain per la gestione delle dipendenze binarie. La creazione di una strategia e di convenzioni standard che consentono di gestire e monitorare in modo efficace le dipendenze in tutte le toolchain dell'intero portafoglio di software dell'organizzazione è un'impresa complessa. È necessario fare investimenti significativi nell'infrastruttura di CI che consenta di testare facilmente nuove versioni delle librerie per valutarne la compatibilità con i sistemi esistenti, oltre che sulle vulnerabilità. Inoltre, è necessario sottoporre a processo regolarmente l'upgrade delle librerie di terze parti.</p>
+
+<p>In pratica, la maggior parte delle organizzazioni lascia che i team gestiscano le proprie dipendenze con risultati altamente variabili. Di conseguenza, in genere è estremamente difficile reagire in modo rapido e prevedibile in caso di scoperta di una vulnerabilità in una libreria: anche trovare i servizi interessati è in genere un progetto di archeologia sostanziale.</p>
+
+<h2 id="how_to_measure_code_maintainability" data-text="Come misurare la manutenibilità del codice">Come misurare la manutenibilità del codice</h2>
+
+<p>Ecco alcune semplici idee per iniziare a misurare la gestibilità del codice:</p>
+
+<ul>
+<li>Quale percentuale del codebase della tua organizzazione è disponibile per la ricerca?</li>
+<li>Qual è il tempo medio di risposta per apportare una modifica a una parte del codebase a cui non ho accesso in scrittura?</li>
+<li>Quale percentuale del nostro codebase è codice duplicato? Quale percentuale è inutilizzata?</li>
+<li>Quale percentuale di applicazioni non utilizza la versione stabile più recente di tutte le librerie che utilizzano?</li>
+<li>Quante versioni diverse di ogni libreria abbiamo in produzione?
+Qual è la mediana? Qual è un buon obiettivo? Quante versioni risalgono a più di un anno fa?</li>
+<li>Con quale frequenza i team eseguono l'upgrade delle loro librerie? Quanto tempo ci vuole per farlo?</li>
+</ul>
+
+<p>Quando valuti cosa misurare, sono tre i casi d'uso su cui concentrarsi:</p>
+
+<ul>
+<li>Gestione del debito tecnico e di progettazione</li>
+<li>Gestione dei cambiamenti (incluse le modifiche di emergenza)</li>
+<li>Applicazione delle patch alle vulnerabilità.</li>
+</ul>
+
+<p>Con l'aumento dei codebase, il debito tecnico è una delle principali preoccupazioni. È importante essere in grado di refactoring e <a href="/architecture/devops/devops-tech-architecture">riprogettare il codice</a> con l'evolversi delle organizzazioni e dei prodotti a cui gli utenti e i loro clienti si affidano. In caso di codebase di grandi dimensioni, il processo può essere complesso e complicato senza un supporto significativo dagli strumenti. È anche importante poter identificare il codice non utilizzato, duplicato, che presenta una scarsa copertura di test o che presenta vulnerabilità. Il primo passaggio consiste nell'assicurarti che i tuoi strumenti ti consentano di stabilire e monitorare metriche che identificano le aree di miglioramento e di intervenire con estrema facilità.</p>
+
+<p>Il secondo passaggio è la
+<a href="/architecture/devops/devops-tech-database-change-management">gestione dei cambiamenti</a>.
+Quando qualcuno apporta una modifica a una parte del codebase, in che misura i tuoi strumenti aiutano a rilevare l'impatto di tale modifica? Se un altro team è interessato, a che velocità può intervenire per risolvere il problema, in particolare se la soluzione si trova in un'area diversa del codebase? Quando si deve apportare una modifica in caso di emergenza, quanto tempo occorre per far sì che le modifiche al codice necessarie vengano eseguite sul codebase, testate e rilasciate?</p>
+
+<p>Stabilisci e monitora metriche in modo da poter monitorare il tempo necessario per la propagazione delle modifiche nei processi. Quindi identifica i colli di bottiglia e
+lavora per migliorare i tuoi processi, aggiungendo il supporto per gli strumenti dove appropriato. Presta attenzione ai processi di emergenza che ignorano le convalide e le approvazioni per aumentare la velocità: l'obiettivo dovrebbe essere un processo affidabile e abbastanza veloce da essere efficace in caso di emergenza.</p>
+
+<p>L'applicazione di patch alle vulnerabilità è uno scenario particolarmente importante. Quando viene rilevata una vulnerabilità in una libreria, quanto tempo occorre per scoprire e applicare patch al software che utilizza le versioni vulnerabili della libreria?
+Se hai dubbi, vale la pena fare regolarmente dei test. Considerati gli enormi costi potenziali per la gestione delle violazioni e l'esfiltrazione di dati e di codice e la frequenza degli attacchi, in genere vale la pena dedicare risorse significative per garantire che il software di terze parti di cui ti fidi sia aggiornato e possa essere facilmente aggiornato in caso di vulnerabilità.</p>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina per DevOps</a>.</li>
+<li><a href="https://research.google/pubs/pub45424/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Perché Google archivia miliardi di righe di codice in un unico repository</a> </li>
+<li><a href="https://www.youtube.com/watch?v=W71BTkUbdqE" target="youtube" track-type="article" track-name="youtubeLink" track-metadata-position="body">Presentazione di Rachel Potvin sul repository di codice monolitico di Google</a> </li>
+<li>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</li>
+<li>Esegui il
+<a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a>
+per comprendere il tuo rendimento rispetto al resto del settore.</li>
+</ul>
+
+</body></html>

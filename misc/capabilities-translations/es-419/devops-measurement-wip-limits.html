@@ -1,0 +1,90 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Medición de DevOps: Límites de trabajo en proceso</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> Los<em>límites de trabajo en proceso</em> forman parte de los conjuntos de capacidades que mejoran la entrega de software y el rendimiento de las organizaciones. Estas funciones se descubrieron mediante el <a href="https://www.devops-research.com/research.html">programa de investigación del estado de DevOps de DORA</a>, una investigación independiente y rigurosa desde el punto de vista académico sobre las prácticas y las funciones que impulsan el alto rendimiento. Para obtener más información, lee nuestros <a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>Cuando los gerentes novatos se enfrentan con el problema de tener demasiado trabajo y pocas personas para hacerlo, asignan varias tareas a los empleados con el objetivo de aumentar la productividad.
+Sin embargo, el resultado es que las tareas llevan más tiempo en completarse, y el equipo se agota en el proceso.</p>
+
+<p>Por lo tanto, se debe hacer lo siguiente:</p>
+
+<ul>
+<li>Prioriza el trabajo.</li>
+<li>Limita la cantidad de personas que trabajan en una tarea.</li>
+<li>Concéntrate en completar pocas tareas de alta prioridad.</li>
+</ul>
+
+<p>Hace mucho tiempo que el sector de fabricación limita la cantidad de trabajo en proceso (WIP). Las fábricas no tienen un inventario muy extenso. En cambio, cuando un cliente pide un producto, las piezas se fabrican a pedido, en las instalaciones o se obtienen de proveedores que las fabriquen, y la empresa ensambla el producto justo a tiempo. Cuando implementas este proceso de forma correcta, obtienes plazos de entrega más cortos, mejor calidad, costos más bajos y menos desperdicio.</p>
+
+<h2 id="how_to_implement_work_in_process_limits" data-text="Cómo implementar los límites de trabajo en proceso">Cómo implementar los límites de trabajo en proceso</h2>
+
+<p><strong>Usa un storyboard.</strong> En el sector de tecnología, nuestro inventario es invisible. No hay un taller con pilas de trabajo o líneas de producción donde podamos ver el progreso del trabajo. Una forma sencilla de ver el inventario es escribir todo el trabajo que el equipo realiza en tarjetas y pegarlas en una pizarra. En los métodos de desarrollo ágil, esto se denomina crear un <em>guion gráfico</em>.</p>
+
+<p>En el siguiente guion gráfico de ejemplo, se muestran varias funciones (análisis, desarrollo, pruebas, operaciones, etc.) y todo el trabajo que requiere un solo producto.</p>
+
+<p><img src="/static/architecture/devops/wip-1.png" alt="imagen"/></p>
+
+<p><em>(Fuente: juego de mesa “Kanban for Ops”, Dominica DeGrandis, 2013)</em></p>
+
+<p>Una práctica común con los guiones gráficos es marcar con un punto la tarjeta por cada día que se trabaje en esa tarea. El equipo puede ver con facilidad qué trabajo está bloqueado o tarda más de lo que debería.</p>
+
+<p><strong>Especifica los límites.</strong> En cada columna de la pizarra, se especifica el límite de WIP o cuántas tarjetas pueden estar en esa columna a la vez. Una vez que se alcanza el límite de WIP, no se pueden agregar más tarjetas a la columna. El equipo debe esperar a que una de las tarjetas de esta columna pase a la siguiente antes de agregar la tarjeta con mayor prioridad de la columna anterior.</p>
+
+<p>Solo cuando se imponen límites de WIP y se sigue este proceso de rotación se crea un tablero Kanban.</p>
+
+<p><strong>Determina los límites de WIP según la capacidad del equipo.</strong> Por ejemplo, si tienes cuatro pares de desarrolladores, no permitas que haya más de cuatro tarjetas en la columna “en desarrollo”.</p>
+
+<p><strong>Respeta los límites.</strong> Los límites de WIP pueden hacer que los equipos permanezcan inactivos mientras esperan que se completen otras tareas. No aumentes los límites de WIP en este momento.
+En su lugar, analiza cómo mejorar los procesos para solucionar los factores que contribuyen a estas demoras. Por ejemplo, si esperas que un entorno pruebe tu trabajo, podrías ayudar al equipo que prepara los entornos a optimizar o agilizar su proceso.</p>
+
+<h2 id="common_pitfalls_with_work_in_process_limits" data-text="Errores comunes en los límites de trabajo en proceso">Errores comunes en los límites de trabajo en proceso</h2>
+
+<p>A menudo, las organizaciones que implementan los límites de WIP encuentran los siguientes obstáculos:</p>
+
+<ul>
+<li><strong>No tienen en cuenta el trabajo invisible.</strong> Es importante visualizar todo el flujo de valor, desde la idea hasta el cliente, no solo la parte del trabajo de la que es responsable el equipo. Si esto no se tiene en cuenta, es imposible ver los cuellos de botella reales, y terminarás abordando problemas que no son limitaciones significativas para el flujo de trabajo (esto también se conoce como óptimos locales).</li>
+<li><strong>Establecen límites de WIP demasiado amplios.</strong> Asegúrate de que los límites de WIP no sean demasiado amplios. Si tu equipo divide su tiempo entre varias tareas o proyectos, es probable que los límites de WIP sean demasiado amplios.</li>
+<li><strong>Establecen límites de WIP permisivos.</strong> No seas demasiado permisivo con los límites de WIP cuando las personas estén inactivas. Esas personas deberían colaborar en otras partes del flujo de valor y abordar los problemas que generan restricciones en otras etapas.</li>
+<li><strong>Establecen límites fáciles de alcanzar.</strong> Si tus límites de WIP son fáciles de alcanzar, cámbialos. El objetivo de estos límites es exponer los problemas en el sistema para que puedan resolverse. Otra situación a la que se debe prestar atención es cuando hay demasiadas columnas en la presentación. Busca formas de simplificar el proceso de entrega y reducir las transferencias. El trabajo para mejorar procesos es fundamental a fin de aumentar el flujo.</li>
+</ul>
+
+<p>La investigación realizada por DevOps Research &amp; Assessment demuestra que los límites de WIP ayudan a mejorar el rendimiento de la entrega de software, en especial, cuando se combinan con <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">el uso de presentaciones</a> y <a href="/architecture/devops/devops-measurement-monitoring-systems" track-type="solution" track-name="internalLink" track-metadata-position="body">ciclos de retroalimentación de la supervisión</a>.</p>
+
+<h2 id="ways_to_improve_work_in_process_limits" data-text="Formas de mejorar los límites de trabajo en proceso">Formas de mejorar los límites de trabajo en proceso</h2>
+
+<ul>
+<li><strong>Haz que tu trabajo sea visible.</strong> A medida que lo haces, intenta destacar todas las etapas del trabajo, de manera que sean visibles para varios equipos y partes interesadas (consulta la página sobre <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">presentaciones visuales</a> para obtener más información).</li>
+<li><strong>Establece límites de WIP que coincidan con la capacidad de trabajo de tu equipo.</strong><ul><li>Ten en cuenta las actividades como la asistencia para la producción, el tiempo dedicado a reuniones y la deuda técnica.</li>
+<li>No permitas que haya más WIP en las etapas del proceso que personal que realice las tareas.</li>
+<li>No le exijas a las personas que dividan su tiempo entre varias tareas.</li>
+<li>Cuando se completa un trabajo en particular, mueve la tarjeta que representa ese trabajo a la columna siguiente y coloca el trabajo de mayor prioridad que está en la cola.</li>
+</ul></li>
+<li><strong>Organiza una reunión semanal para que las partes interesadas prioricen todo el trabajo en orden.</strong> Informa a las partes interesadas que si no asisten, su trabajo no se realizará.</li>
+<li><strong>Trabaja para aumentar el flujo.</strong> Mide el plazo de entrega del trabajo a través del sistema. Registra la fecha de inicio del trabajo y la fecha de finalización en una tarjeta. A partir de esta información, puedes crear un histograma de frecuencia de ejecución, que muestra la cantidad de días que el trabajo tarda en recorrer el sistema. Estos datos te permitirán calcular el plazo de entrega promedio, así como la variabilidad, con el objetivo de lograr una variabilidad baja; la variabilidad alta significa que los proyectos no tienen un alcance correcto o que tienen limitaciones significativas que no solo repercuten en tu equipo. La variabilidad alta también significa que las estimaciones y las predicciones sobre el trabajo futuro no serán tan confiables.</li>
+<li><strong>Mejora los procesos de trabajo.</strong> Reduce las transferencias, simplifica y automatiza las tareas, y piensa en cómo mejorar la colaboración para realizar los trabajos. Una vez que quites algunos obstáculos y te sientas cómodo, reduce los límites de WIP para revelar el siguiente conjunto de obstáculos. Lo ideal es el flujo de una sola pieza, lo que significa que el trabajo fluye desde la idea hasta el cliente con un tiempo de espera o repetición del trabajo mínimos. Es posible que este ideal no sea factible, pero sirve como un “objetivo final” para guiar el camino en un proceso de mejora continua.</li>
+</ul>
+
+<h2 id="ways_to_measure_work_in_process_limits" data-text="Formas de medir los límites de trabajo en proceso">Formas de medir los límites de trabajo en proceso</h2>
+
+<p>Los límites de WIP se imponen en lugar de medirse, pero es importante seguir buscando formas de mejorar. Durante las retrospectivas habituales, hazte las siguientes preguntas:</p>
+
+<ul>
+<li>¿Conoces el plazo de entrega y la variabilidad promedio de todo el flujo de valor (desde la idea hasta el cliente)?</li>
+<li>¿Estás buscando maneras de aumentar el flujo y reducir así el plazo de entrega del trabajo?</li>
+<li>¿Los límites de WIP ayudan a manifestar los obstáculos que te impiden aumentar el flujo?</li>
+<li>¿Estás tratando de resolver esos obstáculos?</li>
+</ul>
+
+<h2 id="whats_next" data-text="Próximos pasos">¿Qué sigue?</h2>
+
+<ul>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</li>
+<li>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</li>
+</ul>
+
+</body></html>

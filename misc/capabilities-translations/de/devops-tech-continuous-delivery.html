@@ -1,0 +1,141 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Technologie: Continuous Delivery</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Continuous Delivery</em> ist eine der folgenden Funktionen, die zu einer höheren Softwarebereitstellung und Unternehmensleistung führen. Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">"State of DevOps"-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, wissenschaftlich exakten Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>Continuous Delivery ermöglicht die schnelle, sichere und nachhaltige Bekanntgabe von Änderungen aller Art. Teams, die Continuous Delivery geschickt nutzen, können Software-Releases und Änderungen in der Produktion jederzeit – auch während der Geschäftszeiten – und mit geringem Risiko vornehmen, ohne die Nutzer zu beeinträchtigen.</p>
+
+<p>Sie können die Grundsätze und Vorgehensweisen der Continuous Delivery auf jeden beliebigen Softwarekontext anwenden. Dazu zählen:</p>
+
+<ul>
+<li>Aktualisierung von Diensten in komplexen verteilten Systemen</li>
+<li>Aktualisierungen von Mainframe-Software</li>
+<li>Änderungen an der Infrastrukturkonfiguration</li>
+<li>Änderungen am Datenbankschema</li>
+<li>Automatische Firmware-Aktualisierungen</li>
+<li>Releases neuer Versionen einer mobilen App</li>
+</ul>
+
+<p>Wenn Ihr Team mit Continuous Delivery arbeitet, können Sie folgende Fragen mit "Ja" beantworten:</p>
+
+<ul>
+<li>Ist unsere Software über ihren gesamten Lebenszyklus in einem bereitstellungstauglichen Zustand?</li>
+<li>Hat die Bereitstellungstauglichkeit der Software für uns Vorrang vor der Arbeit an neuen Features?</li>
+<li>Steht in Bezug auf die Qualität und Bereitstellungstauglichkeit des Systems, an dem wir gerade arbeiten, jedem im Team schnelles Feedback zur Verfügung?</li>
+<li>Hat für uns die Problemlösung oberste Priorität, wenn wir Feedback erhalten, dass ein System nicht bereitgestellt werden kann (z. B. nach fehlgeschlagenen Builds oder Tests)?</li>
+<li>Kann das System bei Bedarf jederzeit für die Produktion oder für Endnutzer bereitgestellt werden?</li>
+</ul>
+
+<p>Continuous Delivery wird häufig mit kontinuierlichen Bereitstellung verbunden, allerdings sind dies separate Verfahren. Kontinuierliche Bereitstellung bedeutet, dass Teams versuchen, jede Codeänderung so schnell wie möglich in die Produktion zu übernehmen. Continuous Delivery funktioniert gut für Webdienste, kann jedoch nicht auf Software, wie Firmware oder mobile Apps, angewendet werden. Continuous Delivery wird auf alle Arten von Software, einschließlich Firmware- und Mainframe-Systemen, sowie in stark regulierten Umgebungen angewendet. Sie können und sollten beginnen, mit Continuous Delivery zu arbeiten, auch wenn Sie nicht die Absicht haben, kontinuierliche Bereitstellung zu nutzen.</p>
+
+<p>Continuous Delivery und die kontinuierliche Bereitstellung werden fälschlicherweise als riskant und ungeeignet für regulierte oder sicherheitsrelevante Domains angesehen. Das Ziel der Continuous Delivery besteht jedoch darin, Softwarerisiken zu reduzieren. Die DORA-Studie hat deutlich gezeigt, dass leistungsstarke Unternehmen damit eine höhere Zuverlässigkeit und Verfügbarkeit erzielen. Die technischen Aspekte für die Continuous Delivery, wie kontinuierliche Tests, Shift Left für Sicherheit sowie umfassende Tests und Beobachtbarkeit, sind in streng regulierten und sicherheitsrelevanten Domains noch wichtiger. Bei streng regulierten Domains, wie von Finanzdienstleistern und Regierungsbehörden, wird Continuous Delivery bereits vielfach erfolgreich genutzt.</p>
+
+<p>Continuous Delivery ist für alle Arten von Software möglich, aber nicht einfach in der Umsetzung. Trotzdem bietet sie große Vorteile. <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> zufolge bietet eine gute Continuous Delivery folgende Vorteile:</p>
+
+<ul>
+<li>Sie verbessert die Leistung der Softwarebereitstellung in Bezug auf die <a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">vier zentralen Messwerte</a> und die Verfügbarkeit.</li>
+<li>Sie verkürzt den Anteil der Zeit, die Teams für Nachbesserungen oder ungeplante Arbeit benötigen (siehe <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">State of DevOps-Bericht 2016</a>, Seiten 25–26, und <a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">State of DevOps-Bericht 2018</a>, Seiten 27–29).</li>
+<li>Beim Personal treten weniger Erschöpfungserscheinungen auf (körperliche, geistige oder emotionale Erschöpfung) aufgrund von Überarbeitung oder Stress auf, die <a href="/architecture/devops/devops-culture-job-satisfaction" track-type="article" track-name="internalLink" track-metadata-position="body">Zufriedenheit am Arbeitsplatz</a> steigt und dies fördert eine positive <a href="/architecture/devops/devops-culture-westrum-organizational-culture" track-type="article" track-name="internalLink" track-metadata-position="body">Unternehmenskultur</a>.</li>
+<li>Sie reduziert Probleme bei der Bereitstellung, die deutlich machen, welche Bereitstellungen disruptiv und nicht einfach umzusetzen sind. Außerdem haben Entwickler und technische Mitarbeiter weniger Angst, wenn sie Code in die Produktion übernehmen.</li>
+<li>Sie nimmt Einfluss auf die Kultur, weil sie die <a href="https://rework.withgoogle.com/print/guides/5721312655835136/">psychologische Sicherheit</a> erhöht und damit eine <a href="/architecture/devops/devops-culture-westrum-organizational-culture" track-type="article" track-name="internalLink" track-metadata-position="body">zielorientierte Unternehmenskultur</a> fördert.</li>
+</ul>
+
+<p>Das folgende Diagramm zeigt, wie sich einige technische Verfahren auf die Continuous Delivery auswirken und so dazu beitragen, die oben genannten Ergebnisse zu erzielen:</p>
+
+<p><img src="/static/architecture/devops/images/continuous-delivery-technical-practices.png" alt="So wirken sich technische Verfahren positiv auf andere Bereiche aus" width="80%" class="screenshot"/> </p>
+
+<p>Continuous Delivery ist zwar nur einer der Aspekte, die zu den oben genannten Ergebnissen beitragen, aber ein sehr wichtiger. Im <a href="https://devops-research.com/research.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">DORA-Forschungsprogramm</a> werden weitere kulturelle und organisatorische Fähigkeiten beschrieben, die ebenfalls dazu beitragen. Sie können Continuous Delivery erreichen, wenn Sie die in diesem Dokument beschriebenen technischen Verfahren implementieren.</p>
+
+<h2 id="implementing_continuous_delivery" data-text="Continuous Delivery implementieren">Continuous Delivery implementieren</h2>
+
+<p>Der DORA-Studie zufolge kann Continuous Delivery mithilfe der folgenden technische Ressourcen erreicht werden. Aber auch <a href="/architecture/devops/devops-culture-transformational-leadership" track-type="article" track-name="internalLink" track-metadata-position="body">transformationale Führung</a> innerhalb der Organisation fördert die Implementierung vieler dieser technischen Funktionen.</p>
+
+<p>Mit den folgenden Best Practices für Continuous Delivery ermöglichen Sie Ihrem Team, einen höheren Arbeitsdurchsatz zu erzielen und gleichzeitig Releases mit geringerem Risiko zu veröffentlichen.</p>
+
+<ul>
+<li><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Testautomatisierung:</a> Verwendung umfangreicher automatischer Testsuiten, die hauptsächlich von Entwicklern erstellt und gewartet werden. Effiziente Testsuiten liefern zuverlässige Ergebnisse, d. h., es werden reale Fehler gefunden und Code besteht diese Tests nur, wenn er für das Release bereit ist.</li>
+<li><a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Automatisierte Bereitstellung:</a> Umfang, in dem Bereitstellungen vollständig automatisiert sind und keine manuellen Eingriffe erfordern.</li>
+<li><a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">Trunk-basierte Entwicklung:</a> Entwicklung mit weniger als drei aktiven Zweigen in einem Code-Repository. Zweige und Forks haben eine sehr kurze Lebensdauer (z. B. weniger als einen Tag), bevor sie in der Mainline zusammengeführt werden. Außerdem haben Anwendungsteams selten oder nie <em>Codesperren</em>, während der niemand Code einchecken oder aufgrund von Problemen bei der Zusammenführung Code-Fixierungen oder Stabilisierungsphasen niemand Pull-Anfragen senden kann.</li>
+<li><a href="/architecture/devops/devops-tech-shifting-left-on-security" track-type="article" track-name="internalLink" track-metadata-position="body">Shift Left für Sicherheit:</a> Einbindung der Sicherheitsaspekte in die Design- und Testphasen des Softwareentwicklungsprozesses. Dieser Prozess umfasst Prüfungen der Anwendungssicherheit unter Einbeziehung des Teams für Informationssicherheit in das Design und die Demonstration der Anwendungen, die Verwendung von vorab genehmigten Sicherheitsbibliotheken und -paketen sowie das Testen von Sicherheitsfunktionen als Teil der automatisierten Testsuite.</li>
+<li><a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">Lose gekoppelte Architektur:</a> Architektur, mit der Teams ihre Anwendungen bei Bedarf testen und bereitstellen können, ohne dass andere Dienste orchestriert werden müssen. Durch eine lose gekoppelte Architektur können Ihre Teams unabhängig von den anderen Teams für Support und Dienste arbeiten. Dies beschleunigt ihre Arbeit, sodass für das Unternehmen ein größerer Mehrwert geschaffen wird.</li>
+<li><a href="/architecture/devops/devops-tech-teams-empowered-to-choose-tools" track-type="article" track-name="internalLink" track-metadata-position="body">Selbstständige Wahl der Tools durch die Teams:</a> Die Teams können selbst entscheiden, welche Tools sie für eine optimale Continuous Delivery verwenden möchten.
+Denn niemand weiß besser als die Praktiker selbst, was sie für effizientes Arbeiten benötigen</li>
+<li><a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">Continuous Integration (CI):</a> Dies ist eine Entwicklungsmethode, bei der Code regelmäßig eingecheckt wird. Jeder Check-in löst eine Reihe von kurzen Tests aus, um Regressionen zu erkennen und sofort zu beheben. Im Rahmen des CI-Prozesses werden kanonische Builds und Pakete erstellt, die letztendlich bereitgestellt und veröffentlicht werden.</li>
+<li><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Kontinuierliche Tests:</a> Hierbei werden Tests über den gesamten Lebenszyklus der Softwarebereitstellung ausgeführt und nicht als separate Phase nach <em>Abschluss der Entwicklung</em>. Bei kontinuierlichen Tests arbeiten die Entwickler und Tester zusammen. Leistungsstarke Unternehmen entwickeln lösungsorientiert und erhalten Test-Feedback in weniger als zehn Minuten. Außerdem prüfen und optimieren sie auch ihre Testsuiten fortlaufend, beispielsweise, um Fehler zu finden und die Komplexität in Grenzen zu halten.</li>
+<li><a href="/architecture/devops/devops-tech-version-control" track-type="article" track-name="internalLink" track-metadata-position="body">Versionsverwaltung:</a> Nutzung eines Versionsverwaltungssystems wie Git oder Subversion für alle Artefakte der Produktion, einschließlich Anwendungscode, Anwendungskonfigurationen, Systemkonfigurationen und Skripts zur Automatisierung der Erstellung und Konfiguration von Umgebungen.</li>
+<li><a href="/architecture/devops/devops-tech-test-data-management" track-type="article" track-name="internalLink" track-metadata-position="body">Testdatenverwaltung:</a> Voraussetzungen für eine effektive Vorgehensweise sind unter anderem die Verfügbarkeit ausreichender Datenmengen, um Testsuite auszuführen, die Möglichkeit, nach Bedarf erforderliche Daten abzurufen, und dass die Anzahl der ausführbaren Tests nicht durch Daten begrenzt sind. Wir empfehlen, dass Ihre Teams möglichst wenig Testdaten brauchen, um automatisierte Tests durchzuführen.</li>
+<li><a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="article" track-name="internalLink" track-metadata-position="body">Umfassendes Monitoring und Beobachtbarkeit:</a> Dies hilft den Teams, den Status ihrer Systeme besser zu verstehen. Effektive Lösungen ermöglichen es den Teams, vordefinierte Messwerte zu überwachen, einschließlich des Systemstatus, wie er von Nutzern wahrgenommen wird. Außerdem können Entwickler so Systeme interaktiv debuggen sowie Attribute und Muster im Zeitverlauf untersuchen.</li>
+<li><a href="/architecture/devops/devops-measurement-proactive-failure-notification" track-type="article" track-name="internalLink" track-metadata-position="body">Proaktive Benachrichtigungen:</a> Monitoring des Systemzustands, damit Teams Probleme frühzeitig erkennen und beheben können.</li>
+<li><a href="/architecture/devops/devops-tech-database-change-management">Änderungsmanagement für Datenbanken:</a> Datenbankänderungen müssen die Arbeit der Teams nicht ausbremsen, wenn einige wichtige Praktiken befolgt werden. Dazu zählen beispielsweise das Speichern von Datenbankänderungen als Skripts in der Versionsverwaltung und das Verwalten dieser Änderungen auf die gleiche Weise, wie bei Produktionsanwendungen. Auf diese Weise sind Datenbankänderungen für jeden im Softwarebereitstellungszyklus (einschließlich Entwicklern) sichtbar und alle Beteiligten können kommunizieren, wenn Änderungen an der Anwendung auch Datenbankänderungen erfordern.</li>
+<li><a href="/architecture/devops/devops-tech-code-maintainability">Verwaltbarkeit von Codes:</a> Systeme und Tools, mit denen Entwickler von anderen Personen verwalteten Code ändern, Beispiele in der Codebasis finden, Code anderer Personen wiederverwenden sowie Code hinzufügen, aktualisieren oder zu neuen Versionen von Abhängigkeiten migrieren können, ohne den ursprünglichen Code zu verändern.</li>
+</ul>
+
+<p>Continuous Delivery wird häufig mit Continuous Integration kombiniert und mit <em>CI/CD</em> abgekürzt. Studien zeigen, dass die Continuous Integration nur ein Bestandteil der Implementierung von Continuous Delivery ist. Für zuverlässige, risikoarme Releases ist eine enge Zusammenarbeit zwischen allen an der Softwarebereitstellung Beteiligten und nicht nur der Softwareentwickler untereinander erforderlich. Außerdem muss Ihr Team dafür neue Arbeitsweisen erschließen und neue Kompetenzen erwerben.</p>
+
+<h2 id="common_pitfalls_of_implementing_continuous_delivery" data-text="Häufige Stolperfallen bei der Implementierung von Continuous Delivery">Häufige Stolperfallen bei der Implementierung von Continuous Delivery</h2>
+
+<p>Einige Organisationen glauben fälschlicherweise, dass Continuous Delivery darin besteht, ihren vorhandenen Prozess der kontinuierlichen Bereitstellung einfach öfter zu wiederholen. Die Implementierung der technischen Funktionen, die Continuous Delivery unterstützen, erfordert jedoch in der Regel erhebliche Prozess- und Architekturänderungen. Wenn Sie ohne Verbesserung der Prozesse und Architektur einfach öfter bereitstellen, erreichen Sie damit wahrscheinlich nicht mehr, als höhere Fehlerraten und erschöpfte Teams.</p>
+
+<p>Viele Beschreibungen der Continuous Delivery konzentrieren sich auf die Tools und Muster, wie die Bereitstellungspipeline, die Änderungen von der Versionsverwaltung bis zur Produktion vornimmt. Wenn Sie jedoch moderne Tools nutzen, ohne die hier beschriebenen, erforderlichen technischen Verfahren und Prozessänderungen zu implementieren, werden Sie nicht die gewünschten Ergebnisse erzielen.</p>
+
+<p>Das folgende Diagramm zeigt die J-Kurve, nach der laut DORA-Studie Transformationsprogramme typischerweise ablaufen. Wenn Ihr Team am Anfang dieser Kurve steht, muss es zuerst die Prozesse umgestalten und vereinfachen, die Architektur optimieren, Fähigkeiten und Kompetenzen entwickeln sowie Automatisierung und Tools implementieren.</p>
+
+<p><img src="/static/architecture/devops/images/continuous-delivery-2.png" alt="J-Kurve: typischer Verlauf der Transformation. Quelle: Bericht &amp;quot;State of DevOps 2018&amp;quot;" width="80%" class="screenshot"/> </p>
+
+<p>Im Diagramm sind die folgenden Phasen beschriftet:</p>
+
+<ul>
+<li>Am Anfang der Kurve beginnen Teams mit der Transformation und identifizieren schnelle Erfolge.</li>
+<li>Bei einer ersten Verbesserung können Unternehmen mit geringer Leistung durch Automatisierung zu durchschnittlicher Leistung gelangen.</li>
+<li>Bei Effizienzverlust (unterer Bereich der J-Kurve) erhöht die Automatisierung die Testanforderungen, die manuell angepasst werden müssen. Ein großer Anteil technischer Altlasten behindert den Fortschritt.</li>
+<li>Während sich Teams entlang der Kurve nach oben arbeiten, führen technische Altlasten und zunehmende Komplexität dazu, dass immer mehr manuelle Kontrollen und Prozessebenen in Bezug auf Änderungen hinzukommen, was die Arbeit verlangsamt.</li>
+<li>Oben in der Kurve führt kompromisslose Optimierungsarbeit zu Spitzenleistung. Die Leistungsstärksten nutzen Fachwissen und lernen von ihren Umgebungen, um die Produktivität zu steigern.</li>
+</ul>
+
+<p>Eine gute Möglichkeit, die Auswirkungen der J-Kurve abzuschwächen, bietet eine <em>Wertstromanalyse</em> (Value Stream Mapping, VSM). Mithilfe dieser Analyse können Sie mögliche Engpässe identifizieren und deren Auswirkungen prognostizieren. Bei einer VSM betrachten Sie jeweils eine einzelne Änderung im Prozess von der Versionsverwaltung bis zur Produktion.</p>
+
+<ol>
+<li>Berücksichtigen Sie die verschiedenen Prozesse, die jede Änderung durchläuft. Dazu gehören automatische und manuelle Tests, Sicherheitsprüfungen, das Änderungsmanagement und die Freigabe für die Produktion.</li>
+<li>Messen Sie die Gesamtzeit, die nach einer Änderung von der Versionsverwaltung bis zum Release verstreicht. Messen Sie für jeden Prozess Folgendes:
+<ul>
+<li>Die tatsächlich verstrichene Zeit und die Wertschöpfungszeit (effektive Arbeitszeit) vom Anfang bis zum Ende des Prozesses.</li>
+<li>Prozentualer Anteil am Zeitaufwand, der entsteht, weil eine beim ersten Mal nicht korrekt ausgeführte Aufgabe zurückgesendet werden muss. Dieser Messwert wird als <em>%C/A (Percentage Complete and Accurate)</em> bezeichnet.</li>
+</ul></li>
+</ol>
+
+<p>Die Wertstromanalyse hilft Ihnen, Ineffizienzen in Ihrem Prozess aufzudecken. Erstellen Sie im Team ein Diagramm, das darstellt, wie der Wertstrom in sechs Monaten aussehen soll. Legen Sie außerdem eine feste Teamkapazität fest, mit der dieser Status erarbeitet werden soll. Identifizieren und beseitigen Sie Hindernisse, wie Prozesse, die im Verhältnis zur Wertschöpfungszeit zu lange dauern oder eine schlechte %C/A haben.</p>
+
+<p>Die Implementierung einer Bereitstellungspipeline erfordert in der Regel eine umfangreiche Neugestaltung des Prozesses und der Architektur. Da die Bereitstellungspipeline vom Check-in bis zum Release reicht, sind hier mehrere Teams beteiligt. Daher ist es wichtig, dass Mitarbeiter aus allen Teams eine Wertstromanalyse machen und sich dann auf eine gemeinsame Toolchain sowie entsprechende Prozesse einigen (z. B. für die Bereitstellung in den Test- und Produktionsumgebungen), um auf den gewünschten Status hinzuarbeiten.</p>
+
+<p>Die Implementierung von Continuous Delivery ist ein Prozess kontinuierlicher, täglicher Optimierungsarbeit, die auf die gewünschten Ergebnisse abzielt. Tools und Muster sind wertvoll, aber nur, wenn sie im Dienst dieser Optimierungsarbeit stehen.</p>
+
+<h2 id="measuring_continuous_delivery" data-text="Continuous Delivery messen">Continuous Delivery messen</h2>
+
+<p>Continuous Delivery soll gewährleisten, dass Releases während der normalen Geschäftszeiten und mit einem geringen Risiko herausgegeben werden können. Ziel ist, dass niemand außerhalb der normalen Geschäftszeiten an Bereitstellungen oder Releases arbeitet. Daher ist es wichtig, diesen Aspekt bei der Messung zu berücksichtigen.</p>
+
+<p>Wie effizient Ihre Continuous Delivery ist, spiegelt sich in den Ergebnissen wider, die damit erzielt werden. Mit dem <a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">DORA-DevOps-Schnelltest</a> können Sie ermitteln, wie sich die wichtigsten Messwerte der Continuous Delivery entwickeln:</p>
+
+<ul>
+<li>Kurze Vorlaufzeiten sowohl für reguläre als auch für Notfalländerungen mit dem Ziel, auch Notfalländerungen im Rahmen des regulären Prozesses vorzunehmen</li>
+<li>Geringe Änderungsausfallraten</li>
+<li>Kurzfristige Wiederherstellung von Diensten bei Ausfällen oder Dienststörungen</li>
+<li>Release-Häufigkeit, die gewährleistet, dass Features mit hoher Priorität und Fehlerkorrekturen zeitnah veröffentlicht werden</li>
+</ul>
+
+<p>Wie schon zu Beginn dieses Dokuments erläutert, sollte die Implementierung der Continuous Delivery auch zu weniger Nachbesserungen und Bereitstellungsproblemen sowie zu einem geringeren Zeitaufwand für korrigierende und ungeplante Arbeiten führen.</p>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Nächste Schritte</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li>Weitere Informationen zur Continuous Delivery finden Sie im <a href="https://martinfowler.com/delivery.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Software Delivery Guide</a> von Martin Fowler.</li>
+<li><a href="https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation</em></a> von Karen Martin und Mike Osterling</li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

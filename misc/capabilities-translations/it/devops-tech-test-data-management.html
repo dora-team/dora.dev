@@ -1,0 +1,93 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia DevOps: gestire la gestione dei dati</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> <em>la gestione dei dati di test</em> è un insieme di funzionalità che incrementano la distribuzione del software e le prestazioni dell'organizzazione. Queste funzionalità sono state scoperte dal <a href="https://www.devops-research.com/research.html">programma di ricerca State of DevOps di DORA</a>, un'indagine indipendente e rigorosamente accademica sulle pratiche e sulle capacità che promuovono prestazioni elevate. Per scoprire di più, leggi le nostre <a href="/devops">risorse DevOps</a>.</span></aside>
+<p>I <a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">test automatici</a> sono un componente chiave delle moderne pratiche di distribuzione del software. La capacità di eseguire un insieme completo di test di unità, integrazioni e sistemi è essenziale per verificare che l'app o il servizio si comporti come previsto e può essere implementato in sicurezza in produzione. Per garantire che i tuoi test convalidino scenari realistici,
+è fondamentale fornire test ai dati realistici.</p>
+
+<p>I dati dei test sono importanti perché sono obbligatori per tutti i tipi di test durante l'intera gamma di test, compresi i test manuali e automatici. Dati di test validi ti consentono di
+convalidare i percorsi degli utenti comuni o di valore elevato, di testare gli scenari di limite, di riprodurre i
+difetti e di simulare gli errori.</p>
+
+<p>Tuttavia, è difficile usare e gestire i dati dei test in modo efficace. L'utilizzo eccessivo di dati definiti al di fuori dell'ambito di test può rendere i test fragili e aumentare i costi di manutenzione. Le dipendenze sulle origini dati esterne possono introdurre ritardi e influire sulle prestazioni dei test. La copia dei dati di produzione introduce un rischio perché potrebbe contenere informazioni sensibili. Per affrontare queste sfide, devi gestire i dati dei test con attenzione e strategicamente.</p>
+
+<h2 id="how_to_implement_test_data_management" data-text="Come implementare la gestione dei dati per i test">Come implementare la gestione dei dati per i test</h2>
+
+<p>L'analisi eseguita da
+<a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a>
+mostra che i team di successo affrontano la gestione dei dati di test con i seguenti
+principi fondamentali:</p>
+
+<ul>
+<li>Sono disponibili dati di test adeguati per eseguire le suite di test automatizzate complete.</li>
+<li>I dati dei test per le suite di test automatizzate possono essere acquisiti on demand.</li>
+<li>I dati di test non limitano né limitano i test automatici che i team possono eseguire.</li>
+</ul>
+
+<p>Per migliorare i processi di gestione dei dati di test, cerca di soddisfare ciascuna di queste condizioni in tutti i tuoi team di sviluppo. Queste pratiche possono anche contribuire positivamente alle tue funzionalità di <a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">automazione di test</a> e <a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">integrazione continua</a> complessive.</p>
+
+<h2 id="common_pitfalls_in_test_data_management" data-text="Insidie comuni nella gestione dei dati dei test">Insidie comuni nella gestione dei dati dei test</h2>
+
+<p>Gestire i dati dei test può essere difficile. Le seguenti inconvenienti sono comuni nella gestione dei dati di test:</p>
+
+<ul>
+<li>Affidabilità dei dati nei test. In particolare, i test delle unità non devono dipendere da dati o stati esterni al test.</li>
+<li>Utilizzare una copia completa del database di produzione, anziché identificare parti pertinenti o importanti.</li>
+<li>Non mascherare o eseguire l'hashing dei dati sensibili.</li>
+<li>Se utilizzi dati obsoleti o non più pertinenti.</li>
+</ul>
+
+<h2 id="ways_to_improve_test_data_management" data-text="Modi per migliorare la gestione dei dati dei test">Modi per migliorare la gestione dei dati dei test</h2>
+
+<p>Le seguenti prassi possono aiutarti a utilizzare i dati di test in modo più efficace ed efficiente:</p>
+
+<ol>
+<li><p><strong>Test delle unità di misura</strong>. I test delle unità devono essere indipendenti l'uno dall'altro e
+da qualsiasi altra parte del sistema, ad eccezione del codice testato. I test delle unità
+non dovrebbero dipendere da dati esterni. Come definito dalla <a href="https://martinfowler.com/articles/practical-test-pyramid.html#TheTestPyramid" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">piramida di automazione di test</a>, i test delle unità dovrebbero costituire la maggior parte dei test. I test delle unità ben scritti eseguiti su un codebase ben progettato sono molto più facili da valutare e più facili da gestire rispetto ai test di livello superiore. Aumentare la copertura dei test delle unità può aiutarti a ridurre al minimo la dipendenza da test di livello superiore che consumano dati esterni.</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-test-automation-pyramid.svg" alt="Testa la piramide dell&amp;#39;automazione."/></p></li>
+<li><p><strong>Riduci al minimo l'utilizzo dei dati del test</strong>. I dati dei test richiedono una manutenzione accurata e continua. Man mano che le API e le interfacce si evolvono, devi aggiornare o
+ricreare i dati di test correlati. Questo processo rappresenta un costo che può influire negativamente sulla velocità del team. Pertanto, è buona norma ridurre al minimo la quantità di dati dei test necessaria per eseguire test automatici.</p></li>
+<li><p><strong>Isolare i dati del test</strong>. Esegui i tuoi test in ambienti ben definiti con input controllati e output previsti che possono essere confrontati con gli output effettivi. Assicurati che i dati consumati da un determinato test siano associati in modo esplicito a tale test e non vengano modificati da altri test o processi.
+Dove possibile, i test dovrebbero creare lo stato necessario
+come parte della configurazione, utilizzando le API dell'applicazione. Isolare i dati dei test è anche un prerequisito per l'esecuzione parallela dei test.</p></li>
+<li><p><strong>Riduci al minimo l'utilizzo di dati di test archiviati nei database</strong>. Mantenere i dati dei test archiviati nei database può essere particolarmente difficile per i seguenti motivi:</p>
+
+<ol>
+<li><strong>Isolamento del test scadente</strong>. I database archiviano i dati in modo durevole; eventuali
+modifiche ai dati verranno mantenute tra i test, a meno che non vengano reimpostate esplicitamente.
+Input di test meno affidabili rendono più difficile l'isolamento dei test e possono impedire il caricamento in contemporanea.</li>
+<li><strong>Impatto sul rendimento</strong>. La velocità di esecuzione è un requisito chiave per i test automatici. L'interazione con un database è generalmente più lenta e più complessa rispetto all'interazione con i dati archiviati localmente. Preferisci i database in memoria, ove opportuno.</li>
+</ol></li>
+<li><p><strong>Fai in modo che i dati di test siano immediatamente disponibili</strong>. L'esecuzione di test su una copia di un database di produzione completo introduce un rischio. Aggiornare i dati può essere complicato e lento. Di conseguenza, i dati possono diventare obsoleti.
+I dati di produzione possono contenere anche informazioni sensibili. Identifica, invece, le sezioni di dati pertinenti richieste dai test. Esporta regolarmente queste sezioni
+e rendile disponibili per il test.</p></li>
+</ol>
+
+<h2 id="how_to_measure_test_data_management" data-text="Come misurare la gestione dei dati per i test">Come misurare la gestione dei dati per i test</h2>
+
+<p>Man mano che il tuo approccio al test dei dati si evolve, è importante misurare i tuoi progressi rispetto ai principi fondamentali sottolineati in precedenza.</p>
+
+<ol>
+<li><strong>Sono disponibili dati di test adeguati per eseguire suite di test automatiche complete</strong>.
+Puoi misurare il tempo trascorso da sviluppatori e tester per gestire e gestire i dati utilizzabili nelle suite di test. Puoi anche acquisire questo provvedimento con misure percettive (ovvero sondaggi) per chiedere ai team di disporre di dati sufficienti per svolgere il loro lavoro o se ritengono che questo sia un vincolo per loro.</li>
+<li><strong>I dati dei test per le suite di test automatizzate possono essere acquisiti on demand</strong>. Puoi misurare questo valore come la percentuale di set di dati chiave disponibili, la frequenza di accesso a tali set di dati e la frequenza di aggiornamento.</li>
+<li><strong>I dati dei test non limitano né limitano i test automatici che i team possono eseguire</strong>. Puoi misurarlo come il numero di test automatici che possono essere eseguiti senza dover acquisire ulteriori dati di test. Puoi anche acquisire questo tipo di dati con misure percettive (ovvero sondaggi), per chiedere ai team se ritengono che i dati di test limitino le attività di test automatici.</li>
+</ol>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina DevOps</a>.</li>
+<li>Scopri come i test e CI/CD possono aiutare a <a href="/blog/products/application-development/release-with-confidence-how-testing-and-cicd-can-keep-bugs-out-of-production" track-type="article" track-name="internalLink" track-metadata-position="body">mantenere i bug fuori produzione</a>.</li>
+<li>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</li>
+<li>Completa il <a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a> per scoprire la tua posizione rispetto al resto del settore.</li>
+</ul>
+
+</body></html>

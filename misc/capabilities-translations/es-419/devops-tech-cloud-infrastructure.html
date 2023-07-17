@@ -1,0 +1,102 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnología de DevOps: infraestructura de nube</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> La <em>infraestructura de nube</em> es una de las capacidades que impulsa una entrega de software más alta y un rendimiento organizativo. Estas funciones se descubrieron mediante el <a href="https://www.devops-research.com/research.html">programa de investigación del estado de DevOps de DORA</a>, una investigación independiente y rigurosa desde el punto de vista académico sobre las prácticas y las funciones que impulsan el alto rendimiento. Para obtener más información, lee nuestros <a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>Muchas organizaciones están adoptando la computación en la nube. Sin embargo, la computación en la nube no solo se trata de comprar la infraestructura desde un proveedor de servicios en la nube. El Instituto Nacional de Estándares y Tecnología (NIST) de EE.UU. <a href="https://csrc.nist.gov/publications/detail/sp/800-145/final" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">define</a> cinco características esenciales de la computación en la nube:</p>
+
+<ul>
+<li><strong>Autoservicio a pedido:</strong> Los consumidores pueden aprovisionar recursos de procesamiento según sea necesario, sin la interacción humana del proveedor.</li>
+<li><strong>Acceso amplio a la red:</strong> Se puede acceder a las funciones a través de diversas plataformas, como teléfonos celulares, tablets, laptops y estaciones de trabajo.</li>
+<li><strong>Agrupación de recursos:</strong> Los recursos del proveedor se agrupan en un modelo de varios usuarios, con recursos físicos y virtuales asignados de forma dinámica a pedido.
+El cliente puede especificar la ubicación en un nivel de abstracción mayor, como país, estado o centro de datos.</li>
+<li><strong>Elasticidad con rapidez:</strong> Las funciones se pueden aprovisionar de manera elástica y se lanzan para escalar con rapidez hacia afuera o hacia adentro a pedido, lo que hace que parezcan ilimitadas y que se las pueda usar en cualquier cantidad y en cualquier momento.</li>
+<li><strong>Servicio medido:</strong> Los sistemas en la nube controlan, informan y optimizan de manera automática el uso de recursos según el tipo de servicio, como almacenamiento, procesamiento, ancho de banda y cuentas de usuario activas.</li>
+</ul>
+
+<p>En el <a href="/devops/state-of-devops">Informe del estado de DevOps de 2019</a> de la <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">Investigación y evaluación de DevOps (DORA)</a>, se descubrió que solo el 29% de las personas que afirmaron que habían adoptado las tecnologías de la nube coincidieron en que cumplían con las cinco características que se definieron antes. En 2018, y 2019, la investigación de DORA descubrió que las organizaciones con un rendimiento superior tenían 23 veces más probabilidades de cumplir con las cinco características esenciales de la nube en comparación con las que tienen un bajo rendimiento. Esto puede explicar por qué los equipos y ejecutivos que afirman tener las tecnologías de computación en la nube también expresan frustración cuando no obtienen los resultados esperados.</p>
+
+<p>Debido a que muchas organizaciones aún usan sus procesos y prácticas de centros de datos tradicionales para administrar su infraestructura de nube, no pueden lograr los beneficios esperados, que según la investigación de DORA incluyen los siguientes:</p>
+
+<ul>
+<li>Rendimiento de entrega de software mejorado: Capacidad de procesamiento más rápida y niveles de estabilidad más altos</li>
+<li>Mejor disponibilidad del servicio</li>
+<li>Visibilidad de costos mejorada: En 2019, descubrimos que los encuestados que cumplieron todas las características esenciales de la nube tienen 2.6 veces más probabilidades de estimar con precisión los costos de operar el software. También tienen el doble de probabilidades de poder identificar con facilidad las aplicaciones más costosas a nivel operativo.</li>
+</ul>
+
+<p>Por ejemplo, muchas organizaciones con infraestructura de nube no permiten que los desarrolladores puedan usar la modalidad de autoservicio para sus entornos a pedido. En cambio, se les pide que abran tickets o envíen correos electrónicos y deben esperar días hasta que los entornos se aprovisionen o hasta que se realicen los cambios de configuración. En este caso, por más que la organización puede pagar por un servicio de nube, no tiene una nube según la definición del NIST.</p>
+
+<p>Cuando se migra a la nube, las organizaciones deben invertir en rediseñar los procesos y las prácticas que implementaban cuando usaban los centros de datos tradicionales. Además, deben adoptar prácticas y patrones nativos de la nube para lograr la agilidad, la estabilidad, la disponibilidad y la transparencia de costos de la computación en la nube. Si la tecnología subyacente está en la nube, pero los resultados de los profesionales permanecen sin cambios (se necesitan días o semanas para obtener entornos de pruebas, aprovisionar infraestructura nueva o realizar cambios en la configuración), las organizaciones no obtendrán los resultados que desean.</p>
+
+<h2 id="how_to_implement_cloud_infrastructure" data-text="Cómo implementar la infraestructura de nube">Cómo implementar la infraestructura de nube</h2>
+
+<p>Adoptar prácticas y procesos nativos de la nube para implementar las cinco características del NIST implica cambios importantes en varias funciones de TI, como desarrolladores, equipos de operaciones, seguridad de la información, adquisición y finanzas.
+Los cambios requieren una estrecha colaboración entre estas funciones para identificar y resolver objetivos contradictorios.</p>
+
+<p>Por ejemplo, muchos desarrolladores esperan un control total sobre la infraestructura de producción cuando usan plataformas en la nube. Los profesionales de seguridad de la información no están de acuerdo con esta práctica y tienen un buen motivo, puesto que, sin una <a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">administración de cambios</a> disciplinada, la infraestructura de nube puede convertirse en una obra de arte frágil difícil de administrar, vulnerable a las amenazas externas y que no cumple con los requisitos reglamentarios.</p>
+
+<p>Sin embargo, los desarrolladores pueden estar capacitados para aprovisionar los recursos que necesitan mientras cumplen con estos requisitos. Muchas organizaciones adoptaron el paradigma de <em>infraestructura como código</em> (GitOps es un ejemplo). La configuración de la infraestructura se verifica en el control de versión, y los desarrolladores pueden aprovisionar entornos, realizar cambios en la configuración y ejecutar implementaciones a través de un mecanismo automatizado. El mecanismo toma el código del control de versión y realiza operaciones a través de la API de la nube a pedido sin la intervención humana. A través del control de versiones y la automatización, todas las acciones y sus resultados se registran para proporcionar un seguimiento completo y la auditabilidad de cada cambio en cada entorno.</p>
+
+<p>La infraestructura como código te permite administrar los cambios de forma efectiva y aplicar los controles de seguridad de la información. Por ejemplo, puedes implementar la división de tareas si exiges que todos los cambios en la configuración especificados en el control de versión estén <a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">aprobados por un miembro de un grupo específico de personas</a> (como se hace en Google). Sin embargo, la migración a la infraestructura como código requiere un esfuerzo significativo de ingeniería y cambios de proceso, lo que incluye los cambios en las políticas para implementar los controles de seguridad de la información.</p>
+
+<p>Considera otro ejemplo. Si bien los proveedores de servicios en la nube por lo general facturan por la infraestructura solo mientras está en uso (lo que cumple con la quinta característica de NIST, servicios medidos), este cambio de infraestructura de costo fijo a costo variable puede tener implicancias significativas en la adquisición y las finanzas. En cuanto a esto, el Informe de estado de DevOps de 2019 indica lo siguiente:</p>
+
+<p>“Algunos en el departamento de finanzas podrían declarar que la nube no generó un ahorro de costos a corto plazo, pero sabemos que brinda una mayor transparencia en la información. ¿Cómo puede ser? Si bien la nube proporciona información transparente sobre los costos a los propietarios del sistema, los usuarios no pagan por estos costos, a menos que exista un modelo de devolución del cargo o un mecanismo similar.
+Esto puede generar costos muy variables que no estén verificados, lo que hace que los costos de la nube sean impredecibles. En estas situaciones, los equipos que pagan por la infraestructura pueden preferir centros de datos porque son predecibles, aunque su visibilidad impide que los usuarios del sistema creen sistemas más eficientes. Sugerimos a las organizaciones que nivelen mejor los incentivos con el fin de que los propietarios de sistemas tengan visibilidad para crear sistemas más eficientes y los incentivos para hacerlo, por medio de la devolución del cargo o mecanismos similares".</p>
+
+<p>Además de considerar cómo se administra la infraestructura a nivel de configuración y finanzas, las aplicaciones a menudo deben volver a diseñarse para obtener los beneficios de aumento de estabilidad, confiabilidad y agilidad que la nube puede proporcionar. El nuevo diseño de los sistemas para un paradigma nativo de la nube se analiza en el informe de Google Cloud <a href="/rearchitecting-to-cloud-native-whitepaper" track-type="article" track-name="internalLink" track-metadata-position="body">Cambia tu estructura a una nativa de la nube: un enfoque evolutivo para aumentar la productividad de los desarrolladores a gran escala.</a> </p>
+
+<p>La consideración más importante a tener en cuenta es si la implementación de la nube realmente ayudó a que tu organización logre <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">versiones confiables y rápidas</a>, además de niveles más altos de disponibilidad, <a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">velocidad y confiabilidad</a>.</p>
+
+<h2 id="common_pitfalls_of_implementing_cloud_infrastructure" data-text="Errores comunes en la implementación de la infraestructura de nube">Errores comunes en la implementación de la infraestructura de nube</h2>
+
+<p>Los mayores obstáculos para cumplir con las cinco características definidas por NIST son los siguientes:</p>
+
+<ul>
+<li>Nivelación y colaboración insuficientes entre las funciones de la organización que deben funcionar en conjunto para poder implementarse</li>
+<li>Inversión insuficiente para el cambio de técnicas, de procesos y de la organización</li>
+</ul>
+
+<p>Muchas organizaciones comienzan con un enfoque de <em>lift-and-shift</em> para migrar aplicaciones a la nube. Esto requiere un cambio mínimo en las aplicaciones y en procesos establecidos para administrar la infraestructura de nube y se puede realizar bastante rápido. Sin embargo, los beneficios que proporciona también son mínimos. Es importante planificar a fin de poder migrar más allá de lift-and-shift a un paradigma nativo de la nube para un software nuevo y los sistemas estratégicos existentes que continuarán evolucionando.</p>
+
+<p>Migrar a la nube es un recorrido de varios años. Al igual que todos los cambios disruptivos, es importante comenzar con poco y experimentar con rapidez para descubrir qué funciona y qué no. Luego, se debe ser persistente y disciplinado sobre el escalamiento horizontal de los aprendizajes y los patrones y las prácticas eficaces a través de la organización.</p>
+
+<p>En este recorrido, se presentan muchos obstáculos que se deberán superar, entre los que se incluyen los siguientes:</p>
+
+<ul>
+<li>Rediseñar procesos, arquitectura y administración para cumplir con los requisitos reglamentarios nativos de la nube</li>
+<li>Diseñar una arquitectura de infraestructura de varios usuarios que permita a los equipos usar la modalidad de autoservicio para realizar implementaciones y cambios de configuración mientras se garantiza una separación lógica entre los entornos, se habilita la devolución del cargo y se evita el uso excesivo de la nube y una infraestructura huérfana</li>
+<li>Compilar una función de desarrollo de productos para tu plataforma de infraestructura de nube</li>
+<li>Ayudar en la transición de adquisición a la infraestructura como un servicio medido en lugar de una inversión de capital</li>
+<li>Ayudar a los desarrolladores a comprender cómo compilar aplicaciones nativas de la nube</li>
+<li>Permitir que las operaciones migren a las prácticas modernas de <a href="https://landing.google.com/sre/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">ingeniería de confiabilidad de sitios</a> (SRE), incluida la implementación de la infraestructura como código como reemplazo para la administración de configuración manual basada en tickets</li>
+<li>Planificar y ejecutar la integración entre sistemas nativos de la nube y sistemas que no están basados en la nube, incluidos las unidades centrales y el software empaquetado o COTS</li>
+</ul>
+
+<p>Para superar estos obstáculos, se requiere un <a href="/architecture/devops/devops-culture-transform" track-type="article" track-name="internalLink" track-metadata-position="body">programa de cambios sustanciales</a> que incluya la inversión continua y la colaboración entre personas de todos los niveles de la organización.</p>
+
+<h2 id="how_to_measure_cloud_infrastructure" data-text="Cómo medir la infraestructura de nube">Cómo medir la infraestructura de nube</h2>
+
+<p>Para decidir qué se debe medir, comienza por considerar los beneficios que esperas obtener de la implementación de la infraestructura de nube. Luego, comienza a medir el grado en el que se alcanzan esos beneficios.</p>
+
+<p>Por ejemplo, si tu objetivo es mejorar la visibilidad de los costos, puedes realizar un seguimiento de tus logros para asegurarte de que los costos de infraestructura se facturen de forma correcta a la línea de negocio, el equipo, el producto o el entorno relevantes.</p>
+
+<p>También puedes medir directamente si realizaste o no un buen trabajo con la implementación de las características esenciales de NIST. Para esto, debes preguntar a tus equipos cuánto están de acuerdo con las declaraciones de estas características que se enumeran al comienzo de este documento. Los equipos que están de acuerdo y los que están muy de acuerdo están dando buenos resultados; los equipos neutrales o que están en desacuerdo necesitan ayuda y asistencia para superar los obstáculos a fin de alcanzar estos resultados. Luego, considera cuántos equipos que afirman que usan la nube realmente pueden cumplir con los criterios de NIST.</p>
+
+<p>Algunos aspectos de las características esenciales también se pueden medir directamente mediante la instrumentación de tus procesos. Por ejemplo, si tienes un proceso para administrar cambios en la infraestructura, podrías medir el tiempo total que se toma para realizar un cambio. También puedes ver cómo las tecnologías nativas de la nube prevalecen en tu organización; por ejemplo, la proporción de clústeres o máquinas administradas mediante Kubernetes o grupos de ajuste de escala automático en lugar del aprovisionamiento manual o el tiempo de actividad de los hosts. En los centros de datos, los tiempos de actividad largos suelen indicar una alta confiabilidad. En el paradigma nativo de la nube, los cambios de configuración suelen realizarse cuando se inician hosts virtuales nuevos con la nueva configuración, en lugar de realizar cambios en los hosts existentes. Esta práctica se conoce como <em>infraestructura efímera</em>, en la que un tiempo de actividad prolongado es un indicador de una máquina sin parches.</p>
+
+<h2 id="whats_next" data-text="Próximos pasos">¿Qué sigue?</h2>
+
+<ul>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li>Lee el informe <a href="/rearchitecting-to-cloud-native-whitepaper" track-type="article" track-name="internalLink" track-metadata-position="body">Cambia tu estructura a una nativa de la nube: un enfoque evolutivo para aumentar la productividad de los desarrolladores a gran escala</a>.</li>
+<li><a href="/billing/docs/concepts" track-type="article" track-name="internalLink" track-metadata-position="body">Consulta los conceptos de Facturación de Cloud en Google Cloud</a>.</li>
+<li>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</li>
+<li>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</li>
+</ul>
+
+</body></html>

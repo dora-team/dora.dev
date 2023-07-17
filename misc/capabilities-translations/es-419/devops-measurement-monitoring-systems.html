@@ -1,0 +1,93 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Medición de DevOps: Sistemas de supervisión para fundamentar las decisiones empresariales</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> <em>Supervisar sistemas para informar decisiones empresariales</em> es uno de los conjuntos de capacidades que impulsan una entrega de software más alta y un rendimiento organizativo.  Estas funciones se descubrieron mediante el <a href="https://www.devops-research.com/research.html">programa de investigación de DevOps de DORA</a>, una investigación independiente y rigurosa desde el punto de vista académico sobre las prácticas y las funciones que impulsan el alto rendimiento. Para obtener más información, lee nuestros <a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>La supervisión es el proceso de recopilar, analizar y usar la información para hacer un seguimiento de las aplicaciones y la infraestructura a fin de poder orientarse en el momento de tomar decisiones empresariales.
+La supervisión es una función clave porque te brinda estadísticas sobre tus sistemas y tu trabajo. Si se implementa de manera correcta, la supervisión también te brinda la posibilidad de recibir comentarios con rapidez para que puedas encontrar y solucionar problemas al comienzo del ciclo de vida del desarrollo de software.</p>
+
+<p>La supervisión también te ayuda a compartir información sobre tus sistemas a personas de otras áreas de la canalización de entrega y desarrollo de software, además de otras partes de la empresa. El conocimiento adquirido en las operaciones descendentes podría integrarse en los equipos ascendentes, como la administración de productos y el desarrollo. Por ejemplo, el conocimiento adquirido como resultado de operar una aplicación altamente escalable que usa una base de datos NoSQL como almacén de datos puede ser información valiosa para los desarrolladores a medida que compilan una aplicación similar.</p>
+
+<p>Esta transferencia de conocimiento les permite a los equipos identificar con rapidez oportunidades de aprendizaje, ya sea que surjan de un problema de producción, un error de implementación o los patrones de uso del cliente. Luego, puedes compartir estas oportunidades de aprendizaje con tu organización para permitir que las personas y los sistemas mejoren.</p>
+
+<h2 id="how_to_implement_monitoring" data-text="Cómo implementar la supervisión">Cómo implementar la supervisión</h2>
+
+<p>Los siguientes elementos son clave para lograr una supervisión eficaz:</p>
+
+<ul>
+<li>Recopilar datos de áreas clave en toda la cadena de valor, incluido el rendimiento y la infraestructura de la aplicación</li>
+<li>Usar los datos recopilados para tomar decisiones empresariales</li>
+</ul>
+
+<h3 id="collecting_data" data-text="Recopila datos">Recopila datos</h3>
+
+<p>Para recopilar datos de manera más eficaz, debes implementar soluciones de supervisión, ya sean servicios propios o administrados, que te permitan ver el trabajo de desarrollo, las pruebas, el control de calidad y las operaciones de TI. Asegúrate de elegir las métricas apropiadas para la función y la empresa.</p>
+
+<h3 id="using_data_to_make_business_decisions" data-text="Usa datos para tomar decisiones empresariales">Usa datos para tomar decisiones comerciales</h3>
+
+<p>Cuando transformas y visualizas los datos recopilados, haces que diferentes públicos puedan acceder a ellos y, así, los ayudas a tomar decisiones. Por ejemplo, es posible que desees compartir datos de operaciones en sentido ascendente. También puedes integrar estos datos de forma apropiada en informes y resúmenes, y usarlos en reuniones para tomar decisiones empresariales fundamentadas. En este caso, <em>de forma apropiada</em> hace referencia a que se realice la integración de manera relevante, oportuna, precisa y fácil de entender.</p>
+
+<p>En estas reuniones, asegúrate de proporcionar contexto a fin de ayudar a aquellos que no estén familiarizados con los datos a comprender cómo se relaciona con el debate y cómo puede ser una ayuda para fundamentar las decisiones que se tomarán. Por ejemplo, tal vez te resulte útil saber cómo responder las siguientes preguntas:</p>
+
+<ul>
+<li>¿Estos valores son relativamente altos o bajos?</li>
+<li>¿Son los esperados?</li>
+<li>¿Se prevén cambios?</li>
+<li>¿En qué se diferencian estos datos de los informes anteriores?</li>
+<li>¿Tu tecnología o tu infraestructura afectaron las cifras de maneras interesantes o no evidentes?</li>
+</ul>
+
+<h2 id="common_pitfalls_in_monitoring" data-text="Errores comunes de la supervisión">Errores comunes de la supervisión</h2>
+
+<p>Las siguientes dificultades son comunes cuando se supervisan los sistemas:</p>
+
+<ul>
+<li><p><strong>Supervisar de forma reactiva</strong>. Por ejemplo, recibir alertas solo cuando el sistema falla, pero no usar los datos de supervisión para alertar cuando el sistema se acerca a los límites críticos.</p></li>
+<li><p><strong>Supervisar un permiso demasiado pequeño</strong>. Por ejemplo, supervisar una o dos áreas en lugar de la canalización de entrega y desarrollo de software completa. Mediante este error se destacan las métricas y se hace foco solo en las áreas que se miden, que podrían no ser las áreas óptimas para supervisar.</p></li>
+<li><p><strong>Centrarse en las optimizaciones locales</strong>. Por ejemplo, enfocarse en reducir el tiempo de respuesta para las necesidades de almacenamiento de un servicio sin evaluar si la infraestructura más amplia también podría beneficiarse de la misma mejora.</p></li>
+<li><p><strong>Supervisar todo</strong>. Si recopilas datos y generas informes acerca de todo el sistema, corres el riesgo de recibir demasiadas alertas o de sobrecargarte de datos. Adoptar un enfoque de supervisión inteligente permite que se les preste atención a las áreas clave.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_monitoring" data-text="Formas de mejorar la supervisión">Formas de mejorar la supervisión</h2>
+
+<p>Para mejorar la eficacia de la supervisión, te recomendamos que enfoques tus iniciativas en dos áreas principales:</p>
+
+<ol>
+<li><p><strong>Recopilar datos de áreas clave en toda la cadena de valor</strong></p>
+
+<p>Si analizas los datos que recopilas y realizas un análisis de diferencias, puedes asegurarte de recopilar los datos correctos para tu organización.</p></li>
+<li><p><strong>Usar los datos recopilados para tomar decisiones empresariales</strong></p>
+
+<p>Los datos que recopiles deben generar valor en toda la organización, y las métricas que selecciones deben ser significativas para esta.
+Muchos equipos pueden usar datos significativos, desde DevOps hasta Finanzas.</p>
+
+<p>También es importante encontrar el medio adecuado para mostrar la información de supervisión. Dado que se le pueden dar diferentes usos a la información, es necesario usar diferentes opciones de presentación. Los paneles en tiempo real pueden ser muy útiles para el equipo de DevOps, mientras que los informes empresariales generados con regularidad pueden ser útiles para métricas que se miden durante un período más largo.</p>
+
+<p>Lo más importante es garantizar que los datos estén disponibles, compartidos y se usen para orientarse en el momento de tomar decisiones. Si lo mejor que puedes hacer para comenzar es una hoja de cálculo compartida, úsala. Luego, cambia de manera gradual a los paneles más sofisticados. No dejes que la perfección se interponga en aquello que ya es bueno.</p></li>
+</ol>
+
+<h2 id="ways_to_measure_monitoring" data-text="Formas de medir la supervisión">Formas de medir la supervisión</h2>
+
+<p>Una supervisión eficaz permite mejorar el rendimiento en el desarrollo y la entrega de software. Sin embargo, medir la eficacia de la supervisión puede ser difícil de instrumentar en los sistemas. Aunque es posible que puedas medir de forma automática la cantidad y el tipo de datos que se recopilan de tus sistemas, es más difícil saber si se usan o dónde se usan.</p>
+
+<p>Para ayudarte a medir la eficacia de la supervisión en tu organización, considera en qué medida las personas están de acuerdo o en desacuerdo con las siguientes afirmaciones:</p>
+
+<ul>
+<li>Los datos de las herramientas de supervisión del rendimiento de la aplicación se usan para tomar decisiones empresariales.</li>
+<li>Los datos de las herramientas de supervisión de la infraestructura se usan para tomar decisiones empresariales.</li>
+</ul>
+
+<h2 id="whats_next" data-text="Próximos pasos">¿Qué sigue?</h2>
+
+<ul>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li>Lee el <a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">libro sobre ingeniería de confiabilidad de sitios (SRE)</a>.</li>
+<li>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</li>
+<li>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</li>
+</ul>
+
+</body></html>

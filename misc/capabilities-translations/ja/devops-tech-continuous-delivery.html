@@ -1,0 +1,139 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技術: 継続的デリバリー</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注:</strong><span> 継続的デリバリーは、ソフトウェア デリバリーと組織のパフォーマンスを改善する一連の機能の 1 つです。<em></em>これらの機能は <a href="https://www.devops-research.com/research.html">DORA State of DevOps Research Program</a> で発見されました。これは、高いパフォーマンスを生み出すプラクティスと機能に関する、学術的に厳格で独立した研究調査です。詳細については、<a href="/devops">DevOps のリソース</a>をご覧ください。</span></aside><p>継続的デリバリーは、すべての変更を必要に応じて、迅速に、安全に、かつ継続的にリリースする機能です。継続的デリバリーをうまく実践するチームは、ユーザーに影響を与えることなく、通常の営業時間を含むあらゆるタイミングで、ソフトウェアをリリースし、本番環境に変更を加えることができます。</p>
+
+<p>継続的デリバリーの原則とプラクティスは、次のような任意のソフトウェア コンテキストに適用できます。</p>
+
+<ul>
+<li>複雑な分散システム内のサービスの更新。</li>
+<li>メインフレーム ソフトウェアのアップグレード。</li>
+<li>インフラストラクチャ構成の変更。</li>
+<li>データベース スキーマの変更。</li>
+<li>ファームウェアの自動更新。</li>
+<li>モバイルアプリの新しいバージョンのリリース。</li>
+</ul>
+
+<p>チームが継続的デリバリーを行っているときは、次の質問に対して「はい」と答えることができます。</p>
+
+<ul>
+<li>ソフトウェアはライフサイクル全体を通じてデプロイ可能ですか？</li>
+<li>新機能の導入よりもソフトウェアのデプロイを最優先にしますか？</li>
+<li>取り組んでいるシステムの品質とデプロイ性に関する迅速なフィードバックを、チームの全員が利用できますか？</li>
+<li>システムをデプロイできないというフィードバック（ビルドやテストの失敗など）があった場合、その問題を最優先で修正しますか？</li>
+<li>いつでも必要に応じて、本番環境にシステムをデプロイしたり、エンドユーザーにデプロイしたりできますか？</li>
+</ul>
+
+<p>継続的デリバリーは継続的デプロイとよく一緒にされますが、両者は異なる手法です。継続的デプロイとは、あらゆるコード変更を可能な限り迅速に本番環境にデプロイしようとする試みです。継続的デプロイはウェブサービスに適していますが、ファームウェアやモバイルアプリなどのソフトウェアには適用できません。継続的デリバリーは、ファームウェアやメインフレーム システムなどのあらゆる種類のソフトウェアや、高度に規制された環境で適用されます。継続的デプロイの使用を開始する予定がない場合でも、継続的デリバリーを開始することが可能であり、開始することが推奨されます。</p>
+
+<p>継続的デリバリーと継続的デプロイは、リスクが高く、規制対象のドメインや安全性が重要なドメインには適していないと思われていますが、それは間違いです。実際、継続的デリバリーの目標はソフトウェア リスクの低減です。DORA の調査では、パフォーマンスが高い人の方がより高い信頼性と可用性を実現していることが判明しています。継続的デリバリー（継続的なテスト、セキュリティのシフトレフト、包括的なテストとオブザーバビリティ）を促進する技術的実践は、高度に規制された安全性が重要なドメインにおいてむしろより重要です。継続的デリバリーは、金融サービスや政府など規制の高いドメインでも何度も問題なく適用されています。</p>
+
+<p>継続的デリバリーはあらゆるソフトウェアで実現できますが、大変な作業を要します。それでもなお、継続的デリバリーには大きな利点があります。<a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps の調査と評価（DORA）</a>の調査では、継続的デリバリーを適切に行えば、次のような利点が得られると説明されています。</p>
+
+<ul>
+<li><a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">4 つの主要指標</a>の観点で測定されるソフトウェア配信のパフォーマンスと可用性を向上させることができます。</li>
+<li>チームが再作業または計画外の作業に費やす時間の割合で測定される、より高いレベルの品質につながります（これは、<a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">2016 年度の State of DevOps Report</a> pp25-26、<a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">2018 年の State of DevOps Report</a> pp27-29 で示されています）。</li>
+<li>燃え尽きの予測（過労やストレスなどによる肉体的、心理的、感情的な疲労）、<a href="/architecture/devops/devops-culture-job-satisfaction" track-type="article" track-name="internalLink" track-metadata-position="body">仕事の満足度</a>の向上、<a href="/architecture/devops/devops-culture-westrum-organizational-culture" track-type="article" track-name="internalLink" track-metadata-position="body">組織の文化</a>の改善が可能です。</li>
+<li>デプロイメントの手間を軽減します。これは、デプロイメントが容易で手間がないというより、破壊的であるかどうかの指標です。また、エンジニアや技術スタッフがコードを本番環境に push するときに感じる恐れや不安も同様に軽減できます。</li>
+<li>文化に影響を与え、<a href="https://rework.withgoogle.com/print/guides/5721312655835136/">心理的安全性</a>と<a href="/architecture/devops/devops-culture-westrum-organizational-culture" track-type="article" track-name="internalLink" track-metadata-position="body">ミッションドリブンの組織の文化</a>を高めます。</li>
+</ul>
+
+<p>次の図は、一連の技術的プラクティスが継続的デリバリーに影響を及ぼし、その結果として前述の結果が得られる様子を示しています。</p>
+
+<p><img src="/static/architecture/devops/images/continuous-delivery-technical-practices.png" alt="技術的プラクティスが、他の可能性において成果につながることを示しています。" width="80%" class="screenshot"/> </p>
+
+<p>継続的デリバリーは重要ですが、先ほど説明した結果を推進するための 1 つの要素にすぎません。<a href="https://devops-research.com/research.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">DORA の研究プログラム</a>で説明されている、他の文化的および組織的機能も、これらの成果の達成に役立ちます。継続的デリバリーは、このドキュメントで説明する技術的手法を実装することで実現できます。</p>
+
+<h2 id="implementing_continuous_delivery" data-text="継続的デリバリーの実装">継続的デリバリーの実装</h2>
+
+<p>DORA の調査では、次の技術力によって継続的デリバリーを実現できることがわかっています。組織内の<a href="/architecture/devops/devops-culture-transformational-leadership" track-type="article" track-name="internalLink" track-metadata-position="body">変革型リーダーシップ</a>も、これらの技術力の導入を促進します。</p>
+
+<p>チームがスループットを向上させ、リリースのリスクを低く抑えられるように、次の継続的デリバリーのプラクティスを実装します。</p>
+
+<ul>
+<li><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">テストの自動化</a>: 主にデベロッパーが作成および保守する包括的な自動テストスイートの使用。効果的なテストスイートは信頼性に優れます。つまり、テストで実際の障害が検出され、リリース可能なコードのみ合格とします。</li>
+<li><a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">デプロイの自動化</a>: デプロイが完全に自動化されていて、手動での操作が必要ではない度合い。</li>
+<li><a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">トランクベースの開発</a>: これには以下の特長があります。コードリポジトリ内のアクティブなブランチが 3 つ未満であること。メインラインにマージされる前の非常に短い有効期間（1 日未満など）を持つブランチとフォーク。マージによる競合、コードフリーズ、または安定化フェーズのためにコードのチェックインや pull リクエストの実行ができないため、アプリケーションチームにはコードロック期間がほとんど、またはまったくないこと。<em></em></li>
+<li><a href="/architecture/devops/devops-tech-shifting-left-on-security" track-type="article" track-name="internalLink" track-metadata-position="body">セキュリティのシフトレフト</a>: ソフトウェア開発プロセスの設計段階とテストフェーズにセキュリティ統合を行います。このプロセスでは、アプリケーションのセキュリティ レビューを実施します。これには、アプリケーションの設計およびデモンストレーションプロセスにおける情報セキュリティチーム、事前承認されたセキュリティライブラリとパッケージの使用、自動テストスイートの一部としてのセキュリティ機能のテストが含まれます。</li>
+<li><a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">ゆるく結合されたアーキテクチャ</a>: 他のサービスでオーケストレーションすることなく、必要に応じてアプリケーションをテストおよびデプロイできるアーキテクチャ。ゆるく結合されたアーキテクチャにより、チームは他のチームのサポートやサービスに依存せずに独立して作業できます。これにより、チームは迅速に業務を行え、組織に価値を提供できます。</li>
+<li><a href="/architecture/devops/devops-tech-teams-empowered-to-choose-tools" track-type="article" track-name="internalLink" track-metadata-position="body">チームのツール選択をサポート</a>: 使用するツールを選択できるチームは、継続的デリバリーにおいてより優れています。効果的な業務に必要なものについて、最も精通しているのは実務担当者です。</li>
+<li><a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">継続的インテグレーション（CI）</a>: コードが定期的にチェックインされる開発手法です。各チェックインが一連のクイックテストをトリガーして回帰を検出するため、デベロッパーはすぐにこれを修正できます。CI プロセスは、最終的にデプロイおよびリリースされる正規のビルドとパッケージを作成します。</li>
+<li><a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">継続的テスト</a>: 開発完了後の個別のフェーズではなく、ソフトウェア配信のライフサイクル全体でテストします。<em></em>継続的なテストでは、デベロッパーとテスト担当者がともに作業します。パフォーマンスが高い人は、テストドリブンな開発を実践して、10 分未満でテストからフィードバックを取得し、テストスイートを継続的に見直して改善します（たとえば、欠陥を見つけて複雑さを制御し続けるため）。</li>
+<li><a href="/architecture/devops/devops-tech-version-control" track-type="article" track-name="internalLink" track-metadata-position="body">バージョン管理</a>: アプリケーションコード、アプリケーション構成、システム構成、および環境の構築と構成を自動化するためのスクリプトを含む、すべての本番環境アーティファクトに対するバージョン管理システム（Git や Subversion など）の使用。</li>
+<li><a href="/architecture/devops/devops-tech-test-data-management" track-type="article" track-name="internalLink" track-metadata-position="body">テストデータ管理</a>: 効果的な方法としては、テストスイートの実行に適切なデータを所有すること、必要なデータをオンデマンドで取得できること、実行できるテスト回数を制限しないデータであることなどがあります。チームは可能な限り、自動テストの実行に必要なテストデータの量を最小限に抑える必要があることにご注意ください。</li>
+<li><a href="/architecture/devops/devops-measurement-monitoring-and-observability" track-type="article" track-name="internalLink" track-metadata-position="body">包括的なモニタリングとオブザーバビリティ</a>: チームがシステムの健全性を把握できるようにします。効果的なソリューションでは、事前定義されたシステム指標（ユーザーが経験したシステム状態など）をモニタリングできます。また、エンジニアはシステムをインタラクティブにデバッグして、プロパティとパターンを出現するたびに探索できます。</li>
+<li><a href="/architecture/devops/devops-measurement-proactive-failure-notification" track-type="article" track-name="internalLink" track-metadata-position="body">事前通知</a>: システムの健全性をモニタリングし、チームが問題を事前に検出して軽減できるようにします。</li>
+<li><a href="/architecture/devops/devops-tech-database-change-management">データベースのチェンジ マネジメント</a>: データベースの変更は、バージョンの管理でスクリプトとしてデータベースの変更を保存する（そして、本番環境のアプリケーションの変更と同じ方法でこれらの変更を管理する）など、いくつかの重要なプラクティスに従えば、チームのパフォーマンスを低下させません。また、ソフトウェア配信のライフサイクルにおいてすべての人（エンジニアを含む）にデータベースの変更を可視化し、アプリケーションの変更にデータベースの変更が必要な場合に、すべての関係者とコミュニケーションをとることができます。</li>
+<li><a href="/architecture/devops/devops-tech-code-maintainability">コードのメンテナンス性</a>: このシステムとツールでは、デベロッパーが保守されているコードの変更、コードベースでのサンプルの検索、他のユーザーのコードの再利用を簡単に行うことができます。また、コードを分割せずに新しいバージョンの依存関係の追加、アップグレード、移行が可能です。</li>
+</ul>
+
+<p>継続的デリバリーは継続的インテグレーションとまとめられて CI / CD と短縮することはよくありますが、継続的インテグレーションは継続的デリバリーを実装する 1 つの要素にすぎません。<em></em>信頼性の高い低リスクのリリースを実現するには、ソフトウェア デベロッパーだけでなく、ソフトウェア デリバリー プロセスに関わるすべての関係者と緊密なコラボレーションが必要になります。また、チームは新しい作業方法を採用し、新しいスキルを習得する必要があります。</p>
+
+<h2 id="common_pitfalls_of_implementing_continuous_delivery" data-text="継続的デリバリーを実装する際のよくある問題">継続的デリバリーを実装する際のよくある問題</h2>
+
+<p>既存のデプロイ プロセスの頻度を上げることで、継続的デリバリーを実装できると誤解されることがあります。ですが通常、継続的デリバリーを促進する技術的機能を実装するには、プロセスとアーキテクチャの大規模な変更が必要になります。プロセスやアーキテクチャを改善せずにデプロイの頻度を上げると、失敗率が高くなり、チームが疲弊してしまう可能性があります。</p>
+
+<p>継続的デリバリーに関する説明の多くは、ツールとパターンに焦点が当てられています。たとえば、バージョン管理から本番環境に移行するデプロイ パイプラインなどです。ただし、このドキュメントで説明する技術的手法とプロセスの変更を実装せずに最新のツールを使用するだけでは、期待されるメリットは得られません。</p>
+
+<p>次の図は、DORA の研究により明らかにされた、変革プログラムでよく認められる J カーブを示しています。J カーブの底から抜け出すには、自動化やツールに加え、プロセスの再設計と簡素化、アーキテクチャの改善、機能とスキルの開発を行う必要があります。</p>
+
+<p><img src="/static/architecture/devops/images/continuous-delivery-2.png" alt="2018 年の State of DevOps Report による一般的な変革の J 曲線の図。" width="80%" class="screenshot"/> </p>
+
+<p>この図では、次のステージにラベルが付けられています。</p>
+
+<ul>
+<li>曲線の開始時に、チームは変革を開始し、迅速な成功を導き出します。</li>
+<li>初期改善では、自動化によって、パフォーマンスの低い人が中間レベルのパフォーマンスを実現できます。</li>
+<li>効率性の低下（J 曲線の下）において、自動化によって手動で処理するテスト要件が増加します。技術的負債が大量に発生し、成長を阻害します。</li>
+<li>チームが曲線から抜け始めると、技術的負債と、複雑さの増加によって、変更に関する手動制御およびプロセスレイヤが追加され、結果的に作業が遅くなります。</li>
+<li>曲線の上部では、絶え間ない改善作業は優れたパフォーマンスにつながります。パフォーマンスの高いエリートは、専門知識を活用して環境から学び、生産性を向上させます。</li>
+</ul>
+
+<p>J 曲線の影響を軽減するには、バリュー ストリーム マッピング（VSM）演習を実施して、ボトルネックの影響を把握し、予測することをおすすめします。<em></em>VSM の演習では、バージョン管理から本番環境に移行する際の単一の変更を確認します。</p>
+
+<ol>
+<li>自動テストと手動テスト、セキュリティ レビュー、チェンジ マネジメント、本番環境へのリリースなど、それぞれの変更が伴うさまざまなプロセスを考慮してください。</li>
+<li>バージョン管理からリリースまでの変更に要する合計時間を測定します。プロセスごとに、以下を測定します。
+<ul>
+<li>プロセスのエンドツーエンドの実行に必要な実際の経過時間と付加価値時間（作業が実際に完了するまでの時間）。</li>
+<li>最初の作業が正常に完了しなかったために作業が戻される回数の割合。この指標は、完全かつ正確な割合、または %C/A として知られています。<em></em></li>
+</ul></li>
+</ol>
+
+<p>バリュー ストリーム マッピングの演習の目的は、プロセスの非効率性を見つけることです。チームとして、6 か月でバリュー ストリームをどのようにしたいかを示す図を作成して、この将来の状態の実装に取り組むためのチームの能力を確保します。付加価値時間と比べて経過時間が長いプロセスや、%C/A が低い障害を特定し、取り除きます。</p>
+
+<p>通常は、デプロイ パイプラインの実装の一環としてプロセスとアーキテクチャを大きく再設計する必要があります。デプロイ パイプラインはチェックインからリリースまであり、複数のチームをまとめるためのものです。すべてのチームの代表者がバリュー ストリーム マッピングの演習を完了し、将来の目標の一部として、共通のツールチェーンとプロセス（たとえば、テスト環境と本番環境へのデプロイなど）について合意することが必要です。</p>
+
+<p>継続的デリバリーの実装とは、達成したい成果に基づいて、毎日継続的に行う改善作業プロセスです。ツールとパターンは重要ですが、それらはこの本質的な改善作業に役立つだけです。</p>
+
+<h2 id="measuring_continuous_delivery" data-text="継続的デリバリーの測定">継続的デリバリーの測定</h2>
+
+<p>継続的デリバリーの最終的な目的は、リリースが通常の営業時間内に低リスクの方法で実施されるようにすることです。目標は、デプロイやリリースを実行するための通常の営業時間外の作業が不要である状態を作ることです。したがって、この点が測定するうえで重要となります。</p>
+
+<p>継続的デリバリーにおける達成度は、達成した成果に反映されます。<a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">DORA DevOps クイック チェック</a>を実行して、主要な継続的デリバリー指標がどのように処理されているかを確認できます。</p>
+
+<ul>
+<li>通常の変更と緊急時の変更におけるリードタイムが短い。緊急時の変更にも通常のプロセスを使用することを目標にします。</li>
+<li>変更時の障害率が低い。</li>
+<li>サービスの停止や低下が発生した場合にサービスの復旧にかかる期間が短い。</li>
+<li>優先度の高い機能とバグ修正を適切なタイミングでリリースする頻度。</li>
+</ul>
+
+<p>このドキュメントの最初に説明したように、継続的デリバリーを実装すると、再作業のレベルが下がり、デプロイの手間が軽減され、再作業や計画外の作業にかける時間を削減できます。</p>
+
+<h2 id="whats_next" data-text="次のステップ">次のステップ</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps ページ</a>で他の記事やリソースへのリンクを確認する。</li>
+<li>Martin Fowler の<a href="https://martinfowler.com/delivery.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">ソフトウェア配信ガイド</a>における継続的デリバリーについて学ぶ。</li>
+<li><a href="https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation<em></em></a>（Karen Martin、Mike Osterling 共著）を読む。</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">研究プログラム</a>を調べる。</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps のクイック チェック</a>を確認する。業界におけるご自身の立ち位置を把握できます。</li>
+</ul>
+
+</body></html>

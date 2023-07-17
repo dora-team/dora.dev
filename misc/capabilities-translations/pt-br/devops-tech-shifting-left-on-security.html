@@ -1,0 +1,129 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia de DevOps: como mudar para a esquerda na segurança</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Observação:</strong><span> <em>a integração de segurança aos processos</em> faz parte de um conjunto de recursos que aumentam
+a entrega de software e o desempenho organizacional. Esses recursos foram
+descobertos pelo
+<a href="https://www.devops-research.com/research.html">programa de pesquisa DORA State of DevOps</a>
+(em inglês), uma investigação independente e academicamente rigorosa sobre as práticas e
+recursos que impulsionam alto desempenho. Para saber mais, leia nossos
+<a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>A segurança é responsabilidade de todos. A pesquisa do <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">relatório State of DevOps 2016</a> (PDF em inglês) mostra que as equipes de alto desempenho passam 50% menos tempo corrigindo problemas de segurança do que as de baixo desempenho. Ao integrar melhor os objetivos de segurança das informações (InfoSec) ao trabalho diário, as equipes podem alcançar níveis mais altos de desempenho de entrega de software e criar sistemas mais seguros.
+Essa ideia também é conhecida como <em>mudança para a esquerda</em>, porque as preocupações, incluindo questões de segurança, são abordadas anteriormente no ciclo de vida do desenvolvimento de software (isto é, deixadas em um diagrama de programação da esquerda para a direita).</p>
+
+<p>No desenvolvimento de software, há pelo menos estas quatro atividades: projetar, desenvolver, testar e lançar. Em um ciclo de desenvolvimento de software tradicional, os testes (incluindo os de segurança) acontecem após a conclusão do desenvolvimento. Isso geralmente significa que uma equipe descobre problemas significativos, incluindo falhas de arquitetura, que são caros de corrigir.</p>
+
+<p>Depois que os erros são descobertos, os desenvolvedores precisam encontrar os fatores de contribuição e como corrigi-los. Em sistemas de produção complexos, geralmente não é uma causa única. Em vez disso, costuma haver uma série de fatores que interagem para causar um erro.
+Defeitos que envolvem segurança, desempenho e disponibilidade são caros e demorados para serem solucionados. eles geralmente exigem mudanças na arquitetura. O tempo necessário para encontrar o erro, desenvolver uma solução e testar completamente a correção é imprevisível. Isso pode aumentar ainda mais as datas de entrega.</p>
+
+<p>A entrega contínua se baseia no conceito de qualidade do produto ao longo do processo. Como W. Edgar Deming diz nos <a href="https://deming.org/explore/fourteen-points?apartner=aarp" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">14 pontos para a transformação do gerenciamento</a>: "pare de depender da inspeção para alcançar a qualidade. elimine a necessidade de inspeção em massa incorporando qualidade no produto". Nesse modelo, em vez de adotar uma abordagem totalmente em fases, os desenvolvedores trabalham com especialistas em segurança e testes para projetar e fornecer <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">trabalhos em pequenos lotes</a> durante todo o ciclo de vida do produto.</p>
+
+<p>A pesquisa da <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> (PDF em inglês) mostra que as equipes podem alcançar melhores resultados fazendo da segurança parte do trabalho diário de todos em vez de fazer os testes de segurança no final do processo. Isso significa integrar testes e controles de segurança no trabalho diário de desenvolvimento, controle de qualidade e operações. O ideal é que grande parte desse trabalho possa ser automatizada e colocada no pipeline de implantação. Ao automatizar essas atividades, é possível gerar provas sob demanda para demonstrar que seus controles estão funcionando de forma eficaz. Essas informações são úteis para auditores, avaliadores e qualquer outra pessoa que trabalhe no fluxo de valor.</p>
+
+<h2 id="how_to_implement_improved_security_quality" data-text="Como implementar uma qualidade de segurança aprimorada">Como implementar uma qualidade de segurança aprimorada</h2>
+
+<p>Mudar o processo de revisão de segurança para "esquerda" ou antes no ciclo de vida de desenvolvimento de software requer várias alterações em relação aos métodos tradicionais de segurança da informação, mas não é um desvio significativo dos métodos tradicionais de desenvolvimento de software em uma inspeção mais detalhada.</p>
+
+<h3 id="get_infosec_involved_in_software_design" data-text="Envolver a InfoSec no design de software">Envolver a InfoSec no design de software</h3>
+
+<p>A equipe da InfoSec precisa participar da fase de design de todos os projetos. Quando um design de projeto começa, uma revisão de segurança pode ser adicionada como um fator limitante para liberar o design para o estágio de desenvolvimento. Esse processo de revisão pode representar uma alteração fundamental no processo de desenvolvimento. Essa alteração pode exigir treinamento do desenvolvedor. Também pode ser necessário aumentar a equipe da InfoSec e fornecer suporte organizacional para a mudança. Ainda que a inclusão da InfoSec possa representar uma mudança na sua organização, incluir novos interessados no design não é um novo conceito e precisa ser adotado ao considerar os benefícios.</p>
+
+<h3 id="develop_security-approved_tools" data-text="Desenvolver ferramentas aprovadas por segurança">Desenvolver ferramentas aprovadas por segurança</h3>
+
+<p>Fornecer aos desenvolvedores bibliotecas e ferramentas pré-aprovadas que incluam entrada da equipe da InfoSec pode ajudar a padronizar o código do desenvolvedor. O uso do código padrão facilita a revisão do código pela equipe da InfoSec. O código padrão permite que os testes automatizados verifiquem se o desenvolvedor está usando bibliotecas pré-aprovadas. Isso também pode ajudar a escalonar a entrada e a influência da InfoSec, porque essa equipe normalmente tem pouco trabalho em comparação com desenvolvedores e testadores.</p>
+
+<h3 id="develop_automated_testing" data-text="Desenvolver testes automatizados">Desenvolver testes automatizados</h3>
+
+<p>A criação de testes de segurança no processo de <a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">testes automatizados</a> significa que o código pode ser <a href="/architecture/devops/devops-tech-continuous-integration" track-type="solution" track-name="internalLink" track-metadata-position="body">testado continuamente</a> em escala sem exigir uma revisão manual. Os testes automatizados podem identificar vulnerabilidades de segurança comuns e podem ser aplicados uniformemente como parte de um pipeline de integração contínua ou processo de compilação. Os testes automatizados exigem que você crie e desenvolva testes de segurança automatizados, inicialmente e como um esforço contínuo à medida que novos testes de segurança são identificados. Essa é outra oportunidade para escalonar a entrada da equipe da InfoSec.</p>
+
+<h2 id="common_pitfalls" data-text="Armadilhas comuns">Armadilhas comuns</h2>
+
+<p>Veja algumas armadilhas comuns que impedem as equipes de mudar a segurança para a esquerda:</p>
+
+<ul>
+<li><strong>Falha ao colaborar com a equipe da InfoSec.</strong> O maior erro é quando as equipes não colaboram com as equipes da InfoSec. A InfoSec é uma função de importância vital em uma era em que as ameaças são onipresentes e contínuas.</li>
+<li><strong>Subfaturamento de equipes da InfoSec.</strong> As equipes da InfoSec costumam ter poucos funcionários.
+James Wickett, engenheiro de segurança sênior da Verica, <a href="https://blog.xebialabs.com/2017/04/20/10-tips-integrating-security-devops/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">cita uma proporção</a> de 1 pessoa da InfoSec por 10 pessoas de infraestrutura por 100 desenvolvedores em grandes empresas (link em inglês).</li>
+<li><strong>Integração tardia com a equipe da InfoSec.</strong> Em muitos casos, a InfoSec é envolvida apenas no final do ciclo de vida da entrega de software, quando geralmente é difícil e caro fazer alterações necessárias para melhorar a segurança.</li>
+<li><strong>Não conhecer os riscos de segurança comuns.</strong> Muitos desenvolvedores não estão cientes dos riscos de segurança comuns, como os <a href="https://owasp.org/www-project-top-ten/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">10 principais do OWASP</a> (em inglês), e como evitá-los.</li>
+</ul>
+
+<h2 id="ways_to_improve_security_quality" data-text="Maneiras de melhorar a qualidade da segurança">Maneiras de melhorar a qualidade da segurança</h2>
+
+<p>É possível melhorar o desempenho da entrega de software e a qualidade da segurança fazendo o seguinte:</p>
+
+<ul>
+<li><strong>Faça análises de segurança.</strong> Realize uma análise de segurança para todos os principais recursos e garanta que o processo de análise de segurança não diminua o desenvolvimento.</li>
+<li><strong>Crie um código pré-aprovado.</strong>  Solicite que a equipe da InfoSec crie bibliotecas, pacotes, conjuntos de ferramentas e processos pré-aprovados e fáceis de usar para desenvolvedores e operações de TI.</li>
+<li><strong>Integre a análise de segurança a cada fase.</strong> Integre a InfoSec ao trabalho diário de todo o ciclo de vida da entrega de software. Isso inclui fazer com que a equipe da InfoSec forneça informações durante o design do aplicativo, participe de demonstrações de software e forneça feedback durante as demonstrações.</li>
+<li><strong>Teste a segurança.</strong> Teste os requisitos de segurança como parte do processo de teste automatizado, incluindo áreas em que o código pré-aprovado precisa ser usado.</li>
+<li><strong>Convide a InfoSec para demonstrações.</strong> Se você incluir a equipe da InfoSec nas demonstrações do seu aplicativo, elas poderão identificar pontos fracos relacionados à segurança antecipadamente, o que dá à equipe tempo suficiente para corrigir.</li>
+</ul>
+
+<h2 id="ways_to_measure_security_quality" data-text="Formas de medir a qualidade da segurança">Formas de medir a qualidade da segurança</h2>
+
+<p>Com base nas formas mencionadas acima, é possível avaliar a segurança das seguintes maneiras.</p>
+
+<table>
+  <colgroup>
+    <col width="30%" />
+    <col width="35%" />
+    <col width="35%" />
+  </colgroup>
+<thead>
+<tr>
+<th><strong>Fator a testar</strong></th>
+<th><strong>O que medir</strong></th>
+<th><strong>Meta</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Se os recursos passam por uma análise de segurança</td>
+<td>A porcentagem de recursos que passam por uma revisão de segurança no início do processo de design.</td>
+<td>Essa porcentagem aumenta com o tempo.</td>
+</tr>
+<tr>
+<td>Se a revisão de segurança diminui o ciclo de desenvolvimento</td>
+<td>Quanto tempo a revisão adiciona ao processo de desenvolvimento.</td>
+<td>O tempo que as revisões de segurança demoram para diminuir até atingir o mínimo acordado.</td>
+</tr>
+<tr>
+<td>Como a segurança é integrada ao ciclo de vida da entrega</td>
+<td>O grau de envolvimento da InfoSec em cada etapa do ciclo de vida da entrega de software. Por exemplo, é possível medir o número de revisões de segurança capturadas em cada um dos estágios do ciclo de vida do desenvolvimento de software (design, desenvolvimento, teste e lançamento).</td>
+<td>Esse valor aumenta até atingir um valor que sugira que a InfoSec esteja totalmente integrada ao ciclo de vida.</td>
+</tr>
+<tr>
+<td>Se os testes automatizados cobrem os requisitos de segurança</td>
+<td>O envolvimento da equipe da InfoSec na criação de testes automatizados. À medida que a InfoSec recebe mais informações sobre o processo de teste, o número ou a porcentagem de requisitos de segurança incluídos no processo de teste automatizado.</td>
+<td>Essa porcentagem aumenta com o tempo.</td>
+</tr>
+<tr>
+<td>O uso de bibliotecas, pacotes, conjuntos de ferramentas e processos pré-aprovados</td>
+<td>Inicialmente, se a InfoSec está envolvida no desenvolvimento de ferramentas. À medida que o trabalho avança, o número de bibliotecas, pacotes e conjuntos de ferramentas aprovados pela InfoSec disponíveis ou o número desses recursos usados pelas equipes de desenvolvimento e operações.</td>
+<td>O engajamento aumenta com o tempo até que a organização concorde que a supervisão de ferramentas da InfoSec esteja no nível correto. Da mesma forma, a porcentagem ou o número de ferramentas pré-aprovadas em uso aumenta até que a equipe use todas as ferramentas criadas ou aprovadas pela InfoSec. </td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="A seguir">A seguir</h2>
+
+<ul>
+<li>Consulte links para outros artigos e recursos na
+<a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página do DevOps</a>.</li>
+<li>Consulte <a href="https://owasp.org/www-project-top-ten/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">a lista do OWASP</a> (em inglês) com os 10 riscos mais críticos de segurança de aplicativos da Web.</li>
+<li>Leia o
+<a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">livro Site Reliability Engineering (SRE)</a>, em inglês.</li>
+<li>Explore nosso
+<a href="https://www.devops-research.com/research.html">programa de pesquisa</a> (em inglês) do DevOps.</li>
+<li>Faça a
+<a href="https://www.devops-research.com/quickcheck.html">verificação rápida de DevOps</a>
+para entender sua posição em relação ao restante do setor.</li>
+</ul>
+
+</body></html>

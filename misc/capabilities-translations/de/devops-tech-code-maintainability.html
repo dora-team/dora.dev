@@ -1,0 +1,146 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Tech: Verwaltbarkeit von Code</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Verwaltbarkeit von Codes</em> ist eine der Funktionen, die die Softwarebereitstellung und Leistung verbessern. Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">"State of DevOps"-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, wissenschaftlich exakten Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>Es erfordert <a href="https://www.businessinsider.com/how-many-lines-of-code-it-takes-to-run-different-software-2017-2" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">ziemlich viel Code</a>, um die von uns entwickelten Systeme auszuführen: Das Android-Betriebssystem umfasst 12 bis 15 Millionen Codezeilen, das monolithische Code-Repository von Google enthält mehr als 1 Milliarde Codezeilen und eine typische Smartphone-App hat 50.000 Codezeilen.</p>
+
+<p>Der Bericht "State of DevOps 2019" aus der Studie <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> zeigt, dass die Fähigkeit von Teams, ihren Code effektiv zu pflegen, eine von mehreren technischen Praktiken ist, die positiv zum Erfolg bei <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">Continuous Delivery</a> beitragen.</p>
+
+<p>Wenn Ihr Team die Verwaltbarkeit von Code gut beherrscht, sind folgende Punkte gegeben:</p>
+
+<ul>
+<li>Falls erforderlich kann das Team ganz einfach Beispiele in der Codebasis finden, den Code anderer Personen wiederverwenden und den Code von anderen Teams ändern.</li>
+<li>Das Team kann problemlos neue Abhängigkeiten zum Projekt hinzufügen oder zu einer neuen Version einer Abhängigkeit migrieren.</li>
+<li>Die Abhängigkeiten des Teams sind stabil und verursachen nur selten Fehler im Code.</li>
+</ul>
+
+<p>Diese Ergebnisse zeigen, wie wichtig es für Entwickler ist, Code in der gesamten Codebasis der gesamten Organisation zu finden, wiederzuverwenden und zu ändern sowie Verfahren und Tools für das Abhängigkeitsmanagement zu implementieren.</p>
+
+<p>Die Verwaltbarkeit von Code ist eine Funktion, die eine organisationsweite Koordination erfordert, da sie darauf beruht, den Code anderer Teams suchen, wiederverwenden und ändern zu können. Die effektive Verwaltung von Abhängigkeiten ist bei der Arbeit mit großen Codebasen und großen Organisationen oft eine enorme Herausforderung. Tools, mit denen Probleme mit Abhängigkeiten vermieden oder die Folgen von Codeänderungen aufgezeigt werden können, können die Designentscheidungen und die Codequalität für alle Entwickler verbessern, wodurch sie schneller arbeiten und eine stabilere und zuverlässigere Software erstellen können.</p>
+
+<h2 id="how_to_implement_code_maintainability" data-text="Verwaltbarkeit von Code implementieren">Verwaltbarkeit von Code implementieren</h2>
+
+<p>In Bezug auf die Implementierung lohnt es sich, das Quellcode-Management und das Abhängigkeitsmanagement getrennt zu behandeln. Es ist aber auch möglich, dass eine Lösung (wie das von Google verwendete monolithische Repository oder <em>Monorepo</em>-Muster) beide Probleme lösen kann.</p>
+
+<p>Zuerst das Quellcodemanagement. Folgendes wird ermöglicht, wenn jeder Nutzer Elemente in der Codebasis ganz einfach finden, wiederverwenden und an andere weitergeben kann:</p>
+
+<ul>
+<li><strong>Schnellere Bereitstellung:</strong> Damit Software schnell bereitgestellt werden kann, müssen Teams den Code des jeweils anderen ansehen und Änderungen vorschlagen können. Wenn Sie dies so einfach wie möglich gestalten, können Sie erlangtes Wissen im gesamten Unternehmen weitergeben. Außerdem können so Teams Änderungen an anderen Teilen der Codebasis vornehmen, wenn ihre Arbeit davon abhängig ist.</li>
+<li><strong>Höhere Stabilität und Verfügbarkeit:</strong> Bei einem Vorfall ist es wichtig, Änderungen an einem beliebigen Teil der Codebasis schnell zu finden und vorschlagen zu können.</li>
+<li><strong>Höhere Codequalität:</strong> Eine Refaktorierung von Code zur Verbesserung seiner internen Qualität erfordert häufig Änderungen an mehreren Teilen der Codebasis. Wenn dies schwierig ist, wird es unwahrscheinlicher, dass jemand eine Refaktorierung durchführt. Außerdem erhöhen sich die Kosten dafür. Einige Organisationen, einschließlich Google, führen teamübergreifende Projekte zur Codeverwaltung durch. Dabei gehen Einzelpersonen die Codebasis durch, um Elemente auf Verwaltungsebene zu reparieren. Dafür ist es notwendig, auf Code im gesamten Unternehmen zugreifen und diesen ändern zu können.</li>
+</ul>
+
+<p>Damit Beispiele gefunden und der Code anderer Personen wiederverwendet werden kann, muss auf den Quellcode des gesamten Unternehmens problemlos zugegriffen und dieser durchsucht werden können. Die einfachste Möglichkeit diese Anforderung zu implementieren besteht darin, eine einzige Plattformen zur Versionsverwaltung für den gesamten Code der Organisation zu verwenden. Auch dann, wenn dieser Code auf mehrere Repositories innerhalb der Plattform aufgeteilt ist. Je mehr Plattformen zur Versionsverwaltung verwendet werden, desto schwieriger kann Code gefunden werden.</p>
+
+<p>Einige Organisationen möchten Teile der Codebasis sperren, sodass nur Personen mit einem berechtigten Interesse die entsprechende Stelle in der Codebasis sehen können (Google ist ein Beispiel für eine solche Organisation). Im Idealfall sollte es sich um die Ausnahme anstelle der Regel handeln. Software sollte so entworfen werden, dass die Menge an vertraulichem Quellcode minimiert wird. In vielen Fällen reicht die logische Trennung von vertraulichem Code mithilfe des Zugriffssteuerungsmechanismus des Versionsverwaltungssystems aus.</p>
+
+<p>Außerdem sollte es möglich sein, von anderen Teams verwalteten Code zu ändern. Solche Änderungen erfordern in der Regel die Genehmigung des Teams, das für die Verwaltung des betreffenden Codes verantwortlich ist. Mechanismen wie Pull-Anfragen, bei denen ein Zweig in der Versionskontrolle erstellt und dieser durch eine Genehmigung wieder zusammengeführt wird, können die Bereitschaft stärken, anderen Teams Änderungen vorzuschlagen. Gleichzeitig werden <a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">nicht autorisierte Änderungen</a> verhindert und Maßnahmen zur Informationssicherheit wie z. B. eine Aufgabenteilung durchgesetzt.</p>
+
+<p>Betrachten Sie als Nächstes Abhängigkeiten. Es muss Folgendes gegeben sein, damit Teams leichter Abhängigkeiten hinzufügen und aktualisieren sowie gewährleisten können, dass diese stabil sind und nur sehr selten Fehler im Code verursachen:</p>
+
+<ul>
+<li><strong>Bessere Sicherheit:</strong> Mit zunehmendem Alter der Abhängigkeiten ist es wahrscheinlicher, dass darin Schwachstellen entdeckt werden. Abhängigkeiten müssen immer auf dem neuesten Stand sein, insbesondere wenn Sicherheitslücken gefunden und gepatcht wurden.</li>
+<li><strong>Schnellere Bereitstellung:</strong> Wenn Sie von anderen Teams oder Organisationen entwickelte Bibliotheken verwenden, müssen Sie zur Ausführung dieses Jobs keinen eigenen Code schreiben.
+Wenn vorhandene Mechanismen gewährleisten, dass Abhängigkeiten stabil sind und selten Fehler im Code verursachen, können Sie mehr Zeit für das Programmieren und weniger Zeit für die Wartung aufwenden.</li>
+</ul>
+
+<p>Das Abhängigkeitsmanagement ist ein häufiges Problem für Softwareentwicklungsteams.
+Abhängigkeiten über Anwendungen hinweg auf dem neuesten Stand und konsistent zu halten, ist komplex, zeitaufwändig und teuer. Viele Organisationen weisen dieser Aufgabe keine ausreichenden Ressourcen zu. Dieses Problem wird durch unzureichende Prozesse und Tools erschwert. Dies kann ein erhebliches Sicherheitsrisiko darstellen, wenn Sicherheitslücken in Abhängigkeiten entdeckt werden und die Anwendungen, die sie verwenden, aktualisiert werden müssen.</p>
+
+<p>Es ist wichtig, Prozesse und Tools zu übernehmen und weiterzuentwickeln, die es Teams erleichtern, bekannte Versionen von Abhängigkeiten zu nutzen und diese schnell zu aktualisieren. Dies schließt automatisierte <a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">Continuous Integration</a> (CI) und <a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">Tests</a> ein, um festzustellen, ob neue Versionen von Abhängigkeiten wichtige Änderungen enthalten, und um die Versionen der verwendeten Abhängigkeiten schnell und einfach mit den Systemen zu korrelieren, die sie verwenden.</p>
+
+<p>Es gibt zwei häufig verwendete Modelle, um Abhängigkeiten in die Software aufzunehmen: das Vendoring und die deklarativen Manifeste. Beim Vendoring wird entweder der Quellcode oder die Binärdatei jeder Abhängigkeit zusammen mit der Anwendung in die Versionskontrolle eingecheckt. Alternativ haben die meisten modernen Plattformen ein Tool zum Abhängigkeitsmanagement, das die Abhängigkeiten in deklarativen Manifestdateien verwaltet, die in die Versionsverwaltung aufgenommen wurden (z. B. pip von Python, npm von Node.js, CRAN von R and NuGet von .NET).</p>
+
+<p>Unabhängig davon, ob Sie Vendoring oder Manifeste verwenden, sind die folgenden Aspekte besonders wichtig:</p>
+
+<ul>
+<li><strong>Rückverfolgbarkeit:</strong> Von jedem Paket oder jeder Bereitstellung muss die genaue Version jeder Abhängigkeit zurückverfolgt werden können, die zum Erstellen verwendet wurde.
+Ohne dies ist es unmöglich, Probleme zu beheben, die durch Änderungen an Abhängigkeiten verursacht werden.</li>
+<li><strong>Reproduzierbarkeit:</strong> Ihr Build-Prozess sollte so deterministisch wie möglich sein. Es ist äußerst mühsam Probleme beheben zu wollen, die durch einen Erstellungsprozess verursacht werden, der sich auf verschiedenen Computern unterschiedlich verhält.</li>
+</ul>
+
+<h3 id="implementing_code_maintainability_at_google" data-text="Wie bei Google Verwaltbarkeit von Code implementiert wird">Wie bei Google Verwaltbarkeit von Code implementiert wird</h3>
+
+<p>Google implementiert die Verwaltbarkeit von Code durch einen relativ ungewöhnlichen Ansatz. Bei diesem Ansatz müssen zwar Kompromisse eingegangen werden und er ist nicht für jeden geeignet. Er ermöglicht es den Teams jedoch effektiv, die in diesem Artikel beschriebenen Ziele zu erreichen.</p>
+
+<p>95 % der Softwareentwickler von Google weltweit arbeiten an einer gemeinsam genutzten monolithischen Codebasis, die über ein zentrales Versionsverwaltungssystem mithilfe eines <a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">Entwicklungsmodells nach Baumschema</a> verwaltet wird.
+<a href="http://dl.acm.org/citation.cfm?id=2854146" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Im Jahr 2016</a> umfasste die Google-Codebasis "ungefähr eine Milliarde Dateien und [hatte] einen Verlauf von ungefähr 35 Millionen Commits über das gesamte 18-jährige Bestehen von Google. Das Repository enthält 86 TB Daten, was etwa zwei Milliarden Codezeilen in neun Millionen eindeutigen Quelldateien umfasst."</p>
+
+<p>Da der gesamte Code von Google in einem einzigen Repository gespeichert wird, kann der Code anderer Teams leicht gefunden und geändert werden. Google stellt eine interne Suchmaschine bereit, die die Suche in der gesamten Codebasis ermöglicht. Entwickler haben eine Vielzahl an Tools, mit denen sie Änderungslisten zur Prüfung und Genehmigung erstellen können. Tests werden für jede Änderungsliste ausgeführt und Änderungslisten können aktualisiert und kommentiert werden.
+Das Code-Review-Tool von Google kann, ähnlich wie viele andere Plattformen, Prüfer für jede Änderung vorschlagen. Jedes Verzeichnis im Google-Repository verfügt über eine OWNERS-Datei (Inhaber), in der die Personen oder Gruppen aufgelistet sind, die Änderungen an Dateien in diesem Verzeichnis genehmigen können (ähnliche Funktionen sind in <a href="https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">GitHub</a>, <a href="https://docs.gitlab.com/ee/user/project/code_owners.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">GitLab</a> und <a href="https://marketplace.atlassian.com/apps/1218598/code-owners-for-bitbucket-server?hosting=server&amp;tab=overview" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Bitbucket</a> verfügbar).
+Durch eine schnelle Suche, Genehmigungsvorschläge und automatisierte Tests wird das Vorschlagen von Änderungen, das Prüfen und die Zusammenarbeit sowohl unkompliziert als auch robust.</p>
+
+<p>Mit diesen Tools sind umfangreiche Refaktorierungen, die mehrere Teile der Codebasis ändern, relativ einfach durchzuführen und können in kleinstmöglichen Schritten durchgeführt werden. Google hat Tools entwickelt, die das Vornehmen von Änderungen, die sich auf wichtige Abschnitte der Codebasis auswirken, weiter vereinfachen und automatisieren. Google Tooling enthält ein Build-System namens Blaze, mit dem Änderungen, einschließlich Abhängigkeiten, aus dem Quellcode erstellt und getestet werden. (Teile von Blaze wurden in der Form des <a href="https://bazel.build/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Open-Source-Tools Bazel</a> veröffentlicht.)
+Es ist für jeden bei Google einfach, an einem beliebigen Teil von Google Änderungen zu entdecken und solche vorzuschlagen. Das schließt die Infrastrukturkonfiguration mit ein, die sich ebenfalls im selben monolithischen Repository befindet. Es ist ganz einfach, den Code mit anderen zu teilen und wiederzuverwenden.</p>
+
+<p>Google bietet auch Steuerelemente, mit denen Sie Abhängigkeiten von Open-Source-Software verwalten können. Erstens muss für jede bei Google verwendete Open Source-Software die Quelle im monolithischen Repository von Google eingecheckt werden. Zweitens kann immer nur eine Version einer bestimmten Bibliothek in die Versionsverwaltung eingecheckt werden. Drittens ist die gesamte Software statisch verlinkt und aus der Quelle erstellt. Abschließend werden jedes Mal, wenn sich der Quellcode einer Bibliothek ändert, Neuerstellungen und automatisierte Tests für jede Software ausgelöst, die diese Abhängigkeit nutzt.</p>
+
+<p>Durch diese Steuerelemente, in Kombination mit der leistungsstarken CI-Infrastruktur von Google, können unsere Produktionssysteme mit neuen Versionen von Abhängigkeiten ganz leicht auf dem neuesten Stand gehalten werden. Sie tragen auch dazu bei, dass alle Systeme konsistente Versionen einer bestimmten Bibliothek verwenden. (Dadurch kommt es nicht zu einer "Diamantabhängigkeit". Bei dieser ist ein Produkt auf zwei Komponenten angewiesen, die wiederum auf <em>unterschiedlichen Versionen</em> einer gemeinsamen Bibliothek beruhen, wodurch das Produkt nicht erstellt werden kann.)</p>
+
+<p>Der Kompromiss bei Googles Ansatz zur Verwaltung von Abhängigkeiten von externem Code besteht darin, dass es schwieriger wird, neue Abhängigkeiten hinzuzufügen (eines der wichtigsten Ergebnisse der Verwaltbarkeit von Code). Bei jeder neuen Abhängigkeit muss der Quellcode in das monolithische Repository von Google eingecheckt werden. Dies bedeutet, dass der Code sowohl anfänglich als auch im Rahmen von Upgrades geprüft und getestet werden muss. Diese Genauigkeit hilft jedoch dabei, zu verhindern, dass Code mit Sicherheitslücken in die Produkte von Google gelangt, und stellt sicher, dass in allen Abhängigkeiten Verantwortliche klar festgelegt sind.</p>
+
+<h2 id="common_pitfalls_of_implementing_code_maintainability" data-text="Häufige Schwierigkeiten bei der Implementierung von Verwaltbarkeit von Code.">Häufige Schwierigkeiten bei der Implementierung von Verwaltbarkeit von Code</h2>
+
+<p>Hauptsächlich wird durch die Toolunterstützung und die Organisationskultur verhindert, dass jeder den gesamten Code durchsuchen und ändern kann.</p>
+
+<p>Die erste häufige Gefahr sind mehrere Repositories zur Versionsverwaltung oder Repositories zur Versionsverwaltung mit restriktiven Zugriffseinstellungen. Organisationen sollten eine einzige Plattform zur Versionsverwaltung haben, auf der der gesamte Code gespeichert ist.
+Der Standardzugriff sollte idealerweise jedem in der Organisation ermöglichen, eine Quelldatei anzuzeigen, mit der Möglichkeit, den Zugriff für vertrauliche Dateien einzuschränken. Es sollte auch eine Möglichkeit geben, die Versionsverwaltung zu durchsuchen.</p>
+
+<p>Stattdessen beschränken Unternehmen in der Regel den Zugriff auf die Versionsverwaltung. Dies führt zu der zweiten Gefahr: Es fehlt an Tools und Prozessen, um Änderungen an Teilen der Codebasis vorzunehmen, auf die sie keinen Schreibzugriff haben. Dadurch kann es erheblich schwieriger werden Problemen zu beheben, die (oft versehentlich) von anderen Teams verursacht werden, von deren Code Sie abhängig sind. Es verhindert auch Refaktorierungen, die mehrere Teile der Codebasis betreffen.</p>
+
+<p>Zur Lösung dieses Problems bieten einige moderne Versionsverwaltungstools die Möglichkeit, Änderungsanfragen für Teile der Codebasis zu senden, zu prüfen und zu genehmigen, auf die Nutzer keinen Schreibzugriff haben.</p>
+
+<p>Selbst wenn Tools unterstützt werden, müssen Unternehmen mit der Bereitstellung und Durchsuchbarkeit von Codebasen innerhalb des Unternehmens und möglicherweise für Anbieter und Auftragnehmer vertraut sein. Dies ist möglicherweise nicht für Organisationen möglich, deren Repositories zur Versionsverwaltung erhebliche Mengen an vertraulichen Informationen und Code enthalten, die nicht zwischen Teams geteilt werden können.</p>
+
+<p>Die Verwendung von binären Abhängigkeiten ist weitaus häufiger, aber jede Sprache verfügt über eine eigene Toolchain zum Verwalten von binären Abhängigkeiten. Es ist ein komplexes Unterfangen, eine Standardstrategie sowie Konventionen zu erstellen, mit denen Abhängigkeiten über diese Toolchains im gesamten Softwareportfolio des Unternehmens effektiv verwaltet und nachverfolgt werden können. Damit die regelmäßige Aktualisierung von Bibliotheken von Drittanbietern nachvollzogen werden können, sind erhebliche Investitionen in die CI-Infrastruktur erforderlich, mit denen neue Versionen von Bibliotheken problemlos auf Kompatibilität mit vorhandenen Systemen und auf Schwachstellen getestet werden können.</p>
+
+<p>In der Praxis überlassen es die meisten Organisationen den Teams, ihre Abhängigkeiten zu verwalten. Mit sehr unterschiedlichen Ergebnissen. Infolgedessen ist es in der Regel äußerst mühsam, schnell und vorhersehbar zu reagieren, wenn in einer Bibliothek eine Sicherheitslücke entdeckt wird. Selbst die betroffenen Dienste zu finden kann in der Regel eine langwierige Aufgabe sein.</p>
+
+<h2 id="how_to_measure_code_maintainability" data-text="Verwaltbarkeit von Code messen">Verwaltbarkeit von Code messen</h2>
+
+<p>Hier sind einige einfache Ideen, um Ihnen den Einstieg in die Messung der Verwaltbarkeit von Code zu erleichtern:</p>
+
+<ul>
+<li>Wie viel Prozent der Codebasis Ihres Unternehmens können durchsucht werden?</li>
+<li>Was ist die durchschnittliche Vorbereitungszeit, um einen Teil der Codebasis zu ändern, auf den ich keinen Schreibzugriff habe?</li>
+<li>Welcher Prozentsatz unserer Codebasis ist doppelt vorhanden? Welcher Prozentsatz wird nicht verwendet?</li>
+<li>Wie viel Prozent der Anwendungen verwenden nicht die neueste stabile Version aller von ihnen verwendeten Bibliotheken?</li>
+<li>Wie viele verschiedene Versionen gibt es in der Produktionsumgebung?
+Wie ist der Medianwert? Was ist ein gutes Ziel? Wie viele Versionen sind älter als ein Jahr?</li>
+<li>Wie oft aktualisieren Teams ihre Bibliotheken? Wie lange dauert das?</li>
+</ul>
+
+<p>Bei der Auswahl der zu berücksichtigenden Messwerte gibt es drei Anwendungsfälle:</p>
+
+<ul>
+<li>Technische und Design-Altlasten verwalten</li>
+<li>Änderungsmanagement (einschließlich Notfalländerungen)</li>
+<li>Sicherheitslücken patchen</li>
+</ul>
+
+<p>Angesichts der wachsenden Codebasis ist die technische Altlast ein wichtiges Anliegen. Es ist wichtig, Code umgestalten und <a href="/architecture/devops/devops-tech-architecture">neu gestalten</a> zu können, wenn sich Organisationen und die Produkte, auf die sie und ihre Kunden angewiesen sind, weiterentwickeln. Bei großen Codebasen kann dies ohne nennenswerte Werkzeugunterstützung komplex und mühselig sein. Es ist auch wichtig, Code identifizieren zu können, der nicht verwendet wird, dupliziert wird, eine schlechte Testabdeckung aufweist oder Sicherheitslücken enthält. Als Erstes muss sichergestellt werden, dass Sie mit Ihren Tools Messwerte erstellen und verfolgen können, die Verbesserungsbereiche identifizieren. Außerdem müssen sie es erleichtern, sichere Maßnahmen ergreifen zu können.</p>
+
+<p>Der zweite Schritt ist das <a href="/architecture/devops/devops-tech-database-change-management">Änderungsmanagement</a>.
+Inwieweit hilft Ihnen Ihr Tool, die Auswirkungen dieser Änderung zu erkennen, wenn jemand eine Änderung an einem Teil der Codebasis vornimmt? Wenn ein anderes Team betroffen ist, wie schnell kann es Maßnahmen ergreifen, um das Problem zu beheben? Insbesondere, wenn die Lösung in einem anderen Bereich der Codebasis liegt. Wie lange dauert es, bis die erforderlichen Codeänderungen in die Codebasis übernommen, getestet und freigegeben werden, wenn eine Notfalländerung vorgenommen werden muss?</p>
+
+<p>Richten Sie Messwerte ein und verfolgen Sie sie, damit Sie verfolgen können, wie lange Änderungen dauern, bis sie sich in Ihren Prozessen verbreiten. Identifizieren Sie dann Engpässe und arbeiten Sie an der Verbesserung Ihrer Prozesse. Fügen Sie gegebenenfalls eine Tool-Unterstützung hinzu. Achten Sie auf "Notfall"-Prozesse, die Validierungen und Genehmigungen umgehen, um schneller ausgeführt werden zu können. Ziel sollte es sein, dass Ihr regulärer Prozess sowohl zuverlässig als auch schnell genug ist, um im Notfall effektiv zu sein.</p>
+
+<p>Das Patchen von Sicherheitslücken ist ein besonders wichtiges Szenario des Änderungsmanagements. Wie lange dauert es, Software zu finden und zu patchen, die die anfälligen Versionen der Bibliothek verwendet, wenn eine Sicherheitsanfälligkeit in einer Bibliothek entdeckt wird?
+Wenn Sie sich nicht sicher sind, sollten Sie regelmäßig Tests durchführen. Angesichts der enormen potenziellen Kosten für die Behandlung von Sicherheitsverletzungen sowie der Daten- und Codeexfiltration und der Häufigkeit solcher Angriffe lohnt es sich in der Regel, erhebliche Ressourcen aufzuwenden, um sicherzustellen, dass die von Ihnen verwendete Software von Drittanbietern auf dem neuesten Stand ist und problemlos aktualisiert werden kann, sollten Sicherheitslücken entdeckt werden.</p>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Nächste Schritte</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li><a href="https://research.google/pubs/pub45424/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Warum Google Milliarden von Codezeilen in einem einzelnen Repository speichert</a> </li>
+<li><a href="https://www.youtube.com/watch?v=W71BTkUbdqE" target="youtube" track-type="article" track-name="youtubeLink" track-metadata-position="body">Rachel Potvins Präsentation zum monolithischen Code-Repository von Google</a></li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,275 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia de DevOps: gestão de mudanças no banco de dados</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Observação:</strong><span> o <em>gerenciamento de alterações do banco de dados</em> é um de um conjunto de recursos que aumentam
+o fornecimento de software e o desempenho organizacional. Esses
+recursos foram descobertos pelo
+<a href="https://www.devops-research.com/research.html">programa de pesquisa DORA State of DevOps</a>
+(em inglês), uma investigação independente e academicamente rigorosa sobre as práticas e
+recursos que impulsionam alto desempenho. Para saber mais, leia nossos
+<a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>As mudanças no banco de dados geralmente são uma fonte importante de risco e atraso
+na realização de implantações. A <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> investigou quais práticas relacionadas ao banco de dados ajudam no processo de implementação da entrega contínua, melhorando o desempenho e a disponibilidade da entrega de software.</p>
+
+<p>Uma pesquisa da DORA descobriu que a integração do trabalho do banco de dados no processo de entrega de software
+contribui positivamente para a <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">entrega contínua</a>.
+Mas como as equipes podem melhorar a entrega do banco de dados como parte da implementação
+da entrega contínua? Algumas práticas preveem resultados de desempenho.</p>
+
+<p>A DORA descobriu que boa comunicação e gestão abrangente
+de configuração que inclui o banco de dados são importantes. As equipes com bom desempenho na entrega contínua
+armazenam as mudanças no banco de dados como scripts no controle de versão e gerenciam essas
+alterações da mesma forma que gerenciam mudanças no aplicativo de produção. Além disso, quando
+as mudanças no aplicativo exigem alterações no banco de dados, essas equipes discutem
+com as pessoas responsáveis pelo banco de dados de produção e garantem que a equipe
+de engenharia possa visualizar o progresso das mudanças pendentes do banco de dados.</p>
+
+<p>Quando as equipes seguem essas práticas, as mudanças no banco de dados não reduzem a velocidade deles
+nem geram problemas na implantação de código.</p>
+
+<h2 id="how_to_implement_database_change_management" data-text="Como implementar a gestão de mudanças no banco de dados">Como implementar a gestão de mudanças no banco de dados</h2>
+
+<p>Há dois aspectos na implementação da gestão eficaz de mudanças no banco de dados:
+cultural e técnico. Nesta seção, discutimos ambos.</p>
+
+<h3 id="establish_effective_communication_of_database_changes" data-text="Estabelecer uma comunicação eficaz sobre mudanças no banco de dados">Estabelecer uma comunicação eficaz sobre mudanças no banco de dados</h3>
+
+<p>A pesquisa mostra que as equipes funcionam melhor quando discutem as mudanças com as pessoas
+responsáveis por gerenciar o banco de dados de produção e quando todos podem
+ver o progresso das mudanças pendentes no banco de dados.</p>
+
+<p>É importante discutir mudanças propostas com administradores de banco de dados de produção (DBAs, na sigla em inglês),
+por vários motivos. Primeiro, esses especialistas podem orientar sobre como
+alcançar os melhores resultados e apontar possíveis problemas, como de desempenho.
+Muitas operações têm características de desempenho muito diferentes em sistemas
+de produção quando comparadas com estações de trabalho de desenvolvedores. Essa discussão também traz
+aos DBAs informações sobre o que está acontecendo upstream, ajudando-os a se preparar melhor
+para o impacto das próximas mudanças.</p>
+
+<p>Para que as equipes, incluindo os DBAs, entendam quais mudanças serão feitas,
+qual o status do teste e quais mudanças de esquema foram feitas nos diversos
+bancos de dados de produção e não produção, é essencial verificar
+se todos podem ver o progresso das mudanças. Para facilitar a visibilidade:</p>
+
+<ul>
+<li>mantenha todas as mudanças de esquema de banco de dados no controle de versão,
+com o código do aplicativo a que o esquema pertence;</li>
+<li>use uma ferramenta que registra quais mudanças foram executadas em que
+ambientes e quais foram os resultados.</li>
+</ul>
+
+<p>Essas práticas também garantem uma fonte canônica
+de verdade para todas as mudanças e facilitam o acesso
+ao histórico de mudanças para fins de auditoria.</p>
+
+<h3 id="treat_all_database_schema_changes_as_migrations" data-text="Tratar todas as mudanças de esquema do banco de dados como migrações">Tratar todas as mudanças de esquema do banco de dados como migrações</h3>
+
+<p>Um padrão amplamente usado no controle de versões do banco de dados é capturar todas
+as mudanças como um script de migração mantido no controle de versão, conforme mostrado
+no diagrama a seguir. Cada script de migração tem um número de sequência exclusivo
+para que você saiba em que ordem aplicar as migrações.</p>
+
+<p><img src="/static/architecture/devops/images/database-change-management-1.png" alt="No diagrama, é mostrada a captura de todas as mudanças no banco de dados como um script de migração com um número sequencial exclusivo."/></p>
+
+<p>Assim, você garante que cada instância de banco de dados tenha uma tabela que registra
+as migrações executadas nessa instância específica. Com isso, você controla a versão do esquema do banco de dados para usar uma ferramenta na aplicação dos scripts de migração, de modo a usar
+a versão que você quiser do esquema do banco de dados. Exemplos de ferramentas (alguns links estão em inglês):</p>
+
+<ul>
+<li><a href="https://github.com/golang-migrate/migrate" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">migrate</a>
+(Go)</li>
+<li><a href="https://pypi.org/project/alembic/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">alembic</a>
+(Python)</li>
+<li><a href="https://guides.rubyonrails.org/active_record_migrations.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Migrações de registro ativo</a>
+(Ruby on Rails)</li>
+<li><a href="https://github.com/dbup/dbup" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">dbup</a>
+(.NET)</li>
+<li><a href="https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Migrações do Entity Framework</a>
+(.NET)</li>
+<li><a href="https://laravel.com/docs/7.x/migrations" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Migrações do Laravel</a>
+(PHP)</li>
+<li><a href="https://flywaydb.org/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Flyway</a>
+(independente de plataforma)</li>
+<li><a href="https://www.liquibase.org/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Liquibase</a>
+(independente de plataforma)</li>
+</ul>
+
+<p>Também é possível usar migrações para
+criar esquemas de banco de dados vazios para desenvolvimento e teste.</p>
+
+<p>Conforme mostrado no diagrama a seguir, cada instância de banco de dados tem uma tabela que
+registra quais migrações você executou na instância. Em seguida, é possível executar
+atualizações automaticamente
+usando uma ferramenta ou script que executa migrações que ainda não foram
+aplicadas à instância do banco de dados, atualizando a tabela de migrações após cada
+uma ser concluída.</p>
+
+<p><img src="/static/architecture/devops/images/database-change-management-2.png" alt="Exemplo de tabela que registra migrações em uma instância."/></p>
+
+<p>Gerencie as mudanças no banco de dados da mesma forma que você faz isso no aplicativo:
+com um processo automatizado que usa o controle de versão como fonte de verdade.</p>
+
+<h3 id="zero-downtime_database_changes" data-text="Mudanças no banco de dados sem inatividade">Mudanças no banco de dados sem inatividade</h3>
+
+<p>Muitas organizações programam a inatividade dos serviços ao fazer mudanças no esquema
+do banco de dados devido à necessidade de coordená-las com implantações de aplicativos
+ou devido ao bloqueio da tabela do banco de dados durante a execução dessas mudanças.
+A entrega contínua tem como objetivo eliminar a inatividade nas implantações. Veja a seguir
+algumas estratégias para fazer mudanças no esquema do banco de dados sem inatividade:</p>
+
+<ul>
+<li><strong>Use uma estrutura de migração de esquema on-line</strong>, como
+<a href="https://github.com/github/gh-ost" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">gh-ost</a>
+ou
+<a href="https://www.percona.com/doc/percona-toolkit/3.0/pt-online-schema-change.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">pt-online-schema-change</a> (links em inglês).
+Essas ferramentas criam uma cópia "fantasma" de cada tabela que você quer mudar, migram
+a cópia vazia e, em seguida, copiam os dados da tabela original,
+incluindo as atualizações que ocorrem durante a migração. Após a conclusão desse processo,
+elas substituem a tabela original pela fantasma. Alguns
+bancos de dados, por exemplo, o <a href="/spanner/docs/schema-updates" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud Spanner</a>, podem executar atualizações de esquema sem inatividade.</li>
+<li><p><strong>Separe as mudanças no banco de dados e no aplicativo</strong> usando o
+<a href="https://medium.com/continuousdelivery/expand-contract-pattern-and-continuous-delivery-of-databases-4cfa00c23d2e" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">padrão de mudança paralela</a> (em inglês).
+Nesse padrão, você nunca modifica objetos de banco de dados atuais. Em vez disso, você
+adiciona novas estruturas com as antigas. Por exemplo, considere alterar uma
+coluna "address" para duas colunas: <code translate="no" dir="ltr">address_1</code> e <code translate="no" dir="ltr">address_2</code>.</p>
+
+<p>Em vez de excluir a coluna antiga e adicionar a nova e
+implantar uma nova versão do aplicativo ao mesmo tempo, adicione as
+novas colunas, mas mantenha a antiga. Faça isso antes da implantação
+do aplicativo. Em seguida, a nova versão do aplicativo pode procurar
+as novas colunas, lendo-as se estiverem presentes e não nulas. Caso contrário,
+o aplicativo pode ler a coluna antiga. O aplicativo pode gravar em colunas antigas e novas,
+migrando lentamente os dados e permitindo a reversão do aplicativo
+sem exigir uma reversão do banco de dados.</p>
+
+<p>Assim, a implantação do aplicativo é separada da mudança no banco de dados,
+que normalmente pode ser feita sem inatividade, já que
+não envolve a migração de dados. Trocamos um pouco da complexidade do aplicativo
+para reduzir a dificuldade de implantação.
+Como alternativa, os gatilhos de banco de dados podem ser usados para manter a sincronia entre dados
+em colunas novas e antigas.</p></li>
+<li><p><strong>Projete e implemente uma estratégia de particionamento e arquivamento de dados:</strong> tabelas de banco de dados com um grande número de linhas são
+uma das principais causas de migrações longas. Verifique se os aplicativos foram projetados para permitir o particionamento
+e arquivamento de dados para evitar que as tabelas fiquem grandes demais. Um exemplo disso seria
+criar várias instâncias de uma tabela para cada trimestre. Por exemplo,
+em vez de uma tabela <code translate="no" dir="ltr">survey_answers</code>, você teria
+<code translate="no" dir="ltr">survey_answers_2020Q1</code>, <code translate="no" dir="ltr">survey_answers_2020Q2</code> e assim por diante. Confira
+se as revisões de design e arquitetura do aplicativo incluem a validação
+da estratégia de particionamento / arquivamento de dados do aplicativo.</p></li>
+<li><p><strong>Use uma arquitetura de geração de eventos:</strong> em uma
+<a href="https://microservices.io/patterns/data/event-sourcing.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">arquitetura de geração de eventos</a> (em inglês),
+em vez de o banco de dados armazenar o estado atual do aplicativo,
+ele armazena <em>mudanças no estado no formato</em>
+de um registro de <em>eventos conhecidos como comandos</em>. Então, quando o cliente altera
+o endereço dele, em vez de atualizar uma tabela com esses detalhes, o
+aplicativo emite um comando de mudança de endereço armazenado
+no banco de dados. É assim que os registros de transações do banco de dados e o controle de versão funcionam,
+e esse é um padrão comum em sistemas distribuídos. Em uma arquitetura alimentada por eventos,
+eles podem ser colocados em fila para permitir que as migrações do banco de dados ocorram
+enquanto os eventos são colocados na fila. Assim, os eventos na fila podem ser transferidos para
+o banco de dados quando a migração for concluída. Alguns bancos de dados podem enfileirar
+consultas enquanto as migrações de esquema são executadas, o que pode ser eficaz se elas forem
+concluídas com rapidez suficiente.</p></li>
+<li><p><strong>Use uma solução NoSQL:</strong> para alguns bancos de dados NoSQL, como o
+<a href="https://firebase.google.com/docs/firestore" target="firebase" track-type="article" track-name="firebaseLink" track-metadata-position="body">Firestore</a>
+e o
+<a href="/bigtable" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud BigTable</a>,
+as mudanças de esquema não causam problemas de inatividade. Bancos de dados
+de documentos, como o Firestore, têm um esquema implícito, o que significa
+que o esquema é gerenciado no nível do aplicativo, não do banco de dados.
+No entanto, há vantagens e desvantagens associadas ao uso de bancos de dados NoSQL. Eles
+não são ideais para todos os aplicativos.</p></li>
+</ul>
+
+<p>Além de eliminar a inatividade programada, também é desejável evitar inatividade
+não programada. Teste todas as mudanças de esquema em um
+<a href="/architecture/devops/devops-tech-test-data-management" track-type="article" track-name="internalLink" track-metadata-position="body">conjunto de dados semelhante à produção</a>
+com todas as informações pessoais ou confidenciais apagadas, é claro, para garantir
+que o aplicativo se comporte da maneira esperada durante e após a migração. Algumas
+organizações criam uma versão refinada do banco de dados de produção diariamente
+para essa finalidade. Se você estiver usando um sistema de gerenciamento de banco de dados
+com mais de um nó em produção, confirme se está testando uma instância
+com pelo menos dois nós para detectar problemas distribuídos no sistema.</p>
+
+<h2 id="common_pitfalls_of_implementing_database_change_management" data-text="Armadilhas comuns na implementação da gestão da mudança de banco de dados">Armadilhas comuns na implementação da gestão da mudança de banco de dados</h2>
+
+<p>Há algumas armadilhas comuns que você precisa conhecer ao implementar as principais
+práticas descritas aqui.</p>
+
+<p>Em primeiro lugar, muitas organizações são altamente compartimentadas. Muitas vezes, os DBAs trabalham
+em uma equipe separada, que usa um próprio processo para gerenciar mudanças. Quando as equipes
+de entrega de software implementam um novo processo para gerenciar mudanças no banco de dados
+sem consultar a equipe de DBA, elas provavelmente enfrentarão resistência ao uso do novo
+processo para fazer mudanças nos bancos de dados gerenciados pela equipe de DBA. Isso pode
+reduzir substancialmente os benefícios de mudar para um novo processo.</p>
+
+<p>A primeira etapa é fazer uma reunião com elas para discutir como alcançar
+os objetivos apresentados neste artigo. É importante ter a participação delas em qualquer
+proposta de processo e alteração tecnológica. A melhor maneira de fazer isso é perguntando
+quais problemas elas estão enfrentando, ver como as ideias apresentadas neste artigo podem
+ajudá-las a resolver esses problemas e oferecer ajuda para solucioná-los. O ideal é que as equipes de entrega e DBAs
+encontrem uma solução mutuamente aceitável.</p>
+
+<p>Esse obstáculo geralmente é exacerbado por outra falha: a situação comum
+em que vários aplicativos compartilham o mesmo esquema de banco de dados. Isso significa que
+as equipes que trabalham em um aplicativo não podem alterar o esquema sem possivelmente
+afetar outros aplicativos. Isso exige que uma solução única seja implementada
+para gerenciar mudanças no banco de dados de todos os aplicativos que compartilham o esquema
+do banco de dados. Certamente é possível e até mais benéfico implementar
+um mecanismo de autoatendimento com controle de versão para implantar as mudanças no banco de dados
+nesta situação. No entanto, isso envolve planejamento e lançamento cuidadosos.</p>
+
+<p>Por fim, a implementação da gestão de mudanças de banco de dados com base em migração e
+implantações sem inatividade pode envolver
+<a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">mudanças significativas na arquitetura</a>.
+Isso deve ser considerado ao estimar o esforço necessário para
+implementar essas práticas.</p>
+
+<h2 id="how_to_measure_database_change_management" data-text="Como avaliar a gestão das mudanças no banco de dados">Como avaliar a gestão das mudanças no banco de dados</h2>
+
+<p>O objetivo de um sistema efetivo de gestão de mudanças no banco de dados
+é que essas alterações não atrasem as implantações nem causem problemas. Vale a pena avaliar a
+porcentagem de falhas de alteração em que mudanças no banco de dados foram um fator contribuinte.
+Também é recomendado avaliar até que ponto o trabalho relacionado a mudanças no banco de dados contribui
+para o tempo de lead geral do controle de versão até o lançamento.</p>
+
+<p>Se as mudanças no banco de dados exigirem inatividade programada, esse também será
+um fator importante. Para avaliar o impacto econômico da inatividade programada, considere
+a possível perda de receita resultante e o custo salarial
+das pessoas que precisarão trabalhar fora do horário normal para realizar implantações.
+A implantação fora do horário comercial também pode contribuir para o esgotamento da equipe. Esses
+efeitos podem ser usados para justificar o trabalho necessário para implementar as soluções discutidas neste documento
+para implantações sem inatividade.</p>
+
+<p>Em termos de medição do nível de automação, considere a proporção
+das mudanças no banco de dados feitas por meio de um botão, usando um processo
+totalmente automatizado. O objetivo é que 100% das mudanças no banco de dados sejam feitas assim.</p>
+
+<h2 id="whats_next" data-text="A seguir">A seguir</h2>
+
+<ul>
+<li>Consulte links para outros artigos e recursos na
+<a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página do DevOps</a>.</li>
+<li>Leia sobre a
+<a href="https://www.martinfowler.com/articles/evodb.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">evolução do design de banco de dados</a> (em inglês).</li>
+<li>Leia sobre
+<a href="https://medium.com/@chbussler/zero-downtime-database-migration-and-replication-to-and-from-cloud-spanner-99ad0c654d12" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">migração e replicação de bancos de dados sem inatividade do e para o Cloud Spanner</a> (em inglês).</li>
+<li>Saiba mais sobre as <a href="/solutions/databases" track-type="article" track-name="internalLink" track-metadata-position="body">soluções de banco de dados do Google Cloud</a>.</li>
+<li>Livros em inglês recomendados:
+<ul>
+<li><a href="http://shop.oreilly.com/product/0636920039761.do" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Database Reliability Engineering</em></a> de Laine Campbell e Charity Majors.</li>
+<li><a href="https://books.google.com/books/about/Refactoring_Databases.html?id=puBQAAAAMAAJ" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Refactoring Databases</em></a> de Scott W. Ambler e Pramod J. Sadalage</li>
+</ul></li>
+<li>Explore nosso
+<a href="https://www.devops-research.com/research.html">programa de pesquisa</a> (em inglês) do DevOps.</li>
+<li>Faça a
+<a href="https://www.devops-research.com/quickcheck.html">verificação rápida de DevOps</a>
+para entender sua posição em relação ao restante do setor.</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,134 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技术：代码可维护性</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong>：<span><em>代码维护</em>是提升软件交付和组织绩效的能力之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>运行我们构建的系统需要<a href="https://www.businessinsider.com/how-many-lines-of-code-it-takes-to-run-different-software-2017-2" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">大量代码</a>：Android 操作系统运行 1200 到 1500 万行代码，Google 的单一代码库包含超过 10 亿行代码，典型的智能手机应用包含 50,000 行代码。</p>
+
+<p>基于 <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps 研究和评估组织 (DORA)</a> 研究的 2019 年 DevOps 现状报告表明，团队有效维护代码的能力是众多可积极促成<a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">持续交付</a>取得成功的技术实践之一。</p>
+
+<p>如果您的团队在代码可维护性方面表现良好，则满足以下条件：</p>
+
+<ul>
+<li>团队可轻松在代码库中找到示例，重复使用其他人的代码，并在必要时更改其他团队维护的代码。</li>
+<li>团队可以轻松地将新的依赖项添加到其项目，以及迁移到新的依赖项版本。</li>
+<li>团队的依赖项稳定，并且很少破坏代码。</li>
+</ul>
+
+<p>这些发现结果突显了开发者可轻松地在整个组织的代码库中找到、重复使用和更改代码，以及实现相关实践和工具来帮助依赖项管理的重要性。</p>
+
+<p>代码可维护性是一项需要组织范围协调的功能，因为它依赖于能够搜索、重复使用和更改其他团队的代码。有效管理依赖项通常是在使用大型代码库和应对大型组织时遇到的主要难题。有助于避免依赖项出现问题或说明代码更改后果的工具可以为所有工程师改进设计决策和代码质量，从而有助于他们提高工作速度并打造更稳定可靠的软件。</p>
+
+<h2 id="how_to_implement_code_maintainability" data-text="如何实现代码可维护性">如何实现代码可维护性</h2>
+
+<p>就实现而言，虽然可以分开进行源代码管理和依赖项管理，但一个解决方案（例如单一代码库或 Google 使用的 <em>monorepo</em> 模式）可以同时解决这两个问题。</p>
+
+<p>首先，源代码管理。如果让每个人都可以轻松找到、重复使用和建议对代码库的任何部分进行更改，那么就可以：</p>
+
+<ul>
+<li><strong>加快交付</strong>：为了快速交付软件，团队需要能够查看和建议对彼此代码的更改。尽早执行此操作有助于在整个组织内传播知识，并且有助于将需要更改代码库其他部分的团队取消屏蔽，以便他们完成工作。</li>
+<li><strong>提高稳定性和可用性水平</strong>：如果发生突发事件，能够快速找到并建议对代码库任何部分的更改至关重要。</li>
+<li><strong>提高代码质量</strong>：重构代码以提高内部质量，通常需要更改代码库的多个部分。如果这样做很困难，则会降低人们执行重构的可能性，也会增加这样做的费用。一些组织（包括 Google）运行跨团队代码维护项目，其中个人负责在代码库中修复维护级层项，而这依赖于可以在组织中轻松访问和更改代码。</li>
+</ul>
+
+<p>能够找到示例并重复使用其他人的代码取决于能够轻松访问和搜索整个组织的源代码。实现此要求的最简单方法是针对整个组织的代码使用单个版本控制平台，即使该代码在平台内拆分为多个代码库也是如此。使用的版本控制平台越分散，就越难找到代码。</p>
+
+<p>某些组织可能希望锁定代码库部分，以便只有需要知道的人才能查看该代码库的该部分（Google 就是这样的组织）。理想情况下，这应该是例外（而非规则），并且应将软件设计为可最大限度地减少机密源代码表面。在很多情况下，使用版本控制系统的访问权限控制机制对机密代码进行逻辑隔离就足够了。</p>
+
+<p>您还应能够更改其他团队维护的代码。通常，此类更改将需要获得负责维护相关代码的团队批准。如果使用拉取请求（即在版本控制中创建分支和批准导致合并分支）等机制，可最大限度地减少允许其他团队建议更改的摩擦，同时也可防止<a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">未经授权的更改</a>，并强制执行信息安全控制（例如职责分离）。</p>
+
+<p>接下来，考虑依赖项。让团队能够轻松添加和更新依赖项，并确保它们稳定且很少破坏代码，这意味着：</p>
+
+<ul>
+<li><strong>提高安全性</strong>：随着依赖项老化，就越有可能发现漏洞。保持依赖项最新很重要，特别是在发现并修补漏洞之后。</li>
+<li><strong>加快交付</strong>：使用其他团队或组织开发的库意味着您无需编写自己的代码即可执行该操作。当您部署了一些机制来确保依赖项稳定并很少破坏代码后，可以将更多时间花在编码上，缩短维护时间。</li>
+</ul>
+
+<p>依赖项管理是软件开发团队的常见痛点。在应用之间保持依赖项最新和一致很复杂、耗时且成本高昂。许多组织无法为此任务分配足够的资源，这一问题因流程和工具不足而加剧。当在依赖项中不可避免地发现漏洞时，这可能表示严重的安全风险，并且必须更新使用依赖项的应用。</p>
+
+<p>务必采用并改进相关流程和工具，让团队能够轻松使用已知良好的依赖项版本并快速升级这些依赖项，包括自动化<a href="/architecture/devops/devops-tech-continuous-integration" track-type="article" track-name="internalLink" track-metadata-position="body">持续集成</a> (CI) 和<a href="/architecture/devops/devops-tech-test-automation" track-type="article" track-name="internalLink" track-metadata-position="body">测试</a>，以发现新版本的依赖项是否包含破坏性更改，并快速且简单地将正在使用的依赖项的版本与使用这些版本的系统相关联。</p>
+
+<p>在软件中添加依赖项时有两种常用的模型：vendoring 和声明式清单。在 vendoring 中，会将每个依赖项的源代码或二进制文件随应用一起签入版本控制中。或者，大多数现代平台都有一个依赖项管理工具，用于管理签入版本控制的声明式清单文件中指定的依赖项（例如 Python 的 pip、Node.js 的 npm、R 的 CRAN 和 .NET 的 NuGet）。</p>
+
+<p>无论您是使用 vendoring 还是使用清单，最重要的注意事项都是：</p>
+
+<ul>
+<li><strong>可追溯性</strong>：确保您可以从任何给定的软件包或部署追溯到用于构建它的每个依赖项的确切版本。否则，将无法调试因依赖项更改而导致的问题。</li>
+<li><strong>可再现性</strong>：您的构建过程应尽可能具有确定性。尝试调试在不同机器上具有不同行为的构建过程引发的问题非常困难。</li>
+</ul>
+
+<h3 id="implementing_code_maintainability_at_google" data-text="在 Google 中实现代码可维护性">在 Google 中实现代码可维护性</h3>
+
+<p>Google 通过相对不同的方法实现代码可维护性。虽然我们的方法需要权衡利弊，且并非适合所有人，但这样做可以有效地让团队实现本文中所述的目标。</p>
+
+<p>全球有 95% 的 Google 软件开发者使用<a href="/architecture/devops/devops-tech-trunk-based-development" track-type="article" track-name="internalLink" track-metadata-position="body">主干开发</a>模型，处理通过集中式源代码控制系统维护的共享单一代码库。<a href="http://dl.acm.org/citation.cfm?id=2854146" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">2016 年</a>，Google 代码库包含“大约 10 亿个文件，其中包括 Google 成立 18 年以来大约 3500 万次提交的历史记录。该代码库包含 86 TB 的数据，其中包括大约 20 亿行代码，分布在 900 万个唯一源代码文件中”。</p>
+
+<p>由于所有 Google 代码都保存在一个代码库中，因此可以轻松找到和更改其他团队的代码。Google 提供内部搜索引擎，使您可以轻松地搜索整个代码库。开发者可通过各种工具创建更改列表以供审核和批准。系统会针对每个更改列表运行测试，并且可以对更改列表进行更新和评论。与许多其他平台类似，Google 的代码审核工具可以向审核者建议任何给定更改。Google 代码库中的每个目录都有一个 OWNERS 文件，其中列出了可以批准该目录中的文件更改的个人或组（类似功能在 <a href="https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">GitHub</a>、<a href="https://docs.gitlab.com/ee/user/project/code_owners.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">GitLab</a> 和 <a href="https://marketplace.atlassian.com/apps/1218598/code-owners-for-bitbucket-server?hosting=server&amp;tab=overview" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Bitbucket</a> 中有提供）。快速搜索、审批者建议和自动化测试，使得建议更改、审核和协作变得简单而强大。</p>
+
+<p>借助这些工具，更改代码库多个部分的大规模重构相对容易执行并且能够以原子方式完成。Google 构建的工具可进一步简化和自动化执行会影响代码库重要部分的更改的过程。Google 工具包含一个名为 Blaze 的构建系统，用于构建和测试来自源代码的任何更改，包括依赖项。（Blaze 部分以开源工具 <a href="https://bazel.build/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Bazel</a> 的形式发布。）Google 中的每个人都可以轻松发现并建议对 Google 的任何部分进行更改，包括其基础架构配置，这些配置也保存在同一单一代码库中。代码共享和重复使用很简单。</p>
+
+<p>Google 提供了一些控制措施来管理开源软件的依赖项。首先，Google 使用的所有开源软件都必须将其源代码签入 Google 单一代码库。其次，任何时候都只能将给定库的一个版本签入源代码控制。第三，所有软件都是静态链接并基于源代码构建。最后，只要库的源代码发生更改，就会触发所有使用该依赖项的软件的重新构建和自动化测试。</p>
+
+<p>通过这些控制措施及 Google 强大的 CI 基础架构，您可以轻松让生产系统保持最新状态，并确保使用新版本的依赖项。它们还有助于确保所有系统都使用给定库的一致版本（消除了“钻石依赖项”地狱的可能性，即产品依赖于两个组件，而这些组件又依赖于不同版本的<em></em>通用库，使得无法构建产品。）</p>
+
+<p>Google 管理外部代码依赖项的的方法权衡是更难以添加新依赖项（代码可维护性的主要结果之一）。任何新依赖项都必须将其源代码签入 Google 单一代码库，这意味着，在最初和任何升级时，都必须先审核和测试代码。但是，这种严谨级别有助于防止将存在安全漏洞的代码放入 Google 产品，并确保所有依赖项也明确指定了维护者。</p>
+
+<h2 id="common_pitfalls_of_implementing_code_maintainability" data-text="实现代码可维护性的常见误区">实现代码可维护性的常见误区</h2>
+
+<p>让所有人都可以全面搜索和更改所有代码的主要障碍是工具支持和组织文化。</p>
+
+<p>第一个常见误区是多个版本控制代码库或具有严格访问权限设置的版本控制代码库。理想情况下，组织应该有一个版本控制平台，其中包含所有代码。默认访问权限最好允许组织中的任何人查看任何源代码文件，并且可以限制对敏感文件的访问。还应有一种方法来搜索版本控制。</p>
+
+<p>相比之下，组织通常限制谁可以更改版本控制。这会导致第二个误区：缺少工具和流程，导致用户无法更改代码库中自身没有写入权限的部分。对于解决您依赖其代码的其他团队通常无意中造成的问题，这通常是一个重大障碍。这也会阻止涉及代码库多个部分的重构。</p>
+
+<p>为了缓解此问题，一些现代版本控制工具提供了一种方法来提交、复核、审批和审核代码库中用户没有写入权限的部分的更改请求。</p>
+
+<p>即使提供工具支持，组织也需要对在组织内提供和搜索代码库放心，甚至也对供应商和承包商放心。如果组织的版本控制代码库包含大量机密信息和不能在团队之间共享的代码，则可能无法实现这一点。</p>
+
+<p>使用二进制文件依赖项更为常见，但每种语言都有各自用于管理二进制依赖项的工具链。创建标准策略和惯例以在组织的整个软件产品组合中跨这些工具链有效地管理和跟踪依赖项是一项复杂的工作。需要对 CI 基础架构进行重大投资，让您可以轻松测试新版本的库是否与现有系统兼容，以及是否有漏洞，才能简化定期升级第三方库的流程。</p>
+
+<p>实际上，大多数组织都会让团队来管理依赖项，导致结果差异很大。因此，如果在库中发现漏洞，快速且可预测地做出响应通常是非常麻烦的：即使找到受影响的服务通常也是一个重大的考古项目。</p>
+
+<h2 id="how_to_measure_code_maintainability" data-text="如何衡量代码可维护性">如何衡量代码可维护性</h2>
+
+<p>下面是一些有助于衡量代码可维护性的简单方法：</p>
+
+<ul>
+<li>贵组织的代码库有多少百分比是可搜索？</li>
+<li>要更改我没有写入权限的代码库部分，中位数完成时间是多少？</li>
+<li>我们的代码库有多少百分比是重复代码？未使用的百分比是多少？</li>
+<li>在使用的所有库中，有多少百分比的应用未使用最新的稳定版本？</li>
+<li>我们在生产环境中具有每个库的多少个不同版本？中位数是多少？良好的目标是什么？有多少个版本超过 1 年？</li>
+<li>团队升级其库的频率如何？这需要多长时间？</li>
+</ul>
+
+<p>在考虑要衡量的项目时，有三个用例需要重点关注：</p>
+
+<ul>
+<li>管理技术和设计债务</li>
+<li>变更管理（包括紧急变更）</li>
+<li>修补漏洞。</li>
+</ul>
+
+<p>随着代码库的增长，技术债务是一个重要顾虑。随着组织以及组织及其客户依赖的产品不断发展，能够重构<a href="/architecture/devops/devops-tech-architecture">和重新设计代码</a>非常重要。对于大型代码库，这可能很复杂且令人烦恼，同时缺少重要工具支持。能够识别未使用的代码、重复代码、测试覆盖率不佳的代码或包含漏洞的代码也很重要。第一步是确保您的工具可让您建立和跟踪指标，以识别有待改进的方面并以此为基础安全地采取行动。</p>
+
+<p>第二步是<a href="/architecture/devops/devops-tech-database-change-management">变更管理</a>。当有人对代码库部分进行更改时，您的工具在多大程度上有助于检测此更改的影响？如果另一个团队受到影响，那么他们多快可以采取行动来补救问题，尤其是修复位于代码库的其他区域时？如果必须进行紧急变更，那么在代码库中对代码进行所需变更、测试和发布需要多长时间？</p>
+
+<p>建立和跟踪指标，以便跟踪更改在流程中传播所需的时间。然后找出瓶颈并努力改进您的流程，并在适当时添加工具支持。请注意“紧急”流程，以免为了获得速度而绕过验证和审批，目标应是确保您的常规流程既可靠又足够快速，以便在紧急情况下有效。</p>
+
+<p>修补漏洞是尤为重要的变更管理场景。如果在库中发现漏洞，需要多长时间才能发现和修补使用易受攻击库版本的软件？如果您不确定，不妨定期测试一下。鉴于处理漏洞以及数据和代码渗漏的可能产生的大笔费用以及此类攻击的发生频率，通常有必要投入大量资源来确保您依靠的第三方软件是最新并且在发现漏洞时可以轻松升级。</p>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li><a href="https://research.google/pubs/pub45424/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">为什么 Google 在单一代码库中存储数十亿行代码</a></li>
+<li><a href="https://www.youtube.com/watch?v=W71BTkUbdqE" target="youtube" track-type="article" track-name="youtubeLink" track-metadata-position="body">Rachel Potvin 有关 Google 单一代码库的演示文稿</a></li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

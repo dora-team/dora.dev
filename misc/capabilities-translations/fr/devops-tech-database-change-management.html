@@ -1,0 +1,134 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Technologies DevOps : gestion des modifications des bases de données</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Remarque</strong> :<span> <em>La gestion du changement de base de données</em> fait partie d'un ensemble de fonctionnalités permettant d'améliorer
+les performances organisationnelles et de livraison de logiciels. Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche de DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les fonctionnalités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>Les modifications des bases de données constituent souvent une source importante de risques et de retards lors de l'exécution des déploiements. Le programme <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> a identifié les pratiques liées aux bases de données qui facilitent la mise en œuvre de la livraison continue. Ces pratiques recommandées permettent d'améliorer les performances de livraison et la disponibilité des logiciels.</p>
+
+<p>Les recherches du programme DORA ont révélé que l'intégration des opérations de base de données dans le processus de livraison de logiciels contribue de façon positive à la <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">livraison continue</a>.
+Mais comment vos équipes peuvent-elles améliorer la livraison de votre base de données en implémentant la livraison continue ? Certaines pratiques permettent de s'assurer d'obtenir de meilleures performances.</p>
+
+<p>Le programme DORA a mis en lumière le fait qu'une communication efficace et une gestion complète des configurations doivent nécessairement intégrer les opérations de base de données. Les équipes expertes en livraison continue stockent leurs modifications de bases de données sous forme de scripts dans le contrôle des versions et gèrent ces modifications de la même manière que celles apportées aux applications de production. De plus, lorsque des modifications d'une application imposent de modifier les bases de données, ces équipes en discutent avec les personnes responsables des bases de données de production et veillent à ce que l'équipe d'ingénierie ait une visibilité sur l'avancement des modifications en attente.</p>
+
+<p>Quand les équipes adoptent ces pratiques, les modifications des bases de données n'entraînent pas de ralentissements ni de problèmes lors des déploiements de code.</p>
+
+<h2 id="how_to_implement_database_change_management" data-text="Mettre en œuvre la gestion des modifications des bases de données">Mettre en œuvre la gestion des modifications des bases de données</h2>
+
+<p>La mise en œuvre d'une gestion efficace des modifications des bases de données présente deux aspects : culturel et technique. Cette section aborde ces deux aspects.</p>
+
+<h3 id="establish_effective_communication_of_database_changes" data-text="Établir une communication efficace au sujet des modifications des bases de données">Établir une communication efficace au sujet des modifications des bases de données</h3>
+
+<p>Des études montrent que les équipes obtiennent de meilleures performances lorsqu'elles discutent des modifications avec les responsables de la gestion des bases de données de production, et lorsque toutes les personnes concernées ont accès à l'avancement des modifications en attente.</p>
+
+<p>Discuter des modifications proposées avec les administrateurs de bases de données de production est important pour plusieurs raisons. Tout d'abord, ces experts peuvent vous conseiller sur la meilleure façon d'obtenir de bons résultats et vous aider à identifier les problèmes potentiels, tels que des soucis de performances.
+En effet, dans les systèmes de production, de nombreuses opérations présentent des performances très différentes de celles constatées sur les postes de travail des développeurs. En outre, ces échanges fournissent aux administrateurs de bases de données des informations sur les événements en amont, ce qui leur permet de mieux anticiper l'impact des modifications à venir.</p>
+
+<p>Il est également important que tous les participants aient la visibilité nécessaire sur l'avancement des modifications afin que les équipes, y compris les administrateurs de bases de données, puissent comprendre les modifications à venir, les résultats des tests et les incidences des modifications apportées au schéma sur les diverses bases de données partagées en production et hors production. Vous pouvez faciliter la visibilité en procédant de la façon suivante :</p>
+
+<ul>
+<li>Conservez dans le contrôle des versions toutes les modifications de schéma de base de données, ainsi que le code d'application dont dépend le schéma.</li>
+<li>Utilisez un outil permettant de consigner les modifications apportées et les environnements concernés, ainsi que les résultats obtenus.</li>
+</ul>
+
+<p>Ces pratiques vous assurent également de disposer d'une source canonique fiable pour toutes les modifications et facilitent l'accès à ces informations à des fins d'audit.</p>
+
+<h3 id="treat_all_database_schema_changes_as_migrations" data-text="Considérer toutes les modifications du schéma de base de données comme des migrations">Considérer toutes les modifications du schéma de base de données comme des migrations</h3>
+
+<p>Un modèle couramment utilisé pour gérer les modifications des bases de données consiste à capturer chaque modification sous la forme d'un script de migration et à conserver celui-ci dans le contrôle des versions, comme illustré dans le schéma suivant. Chaque script de migration possède un numéro de séquence unique. Vous savez ainsi dans quel ordre appliquer les migrations.</p>
+
+<p><img src="/static/architecture/devops/images/database-change-management-1.png" alt="Le schéma montre la capture de chaque modification apportée à votre base de données sous la forme d&amp;#39;un script de migration avec un numéro de séquence unique."/></p>
+
+<p>Assurez-vous ensuite que chaque instance de base de données possède une table qui enregistre les migrations exécutées sur cette instance. De cette manière, vous disposez d'un contrôle des versions pour le schéma de base de données. Il vous suffit ensuite d'utiliser un outil permettant d'appliquer les scripts de migration pour amener la base de données à la version de schéma souhaitée. Voici quelques exemples d'outils :</p>
+
+<ul>
+<li><a href="https://github.com/golang-migrate/migrate" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">migrate</a>
+(Go)</li>
+<li><a href="https://pypi.org/project/alembic/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">ambemic</a>
+(Python)</li>
+<li><a href="https://guides.rubyonrails.org/active_record_migrations.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Migrations Active Record</a>
+(Ruby on Rails)</li>
+<li><a href="https://github.com/dbup/dbup" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">dbup</a>
+(.NET)</li>
+<li><a href="https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Migrations Entity Framework</a>
+(.NET)</li>
+<li><a href="https://laravel.com/docs/7.x/migrations" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Migrations Laravel</a>
+(PHP)</li>
+<li><a href="https://flywaydb.org/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Flyway</a>
+(indépendant de la plate-forme)</li>
+<li><a href="https://www.liquibase.org/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Liquibase</a>
+(indépendant de la plate-forme)</li>
+</ul>
+
+<p>Les migrations permettent également de créer des schémas de base de données vides pour le développement et les tests.</p>
+
+<p>Comme le montre le diagramme suivant, chaque instance de base de données possède une table qui enregistre les migrations que vous avez exécutées sur cette instance. Vous pouvez ensuite effectuer des mises à jour automatiquement à l'aide d'un outil ou d'un script qui exécute les migrations qui n'ont pas encore été appliquées à l'instance de base de données et met à jour la table de migration à la fin de chaque opération.</p>
+
+<p><img src="/static/architecture/devops/images/database-change-management-2.png" alt="Exemple de table qui enregistre des migrations effectuées sur une instance"/></p>
+
+<p>Vous pouvez gérer les modifications de base de données de la même manière que vous gérez les modifications apportées aux applications, via un processus automatisé qui utilise le contrôle des versions comme source fiable.</p>
+
+<h3 id="zero-downtime_database_changes" data-text="Modifications des bases de données sans temps d'arrêt">Modifications des bases de données sans temps d'arrêt</h3>
+
+<p>De nombreuses organisations planifient des temps d'arrêt de leurs services lorsqu'elles modifient le schéma de base de données, car elles doivent coordonner l'opération avec les déploiements d'applications ou verrouiller les tables de base de données pendant l'exécution de ces modifications.
+La livraison continue vise à éliminer les temps d'arrêt lors des déploiements. Voici quelques stratégies permettant de modifier les schémas de base de données sans temps d'arrêt :</p>
+
+<ul>
+<li><strong>Utilisez un framework de migration de schéma en ligne</strong> tel que <a href="https://github.com/github/gh-ost" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">gh-ost</a> ou <a href="https://www.percona.com/doc/percona-toolkit/3.0/pt-online-schema-change.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">pt-online-schema-change</a>.
+Ces outils créent une copie fantôme ("ghost") de chaque table que vous souhaitez modifier, transfèrent la copie vide, puis effectuent une copie incrémentielle des données de la table d'origine et des modifications intervenues pendant la migration. Une fois le processus terminé, la table d'origine est remplacée par la copie fantôme. Certaines bases de données comme <a href="/spanner/docs/schema-updates" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud Spanner</a> permettent d'effectuer des modifications de schéma sans aucun temps d'arrêt.</li>
+<li><p><strong>Dissociez les modifications de la base de données des modifications d'applications</strong> à l'aide du <a href="https://medium.com/continuousdelivery/expand-contract-pattern-and-continuous-delivery-of-databases-4cfa00c23d2e" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">schéma de propagation parallèle des modifications</a>.
+Avec ce modèle, vous ne modifiez jamais les objets de base de données existants. À la place, vous ajoutez de nouvelles structures aux anciennes. Vous pouvez, par exemple, remplacer une colonne du champ d'adresse par deux colonnes : <code translate="no" dir="ltr">address_1</code> et <code translate="no" dir="ltr">address_2</code>.</p>
+
+<p>Au lieu de supprimer l'ancienne colonne, d'ajouter la nouvelle et de déployer simultanément une nouvelle version de l'application, vous ajoutez les nouvelles colonnes tout en conservant les anciennes. Vous pouvez le faire avant de déployer l'application. La nouvelle version de l'application peut alors consulter les nouvelles colonnes et lire les données si elles sont présentes et non nulles. Dans le cas contraire, elle peut les lire à partir de l'ancienne colonne. Par la suite, il est possible d'écrire à la fois dans les colonnes anciennes et nouvelles, de différer la migration des données et de restaurer l'ancienne application sans qu'il soit nécessaire d'effectuer un rollback de la base de données.</p>
+
+<p>De cette manière, le déploiement de l'application est découplé de la modification de la base de données, laquelle peut généralement être réalisée sans temps d'arrêt puisque la migration des données est différée. Nous faisons le compromis d'un surcroît de complexité dans l'application afin de réduire les contraintes liées au déploiement.
+Les déclencheurs de base de données permettent également d'assurer la synchronisation des données dans les colonnes nouvelles et anciennes.</p></li>
+<li><p><strong>Concevez et mettez en œuvre une stratégie de partitionnement et d'archivage des données.</strong> La présence d'un grand nombre de lignes dans les tables de base de données est la cause principale des migrations de longue durée. Assurez-vous que vos applications sont conçues pour permettre le partitionnement et l'archivage des données afin d'éviter que les tables ne deviennent trop volumineuses. Par exemple, vous pouvez créer plusieurs instances d'une table pour les différents trimestres. Plutôt qu'une seule table <code translate="no" dir="ltr">survey_answers</code>, vous pourriez avoir <code translate="no" dir="ltr">survey_answers_2020Q1</code>, <code translate="no" dir="ltr">survey_answers_2020Q2</code>, etc. Assurez-vous que les vérifications de la conception et de l'architecture de l'application comprennent la validation de la stratégie de partitionnement ou d'archivage des données associées.</p></li>
+<li><p><strong>Utilisez une architecture d'approvisionnement basée sur les événements.</strong> Dans une <a href="https://microservices.io/patterns/data/event-sourcing.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">architecture d'approvisionnement basée sur les événements</a>, ce n'est pas l'état de l'application qui est stocké dans la base de données, mais les <em>modifications</em> apportées à son état. Celles-ci sont consignées dans un journal d'événements, lesquels sont appelés <em>commandes</em>. Ainsi, lorsqu'un client modifie son adresse, au lieu de mettre à jour les informations client dans une table, l'application émet une commande de changement d'adresse stockée dans la base de données. C'est ainsi que fonctionnent les journaux de transactions de base de données et le contrôle des versions. Il s'agit d'un modèle couramment utilisé dans les systèmes distribués. Dans une architecture basée sur les événements, ceux-ci peuvent être placés en file d'attente pendant que les migrations de la base de données sont effectuées. Les événements de la file d'attente sont ensuite vidés dans la base de données une fois la migration terminée. Pour certaines bases de données, il est possible de placer des requêtes en file d'attente pendant l'exécution des migrations de schéma. Cette solution est efficace, à condition que les migrations se terminent suffisamment rapidement.</p></li>
+<li><p><strong>Utilisez une solution NoSQL.</strong> Certaines bases de données NoSQL, telles que <a href="https://firebase.google.com/docs/firestore" target="firebase" track-type="article" track-name="firebaseLink" track-metadata-position="body">Firestore</a> et <a href="/bigtable" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud BigTable</a>, ne sont pas concernées par le problème des temps d'arrêt imputables aux modifications de schémas. Les bases de données de documents comme Firestore possèdent un schéma implicite, géré au niveau de la couche applicative et non au niveau de la couche de la base de données.
+L'utilisation de bases de données NoSQL implique toutefois certains compromis. Par conséquent, il ne s'agit pas d'une solution optimale pour toutes les applications.</p></li>
+</ul>
+
+<p>En plus d'éliminer les temps d'arrêt planifiés, vous souhaitez également éviter ceux qui ne le sont pas. Assurez-vous de tester chaque modification de schéma sur un <a href="/architecture/devops/devops-tech-test-data-management" track-type="article" track-name="internalLink" track-metadata-position="body">ensemble de données de type production</a> (dont, bien entendu, les informations personnelles ou confidentielles ont été préalablement nettoyées) afin d'être certain que votre application se comporte de la façon attendue, pendant et après la migration. Certaines organisations créent à cette fin une version nettoyée de leur base de données de production quotidiennement. Si vous utilisez un système de gestion de bases de données comportant plusieurs nœuds en production, veillez à effectuer les tests sur une instance dotée d'au moins deux nœuds afin de détecter les problèmes potentiels liés au système distribué.</p>
+
+<h2 id="common_pitfalls_of_implementing_database_change_management" data-text="Problèmes courants liés à la mise en œuvre de la gestion des modifications des bases de données">Problèmes courants liés à la mise en œuvre de la gestion des modifications des bases de données</h2>
+
+<p>Il existe un certain nombre de pièges courants dont vous devez tenir compte lors de la mise en œuvre des pratiques essentielles décrites ici.</p>
+
+<p>Tout d'abord, de nombreuses organisations sont fortement cloisonnées. Les administrateurs de bases de données travaillent souvent de façon isolée avec leur équipe, qui utilise son propre processus de gestion des modifications. Lorsque les équipes de livraison de logiciels mettent en œuvre un nouveau processus de gestion des modifications des bases de données sans consulter l'équipe des administrateurs de bases de données, celle-ci peut être réticente à utiliser le nouveau processus pour appliquer les modifications aux bases de données dont elle a la charge. Les avantages du nouveau processus peuvent ainsi s'en trouver considérablement réduits.</p>
+
+<p>La première étape consiste à associer cette équipe à la réalisation des objectifs présentés dans cet article. Il est important de s'assurer de son adhésion à tous les processus et changements technologiques proposés. Pour ce faire, le meilleur moyen est d'interroger les membres de l'équipe sur les problèmes auxquels ils sont confrontés, de voir comment les idées présentées dans cet article peuvent les aider à les résoudre et de proposer d'y travailler ensemble. Dans l'idéal, les équipes de livraison et d'administration de bases de données doivent trouver une solution mutuellement acceptable.</p>
+
+<p>Cet obstacle est souvent exacerbé par un autre piège : il est fréquent que plusieurs applications partagent le même schéma de base de données. Cela signifie que les équipes travaillant sur une application ne peuvent pas modifier le schéma sans potentiellement affecter d'autres applications. Il convient alors de mettre en place une solution unique permettant de gérer les modifications de la base de données pour toutes les applications qui partagent ce schéma de base de données. Il doit être possible, et même avantageux, de mettre en œuvre un mécanisme de contrôle des versions en libre-service permettant de déployer des modifications de base de données dans cette situation. Cependant, cela implique une planification et un déploiement minutieux.</p>
+
+<p>Enfin, la mise en œuvre de la gestion des modifications des bases de données basée sur la migration et les déploiements sans temps d'arrêt peut nécessiter un <a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">changement d'architecture</a> important.
+Vous devez en tenir compte dans votre estimation des efforts nécessaires à la mise en œuvre de ces pratiques.</p>
+
+<h2 id="how_to_measure_database_change_management" data-text="Mesurer la gestion des modifications des bases de données">Mesurer la gestion des modifications des bases de données</h2>
+
+<p>L'objectif d'un système efficace de gestion des modifications des bases de données est d'éviter de ralentir les déploiements ou de créer des problèmes. Il est important de mesurer le pourcentage d'échecs des modifications imputable en partie ou totalement aux modifications de la base de données, et dans quelle mesure les opérations liées aux modifications de la base de données contribuent au délai global entre le contrôle des versions et la publication.</p>
+
+<p>Si les modifications de la base de données nécessitent un temps d'arrêt planifié, cet aspect est également important. Pour mesurer l'impact économique des temps d'arrêt planifiés, tenez compte à la fois de la perte potentielle de revenu résultant du temps d'arrêt et du coût salarial des employés affectés aux déploiements en dehors des heures normales de travail.
+Le déploiement en dehors des heures de travail peut également contribuer à provoquer un burn-out à l'échelle de l'équipe. Ces conséquences possibles permettent de justifier les efforts nécessaires pour mettre en œuvre les solutions de déploiement sans temps d'arrêt décrites dans ce document.</p>
+
+<p>Pour évaluer le niveau d'automatisation, tenez compte de la proportion de modifications de la base de données effectuées en mode push à l'aide d'un processus entièrement automatisé. L'objectif est que 100 % des modifications de base de données soient effectuées de cette manière.</p>
+
+<h2 id="whats_next" data-text="Étapes suivantes">Étape suivante</h2>
+
+<ul>
+<li>Consultez la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">page DevOps</a> pour obtenir des liens vers d'autres articles et ressources.</li>
+<li>Découvrez la <a href="https://www.martinfowler.com/articles/evodb.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">conception de base de données évolutive</a>.</li>
+<li>Documentez-vous sur la <a href="https://medium.com/@chbussler/zero-downtime-database-migration-and-replication-to-and-from-cloud-spanner-99ad0c654d12" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">migration et la réplication de bases de données sans temps d'arrêt vers et depuis Cloud Spanner</a>.</li>
+<li>Découvrez les <a href="/solutions/databases" track-type="article" track-name="internalLink" track-metadata-position="body">solutions de base de données de Google Cloud</a>.</li>
+<li>Livres recommandés :<ul><li><a href="http://shop.oreilly.com/product/0636920039761.do" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Database Reliability Engineering</em></a> (Ingénierie en fiabilité des bases de données) de Laine Campbell et Charity Majors</li>
+<li><a href="https://books.google.com/books/about/Refactoring_Databases.html?id=puBQAAAAMAAJ" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>Refactoring Databases</em></a> (Refactoriser les bases de données) de Scott W. Ambler et Pramod J. Sadalage</li>
+</ul></li>
+<li>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</li>
+<li>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</li>
+</ul>
+
+</body></html>

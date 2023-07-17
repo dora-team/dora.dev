@@ -1,0 +1,118 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Technologie: Ein Linksruck bei der Sicherheit</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Linksverschiebung bei der Sicherheit</em> ist eine Möglichkeit, mit der die Softwareleistung und die Unternehmensleistung verbessert werden kann. Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">"State of DevOps"-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, wissenschaftlich exakten Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>Sicherheit liegt in der Verantwortung aller. Die US-Studie <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">State of DevOps Report</a> (PDF) zeigt, dass leistungsstarke Teams 50 % weniger Zeit für die Behebung von Sicherheitsproblemen aufwenden als Teams mit wenig Leistung. Durch die Integration von Zielen zur Informationssicherheit (InfoSec) in die tägliche Arbeit können Teams ihre Leistung bei der Softwarebereitstellung steigern und sicherere Systeme aufbauen.
+Diese Idee wird auch als <em>"shifting left"</em> (Verschiebung nach links) bezeichnet, weil Bedenken, darunter auch Sicherheitsprobleme, früher im Lebenszyklus der Softwareentwicklung angegangen werden (d. H. in einem Planungsdiagramm, dessen Leserichtung von links nach rechts geht, also weiter links).</p>
+
+<p>In der Softwareentwicklung gibt es mindestens die folgenden vier Aktivitäten: Design, Entwicklung, Test und Veröffentlichung. In einem traditionellen Softwareentwicklungszyklus werden Tests (einschließlich Sicherheitstests) nach Abschluss der Entwicklung durchgeführt. Dies bedeutet in der Regel, dass ein Team erhebliche Probleme entdeckt, darunter auch Architekturfehler, deren Behebung teuer ist.</p>
+
+<p>Nachdem Fehler gefunden wurden, müssen Entwickler die verursachenden Faktoren ermitteln und beheben. In komplexen Produktionssystemen gibt es dabei meistens nicht nur eine Ursache, sondern eine Reihe von Faktoren, die zusammen einen Fehler verursachen.
+Fehler in Bezug auf Sicherheit, Leistung und Verfügbarkeit sind teuer und zeitaufwendig zu beheben. Sie erfordern oft Änderungen an der Architektur. Die Zeit, die es braucht, um den Fehler zu finden, eine Lösung zu entwickeln und diese vollständig zu testen, ist nicht vorhersehbar. Dadurch können sich Lieferdaten weiter verzögern.</p>
+
+<p>Continuous Delivery basiert auf dem Lean-Konzept, dem zufolge während des gesamten Produktionsprozesses eine Qualitätssicherung erfolgt. W. Edward Deming drückt es in seinem Buch <a href="https://deming.org/explore/fourteen-points?apartner=aarp" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Fourteen Points for the Transformation of Management</a> so aus: "Wir sollten uns nicht länger auf Prüfungen konzentrieren, um Qualität zu erreichen. Lassen wir die massenhafte Prüfung hinter uns und integrieren stattdessen als Erstes qualitätssichernde Maßnahmen im Produkt." Bei diesem Modell arbeiten Entwickler mit Sicherheits- und Testexperten zusammen und erstellen und liefern während des gesamten Produktlebenszyklus <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">kleine Arbeitspakete</a>.</p>
+
+<p>Untersuchungen der Organisation <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> (PDF) zeigen, dass Teams bessere Ergebnisse erzielen können, wenn sie Sicherheit in die tägliche Arbeit aller Nutzer einbeziehen, anstatt am Ende des Prozesses auf Sicherheitsbedenken zu testen. Es geht also darum, Sicherheitstests und -kontrollen in die tägliche Arbeit von Entwicklung, QA und Operations zu integrieren. Im Idealfall kann ein Großteil dieser Arbeit automatisiert und in die Deployment-Pipeline integriert werden. Wenn sich diese Aktivitäten automatisieren lassen, können Sie bei Bedarf Belege generieren, um nachzuweisen, dass Ihre Steuerelemente effektiv funktionieren. Diese Informationen sind Auditoren, Prüfern und allen anderen, die im Wertstrom arbeiten, nützlich.</p>
+
+<h2 id="how_to_implement_improved_security_quality" data-text="Verbesserte Sicherheitsqualität implementieren">Verbesserte Sicherheitsqualität implementieren</h2>
+
+<p>Damit die Sicherheitsprüfung im Softwareentwicklungszyklus nach "links" verschoben werden bzw. früher erfolgen kann, müssen an traditionellen Methoden zur Informationssicherheit einige Änderungen vorgenommen werden. Bei näherer Betrachtung gibt es zu traditionellen Methoden der Softwareentwicklung aber keine wesentliche Abweichung.</p>
+
+<h3 id="get_infosec_involved_in_software_design" data-text="InfoSec in Softwaredesign einbinden">InfoSec in Softwaredesign einbinden</h3>
+
+<p>Das InfoSec-Team sollte in die Designphase aller Projekte einbezogen werden. Wenn die Designphase eines Projekts beginnt, kann eine Sicherheitsüberprüfung hinzugefügt werden, um das Design in die Entwicklungsphase freizugeben. Dieser Überprüfungsprozess könnte eine grundlegende Veränderung im Entwicklungsprozess darstellen, und diese Veränderung erfordert möglicherweise eine Schulung der Entwickler. Außerdem kann es notwendig sein, die Anzahl der Mitarbeiter des InfoSec-Teams zu erhöhen und Maßnahmen zu ergreifen, um die Veränderung organisationsseitig zu unterstützen. Die Einbindung von InfoSec stellt möglicherweise zwar eine Veränderung in der Organisation dar, neue Beteiligte im Designprozess stellt allerdings kein neues Konzept dar und sollte vielmehr begrüßt werden, denn es hat einige Vorteile.</p>
+
+<h3 id="develop_security-approved_tools" data-text="Sicherheitsrelevante Tools entwickeln">Sicherheitsrelevante Tools entwickeln</h3>
+
+<p>Wenn Entwicklern vorab genehmigte Bibliotheken und Tools zur Verfügung gestellt werden, die Kommentare vom InfoSec-Team enthalten, lässt sich Entwicklercode standardisieren. Standardcode erleichtert dem InfoSec-Team die Überprüfung von Code. Standardcode erlaubt auch automatisierte Tests zur Prüfung, ob Entwickler vorab genehmigte Bibliotheken verwenden. Dies kann auch dazu beitragen, dass InfoSec weniger beitragen und Einfluss nehmen muss, denn das Team ist im Vergleich zu Entwicklern und Testern normalerweise unterbesetzt.</p>
+
+<h3 id="develop_automated_testing" data-text="Automatisierte Tests entwickeln">Automatisierte Tests entwickeln</h3>
+
+<p>Durch die Integration von Sicherheitstests in den <a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">automatisierten Testprozess</a> kann der Code <a href="/architecture/devops/devops-tech-continuous-integration" track-type="solution" track-name="internalLink" track-metadata-position="body">kontinuierlich und in großem Umfang getestet werden</a>, ohne dass eine manuelle Überprüfung erforderlich ist. Automatisierte Tests können häufig auftretende Sicherheitslücken erkennen und im Rahmen einer Continuous Integration-Pipeline oder eines Build-Prozesses einheitlich angewendet werden. Damit automatisierte Tests möglich sind, müssen automatisierte Sicherheitstests konzipiert und entwickelt werden, und zwar sowohl zu Beginn als auch fortlaufend, wenn neue Sicherheitstests ermittelt werden. Hier besteht eine weitere Möglichkeit, die Arbeit des InfoSec-Teams zu skalieren.</p>
+
+<h2 id="common_pitfalls" data-text="Häufige Stolperfallen">Häufige Schwierigkeiten</h2>
+
+<p>Nachstehend sind einige häufige Probleme aufgeführt, die Teams daran hindern, Sicherheitsaspekte früher in die Softwareentwicklung einzubinden:</p>
+
+<ul>
+<li><strong>Mangelnde Zusammenarbeit mit dem InfoSec-Team</strong> Den größten Fehler machen Teams, wenn sie nicht mit dem InfoSec-Team zusammenarbeiten. In einer Zeit, in der Bedrohungen allgegenwärtig sind und andauern, nimmt InfoSec eine äußerst wichtige Funktion ein.</li>
+<li><strong>Unterbesetzung von InfoSec-Teams</strong> InfoSec-Teams sind oft nicht ausreichend besetzt.
+James Wickett, Senior Security Engineer bei Verica <a href="https://blog.xebialabs.com/2017/04/20/10-tips-integrating-security-devops/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">empfiehlt</a> ein Verhältnis von 1 InfoSec-Mitarbeiter pro 10 Infrastruktur-Mitarbtieren pro 100 Entwicklern in großen Unternehmen.</li>
+<li><strong>Interaktion mit dem InfoSec-Team zu spät</strong> In vielen Fällen wird InfoSec erst am Ende des Softwarebereitstellungszyklus beteiligt, wenn es in der Regel mühsam und teuer ist, Änderungen vorzunehmen, die zur Verbesserung der Sicherheit erforderlich sind.</li>
+<li><strong>Sich mit gängigen Sicherheitsrisiken nicht vertraut machen</strong> Viele Entwickler kennen allgemeine Sicherheitsrisiken wie die <a href="https://owasp.org/www-project-top-ten/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">OWASP Top 10</a> und deren Verhinderung nicht.</li>
+</ul>
+
+<h2 id="ways_to_improve_security_quality" data-text="Möglichkeiten für eine bessere Sicherheitsqualität">Möglichkeiten für eine bessere Sicherheitsqualität</h2>
+
+<p>So können Sie die Leistung bei der Softwarebereitstellung und die Sicherheitsqualität verbessern:</p>
+
+<ul>
+<li><strong>Sicherheitsprüfungen durchführen</strong>. Führen Sie für alle wichtigen Funktionen eine Sicherheitsprüfung durch und achten Sie dabei darauf, dass die Sicherheitsprüfung die Entwicklung nicht verlangsamt.</li>
+<li><strong>Vorab genehmigten Code erstellen</strong>.  Lassen Sie das InfoSec-Team vorab genehmigte, benutzerfreundliche Bibliotheken, Pakete, Toolchains und Prozesse erstellen, die Entwickler und IT Operations bei ihrer Arbeit verwenden können.</li>
+<li><strong>Sicherheitsprüfung in jede Phase integrieren</strong>. Integrieren Sie InfoSec in die tägliche Arbeit des gesamten Softwarebereitstellungszyklus. Dazu gehört auch, dass das InfoSec-Team bei der Entwicklung der Anwendung dabei ist, an Software-Demos teilnimmt und währenddessen Feedback gibt.</li>
+<li><strong>Sicherheit testen</strong>. Testen Sie Sicherheitsanforderungen im Rahmen der automatisierten Tests, auch Bereiche, in denen vorab genehmigter Code verwendet werden sollte.</li>
+<li><strong>InfoSec zu Demos einladen</strong>. Wenn Sie das InfoSec-Team in die Demos Ihrer Anwendungen einbeziehen, kann es frühzeitig Sicherheitsmängel erkennen. Das gibt dem Team genügend Zeit, solche Probleme zu beheben.</li>
+</ul>
+
+<h2 id="ways_to_measure_security_quality" data-text="Möglichkeiten zur Messung der Sicherheitsqualität">Möglichkeiten zur Messung der Sicherheitsqualität</h2>
+
+<p>Mit den zuvor genannten Möglichkeiten zur Verbesserung im Blick können Sie die Sicherheit folgendermaßen messen.</p>
+
+<table>
+  <colgroup>
+    <col width="30%" />
+    <col width="35%" />
+    <col width="35%" />
+  </colgroup>
+<thead>
+<tr>
+<th><strong>Faktor zum Testen</strong></th>
+<th><strong>Geeignete Messwerte</strong></th>
+<th><strong>Ziel</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gibt an, ob Funktionen einer Sicherheitsprüfung unterzogen werden.</td>
+<td>Prozentualer Anteil der Funktionen, die zu Beginn des Designprozesses einer Sicherheitsprüfung unterzogen werden.</td>
+<td>Dieser Prozentsatz sollte mit der Zeit ansteigen.</td>
+</tr>
+<tr>
+<td>Gibt an, ob die Sicherheitsüberprüfung den Entwicklungszyklus verlangsamt.</td>
+<td>Gibt die Zeit an, die der Entwicklungsprozess durch die ergänzte Überprüfung länger dauert.</td>
+<td>Die Dauer der Sicherheitsüberprüfungen sollte sich verkürzen, bis ein vereinbarter Mindestwert erreicht ist.</td>
+</tr>
+<tr>
+<td>Gibt an, wie gut die Sicherheit in den Bereitstellungslebenszyklus integriert ist.</td>
+<td>Grad der Einbindung von InfoSec in jeden Schritt des Softwarebereitstellungszyklus. Sie können beispielsweise die Anzahl der Sicherheitsprüfungen messen, die in jeder Phase des Softwareentwicklungszyklus (Design, Entwicklung, Test und Release) erfasst werden.</td>
+<td>Dieser Wert sollte sich erhöhen, bis er einen Wert erreicht, der nahelegt, dass InfoSec vollständig in den Lebenszyklus integriert ist.</td>
+</tr>
+<tr>
+<td>Gibt an, ob automatisierte Tests die Sicherheitsanforderungen erfüllen.</td>
+<td>Die Einbindung des InfoSec-Teams in das Schreiben von automatisierten Tests. Sobald InfoSec mehr in den Testprozess einbezogen wird, die Anzahl oder der Prozentsatz der Sicherheitsanforderungen, die im automatisierten Testprozess enthalten sind.</td>
+<td>Dieser Prozentsatz sollte mit der Zeit ansteigen.</td>
+</tr>
+<tr>
+<td>Verwendung vorab genehmigter Bibliotheken, Pakete, Toolchains und Prozesse.</td>
+<td>Gibt am Anfang an, ob InfoSec an der Entwicklung von Tools beteiligt ist. Im Laufe der Arbeit die Anzahl der verfügbaren von InfoSec genehmigten Bibliotheken, Pakete und Toolchains oder die Anzahl dieser Ressourcen, die von den Entwicklungs- und Operations-Teams verwendet werden.</td>
+<td>Die Beteiligung sollte mit der Zeit zunehmen, bis die Organisation übereinstimmt, dass InfoSec die Tools in angemessenem Maß überwacht. Ebenso sollte sich der Prozentsatz oder die Anzahl der verwendeten vorab genehmigten Tools erhöhen, bis das Team alle von InfoSec erstellten oder genehmigten Tools verwendet. </td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Nächste Schritte</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li>Die <a href="https://owasp.org/www-project-top-ten/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">OWASP Top 10</a> erläutert die zehn größten Sicherheitsrisiken für Webanwendungen</li>
+<li>E-Book <a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Site Reliability Engineering (SRE)</a></li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

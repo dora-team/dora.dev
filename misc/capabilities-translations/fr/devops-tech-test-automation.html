@@ -1,0 +1,155 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Technologies DevOps : tests continus</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+<aside class="note"><strong>Remarque</strong> :<span> Le principe des <em>tests continus</em> figure parmi un ensemble de capacités permettant d'optimiser les performances organisationnelles et de livraison de logiciels.  Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les capacités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>Pour assurer la qualité des logiciels, il est essentiel d'obtenir des retours rapides sur l'impact des modifications effectuées tout au long du cycle de livraison des logiciels. Par le passé, les équipes avaient recours aux tests manuels et à l'inspection du code pour vérifier la précision du système.
+Ces inspections et tests suivaient généralement la phase "dev complete" (développement terminé). Cette approche présente les inconvénients suivants :</p>
+
+<ul>
+<li>Chronophage et coûteuse, la réalisation manuelle de tests de régression agit comme un goulot d'étranglement dans le processus. Elle rend impossible la publication fréquente de logiciels et empêche les développeurs d'obtenir des retours et commentaires rapides.</li>
+<li>Les tests et inspections manuels ne sont pas fiables, car les équipes sont généralement peu efficaces lorsqu'elles doivent effectuer des tâches répétitives comme les tests de régression manuels. Il est également difficile de prédire l'impact des modifications sur un système logiciel complexe par le biais d'une inspection.</li>
+<li>Une fois que le logiciel atteint la phase "dev complete" (développement terminé), les développeurs doivent attendre longtemps avant de recevoir des retours sur leurs modifications. Cela entraîne généralement un travail important pour trier les erreurs et les corriger. Lorsqu'ils sont découverts pendant cette phase, les problèmes de performances, de sécurité et de fiabilité nécessitent souvent des modifications de conception encore plus coûteuses.</li>
+<li>Les longs cycles de rétroaction compliquent également la tâche des développeurs pour apprendre à créer du code de qualité, et les équipes de développement sous pression peuvent parfois considérer que la qualité ne relève pas forcément de leur responsabilité.</li>
+<li>Lorsque les développeurs ne sont pas chargés de tester leur propre code, ils ont du mal à écrire du code qui se prête à des procédures de test.</li>
+<li>En ce qui concerne les systèmes qui évoluent avec le temps, assurer la mise à jour de la documentation associée aux tests demande des efforts considérables.</li>
+</ul>
+
+<p>Les équipes devraient plutôt :</p>
+
+<ul>
+<li>effectuer tous les types de tests continus tout au long du cycle de livraison des logiciels ;</li>
+<li>créer et organiser des suites de tests automatisés rapides et fiables à exécuter dans le cadre de vos <a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">pipelines de livraison continue</a>.</li>
+</ul>
+
+<p>Non seulement cela permet aux équipes de créer (et d'apprendre à créer) des logiciels de haute qualité plus rapidement, mais les recherches de l'équipe DORA montrent que cela permet également d'améliorer la stabilité des logiciels, de réduire la pression des équipes et de simplifier les déploiements.</p>
+
+<h2 id="how_to_implement_continuous_testing" data-text="Mettre en œuvre des tests continus">Mettre en œuvre des tests continus</h2>
+
+<p>Pour assurer la qualité des logiciels, vous devez continuellement exécuter des tests à la fois manuels et automatisés, tout au long du processus de livraison, afin de valider les fonctionnalités et l'architecture du système en cours de développement. Cette discipline présente à la fois un composant organisationnel et un composant technique. D'un point de vue organisationnel, les recherches de l'équipe DORA montrent que les équipes sont plus performantes si elles :</p>
+
+<ul>
+<li>autorisent les testeurs à travailler avec les développeurs tout au long du processus de développement et de livraison des logiciels (notez que "testeur" est un rôle, et pas nécessairement un poste à temps plein, bien qu'il s'agisse d'un modèle commun décrit ci-dessous) ;</li>
+<li>effectuent des tests manuels, tels que des tests exploratoires, des tests de facilité d'utilisation et des tests de validation tout au long du processus de livraison.</li>
+</ul>
+
+<p>Une activité technique clé consiste à créer et à gérer un ensemble de suites de tests automatisés, comprenant les éléments suivants.</p>
+
+<ul>
+<li><strong>Tests unitaires</strong>. qui servent généralement à tester une seule méthode, classe ou fonction isolée, et permettent aux développeurs de vérifier que le code s'exécute comme prévu. Pour vous assurer que le code peut être testé et que les tests sont faciles à gérer, écrivez vos tests unitaires avant d'écrire du code. Cette approche est également appelée <a href="http://www.jamesshore.com/v2/books/aoad1/test_driven_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">développement piloté par les tests</a> (TDD, Test-Driven Development).</li>
+<li>Des <strong>tests de validation</strong>, qui servent généralement à tester une application ou un service en cours d'exécution (en général avec des dépendances remplacées par des <a href="https://testing.googleblog.com/2013/07/testing-on-toilet-know-your-test-doubles.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">doublures</a>) pour garantir qu'un niveau de fonctionnalité supérieur fonctionne comme prévu, et qu'aucune erreur de régression n'a été détectée. Par exemple, des tests de validation peuvent vérifier si un scénario utilisateur respecte les critères d'éligibilité de l'entreprise ou s'assurer de la précision d'une API. Rédigez ces tests dans le cadre du processus de développement. Le travail ne pourra pas entrer en phase "dev complete" (développement terminé) tant que les tests de validation automatisés n'auront pas été exécutés et réussis.</li>
+</ul>
+
+<p>Le diagramme suivant, <a href="http://www.exampler.com/old-blog/2003/08/22/#agile-testing-project-2" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">créé par Brian Marick</a> et utilisé comme référence dans le livre <a href="https://books.google.com/books/about/Agile_Testing.html?id=68_lhPvoKS8C" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body"><em>Agile Testing: A Practical Guide for Testers and Agile Teams</em></a> (Tests Agile : guide pratique pour testeurs et équipes Agile), indique les types de tests manuels et automatisés à effectuer.</p>
+
+<p><img src="/static/architecture/images/ta-image1.png" alt="image"/></p>
+
+<p>Les tests automatisés présentés dans le diagramme ci-dessus peuvent être intégrés dans un <a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">pipeline de déploiement</a> de <a href="/architecture/devops/devops-tech-continuous-delivery">livraison continue</a>.
+Dans ces pipelines, chaque modification exécute un build qui crée des packages logiciels, effectue des tests unitaires et réalise éventuellement d'autres vérifications telles qu'une analyse statique. Une fois que ces packages ont passé la première étape, des tests de validation automatisés plus complets, et éventuellement d'autres tests non fonctionnels, tels que les tests de performances et les analyses de failles, sont exécutés sur des logiciels en cours d'exécution automatiquement déployés. Chaque fois qu'un build franchit une étape de validation, celui-ci est généralement disponible pour l'exploration manuelle et la réalisation de tests de facilité d'utilisation. Enfin, si aucune erreur n'est détectée au cours de ces étapes manuelles, l'application est considérée comme étant livrable.</p>
+
+<p>L'exécution de tests continus dans le cadre d'un pipeline contribue à accélérer les retours pour les développeurs, à réduire les délais de livraison et à obtenir un faible taux d'erreurs au sein des environnements de production. La majeure partie du travail effectué par les développeurs peut être validée en quelques minutes seulement, contre plusieurs jours voire plusieurs semaines, ce qui leur permet de corriger les bugs sans délai.</p>
+
+<p>Le diagramme ci-dessous illustre un exemple de pipeline de déploiement linéaire simple.
+Dans cet exemple, la couleur verte signifie qu'aucun problème n'a été détecté, et le rouge signifie qu'un ou plusieurs problèmes ont été découverts.</p>
+
+<p><img src="/static/architecture/images/ta-image3.png" alt="image"/></p>
+
+<p>Dans le cas du modèle de pipeline de déploiement, chaque modification crée une version finale. La boucle de rétroaction rapide permet de détecter des problèmes le plus en amont possible. Lorsqu'un package atteint la fin du pipeline et que l'équipe ne se sent pas encore prête pour la publication ou qu'elle découvre des défaillances en production, le pipeline doit être amélioré (par exemple, en ajoutant ou en mettant à jour des tests).</p>
+
+<h2 id="common_pitfalls" data-text="Écueils les plus courants">Écueils les plus courants</h2>
+
+<ul>
+<li><p><strong>Les développeurs ne sont pas impliqués lors des tests.</strong> Les recherches de l'équipe DORA montrent que les performances sont meilleures lorsque les développeurs sont principalement responsables de la création et de la maintenance de suites de tests automatisés, et lorsqu'il leur est facile de pallier aux défaillances révélées par les tests de validation. Lorsque d'autres équipes sont chargées de l'automatisation des tests, les deux problèmes suivants peuvent se poser :</p>
+
+<ul>
+<li><strong>Les suites de tests sont souvent défectueuses.</strong> Les modifications apportées au code peuvent nécessiter de mettre à jour les tests. Si les développeurs ne sont pas chargés de l'automatisation des tests, le pipeline de build reste défaillant jusqu'à ce que l'équipe responsable corrige les tests.</li>
+<li><strong>Les développeurs écrivent du code difficile à tester.</strong> Ils ont tendance à résoudre le problème qui leur est confié sans penser à la phase de test qui suivra.
+Cela peut entraîner un code mal conçu et des suites de test coûteuses et difficiles à gérer.</li>
+</ul>
+
+<p>Les équipes de test et de contrôle qualité continuent d'avoir un rôle important à cet égard. Les testeurs ont une connaissance unique du système, car ils comprennent comment les utilisateurs interagissent avec celui-ci. Il est recommandé d'associer des testeurs et des développeurs pour créer et faire évoluer les suites de tests automatisés, à l'aide d'outils de partage d'écran si les équipes sont géographiquement éparses. Ils peuvent ainsi apprendre les uns des autres et résoudre les problèmes en temps réel. Les testeurs jouent également un rôle essentiel pour l'exécution de tests exploratoires et de tests de facilité d'utilisation, et l'organisation des suites de tests.</p></li>
+<li><p><strong>Vos suites de tests ne sont pas bien organisées.</strong> Appliquez un processus continu d'examen et d'amélioration de vos suites de tests, afin de mieux détecter les défauts, et de maîtriser la complexité et les coûts. Exemple :</p>
+
+<ul>
+<li>Les suites de tests de validation doivent représenter le parcours utilisateur <a href="https://testing.googleblog.com/2016/09/testing-on-toilet-what-makes-good-end.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">de bout en bout</a> sur le système, et non pas consister en une pile de critères de validation définis de manière automatisée. À mesure que votre produit évolue, ces scénarios évoluent également, tout comme les suites de tests qui les valident. Pour plus d'informations sur ce processus, regardez la vidéo d'Angie Jones intitulée <a href="https://www.youtube.com/watch?v=qYfI2-bC6LA">Setting a Foundation For Successful Test Automation</a> (Établir les bases d'une automatisation de tests réussie).</li>
+<li>Si vous devez modifier plusieurs tests unitaires à chaque fois que vous modifiez votre code, cela signifie que vous <a href="https://martinfowler.com/articles/mocksArentStubs.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">dépendez trop de la simulation</a> ou que vous n'arrivez pas à épurer votre suite de tests unitaires.</li>
+<li>Veillez à la bonne intégration de vos suites de tests. Si chaque modification apportée à votre interface utilisateur entraîne l'échec de plusieurs tests de validation, servez-vous du <a href="https://martinfowler.com/bliki/PageObject.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">modèle Page Object</a> pour dissocier vos tests du système soumis aux tests.</li>
+<li>Si la gestion de vos tests est coûteuse, cela peut indiquer des problèmes au niveau de l'<a href="/architecture/devops/devops-tech-architecture">architecture</a> de votre logiciel. Assurez-vous de continuer à investir pour faciliter les tests de vos logiciels, par exemple en menant des efforts de <a href="https://refactoring.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">refactorisation</a> dans le travail quotidien de votre équipe.</li>
+</ul></li>
+<li><p><strong>La proportion de tests unitaires et de tests de validation n'est pas équilibrée.</strong> L'un des objectifs de conception spécifiques aux suites de tests automatisés consiste à détecter les erreurs le plus rapidement possible. Pour cette raison, les tests unitaires, à exécution accélérée, sont lancés avant les tests de validation dont l'exécution est plus lente. En outre, ces deux catégories de tests sont exécutées avant tout test manuel.</p>
+
+<p>Vous devez rechercher des erreurs à l'aide de la catégorie de test la plus rapide. Lorsque vous repérez une erreur au sein d'un test de validation ou lors d'un test exploratoire, ajoutez un test unitaire pour garantir que cette erreur sera détectée plus rapidement, plus tôt et à moindre coût la prochaine fois.
+Mike Cohn a élaboré la <a href="https://books.google.com.br/books?id=8IglA6i_JwAC&amp;printsec=frontcover&amp;dq=Mike+Cohn+Succeeding+with+Agile&amp;hl=pt-BR&amp;sa=X&amp;ved=0ahUKEwj9x8S8tuTiAhWjGLkGHU0GCxEQ6AEILTAA#v=onepage&amp;q=Mike%20Cohn%20Succeeding%20with%20Agile&amp;f=false" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">pyramide d'automatisation des tests</a> idéale, illustrée par le diagramme ci-dessous. Dans cette pyramide, la plupart des erreurs sont détectées à l'aide des tests unitaires.</p>
+
+<p><img src="/static/architecture/images/ta-image2.png" alt="image"/></p></li>
+<li><p><strong>Des tests non fiables sont tolérés.</strong> Les tests doivent être fiables. En d'autres termes, lorsque les tests sont concluants, nous devons être sûrs que le logiciel est livrable. Les échecs sur ces tests doivent indiquer une défaillance réelle. Veillez en particulier à ne pas tolérer les tests irréguliers.
+<a href="https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Découvrez la stratégie d'atténuation de Google concernant les tests irréguliers.</a></p></li>
+</ul>
+
+<h2 id="ways_to_improve_continuous_testing" data-text="Méthodes pour améliorer les tests continus">Méthodes pour améliorer les tests continus</h2>
+
+<p>Ne vous inquiétez pas si votre organisation n'a pas encore adopté la culture des tests unitaires menés par les développeurs. Les tests unitaires n'étaient pas une pratique courante de Google à ses débuts. La culture actuelle faisant la part belle aux tests unitaires a été mise en place par un groupe de bénévoles de Google appelé "Testing Grouplet".
+<a href="https://martinfowler.com/articles/testing-culture.html#google" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Découvrez comment ils ont contribué à l'adoption des tests unitaires</a> en créant une communauté dont le but était de propager les connaissances en matière de tests dans toutes les strates de l'organisation Google, et de convaincre les développeurs de l'importance des tests unitaires.</p>
+
+<p>Si vous n'êtes pas satisfait du niveau d'automatisation des tests, commencez par créer un pipeline de déploiement squelette. Par exemple, créez un seul test unitaire, un seul test de validation et un script de déploiement automatisé adapté aux environnements de tests exploratoires, puis reliez l'ensemble. Augmentez ensuite progressivement la couverture des tests et étendez votre pipeline de déploiement à mesure que votre produit ou service évolue.</p>
+
+<p>Si vous travaillez déjà sur un <a href="https://wikipedia.org/wiki/Brownfield_(software_development)" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">système qui nécessite une conversion</a>, suivez les instructions de cet article, mais évitez d'adapter un ensemble complet de tests automatisés. À la place, rédigez un nombre limité de tests de validation pour les fonctionnalités stratégiques. Demandez ensuite aux développeurs de rédiger des tests unitaires et de validation pour toutes les nouvelles fonctionnalités, ainsi que pour les fonctionnalités que vous modifiez. Pensez à utiliser le développement piloté par les tests (TDD) pour améliorer la qualité et la gestion du code principal et du code de test. Enfin, lorsque vos tests de validation échouent, assurez-vous de rédiger des tests unitaires afin de détecter l'erreur plus rapidement à l'avenir.</p>
+
+<p>Si votre suite de tests est coûteuse et peu fiable, n'hésitez pas à l'élaguer. Une suite de dix tests qui se révèle fiable et rapide est bien plus efficace qu'une suite de 100 tests difficile à gérer et non fiable.</p>
+
+<h2 id="ways_to_measure_continuous_testing" data-text="Méthodes pour évaluer les tests continus">Méthodes pour évaluer les tests continus</h2>
+
+<p>Vous pouvez mesurer les résultats des tests continus dans votre environnement en procédant comme suit :</p>
+
+<table>
+<thead>
+<tr>
+<th>Facteur à tester</th>
+<th>Métriques à évaluer</th>
+<th>Objectif</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rédacteurs de tests unitaires et de tests de validation.</td>
+<td>Pourcentage de tests rédigés par des développeurs, testeurs ou autres équipes au sein de votre entreprise.</td>
+<td>Les auteurs et les responsables principaux des tests de validation sont des développeurs.</td>
+</tr>
+<tr>
+<td>Nombre de bugs détectés au cours des tests de validation, des tests exploratoires et en production.</td>
+<td>Modification de la proportion des bugs détectés au fil du temps.</td>
+<td>Davantage de bugs sont détectés lors des phases de tests "plus économiques". Les équipes ajoutent des tests automatisés pour les bugs que vous trouvez au cours des tests exploratoires et en production, et ajoutent des tests unitaires pour détecter les bugs découverts pendant les tests de validation.</td>
+</tr>
+<tr>
+<td>Temps passé à corriger les défaillances des tests de validation.</td>
+<td>Évolution du temps passé à corriger les défaillances des tests au fil du temps. (Ce temps devrait être réduit.)</td>
+<td>Les développeurs peuvent facilement corriger les défaillances des tests de validation.</td>
+</tr>
+<tr>
+<td>Pertinence des tests automatisés.</td>
+<td>Identifiez les défaillances de tests qui représentent un défaut réel et celles qui ont simplement été mal codées.</td>
+<td>Les défaillances des tests doivent toujours indiquer un défaut réel du produit.</td>
+</tr>
+<tr>
+<td>Exécution des tests automatisés sur le pipeline de livraison.</td>
+<td>Indiquez (cochez oui ou non) si tous les suites de tests sont exécutées dans tous les déclencheurs de pipeline.</td>
+<td>Les tests automatisés doivent être exécutés dans le cadre des pipeline et workflow principaux.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="Étapes suivantes">Étapes suivantes</h2>
+
+<ul>
+<li>Consultez la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">page DevOps</a> pour obtenir des liens vers d'autres articles et ressources.</li>
+<li>Lisez le livre <a href="https://books.google.com/books/about/Software_Engineering_at_Google.html?id=WXTTDwAAQBAJ" track-type="solution" track-name="internalLink" track-metadata-position="body">Software Engineering at Google</a> (Ingénierie logicielle chez Google) pour en savoir plus sur les tests menés au sein de Google.</li>
+<li>Apprenez à créer, tester et déployer votre système en continu à l'aide de <a href="/build/?&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=latam-BR-all-pt-dr-skws-all-all-trial-e-dr-1003997-LUAC0008680&amp;utm_content=text-ad-none-none-DEV_c-CRE_325592090632-ADGP_SKWS+%7C+Multi+%7E+Dev+%7C+Build-KWID_43700040482196107-kwd-471794162766-userloc_1001743&amp;utm_term=KW_cloud%20build-ST_Cloud+Build&amp;gclid=Cj0KCQjw6IfoBRCiARIsAF6q06suRucypheWE5dDKAmsKDZrEVvuY0nDFS0YgbkN5XVmkEzJPl89zIIaAoJcEALw_wcB&amp;gclsrc=aw.ds" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Build</a>.</li>
+<li>Découvrez comment surveiller votre système et vos tests à l'aide de <a href="/stackdriver" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Monitoring</a>.</li>
+<li>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</li>
+<li>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</li>
+</ul>
+
+</body></html>

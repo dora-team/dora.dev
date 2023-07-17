@@ -1,0 +1,74 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia DevOps: strumenti che aiutano i team a scegliere</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> <em>autorizzare i team a scegliere gli strumenti</em> è un insieme di funzionalità che incrementano la distribuzione del software e le prestazioni dell'organizzazione. Queste funzionalità sono state scoperte dal <a href="https://www.devops-research.com/research.html">programma di ricerca State of DevOps di DORA</a>, un'indagine indipendente e rigorosa sulle accademine sulle pratiche e sulle funzionalità che determinano prestazioni elevate. Per scoprire di più, leggi le nostre <a href="/devops">risorse DevOps</a>.</span></aside>
+<p>Se vuoi ottenere prestazioni di distribuzione del software più elevate e aumentare la <a href="/architecture/devops/devops-culture-job-satisfaction" track-type="solution" track-name="internalLink" track-metadata-position="body">soddisfazione del lavoro</a> del tuo personale tecnico, devi abilitarlo a prendere decisioni informate sugli strumenti e sulle tecnologie che utilizza per svolgere il suo lavoro.
+Il <a href="https://services.google.com/fh/files/misc/state-of-devops-2017.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">studio</a>
+ (PDF) del team DORA (DevOps Research and Assessment) indica che ciò contribuisce a migliorare la distribuzione continua e le prestazioni relative alla distribuzione del software. I team che possono scegliere i propri strumenti sono in grado di fare queste scelte in base a come lavorano e alle attività che devono svolgere. Nessuno sa meglio dei professionisti
+di cosa hanno bisogno per essere efficaci, quindi non sorprende che la scelta dello strumento
+del professionista aiuti a ottenere risultati migliori.</p>
+
+<p>Offrire ai team la possibilità di scegliere strumenti non significa che ogni team abbia la possibilità di scegliere gli strumenti che vuole. L'introduzione di tecnologie senza vincoli può aumentare il debito e la franchigia tecnica. Tuttavia, quando combini la scelta degli strumenti con altre funzionalità, ad esempio una visione completa del sistema, un feedback rapido e la comprensione del responsabile del codice che scrivono, puoi aiutare i tuoi tecnici a prendere decisioni oculate sugli strumenti da utilizzare e su cui devono eseguire il supporto. Questo pattern è stato osservato in aziende come Google e Netflix, dove è supportato uno stack tecnico preferito per impostazione predefinita. Tuttavia, se un team ritiene che uno strumento o una tecnologia diversi siano quelli più adatti al suo caso, può scegliere liberamente. I team comprendono che la loro scelta è consapevole del fatto che devono impegnarsi anche a supportare questo nuovo stack tecnico.</p>
+
+<h2 id="how_to_empower_teams_to_choose_tools" data-text="Come offrire ai team gli strumenti per scegliere gli strumenti">Come offrire ai team gli strumenti per scegliere gli strumenti</h2>
+
+<p>Quando la tua organizzazione permette ai team di selezionare gli strumenti, è importante trovare un equilibrio tra la libertà di scegliere gli strumenti e il costo per acquisirli e supportarli, nonché la potenziale complessità aggiuntiva della comunicazione tra i team che utilizzano strumenti diversi. Di seguito sono riportati alcuni modi per consentire ai team di scegliere
+i propri strumenti.</p>
+
+<ul>
+<li><p><strong>Definisci un valore basale per più team</strong>. Con rappresentanti di team diversi e aree interfunzionali (Product Manager, sviluppatori, tester, operatori), stabilisci una base di riferimento degli strumenti approvati. Ti consigliamo di utilizzare un set di strumenti di base ampio e eterogeneo per soddisfare la maggior parte delle esigenze della tua organizzazione. Alcuni esempi di strumenti da includere nel riferimento sono linguaggi di programmazione e librerie, strumenti di test e deployment, infrastruttura di monitoraggio e backend di dati.</p></li>
+<li><p><strong>Esamina periodicamente gli strumenti</strong>. Periodicamente o nell'ambito di retrospettive dello sprint, valuta attentamente il set di strumenti di riferimento per esaminarne l'efficacia. Queste recensioni offrono anche l'opportunità di discutere e dimostrare nuove tecnologie.</p></li>
+<li><p><strong>Definisci una procedura per le eccezioni</strong>. Crea un processo chiaramente definito per uscire dal set di strumenti di base. Quando viene utilizzata una nuova tecnologia al di fuori della base di riferimento per un progetto, documenta la funzione del nuovo strumento e il motivo per cui è stata utilizzata. Questa documentazione è fondamentale per la risoluzione
+e la manutenzione del progetto. Inoltre, la documentazione inclusa nei progetti può essere utilizzata in seguito per giustificare l'aggiunta dello strumento alla base di riferimento.</p></li>
+</ul>
+
+<p>Un approccio alternativo è quello di consentire ai team di selezionare i propri strumenti. Con questa strategia, ogni team si occupa di tutta la procedura di distribuzione del software (requisiti aziendali, sviluppo, operazioni) utilizzando la propria catena di strumenti. Tuttavia, assicurati di tenere in considerazione l'impatto sulla comunicazione tra i team e le aree di prodotto quando sono presenti risorse condivise.</p>
+
+<h2 id="common_pitfalls" data-text="Insetti comuni">Insetti comuni</h2>
+
+<p>L'errore più comune quando consenti ai tuoi team di scegliere gli strumenti è prendere una posizione estrema, ad esempio lasciare agli ingegneri la possibilità di scegliere da zero o offrire agli ingegneri una scelta eccessiva.</p>
+
+<p>Forzare gli strumenti e le tecnologie sui professionisti può migliorare la standardizzazione.
+Tuttavia, ciò che funziona in alcuni casi non è necessariamente la soluzione migliore in tutti i casi. Questo approccio limita anche le opportunità per <a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">sperimentazione e crescita</a>, in cui le tecnologie emergenti possono essere provate e testate. Spesso, l'adozione di nuove tecnologie e l'adozione di queste API si traducono in notevoli miglioramenti delle prestazioni. Ad esempio, se nessun team fosse stato autorizzato a sperimentare con la containerizzazione o il Platform as a Service quando si trattasse di nuove tecnologie, le sue organizzazioni non avrebbero realizzato i miglioramenti delle prestazioni ottenuti.</p>
+
+<p>Al contrario, la scelta di strumenti e tecnologie diversi per ogni progetto o servizio può introdurre debito tecnico e aumentare la franchigia. Ogni volta che si aggiunge qualcosa alla catena degli attrezzi, le spese di manutenzione e operative aumentano. Nel corso del tempo, queste spese possono annullare il rendimento ottenuto dalla nuova tecnologia.</p>
+
+<h2 id="ways_to_improve_tool_choice_in_teams" data-text="Modi per migliorare la scelta degli strumenti nei team">Modi per migliorare la scelta degli strumenti nei team</h2>
+
+<p>L'aspetto chiave delle prestazioni nella scelta degli strumenti è consentire ai team che lavorano di selezionare i migliori strumenti per gli interventi in questione. Di seguito sono riportati alcuni suggerimenti in merito:</p>
+
+<ul>
+<li><strong>Valuta periodicamente lo stack tecnico</strong>. Durante le valutazioni, incoraggia
+i membri del team a valutare attentamente il grado di conformità degli strumenti correnti ai requisiti. Inoltre, durante queste revisioni, potrai discutere dei problemi con gli strumenti esistenti e della potenziale sperimentazione di nuovi strumenti.</li>
+<li><strong>Esamina proattivamente nuovi strumenti per i nuovi progetti</strong>. Chiedi ai membri del team di pensare e sperimentare nuovi strumenti per determinare se vale la pena supportarli. Prova a implementare una parte fondamentale del nuovo sistema utilizzando le tecnologie esistenti e quelle proposte per vedere se i vantaggi previsti si concretizzano. Quando selezioni le tecnologie, devi avere un'idea chiara dei costi associati a ciascuna di esse.
+Questi possono includere licenze, assistenza e l'infrastruttura necessaria per eseguire gli strumenti. Potresti anche aver bisogno di assumere altre persone che ti aiutino ad adottare e gestire la tecnologia.</li>
+<li><strong>Pianifica del tempo per sperimentare nuovi strumenti</strong>. Organizza periodicamente sessioni (ad esempio hackathon) in cui i team possono divertirsi con nuovi progetti
+e nuove tecnologie. Non tutti gli strumenti verranno mantenuti come risultato di questi esperimenti. Ma il punto importante è che state rilasciando queste nuove tecnologie nel vostro stack o decidete che non sono appropriate.</li>
+<li><strong>Organizza regolarmente presentazioni per discutere di nuovi strumenti</strong>. Organizzare riunioni organizzate (come le riunioni per il pranzo) in cui vengono presentate e discusse le nuove tecnologie. Possono essere riunioni informali in cui una persona fa una presentazione su un progetto a cui sta lavorando in una nuova tecnologia o qualcosa che sta esaminando. Riunioni informali come queste sono un ottimo
+modo per il gruppo di parlare di nuove tecnologie e rimanere al passo con gli aggiornamenti. Un
+ottimo approccio è ruotare le presentazioni, con i membri del team che
+presentano a turno, oppure puoi invitare persone di altri team o
+persone esterne all'azienda a presentare. Includere persone esterne all'organizzazione può essere particolarmente utile, perché se hanno esperienza con uno strumento, possono discutere costi e complessità nascoste che saranno evidenti solo dopo un utilizzo a lungo termine.</li>
+</ul>
+
+<p>L'obiettivo è trovare nuovi modi per introdurre le tecnologie nella conversazione e
+assicurarti che il team abbia le risorse necessarie per prendere le decisioni relative allo strumento e alla tecnologia più adatte. Il risultato di queste conversazioni potrebbe essere l'utilizzo degli strumenti a loro disposizione.</p>
+
+<h2 id="ways_to_measure_if_teams_are_empowered_to_choose_tools" data-text="Modi per misurare se i team sono autorizzati a scegliere gli strumenti">Modi per misurare se i team sono autorizzati a scegliere gli strumenti</h2>
+
+<p>Il modo migliore per determinare se i team sentono di avere la possibilità di scegliere gli strumenti è chiedere. Non vuoi misurare il rendimento contando il numero di strumenti utilizzati dal team o la frequenza con cui cambiano team, perché il team potrebbe continuare a utilizzare lo stesso strumento o cambiare strumenti, perché gli viene chiesto di farlo.</p>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina DevOps</a>.</li>
+<li>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</li>
+<li>Completa il <a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a> per scoprire la tua posizione rispetto al resto del settore.</li>
+</ul>
+
+</body></html>

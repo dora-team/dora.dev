@@ -1,0 +1,119 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技術: 継続的インテグレーション</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注:</strong> <span>継続的インテグレーション<em></em>は、ソフトウェア デリバリーと組織のパフォーマンスを改善する一連の能力の一つです。これらの機能は <a href="https://www.devops-research.com/research.html">DORA State of DevOps Research Program</a> で発見されました。これは、高いパフォーマンスを生み出すプラクティスと機能に関する、学術的に厳格で独立した研究調査です。詳細については、<a href="/devops">DevOps のリソース</a>をご覧ください。</span></aside><p>ソフトウェア システムは複雑であり、たった 1 つのファイルに明らかに単純で自己完結型の変更を加えても、システム全体に意図しない影響が生じる可能性があります。関連するシステムで多数のデベロッパーが作業している場合、コードの更新を調整するのは難しい問題であり、異なるデベロッパーによる変更に互換性がなくなる可能性があります。</p>
+
+<p>これらの問題に対処するために、継続的インテグレーション（CI）が作成されました。CI は、なんらかの処理に多大な労力と時間がかかる場合、それを行う頻度を増やし、苦痛を軽減する必要があるという<a href="https://martinfowler.com/articles/originalContinuousIntegration.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">原則</a>に従っています。迅速なフィードバック ループを作成し、デベロッパーが小さなバッチで作業できるようにすることで、CI は、チームが高品質のソフトウェアを開発し、進行中のソフトウェアの開発と保守に要するコストを削減して、チームの生産性を高められるようにします。</p>
+
+<h2 id="how_to_implement_ci" data-text="CI の実装方法">CI の実装方法</h2>
+
+<p>組織で CI を実施する場合、デベロッパーはすべての作業を<a href="/architecture/devops/devops-tech-trunk-based-development" track-type="solution" track-name="internalLink" track-metadata-position="body">コードベースのメイン バージョン</a>（<a href="/architecture/devops/devops-tech-trunk-based-development" track-type="solution" track-name="internalLink" track-metadata-position="body"><em></em>トランク</a>、<em></em>メイン、または<em></em>メインライン）に定期的に統合します。DevOps の調査と評価（DORA）の<a href="https://services.google.com/fh/files/misc/state-of-devops-2015.pdf#page=20" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">調査</a>（PDF）によると、デベロッパーが少なくとも 1 日に 1 回作業をトランクにマージすることで、チームのパフォーマンスが向上します。変更によってリグレッション バグが発生しないことを検証するために、マージの前後に一連の自動テストが実行されます。これらの自動テストに失敗すると、チームは直ちに作業を中止し、問題を解決します。</p>
+
+<p>CI により、ソフトウェアは常に動作状態になり、デベロッパーのブランチがトランクから大幅にそれることがなくなります。CI には大きなメリットがあります。<a href="https://services.google.com/fh/files/misc/state-of-devops-2015.pdf#page=16" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">リサーチ</a>（PDF）によると、導入頻度の増加、システムの安定化、ソフトウェアの品質向上につながります。</p>
+
+<p>継続的インテグレーションをうまく実装するための主な要素は次のとおりです。</p>
+
+<ul>
+<li>各 commit によって、ソフトウェアのビルドがトリガーされる必要があります。</li>
+<li>各 commit によって、数分以内にフィードバックを提供する一連の自動テストがトリガーされる必要があります。</li>
+</ul>
+
+<p>これらの要素を実装するには、次が必要です。</p>
+
+<ul>
+<li><strong>自動ビルドプロセス</strong>。CI の最初のステップは、任意の環境にデプロイできるパッケージを作成する自動スクリプトを用意することです。CI のビルドによって作成されたパッケージは信頼できるものである必要があり、すべてのダウンストリーム プロセスで使用される必要があります。これらのビルドには番号を付け、繰り返し可能にする必要があります。ビルドプロセスは少なくとも 1 日に 1 回は実行する必要があります。</li>
+<li><strong>一連の<a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">自動テスト</a></strong>。まだ持っていない場合は、システムの価値の高い機能を網羅した少数の単体テストと<a href="https://services.google.com/fh/files/misc/state-of-devops-2014.pdf#page=14" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">受け入れテスト</a>（PDF）を作成します。テストが信頼できることを確認します。これにより、テストに失敗すると、実際の問題が発生していることがわかり、テストに合格すると、システムに重大な問題がないことを確信できます。次に、すべての新機能がテストの対象になっていることを確認します。これらのテストは迅速に実行し、デベロッパーに可能な限り早くフィードバックを提供する必要があります。テストは少なくとも 1 日に 1 回、正常に実行される必要があります。最終的には、パフォーマンス テストと受け入れテストを行う場合、デベロッパーはテストからのフィードバックを毎日受け取る必要があります。</li>
+<li><strong>チェックインごとにビルドテストと自動テストを実行する CI システム</strong>。また、システムでチームにステータスが表示されるようにする必要もあります。この処理については、少し遊び心を持って行うことができます。たとえば、クラクションや信号を使って、ビルドが失敗したことを示すことができます。メール通知は使用しないでください。多くのユーザーはメール通知を無視するか、通知を非表示にするフィルタを設定しています。うまく伝達できる、より利用しやすい方法はチャット システムの通知機能です。</li>
+</ul>
+
+<p>継続的インテグレーションには、Kent Beck とその用語が生まれたエクストリーム プログラミング コミュニティで<a href="https://www.martinfowler.com/articles/continuousIntegration.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">定義</a>されているように、さらに 2 つの実施事項が含まれており、ソフトウェア配信パフォーマンスの向上も見込めます。</p>
+
+<ul>
+<li><a href="/architecture/devops/devops-tech-trunk-based-development" track-type="solution" track-name="internalLink" track-metadata-position="body">トランクベース開発</a>の実施。デベロッパーは<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">小さなバッチ</a>でトランク / メインラインを処理します。有効期間が長い機能ブランチで作業するのではなく、少なくとも 1 日 1 回、共有されたトランク / メインラインに作業をマージします。</li>
+<li>ビルドが中断した場合、その修正は<a href="/architecture/devops/devops-tech-trunk-based-development" track-type="solution" track-name="internalLink" track-metadata-position="body">他の作業よりも優先される</a>必要があるという意見の合致。</li>
+</ul>
+
+<p>CI では<a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">自動単体テスト</a>が必要です。これらのテストは、ソフトウェアが期待どおりに動作することを十分に確信できる包括的なものである必要があります。また、テストは数分以内に完了できる必要があります。自動単体テストの実行に時間がかかる場合、デベロッパーは頻繁には実行したくなくなります。テストの実行頻度が低くなると、多数の変更が原因でテストが失敗するようになり、デバッグが困難になります。実行頻度の低いテストは、保守が困難です。</p>
+
+<p>自動単体テストの保守可能なスイートを作成する作業は複雑です。この問題を解決するために、デベロッパーが最初は失敗する自動テストを作成し、その後、テストに合格するコードを実装する<a href="https://wikipedia.org/wiki/Test-driven_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">テストドリブンな開発</a>（TDD）を行うことをおすすめします。TDD にはいくつかの利点があります。1 つは、モジュール式でテストしやすいコードを作成できるため、自動テストスイートの保守に要するコストが削減されることです。多くの組織は、保守可能な自動単体テストスイートを持っていないため、まだ TDD を実施していません。</p>
+
+<h3 id="objections_to_ci" data-text="CI に対する異論">CI に対する異論</h3>
+
+<p>前述のように、CI は議論の的になる行為とみなされることがあります。CI では、デベロッパーは大規模な機能やその他の変更を、トランクに頻繁に統合できる<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">小さな増分ステップ</a>に分割する必要があります。この方法で作業することに慣れていないデベロッパーにとって、これは 1 つの変更です。また、チームが小さなステップを使用するように切り替えると、大規模な機能が完成するまでに時間がかかることがあります。しかし、多くの場合、ブランチで実行されるように、デベロッパーが大規模な機能を宣言できるスピードを最適化する必要はありません。そうではなく、可能な限り迅速に変更のレビュー、統合、テスト、デプロイを行える必要があります。このプロセスにより、変更の規模が小さく、自己完結型であり、それらが適用されるブランチの有効期限が短い場合、<a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=35" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">より高速で安定した</a>（PDF）ソフトウェアの開発と配信を行えます。また、小さなバッチで作業することで、他のデベロッパー、テスター、お客様から、あるいは自動化されたパフォーマンス テストやセキュリティ テストから、作業がシステム全体に及ぼす影響に対するフィードバックを定期的に得ることができます。これにより、問題の検出、優先順位付け、修正をより簡単に、すばやく行えるようになります。</p>
+
+<p>こうした異論にもかかわらず、継続的デリバリーの実現を目指す組織にとって、ソフトウェア開発チームによる継続的インテグレーションの実装を支援することは最優先事項です。</p>
+
+<h2 id="common_pitfalls" data-text="主な注意点">主な注意点</h2>
+
+<p>CI の普及を妨げる一般的な落とし穴には、次のようなものがあります。</p>
+
+<ul>
+<li><strong>すべてをコード リポジトリに配置しない</strong>。アプリケーションとシステムのビルドと構成に必要なものはすべて、リポジトリ内にある必要があります。これは CI の範囲外と思われるかもしれませんが、重要な基盤です。</li>
+<li><strong>ビルドプロセスを自動化しない</strong>。手動による手順では、間違いが生じる可能性があり、手順は文書化されません。</li>
+<li><strong>すべての変更でクイックテストを実行しない</strong>。エンドツーエンドの完全なテストは必要ですが、迅速にフィードバックを得るために、クイックテスト（通常は単体テスト）も重要です。</li>
+<li><strong>問題のあるビルドをすぐに修正しない</strong>。CI の主な目標は、誰もが開発できる安定したビルドを作成することです。ビルドを数分間で修正できない場合は、ビルドが中断する原因となった変更を特定して元に戻す必要があります。</li>
+<li><strong>実行に時間がかかりすぎるテストを作成する</strong>。<a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf#page=56" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">DORA の調査</a>（PDF）によると、テストの実行に数分以上かかってはならず、上限は約 10 分間です。ビルドにこれ以上の時間がかかる場合は、テストの効率を向上させ、コンピューティング リソースを追加し、それらを並列実行できるようにするか、<a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">デプロイ パイプラインのパターン</a>を使用して実行に時間を要するテストを別個のビルドに分割する必要があります。</li>
+<li><strong>十分な頻度でトランクにマージされない</strong>。多くの組織は自動テストとビルドを使用していますが、トランクへの毎日のマージは強制されていません。これにより、ブランチの有効期間が長くなり、統合が大幅に困難になります。また、デベロッパーのフィードバック ループが長くなります。</li>
+</ul>
+
+<h2 id="ways_to_measure_ci" data-text="CI の測定方法">CI の測定方法</h2>
+
+<p>前に説明した CI のコンセプトでは、次の表に示すように、システムと開発環境で CI の有効性を測定する方法の概要が示されています。これらの指標を収集することで、プロセスとプロセス用のツールを最適化できます。これにより、CI の実施が改善され、デベロッパーのフィードバック ループが短縮されます。</p>
+
+<table>
+  <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+  </colgroup>
+<thead>
+<tr>
+<th><strong>テスト項目</strong></th>
+<th><strong>測定データ</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>コードの commit により、ソフトウェアのビルドがトリガーされる</td>
+<td>手動での操作なしでソフトウェア ビルドが行われるコード commit の割合。</td>
+</tr>
+<tr>
+<td>コードの commit により、一連の自動テストがトリガーされる</td>
+<td>手動での操作なしで一連の自動テストが実行されるコード commit の割合。</td>
+</tr>
+<tr>
+<td>自動ビルドとテストが毎日正常に実行される</td>
+<td>毎日正常に実行される自動ビルドの割合と、自動テストの割合。</td>
+</tr>
+<tr>
+<td>現在のビルドを探索的テストのテスターに使用できる</td>
+<td>テスターに対するビルドの可用性、またはその逆。つまり、テスターに対するビルドの非可用性。</td>
+</tr>
+<tr>
+<td>デベロッパーが毎日、受け入れテストとパフォーマンス テストからのフィードバックを得る</td>
+<td>受け入れテストとパフォーマンス テストからデベロッパーにフィードバックが提供されるかどうか。つまり、1 日以内にデベロッパーが入手できるフィードバックを提供するテストの割合。</td>
+</tr>
+<tr>
+<td>問題が生じたビルドが即時に修正される</td>
+<td>ビルドに問題が発生してから、問題を修正するチェックインを使用するか問題を生じた変更を元に戻すことで修正が行われるまでの時間。</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="次のステップ">次のステップ</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps ページ</a>で他の記事やリソースへのリンクを確認する。</li>
+<li>Google Cloud の<a href="/solutions/continuous-integration" track-type="solution" track-name="internalLink" track-metadata-position="body">継続的インテグレーション ソリューション</a>の詳細を確認する。</li>
+<li><a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">SRE の書籍</a>の、特に<a href="https://landing.google.com/sre/sre-book/chapters/release-engineering/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">第 8 章 - リリース エンジニアリング</a>を読む。</li>
+<li>James Shore の記事 <a href="https://www.jamesshore.com/Blog/Continuous-Integration-on-a-Dollar-a-Day.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">CI on a dollar a day</a> を読む。</li>
+<li>Google の John Penix による <a href="https://www.infoq.com/presentations/Continuous-Testing-Build-Cloud/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">how Google practices CI at scale</a> を見る。</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">研究プログラム</a>を調べる。</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps のクイック チェック</a>を確認する。業界におけるご自身の立ち位置を把握できます。</li>
+</ul>
+
+</body></html>

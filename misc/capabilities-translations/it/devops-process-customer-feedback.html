@@ -1,0 +1,140 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Processo DevOps: feedback dei clienti</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> il <em>feedback dei clienti</em> è una delle funzionalità che consentono una maggiore distribuzione
+del software e le prestazioni dell'organizzazione.  Queste capacità sono state scoperte dal <a href="https://www.devops-research.com/research.html">programma di ricerca DORA State of DevOps</a>, un'indagine indipendente e accademicamente rigorosa sulle pratiche e funzionalità che determinano prestazioni elevate. Per ulteriori informazioni, consulta le nostre
+<a href="/devops">risorse DevOps</a>.</span></aside>
+<p>Nei progetti software, gli sviluppatori spesso lavorano sui prodotti per mesi o anni, a volte per più release senza convalidare se le funzionalità che stanno effettivamente aiutando gli utenti a risolvere i loro problemi o se le funzionalità vengono effettivamente utilizzate.</p>
+
+<p>Il feedback dei clienti fa parte di un gruppo più ampio di funzionalità, tra cui la <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">visibilità del lavoro nel flusso di valore</a>, la <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">lavorazione in piccoli batch</a> e la <a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">esperimento del team</a>, che insieme rappresentano un <a href="https://books.google.com/books/about/Escaping_the_Build_Trap.html?id=PQ8dMQAACAAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">approccio semplice alla gestione dei prodotti</a>.</p>
+
+<p>L'applicazione di queste funzionalità contribuisce a prevedere quanto segue:</p>
+
+<ul>
+<li>Prestazioni di distribuzione del software, misurate in termini di velocità di distribuzione, stabilità e disponibilità.</li>
+<li>Prestazioni organizzative, misurate in termini di redditività,
+quota di mercato e produttività.</li>
+</ul>
+
+<p>La ricerca DORA (DevOps Research and Assessment) <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=35" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">mostra</a> (PDF) che i team ottengono prestazioni più elevate quando lavorano in organizzazioni che utilizzano queste funzionalità e svolgono anche le seguenti operazioni:</p>
+
+<ul>
+<li>Raccogli regolarmente le metriche sulla soddisfazione dei clienti.</li>
+<li>Chiedi ai clienti di fornire feedback sulla qualità di prodotti e funzionalità.</li>
+<li>Utilizza questo feedback per facilitare la progettazione di prodotti e funzionalità.</li>
+</ul>
+
+<h2 id="how_to_implement_customer_feedback" data-text="Come implementare il feedback dei clienti">Come implementare il feedback dei clienti</h2>
+
+<p>Quando sviluppi un prodotto, è importante stabilire metriche chiave per valutarne il successo. Queste metriche ti aiutano a capire se stai risolvendo un problema reale, se la soluzione viene adottata abbastanza rapidamente e se gli utenti continuano a utilizzarla e la consigliano ad altri. Queste metriche devono essere
+ricavate esplicitamente da come i clienti interagiscono con il prodotto. Per utilizzare queste metriche, devi raccogliere e analizzare attentamente il feedback dei clienti.</p>
+
+<p>Un set di metriche molto utilizzate nei prodotti SaaS destinati ai consumatori è AARRR: acquisizione, attivazione, fidelizzazione, referral ed entrate. A volte l'ordine varia a seconda di chi li presenta. Queste sono a volte note come <em>metriche sui pirati</em>, perché l'acronimo parla di una parola stereotipicamente associata al modo in cui i pirati parlano.</p>
+
+<p>L'idea è quella di esaminare cinque metriche chiave e riformulare la tua esperienza cliente per migliorarle:</p>
+
+<ul>
+<li><strong>Acquisizione</strong>: la percentuale di utenti che accedono al tuo sito che
+creano un account.</li>
+<li><strong>Attivazione</strong>: la percentuale di utenti acquisiti che attivano il proprio account e utilizzano il servizio.</li>
+<li><strong>Fidelizzazione</strong>: la percentuale di utenti attivati che tornano al servizio.</li>
+<li><strong>Referral</strong>: la percentuale di utenti fidelizzati che indirizzano altri utenti al servizio.</li>
+<li><strong>Entrate</strong>: la percentuale di utenti referenti che pagano effettivamente il servizio.</li>
+</ul>
+
+<p>Se queste metriche non sono adatte alla tua attività o al tuo prodotto, è essenziale scoprirne alcune adatte, monitorarle periodicamente e utilizzarle come fattori chiave nella tua strategia di prodotto.</p>
+
+<p>L'approccio descritto in questo articolo non riguarda solo i prodotti rivolti all'esterno. Si applica allo stesso modo ai prodotti e servizi interni creati per altri utenti della tua organizzazione. La creazione di strumenti interni richiede esattamente lo stesso approccio: coinvolgimento precoce e frequente con utenti reali per assicurarsi che il problema risolto viene effettivamente risolto. Altrimenti, potresti finire con la creazione e l'utilizzo di strumenti che nessuno utilizza. Ciò è scoraggiante per chi lavora con strumenti e non è chiaro per chi deve utilizzare strumenti che non gli piace. Inoltre, rappresenta un significativo costo per l'azienda in termini di scarsa corrispondenza tecnologica per gli utenti.</p>
+
+<p>Un team dovrebbe utilizzare il seguente pattern per massimizzare le possibilità di risolvere con successo i problemi dei clienti:</p>
+
+<ol>
+<li>Raccogli il feedback dei clienti prima di definire potenziali funzionalità.</li>
+<li>Conferma di aver risolto un problema reale.</li>
+<li>Ripeti la procedura per trovare una soluzione che risolva effettivamente il problema (e non altro).</li>
+<li>Assicurati che la soluzione produca un'attività praticabile (ad esempio, il costo sia inferiore alle entrate previste).</li>
+<li>Monitora le metriche principali per valutare l'efficacia (ad esempio, AARRR).</li>
+<li>Ripeti la procedura sopra per migliorare queste metriche.</li>
+</ol>
+
+<p>Per avere successo, non solo è necessario distribuire e rilasciare rapidamente il software, ma anche soddisfare le esigenze dei clienti in modo più intelligente, intelligente e veloce. Per raggiungere questo obiettivo,
+sperimenta più a fondo rispetto alla concorrenza. Il settore retail è un settore che <a href="https://services.google.com/fh/files/misc/state-of-devops-2019.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">ha registrato risultati positivi</a> (PDF).
+Tecniche come lo <a href="https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">sviluppo basato sull'ipotesi</a>, la definizione e la misurazione della canalizzazione di acquisizione dei clienti e il test A/B consentono di eseguire esperimenti utente. Ciò può favorire la creatività, accelerare
+l'innovazione e creare apprendimento organizzativo.</p>
+
+<p>Il maggiore coinvolgimento dei clienti e la partecipazione ai processi di gestione dei prodotti contribuiscono a una maggiore identificazione con gli <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=37" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">obiettivi e i valori</a> della tua organizzazione (PDF). Questo a sua volta contribuisce a migliorare le prestazioni organizzative.</p>
+
+<h2 id="common_pitfalls" data-text="Errori comuni">Errori comuni</h2>
+
+<p>Alcuni errori comuni nell'utilizzo efficace del feedback dei clienti sono i seguenti:</p>
+
+<ul>
+<li><strong>Impossibile raccogliere il feedback</strong>. Spesso, le società di sviluppo di software
+non raccolgono alcun feedback dei clienti.</li>
+<li><strong>Raccolta dei feedback troppo tardi</strong>. A volte le aziende raccolgono i feedback dei clienti così tardi nel ciclo di vita di distribuzione del software che non possono intervenire.</li>
+<li><strong>Non capisco il problema</strong> (o interpreta erroneamente il feedback dei clienti). Le aziende possono avere aspettative non realistiche dei propri clienti o non comprendere ciò che i clienti vogliono dal prodotto. Il team
+potrebbe anche ignorare esplicitamente un feedback dei clienti scomodo ma accurato.
+Questa situazione può presentarsi quando un team di sviluppo non ha adeguatamente valutato o gestito il rischio di fornire la soluzione a portata di mano o semplicemente non ha compreso il problema da risolvere. Un team di sviluppo vuole ridurre al minimo l'ambito del proprio lavoro per risolvere un problema.
+In alcuni casi, se il problema è maggiore di quello che è stato progettato dal team, il team potrebbe ignorare erroneamente il lavoro aggiuntivo come
+"ambito scope."  Ciò si traduce in una soluzione incompleta dal punto di vista del cliente e, in ultima analisi, in un prodotto non superato.</li>
+<li><strong>Mancata autorizzazione dei team ad agire in base al feedback</strong>. I team di distribuzione devono avere il potere di apportare modifiche alla progettazione o alle specifiche del sistema in risposta ai feedback, come descritto nel documento sulla <a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">sperimentazione dei team</a>.</li>
+<li><strong>Misurazione del successo in base alla metrica sbagliata</strong>. In alcuni casi, le soluzioni senza una sufficiente convalida dei clienti vengono fornite ai team di sviluppo e consegna come requisiti finalizzati. In questi casi, il successo del team addetto alla pubblicazione viene misurato in base alla capacità dell'utente di fornire la funzionalità specificata, non alla risoluzione del problema o al raggiungimento dei risultati da parte dei clienti.</li>
+<li><strong>Risolvere il problema del cliente</strong>.
+<a href="http://ai.stanford.edu/%7Eronnyk/ExPThinkWeek2009Public.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">I dati di settore</a>
+(PDF) dei test A/B mostrano che, nei prodotti di successo, solo un terzo circa delle funzionalità proposte migliora i risultati commerciali effettivamente offerti. I restanti due terzi delle funzionalità forniscono risultati pari a zero o <em>negativi</em> per le aziende. Quindi, se le ricerche sugli utenti non vengono eseguite, è probabile che almeno due terzi del lavoro svolto dai team non ottengano i risultati auspicati o che rendano peggiore il lavoro. Se un team si occupa di prodotti in fase di ciclo di vita, in particolare di quelli innovativi, le probabilità che il team raggiunga il risultato desiderato sono notevolmente peggiori.</li>
+<li><strong>Sottostimare il tempo e l'impegno necessari per rispondere al feedback dei clienti</strong>. I team devono aspettarsi che le loro soluzioni proposte siano sbagliate e prepararsi a scartarne almeno due terzi. Per quanto riguarda il restante terzo delle soluzioni, i team devono essere pronti a evolverle in modo significativo in risposta ai feedback dei clienti.</li>
+</ul>
+
+<h2 id="ways_to_improve_customer_feedback" data-text="Come migliorare il feedback dei clienti">Come migliorare il feedback dei clienti</h2>
+
+<p>Il campo della progettazione dell'esperienza utente (UX) fornisce un framework per comprendere il miglioramento. Molte organizzazioni considerano la UX un aspetto ottimale dell'interfaccia utente del prodotto.
+Tuttavia, la UX indica se stai risolvendo un problema reale per gli utenti; più in generale, l'esperienza utente si riferisce a ogni esperienza vissuta da un utente quando interagisce con la tua organizzazione. Non si può sottolineare l'importanza di una buona UX per creare prodotti e servizi di successo.</p>
+
+<p>È fondamentale raccogliere il feedback dei clienti nel processo di consegna.
+Tutte le funzionalità significative che crei devono iniziare considerando il problema da risolvere. Questo include lo svolgimento di ricerche sugli utenti per determinare le possibili
+soluzioni e selezionare un candidato. La ricerca sugli utenti deve essere analizzata prima che venga scritta una singola riga di codice.</p>
+
+<p>Per i prodotti per la fase di ciclo di vita iniziale, i team devono adottare le idee presentate nel <a href="https://wikipedia.org/wiki/Lean_startup" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">movimento delle startup</a> per convalidare il modello di business sottostante del prodotto prima che venga scritto qualsiasi codice. Dovresti verificare di aver risolto un problema reale e poi riformulare una soluzione che risolva il problema fornendo al contempo un modello di business attuabile.</p>
+
+<p>Devi seguire uno schema simile per i prodotti esistenti che stanno implementando una nuova soluzione a un problema aziendale noto. Una volta convalidata la progettazione della soluzione, è necessario creare un prototipo per eseguire ulteriori ricerche e test. Solo quando il test conferma che la funzionalità raggiunge il tuo obiettivo nel caso in cui la funzionalità di produzione completa venga completata.</p>
+
+<p>Molte organizzazioni ignorano tutto questo lavoro e non riescono. Tuttavia, anche rigorosamente seguendo questi passaggi non garantisce il successo. Lo scopo di questo impegno è fare il possibile
+per ridurre al minimo il rischio di errori.</p>
+
+<h2 id="ways_to_measure_customer_feedback" data-text="Metodi per misurare il feedback dei clienti">Metodi per misurare il feedback dei clienti</h2>
+
+<p>La raccolta di dati sofisticati non è necessaria per stabilire se il feedback dei clienti viene raccolto, visibile e a cui interviene. Le seguenti domande possono aiutarti a determinare in che misura utilizzi il feedback dei clienti per la progettazione del tuo prodotto:</p>
+
+<ul>
+<li>Sono presenti metriche che misurano la soddisfazione dei clienti? Queste vengono aggiornate e trasmesse regolarmente ai team? Intervieni?</li>
+<li>Convalidate tutte le funzionalità prima di crearle ed eseguite ricerche degli utenti con i prototipi durante la consegna?</li>
+<li>Apportate modifiche alle funzionalità in base a questa ricerca sugli utenti?</li>
+<li>Raccogli attivamente e regolarmente feedback dagli utenti e agisci in base a questo dato?</li>
+</ul>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina per DevOps</a>.</li>
+<li>Leggi l'articolo <a href="http://ai.stanford.edu/%7Eronnyk/ExPThinkWeek2009Public.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Test online con Microsoft</a>
+(PDF), di Ronny Kohavi.</li>
+<li>Leggi l'articolo <a href="https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">Sviluppo basato sull'ipotesi</a>,
+di Barry O'Reilly.</li>
+<li>Leggi il libro <a href="http://shop.oreilly.com/product/0636920049166.do" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean UX: Designing Great Products with Agile Teams</em></a>, di Jeff Gothelf e Josh Seiden.</li>
+<li>Leggi il libro
+<a href="http://leananalyticsbook.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Analytics: Use Data to Build an Better Startup Faster</em></a>,
+di Alistair Croll e Benjamin Yoskovitz.</li>
+<li>Leggi il libro <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise: How High Performance Organizations Innovate at Scale</em></a>,
+di Jez Humble, Joanne Molesky e Barry O'Reilly.</li>
+<li>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</li>
+<li>Esegui il
+<a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a>
+per comprendere il tuo rendimento rispetto al resto del settore.</li>
+</ul>
+
+</body></html>

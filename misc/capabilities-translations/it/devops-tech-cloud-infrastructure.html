@@ -1,0 +1,114 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia DevOps: infrastruttura cloud</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> <em>l'infrastruttura cloud</em> è un insieme di funzionalità che incrementano la distribuzione del software e le prestazioni dell'organizzazione. Queste funzionalità sono state scoperte dal <a href="https://www.devops-research.com/research.html">programma di ricerca State of DevOps di DORA</a>, un'indagine indipendente e rigorosa sulle accademine sulle pratiche e sulle funzionalità che determinano prestazioni elevate. Per scoprire di più, leggi le nostre <a href="/devops">risorse DevOps</a>.</span></aside>
+<p>Molte organizzazioni stanno adottando il cloud computing. Ma c'è molto altro sul cloud che
+acquistare l'infrastruttura da un cloud provider. Lo US National Institute of
+Standards and Technologies (NIST)
+<a href="https://csrc.nist.gov/publications/detail/sp/800-145/final" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">definisce</a>
+cinque caratteristiche essenziali del cloud computing:</p>
+
+<ul>
+<li><strong>On-demand self-service:</strong> i consumatori possono eseguire il provisioning delle risorse di calcolo secondo necessità, senza l'interazione umana da parte del fornitore.</li>
+<li><strong>Accesso generico alla rete:</strong> è possibile accedere alle funzionalità tramite piattaforme diverse, come telefoni cellulari, tablet, laptop e workstation.</li>
+<li><strong>Pool di risorse:</strong> le risorse del provider sono raggruppate in un modello multi-tenant, con risorse fisiche e virtuali assegnate dinamicamente on demand.
+Il cliente può specificare la località a un livello più elevato di astrazione, ad esempio
+paese, stato o data center.</li>
+<li><strong>elasticità rapida:</strong> è possibile eseguire il provisioning elastico e il rilascio di funzionalità in modo rapido per lo scale out verso l'esterno o verso l'interno on demand, con un aspetto illimitato e adatta a qualsiasi quantità in qualsiasi momento.</li>
+<li><strong>Servizio misurato:</strong> i sistemi cloud controllano automaticamente, ottimizzano e generano report sull'utilizzo delle risorse in base al tipo di servizio, ad esempio archiviazione, elaborazione, larghezza di banda e account utente attivi.</li>
+</ul>
+
+<p>Il <a href="/devops/state-of-devops">Report 2019 State of DevOps</a> di <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a> ha rivelato che solo il 29% delle persone che dichiara di aver adottato le tecnologie cloud ha concordato o ha concordato di aver soddisfatto tutte e cinque le caratteristiche descritte sopra. Sia nel 2018 che nel 2019, la ricerca di DORA ha rilevato che le aziende con prestazioni elevate sono più di 23 volte più propense a soddisfare tutte e cinque le caratteristiche essenziali del cloud rispetto a quelle con prestazioni inferiori. Questo può spiegare perché i team e i dirigenti che affermano di aver adottato le tecnologie di cloud computing esprimono frustrazione per non aver raccolto i risultati previsti.</p>
+
+<p>Poiché molte organizzazioni utilizzano ancora le proprie procedure e procedure tradizionali per gestire i propri cloud, non possono ottenere i vantaggi previsti, secondo quanto emerso dalla ricerca di DORA:</p>
+
+<ul>
+<li>Miglioramento delle prestazioni di distribuzione del software: velocità effettiva più elevata e livelli più elevati di stabilità</li>
+<li>Migliore disponibilità del servizio</li>
+<li>Migliore visibilità dei costi: nel 2019, abbiamo constatato che gli intervistati che hanno soddisfatto tutte le caratteristiche essenziali del cloud hanno una probabilità 2,6 volte maggiore di riuscire a stimare in modo accurato i costi di gestione del software. Sono anche due volte più propensi a identificare le loro applicazioni più costose dal punto di vista operativo.</li>
+</ul>
+
+<p>Ad esempio, molte organizzazioni con un'infrastruttura cloud non consentono agli sviluppatori di eseguire autonomamente il self-service dell'ambiente on demand: richiedono loro di aprire ticket o inviare email e di attendere i giorni per il provisioning degli ambienti o l'applicazione delle modifiche alla configurazione. In questo caso, sebbene l'organizzazione possa pagare per un servizio cloud, non ha un cloud secondo la definizione di NIST.</p>
+
+<p>Quando passano al cloud, le organizzazioni devono investire nella riprogettazione dei processi e delle pratiche che hanno implementato quando utilizzavano i data center tradizionali. Devono adottare pratiche e pattern cloud-native per ottenere
+agilità, stabilità, disponibilità e trasparenza dei costi del cloud computing. Se la tecnologia sottostante è nel cloud, ma i risultati per i professionisti rimangono invariati (giorni o settimane per ottenere ambienti di test, eseguire il provisioning di una nuova infrastruttura o eseguire modifiche alla configurazione), le organizzazioni non raccoglieranno i risultati che vogliono.</p>
+
+<h2 id="how_to_implement_cloud_infrastructure" data-text="Come implementare l'infrastruttura cloud">Come implementare l'infrastruttura cloud</h2>
+
+<p>L'adozione di processi e procedure cloud-native per implementare le cinque caratteristiche di NIST prevede una modifica sostanziale da parte di diverse funzioni IT, tra cui sviluppatori, team operativi, sicurezza delle informazioni, approvvigionamento e finanza.
+Le modifiche richiedono una stretta collaborazione tra queste funzioni per poter identificare e risolvere gli obiettivi in conflitto.</p>
+
+<p>Ad esempio, molti sviluppatori si aspettano il controllo completo dell'infrastruttura di produzione quando usano le piattaforme cloud. I professionisti della sicurezza delle informazioni si oppongono a questa pratica, e per validi motivi, senza una <a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">gestione del cambiamento</a> disciplinata, possono trasformarsi in un'opera d'arte fragile, difficile da gestire, vulnerabile alle minacce esterne e non soddisfa i requisiti normativi.</p>
+
+<p>Tuttavia, gli sviluppatori possono essere in grado di eseguire il provisioning delle risorse necessarie nel rispetto di questi requisiti. Molte organizzazioni hanno adottato il paradigma dell'<em>infrastruttura come codice</em>. (GitOps è un esempio). La configurazione dell'infrastruttura è controllata nel controllo della versione e gli sviluppatori possono eseguire il provisioning di ambienti, apportare modifiche di configurazione ed eseguire i deployment tramite un meccanismo automatizzato. Il meccanismo prende il codice dal controllo della versione ed esegue operazioni tramite l'API on-cloud del cloud senza intervento umano. Tramite il controllo delle versioni e l'automazione, tutte le azioni e i relativi output vengono registrati per fornire tracciabilità e abilità complete di ogni modifica in ogni ambiente.</p>
+
+<p>Infrastructure as a Code ti consente di gestire le modifiche in modo efficace e di applicare controlli di sicurezza delle informazioni. Ad esempio, puoi implementare la segregazione dei compiti richiedendo che tutte le modifiche alla configurazione specificata nel controllo della versione siano <a href="/architecture/devops/devops-process-streamlining-change-approval" track-type="article" track-name="internalLink" track-metadata-position="body">approvate da un gruppo specifico di persone</a> (come avviene in Google). Tuttavia, il passaggio all'infrastruttura come codice richiede attività di progettazione significative e modifiche dei processi, inclusa la modifica dei criteri per l'implementazione dei controlli di sicurezza delle informazioni.</p>
+
+<p>Prova con un altro esempio. Mentre i cloud provider in genere addebitano l'infrastruttura solo quando sono in uso (rispettando la quinta caratteristica caratteristica di NIST, questo passaggio dall'infrastruttura a costo fisso al costo variabile può avere implicazioni significative sia per l'approvvigionamento che per il finanziamento). Come descritto nel
+report State of DevOps 2019:</p>
+
+<p>"Alcuni in ambito finanziario potrebbero dire che il cloud non ha determinato un risparmio sui costi a breve termine, tuttavia sappiamo che offre una maggiore trasparenza delle informazioni. Come può essere? Sebbene il cloud fornisca informazioni trasparenti sui costi ai proprietari del sistema, gli utenti non pagano tali costi a meno che non esista un modello di storno di addebito o un meccanismo simile.
+Questo può portare a costi estremamente variabili che diventano deselezionati, rendendo i costi cloud imprevedibili. In questi scenari, i team che pagano per l'infrastruttura potrebbero preferire i data center perché sono prevedibili, anche se la loro visibilità disincentiva gli utenti del sistema a creare sistemi più efficienti. Suggeriamo alle organizzazioni di allineare meglio gli incentivi in modo che i proprietari dei sistemi abbiano visibilità sia per creare sistemi più efficienti sia per farlo in questo caso, utilizzando storni di addebito o meccanismi simili."</p>
+
+<p>Oltre a considerare come viene gestita l'infrastruttura sia a livello di
+configurazione che di finanza, le applicazioni devono spesso essere riprogettate per
+sfruttare i vantaggi di una maggiore stabilità, affidabilità e agilità che
+il cloud può fornire. La riprogettazione dell'architettura di sistemi per un paradigma cloud-native è descritta nel white paper di Google Cloud, <a href="/rearchitecting-to-cloud-native-whitepaper" track-type="article" track-name="internalLink" track-metadata-position="body">Riprogettare l'architettura rendendola cloud-native: un approccio evolutivo per aumentare la produttività degli sviluppatori su larga scala.</a> </p>
+
+<p>La considerazione più importante è se il deployment nel cloud ha effettivamente aiutato la tua organizzazione a ottenere <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">release più rapide e affidabili</a>, nonché livelli più elevati di disponibilità, <a href="https://www.devops-research.com/quickcheck.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">velocità e affidabilità</a>.</p>
+
+<h2 id="common_pitfalls_of_implementing_cloud_infrastructure" data-text="Insetti comuni dell'implementazione dell'infrastruttura cloud">Insetti comuni dell'implementazione dell'infrastruttura cloud</h2>
+
+<p>I maggiori ostacoli al raggiungimento delle cinque caratteristiche definite dal NIST sono:</p>
+
+<ul>
+<li>Allineamento e collaborazione insufficienti tra le funzioni organizzative che devono funzionare insieme per poterle implementare.</li>
+<li>Investimenti insufficienti a cambiamenti tecnici, di processo e organizzativi.</li>
+</ul>
+
+<p>Molte organizzazioni iniziano con un approccio <em>lift and shift</em> allo spostamento delle applicazioni nel cloud. Ciò richiede la modifica minima delle applicazioni e processi prestabiliti per la gestione dell'infrastruttura cloud, e può essere eseguito in modo relativamente veloce. Tuttavia, offre anche vantaggi minimi. È importante pianificare di andare oltre il passaggio e passare a un paradigma cloud-native per il nuovo software, nonché ai sistemi strategici esistenti che continueranno a evolversi.</p>
+
+<p>Il passaggio al cloud è un percorso di più anni. Come per tutti i cambiamenti invasivi, è importante iniziare con poco e sperimentare velocemente ciò che funziona e ciò che non funziona, quindi adottare un approccio costante e disciplinare la scalabilità nell'ambito dell'apprendimento e degli schemi e delle pratiche efficaci attraverso l'organizzazione.</p>
+
+<p>Ci saranno molti ostacoli in questo percorso da superare, tra cui:</p>
+
+<ul>
+<li>Riprogettare i processi, l'architettura e la governance per soddisfare i requisiti normativi in modo cloud-native</li>
+<li>Progettazione di un'architettura di infrastruttura multi-tenant che consenta ai team di eseguire self-service deployment e modifiche alla configurazione, garantendo al contempo la separazione logica tra gli ambienti, l'abilitazione dello storno di addebito e la prevenzione dell'espansione del cloud e dell'infrastruttura orfana</li>
+<li>Creazione di una capacità di sviluppo del prodotto per la tua piattaforma di infrastruttura cloud</li>
+<li>Contribuire alla transizione dell'approvvigionamento all'infrastruttura come servizio a consumo invece di un investimento di capitale</li>
+<li>Aiutare gli sviluppatori a capire come creare applicazioni cloud-native</li>
+<li>Possibilità di passare alle moderne pratiche di <a href="https://landing.google.com/sre/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Site Reliability Engineering</a>
+(SRE), tra cui il deployment di Infrastructure-as-Code come
+sostituzione per la gestione manuale della configurazione basata su ticket</li>
+<li>Pianificazione ed esecuzione dell'integrazione tra sistemi cloud-native e sistemi non basati su cloud, inclusi mainframe e software/COTS in pacchetto</li>
+</ul>
+
+<p>Per superare questi ostacoli è necessario un <a href="/architecture/devops/devops-culture-transform" track-type="article" track-name="internalLink" track-metadata-position="body">programma di cambiamento sostanziale</a> che coinvolga e investi in modo duraturo tra le persone in ogni livello dell'organizzazione.</p>
+
+<h2 id="how_to_measure_cloud_infrastructure" data-text="Come misurare l'infrastruttura cloud">Come misurare l'infrastruttura cloud</h2>
+
+<p>Per decidere cosa misurare, inizia valutando quali vantaggi vorresti ottenere dall'implementazione dell'infrastruttura cloud. Poi inizia a misurare in che misura vengono realizzati questi vantaggi.</p>
+
+<p>Ad esempio, se il tuo obiettivo è migliorare la visibilità dei costi, puoi monitorare il tuo rendimento assicurandoti che il costo dell'infrastruttura venga fatturato correttamente alla linea di lavoro, al team, al prodotto o all'ambiente pertinenti.</p>
+
+<p>Puoi anche misurare direttamente se hai svolto o meno correttamente le caratteristiche essenziali di NIST: chiedi ai tuoi team in che misura sono d'accordo con le affermazioni di queste caratteristiche elencate nella parte superiore di questo documento. I team che concordano o che sono totalmente d'accordo stanno andando bene; i team neutrali o in disaccordo hanno bisogno di aiuto e supporto per rimuovere gli ostacoli al raggiungimento di questi risultati. Quindi, valuta quanti team affermano di utilizzare il cloud in grado di soddisfare i criteri di NIST.</p>
+
+<p>Alcuni aspetti delle caratteristiche essenziali possono essere misurati anche direttamente strumentando i processi. Ad esempio, se hai un processo per la gestione delle modifiche all'infrastruttura, puoi misurare il tempo necessario per apportare una modifica end-to-end. Puoi anche osservare la presenza di tecnologie cloud-native diffuse nella tua organizzazione, ad esempio la proporzione di cluster o macchine gestite tramite gruppi di Kubernetes o scalabilità automatica anziché il provisioning manuale oppure la durata (TTL) per gli host. Nei data center, i tempi di attività lunghi generalmente indicano un'elevata affidabilità; nel paradigma cloud-native, le modifiche alla configurazione vengono spesso apportate avviando nuovi host virtuali con la nuova configurazione anziché apportando modifiche agli host esistenti. Questa pratica è nota come <em>infrastruttura temporanea</em>, in cui un tempo di attività prolungato è un indicatore di una macchina senza patch.</p>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina DevOps</a>.</li>
+<li><a href="/rearchitecting-to-cloud-native-whitepaper" track-type="article" track-name="internalLink" track-metadata-position="body">White paper: Riprogettare l'architettura rendendola cloud-native: un approccio evolutivo per aumentare la produttività degli sviluppatori su larga scala</a> </li>
+<li><a href="/billing/docs/concepts" track-type="article" track-name="internalLink" track-metadata-position="body">Concetti di fatturazione di Cloud in Google Cloud</a> </li>
+<li>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</li>
+<li>Completa il <a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a> per scoprire la tua posizione rispetto al resto del settore.</li>
+</ul>
+
+</body></html>

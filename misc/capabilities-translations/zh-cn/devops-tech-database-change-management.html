@@ -1,0 +1,123 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技术：数据库变更管理</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：数据库变更管理<em></em>是提升软件交付和组织绩效的能力之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>数据库变更通常是执行部署时风险和延迟的主要来源。<a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps 研究和评估 (DORA)</a> 调查了在实现持续交付过程中与数据库相关的最佳做法，同时提高了软件交付性能和可用性。</p>
+
+<p>DORA 的研究发现，将数据库工作集成到软件交付流程中有助于<a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">持续交付</a>。但是，作为实现持续交付的一部分，您的团队如何改进数据库交付？一些做法可以预测性能结果。</p>
+
+<p>DORA 发现包含数据库诉讼或调查的良好通信和综合配置管理。在持续交付方面表现出色的团队将数据库变更作为脚本存储在版本控制中，并以与管理生产应用变更相同的方式来管理这些变更。此外，当对应用的变更需要变更数据库时，这些团队会与负责生产数据库的人员讨论这些变更，并确保工程团队能够清楚了解待处理的数据库变更进度。</p>
+
+<p>如果团队遵循这些做法，数据库变更不会拖慢它们的速度，或在执行代码部署时出现问题。</p>
+
+<h2 id="how_to_implement_database_change_management" data-text="如何实现数据库变更管理">如何实现数据库变更管理</h2>
+
+<p>实现高效的数据库变更管理有两个方面：文化和技术。本部分将讨论这两种方法。</p>
+
+<h3 id="establish_effective_communication_of_database_changes" data-text="建立有效的数据库变更通信">建立有效的数据库变更通信</h3>
+
+<p>研究显示，当团队与负责管理生产数据库的人员讨论变更，并且当团队每个人了解待处理的数据库变更进度时，团队表现最佳。</p>
+
+<p>由于几个原因，与生产数据库管理员 (DBA) 讨论建议的变更很重要。首先，这些专家可以就如何取得最佳结果提出建议，并指出诸如性能问题之类的潜在问题。（与开发者工作站相比，生产系统中的许多操作具有非常不同的性能特征）。通过这次讨论，DBA 可以深入了解上游正在发生的事情，从而帮助他们更好地为即将发生的变更带来的影响做准备。</p>
+
+<p>确保每个人都了解变更进度也很重要，因此包括 DBA 在内的团队可以了解即将发生的变更、其测试状态，以及各种生产数据库和非生产共享数据库发生了哪些架构变更。您可以通过以下方式提高可见性：</p>
+
+<ul>
+<li>将所有数据库架构变更以及架构所属的应用代码一起保留在版本控制中；</li>
+<li>使用工具记录对环境进行了哪些变更及其结果。</li>
+</ul>
+
+<p>这些做法还可确保所有变更具有规范真实来源，使变更历史记录易于访问以用于审核。</p>
+
+<h3 id="treat_all_database_schema_changes_as_migrations" data-text="将所有数据库架构变更视为迁移">将所有数据库架构变更视为迁移</h3>
+
+<p>版本控制数据库变更的广泛模式是捕获所有变更作为迁移脚本保留在版本控制中，如下图所示。每个迁移脚本都有唯一的序列号，以便您知道应用迁移的顺序。</p>
+
+<p><img src="/static/architecture/devops/images/database-change-management-1.png" alt="该图显示了将数据库的每个变更捕获为具有唯一序列号的迁移脚本。"/></p>
+
+<p>然后确保每个数据库实例都有一个表，记录针对该特定实例运行的迁移。通过这种方式，您可以对数据库架构进行版本控制，因此，您可以使用工具来应用迁移脚本，将数据库转换为您想要的架构版本。工具示例包括：</p>
+
+<ul>
+<li><a href="https://github.com/golang-migrate/migrate" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">迁移</a>
+(Go)</li>
+<li><a href="https://pypi.org/project/alembic/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">alembic</a>
+(Python)</li>
+<li><a href="https://guides.rubyonrails.org/active_record_migrations.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Active Record Migrations</a>
+（Ruby on Rails）</li>
+<li><a href="https://github.com/dbup/dbup" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">dbup</a>
+（.NET）</li>
+<li><a href="https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Entity Framework Migrations</a>
+（.NET）</li>
+<li><a href="https://laravel.com/docs/7.x/migrations" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Laravel Migrations</a>
+(PHP)</li>
+<li><a href="https://flywaydb.org/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Flyway</a>
+（platform-independent）</li>
+<li><a href="https://www.liquibase.org/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Liquibase</a>
+（platform-independent）</li>
+</ul>
+
+<p>您还可以使用迁移来创建空数据库架构以进行开发和测试。</p>
+
+<p>如下图所示，每个数据库实例都有一个表，记录您针对该实例运行的迁移。然后，您可以使用工具或脚本自动执行更新，该工具或脚本会执行尚未应用到数据库实例的迁移，并在每个迁移成功完成后更新迁移表。</p>
+
+<p><img src="/static/architecture/devops/images/database-change-management-2.png" alt="记录针对实例的迁移的表示例。"/></p>
+
+<p>您可以用与管理应用变更相同的方式来管理数据库变更：通过使用版本控制作为其真实来源的自动化过程。</p>
+
+<h3 id="zero-downtime_database_changes" data-text="零停机时间数据库变更">零停机时间数据库变更</h3>
+
+<p>许多组织会在数据库架构变更时安排服务停机时间，因为需要与应用部署协调，或在执行此类变更的过程中数据库表锁定。持续交付旨在消除部署的停机时间，因此以下是在不停机的情况下进行数据库架构变更的一些策略：</p>
+
+<ul>
+<li><strong>使用在线架构迁移框架</strong>，例如 <a href="https://github.com/github/gh-ost" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">gh-ost</a> 或 <a href="https://www.percona.com/doc/percona-toolkit/3.0/pt-online-schema-change.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">pt-online-schema-change</a>。这些工具会为您要变更的每个表创建一个“ghost”副本，迁移空副本，然后从原始表中逐步复制数据，包括迁移期间发生的任何更新。此过程完成后，它们会用“ghost”替换原始表。某些数据库，例如 <a href="/spanner/docs/schema-updates" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud Spanner</a>，可以在零停机时间的情况下执行架构更新。</li>
+<li><p>使用<a href="https://medium.com/continuousdelivery/expand-contract-pattern-and-continuous-delivery-of-databases-4cfa00c23d2e" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">并行更改模式</a><strong>分离数据库变更和应用变更</strong>。在此模式中，您永远不会更改现有数据库对象。相反，您可以在旧结构的基础上添加新的结构。例如，考虑将“地址”列变更为两列：<code translate="no" dir="ltr">address_1</code> 和 <code translate="no" dir="ltr">address_2</code>。</p>
+
+<p>您可以添加新列，但保留旧列，而不用删除旧列并添加新列，并同时发布应用的新版本。您可以在部署应用之前执行此操作。然后，该应用的新版本可以查找新列并从中读取（如果存在且不为 null），否则从旧列中读取。然后，应用可以写入新列和旧列、延迟迁移数据，并允许应用回滚，而无需数据库回滚。</p>
+
+<p>通过这种方式，应用部署与数据库变更分离，数据库变更通常可以在不引起停机的情况下进行，因为它不涉及迁移数据。为了降低部署难度，我们在应用中权衡了一些额外的复杂性。或者，您可以使用数据库触发器来使新列和旧列中的数据保持同步。</p></li>
+<li><p><strong>设计和实现数据分区和归档策略</strong>。迁移时间长的一个主要原因是具有大量行的数据库表。请确保您的应用设计为允许对数据进行分区和归档，以避免表变得太大。其中一个例子是为每个季度创建一个表的多个实例，例如，如果没有 <code translate="no" dir="ltr">survey_answers</code> 表，您可能有 <code translate="no" dir="ltr">survey_answers_2020Q1</code>、<code translate="no" dir="ltr">survey_answers_2020Q2</code>，依此类推。确保应用的设计和架构审核包括验证应用的数据分区/归档策略。</p></li>
+<li><p><strong>使用事件溯源架构</strong>。在<a href="https://microservices.io/patterns/data/event-sourcing.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">事件溯源架构</a>中，不是让数据库存储应用的当前状态，而是以事件日志的形式将其<em>变更</em>存储其状态，称为<em>命令</em>。因此，当客户更改其地址时，该应用会发出一个存储在数据库中的地址变更命令，而不是在表中更新客户详情。这就是数据库事务日志和版本控制的工作方式，也是分布式系统中的常见模式。在事件溯源架构中，事件可排入队列，从而允许在事件排队时进行数据库迁移。迁移完成后，队列中的事件可以刷新到数据库中。有些数据库能够在架构迁移运行时对查询进行排队，如果迁移完成得足够快，这会很有效。</p></li>
+<li><p><strong>使用 NoSQL 解决方案。</strong>有些 NoSQL 数据库（例如 <a href="https://firebase.google.com/docs/firestore" target="firebase" track-type="article" track-name="firebaseLink" track-metadata-position="body">Firestore</a> 和 <a href="/bigtable" track-type="article" track-name="internalLink" track-metadata-position="body">Cloud BigTable</a>）不受架构变更造成的停机时间问题的影响。Firestore 等文档数据库具有隐式架构，这意味着架构在应用层（而不是数据库层）进行管理。但是，使用 NoSQL 数据库时也存在与其相关的权衡：它并非适用于每个应用。</p></li>
+</ul>
+
+<p>除了消除计划停机时间之外，您还需要避免计划外停机时间。请确保针对<a href="/architecture/devops/devops-tech-test-data-management" track-type="article" track-name="internalLink" track-metadata-position="body">类似生产的数据集</a>（已清理任何个人信息或机密信息）测试每个架构变更，以确保应用在迁移期间和迁移后的行为符合预期。一些组织每天都会创建生产数据库的清理版本以用于此目的。如果您使用的数据库管理系统在生产环境中具有多个节点，请确保您正在针对具有至少两个节点的实例进行测试，以捕获分布式系统问题。</p>
+
+<h2 id="common_pitfalls_of_implementing_database_change_management" data-text="实施数据库变更管理的常见误区">实施数据库变更管理的常见误区</h2>
+
+<p>在实现本文所述的关键做法时，需要注意一些常见问题。</p>
+
+<p>许多组织都处于非常孤立的状态。DBA 通常在自己的单独团队中工作，该团队使用自己的流程来管理变更。当软件交付团队在没有咨询 DBA 团队的情况下实现管理数据库变更的新流程时，他们可能会在使用新流程对 DBA 团队管理的数据库进行变更时遇到阻力。这样可以显著减少迁移到新流程的优势。</p>
+
+<p>第一步是与他们一起讨论如何实现本文所述的目标。让他们接受任何建议的流程和技术变更是很重要的。为此，最好的办法是询问他们所遇到的问题，了解本文介绍的建议如何帮助他们解决这些问题，并提供解决方案。理想情况下，交付团队和 DBA 可以找到一个互相接受的解决方案。</p>
+
+<p>另一个问题通常会加剧这种障碍：多个应用共用同一数据库架构的情况。这意味着在一个应用上工作的团队不能在不影响其他应用的情况下变更架构。这要求采用一个解决方案来管理共享数据库架构的所有应用的数据库变更。在这种情况下，实现版本控制的自助服务机制部署数据库变更是可行的，甚至更加有益。不过，这需要仔细规划和发布。</p>
+
+<p>最后，同时实现基于迁移的数据库变更管理和零停机时间部署可能涉及重大<a href="/architecture/devops/devops-tech-architecture" track-type="article" track-name="internalLink" track-metadata-position="body">架构变更</a>。在估算实现这些做法所需的工作量时，应考虑这一点。</p>
+
+<h2 id="how_to_measure_database_change_management" data-text="如何衡量数据库变更管理">如何衡量数据库变更管理</h2>
+
+<p>有效的数据库变更管理系统的目标是，数据库变更不会减慢部署的速度或造成问题。值得衡量的是，数据库变更中失败变更的百分比是一个促成因素，以及与数据库变更相关的工作在多大程度上有助于从版本控制到发布的整个交货期。</p>
+
+<p>如果数据库变更需要计划停机时间，这也是一个重要的考虑因素。要衡量计划停机时间的经济影响，请考虑停机时间所产生的潜在经济损失，以及为执行部署而支付员工在非正常工作时间工作的工资成本。在工作时间以外进行部署也可能会导致团队倦怠。这些影响可用于证明实现本文档中讨论的零停机时间部署解决方案所需的工作。</p>
+
+<p>在衡量自动化水平时，请考虑使用完全自动化流程以按钮式进行数据库变更的比例。目标是以这种方式完成 100% 的数据库变更。</p>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>了解<a href="https://www.martinfowler.com/articles/evodb.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">演进式数据库设计</a>。</li>
+<li>了解<a href="https://medium.com/@chbussler/zero-downtime-database-migration-and-replication-to-and-from-cloud-spanner-99ad0c654d12" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">与 Cloud Spanner 之间的零停机时间数据库迁移和复制</a></li>
+<li>详细了解 <a href="/solutions/databases" track-type="article" track-name="internalLink" track-metadata-position="body">Google Cloud 的数据库解决方案</a>。</li>
+<li>推荐图书：<ul><li>Laine Campbell 和 Charity Majors 的<a href="http://shop.oreilly.com/product/0636920039761.do" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>数据库可靠性工程</em></a>。</li>
+<li>Scott W 的<a href="https://books.google.com/books/about/Refactoring_Databases.html?id=puBQAAAAMAAJ" target="external" track-type="article" track-name="externalLink" track-metadata-position="body"><em>重构数据库</em></a>。Ambler 和 Pramod J.Sadalage</li>
+</ul></li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,143 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia DevOps: sviluppo basato su trunk</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> <em>lo sviluppo basato su tronco</em> è una delle funzionalità che incrementano la distribuzione del software e le prestazioni dell'organizzazione.
+Queste funzionalità sono state scoperte dal <a href="https://www.devops-research.com/research.html">programma di ricerca DORA State of DevOps</a>, un'indagine indipendente e rigorosa sulle pratiche che consentono prestazioni elevate. Per scoprire di più, leggi le nostre <a href="/devops">risorse DevOps</a>.</span></aside>
+<p>I team principali di sviluppatori possono collaborare in due modi utilizzando il controllo della versione. Uno prevede l'utilizzo di <em>rami di funzionalità</em>, in cui uno sviluppatore o un gruppo di sviluppatori creano un ramo solitamente dal trunk (noto anche come <em>main</em> o <em>mainline</em>) e poi lavorano in modo indipendente su quel ramo fino al completamento della funzionalità. Quando il team considera la funzionalità pronta, aggiunge il ramo alla funzione.</p>
+
+<p>Il secondo pattern è noto come <em>sviluppo basato su trunk</em>, in cui ogni sviluppatore suddivide il proprio <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">lavoro in piccoli batch</a> e unisce il lavoro in trunk almeno una volta (e potenzialmente più volte) al giorno. La differenza principale tra questi approcci è l'ambito. I rami di funzionalità
+in genere interessano più sviluppatori e richiedono giorni o addirittura settimane di lavoro. Al contrario, in genere le diramazioni nello sviluppo basato su trunk non durano poche ore, con molti sviluppatori che uniscono di frequente le proprie modifiche in trunk.</p>
+
+<p>Il seguente diagramma mostra una sequenza temporale di sviluppo tipica basata su trunk:</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-trunk-based-development-typical-trunk-timeline.svg" alt="Sequenza temporale per le versioni 1.0 e 1.1, che mostra una correzione di bug unita dalla versione 1.0 al trunk per la versione 1.1."/></p>
+
+<p>Nello sviluppo basato su trunk, gli sviluppatori eseguono il push del codice direttamente nel trunk. Le modifiche apportate nei rami di rilascio, ovvero le istantanee del codice, quando sono pronte per essere rilasciate vengono generalmente unite al trunk (rappresentato dalle frecce verso il basso) il prima possibile. In questo approccio ci sono casi in cui le correzioni di bug devono essere selezionate e unite nelle release (rappresentate dalla freccia verso l'alto), ma questi casi non sono frequenti quanto lo sviluppo di nuove funzionalità nel trunk. Nei casi in cui le release vengono eseguite più volte al giorno, i rami di rilascio non sono affatto richiesti, in quanto le modifiche possono essere trasferite direttamente nel trunk e ne viene eseguito il deployment.
+Uno dei principali vantaggi dell'approccio basato su trunk che consente di ridurre la complessità dell'unione di eventi e di mantenere aggiornato il codice è necessario avere meno righe per lo sviluppo ed eseguire piccole e frequenti unioni.</p>
+
+<p>Al contrario, il seguente diagramma mostra uno stile di sviluppo tipico non basato su trunk:</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-trunk-based-development-typical-non-trunk-timeline.svg" alt="Sequenze temporali per più rami di lunga durata, che mostrano percorsi di unione complessi e molti punti in cui i conflitti di unione possono rallentare il rilascio del prodotto."/></p>
+
+<p>Con questo approccio, gli sviluppatori apportano le modifiche alle filiali di lunga durata. Queste modifiche richiedono eventi di unione più grandi e più complessi rispetto allo sviluppo basato su trunk. Questo approccio richiede anche ulteriori sforzi di stabilizzazione e periodi di blocco del codice per essere sicuri che il software rimanga attivo, perché grandi fusioni introducono spesso bug o regressioni. Di conseguenza, devi testare il codice post-unione e spesso devi apportare correzioni di bug.</p>
+
+<h2 id="how_to_implement_trunk-based_development" data-text="Come implementare lo sviluppo basato su trunk">Come implementare lo sviluppo basato su trunk</h2>
+
+<p>Lo sviluppo basato su trunk è necessario per l'<a href="/architecture/devops/devops-tech-continuous-integration" track-type="solution" track-name="internalLink" track-metadata-position="body">integrazione continua</a>.
+L'integrazione continua (CI) è la combinazione di pratica dello sviluppo basato su trunk e della gestione di una suite di test automatici rapidi che vengono eseguiti dopo ogni impegno nel trunk per garantire che il sistema funzioni sempre.</p>
+
+<p>Lo scopo dell'utilizzo dell'integrazione continua è eliminare le lunghe fasi di integrazione e stabilizzazione integrando spesso piccoli batch di codice. In questo modo, gli sviluppatori assicurano di comunicare ciò che stanno facendo e l'integrazione elimina le grandi fusioni che possono creare un lavoro sostanziale per altri sviluppatori e per i tester.</p>
+
+<p>Nel paradigma CI, gli sviluppatori sono responsabili che il processo di compilazione sia <em>verde</em>,  ossia funzionante. Ciò significa che se il processo CI ha esito negativo, gli sviluppatori devono interrompere ciò che stanno facendo per risolvere il problema immediatamente o per ripristinare la modifica se non può essere risolto in pochi minuti.</p>
+
+<p>Praticare uno sviluppo basato su trunk richiede a sua volta che gli sviluppatori sappiano come
+<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">scomporre il loro lavoro in piccoli batch</a>.
+Si tratta di un cambiamento significativo per gli sviluppatori che non lavorano in questo modo.</p>
+
+<p>L'analisi dei dati DORA (DevOps Research and Assessment) del <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf#page=31" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2016</a> (PDF) e del <a href="https://services.google.com/fh/files/misc/state-of-devops-2017.pdf#page=40" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2017</a> (PDF) mostra che i team raggiungono livelli più elevati di distribuzione del software e prestazioni operative (velocità di distribuzione, stabilità e disponibilità) se seguono queste pratiche:</p>
+
+<ul>
+<li>Hanno tre rami attivi nel repository del codice dell'applicazione.</li>
+<li>Unisci i rami al trunk almeno una volta al giorno.</li>
+<li>Non sono bloccati i codici e non sono previste fasi di integrazione.</li>
+</ul>
+
+<h2 id="common_pitfalls" data-text="Insetti comuni">Insetti comuni</h2>
+
+<p>Alcuni degli ostacoli più comuni all'adozione completa dello sviluppo basato su trunk sono i seguenti:</p>
+
+<ul>
+<li><p><strong>Una procedura di revisione del codice troppo pesante</strong>. Molte organizzazioni hanno un processo di revisione del codice pesante che richiede più approvazioni prima di poter unire le modifiche in trunk. Quando la revisione del codice è complessa e richiede ore o giorni, gli sviluppatori evitano di lavorare in piccoli batch e di raggruppare molte modifiche. Questo a sua volta porta a una spirale discendente in cui i revisori
+rinviano le revisioni con grandi codici a causa della loro complessità.</p>
+
+<p>Di conseguenza, le richieste di unione spesso si verificano perché gli sviluppatori le evitano. Poiché è difficile ragionare sull'impatto di grandi modifiche su un sistema attraverso un'ispezione, è probabile che i difetti sfuggiscano all'attenzione dei revisori e riducono i vantaggi dello sviluppo basato su trunk.</p></li>
+<li><p><strong>Esecuzione delle revisioni del codice in modo asincrono</strong>. Se il tuo team esercita la programmazione di
+coppie, il codice è già stato esaminato da un'altra persona. Se
+sono necessarie ulteriori revisioni, dovrebbero essere eseguite in modo sincrono: quando lo sviluppatore è pronto a utilizzare il codice, dovrebbe chiedere a qualcun altro
+del team di esaminare il codice. Non devono richiedere una revisione asincrona, ad esempio inviando una richiesta in uno strumento e poi avvia una nuova attività durante l'attesa della revisione. Più lungo è il ritardo di un'unione, maggiore è la probabilità di creare conflitti di unione e problemi associati. L'implementazione delle revisioni sincrone richiede l'accordo del team per la priorità della revisione del codice degli altri studenti rispetto a quella di altro lavoro.</p></li>
+<li><p><strong>Non vengono eseguiti test automatici prima di eseguire il commit del codice</strong>. Per garantire che il trunk venga conservato in uno stato di lavoro, è essenziale che i test vengano eseguiti sulle modifiche al codice prima del commit. Questa operazione può essere eseguita sulle workstation di sviluppo e molti strumenti forniscono anche una struttura per eseguire test a distanza in base alle modifiche locali e quindi eseguire il commit automaticamente al passaggio. Quando
+gli sviluppatori sanno di poter inserire il codice nel trunk senza dover affrontare
+molto cerimonie, il risultato è una piccola modifica al codice che può essere
+comprensibile, esaminata, testata e spostata più rapidamente in produzione.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_trunk-based_development" data-text="Modi per migliorare lo sviluppo basato su trunk">Modi per migliorare lo sviluppo basato su trunk</h2>
+
+<p>In base alla discussione precedente, di seguito sono riportate alcune pratiche che puoi implementare per migliorare lo sviluppo basato su trunk:</p>
+
+<ul>
+<li><strong>Sviluppa in piccoli gruppi</strong>. Uno dei fattori chiave più importanti per lo sviluppo basato su trunk è l'apprendimento dei team come <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">sviluppare in piccoli batch</a>.
+Ciò richiede formazione e supporto organizzativo per il team di sviluppo.</li>
+<li><strong>Esegui la revisione del codice sincrono.</strong> Come spiegato in precedenza, il passaggio alla revisione sincrona del codice o almeno alla garanzia che gli sviluppatori assegnino la priorità alla revisione del codice, garantisce che le modifiche non debbano attendere ore, o anche giorni, per essere unite in trunk.</li>
+<li><strong>Implementa test automatici completi</strong>. Assicurati di disporre di una suite completa e significativa di <a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">test delle unità automatizzate</a>, da eseguire prima di ogni impegno. Ad esempio, se utilizzi GitHub puoi <a href="https://help.github.com/en/articles/about-protected-branches" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">proteggere i rami</a> per consentire le unioni di richiesta di pull solo quando tutti i test sono stati superati. Il tutorial
+<a href="/build/docs/run-builds-with-github-checks" track-type="solution" track-name="internalLink" track-metadata-position="body">Esecuzione delle build con i controlli GitHub</a>
+mostra come integrare i
+<a href="https://developer.github.com/v3/checks/" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">controlli GitHub</a>
+con
+<a href="/build" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Build</a>.</li>
+<li><strong>Creare una build veloce</strong>. Il processo di compilazione e test dovrebbe essere eseguito in <a href="https://www.infoq.com/presentations/Crazy-Fast-Build-Times-or-When-10-Seconds-Starts-to-Make-You-Nervous/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">pochi minuti</a>.
+Se sembra difficile da raggiungere, probabilmente indica opportunità di miglioramento nell'<a href="/architecture/devops/devops-tech-architecture" track-type="solution" track-name="internalLink" track-metadata-position="body">architettura</a> del sistema.</li>
+<li><strong>Crea un gruppo principale di sostenitori e mentori</strong>. Lo sviluppo basato su trunk è un cambiamento sostanziale per molti sviluppatori e richiede una certa resistenza. Molti sviluppatori non possono immaginare di lavorare
+in questo modo. È buona norma trovare gli sviluppatori che hanno lavorato in questo
+modo e chiedere loro di allenare altri sviluppatori. Inoltre, è importante spostare alcuni team in modo che lavorino in modo basato sul trunk. Un modo per farlo è mettere insieme una serie critica di sviluppatori esperti nello sviluppo basato su trunk in modo che almeno un team segua pratiche di sviluppo basato su trunk. Puoi quindi spostare gli altri team in questo stile quando hai la certezza che il team che segue questa pratica stia dando i risultati previsti.</li>
+</ul>
+
+<h2 id="ways_to_measure_trunk-based_development" data-text="Modi per misurare lo sviluppo basato su trunk">Modi per misurare lo sviluppo basato su trunk</h2>
+
+<p>Puoi misurare l'efficacia dello sviluppo basato su trunk effettuando le seguenti operazioni.</p>
+
+<table>
+  <colgroup>
+    <col width="30%" />
+    <col width="35%" />
+    <col width="35%" />
+  </colgroup>
+<thead>
+<tr>
+<th>Fattore di verifica</th>
+<th>Cosa misurare</th>
+<th>Obiettivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ramo attivi nel repository di codice dell'applicazione.</td>
+<td>Misura quanti rami attivi sono presenti nei tuoi repository di applicazioni e nei sistemi di controllo delle versioni e rendi questo numero visibile a tutti i team. Quindi, monitora i progressi incrementali verso lo stato dell'obiettivo.</td>
+<td>Tre o più rami attivi. </td>
+</tr>
+<tr>
+<td>Periodi di blocco del codice.</td>
+<td>Misura il numero di codici bloccati e i tuoi team per quanto tempo. Queste misurazioni possono anche categorizzare quanto tempo viene dedicato all'unione dei conflitti, ai blocchi del codice, alla stabilizzazione e così via.</td>
+<td>Nessun codice si blocca quando nessuno può inviare il codice.</td>
+</tr>
+<tr>
+<td>Frequenza di unione dei rami e delle diramazioni nel trunk.</td>
+<td>Misura il valore di un programma binario (sì/no) per ogni ramo che è stato unito oppure misura una percentuale di rami e diramazioni che vengono uniti ogni giorno.</td>
+<td>Unione almeno una volta al giorno.</td>
+</tr>
+<tr>
+<td>Controlla il tempo necessario per l'approvazione delle modifiche al codice. </td>
+<td>Se esegui la revisione del codice in modo asincrono, misura il tempo medio necessario per approvare le richieste di modifica e presta particolare attenzione alle richieste che richiedono sostanzialmente più tempo della media.</td>
+<td>Trova dei modi per far sì che la revisione del codice diventi un'attività sincrona eseguita come parte dello sviluppo.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina DevOps</a>.</li>
+<li>Consulta la pagina relativa all'<a href="/build/docs/run-builds-with-github-checks" track-type="solution" track-name="internalLink" track-metadata-position="body">esecuzione delle build con i controlli GitHub</a> per imparare a connettere Google Cloud a GitHub utilizzando l'<a href="https://github.com/marketplace/google-cloud-build" target="github" track-type="solution" track-name="gitHubLink" track-metadata-position="body" class="external">app Cloud Build</a>.</li>
+<li><p>Vedi un articolo di Martin Fowler sulla <a href="https://martinfowler.com/bliki/FeatureBranch.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">diramazione di caratteristiche</a>.</p></li>
+<li><p>Leggi il post di Jez semplici su <a href="https://continuousdelivery.com/2011/07/on-dvcs-continuous-integration-and-feature-branches/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">DVCS e i rami delle funzionalità</a>.</p></li>
+<li><p>Visita il <a href="https://trunkbaseddevelopment.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">portale di Paul Hammant dedicato allo sviluppo basato su trunk</a>.</p></li>
+<li><p>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</p></li>
+<li><p>Completa il <a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a> per scoprire la tua posizione rispetto al resto del settore.</p></li>
+</ul>
+
+</body></html>

@@ -1,0 +1,91 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Messung: Umfang laufender Arbeiten begrenzen</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Arbeitliche Prozesslimits</em> gehören zu einer Reihe von Funktionen. die die Bereitstellung von Software verbessern und
+die Organisationsleistung verbessern. Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">"State of DevOps"-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, akademisch anspruchsvollen Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>Wenn unerfahrene Manager zu viel Arbeit und zu wenig Personal haben, lassen sie Mitarbeiter an mehreren Aufgaben arbeiten – in der Hoffnung, den Durchsatz damit zu steigern.
+Leider hat dies zur Folge, dass Aufgaben langsamer erledigt werden und das Team im Zuge dieses Prozesses ausbrennt.</p>
+
+<p>Sie sollten stattdessen so vorgehen:</p>
+
+<ul>
+<li>Priorisieren Sie die Arbeit.</li>
+<li>Begrenzen Sie den Arbeitsumfang von Personen.</li>
+<li>Konzentrieren Sie sich darauf, eine kleine Anzahl von Aufgaben mit hoher Priorität zu erledigen.</li>
+</ul>
+
+<p>Im Fertigungssektor wird der Umfang laufender Arbeiten (Work in Process, WIP) seit jeher begrenzt. Fabriken halten keine großen Lagerbestände vor. Stattdessen werden die Teile intern und on demand gefertigt oder von vorgelagerten Lieferanten nach Bedarf bezogen, wenn ein Kunde ein Produkt bestellt. Anschließend baut das Unternehmen das Produkt zeitgerecht zusammen (Just-in-Time-Prinzip). Wenn Sie diesen Prozess korrekt implementieren, erreichen Sie kürzere Durchlaufzeiten, eine höhere Qualität, geringere Kosten und weniger Verschwendung.</p>
+
+<h2 id="how_to_implement_work_in_process_limits" data-text="WIP-Limits implementieren">WIP-Limits implementieren</h2>
+
+<p><strong>Verwenden Sie ein Storyboard.</strong> Im Bereich der Technologie ist der Bestand unsichtbar. Es gibt keine Produktionsstätte mit Stapeln von Arbeitsmaterialien oder Fließbändern, die den Arbeitsfortschritt erkennen lassen. Eine einfache Möglichkeit zur Bestandsaufnahme besteht darin, die gesamte Arbeit des Teams auf Karteikarten festzuhalten und an einer Tafel zu befestigen. Bei agilen Methoden wird dies als Erstellen eines <em>Storyboards</em> bezeichnet.</p>
+
+<p>Das folgende Beispiel-Storyboard umfasst mehrere Funktionsbereiche (Analyse, Entwicklung, Tests, Operations) und stellt die gesamte Arbeit für ein einzelnes Produkt dar.</p>
+
+<p><img src="/static/architecture/devops/wip-1.png" alt="Bild"/></p>
+
+<p><em>(Quelle: Brettspiel "Kanban for Ops", Dominica DeGrandis, 2013)</em></p>
+
+<p>Bei Verwendung von Storyboards ist es üblich, für jeden Tag, an dem an einer Karte gearbeitet wurde, einen Punkt auf der Karte einzuzeichnen. Das Team kann dann leicht sehen, welche Arbeit blockiert ist oder länger dauert als geplant.</p>
+
+<p><strong>Legen Sie Limits fest.</strong> Legen Sie für jede Spalte auf dem Storyboard das WIP-Limit fest oder geben Sie vor, wie viele Karten sich gleichzeitig in dieser Spalte befinden können. Wenn das WIP-Limit erreicht ist, dürfen der Spalte keine weiteren Karten hinzugefügt werden. Das Team muss warten, bis eine Karte in die nächste Spalte verschoben wird, bevor die Karte mit der höchsten Priorität aus der vorherigen Spalte nachgezogen wird.</p>
+
+<p>Nur wenn Sie WIP-Limits festlegen und Karten nach dem obigen Prinzip nachziehen, erstellen Sie tatsächlich eine Kanban-Tafel.</p>
+
+<p><strong>Legen Sie WIP-Limits nach Teamkapazität fest.</strong> Wenn Sie beispielsweise vier Zweierteams von Entwicklern haben, sollten Sie nicht mehr als vier Karten in der Spalte "In Entwicklung" zulassen.</p>
+
+<p><strong>Halten Sie sich an die Limits.</strong> WIP-Limits können dazu führen, dass Teams untätig auf den Abschluss anderer Aufgaben warten. Erhöhen Sie WIP-Limits zu diesem Zeitpunkt nicht.
+Verbessern Sie stattdessen Ihre Prozesse, um die Faktoren anzugehen, die zu diesen Verzögerungen beitragen. Wenn Sie beispielsweise auf eine Umgebung zum Testen Ihrer Arbeit warten, könnten Sie dem Team, das Umgebungen vorbereitet, Hilfe beim Verbessern oder Rationalisieren seines Prozesses anbieten.</p>
+
+<h2 id="common_pitfalls_with_work_in_process_limits" data-text="Häufige Probleme mit WIP-Limits">Gängige Probleme mit WIP-Limits</h2>
+
+<p>Organisationen, die WIP-Limits implementieren, stoßen häufig auf folgende Probleme:</p>
+
+<ul>
+<li><strong>Unsichtbare Arbeit wird nicht einberechnet.</strong> Es ist wichtig, den gesamten Wertstrom von der Idee bis zum Kunden zu visualisieren, nicht nur den Teil der Arbeit, für den das Team verantwortlich ist. Andernfalls ist es nicht möglich, die tatsächlichen Engpässe zu erkennen, und Sie beschäftigen sich am Ende mit Problemen, die den Arbeitsfluss nicht wesentlich beeinträchtigen. Dies wird auch als lokale Optima bezeichnet.</li>
+<li><strong>WIP-Limits werden viel zu hoch angesetzt.</strong> Achten Sie darauf, dass Ihre WIP-Limits nicht zu hoch sind. Wenn Ihr Team seine Zeit auf mehrere Aufgaben oder Projekte aufteilt, können Sie davon ausgehen, sind Ihre WIP-Limits zu hoch sind.</li>
+<li><strong>WIP-Limits werden gelockert.</strong> Lockern Sie Ihre WIP-Limits nicht, wenn Personen untätig sind. Diese Personen sollten vielmehr in anderen Bereichen des Wertstroms aushelfen und Probleme lösen, die an anderer Stelle zu Einschränkungen führen.</li>
+<li><strong>Personen hören auf, wenn sie dem Zeitplan voraus sind.</strong> Wenn Ihre WIP-Limits leicht zu erreichen sind, verringern Sie sie. Der Zweck von WIP-Limits besteht darin, Probleme im System aufzudecken, damit sie behoben werden können. Außerdem sollten Sie darauf achten, dass Ihre visuelle Darstellung nicht zu viele Spalten enthält. Suchen Sie stattdessen nach Möglichkeiten, den Bereistellungsprozess zu vereinfachen und die Anzahl der Übergaben zu verringern. Prozessoptimierung ist der Schlüssel zu einem verbesserten Arbeitsfluss.</li>
+</ul>
+
+<p>Studien von DevOps Research &amp; Assessment zeigen, dass WIP-Limits zu Leistungssteigerungen bei der Softwarebereitstellung führen können, insbesondere wenn sie mit <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">visuellen Darstellungen</a> und <a href="/architecture/devops/devops-measurement-monitoring-systems" track-type="solution" track-name="internalLink" track-metadata-position="body">Feedback Loops aus dem Monitoring</a> kombiniert werden.</p>
+
+<h2 id="ways_to_improve_work_in_process_limits" data-text="Möglichkeiten zum Verbessern von WIP-Limits">Möglichkeiten zum Verbessern von WIP-Limits</h2>
+
+<ul>
+<li><strong>Machen Sie Ihre Arbeit sichtbar.</strong> Versuchen Sie dabei, Ihre gesamte Arbeit aufzuzeigen und für verschiedene Teams und Stakeholder sichtbar zu machen. Weitere Informationen finden Sie unter <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">Visuelle Darstellungen</a>.</li>
+<li><strong>Legen Sie WIP-Limits entsprechend der Arbeitskapazität Ihres Teams fest.</strong><ul><li>Berücksichtigen Sie Aktivitäten wie Produktionssupport, Besprechungszeit und technische Schulden.</li>
+<li>Lassen Sie in keinem Teil des Prozesses mehr laufende Arbeiten zu, als Sie Mitarbeiter zum Erledigen der Aufgaben haben.</li>
+<li>Verlangen Sie nicht, dass Personen ihre Zeit auf mehrere Aufgaben aufteilen.</li>
+<li>Verschieben Sie nach Abschluss einer bestimmten Arbeit die Karte, die diese Arbeit darstellt, in die nächste Spalte und ziehen Sie die Arbeit mit der höchsten Priorität aus der Warteschlange nach.</li>
+</ul></li>
+<li><strong>Beraumen Sie eine wöchentliche Besprechung für Stakeholder an, um alle Arbeiten der Reihe nach zu priorisieren.</strong> Geben Sie den Stakeholdern zu verstehen, dass ihre Arbeit unerledigt bleibt, wenn sie nicht teilnehmen.</li>
+<li><strong>Verbessern Sie den Arbeitsfluss.</strong> Messen Sie die Durchlaufzeit der Arbeit durch das System. Zeichnen Sie das Datum auf, an dem die Arbeit an einer Karte begonnen hat und an dem die Arbeit beendet wurde. Anhand dieser Informationen können Sie ein laufendes Häufigkeitshistogramm erstellen, das aufzeigt, wie viele Tage es dauert, bis eine Arbeit das System durchlaufen hat. Mit diesen Daten können Sie die durchschnittliche Durchlaufzeit sowie die Variabilität berechnen. Ziel sollte eine geringe Variabilität sein, da eine hohe Variabilität bedeutet, dass Ihr Projekt-Scoping unzureichend ist oder erhebliche Einschränkungen außerhalb Ihres Teams vorliegen. Eine hohe Variabilität bedeutet auch, dass Ihre Schätzungen und Prognosen für zukünftige Arbeiten nicht zuverlässig genug sind.</li>
+<li><strong>Verbessern Sie Arbeitsprozesse.</strong> Verringern Sie die Anzahl der Übergaben, vereinfachen und automatisieren Sie Aufgaben und überlegen Sie sich, wie Sie die Zusammenarbeit zur Erledigung der Arbeit optimieren können. Wenn Sie einige Hindernisse aus dem Weg geräumt haben und alles gut läuft, reduzieren Sie die WIP-Limits, um die nächsten Hindernisse aufzudecken. Ideal ist ein Arbeitsfluss aus einem Guss, was bedeutet, dass die Arbeit von der Idee bis zum Kunden mit minimaler Wartezeit oder Nacharbeit abläuft. Dieses Ideal ist vielleicht nicht erreichbar, dient aber als Wegweiser im Prozess der kontinuierlichen Verbesserung.</li>
+</ul>
+
+<h2 id="ways_to_measure_work_in_process_limits" data-text="Möglichkeiten zum Messen von WIP-Limits">Möglichkeiten zum Messen von WIP-Limits</h2>
+
+<p>WIP-Limits sind etwas, das Sie eher auferlegen als messen. Es ist jedoch wichtig, immer wieder Verbesserungsmöglichkeiten zu finden. Stellen Sie sich im Rahmen Ihrer regelmäßigen Rückblicke folgende Fragen:</p>
+
+<ul>
+<li>Kennen wir die durchschnittliche Durchlaufzeit und die Variabilität unseres gesamten Wertstroms (von der Idee bis zum Kunden)?</li>
+<li>Finden wir Möglichkeiten, den Arbeitsfluss zu verbessern und so die Durchlaufzeit der Arbeit zu reduzieren?</li>
+<li>Decken unsere WIP-Limits Hindernisse auf, die uns beim Verbessern des Arbeitsflusses im Weg stehen?</li>
+<li>Unternehmen wir etwas gegen diese Hindernisse?</li>
+</ul>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Nächste Schritte</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

@@ -1,0 +1,73 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps プロセス: チームのテスト</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注:</strong><span> チームのテストは、ソフトウェア デリバリーと組織のパフォーマンスを改善する一連の仕組みの一つです。<em></em>これらの能力は <a href="https://www.devops-research.com/research.html">DORA State of DevOps Research Program</a> で発見されました。これは、高いパフォーマンスを生み出すプラクティスと機能に関する、学術的に厳格で独立した研究調査です。詳細については、<a href="/devops">DevOps のリソース</a>をご覧ください。</span></aside><p>多くの、いわゆるアジャイルなチームであっても、開発者が対応できるのは、自分たちに提示された要件やストーリーについてのみです。また、開発者の専門知識や、開発プロセスで見つけた情報があったとしても、彼らがこうした要件やストーリーを変えることはできません。真にアジャイルなチームでは、お客様との会話を思い出させる内容がストーリー カードに書かれています。ストーリーは、達成しようとしているビジネスの成果や解決しようとしている問題から始まります。次に、チームは何をすべきかを判断し、それによって成果が達成されるかどうか、または問題が解決されるかどうかをテストします。</p>
+
+<p>組織が最新のソフトウェア開発手法から最大限の利益を得るには、チームが実際のユーザーでテストして、合意済みのビジネス成果を達成できるようにする必要があります。このパラダイムでは、開発者は、ユーザーや問題についてより多くのことを発見し、ソリューションを設計するため、アイデアのプロトタイプをすばやく作成してテストできます。その後、チームは学んだ内容をプロダクトやサービスの設計に組み込みます。効率的なプロダクト管理手法を使用してこれらを実施することで、チームは組織に価値をもたらす機能を提供し、それらの機能をより頻繁に提供できるようになります。</p>
+
+<p>チームのテストは効率的なプロダクト管理の一部です。このアプローチは、<a href="/architecture/devops/devops-process-work-visibility-in-value-stream" track-type="article" track-name="internalLink" track-metadata-position="body">価値ストリームにおける作業の可視性</a>、<a href="/architecture/devops/devops-process-working-in-small-batches" track-type="article" track-name="internalLink" track-metadata-position="body">小さなバッチでの作業</a>、<a href="/architecture/devops/devops-process-customer-feedback" track-type="article" track-name="internalLink" track-metadata-position="body">お客様からのフィードバックの可視性</a>などの機能と組み合わせて使用されることがよくあります。これらの機能により、ソフトウェア配信のパフォーマンスと組織のパフォーマンスが予測されます。</p>
+
+<h2 id="how_to_implement_team_experimentation" data-text="チームのテストの実装方法">チームのテストの実装方法</h2>
+
+<p><a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment（DORA）のリサーチ</a>で、ソフトウェア配信のパフォーマンスを向上させるチームのテストの次の 3 つの主要な要素が明らかになりました。</p>
+
+<ul>
+<li>チームの外部から許可を得ずに、新しいアイデアに独自に取り組む能力。</li>
+<li>開発中に仕様を作成および変更する能力。</li>
+<li>チームの外部から許可を得ずに、ストーリーや仕様を変更できる能力。</li>
+</ul>
+
+<p>これらの能力に基づいて以下を実施することで、チームのテストを改善できます。</p>
+
+<ul>
+<li><strong>チームに権限を与える</strong>。重要な問題を解決するビジネス目標を達成するために、チームが新しいアイデアに取り組むことができるようにします。</li>
+<li><strong>情報とコンテキストを提供する</strong>。チームに情報とコンテキストを提供することで、チームが適切な作業に関する十分な情報に基づいて判断できるようにします。組織の成果を測定することで、最適な意思決定を行うための重要な情報を得られるため、チームは期待される成果を達成し、問題を解決できます。</li>
+<li><strong>作業の担当者に詳細を任せる</strong>。チームが適切であると判断したら、ストーリー、仕様、テクノロジーをチームが変更できるようにします。彼らが専門家であることを理解して認識し、作業の完了に必要な技術的決定を行えるようにします。高い成果を上げているチームや組織では、チームは<a href="/architecture/devops/devops-tech-teams-empowered-to-choose-tools" track-type="article" track-name="internalLink" track-metadata-position="body">使用するツールやテクノロジーについて十分な情報に基づいて判断できます</a>。</li>
+</ul>
+
+<h2 id="common_pitfalls_in_team_experimentation" data-text="チームのテストでよくある落とし穴">チームのテストでよくある落とし穴</h2>
+
+<p>組織がチームのテストを実施する場合に、よく直面する落とし穴を次に示します。</p>
+
+<ul>
+<li><strong>テストする重要性を完全に無視する</strong>。技術スタッフを御用聞きのように扱わないでください。仕事の進め方についてチームに具体的な指示を与えると、さらに悪い結果をもたらします。技術スタッフはエキスパートであるため、作業を完了するために必要な技術的な決定を行えるようにしてください。</li>
+<li><strong>短時間で簡単に技術スタッフがテストを作成して実施できる機会や時間を提供していない</strong>。開発者がすばやくアイデアのプロトタイプを作成してテストできるようにします。</li>
+</ul>
+
+<h2 id="ways_to_improve_team_experimentation" data-text="チームのテストの改善方法">チームのテストの改善方法</h2>
+
+<p>チームが自由に最適なソリューションを見つけられるように、次の提案をいくつか試してみてください。</p>
+
+<ul>
+<li><strong>定期的にハッカソンを開催する</strong>。ハッカソンで、チームはアイデアを試し、作業し、共有できます。また、新しいテクノロジーやツールをチームで利用できるというメリットもあります。</li>
+<li><strong>テストを促進するために、ソリューションを繰り返すとともに、継続的に改善するようチームに働きかける</strong>。多くの場合、問題に対する最初の解決策は最善ではありません。あるサービスや機能に改善を施すと、他のサービスや機能も改善されることがよくあります。</li>
+<li><strong>開発者とオペレーターがお客様とやり取りできるようにする</strong>。この種のやり取りにより、チームが問題を解決して新しいアイデアを開拓するために使用できるコンテキストと情報が提供されます。</li>
+</ul>
+
+<h2 id="ways_to_measure_team_experimentation" data-text="チームのテストの測定方法">チームのテストの測定方法</h2>
+
+<p>ストーリーや仕様を変更するための権限リクエストを追跡するなどして、システム内でのチームのテストの形跡を取得できる場合があります。しかし、テストを測定するにはアンケートを使用することをおすすめします。重要なのは、チームが自由にこの作業を行えると感じ、問題を解決する最善の方法を見つけることです。</p>
+
+<p>DORA の調査によると、高い成果を上げているチームは次のような基準によって突き動かされることがわかりました。</p>
+
+<ul>
+<li>チームは新しいアイデアに取り組むことができる。</li>
+<li>チームは許可を求めることなく、作業を行うことができる。</li>
+<li>チームは開発中にストーリーや仕様を変更できる。</li>
+<li>チームは許可を求めることなく、変更を加えることができる。</li>
+</ul>
+
+<h2 id="whats_next" data-text="次のステップ">次のステップ</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps ページ</a>で他の記事やリソースへのリンクを確認する。</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">研究プログラム</a>を調べる。</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps のクイック チェック</a>を確認する。業界におけるご自身の立ち位置を把握できます。</li>
+</ul>
+
+</body></html>

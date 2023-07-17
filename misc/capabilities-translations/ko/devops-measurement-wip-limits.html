@@ -1,0 +1,92 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 측정: 진행 중인 업무 한도</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>참고:</strong><span> <em>진행 중인 업무 한도</em>는 소프트웨어 제공 및 조직 성과 향상을 가져오는 기능 집합 중 하나입니다. 이러한 기능은 성과 향상을 이끌어내는 관례와 기능을 독립적이면서 학술적으로 심층 연구하는 <a href="https://www.devops-research.com/research.html">DORA State of DevOps 연구 프로그램</a>을 통해 개발되었습니다. 자세한 내용은 <a href="/devops">DevOps 리소스</a>를 참조하세요.</span></aside>
+<p>일은 많은데 일을 할 수 있는 사람이 적을 때 신입 관리자는 처리량을 늘리기 위해 사람들에게 여러 업무를 할당합니다.
+하지만 업무 처리에 더 오랜 시간이 걸리고 그 과정에서 팀이 지치는 결과를 초래합니다.</p>
+
+<p>대신 다음을 수행해야 합니다.</p>
+
+<ul>
+<li>업무 우선순위 지정</li>
+<li>업무 수행 인원 제한</li>
+<li>우선순위가 높은 소량의 업무를 완료하는 데 집중</li>
+</ul>
+
+<p>제조업 부문은 진행 중인 업무(WIP)의 양을 오랜 기간 동안 제한해 왔습니다. 공장은 대량의 재고를 보유하지 않습니다. 대신 고객이 제품을 주문할 때 부품을 사내에서 주문형으로 제작하거나 필요에 따라 상류 부문의 공급업체로부터 가져와서 적시에 제품을 조립합니다. 이 프로세스를 올바르게 구현하면 리드 타임이 단축되고 품질이 향상되고 비용이 절감되며 낭비가 줄어듭니다.</p>
+
+<h2 id="how_to_implement_work_in_process_limits" data-text="진행 중인 업무 한도를 구현하는 방법">진행 중인 업무 한도를 구현하는 방법</h2>
+
+<p><strong>스토리보드 사용.</strong> 기술적으로 재고는 눈에 보이지 않습니다. 일감이 쌓여 있는 작업실이나 작업 진행 현황을 볼 수 있는 어셈블리 라인이 있는 것도 아닙니다. 재고를 확인하는 간단한 방법은 팀이 수행하는 모든 작업을 색인 카드에 작성하고 보드에 붙이는 것입니다. 애자일 방법론에서는 이를 <em>스토리보드</em> 작성이라고 합니다.</p>
+
+<p>다음 샘플 스토리보드는 여러 기능(분석, 개발, 테스트, 운영)에 걸쳐 있으며 단일 제품의 모든 작업을 보여줍니다.</p>
+
+<p><img src="/static/architecture/devops/wip-1.png" alt="이미지"/></p>
+
+<p><em>(출처: 'Kanban for Ops' 보드 게임, Dominica DeGrandis 2013')</em></p>
+
+<p>스토리보드를 사용하는 일반적인 방법은 카드가 작성될 때마다 카드에 점을 찍는 것입니다. 팀은 어떤 업무가 차단되었고 어떤 업무가 예상보다 오래 걸리는지 쉽게 확인할 수 있습니다.</p>
+
+<p><strong>한도 지정.</strong> 보드의 각 열에 WIP 한도 또는 해당 열에 한 번에 추가할 수 있는 카드 수를 지정합니다. WIP 한도에 도달한 후에는 해당 열에 더 이상 카드를 추가할 수 없으며 팀은 이전 열에서 우선순위가 가장 높은 카드를 가져오기 전에 다음 열로 카드가 이동할 때까지 기다려야 합니다.</p>
+
+<p>WIP 한도를 적용하고 이러한 가져오기 기반 프로세스를 따라야만 실제로 Kanban 보드를 만들 수 있습니다.</p>
+
+<p><strong>팀 역량에 따라 WIP 한도 결정.</strong> 예를 들어 2인 4조로 구성된 개발자가 있다면 '개발 중' 열의 카드를 4개 이하로 제한합니다.</p>
+
+<p><strong>한도 준수.</strong> WIP 한도로 인해 팀이 일을 하지 않고 쉬면서 다른 업무가 완료되기를 기다릴 수 있습니다. 이때는 WIP 한도를 늘리지 않습니다.
+그 대신 프로세스를 개선하여 이러한 지연의 원인이 되는 문제를 해결하기 위해 노력합니다. 예를 들어 업무를 테스트하는 데 사용할 환경을 기다리고 있는 경우 환경을 준비하는 팀이 해당 프로세스를 개선하거나 간소화하도록 도움을 제의할 수 있습니다.</p>
+
+<h2 id="common_pitfalls_with_work_in_process_limits" data-text="진행 중인 업무 한도의 일반적인 함정">진행 중인 업무 한도의 일반적인 함정</h2>
+
+<p>WIP 한도를 구현하는 조직은 다음과 같은 함정에 빠지곤 합니다.</p>
+
+<ul>
+<li><strong>보이지 않는 업무를 고려하지 않음.</strong> 팀이 담당하는 업무의 일부분만이 아니라 아이디어부터 고객까지의 전체 가치 흐름을 시각화하는 것이 중요합니다. 이렇게 하지 않으면 실제 병목 현상을 볼 수 없으며 실제로 업무 흐름에 큰 제약이 되지 않는 문제를 해결할 수 있습니다. 이를 로컬 최적 조건이라고도 합니다.</li>
+<li><strong>WIP 한도를 너무 크게 설정.</strong> WIP 한도가 너무 크지 않은지 확인합니다. 팀이 여러 작업 또는 프로젝트에 시간을 할애할 경우 WIP 한도가 너무 높다는 뜻입니다.</li>
+<li><strong>WIP 한도 완화.</strong> 일이 없는 사람들이 있을 때는 WIP 한도를 완화하지 않습니다. 그 대신 이러한 사람들이 가치 흐름의 다른 부분을 도와주면서 어딘가에 제약을 유발하는 문제를 해결해야 합니다.</li>
+<li><strong>미리 종료.</strong> WIP 한도에 금방 도달한다면 한도를 축소합니다. WIP 한도의 핵심은 시스템의 문제를 해결할 수 있도록 노출시키는 것입니다. 또 다른 유의점은 시각적 디스플레이에 너무 많은 열이 있는 경우입니다. 그 대신 제공 프로세스를 간소화하고 핸드오프 횟수를 줄일 방법을 찾으세요. 프로세스 개선 작업은 흐름 개선에 중요합니다.</li>
+</ul>
+
+<p>DevOps Research &amp; Assessment 연구에 따르면 WIP 한도는 <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">시각적 디스플레이 사용</a>과 <a href="/architecture/devops/devops-measurement-monitoring-systems" track-type="solution" track-name="internalLink" track-metadata-position="body">모니터링을 통한 피드백 루프</a>와 결합될 경우에 특히 소프트웨어 제공 수행 능력 개선에 도움이 됩니다.</p>
+
+<h2 id="ways_to_improve_work_in_process_limits" data-text="진행 중인 업무 한도를 개선하는 방법">진행 중인 업무 한도를 개선하는 방법</h2>
+
+<ul>
+<li><strong>업무 표시.</strong> 모든 업무를 표시하여 여러 팀과 이해관계자가 모든 업무를 볼 수 있게 하세요. 자세한 내용은 <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">시각적 디스플레이</a>를 참조하세요.</li>
+<li><strong>팀의 업무 역량에 맞는 WIP 한도 설정.</strong>
+<ul>
+<li>프로덕션 지원, 회의 시간, 기술적 채무와 같은 활동을 고려합니다.</li>
+<li>프로세스의 특정 부분에 사람들에게 배정한 업무보다 더 많은 WIP를 허용하지 않습니다.</li>
+<li>사람들에게 여러 업무에 시간을 할애하도록 요구하지 않습니다.</li>
+<li>특정 업무가 완료되면 해당 업무를 나타내는 카드를 다음 열로 이동하고 큐에서 기다리는 업무 중 가장 우선순위가 높은 업무를 가져옵니다.</li>
+</ul></li>
+<li><strong>모든 업무를 순서대로 우선순위를 정하기 위해 이해관계자의 주간 회의 주최.</strong> 이해관계자들에게 참석하지 않으면 업무가 완료되지 않을 것임을 알립니다.</li>
+<li><strong>흐름 개선을 위해 노력.</strong> 시스템을 통해 업무의 리드 시간을 측정합니다. 업무 시작일과 종료일을 카드에 기록합니다. 이러한 정보를 바탕으로 업무가 시스템을 거치는 데 걸리는 일수를 보여주는 진행 빈도 히스토그램을 만들 수 있습니다. 이 데이터를 사용하면 변동성 축소를 목표로 평균 리드 타임과 변동성을 계산할 수 있습니다. 변동성이 높다면 프로젝트의 범위를 잘못 설정했거나 팀 외부의 제약이 많은 것입니다. 또한 이후 업무에 대한 예상과 예측을 믿을 수 없다는 의미이기도 합니다.</li>
+<li><strong>업무 프로세스 개선.</strong> 핸드오프 횟수를 줄이고, 업무를 간소화 및 자동화하고, 더 효율적인 공동작업을 통해 업무를 완수하는 방법에 대해 생각해 봅니다. 장애물을 없애고 여유가 생기면 다음 장애물이 나타나도록 WIP 한도를 줄입니다. 대기 시간이나 재작업이 최소화된 상태로 아이디어부터 고객까지 업무가 흐르는 단일 흐름이 이상적입니다. 이는 달성할 수 없는 이상일 수도 같지만 지속적인 개선 과정을 안내하는 '진북' 역할을 합니다.</li>
+</ul>
+
+<h2 id="ways_to_measure_work_in_process_limits" data-text="진행 중인 업무 한도 측정 방법">진행 중인 업무 한도 측정 방법</h2>
+
+<p>WIP 한도는 측정하기보다는 적용하는 것이지만 계속 개선할 방법을 찾는 것이 중요합니다. 정기 회고 회의 시 다음과 같은 질문을 물어보세요.</p>
+
+<ul>
+<li>아이디어부터 고객에 이르기까지 전체 가치 흐름의 평균 리드 타임과 변동성을 알고 있나요?</li>
+<li>흐름을 개선해서 업무 리드 타임을 줄일 방안을 강구하고 있나요?</li>
+<li>WIP 한도로 인해 흐름 개선에 방해가 되는 장애물이 나타나고 있나요?</li>
+<li>이러한 장애물에 대한 조치를 취하고 있나요?</li>
+</ul>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

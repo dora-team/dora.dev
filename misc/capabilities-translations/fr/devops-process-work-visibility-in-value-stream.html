@@ -1,0 +1,110 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Processus DevOps : visibilité sur le travail dans le flux de valeur</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Remarque</strong> : <span>La <em>visibilité sur le travail dans le flux de valeur</em> fait partie d'un ensemble de critères d'aptitude permettant d'optimiser les performances organisationnelles et celles de la livraison de logiciels.  Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche sur l'état du DevOps, mené par l'équipe DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les fonctionnalités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>La <em>visibilité sur le travail</em> indique dans quelle mesure les équipes appréhendent correctement le flux de travail allant de l'entreprise au client, et s'ils ont une visibilité sur ce flux, en particulier sur l'état des produits et des fonctionnalités. La visibilité sur le travail fait partie des capacités caractérisant le Lean Product Management, avec le <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">travail en petits lots</a>, l'<a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">expérimentation en équipe</a> et la <a href="/architecture/devops/devops-process-customer-feedback" track-type="solution" track-name="internalLink" track-metadata-position="body">visibilité sur les commentaires client</a>.
+Ces capacités permettent de prédire à la fois les performances en matière de livraison de logiciels et la performance organisationnelle (mesurées en termes de rentabilité, de part de marché et de productivité).</p>
+
+<h2 id="how_to_implement_work_visibility" data-text="Comment mettre en œuvre la visibilité sur le travail">Comment mettre en œuvre la visibilité sur le travail</h2>
+
+<p>Les équipes qui maîtrisent cette capacité partagent un ensemble de caractéristiques :</p>
+
+<ul>
+<li>L'équipe a une bonne compréhension du <strong>parcours du travail</strong> dans l'entreprise, depuis l'idée initiale jusqu'au client, y compris en ce qui concerne les produits ou les fonctionnalités.</li>
+<li>L'équipe a une visibilité sur le <strong>déroulement de ce travail</strong>.</li>
+<li>Les caractéristiques du flux de travail, parmi lesquelles son état actuel, font l'objet de <strong>représentations visuelles</strong> ou de tableaux de bord.</li>
+<li>Les <strong>informations relatives au déroulement</strong> du travail de développement de produits sur l'ensemble du flux de valeur sont aisément accessibles.</li>
+</ul>
+
+<h3 id="use_value_stream_mapping_to_understand_how_work_flows" data-text="Utiliser la cartographie de flux de valeur pour comprendre le déroulement du travail">Utiliser la cartographie de flux de valeur pour comprendre le déroulement du travail</h3>
+
+<p>Une bonne compréhension du parcours du travail à tous les stades du flux de valeur de développement de produits ou de fonctionnalités est une étape essentielle dans l'amélioration du workflow. La <a href="https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>cartographie de flux de valeur</em></a> est une technique utile à cet égard. La marche à suivre pour créer une cartographie de flux de valeur consiste à réunir des parties prenantes des différentes composantes du flux de valeur de développement de produits : branche d'activité, conception, tests, assurance qualité, opérations et assistance. Vous divisez alors le flux de valeur en 5 à 15 blocs de processus. Dans chaque bloc, vous enregistrez l'activité effectuée ainsi que l'équipe qui l'exécute, comme indiqué dans le diagramme suivant :</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-9-stages.svg" alt="Flux de valeur en 9 étapes allant du client au déploiement du produit."/></p>
+
+<p>Source : <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise</em></a> (O'Reilly) de Jez Humble, Joanne Molesky et Barry O'Reilly, 2014</p>
+
+<p>Ensuite, vous analysez l'état du travail au sein du flux de valeur afin de recueillir les informations permettant d'identifier les obstacles affectant le flux. Pour chaque bloc de processus, vous mesurez en particulier les métriques clés suivantes :</p>
+
+<ul>
+<li><strong>Temps d'écoulement</strong> : durée qui s'écoule entre le moment où un processus accepte une unité de travail et celui où il transfère cette unité au processus en aval.</li>
+<li><strong>Temps de traitement</strong> : temps que prendrait le traitement d'une unité de travail si la personne qui l'effectue disposait de toutes les informations et ressources nécessaires à son exécution et pouvait travailler de manière ininterrompue.</li>
+<li><strong>Pourcentage d'achèvement et de conformité</strong> : pourcentage de fois qu'un processus donné reçoit d'un processus aval un élément utilisable sans retraitement.</li>
+</ul>
+
+<p>Veillez à toujours enregistrer l'état des processus effectivement constaté le jour de l'exercice. Les métriques que vous relevez doivent correspondre à la réalité, et non au souhait des personnes concernées.</p>
+
+<p>Le diagramme suivant présente un exemple de résultat final :</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-stages-with-notes-and-timeline.svg" alt="Étapes du flux de valeur, avec des remarques sur chaque étape et une chronologie globale."/></p>
+
+<p>Source : <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise</em></a> (O'Reilly) de Jez Humble, Joanne Molesky et Barry O'Reilly, 2014</p>
+
+<p>Recherchez les blocs de processus qui génèrent un travail de qualité médiocre nécessitant un important retraitement en aval (un faible pourcentage d'achèvement et de conformité est alors constaté au niveau du bloc de processus en aval), ainsi que les processus présentant des temps d'écoulement excessifs par rapport au temps de traitement.</p>
+
+<p>Il importe de collaborer avec les parties prenantes pour créer une cartographie reflétant l'état futur du flux de valeur, c'est-à-dire son état optimal à un horizon donné (par exemple, dans 6 mois à 2 ans). Les parties prenantes doivent également accepter de renouveler l'exercice à intervalles réguliers (par exemple, tous les six mois) afin d'apprécier le nouvel état actuel et les progrès accomplis.</p>
+
+<p>Une présentation détaillée de la cartographie de flux de valeur n'entre pas dans le cadre du présent document. Pour plus d'informations, nous vous recommandons l'ouvrage de Karen Martin et Mike Osterling intitulé <a href="https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation</em></a>.</p>
+
+<h3 id="visualize_the_current_state_of_work" data-text="Visualiser l'état actuel du travail">Visualiser l'état actuel du travail</h3>
+
+<p>La cartographie de flux de valeur permet de décrire le parcours du travail dans l'entreprise depuis l'idée initiale jusqu'au client. Une vue plus dynamique s'avère cependant indispensable pour vous assurer une visibilité permanente sur le déroulement de ce travail. Pour le développement logiciel, vous pouvez faire appel à un mur d'images, à un storyboard ou à un tableau Kanban comme celui qui figure dans le schéma suivant.</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-kanban-board.svg" alt="Tableau Kanban."/></p>
+
+<p>Source : Jeu de société "Kanban for Ops", Dominica DeGrandis, 2013.</p>
+
+<p>L'utilisation de représentations visuelles telles que celle-ci et la création de limites de travail en cours pour les besoins de la gestion des flux sont détaillées dans les articles sur les <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">limites de travail en cours</a> et la <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">gestion visuelle</a>.</p>
+
+<p>Enfin, la cartographie doit inclure des informations sur les responsabilités de chaque équipe, ainsi que des données statistiques sur des indicateurs clés tels que le temps d'écoulement, la fréquence de déploiement et le pourcentage d'achèvement et de conformité.</p>
+
+<h2 id="common_pitfalls_with_work_visibility" data-text="Principaux écueils liés à la visibilité sur le travail">Principaux écueils liés à la visibilité sur le travail</h2>
+
+<p>Voici quelques-uns des obstacles à éviter lors de la mise en œuvre de la visibilité sur le travail :</p>
+
+<ul>
+<li><p><strong>Surestimer l'état des connaissances organisationnelles</strong>. Aucun membre d'une organisation n'est à même d'appréhender correctement la totalité du flux de valeur. Lors de la mise en place d'un exercice de cartographie de flux de valeur dans l'entreprise, il importe d'impliquer des représentants de toutes les composantes du flux de valeur dans la démarche. Les participants sont souvent surpris de découvrir ce qui se passe <em>réellement</em> dans les autres services de l'entreprise.</p></li>
+<li><p><strong>Négliger de cartographier la totalité du flux de valeur</strong>. Il importe de cartographier le flux de valeur dans son intégralité, depuis l'idée initiale (qu'il s'agisse d'une branche d'activité, du service marketing produit ou de clients internes) jusqu'aux opérations informatiques et aux équipes d'assistance couvrant le produit ou le service à cartographier.
+Ce gain de visibilité ainsi que l'alignement et la compréhension partagée qui en résultent sont extrêmement précieux. Une cartographie qui ne couvrirait pas l'ensemble du flux de valeur peut engendrer des optimisations de portée locale et, par conséquent, des pertes d'opportunités d'amélioration des processus dans des domaines clés ayant un impact sur l'ensemble de l'organisation.</p></li>
+<li><p><strong>Ne pas cibler correctement les domaines à améliorer</strong>. Les gains d'efficacité obtenus dans des domaines qui ne constituent pas des goulots d'étranglement n'ont guère d'impact sur les temps d'écoulement globaux, et peuvent même aggraver les choses. Les entreprises sont bien sûr tenues de s'améliorer dans tous les domaines, mais il ne sert à rien d'investir des efforts de grande ampleur dans une initiative qui n'aura pas de résultats à l'échelle de l'organisation.</p></li>
+<li><p><strong>Ne pas accorder l'autorité requise pour apporter des changements</strong>. Les personnes impliquées dans l'effort doivent avoir le pouvoir d'effectuer des changements pour atteindre l'état futur.
+Si ces participants ne peuvent que tenter de persuader d'autres membres de l'organisation, l'exercice aura peu de chances d'aboutir.</p></li>
+</ul>
+
+<p>En outre, veillez à examiner les obstacles courants décrits dans les articles sur les <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">limites de travail en cours</a> et la <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">gestion visuelle</a>.
+Nombre d'entre eux s'appliquent également dans ce contexte.</p>
+
+<h2 id="ways_to_improve_work_visibility" data-text="Comment améliorer la visibilité sur le travail">Comment améliorer la visibilité sur le travail</h2>
+
+<ul>
+<li><p><strong>Fournir des outils de visualisation et d'enregistrement du workflow</strong>. Assurez-vous tout d'abord que l'équipe a accès à des dispositifs de <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">gestion visuelle</a> représentant leur travail et son déroulement à travers la partie du flux de valeur qui leur est la plus proche, en incluant les parties situées en amont et en aval du processus. Enregistrez le temps que prend le travail à traverser le processus, ainsi que la fréquence à laquelle un retraitement s'est avéré nécessaire en raison du fait que l'équipe n'a pas effectué le travail correctement du premier coup. Cela vous permettra de découvrir précocement vos meilleures opportunités d'amélioration au niveau de l'équipe.</p></li>
+<li><p><strong>Créer une cartographie de flux de valeur</strong>. Collaborez avec les autres équipes pour réaliser un exercice de cartographie de flux de valeur, de façon à déterminer le déroulement du travail depuis l'idée initiale jusqu'au résultat client, puis à générer un rapport sur les métriques de cartographie de flux de valeur (temps d'écoulement, temps de traitement, pourcentage d'achèvement et de conformité) pour chaque bloc de processus. Demandez à l'équipe d'élaborer une cartographie reflétant l'état futur du flux de valeur et de travailler à sa mise en œuvre.</p></li>
+<li><p><strong>Partager les artefacts</strong>. Assurez-vous que les artefacts issus de ces exercices sont accessibles à tous les membres de l'organisation et actualisés au moins une fois par an.</p></li>
+</ul>
+
+<h2 id="ways_to_measure_work_visibility" data-text="Comment mesurer la visibilité sur le travail">Comment mesurer la visibilité sur le travail</h2>
+
+<p>Pour déterminer dans quelle mesure l'équipe dispose d'une visibilité sur le travail au sein du flux de valeur, posez les questions suivantes :</p>
+
+<ul>
+<li>Tous les membres de l'organisation ont-ils accès à une cartographie de flux de valeur actuelle ou récente ?</li>
+<li>Tous les membres de l'organisation ont-ils accès à une représentation visuelle de ce sur quoi ils travaillent ainsi que de l'état de leur travail ?</li>
+<li>L'équipe dispose-t-elle de statistiques relatives à des métriques comme le temps d'écoulement et le pourcentage d'achèvement et de conformité ?</li>
+</ul>
+
+<h2 id="whats_next" data-text="Étapes suivantes">Étapes suivantes</h2>
+
+<ul>
+<li>Pour obtenir des liens vers d'autres articles ou ressources, consultez la page <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps</a>.</li>
+<li>Lisez le livre <a href="https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation</em></a>, de Karen Martin et Mike Osterling.</li>
+<li>Lisez le livre <a href="https://books.google.com/books/about/Kanban.html?id=RJ0VUkfUWZkC" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Kanban: Successful Evolutionary Change for Your Technology Business</em></a>, de David Anderson.</li>
+<li>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</li>
+<li>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</li>
+</ul>
+
+</body></html>

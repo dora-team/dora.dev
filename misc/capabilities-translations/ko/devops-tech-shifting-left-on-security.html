@@ -1,0 +1,118 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 기술: 개발 초기부터 보안 문제 반영</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>참고:</strong><span> <em>개발 초기부터 보안 문제 반영</em>은 더 나은 소프트웨어 제공 및 조직 성과를 향상하는 여러 기능 중 하나입니다. 이러한 기능은 성과 향상을 이끌어내는 관례와 기능을 독립적이자 학술적으로 심층 연구하는 <a href="https://www.devops-research.com/research.html">DORA State of DevOps 연구 프로그램</a>을 통해 개발되었습니다. 자세한 내용은 <a href="/devops">DevOps 리소스</a>를 참조하세요.</span></aside>
+<p>보안은 모든 사람의 책임입니다. <a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">2016 State of DevOps Report</a>(PDF) 연구에 따르면 성과가 우수한 팀은 성과가 낮은 팀보다 보안 문제를 해결하는 데 50% 적은 시간을 씁니다. 일상 업무에 정보 보안(InfoSec) 목표를 우수하게 통합하는 팀은 소프트웨어 배포 성과를 향상시키고 더 안전한 시스템을 구축할 수 있습니다.
+보안 문제를 비롯한 문제가 소프트웨어 개발 수명 주기의 초반에 처리되기 때문에(즉, 일정 다이어그램에서 왼쪽 방향으로 진행) 이 아이디어를 <em>원점 회귀(shift idea)</em>라고 부르기도 합니다.</p>
+
+<p>소프트웨어 개발은 최소한 네 가지 활동(설계, 개발, 테스트, 출시)으로 이루어집니다. 기존 소프트웨어 개발 주기에서는 개발이 완료된 후 보안 테스트를 비롯한 테스트가 수행됩니다. 이 방식에서는 보통 테스트에서 아키텍처 결함 등 해결에 큰 비용이 드는 중요한 문제를 발견하게 됩니다.</p>
+
+<p>결함이 발견되면 개발자는 원인과 해결 방법을 찾아야 합니다. 복잡한 프로덕션 시스템에서는 원인이 한 가지인 경우보다 여러 원인이 일련의 상호작용으로 결함을 야기하는 경우가 많습니다.
+보안, 성능, 가용성과 관련된 결함은 해결에 비용이 많이 들고 시간이 오래 걸립니다. 또한 아키텍처 변경이 필요한 경우가 많습니다. 결함을 찾고, 솔루션을 개발하고, 수정 사항을 완전히 테스트하는 데 필요한 시간은 예측할 수 없습니다. 결과적으로 배포일이 매우 지연될 수 있습니다.</p>
+
+<p>지속적 배포는 프로세스 전반에 걸쳐 제품에 품질을 구축한다는 단순한 생각을 구현한 것입니다. W. 에드워드 데밍은 <a href="https://deming.org/explore/fourteen-points?apartner=aarp" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">관리 혁신의 14가지 요소</a>에서 '품질 확보에 있어 검사에 의존하지 마세요. 처음부터 제품에 품질을 구축하여 한꺼번에 검사를 수행하지 마세요'라고 말합니다. 이 모델에서는 개발자가 단순히 단계적으로 접근하는 대신 보안 및 테스트 전문가와 함께 제품 수명 주기 전반에 걸쳐 <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">작은 배치로 작업</a>을 설계하고 배포합니다.</p>
+
+<p><a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">DevOps Research and Assessment(Dora)</a>(PDF)의 연구에 따르면 프로세스 마지막에 보안 문제를 테스트하는 대신 모든 사람의 일상 업무에 보안을 접목시킬 때 더 우수한 결과를 얻을 수 있습니다. 즉, 일상적인 개발, 품질 관리, 운영에 보안 테스트 및 제어 기능을 통합해야 합니다. 이러한 작업의 대부분은 자동화되어 배포 파이프라인에 포함될 수 있습니다. 이러한 활동을 자동화하면 필요에 따라 증거를 생성하여 제어 기능이 효과적으로 작동하고 있음을 입증할 수 있습니다. 이 정보는 감사관, 평가자, 가치 스트림에 관련된 모든 담당자에게 유용합니다.</p>
+
+<h2 id="how_to_implement_improved_security_quality" data-text="향상된 보안 품질 구현 방법">향상된 보안 품질 구현 방법</h2>
+
+<p>보안 검토 프로세스를 소프트웨어 개발 수명 주기의 '왼쪽' 또는 초기 단계로 옮기려면 기존 정보 보안 방법에서 몇 가지를 변경해야 하지만 정밀 검사에 관해서는 기존 소프트웨어 개발 방법과 큰 차이가 없습니다.</p>
+
+<h3 id="get_infosec_involved_in_software_design" data-text="소프트웨어 설계에 InfoSec 참여">InfoSec의 소프트웨어 설계 과정 참여</h3>
+
+<p>InfoSec팀은 모든 프로젝트의 설계 단계에 참여해야 합니다. 프로젝트 설계를 시작할 때 개발 단계에 설계를 출시하기 위한 평가 요소로 보안 검토를 추가할 수 있습니다. 이 검토 프로세스는 개발 프로세스의 근본적인 변화를 나타낼 수 있습니다. 이러한 변경을 위해서는 개발자 교육이 필요할 수 있습니다. 또한 InfoSec팀의 직원을 늘리고 변경에 대한 조직적 지원을 제공해야 할 수도 있습니다. InfoSec팀이 설계 단계에 참여하는 일이 조직의 변화를 나타낼 수도 있지만, 설계 단계에 새로운 이해관계자가 참여하는 것은 새로운 개념이 아니며 이점을 고려하여 수용해야 합니다.</p>
+
+<h3 id="develop_security-approved_tools" data-text="보안 승인 도구 개발">보안 승인 도구 개발</h3>
+
+<p>개발자에게 InfoSec팀의 의견이 포함된 사전 승인된 라이브러리 및 도구를 제공하면 개발자 코드를 표준화하는 데 도움이 됩니다. 표준 코드를 사용하면 InfoSec팀에서 코드를 더 쉽게 검토할 수 있습니다. 표준 코드 사용 시 자동 테스트를 통해 개발자가 사전 승인된 라이브러리를 사용하고 있는지 확인할 수 있습니다. InfoSec팀은 개발자나 테스터에 비해 인원이 부족한 경우가 많기 때문에 이러한 방식은 InfoSec팀의 의견이나 영향력을 확장하는 데에도 도움이 됩니다.</p>
+
+<h3 id="develop_automated_testing" data-text="자동 테스트 개발">자동 테스트 개발</h3>
+
+<p><a href="/architecture/devops/devops-tech-test-automation" track-type="solution" track-name="internalLink" track-metadata-position="body">자동 테스트</a> 프로세스에 보안 테스트를 구축하면 수동으로 검토하지 않고도 대규모 코드를 <a href="/architecture/devops/devops-tech-continuous-integration" track-type="solution" track-name="internalLink" track-metadata-position="body">지속적으로 테스트</a>할 수 있습니다. 자동 테스트로 공통적인 보안 취약성을 식별할 수 있으며 지속적 통합 파이프라인 또는 빌드 프로세스의 일부로 균일하게 적용할 수 있습니다. 자동 테스트를 위해서는 테스트 초기와 새로운 보안 테스트가 식별될 때 지속적으로 자동 보안 테스트를 설계하고 개발해야 합니다. 이는 InfoSec팀의 의견을 반영할 수 있는 또 다른 기회입니다.</p>
+
+<h2 id="common_pitfalls" data-text="일반적인 문제">일반적인 문제</h2>
+
+<p>팀이 개발 초기에 보안 문제를 처리하지 못하게 되는 가장 흔한 이유는 다음과 같습니다.</p>
+
+<ul>
+<li><strong>InfoSec팀과 협력하지 못함</strong>. 가장 큰 문제는 다른 팀이 InfoSec팀과 협력하지 못하는 경우입니다. InfoSec은 위협이 어디서나 지속적으로 발생하는 시대에 매우 중요한 부서입니다.</li>
+<li><strong>InfoSec팀 인력 부족</strong>. InfoSec팀 인력이 부족한 경우가 많습니다.
+Verica의 선임 보안 엔지니어인 제임스 위켓은 대기업의 경우 개발자 100명당 인프라 인력은 10명이고 InfoSec 인력은 1명이라고 <a href="https://blog.xebialabs.com/2017/04/20/10-tips-integrating-security-devops/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">인용합니다</a>.</li>
+<li><strong>InfoSec팀과의 너무 느린 소통</strong>. 대부분의 경우 InfoSec은 소프트웨어 배포 수명 주기가 끝날 때에만 참여하는데 이 단계에서는 대부분 보안 개선에 필요한 변경이 매우 어렵고 비용이 많이 듭니다.</li>
+<li><strong>일반적인 보안 위험에 익숙하지 않음</strong>. 많은 개발자가 <a href="https://owasp.org/www-project-top-ten/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">OWASP 상위 10개</a> 보안 위험과 같은 일반적인 보안 위험과 이를 방지하는 방법을 모릅니다.</li>
+</ul>
+
+<h2 id="ways_to_improve_security_quality" data-text="보안 품질 개선 방법">보안 품질 개선 방법</h2>
+
+<p>다음을 수행하여 소프트웨어 배포 성과와 보안 품질을 개선할 수 있습니다.</p>
+
+<ul>
+<li><strong>보안 검토를 수행합니다</strong>. 보안 검토 프로세스가 개발 속도를 늦추지 않도록 주의하면서 모든 주요 기능에 대해 보안 검토를 수행합니다.</li>
+<li><strong>사전 승인된 코드를 빌드합니다</strong>.  InfoSec팀에서 개발자 및 IT 운영팀이 업무에 사용할 수 있도록 사전 승인되고 사용하기 쉬운 라이브러리, 패키지, 도구 모음, 프로세스를 구축하도록 합니다.</li>
+<li><strong>모든 단계에 보안 검토를 통합합니다</strong>. InfoSec을 전체 소프트웨어 배포 수명 주기의 일상 업무에 통합합니다. 여기에는 애플리케이션 설계 단계에서 InfoSec팀이 의견을 제공하고 소프트웨어 데모에 참여하며 데모 중에 의견을 제공하는 것이 포함됩니다.</li>
+<li><strong>보안을 테스트합니다</strong>. 사전 승인된 코드를 사용해야 하는 영역을 포함하여 자동화된 테스트 프로세스의 일부로 보안 요구사항을 테스트합니다.</li>
+<li><strong>데모에 InfoSec팀을 초대합니다</strong>. 애플리케이션 데모에 InfoSec팀을 포함하면 보안 관련 취약점을 조기에 발견할 수 있으므로 팀에서 해결할 시간이 늘어납니다.</li>
+</ul>
+
+<h2 id="ways_to_measure_security_quality" data-text="보안 품질 측정 방법">보안 품질 측정 방법</h2>
+
+<p>위에서 설명한 개선 방법을 바탕으로 다음과 같이 보안을 측정할 수 있습니다.</p>
+
+<table>
+  <colgroup>
+    <col width="30%" />
+    <col width="35%" />
+    <col width="35%" />
+  </colgroup>
+<thead>
+<tr>
+<th><strong>테스트 요소</strong></th>
+<th><strong>측정 항목</strong></th>
+<th><strong>목표</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기능의 보안 검토 여부</td>
+<td>설계 프로세스 초기에 보안 검토를 받는 기능의 비율입니다.</td>
+<td>이 비율이 시간이 지남에 따라 증가해야 합니다.</td>
+</tr>
+<tr>
+<td>보안 검토로 인해 개발 주기가 지연되는지 여부</td>
+<td>검토로 인해 개발 프로세스에 추가되는 시간입니다.</td>
+<td>보안 검토에 걸리는 시간은 합의한 최소 시간까지 단축해야 합니다.</td>
+</tr>
+<tr>
+<td>보안이 배포 수명 주기에 통합된 정도</td>
+<td>소프트웨어 배포 수명 주기의 각 단계에서 InfoSec의 참여 정도입니다. 예를 들어 소프트웨어 개발 수명 주기(설계, 개발, 테스트, 출시)의 각 단계에서 기록된 보안 검토 횟수를 측정할 수 있습니다.</td>
+<td>이 값은 InfoSec이 수명 주기에 완전히 통합되었음을 나타내는 값에 도달할 때까지 증가해야 합니다.</td>
+</tr>
+<tr>
+<td>자동 테스트가 보안 요구사항을 충족하는지 여부</td>
+<td>InfoSec팀이 자동 테스트를 작성하는 과정 InfoSec이 테스트 프로세스에 대해 의견을 받을 때 자동 테스트 프로세스에 포함된 보안 요구사항의 수입니다.</td>
+<td>이 비율이 시간이 지남에 따라 증가해야 합니다.</td>
+</tr>
+<tr>
+<td>사전 승인된 라이브러리, 패키지, 도구 모음, 프로세스 사용 여부</td>
+<td>처음에는 InfoSec팀이 도구 개발에 참여하는지 여부입니다. 작업이 진행될 때 사용 가능한 InfoSec 승인 라이브러리, 패키지, 도구 모음의 수 또는 개발팀 및 운영팀에서 사용하는 리소스의 수입니다.</td>
+<td>조직에서 InfoSec 감독 도구가 올바른 수준이라고 동의할 때까지 시간이 지나면서 참여도가 높아져야 합니다. 마찬가지로 사전 승인된 도구 사용의 비율이나 개수는 팀에서 InfoSec에서 만들거나 승인한 모든 도구를 사용할 때까지 증가해야 합니다. </td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li>가장 중요한 웹 애플리케이션 보안 위험 10개의 목록은 <a href="https://owasp.org/www-project-top-ten/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external">OWASP 상위 10개</a>를 참조하세요.</li>
+<li><a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">사이트 안정성 엔지니어링(SRE) 도서</a>를 읽어보세요.</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

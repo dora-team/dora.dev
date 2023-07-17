@@ -1,0 +1,110 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Proceso de DevOps: Visibilidad del trabajo en el flujo de valor</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> La <em>visibilidad del trabajo en la cadena de valor</em> forma parte del conjunto de capacidades que mejoran la entrega de software y el rendimiento de la organización.  Estas funciones se descubrieron mediante el <a href="https://www.devops-research.com/research.html">programa de investigación de DevOps de DORA</a>, una investigación independiente y rigurosa desde el punto de vista académico sobre las prácticas y las funciones que impulsan el alto rendimiento. Para obtener más información, lee nuestros <a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>La <em>visibilidad del trabajo</em> representa la medida en la que los equipos comprenden correctamente el flujo de trabajo desde la empresa hasta los clientes, y si esos equipos tienen visibilidad de este flujo, incluidos el estado de los productos y las características. La visibilidad del trabajo es parte de un grupo más amplio de capacidades que representan la administración eficiente de productos. Estas capacidades incluyen el <a href="/architecture/devops/devops-process-working-in-small-batches" track-type="solution" track-name="internalLink" track-metadata-position="body">trabajo en lotes pequeños</a>, la <a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">experimentación en equipo</a> y la <a href="/architecture/devops/devops-process-customer-feedback" track-type="solution" track-name="internalLink" track-metadata-position="body">visibilidad de los comentarios de los clientes</a>.
+También predicen tanto el rendimiento de la entrega de software como el rendimiento organizativo (que se mide en términos de rentabilidad, participación de mercado y productividad).</p>
+
+<h2 id="how_to_implement_work_visibility" data-text="Cómo implementar la visibilidad del trabajo">Cómo implementar la visibilidad del trabajo</h2>
+
+<p>Los equipos que dominan esta capacidad tienen las características siguientes:</p>
+
+<ul>
+<li>El equipo comprende <strong>cómo el trabajo se mueve</strong> por la empresa, desde la idea hasta el cliente, incluidos los productos o las características.</li>
+<li>El equipo tiene visibilidad en el <strong>flujo de este trabajo</strong>.</li>
+<li>El flujo de trabajo, incluido su estado actual, se <strong>muestra en presentaciones visuales</strong> o paneles.</li>
+<li>Es fácil obtener <strong>información sobre el flujo</strong> del trabajo de desarrollo de productos en todo el flujo de valor.</li>
+</ul>
+
+<h3 id="use_value_stream_mapping_to_understand_how_work_flows" data-text="Usa la asignación del flujo de valor para comprender cómo fluye el trabajo">Usa la asignación del flujo de valor para comprender cómo fluye el trabajo</h3>
+
+<p>La comprensión de cómo se mueve el trabajo a través del flujo de valor de desarrollo de productos o características es un paso esencial para mejorar el flujo de trabajo. Una técnica útil es la <a href="https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>asignación del flujo de valor</em></a> (VSM). Creas un mapa del flujo de valor mediante la recopilación de partes interesadas de cada parte del flujo de valor de desarrollo de productos: la línea de negocio, el diseño, las pruebas, la garantía de calidad, las operaciones y la asistencia. Divides el flujo de valor en 5 a 15 bloques de proceso. En cada bloque, registras la actividad que se realiza, junto con el equipo que la lleva a cabo, como se muestra en el siguiente diagrama:</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-9-stages.svg" alt="Flujo de valor que muestra 9 etapas desde el cliente hasta la implementación del producto"/></p>
+
+<p>Fuente: <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise</em></a> (O'Reilly) de Jez Humble, Joanne Molesky y Barry O'Reilly, 2014</p>
+
+<p>A continuación, analizas el estado del trabajo dentro del flujo de valor y recopilas la información para determinar las barreras que impiden el flujo. En particular, para cada bloque de proceso, mides las métricas clave siguientes:</p>
+
+<ul>
+<li><strong>Plazo de entrega</strong>: tiempo desde el momento en el que un proceso acepta un trabajo hasta el punto en el que lo entrega al proceso descendente siguiente</li>
+<li><strong>Tiempo de proceso</strong>: tiempo que llevaría completar un solo elemento del trabajo si la persona que lo realiza tuviera toda la información y los recursos necesarios para completarlo y pudiera trabajar sin interrupciones</li>
+<li><strong>Porcentaje completo y exacto (%C/A)</strong>: proporción de veces que un proceso recibe algo de un proceso ascendente que puede usar sin necesidad de repetir el trabajo</li>
+</ul>
+
+<p>Siempre registras el estado de los procesos como están el día en el que se realiza el ejercicio. Asegúrate de determinar las métricas reales y no las que las personas tienen como objetivo.</p>
+
+<p>En el siguiente diagrama, se muestra un ejemplo del resultado final.</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-stages-with-notes-and-timeline.svg" alt="Etapas del flujo de valor con notas sobre cada etapa y un cronograma general"/></p>
+
+<p>Fuente: <a href="https://www.oreilly.com/library/view/lean-enterprise/9781491946527/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Lean Enterprise</em></a> (O'Reilly) de Jez Humble, Joanne Molesky y Barry O'Reilly, 2014.</p>
+
+<p>Busca bloques de proceso que produzcan un trabajo de baja calidad, que luego requieren una gran cantidad de repetición de trabajo descendente (reflejado en un bajo %C/A en el bloque de proceso descendente), y procesos que tienen plazos de entrega largos en relación con el tiempo del proceso.</p>
+
+<p>Es importante trabajar con las partes interesadas para crear un mapa del flujo de valor del estado futuro que refleje el estado óptimo del flujo en alguna fecha futura (por ejemplo, en un período de 6 meses a 2 años). Las partes interesadas también deberían acordar la ejecución habitual del ejercicio (por ejemplo, cada 6 meses) para analizar el estado actual y el progreso.</p>
+
+<p>No se profundiza en la VSM en este documento. Si deseas obtener más información, te recomendamos el libro <a href="https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation</em></a> (Asignación del flujo de valor: Cómo visualizar y alinear el liderazgo para una transformación organizacional), escrito por Karen Martin y Mike Osterling.</p>
+
+<h3 id="visualize_the_current_state_of_work" data-text="Visualiza el estado actual del trabajo">Visualiza el estado actual del trabajo</h3>
+
+<p>Con la VSM, se puede ver cómo el trabajo se mueve a través del flujo de valor de desarrollo de productos, desde la idea hasta el cliente. Sin embargo, para obtener una visibilidad continua del flujo de este trabajo, necesitas una vista más dinámica. Para el desarrollo de software, puedes usar un muro de tarjetas, un guion o un tablero Kanban como el que se muestra en el siguiente diagrama.</p>
+
+<p><img src="/static/architecture/devops/images/devops-process-work-visibility-in-value-stream-kanban-board.svg" alt="Tablero Kanban"/></p>
+
+<p>Fuente: Juego de mesa "Kanban for Ops", Dominica DeGrandis, 2013.</p>
+
+<p>En los artículos sobre los <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">límites de trabajo en proceso</a> y la <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">administración visual</a>, se detalla la forma de usar presentaciones visuales como esta y crear límites de trabajo en proceso para administrar el flujo.</p>
+
+<p>Por último, la asignación debe incluir información sobre las responsabilidades de cada equipo, junto con datos estadísticos sobre métricas clave, como el plazo de entrega, la frecuencia de implementación y el %C/A.</p>
+
+<h2 id="common_pitfalls_with_work_visibility" data-text="Errores comunes de la visibilidad del trabajo">Errores comunes de la visibilidad del trabajo</h2>
+
+<p>A continuación, se detallan algunos de los obstáculos comunes para implementar la visibilidad del trabajo:</p>
+
+<ul>
+<li><p><strong>Sobreestimar el estado del conocimiento organizativo</strong>. En cualquier organización, nadie tiene una buena vista de todo el flujo de valor. Cuando una empresa realiza un ejercicio de asignación del flujo de valor, es importante reunir a personas de todo el flujo de valor para realizar el ejercicio. A menudo, las personas se sorprenden cuando descubren lo que <em>en realidad</em> sucede en otras partes de la organización.</p></li>
+<li><p><strong>No asignar todo el flujo de valor</strong>. Es importante asignar todo el flujo de valor desde la idea (ya sea una línea de negocio, el departamento de marketing de productos o los clientes internos) hasta las operaciones de TI y las personas que brindan asistencia para el producto o servicio que se desea asignar.
+La mayor visibilidad y alineación que resultan, junto con la comprensión compartida, son extremadamente valiosas. Si no se asigna todo el flujo de valor, se pueden generar optimizaciones locales y perderse oportunidades de mejorar los procesos en áreas clave con impacto en toda la organización.</p></li>
+<li><p><strong>Centrarse en las áreas equivocadas para mejorar</strong>. La mejora de la eficacia en áreas que no son cuellos de botella no tendrá mucho impacto en los plazos de entrega generales, y puede empeorar la situación. Por supuesto, las empresas deben mejorar en todas las áreas, pero no tiene sentido invertir un esfuerzo sustancial en un trabajo que no tendrá resultados a nivel de la organización.</p></li>
+<li><p><strong>No otorgar autoridad para realizar cambios</strong>. Las personas involucradas en el esfuerzo deben tener la autoridad para hacer cambios a fin de lograr el estado futuro.
+Si estas personas deben tratar de persuadir a otros miembros de la organización, es poco probable que el ejercicio tenga éxito.</p></li>
+</ul>
+
+<p>Además, asegúrate de observar los obstáculos comunes en los artículos sobre <a href="/architecture/devops/devops-measurement-wip-limits" track-type="solution" track-name="internalLink" track-metadata-position="body">límites de trabajo en proceso</a> y <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">administración visual</a>.
+Muchos de ellos también se aplican en este contexto.</p>
+
+<h2 id="ways_to_improve_work_visibility" data-text="Formas de mejorar la visibilidad del trabajo">Formas de mejorar la visibilidad del trabajo</h2>
+
+<ul>
+<li><p><strong>Proporciona herramientas para visualizar y grabar el flujo de trabajo</strong>. Para comenzar, asegúrate de que el equipo tenga pantallas de <a href="/architecture/devops/devops-measurement-visual-management" track-type="solution" track-name="internalLink" track-metadata-position="body">administración visual</a> que muestren el trabajo que realizan y su flujo en la parte del flujo de valor más cercana a ellos, incluidas las partes ascendentes y descendentes del proceso. Registra cuánto tiempo se tarda en completar el proceso y la frecuencia con la que se debe repetir el trabajo porque el equipo no lo hizo bien la primera vez. Esto te permitirá descubrir las primeras y mejores oportunidades de mejora a nivel de equipo.</p></li>
+<li><p><strong>Crea un mapa del flujo de valor</strong>. Trabaja con otros equipos para realizar un ejercicio de asignación del flujo de valor a fin de descubrir cómo fluye el trabajo desde la idea hasta el resultado del cliente y, luego, informa las métricas de VSM (plazo de entrega, tiempo de proceso, %C/A) de cada bloque de proceso. Pídele al equipo que prepare un mapa del flujo de valor del estado futuro y que trabaje en su implementación.</p></li>
+<li><p><strong>Comparte artefactos</strong>. Asegúrate de que los artefactos de estos ejercicios estén disponibles para todos en la organización y de que se actualicen al menos una vez al año.</p></li>
+</ul>
+
+<h2 id="ways_to_measure_work_visibility" data-text="Formas de medir la visibilidad del trabajo">Formas de medir la visibilidad del trabajo</h2>
+
+<p>Para determinar la eficacia de la visibilidad del equipo respecto del trabajo en el flujo de valor, haz las preguntas siguientes:</p>
+
+<ul>
+<li>¿Hay un mapa del flujo de valor actual o reciente disponible para todos los miembros de la organización?</li>
+<li>¿Todos los miembros de la organización tienen acceso a una presentación visual que muestra en qué están trabajando y el estado de su trabajo?</li>
+<li>¿Las estadísticas de las métricas, como plazo de entrega y %C/A, están disponibles para el equipo?</li>
+</ul>
+
+<h2 id="whats_next" data-text="Próximos pasos">Pasos siguientes</h2>
+
+<ul>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li>Lee el libro <a href="https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation</em></a> (Asignación del flujo de valor: Cómo visualizar y alinear el liderazgo para una transformación organizacional), de Karen Martin y Mike Osterling.</li>
+<li>Lee el libro <a href="https://books.google.com/books/about/Kanban.html?id=RJ0VUkfUWZkC" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body" class="external"><em>Kanban: Successful Evolutionary Change for Your Technology Business</em></a> (Kanban: Cambio evolutivo exitoso para su empresa de tecnología), de David Anderson.</li>
+<li>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</li>
+<li>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</li>
+</ul>
+
+</body></html>

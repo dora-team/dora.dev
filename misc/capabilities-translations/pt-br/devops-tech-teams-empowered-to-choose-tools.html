@@ -1,0 +1,161 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia de DevOps: como capacitar equipes para escolher ferramentas</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Observação:</strong><span> <em>a capacitação de equipes para escolher ferramentas</em> faz parte de um conjunto de recursos que aumentam a entrega de software e o desempenho organizacional. Esses
+recursos foram descobertos pelo
+<a href="https://www.devops-research.com/research.html">programa de pesquisa DORA State of DevOps</a>
+(em inglês), uma investigação independente e academicamente rigorosa sobre as práticas e
+recursos que impulsionam alto desempenho. Para saber mais, leia nossos
+<a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>Se você quiser atingir um maior desempenho de entrega de software e aumentar a
+<a href="/architecture/devops/devops-culture-job-satisfaction" track-type="solution" track-name="internalLink" track-metadata-position="body">satisfação das equipes técnica no trabalho</a>,
+é preciso permitir que elas façam escolhas conscientes sobre
+as ferramentas e tecnologias que usam para trabalhar.
+A <a href="https://services.google.com/fh/files/misc/state-of-devops-2017.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">pesquisa</a>
+da equipe da DevOps Research and Assessment (DORA) (PDF) mostra que isso contribui
+para entrega contínua aprimorada e maior desempenho de entrega de software. As equipes
+que têm a liberdade de escolher suas próprias ferramentas podem fazer essas escolhas baseando-se em como elas
+funcionam e nas tarefas que precisam realizar. Ninguém sabe melhor do que os próprios profissionais
+o que eles precisam para ser eficazes. Por isso, não é de se surpreender que a escolha da ferramenta
+do profissional ajude a gerar melhores resultados.</p>
+
+<p>Permitir que as equipes escolham ferramentas não significa dar carta branca para
+que elas selecionem tudo o que quiserem. A introdução de tecnologias sem qualquer tipo de restrição pode
+aumentar a fragilidade e a dívida técnica. No entanto, quando você combina a escolha de ferramentas
+com outros recursos, como visão completa do sistema, feedback rápido
+e entendimento de que os colaboradores são responsáveis pelo código que escrevem, isso
+ajuda os tecnólogos a tomar decisões inteligentes sobre as ferramentas a serem
+utilizadas e compatibilizadas. Esse padrão foi observado em empresas como Google e Netflix,
+em que uma pilha técnica preferencial é compatível por padrão. No entanto, se uma equipe
+realmente acreditar que uma ferramenta ou tecnologia diferente é melhor para determinada situação, ela terá
+a liberdade de escolhê-la. As equipes compreendem que a escolha vem acompanhada
+do entendimento de que elas também precisam fazer o trabalho de dar apoio a essa nova pilha
+técnica.</p>
+
+<h2 id="how_to_empower_teams_to_choose_tools" data-text="Como capacitar as equipes para escolher ferramentas">Como capacitar as equipes para escolher ferramentas</h2>
+
+<p>Quando sua organização permite que as equipes selecionem ferramentas, é importante
+equilibrar essa liberdade de escolha com o custo de aquisição e manutenção,
+além da possível complexidade de comunicação entre equipes que usam
+ferramentas diferentes. Veja a seguir algumas maneiras de capacitar as equipes para escolher
+as próprias ferramentas.</p>
+
+<ul>
+<li><p><strong>Estabeleça diretrizes entre equipes</strong>. Com representantes de diferentes
+equipes e áreas multifuncionais (gerentes de produtos, desenvolvedores,
+testadores, operadores), estabeleça diretrizes relacionadas às ferramentas aprovadas. Recomendamos
+que o conjunto de ferramentas disposto nas diretrizes seja grande e diversificado o suficiente para atender
+à maioria das necessidades da organização. Exemplos de ferramentas a serem incluídas nas
+diretrizes são linguagens de programação e bibliotecas, ferramentas de teste e
+implantação, infraestrutura de monitoramento e back-ends de dados.</p></li>
+<li><p><strong>Revise as ferramentas periodicamente</strong>. Periodicamente ou como parte das retrospectivas
+de sprint, avalie de forma crítica o conjunto de ferramentas disposto nas diretrizes para examinar
+sua eficácia. Essas revisões também oferecem oportunidades para discutir e
+apresentar novas tecnologias.</p></li>
+<li><p><strong>Defina um processo para exceções</strong>. Crie um processo claramente definido
+para que seja possível desviar do conjunto de ferramentas estabelecido. Quando uma nova tecnologia for usada
+para um projeto e não fizer parte do que consta nas diretrizes, documente as características da nova ferramenta e
+o porquê de ela ter sido usada. Esta documentação é fundamental para solucionar problemas e
+manter o projeto. Além disso, a documentação incluída nos
+projetos pode ser usada posteriormente para justificar a adição da ferramenta às diretrizes previamente
+estabelecidas.</p></li>
+</ul>
+
+<p>Outra abordagem possível é permitir que as equipes selecionem as ferramentas. Com essa estratégia,
+cada equipe aborda o processo de entrega de software (requisitos empresariais,
+desenvolvimento, operações) conforme achar apropriado, usando o próprio
+conjunto de ferramentas. Entretanto, lembre-se de considerar o impacto sobre a comunicação
+entre equipes e áreas de produtos quando houver recursos compartilhados.</p>
+
+<h2 id="common_pitfalls" data-text="Armadilhas comuns">Armadilhas comuns</h2>
+
+<p>A armadilha mais comum ao capacitar colaboradores para escolher ferramentas é assumir
+uma postura extrema, como não permitir que a equipe de engenharia faça escolhas
+ou permitir que ela faça escolhas demais.</p>
+
+<p>Obrigar profissionais a usarem determinadas ferramentas e tecnologias pode contribuir com a padronização.
+No entanto, o que funciona em alguns casos não é necessariamente a melhor solução em todas
+as situações. Essa abordagem também limita as oportunidades de
+<a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">experimentação e crescimento</a>,
+em que novas tecnologias podem ser usadas e testadas. Muitas vezes, testar
+novas tecnologias e adotá-las gera otimizações de desempenho. Por
+exemplo, se nenhuma equipe tivesse permissão para testar a contentorização ou
+a plataforma como serviço quando essas tecnologias ainda eram recentes, as organizações
+não perceberiam as melhorias de desempenho causadas por elas.</p>
+
+<p>Por outro lado, escolher diferentes ferramentas e tecnologias para cada
+projeto ou serviço pode gerar débitos técnicos e aumentar
+a fragilidade. Sempre que algo é adicionado ao conjunto de ferramentas, as despesas operacionais
+e de manutenção aumentam. Com o tempo, essas despesas podem
+anular o bom desempenho gerado com a nova tecnologia.</p>
+
+<h2 id="ways_to_improve_tool_choice_in_teams" data-text="Maneiras de melhorar a escolha de ferramentas nas equipes">Maneiras de melhorar a escolha de ferramentas nas equipes</h2>
+
+<p>O principal aspecto do desempenho na escolha da ferramenta é permitir que as equipes responsáveis
+pelo trabalho selecionem os melhores instrumentos para realizá-lo. Com base nisso, confira algumas
+sugestões:</p>
+
+<ul>
+<li><strong>Avalie periodicamente o conjunto de tecnologias</strong>. Durante as avaliações, incentive
+os membros da equipe a avaliarem criticamente até que ponto as ferramentas atuais atendem
+às exigências. Além disso, durante essas revisões, discuta problemas relacionados às
+ferramentas. Assim, possíveis experimentações com novas ferramentas podem ser discutidas e
+planejadas.</li>
+<li><strong>Investigue, de forma proativa, novas ferramentas para novos projetos</strong>. Peça para os membros
+das equipes considerarem e testarem novas ferramentas para determinar
+se vale a pena oferecer suporte a elas. Tente implementar uma parte importante do novo
+sistema usando tecnologias já utilizadas e tecnologias novas para ver
+se surgem os benefícios esperados. Ao selecionar tecnologias,
+tenha um bom entendimento dos custos associados a elas.
+Isso pode incluir licenciamento, suporte e infraestrutura necessária
+para usar as ferramentas. Talvez você também precise contratar mais pessoas para implementar e manter a tecnologia.</li>
+<li><strong>Programe um tempo para testar novas ferramentas</strong>. Realize sessões
+periodicamente, como hackathons, que permitem às equipes explorar novos projetos
+e novas tecnologias. Como resultado desses testes, algumas ferramentas
+já serão descartadas. O importante é que você está abrindo espaço para essas novas
+tecnologias na sua pilha ou decidindo que elas não são apropriadas.</li>
+<li><strong>Faça apresentações regulares para conversar sobre novas ferramentas</strong>. Patrocine encontros
+organizados, como reuniões de almoço, em que novas tecnologias são apresentadas e
+discutidas. Podem ser reuniões informais em que uma pessoa faz uma
+apresentação sobre um projeto no qual está trabalhando e usando uma nova tecnologia ou
+sobre algo que está investigando. Reuniões informais como essas são uma ótima
+maneira de falar sobre novas tecnologias e manter o grupo atualizado. Uma
+boa abordagem é alternar as apresentações entre membros da equipe.
+Outra opção é convidar pessoas de outras equipes ou alguém
+de fora da empresa para apresentar. Incluir pessoas de fora da organização
+pode ser bem útil, porque se elas tiverem experiência com determinada ferramenta,
+poderão discutir custos e complexidades ocultos que geralmente só
+aparecem após o uso a longo prazo.</li>
+</ul>
+
+<p>O objetivo é encontrar maneiras de discutir sobre tecnologias e
+garantir que a equipe esteja capacitada para tomar decisões relacionadas às ferramentas e tecnologias
+apropriadas para elas. Pode ser que o resultado dessas conversas seja continuar
+com as ferramentas atuais.</p>
+
+<h2 id="ways_to_measure_if_teams_are_empowered_to_choose_tools" data-text="Maneiras de avaliar se as equipes estão capacitadas para escolher ferramentas">Maneiras de avaliar se as equipes estão capacitadas para escolher ferramentas</h2>
+
+<p>A melhor maneira de determinar se as equipes sentem que têm capacidade
+para escolher ferramentas é perguntar. Você não quer avaliar isso contando
+quantas ferramentas a equipe usa ou com que frequência essas ferramentas são trocadas, porque
+talvez os colaboradores continuem usando a mesma ferramenta ou fazendo trocas
+porque estão sendo instruídos dessa forma.</p>
+
+<h2 id="whats_next" data-text="A seguir">A seguir</h2>
+
+<ul>
+<li>Consulte links para outros artigos e recursos na
+<a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página do DevOps</a>.</li>
+<li>Explore nosso
+<a href="https://www.devops-research.com/research.html">programa de pesquisa</a> (em inglês) do DevOps.</li>
+<li>Faça a
+<a href="https://www.devops-research.com/quickcheck.html">verificação rápida de DevOps</a>
+para entender sua posição em relação ao restante do setor.</li>
+</ul>
+
+</body></html>

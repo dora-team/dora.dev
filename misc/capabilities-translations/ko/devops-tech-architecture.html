@@ -1,0 +1,187 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 기술: 아키텍처</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>참고:</strong><span> <em>아키텍처</em>는 소프트웨어 제공 및 조직 성과 향상을 가져오는 기능 집합 중 하나입니다. 이러한 기능은 성과 향상을 이끌어내는 관례와 기능을 독립적이자 학술적으로 심층 연구하는 <a href="https://www.devops-research.com/research.html">DORA State of DevOps 연구 프로그램</a>을 통해 개발되었습니다. 자세한 내용은 <a href="/devops">DevOps 리소스</a>를 참조하세요.</span></aside>
+<p>DevOps Research and Assessment(DORA)팀의 연구 결과, 지속적 배포를 위해서는 아키텍처가 중요한 예측자인 사실이 밝혀졌습니다.
+Kubernetes 또는 메인프레임을 사용 중인지 여부에 관계없이 아키텍처를 통해 팀은 더 높은 수준의 소프트웨어 제공 성능을 향상시키는 방법을 채택할 수 있습니다.</p>
+
+<p>팀이 지속적 배포 방식을 채택하면 다음 아키텍처 방식을 통해 성공적인 결과를 얻을 수 있습니다.</p>
+
+<ul>
+<li>팀은 팀 외부인의 권한 없이 또는 다른 팀에 따라 시스템 설계를 대규모로 변경할 수 있습니다.</li>
+<li>팀은 팀 외부인과의 세분화된 커뮤니케이션 및 조정 없이도 작업을 완료할 수 있습니다.</li>
+<li>팀은 사용하는 서비스 또는 그 서비스를 사용하는 다른 서비스에 관계없이 필요에 따라 제품 또는 서비스를 배포하고 출시할 수 있습니다.</li>
+<li>팀은 통합 테스트 환경을 필요로 하지 않고도 필요에 따라 대부분의 테스트를 수행합니다.</li>
+<li>팀은 다운타임이 거의 없이 정상적인 업무시간에 배포할 수 있습니다.</li>
+</ul>
+
+<p>메인프레임 기술을 통해 이러한 결과를 얻을 수 있습니다. 또한 최첨단 기술을 사용한다고 하더라도 결과를 얻지 못할 수도 있습니다. 많은 조직이 기술 도입에 많은 시간과 노력을 투자하지만, 아키텍처의 한계로 인해 중요 소프트웨어를 제공하지 못합니다.</p>
+
+<p>시스템 아키텍처 설계를 통해 팀이 다른 팀에 의존하지 않고도 시스템을 테스트, 배포, 변경할 수 있는 경우 팀은 커뮤니케이션을 거의 하지 않고 작업을 수행할 수 있습니다. 다시 말해, 아키텍처와 팀이 느슨하게 연결되어 있습니다.</p>
+
+<p>Melvin Conway는 통신 대역폭과 시스템 아키텍처 사이의 이러한 연결에 대해 처음으로 논의하며 "시스템을 설계하는 조직은 조직의 커뮤니케이션 구조를 복사한 설계를 생산할 수 밖에 없다"고 밝혔습니다. 긴밀하게 연결된 아키텍처를 완화하고 커뮤니케이션 패턴 개선을 지원하기 위해, 팀과 조직은 <a href="https://medium.com/better-practices/how-to-dissolve-communication-barriers-in-your-api-development-organization-3347179b4ecc" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Inverse Conway Maneuver</a>를 통해 예상되는 아키텍처 상태를 개선하는 팀 구조와 패턴을 설계할 수 있습니다. 이를 통해 팀 커뮤니케이션 패턴은 구축된 아키텍처 패턴을 지원하고 실행합니다.</p>
+
+<p>밀접하게 연결된 아키텍처를 사용하면 사소한 변경사항으로 인해 대규모 오류가 단계적으로 발생할 수 있습니다. 따라서 시스템 일부에서 작업하는 직원은 시스템의 다른 부분에서 작업하는 직원과 복잡한 행정상 변경 관리 프로세스 진행 등에 대해 지속적으로 소통해야 합니다.</p>
+
+<p>진정한 서비스 지향 아키텍처와 마이크로서비스 아키텍처는 이러한 소통을 가능하게 해 줍니다. 실전에서는 소위 서비스 지향 아키텍처가 테스트와 배포 서비스를 별개로 허용하지 않기 때문에, 팀은 소프트웨어 제공 성능을 향상시킬 수 없습니다.
+서비스 지향 및 마이크로서비스 아키텍처 실행 시 이러한 결과에 엄격해야 합니다.</p>
+
+<h2 id="how_to_implement_architectures_for_continuous_delivery" data-text="지속적 배포를 위한 아키텍처 구현 방법">지속적 배포를 위한 아키텍처 구현 방법</h2>
+
+<p>주요 아키텍처 archetype을 고려합니다. WeWork의 전직 App Engine 부서 책임자이자 엔지니어링 부사장인 Randy Shoup는 다음과 같이 밝혔습니다.</p>
+
+<blockquote>'모든 제품과 모든 규모에 완벽한 아키텍처는 없습니다. 모든 아키텍처는 TTM(time to market), 기능 개발 가능성, 확장성 등과 같은 특정 목표 또는 요구사항 및 제약 조건의 범위를 충족합니다. 모든 제품 또는 서비스의 기능은 시간이 지남에 따라 거의 확실하게 발전할 것이며, 아키텍처에 대한 요구도 바뀔 것입니다. 스케일 1x에서 작동하는 것은 스케일 10x 또는 100x에서 대부분 작동하지 않습니다.'</blockquote>
+
+<p>아키텍처 archetype의 장단점을 고려할 때, 각 archetype마다 적합한 조직의 발전적 요구가 다릅니다.</p>
+
+<table>
+<thead>
+<tr>
+<th width="25%">Archetype</th>
+<th>장점</th>
+<th>단점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>모놀리식 v1</strong><br />
+(하나의 애플리케이션에 모든 기능 포함)</td>
+<td><ul><li>초기의 단순성</li>
+<li>프로세스 간 지연 시간 짧음</li>
+<li>단일 코드베이스, 하나의 배포 단위</li>
+<li>작은 규모로 높은 리소스 효율성</li>
+</ul>
+</td>
+<td><ul><li>팀 성장에 따라 조정 오버헤드 증가</li>
+<li>모듈성 실행 저하</li>
+<li>확장 저하</li>
+<li>전체 배포 또는 무배포(다운타임 실패)</li>
+<li>긴 빌드 시간</li>
+</ul>
+</td>
+</tr>
+<tr>
+  <td><strong>모놀리식 v2</strong><br />
+(모놀리식 등급 집합: 프런트엔드 프레젠테이션, 애플리케이션 서버, 데이터베이스 레이어)</td>
+<td><ul><li>초기의 단순성</li>
+<li>조인 쿼리 용이</li>
+<li>단일 스키마 배포</li>
+<li>작은 규모로 높은 리소스 효율성</li>
+</ul>
+</td>
+<td><ul><li>시간 경과에 따라 결합 증가 경향</li>
+<li>확장 및 중복 저하(전체 또는 없음, 수직 이동만 가능)</li>
+<li>정확한 조정이 어려움</li>
+<li>양단간의 스키마 관리</li>
+</ul>
+</td>
+</tr>
+<tr>
+  <td><strong>마이크로서비스</strong><br />
+(모듈식, 독립형, 그래프 관계 또는 등급, 격리된 지속성)</td>
+<td><ul><li>각 단위가 단순함</li>
+<li>독립적인 확장 및 성능</li>
+<li>독립적인 테스트 및 배포</li>
+<li>성능(캐싱, 복제 등)을 최적으로 조정 가능</li>
+</ul>
+</td>
+<td><ul><li>다양한 적용 단위</li>
+<li>많은 소규모 저장소</li>
+<li>정교한 도구와 종속 항목 관리 필요</li>
+<li>네트워크 지연 시간</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>표와 같이, 린 제품 개발을 지원하는 모놀리식 아키텍처(예: 새로운 기능의 신속한 프로토타입 제작, 잠재적 피벗, 전략의 큰 변경)는 독립적으로 고객에게 가치를 제공해야 하는 수백 개의 개발팀에 필요한 아키텍처와 다릅니다. 아키텍처가 진화함에 따라 조직이 현재 필요로 하는 것을 아키텍처에서 항상 제공하도록 할 수 있습니다. archetype에 관계없이, 지속적 배포를 위해 아키텍처를 설계할 때 팀은 본 문서의 소개에서 언급된 기능을 사용할 수 있어야 합니다.</p>
+
+<p>조직 전체에 걸쳐(제품, 개발, 테스트, 운영) 기능 통합 부서를 구축하면 팀이 독립적으로 작업할 수 있으며 팀 경계에 따른 구축이 용이합니다. 기능이 통합된 팀은 자율적으로 기능하며, <a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">아이디어를 실험</a>하고, <a href="/architecture/devops/devops-tech-teams-empowered-to-choose-tools" track-type="article" track-name="internalLink" track-metadata-position="body">자체적으로 도구를 선택</a>할 수 있습니다.
+서비스 간 명확한 계약이 팀 간 의사소통과 테스트를 지원하는 데 도움이 될 수 있습니다.</p>
+
+<p>팀 독립성은 제품 및 서비스의 독립성만큼 중요합니다. 서비스는 필요에 따라 테스트가 가능해야 합니다. 외부 서비스의 <a href="https://martinfowler.com/bliki/TestDouble.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">모의 및 스터브</a>에 맞는 기술을 채택하면 외부 종속 항목의 영향을 완화할 수 있고, 팀에서는 테스트 환경을 신속하게 구축할 수 있습니다. 또한 외부 서비스의 <a href="https://martinfowler.com/bliki/ContractTest.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">계약 테스트</a>를 구현하면 자체 서비스 또는 외부 서비스의 종속 항목이 요건을 충족하도록 할 수 있습니다. 실제로 지속적 배포를 위해서는 개별 팀의 제품 또는 서비스가 독립적인 적합성 테스트를 거치고 사용하는 서비스에서 배포되어야 합니다.</p>
+
+<p>상시 배포 기능을 사용 설정하려면 <a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">자동화</a> 수준이 높은 블루/그린 또는 롤링 배포 모델을 실행하는 것을 고려합니다.
+이러한 모델의 경우 2개 이상의 제품 또는 서비스 모델이 동시에 실행됩니다. 이러한 배포 모델을 통해 팀은 다운타임이 거의 없이 변경사항을 확인하고 프로덕션에 배포할 수 있습니다. 중요하게 고려해야 할 사항은 데이터 업그레이드가 실행되는 방식으로, 즉 데이터와 스키마가 이전 버전과 호환되는 방식으로 실행되어야 합니다.</p>
+
+<p>구성요소를 독립적으로 배포할 수 있도록 이전 버전과 호환되는 버전의 API를 만드는 것이 좋습니다. API의 하위 호환성을 확보하면 시스템이 복잡해지지만, 배포 용이성 측면에서 얻을 수 있는 유연성으로 인해 이러한 복잡성이 몇 번이고 상쇄됩니다.</p>
+
+<p>서비스 지향 및 마이크로서비스 아키텍처는 <a href="https://martinfowler.com/bliki/BoundedContext.html" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">제한된 컨텍스트</a> 및 API를 통해 대규모 도메인을 느슨하게 결합된 작은 단위로 분할하여 테스트 더블 및 가상화를 통해 서비스 또는 구성요소를 개별적으로 테스트하기 때문에 이러한 기능을 사용 설정할 수 있습니다.</p>
+
+<h2 id="common_pitfalls_in_architectures" data-text="아키텍처의 일반적인 문제">아키텍처의 일반적인 문제</h2>
+
+<ul>
+<li><p><strong>다수의 서비스를 동시에 출시</strong>. 테스트 가능성과 배포 가능성을 우선시하지 않는 팀에서는 대부분의 테스트에 복잡하고 많은 비용이 드는 통합 환경을 사용해야 합니다. 많은 경우에 복잡한 상호 종속 항목으로 인해 배포 시 다수의 서비스를 동시에 출시해야 합니다. 이러한 '빅뱅' 배포를 위해서는 팀이 수백 또는 수천 개의 태스크 간 핸드오프와 종속 항목이 많은 작업을 조율해야 합니다. 빅뱅 배포에는 일반적으로 몇 시간 또는 며칠이 소요되며 긴 다운타임 일정 예약을 요합니다.</p></li>
+<li><p><strong>수백 또는 수천 명의 다른 개발자의 변경사항과 변경사항 통합</strong>. 다른 개발자들에게도 수십, 수백 또는 수천 개의 상호 연결 시스템에 대한 종속 항목이 있을 수 있습니다.
+테스트는 확보 및 구성에 몇 주가 소요되는 부족한 통합 테스트 환경에서 진행됩니다. 이러한 환경은 일반적으로 프로덕션의 대표적인 환경이 아니기 때문에 테스트의 가치와 정확성이 떨어집니다. 이로 인해 변경사항에 대한 리드 타임이 길어질 뿐 아니라 개발자 생산성이 낮고 배포 결과가 나빠집니다.</p></li>
+<li><p><strong>소프트웨어 배포 프로세스에서 병목 현상 발생</strong>. 대표적인 병목 현상으로는 수동 프로세스 관점(테스트, 배포 등) 또는 서비스 운영 관점에서 여러 팀이 하나의 팀에 의존하는 경우가 있습니다. 두 경우 모두, 이러한 병목 현상으로 인해 단일 장애점이 발생하며, 이러한 팀 또는 서비스는 확장을 통해 여러 의존 팀의 수요를 충족해야 합니다.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_your_architecture" data-text="아키텍처를 개선하는 방법">아키텍처를 개선하는 방법</h2>
+
+<p>소규모 개발팀은 독립적으로 안전하고 신속하게 코드를 실행, 테스트, 프로덕션으로 배포할 수 있는 아키텍처를 통해 개발자 생산성과 배포 결과를 개선할 수 있습니다. 서비스 지향 및 마이크로서비스 아키텍처의 주요 특징은 제한된 컨텍스트를 가진 느슨하게 결합된 서비스로 구성되어 있다는 것입니다. 이러한 원칙에 따라 최신 웹 아키텍처에서 흔히 사용되는 패턴 중 하나는 <a href="https://12factor.net/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body" class="external">Twelve-Factor 앱</a>입니다.</p>
+
+<p>Randy Shoup는 다음과 같이 밝혔습니다.</p>
+
+<blockquote>'Google과 Amazon 등 이러한 서비스 지향 아키텍처 유형을 가진 조직은 탁월한 유연성과 확장성을 갖추고 있습니다. 이러한 조직에는 소규모 팀에서도 뛰어난 생산성을 발휘하는 수만 명의 개발자가 있습니다.'</blockquote>
+
+<p>많은 조직에서 서비스의 테스트 및 배포는 매우 어렵습니다. 모든 요소의 아키텍처를 다시 설계하는 대신 엔터프라이즈 시스템 설계 개선에 대한 반복적인 접근 방식을 실행하는 것이 좋습니다. 이러한 방식은 <em>혁신적인 아키텍처</em>로 알려져 있습니다. 이 방법에서는 성공적인 제품 및 서비스가 변화하는 요구사항으로 인해 수명 주기 동안 아키텍처를 다시 설계해야 한다고 가정합니다.</p>
+
+<p>이러한 환경에서 바람직한 패턴 중 하나는 <em>스트랭글러 피그(strangler fig) 애플리케이션</em>입니다. 이 패턴에서는 다음의 서비스 지향 아키텍처 원칙에 따라 새로운 작업을 수행하여 모놀리식 아키텍처를 더욱 구성요소화된 아키텍처로 반복적으로 바꿉니다. 새로운 아키텍처가 원래의 시스템에 위임할 수 있도록 수락합니다. 시간이 지남에 따라 새로운 아키텍처에서 점점 더 많은 기능이 수행되므로 기존 시스템은 '스트랭글'됩니다.</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-strangler-fig-pattern.svg" alt="모놀리식 아키텍처를 더욱 구성요소화된 아키텍처로 변경"/></p>
+
+<p>제품 및 서비스 아키텍처는 계속해서 진화합니다. 새로운 모듈이나 서비스를 결정하는 방법에는 여러 가지가 있으며 프로세스는 반복적입니다.
+하나의 기능을 서비스로 만들지 결정할 때에는 다음 특성이 있는지 고려합니다.</p>
+
+<ul>
+<li>단일 비즈니스 기능을 구현합니다.</li>
+<li>다른 서비스와 최소한의 상호 작용으로 기능을 수행합니다.</li>
+<li>다른 서비스와 독립적으로 빌드, 확장, 배포됩니다.</li>
+<li>메시지 버스 또는 HTTP 엔드포인트와 같은 간단한 통신 방식을 사용하여 다른 서비스와 상호 작용합니다.</li>
+<li>다양한 도구, 프로그래밍 언어, 데이터 저장소 등으로 구현할 수 있습니다.</li>
+</ul>
+
+<p>마이크로서비스 또는 서비스 지향 아키텍처로의 이전은 조직 전체를 통해 많은 변화를 가져옵니다. Steve Yegge는 <a href="https://gist.github.com/chitchcock/1281611/9621c8859db00bf08b98212a109fa2dec4c6d601" target="github" track-type="article" track-name="gitHubLink" track-metadata-position="body">플랫폼 지원</a>을 통해 SOA로의 이전 경험에서 얻은 다음과 같은 몇 가지 중요한 교훈을 소개합니다.</p>
+
+<ul>
+<li>하나의 서비스에 발생하는 문제는 여러 서비스 호출로 인한 것일 수 있기 때문에 측정항목과 모니터링이 더욱 중요하며 신고가 더욱 어려워집니다.</li>
+<li>내부 서비스에 서비스 거부(DOS) 유형 문제가 발생할 수 있으므로 모든 서비스에서 할당량과 메시지 제한이 중요합니다.</li>
+<li>모니터링은 포괄적이어야 하며 서비스의 비즈니스 로직과 데이터를 사용해야 하기 때문에 품질보증과 모니터링이 조화를 이루기 시작합니다.</li>
+<li>다수의 서비스가 있는 경우 서비스 발견 메커니즘을 갖추는 것이 시스템의 효율적인 운영에 중요합니다.</li>
+<li>디버깅이 가능한 환경에서 서비스를 실행하기 위한 범용 표준이 없으면 다른 사용자의 서비스의 디버깅 문제가 훨씬 어려워집니다.</li>
+</ul>
+
+<h2 id="case-study-datastore" data-text="우수사례: Datastore">우수사례: Datastore</h2>
+
+<p>긴밀하게 연결된 아키텍처는 모든 사용자의 생산성과 안전한 변경을 방해할 수 있습니다. 반대로 느슨하게 연결된 아키텍처는 모듈이 서로 연결되는 방식을 실행하는 명확하게 정의된 인터페이스로 생산성과 안전을 향상시킵니다. 느슨하게 연결된 아키텍처를 사용하면 생산성이 높은 소규모 팀이 안전하고 독립적으로 배포할 수 있는 변경사항을 적용할 수 있습니다. 또한 각 서비스에는 API가 명확하게 정의되어 있으므로 팀 간 서비스 테스트 및 계약 및 서비스수준계약(SLA)을 쉽게 만들 수 있습니다.</p>
+
+<p><img src="/static/architecture/devops/images/devops-tech-loosely-coupled-architecture.svg" alt="느슨하게 연결된 아키텍처"/></p>
+
+<p>Randy Shoup는 이러한 아키텍처를 다음과 같이 설명합니다.</p>
+
+<blockquote>'이러한 유형의 아키텍처는 Google에 탁월한 서비스를 제공해 왔습니다. Gmail과 같은 서비스에는 5~6개의 서비스 레이어가 있으며 각 레이어는 매우 구체적인 기능에 중점을 둡니다. 각 서비스는 소규모 팀에서 지원하며, 각 팀은 서로 다른 기술을 사용하여 서비스를 빌드하고 자체적인 기능을 실행합니다. 또 다른 예시로는 세계 최대 규모의 NoSQL 서비스 중 하나인 Datastore 서비스가 있는데 약 8명으로 구성된 팀에서 이 서비스를 지원합니다. 신뢰할 수 있는 서비스의 여러 레이어를 기반으로 하기 때문에 가능한 일입니다.'</blockquote>
+
+<p>이러한 유형의 서비스 지향 아키텍처를 통해 소규모 팀은 각 팀이 독립적으로 빠르고 안전하게 배포할 수 있는 작고 간단한 개발 단위로 작업할 수 있습니다.</p>
+
+<h2 id="ways_to_measure_architectural_improvement" data-text="아키텍처 개선을 측정하는 방법">아키텍처 개선을 측정하는 방법</h2>
+
+<p>메인프레임이든 마이크로서비스든 소프트웨어 배포 성능 개선(변경사항의 리드 타임, 서비스 복구 시간, 변경 실패율을 줄여 배포 빈도 증가)을 위해서는 아키텍처 개선에 필요한 방식을 용이하게 하는 것이 중요합니다. 서비스와 제품의 연결이 느슨해지면 배포 빈도가 높아집니다. 서비스가 추가됨에 따라 배포 수가 자연스럽게 증가하기 때문에 개선을 측정할 때는 단순히 개수보다 배포 속도를 사용하는 것이 좋습니다. 마지막으로, 문제를 감지하고 복구하는 데 걸리는 시간과 변경사항이 프로덕션에 반영되는 시간을 줄일 수 있습니다.</p>
+
+<p>이러한 배포 및 서비스 측정 외에도 더 독립적으로 운영되는 팀은 <a href="/architecture/devops/devops-culture-job-satisfaction" track-type="article" track-name="internalLink" track-metadata-position="body">작업 만족도</a> 및 <a href="/architecture/devops/devops-process-team-experimentation" track-type="article" track-name="internalLink" track-metadata-position="body">팀 실험</a>을 개선하고 필요에 따라 다양한 기술과 도구를 선택하려는 경향이 있습니다.</p>
+
+<h2 id="whats_next" data-text="다음 단계">다음 단계</h2>
+
+<ul>
+<li>다른 문서 및 리소스 링크는 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 페이지</a>를 참조하세요.</li>
+<li>DevOps <a href="https://www.devops-research.com/research.html">연구 프로그램</a>을 살펴보세요.</li>
+<li><a href="https://www.devops-research.com/quickcheck.html">DevOps 빠른 점검</a>을 사용하여 업계와 비교되는 자신의 현재 상태를 파악하세요.</li>
+</ul>
+
+</body></html>

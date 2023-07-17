@@ -1,0 +1,108 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Misurazione di DevOps: sistemi di monitoraggio per decisioni aziendali consapevoli</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_no_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> <em>il monitoraggio dei sistemi per orientare le decisioni aziendali</em> è una delle funzionalità in grado di incrementare la distribuzione del software e le prestazioni dell'organizzazione.  Queste funzionalità sono state scoperte dal
+<a href="https://www.devops-research.com/research.html">programma di ricerca DORA State of DevOps</a>,
+un'indagine accademica indipendente e rigorosa sulle pratiche e
+funzionalità che determinano prestazioni elevate. Per ulteriori informazioni, consulta le nostre
+<a href="/devops">risorse DevOps</a>.</span></aside>
+<p>Monitoring è il processo di raccolta, analisi e utilizzo delle informazioni per il monitoraggio delle applicazioni e dell'infrastruttura al fine di guidare le decisioni aziendali.
+Monitoring è una funzionalità fondamentale perché ti consente di ottenere informazioni dettagliate sui tuoi sistemi e sul tuo lavoro. Se implementato correttamente, il monitoraggio offre inoltre un feedback rapido che ti consente di individuare e risolvere rapidamente i problemi nelle prime fasi del ciclo di vita di sviluppo del software.</p>
+
+<p>Monitoring consente inoltre di comunicare informazioni sui sistemi alle persone in altre aree della pipeline di sviluppo e distribuzione del software e ad altre parti dell'azienda. Le conoscenze acquisite a valle nelle operazioni potrebbero essere integrate in team upstream, come lo sviluppo e la gestione dei prodotti. Ad
+esempio, le conoscenze acquisite utilizzando un'applicazione a scalabilità elevata che utilizza un database NoSQL come datastore possono essere informazioni preziose per gli sviluppatori che creano un'applicazione simile.</p>
+
+<p>Questo trasferimento di conoscenze consente ai team di identificare rapidamente i concetti appresi,
+che derivano da un problema di produzione, un errore di deployment o pattern
+di utilizzo dei clienti. Puoi condividere questi insegnamenti in tutta l'organizzazione per aiutare
+persone e sistemi a migliorare.</p>
+
+<h2 id="how_to_implement_monitoring" data-text="Come implementare il monitoraggio">Come implementare il monitoraggio</h2>
+
+<p>I seguenti elementi sono fondamentali per un monitoraggio efficace:</p>
+
+<ul>
+<li>Raccolta di dati da aree chiave di tutta la catena del valore, comprese le prestazioni e l'infrastruttura delle applicazioni.</li>
+<li>Utilizzo dei dati raccolti per prendere decisioni aziendali.</li>
+</ul>
+
+<h3 id="collecting_data" data-text="Raccolta di dati in corso…">Raccolta di dati in corso…</h3>
+
+<p>Per raccogliere i dati in modo più efficace, dovresti implementare soluzioni di monitoraggio, come servizi locali o gestiti, che offrano visibilità su lavori di sviluppo, test, QA e operazioni IT. Assicurati di scegliere le metriche più adatte alla tua attività e alla tua attività.</p>
+
+<h3 id="using_data_to_make_business_decisions" data-text="Utilizzare i dati per prendere decisioni aziendali">Utilizzare i dati per prendere decisioni aziendali</h3>
+
+<p>Quando trasformi e visualizzi i dati raccolti, li rendi accessibili a segmenti di pubblico diversi e li aiuti a prendere decisioni. Ad esempio, potresti voler condividere i dati delle operazioni a monte.Puoi anche integrare questi dati in modo appropriato nei rapporti e nei briefing e utilizzarli nelle riunioni per prendere decisioni aziendali consapevoli. In questo caso, <em>appropriato</em> indica contenuti pertinenti, tempestivi, accurati e
+facili da capire.</p>
+
+<p>In queste riunioni, assicurati di fornire anche un contesto utile per aiutare chi non conosce
+i dati a capire in che modo questo influisce sulla discussione
+e in che modo può prendere decisioni informate. Ad esempio, potresti voler sapere come rispondere alle seguenti domande:</p>
+
+<ul>
+<li>Questi valori sono relativamente alti o bassi?</li>
+<li>Sono previsti?</li>
+<li>Prevedi i cambiamenti?</li>
+<li>Qual è la differenza tra questi dati e i rapporti storici?</li>
+<li>La tua tecnologia o infrastruttura ha influenzato i numeri in modi interessanti o non ovvi?</li>
+</ul>
+
+<h2 id="common_pitfalls_in_monitoring" data-text="Errori comuni nel monitoraggio">Errori comuni nel monitoraggio</h2>
+
+<p>I seguenti errori sono comuni durante il monitoraggio dei sistemi:</p>
+
+<ul>
+<li><p><strong>Monitoraggio in modo reattivo</strong>. Ad esempio, riceverai avvisi solo quando il sistema non funziona, ma non utilizzi i dati di monitoraggio per avvisare quando il sistema si avvicina a soglie critiche.</p></li>
+<li><p><strong>Monitoraggio di un ambito troppo piccolo</strong>. Ad esempio, il monitoraggio di una o due aree anziché della pipeline completa di sviluppo e distribuzione del software. Questo
+inserito evidenzia le metriche, concentrandosi solo sulle aree misurate, che potrebbero non essere le aree ottimali da monitorare.</p></li>
+<li><p><strong>Concentrati sulle ottimizzazioni locali</strong>. Ad esempio, puntando a ridurre il tempo di risposta per le esigenze di archiviazione di un servizio senza valutare se l'infrastruttura più ampia potrebbe trarre vantaggio dallo stesso miglioramento.</p></li>
+<li><p><strong>Monitoraggio di tutto</strong>. La raccolta di dati e la generazione di rapporti su tutto ciò che include il sistema comporta il rischio di avvisi eccessivi o di annegamento dei dati. Adottare un approccio intelligente al monitoraggio può attirare l'attenzione sulle aree più importanti.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_monitoring" data-text="Modi per migliorare il monitoraggio">Modi per migliorare il monitoraggio</h2>
+
+<p>Per migliorare l'efficacia del monitoraggio, ti consigliamo di concentrare i tuoi sforzi su due aree principali:</p>
+
+<ol>
+<li><p><strong>Raccogliere dati dalle aree più importanti della catena del valore.</strong></p>
+
+<p>L'analisi dei dati raccolti e di un'analisi dei dati vuoti può
+aiutarti a raccogliere i dati giusti per la tua organizzazione.</p></li>
+<li><p><strong>Utilizzo dei dati raccolti per prendere decisioni aziendali.</strong></p>
+
+<p>I dati raccolti devono generare valore per tutta l'organizzazione e le metriche che selezioni devono essere significative per la tua organizzazione.
+Dati significativi possono essere utilizzati da molti team, da DevOps a Finanza.</p>
+
+<p>È inoltre importante trovare il mezzo giusto per visualizzare le informazioni di monitoraggio. I diversi utilizzi delle informazioni richiedono scelte di presentazione diverse. Le dashboard in tempo reale potrebbero essere più utili per il team DevOps, mentre i rapporti aziendali generati regolarmente potrebbero essere utili per le metriche misurate per un periodo più lungo.</p>
+
+<p>La cosa più importante è garantire che i dati siano disponibili, condivisi e utilizzati per guidare le decisioni. Se il modo migliore per iniziare è un foglio di lavoro condiviso, utilizzalo. Passa poi alle dashboard costose in seguito. Non essere perfetto nemico abbastanza buono.</p></li>
+</ol>
+
+<h2 id="ways_to_measure_monitoring" data-text="Modi per misurare il monitoraggio">Modi per misurare il monitoraggio</h2>
+
+<p>Un monitoraggio efficace aiuta a migliorare le prestazioni nello sviluppo e nella distribuzione del software. Tuttavia, può essere difficile misurare l'efficacia del monitoraggio nei sistemi. Anche se potresti riuscire a misurare automaticamente la quantità di dati raccolti dai tuoi sistemi e i tipi di dati, è più difficile sapere se o dove vengono utilizzati.</p>
+
+<p>Per aiutarti a misurare l'efficacia del monitoraggio nella tua organizzazione, considera in che misura le persone concordano o non concordano con le seguenti dichiarazioni:</p>
+
+<ul>
+<li>I dati provenienti dagli strumenti di monitoraggio delle prestazioni delle applicazioni vengono utilizzati per prendere decisioni aziendali.</li>
+<li>I dati provenienti dagli strumenti di monitoraggio dell'infrastruttura vengono utilizzati per prendere decisioni aziendali.</li>
+</ul>
+
+<h2 id="whats_next" data-text="Passaggi successivi">Passaggi successivi</h2>
+
+<ul>
+<li>Per link ad altri articoli e risorse, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">pagina per DevOps</a>.</li>
+<li>Leggi il <a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">libro SRE (Site Reliability Engineering)</a>.</li>
+<li>Esplora il nostro <a href="https://www.devops-research.com/research.html">programma di ricerca</a> DevOps.</li>
+<li>Esegui il
+<a href="https://www.devops-research.com/quickcheck.html">controllo rapido DevOps</a>
+per comprendere il tuo rendimento rispetto al resto del settore.</li>
+</ul>
+
+</body></html>

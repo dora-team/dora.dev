@@ -1,0 +1,62 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps-Technologie: Teams die Auswahl von Tools ermöglichen</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Hinweis:</strong><span> <em>Teams zur Auswahl von Tools befähigen</em> gehört zu einer Reihe von Funktionen, die zu einer höheren Softwarebereitstellung und Unternehmensleistung führen. Diese Faktoren wurden im Rahmen des <a href="https://www.devops-research.com/research.html">"State of DevOps"-Forschungsprogramms des DORA-Teams</a> ermittelt, einer unabhängigen, akademisch anspruchsvollen Untersuchung der Praktiken und Faktoren, die zu einer hohen Leistung führen. Weitere Informationen finden Sie in unseren <a href="/devops">Artikeln zu DevOps</a>.</span></aside>
+<p>Sie möchten die Leistung bei der Softwarebereitstellung erhöhen und die <a href="/architecture/devops/devops-culture-job-satisfaction" track-type="solution" track-name="internalLink" track-metadata-position="body">Jobzufriedenheit</a> Ihrer technischen Mitarbeiter steigern? Dann sollten Sie ein Arbeitsumfeld schaffen, in dem die Teams über die Tools und Technologien, die sie für ihre Arbeit verwenden, selbst bestimmen und sich im Vorfeld umfassend informieren können.
+<a href="https://services.google.com/fh/files/misc/state-of-devops-2017.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Studien des DevOps Research and Assessment-Teams (DORA)</a> (PDF) haben ergeben, dass dies zu einer besseren kontinuierlichen Bereitstellung und leistungsfähigeren Softwarebereitstellung beiträgt. Die Mitarbeiter kennen ihre Aufgaben, Arbeitsweisen und -abläufe. Sie wissen selbst am besten, was sie brauchen, um effektiv arbeiten zu können. Darauf können sie ihre Toolentscheidungen aufbauen. Es ist daher nicht verwunderlich, dass sie bessere Ergebnisse liefern, wenn sie Einfluss auf die Wahl ihrer Tools nehmen können.</p>
+
+<p>Das bedeutet nicht, dass jedes Team bei der Toolauswahl völlig freie Hand haben sollte. Eine uneingeschränkte Einführung neuer Technologien kann zu technischen Problemen und fragilen Systemen führen. Die technischen Mitarbeiter benötigen zusätzlich alle Hilfsmittel, die für kluge Entscheidungen bezüglich der geeigneten und unterstützenswerten Tools erforderlich sind: z. B. komplette Übersicht über das System, schnelles Feedback und das Bewusstsein, für den Code, den sie schreiben, selbst verantwortlich zu sein. Dieses Muster wurde bei Unternehmen wie Google und Netflix beobachtet. Dort gehört ein Paket mit der bevorzugten Software zur Grundausstattung. Teams haben jedoch darüber hinaus die freie Wahl, wenn sie überzeugt sind, ein anderes Tool oder eine andere Technologie wäre besser für ihren speziellen Fall geeignet. Die Teams wissen, dass sie auch den Support der neuen Softwarepakete übernehmen müssen.</p>
+
+<h2 id="how_to_empower_teams_to_choose_tools" data-text="Hilfreiche Tipps zur Toolauswahl durch Teams">Hilfreiche Tipps zur Toolauswahl durch Teams</h2>
+
+<p>Beim Ansatz der Toolauswahl durch Teams ist es wichtig, ein Gleichgewicht zu finden zwischen der Freiheit der Wahl einerseits und den Kosten für den Erwerb und den Support der Tools andererseits. Berücksichtigt werden muss dabei auch die möglicherweise komplexere Kommunikation zwischen Teams, die unterschiedliche Tools verwenden. Hier einige hilfreiche Empfehlungen für die Toolauswahl durch Teams:</p>
+
+<ul>
+<li><p><strong>Teamübergreifendes Grundsortiment einrichten</strong>. Mit Vertretern aus den verschiedenen Teams und funktionsübergreifenden Bereichen (Produktmanager, Entwickler, Tester, Bediener) stellen Sie ein Grundsortiment an genehmigten Tools zusammen, das als Referenz und Grundlage für künftige Entscheidungen dienen kann. Wir empfehlen ein möglichst umfangreiches und vielfältiges Sortiment, das die meisten Anforderungen im Unternehmen abdecken kann. Darin sollten Programmiersprachen und Bibliotheken, Test- und Bereitstellungstools, Monitoring-Infrastruktur und Daten-Back-Ends enthalten sein.</p></li>
+<li><p><strong>Tools regelmäßig überprüfen</strong>. Prüfen Sie das Grundsortiment regelmäßig oder im Rahmen von Sprint-Retrospektiven kritisch auf seine Effektivität. Die Evaluierungstreffen sind auch eine gute Gelegenheit, neue Technologien vorzustellen und zu besprechen.</p></li>
+<li><p><strong>Prozess für Ausnahmen definieren</strong>. Sie entwickeln einen klar definierten Prozess für neue Technologien, die vom Grund- und Referenzsortiment abweichen. Beispielsweise dokumentieren Sie Art und Nutzen des neuen Tools sowie den Grund für seine Verwendung. Die Dokumentation ist wichtig für die Fehlerbehebung und Wartung von Projekten und kann herangezogen werden, um die Aufnahme des Tools in das Grundsortiment zu rechtfertigen.</p></li>
+</ul>
+
+<p>In einem alternativen Ansatz können die Teams ihre Tools komplett selbst auswählen. Dabei übernehmen die einzelnen Teams möglichst viele Aufgaben des gesamten Software-Bereitstellungsprozesses (Geschäftsanforderungen, Entwicklung, Betrieb) und nutzen ihre eigene Toolkette. Berücksichtigen Sie in diesem Fall jedoch die Bedeutung der Kommunikation zwischen Teams und Produktbereichen, wenn Ressourcen gemeinsam genutzt werden.</p>
+
+<h2 id="common_pitfalls" data-text="Häufige Fallstricke">Häufige Schwierigkeiten</h2>
+
+<p>Die häufigste Schwierigkeit besteht darin, in eine Extremposition zu verfallen, also zum Beispiel den Entwicklern überhaupt keine oder zu viele Wahlmöglichkeiten anzubieten.</p>
+
+<p>Wenn Sie komplett über die Tools und Technologien bestimmen, ist eine bessere Standardisierung gewährleistet.
+Was in einigen Fällen funktioniert, muss jedoch nicht in jedem Fall die beste Lösung sein. Mit dieser Vorgehensweise beschränken Sie außerdem die Möglichkeit, neue Technologien zu testen, mit ihnen zu <a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">experimentieren und letztendlich zu wachsen</a>. Häufig werden mit neuen Technologien, die getestet und übernommen wurden, große Leistungssteigerungen erzielt. Hätten beispielsweise Teams nicht die Möglichkeit gehabt, die Technologien Containerisierung oder Platform as a Service auszuprobieren, als sie noch neu waren, hätten ihre Unternehmen die mit ihnen einhergehenden Leistungssteigerungen nicht erkennen und umsetzen können.</p>
+
+<p>Im anderen Extremfall führen zu viele verschiedene Tools und Technologien zu technischen Problemen und erhöhen die Fragilität des Systems, wenn Sie für jedes Projekt und jeden Service neue Tools zulassen. Mit jedem neuen Tool in der Toolkette steigen die Wartungs- und Betriebskosten. Die im Laufe der Zeit entstehenden Kosten können die Leistungsvorteile der neuen Technologie zunichte machen.</p>
+
+<h2 id="ways_to_improve_tool_choice_in_teams" data-text="Toolauswahl in Teams verbessern">Toolauswahl in Teams verbessern</h2>
+
+<p>Eine Leistungssteigerung wird hauptsächlich dadurch erreicht, dass die Teams die Aufgaben zur Auswahl der besten Tools für ihre Arbeit selbst übernehmen. Dabei können folgende Empfehlungen hilfreich sein:</p>
+
+<ul>
+<li><strong>Softwarepakete regelmäßig prüfen und bewerten</strong>. Teammitglieder müssen dazu motiviert werden, kritisch zu beurteilen, inwieweit die aktuellen Tools die Anforderungen erfüllen. Außerdem sollten Sie eventuelle Probleme mit den vorhandenen Tools erörtern und Testzeiten für potenzielle neue Tools planen.</li>
+<li><strong>Neue Tools für neue Projekte proaktiv überprüfen</strong>. Die Teammitglieder sollen sich über neue Tools Gedanken machen, sie ausprobieren und feststellen, ob sie unterstützenswert sind. Wenn Sie ein Schlüsselelement des neuen Systems mit den vorhandenen und den vorgeschlagenen neuen Technologien implementieren, können Sie herausfinden, ob die erwarteten Vorteile tatsächlich eintreten. Bei der Auswahl von Technologien verschaffen Sie sich einen genauen Überblick über die mit der neuen Technologie verbundenen Kosten, z. B.
+für Lizenzen, Support und Infrastruktur zur Ausführung der Tools. Möglicherweise benötigen Sie zusätzliche Mitarbeiter, die bei der Einführung und Wartung der Technologie helfen.</li>
+<li><strong>Zeit zur Erprobung neuer Tools einplanen</strong>. Sie sollten regelmäßig Zeiten einplanen, in denen Teams neue Projekte und Technologien ausprobieren können (z. B. in Hackathons). Nicht alle Tools werden nach diesen Testsessions für gut befunden und übernommen. Wichtig ist jedoch, dass die Teams entscheiden können, ob die Technologien geeignet sind und sie sie gegebenenfalls auf einfache Weise in ihren Stack integrieren können.</li>
+<li><strong>Regelmäßig neue Tools vorstellen</strong>. Wenn Sie organisierte Meetings (z. B. Lunch-Meetings) fördern, können dabei neue Technologien vorgestellt und erörtert werden. Das können informelle Meetings sein, bei denen Projekte präsentiert werden, in denen neue Technologien zum Einsatz kommen oder etwas genauer untersucht wird. Informelle Treffen wie diese bieten Gruppen eine gute Gelegenheit, sich über neue Technologien auszutauschen und auf dem Laufenden zu bleiben. Dabei empfiehlt sich das Abwechseln bei Präsentationen. Jedes Teammitglied ist mal an der Reihe. Sie können auch Personen aus anderen Teams oder Personen von außerhalb des Unternehmens einladen, eine Präsentation zu halten. Die Einbeziehung von externen Fachleuten kann besonders hilfreich sein, denn wenn sie Erfahrung mit dem Tool haben, können sie über die versteckten Kosten und Komplexitäten informieren, die sich erst nach längerer Verwendung manifestieren.</li>
+</ul>
+
+<p>Das Ziel ist es, dass Technologiethemen Eingang in Gespräche finden und Teams so informiert werden, dass sie in der Lage sind, fundierte Entscheidungen über die für sie geeigneten Tools und Technologien zu treffen. Ein Ergebnis dieser Gespräche kann auch sein, bei den altbewährten Technologien zu bleiben.</p>
+
+<h2 id="ways_to_measure_if_teams_are_empowered_to_choose_tools" data-text="Sind Ihre Teams in der Lage, Tools auszuwählen?">Sind Ihre Teams in der Lage, Tools auszuwählen?</h2>
+
+<p>Wenn Sie wissen möchten, ob sich Ihre Teams Entscheidungen über Tools zutrauen, ist es am besten, sie zu fragen. Die Antwort lässt sich nicht an der Anzahl der Tools ablesen, die das Team verwendet, oder an der Häufigkeit, mit der das Team seine Tools wechselt. Schließlich ist es möglich, dass das Team darüber nicht selbst entscheidet, sondern nur Anweisungen befolgt.</p>
+
+<h2 id="whats_next" data-text="Weitere Informationen">Weitere Informationen</h2>
+
+<ul>
+<li><a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">Links zu anderen Artikeln und Ressourcen auf der DevOps-Seite</a></li>
+<li><a href="https://www.devops-research.com/research.html">DevOps-Forschungsprogramm entdecken</a></li>
+<li>Über den <a href="https://www.devops-research.com/quickcheck.html">DevOps Quick Check</a> erfahren, wo Sie im Vergleich zum Rest der Branche stehen</li>
+</ul>
+
+</body></html>

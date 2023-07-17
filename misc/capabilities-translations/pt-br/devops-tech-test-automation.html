@@ -1,0 +1,287 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Tecnologia do DevOps: testes contínuos</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Observação:</strong><span> <em>o teste contínuo</em> é um dos conjunto de recursos que aumentam o fornecimento do software e o desempenho organizacional.  Esses recursos foram
+descobertos pelo
+<a href="https://www.devops-research.com/research.html">programa de pesquisa DORA State of DevOps</a>
+(em inglês), uma investigação independente e acadêmica rigorosa sobre as práticas e
+recursos que impulsionam alto desempenho. Para saber mais, leia nossos
+<a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>O segredo para agregar qualidade a um software é agilizar o recebimento de feedback sobre o impacto
+das alterações durante o ciclo de vida da entrega de software. Tradicionalmente, as equipes
+confiam em testes manuais e inspeção de código para verificar a exatidão dos sistemas.
+Essas inspeções e testes normalmente ocorriam em uma fase separada após o "dev
+complete". Essa abordagem tem as seguintes desvantagens:</p>
+
+<ul>
+<li>A execução manual do teste de regressão é demorada, economicamente
+onerosa e provoca um gargalo no processo. O software não pode
+ser lançado com frequência e os desenvolvedores não conseguem receber feedback com a rapidez necessária.</li>
+<li>Testes e inspeções manuais não são confiáveis porque as pessoas têm baixo desempenho na
+execução de tarefas repetitivas, como testes de regressão manual. Além disso, é difícil prever,
+por meio de inspeção, o impacto das alterações em um sistema de software complexo.</li>
+<li>Depois que o software estiver no estágio "dev complete", os desenvolvedores precisarão esperar muito tempo para receber
+feedback sobre as alterações. Isso geralmente resulta em um trabalho substancial para
+classificar defeitos e corrigi-los. Problemas de desempenho, segurança e confiabilidade
+geralmente exigem alterações de design que são ainda mais caras quando
+solucionadas nesta fase.</li>
+<li>Ciclos de feedback longos também dificultam a
+criação de código de qualidade pelos desenvolvedores, e, sob pressão do cronograma, as equipes de desenvolvimento
+às vezes podem tratar a qualidade como "problema de outra pessoa".</li>
+<li>Quando os desenvolvedores não são responsáveis por testar o próprio código, fica difícil
+aprender a escrever códigos testáveis.</li>
+<li>Para sistemas que estão sempre em evolução, manter a documentação de teste atualizada
+exige um esforço significativo.</li>
+</ul>
+
+<p>Em vez disso, as equipes podem:</p>
+
+<ul>
+<li>executar todos os tipos de testes continuamente durante todo o ciclo de vida da entrega de
+software;</li>
+<li>criar e selecionar conjuntos rápidos e confiáveis de testes automatizados que são executados como
+parte dos
+<a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">pipelines de entrega contínua</a> (em inglês).</li>
+</ul>
+
+<p>Esse processo não ajuda apenas as equipes a criar (e aprender a criar) software
+de alta qualidade mais rapidamente, a pesquisa da DORA mostra que também aumenta a estabilidade
+do software, reduz a exaustão da equipe e diminui a dificuldade de implantação.</p>
+
+<h2 id="how_to_implement_continuous_testing" data-text="Como implementar testes contínuos">Como implementar testes contínuos</h2>
+
+<p>Para criar qualidade no software, você precisa executar continuamente testes automatizados e
+manuais durante todo o processo de entrega para validar a funcionalidade e a
+arquitetura do sistema em desenvolvimento. Essa disciplina tem um
+componente organizacional e um componente técnico. Em nível organizacional, a pesquisa da DORA
+acredita que as equipes melhoram quando:</p>
+
+<ul>
+<li>permitem que testadores trabalhem com desenvolvedores em todo o processo
+de desenvolvimento e entrega do software. Observe que "testador" é um papel, não
+necessariamente um emprego em tempo integral, mesmo que esse seja um padrão comum discutido
+abaixo;</li>
+<li>realizam atividades de teste manuais, como testes exploratórios, testes
+de usabilidade e testes de aceitação, durante todo o processo de entrega.</li>
+</ul>
+
+<p>Uma atividade técnica importante é criar e manter um conjunto de conjuntos de testes automatizados,
+incluindo os seguintes:</p>
+
+<ul>
+<li><strong>Testes de unidade:</strong> normalmente, eles testam um único método, classe ou função
+isoladamente, fornecendo garantias aos desenvolvedores de que o código opera conforme
+projetado. Para assegurar que o código possa ser testado e os testes possam receber manutenção,
+escreva os testes de unidade antes do código, uma técnica conhecida como
+<a href="http://www.jamesshore.com/v2/books/aoad1/test_driven_development" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">desenvolvimento orientado a teste</a> (link em inglês)
+ou TDD, na sigla em inglês.</li>
+<li><strong>Testes de aceitação:</strong> normalmente testam um aplicativo ou serviço em execução (em geral,
+com dependências substituídas por
+<a href="https://testing.googleblog.com/2013/07/testing-on-toilet-know-your-test-doubles.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">cópias de teste</a>)
+para garantir que um nível mais alto de funcionalidade opere conforme
+projetado e que não tenham sido introduzidos erros de regressão (link em inglês). Exemplos
+de testes de aceitação podem verificar os critérios de aceitação da empresa para um histórico
+de usuário ou a correção de uma API. Escreva esses testes durante o
+processo de desenvolvimento. Ninguém pode declarar o trabalho de desenvolvimento como "dev
+complete" sem que os testes de aceitação automatizados tenham sido aprovados.</li>
+</ul>
+
+<p>O diagrama a seguir,
+<a href="http://www.exampler.com/old-blog/2003/08/22/#agile-testing-project-2" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">criado inicialmente por Brian Marick</a>
+e depois mencionado no livro
+<a href="https://books.google.com/books/about/Agile_Testing.html?id=68_lhPvoKS8C" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body"><em>Agile Testing: A Practical Guide for Testers and Agile Teams</em></a>,
+mostra os tipos de testes automáticos e manuais que precisam ser executados (links em inglês).</p>
+
+<p><img src="/static/architecture/images/ta-image1.png" alt="image"/></p>
+
+<p>Os testes automatizados, destacados no diagrama anterior, se encaixam em um
+<a href="https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">pipeline de implantação</a> (em inglês)
+de <a href="/architecture/devops/devops-tech-continuous-delivery">entrega contínua</a>.
+Nesse tipo de pipeline, cada alteração executa um build e cria pacotes de software,
+executa testes de unidade e possivelmente realiza outras verificações, como análise
+estática. Depois que esses pacotes passam pelo primeiro estágio, testes de aceitação automatizados
+mais abrangentes e, provavelmente, alguns testes não funcionais, como
+testes de desempenho e verificações de vulnerabilidade, são executados no software em execução
+implantado automaticamente. Qualquer build que for aprovado no estágio de aceitação é normalmente
+disponibilizado para exploração manual e testes de usabilidade. Por fim, se nenhum
+erro for encontrado nessas etapas manuais, o aplicativo será considerado como passível de lançamento.</p>
+
+<p>A execução contínua de testes como parte de um pipeline contribui para um feedback
+rápido para os desenvolvedores, menor tempo de lead desde o check-in até o lançamento e baixa taxa de erros
+nos ambientes de produção. A maior parte do trabalho dos desenvolvedores é validada em
+minutos, em vez de dias ou semanas, por isso, eles podem corrigir os bugs o mais rápido
+possível.</p>
+
+<p>O diagrama a seguir mostra um exemplo de um pipeline de implantação linear simples.
+Neste exemplo, a cor verde significa que nenhum problema foi encontrado, e vermelho significa que um ou
+mais problemas foram descobertos.</p>
+
+<p><img src="/static/architecture/images/ta-image3.png" alt="imagem"/></p>
+
+<p>No padrão de pipeline de implantação, todas as alterações criam um candidato a versão e
+o ciclo de feedback rápido ajuda a detectar problemas no processo o mais cedo
+possível. Quando um pacote chega ao final do pipeline e a equipe ainda
+não se sente confortável para liberá-lo ou são descobertos defeitos já em
+produção, o pipeline precisa ser aprimorado, talvez com a adição ou atualização de testes.</p>
+
+<h2 id="common_pitfalls" data-text="Armadilhas comuns">Armadilhas comuns</h2>
+
+<ul>
+<li><p><strong>Não envolver os desenvolvedores nos testes.</strong> A pesquisa do DORA mostra que,
+quando os desenvolvedores são responsáveis principalmente por criar e manter
+conjuntos de testes automatizados e quando é fácil para os desenvolvedores corrigirem
+falhas em testes de aceitação, o desempenho é aprimorado. Quando outros
+grupos são os proprietários da automatização de testes, geralmente surgem dois problemas:</p>
+
+<ul>
+<li><strong>O estado dos conjuntos de testes frequentemente é incompleto.</strong> Alterações no código podem exigir a atualização dos testes. Se os desenvolvedores não forem responsáveis pela automação
+dos testes, o pipeline do build permanecerá incompleto até que a equipe responsável
+corrija os testes.</li>
+<li><strong>Os desenvolvedores escrevem um código difícil de testar.</strong> Os desenvolvedores tendem a resolver
+o problema recebido sem pensar em como ele será testado.
+Isso pode levar à criação de códigos mal projetados e conjuntos de testes caros e
+difíceis de manter.</li>
+</ul>
+
+<p>Os testadores e as equipes de controle de qualidade continuam tendo um papel importante nesse modo de
+trabalhar. Os testadores têm uma perspectiva única do sistema, porque
+entendem como os usuários interagem com ele. É uma prática recomendada unir testadores
+a desenvolvedores para criar e desenvolver conjuntos de testes automatizados usando
+ferramentas de compartilhamento de tela, caso as equipes não estejam fisicamente no mesmo local. Assim, eles
+podem aprender uns com os outros e resolver problemas em tempo real. Os testadores também desempenham
+um papel essencial na realização de testes exploratórios e de usabilidade, além de
+ajudar a selecionar conjuntos de testes.</p></li>
+<li><p><strong>Falha ao selecionar seus conjuntos de testes.</strong> Sempre analise
+e melhore seus conjuntos de testes para encontrar problemas com facilidade e manter a complexidade e
+os custos sob controle. Exemplo:</p>
+
+<ul>
+<li>Os conjuntos de testes de aceitação normalmente representam jornadas do usuário
+<a href="https://testing.googleblog.com/2016/09/testing-on-toilet-what-makes-good-end.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">completas</a>
+(em inglês) ao longo do sistema, em vez de apenas coleções de critérios de
+aceitação automatizados. À medida que seu produto evolui, esses
+cenários e os conjuntos de testes que os validam também evoluem. Para mais informações sobre
+esse processo, consulte o vídeo
+<a href="https://www.youtube.com/watch?v=qYfI2-bC6LA">Como criar as bases para a automação de testes bem-sucedida</a>,
+(em inglês) de Angie Jones.</li>
+<li>Se toda vez que houver uma alteração de código, também for preciso alterar vários testes de unidade, provavelmente você está<a href="https://martinfowler.com/articles/mocksArentStubs.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body"> confiando demais na simulação</a> ou falhando na remoção do seu conjunto de testes de unidade.</li>
+<li>Mantenha seus conjuntos de testes bem fatorados. Se todas as alterações na interface do usuário fizerem com que vários testes de aceitação falhem, use o <a href="https://martinfowler.com/bliki/PageObject.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">padrão de objeto de página</a> para desacoplar seus testes do sistema que está sendo testado.</li>
+<li>Caso a manutenção dos seus testes seja cara, isso pode indicar problemas
+com a
+<a href="/architecture/devops/devops-tech-architecture">arquitetura</a> do seu software. Continue
+investindo para tornar seu software fácil de testar, incluindo
+a incorporação de
+<a href="https://refactoring.com/" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">refatoração</a> (em inglês)
+no trabalho diário da equipe.</li>
+</ul></li>
+<li><p><strong>Ter a proporção incorreta de testes de unidade e aceitação.</strong> Um objetivo
+específico do projeto de um conjunto de testes automatizados é encontrar erros o mais cedo
+possível. É por isso que os testes unitários de execução mais rápida são feitos antes dos testes de aceitação de
+execução mais lenta, sendo ambos executados antes de qualquer teste manual.</p>
+
+<p>Use a categoria mais rápida de testes para encontrar erros. Quando encontrar um
+erro em um teste de aceitação ou durante um teste exploratório, adicione um teste de unidade
+para garantir que esse erro seja detectado mais rápido, mais cedo e de maneira mais econômica na próxima vez.
+Mike Cohn descreveu a
+<a href="https://books.google.com.br/books?id=8IglA6i_JwAC&amp;printsec=frontcover&amp;dq=Mike+Cohn+Succeeding+with+Agile&amp;hl=pt-BR&amp;sa=X&amp;ved=0ahUKEwj9x8S8tuTiAhWjGLkGHU0GCxEQ6AEILTAA#v=onepage&amp;q=Mike%20Cohn%20Succeeding%20with%20Agile&amp;f=false" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">pirâmide de automatização de teste ideal</a>
+(em inglês), mostrada no diagrama a seguir, em que a maioria dos erros é detectada usando o
+teste de unidade.</p>
+
+<p><img src="/static/architecture/images/ta-image2.png" alt="image"/></p></li>
+<li><p><strong>Tolerar testes não confiáveis.</strong> Os testes precisam ser confiáveis: ou seja, quando os
+testes são aprovados, precisamos ter certeza de que o software está pronto para ser lançado e que as falhas
+dos testes indicam um defeito real. Especificamente, não toleram testes
+instáveis.
+<a href="https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Leia sobre a estratégia do Google para mitigação de testes instáveis</a> (em inglês).</p></li>
+</ul>
+
+<h2 id="ways_to_improve_continuous_testing" data-text="Formas de melhorar o teste contínuo">Formas de melhorar o teste contínuo</h2>
+
+<p>Se sua organização ainda não tem uma cultura de teste de unidade por desenvolvedores,
+não se preocupe. O teste de unidade não era uma prática difundida nos primeiros anos do
+Google. A cultura atual de testes de unidade abrangentes foi impulsionada por um grupo
+de voluntários no Google, chamado Grupo de Testes.
+<a href="https://martinfowler.com/articles/testing-culture.html#google" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">Leia como eles ajudaram a conduzir a adoção de testes de unidade</a> (em inglês)
+criando uma comunidade de práticas focadas na propagação de conhecimento
+sobre o testes no Google e convencendo os desenvolvedores a respeito do valor do teste de unidade.</p>
+
+<p>Se você não tiver automação de testes suficiente, comece criando um
+pipeline de implantação estrutural. Por exemplo, primeiro crie um único teste de unidade, um único teste de aceitação e um script de implantação automatizado que sustente um ambiente de teste exploratório e depois os agrupe. Aumente gradualmente a cobertura de teste e amplie o pipeline de implantação de acordo com a evolução do seu produto ou serviço.</p>
+
+<p>Se você já estiver trabalhando em um <a href="https://wikipedia.org/wiki/Brownfield_(software_development)" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">sistema já em execução</a>, siga as orientações deste artigo, mas não interrompa a atividade para atualizar um conjunto abrangente de testes automatizados. Em vez disso, crie uma pequena quantidade de testes de aceitação para
+a funcionalidade de alto valor. Em seguida, verifique se está sendo exigido que os desenvolvedores gravem
+testes de unidade e aceitação para qualquer nova funcionalidade e qualquer funcionalidade que você
+estiver alterando. Pense em usar o TDD para melhorar a qualidade e a manutenção, tanto
+do código principal quanto do código de teste e garanta que, quando seus testes de aceitação
+falharem, você criará testes de unidade para descobrir mais o defeito com mais rapidez futuramente.</p>
+
+<p>Se você tiver um conjunto de testes de manutenção oneroso e pouco confiável, não hesite em abandoná-lo. Um conjunto de dez testes confiáveis, rápidos e
+incontestáveis é muito melhor que um conjunto de centenas de testes de manutenção difícil
+e em que ninguém confia.</p>
+
+<h2 id="ways_to_measure_continuous_testing" data-text="Formas de avaliar testes contínuos">Formas de avaliar testes contínuos</h2>
+
+<p>É possível medir os resultados dos testes contínuos no seu ambiente fazendo
+o seguinte:</p>
+
+<table>
+<thead>
+<tr>
+<th>Fator a testar</th>
+<th>O que medir</th>
+<th>Meta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Criadores de testes de aceitação e de unidade.</td>
+<td>Porcentagem de testes criados por desenvolvedores, testadores e qualquer outro grupo da empresa.</td>
+<td>Os principais autores e mantenedores de testes de aceitação são desenvolvedores.</td>
+</tr>
+<tr>
+<td>Número de bugs encontrados em testes de aceitação, testes exploratórios e na produção.</td>
+<td>Alteração na proporção de erros encontrados ao longo do tempo.</td>
+<td>Mais bugs são encontrados nas fases de teste "mais baratas", as equipes adicionam testes automatizados
+para os bugs encontrados durante testes exploratórios e em produção, além de adicionar testes de unidade para detectar bugs descobertos em testes de aceitação.</td>
+</tr>
+<tr>
+<td>Tempo gasto corrigindo falhas em testes de aceitação.</td>
+<td>Alteração no tempo gasto na correção de falhas de testes ao longo do tempo. (Deve reduzir.)</td>
+<td>Os desenvolvedores podem facilmente corrigir falhas nos testes de aceitação.</td>
+</tr>
+<tr>
+<td>Testes automatizados são significativos.</td>
+<td>Acompanhe a quantidade de falhas de testes automatizados que representam um defeito real e a quantidade que foi mal codificada.</td>
+<td>As falhas nos testes sempre indicam um defeito real no produto.</td>
+</tr>
+<tr>
+<td>Testes automatizados são executados no pipeline de entrega.</td>
+<td>Verifique (sim/não) se todos os conjuntos de testes são executados em cada gatilho do pipeline.</td>
+<td>Testes automatizados são executados como parte do pipeline principal e do fluxo de trabalho.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="whats_next" data-text="A seguir">A seguir</h2>
+
+<ul>
+<li>Consulte links para outros artigos e recursos na
+<a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página do DevOps</a>.</li>
+<li>Saiba mais sobre testes no Google lendo
+<a href="https://books.google.com/books/about/Software_Engineering_at_Google.html?id=WXTTDwAAQBAJ" track-type="solution" track-name="internalLink" track-metadata-position="body">Engenharia de software no Google</a> (em inglês).</li>
+<li>Saiba como criar, testar e implantar continuamente seu sistema usando o <a href="/build/?&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=latam-BR-all-pt-dr-skws-all-all-trial-e-dr-1003997-LUAC0008680&amp;utm_content=text-ad-none-none-DEV_c-CRE_325592090632-ADGP_SKWS+%7C+Multi+%7E+Dev+%7C+Build-KWID_43700040482196107-kwd-471794162766-userloc_1001743&amp;utm_term=KW_cloud%20build-ST_Cloud+Build&amp;gclid=Cj0KCQjw6IfoBRCiARIsAF6q06suRucypheWE5dDKAmsKDZrEVvuY0nDFS0YgbkN5XVmkEzJPl89zIIaAoJcEALw_wcB&amp;gclsrc=aw.ds" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Build</a>.</li>
+<li>Saiba como monitorar seu sistema e os testes usando o
+<a href="/stackdriver" track-type="solution" track-name="internalLink" track-metadata-position="body">Cloud Monitoring</a>.</li>
+<li>Explore nosso
+<a href="https://www.devops-research.com/research.html">programa de pesquisa</a> (em inglês) do DevOps.</li>
+<li>Faça a
+<a href="https://www.devops-research.com/quickcheck.html">verificação rápida de DevOps</a>
+para entender sua posição em relação ao restante do setor.</li>
+</ul>
+
+</body></html>

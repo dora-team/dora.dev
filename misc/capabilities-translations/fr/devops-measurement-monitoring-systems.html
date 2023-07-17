@@ -1,0 +1,93 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Mesure DevOps : systèmes de surveillance pour des décisions commerciales éclairées</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Remarque</strong> : <span>Les <em>systèmes de surveillance pour des décisions commerciales éclairées</em> est un ensemble de fonctionnalités permettant d'améliorer la livraison de logiciels et les performances organisationnelles.  Ces capacités ont été découvertes par le <a href="https://www.devops-research.com/research.html">programme de recherche sur l'état du DevOps, mené par l'équipe DevOps Research and Assessment (DORA)</a>, une investigation indépendante et rigoureuse concernant les pratiques et les fonctionnalités permettant d'optimiser les performances. Pour en savoir plus, consultez nos <a href="/devops">ressources DevOps</a>.</span></aside>
+<p>La surveillance consiste à collecter, analyser et utiliser des informations pour suivre les applications et l'infrastructure afin d'orienter les décisions commerciales.
+Fonction essentielle, la surveillance vous donne un aperçu de vos systèmes et de vos tâches. Si elle est mise en œuvre correctement, la surveillance facilite également une rétroaction rapide qui vous permet de rechercher et de résoudre rapidement les problèmes au début du cycle de développement des logiciels.</p>
+
+<p>La surveillance vous aide également à communiquer des informations sur vos systèmes à des personnes appartenant à d'autres domaines du pipeline de développement et de livraison de logiciels, ainsi qu'à d'autres secteurs de l'entreprise. Les connaissances acquises en aval des opérations peuvent être intégrées aux équipes en amont, telles que le développement et la gestion des produits. Par exemple, les connaissances acquises grâce à l'utilisation d'une application hautement évolutive ayant recours à une base de données NoSQL en tant que data store peuvent constituer des informations précieuses pour les développeurs lors de la création d'une application similaire.</p>
+
+<p>Ce transfert de connaissances permet aux équipes d'identifier rapidement les apprentissages, qu'ils résultent d'un problème de production, d'une erreur de déploiement ou des habitudes d'utilisation de vos clients. Vous pouvez ensuite partager ces connaissances dans votre organisation pour stimuler l'amélioration du travail des équipes et des systèmes.</p>
+
+<h2 id="how_to_implement_monitoring" data-text="Comment mettre en œuvre la surveillance">Comment mettre en œuvre la surveillance</h2>
+
+<p>Les éléments suivants sont essentiels à la mise en œuvre d'une surveillance efficace :</p>
+
+<ul>
+<li>Collecter les données dans des domaines clés de la chaîne de valeur, en incluant les performances et l'infrastructure des applications</li>
+<li>Utiliser les données collectées pour prendre des décisions commerciales</li>
+</ul>
+
+<h3 id="collecting_data" data-text="Collecter les données">Collecter les données</h3>
+
+<p>Pour collecter les données plus efficacement, vous devez mettre en œuvre des solutions de surveillance, en tant que services internes ou gérés, qui offrent une visibilité sur les tâches de développement, les tests, le contrôle qualité et les opérations informatiques. Assurez-vous de choisir des métriques appropriées pour la fonction et pour votre entreprise.</p>
+
+<h3 id="using_data_to_make_business_decisions" data-text="Utiliser les données pour prendre des décisions commerciales">Utiliser les données pour prendre des décisions commerciales</h3>
+
+<p>Lorsque vous transformez et visualisez les données collectées, vous les rendez accessibles à différentes audiences pour les aider à prendre des décisions. Par exemple, vous souhaiterez peut-être partager des données d'opérations en amont. Vous pouvez également intégrer ces données, de manière appropriée, dans des rapports et des présentations, et les utiliser lors de réunions pour prendre des décisions commerciales éclairées. Dans ce cas, <em>de manière appropriée</em> signifie "de manière pertinente, en temps opportun, en utilisant une méthode précise et facile à comprendre".</p>
+
+<p>Lors de ces réunions, veillez également à fournir le contexte afin d'aider ceux qui ne connaissent pas bien les données à comprendre comment elles se rapportent à la discussion et comment elles peuvent éclairer les décisions à prendre. Par exemple, vous voudrez peut-être savoir comment répondre aux questions suivantes :</p>
+
+<ul>
+<li>Ces valeurs sont-elles relativement élevées ou faibles ?</li>
+<li>Sont-elles des valeurs attendues ?</li>
+<li>Prévoyez-vous des changements ?</li>
+<li>En quoi ces données sont-elles différentes des rapports historiques ?</li>
+<li>Votre technologie ou votre infrastructure a-t-elle eu une incidence sur les chiffres de manière intéressante ou non évidente ?</li>
+</ul>
+
+<h2 id="common_pitfalls_in_monitoring" data-text="Problèmes courants liés à la surveillance">Problèmes courants liés à la surveillance</h2>
+
+<p>Les problèmes suivants sont fréquents lors de la surveillance des systèmes :</p>
+
+<ul>
+<li><p><strong>Surveillance réactive</strong> : par exemple, vous n'êtes alerté que lorsque le système tombe en panne, mais vous n'utilisez pas les données de surveillance pour vous alerter lorsque le système approche des seuils critiques.</p></li>
+<li><p><strong>Surveillance dont le champ d'application est limité</strong> : par exemple, vous surveillez un ou deux domaines plutôt que le pipeline complet de développement et de livraison de logiciels. Cette surveillance limitée, mise en évidence par les métriques, cible uniquement les zones mesurées qui ne sont peut-être pas les zones optimales à surveiller.</p></li>
+<li><p><strong>Surveillance ciblée sur les optimisations locales</strong> : par exemple, vous ciblez la réduction du temps de réponse pour les besoins en stockage d'un service sans évaluer si l'infrastructure plus large pourrait également bénéficier de la même amélioration.</p></li>
+<li><p><strong>Surveillance totale</strong> : en collectant les données et en créant des rapports sur tous les éléments de votre système, vous risquez de générer une surabondance d'alertes et de données. En adoptant une approche réfléchie de la surveillance, vous pouvez concentrer l'attention sur des domaines clés.</p></li>
+</ul>
+
+<h2 id="ways_to_improve_monitoring" data-text="Méthodes pour améliorer la surveillance">Méthodes pour améliorer la surveillance</h2>
+
+<p>Pour améliorer l'efficacité de votre surveillance, nous vous recommandons de concentrer vos efforts sur deux domaines principaux :</p>
+
+<ol>
+<li><p><strong>Collecter les données dans des domaines clés de la chaîne de valeur</strong></p>
+
+<p>En analysant les données que vous collectez et en en déterminant les lacunes, vous pouvez vous assurer de collecter les données appropriées pour votre organisation.</p></li>
+<li><p><strong>Utiliser les données collectées pour prendre des décisions commerciales</strong></p>
+
+<p>Les données que vous collectez doivent générer de la valeur pour l'ensemble de l'organisation. De la même manière, les mesures que vous sélectionnez doivent être pertinentes pour votre organisation.
+Des données pertinentes peuvent être utilisées par de nombreuses équipes, de l'équipe DevOps à l'équipe Finance.</p>
+
+<p>Il est également important de trouver le bon support pour afficher les informations de surveillance. Différentes utilisations de l'information exigent différents choix de présentation. Les tableaux de bord en temps réel peuvent être le support le plus utile pour l'équipe DevOps, tandis que les rapports de gestion générés régulièrement peuvent s'avérer utiles pour les métriques mesurées sur une longue période.</p>
+
+<p>Le plus important est de s'assurer que les données sont disponibles, partagées et utilisées pour orienter les décisions. Si une feuille de calcul partagée est le support idéal pour commencer, utilisez-en une. Vous pouvez ensuite migrer vers des tableaux de bord plus élaborés ultérieurement. Ne laissez pas la perfection être l'ennemi du bien.</p></li>
+</ol>
+
+<h2 id="ways_to_measure_monitoring" data-text="Méthodes pour mesurer la surveillance">Méthodes pour mesurer la surveillance</h2>
+
+<p>Une surveillance efficace permet d'améliorer les performances en matière de développement et de livraison de logiciels. Toutefois, il peut être difficile de mesurer l'efficacité de la surveillance dans les systèmes. Il est possible de mesurer automatiquement la quantité de données collectées sur vos systèmes et les types de données collectées ; cependant, il est plus difficile de savoir si ces données sont utilisées ou à quel endroit elles sont utilisées.</p>
+
+<p>Pour vous aider à évaluer l'efficacité de la surveillance dans votre organisation, déterminez dans quelle mesure les personnes sont en accord ou en désaccord avec les affirmations suivantes :</p>
+
+<ul>
+<li>Les données des outils de surveillance des performances des applications sont utilisées pour prendre des décisions commerciales.</li>
+<li>Les données des outils de surveillance de l'infrastructure sont utilisées pour prendre des décisions commerciales.</li>
+</ul>
+
+<h2 id="whats_next" data-text="Étapes suivantes">Étapes suivantes</h2>
+
+<ul>
+<li>Pour obtenir des liens vers d'autres articles et ressources, consultez la page <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps</a>.</li>
+<li>Consultez la publication <a href="https://landing.google.com/sre/books/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Site Reliability Engineering (SRE)</a>.</li>
+<li>Découvrez notre <a href="https://www.devops-research.com/research.html">programme de recherche</a> DevOps.</li>
+<li>Effectuez l'<a href="https://www.devops-research.com/quickcheck.html">évaluation DevOps rapide</a> pour comprendre votre position par rapport au reste du secteur.</li>
+</ul>
+
+</body></html>

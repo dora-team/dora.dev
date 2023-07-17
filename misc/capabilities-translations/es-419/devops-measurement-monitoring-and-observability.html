@@ -1,0 +1,154 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Medición de DevOps: supervisión y observabilidad</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>Nota:</strong><span> La <em>supervisión y observabilidad</em> es una capacidad de varias que ofrecen una mejor entrega de software y rendimiento organizativo. Estas funciones se descubrieron mediante el <a href="https://www.devops-research.com/research.html">programa de investigación del estado de DevOps de DORA</a>, una investigación independiente y rigurosa desde el punto de vista académico sobre las prácticas y las funciones que impulsan el alto rendimiento. Para obtener más información, lee nuestros <a href="/devops">recursos de DevOps</a>.</span></aside>
+<p>Una buena supervisión es un aspecto esencial de los equipos de alto rendimiento.
+En la <a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">investigación</a> de <a href="/devops" track-type="article" track-name="internalLink" track-metadata-position="body">DevOps Research and Assessment (DORA)</a>, se muestra que una solución integral de supervisión y observabilidad, junto con otras prácticas técnicas, contribuye de manera positiva a la <a href="/architecture/devops/devops-tech-continuous-delivery" track-type="article" track-name="internalLink" track-metadata-position="body">entrega continua</a>. </p>
+
+<p>La investigación de DORA definió estos términos de la siguiente manera:</p>
+
+<p>La <strong>supervisión</strong> es una herramienta o una solución técnica que permite a los equipos observar y comprender el estado de sus sistemas. La supervisión se basa en la recopilación de conjuntos predefinidos de métricas o registros.</p>
+
+<p>La <strong>observabilidad</strong> es una herramienta o una solución técnica que permite a los equipos depurar de forma activa su sistema. La observabilidad se basa en la exploración de las propiedades y los patrones que no se definen con anticipación.</p>
+
+<p>Para realizar un buen trabajo con la supervisión y la observabilidad, los equipos deben tener lo siguiente:</p>
+
+<ul>
+<li>Informes sobre el estado general de los sistemas (¿Mis sistemas funcionan?
+¿Tienen recursos suficientes disponibles?)</li>
+<li>Informes sobre el estado del sistema según la experiencia de los clientes (¿Mis clientes saben si el sistema no está activo y tienen una mala experiencia?)</li>
+<li>Supervisión de métricas clave de sistemas y empresas</li>
+<li>Herramientas para ayudarte a comprender y depurar los sistemas en producción</li>
+<li>Herramientas para encontrar información sobre elementos que no conocías antes (es decir, puedes identificar <em>lo desconocido</em>)</li>
+<li>Acceso a herramientas y datos que ayudan a comprender y diagnosticar problemas de infraestructura en el entorno de producción, incluidas las interacciones entre servicios, y a hacer un seguimiento de ellos.</li>
+</ul>
+
+<h2 id="how_to_implement_monitoring_and_observability" data-text="Cómo implementar la supervisión y la observabilidad">Cómo implementar la supervisión y la observabilidad</h2>
+
+<p>Las soluciones de supervisión y observabilidad están diseñadas para realizar las siguientes acciones:</p>
+
+<ul>
+<li>Proporcionar los indicadores principales de una interrupción o una degradación del servicio</li>
+<li>Detectar interrupciones, degradaciones de servicios, errores y actividad no autorizada</li>
+<li>Ayudar a depurar interrupciones, degradaciones de servicios, errores y actividad no autorizada</li>
+<li>Identificar tendencias a largo plazo para la planificación de capacidad y los propósitos comerciales</li>
+<li>Exponer efectos secundarios inesperados de cambios o funcionalidad agregada</li>
+</ul>
+
+<p>Al igual que con todas las funciones de DevOps, la instalación de una herramienta no es suficiente para lograr los objetivos, pero las herramientas pueden ayudar o dificultar el esfuerzo.  Los sistemas de supervisión no deben estar limitados a una sola persona o a un equipo dentro de una organización.
+Capacitar a todos los desarrolladores para que dominen la supervisión ayuda a desarrollar una cultura de toma de decisiones basada en datos y mejora la capacidad de depuración general del sistema, lo que reduce las interrupciones.</p>
+
+<p>Hay algunos puntos clave para lograr una implementación eficaz de la supervisión y la observabilidad. En primer lugar, la supervisión debería indicarte qué no funciona y ayudarte a comprender la razón, antes de que se produzca demasiado daño. La métrica clave en caso de una interrupción o degradación del servicio es el tiempo de restablecimiento (TTR). La capacidad de comprender con rapidez qué es lo que no funciona es lo que más contribuye al TTR y la ruta más rápida para restablecer el servicio (lo que no significa que los problemas subyacentes se solucionarán de inmediato).</p>
+
+<p>Hay dos formas de alto nivel de observar un sistema: la supervisión en <em>caja negra</em>, en la que no se conoce el estado interno ni los mecanismos del sistema, y la supervisión en <em>caja blanca</em>, en la que sí se los conoce.</p>
+
+<p>Para obtener más información, consulta “Monitoring Distributed Systems” (Supervisión de sistemas distribuidos) en el libro <a href="https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">Site Reliability Engineering</a> (Ingeniería de confiabilidad de sitios).</p>
+
+<h3 id="blackbox_monitoring" data-text="Supervisión en caja negra">Supervisión en caja negra</h3>
+
+<p>En un sistema de supervisión en caja negra (o <em>sintético</em>), la entrada se envía al sistema que se encuentra en análisis de la misma manera que lo haría un cliente. Esto puede tomar la forma de llamadas HTTP a una API pública o llamadas RPC a un extremo expuesto, o puede llamar a una página web completa para que se procese como parte del proceso de supervisión.</p>
+
+<p>La supervisión en caja negra es un método basado en muestras. El sistema de caja negra supervisa el mismo sistema que se encarga de las solicitudes de los usuarios. Un sistema de caja negra también puede proporcionar cobertura del área de superficie del sistema de destino.  Esto podría implicar el sondeo de cada método externo de la API. También puedes considerar una combinación representativa de solicitudes para imitar mejor el comportamiento real del cliente.
+Por ejemplo, podrías realizar 100 operaciones de lecturas y solo 1 de escritura en una API determinada.</p>
+
+<p>Puedes controlar este proceso con un <em>sistema de programación</em> a fin de asegurarte de que estas entradas se realicen a una velocidad suficiente para ganar confianza en el muestreo. El sistema también debe contener un <em>motor de validación</em>, que puede ser tan simple como verificar los códigos de respuesta o hacer coincidir los resultados con expresiones regulares, procesar un sitio dinámico en un navegador sin interfaz gráfica y recorrer el árbol del DOM en busca de elementos específicos. Después de tomar una decisión (aprobada o con errores) en un sondeo determinado, debes almacenar el resultado y los metadatos para generar informes y alertas.  Examinar una instantánea de una falla y su contexto puede ser muy valioso para diagnosticar un problema.</p>
+
+<h3 id="whitebox_monitoring" data-text="Supervisión en caja blanca">Supervisión en caja blanca</h3>
+
+<p>La supervisión y la observabilidad dependen de las señales enviadas desde la carga de trabajo que se analiza al sistema de supervisión. En general, esto puede adoptar la forma de los tres componentes más comunes: <em>métricas</em>, <em>registros</em> y <em>seguimientos</em>. Algunos sistemas de supervisión también realizan un seguimiento de los <em>eventos</em> y los informan, lo que puede representar interacciones del usuario con un sistema completo o cambios de estado dentro del sistema.</p>
+
+<p>Las <em>métricas</em> solo son mediciones tomadas dentro de un sistema, que representan el estado de ese sistema de manera medible. Casi siempre son numéricas y tienden a tomar la forma de contadores, distribuciones y medidores. Existen algunos casos en los que las métricas de string tienen sentido, pero, en general, se usan métricas numéricas debido a la necesidad de realizar cálculos matemáticos en estas para generar estadísticas y visualizaciones.</p>
+
+<p>Los <em>registros</em> se pueden considerar como archivos que solo permiten agregar y que representan el estado de un solo subproceso de trabajo en un momento determinado. Estos registros pueden ser una sola string, como “El usuario presionó el botón X”, o una entrada de registro estructurada que incluye metadatos como la hora en que ocurrió el evento, qué servidor la procesó y otros elementos del entorno.  En ocasiones, un sistema que no puede escribir registros estructurados producirá una string semiestructurada como <code translate="no" dir="ltr">[timestamp] [server] message
+[code]</code>, que se puede analizar después del hecho, según sea necesario. Las entradas de registro suelen escribirse mediante una biblioteca cliente como log4j, structlog, bunyan, log4net o Nlog.
+El procesamiento de registros puede ser un método para producir estadísticas que se pueden considerar confiables, ya que se pueden volver a procesar según los registros inmutables almacenados, incluso si el propio sistema de procesamiento de registros tiene errores. Además, los registros se pueden procesar en tiempo real para producir <em>métricas basadas en registros</em>.</p>
+
+<p>Los <em>seguimientos</em> están compuestos por <em>intervalos</em>, que se usan para seguir un evento o una acción del usuario a través de un sistema distribuido. Un intervalo puede mostrar la ruta de una solicitud a través de un servidor, mientras que otro intervalo puede ejecutarse en paralelo, ambos con el mismo intervalo superior. Estas forman un seguimiento, que a menudo se visualiza en un gráfico de cascada similar a los que se usan en las herramientas de creación de perfiles. Esto permite a los desarrolladores comprender el tiempo que se toma en un sistema, muchos servidores, colas y saltos de red. Un framework común es <a href="https://opentelemetry.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenTelemetry</a>, que se formó a partir de <a href="https://opencensus.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenCensus</a> y <a href="https://opentracing.io/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">OpenTracing</a>.</p>
+
+<p>El servidor que se mide puede informar métricas, registros y seguimientos al sistema de supervisión, o lo hace un <em>agente</em> adyacente que puede presenciar o inferir situaciones en el sistema.</p>
+
+<h3 id="instrumentation" data-text="Instrumentación">Instrumentación</h3>
+
+<p>Para usar un sistema de supervisión, el sistema debe estar <em>instrumentado</em>. Es decir, el código debe agregarse a un sistema para exponer su estado interno. Por ejemplo, si un programa simple contiene un grupo de conexiones a otro servicio, recomendamos hacer un seguimiento del tamaño de ese grupo y la cantidad de conexiones sin usar en un momento determinado. Para ello, un desarrollador debe escribir código en la lógica del grupo de conexiones a fin de realizar un seguimiento de cuándo se forman o destruyen las conexiones, cuándo se transfieren y cuándo se muestran. Esto puede tomar la forma de entradas de registro o eventos. También, puedes aumentar o disminuir un medidor para el tamaño de la cola, o bien aumentar un contador cada vez que se crea una conexión o que un grupo se expande.</p>
+
+<h3 id="correlation" data-text="Correlación">Correlación</h3>
+
+<p>Las métricas se pueden recopilar de la aplicación y de sus sistemas subyacentes, como la JVM, el SO invitado, el hipervisor, el SO de nodos y el hardware. Ten en cuenta que, a medida que avanzas en una pila, puedes comenzar a combinar las métricas que se comparten en las cargas de trabajo. Por ejemplo, si una sola máquina entrega varias aplicaciones, observar el uso del disco podría no corresponder de forma directa con el sistema en observación. Sin embargo, los problemas relacionados con las aplicaciones en un sistema compartido pueden ayudarte a identificar un factor contribuyente (como un disco lento). Desglosar una aplicación única hasta las métricas de sistema subyacentes y, luego, mostrar todas las aplicaciones afectadas de forma similar puede ser muy potente.</p>
+
+<p>Medir un sistema distribuido significa tener observabilidad en muchos lugares y poder visualizarlos en conjunto. Esto puede referirse a un frontend y a su base de datos o a una aplicación para dispositivos móviles que se ejecuta en el dispositivo de un cliente, un balanceador de cargas en la nube y un conjunto de microservicios. Poder conectar los datos de todas estas fuentes en un solo lugar es un requisito fundamental en las herramientas de observabilidad modernas.</p>
+
+<h3 id="computation" data-text="Procesamiento">Procesamiento</h3>
+
+<p>Después de recopilar datos de varias fuentes para el sistema, generarás estadísticas y agregarás datos en varios dominios. Pueden ser cohortes de usuarios, regiones de la huella de procesamiento o ubicaciones geográficas de los clientes. Desarrollar estas estadísticas sobre la marcha en función de eventos sin procesar es muy beneficioso, pero puede ser costoso en términos de almacenamiento y la capacidad de procesamiento en tiempo real que se requiere.</p>
+
+<p>Cuando elijas las herramientas y planifiques la instrumentación, debes tener en cuenta la cardinalidad y dimensionalidad. Estos dos aspectos de la recopilación de métricas pueden afectar en gran medida tu capacidad para escalar y observar un sistema.</p>
+
+<p>La <em>cardinalidad</em> es la medida de valores distintos en un sistema. Por ejemplo, un campo como <code translate="no" dir="ltr">cpu-utilization</code> suele necesitar un rango entre 0 y 100. Sin embargo, si haces un seguimiento del identificador único de un usuario, todos son distintos, por lo que si tienes 1 millón de usuarios, tienes una cardinalidad de 1 millón. Esto marca una gran diferencia.</p>
+
+<p>La <em>dimensionalidad</em> es la capacidad de registrar más de un solo valor junto con una marca de tiempo, como podría suceder en una base de datos de serie temporal simple que respalda un sistema de supervisión. Tan solo registrar el valor de un contador, por ejemplo, las solicitudes enviadas, podría registrar solo el valor de la cantidad de solicitudes enviadas hasta este momento, como <code translate="no" dir="ltr">{time=x, value=y}</code>. Sin embargo, al igual que con los registros estructurados, recomendamos registrar algunos datos del entorno, lo que da como resultado algo como lo siguiente: <code translate="no" dir="ltr">{time=x, value=y, server=foo, cluster=123,
+environment=prod, service=bar}</code>. La combinación de cardinalidad y dimensionalidad altas puede aumentar considerablemente los requisitos de procesamiento y almacenamiento, hasta el punto en que la supervisión puede no funcionar como se esperaba.  Los desarrolladores que escriben datos y metadatos generados de forma dinámica en sistemas de supervisión deben comprender esto.</p>
+
+<h3 id="learning_and_improving" data-text="Aprendizaje y mejoras">Aprendizaje y mejoras</h3>
+
+<p>Parte de operar un sistema es aprender de las interrupciones y los errores. El proceso de escritura de retrospectivas o análisis retrospectivos con acciones correctivas está bien documentado. Un resultado de este proceso es el desarrollo de una supervisión mejorada. Es fundamental que una organización en constante evolución permita que cualquier persona dentro de ella actualice los sistemas de supervisión con rapidez y eficacia. La configuración de la supervisión es crucial, por lo que debe hacerse un seguimiento de los cambios mediante <a href="/architecture/devops/devops-process-streamlining-change-approval" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">la revisión y la aprobación</a>, al igual que con el desarrollo y la entrega de código. Conservar la configuración de supervisión en un <a href="/architecture/devops/devops-tech-version-control" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">sistema de control de versión</a> es un buen primer paso para permitir un acceso amplio al sistema, a la vez que mantienes el control sobre esta parte fundamental del sistema. Desarrollar la automatización en la implementación de la configuración de supervisión a través de una canalización de automatización también puede mejorar tu capacidad para garantizar que estas opciones de configuración sean válidas y se apliquen de manera coherente. Después de tratar la configuración de supervisión como código, todas estas mejoras se pueden realizar mediante un proceso de <a href="/architecture/devops/devops-tech-deployment-automation" track-type="article" track-name="internalLink" track-metadata-position="body">automatización de implementaciones</a>, el mismo sistema que usa el resto de tu equipo sería ideal.</p>
+
+<h2 id="common_pitfalls_of_implementing_monitoring_and_observability" data-text="Errores comunes de la implementación de la supervisión y la observabilidad">Errores comunes de la implementación de la supervisión y la observabilidad</h2>
+
+<p>Cuando desarrollas un sistema para la supervisión y la observabilidad de la organización, debes tener en cuenta que, por lo general, no existe una solución simple lista para usar. Cualquier sistema de supervisión aceptable requerirá un conocimiento profundo de cada componente que quieras medir y una manipulación directa del código para instrumentar esos sistemas. Evita tener una sola persona para la supervisión o un equipo dedicado que sea el único responsable del sistema. Esto no solo te ayudará a prevenir un punto único de fallo, sino que también aumentará tu capacidad de comprender y mejorar el sistema como una organización completa. La supervisión y la observabilidad deben estar incorporadas en el conocimiento básico de todos los desarrolladores. Un inconveniente común es que el equipo de operaciones, NOC o algún otro equipo similar es el único que tiene permitido realizar cambios en un sistema de supervisión. Esto debe evitarse y reemplazarse por un sistema que siga los patrones de la CD.</p>
+
+<p>Un antipatrón común de la escritura de alertas en los sistemas de supervisión es tratar de enumerar todas las condiciones de error posibles y escribir una alerta para cada una. A esto se lo denomina <em>alertas basadas en causas</em>, y debes evitarlo tanto como sea posible.
+En su lugar, debes enfocarte en las <em>alertas basadas en síntomas</em>, que solo te alertan cuando un síntoma orientado al usuario es visible o se espera que suceda pronto. Aún podrás observar los sistemas que no estén orientados a los usuarios, pero no se debería alertar directamente a los ingenieros de guardia si no hay síntomas orientados al usuario. Ten en cuenta que el término <em>orientado al usuario</em> también puede incluir usuarios internos de la organización.</p>
+
+<p>Cuando generes alertas, debes considerar cómo se entregan. Las alertas deben tener varias vías a los ingenieros activos, incluidos, entre otros: la entrega de SMS, las apps para dispositivos móviles dedicadas, las llamadas telefónicas automatizadas o el correo electrónico. Un error común es enviar alertas por correo electrónico a todo un equipo a través de una lista de distribución de correo electrónico.
+Esto puede dar como resultado alertas ignoradas debido a la <a href="https://wikipedia.org/wiki/Diffusion_of_responsibility" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">difusión de la responsabilidad</a>. Otro error común es una <a href="https://wikipedia.org/wiki/Signal-to-noise_ratio" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">relación señal/ruido</a> deficiente.
+Si enviar muchas alertas no es práctico, o no se obtiene una mejora, el equipo perderá con facilidad las alertas que son significativas y, tal vez, muy importantes. Este problema se conoce como <a href="https://wikipedia.org/wiki/Alarm_fatigue" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">fatiga por alarmas</a>.
+Se debe hacer un seguimiento muy cuidadoso a cualquier método para silenciar o suprimir un conjunto de alertas a fin de garantizar que no sea demasiado amplio ni se aplique con demasiada frecuencia.</p>
+
+<p>Cuando se crean paneles de supervisión para visualizar métricas, un error común es dedicar mucho tiempo a la creación del “Panel perfecto”. Esto es similar al error de alertas basadas en causa anterior. En un equipo de alto funcionamiento, el sistema que se encuentra en observación cambia tan rápido que el tiempo dedicado a crear un panel estará obsoleto antes de que se complete. En su lugar, es importante centrarse en la capacidad de los miembros del equipo de crear con rapidez un panel o algún otro conjunto de visualizaciones que se adapten a sus necesidades.</p>
+
+<p>No separar las métricas del producto o las orientadas a los ejecutivos, como la tasa de adquisición de usuarios y el seguimiento de ingresos, de los paneles de estado operativos o de servicio, también es un problema común, ya que ambos son muy importantes, pero distintos. Te recomendamos que los mantengas separados.</p>
+
+<h2 id="how_to_measure_monitoring_and_observability" data-text="Cómo medir la supervisión y la observabilidad">Cómo medir la supervisión y la observabilidad</h2>
+
+<p>Cuando implementas un sistema de supervisión y observabilidad en la organización, puedes hacer un seguimiento de algunas métricas internas para ver tu rendimiento.  Estas son algunas de las métricas para las que recomendamos hacer un seguimiento mediante una encuesta mensual o un análisis automático de tus registros retrospectivos o de alertas.</p>
+
+<ul>
+<li><strong>Cambios realizados en la configuración de la supervisión.</strong> ¿Cuántas solicitudes de extracción o cambios por semana se realizan en el repositorio que contiene la configuración de supervisión? ¿Con qué frecuencia se envían estos cambios al sistema de supervisión? (¿Por día? ¿Por lotes? ¿De inmediato?)</li>
+<li><strong>Alertas “fuera de horario”.</strong> ¿Qué porcentaje de alertas se maneja por la noche? Si bien algunas empresas globales tienen un modelo de asistencia continua, lo hace que esto no sea un problema, puede ser una indicación de que no se prestó la atención suficiente a los indicadores principales de fallas. Las alertas nocturnas frecuentes pueden provocar fatiga de alertas y equipos agotados.</li>
+<li><strong>Balance de alertas de equipos.</strong> Si cuentas con equipos responsables de un servicio en ubicaciones diferentes, ¿las alertas se distribuyen de forma equitativa y las reciben todos los equipos?  De no ser así, ¿por qué no?</li>
+<li><strong>Falsos positivos.</strong> ¿Cuántas alertas no generaron ninguna acción o se marcaron como “Funciona según lo previsto”? Las alertas que no son prácticas y que no te ayudaron a predecir fallas deben borrarse.</li>
+<li><strong>Falsos negativos.</strong> ¿Para cuántas fallas del sistema no se generaron alertas o se generaron más tarde de lo esperado? ¿Con qué frecuencia los informes retrospectivos incluyen agregar alertas nuevas (basadas en síntomas)?</li>
+<li><strong>Creación de alertas.</strong> ¿Cuántas alertas se crean por semana (total o agrupadas por gravedad, equipo, etcétera)?</li>
+<li><strong>Confirmación de alertas.</strong> ¿Qué porcentaje de alertas se confirman dentro del plazo acordado (como 5 minutos, 30 minutos)? En ocasiones, esto se combina con una métrica, como la <em>falla de alerta</em>, cuando se notifica a una persona secundaria del envío de una alerta.</li>
+<li><strong>Alarmas silenciadas y duración del silencio.</strong> ¿Cuántas alertas se encuentran silenciadas o suprimidas por semana?  ¿Cuántas se agregan a este grupo? ¿Cuántas se quitan?  Si el silenciamiento de alertas tiene un sistema de vencimiento, ¿cuántos silencios duran más tiempo del esperado?  ¿Cuál es el período máximo y medio de silencio? (Uno divertido es “¿cuántos silencios son infinitos”?)</li>
+<li><strong>Alertas no prácticas.</strong> ¿Qué porcentaje de alertas se consideraron “no prácticas”? Es decir, el ingeniero al que se alertó no pudo tomar medidas de inmediato, ya sea por no comprender la implicación de la alerta o debido a un problema conocido. Las alertas no prácticas son una fuente conocida de <a href="https://landing.google.com/sre/sre-book/chapters/eliminating-toil/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">trabajo duro</a>.</li>
+<li><strong>Usabilidad: alertas, runbooks y paneles.</strong> ¿Cuántos gráficos hay en los paneles? ¿Cuántas líneas por gráfico? ¿Los equipos pueden comprender los gráficos?
+¿Hay textos explicativos para ayudar a los ingenieros nuevos? ¿Las personas deben desplazarse y navegar mucho para encontrar la información que necesitan? ¿Los ingenieros pueden pasar de una alerta a una guía y a un panel de manera eficaz? ¿Las alertas tienen un nombre que permite guiar a los ingenieros en la dirección correcta? Podrían medirse a través de encuestas al equipo a lo largo del tiempo.</li>
+<li><strong>MTTD, MTTR, impacto</strong>. El tiempo de detección, el tiempo de resolución y el impacto son fundamentales. Considera medir el “área bajo la curva” del tiempo que la interrupción afectó a los clientes por la cantidad de clientes afectados.
+Esto se puede estimar o realizar con mayor precisión con herramientas.</li>
+</ul>
+
+<p>Mediante el seguimiento de algunas o de todas estas métricas, comenzarás a comprender mejor qué tan bien funcionan los sistemas de supervisión y observabilidad en tu organización. Si desglosas estas mediciones por producto, por equipo operativo o por otros métodos, obtendrás estadísticas no solo sobre el estado de los productos, sino también de los procesos y las personas.</p>
+
+<h2 id="whats_next" data-text="Próximos pasos">¿Qué sigue?</h2>
+
+<ul>
+<li>Para ver vínculos a otros artículos y recursos, consulta la <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">página de DevOps</a>.</li>
+<li>Obtén más información sobre cómo generar alertas proactivas con <a href="/architecture/devops/devops-measurement-proactive-failure-notification" track-type="solution" track-name="internalLink" track-metadata-position="body">notificaciones proactivas de fallas</a>.</li>
+<li>Consulta los <a href="https://landing.google.com/sre/resources/" target="external" track-type="article" track-name="externalLink" track-metadata-position="body">recursos de la ingeniería de confiabilidad de sitios de Google</a> para encontrar los siguientes libros de SRE:
+<ul>
+<li>Site Reliability Engineering (Ingeniería de confiabilidad de sitios)</li>
+<li>Site Reliability Engineering Workbook (Libro de actividades sobre ingeniería de confiabilidad de sitios)</li>
+<li>Building Secure &amp; Reliable Systems (Compila sistemas seguros y confiables)</li>
+</ul></li>
+<li><a href="/products/operations" track-type="article" track-name="internalLink" track-metadata-position="body">Operaciones de Google Cloud</a> </li>
+<li>Explora nuestro <a href="https://www.devops-research.com/research.html">programa de investigación</a> de DevOps.</li>
+<li>Realiza la <a href="https://www.devops-research.com/quickcheck.html">verificación rápida de DevOps</a> para comprender cuál es tu posición en comparación con el resto de la industria.</li>
+</ul>
+
+</body></html>

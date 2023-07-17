@@ -1,0 +1,58 @@
+<html devsite><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>DevOps 技术：助力团队选择工具</title>
+    <meta name="book_path" value="/architecture/devops/_book.yaml"/>
+    <meta name="project_path" value="/architecture/devops/_project.yaml"/>
+    <meta name="translation_service" value="machine_translation_light_post_edit"/>
+  </head>
+  <body>
+
+<aside class="note"><strong>注意</strong><span>：<em>助力团队选择工具</em>是提升软件交付和组织绩效的能力之一。这些能力是由 <a href="https://www.devops-research.com/research.html">DORA DevOps 现状研究项目</a>发现的，这是一项针对提升绩效的做法和能力进行的具有学术意义的独立而严谨的调查。如需了解详情，请阅读我们的 <a href="/devops">DevOps 资源</a>。</span></aside><p>如果您希望实现更出色的软件交付表现并提高技术人员的<a href="/architecture/devops/devops-culture-job-satisfaction" track-type="solution" track-name="internalLink" track-metadata-position="body">工作满意度</a>，应该帮助他们在用于工作的工具和技术方面作出明智的选择。DevOps 研究和评估 (DORA) 团队的<a href="https://services.google.com/fh/files/misc/state-of-devops-2017.pdf" target="external" track-type="solution" track-name="externalLink" track-metadata-position="body">研究</a> (PDF) 表明，这有助于实现更优质的持续交付和更出色的软件交付表现。可自行选择工具的团队可以根据自己的工作方式以及需要执行的任务来作出这些选择。一线人员比其他人更清楚自己需要什么才能保持效率，因此，他们选择的工具有助于达成更好的结果也就不足为奇。</p>
+
+<p>允许团队自行选择工具并不意味着每个团队都可以自由选择他们想要的任何工具。不受限制地引入技术可能会增加技术债务和脆弱性。但是，如果您将工具选择方面的自主性与其他能力（例如全面掌握系统状况、快速获得反馈以及了解他们需要对所编写的代码负责）相结合，则可以帮助技术专家明智地决定要采用并支持哪些工具。Google 和 Netflix 等公司已采用这种模式，他们都有一个默认支持的首选技术栈。但是，如果团队强烈认为其他工具或技术才最适合他们，他们可以自由进行选择。团队了解，如果选择其他工具或技术，他们还必须为这一新技术栈提供支持。</p>
+
+<h2 id="how_to_empower_teams_to_choose_tools" data-text="如何助力团队选择工具">如何助力团队选择工具</h2>
+
+<p>您的组织在助力团队选择工具时，务必要在工具选择自由度、获取和支持这些工具所需的费用以及使用不同工具的团队之间潜在沟通复杂性增加这些因素之间取得平衡。您可以通过以下几种方式助力团队选择工具。</p>
+
+<ul>
+<li><p><strong>建立跨团队基准</strong>。与来自不同团队和跨职能领域的代表（产品经理、开发者、测试人员、运维人员）一起，在已获批准的工具方面建立基准。我们建议基准工具集应该足够大且多样化，以满足组织的大部分需求。基准中所含工具的示例包括编程语言和库、测试和部署工具、监控基础架构以及数据后端。</p></li>
+<li><p><strong>定期审核工具</strong>。定期审核或快速回顾时，严格评估基准工具集以检查其有效性。此类审核还提供了讨论和演示新技术的机会。</p></li>
+<li><p><strong>定义例外流程</strong>。创建一个明确定义的偏离基础工具集的流程。在项目中使用基准以外的新技术时，记录新工具是什么以及为什么要使用此新工具。在对项目进行问题排查和维护时，此记录至关重要。此外，项目中包含的记录之后可用于证明将该工具添加到基准中的合理性。</p></li>
+</ul>
+
+<p>另一种方法是让团队自行选择他们要用的工具。采用此策略时，每个团队都将使用自己的工具链酌情处理尽可能多的软件交付过程（业务要求、开发、运营）。但是，当存在共享资源时，请务必考虑团队和产品领域之间的沟通受到的影响。</p>
+
+<h2 id="common_pitfalls" data-text="常见误区">常见误区</h2>
+
+<p>在助力团队选择工具时，最常见的误区是采取极端的态度，例如在这方面不给工程师任何选择，或者给工程师的选择过多。</p>
+
+<p>对一线人员使用的工具和技术实施强制要求可以提高标准化水平。但是，适用于某些情况的方法不一定是所有情况下的最佳解决方案。这种做法还限制了<a href="/architecture/devops/devops-process-team-experimentation" track-type="solution" track-name="internalLink" track-metadata-position="body">实验和发展</a>的机会（利用这些机会，可以对新兴技术进行试用和测试）。通常情况下，试用并采用新技术可显著改善相关表现。例如，当容器化和“平台即服务”还是新技术时，如果不允许任何团队试用它们，那么这些团队所在的组织就无法改进在相应领域的表现。</p>
+
+<p>而另一种极端做法是为每个项目或服务都选择不同的工具和技术，这可能会引入技术债务并增加脆弱性。每次向工具链添加工具时，维护和运营费用都会增加。随着时间的推移，这些费用可能会抵消新技术带来的收益。</p>
+
+<h2 id="ways_to_improve_tool_choice_in_teams" data-text="改进团队工具选择面的方法">改进团队工具选择面的方法</h2>
+
+<p>要切实受益于工具选择面的拓宽，关键是允许一线团队选择最适合其工作需求的工具。基于这一考虑，下面提供了一些建议：</p>
+
+<ul>
+<li><strong>定期评估技术栈</strong>。在评估过程中，建议团队成员严格评估当前所用工具在多大程度上满足了需求。此外，在审核过程中，应讨论现有工具存在的问题，并讨论和规划可能的新工具试用。</li>
+<li><strong>在新项目中积极探索新工具</strong>。让团队成员考量并试用新工具，以确定这些工具是否值得支持。尝试使用现有的技术和建议的技术来实现新系统的关键部分，了解是否可实现预期效果。您选择技术时，应该充分了解与该技术相关的费用。其中可能包括运行工具所需的许可、支持和基础架构。您可能还需要聘请更多人员来帮助采用和维护该技术。</li>
+<li><strong>安排时间试用新工具</strong>。定期开展黑客马拉松等活动，让团队尝试新项目和新技术。并非所有工具都会在试用后被保留。但重要的一点是，这有助于您稳健地逐步将这些新技术融入到技术栈中，或者确定它们不合适您的使用场景。</li>
+<li><strong>定期进行演示以讨论新工具</strong>。由新技术的倡导者组织午餐会等会议，并在会议中展示和讨论相应技术。这些会议可以是非正式会议，在会中由一个人演示其采用新技术开展的项目或正在调查的技术。这样的非正式会议是一种大家一起讨论新技术并及时掌握最新信息的好方法。让团队成员轮流进行演示是一种不错的方法，或者您也可以邀请其他团队的人员或公司外部的人员进行演示。让组织外部的人员参与其中尤其有用，因为如果他们具有使用某一工具的经验，则可以讨论只有在长期使用之后才会表现出的隐性费用和复杂性。</li>
+</ul>
+
+<p>您的目标是找到将技术引入讨论的方法，并确保团队能够作出适合他们的工具和技术决策。这些讨论的结果可能是继续使用他们现有的工具。</p>
+
+<h2 id="ways_to_measure_if_teams_are_empowered_to_choose_tools" data-text="衡量团队是否能够自主选择工具的方法">衡量团队是否能够自主选择工具的方法</h2>
+
+<p>确定团队是否能够自主选择工具的最佳方法就是向他们询问。不建议您根据团队使用的工具数量或团队更换工具的频率来衡量，因为团队可能只是因上层要求而持续使用同一工具或更换工具。</p>
+
+<h2 id="whats_next" data-text="后续步骤">后续步骤</h2>
+
+<ul>
+<li>如需其他文章和资源的链接，请参阅 <a href="/devops" track-type="solution" track-name="internalLink" track-metadata-position="body">DevOps 页面</a>。</li>
+<li>浏览我们的 DevOps <a href="https://www.devops-research.com/research.html">研究项目</a>。</li>
+<li>进行 <a href="https://www.devops-research.com/quickcheck.html">DevOps 快速检查</a>，了解您与业界其他公司相比所处的位置。</li>
+</ul>
+
+</body></html>
