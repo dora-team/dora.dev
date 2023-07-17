@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    </head>
+<body>
+    <object data="dora-core-model.svg" type="image/svg+xml" id="dora-core-model"></object>
+    <script>
+        window.onload = function() {
+            var coreModel = document.getElementById('dora-core-model').contentDocument;
+            console.log(coreModel);
+            var trunk = coreModel.getElementById('entity-capability-trunk-based-development');
+            trunk.addEventListener('click',function() {
+                console.log('hi i got clicked')
+            })
+        };
+    </script>
+    <style type="text/css">
+        .entity text {
+            font-family:arial;
+        }
+    </style>
+</body>
+</html>
