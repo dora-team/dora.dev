@@ -1,7 +1,7 @@
 # Hosting / Deployment / Continuous Integration
 
 ## Environments
-There are two persistent hosting environments (powered by Firebase): [Staging](https://staging.dora.com/) and [Prod](https://dora.dev/).
+There are two persistent hosting environments (powered by Firebase): [Staging](https://staging.dora.dev/) and [Prod](https://dora.dev/).
 _Also, ephemeral environments are created during CI (see below)._
 
 ## Publishing
