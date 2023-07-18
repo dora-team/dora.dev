@@ -4,7 +4,7 @@ steps:
       - 'PROJECT_ID=$PROJECT_ID'
     script: |
       # Copy correct Firestore config per project
-      cp hugo/static/js/firebase-config.${PROJECT_ID}.js /workspace/hugo/static/js/firebase-config.js
+      cp -v hugo/static/js/firebase-config.${PROJECT_ID}.js /workspace/hugo/static/js/firebase-config.js
 
   - name: 'ubuntu'
     script: |

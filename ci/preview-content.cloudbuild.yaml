@@ -4,7 +4,7 @@ steps:
       - 'PROJECT_ID=$PROJECT_ID'
     script: |
       # Copy correct Firestore config per project
-      cp hugo/static/js/firebase-config.${PROJECT_ID}.js /workspace/hugo/static/js/firebase-config.js
+      cp -v hugo/static/js/firebase-config.${PROJECT_ID}.js /workspace/hugo/static/js/firebase-config.js
 
   - name: gcr.io/$PROJECT_ID/hugo
     script: |
@@ -50,7 +50,7 @@ steps:
       cat /workspace/preview-published-url.txt
 
   - name: 'bash'
-    env: 
+    env:
     - '_PR_NUMBER=$_PR_NUMBER'
     - 'REPO_NAME=$REPO_NAME'
     script: |
@@ -70,7 +70,7 @@ steps:
       gh pr comment $_PR_NUMBER --repo=dora-team/$REPO_NAME --body "Preview this PR [including DRAFT content] at $(cat /workspace/preview-draft-url.txt)"
       gh pr comment $_PR_NUMBER --repo=dora-team/$REPO_NAME --body "Preview this PR [published content only] at $(cat /workspace/preview-published-url.txt)"
     secretEnv: ['GH_TOKEN']
-    
+
 availableSecrets:
   secretManager:
   - versionName: projects/$PROJECT_ID/secrets/github_token/versions/latest
