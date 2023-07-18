@@ -1,5 +1,5 @@
 steps:
-  - name: 'ubuntu'
+  - name: 'bash'
     env:
       - 'PROJECT_ID=$PROJECT_ID'
     script: |

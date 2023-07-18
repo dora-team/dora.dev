@@ -1,5 +1,5 @@
 steps:
-  - name: gcr.io/$PROJECT_ID/hugo
+  - name: 'bash'
     env:
       - 'PROJECT_ID=$PROJECT_ID'
     script: |
@@ -13,10 +13,11 @@ steps:
 
   - name: gcr.io/$PROJECT_ID/firebase
     env:
-      - "_PR_NUMBER=$_PR_NUMBER"
+      - '_PR_NUMBER=$_PR_NUMBER'
+      - 'PROJECT_ID=$PROJECT_ID'
     script: |
       PREVIEW_CHANNEL="PR$_PR_NUMBER-DRAFT"
-      firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=$PROJECT_ID
+      firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=${PROJECT_ID}
 
       # get the url of this preview channel
       # (it returns in format `i  hosting:channel: https://<url>`)
@@ -34,10 +35,11 @@ steps:
 
   - name: gcr.io/$PROJECT_ID/firebase
     env:
-      - "_PR_NUMBER=$_PR_NUMBER"
+      - '_PR_NUMBER=$_PR_NUMBER'
+      - 'PROJECT_ID=$PROJECT_ID'
     script: |
       PREVIEW_CHANNEL="PR$_PR_NUMBER"
-      firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=$PROJECT_ID
+      firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=${PROJECT_ID}
 
       # get the url of this preview channel
       # (it returns in format `i  hosting:channel: https://<url>`)
