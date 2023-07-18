@@ -11,5 +11,7 @@ steps:
     args: ['install']
 
   - name: gcr.io/$PROJECT_ID/firebase
+    env:
+      - 'PROJECT_ID=$PROJECT_ID'
     script: |
-      firebase deploy --non-interactive --project=$PROJECT_ID --except=extensions
+      firebase deploy --non-interactive --except=extensions --project=${PROJECT_ID}
