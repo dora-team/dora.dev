@@ -1,4 +1,10 @@
 steps:
+  - name: 'ubuntu'
+    env:
+      - 'PROJECT_ID=$PROJECT_ID'
+    script: |
+      # Copy correct Firestore config per project
+      cp hugo/static/js/firebase-config.${PROJECT_ID}.js /workspace/hugo/static/js/firebase-config.js
 
   - name: 'ubuntu'
     script: |
@@ -21,6 +27,8 @@ steps:
     args: ['install']
 
   - name: 'ubuntu'
+    env:
+      - 'PROJECT_ID=$PROJECT_ID'
     script: |
       apt update && apt install curl sudo -y
       curl -sL https://firebase.tools | bash
@@ -29,4 +37,4 @@ steps:
       # see: https://github.com/firebase/firebase-tools/issues/6060
       # so we'll skip the extension until that's fixed
 
-      firebase deploy --project=doradotdev-staging --except=extensions
+      firebase deploy --non-interactive --project=${PROJECT_ID} --except=extensions

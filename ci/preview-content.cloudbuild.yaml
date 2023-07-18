@@ -1,5 +1,12 @@
 steps:
   - name: gcr.io/$PROJECT_ID/hugo
+    env:
+      - 'PROJECT_ID=$PROJECT_ID'
+    script: |
+      # Copy correct Firestore config per project
+      cp hugo/static/js/firebase-config.${PROJECT_ID}.js /workspace/hugo/static/js/firebase-config.js
+
+  - name: gcr.io/$PROJECT_ID/hugo
     script: |
       # Build draft site
       hugo -D -v -s ./hugo -d /workspace/hugo/public --debug

@@ -1,4 +1,3 @@
-// default config will be non-prod
 export const config = {
     apiKey: "AIzaSyATzQBPDMDXsXdqzJLcQ5msW0qrrz-YP_Q",
     authDomain: "doradotdev-staging.firebaseapp.com",
