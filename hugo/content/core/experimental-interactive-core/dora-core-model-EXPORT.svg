@@ -1,0 +1,73 @@
+<svg width="1833" height="401" viewBox="0 0 1833 401" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="dora-core-model-EXPORT">
+<rect width="1833" height="401" fill="white"/>
+<text id="Experimental sandbox model viz" fill="black" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0em"><tspan x="7" y="33.16">Experimental sandbox model viz</tspan></text>
+<g id="entity-capability">
+<g id="entity">
+<rect id="Rectangle 1" x="37" y="149" width="327" height="102" rx="9" fill="white" stroke="#005D8D" stroke-width="2"/>
+<g id="Rectangle 2">
+<path d="M38 158C38 153.582 41.5817 150 46 150H138V250H46C41.5817 250 38 246.418 38 242V158Z" fill="#FF8A01"/>
+<path d="M38 158C38 153.582 41.5817 150 46 150H138V250H46C41.5817 250 38 246.418 38 242V158Z" stroke="#005D8D"/>
+</g>
+<text id="Entity Name" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="158" y="192.02">Trunk-based </tspan><tspan x="158" y="227.02">development</tspan></text>
+<g id="Settings" clip-path="url(#clip0_5_88)">
+<g id="Group">
+<path id="Vector" d="M110.8 203.133C110.933 202.133 111 201.1 111 200C111 198.933 110.933 197.867 110.767 196.867L117.533 191.6C118.133 191.133 118.3 190.233 117.933 189.567L111.533 178.5C111.133 177.767 110.3 177.533 109.567 177.767L101.6 180.967C99.9333 179.7 98.1667 178.633 96.2 177.833L95 169.367C94.8667 168.567 94.2 168 93.4 168H80.6C79.8 168 79.1667 168.567 79.0333 169.367L77.8333 177.833C75.8667 178.633 74.0667 179.733 72.4333 180.967L64.4667 177.767C63.7333 177.5 62.9 177.767 62.5 178.5L56.1333 189.567C55.7333 190.267 55.8667 191.133 56.5333 191.6L63.3 196.867C63.1333 197.867 63 198.967 63 200C63 201.033 63.0667 202.133 63.2333 203.133L56.4667 208.4C55.8667 208.867 55.7 209.767 56.0667 210.433L62.4667 221.5C62.8667 222.233 63.7 222.467 64.4333 222.233L72.4 219.033C74.0667 220.3 75.8333 221.367 77.8 222.167L79 230.633C79.1667 231.433 79.8 232 80.6 232H93.4C94.2 232 94.8667 231.433 94.9667 230.633L96.1667 222.167C98.1333 221.367 99.9333 220.3 101.567 219.033L109.533 222.233C110.267 222.5 111.1 222.233 111.5 221.5L117.9 210.433C118.3 209.7 118.133 208.867 117.5 208.4L110.8 203.133ZM87 212C80.4 212 75 206.6 75 200C75 193.4 80.4 188 87 188C93.6 188 99 193.4 99 200C99 206.6 93.6 212 87 212Z" fill="white"/>
+</g>
+</g>
+</g>
+</g>
+<g id="entity-capability_2">
+<g id="entity_2">
+<rect id="Rectangle 1_2" x="516" y="199" width="327" height="102" rx="9" fill="white" stroke="#005D8D" stroke-width="2"/>
+<g id="Rectangle 2_2">
+<path d="M517 208C517 203.582 520.582 200 525 200H617V300H525C520.582 300 517 296.418 517 292V208Z" fill="#FF8A01"/>
+<path d="M517 208C517 203.582 520.582 200 525 200H617V300H525C520.582 300 517 296.418 517 292V208Z" stroke="#005D8D"/>
+</g>
+<text id="Entity Name_2" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="637" y="242.02">Continuous </tspan><tspan x="637" y="277.02">Delivery</tspan></text>
+<g id="Settings_2" clip-path="url(#clip1_5_88)">
+<g id="Group_2">
+<path id="Vector_2" d="M589.8 253.133C589.933 252.133 590 251.1 590 250C590 248.933 589.933 247.867 589.767 246.867L596.533 241.6C597.133 241.133 597.3 240.233 596.933 239.567L590.533 228.5C590.133 227.767 589.3 227.533 588.567 227.767L580.6 230.967C578.933 229.7 577.167 228.633 575.2 227.833L574 219.367C573.867 218.567 573.2 218 572.4 218H559.6C558.8 218 558.167 218.567 558.033 219.367L556.833 227.833C554.867 228.633 553.067 229.733 551.433 230.967L543.467 227.767C542.733 227.5 541.9 227.767 541.5 228.5L535.133 239.567C534.733 240.267 534.867 241.133 535.533 241.6L542.3 246.867C542.133 247.867 542 248.967 542 250C542 251.033 542.067 252.133 542.233 253.133L535.467 258.4C534.867 258.867 534.7 259.767 535.067 260.433L541.467 271.5C541.867 272.233 542.7 272.467 543.433 272.233L551.4 269.033C553.067 270.3 554.833 271.367 556.8 272.167L558 280.633C558.167 281.433 558.8 282 559.6 282H572.4C573.2 282 573.867 281.433 573.967 280.633L575.167 272.167C577.133 271.367 578.933 270.3 580.567 269.033L588.533 272.233C589.267 272.5 590.1 272.233 590.5 271.5L596.9 260.433C597.3 259.7 597.133 258.867 596.5 258.4L589.8 253.133ZM566 262C559.4 262 554 256.6 554 250C554 243.4 559.4 238 566 238C572.6 238 578 243.4 578 250C578 256.6 572.6 262 566 262Z" fill="white"/>
+</g>
+</g>
+</g>
+</g>
+<g id="entity-metric">
+<g id="entity_3">
+<rect id="Rectangle 1_3" x="997" y="149" width="327" height="102" rx="9" fill="white" stroke="#005D8D" stroke-width="2"/>
+<g id="Rectangle 2_3">
+<path d="M998 158C998 153.582 1001.58 150 1006 150H1098V250H1006C1001.58 250 998 246.418 998 242V158Z" fill="#39B54A"/>
+<path d="M998 158C998 153.582 1001.58 150 1006 150H1098V250H1006C1001.58 250 998 246.418 998 242V158Z" stroke="#005D8D"/>
+</g>
+<text id="Entity Name_3" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1118" y="192.02">Software </tspan><tspan x="1118" y="227.02">Delivery Perf.</tspan></text>
+</g>
+<rect id="Bar Chart" x="1007" y="160" width="80" height="80" fill="url(#pattern0)"/>
+</g>
+<g id="entity-outcome">
+<g id="entity_4">
+<rect id="Rectangle 1_4" x="1477" y="149" width="327" height="102" rx="9" fill="white" stroke="#005D8D" stroke-width="2"/>
+<g id="Rectangle 2_4">
+<path d="M1478 158C1478 153.582 1481.58 150 1486 150H1578V250H1486C1481.58 250 1478 246.418 1478 242V158Z" fill="#005D8D"/>
+<path d="M1478 158C1478 153.582 1481.58 150 1486 150H1578V250H1486C1481.58 250 1478 246.418 1478 242V158Z" stroke="#005D8D"/>
+</g>
+<text id="Entity Name_4" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1598" y="192.02">Job </tspan><tspan x="1598" y="227.02">Satisfaction</tspan></text>
+</g>
+<path id="Vector_3" d="M1542.69 185.856L1521.6 206.944L1510.11 195.488L1505.6 200L1521.6 216L1547.2 190.4L1542.69 185.856ZM1528 168C1510.34 168 1496 182.336 1496 200C1496 217.664 1510.34 232 1528 232C1545.66 232 1560 217.664 1560 200C1560 182.336 1545.66 168 1528 168ZM1528 225.6C1513.86 225.6 1502.4 214.144 1502.4 200C1502.4 185.856 1513.86 174.4 1528 174.4C1542.14 174.4 1553.6 185.856 1553.6 200C1553.6 214.144 1542.14 225.6 1528 225.6Z" fill="white"/>
+</g>
+<path id="Vector 3" d="M515 251L505.237 244.834L504.779 256.372L515 251ZM365 198C387.295 198 407.621 210.067 429.955 222.936C452.202 235.755 476.327 249.284 505.932 251.64L506.09 249.646C476.99 247.33 453.226 234.037 430.953 221.203C408.766 208.418 387.939 196 365 196V198Z" fill="#005D8D"/>
+<path id="Vector 4" d="M994.5 199.5L984.305 194.077L984.707 205.618L994.5 199.5ZM841 248C863.898 248 885.494 237.096 908.525 225.843C931.629 214.554 956.285 202.846 985.575 200.81L985.437 198.815C955.71 200.881 930.731 212.767 907.647 224.046C884.489 235.362 863.341 246 841 246V248Z" fill="#005D8D"/>
+<path id="Vector 5" d="M1473 199L1463 193.226V204.774L1473 199ZM1325 200H1464V198H1325V200Z" fill="#005D8D"/>
+</g>
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_5_88" transform="scale(0.0104167)"/>
+</pattern>
+<clipPath id="clip0_5_88">
+<rect width="80" height="80" fill="white" transform="translate(47 160)"/>
+</clipPath>
+<clipPath id="clip1_5_88">
+<rect width="80" height="80" fill="white" transform="translate(526 210)"/>
+</clipPath>
+<image id="image0_5_88" width="96" height="96" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAABrElEQVR4nO3aQU7DUBCD4R4ElhV3RxU3Q6JcwCiiKyQWTiNP4vzfvrXfTGHx9C4XAAAAAAAAAACAE5L0Kukm6Vu+5TMfkt6mz3Hk4X/qect3vEyf53D0+8vfyvv0eQ5H6/7t/Oc+fZ7D0camz3M4YgGzWMAwFjCMBQxjAcNYwDAWMIwFDGMBw1jAMBYwfD/PAobv51nA8P08Cxi+n2cBwwNhAX+wgGHiL4AFPONydNrY3vJ2T+GBpPN2T+GBpPN2T+GBpPN2T+GBpPN2T+GBpPN2T+GBpPN2T+GBpPPWDqX2fl7hPFv7/bzCebb2+3mF82zt9/MK59nSBVWeZ0sXVHmeLV1Q5Xm2dEGV59nSBVWeZ0sXVHmeLV1Q5Xm2dEGV59nSBVWeZ0sXVHmeLV1Q5Xm2dEGV59nSBVWeZ0sXVHmeLV1Q5Xm2dEGV59nSBVWeZ0sXVHmeLV1Q5Xm2dEGV59nSBVWeZ0sXVHmeLV1Q5Xm2dEGV500/zPo6e57t8bB2K7ez59mWV80bPs69nj1vleVV8/KwdnnbuaLY/fHA90oeAAAAAAAAAAC4nMAPyo6HFB9vwZcAAAAASUVORK5CYII="/>
+</defs>
+</svg>

@@ -24,7 +24,7 @@ DORA’s research program is continuous and ongoing; each year brings new avenue
     };
 </script>
 
-<object data="dora-core-model-interactive.svg" id="dora-core-model" type="image/svg+xml"></object>
+<object data="dora-core-model.svg" id="dora-core-model" type="image/svg+xml"></object>
 
 > [Download as PDF](dora-core-model.pdf)
 
