@@ -2,7 +2,7 @@ steps:
   - name: gcr.io/$PROJECT_ID/hugo
     script: |
       # Build draft site
-      hugo -v -s ./hugo -d /workspace/hugo/public --debug -D --environment=draft
+      hugo -v -s ./hugo -d /workspace/hugo/public --debug -D
 
   - name: gcr.io/$PROJECT_ID/firebase
     env:
