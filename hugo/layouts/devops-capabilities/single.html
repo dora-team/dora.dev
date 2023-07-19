@@ -3,7 +3,7 @@
 {{ $stylesheet := printf "scss/devops-capabilities.scss" | resources.Get | toCSS | fingerprint }}
 <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
 
-<h4><a href={{ relLangURL "/devops-capabilities" }}>DevOps capabilities</a></h4>
+<h4><a href="/devops-capabilities">DevOps capabilities</a></h4>
 <h1>{{ .Title }}</h1>
 <section class="hasSidebar">
     <article>
@@ -11,7 +11,6 @@
     </article>
     <sidebar>
         <section>
-            {{- partial "language_selector" . -}}
             <h4>DevOps Capabilities</h4>
             <h5>Technical</h5>
             <ul>

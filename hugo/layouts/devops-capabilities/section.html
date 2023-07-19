@@ -2,9 +2,6 @@
     <!-- TODO: #121 make a partial to process scss files and render <link> tags -->
     {{ $stylesheet := printf "scss/devops-capabilities.scss" | resources.Get | toCSS | fingerprint }}
     <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
-    <div style="text-align: right;">
-        {{- partial "language_selector" . -}}
-    </div>
     <h2>Technical capabilities</h2>
     <section class="capabilitiesGrid">
         {{ $capabilities := where site.RegularPages "Params.category" "technical" }}
