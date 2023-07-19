@@ -2,7 +2,7 @@
 <g id="dora-core-model-EXPORT">
 <rect width="1833" height="401" fill="white"/>
 <text id="Experimental sandbox model viz" fill="black" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0em"><tspan x="7" y="33.16">Experimental sandbox model viz</tspan></text>
-<g id="#technical_trunk-based-development.entity.capability">
+<g data-category="technical" id="trunk-based-development" class="entity capability">
 <rect id="Rectangle 1" x="36.5" y="148.5" width="328" height="103" rx="9.5" fill="white" stroke="#005D8D" stroke-width="3"/>
 <g id="Rectangle 2">
 <path d="M38 158C38 153.582 41.5817 150 46 150H138V250H46C41.5817 250 38 246.418 38 242V158Z" fill="#FF8A01"/>
@@ -15,7 +15,7 @@
 </g>
 </g>
 </g>
-<g id="#technical_continuous-delivery.entity.capability">
+<g data-category="technical" id="continuous-delivery" class="entity capability">
 <rect id="Rectangle 1_2" x="515.5" y="198.5" width="328" height="103" rx="9.5" fill="white" stroke="#005D8D" stroke-width="3"/>
 <g id="Rectangle 2_2">
 <path d="M517 208C517 203.582 520.582 200 525 200H617V300H525C520.582 300 517 296.418 517 292V208Z" fill="#FF8A01"/>

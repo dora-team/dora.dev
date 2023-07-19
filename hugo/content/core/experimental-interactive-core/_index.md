@@ -9,22 +9,30 @@ draft: true
 # DORA Core
 DORA’s research program is continuous and ongoing; each year brings new avenues of inquiry, and each analysis yields new insights. At the cutting edge, new concepts are introduced frequently, and artifacts (especially the [Accelerate State of DevOps Reports]({{< relref "/publications" >}})) are continuously released, revealing new insights and dynamics. With each study, some prior findings are reinforced, while others may be called into question. This is a hallmark of good science: any new finding is to be considered suspect—intriguing, but suspect—until it has been validated through replication and application. Meanwhile, practitioners are encouraged to apply the research in their own professional contexts. In such contexts, it can be challenging to keep up with the latest developments from DORA: cultural transformation efforts in a large organization require a steady hand, persistent over stretches of time measured across multiple years. An attempt to update one’s practices to match the pace of the research can lead to counterproductive churn. In these contexts, it’s more practical to rely on “evergreen” artifacts. DORA Core represents a distillation of DORA’s most foundational findings: metrics, capabilities, and outcomes that the research has repeatedly surfaced. It enables teams to focus their improvement efforts even more precisely on what is likely to produce tangible benefits to their organizational goals and quality of life. 
 
+WORK IN PROGRESS -- try clicking the capabilities -- they should navigate to the cap pages.
+
 <script>
     window.onload = function() {
         var coreModel = document.getElementById('dora-core-model').contentDocument;
 
-        var entities = coreModel.querySelectorAll('.entity');
+        var capabilities = coreModel.querySelectorAll('.entity.capability');
 
-       for (const item of entities) {
+       for (const item of capabilities) {
             item.addEventListener('click', () => {
                 // do something when the item is clicked
-                console.log(item.id);
+                let capabilitySlug=item.id;
+                let capabilityCategory=item.dataset.category;
+
+                console.log(capabilitySlug);
+                console.log(capabilityCategory);
+
+                window.location.href=`/devops-capabilities/${capabilityCategory}/${capabilitySlug}/`;
             });
        }
     };
 </script>
 
-<object data="dora-core-model.svg" id="dora-core-model" type="image/svg+xml"></object>
+<object data="dora-core-model.svg" id="dora-core-model" type="image/svg+xml" style="width:100%;"></object>
 
 > [Download as PDF](dora-core-model.pdf)
 
