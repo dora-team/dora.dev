@@ -1,12 +1,14 @@
 steps:
-  - name: 'bash'
+  - id: 'Stage FirebaseConfig'
+    name: 'bash'
     env:
       - 'PROJECT_ID=$PROJECT_ID'
     script: |
       # Copy correct Firestore config per project
       cp -v hugo/static/js/firebase-config.${PROJECT_ID}.js /workspace/hugo/static/js/firebase-config.js
 
-  - name: 'ubuntu'
+  - id: 'Hugo Build "Prod" Site'
+    name: 'ubuntu'
     script: |
       #! /usr/bin/env bash
 
@@ -21,12 +23,14 @@ steps:
       # Build the prod version of the site (this will omit content where the front matter specifies Draft: true)
       hugo -v -s ./hugo -d /workspace/hugo/public --logLevel=debug
 
-  - name: gcr.io/cloud-builders/npm:node-16.18.0
+  - id: 'Node Install'
+    name: gcr.io/cloud-builders/npm:node-16.18.0
     entrypoint: npm
     dir: 'functions/inquiry-monitor'
     args: ['install']
 
-  - name: 'ubuntu'
+  - id: 'Firebase (re)Deploy All'
+    name: 'ubuntu'
     env:
       - 'PROJECT_ID=$PROJECT_ID'
     script: |

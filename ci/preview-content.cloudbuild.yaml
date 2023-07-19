@@ -1,17 +1,20 @@
 steps:
-  - name: 'bash'
+  - id: 'Stage FirebaseConfig'
+    name: 'bash'
     env:
       - 'PROJECT_ID=$PROJECT_ID'
     script: |
       # Copy correct Firestore config per project
       cp -v hugo/static/js/firebase-config.${PROJECT_ID}.js /workspace/hugo/static/js/firebase-config.js
 
-  - name: gcr.io/$PROJECT_ID/hugo
+  - id: 'Hugo Build Draft Site'
+    name: gcr.io/$PROJECT_ID/hugo
     script: |
       # Build draft site
       hugo -D -v -s ./hugo -d /workspace/hugo/public --debug
 
-  - name: gcr.io/$PROJECT_ID/firebase
+  - id: 'Firebase deploy DRAFT Hosting'
+    name: gcr.io/$PROJECT_ID/firebase
     env:
       - '_PR_NUMBER=$_PR_NUMBER'
       - 'PROJECT_ID=$PROJECT_ID'
@@ -27,13 +30,15 @@ steps:
       echo "${CHANNEL_DATA##* }" > /workspace/preview-draft-url.txt
       cat /workspace/preview-draft-url.txt
 
-  - name: gcr.io/$PROJECT_ID/hugo
+  - id: 'Hugo Build PREVIEW_CHANNEL Site'
+    name: gcr.io/$PROJECT_ID/hugo
     script: |
       # Build published site
       rm -rf /workspace/hugo/public
       hugo -v -s ./hugo -d /workspace/hugo/public --debug
 
-  - name: gcr.io/$PROJECT_ID/firebase
+  - id: 'Firebase deploy PREVIEW_CHANNEL Hosting'
+    name: gcr.io/$PROJECT_ID/firebase
     env:
       - '_PR_NUMBER=$_PR_NUMBER'
       - 'PROJECT_ID=$PROJECT_ID'
@@ -49,7 +54,8 @@ steps:
       echo "${CHANNEL_DATA##* }" > /workspace/preview-published-url.txt
       cat /workspace/preview-published-url.txt
 
-  - name: 'bash'
+  - id: 'Write PR URL back to github'
+    name: 'bash'
     env:
     - '_PR_NUMBER=$_PR_NUMBER'
     - 'REPO_NAME=$REPO_NAME'
