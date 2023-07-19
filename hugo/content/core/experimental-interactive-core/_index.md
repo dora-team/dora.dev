@@ -12,20 +12,19 @@ DORA’s research program is continuous and ongoing; each year brings new avenue
 <script>
     window.onload = function() {
         var coreModel = document.getElementById('dora-core-model').contentDocument;
-        console.log(coreModel);
-        var trunk = coreModel.getElementById('entity-capability-trunk-based-development');
-        trunk.addEventListener('click',function() {
-            console.log('hi i got clicked')
-        })
+
+        var entities = coreModel.querySelectorAll('.entity');
+
+       for (const item of entities) {
+            item.addEventListener('click', () => {
+                // do something when the item is clicked
+                console.log(item.id);
+            });
+       }
     };
 </script>
-<style type="text/css">
-    .entity text {
-        font-family:arial;
-    }
-</style>
 
-<img src="dora-core-model-interactive.svg" style="width:100%">
+<object data="dora-core-model-interactive.svg" id="dora-core-model" type="image/svg+xml"></object>
 
 > [Download as PDF](dora-core-model.pdf)
 
