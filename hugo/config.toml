@@ -12,3 +12,10 @@ unsafe= true
   changefreq = 'monthly'
   filename = 'sitemap.xml'
   priority = 0.5
+
+[[cascade]]
+  [cascade._target]
+    path = "**/README.md"
+  [cascade._build]
+    render = "never"
+    list = "never"
