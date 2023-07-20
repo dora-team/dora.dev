@@ -9,7 +9,13 @@ draft: true
 # DORA Core
 DORA’s research program is continuous and ongoing; each year brings new avenues of inquiry, and each analysis yields new insights. At the cutting edge, new concepts are introduced frequently, and artifacts (especially the [Accelerate State of DevOps Reports]({{< relref "/publications" >}})) are continuously released, revealing new insights and dynamics. With each study, some prior findings are reinforced, while others may be called into question. This is a hallmark of good science: any new finding is to be considered suspect—intriguing, but suspect—until it has been validated through replication and application. Meanwhile, practitioners are encouraged to apply the research in their own professional contexts. In such contexts, it can be challenging to keep up with the latest developments from DORA: cultural transformation efforts in a large organization require a steady hand, persistent over stretches of time measured across multiple years. An attempt to update one’s practices to match the pace of the research can lead to counterproductive churn. In these contexts, it’s more practical to rely on “evergreen” artifacts. DORA Core represents a distillation of DORA’s most foundational findings: metrics, capabilities, and outcomes that the research has repeatedly surfaced. It enables teams to focus their improvement efforts even more precisely on what is likely to produce tangible benefits to their organizational goals and quality of life. 
 
-WORK IN PROGRESS -- try clicking the capabilities -- they should navigate to the cap pages.
+### This INTERACTIVE DIAGRAM is a work in progress -- try clicking the (orange) capabilities.
+
+<div x-init="Alpine.store('coreModal',
+    {
+        open: false,
+        modalContents: ''
+    })">
 
 <script>
     window.onload = function() {
@@ -17,7 +23,7 @@ WORK IN PROGRESS -- try clicking the capabilities -- they should navigate to the
 
         var capabilities = coreModel.querySelectorAll('.entity.capability');
 
-       for (const item of capabilities) {
+    for (const item of capabilities) {
             item.addEventListener('click', () => {
                 // do something when the item is clicked
                 let capabilitySlug=item.id;
@@ -26,15 +32,42 @@ WORK IN PROGRESS -- try clicking the capabilities -- they should navigate to the
                 console.log(capabilitySlug);
                 console.log(capabilityCategory);
 
-                window.location.href=`/devops-capabilities/${capabilityCategory}/${capabilitySlug}/`;
+               Alpine.store('coreModal').open = true;
+               Alpine.store('coreModal').modalContents = capabilitySlug;
             });
-       }
+    }
     };
 </script>
+
+ <div x-cloak class="modal-container" x-show="$store.coreModal.open">
+    <div x-cloak class="modal" x-show="$store.coreModal.open" @click.outside="$store.coreModal.open=false"
+        x-on:keydown.escape.window="$store.coreModal.open=false" x-transition>
+        <div class="modal-header">
+            <h2 x-text="$store.coreModal.modalContents"></h2>
+            <img class="modal-close-x" x-on:click="$store.coreModal.open=false" aria-controls="coreModal"
+                src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg"
+                alt="close">
+        </div>
+        <div class="capability-content" x-ref="version-control" x-cloak x-show="$store.coreModal.modalContents=='version-control'">
+            <p><a href="/devops-capabilities/technical/version-control/"><strong>Version control</strong>:</a>  The use of a version control system, such as Git or Subversion, for all production artifacts, including application code, application configurations, system configurations, and scripts for automating build and configuration of environments.</p>
+        </div>
+        <div class="capability-content" x-ref="continuous-delivery" x-cloak x-show="$store.coreModal.modalContents=='continuous-delivery'">
+            <p>Teams can be said to have implemented continuous delivery when they have achieved the following outcomes:</p>
+            <ul>
+            <li>Teams can deploy to production (or to end users) on demand, throughout the software delivery lifecycle.</li>
+            <li>Fast feedback on the quality and deployability of the system is available to everyone on the team, and people make acting on this feedback their highest priority.</li>
+            </ul>
+            <p>Continuous delivery requires the implementation of a number of technical practices including continuous integration, trunk-based development, the comprehensive use of version control, and continuous testing.</p>
+            <p>In turn, continuous delivery drives a number of outcomes: higher software delivery performance, better organizational culture, less rework, lower deployment pain, and less burnout.
+            <p>For more detail read <a href="/devops-capabilities/technical/continuous-delivery/">our complete guide to continuous delivery</a> also discusses how to implement it, and how to overcome common obstacles.</p>
+        </div>
+    </div>
+</div>
 
 <object data="dora-core-model.svg" id="dora-core-model" type="image/svg+xml" style="width:100%;"></object>
 
 > [Download as PDF](dora-core-model.pdf)
+</div>
 
 ## FAQ
 #### What’s in Core? What isn’t?
