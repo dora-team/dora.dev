@@ -7,7 +7,7 @@ steps:
       # Copy correct Firestore config per project
       cp -v ci/firebase-config.${PROJECT_ID}.js /workspace/hugo/static/js/firebase-config.js
 
-  - id: 'Hugo Build "Prod" Site'
+  - id: 'Hugo Build Staging Site'
     name: 'ubuntu'
     script: |
       #! /usr/bin/env bash

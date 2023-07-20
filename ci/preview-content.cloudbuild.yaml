@@ -7,13 +7,13 @@ steps:
       # Copy correct Firestore config per project
       cp -v ci/firebase-config.${PROJECT_ID}.js /workspace/hugo/static/js/firebase-config.js
 
-  - id: 'Hugo Build Draft Site'
+  - id: 'Hugo Build PREVIEW_CHANNEL (w/ Drafts) Site'
     name: gcr.io/$PROJECT_ID/hugo
     script: |
       # Build draft site
       hugo -D -v -s ./hugo -d /workspace/hugo/public --debug
 
-  - id: 'Firebase deploy DRAFT Hosting'
+  - id: 'Firebase deploy PREVIEW_CHANNEL (w/ Drafts) Hosting'
     name: gcr.io/$PROJECT_ID/firebase
     env:
       - '_PR_NUMBER=$_PR_NUMBER'
@@ -30,14 +30,14 @@ steps:
       echo "${CHANNEL_DATA##* }" > /workspace/preview-draft-url.txt
       cat /workspace/preview-draft-url.txt
 
-  - id: 'Hugo Build PREVIEW_CHANNEL Site'
+  - id: 'Hugo Build PREVIEW_CHANNEL (w/o Drafts) Site'
     name: gcr.io/$PROJECT_ID/hugo
     script: |
       # Build published site
       rm -rf /workspace/hugo/public
       hugo -v -s ./hugo -d /workspace/hugo/public --debug
 
-  - id: 'Firebase deploy PREVIEW_CHANNEL Hosting'
+  - id: 'Firebase deploy PREVIEW_CHANNEL (w/o Drafts) Hosting'
     name: gcr.io/$PROJECT_ID/firebase
     env:
       - '_PR_NUMBER=$_PR_NUMBER'
