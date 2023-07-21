@@ -87,9 +87,11 @@
                 document.querySelector("#goback").addEventListener("click", resetForm);
 
                 function resetForm() {
-                    document.querySelector('#inquiry-form').reset();
-                    document.querySelector('#contact-thanks').style.display='none';
-                    document.querySelector('#inquiry-form-fields').style.display='inline-grid';
+                    // document.querySelector('#inquiry-form').reset();
+                    // document.querySelector('#contact-thanks').style.display='none';
+                    // document.querySelector('#inquiry-form-fields').style.display='inline-grid';
+                    history.go(0);
+                    event.preventDefault();
                 }
                 
             }, false);
