@@ -1,15 +1,26 @@
 steps:
-  - name: gcr.io/$PROJECT_ID/hugo
+  - id: 'Stage FirebaseConfig'
+    name: 'bash'
+    env:
+      - 'PROJECT_ID=$PROJECT_ID'
+    script: |
+      # Copy correct Firestore config per project
+      cp -v ci/firebase-config.${PROJECT_ID}.js /workspace/hugo/static/js/firebase-config.js
+
+  - id: 'Hugo Build PREVIEW_CHANNEL (w/ Drafts) Site'
+    name: gcr.io/$PROJECT_ID/hugo
     script: |
       # Build draft site
       hugo -v -s ./hugo -d /workspace/hugo/public --debug -D
 
-  - name: gcr.io/$PROJECT_ID/firebase
+  - id: 'Firebase deploy PREVIEW_CHANNEL (w/ Drafts) Hosting'
+    name: gcr.io/$PROJECT_ID/firebase
     env:
-      - "_PR_NUMBER=$_PR_NUMBER"
+      - '_PR_NUMBER=$_PR_NUMBER'
+      - 'PROJECT_ID=$PROJECT_ID'
     script: |
       PREVIEW_CHANNEL="PR$_PR_NUMBER-DRAFT"
-      firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=$PROJECT_ID
+      firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=${PROJECT_ID}
 
       # get the url of this preview channel
       # (it returns in format `i  hosting:channel: https://<url>`)
@@ -19,18 +30,21 @@ steps:
       echo "${CHANNEL_DATA##* }" > /workspace/preview-draft-url.txt
       cat /workspace/preview-draft-url.txt
 
-  - name: gcr.io/$PROJECT_ID/hugo
+  - id: 'Hugo Build PREVIEW_CHANNEL (w/o Drafts) Site'
+    name: gcr.io/$PROJECT_ID/hugo
     script: |
       # Build published site
       rm -rf /workspace/hugo/public
       hugo -v -s ./hugo -d /workspace/hugo/public --debug
 
-  - name: gcr.io/$PROJECT_ID/firebase
+  - id: 'Firebase deploy PREVIEW_CHANNEL (w/o Drafts) Hosting'
+    name: gcr.io/$PROJECT_ID/firebase
     env:
-      - "_PR_NUMBER=$_PR_NUMBER"
+      - '_PR_NUMBER=$_PR_NUMBER'
+      - 'PROJECT_ID=$PROJECT_ID'
     script: |
       PREVIEW_CHANNEL="PR$_PR_NUMBER"
-      firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=$PROJECT_ID
+      firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=${PROJECT_ID}
 
       # get the url of this preview channel
       # (it returns in format `i  hosting:channel: https://<url>`)
@@ -40,8 +54,9 @@ steps:
       echo "${CHANNEL_DATA##* }" > /workspace/preview-published-url.txt
       cat /workspace/preview-published-url.txt
 
-  - name: 'bash'
-    env: 
+  - id: 'Write PR URL back to github'
+    name: 'bash'
+    env:
     - '_PR_NUMBER=$_PR_NUMBER'
     - 'REPO_NAME=$REPO_NAME'
     script: |
@@ -61,7 +76,7 @@ steps:
       gh pr comment $_PR_NUMBER --repo=dora-team/$REPO_NAME --body "Preview this PR [including DRAFT content] at $(cat /workspace/preview-draft-url.txt)"
       gh pr comment $_PR_NUMBER --repo=dora-team/$REPO_NAME --body "Preview this PR [published content only] at $(cat /workspace/preview-published-url.txt)"
     secretEnv: ['GH_TOKEN']
-    
+
 availableSecrets:
   secretManager:
   - versionName: projects/$PROJECT_ID/secrets/github_token/versions/latest
