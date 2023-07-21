@@ -1,4 +1,9 @@
 /* put SVG-style CSS styles here for styling Core Model diagram */
+
+.entity-box {
+    stroke: red;
+}
+
 .entity.capability {
     cursor: pointer;
     transition: all .1s ease;
