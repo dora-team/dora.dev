@@ -11,7 +11,7 @@ steps:
     name: gcr.io/$PROJECT_ID/hugo
     script: |
       # Build draft site
-      hugo -D -v -s ./hugo -d /workspace/hugo/public --debug
+      hugo -v -s ./hugo -d /workspace/hugo/public --debug -D
 
   - id: 'Firebase deploy PREVIEW_CHANNEL (w/ Drafts) Hosting'
     name: gcr.io/$PROJECT_ID/firebase
