@@ -2,41 +2,41 @@
 <g id="dora-core-model-EXPORT">
 <rect width="1833" height="401" fill="white"/>
 <text id="Experimental sandbox model viz" fill="black" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0em"><tspan x="7" y="33.16">Experimental sandbox model viz</tspan></text>
-<g data-category="technical" id="version-control" class="entity capability">
-<rect class="entity-box" x="36.5" y="148.5" width="328" height="103" rx="9.5" fill="white" stroke="#DADADA" stroke-width="3"/>
-<path id="icon-bg" d="M38 158C38 153.582 41.5817 150 46 150H138V250H46C41.5817 250 38 246.418 38 242V158Z" fill="#DADADA"/>
+<g class="entity capability technical" id="version-control" >
+<rect class="entity-box" x="36.5" y="148.5" width="328" height="103" rx="9.5" fill="white" stroke="#005D8D" stroke-width="3"/>
+<path class="icon-bg" d="M38 158C38 153.582 41.5817 150 46 150H138V250H46C41.5817 250 38 246.418 38 242V158Z" fill="#DADADA"/>
 <text id="Entity Name" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="148" y="209.52">Version control</tspan></text>
-<text id="icon" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="64" font-weight="500" letter-spacing="0em"><tspan x="74.1562" y="222.76">&#x2022;</tspan></text>
+<text class="icon" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="64" font-weight="bold" letter-spacing="0em"><tspan x="45.375" y="221.76">00</tspan></text>
 </g>
-<g data-category="technical" id="continuous-delivery" class="entity capability">
-<rect class="entity-box" x="515.5" y="198.5" width="328" height="103" rx="9.5" fill="white" stroke="#DADADA" stroke-width="3"/>
-<path id="icon-bg_2" d="M517 208C517 203.582 520.582 200 525 200H617V300H525C520.582 300 517 296.418 517 292V208Z" fill="#DADADA"/>
+<g class="entity capability technical" id="continuous-delivery" >
+<rect class="entity-box" x="515.5" y="198.5" width="328" height="103" rx="9.5" fill="white" stroke="#005D8D" stroke-width="3"/>
+<path class="icon-bg" d="M517 208C517 203.582 520.582 200 525 200H617V300H525C520.582 300 517 296.418 517 292V208Z" fill="#DADADA"/>
 <text id="Entity Name_2" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="627" y="242.02">Continuous </tspan><tspan x="627" y="277.02">Delivery</tspan></text>
-<text id="icon_2" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="64" font-weight="500" letter-spacing="0em"><tspan x="553.156" y="272.76">&#x2022;</tspan></text>
+<text class="icon" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="64" font-weight="bold" letter-spacing="0em"><tspan x="524.375" y="271.76">00</tspan></text>
 </g>
-<g data-category="none" id="software-delivery-performance" class="entity metric">
-<rect class="entity-box" x="996.5" y="148.5" width="328" height="103" rx="9.5" fill="white" stroke="#DADADA" stroke-width="3"/>
-<path id="icon-bg_3" d="M998 158C998 153.582 1001.58 150 1006 150H1098V250H1006C1001.58 250 998 246.418 998 242V158Z" fill="#DADADA"/>
+<g class="entity metric none" id="software-delivery-performance" >
+<rect class="entity-box" x="996.5" y="148.5" width="328" height="103" rx="9.5" fill="white" stroke="#005D8D" stroke-width="3"/>
+<path class="icon-bg" d="M998 158C998 153.582 1001.58 150 1006 150H1098V250H1006C1001.58 250 998 246.418 998 242V158Z" fill="#DADADA"/>
 <text id="Entity Name_3" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1108" y="192.02">Software </tspan><tspan x="1108" y="227.02">Delivery Perf.</tspan></text>
-<text id="icon_3" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="64" font-weight="500" letter-spacing="0em"><tspan x="1034.16" y="222.76">&#x2022;</tspan></text>
+<text class="icon" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="64" font-weight="bold" letter-spacing="0em"><tspan x="1005.38" y="221.76">00</tspan></text>
 </g>
-<g data-category="none" id="job-satisfaction" class="entity outcome">
-<rect class="entity-box" x="1476.5" y="148.5" width="328" height="103" rx="9.5" fill="white" stroke="#DADADA" stroke-width="3"/>
-<path id="icon-bg_4" d="M1478 158C1478 153.582 1481.58 150 1486 150H1578V250H1486C1481.58 250 1478 246.418 1478 242V158Z" fill="#DADADA"/>
+<g class="entity outcome none" id="job-satisfaction" >
+<rect class="entity-box" x="1476.5" y="148.5" width="328" height="103" rx="9.5" fill="white" stroke="#005D8D" stroke-width="3"/>
+<path class="icon-bg" d="M1478 158C1478 153.582 1481.58 150 1486 150H1578V250H1486C1481.58 250 1478 246.418 1478 242V158Z" fill="#DADADA"/>
 <text id="Entity Name_4" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1588" y="192.02">Job </tspan><tspan x="1588" y="227.02">Satisfaction</tspan></text>
-<text id="icon_4" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="64" font-weight="500" letter-spacing="0em"><tspan x="1514.16" y="222.76">&#x2022;</tspan></text>
+<text class="icon" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="64" font-weight="bold" letter-spacing="0em"><tspan x="1485.38" y="221.76">00</tspan></text>
 </g>
-<g id="connector">
+<g class="connector">
 <path d="M1323 195.5C1320.5 195.5 1318.5 197.5 1318.5 200C1318.5 202.5 1320.5 204.5 1323 204.5C1325.5 204.5 1327.5 202.5 1327.5 200C1327.5 197.5 1325.5 195.5 1323 195.5Z" fill="white"/>
-<path d="M1478 200L1463 191.34V208.66L1478 200ZM1320 200C1320 198.328 1321.33 197 1323 197V194C1319.67 194 1317 196.672 1317 200H1320ZM1323 197C1324.67 197 1326 198.328 1326 200H1329C1329 196.672 1326.33 194 1323 194V197ZM1326 200C1326 201.672 1324.67 203 1323 203V206C1326.33 206 1329 203.328 1329 200H1326ZM1323 203C1321.33 203 1320 201.672 1320 200H1317C1317 203.328 1319.67 206 1323 206V203ZM1327.5 201.5H1464.5V198.5H1327.5V201.5Z" fill="#DADADA"/>
+<path d="M1478 200L1463 191.34V208.66L1478 200ZM1320 200C1320 198.328 1321.33 197 1323 197V194C1319.67 194 1317 196.672 1317 200H1320ZM1323 197C1324.67 197 1326 198.328 1326 200H1329C1329 196.672 1326.33 194 1323 194V197ZM1326 200C1326 201.672 1324.67 203 1323 203V206C1326.33 206 1329 203.328 1329 200H1326ZM1323 203C1321.33 203 1320 201.672 1320 200H1317C1317 203.328 1319.67 206 1323 206V203ZM1327.5 201.5H1464.5V198.5H1327.5V201.5Z" fill="#005D8D"/>
 </g>
-<g id="connector_2">
+<g class="connector">
 <path d="M363 195.5C360.5 195.5 358.5 197.5 358.5 200C358.5 202.5 360.5 204.5 363 204.5C365.5 204.5 367.5 202.5 367.5 200C367.5 197.5 365.5 195.5 363 195.5Z" fill="white"/>
-<path d="M517 250L503.066 239.712L501.123 256.924L517 250ZM360 200C360 198.328 361.328 197 363 197V194C359.672 194 357 196.672 357 200H360ZM363 197C364.672 197 366 198.328 366 200H369C369 196.672 366.328 194 363 194V197ZM366 200C366 201.672 364.672 203 363 203V206C366.328 206 369 203.328 369 200H366ZM363 203C361.328 203 360 201.672 360 200H357C357 203.328 359.672 206 363 206V203ZM367.5 201.5C402.121 201.5 420.458 211.104 437.88 221.945C455.402 232.847 472.182 245.151 503.353 249.968L503.812 247.003C473.347 242.295 457.079 230.357 439.465 219.397C421.752 208.376 402.865 198.5 367.5 198.5V201.5Z" fill="#DADADA"/>
+<path d="M517 250L503.066 239.712L501.123 256.924L517 250ZM360 200C360 198.328 361.328 197 363 197V194C359.672 194 357 196.672 357 200H360ZM363 197C364.672 197 366 198.328 366 200H369C369 196.672 366.328 194 363 194V197ZM366 200C366 201.672 364.672 203 363 203V206C366.328 206 369 203.328 369 200H366ZM363 203C361.328 203 360 201.672 360 200H357C357 203.328 359.672 206 363 206V203ZM367.5 201.5C402.121 201.5 420.458 211.104 437.88 221.945C455.402 232.847 472.182 245.151 503.353 249.968L503.812 247.003C473.347 242.295 457.079 230.357 439.465 219.397C421.752 208.376 402.865 198.5 367.5 198.5V201.5Z" fill="#005D8D"/>
 </g>
-<g id="connector_3">
+<g class="connector">
 <path d="M842 245.5C839.5 245.5 837.5 247.5 837.5 250C837.5 252.5 839.5 254.5 842 254.5C844.5 254.5 846.5 252.5 846.5 250C846.5 247.5 844.5 245.5 842 245.5Z" fill="white"/>
-<path d="M998 200L982.455 192.36L983.612 209.642L998 200ZM839 250C839 248.328 840.328 247 842 247V244C838.672 244 836 246.672 836 250H839ZM842 247C843.672 247 845 248.328 845 250H848C848 246.672 845.328 244 842 244V247ZM845 250C845 251.672 843.672 253 842 253V256C845.328 256 848 253.328 848 250H845ZM842 253C840.328 253 839 251.672 839 250H836C836 253.328 838.672 256 842 256V253ZM846.5 251.5C882.379 251.5 901.525 240.809 919.467 229.321C937.308 217.897 953.795 205.824 984.686 202.393L984.355 199.411C952.674 202.93 935.634 215.407 917.85 226.794C900.167 238.117 881.588 248.5 846.5 248.5V251.5Z" fill="#DADADA"/>
+<path d="M998 200L982.455 192.36L983.612 209.642L998 200ZM839 250C839 248.328 840.328 247 842 247V244C838.672 244 836 246.672 836 250H839ZM842 247C843.672 247 845 248.328 845 250H848C848 246.672 845.328 244 842 244V247ZM845 250C845 251.672 843.672 253 842 253V256C845.328 256 848 253.328 848 250H845ZM842 253C840.328 253 839 251.672 839 250H836C836 253.328 838.672 256 842 256V253ZM846.5 251.5C882.379 251.5 901.525 240.809 919.467 229.321C937.308 217.897 953.795 205.824 984.686 202.393L984.355 199.411C952.674 202.93 935.634 215.407 917.85 226.794C900.167 238.117 881.588 248.5 846.5 248.5V251.5Z" fill="#005D8D"/>
 </g>
 </g>
 </svg>
