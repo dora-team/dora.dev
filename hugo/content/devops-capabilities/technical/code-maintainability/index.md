@@ -4,8 +4,10 @@ titleForHTMLHead: "DevOps Capabilities: Code Maintainability" # TODO: can we DRY
 date: 2023-03-27T09:48:50+01:00
 category: technical
 draft: false
+core: true
 headline: "Make it easy for developers to find, reuse, and change code, and keep dependencies up-to-date."
 summary: "Make it easy for developers to find, reuse, and change code, and keep dependencies up-to-date."
+slug: "code-maintainability"
 ---
 
 It takes

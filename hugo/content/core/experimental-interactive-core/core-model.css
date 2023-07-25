@@ -7,7 +7,11 @@
 .connector path { /* arrow connectors showing predictive relationships */
 }
 
-.entity.capability {
+.entity {
+    cursor: default;
+}
+
+.entity.has-modal {
     cursor: pointer;
     transition: all .1s ease;
 }
@@ -16,15 +20,11 @@
     fill:#666;
 }
 
-.entity .entity-box {
-    transition: all .1s ease;
-}
-
-.entity:hover .entity-box {
+.entity.has-modal:hover .entity-box {
     filter: drop-shadow( 3px 3px 3px rgba(0, 0, 0, .25));
 }
 
-.entity:hover {
+.entity.has-modal:hover {
     transform:translate(-2px, -2px);
 }
 
