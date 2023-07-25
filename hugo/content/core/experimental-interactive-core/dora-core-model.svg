@@ -42,12 +42,12 @@
 </g>
 <g id="software-delivery-performance">
 <rect id="Rectangle 2" x="1147" y="267" width="404" height="366" rx="25" fill="white" stroke="#CCCCCC" stroke-width="2"/>
-<path id="Rectangle 3" d="M1147 292C1147 278.193 1158.19 267 1172 267H1526C1539.81 267 1551 278.193 1551 292V365H1147V292Z" fill="#46A45F" stroke="#46A45F" stroke-width="2"/>
+<path id="Rectangle 3" d="M1147 292C1147 278.193 1158.19 267 1172 267H1526C1539.81 267 1551 278.193 1551 292V365H1147V292Z" fill="#63A657" stroke="#63A657" stroke-width="2"/>
 <g class="entity metric none" id="change-lead-time" >
 <rect class="entity-box" x="1164" y="382" width="370" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_4" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.015em"><tspan x="1215" y="411.16">Change lead time</tspan></text>
 <g id="icon-group_4">
-<path class="icon-bg" d="M1208 383V382H1207H1173C1168.03 382 1164 386.029 1164 391V415C1164 419.971 1168.03 424 1173 424H1207H1208V423V383Z" fill="#46A45F" stroke="#46A45F" stroke-width="2"/>
+<path class="icon-bg" d="M1208 383V382H1207H1173C1168.03 382 1164 386.029 1164 391V415C1164 419.971 1168.03 424 1173 424H1207H1208V423V383Z" fill="#63A657" stroke="#63A657" stroke-width="2"/>
 <path class="icon" d="M1172 397.4H1178V417H1172V397.4ZM1183.2 389H1188.8V417H1183.2V389ZM1194.4 405H1200V417H1194.4V405Z" fill="white"/>
 </g>
 </g>
@@ -55,7 +55,7 @@
 <rect class="entity-box" x="1164" y="446" width="370" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_5" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.015em"><tspan x="1215" y="475.16">Deployment frequency</tspan></text>
 <g id="icon-group_5">
-<path class="icon-bg" d="M1208 447V446H1207H1173C1168.03 446 1164 450.029 1164 455V479C1164 483.971 1168.03 488 1173 488H1207H1208V487V447Z" fill="#46A45F" stroke="#46A45F" stroke-width="2"/>
+<path class="icon-bg" d="M1208 447V446H1207H1173C1168.03 446 1164 450.029 1164 455V479C1164 483.971 1168.03 488 1173 488H1207H1208V487V447Z" fill="#63A657" stroke="#63A657" stroke-width="2"/>
 <path class="icon" d="M1172 461.4H1178V481H1172V461.4ZM1183.2 453H1188.8V481H1183.2V453ZM1194.4 469H1200V481H1194.4V469Z" fill="white"/>
 </g>
 </g>
@@ -63,7 +63,7 @@
 <rect class="entity-box" x="1164" y="509" width="370" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_6" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.015em"><tspan x="1215" y="538.16">Change fail rate</tspan></text>
 <g id="icon-group_6">
-<path class="icon-bg" d="M1208 510V509H1207H1173C1168.03 509 1164 513.029 1164 518V542C1164 546.971 1168.03 551 1173 551H1207H1208V550V510Z" fill="#46A45F" stroke="#46A45F" stroke-width="2"/>
+<path class="icon-bg" d="M1208 510V509H1207H1173C1168.03 509 1164 513.029 1164 518V542C1164 546.971 1168.03 551 1173 551H1207H1208V550V510Z" fill="#63A657" stroke="#63A657" stroke-width="2"/>
 <path class="icon" d="M1172 524.4H1178V544H1172V524.4ZM1183.2 516H1188.8V544H1183.2V516ZM1194.4 532H1200V544H1194.4V532Z" fill="white"/>
 </g>
 </g>
@@ -72,7 +72,7 @@
 <rect class="entity-box" x="1164" y="572" width="370" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_7" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.015em"><tspan x="1215" y="601.16">Time to repair</tspan></text>
 <g id="icon-group_7">
-<path class="icon-bg" d="M1208 573V572H1207H1173C1168.03 572 1164 576.029 1164 581V605C1164 609.971 1168.03 614 1173 614H1207H1208V613V573Z" fill="#46A45F" stroke="#46A45F" stroke-width="2"/>
+<path class="icon-bg" d="M1208 573V572H1207H1173C1168.03 572 1164 576.029 1164 581V605C1164 609.971 1168.03 614 1173 614H1207H1208V613V573Z" fill="#63A657" stroke="#63A657" stroke-width="2"/>
 <path class="icon" d="M1172 587.4H1178V607H1172V587.4ZM1183.2 579H1188.8V607H1183.2V579ZM1194.4 595H1200V607H1194.4V595Z" fill="white"/>
 </g>
 </g>
@@ -243,7 +243,7 @@
 <text id="TECHNICAL CAPABILITIES" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.225em"><tspan x="130.21" y="296.16">TECHNICAL CAPABILITIES</tspan></text>
 </g>
 <g id="legend-metrics">
-<path id="Rectangle 9" d="M1271 101.707C1271 93.0322 1278.03 86 1286.71 86H1405.29C1413.97 86 1421 93.0322 1421 101.707V101.707C1421 110.381 1413.97 117.414 1405.29 117.414H1286.71C1278.03 117.414 1271 110.381 1271 101.707V101.707Z" fill="#46A45F"/>
+<path id="Rectangle 9" d="M1271 101.707C1271 93.0322 1278.03 86 1286.71 86H1405.29C1413.97 86 1421 93.0322 1421 101.707V101.707C1421 110.381 1413.97 117.414 1405.29 117.414H1286.71C1278.03 117.414 1271 110.381 1271 101.707V101.707Z" fill="#63A657"/>
 <text id="metrics" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="20" font-weight="500" letter-spacing="0em"><tspan x="1310.24" y="108.821">metrics</tspan></text>
 </g>
 <g id="legend-capabilities">
