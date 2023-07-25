@@ -41,4 +41,5 @@ steps:
       # see: https://github.com/firebase/firebase-tools/issues/6060
       # so we'll skip the extension until that's fixed
 
-      firebase deploy --non-interactive --project=${PROJECT_ID} --except=extensions
+      # skip remote config
+      firebase deploy --non-interactive --project=${PROJECT_ID} --except=extensions,remoteconfig
