@@ -1,13 +1,10 @@
 /* put SVG-style CSS styles here for styling Core Model diagram */
 
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
-.entity-box {
-    /* stroke: red; */
+.entity-box { /* styles applying to the entire entity visual element */
+    
 }
 
-.connector path {
-    /* fill: red; */
+.connector path { /* arrow connectors showing predictive relationships */
 }
 
 .entity.capability {
@@ -19,27 +16,23 @@
     fill:#666;
 }
 
-.entity.capability:hover {
-    transform:translate(-3px,-3px);
+.entity .entity-box {
+    transition: all .1s ease;
 }
 
-.entity.capability:hover [stroke] {
-    filter: drop-shadow( 5px 5px 5px rgba(0, 0, 0, .25));
+.entity:hover .entity-box {
+    filter: drop-shadow( 3px 3px 3px rgba(0, 0, 0, .25));
 }
 
-.entity.capability .icon-bg {
-    fill:#FF8A01;
+.entity:hover {
+    transform:translate(-2px, -2px);
 }
 
-.entity.metric .icon-bg {
-    fill:#39B54A;
+.entity.capability .icon-bg { /* background behind capability icons */
 }
 
-.entity.outcome .icon-bg {
-    fill:#005D8D;
+.entity.metric .icon-bg { /* background behind metric icons */
 }
 
-.entity > .icon tspan {
-    fill:white;
-    font-family:'Roboto Mono' !important;
+.entity.outcome .icon-bg { /* background behind outcome icons */
 }
