@@ -17,5 +17,17 @@
         ]
       }
     }
+  },
+  "etags": {
+    "doradotdev-staging": {
+      "extensionInstances": {
+        "firestore-send-email": "cef271def8b9c29491c2d27fd15472452515f5b3834421efac1015c3dd06205f"
+      }
+    },
+    "doradotdev": {
+      "extensionInstances": {
+        "firestore-send-email": "00497ea8422b10db134cec9785fe611e6f3f9d18acd8196a4dc578f6ce5dda66"
+      }
+    }
   }
 }

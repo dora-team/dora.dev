@@ -55,7 +55,7 @@
     "codebase": "inquiry-monitor"
   },
   "extensions": {
-    "firestore-send-email": "firebase/firestore-send-email@0.1.25"
+    "firestore-send-email": "firebase/firestore-send-email@0.1.27"
   },
   "remoteconfig": {
     "template": "remote-config/remote-cfg-inquiry-monitor.json"
