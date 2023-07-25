@@ -1,4 +1,12 @@
 /* put SVG-style CSS styles here for styling Core Model diagram */
+
+.entity-box { /* styles applying to the entire entity visual element */
+    
+}
+
+.connector path { /* arrow connectors showing predictive relationships */
+}
+
 .entity.capability {
     cursor: pointer;
     transition: all .1s ease;
@@ -8,19 +16,23 @@
     fill:#666;
 }
 
-.entity.capability:hover {
-    transform:translate(-3px,-3px);
+.entity .entity-box {
+    transition: all .1s ease;
 }
 
-.entity.capability:hover [stroke] {
-    filter: drop-shadow( 5px 5px 5px rgba(0, 0, 0, .25));
+.entity:hover .entity-box {
+    filter: drop-shadow( 3px 3px 3px rgba(0, 0, 0, .25));
 }
 
-.entity.capability:hover [fill="#FF8A01"] {
-    fill:#ff5a01;
-    transition: fill .25s ease;
+.entity:hover {
+    transform:translate(-2px, -2px);
 }
 
-.entity.capability:hover text {
-    fill:#333;
+.entity.capability .icon-bg { /* background behind capability icons */
+}
+
+.entity.metric .icon-bg { /* background behind metric icons */
+}
+
+.entity.outcome .icon-bg { /* background behind outcome icons */
 }
