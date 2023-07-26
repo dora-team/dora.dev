@@ -42,4 +42,4 @@ steps:
       # so we'll skip the extension until that's fixed
 
       # skip remote config
-      firebase deploy --non-interactive --project=${PROJECT_ID} --except=extensions,remoteconfig
+      firebase deploy --non-interactive --project=${PROJECT_ID} --except=remoteconfig
