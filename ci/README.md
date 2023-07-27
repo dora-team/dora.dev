@@ -1,4 +1,4 @@
-# Hosting / Deployment / Continuous Integration
+# Hosting / Deployment / Continuous Integration / TEST
 
 ## Environments
 There are two persistent hosting environments (powered by Firebase): [Staging](https://staging.dora.dev/) and [Prod](https://dora.dev/).
