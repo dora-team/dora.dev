@@ -26,7 +26,7 @@
     },
     "doradotdev": {
       "extensionInstances": {
-        "firestore-send-email": "00497ea8422b10db134cec9785fe611e6f3f9d18acd8196a4dc578f6ce5dda66"
+        "firestore-send-email": "f4d6ab6ee00f295ac25a38c461ef0826996ce45ddf5f6ea524a25c45750a124c"
       }
     }
   }
