@@ -8,8 +8,10 @@ cp dora-core-model-EXPORT.svg dora-core-model.svg
 # replace exported ids on entity from Figma with usable id and class attributes
 # e.g.  id="entity.capability.technical#trunk-based-development" 
 #       --> class="entity capability technical" id="trunk-based-development" 
-sed -i '' 's/<g id="#\(.*\)_\(.*\)\.\(.*\)\.\(.*\)"/<g data-category="\1" id="\2" class="\3 \4"/' dora-core-model.svg
 sed -i '' 's/<g id="\(.*\)\.\(.*\)\.\(.*\)#\(.*\)"/<g class="\1 \2 \3" id="\4" /' dora-core-model.svg
+
+# add class tag to `construct`
+sed -i '' 's/<g id="\(.*\)#\(.*\)"/<g class="\1" id="\2" /' dora-core-model.svg
 
 # add class tag to `entity-box`
 sed -i '' 's/id="entity-box"/class="entity-box"/' dora-core-model.svg

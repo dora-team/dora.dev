@@ -16,7 +16,9 @@
                 svg.addEventListener('load', function() {
                     var coreModel = document.getElementById('dora-core-model').contentDocument;
             
-                    var capabilities = coreModel.querySelectorAll('.entity.capability');
+                    var capabilities = coreModel.querySelectorAll('.entity');
+
+                    console.log(capabilities);
             
                     for (const item of capabilities) {
                         // if modal content exists, add listener to open modal on click
@@ -36,6 +38,10 @@
     <div x-cloak class="modal-container" x-show="$store.coreModal.open">
         <div x-cloak class="modal" x-show="$store.coreModal.open" @click.outside="$store.coreModal.open=false"
             x-on:keydown.escape.window="$store.coreModal.open=false" x-transition>
+
+            <!-- TODO: each of these modals has two divs, each of which is activated/deactivated via `x-show`. Let's wrap each pair in a single div and show/hide that. -->
+
+            <!-- loop across all items in `content/devops-capabilities` labeled 'core' and create content for the modal, based on the `summary` front matter -->
             {{ range $capabilities }}
                 <div class="modal-header"
                     x-cloak 
@@ -50,16 +56,68 @@
                     x-cloak 
                     x-show="$store.coreModal.capabilitySlug=='{{ .Slug }}'"
                     data-title="{{ .Page.Title }}">
-                    <p>{{ .Page.Params.summary }}</p>
+                    <p>{{ .Page.Params.summary | markdownify }}</p>
                     <p><a href="{{ .Page.RelPermalink }}">Learn more about {{ .Page.Title }}</a></p>
                 </div>
             {{ end }}
+
+            <!-- there are also a few pieces of modal content which are not (currently) represented in `devops-capabilities`. Hard-code them: -->
+            <div class="modal-header"
+                x-cloak 
+                x-show="$store.coreModal.capabilitySlug=='deployment-pain'">
+                <h2>Deployment pain</h2>
+                <img class="modal-close-x" x-on:click="$store.coreModal.open=false" aria-controls="coreModal"
+                    src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg"
+                    alt="close">
+            </div>
+            <div class="capability-content"
+                x-ref="deployment-pain"
+                x-cloak 
+                x-show="$store.coreModal.capabilitySlug=='deployment-pain'"
+                data-title="Deployment pain">
+
+                {{- partial "core/outcome-deployment-pain" . -}}
+            </div>
+
+            <div class="modal-header"
+                x-cloak 
+                x-show="$store.coreModal.capabilitySlug=='rework'">
+                <h2>Rework</h2>
+                <img class="modal-close-x" x-on:click="$store.coreModal.open=false" aria-controls="coreModal"
+                    src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg"
+                    alt="close">
+            </div>
+            <div class="capability-content"
+                x-ref="rework"
+                x-cloak 
+                x-show="$store.coreModal.capabilitySlug=='rework'"
+                data-title="Deployment pain">
+
+                {{- partial "core/outcome-rework" . -}}
+            </div>
+
+            <div class="modal-header"
+                x-cloak 
+                x-show="$store.coreModal.capabilitySlug=='burnout'">
+                <h2>Burnout</h2>
+                <img class="modal-close-x" x-on:click="$store.coreModal.open=false" aria-controls="coreModal"
+                    src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg"
+                    alt="close">
+            </div>
+            <div class="capability-content"
+                x-ref="burnout"
+                x-cloak 
+                x-show="$store.coreModal.capabilitySlug=='burnout'"
+                data-title="Deployment pain">
+
+                {{- partial "core/outcome-burnout" . -}}
+            </div>
+
         </div>
     </div>
 
     > [Download as PDF](dora-core-model.pdf)
 </div>
-
 
     {{ .Content }}
 
