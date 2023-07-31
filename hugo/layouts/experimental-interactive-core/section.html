@@ -12,26 +12,35 @@
             { open: false, 
                 capabilitySlug: '',});
 
-                let svg = document.getElementById('dora-core-model');
-                svg.addEventListener('load', function() {
-                    var coreModel = document.getElementById('dora-core-model').contentDocument;
-            
-                    var capabilities = coreModel.querySelectorAll('.entity');
+        let svg = document.getElementById('dora-core-model');
 
-                    console.log(capabilities);
-            
-                    for (const item of capabilities) {
-                        // if modal content exists, add listener to open modal on click
-                        if ($refs[item.id]) {
-                            item.classList.add('has-modal');
-                            item.addEventListener('click', () => {
-                                Alpine.store('coreModal').open = true;
-                                Alpine.store('coreModal').capabilitySlug = item.id;
-                            });
-                        }
-                    }
-                });
-            ">
+        svg.addEventListener('load', function() {
+            var coreModelContentDocument = document.getElementById('dora-core-model').contentDocument;
+        
+            var capabilities = coreModelContentDocument.querySelectorAll('.entity');
+
+            for (const item of capabilities) {
+                // if modal content exists, add listener to open modal on click
+                if ($refs[item.id]) {
+                    item.classList.add('has-modal');
+                    item.addEventListener('click', (el) => {
+                        Alpine.store('coreModal').open = true;
+                        Alpine.store('coreModal').capabilitySlug = item.id;
+                        item.classList.add('clickedEntity');
+                    });
+                }
+            }
+
+
+            $watch('$store.coreModal.open', value => { if(!value) {
+                coreModelContentDocument.querySelector('.entity.clickedEntity').classList.remove('clickedEntity'); 
+                }
+            });
+
+
+         });
+
+        ">
         
         <object data="dora-core-model.svg" id="dora-core-model" type="image/svg+xml" style="width:100%;border:1px solid #ddd;border-radius:.5em;"></object>
 

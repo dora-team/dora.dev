@@ -25,7 +25,7 @@
 
 .entity text {
     fill:#666;
-    transition: all .1s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 .has-modal:hover .entity-box {
@@ -33,7 +33,7 @@
     transition: all .1s ease-in-out;
 }
 
-.entity.has-modal:hover text {
+.entity.has-modal.clickedEntity text {
     fill:#333;
     transform:scale3d(1.05, 1.05, 1.05);
     transform-origin: 0% 50%;
@@ -43,8 +43,7 @@
     display: inline-block;
 }
 
-
-.capability.has-modal:hover .icon {
+.entity.capability.has-modal.clickedEntity .icon {
     animation: turngear .4s 0s ease-in-out;
     transform-origin: 50% 50%;
 }
@@ -54,12 +53,12 @@
     transform-origin: bottom;
 }
 
-.metric.has-modal:hover .icon {
+.metric.has-modal.clickedEntity .icon {
     animation: stretchup .4s 0s ease-out;
     transform:scale3d(1, 1, 1);
 }
 
-.outcome.has-modal:hover .icon {
+.outcome.has-modal.clickedEntity .icon {
     animation: stretchout .4s 0s ease-out;
     transform:scale3d(1.1, 1.1, 1.1);
     transform-origin: center;
