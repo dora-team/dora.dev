@@ -40,7 +40,7 @@ steps:
 
       apt install nodejs sudo -y
       apt install npm sudo -y
-      npm test
+      firebase emulators:exec 'npm run emulator-test' --only firestore,functions
 
   - id: 'Firebase (re)Deploy All'
     name: 'ubuntu'
