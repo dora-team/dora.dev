@@ -36,12 +36,14 @@
                 }
             }
 
-
+            // when modal is closed, remove 'clickedEntity' class from whichever elemnt was clicked
             $watch('$store.coreModal.open', value => { if(!value) {
                 coreModelContentDocument.querySelector('.entity.clickedEntity').classList.remove('clickedEntity'); 
                 }
             });
 
+            // remove the URL at the top of the page
+            coreModelContentDocument.getElementById('url').style.display = 'none';
 
          });
 
