@@ -37,9 +37,5 @@ steps:
       apt update && apt install curl sudo -y
       curl -sL https://firebase.tools | bash
 
-      # BUG: there is a bug in Firebase that is causing issues when installing the extension on staging
-      # see: https://github.com/firebase/firebase-tools/issues/6060
-      # so we'll skip the extension until that's fixed
-
       # skip remote config
-      firebase deploy --non-interactive --project=${PROJECT_ID} --except=extensions,remoteconfig
+      firebase deploy --non-interactive --force --project=${PROJECT_ID} --except=remoteconfig

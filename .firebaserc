@@ -21,12 +21,12 @@
   "etags": {
     "doradotdev-staging": {
       "extensionInstances": {
-        "firestore-send-email": "cef271def8b9c29491c2d27fd15472452515f5b3834421efac1015c3dd06205f"
+        "firestore-send-email": "e454c6869b1d6c05ac318fc9347178c13b457fa22f299f7e70fd49a1b324880e"
       }
     },
     "doradotdev": {
       "extensionInstances": {
-        "firestore-send-email": "00497ea8422b10db134cec9785fe611e6f3f9d18acd8196a4dc578f6ce5dda66"
+        "firestore-send-email": "f4d6ab6ee00f295ac25a38c461ef0826996ce45ddf5f6ea524a25c45750a124c"
       }
     }
   }

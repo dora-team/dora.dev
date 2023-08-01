@@ -24,4 +24,4 @@ steps:
     env:
       - 'PROJECT_ID=$PROJECT_ID'
     script: |
-      firebase deploy --non-interactive --except=extensions --project=${PROJECT_ID}
+      firebase deploy --non-interactive  --force --project=${PROJECT_ID}
