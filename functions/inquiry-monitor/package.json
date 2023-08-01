@@ -1,15 +1,23 @@
 {
     "name": "dora-inquiry-monitor",
+    "version": "1.1.0",
     "description": "Firebase Function to monitor new DORA Inquiry requests",
     "dependencies": {
-      "firebase-admin": "^11.5.0",
-      "firebase-functions": "^4.3.1",
-      "firebase": "^9.19.1"
+      "firebase": "^10.1.0",
+      "firebase-admin": "^11.9.0",
+      "firebase-functions": "^4.4.1"
     },
     "devDependencies": {
       "eslint": "^7.23.0",
-      "eslint-plugin-promise": "^4.3.1"
+      "eslint-plugin-promise": "^4.3.1",
+      "firebase-functions-test": "^3.1.0",
+      "jest": "^29.6.2"
     },
+    "scripts": {
+      "test": "firebase emulators:exec 'npm run emulator-test' --only firestore,functions",
+      "emulator-test": "jest",
+      "shell": "firebase functions:shell"
+  },
     "engines": {
       "node": "16"
     },

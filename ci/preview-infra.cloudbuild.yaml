@@ -29,6 +29,17 @@ steps:
     dir: 'functions/inquiry-monitor'
     args: ['install']
 
+  - id: 'Unit Testing'
+    name: 'ubuntu'
+    env:
+      - 'MONITOR_SEND_TO=no-reply@example.com'
+    dir: 'functions/inquiry-monitor'
+    script: |
+      apt update && apt install curl sudo -y
+      curl -sL https://firebase.tools | bash
+
+      npm test
+
   - id: 'Firebase (re)Deploy All'
     name: 'ubuntu'
     env:
