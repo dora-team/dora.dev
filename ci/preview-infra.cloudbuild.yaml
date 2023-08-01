@@ -30,7 +30,7 @@ steps:
     args: ['install']
 
   - id: 'Unit Testing'
-    name: gcr.io/cloud-builders/npm:node-16.18.0
+    name: 'openjdk:20-ea-jdk-slim'
     dir: 'functions/inquiry-monitor'
     env:
       - 'MONITOR_SEND_TO=no-reply@example.com'
@@ -38,6 +38,8 @@ steps:
       apt update && apt install curl sudo -y
       curl -sL https://firebase.tools | bash
 
+      apt install nodejs sudo -y
+      apt install npm sudo -y
       npm test
 
   - id: 'Firebase (re)Deploy All'
