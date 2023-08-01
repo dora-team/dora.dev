@@ -29,7 +29,7 @@ steps:
     dir: 'functions/inquiry-monitor'
     args: ['install']
 
-  - id: 'Unit Testing'
+  - id: 'CI Testing'
     name: 'openjdk:20-ea-jdk-slim'
     dir: 'functions/inquiry-monitor'
     env:
