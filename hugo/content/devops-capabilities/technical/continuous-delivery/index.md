@@ -1,11 +1,21 @@
 ---
 title: "Continuous delivery"
+slug: "continuous-delivery"
 titleForHTMLHead: "DevOps Capabilities: Continuous Delivery" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical
 draft: false
+core: true
 headline: "Make deploying software a reliable, low-risk process that can be performed on demand at any time."
-summary: "Make deploying software a reliable, low-risk process that can be performed on demand at any time."
+summary: |
+    Teams can be said to have implemented continuous delivery when they have achieved the following outcomes:
+
+    * Teams can deploy to production (or to end users) on demand, throughout the software delivery lifecycle.
+    * Fast feedback on the quality and deployability of the system is available to everyone on the team, and people make acting on this feedback their highest priority.
+
+    Continuous delivery requires the implementation of a number of technical practices including continuous integration, trunk-based development, the comprehensive use of version control, and continuous testing.
+
+    In turn, continuous delivery drives a number of outcomes: higher software delivery performance, better organizational culture, less rework, lower deployment pain, and less burnout.
 ---
 
 Continuous delivery is the ability to release changes of all kinds on demand

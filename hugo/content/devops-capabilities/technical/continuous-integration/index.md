@@ -4,8 +4,10 @@ titleForHTMLHead: "DevOps Capabilities: Continuous Integration" # TODO: can we D
 date: 2023-03-27T09:48:50+01:00
 category: technical
 draft: false
+core: true
 headline: "Learn about common mistakes, ways to measure, and how to improve on your continuous integration efforts."
 summary: "Learn about common mistakes, ways to measure, and how to improve on your continuous integration efforts."
+slug: 'continuous-integration'
 ---
 
 Software systems are complex, and an apparently simple, self-contained change
