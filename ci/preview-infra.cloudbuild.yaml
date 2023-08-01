@@ -37,7 +37,9 @@ steps:
     script: |
       apt update
       apt install curl sudo -y
-      apt install nodejs sudo -y
+      curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - &&\
+      sudo apt-get install -y nodejs
+
       apt install npm sudo -y
       npm install -g firebase-tools
       firebase emulators:exec 'npm run emulator-test' --only firestore,functions
