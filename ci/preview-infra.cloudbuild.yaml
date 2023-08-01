@@ -35,11 +35,11 @@ steps:
     env:
       - 'MONITOR_SEND_TO=no-reply@example.com'
     script: |
-      apt update && apt install curl sudo -y
-      curl -sL https://firebase.tools | bash
-
+      apt update
+      apt install curl sudo -y
       apt install nodejs sudo -y
       apt install npm sudo -y
+      npm install -g firebase-tools
       firebase emulators:exec 'npm run emulator-test' --only firestore,functions
 
   - id: 'Firebase (re)Deploy All'
