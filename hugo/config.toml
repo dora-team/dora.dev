@@ -1,5 +1,6 @@
 baseURL = 'https://dora.dev/'
 languageCode = 'en-us'
+DefaultContentLanguage = 'en'
 
 [markup.goldmark.renderer]
 unsafe= true
@@ -19,3 +20,19 @@ unsafe= true
   [cascade._build]
     render = "never"
     list = "never"
+
+[languages]
+    [languages.en]
+        contentDir = 'content'
+        disabled = false
+        languageCode = 'en-EN'
+        languageDirection = 'ltr'
+        languageName = "English"
+        weight = 1
+    [languages.fr]
+        contentDir = 'content/fr'
+        disabled = true
+        languageCode = 'fr-FR'
+        languageDirection = 'ltr'
+        languageName = "Français"
+        weight = 2
