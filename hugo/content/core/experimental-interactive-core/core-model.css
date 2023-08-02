@@ -35,8 +35,6 @@
 
 .entity.has-modal.clickedEntity text {
     fill:#333;
-    transform:scale3d(1.05, 1.05, 1.05);
-    transform-origin: 0% 50%;
 }
 
 .icon {

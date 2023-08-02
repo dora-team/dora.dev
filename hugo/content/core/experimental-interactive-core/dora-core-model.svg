@@ -3,7 +3,7 @@
 <rect width="2112" height="1188" fill="white"/>
 <rect id="Rectangle 13" width="303" height="101" fill="#F5F5F5"/>
 <g class="construct" id="technical-capabilities" >
-<rect id="Rectangle 1" x="82" y="253" width="500" height="916" rx="16" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="Rectangle 1" x="82" y="253" width="500" height="916" rx="16" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="TECHNICAL CAPABILITIES" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.225em"><tspan x="130.21" y="296.16">TECHNICAL CAPABILITIES</tspan></text>
 </g>
 <g class="connector">
@@ -16,74 +16,74 @@
 </g>
 <g class="construct" id="job-satisfaction" >
 <g id="Group 1">
-<rect id="Rectangle 6" x="1677" y="803" width="382" height="279" rx="25" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="Rectangle 6" x="1677" y="803" width="382" height="279" rx="25" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <path id="Rectangle 7" d="M1677 828C1677 814.193 1688.19 803 1702 803H2034C2047.81 803 2059 814.193 2059 828V878H1677V828Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
 <g class="entity outcome none" id="deployment-pain" >
-<rect class="entity-box" x="1695" y="898" width="348" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="1695" y="898" width="348" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.025em"><tspan x="1746" y="927.16">Less deployment pain</tspan></text>
 <g id="icon-group">
 <path class="icon-bg" d="M1739 899V898H1738H1704C1699.03 898 1695 902.029 1695 907V931C1695 935.971 1699.03 940 1704 940H1738H1739V939V899Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
-<path class="icon" d="M1723.7 913.533L1714.8 922.43L1709.95 917.597L1708.05 919.5L1714.8 926.25L1725.6 915.45L1723.7 913.533ZM1717.5 906C1710.05 906 1704 912.048 1704 919.5C1704 926.952 1710.05 933 1717.5 933C1724.95 933 1731 926.952 1731 919.5C1731 912.048 1724.95 906 1717.5 906ZM1717.5 930.3C1711.53 930.3 1706.7 925.467 1706.7 919.5C1706.7 913.533 1711.53 908.7 1717.5 908.7C1723.47 908.7 1728.3 913.533 1728.3 919.5C1728.3 925.467 1723.47 930.3 1717.5 930.3Z" fill="white"/>
+<path class="icon" d="M1723.7 913.533L1714.8 922.43L1709.95 917.597L1708.05 919.5L1714.8 926.25L1725.6 915.45L1723.7 913.533ZM1717.5 906C1710.05 906 1704 912.048 1704 919.5C1704 926.952 1710.05 933 1717.5 933C1724.95 933 1731 926.952 1731 919.5C1731 912.048 1724.95 906 1717.5 906ZM1717.5 930.3C1711.53 930.3 1706.7 925.467 1706.7 919.5C1706.7 913.533 1711.53 908.7 1717.5 908.7C1723.47 908.7 1728.3 913.533 1728.3 919.5C1728.3 925.467 1723.47 930.3 1717.5 930.3Z" fill="#FCFCFC"/>
 </g>
 </g>
 <g class="entity outcome none" id="rework" >
-<rect class="entity-box" x="1695" y="959" width="348" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="1695" y="959" width="348" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_2" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.025em"><tspan x="1746" y="988.16">Less rework</tspan></text>
 <g id="icon-group_2">
 <path class="icon-bg" d="M1739 960V959H1738H1704C1699.03 959 1695 963.029 1695 968V992C1695 996.971 1699.03 1001 1704 1001H1738H1739V1000V960Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
-<path class="icon" d="M1723.7 974.533L1714.8 983.43L1709.95 978.597L1708.05 980.5L1714.8 987.25L1725.6 976.45L1723.7 974.533ZM1717.5 967C1710.05 967 1704 973.048 1704 980.5C1704 987.952 1710.05 994 1717.5 994C1724.95 994 1731 987.952 1731 980.5C1731 973.048 1724.95 967 1717.5 967ZM1717.5 991.3C1711.53 991.3 1706.7 986.467 1706.7 980.5C1706.7 974.533 1711.53 969.7 1717.5 969.7C1723.47 969.7 1728.3 974.533 1728.3 980.5C1728.3 986.467 1723.47 991.3 1717.5 991.3Z" fill="white"/>
+<path class="icon" d="M1723.7 974.533L1714.8 983.43L1709.95 978.597L1708.05 980.5L1714.8 987.25L1725.6 976.45L1723.7 974.533ZM1717.5 967C1710.05 967 1704 973.048 1704 980.5C1704 987.952 1710.05 994 1717.5 994C1724.95 994 1731 987.952 1731 980.5C1731 973.048 1724.95 967 1717.5 967ZM1717.5 991.3C1711.53 991.3 1706.7 986.467 1706.7 980.5C1706.7 974.533 1711.53 969.7 1717.5 969.7C1723.47 969.7 1728.3 974.533 1728.3 980.5C1728.3 986.467 1723.47 991.3 1717.5 991.3Z" fill="#FCFCFC"/>
 </g>
 </g>
 <g class="entity outcome none" id="burnout" >
-<rect class="entity-box" x="1695" y="1019" width="348" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="1695" y="1019" width="348" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_3" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.025em"><tspan x="1746" y="1048.16">Less burnout</tspan></text>
 <g id="icon-group_3">
 <path class="icon-bg" d="M1739 1020V1019H1738H1704C1699.03 1019 1695 1023.03 1695 1028V1052C1695 1056.97 1699.03 1061 1704 1061H1738H1739V1060V1020Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
-<path class="icon" d="M1723.7 1034.53L1714.8 1043.43L1709.95 1038.6L1708.05 1040.5L1714.8 1047.25L1725.6 1036.45L1723.7 1034.53ZM1717.5 1027C1710.05 1027 1704 1033.05 1704 1040.5C1704 1047.95 1710.05 1054 1717.5 1054C1724.95 1054 1731 1047.95 1731 1040.5C1731 1033.05 1724.95 1027 1717.5 1027ZM1717.5 1051.3C1711.53 1051.3 1706.7 1046.47 1706.7 1040.5C1706.7 1034.53 1711.53 1029.7 1717.5 1029.7C1723.47 1029.7 1728.3 1034.53 1728.3 1040.5C1728.3 1046.47 1723.47 1051.3 1717.5 1051.3Z" fill="white"/>
+<path class="icon" d="M1723.7 1034.53L1714.8 1043.43L1709.95 1038.6L1708.05 1040.5L1714.8 1047.25L1725.6 1036.45L1723.7 1034.53ZM1717.5 1027C1710.05 1027 1704 1033.05 1704 1040.5C1704 1047.95 1710.05 1054 1717.5 1054C1724.95 1054 1731 1047.95 1731 1040.5C1731 1033.05 1724.95 1027 1717.5 1027ZM1717.5 1051.3C1711.53 1051.3 1706.7 1046.47 1706.7 1040.5C1706.7 1034.53 1711.53 1029.7 1717.5 1029.7C1723.47 1029.7 1728.3 1034.53 1728.3 1040.5C1728.3 1046.47 1723.47 1051.3 1717.5 1051.3Z" fill="#FCFCFC"/>
 </g>
 </g>
-<text id="Wellbeing" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1700" y="851.02">Wellbeing</tspan></text>
+<text id="Wellbeing" fill="#FCFCFC" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1700" y="851.02">Wellbeing</tspan></text>
 </g>
 </g>
 <g class="construct" id="software-delivery-performance" >
-<rect id="Rectangle 2" x="1147" y="267" width="404" height="366" rx="25" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="Rectangle 2" x="1147" y="267" width="404" height="366" rx="25" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <path id="Rectangle 3" d="M1147 292C1147 278.193 1158.19 267 1172 267H1526C1539.81 267 1551 278.193 1551 292V365H1147V292Z" fill="#63A657" stroke="#63A657" stroke-width="2"/>
 <g class="entity metric none" id="change-lead-time" >
-<rect class="entity-box" x="1164" y="382" width="370" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="1164" y="382" width="370" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_4" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.015em"><tspan x="1215" y="411.16">Change lead time</tspan></text>
 <g id="icon-group_4">
 <path class="icon-bg" d="M1208 383V382H1207H1173C1168.03 382 1164 386.029 1164 391V415C1164 419.971 1168.03 424 1173 424H1207H1208V423V383Z" fill="#63A657" stroke="#63A657" stroke-width="2"/>
-<path class="icon" d="M1172 397.4H1178V417H1172V397.4ZM1183.2 389H1188.8V417H1183.2V389ZM1194.4 405H1200V417H1194.4V405Z" fill="white"/>
+<path class="icon" d="M1172 397.4H1178V417H1172V397.4ZM1183.2 389H1188.8V417H1183.2V389ZM1194.4 405H1200V417H1194.4V405Z" fill="#FCFCFC"/>
 </g>
 </g>
 <g class="entity metric none" id="deployment-frequency" >
-<rect class="entity-box" x="1164" y="446" width="370" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="1164" y="446" width="370" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_5" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.015em"><tspan x="1215" y="475.16">Deployment frequency</tspan></text>
 <g id="icon-group_5">
 <path class="icon-bg" d="M1208 447V446H1207H1173C1168.03 446 1164 450.029 1164 455V479C1164 483.971 1168.03 488 1173 488H1207H1208V487V447Z" fill="#63A657" stroke="#63A657" stroke-width="2"/>
-<path class="icon" d="M1172 461.4H1178V481H1172V461.4ZM1183.2 453H1188.8V481H1183.2V453ZM1194.4 469H1200V481H1194.4V469Z" fill="white"/>
+<path class="icon" d="M1172 461.4H1178V481H1172V461.4ZM1183.2 453H1188.8V481H1183.2V453ZM1194.4 469H1200V481H1194.4V469Z" fill="#FCFCFC"/>
 </g>
 </g>
 <g class="entity metric none" id="change-fail-rate" >
-<rect class="entity-box" x="1164" y="509" width="370" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="1164" y="509" width="370" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_6" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.015em"><tspan x="1215" y="538.16">Change fail rate</tspan></text>
 <g id="icon-group_6">
 <path class="icon-bg" d="M1208 510V509H1207H1173C1168.03 509 1164 513.029 1164 518V542C1164 546.971 1168.03 551 1173 551H1207H1208V550V510Z" fill="#63A657" stroke="#63A657" stroke-width="2"/>
-<path class="icon" d="M1172 524.4H1178V544H1172V524.4ZM1183.2 516H1188.8V544H1183.2V516ZM1194.4 532H1200V544H1194.4V532Z" fill="white"/>
+<path class="icon" d="M1172 524.4H1178V544H1172V524.4ZM1183.2 516H1188.8V544H1183.2V516ZM1194.4 532H1200V544H1194.4V532Z" fill="#FCFCFC"/>
 </g>
 </g>
-<text id="Software Delivery Performance" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1165" y="311.02">Software Delivery&#10;</tspan><tspan x="1165" y="346.02">Performance</tspan></text>
+<text id="Software Delivery Performance" fill="#FCFCFC" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1165" y="311.02">Software Delivery&#10;</tspan><tspan x="1165" y="346.02">Performance</tspan></text>
 <g class="entity metric none" id="time-to-repair" >
-<rect class="entity-box" x="1164" y="572" width="370" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="1164" y="572" width="370" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_7" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.015em"><tspan x="1215" y="601.16">Time to restore service</tspan></text>
 <g id="icon-group_7">
 <path class="icon-bg" d="M1208 573V572H1207H1173C1168.03 572 1164 576.029 1164 581V605C1164 609.971 1168.03 614 1173 614H1207H1208V613V573Z" fill="#63A657" stroke="#63A657" stroke-width="2"/>
-<path class="icon" d="M1172 587.4H1178V607H1172V587.4ZM1183.2 579H1188.8V607H1183.2V579ZM1194.4 595H1200V607H1194.4V595Z" fill="white"/>
+<path class="icon" d="M1172 587.4H1178V607H1172V587.4ZM1183.2 579H1188.8V607H1183.2V579ZM1194.4 595H1200V607H1194.4V595Z" fill="#FCFCFC"/>
 </g>
 </g>
 </g>
 <g class="entity capability technical" id="continuous-delivery" >
-<rect class="entity-box" x="679" y="576" width="311" height="110" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="679" y="576" width="311" height="110" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_8" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="755" y="623.84">Continuous&#10;</tspan><tspan x="755" y="655.84">delivery</tspan></text>
 <g id="icon-group_8">
 <path class="icon-bg" d="M740 577V576H739H688C683.029 576 679 580.029 679 585V677C679 681.971 683.029 686 688 686H739H740V685V577Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -91,7 +91,7 @@
 </g>
 </g>
 <g class="entity capability technical" id="shifting-left-on-security" >
-<rect class="entity-box" x="679" y="395" width="311" height="110" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="679" y="395" width="311" height="110" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_9" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="755" y="442.84">Shift left&#10;</tspan><tspan x="755" y="474.84">on security</tspan></text>
 <g id="icon-group_9">
 <path class="icon-bg" d="M740 396V395H739H688C683.029 395 679 399.029 679 404V496C679 500.971 683.029 505 688 505H739H740V504V396Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -99,7 +99,7 @@
 </g>
 </g>
 <g class="entity capability technical" id="streamlining-change-approval" >
-<rect class="entity-box" x="679" y="757" width="311" height="110" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="679" y="757" width="311" height="110" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_10" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="755" y="804.84">Streamlined&#10;</tspan><tspan x="755" y="836.84">change approval</tspan></text>
 <g id="icon-group_10">
 <path class="icon-bg" d="M740 758V757H739H688C683.029 757 679 761.029 679 766V858C679 862.971 683.029 867 688 867H739H740V866V758Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -107,7 +107,7 @@
 </g>
 </g>
 <g class="entity capability technical" id="generative-organizational-culture" >
-<rect class="entity-box" x="679" y="938" width="311" height="110" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="679" y="938" width="311" height="110" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_11" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="755" y="969.84">Generative&#10;</tspan><tspan x="755" y="1001.84">organizational&#10;</tspan><tspan x="755" y="1033.84">culture</tspan></text>
 <g id="icon-group_11">
 <path class="icon-bg" d="M740 939V938H739H688C683.029 938 679 942.029 679 947V1039C679 1043.97 683.029 1048 688 1048H739H740V1047V939Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -115,7 +115,7 @@
 </g>
 </g>
 <g class="entity capability technical" id="flexible-infrastructure" >
-<rect class="entity-box" x="38" y="141" width="285" height="75" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="38" y="141" width="285" height="75" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_12" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="114" y="173.84">Flexible&#10;</tspan><tspan x="114" y="201.84">infrastructure</tspan></text>
 <g id="icon-group_12">
 <path class="icon-bg" d="M99 142V141H98H47C42.0294 141 38 145.029 38 150V207C38 211.971 42.0294 216 47 216H98H99V215V142Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -123,7 +123,7 @@
 </g>
 </g>
 <g class="entity capability technical" id="documentation-quality" >
-<rect class="entity-box" x="340" y="140" width="285" height="75" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="340" y="140" width="285" height="75" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_13" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0em"><tspan x="416" y="172.84">Documentation&#10;</tspan><tspan x="416" y="200.84">quality</tspan></text>
 <g id="icon-group_13">
 <path class="icon-bg" d="M401 141V140H400H349C344.029 140 340 144.029 340 149V206C340 210.971 344.029 215 349 215H400H401V214V141Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -137,29 +137,29 @@
 </g>
 <g class="construct" id="organizational-performance" >
 <g id="Group 2">
-<rect id="Rectangle 4" x="1677" y="328" width="382" height="244" rx="25" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="Rectangle 4" x="1677" y="328" width="382" height="244" rx="25" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <path id="Rectangle 5" d="M1677 353C1677 339.193 1688.19 328 1702 328H2034C2047.81 328 2059 339.193 2059 353V426H1677V353Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
 <g class="entity outcome none" id="job-satisfaction" >
-<rect class="entity-box" x="1695" y="446" width="348" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="1695" y="446" width="348" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_14" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.025em"><tspan x="1746" y="475.16">Commercial</tspan></text>
 <g id="icon-group_14">
 <path class="icon-bg" d="M1739 447V446H1738H1704C1699.03 446 1695 450.029 1695 455V479C1695 483.971 1699.03 488 1704 488H1738H1739V487V447Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
-<path class="icon" d="M1723.7 461.533L1714.8 470.43L1709.95 465.597L1708.05 467.5L1714.8 474.25L1725.6 463.45L1723.7 461.533ZM1717.5 454C1710.05 454 1704 460.048 1704 467.5C1704 474.952 1710.05 481 1717.5 481C1724.95 481 1731 474.952 1731 467.5C1731 460.048 1724.95 454 1717.5 454ZM1717.5 478.3C1711.53 478.3 1706.7 473.467 1706.7 467.5C1706.7 461.533 1711.53 456.7 1717.5 456.7C1723.47 456.7 1728.3 461.533 1728.3 467.5C1728.3 473.467 1723.47 478.3 1717.5 478.3Z" fill="white"/>
+<path class="icon" d="M1723.7 461.533L1714.8 470.43L1709.95 465.597L1708.05 467.5L1714.8 474.25L1725.6 463.45L1723.7 461.533ZM1717.5 454C1710.05 454 1704 460.048 1704 467.5C1704 474.952 1710.05 481 1717.5 481C1724.95 481 1731 474.952 1731 467.5C1731 460.048 1724.95 454 1717.5 454ZM1717.5 478.3C1711.53 478.3 1706.7 473.467 1706.7 467.5C1706.7 461.533 1711.53 456.7 1717.5 456.7C1723.47 456.7 1728.3 461.533 1728.3 467.5C1728.3 473.467 1723.47 478.3 1717.5 478.3Z" fill="#FCFCFC"/>
 </g>
 </g>
 <g class="entity outcome none" id="job-satisfaction_2" >
-<rect class="entity-box" x="1695" y="506" width="348" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="1695" y="506" width="348" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_15" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.025em"><tspan x="1746" y="535.16">Non-Commercial</tspan></text>
 <g id="icon-group_15">
 <path class="icon-bg" d="M1739 507V506H1738H1704C1699.03 506 1695 510.029 1695 515V539C1695 543.971 1699.03 548 1704 548H1738H1739V547V507Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
-<path class="icon" d="M1723.7 521.533L1714.8 530.43L1709.95 525.597L1708.05 527.5L1714.8 534.25L1725.6 523.45L1723.7 521.533ZM1717.5 514C1710.05 514 1704 520.048 1704 527.5C1704 534.952 1710.05 541 1717.5 541C1724.95 541 1731 534.952 1731 527.5C1731 520.048 1724.95 514 1717.5 514ZM1717.5 538.3C1711.53 538.3 1706.7 533.467 1706.7 527.5C1706.7 521.533 1711.53 516.7 1717.5 516.7C1723.47 516.7 1728.3 521.533 1728.3 527.5C1728.3 533.467 1723.47 538.3 1717.5 538.3Z" fill="white"/>
+<path class="icon" d="M1723.7 521.533L1714.8 530.43L1709.95 525.597L1708.05 527.5L1714.8 534.25L1725.6 523.45L1723.7 521.533ZM1717.5 514C1710.05 514 1704 520.048 1704 527.5C1704 534.952 1710.05 541 1717.5 541C1724.95 541 1731 534.952 1731 527.5C1731 520.048 1724.95 514 1717.5 514ZM1717.5 538.3C1711.53 538.3 1706.7 533.467 1706.7 527.5C1706.7 521.533 1711.53 516.7 1717.5 516.7C1723.47 516.7 1728.3 521.533 1728.3 527.5C1728.3 533.467 1723.47 538.3 1717.5 538.3Z" fill="#FCFCFC"/>
 </g>
 </g>
 </g>
-<text id="Organizational Performance" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1700" y="372.02">Organizational&#10;</tspan><tspan x="1700" y="407.02">Performance</tspan></text>
+<text id="Organizational Performance" fill="#FCFCFC" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1700" y="372.02">Organizational&#10;</tspan><tspan x="1700" y="407.02">Performance</tspan></text>
 </g>
 <g class="entity capability technical" id="loosely-coupled-architecture" >
-<rect class="entity-box" x="96" y="717" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="96" y="717" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_16" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="756.84">Loosely coupled architecture</tspan></text>
 <g id="icon-group_16">
 <path class="icon-bg" d="M157 718V717H156H105C100.029 717 96 721.029 96 726V770C96 774.971 100.029 779 105 779H156H157V778V718Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -167,7 +167,7 @@
 </g>
 </g>
 <g class="entity capability technical" id="monitoring-and-observability" >
-<rect class="entity-box" x="96" y="792" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="96" y="792" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_17" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="831.84">Monitoring and observability</tspan></text>
 <g id="icon-group_17">
 <path class="icon-bg" d="M157 793V792H156H105C100.029 792 96 796.029 96 801V845C96 849.971 100.029 854 105 854H156H157V853V793Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -175,7 +175,7 @@
 </g>
 </g>
 <g class="entity capability technical" id="test-automation" >
-<rect class="entity-box" x="96" y="867" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="96" y="867" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_18" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="906.84">Test automation</tspan></text>
 <g id="icon-group_18">
 <path class="icon-bg" d="M157 868V867H156H105C100.029 867 96 871.029 96 876V920C96 924.971 100.029 929 105 929H156H157V928V868Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -183,7 +183,7 @@
 </g>
 </g>
 <g class="entity capability technical" id="test-data-management" >
-<rect class="entity-box" x="96" y="942" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="96" y="942" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_19" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="981.84">Test data management</tspan></text>
 <g id="icon-group_19">
 <path class="icon-bg" d="M157 943V942H156H105C100.029 942 96 946.029 96 951V995C96 999.971 100.029 1004 105 1004H156H157V1003V943Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -191,7 +191,7 @@
 </g>
 </g>
 <g class="entity capability technical" id="trunk-based-development" >
-<rect class="entity-box" x="96" y="1017" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="96" y="1017" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_20" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="1056.84">Trunk-based development</tspan></text>
 <g id="icon-group_20">
 <path class="icon-bg" d="M157 1018V1017H156H105C100.029 1017 96 1021.03 96 1026V1070C96 1074.97 100.029 1079 105 1079H156H157V1078V1018Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -199,7 +199,7 @@
 </g>
 </g>
 <g class="entity capability technical" id="version-control" >
-<rect class="entity-box" x="96" y="1092" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="96" y="1092" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_21" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="1131.84">Version control</tspan></text>
 <g id="icon-group_21">
 <path class="icon-bg" d="M157 1093V1092H156H105C100.029 1092 96 1096.03 96 1101V1145C96 1149.97 100.029 1154 105 1154H156H157V1153V1093Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -207,7 +207,7 @@
 </g>
 </g>
 <g class="entity capability technical" id="code-maintainability" >
-<rect class="entity-box" x="96" y="318" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="96" y="318" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_22" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="357.84">Code maintainability</tspan></text>
 <g id="icon-group_22">
 <path class="icon-bg" d="M157 319V318H156H105C100.029 318 96 322.029 96 327V371C96 375.971 100.029 380 105 380H156H157V379V319Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -215,7 +215,7 @@
 </g>
 </g>
 <g class="entity capability technical" id="continuous-integration" >
-<rect class="entity-box" x="96" y="393" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="96" y="393" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_23" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="432.84">Continuous integration</tspan></text>
 <g id="icon-group_23">
 <path class="icon-bg" d="M157 394V393H156H105C100.029 393 96 397.029 96 402V446C96 450.971 100.029 455 105 455H156H157V454V394Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -223,7 +223,7 @@
 </g>
 </g>
 <g class="entity capability technical" id="database-change-management" >
-<rect class="entity-box" x="96" y="468" width="472" height="74" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="96" y="468" width="472" height="74" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_24" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="499.84">Database change </tspan><tspan x="172" y="527.84">management</tspan></text>
 <g id="icon-group_24">
 <path class="icon-bg" d="M157 469V468H156H105C100.029 468 96 472.029 96 477V533C96 537.971 100.029 542 105 542H156H157V541V469Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -231,7 +231,7 @@
 </g>
 </g>
 <g class="entity capability technical" id="deployment-automation" >
-<rect class="entity-box" x="96" y="555" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="96" y="555" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_25" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="594.84">Deployment automation</tspan></text>
 <g id="icon-group_25">
 <path class="icon-bg" d="M157 556V555H156H105C100.029 555 96 559.029 96 564V608C96 612.971 100.029 617 105 617H156H157V616V556Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -239,7 +239,7 @@
 </g>
 </g>
 <g class="entity capability technical" id="teams-empowered-to-choose-tools" >
-<rect class="entity-box" x="96" y="630" width="472" height="74" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect class="entity-box" x="96" y="630" width="472" height="74" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_26" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="661.84">Empowering teams&#10;</tspan><tspan x="172" y="689.84">to choose tools</tspan></text>
 <g id="icon-group_26">
 <path class="icon-bg" d="M157 631V630H156H105C100.029 630 96 634.029 96 639V695C96 699.971 100.029 704 105 704H156H157V703V631Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
