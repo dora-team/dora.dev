@@ -53,4 +53,4 @@ npm run int-test
 
 You may review [package.json](./package.json) for details on execution
 
-**NOTE:** Be aware that anytime a Test is execute, if the extension is active, you will trigger emails to the test.  This is not part of the testing code, but a result of the extension monitoring the same collection.  [*A nice(?) by-product of the full integration test of the environment*]
+**NOTE:** Be aware that anytime a Test is execute for the first time, if the Send Mail extension is active, you will trigger emails from the test.  This is not part of the *wrapped testing function*, but a result of the *deployed function* monitoring the same collection. However, subsequent tests will not trigger the deployed Cloud Function since the function will only trigger on a Document *creation* event.  If you wish to trigger an email, just delete the `mockDataReferenceID` document with the `email-inquiry` collection.
