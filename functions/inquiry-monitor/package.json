@@ -8,15 +8,18 @@
       "firebase-functions": "^4.4.1"
     },
     "devDependencies": {
+      "cross-env": "^7.0.3",
       "eslint": "^7.23.0",
       "eslint-plugin-promise": "^4.3.1",
       "firebase-functions-test": "^3.1.0",
       "jest": "^29.6.2"
     },
     "scripts": {
-      "test": "firebase emulators:exec 'npm run emulator-test' --only firestore,functions",
-      "emulator-test": "jest",
-      "shell": "firebase functions:shell"
+      "test": "cross-env MONITOR_SEND_TO=noreply@example.com firebase emulators:exec 'npm run jest-test' --only firestore,functions",
+      "int-test": "cross-env MONITOR_SEND_TO=noreply@example.com npm run jest-test",
+      "jest-test": "jest",
+      "deploy": "firebase deploy --only functions --project doradotdev-staging",
+      "emulator": "firebase emulators:start --only functions,firestore"
   },
     "engines": {
       "node": "16"
