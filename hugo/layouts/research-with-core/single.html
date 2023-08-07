@@ -50,9 +50,9 @@
         ">
 
         <p>DORA Core is a collection of capabilities, metrics, and outcomes that represent the most firmly-established findings from across the history and breadth of DORA’s research program.</p>
-        <p></p>
         
-        <object data="dora-core-model.svg" id="dora-core-model" type="image/svg+xml" style="width:100%;border:1px solid #ddd;border-radius:.5em;"></object>
+         {{ $svg := resources.Get "core/dora-core-model.svg" }}
+        <object data="{{ }}" id="dora-core-model" type="image/svg+xml" style="width:100%;border:1px solid #ddd;border-radius:.5em;"></object>
 
     <div x-cloak class="modal-container" x-show="$store.coreModal.open">
         <div x-cloak class="modal" x-show="$store.coreModal.open" @click.outside="$store.coreModal.open=false"
