@@ -30,4 +30,4 @@ sed -i '' 's/id="connector"/class="connector"/' dora-core-model.svg
 sed -i '' 's/id="connector_[0-9]*"/class="connector"/' dora-core-model.svg
 
 # inject svg stylesheet tag at beginning of SVG so it can be styled via external styles
-sed -i '' '1s/^/<?xml-stylesheet type="text\/css" href="core-model.css"?> /' dora-core-model.svg
+sed -i '' '1s/^/<?xml-stylesheet type="text\/css" href="\/core\/dora-core-model.css"?> /' dora-core-model.svg

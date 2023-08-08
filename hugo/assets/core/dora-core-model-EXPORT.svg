@@ -1,89 +1,83 @@
 <svg width="2112" height="1188" viewBox="0 0 2112 1188" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="dora-core-model-EXPORT" clip-path="url(#clip0_5_88)">
 <rect width="2112" height="1188" fill="white"/>
+<path id="performance --&#62; outcomes" d="M1785 49L1775.01 43.2122L1774.99 54.7592L1785 49ZM1419 49C1598.96 49 1601.93 49.7252 1776.01 49.9871L1776.01 47.9871C1601.97 47.7253 1598.94 47 1419 47V49Z" fill="#999999"/>
+<path id="Rectangle 8 --&#62; Rectangle 9" d="M1269 49.7068L1259 43.9333V55.4803L1269 49.7068ZM905 50.7068H1260V48.7068H905V50.7068Z" fill="#999999"/>
 <rect id="Rectangle 13" width="303" height="101" fill="#F5F5F5"/>
 <g id="construct#technical-capabilities">
-<rect id="Rectangle 1" x="82" y="253" width="500" height="916" rx="16" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="Rectangle 1" x="82" y="253" width="500" height="916" rx="16" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="TECHNICAL CAPABILITIES" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.225em"><tspan x="130.21" y="296.16">TECHNICAL CAPABILITIES</tspan></text>
-</g>
-<g id="connector">
-<path d="M581 708C579.333 708 578 709.333 578 711C578 712.667 579.333 714 581 714C582.667 714 584 712.667 584 711C584 709.333 582.667 708 581 708Z" fill="white"/>
-<path d="M680 450L668.594 448.201L672.739 458.978L680 450ZM579 711C579 709.886 579.886 709 581 709V707C578.781 707 577 708.781 577 711H579ZM581 709C582.114 709 583 709.886 583 711H585C585 708.781 583.219 707 581 707V709ZM583 711C583 712.114 582.114 713 581 713V715C583.219 715 585 713.219 585 711H583ZM581 713C579.886 713 579 712.114 579 711H577C577 713.219 578.781 715 581 715V713ZM584 712C590.102 712 595.332 708.131 599.874 701.733C604.422 695.325 608.417 686.199 612.035 675.255C619.275 653.357 625.099 623.88 630.746 593.546C636.399 563.178 641.877 531.939 648.426 506.409C651.7 493.646 655.232 482.347 659.173 473.319C663.126 464.263 667.436 457.62 672.197 454.031L670.993 452.434C665.809 456.342 661.33 463.377 657.34 472.519C653.338 481.688 649.774 493.104 646.489 505.912C639.918 531.526 634.425 562.855 628.78 593.18C623.128 623.539 617.326 652.88 610.136 674.627C606.54 685.506 602.62 694.41 598.243 700.575C593.859 706.751 589.153 710 584 710V712Z" fill="#999999"/>
-</g>
-<g id="connector_2">
-<path d="M581 708C579.333 708 578 709.333 578 711C578 712.667 579.333 714 581 714C582.667 714 584 712.667 584 711C584 709.333 582.667 708 581 708Z" fill="white"/>
-<path d="M680 631L669.243 626.801L670.985 638.216L680 631ZM579 711C579 709.886 579.886 709 581 709V707C578.781 707 577 708.781 577 711H579ZM581 709C582.114 709 583 709.886 583 711H585C585 708.781 583.219 707 581 707V709ZM583 711C583 712.114 582.114 713 581 713V715C583.219 715 585 713.219 585 711H583ZM581 713C579.886 713 579 712.114 579 711H577C577 713.219 578.781 715 581 715V713ZM584 712C607.039 712 619.252 694.472 630.474 676.202C636.127 666.998 641.535 657.586 647.983 649.783C654.415 641.999 661.807 635.916 671.362 633.323L670.838 631.393C660.738 634.133 653.02 640.547 646.441 648.509C639.878 656.451 634.373 666.033 628.77 675.155C617.477 693.54 605.795 710 584 710V712Z" fill="#999999"/>
 </g>
 <g id="construct#job-satisfaction">
 <g id="Group 1">
-<rect id="Rectangle 6" x="1677" y="803" width="382" height="279" rx="25" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="Rectangle 6" x="1677" y="803" width="382" height="279" rx="25" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <path id="Rectangle 7" d="M1677 828C1677 814.193 1688.19 803 1702 803H2034C2047.81 803 2059 814.193 2059 828V878H1677V828Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
 <g id="entity.outcome.none#deployment-pain">
-<rect id="entity-box" x="1695" y="898" width="348" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box" x="1695" y="898" width="348" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.025em"><tspan x="1746" y="927.16">Less deployment pain</tspan></text>
 <g id="icon-group">
 <path id="icon-bg" d="M1739 899V898H1738H1704C1699.03 898 1695 902.029 1695 907V931C1695 935.971 1699.03 940 1704 940H1738H1739V939V899Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
-<path id="icon" d="M1723.7 913.533L1714.8 922.43L1709.95 917.597L1708.05 919.5L1714.8 926.25L1725.6 915.45L1723.7 913.533ZM1717.5 906C1710.05 906 1704 912.048 1704 919.5C1704 926.952 1710.05 933 1717.5 933C1724.95 933 1731 926.952 1731 919.5C1731 912.048 1724.95 906 1717.5 906ZM1717.5 930.3C1711.53 930.3 1706.7 925.467 1706.7 919.5C1706.7 913.533 1711.53 908.7 1717.5 908.7C1723.47 908.7 1728.3 913.533 1728.3 919.5C1728.3 925.467 1723.47 930.3 1717.5 930.3Z" fill="white"/>
+<path id="icon" d="M1723.7 913.533L1714.8 922.43L1709.95 917.597L1708.05 919.5L1714.8 926.25L1725.6 915.45L1723.7 913.533ZM1717.5 906C1710.05 906 1704 912.048 1704 919.5C1704 926.952 1710.05 933 1717.5 933C1724.95 933 1731 926.952 1731 919.5C1731 912.048 1724.95 906 1717.5 906ZM1717.5 930.3C1711.53 930.3 1706.7 925.467 1706.7 919.5C1706.7 913.533 1711.53 908.7 1717.5 908.7C1723.47 908.7 1728.3 913.533 1728.3 919.5C1728.3 925.467 1723.47 930.3 1717.5 930.3Z" fill="#FCFCFC"/>
 </g>
 </g>
 <g id="entity.outcome.none#rework">
-<rect id="entity-box_2" x="1695" y="959" width="348" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_2" x="1695" y="959" width="348" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_2" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.025em"><tspan x="1746" y="988.16">Less rework</tspan></text>
 <g id="icon-group_2">
 <path id="icon-bg_2" d="M1739 960V959H1738H1704C1699.03 959 1695 963.029 1695 968V992C1695 996.971 1699.03 1001 1704 1001H1738H1739V1000V960Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
-<path id="icon_2" d="M1723.7 974.533L1714.8 983.43L1709.95 978.597L1708.05 980.5L1714.8 987.25L1725.6 976.45L1723.7 974.533ZM1717.5 967C1710.05 967 1704 973.048 1704 980.5C1704 987.952 1710.05 994 1717.5 994C1724.95 994 1731 987.952 1731 980.5C1731 973.048 1724.95 967 1717.5 967ZM1717.5 991.3C1711.53 991.3 1706.7 986.467 1706.7 980.5C1706.7 974.533 1711.53 969.7 1717.5 969.7C1723.47 969.7 1728.3 974.533 1728.3 980.5C1728.3 986.467 1723.47 991.3 1717.5 991.3Z" fill="white"/>
+<path id="icon_2" d="M1723.7 974.533L1714.8 983.43L1709.95 978.597L1708.05 980.5L1714.8 987.25L1725.6 976.45L1723.7 974.533ZM1717.5 967C1710.05 967 1704 973.048 1704 980.5C1704 987.952 1710.05 994 1717.5 994C1724.95 994 1731 987.952 1731 980.5C1731 973.048 1724.95 967 1717.5 967ZM1717.5 991.3C1711.53 991.3 1706.7 986.467 1706.7 980.5C1706.7 974.533 1711.53 969.7 1717.5 969.7C1723.47 969.7 1728.3 974.533 1728.3 980.5C1728.3 986.467 1723.47 991.3 1717.5 991.3Z" fill="#FCFCFC"/>
 </g>
 </g>
 <g id="entity.outcome.none#burnout">
-<rect id="entity-box_3" x="1695" y="1019" width="348" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_3" x="1695" y="1019" width="348" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_3" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.025em"><tspan x="1746" y="1048.16">Less burnout</tspan></text>
 <g id="icon-group_3">
 <path id="icon-bg_3" d="M1739 1020V1019H1738H1704C1699.03 1019 1695 1023.03 1695 1028V1052C1695 1056.97 1699.03 1061 1704 1061H1738H1739V1060V1020Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
-<path id="icon_3" d="M1723.7 1034.53L1714.8 1043.43L1709.95 1038.6L1708.05 1040.5L1714.8 1047.25L1725.6 1036.45L1723.7 1034.53ZM1717.5 1027C1710.05 1027 1704 1033.05 1704 1040.5C1704 1047.95 1710.05 1054 1717.5 1054C1724.95 1054 1731 1047.95 1731 1040.5C1731 1033.05 1724.95 1027 1717.5 1027ZM1717.5 1051.3C1711.53 1051.3 1706.7 1046.47 1706.7 1040.5C1706.7 1034.53 1711.53 1029.7 1717.5 1029.7C1723.47 1029.7 1728.3 1034.53 1728.3 1040.5C1728.3 1046.47 1723.47 1051.3 1717.5 1051.3Z" fill="white"/>
+<path id="icon_3" d="M1723.7 1034.53L1714.8 1043.43L1709.95 1038.6L1708.05 1040.5L1714.8 1047.25L1725.6 1036.45L1723.7 1034.53ZM1717.5 1027C1710.05 1027 1704 1033.05 1704 1040.5C1704 1047.95 1710.05 1054 1717.5 1054C1724.95 1054 1731 1047.95 1731 1040.5C1731 1033.05 1724.95 1027 1717.5 1027ZM1717.5 1051.3C1711.53 1051.3 1706.7 1046.47 1706.7 1040.5C1706.7 1034.53 1711.53 1029.7 1717.5 1029.7C1723.47 1029.7 1728.3 1034.53 1728.3 1040.5C1728.3 1046.47 1723.47 1051.3 1717.5 1051.3Z" fill="#FCFCFC"/>
 </g>
 </g>
-<text id="Job Satisfaction" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1700" y="851.02">Job Satisfaction</tspan></text>
+<text id="Wellbeing" fill="#FCFCFC" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1700" y="851.02">Wellbeing</tspan></text>
 </g>
 </g>
 <g id="construct#software-delivery-performance">
-<rect id="Rectangle 2" x="1147" y="267" width="404" height="366" rx="25" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="Rectangle 2" x="1147" y="267" width="404" height="366" rx="25" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <path id="Rectangle 3" d="M1147 292C1147 278.193 1158.19 267 1172 267H1526C1539.81 267 1551 278.193 1551 292V365H1147V292Z" fill="#63A657" stroke="#63A657" stroke-width="2"/>
 <g id="entity.metric.none#change-lead-time">
-<rect id="entity-box_4" x="1164" y="382" width="370" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_4" x="1164" y="382" width="370" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_4" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.015em"><tspan x="1215" y="411.16">Change lead time</tspan></text>
 <g id="icon-group_4">
 <path id="icon-bg_4" d="M1208 383V382H1207H1173C1168.03 382 1164 386.029 1164 391V415C1164 419.971 1168.03 424 1173 424H1207H1208V423V383Z" fill="#63A657" stroke="#63A657" stroke-width="2"/>
-<path id="icon_4" d="M1172 397.4H1178V417H1172V397.4ZM1183.2 389H1188.8V417H1183.2V389ZM1194.4 405H1200V417H1194.4V405Z" fill="white"/>
+<path id="icon_4" d="M1172 397.4H1178V417H1172V397.4ZM1183.2 389H1188.8V417H1183.2V389ZM1194.4 405H1200V417H1194.4V405Z" fill="#FCFCFC"/>
 </g>
 </g>
 <g id="entity.metric.none#deployment-frequency">
-<rect id="entity-box_5" x="1164" y="446" width="370" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_5" x="1164" y="446" width="370" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_5" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.015em"><tspan x="1215" y="475.16">Deployment frequency</tspan></text>
 <g id="icon-group_5">
 <path id="icon-bg_5" d="M1208 447V446H1207H1173C1168.03 446 1164 450.029 1164 455V479C1164 483.971 1168.03 488 1173 488H1207H1208V487V447Z" fill="#63A657" stroke="#63A657" stroke-width="2"/>
-<path id="icon_5" d="M1172 461.4H1178V481H1172V461.4ZM1183.2 453H1188.8V481H1183.2V453ZM1194.4 469H1200V481H1194.4V469Z" fill="white"/>
+<path id="icon_5" d="M1172 461.4H1178V481H1172V461.4ZM1183.2 453H1188.8V481H1183.2V453ZM1194.4 469H1200V481H1194.4V469Z" fill="#FCFCFC"/>
 </g>
 </g>
 <g id="entity.metric.none#change-fail-rate">
-<rect id="entity-box_6" x="1164" y="509" width="370" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_6" x="1164" y="509" width="370" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_6" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.015em"><tspan x="1215" y="538.16">Change fail rate</tspan></text>
 <g id="icon-group_6">
 <path id="icon-bg_6" d="M1208 510V509H1207H1173C1168.03 509 1164 513.029 1164 518V542C1164 546.971 1168.03 551 1173 551H1207H1208V550V510Z" fill="#63A657" stroke="#63A657" stroke-width="2"/>
-<path id="icon_6" d="M1172 524.4H1178V544H1172V524.4ZM1183.2 516H1188.8V544H1183.2V516ZM1194.4 532H1200V544H1194.4V532Z" fill="white"/>
+<path id="icon_6" d="M1172 524.4H1178V544H1172V524.4ZM1183.2 516H1188.8V544H1183.2V516ZM1194.4 532H1200V544H1194.4V532Z" fill="#FCFCFC"/>
 </g>
 </g>
-<text id="Software Delivery Performance" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1165" y="311.02">Software Delivery&#10;</tspan><tspan x="1165" y="346.02">Performance</tspan></text>
+<text id="Software Delivery Performance" fill="#FCFCFC" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1165" y="311.02">Software Delivery&#10;</tspan><tspan x="1165" y="346.02">Performance</tspan></text>
 <g id="entity.metric.none#time-to-repair">
-<rect id="entity-box_7" x="1164" y="572" width="370" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_7" x="1164" y="572" width="370" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_7" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.015em"><tspan x="1215" y="601.16">Time to restore service</tspan></text>
 <g id="icon-group_7">
 <path id="icon-bg_7" d="M1208 573V572H1207H1173C1168.03 572 1164 576.029 1164 581V605C1164 609.971 1168.03 614 1173 614H1207H1208V613V573Z" fill="#63A657" stroke="#63A657" stroke-width="2"/>
-<path id="icon_7" d="M1172 587.4H1178V607H1172V587.4ZM1183.2 579H1188.8V607H1183.2V579ZM1194.4 595H1200V607H1194.4V595Z" fill="white"/>
+<path id="icon_7" d="M1172 587.4H1178V607H1172V587.4ZM1183.2 579H1188.8V607H1183.2V579ZM1194.4 595H1200V607H1194.4V595Z" fill="#FCFCFC"/>
 </g>
 </g>
 </g>
 <g id="entity.capability.technical#continuous-delivery">
-<rect id="entity-box_8" x="679" y="576" width="311" height="110" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_8" x="679" y="576" width="311" height="110" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_8" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="755" y="623.84">Continuous&#10;</tspan><tspan x="755" y="655.84">delivery</tspan></text>
 <g id="icon-group_8">
 <path id="icon-bg_8" d="M740 577V576H739H688C683.029 576 679 580.029 679 585V677C679 681.971 683.029 686 688 686H739H740V685V577Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -91,7 +85,7 @@
 </g>
 </g>
 <g id="entity.capability.technical#shifting-left-on-security">
-<rect id="entity-box_9" x="679" y="395" width="311" height="110" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_9" x="679" y="395" width="311" height="110" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_9" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="755" y="442.84">Shift left&#10;</tspan><tspan x="755" y="474.84">on security</tspan></text>
 <g id="icon-group_9">
 <path id="icon-bg_9" d="M740 396V395H739H688C683.029 395 679 399.029 679 404V496C679 500.971 683.029 505 688 505H739H740V504V396Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -99,23 +93,23 @@
 </g>
 </g>
 <g id="entity.capability.technical#streamlining-change-approval">
-<rect id="entity-box_10" x="679" y="757" width="311" height="110" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
-<text id="entity-name_10" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="755" y="804.84">Streamlined&#10;</tspan><tspan x="755" y="836.84">change approval</tspan></text>
+<rect id="entity-box_10" x="679" y="940" width="311" height="110" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
+<text id="entity-name_10" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="755" y="987.84">Streamlined&#10;</tspan><tspan x="755" y="1019.84">change approval</tspan></text>
 <g id="icon-group_10">
-<path id="icon-bg_10" d="M740 758V757H739H688C683.029 757 679 761.029 679 766V858C679 862.971 683.029 867 688 867H739H740V866V758Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
-<path id="icon_10" d="M724.351 812.958C724.432 812.333 724.473 811.688 724.473 811C724.473 810.333 724.432 809.667 724.331 809.042L728.44 805.75C728.804 805.458 728.905 804.896 728.683 804.479L724.797 797.562C724.554 797.104 724.048 796.958 723.602 797.104L718.765 799.104C717.753 798.312 716.68 797.646 715.486 797.146L714.758 791.854C714.677 791.354 714.272 791 713.786 791H706.014C705.528 791 705.144 791.354 705.063 791.854L704.334 797.146C703.14 797.646 702.047 798.333 701.055 799.104L696.218 797.104C695.773 796.937 695.267 797.104 695.024 797.562L691.158 804.479C690.915 804.917 690.996 805.458 691.401 805.75L695.509 809.042C695.408 809.667 695.327 810.354 695.327 811C695.327 811.646 695.368 812.333 695.469 812.958L691.36 816.25C690.996 816.542 690.895 817.104 691.117 817.521L695.003 824.438C695.246 824.896 695.752 825.042 696.198 824.896L701.035 822.896C702.047 823.687 703.12 824.354 704.314 824.854L705.042 830.146C705.144 830.646 705.528 831 706.014 831H713.786C714.272 831 714.677 830.646 714.737 830.146L715.466 824.854C716.66 824.354 717.753 823.687 718.745 822.896L723.582 824.896C724.027 825.062 724.533 824.896 724.776 824.438L728.662 817.521C728.905 817.062 728.804 816.542 728.419 816.25L724.351 812.958ZM709.9 818.5C705.893 818.5 702.614 815.125 702.614 811C702.614 806.875 705.893 803.5 709.9 803.5C713.907 803.5 717.186 806.875 717.186 811C717.186 815.125 713.907 818.5 709.9 818.5Z" fill="white"/>
+<path id="icon-bg_10" d="M740 941V940H739H688C683.029 940 679 944.029 679 949V1041C679 1045.97 683.029 1050 688 1050H739H740V1049V941Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
+<path id="icon_10" d="M724.351 995.958C724.432 995.333 724.473 994.688 724.473 994C724.473 993.333 724.432 992.667 724.331 992.042L728.44 988.75C728.804 988.458 728.905 987.896 728.683 987.479L724.797 980.562C724.554 980.104 724.048 979.958 723.602 980.104L718.765 982.104C717.753 981.312 716.68 980.646 715.486 980.146L714.758 974.854C714.677 974.354 714.272 974 713.786 974H706.014C705.528 974 705.144 974.354 705.063 974.854L704.334 980.146C703.14 980.646 702.047 981.333 701.055 982.104L696.218 980.104C695.773 979.937 695.267 980.104 695.024 980.562L691.158 987.479C690.915 987.917 690.996 988.458 691.401 988.75L695.509 992.042C695.408 992.667 695.327 993.354 695.327 994C695.327 994.646 695.368 995.333 695.469 995.958L691.36 999.25C690.996 999.542 690.895 1000.1 691.117 1000.52L695.003 1007.44C695.246 1007.9 695.752 1008.04 696.198 1007.9L701.035 1005.9C702.047 1006.69 703.12 1007.35 704.314 1007.85L705.042 1013.15C705.144 1013.65 705.528 1014 706.014 1014H713.786C714.272 1014 714.677 1013.65 714.737 1013.15L715.466 1007.85C716.66 1007.35 717.753 1006.69 718.745 1005.9L723.582 1007.9C724.027 1008.06 724.533 1007.9 724.776 1007.44L728.662 1000.52C728.905 1000.06 728.804 999.542 728.419 999.25L724.351 995.958ZM709.9 1001.5C705.893 1001.5 702.614 998.125 702.614 994C702.614 989.875 705.893 986.5 709.9 986.5C713.907 986.5 717.186 989.875 717.186 994C717.186 998.125 713.907 1001.5 709.9 1001.5Z" fill="white"/>
 </g>
 </g>
 <g id="entity.capability.technical#generative-organizational-culture">
-<rect id="entity-box_11" x="679" y="938" width="311" height="110" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
-<text id="entity-name_11" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="755" y="969.84">Generative&#10;</tspan><tspan x="755" y="1001.84">organizational&#10;</tspan><tspan x="755" y="1033.84">culture</tspan></text>
+<rect id="entity-box_11" x="679" y="759" width="311" height="110" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
+<text id="entity-name_11" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="755" y="790.84">Generative&#10;</tspan><tspan x="755" y="822.84">organizational&#10;</tspan><tspan x="755" y="854.84">culture</tspan></text>
 <g id="icon-group_11">
-<path id="icon-bg_11" d="M740 939V938H739H688C683.029 938 679 942.029 679 947V1039C679 1043.97 683.029 1048 688 1048H739H740V1047V939Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
-<path id="icon_11" d="M724.351 993.958C724.432 993.333 724.473 992.688 724.473 992C724.473 991.333 724.432 990.667 724.331 990.042L728.44 986.75C728.804 986.458 728.905 985.896 728.683 985.479L724.797 978.562C724.554 978.104 724.048 977.958 723.602 978.104L718.765 980.104C717.753 979.312 716.68 978.646 715.486 978.146L714.758 972.854C714.677 972.354 714.272 972 713.786 972H706.014C705.528 972 705.144 972.354 705.063 972.854L704.334 978.146C703.14 978.646 702.047 979.333 701.055 980.104L696.218 978.104C695.773 977.937 695.267 978.104 695.024 978.562L691.158 985.479C690.915 985.917 690.996 986.458 691.401 986.75L695.509 990.042C695.408 990.667 695.327 991.354 695.327 992C695.327 992.646 695.368 993.333 695.469 993.958L691.36 997.25C690.996 997.542 690.895 998.104 691.117 998.521L695.003 1005.44C695.246 1005.9 695.752 1006.04 696.198 1005.9L701.035 1003.9C702.047 1004.69 703.12 1005.35 704.314 1005.85L705.042 1011.15C705.144 1011.65 705.528 1012 706.014 1012H713.786C714.272 1012 714.677 1011.65 714.737 1011.15L715.466 1005.85C716.66 1005.35 717.753 1004.69 718.745 1003.9L723.582 1005.9C724.027 1006.06 724.533 1005.9 724.776 1005.44L728.662 998.521C728.905 998.062 728.804 997.542 728.419 997.25L724.351 993.958ZM709.9 999.5C705.893 999.5 702.614 996.125 702.614 992C702.614 987.875 705.893 984.5 709.9 984.5C713.907 984.5 717.186 987.875 717.186 992C717.186 996.125 713.907 999.5 709.9 999.5Z" fill="white"/>
+<path id="icon-bg_11" d="M740 760V759H739H688C683.029 759 679 763.029 679 768V860C679 864.971 683.029 869 688 869H739H740V868V760Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
+<path id="icon_11" d="M724.351 814.958C724.432 814.333 724.473 813.688 724.473 813C724.473 812.333 724.432 811.667 724.331 811.042L728.44 807.75C728.804 807.458 728.905 806.896 728.683 806.479L724.797 799.562C724.554 799.104 724.048 798.958 723.602 799.104L718.765 801.104C717.753 800.312 716.68 799.646 715.486 799.146L714.758 793.854C714.677 793.354 714.272 793 713.786 793H706.014C705.528 793 705.144 793.354 705.063 793.854L704.334 799.146C703.14 799.646 702.047 800.333 701.055 801.104L696.218 799.104C695.773 798.937 695.267 799.104 695.024 799.562L691.158 806.479C690.915 806.917 690.996 807.458 691.401 807.75L695.509 811.042C695.408 811.667 695.327 812.354 695.327 813C695.327 813.646 695.368 814.333 695.469 814.958L691.36 818.25C690.996 818.542 690.895 819.104 691.117 819.521L695.003 826.438C695.246 826.896 695.752 827.042 696.198 826.896L701.035 824.896C702.047 825.687 703.12 826.354 704.314 826.854L705.042 832.146C705.144 832.646 705.528 833 706.014 833H713.786C714.272 833 714.677 832.646 714.737 832.146L715.466 826.854C716.66 826.354 717.753 825.687 718.745 824.896L723.582 826.896C724.027 827.062 724.533 826.896 724.776 826.438L728.662 819.521C728.905 819.062 728.804 818.542 728.419 818.25L724.351 814.958ZM709.9 820.5C705.893 820.5 702.614 817.125 702.614 813C702.614 808.875 705.893 805.5 709.9 805.5C713.907 805.5 717.186 808.875 717.186 813C717.186 817.125 713.907 820.5 709.9 820.5Z" fill="white"/>
 </g>
 </g>
 <g id="entity.capability.technical#flexible-infrastructure">
-<rect id="entity-box_12" x="38" y="141" width="285" height="75" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_12" x="38" y="141" width="285" height="75" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_12" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="114" y="173.84">Flexible&#10;</tspan><tspan x="114" y="201.84">infrastructure</tspan></text>
 <g id="icon-group_12">
 <path id="icon-bg_12" d="M99 142V141H98H47C42.0294 141 38 145.029 38 150V207C38 211.971 42.0294 216 47 216H98H99V215V142Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -123,7 +117,7 @@
 </g>
 </g>
 <g id="entity.capability.technical#documentation-quality">
-<rect id="entity-box_13" x="340" y="140" width="285" height="75" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_13" x="340" y="140" width="285" height="75" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_13" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0em"><tspan x="416" y="172.84">Documentation&#10;</tspan><tspan x="416" y="200.84">quality</tspan></text>
 <g id="icon-group_13">
 <path id="icon-bg_13" d="M401 141V140H400H349C344.029 140 340 144.029 340 149V206C340 210.971 344.029 215 349 215H400H401V214V141Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -131,34 +125,35 @@
 </g>
 </g>
 <g id="footer">
+<text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="2041.82" y="1133.26">1</tspan><tspan x="2073.43" y="1133.26">2&#10;</tspan></text>
 <text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="14" font-weight="500" letter-spacing="0em" text-decoration="underline"><tspan x="1965.31" y="1154.26"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></tspan></text>
-<text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="1977.75" y="1133.26">version 1.0.0rc8&#10;</tspan><tspan x="1760.12" y="1154.26"> Licensed by Google LLC under </tspan><tspan x="2081" y="1154.26"> </tspan></text>
+<text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="1981.67" y="1133.26">version 1.</tspan><tspan x="2047.52" y="1133.26">.0rc</tspan><tspan x="1760.12" y="1154.26"> Licensed by Google LLC under </tspan><tspan x="2081" y="1154.26"> </tspan></text>
 </g>
 <g id="construct#organizational-performance">
 <g id="Group 2">
-<rect id="Rectangle 4" x="1677" y="328" width="382" height="244" rx="25" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="Rectangle 4" x="1677" y="328" width="382" height="244" rx="25" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <path id="Rectangle 5" d="M1677 353C1677 339.193 1688.19 328 1702 328H2034C2047.81 328 2059 339.193 2059 353V426H1677V353Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
 <g id="entity.outcome.none#job-satisfaction">
-<rect id="entity-box_14" x="1695" y="446" width="348" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_14" x="1695" y="446" width="348" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_14" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.025em"><tspan x="1746" y="475.16">Commercial</tspan></text>
 <g id="icon-group_14">
 <path id="icon-bg_14" d="M1739 447V446H1738H1704C1699.03 446 1695 450.029 1695 455V479C1695 483.971 1699.03 488 1704 488H1738H1739V487V447Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
-<path id="icon_14" d="M1723.7 461.533L1714.8 470.43L1709.95 465.597L1708.05 467.5L1714.8 474.25L1725.6 463.45L1723.7 461.533ZM1717.5 454C1710.05 454 1704 460.048 1704 467.5C1704 474.952 1710.05 481 1717.5 481C1724.95 481 1731 474.952 1731 467.5C1731 460.048 1724.95 454 1717.5 454ZM1717.5 478.3C1711.53 478.3 1706.7 473.467 1706.7 467.5C1706.7 461.533 1711.53 456.7 1717.5 456.7C1723.47 456.7 1728.3 461.533 1728.3 467.5C1728.3 473.467 1723.47 478.3 1717.5 478.3Z" fill="white"/>
+<path id="icon_14" d="M1723.7 461.533L1714.8 470.43L1709.95 465.597L1708.05 467.5L1714.8 474.25L1725.6 463.45L1723.7 461.533ZM1717.5 454C1710.05 454 1704 460.048 1704 467.5C1704 474.952 1710.05 481 1717.5 481C1724.95 481 1731 474.952 1731 467.5C1731 460.048 1724.95 454 1717.5 454ZM1717.5 478.3C1711.53 478.3 1706.7 473.467 1706.7 467.5C1706.7 461.533 1711.53 456.7 1717.5 456.7C1723.47 456.7 1728.3 461.533 1728.3 467.5C1728.3 473.467 1723.47 478.3 1717.5 478.3Z" fill="#FCFCFC"/>
 </g>
 </g>
 <g id="entity.outcome.none#job-satisfaction_2">
-<rect id="entity-box_15" x="1695" y="506" width="348" height="42" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_15" x="1695" y="506" width="348" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_15" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.025em"><tspan x="1746" y="535.16">Non-Commercial</tspan></text>
 <g id="icon-group_15">
 <path id="icon-bg_15" d="M1739 507V506H1738H1704C1699.03 506 1695 510.029 1695 515V539C1695 543.971 1699.03 548 1704 548H1738H1739V547V507Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
-<path id="icon_15" d="M1723.7 521.533L1714.8 530.43L1709.95 525.597L1708.05 527.5L1714.8 534.25L1725.6 523.45L1723.7 521.533ZM1717.5 514C1710.05 514 1704 520.048 1704 527.5C1704 534.952 1710.05 541 1717.5 541C1724.95 541 1731 534.952 1731 527.5C1731 520.048 1724.95 514 1717.5 514ZM1717.5 538.3C1711.53 538.3 1706.7 533.467 1706.7 527.5C1706.7 521.533 1711.53 516.7 1717.5 516.7C1723.47 516.7 1728.3 521.533 1728.3 527.5C1728.3 533.467 1723.47 538.3 1717.5 538.3Z" fill="white"/>
+<path id="icon_15" d="M1723.7 521.533L1714.8 530.43L1709.95 525.597L1708.05 527.5L1714.8 534.25L1725.6 523.45L1723.7 521.533ZM1717.5 514C1710.05 514 1704 520.048 1704 527.5C1704 534.952 1710.05 541 1717.5 541C1724.95 541 1731 534.952 1731 527.5C1731 520.048 1724.95 514 1717.5 514ZM1717.5 538.3C1711.53 538.3 1706.7 533.467 1706.7 527.5C1706.7 521.533 1711.53 516.7 1717.5 516.7C1723.47 516.7 1728.3 521.533 1728.3 527.5C1728.3 533.467 1723.47 538.3 1717.5 538.3Z" fill="#FCFCFC"/>
 </g>
 </g>
 </g>
-<text id="Organizational Performance" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1700" y="372.02">Organizational&#10;</tspan><tspan x="1700" y="407.02">Performance</tspan></text>
+<text id="Organizational Performance" fill="#FCFCFC" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1700" y="372.02">Organizational&#10;</tspan><tspan x="1700" y="407.02">Performance</tspan></text>
 </g>
 <g id="entity.capability.technical#loosely-coupled-architecture">
-<rect id="entity-box_16" x="96" y="717" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_16" x="96" y="717" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_16" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="756.84">Loosely coupled architecture</tspan></text>
 <g id="icon-group_16">
 <path id="icon-bg_16" d="M157 718V717H156H105C100.029 717 96 721.029 96 726V770C96 774.971 100.029 779 105 779H156H157V778V718Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -166,7 +161,7 @@
 </g>
 </g>
 <g id="entity.capability.technical#monitoring-and-observability">
-<rect id="entity-box_17" x="96" y="792" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_17" x="96" y="792" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_17" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="831.84">Monitoring and observability</tspan></text>
 <g id="icon-group_17">
 <path id="icon-bg_17" d="M157 793V792H156H105C100.029 792 96 796.029 96 801V845C96 849.971 100.029 854 105 854H156H157V853V793Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -174,7 +169,7 @@
 </g>
 </g>
 <g id="entity.capability.technical#test-automation">
-<rect id="entity-box_18" x="96" y="867" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_18" x="96" y="867" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_18" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="906.84">Test automation</tspan></text>
 <g id="icon-group_18">
 <path id="icon-bg_18" d="M157 868V867H156H105C100.029 867 96 871.029 96 876V920C96 924.971 100.029 929 105 929H156H157V928V868Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -182,7 +177,7 @@
 </g>
 </g>
 <g id="entity.capability.technical#test-data-management">
-<rect id="entity-box_19" x="96" y="942" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_19" x="96" y="942" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_19" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="981.84">Test data management</tspan></text>
 <g id="icon-group_19">
 <path id="icon-bg_19" d="M157 943V942H156H105C100.029 942 96 946.029 96 951V995C96 999.971 100.029 1004 105 1004H156H157V1003V943Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -190,7 +185,7 @@
 </g>
 </g>
 <g id="entity.capability.technical#trunk-based-development">
-<rect id="entity-box_20" x="96" y="1017" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_20" x="96" y="1017" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_20" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="1056.84">Trunk-based development</tspan></text>
 <g id="icon-group_20">
 <path id="icon-bg_20" d="M157 1018V1017H156H105C100.029 1017 96 1021.03 96 1026V1070C96 1074.97 100.029 1079 105 1079H156H157V1078V1018Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -198,7 +193,7 @@
 </g>
 </g>
 <g id="entity.capability.technical#version-control">
-<rect id="entity-box_21" x="96" y="1092" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_21" x="96" y="1092" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_21" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="1131.84">Version control</tspan></text>
 <g id="icon-group_21">
 <path id="icon-bg_21" d="M157 1093V1092H156H105C100.029 1092 96 1096.03 96 1101V1145C96 1149.97 100.029 1154 105 1154H156H157V1153V1093Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -206,7 +201,7 @@
 </g>
 </g>
 <g id="entity.capability.technical#code-maintainability">
-<rect id="entity-box_22" x="96" y="318" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_22" x="96" y="318" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_22" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="357.84">Code maintainability</tspan></text>
 <g id="icon-group_22">
 <path id="icon-bg_22" d="M157 319V318H156H105C100.029 318 96 322.029 96 327V371C96 375.971 100.029 380 105 380H156H157V379V319Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -214,7 +209,7 @@
 </g>
 </g>
 <g id="entity.capability.technical#continuous-integration">
-<rect id="entity-box_23" x="96" y="393" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_23" x="96" y="393" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_23" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="432.84">Continuous integration</tspan></text>
 <g id="icon-group_23">
 <path id="icon-bg_23" d="M157 394V393H156H105C100.029 393 96 397.029 96 402V446C96 450.971 100.029 455 105 455H156H157V454V394Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -222,7 +217,7 @@
 </g>
 </g>
 <g id="entity.capability.technical#database-change-management">
-<rect id="entity-box_24" x="96" y="468" width="472" height="74" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_24" x="96" y="468" width="472" height="74" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_24" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="499.84">Database change </tspan><tspan x="172" y="527.84">management</tspan></text>
 <g id="icon-group_24">
 <path id="icon-bg_24" d="M157 469V468H156H105C100.029 468 96 472.029 96 477V533C96 537.971 100.029 542 105 542H156H157V541V469Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -230,7 +225,7 @@
 </g>
 </g>
 <g id="entity.capability.technical#deployment-automation">
-<rect id="entity-box_25" x="96" y="555" width="472" height="62" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_25" x="96" y="555" width="472" height="62" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_25" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="594.84">Deployment automation</tspan></text>
 <g id="icon-group_25">
 <path id="icon-bg_25" d="M157 556V555H156H105C100.029 555 96 559.029 96 564V608C96 612.971 100.029 617 105 617H156H157V616V556Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -238,7 +233,7 @@
 </g>
 </g>
 <g id="entity.capability.technical#teams-empowered-to-choose-tools">
-<rect id="entity-box_26" x="96" y="630" width="472" height="74" rx="9" fill="white" stroke="#CCCCCC" stroke-width="2"/>
+<rect id="entity-box_26" x="96" y="630" width="472" height="74" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_26" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="26" font-weight="500" letter-spacing="0.03em"><tspan x="172" y="661.84">Empowering teams&#10;</tspan><tspan x="172" y="689.84">to choose tools</tspan></text>
 <g id="icon-group_26">
 <path id="icon-bg_26" d="M157 631V630H156H105C100.029 630 96 634.029 96 639V695C96 699.971 100.029 704 105 704H156H157V703V631Z" fill="#33484F" stroke="#33484F" stroke-width="2"/>
@@ -257,72 +252,32 @@
 </g>
 </g>
 </g>
-<g id="Group 4">
-<path id="Rectangle 9" d="M1269 49.7068C1269 41.0322 1276.03 34 1284.71 34H1403.29C1411.97 34 1419 41.0322 1419 49.7068V49.7068C1419 58.3814 1411.97 65.4136 1403.29 65.4136H1284.71C1276.03 65.4136 1269 58.3814 1269 49.7068V49.7068Z" fill="#63A657"/>
+<path id="Rectangle 9" d="M1269 49.7068C1269 41.0322 1276.03 34 1284.71 34H1403.29C1411.97 34 1419 41.0322 1419 49.7068C1419 58.3814 1411.97 65.4136 1403.29 65.4136H1284.71C1276.03 65.4136 1269 58.3814 1269 49.7068Z" fill="#63A657"/>
 <text id="performance" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="20" font-weight="500" letter-spacing="0em"><tspan x="1283.12" y="54.8">performance</tspan></text>
-<path id="Rectangle 8" d="M755 49.7068C755 41.0322 762.032 34 770.707 34H889.293C897.968 34 905 41.0322 905 49.7068V49.7068C905 58.3814 897.968 65.4136 889.293 65.4136H770.707C762.032 65.4136 755 58.3814 755 49.7068V49.7068Z" fill="#33484F"/>
+<path id="Rectangle 8" d="M755 49.7068C755 41.0322 762.032 34 770.707 34H889.293C897.968 34 905 41.0322 905 49.7068C905 58.3814 897.968 65.4136 889.293 65.4136H770.707C762.032 65.4136 755 58.3814 755 49.7068Z" fill="#33484F"/>
 <text id="capabilities" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="20" font-weight="500" letter-spacing="0em"><tspan x="775.375" y="55.8">capabilities</tspan></text>
-<path id="Rectangle 10" d="M1785 49.7068C1785 41.0322 1792.03 34 1800.71 34H1919.29C1927.97 34 1935 41.0322 1935 49.7068V49.7068C1935 58.3814 1927.97 65.4136 1919.29 65.4136H1800.71C1792.03 65.4136 1785 58.3814 1785 49.7068V49.7068Z" fill="#005E8D"/>
+<path id="Rectangle 10" d="M1785 49.7068C1785 41.0322 1792.03 34 1800.71 34H1919.29C1927.97 34 1935 41.0322 1935 49.7068C1935 58.3814 1927.97 65.4136 1919.29 65.4136H1800.71C1792.03 65.4136 1785 58.3814 1785 49.7068Z" fill="#005E8D"/>
 <text id="outcomes" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="20" font-weight="500" letter-spacing="0em"><tspan x="1813.33" y="55.8">outcomes</tspan></text>
-<g id="legend-connector">
-<path d="M905 46.7068C903.333 46.7068 902 48.0401 902 49.7068C902 51.3735 903.333 52.7068 905 52.7068C906.667 52.7068 908 51.3735 908 49.7068C908 48.0401 906.667 46.7068 905 46.7068Z" fill="white"/>
-<path d="M1269 49.7068L1259 43.9333V55.4803L1269 49.7068ZM903 49.7068C903 48.5924 903.886 47.7068 905 47.7068V45.7068C902.781 45.7068 901 47.4878 901 49.7068H903ZM905 47.7068C906.114 47.7068 907 48.5924 907 49.7068H909C909 47.4878 907.219 45.7068 905 45.7068V47.7068ZM907 49.7068C907 50.8212 906.114 51.7068 905 51.7068V53.7068C907.219 53.7068 909 51.9257 909 49.7068H907ZM905 51.7068C903.886 51.7068 903 50.8212 903 49.7068H901C901 51.9257 902.781 53.7068 905 53.7068V51.7068ZM908 50.7068H1260V48.7068H908V50.7068Z" fill="#999999"/>
-</g>
 <rect id="Rectangle 11" x="1022" y="38" width="95.3143" height="24" rx="4" fill="white" stroke="#999999" stroke-width="2"/>
 <text id="predict" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="16" font-weight="500" letter-spacing="0em"><tspan x="1042.57" y="54.44">predict</tspan></text>
-<g id="legend-connector_2">
-<path d="M1419 46.7068C1417.33 46.7068 1416 48.0401 1416 49.7068C1416 51.3735 1417.33 52.7068 1419 52.7068C1420.67 52.7068 1422 51.3735 1422 49.7068C1422 48.0401 1420.67 46.7068 1419 46.7068Z" fill="white"/>
-<path d="M1785 49.7068L1775 43.9333V55.4803L1785 49.7068ZM1417 49.7068C1417 48.5924 1417.89 47.7068 1419 47.7068V45.7068C1416.78 45.7068 1415 47.4878 1415 49.7068H1417ZM1419 47.7068C1420.11 47.7068 1421 48.5924 1421 49.7068H1423C1423 47.4878 1421.22 45.7068 1419 45.7068V47.7068ZM1421 49.7068C1421 50.8212 1420.11 51.7068 1419 51.7068V53.7068C1421.22 53.7068 1423 51.9257 1423 49.7068H1421ZM1419 51.7068C1417.89 51.7068 1417 50.8212 1417 49.7068H1415C1415 51.9257 1416.78 53.7068 1419 53.7068V51.7068ZM1422 50.7068H1776V48.7068H1422V50.7068Z" fill="#999999"/>
-</g>
 <rect id="Rectangle 12" x="1537" y="38" width="95.3143" height="24" rx="4" fill="white" stroke="#999999" stroke-width="2"/>
 <text id="predicts" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="16" font-weight="500" letter-spacing="0em"><tspan x="1553.58" y="54.44">predicts</tspan></text>
-</g>
-<g id="connector_3">
-<path d="M1868 799C1866.33 799 1865 800.333 1865 802C1865 803.667 1866.33 805 1868 805C1869.67 805 1871 803.667 1871 802C1871 800.333 1869.67 799 1868 799Z" fill="white"/>
-<path d="M1868 573L1862.23 583H1873.77L1868 573ZM1866 802C1866 800.886 1866.89 800 1868 800V798C1865.78 798 1864 799.781 1864 802H1866ZM1868 800C1869.11 800 1870 800.886 1870 802H1872C1872 799.781 1870.22 798 1868 798V800ZM1870 802C1870 803.114 1869.11 804 1868 804V806C1870.22 806 1872 804.219 1872 802H1870ZM1868 804C1866.89 804 1866 803.114 1866 802H1864C1864 804.219 1865.78 806 1868 806V804ZM1869 799V582H1867V799H1869Z" fill="#999999"/>
-</g>
-<g id="connector_4">
-<path d="M989 628C987.333 628 986 629.333 986 631C986 632.667 987.333 634 989 634C990.667 634 992 632.667 992 631C992 629.333 990.667 628 989 628Z" fill="white"/>
-<path d="M1676 942.5L1666.89 935.41L1665.3 946.848L1676 942.5ZM987 631C987 629.886 987.886 629 989 629V627C986.781 627 985 628.781 985 631H987ZM989 629C990.114 629 991 629.886 991 631H993C993 628.781 991.219 627 989 627V629ZM991 631C991 632.114 990.114 633 989 633V635C991.219 635 993 633.219 993 631H991ZM989 633C987.886 633 987 632.114 987 631H985C985 633.219 986.781 635 989 635V633ZM992 632C1076.61 632 1140.22 648.337 1193.23 673.575C1246.26 698.821 1288.74 732.992 1331.11 768.746C1415.87 840.258 1500.09 918.01 1666.97 942.259L1667.25 940.28C1501 916.121 1417.17 838.739 1332.4 767.218C1290.02 731.455 1247.37 697.135 1194.09 671.769C1140.79 646.396 1076.89 630 992 630V632Z" fill="#999999"/>
-</g>
-<g id="connector_5">
-<path d="M989 809C987.333 809 986 810.333 986 812C986 813.667 987.333 815 989 815C990.667 815 992 813.667 992 812C992 810.333 990.667 809 989 809Z" fill="white"/>
-<path d="M1676 942.5L1666.61 935.779L1665.48 947.271L1676 942.5ZM987 812C987 810.886 987.886 810 989 810V808C986.781 808 985 809.781 985 812H987ZM989 810C990.114 810 991 810.886 991 812H993C993 809.781 991.219 808 989 808V810ZM991 812C991 813.114 990.114 814 989 814V816C991.219 816 993 814.219 993 812H991ZM989 814C987.886 814 987 813.114 987 812H985C985 814.219 986.781 816 989 816V814ZM992 813C1161.36 813 1246.75 837.013 1331.42 865.208C1416.17 893.43 1500.27 925.869 1666.91 942.615L1667.11 940.625C1500.71 923.903 1416.8 891.532 1332.05 863.311C1247.22 835.063 1161.62 811 992 811V813Z" fill="#999999"/>
-</g>
-<g id="connector_6">
-<path d="M989 990C987.333 990 986 991.333 986 993C986 994.667 987.333 996 989 996C990.667 996 992 994.667 992 993C992 991.333 990.667 990 989 990Z" fill="white"/>
-<path d="M1676 942.5L1665.99 936.748L1666.01 948.295L1676 942.5ZM987 993C987 991.886 987.886 991 989 991V989C986.781 989 985 990.781 985 993H987ZM989 991C990.114 991 991 991.886 991 993H993C993 990.781 991.219 989 989 989V991ZM991 993C991 994.114 990.114 995 989 995V997C991.219 997 993 995.219 993 993H991ZM989 995C987.886 995 987 994.114 987 993H985C985 995.219 986.781 997 989 997V995ZM992 994C1161.55 994 1247.1 981.662 1331.88 969.183C1416.61 956.711 1500.56 944.097 1667.02 943.519L1667.01 941.519C1500.42 942.098 1416.36 954.725 1331.59 967.204C1246.86 979.676 1161.42 992 992 992V994Z" fill="#999999"/>
-</g>
-<g id="connector_7">
-<path d="M1552 447C1550.33 447 1549 448.333 1549 450C1549 451.667 1550.33 453 1552 453C1553.67 453 1555 451.667 1555 450C1555 448.333 1553.67 447 1552 447Z" fill="white"/>
-<path d="M1676 450L1666 444.226V455.774L1676 450ZM1550 450C1550 448.886 1550.89 448 1552 448V446C1549.78 446 1548 447.781 1548 450H1550ZM1552 448C1553.11 448 1554 448.886 1554 450H1556C1556 447.781 1554.22 446 1552 446V448ZM1554 450C1554 451.114 1553.11 452 1552 452V454C1554.22 454 1556 452.219 1556 450H1554ZM1552 452C1550.89 452 1550 451.114 1550 450H1548C1548 452.219 1549.78 454 1552 454V452ZM1555 451H1667V449H1555V451Z" fill="#999999"/>
-</g>
-<g id="connector_8">
-<path d="M989 447C987.333 447 986 448.333 986 450C986 451.667 987.333 453 989 453C990.667 453 992 451.667 992 450C992 448.333 990.667 447 989 447Z" fill="white"/>
-<path d="M1146 450L1136 444.226V455.774L1146 450ZM987 450C987 448.886 987.886 448 989 448V446C986.781 446 985 447.781 985 450H987ZM989 448C990.114 448 991 448.886 991 450H993C993 447.781 991.219 446 989 446V448ZM991 450C991 451.114 990.114 452 989 452V454C991.219 454 993 452.219 993 450H991ZM989 452C987.886 452 987 451.114 987 450H985C985 452.219 986.781 454 989 454V452ZM992 451H1137V449H992V451Z" fill="#999999"/>
-</g>
-<g id="connector_9">
-<path d="M989 628C987.333 628 986 629.333 986 631C986 632.667 987.333 634 989 634C990.667 634 992 632.667 992 631C992 629.333 990.667 628 989 628Z" fill="white"/>
-<path d="M1146 450L1135.42 445.376L1136.71 456.851L1146 450ZM987 631C987 629.886 987.886 629 989 629V627C986.781 627 985 628.781 985 631H987ZM989 629C990.114 629 991 629.886 991 631H993C993 628.781 991.219 627 989 627V629ZM991 631C991 632.114 990.114 633 989 633V635C991.219 635 993 633.219 993 631H991ZM989 633C987.886 633 987 632.114 987 631H985C985 633.219 986.781 635 989 635V633ZM992 632C1010.92 632 1025.22 621.384 1037.05 605.51C1048.87 589.656 1058.35 568.403 1067.59 546.826C1076.86 525.197 1085.9 503.24 1096.87 485.768C1107.84 468.293 1120.62 455.516 1137.27 451.98L1136.85 450.024C1119.41 453.729 1106.24 467.073 1095.17 484.705C1084.1 502.341 1074.99 524.478 1065.75 546.038C1056.49 567.651 1047.11 588.682 1035.45 604.314C1023.81 619.927 1010.03 630 992 630V632Z" fill="#999999"/>
-</g>
-<g id="connector_10">
-<path d="M989 809C987.333 809 986 810.333 986 812C986 813.667 987.333 815 989 815C990.667 815 992 813.667 992 812C992 810.333 990.667 809 989 809Z" fill="white"/>
-<path d="M1146 450L1135.04 446.354L1137.36 457.666L1146 450ZM987 812C987 810.886 987.886 810 989 810V808C986.781 808 985 809.781 985 812H987ZM989 810C990.114 810 991 810.886 991 812H993C993 809.781 991.219 808 989 808V810ZM991 812C991 813.114 990.114 814 989 814V816C991.219 816 993 814.219 993 812H991ZM989 814C987.886 814 987 813.114 987 812H985C985 814.219 986.781 816 989 816V814ZM992 813C1001.67 813 1010.06 807.552 1017.45 798.277C1024.84 789.005 1031.33 775.789 1037.21 759.944C1048.98 728.248 1058.43 685.733 1067.68 642.448C1076.95 599.124 1086.02 555.019 1097.03 520.015C1102.54 502.515 1108.52 487.339 1115.23 475.698C1121.96 464.034 1129.33 456.056 1137.56 452.736L1136.81 450.881C1127.96 454.451 1120.3 462.897 1113.5 474.699C1106.69 486.523 1100.65 501.856 1095.13 519.415C1084.07 554.531 1074.98 598.752 1065.73 642.03C1056.47 685.348 1047.05 727.713 1035.34 759.247C1029.48 775.018 1023.08 788.003 1015.88 797.03C1008.7 806.053 1000.82 811 992 811V813Z" fill="#999999"/>
-</g>
-<g id="connector_11">
-<path d="M989 990C987.333 990 986 991.333 986 993C986 994.667 987.333 996 989 996C990.667 996 992 994.667 992 993C992 991.333 990.667 990 989 990Z" fill="white"/>
-<path d="M1146 450L1134.78 447.275L1138.03 458.355L1146 450ZM987 993C987 991.886 987.886 991 989 991V989C986.781 989 985 990.781 985 993H987ZM989 991C990.114 991 991 991.886 991 993H993C993 990.781 991.219 989 989 989V991ZM991 993C991 994.114 990.114 995 989 995V997C991.219 997 993 995.219 993 993H991ZM989 995C987.886 995 987 994.114 987 993H985C985 995.219 986.781 997 989 997V995ZM992 994C1001.87 994 1010.26 985.677 1017.57 971.886C1024.92 958.013 1031.4 938.211 1037.28 914.418C1049.04 866.816 1058.48 802.955 1067.75 737.909C1077.01 672.835 1086.1 606.567 1097.15 554.063C1102.68 527.81 1108.68 505.04 1115.43 487.602C1118.8 478.883 1122.35 471.524 1126.11 465.738C1129.86 459.944 1133.78 455.786 1137.88 453.394L1136.87 451.667C1132.4 454.277 1128.27 458.717 1124.43 464.65C1120.58 470.59 1116.97 478.085 1113.57 486.88C1106.76 504.468 1100.73 527.36 1095.19 553.651C1084.13 606.236 1075.03 672.585 1065.77 737.627C1056.5 802.698 1047.07 866.453 1035.34 913.938C1029.47 937.688 1023.04 957.297 1015.8 970.949C1008.52 984.683 1000.64 992 992 992V994Z" fill="#999999"/>
-</g>
-<g id="connector_12">
-<path d="M180.5 212C178.833 212 177.5 213.333 177.5 215C177.5 216.667 178.833 218 180.5 218C182.167 218 183.5 216.667 183.5 215C183.5 213.333 182.167 212 180.5 212Z" fill="white"/>
-<path d="M332 254L324.831 244.948L320.576 255.682L332 254ZM178.5 215C178.5 213.886 179.386 213 180.5 213V211C178.281 211 176.5 212.781 176.5 215H178.5ZM180.5 213C181.614 213 182.5 213.886 182.5 215H184.5C184.5 212.781 182.719 211 180.5 211V213ZM182.5 215C182.5 216.114 181.614 217 180.5 217V219C182.719 219 184.5 217.219 184.5 215H182.5ZM180.5 217C179.386 217 178.5 216.114 178.5 215H176.5C176.5 217.219 178.281 219 180.5 219V217ZM179.5 218C179.5 220.655 181.46 222.772 184.338 224.487C187.255 226.227 191.408 227.736 196.43 229.093C206.488 231.811 220.324 233.994 235.466 236.105C265.841 240.339 301.482 244.291 323.32 251.633L323.958 249.738C301.889 242.317 265.961 238.337 235.742 234.124C220.588 232.012 206.872 229.843 196.952 227.162C191.985 225.82 188.042 224.368 185.362 222.77C182.641 221.147 181.5 219.551 181.5 218H179.5Z" fill="#999999"/>
-</g>
-<g id="connector_13">
-<path d="M482.5 211C480.833 211 479.5 212.333 479.5 214C479.5 215.667 480.833 217 482.5 217C484.167 217 485.5 215.667 485.5 214C485.5 212.333 484.167 211 482.5 211Z" fill="white"/>
-<path d="M332 254L343.395 252.133L336.081 243.198L332 254ZM480.5 214C480.5 212.886 481.386 212 482.5 212V210C480.281 210 478.5 211.781 478.5 214H480.5ZM482.5 212C483.614 212 484.5 212.886 484.5 214H486.5C486.5 211.781 484.719 210 482.5 210V212ZM484.5 214C484.5 215.114 483.614 216 482.5 216V218C484.719 218 486.5 216.219 486.5 214H484.5ZM482.5 216C481.386 216 480.5 215.114 480.5 214H478.5C478.5 216.219 480.281 218 482.5 218V216ZM481.5 217C481.5 217.708 481.2 218.444 480.479 219.231C479.749 220.028 478.625 220.83 477.097 221.624C474.04 223.211 469.577 224.656 464.038 225.992C452.975 228.66 437.885 230.833 421.804 232.907C405.748 234.978 388.712 236.952 373.84 239.22C359 241.485 346.168 244.062 338.563 247.384L339.363 249.216C346.692 246.016 359.269 243.467 374.142 241.198C388.983 238.933 405.965 236.967 422.06 234.891C438.13 232.818 453.324 230.634 464.507 227.936C470.091 226.59 474.742 225.1 478.018 223.399C479.656 222.548 481.004 221.618 481.953 220.582C482.912 219.536 483.5 218.339 483.5 217H481.5Z" fill="#999999"/>
-</g>
 <line id="Line 1" y1="100.5" x2="2112" y2="100.5" stroke="#CCCCCC"/>
 <text id="url" fill="#33484F" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="18" letter-spacing="0em"><tspan x="353" y="56.62">dora.dev/core</tspan></text>
+<path id="entity.capability.technical#continuous-delivery --&#62; entity.capability.technical#generative-organizational-culture" d="M834.5 685V760" stroke="#999999" stroke-width="2"/>
+<path id="entity.capability.technical#generative-organizational-culture --&#62; construct#software-delivery-performance" d="M1146 450L1135.07 446.282L1137.31 457.608L1146 450ZM989 815C998.848 815 1007.4 809.521 1014.94 800.179C1022.48 790.842 1029.1 777.532 1035.1 761.576C1047.11 729.659 1056.74 686.853 1066.18 643.289C1075.63 599.685 1084.89 555.312 1096.14 520.133C1101.77 502.545 1107.88 487.305 1114.73 475.632C1121.6 463.938 1129.13 455.96 1137.55 452.68L1136.82 450.817C1127.78 454.339 1119.96 462.782 1113.01 474.619C1106.04 486.477 1099.88 501.876 1094.24 519.524C1082.95 554.818 1073.67 599.308 1064.23 642.865C1054.78 686.463 1045.17 729.118 1033.23 760.872C1027.26 776.752 1020.73 789.83 1013.39 798.922C1006.05 808.009 998.013 813 989 813V815Z" fill="#999999"/>
+<path id="entity.capability.technical#generative-organizational-culture --&#62; construct#job-satisfaction" d="M1676 942.5L1666.6 935.798L1665.49 947.292L1676 942.5ZM989 815C1159.12 815 1244.89 838.651 1329.94 866.418C1415.07 894.211 1499.56 926.154 1666.97 942.638L1667.17 940.648C1499.99 924.187 1415.69 892.309 1330.56 864.516C1245.35 836.698 1159.38 813 989 813V815Z" fill="#999999"/>
+<path id="entity.capability.technical#streamlining-change-approval --&#62; construct#software-delivery-performance" d="M1146 450L1134.8 447.181L1137.96 458.288L1146 450ZM989 996C999.046 996 1007.6 987.65 1015.06 973.786C1022.56 959.845 1029.17 939.947 1035.16 916.04C1047.16 868.211 1056.79 804.052 1066.24 738.722C1075.69 673.363 1084.96 606.824 1096.24 554.147C1101.88 527.807 1108.01 504.976 1114.9 487.51C1118.35 478.778 1121.97 471.414 1125.8 465.634C1129.64 459.846 1133.64 455.702 1137.82 453.334L1136.84 451.594C1132.28 454.175 1128.06 458.599 1124.13 464.529C1120.2 470.466 1116.52 477.967 1113.04 486.776C1106.09 504.393 1099.93 527.35 1094.29 553.728C1082.99 606.488 1073.71 673.11 1064.26 738.436C1054.81 803.791 1045.19 867.842 1033.22 915.553C1027.24 939.415 1020.68 959.12 1013.3 972.838C1005.88 986.633 997.829 994 989 994V996Z" fill="#999999"/>
+<path id="entity.capability.technical#streamlining-change-approval --&#62; construct#job-satisfaction" d="M1676 942.5L1665.99 936.748L1666.01 948.295L1676 942.5ZM989 996C1159.3 996 1245.22 983.17 1330.37 970.195C1415.47 957.227 1499.8 944.115 1666.98 943.52L1666.97 941.52C1499.65 942.115 1415.22 955.243 1330.07 968.218C1244.98 981.184 1159.16 994 989 994V996Z" fill="#999999"/>
+<path id="construct#job-satisfaction --&#62; construct#organizational-performance" d="M1868 573L1862.23 583H1873.77L1868 573ZM1869 802V582H1867V802H1869Z" fill="#999999"/>
+<path id="construct#software-delivery-performance --&#62; construct#organizational-performance" d="M1676 450L1666 444.226V455.774L1676 450ZM1552 451H1667V449H1552V451Z" fill="#999999"/>
+<path id="entity.capability.technical#shifting-left-on-security --&#62; construct#software-delivery-performance" d="M1146 450L1136 444.226V455.774L1146 450ZM989 451H1137V449H989V451Z" fill="#999999"/>
+<path id="entity.capability.technical#flexible-infrastructure --&#62; construct#technical-capabilities" d="M332 254L325.096 244.745L320.532 255.352L332 254ZM179.5 215C179.5 217.793 181.411 220.069 184.314 221.942C187.238 223.829 191.401 225.466 196.432 226.938C206.508 229.885 220.365 232.252 235.522 234.54C265.932 239.131 301.587 243.416 323.392 251.384L324.078 249.505C302.026 241.447 266.063 237.128 235.82 232.562C220.651 230.272 206.922 227.922 196.994 225.018C192.023 223.564 188.079 221.992 185.398 220.261C182.694 218.517 181.5 216.766 181.5 215H179.5Z" fill="#999999"/>
+<path id="entity.capability.technical#documentation-quality --&#62; construct#technical-capabilities" d="M332 254L343.279 251.527L335.498 242.996L332 254ZM481.5 214C481.5 215.627 480.177 217.343 477.035 219.097C473.959 220.815 469.47 222.378 463.897 223.824C452.767 226.712 437.591 229.063 421.437 231.31C405.31 233.553 388.216 235.692 373.338 238.155C358.495 240.613 345.696 243.416 338.213 247.036L339.084 248.836C346.269 245.361 358.786 242.592 373.665 240.129C388.509 237.671 405.545 235.54 421.713 233.291C437.855 231.045 453.141 228.681 464.4 225.76C470.021 224.302 474.708 222.687 478.01 220.843C481.245 219.037 483.5 216.809 483.5 214H481.5Z" fill="#999999"/>
+<path id="construct#technical-capabilities --&#62; entity.capability.technical#shifting-left-on-security" d="M680 450L668.63 447.988L672.572 458.841L680 450ZM581 712C587.275 712 592.667 708.134 597.359 701.71C602.056 695.281 606.181 686.125 609.916 675.146C617.39 653.18 623.401 623.62 629.233 593.226C635.072 562.796 640.733 531.519 647.508 506.007C650.895 493.252 654.552 481.977 658.631 472.992C662.723 463.981 667.185 457.399 672.117 453.889L670.958 452.259C665.586 456.082 660.944 463.061 656.81 472.165C652.664 481.296 648.975 492.692 645.575 505.493C638.777 531.092 633.099 562.463 627.269 592.849C621.432 623.269 615.444 652.69 608.023 674.502C604.311 685.413 600.264 694.344 595.744 700.53C591.221 706.723 586.351 710 581 710V712Z" fill="#999999"/>
+<path id="construct#technical-capabilities --&#62; entity.capability.technical#continuous-delivery" d="M680 631L669.282 626.705L670.921 638.135L680 631ZM581 712C604.777 712 617.368 694.404 628.969 676.071C634.81 666.84 640.402 657.41 647.079 649.613C653.739 641.837 661.407 635.777 671.336 633.247L670.842 631.309C660.375 633.976 652.377 640.353 645.56 648.312C638.762 656.25 633.069 665.851 627.279 675.001C615.617 693.431 603.559 710 581 710V712Z" fill="#999999"/>
+<path id="entity.capability.technical#continuous-delivery --&#62; construct#software-delivery-performance" d="M1146 450L1135.44 445.332L1136.68 456.812L1146 450ZM989 632C1008.28 632 1022.87 621.375 1034.94 605.475C1047 589.598 1056.66 568.315 1066.09 546.718C1075.54 525.069 1084.77 503.099 1095.97 485.637C1107.17 468.174 1120.23 455.42 1137.26 451.944L1136.86 449.984C1119.04 453.622 1105.6 466.931 1094.29 484.557C1082.98 502.186 1073.68 524.336 1064.26 545.918C1054.81 567.551 1045.23 588.609 1033.35 604.266C1021.48 619.899 1007.42 630 989 630V632Z" fill="#999999"/>
+<path id="entity.capability.technical#continuous-delivery --&#62; construct#job-satisfaction" d="M1676 942.5L1666.88 935.415L1665.31 946.854L1676 942.5ZM989 632C1073.99 632 1137.87 648.337 1191.12 673.576C1244.38 698.822 1287.04 732.993 1329.61 768.748C1414.73 840.26 1499.32 918.01 1666.93 942.259L1667.21 940.28C1500.23 916.121 1416.03 838.737 1330.89 767.216C1288.32 731.454 1245.49 697.134 1191.97 671.769C1138.44 646.395 1074.26 630 989 630V632Z" fill="#999999"/>
 </g>
 <defs>
 <clipPath id="clip0_5_88">

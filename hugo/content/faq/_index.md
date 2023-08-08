@@ -7,15 +7,28 @@ type: faq
 
 # Frequently Asked Questions
 
-## dora.dev
 ### DevOps Quick Check
 - What data are used to calculate my results?
 - Quick Check results are based on data collected from respondents to the Accelerate State of DevOps survey (the same survey on which the Accelerate State of DevOps Report is based). Your results are based on findings from the 2022 survey; you can also take the Quick Check based on results from [2019](/quickcheck/?year=2019) or [2021](/quickcheck/?year=2021). <small><em>(There was no Accelerate State of DevOps study in 2020.)</em></small>
 - Why don't my results include a performance cluster?
-- Prior versions of the Quick Check displayed results including a performance cluster (low, medium, high, elite). Because the number of clusters varies between studies (see below), and in order to focus on ongoing improvement at the level of individual teams, we no longer compute a performance cluster, but rather a percentile based on data from all research participants.
+- Prior versions of the Quick Check displayed results including a performance cluster (low, medium, high, elite). Because the number of clusters varies between studies, and in order to focus on ongoing improvement at the level of individual teams, we no longer compute a performance cluster, but rather a percentile based on data from all research participants.
 
-## Publications
-### Accelerate State of DevOps 2022
+### DORA Core
+- What is [DORA Core](/core/)?
+- DORA’s research program is continuous and ongoing; each year brings new avenues of inquiry, and each analysis yields new insights. At the cutting edge, new concepts are introduced frequently, and artifacts (especially the [Accelerate State of DevOps Reports]("/publications") are continuously released, revealing new insights and dynamics. With each study, some prior findings are reinforced, while others may be called into question. This is a hallmark of good science: any new finding is to be considered suspect—intriguing, but suspect—until it has been validated through replication and application. Meanwhile, practitioners are encouraged to apply the research in their own professional contexts. In such contexts, it can be challenging to keep up with the latest developments from DORA: cultural transformation efforts in a large organization require a steady hand, persistent over stretches of time measured across multiple years. An attempt to update one’s practices to match the pace of the research can lead to counterproductive churn. In these contexts, it’s more practical to rely on “evergreen” artifacts. DORA Core represents a distillation of DORA’s most foundational findings: metrics, capabilities, and outcomes that the research has repeatedly surfaced. It enables teams to focus their improvement efforts even more precisely on what is likely to produce tangible benefits to their organizational goals and quality of life.
+- Which concepts are included in Core?
+- DORA Core encompasses the set of concepts that have been perennially studied by DORA and whose interactions are well supported. These concepts include capabilities like [Continuous delivery](/devops-capabilities/technical/continuous-delivery) and [Generative organizational culture](/devops-capabilities/cultural/generative-organizational-culture), metrics like the "Four Key" metrics, and outcomes like organizational performance. These established ideas contrast with areas of inquiry, or divergent predictive pathways, which have shown promise when we’ve studied them, but aren’t (yet) as well supported as part of DORA’s predictive model. A concept may be considered for Core if: a) it has been researched at least twice; b) practitioners have found it valuable; c) continued exploration is warranted. This rubric is, by design, a subjective one: it draws heavily on the data and analyses, but it's ultimately guided by intuition. So please contribute! Your intuition is valuable; if you feel like something doesn’t accurately reflect the research, please let us know.
+- Will Core ever change?
+- Yes! The application of research is necessarily less volatile than the research itself. But it’s not static. Core will evolve over time, and things we’re starting to investigate now will, once established, “graduate” into core. A threshold of support is required for inclusion in core; likewise, if sufficient evidence is collected to support the removal or alteration of something in core, it will be deprecated. Core is informed by, and evolves with, the research—but more slowly.
+- What is the Core Model?
+- The DORA Core Model is a visual summary of the predictive framework that DORA has been developing since its inception. It draws from all of the Structural Equation Models (SEMs) that have been developed through the years, to highlight the best-supported entities and predictive pathways. Practitioners are encouraged to study the Model and use it to guide their continuous improvement journeys.
+- Are all research years treated equally?
+- No. Some findings have proven to be extremely durable, replicating year after year. But, as one expects when studying a dynamic context, other findings have changed. Plus, every year, we add or subtract areas of study. Our goal with Core is to create something that’s durable across years, while also evolving as we continue to learn. To that end, more recent research gets more weight than older research. This is why, for example, “Shift Left on Security” is separated from the Technical Capabilities, which reflects findings from 2021 and 2022 that showed the unique impact of security practices on software delivery performance.
+
+_DORA Core is an ongoing effort. Learn more, and provide feedback, in the [DORA Core GitHub Discussion](https://github.com/dora-team/dora.dev/discussions/265)._
+
+
+### Accelerate State of DevOps Report 2022
 
 - What is different in this year's Accelerate State of DevOps Report?
 - Comparing the 2022 results to the 2021 results, there are a number of findings that did not follow trends that we have seen consistently over the past several years. In fact, there were enough of these that we chose to add a section to the report—"Surprises"—summarizing them.
@@ -28,4 +41,4 @@ type: faq
     1. In the past two years, multiple high-profile, catastrophic security breaches (see: [SolarWinds](https://www.businessinsider.com/solarwinds-hack-explained-government-agencies-cyber-security-2020-12), [Codecov](https://www.reuters.com/technology/codecov-hackers-breached-hundreds-restricted-customer-sites-sources-2021-04-19/), and [Colonial Pipeline](https://www.bloomberg.com/news/articles/2021-06-04/hackers-breached-colonial-pipeline-using-compromised-password) attacks) have brought the dangers of a vulnerable software supply chain to the public's attention.
     2. Prior DORA research revealed the importance of incorporating software supply-chain security measures early, and throughout the development process. In 2021, for example, our data showed that elite performers excel in implementing security best practices, and that development teams that embrace security see significant value driven to the business.
 
-Do you have a question that is not answered here? Discuss it with the [DORA community](https://dora.community)!
+> Do you have a question that is not answered here? Discuss it with the [DORA community](https://dora.community)!
