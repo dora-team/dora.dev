@@ -1,5 +1,5 @@
 ---
-title: "DORA Reseach Archives"
+title: "DORA Research Archives"
 date: 2022-10-01
 draft: false
 type: research_archives
