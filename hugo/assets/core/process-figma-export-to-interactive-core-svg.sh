@@ -44,3 +44,5 @@ echo "rename PDF and PNG (remove version ids)..."
 
 cp dora-core-model-v*.pdf dora-core-model.pdf
 cp dora-core-model-v*.png dora-core-model.png
+
+echo "done."

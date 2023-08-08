@@ -6,11 +6,11 @@
 <rect id="Rectangle 1" x="82" y="253" width="500" height="916" rx="16" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="TECHNICAL CAPABILITIES" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.225em"><tspan x="130.21" y="296.16">TECHNICAL CAPABILITIES</tspan></text>
 </g>
-<g class="construct" id="job-satisfaction" >
+<g class="construct" id="wellbeing" >
 <g id="Group 1">
 <rect id="Rectangle 6" x="1677" y="663" width="382" height="279" rx="25" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <path id="Rectangle 7" d="M1677 688C1677 674.193 1688.19 663 1702 663H2034C2047.81 663 2059 674.193 2059 688V738H1677V688Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
-<g class="entity outcome none" id="deployment-pain" >
+<g class="unclickable-entity outcome none" id="deployment-pain" >
 <rect class="entity-box" x="1695" y="758" width="348" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.025em"><tspan x="1746" y="787.16">Less deployment pain</tspan></text>
 <g id="icon-group">
@@ -18,7 +18,7 @@
 <path class="icon" d="M1723.7 773.533L1714.8 782.43L1709.95 777.597L1708.05 779.5L1714.8 786.25L1725.6 775.45L1723.7 773.533ZM1717.5 766C1710.05 766 1704 772.048 1704 779.5C1704 786.952 1710.05 793 1717.5 793C1724.95 793 1731 786.952 1731 779.5C1731 772.048 1724.95 766 1717.5 766ZM1717.5 790.3C1711.53 790.3 1706.7 785.467 1706.7 779.5C1706.7 773.533 1711.53 768.7 1717.5 768.7C1723.47 768.7 1728.3 773.533 1728.3 779.5C1728.3 785.467 1723.47 790.3 1717.5 790.3Z" fill="#FCFCFC"/>
 </g>
 </g>
-<g class="entity outcome none" id="rework" >
+<g class="unclickable-entity outcome none" id="rework" >
 <rect class="entity-box" x="1695" y="819" width="348" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_2" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.025em"><tspan x="1746" y="848.16">Less rework</tspan></text>
 <g id="icon-group_2">
@@ -26,7 +26,7 @@
 <path class="icon" d="M1723.7 834.533L1714.8 843.43L1709.95 838.597L1708.05 840.5L1714.8 847.25L1725.6 836.45L1723.7 834.533ZM1717.5 827C1710.05 827 1704 833.048 1704 840.5C1704 847.952 1710.05 854 1717.5 854C1724.95 854 1731 847.952 1731 840.5C1731 833.048 1724.95 827 1717.5 827ZM1717.5 851.3C1711.53 851.3 1706.7 846.467 1706.7 840.5C1706.7 834.533 1711.53 829.7 1717.5 829.7C1723.47 829.7 1728.3 834.533 1728.3 840.5C1728.3 846.467 1723.47 851.3 1717.5 851.3Z" fill="#FCFCFC"/>
 </g>
 </g>
-<g class="entity outcome none" id="burnout" >
+<g class="unclickable-entity outcome none" id="burnout" >
 <rect class="entity-box" x="1695" y="879" width="348" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_3" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.025em"><tspan x="1746" y="908.16">Less burnout</tspan></text>
 <g id="icon-group_3">
@@ -37,10 +37,10 @@
 <text id="Wellbeing" fill="#FCFCFC" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1700" y="711.02">Wellbeing</tspan></text>
 </g>
 </g>
-<g class="construct" id="software-delivery-performance" >
+<g class="construct" id="measuring-and-improving" >
 <rect id="Rectangle 2" x="1147" y="267" width="404" height="366" rx="25" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <path id="Rectangle 3" d="M1147 292C1147 278.193 1158.19 267 1172 267H1526C1539.81 267 1551 278.193 1551 292V365H1147V292Z" fill="#63A657" stroke="#63A657" stroke-width="2"/>
-<g class="entity metric none" id="change-lead-time" >
+<g class="unclickable-entity metric none" id="change-lead-time" >
 <rect class="entity-box" x="1164" y="382" width="370" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_4" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.015em"><tspan x="1215" y="411.16">Change lead time</tspan></text>
 <g id="icon-group_4">
@@ -48,7 +48,7 @@
 <path class="icon" d="M1172 397.4H1178V417H1172V397.4ZM1183.2 389H1188.8V417H1183.2V389ZM1194.4 405H1200V417H1194.4V405Z" fill="#FCFCFC"/>
 </g>
 </g>
-<g class="entity metric none" id="deployment-frequency" >
+<g class="unclickable-entity metric none" id="deployment-frequency" >
 <rect class="entity-box" x="1164" y="446" width="370" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_5" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.015em"><tspan x="1215" y="475.16">Deployment frequency</tspan></text>
 <g id="icon-group_5">
@@ -56,7 +56,7 @@
 <path class="icon" d="M1172 461.4H1178V481H1172V461.4ZM1183.2 453H1188.8V481H1183.2V453ZM1194.4 469H1200V481H1194.4V469Z" fill="#FCFCFC"/>
 </g>
 </g>
-<g class="entity metric none" id="change-fail-rate" >
+<g class="unclickable-entity metric none" id="change-fail-rate" >
 <rect class="entity-box" x="1164" y="509" width="370" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_6" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.015em"><tspan x="1215" y="538.16">Change fail rate</tspan></text>
 <g id="icon-group_6">
@@ -65,7 +65,7 @@
 </g>
 </g>
 <text id="Software Delivery Performance" fill="#FCFCFC" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1165" y="311.02">Software Delivery&#10;</tspan><tspan x="1165" y="346.02">Performance</tspan></text>
-<g class="entity metric none" id="time-to-repair" >
+<g class="unclickable-entity metric none" id="time-to-repair" >
 <rect class="entity-box" x="1164" y="572" width="370" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_7" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.015em"><tspan x="1215" y="601.16">Time to restore service</tspan></text>
 <g id="icon-group_7">
@@ -131,7 +131,7 @@
 <g id="Group 2">
 <rect id="Rectangle 4" x="1677" y="328" width="382" height="244" rx="25" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <path id="Rectangle 5" d="M1677 353C1677 339.193 1688.19 328 1702 328H2034C2047.81 328 2059 339.193 2059 353V426H1677V353Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
-<g class="entity outcome none" id="job-satisfaction" >
+<g class="unclickable-entity outcome none" id="job-satisfaction" >
 <rect class="entity-box" x="1695" y="446" width="348" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_14" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.025em"><tspan x="1746" y="475.16">Commercial</tspan></text>
 <g id="icon-group_14">
@@ -139,7 +139,7 @@
 <path class="icon" d="M1723.7 461.533L1714.8 470.43L1709.95 465.597L1708.05 467.5L1714.8 474.25L1725.6 463.45L1723.7 461.533ZM1717.5 454C1710.05 454 1704 460.048 1704 467.5C1704 474.952 1710.05 481 1717.5 481C1724.95 481 1731 474.952 1731 467.5C1731 460.048 1724.95 454 1717.5 454ZM1717.5 478.3C1711.53 478.3 1706.7 473.467 1706.7 467.5C1706.7 461.533 1711.53 456.7 1717.5 456.7C1723.47 456.7 1728.3 461.533 1728.3 467.5C1728.3 473.467 1723.47 478.3 1717.5 478.3Z" fill="#FCFCFC"/>
 </g>
 </g>
-<g class="entity outcome none" id="job-satisfaction_2" >
+<g class="unclickable-entity outcome none" id="job-satisfaction_2" >
 <rect class="entity-box" x="1695" y="506" width="348" height="42" rx="9" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="entity-name_15" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="24" font-weight="500" letter-spacing="0.025em"><tspan x="1746" y="535.16">Non-Commercial</tspan></text>
 <g id="icon-group_15">
