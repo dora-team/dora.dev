@@ -11,4 +11,4 @@ about: "**About this model:** DORA Core is a collection of capabilities, metrics
 ---
 
 # DORA's Research Program
-DORA is [the longest running academically rigorous research investigation](/research/archives/) of its kind. Our [research team](/research/team/) applies behavioral science methodology to uncover the predictive pathways which connect ways of working, via software delivery performance, to organizational goals and individual wellbeing. Explore our findings using the interactive diagram below&mdash;click any item to learn more about why it matters, how to measure it, and how to improve:
+DORA is the [longest running](/research/archives/) academically rigorous research investigation of its kind. Our [research team](/research/team/) applies behavioral science methodology to uncover the predictive pathways which connect ways of working, via software delivery performance, to organizational goals and individual wellbeing. Explore our findings using the interactive diagram below&mdash;click any item to learn more about why it matters, how to measure it, and how to improve:
