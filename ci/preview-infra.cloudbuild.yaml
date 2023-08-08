@@ -1,11 +1,16 @@
 steps:
-  - id: 'Stage FirebaseConfig'
+  - id: 'Stage FirebaseConfigs'
     name: 'bash'
     env:
       - 'PROJECT_ID=$PROJECT_ID'
     script: |
       # Copy correct Firestore config per project
       cp -v ci/firebase-config.${PROJECT_ID}.js /workspace/hugo/static/js/firebase-config.js
+
+      # Get Key for Firebase Integration Testing
+      mkdir secrets
+      echo "${APPSPOT_KEY_TOKEN}" > secrets/${PROJECT_ID}-private-key.json
+    secretEnv: ['APPSPOT_KEY_TOKEN']
 
   - id: 'Hugo Build Staging Site'
     name: 'ubuntu'
@@ -39,3 +44,14 @@ steps:
 
       # skip remote config
       firebase deploy --non-interactive --force --project=${PROJECT_ID} --except=remoteconfig
+
+  - id: 'CI Testing'
+    name: 'gcr.io/cloud-builders/npm:node-16.18.0'
+    entrypoint: npm
+    dir: 'functions/inquiry-monitor'
+    args: ['run', 'int-test']
+
+availableSecrets:
+  secretManager:
+  - versionName: projects/$PROJECT_ID/secrets/appspot_gserviceaccount_com/versions/latest
+    env: 'APPSPOT_KEY_TOKEN'
