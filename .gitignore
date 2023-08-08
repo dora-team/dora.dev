@@ -27,3 +27,6 @@ ui-debug.log
 
 # Node mods
 **/node_modules/
+
+#exclude secrets
+secrets/*
