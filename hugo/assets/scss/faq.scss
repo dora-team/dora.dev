@@ -21,11 +21,8 @@ main {
     ul {
         padding-left: 0;
 
-        li {
-            line-height: 150%;
-        }
-
         & > li {
+            line-height: 150%;
             list-style-type: none;
 
             &:nth-child(even) {

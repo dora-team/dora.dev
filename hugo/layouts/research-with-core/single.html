@@ -1,17 +1,9 @@
 {{ define "main" }}
 
-<blockquote>This page is intended to replace /research</blockquote>
+<blockquote>DORA Core is a work in progress. (This page is <a href="https://github.com/dora-team/dora.dev/discussions/265">intended to replace</a> the content on /research)</blockquote>
 
 {{ .Content }}
-
-{{- partial "tab_navigation.v2" (dict 
-    "tabs"  (slice "DORA Core" "Our Research Program")
-    "tabSet" "research"
-    ) -}}
-
-<div id="dora-core" x-cloak  x-show="activeTabs.research == 'dora-core'">
-    {{ $capabilities := where (where $.Site.RegularPages "Section" "devops-capabilities") "Params.core" true}}
-
+    
     <div x-init="
         Alpine.store('coreModal',
             { open: false, 
@@ -48,19 +40,25 @@
          });
 
         ">
-
-        <p>DORA Core is a collection of capabilities, metrics, and outcomes that represent the most firmly-established findings from across the history and breadth of DORA’s research program.</p>
         
-         {{ $svg := resources.Get "core/dora-core-model.svg" }}
-        <object data="{{ }}" id="dora-core-model" type="image/svg+xml" style="width:100%;border:1px solid #ddd;border-radius:.5em;"></object>
+         <!-- Process CSS for Core; note that the reference to this stylesheet is inserted into the SVG file by the script in `/assets/core/` -->
+         {{ $stylesheet := printf "core/dora-core-model.scss" | resources.Get | toCSS }} <!-- renders to /core/dora-core-model.css -->
+
+         <!-- DEBUG: {{ $stylesheet.RelPermalink }} -->
+
+        <!--- embed the SVG (TODO: consider processing the SVG manipulations—or at least the stylesheet link injection—in Hugo) -->
+        {{ $svg := resources.Get "core/dora-core-model.svg" }} 
+        <object data="{{ $svg.RelPermalink }}" id="dora-core-model" type="image/svg+xml" style="width:100%;border:1px solid #ddd;border-radius:.5em;margin:1em 0;"></object>
 
     <div x-cloak class="modal-container" x-show="$store.coreModal.open">
         <div x-cloak class="modal" x-show="$store.coreModal.open" @click.outside="$store.coreModal.open=false"
             x-on:keydown.escape.window="$store.coreModal.open=false" x-transition>
 
-            <!-- TODO: each of these modals has two divs, each of which is activated/deactivated via `x-show`. Let's wrap each pair in a single div and show/hide that. -->
+            {{ $capabilities := where (where $.Site.RegularPages "Section" "devops-capabilities") "Params.core" true}}
+
 
             <!-- loop across all items in `content/devops-capabilities` labeled 'core' and create content for the modal, based on the `summary` front matter -->
+            <!-- TODO: each of these modals has two divs, each of which is activated/deactivated via `x-show`. Let's wrap each pair in a single div and show/hide that. -->
             {{ range $capabilities }}
                 <div class="modal-header"
                     x-cloak 
@@ -135,35 +133,34 @@
         </div>
     </div>
 
-    <a class="button secondary">Download as PDF</a> <a class="button secondary">Download as PNG</a>
+<section>
+    <p>{{ .Params.about | markdownify }}</p>
 
-    <h2>FAQ</h2>
 
-<h4>Why DORA Core?</h4>
-<p>DORA’s research program is continuous and ongoing; each year brings new avenues of inquiry, and each analysis yields new insights. At the cutting edge, new concepts are introduced frequently, and artifacts (especially the [Accelerate State of DevOps Reports]("/publications") are continuously released, revealing new insights and dynamics. With each study, some prior findings are reinforced, while others may be called into question. This is a hallmark of good science: any new finding is to be considered suspect—intriguing, but suspect—until it has been validated through replication and application. Meanwhile, practitioners are encouraged to apply the research in their own professional contexts. In such contexts, it can be challenging to keep up with the latest developments from DORA: cultural transformation efforts in a large organization require a steady hand, persistent over stretches of time measured across multiple years. An attempt to update one’s practices to match the pace of the research can lead to counterproductive churn. In these contexts, it’s more practical to rely on “evergreen” artifacts. DORA Core represents a distillation of DORA’s most foundational findings: metrics, capabilities, and outcomes that the research has repeatedly surfaced. It enables teams to focus their improvement efforts even more precisely on what is likely to produce tangible benefits to their organizational goals and quality of life.</p>
+    {{ $pdf := resources.GetMatch "core/dora-core-model-v*.pdf" }}
+    {{ $png := resources.GetMatch "core/dora-core-model-v*.png" }} 
 
-<p>DORA Core is a work in progress. Learn more, and provide feedback, in the [DORA Core GitHub Discussion](https://github.com/dora-team/dora.dev/discussions/265).</p>
-
-<h4>What’s in Core? What isn’t?</h4>
-<p>DORA Core encompasses the set of entities that have been perennially studied by DORA and whose interactions are well supported. These entities include capabilities like <a href="/devops-capabilities/technical/continuous-delivery">Continuous delivery</a> and <a href="/devops-capabilities/cultural/generative-organizational-culture">Generative organizational culture</a>, metrics like the “Four Key'' metrics, and outcomes like organizational performance. These established ideas contrast with areas of inquiry, or divergent predictive pathways, which have shown promise when we’ve studied them, but aren’t (yet) as well supported as part of DORA’s predictive model. An entity may be considered for Core if: a) it has been researched at least twice; b) practitioners have found it valuable; c) continued exploration is warranted. This rubric is, by design, a subjective one, which draws heavily on the data and analyses, but it is ultimately guided by intuition. So please contribute! Your intuition is valuable; if you feel like something doesn’t accurately reflect the research, please let us know.
-</p>
-
-<h4>Will Core ever change?</h4>
-<p>Yes! The application of research is necessarily less volatile than the research itself. But it’s not static. Core will evolve over time, and things we’re starting to investigate now will, once established, “graduate” into core. A threshold of support is required for inclusion in core; likewise, if sufficient evidence is collected to support the removal or alteration of something in core, it will be deprecated. Core is informed by, and evolves with, the research—but more slowly.
-</p>
-
-<h4>What is the Core Model?</h4>
-<p>The DORA Core Model is a visual summary of the predictive framework that DORA has been developing since its inception. It draws from all of the Structural Equation Models (SEMs) that have been developed through the years, to highlight the best-supported entities and predictive pathways. Practitioners are encouraged to study the Model and use it to guide their continuous improvement journeys.</p>
-
-<h4>Are all research years treated equally?</h4>
-<p>No. Some findings have proven to be extremely durable, replicating year after year. But, as one expects when studying a dynamic context, other findings have changed. Plus, every year, we add or subtract areas of study. Our goal with Core is to create something that’s durable across years, while also evolving as we continue to learn. To that end, more recent research gets more weight than older research. This is why, for example, “Shift Left on Security” is separated from the Technical Capabilities, which reflects findings from 2021 and 2022 that showed the unique impact of security practices on software delivery performance.</p>
-
-</div>
-</div>
-<div id="our-research-program" x-cloak  x-show="activeTabs.research == 'our-research-program'">
-    TODO
+<div style="text-align: center;">
+    {{ with $pdf }}
+        <a href="{{ .RelPermalink }}" target="_blank" class="button secondary">Download as PDF</a>
+    {{ end }}
+    {{ with $png }}
+        <a href="{{ .RelPermalink }}" target="_blank" class="button secondary">Download as PNG</a>
+    {{ end }}
 </div>
 
+    <h3>DORA Research Archives</h3>
+    {{ $archives := where $.Site.RegularPages "Type" "research_archives" }}
 
+    <ul>
+        {{ range $archives }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+    </ul>
+
+    <h3>Meet the team</h3>
+    <p>Learn more about <a href='{{ "/research/team/" | relURL }}'>DORA's Research Team</a></p>
+
+</section>
 
 {{ end }}

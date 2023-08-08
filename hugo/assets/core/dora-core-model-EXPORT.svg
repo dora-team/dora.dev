@@ -1,6 +1,8 @@
 <svg width="2112" height="1188" viewBox="0 0 2112 1188" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="dora-core-model-EXPORT" clip-path="url(#clip0_5_88)">
 <rect width="2112" height="1188" fill="white"/>
+<path id="performance --&#62; outcomes" d="M1785 49L1775.01 43.2122L1774.99 54.7592L1785 49ZM1419 49C1598.96 49 1601.93 49.7252 1776.01 49.9871L1776.01 47.9871C1601.97 47.7253 1598.94 47 1419 47V49Z" fill="#999999"/>
+<path id="Rectangle 8 --&#62; Rectangle 9" d="M1269 49.7068L1259 43.9333V55.4803L1269 49.7068ZM905 50.7068H1260V48.7068H905V50.7068Z" fill="#999999"/>
 <rect id="Rectangle 13" width="303" height="101" fill="#F5F5F5"/>
 <g id="construct#technical-capabilities">
 <rect id="Rectangle 1" x="82" y="253" width="500" height="916" rx="16" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
@@ -123,9 +125,9 @@
 </g>
 </g>
 <g id="footer">
-<text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="2043.69" y="1133.26">1</tspan><tspan x="2075.3" y="1133.26">1&#10;</tspan></text>
+<text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="2041.82" y="1133.26">1</tspan><tspan x="2073.43" y="1133.26">2&#10;</tspan></text>
 <text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="14" font-weight="500" letter-spacing="0em" text-decoration="underline"><tspan x="1965.31" y="1154.26"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></tspan></text>
-<text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="1983.55" y="1133.26">version 1.</tspan><tspan x="2049.39" y="1133.26">.0rc</tspan><tspan x="1760.12" y="1154.26"> Licensed by Google LLC under </tspan><tspan x="2081" y="1154.26"> </tspan></text>
+<text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="1981.67" y="1133.26">version 1.</tspan><tspan x="2047.52" y="1133.26">.0rc</tspan><tspan x="1760.12" y="1154.26"> Licensed by Google LLC under </tspan><tspan x="2081" y="1154.26"> </tspan></text>
 </g>
 <g id="construct#organizational-performance">
 <g id="Group 2">
@@ -250,7 +252,6 @@
 </g>
 </g>
 </g>
-<g id="Group 4">
 <path id="Rectangle 9" d="M1269 49.7068C1269 41.0322 1276.03 34 1284.71 34H1403.29C1411.97 34 1419 41.0322 1419 49.7068C1419 58.3814 1411.97 65.4136 1403.29 65.4136H1284.71C1276.03 65.4136 1269 58.3814 1269 49.7068Z" fill="#63A657"/>
 <text id="performance" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="20" font-weight="500" letter-spacing="0em"><tspan x="1283.12" y="54.8">performance</tspan></text>
 <path id="Rectangle 8" d="M755 49.7068C755 41.0322 762.032 34 770.707 34H889.293C897.968 34 905 41.0322 905 49.7068C905 58.3814 897.968 65.4136 889.293 65.4136H770.707C762.032 65.4136 755 58.3814 755 49.7068Z" fill="#33484F"/>
@@ -261,7 +262,6 @@
 <text id="predict" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="16" font-weight="500" letter-spacing="0em"><tspan x="1042.57" y="54.44">predict</tspan></text>
 <rect id="Rectangle 12" x="1537" y="38" width="95.3143" height="24" rx="4" fill="white" stroke="#999999" stroke-width="2"/>
 <text id="predicts" fill="#414042" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="16" font-weight="500" letter-spacing="0em"><tspan x="1553.58" y="54.44">predicts</tspan></text>
-</g>
 <line id="Line 1" y1="100.5" x2="2112" y2="100.5" stroke="#CCCCCC"/>
 <text id="url" fill="#33484F" xml:space="preserve" style="white-space: pre" font-family="Google Sans" font-size="18" letter-spacing="0em"><tspan x="353" y="56.62">dora.dev/core</tspan></text>
 <path id="entity.capability.technical#continuous-delivery --&#62; entity.capability.technical#generative-organizational-culture" d="M834.5 685V760" stroke="#999999" stroke-width="2"/>
@@ -269,14 +269,6 @@
 <path id="entity.capability.technical#generative-organizational-culture --&#62; construct#job-satisfaction" d="M1676 942.5L1666.6 935.798L1665.49 947.292L1676 942.5ZM989 815C1159.12 815 1244.89 838.651 1329.94 866.418C1415.07 894.211 1499.56 926.154 1666.97 942.638L1667.17 940.648C1499.99 924.187 1415.69 892.309 1330.56 864.516C1245.35 836.698 1159.38 813 989 813V815Z" fill="#999999"/>
 <path id="entity.capability.technical#streamlining-change-approval --&#62; construct#software-delivery-performance" d="M1146 450L1134.8 447.181L1137.96 458.288L1146 450ZM989 996C999.046 996 1007.6 987.65 1015.06 973.786C1022.56 959.845 1029.17 939.947 1035.16 916.04C1047.16 868.211 1056.79 804.052 1066.24 738.722C1075.69 673.363 1084.96 606.824 1096.24 554.147C1101.88 527.807 1108.01 504.976 1114.9 487.51C1118.35 478.778 1121.97 471.414 1125.8 465.634C1129.64 459.846 1133.64 455.702 1137.82 453.334L1136.84 451.594C1132.28 454.175 1128.06 458.599 1124.13 464.529C1120.2 470.466 1116.52 477.967 1113.04 486.776C1106.09 504.393 1099.93 527.35 1094.29 553.728C1082.99 606.488 1073.71 673.11 1064.26 738.436C1054.81 803.791 1045.19 867.842 1033.22 915.553C1027.24 939.415 1020.68 959.12 1013.3 972.838C1005.88 986.633 997.829 994 989 994V996Z" fill="#999999"/>
 <path id="entity.capability.technical#streamlining-change-approval --&#62; construct#job-satisfaction" d="M1676 942.5L1665.99 936.748L1666.01 948.295L1676 942.5ZM989 996C1159.3 996 1245.22 983.17 1330.37 970.195C1415.47 957.227 1499.8 944.115 1666.98 943.52L1666.97 941.52C1499.65 942.115 1415.22 955.243 1330.07 968.218C1244.98 981.184 1159.16 994 989 994V996Z" fill="#999999"/>
-<g id="entity.capability.technical#continuous-delivery --&#62; construct#software-delivery-performance">
-<path d="M989 628C987.333 628 986 629.333 986 631C986 632.667 987.333 634 989 634C990.667 634 992 632.667 992 631C992 629.333 990.667 628 989 628Z" fill="white"/>
-<path d="M1146 450L1135.42 445.376L1136.71 456.851L1146 450ZM987 631C987 629.886 987.886 629 989 629V627C986.781 627 985 628.781 985 631H987ZM989 629C990.114 629 991 629.886 991 631H993C993 628.781 991.219 627 989 627V629ZM991 631C991 632.114 990.114 633 989 633V635C991.219 635 993 633.219 993 631H991ZM989 633C987.886 633 987 632.114 987 631H985C985 633.219 986.781 635 989 635V633ZM992 632C1010.92 632 1025.22 621.384 1037.05 605.51C1048.87 589.656 1058.35 568.403 1067.59 546.826C1076.86 525.197 1085.9 503.24 1096.87 485.768C1107.84 468.293 1120.62 455.516 1137.27 451.98L1136.85 450.024C1119.41 453.729 1106.24 467.073 1095.17 484.705C1084.1 502.341 1074.99 524.478 1065.75 546.038C1056.49 567.651 1047.11 588.682 1035.45 604.314C1023.81 619.927 1010.03 630 992 630V632Z" fill="#999999"/>
-</g>
-<g id="entity.capability.technical#continuous-delivery --&#62; construct#job-satisfaction">
-<path d="M989 628C987.333 628 986 629.333 986 631C986 632.667 987.333 634 989 634C990.667 634 992 632.667 992 631C992 629.333 990.667 628 989 628Z" fill="white"/>
-<path d="M1676 942.5L1666.89 935.41L1665.3 946.848L1676 942.5ZM987 631C987 629.886 987.886 629 989 629V627C986.781 627 985 628.781 985 631H987ZM989 629C990.114 629 991 629.886 991 631H993C993 628.781 991.219 627 989 627V629ZM991 631C991 632.114 990.114 633 989 633V635C991.219 635 993 633.219 993 631H991ZM989 633C987.886 633 987 632.114 987 631H985C985 633.219 986.781 635 989 635V633ZM992 632C1076.61 632 1140.22 648.337 1193.23 673.575C1246.26 698.821 1288.74 732.992 1331.11 768.746C1415.87 840.258 1500.09 918.01 1666.97 942.259L1667.25 940.28C1501 916.121 1417.17 838.739 1332.4 767.218C1290.02 731.455 1247.37 697.135 1194.09 671.769C1140.79 646.396 1076.89 630 992 630V632Z" fill="#999999"/>
-</g>
 <path id="construct#job-satisfaction --&#62; construct#organizational-performance" d="M1868 573L1862.23 583H1873.77L1868 573ZM1869 802V582H1867V802H1869Z" fill="#999999"/>
 <path id="construct#software-delivery-performance --&#62; construct#organizational-performance" d="M1676 450L1666 444.226V455.774L1676 450ZM1552 451H1667V449H1552V451Z" fill="#999999"/>
 <path id="entity.capability.technical#shifting-left-on-security --&#62; construct#software-delivery-performance" d="M1146 450L1136 444.226V455.774L1146 450ZM989 451H1137V449H989V451Z" fill="#999999"/>
@@ -284,6 +276,8 @@
 <path id="entity.capability.technical#documentation-quality --&#62; construct#technical-capabilities" d="M332 254L343.279 251.527L335.498 242.996L332 254ZM481.5 214C481.5 215.627 480.177 217.343 477.035 219.097C473.959 220.815 469.47 222.378 463.897 223.824C452.767 226.712 437.591 229.063 421.437 231.31C405.31 233.553 388.216 235.692 373.338 238.155C358.495 240.613 345.696 243.416 338.213 247.036L339.084 248.836C346.269 245.361 358.786 242.592 373.665 240.129C388.509 237.671 405.545 235.54 421.713 233.291C437.855 231.045 453.141 228.681 464.4 225.76C470.021 224.302 474.708 222.687 478.01 220.843C481.245 219.037 483.5 216.809 483.5 214H481.5Z" fill="#999999"/>
 <path id="construct#technical-capabilities --&#62; entity.capability.technical#shifting-left-on-security" d="M680 450L668.63 447.988L672.572 458.841L680 450ZM581 712C587.275 712 592.667 708.134 597.359 701.71C602.056 695.281 606.181 686.125 609.916 675.146C617.39 653.18 623.401 623.62 629.233 593.226C635.072 562.796 640.733 531.519 647.508 506.007C650.895 493.252 654.552 481.977 658.631 472.992C662.723 463.981 667.185 457.399 672.117 453.889L670.958 452.259C665.586 456.082 660.944 463.061 656.81 472.165C652.664 481.296 648.975 492.692 645.575 505.493C638.777 531.092 633.099 562.463 627.269 592.849C621.432 623.269 615.444 652.69 608.023 674.502C604.311 685.413 600.264 694.344 595.744 700.53C591.221 706.723 586.351 710 581 710V712Z" fill="#999999"/>
 <path id="construct#technical-capabilities --&#62; entity.capability.technical#continuous-delivery" d="M680 631L669.282 626.705L670.921 638.135L680 631ZM581 712C604.777 712 617.368 694.404 628.969 676.071C634.81 666.84 640.402 657.41 647.079 649.613C653.739 641.837 661.407 635.777 671.336 633.247L670.842 631.309C660.375 633.976 652.377 640.353 645.56 648.312C638.762 656.25 633.069 665.851 627.279 675.001C615.617 693.431 603.559 710 581 710V712Z" fill="#999999"/>
+<path id="entity.capability.technical#continuous-delivery --&#62; construct#software-delivery-performance" d="M1146 450L1135.44 445.332L1136.68 456.812L1146 450ZM989 632C1008.28 632 1022.87 621.375 1034.94 605.475C1047 589.598 1056.66 568.315 1066.09 546.718C1075.54 525.069 1084.77 503.099 1095.97 485.637C1107.17 468.174 1120.23 455.42 1137.26 451.944L1136.86 449.984C1119.04 453.622 1105.6 466.931 1094.29 484.557C1082.98 502.186 1073.68 524.336 1064.26 545.918C1054.81 567.551 1045.23 588.609 1033.35 604.266C1021.48 619.899 1007.42 630 989 630V632Z" fill="#999999"/>
+<path id="entity.capability.technical#continuous-delivery --&#62; construct#job-satisfaction" d="M1676 942.5L1666.88 935.415L1665.31 946.854L1676 942.5ZM989 632C1073.99 632 1137.87 648.337 1191.12 673.576C1244.38 698.822 1287.04 732.993 1329.61 768.748C1414.73 840.26 1499.32 918.01 1666.93 942.259L1667.21 940.28C1500.23 916.121 1416.03 838.737 1330.89 767.216C1288.32 731.454 1245.49 697.134 1191.97 671.769C1138.44 646.395 1074.26 630 989 630V632Z" fill="#999999"/>
 </g>
 <defs>
 <clipPath id="clip0_5_88">
