@@ -101,7 +101,7 @@
                     data-title="{{ .Title }}">
 
                     <p>{{ .Page.Params.summary | markdownify }}</p>
-                    {{ if .Page.Params.link_from_core }}
+                    {{ if .Page.Params.link_from_core_modal }}
                         <div class="core-model-learn-more"><a href="{{ .Page.RelPermalink }}">Learn more about {{ .Page.Title }}</a></div>
                     {{ end }}
                 </div>
