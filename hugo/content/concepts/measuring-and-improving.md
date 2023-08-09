@@ -15,5 +15,9 @@ summary: |
     **Change failure rate:** What percentage of changes to production or released to users result in degraded service (e.g., lead to service impairment or service outage) and subsequently require remediation (e.g., require a hotfix, rollback, fix forward, patch)?
 
     **Time to restore service:** How long does it generally take to restore service when a service incident or a defect that impacts users occurs (e.g., unplanned outage, service impairment)?
+    
+    ---
+
+    Want to assess your team's software delivery performance? Try our [DevOps Quick Check](/quickcheck) for insights on how to improve.
 ---
 {{/* No content on this page yet, just a summary. TODO: write an article with practical guidance on how to use the metrics. */}}

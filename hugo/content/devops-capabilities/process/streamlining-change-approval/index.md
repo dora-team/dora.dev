@@ -1,11 +1,16 @@
 ---
 title: "Streamlining change approval"
 titleForHTMLHead: "DevOps Capabilities: Streamlining Change Approval" # TODO: can we DRY this out?
+slug: streamlining-change-approval
+core: true
 date: 2023-03-22T11:02:58Z
 category: process
 draft: false
 headline: "Replace heavyweight change-approval processes with peer review, to get the benefits of a more reliable, compliant release process without sacrificing speed."
-summary: "Replace heavyweight change-approval processes with peer review, to get the benefits of a more reliable, compliant release process without sacrificing speed."
+summary: |
+    Most IT organizations have change management processes to manage the life cycle of changes to IT services, both internal and customer-facing. These processes are often the primary controls to reduce the operational and security risks of change. Change management processes often include approvals by external reviewers or change approval boards (CABs) to promote changes through the system.
+
+    Our research shows that formal change management processes that require the approval of an external body such as a change advisory board (CAB) or a senior manager have a negative impact on software delivery performance. Furthermore, we found no evidence to support the hypothesis that a more formal approval process is associated with lower change fail rates. However the data does support the hypothesis that introducing more approvals results in a slower process and less frequent releases of large batches, with an accompanying higher impact on the production system that is likely associated with higher levels of risk and thus higher change fail rates.
 ---
 
 Most IT organizations have change management processes to manage the life cycle

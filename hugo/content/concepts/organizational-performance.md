@@ -19,5 +19,7 @@ summary: |
     - Achieving organization or mission goals
     
     Several years of analysis shows that, compared to low performers, organizations with the highest level of software delivery performance are twice as likely to exceed their goals. Employee wellbeing also contributes to organizational performance.
+    
+    Read the whitepaper: [ROI of DevOps Transformation](https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper)
 ---
 <!-- No content on this page (yet?). It's used only for the modal on Core. -->

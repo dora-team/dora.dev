@@ -12,11 +12,11 @@ headline: "Find out how to manage cloud infrastructure effectively so you can ac
 summary: |
     Infrastructure flexibility is often a motivation for organizations to adopt cloud computing. However, the use of a cloud provider alone may not be sufficient to achieve the desired agility. DORA's research uses [a definition](https://csrc.nist.gov/publications/detail/sp/800-145/final) from The USA's National Institute of Standards and Technology (NIST) to establish the five essential characteristics that enable cloud computing to provide its full potential benefit to an organization:
 
-    - **On-demand self-service**. Consumers can provision computing resources as needed, automatically, without any human interaction.
-    - **Broad network access**. Capabilities are widely available and can be accessed through heterogeneous platforms such as mobile phones, tablets, laptops, and workstations.
-    - **Resource pooling**. Provider resources are pooled in a multi-tenant model, with physical and virtual resources dynamically assigned and reassigned on demand. The customer generally has no direct control over the exact location of provided resources, but may specify location at a higher level of abstraction (for example country, state, or datacenter).
-    - **Rapid elasticity**. Capabilities can be elastically provisioned and released to rapidly scale outward or inward according to demand. Consumer capabilities available for provisioning appear to be unlimited and can be appropriated in any quantity at any time.
-    - **Measured service**. Cloud systems automatically control and optimize resource use by leveraging a metering capability at some level of abstraction appropriate to the type of service (for example storage, processing, bandwidth, and active user accounts). Resource usage can be monitored, controlled, and reported for transparency.
+    - On-demand self-service
+    - Broad network access
+    - Resource pooling
+    - Rapid elasticity
+    - Measured service
 ---
 
 Many organizations seek flexible technical infrastructure, often in the form of cloud computing. But there's more to it than
