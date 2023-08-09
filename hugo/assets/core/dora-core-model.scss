@@ -30,18 +30,9 @@ text {
     filter: drop-shadow( 2px 2px 2px rgba(0, 0, 0, .15));
 }
 
-.entity text {
-    fill:#666;
-    transition: all .3s ease-in-out;
-}
-
 .has-modal:hover {
     filter: drop-shadow( 3px 3px 3px rgba(0, 0, 0, .25));
     transition: all .1s ease-in-out;
-}
-
-.entity.has-modal.clickedEntity text {
-    fill:#333;
 }
 
 .icon {
