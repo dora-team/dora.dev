@@ -8,12 +8,12 @@ summary: |
 
     _For the primary application or service you work on..._
 
-    **Lead time for changes:** how long does it take to go from code committed to code successfully running in production?
+    **Lead time for changes:** How long does it take to go from code committed to code successfully running in production?
 
-    **Deployment frequency:** how often does your organization deploy code to production or release it to end users?
+    **Deployment frequency:** How often does your organization deploy code to production or release it to end users?
 
-    **Change failure rate:** what percentage of changes to production or released to users result in degraded service (e.g., lead to service impairment or service outage) and subsequently require remediation (e.g., require a hotfix, rollback, fix forward, patch)?
+    **Change failure rate:** What percentage of changes to production or released to users result in degraded service (e.g., lead to service impairment or service outage) and subsequently require remediation (e.g., require a hotfix, rollback, fix forward, patch)?
 
-    **Time to restore service:** how long does it generally take to restore service when a service incident or a defect that impacts users occurs (e.g., unplanned outage, service impairment)?
+    **Time to restore service:** How long does it generally take to restore service when a service incident or a defect that impacts users occurs (e.g., unplanned outage, service impairment)?
 ---
 {{/* No content on this page yet, just a summary. TODO: write an article with practical guidance on how to use the metrics. */}}

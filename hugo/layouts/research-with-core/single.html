@@ -78,7 +78,7 @@
                     x-show="$store.coreModal.capabilitySlug=='{{ .Slug }}'"
                     data-title="{{ .Page.Title }}">
                     <p>{{ .Page.Params.summary | markdownify }}</p>
-                    <p><a href="{{ .Page.RelPermalink }}">Learn more about {{ .Page.Title }}</a></p>
+                    <div class="core-model-learn-more"><a href="{{ .Page.RelPermalink }}">Learn more about {{ .Page.Title }}</a></div>
                 </div>
             {{ end }}
 
