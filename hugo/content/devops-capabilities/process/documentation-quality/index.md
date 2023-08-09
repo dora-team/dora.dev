@@ -17,9 +17,7 @@ summary: |
     - Recognizing documentation work during performance reviews and promotions.
 ---
 
-Internal documentation is a fundamental part of software development. For the past two years, the DORA team has looked at the quality of internal documentation. From our analysis, we’ve found a clear link between documentation quality and organizational performance — the organization’s ability to meet their performance and profitability goals. Just like a plant needs water and sunshine to thrive, an organization with good technical practices and documentation is significantly more likely to meet or exceed their performance goals.
-
-Documentation is highly technical work, and our findings show just how much this work pays off. 
+Internal documentation is a fundamental part of software development. Analysis by DORA has found a clear link between documentation quality and organizational performance — the organization’s ability to meet their performance and profitability goals. Documentation is highly technical work, and our findings show just how much this work pays off. 
 
 ## Measuring documentation quality
 For our research, we used a set of eight metrics that assess documentation attributes like clarity, findability, and reliability. You can review the [questions from 2022](http://localhost:1313/research/archives/2022/?tab_archives=questions) for the statements we used to assess these attributes.
