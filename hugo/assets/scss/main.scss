@@ -1,3 +1,7 @@
+@import url(//fonts.googleapis.com/css2?family=Google+Sans);
+@import url(//fonts.googleapis.com/css2?family=Google+Sans+Text);
+@import url(//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+
 @import "_variables.scss";
 
 @import "normalize.scss";
@@ -96,7 +100,7 @@ section.banner {
         line-height: 1.75;
 
         p {
-            font-family: $font-google-sans;
+            font-family: $font-google-sans-text;
             font-weight: 300;
         }
 

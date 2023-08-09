@@ -1,8 +1,15 @@
 /* put SVG-style CSS styles here for styling Core Model diagram */
 
+@import url(//fonts.googleapis.com/css2?family=Google+Sans+Text);
+
 * { 
     transform-box: fill-box;
   }
+
+text {
+    font-family: "Google Sans Text","Roboto",sans-serif !important;
+    font-weight: 500 !important;
+} 
 
 .entity-box { /* styles applying to the entire entity visual element */
     
@@ -23,18 +30,9 @@
     filter: drop-shadow( 2px 2px 2px rgba(0, 0, 0, .15));
 }
 
-.entity text {
-    fill:#666;
-    transition: all .3s ease-in-out;
-}
-
-.has-modal:hover .entity-box {
+.has-modal:hover {
     filter: drop-shadow( 3px 3px 3px rgba(0, 0, 0, .25));
     transition: all .1s ease-in-out;
-}
-
-.entity.has-modal.clickedEntity text {
-    fill:#333;
 }
 
 .icon {

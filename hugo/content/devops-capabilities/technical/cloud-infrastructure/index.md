@@ -1,14 +1,25 @@
 ---
-title: "Cloud infrastructure"
-titleForHTMLHead: "DevOps Capabilities: Cloud Infrastructure" # TODO: can we DRY this out?
+title: "Flexible infrastructure"
+titleForHTMLHead: "DevOps Capabilities: Flexible Infrastructure" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical
 draft: false
+slug: flexible-infrastructure
+aliases:
+    cloud-infrastructure
+core: true
 headline: "Find out how to manage cloud infrastructure effectively so you can achieve higher levels of agility, availability, and cost visibility."
-summary: "Find out how to manage cloud infrastructure effectively so you can achieve higher levels of agility, availability, and cost visibility."
+summary: |
+    Infrastructure flexibility is often a motivation for organizations to adopt cloud computing. However, the use of a cloud provider alone may not be sufficient to achieve the desired agility. DORA's research uses [a definition](https://csrc.nist.gov/publications/detail/sp/800-145/final) from The USA's National Institute of Standards and Technology (NIST) to establish the five essential characteristics that enable cloud computing to provide its full potential benefit to an organization:
+
+    - **On-demand self-service**. Consumers can provision computing resources as needed, automatically, without any human interaction.
+    - **Broad network access**. Capabilities are widely available and can be accessed through heterogeneous platforms such as mobile phones, tablets, laptops, and workstations.
+    - **Resource pooling**. Provider resources are pooled in a multi-tenant model, with physical and virtual resources dynamically assigned and reassigned on demand. The customer generally has no direct control over the exact location of provided resources, but may specify location at a higher level of abstraction (for example country, state, or datacenter).
+    - **Rapid elasticity**. Capabilities can be elastically provisioned and released to rapidly scale outward or inward according to demand. Consumer capabilities available for provisioning appear to be unlimited and can be appropriated in any quantity at any time.
+    - **Measured service**. Cloud systems automatically control and optimize resource use by leveraging a metering capability at some level of abstraction appropriate to the type of service (for example storage, processing, bandwidth, and active user accounts). Resource usage can be monitored, controlled, and reported for transparency.
 ---
 
-Many organizations are adopting cloud computing. But there's more to cloud than
+Many organizations seek flexible technical infrastructure, often in the form of cloud computing. But there's more to it than
 buying your infrastructure from a cloud provider. The US National Institute of
 Standards and Technologies (NIST)
 [defines](https://csrc.nist.gov/publications/detail/sp/800-145/final)
@@ -65,7 +76,7 @@ remain unchanged — days or weeks to obtain test environments, provision new
 infrastructure, or get configuration changes made — then organizations will not
 reap the results they want.
 
-## How to implement cloud infrastructure
+## How to implement flexible infrastructure
 
 Adopting cloud-native processes and practices to implement NIST's five
 characteristics involves substantial change by several IT functions, including
@@ -132,7 +143,7 @@ helped your organization achieve more
 and higher levels of availability,
 [velocity, and reliability](/quickcheck/).
 
-## Common pitfalls of implementing cloud infrastructure
+## Common pitfalls of implementing flexible infrastructure
 
 The biggest obstacles to meeting the five characteristics defined by NIST
 are:
@@ -178,7 +189,7 @@ Overcoming these obstacles requires a
 involving sustained investment and collaboration between people at every level
 of the organization.
 
-## How to measure cloud infrastructure
+## How to measure flexible infrastructure
 
 In order to decide what to measure, start by considering what benefits you hope
 to gain from implementing cloud infrastructure. Then start measuring the extent
@@ -207,15 +218,3 @@ reliability; in the cloud-native paradigm, configuration changes are often made
 by starting new virtual hosts with the new configuration rather than making
 changes to existing hosts. This practice is known as *ephemeral infrastructure*, in
 which a long uptime is an indicator of an unpatched machine.
-
-## What's next
-
--  For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
--  [White paper: Re-architecting to cloud native: an evolutionary approach to increasing developer productivity at scale](https://cloud.google.com/rearchitecting-to-cloud-native-whitepaper)
--  [Cloud billing concepts in Google Cloud](https://cloud.google.com/billing/docs/concepts)
--   Explore our DevOps
-    [research program](/).
--   Take the
-    [DevOps quick check](/quickcheck/)
-    to understand where you stand in comparison with the rest of the industry.
