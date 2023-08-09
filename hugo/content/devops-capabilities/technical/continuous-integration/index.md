@@ -6,7 +6,7 @@ category: technical
 draft: false
 core: true
 headline: "Learn about common mistakes, ways to measure, and how to improve on your continuous integration efforts."
-summary: "Learn about common mistakes, ways to measure, and how to improve on your continuous integration efforts."
+summary: "A development practice where code is regularly checked in, and each check-in triggers a set of quick tests to discover regressions, which developers fix immediately. The CI process creates canonical builds and packages that are ultimately deployed and released."
 slug: 'continuous-integration'
 ---
 

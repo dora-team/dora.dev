@@ -1,11 +1,14 @@
 ---
 title: "Trunk-based development"
 titleForHTMLHead: "DevOps Capabilities: Trunk-based Development" # TODO: can we DRY this out?
+slug: trunk-based-development
+core: true
 date: 2023-03-27T09:48:50+01:00
 category: technical 
 draft: false
 headline: "Prevent merge-conflict hassles with trunk-based development practices."
-summary: "Prevent merge-conflict hassles with trunk-based development practices."
+summary: |
+    Characterized by minimizing the number of active branches in a code repository; branches and forks having very short lifetimes (e.g., less than a day) before being merged into `main`; and application teams rarely or never having "code lock" periods when no one can check in code or do pull requests due to merging conflicts, code freezes, or stabilization phases.
 ---
 
 There are two main patterns for developer teams to work together using version

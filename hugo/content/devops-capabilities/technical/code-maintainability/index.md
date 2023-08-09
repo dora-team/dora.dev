@@ -6,7 +6,7 @@ category: technical
 draft: false
 core: true
 headline: "Make it easy for developers to find, reuse, and change code, and keep dependencies up-to-date."
-summary: "Make it easy for developers to find, reuse, and change code, and keep dependencies up-to-date."
+summary: "Systems and tools that make it easy for developers to change code maintained by others, to find examples in the codebase, to reuse other people's code, and to add, upgrade, and migrate to new versions of dependencies without breaking their code."
 slug: "code-maintainability"
 ---
 

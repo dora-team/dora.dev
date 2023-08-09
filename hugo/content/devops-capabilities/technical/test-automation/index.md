@@ -1,11 +1,14 @@
 ---
 title: "Test automation"
 titleForHTMLHead: "DevOps Capabilities: Test automation" # TODO: can we DRY this out?
+slug: test-automation
+core: true
 date: 2023-03-27T09:48:50+01:00
 category: technical
 draft: false
 headline: "Improve software quality by building reliable automated test suites and performing all kinds of testing throughout the software delivery lifecycle."
-summary: "Improve software quality by building reliable automated test suites and performing all kinds of testing throughout the software delivery lifecycle."
+summary: |
+    Test throughout the software delivery lifecycle, rather than as a separate phase after "dev complete." With continuous testing, developers and testers work side by side. High performers practice test-driven development, get feedback from tests in less than ten minutes, and continuously review and improve their test suites (for example, to better find defects and keep complexity under control).
 ---
 
 The key to building quality into software is getting fast feedback on the impact

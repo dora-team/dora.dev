@@ -1,11 +1,13 @@
 ---
 title: "Test data management"
 titleForHTMLHead: "DevOps Capabilities: Test Data Management" # TODO: can we DRY this out?
+slug: test-data-management
+core: true
 date: 2023-03-27T09:48:50+01:00
 category: technical
 draft: false
 headline: "Understand the right strategies for managing test data effectively along with approaches to provide fast, secure data access for testing."
-summary: "Understand the right strategies for managing test data effectively along with approaches to provide fast, secure data access for testing."
+summary: "The management of test data is an increasingly important part of automated testing. Effective practices include having adequate data to run your test suite, the ability to acquire necessary data on demand, and the data not limiting the number of tests you can run. We caution that your teams should minimize, whenever possible, the amount of test data needed to run automated tests."
 ---
 
 [Automated testing](/devops-capabilities/technical/test-automation)

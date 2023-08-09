@@ -1,11 +1,14 @@
 ---
 title: "Shifting left on security"
 titleForHTMLHead: "DevOps Capabilities: Shifting Left on Security" # TODO: can we DRY this out?
+slug: shifting-left-on-security
+core: true
 date: 2023-03-27T09:48:50+01:00
 category: technical
 draft: false
 headline: "Build security into the software development lifecycle without compromising delivery speed."
-summary: "Build security into the software development lifecycle without compromising delivery speed."
+summary: |
+    Shift security concerns to the "left"—that is, earlier in the software delivery lifecycle (SLDC)—by integrating security into the design and testing phases of the software development process. This process includes conducting security reviews of applications, including the infosec team in the design and demo process for applications, using pre-approved security libraries and packages, and testing security features as a part of the automated test suite.
 ---
 
 Security is everyone's responsibility. The

@@ -1,11 +1,13 @@
 ---
 title: "Deployment automation"
 titleForHTMLHead: "DevOps Capabilities: Deployment Automation" # TODO: can we DRY this out?
+slug: deployment-automation
+core: true
 date: 2023-03-27T09:48:50+01:00
 category: technical
 draft: false
 headline: "Best practices and approaches for deployment automation and reducing manual intervention in the release process."
-summary: "Best practices and approaches for deployment automation and reducing manual intervention in the release process."
+summary: "The degree to which deployments are fully automated and do not require manual intervention."
 ---
 
 Deployment automation is what enables you to deploy your software to testing
