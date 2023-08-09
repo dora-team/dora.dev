@@ -48,4 +48,4 @@ This research doesn’t investigate individual resources, but there are plenty o
 If you’re lucky enough to work in an environment with plenty of quality documentation, it’s because you or people in your organization create that content. But if your organization has poor quality documentation, there’s good news. By implementing the practices linked above, you can improve your documentation quality and make it shine.
 
 
-_Excerpted from [2022 State of DevOps Report data deep dive: Documenation is like sunshine](https://cloud.google.com/blog/products/devops-sre/deep-dive-into-2022-state-of-devops-report-on-documentation) by [Michelle Irvine](/research/team/#michelle-irvine) and [Derek DeBellis](/research/team/#derek-debellis)_
+_Excerpted from [2022 State of DevOps Report data deep dive: Documentation is like sunshine](https://cloud.google.com/blog/products/devops-sre/deep-dive-into-2022-state-of-devops-report-on-documentation) by [Michelle Irvine](/research/team/#michelle-irvine) and [Derek DeBellis](/research/team/#derek-debellis)_
