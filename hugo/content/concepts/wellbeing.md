@@ -11,7 +11,6 @@ summary: |
     **Rework** is reactive unplanned work, including any break/fix work, emergency software deployments and patches, responding to urgent audit documentation requests, and so on.
     
     **Burnout** is physical, mental, or emotional exhaustion caused by overwork or stress.
-link_from_core_modal: true
 ---
 
 # Wellbeing
