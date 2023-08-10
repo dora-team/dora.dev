@@ -58,11 +58,11 @@
         <div x-cloak class="modal" x-show="$store.coreModal.open" @click.outside="$store.coreModal.open=false"
             x-on:keydown.escape.window="$store.coreModal.open=false" x-transition>
 
+            <!-- there are modals for all of the capabilities, plus the grouped concepts like outcomes; grab all the relevant pages and render the modals -->
             {{ $capabilities := where (where $.Site.RegularPages "Section" "devops-capabilities") "Params.core" true}}
             {{ $concepts := where $.Site.RegularPages "Section" "concepts" }}
             {{ $modals := union $capabilities $concepts }}
 
-            <!-- TODO: each of these modals has two divs, each of which is activated/deactivated via `x-show`. Let's wrap each pair in a single div and show/hide that. -->
             {{ range $modals }}
                 <div x-ref="{{ .Slug }}" x-cloak x-show="$store.coreModal.capabilitySlug=='{{ .Slug }}'">
                     <div class="modal-header">
@@ -73,6 +73,8 @@
                     </div>
                     <div class="capability-content">
                         <p>{{ .Page.Params.summary | markdownify }}</p>
+
+                        <!-- some of the pages don't have any body text, only summaries. don't link to those (they exist only to populate these modals). -->
                         {{ if .Page.Content }}
                             <div class="core-model-learn-more"><a href="{{ .Page.RelPermalink }}">Learn more about {{ .Page.Title }}</a></div>
                         {{ end }}
