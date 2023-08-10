@@ -64,23 +64,19 @@
 
             <!-- TODO: each of these modals has two divs, each of which is activated/deactivated via `x-show`. Let's wrap each pair in a single div and show/hide that. -->
             {{ range $modals }}
-                <div class="modal-header"
-                    x-cloak 
-                    x-show="$store.coreModal.capabilitySlug=='{{ .Slug }}'">
-                    <h2>{{ .Title }}</h2>
-                    <img class="modal-close-x" x-on:click="$store.coreModal.open=false" aria-controls="coreModal"
-                        src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg"
-                        alt="close">
-                </div>
-                <div class="capability-content"
-                    x-ref="{{ .Slug }}"
-                    x-cloak 
-                    x-show="$store.coreModal.capabilitySlug=='{{ .Slug }}'"
-                    data-title="{{ .Page.Title }}">
-                    <p>{{ .Page.Params.summary | markdownify }}</p>
-                    {{ if .Page.Content }}
-                        <div class="core-model-learn-more"><a href="{{ .Page.RelPermalink }}">Learn more about {{ .Page.Title }}</a></div>
-                    {{ end }}
+                <div x-ref="{{ .Slug }}" x-cloak x-show="$store.coreModal.capabilitySlug=='{{ .Slug }}'">
+                    <div class="modal-header">
+                        <h2>{{ .Title }}</h2>
+                        <img class="modal-close-x" x-on:click="$store.coreModal.open=false" aria-controls="coreModal"
+                            src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg"
+                            alt="close">
+                    </div>
+                    <div class="capability-content">
+                        <p>{{ .Page.Params.summary | markdownify }}</p>
+                        {{ if .Page.Content }}
+                            <div class="core-model-learn-more"><a href="{{ .Page.RelPermalink }}">Learn more about {{ .Page.Title }}</a></div>
+                        {{ end }}
+                    </div>
                 </div>
             {{ end }}
 
