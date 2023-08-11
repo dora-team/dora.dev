@@ -1,6 +1,8 @@
 // [TESTING ENVIRONMENT] - START
 const admin = require("firebase-admin");
-let testEnv, projectID;
+let testEnv;
+
+let projectID = process.env.GCLOUD_PROJECT || 'doradotdev-staging';
 
 // Test to see if running Test w/in Local Emulator
 // and set appropriate environmental configurations
@@ -19,8 +21,6 @@ if (process.env.FIREBASE_EMULATOR_HUB){
 
 }else{
     // Running Integration Test to hosted Firestore db
-    projectID = 'doradotdev-staging';
-    process.env.GCLOUD_PROJECT = projectID;
     const privateKey = `../../secrets/${projectID}-private-key.json`;
     const projectConfig = require("firebase-functions-test")({
         databaseURL: `https://${projectID}.firebaseio.com`,
