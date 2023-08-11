@@ -1,4 +1,15 @@
 {{ define "main" }}
+<!-- TODO: #121 make a partial to process scss files and render <link> tags -->
+{{ $stylesheet := printf "scss/research.scss" | resources.Get | toCSS | fingerprint }}
+<link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
+
+<script defer src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- TODO: #189 make a partial to process javascript assets and render a `script` tag -->
+{{- $bfd := resources.Get "js/bfd.js" -}}
+{{- $jsFiles := slice $bfd }}
+{{- $jsBundle := $jsFiles | resources.Concat "js/research" | fingerprint -}}
+<script defer src="{{ $jsBundle.RelPermalink }}" integrity="{{ $jsBundle.Data.Integrity }}" defer></script>
+
 <section class="hasSidebar">
     <article>
         {{ .Content }}
@@ -6,5 +17,55 @@
     <sidebar>
         {{ partial "research_sidebar.html" . }}
     </sidebar>
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('modal', {
+                open: false,
+                capability_headline: 'DevOps Capability',
+                capability_content: 'How to improve',
+            });
+        })
+    </script>
+    <div class="double-wide bfd-container" x-data>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <div class="text-left">
+            <div id="bfd"></div>
+            <svg id="key" width="100%" height="170">
+                <text x="5" y="15" class="bfd-title">Key</text>
+                <circle r="5" cx="15" cy="30" class="bfd-circle cultural"></circle>
+                <text x="40" y="35" class="bfd-text">Cultural capability</text>
+                <circle r="5" cx="15" cy="50" class="bfd-circle process"></circle>
+                <text x="40" y="55" class="bfd-text">Product and process capability</text>
+                <circle r="5" cx="15" cy="70" class="bfd-circle management"></circle>
+                <text x="40" y="75" class="bfd-text">Lean management and monitoring capability</text>
+                <circle r="5" cx="15" cy="90" class="bfd-circle technical"></circle>
+                <text x="40" y="95" class="bfd-text">Technical capability</text>
+                <circle r="5" cx="15" cy="110" class="bfd-circle outcome"></circle>
+                <text x="40" y="115" class="bfd-text outcome-text">Outcome</text>
+                <circle r="5" cx="15" cy="130" class="bfd-circle transparent"></circle>
+                <text x="40" y="135" class="bfd-text">Multiple constructs</text>
+                <text x="11.7" y="134" class="plus">+</text>
+                <path id="key-link" class="link" d="M0 150 l20 0 m15 0" marker-end="url(#arrow)"></path>
+                <text x="40" y="155" class="bfd-text">Predictive relationship</text>
+            </svg>
+            <div x-cloak class="modal-container" x-show="$store.modal.open">
+                <div x-cloak class="modal" x-show="$store.modal.open" @click.outside="$store.modal.open=false"
+                    x-on:keydown.escape.window="$store.modal.open=false">
+                    <div class="modal-header">
+                        <h2 x-text="$store.modal.capability_headline"></h2>
+                        <img class="modal-close-x" x-on:click="$store.modal.open=false" aria-controls="modal"
+                            src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/close/default/48px.svg"
+                            alt="close">
+                    </div>
+                    <div class="capability-content" x-html="$store.modal.capability_content"></div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center"><a href="/pdf/big_friendly_diagram.pdf" target="_blank">
+                        <button>View PDF</button></a>
+                        <br>
+                        An update to this model is in progress: <a href="/core/">DORA Core</a>
+                </div>
+    </div>
 </section>
 {{ end }}
