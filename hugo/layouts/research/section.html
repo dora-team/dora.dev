@@ -50,7 +50,7 @@
 
         <!--- embed the SVG (TODO: consider processing the SVG manipulations—or at least the stylesheet link injection—in Hugo) -->
         {{ $svg := resources.Get "core/dora-core-model.svg" }} 
-        <object data="{{ $svg.RelPermalink }}" id="dora-core-model" type="image/svg+xml" style="width:100%;border:1px solid #ddd;border-radius:.5em;margin:1em 0;"></object>
+        <object data="{{ $svg.RelPermalink }}" id="dora-core-model" type="image/svg+xml" style="width:100%;border:1px solid #ddd;border-radius:.5em;"></object>
 
     <div x-cloak class="modal-container" x-show="$store.coreModal.open">
         <div x-cloak class="modal" x-show="$store.coreModal.open" @click.outside="$store.coreModal.open=false"
