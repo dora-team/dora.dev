@@ -2,7 +2,6 @@
 draft: false
 slug: organizational-performance
 title: "Organizational Performance"
-link_from_core_modal: false
 summary: |
     Organizational performance measures the ability of an organization to achieve commercial and non-commercial goals. Academic research has validated this measure and found it to be highly correlated to measures of return on investment (ROI), and it is robust to economic cycles.
 
@@ -22,4 +21,3 @@ summary: |
     
     Read the whitepaper: [ROI of DevOps Transformation](https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper)
 ---
-<!-- No content on this page (yet?). It's used only for the modal on Core. -->

@@ -1,9 +1,10 @@
 ---
 draft: false
 slug: measuring-and-improving
-title: "Measuring and Improving"
-link_from_core_modal: false
+title: "Software delivery performance"
 summary: |
+    ### Measuring and improving software delivery performance
+
     DORA's research has consistently found that a team's software delivery capability reliably predicts the value that the team provides to their organization. Survey respondents who achieve high levels of software delivery performance report that their organizations perform better on business objectives. Performance can be assessed according to four software delivery metrics:
 
     _For the primary application or service you work on..._
@@ -20,4 +21,3 @@ summary: |
 
     Want to assess your team's software delivery performance? Try our [DevOps Quick Check](/quickcheck) for insights on how to improve.
 ---
-{{/* No content on this page yet, just a summary. TODO: write an article with practical guidance on how to use the metrics. */}}

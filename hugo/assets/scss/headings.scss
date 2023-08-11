@@ -14,7 +14,7 @@
 @include headings {
     font-weight: 400;
     margin-bottom: 0.5rem;
-    margin-top: 0.25rem;
+    margin-top: .75rem;
     padding: 0;
     line-height: 120%;
     text-rendering: optimizeLegibility;
@@ -30,8 +30,7 @@ h2 {
 }
 
 h3 {
-    margin-top: 2em;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 h4 {
