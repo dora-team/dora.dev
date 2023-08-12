@@ -26,8 +26,11 @@ steps:
       # (it returns in format `i  hosting:channel: https://<url>`)
       CHANNEL_DATA="$(firebase hosting:channel:open ${PREVIEW_CHANNEL})"
 
+      # Add header for better communications
+      echo "Cloud Build time: $(date)" > /workspace/gh-pr-comment-message.txt
+
       # extract the URL from the channel data and save it to /workspace
-      echo "Preview this PR [including DRAFT content] at ${CHANNEL_DATA##* }" > /workspace/gh-pr-comment-message.txt
+      echo "Preview this PR [including DRAFT content] at ${CHANNEL_DATA##* }" >> /workspace/gh-pr-comment-message.txt
       echo ${CHANNEL_DATA##* }
 
   - id: 'Hugo Build PREVIEW_CHANNEL (w/o Drafts) Site'
