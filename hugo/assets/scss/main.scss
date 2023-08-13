@@ -159,6 +159,7 @@ section.banner {
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
+    vertical-align: middle;
 
     &.divider-before {
         border-left:1px solid $border-light;

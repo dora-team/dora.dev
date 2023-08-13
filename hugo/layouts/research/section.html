@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <!-- TODO: #121 make a partial to process scss files and render <link> tags -->
-{{ $stylesheet := printf "scss/research-with-core.scss" | resources.Get | toCSS | fingerprint }}
+{{ $stylesheet := printf "scss/research.scss" | resources.Get | toCSS | fingerprint }}
 <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
 
 {{ .Content }}
@@ -46,7 +46,9 @@
          <!-- Process CSS for Core; note that the reference to this stylesheet is inserted into the SVG file by the script in `/assets/core/` -->
          {{ $stylesheet := printf "core/dora-core-model.scss" | resources.Get | toCSS }} <!-- renders to /core/dora-core-model.css -->
 
-         <!-- DEBUG: {{ $stylesheet.RelPermalink }} -->
+         <!-- if the viewport is taller than it is wide probably because it's a mobile device being held vertically, nudge the user to rotate -->
+         <!-- this element will be hidden by CSS when viewport is wider than it is tall -->
+         <blockquote id="rotate-tip"><span class="google-material-icons">screen_rotation</span> for optimal display of the Core model, rotate your device to landscape mode</blockquote>
 
         <!--- embed the SVG (TODO: consider processing the SVG manipulations—or at least the stylesheet link injection—in Hugo) -->
         {{ $svg := resources.Get "core/dora-core-model.svg" }} 

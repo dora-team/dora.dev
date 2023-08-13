@@ -1,6 +1,6 @@
 {{ define "main" }}
 <!-- TODO: #121 make a partial to process scss files and render <link> tags -->
-{{ $stylesheet := printf "scss/research.scss" | resources.Get | toCSS | fingerprint }}
+{{ $stylesheet := printf "scss/research-backup.scss" | resources.Get | toCSS | fingerprint }}
 <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
 
 <script defer src="https://www.gstatic.com/charts/loader.js"></script>
