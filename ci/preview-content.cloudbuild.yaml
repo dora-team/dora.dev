@@ -13,6 +13,9 @@ steps:
       # Build draft site
       hugo -v -s ./hugo -d /workspace/hugo/public --debug -D
 
+      # 2023-08-13: Dave is debugging a missing stylesheet
+      ls /workspace/hugo/public/core
+
   - id: 'Firebase deploy PREVIEW_CHANNEL (w/ Drafts) Hosting'
     name: gcr.io/$PROJECT_ID/firebase
     env:
