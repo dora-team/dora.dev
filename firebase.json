@@ -48,6 +48,11 @@
             "source": "/core",
             "destination": "/research/",
             "type": 302
+        },
+        {
+            "source": "/concepts/wellbeing",
+            "destination": "/devops-capabilities/cultural/wellbeing/",
+            "type": 302
         }
       ]
     }
