@@ -27,6 +27,12 @@ type: faq
 
 _DORA Core is an ongoing effort. Learn more, and provide feedback, in the [DORA Core GitHub Discussion](https://github.com/dora-team/dora.dev/discussions/265)._
 
+### Accelerate State of DevOps Report 2023
+
+- Where can I find the 2023 Accelerate State of DevOps survey?
+- The 2023 Accelerate State of DevOps survey is now closed.  Thank you to everyone who participated in this year's research.
+- When will the 2023 Accelerate State of DevOps Report be released?
+- We plan to publish the 2023 Accelerate State of DevOps Report in the fourth quarter of this year. [Join the DORA community](https://dora.community/) to be notified when it’s released.
 
 ### Accelerate State of DevOps Report 2022
 
