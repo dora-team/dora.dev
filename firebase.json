@@ -43,6 +43,11 @@
           "source": "/dora-joins-google-cloud.html",
           "destination": "/news/dora-joins-google-cloud/",
           "type": 301
+        },
+        {
+            "source": "/core",
+            "destination": "/research/",
+            "type": 302
         }
       ]
     }
