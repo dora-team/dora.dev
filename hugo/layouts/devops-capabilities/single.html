@@ -3,8 +3,11 @@
 {{ $stylesheet := printf "scss/devops-capabilities.scss" | resources.Get | toCSS | fingerprint }}
 <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
 
-<h4><a href="/devops-capabilities">DevOps capabilities</a></h4>
-<h1>{{ .Title }}</h1>
+<h4><a href="/devops-capabilities">DevOps capabilities</a>: {{ .Params.category }}</h4>
+<h1>
+    {{ .Title }}
+    {{ if .Params.core }}<a class="core" href='{{ relref . "/research/" }}'>core</a>{{ end }}
+</h1>
 <section class="hasSidebar">
     <article>
         {{ .Content }}

@@ -1,3 +1,5 @@
+@import "_variables.scss";
+
 fieldset {
     padding: 0;
     border: none;
@@ -27,6 +29,7 @@ button,
 input[type="submit"],
 .button {
     display: inline-block;
+    font-family: $font-google-sans-text;
     border: none;
     border-radius: 2px;
     font-size: 14px;
@@ -38,30 +41,30 @@ input[type="submit"],
     padding: 15px 24px;
     transition: color 0.15s linear, background-color 0.15s linear;
     color: white;
-    background-color: #1a73e8;
+    background-color: $color-link;
     cursor: pointer;
     text-decoration: none;
 
     &:disabled {
-        background-color: #dadce0;
+        background-color: $border-light;
         cursor: default;
     }
 
     &:hover:not(:disabled) {
-        background-color: #174ea6;
-        color: white;
+        background-color: $color-link-hover;
+        color: $color-text-knockout;
     }
 }
 
 button.secondary,
 .button.secondary {
-    background-color: white;
-    color: #1a73e8;
-    border: 1px solid #dadce0;
+    background-color: $color-text-knockout;
+    color: $color-text-highlight;
+    border: 1px solid $border-light;
 
     &:hover {
-        color: #1a73e8;
-        background-color: #e1f3fc;
+        color: $color-text-highlight;
+        background-color: $background-soft;
     }
 }
 

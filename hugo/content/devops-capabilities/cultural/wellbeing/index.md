@@ -1,8 +1,10 @@
 ---
 draft: false
-summary: (stub page for "Wellbeing")
 slug: wellbeing
 title: "Wellbeing"
+category: cultural
+core: true
+headline: A focus on employee happiness and work environment can improve organizational performance while helping retain talent.
 summary: |
     Wellbeing is a reflection of individuals' happiness and job satisfaction. Increased wellbeing predicts organizational performance and employees' job tenure. DORA has studied the impact of deployment pain, rework, and burnout on wellbeing.
 
@@ -13,7 +15,6 @@ summary: |
     **Burnout** is physical, mental, or emotional exhaustion caused by overwork or stress.
 ---
 
-# Wellbeing
 Wellbeing is a reflection of individuals' happiness and job satisfaction. Increased wellbeing predicts organizational performance and employees' job tenure. DORA has studied the impact of deployment pain, rework, and burnout on wellbeing.
 
 ## Deployment pain
