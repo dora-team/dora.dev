@@ -97,12 +97,14 @@
 
 <div style="text-align: center;">
     {{ with $pdf }}
-        <a href="{{ .RelPermalink }}" target="_blank" class="button secondary">Download as PDF</a>
+        <a href="{{ .RelPermalink }}" class="button secondary" download>Download as PDF</a>
     {{ end }}
     {{ with $png }}
-        <a href="{{ .RelPermalink }}" target="_blank" class="button secondary">Download as PNG</a>
+        <a href="{{ .RelPermalink }}" class="button secondary" download>Download as PNG</a>
     {{ end }}
 </div>
+
+
 
     <h3>DORA Research Archives</h3>
     {{ $archives := where $.Site.RegularPages "Type" "research_archives" }}
