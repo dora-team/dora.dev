@@ -1,5 +1,5 @@
 <svg width="2112" height="1188" viewBox="0 0 2112 1188" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="dora-core-model-v1.1.0" clip-path="url(#clip0_5_88)">
+<g id="dora-core-model-v1.1.1" clip-path="url(#clip0_5_88)">
 <rect width="2112" height="1188" fill="white"/>
 <rect id="Rectangle 13" width="303" height="101" fill="#F5F5F5"/>
 <g id="construct#technical-capabilities">
@@ -123,8 +123,9 @@
 </g>
 </g>
 <g id="footer">
-<text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="14" font-weight="500" letter-spacing="0em" text-decoration="underline"><tspan x="1964.09" y="1154.26"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></tspan></text>
-<text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="2001.88" y="1133.26">version 1.1.0&#10;</tspan><tspan x="1755.06" y="1154.26"> Licensed by Google LLC under </tspan><tspan x="2081" y="1154.26"> </tspan></text>
+<text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="2006.26" y="1133.26">version 1.1.1&#10;</tspan></text>
+<text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="1964.09" y="1154.26"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></tspan></text>
+<text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="1755.06" y="1154.26"> Licensed by Google LLC under </tspan><tspan x="2081" y="1154.26"> </tspan></text>
 </g>
 <g id="construct#organizational-performance">
 <g id="Group 2">
@@ -259,7 +260,7 @@
 <text id="outcomes" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="25" font-weight="500" letter-spacing="0em"><tspan x="1810.52" y="57.3233">outcomes</tspan></text>
 </g>
 <line id="Line 1" y1="100.5" x2="2112" y2="100.5" stroke="#CCCCCC"/>
-<text id="url" fill="#33484F" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="18" letter-spacing="0em"><tspan x="353" y="56.62">dora.dev/core</tspan></text>
+<text id="url" fill="#33484F" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="24" letter-spacing="0em"><tspan x="353" y="58.16"><a href="https://dora.dev/research">dora.dev/research</a></tspan></text>
 <path id="entity.capability.technical#continuous-delivery --&#62; entity.capability.technical#generative-organizational-culture" d="M834.5 685V760" stroke="#999999" stroke-width="2"/>
 <path id="entity.capability.technical#generative-organizational-culture --&#62; construct#software-delivery-performance" d="M1146 450L1135.07 446.282L1137.31 457.608L1146 450ZM989 815C998.848 815 1007.4 809.521 1014.94 800.178C1022.48 790.842 1029.1 777.532 1035.1 761.576C1047.11 729.659 1056.74 686.853 1066.18 643.289C1075.63 599.685 1084.89 555.312 1096.14 520.133C1101.77 502.545 1107.88 487.305 1114.73 475.632C1121.6 463.938 1129.13 455.96 1137.55 452.68L1136.82 450.817C1127.78 454.339 1119.96 462.782 1113.01 474.619C1106.04 486.477 1099.88 501.876 1094.24 519.524C1082.95 554.818 1073.67 599.308 1064.23 642.865C1054.78 686.463 1045.17 729.118 1033.23 760.872C1027.26 776.752 1020.73 789.83 1013.39 798.922C1006.05 808.009 998.013 813 989 813V815Z" fill="#999999"/>
 <path id="construct#software-delivery-performance --&#62; construct#organizational-performance" d="M1676 450L1666 444.226V455.774L1676 450ZM1552 451H1667V449H1552V451Z" fill="#999999"/>
