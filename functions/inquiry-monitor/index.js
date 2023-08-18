@@ -11,11 +11,16 @@
 const functions = require('firebase-functions');
 var admin = require('firebase-admin');
 
+const { Timestamp } = require('firebase-admin/firestore');
+
 admin.initializeApp();
 const remoteConfig = admin.remoteConfig();
 
 // Initialize Cloud Firestore and get a reference to the db service
 const db = admin.firestore();
+
+// The number of days to expire the email-inquiry entry
+const INQUIRY_EXPIRES_DAYS = 63;
 
 /**
  * Monitor Email Inquiry Collection
@@ -72,6 +77,15 @@ exports.emailInquiryMonitor = functions.firestore
                     .catch((error) => {
                         console.error("Error writing document: ", error);
                     });
+
+            // ISSUE: #363 Update Email Inquiry (from web-post) with expirationDate to support TTL
+            const expireDate = new Date(context.timestamp);
+            expireDate.setDate(expireDate.getDate() + INQUIRY_EXPIRES_DAYS);
+            const expireTime = Timestamp.fromDate(expireDate);
+
+            let inquiryRef = db.collection(`${MONITOR_EMAIL_INQUIRY_COLLECTION}`).doc(snap.id);
+            // let expireTime = admin.firestore.Timestamp.fromDate(context.timestamp + expireTimeInSec);
+            const res = await inquiryRef.update({expireAt: expireTime});
 
             return newDocRefID; // return the ID reference
 });

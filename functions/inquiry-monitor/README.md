@@ -1,5 +1,9 @@
 # Release Notes: Firebase emailInquiryMonitor Cloud Function
 
+V1.2.0 - New features
+ - Added support for Firestore TTL Policies by adding expireAt field to email-inquiry collection
+ - Bumped node module versions to address security vulnerabilities
+
 V1.1.0 - New features
  - Added custom document ID based upon timestamp for ease of sorting and research
  - Added original Web Inquiry documentID (from HTML post) as additional document element (`inquiryRef`) for traceability to original request

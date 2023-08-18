@@ -1,5 +1,6 @@
 // [TESTING ENVIRONMENT] - START
 const admin = require("firebase-admin");
+const { Timestamp } = require('firebase-admin/firestore');
 let testEnv;
 
 let projectID = process.env.GCLOUD_PROJECT || 'doradotdev-staging';
@@ -50,7 +51,8 @@ const MOCK_EMAIL_INQUIRY = {
     last_name: 'Test',
     inquiry_type: 'Support',
     from_email: 'integration.test@example.com',
-    message: 'This is an Integration TEST Message'
+    message: 'This is an Integration TEST Message',
+    created: context.timestamp,
 };
 
 // Define the expected results
@@ -90,6 +92,28 @@ describe("EMAIL MONITOR", () => {
 
     afterAll(() => {
         testEnv.cleanup()
+    });
+
+    it("Is email-inquire expireAt 63 days from context", async() => {
+
+        // 63 Days and calculate future expiration time based upon context
+        INQUIRY_EXPIRES_DAYS = 63;
+        const expireDate = new Date(context.timestamp);
+        expireDate.setDate(expireDate.getDate() + INQUIRY_EXPIRES_DAYS);
+        let expectedExpireTime =  Timestamp.fromDate(expireDate);
+
+        // get the snapshot obj of mockWeb Inquiry
+        let mockInquirySnap = await webInquiryCollectionRef.get();
+
+        // Call the wrapped function with the snapshot (returns DocID)
+        await wrapped(mockInquirySnap, context);
+
+        // Get get the updated document reference from the EMAIL_INQUIRY_COLLECTION entry
+        let updateInquirySnap = (await webInquiryCollectionRef.get()).data();
+
+        // Compare results with the expected result constant
+        expect(updateInquirySnap.expireAt).toStrictEqual(expectedExpireTime);
+
     });
 
     it("Can read from web form collection", async() => {
