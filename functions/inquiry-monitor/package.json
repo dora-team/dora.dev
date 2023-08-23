@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "description": "Firebase Function to monitor new DORA Inquiry requests",
   "dependencies": {
-    "firebase": "^10.2.0",
+    "firebase": "^10.3.0",
     "firebase-admin": "^11.10.1",
     "firebase-functions": "^4.4.1"
   },
