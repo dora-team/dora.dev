@@ -3,7 +3,7 @@ const admin = require("firebase-admin");
 const { Timestamp } = require('firebase-admin/firestore');
 let testEnv;
 
-let projectID = process.env.GCLOUD_PROJECT || 'doradotdev-staging';
+let projectID = process.env.PROJECT_ID || 'doradotdev-staging';
 
 // Test to see if running Test w/in Local Emulator
 // and set appropriate environmental configurations
@@ -44,6 +44,8 @@ const context = {
     timestamp: new Date().getTime()
 };
 
+const createdDate = new Date(context.timestamp);
+
 // Define the test data
 const mockReferenceID = "mockDataReferenceID"
 const MOCK_EMAIL_INQUIRY = {
@@ -52,11 +54,12 @@ const MOCK_EMAIL_INQUIRY = {
     inquiry_type: 'Support',
     from_email: 'integration.test@example.com',
     message: 'This is an Integration TEST Message',
-    created: context.timestamp,
+    created: Timestamp.fromDate(createdDate)
 };
 
 // Define the expected results
 const expectedResults = {
+    delivery: "",
     inquiryRef: mockReferenceID,
     to: TEST_SEND_TO,
     message: {subject: 'DORA.dev inquiry from Integration Test: Support',html: `<br>From: integration.test@example.com<br>First Name: Integration<br>Last Name: Test<br>Submitted:  ${context.timestamp}<hr><br>Message: This is an Integration TEST Message`
@@ -111,7 +114,10 @@ describe("EMAIL MONITOR", () => {
         // Get get the updated document reference from the EMAIL_INQUIRY_COLLECTION entry
         let updateInquirySnap = (await webInquiryCollectionRef.get()).data();
 
-        // Compare results with the expected result constant
+        // Compare results with the expected result constant::
+        // Note:  It is possible that the deployed extension will
+        // update the field prior to read and fail the test;
+        // This should only happen if the mock entry is new
         expect(updateInquirySnap.expireAt).toStrictEqual(expectedExpireTime);
 
     });
@@ -139,10 +145,13 @@ describe("EMAIL MONITOR", () => {
 
         // get new get reference to collection - then get document data
         let dataAfterCreate = (await newDocRef.get()).data();
-        // expectedResults.inquiryRef = dataAfterCreate;
+
+        // remove meta-data if Extension ran before test completed
+        dataAfterCreate.delivery = "";
 
         // Compare results with the expected result constant
         expect(dataAfterCreate).toStrictEqual(expectedResults);
+
 
     });
 });
