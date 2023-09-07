@@ -4,48 +4,6 @@ $font-stack: "Google Sans Text", "Roboto", sans-serif;
 $shadow-light: drop-shadow(2px 2px 2px rgba(0, 0, 0, .15));
 $shadow-dark: drop-shadow(3px 3px 3px rgba(0, 0, 0, .25));
 
-* {
-    transform-box: fill-box;
-}
-
-text {
-    font-family: $font-stack !important;
-    font-weight: 500 !important;
-}
-
-.entity,
-.construct {
-    filter: $shadow-light;
-
-    &.has-modal {
-        &:hover {
-            filter: $shadow-dark;
-            transition: all .1s ease-in-out;
-        }
-    }
-}
-
-.entity {
-    &.capability.has-modal.clickedEntity .icon {
-        @include gearAnimation;
-    }
-
-    &.metric.has-modal {
-        .icon {
-            transform: scale3d(1, .85, 1);
-            transform-origin: bottom;
-        }
-    }
-
-    &.metric.has-modal.clickedEntity .icon {
-        @include stretchUpAnimation;
-    }
-
-    &.outcome.has-modal.clickedEntity .icon {
-        @include stretchOutAnimation;
-    }
-}
-
 @mixin gearAnimation {
     animation: turngear .4s 0s ease-in-out;
     transform-origin: 50% 50%;
@@ -99,3 +57,46 @@ text {
         transform: scale3d(1.1, 1.1, 1.1);
     }
 }
+
+* {
+    transform-box: fill-box;
+}
+
+text {
+    font-family: $font-stack !important;
+    font-weight: 500 !important;
+}
+
+.entity,
+.construct {
+    filter: $shadow-light;
+
+    &.has-modal {
+        &:hover {
+            filter: $shadow-dark;
+            transition: all .1s ease-in-out;
+        }
+    }
+}
+
+.entity {
+    &.capability.has-modal.clickedEntity .icon {
+        @include gearAnimation;
+    }
+
+    &.metric.has-modal {
+        .icon {
+            transform: scale3d(1, .85, 1);
+            transform-origin: bottom;
+        }
+    }
+
+    &.metric.has-modal.clickedEntity .icon {
+        @include stretchUpAnimation;
+    }
+
+    &.outcome.has-modal.clickedEntity .icon {
+        @include stretchOutAnimation;
+    }
+}
+
