@@ -24,6 +24,26 @@ type: quickcheck
 <h5>Question 1 of 5</h5>
 <section class="question">
 <aside>
+    <h2>Lead time</h2>
+    <img src="/img/quickcheck/lead_time.svg" class="spot">
+</aside>
+<fieldset class="paragraph">
+    <legend>For the primary application or service you work on, what is your lead time for changes (that is, how long does it take to go from code committed to code successfully running in production)?
+    </legend>
+    <ul>
+        <li><label for="leadtime1"><input type="radio" name="leadtime" id="leadtime1" value="1"> More than six months</label></li>
+        <li><label for="leadtime2"><input type="radio" name="leadtime" id="leadtime2" value="2"> One to six months</label></li>
+        <li><label for="leadtime3"><input type="radio" name="leadtime" id="leadtime3" value="3"> One week to one month</label></li>
+        <li><label for="leadtime4"><input type="radio" name="leadtime" id="leadtime4" value="4"> One day to one week</label></li>
+        <li><label for="leadtime5"><input type="radio" name="leadtime" id="leadtime5" value="5"> Less than one day</label></li>
+        <li><label for="leadtime6"><input type="radio" name="leadtime" id="leadtime6" value="6"> Less than one hour</label></li>
+    </ul>
+    </fieldset>
+</section>
+
+<h5>Question 2 of 5</h5>
+<section class="question">
+<aside>
     <h2>Deploy frequency</h2>
     <img src="/img/quickcheck/deploy_freq.svg" class="spot">
 </aside>
@@ -39,26 +59,6 @@ type: quickcheck
         <li><label for="deployfreq5"><input type="radio" name="deployfreq" id="deployfreq5" value="5"> Between once per hour and once per day</label></li>
         <li><label for="deployfreq6"><input type="radio" name="deployfreq" id="deployfreq6" value="6"> On demand (multiple deploys per day)</label></li>
       </ul>
-    </fieldset>
-</section>
-
-<h5>Question 2 of 5</h5>
-<section class="question">
-<aside>
-    <h2>Lead time</h2>
-    <img src="/img/quickcheck/lead_time.svg" class="spot">
-</aside>
-<fieldset class="paragraph">
-    <legend>For the primary application or service you work on, what is your lead time for changes (that is, how long does it take to go from code committed to code successfully running in production)?
-    </legend>
-    <ul>
-        <li><label for="leadtime1"><input type="radio" name="leadtime" id="leadtime1" value="1"> More than six months</label></li>
-        <li><label for="leadtime2"><input type="radio" name="leadtime" id="leadtime2" value="2"> One to six months</label></li>
-        <li><label for="leadtime3"><input type="radio" name="leadtime" id="leadtime3" value="3"> One week to one month</label></li>
-        <li><label for="leadtime4"><input type="radio" name="leadtime" id="leadtime4" value="4"> One day to one week</label></li>
-        <li><label for="leadtime5"><input type="radio" name="leadtime" id="leadtime5" value="5"> Less than one day</label></li>
-        <li><label for="leadtime6"><input type="radio" name="leadtime" id="leadtime6" value="6"> Less than one hour</label></li>
-    </ul>
     </fieldset>
 </section>
 
