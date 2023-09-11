@@ -23,7 +23,7 @@
     "emulator": "firebase emulators:start --only functions,firestore"
   },
   "engines": {
-    "node": "16"
+    "node": "18"
   },
   "private": true
 }
