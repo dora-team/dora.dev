@@ -1,6 +1,6 @@
 // [TESTING ENVIRONMENT] - START
 const admin = require('firebase-admin');
-const { Timestamp } = require('firebase-admin/firestore');
+const {Timestamp} = require('firebase-admin/firestore');
 let testEnv;
 
 let projectID = process.env.PROJECT_ID || 'doradotdev-staging';
@@ -38,13 +38,13 @@ const TEST_SEND_TO = process.env.MONITOR_SEND_TO || 'no-reply@example.com';
 
 // Define the test context
 const context = {
-  timestamp: new Date().getTime()
+  timestamp: new Date().getTime(),
 };
 
 const createdDate = new Date(context.timestamp);
 
 // Define the test data
-const mockReferenceID = 'mockDataReferenceID'
+const mockReferenceID = 'mockDataReferenceID';
 const MOCK_EMAIL_INQUIRY = {
   first_name: 'Integration',
   last_name: 'Test',
@@ -80,7 +80,7 @@ describe('EMAIL MONITOR', () => {
   const webInquiryCollectionRef =
     db.collection(EMAIL_INQUIRY_COLLECTION).doc(mockReferenceID);
 
-  beforeEach(async() => {
+  beforeEach(async () => {
     // Creates wrapped test function from cloud function
     wrapped = testEnv.wrap(myFunctions.emailInquiryMonitor);
 
@@ -115,7 +115,7 @@ describe('EMAIL MONITOR', () => {
     expect(updateInquirySnap.expireAt).toStrictEqual(expectedExpireTime);
   });
 
-  it('Can read from web form collection', async() => {
+  it('Can read from web form collection', async () => {
     // Can I read from the mock Collection
     const dataAfterCreate = (await webInquiryCollectionRef.get()).data();
 
@@ -123,7 +123,7 @@ describe('EMAIL MONITOR', () => {
     expect(dataAfterCreate).toStrictEqual(MOCK_EMAIL_INQUIRY);
   });
 
-  it('Function writes data in expected schema', async() => {
+  it('Function writes data in expected schema', async () => {
     // get the snapshot obj of mockWeb Inquiry
     const mockInquirySnap = await webInquiryCollectionRef.get();
 
