@@ -29,7 +29,7 @@ steps:
       hugo -v -s ./hugo -d /workspace/hugo/public --logLevel=debug
 
   - id: 'Node Install'
-    name: gcr.io/cloud-builders/npm:node-16.18.0
+    name: 'gcr.io/cloud-builders/npm:node-18.12.0'
     entrypoint: npm
     dir: 'functions/inquiry-monitor'
     args: ['install']
@@ -44,7 +44,7 @@ steps:
       firebase deploy --non-interactive --force --project=${PROJECT_ID}
 
   - id: 'CI Testing'
-    name: 'gcr.io/cloud-builders/npm:node-16.18.0'
+    name: 'gcr.io/cloud-builders/npm:node-18.12.0'
     entrypoint: npm
     dir: 'functions/inquiry-monitor'
     args: ['run', 'int-test']
