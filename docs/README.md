@@ -16,7 +16,6 @@ All development and deployment/administration for *Platform capabilities* includ
  - Firebase Hosting
  - Firebase Cloud Functions Development and Deployment
  - Firebase Extension Deployment
- - Firebase Remote Configuration
  - Firestore Data retention and Firestore Rules Deployment
 
 ## Hosting
@@ -38,7 +37,7 @@ To emulate Firestore and Firebase hosting (to see features like server-side redi
 #### **Cloud Functions**
 To emulate Firestore Cloud Functions, you will need NodeJS installed locally. For version requirements review `functions/{function_name}/package.json` and may start the Functions Emulator (with hosting and firestore) with the following: `firebase emulators:start --only firestore,hosting,functions`.
 
-Cloud Function Configuration: The hosted version of the Cloud Function leverages [Remote Config](https://firebase.google.com/docs/remote-config) to get the value for the "Send To" value.  However, at this time Remote Config is not supported in the local emulator.  However, you may still pass in a local environment option by setting the `SEND_TO=` value within a newly created file `functions/{function_name}/.env.local`. (NOTE: By design, all `*.env.local` files are excluded from Git a defined in the `.gitignore`)
+Cloud Function Configuration: The hosted version of the Cloud Function environment variables to get the value for the "Send To" value and expiration time.  You may pass in a local environment option by setting the `MONITOR_SEND_TO` and `INQUIRY_EXPIRES_DAYS` values within a newly created file `functions/{function_name}/.env.local`. (NOTE: By design, all `*.env.local` files are excluded from Git a defined in the `.gitignore`)
 
 #### **Extensions**
 Firebase emulation for extensions is available by adjusting the CLI option (i.e., either with the `--only extensions` or loading all by eliminating the `--only` completely).  However, by (current) [Firebase design](https://github.com/firebase/firebase-tools/issues/5510), _extensions require access to the hosted Firebase project at startup_ as defined within `./.firebaserc`.  This is used for start-up authentication only; If you not have access, this can cause permissions errors and fail to start the emulation (see notes below).
