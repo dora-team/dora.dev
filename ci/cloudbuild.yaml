@@ -14,7 +14,7 @@ steps:
       hugo -v -s ./hugo -d /workspace/hugo/public --debug
 
   - id: 'Node Install'
-    name: gcr.io/cloud-builders/npm:node-16.18.0
+    name: 'gcr.io/cloud-builders/npm:node-18.12.0'
     entrypoint: npm
     dir: 'functions/inquiry-monitor'
     args: ['install']

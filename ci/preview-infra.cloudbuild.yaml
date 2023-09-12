@@ -29,7 +29,7 @@ steps:
       hugo -v -s ./hugo -d /workspace/hugo/public --logLevel=debug
 
   - id: 'Node Install'
-    name: gcr.io/cloud-builders/npm:node-16.18.0
+    name: 'gcr.io/cloud-builders/npm:node-18.12.0'
     entrypoint: npm
     dir: 'functions/inquiry-monitor'
     args: ['install']
@@ -41,15 +41,15 @@ steps:
     script: |
       apt update && apt install curl sudo -y
       curl -sL https://firebase.tools | bash
-
-      # skip remote config
-      firebase deploy --non-interactive --force --project=${PROJECT_ID} --except=remoteconfig
+      firebase deploy --non-interactive --force --project=${PROJECT_ID}
 
   - id: 'CI Testing'
-    name: 'gcr.io/cloud-builders/npm:node-16.18.0'
+    name: 'gcr.io/cloud-builders/npm:node-18.12.0'
     entrypoint: npm
     dir: 'functions/inquiry-monitor'
     args: ['run', 'int-test']
+    env:
+      - 'PROJECT_ID=$PROJECT_ID'
 
 availableSecrets:
   secretManager:
