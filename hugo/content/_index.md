@@ -2,7 +2,7 @@
 title: "DevOps Research and Assessment"
 date: 2022-11-22
 draft: false
-bannerTitle: "DevOps Research and Assessment"
+bannerTitle: "Get Better at Getting Better"
 bannerSubtitle: "DevOps Research and Assessment (DORA) is the largest and longest running research program of its kind, that seeks to understand the capabilities that drive software delivery and operations performance. DORA helps teams apply those capabilities, leading to better organizational performance."
 stylesheets:
     - name: "homepage"
@@ -18,15 +18,14 @@ stylesheets:
 Use our quick check tool to discover how you compare to industry peers, identify specific capabilities you can use to improve performance, and make progress on your software delivery goals.
 {{< /article >}}
 
-{{< article 
-    columns="1" 
-    title="The ROI of DevOps" 
-    url="https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper"
-    cta="Read the Whitepaper"
-    img-src="/img/features/whitepaper-roi.png"
-    img-align="left"
-    img-stroke="true" >}}
-Organizations are constantly grappling to quantify the value of technology transformation. The whitepaper takes an analytical, data-driven approach to forecast the value and justify investment in DevOps transformations.
+{{< article columns="1" 
+    title="DORA Core" 
+    url="/research/"
+    cta="Explore the model" 
+    img-src="/img/features/homepage-core-snipe.png" 
+    img-align="left" 
+    >}}
+DORA Core represents the most well-established findings across the history and breadth our research program. Use it to guide transformation efforts in your organization.
 {{< /article >}}
 
 {{< article columns="2" 
@@ -44,7 +43,7 @@ In 2021, more than [22 billion records were exposed](https://www.securitymagazin
 {{< /article >}}
 
 {{< article 
-    columns="2" 
+    columns="1" 
     title="DevOps Awards" 
     cta="See the Winners"
     url="https://cloud.google.com/awards/devops" 
@@ -52,4 +51,15 @@ In 2021, more than [22 billion records were exposed](https://www.securitymagazin
     url_2="https://services.google.com/fh/files/misc/devops_awards_fullebook_final.pdf" 
     >}}
 The Winners of the DevOps Awards are implementing DevOps practices to drive organizational success and deliver high-quality customer experiences. Read about their journeys and learn how they applied a philosophy of continuous improvement.
+{{< /article >}}
+
+{{< article 
+    columns="1" 
+    title="The ROI of DevOps" 
+    url="https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper"
+    cta="Read the Whitepaper"
+    img-src="/img/features/whitepaper-roi.png"
+    img-align="left"
+    img-stroke="true" >}}
+Organizations are constantly grappling to quantify the value of technology transformation. The whitepaper takes an analytical, data-driven approach to forecast the value and justify investment in DevOps transformations.
 {{< /article >}}

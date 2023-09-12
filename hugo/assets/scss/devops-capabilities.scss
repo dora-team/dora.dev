@@ -9,28 +9,64 @@
     article {
         border: 1px solid $border-light;
         border-radius: 0.5em;
-        padding: 0.5em;
+        display: grid; 
+        grid-template-columns: 1fr 3rem; 
+        grid-auto-rows: min-content;
+        gap: 0px 0px; 
+        grid-template-areas: 
+            "heading core"
+            "content content"
+            ; 
 
         h4 {
             font-size: 1em;
+            grid-area: heading;
+            margin:0;
+            padding:1rem .5rem 0 .75rem;
+
+            a {
+                color: $color-text;
+                text-decoration: none;
+            }
         }
 
-        a {
-            color: $color-text;
+        .core {
+            grid-area: core;
+
+            a {
+            background-color:$background-soft;
+            border-top-right-radius: 0.5em;
+            border-bottom-left-radius: 0.5em;
+            text-align: center;
+            display:block;
+            font-size:.8rem;
+            padding: .25rem 0;
+            color:$color-link;
             text-decoration: none;
+            
+            }
         }
 
         p {
-            font-size: 0.85em;
-        }
+            grid-area: content;
+            font-size: 0.95em;
+            margin:0;
+            padding:.5rem;
+            padding-left:.75rem;
 
-        .learn_more {
-            font-weight: 400;
-            color: $color-link;
-            display:block;
+            a {
+                color: $color-text;
+                text-decoration: none;
+            }
 
-            img {
-                vertical-align: middle;
+            .learn_more {
+                font-weight: 400;
+                color: $color-link;
+                display:block;
+
+                img {
+                    vertical-align: middle;
+                }
             }
         }
     }
@@ -114,6 +150,18 @@ section.hasSidebar {
             }
         }
     }
+}
+
+h1 a.core {
+    display:inline-block;
+    background-color: $background-soft;
+    font-weight:400;
+    font-size:1rem;
+    line-height:1rem;
+    padding:.25rem .5rem;
+    border-radius: .5rem;
+    text-decoration: none;
+    vertical-align: middle;
 }
 
 @include media-medium {

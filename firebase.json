@@ -43,6 +43,21 @@
           "source": "/dora-joins-google-cloud.html",
           "destination": "/news/dora-joins-google-cloud/",
           "type": 301
+        },
+        {
+          "source": "/2018/12/dora-joins-google-cloud/",
+          "destination": "/news/dora-joins-google-cloud/",
+          "type": 301
+        },        
+        {
+            "source": "/core",
+            "destination": "/research/",
+            "type": 302
+        },
+        {
+            "source": "/concepts/wellbeing",
+            "destination": "/devops-capabilities/cultural/wellbeing/",
+            "type": 302
         }
       ]
     }
@@ -56,9 +71,6 @@
   },
   "extensions": {
     "firestore-send-email": "firebase/firestore-send-email@0.1.27"
-  },
-  "remoteconfig": {
-    "template": "remote-config/remote-cfg-inquiry-monitor.json"
   },
   "emulators": {
     "hosting": {

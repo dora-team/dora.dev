@@ -28,7 +28,7 @@ var linkTo;
         window.Alpine.store('modal').open=true;
       }
     }
-    xhr.open("GET", "content/" + d.id + ".html");
+    xhr.open("GET", "/research/content/" + d.id + ".html");
     xhr.send();
   }
 
