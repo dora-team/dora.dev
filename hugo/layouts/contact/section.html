@@ -1,99 +1,129 @@
 {{ define "main" }}
-        <form id="inquiry-form">
-        <h1>Contact DORA</h1>
-        <div id="inquiry-form-fields">
-            <label>Your Name:</label>
-            <div>
-                <input type="text" id="first_name" required="true" placeholder="first name" class="name">
-                &nbsp;<input type="text" id="last_name" required="true" placeholder="last name" class="name">
+    <!-- if 'errata_pub' is passed in the URL querystring, set form values accordingly -->
+    <form id="inquiry-form"   
+        x-data="{
+            inquiry_type: '',
+            errata_pub: new URLSearchParams(location.search).get('errata_pub'),
+            init() {
+                $data.inquiry_type = $data.errata_pub ? 'Report an error in a publication' : ''
+            }
+        }">
+            <h1>Contact DORA</h1>
+            <div id="inquiry-form-fields">
+                <label>Your Name:</label>
+                <div>
+                    <input type="text" id="first_name" required="true" placeholder="first name" class="name">
+                    &nbsp;<input type="text" id="last_name" required="true" placeholder="last name" class="name">
+                </div>
+                <label>Your Email Address:</label>
+                <input type="email" id="from_email" required="true" placeholder="email">
+                <label>Inquiry Type:</label>
+                <div>
+                    <select id="inquiry_type" required x-model="inquiry_type">
+                        <option value="">- inquiry type -</option>
+                        <option value="Sponsorship">Accelerate State of DevOps Report sponsorship</option>
+                        <option value="Speaker Request">Speaker request</option>
+                        <option value="Workshop or Assessment">Workshop or assessment inquiry</option>
+                        <option value="Report an error in a publication">Report an error in a publication</option>
+                        <option value="(Other)">General Inquiry</option>
+                    </select>
+                </div>
+                <label x-show="inquiry_type=='Report an error in a publication'">Publication:</label>
+                <div x-show="inquiry_type=='Report an error in a publication'">
+                    <select x-model="errata_pub" id="errata_pub" x-bind:required="inquiry_type=='Report an error in a publication'">
+                        <option value="">- select -</option>
+                        <!-- TODO: populate publications dynamically -->
+                        <option value="Accelerate State of DevOps Report 2022">Accelerate State of DevOps Report 2022</option>
+                        <option value="Accelerate State of DevOps Report 2021">Accelerate State of DevOps Report 2021</option>
+                        <option value="Accelerate State of DevOps Report 2019">Accelerate State of DevOps Report 2019</option>
+                        <option value="Accelerate State of DevOps Report 2018">Accelerate State of DevOps Report 2018</option>
+                        <option value="(earlier state of DevOps Reports)">(earlier State of DevOps Reports)</option>
+                        <option value="The ROI of DevOps Transformation">The ROI of DevOps Transformation</option>
+                        <option value="DevOps Awards Winners 2021">DevOps Awards Winners 2021</option>
+                    </select>
+                </div>
+                <label>Message:</label>
+                <textarea required rows="8" id="message" placeholder="your message"></textarea>
+                <label></label><div><input type="submit" value="Submit"></div>
             </div>
-            <label>Your Email Address:</label>
-            <input type="email" id="from_email" required="true" placeholder="email">
-            <label>Inquiry Type:</label>
-            <div>
-                <select id="inquiry_type" required>
-                    <option value="">- inquiry type -</option>
-                    <option value="Sponsorship">Accelerate State of DevOps Report Sponsorship</option>
-                    <option value="Speaker Request">Speaker Request</option>
-                    <option value="Workshop or Assessment">Workshop or Assessment Inquiry</option>
-                    <option value="(Other)">General Inquiry</option>
-                </select>
+            <div id="contact-thanks">
+                <h3>Thank you. Your inquiry has been sent.</h3>
+                <a href="#" id="goback">&lt; back</a>
             </div>
-            <label>Message:</label>
-            <textarea required rows="8" id="message" placeholder="your message"></textarea>
-            <label></label><div><input type="submit" value="Submit"></div>
-        </div>
-        <div id="contact-thanks">
-            <h3>Thank you. Your inquiry has been sent.</h3>
-            <a href="#" id="goback">&lt; back</a>
-        </div>
-    </form>
 
-        <script type="module">
-            {{ if not hugo.IsProduction }}
-                console.log('Hello developer! To test this form locally, you\'ll need to run `firebase emulators:start` (if you haven\'t already). Leave it running in the background so the form can write to (emulated) Firestore.');
-                import { connectFirestoreEmulator } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js';
-            {{ end }}
 
-            import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js'
-            import { 
-                getFirestore, 
-                collection, 
-                doc, 
-                setDoc, 
-                serverTimestamp,
-            } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js'
-
-             // Initialize Firebase
-             import {config} from '/js/firebase-config.js'
-             const app = initializeApp(config);
-             const db = getFirestore(app);
-             {{ if not hugo.IsProduction }}
-                connectFirestoreEmulator(db, 'localhost', 6100);        
-            {{ end }}
-            
-            const newInquiryRef = doc(collection(db, "email-inquiry"));
-
-            document.addEventListener('DOMContentLoaded', function() {
-
-                document.querySelector("#inquiry-form").addEventListener("submit", submitForm);
-
-                function submitForm(e) {
-                    e.preventDefault();
-                    
-                    let inquiry_data = {
-                        created: serverTimestamp(),
-                        from_email: document.querySelector("#from_email").value,
-                        first_name: document.querySelector("#first_name").value,
-                        last_name: document.querySelector("#last_name").value,
-                        inquiry_type: document.querySelector("#inquiry_type").value,
-                        message: document.querySelector("#message").value,
-                    };
-                    
-                    sendEmailInquiry(inquiry_data);
-                }
-
-                function sendEmailInquiry(inquiry_data) {
-                    setDoc(
-                        newInquiryRef,
-                        inquiry_data  
-                    );
-
-                    document.querySelector('#contact-thanks').style.display='block';
-                    document.querySelector('#inquiry-form-fields').style.display='none';
-
-                }
-
-                document.querySelector("#goback").addEventListener("click", resetForm);
-
-                function resetForm() {
-                    // document.querySelector('#inquiry-form').reset();
-                    // document.querySelector('#contact-thanks').style.display='none';
-                    // document.querySelector('#inquiry-form-fields').style.display='inline-grid';
-                    history.go(0);
-                    event.preventDefault();
-                }
+            <script type="module">
+                {{ if not hugo.IsProduction }}
+                    console.log('Hello developer! To test this form locally, you\'ll need to run `firebase emulators:start` (if you haven\'t already). Leave it running in the background so the form can write to (emulated) Firestore.');
+                    import { connectFirestoreEmulator } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js';
+                {{ end }}
+    
+                import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js'
+                import { 
+                    getFirestore, 
+                    collection, 
+                    doc, 
+                    setDoc, 
+                    serverTimestamp,
+                } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js'
+    
+                 // Initialize Firebase
+                 import {config} from '/js/firebase-config.js'
+                 const app = initializeApp(config);
+                 const db = getFirestore(app);
+                 {{ if not hugo.IsProduction }}
+                    connectFirestoreEmulator(db, 'localhost', 6100);        
+                {{ end }}
                 
-            }, false);
-        </script>
+                const newInquiryRef = doc(collection(db, "email-inquiry"));
+    
+                document.addEventListener('DOMContentLoaded', function() {
+    
+                    document.querySelector("#inquiry-form").addEventListener("submit", submitForm);
+    
+                    function submitForm(e) {
+                        e.preventDefault();
+                        
+                        let inquiry_type = document.querySelector("#inquiry_type").value;
+                        if(document.querySelector("#errata_pub").value) {
+                            inquiry_type = `${inquiry_type}: ${errata_pub.value}`
+                        }
+
+                        let inquiry_data = {
+                            created: serverTimestamp(),
+                            from_email: document.querySelector("#from_email").value,
+                            first_name: document.querySelector("#first_name").value,
+                            last_name: document.querySelector("#last_name").value,
+                            inquiry_type: inquiry_type,
+                            message: document.querySelector("#message").value,
+                        };
+                        
+                        sendEmailInquiry(inquiry_data);
+                    }
+    
+                    function sendEmailInquiry(inquiry_data) {
+                        
+                        setDoc(
+                            newInquiryRef,
+                            inquiry_data  
+                        );
+    
+                        document.querySelector('#contact-thanks').style.display='block';
+                        document.querySelector('#inquiry-form-fields').style.display='none';
+    
+                    }
+    
+                    document.querySelector("#goback").addEventListener("click", resetForm);
+    
+                    function resetForm() {
+                        // document.querySelector('#inquiry-form').reset();
+                        // document.querySelector('#contact-thanks').style.display='none';
+                        // document.querySelector('#inquiry-form-fields').style.display='inline-grid';
+                        history.go(0);
+                        event.preventDefault();
+                    }
+                    
+                }, false);
+            </script>
+    </form>
 {{ end }}
