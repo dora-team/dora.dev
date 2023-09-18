@@ -24,7 +24,8 @@ steps:
 
       # get the url of this preview channel
       # (it returns in format `i  hosting:channel: https://<url>`)
-      CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL)"
+      CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL  --project=${PROJECT_ID})"
+      echo "CHANNEL_DATA: $CHANNEL_DATA"
 
       # extract the URL from the channel data and save it to /workspace
       echo "${CHANNEL_DATA##* }" > /workspace/preview-draft-url.txt
@@ -48,7 +49,8 @@ steps:
 
       # get the url of this preview channel
       # (it returns in format `i  hosting:channel: https://<url>`)
-      CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL)"
+      CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL --project=${PROJECT_ID})"
+      echo "CHANNEL_DATA: $CHANNEL_DATA"
 
       # extract the URL from the channel data and save it to /workspace
       echo "${CHANNEL_DATA##* }" > /workspace/preview-published-url.txt
