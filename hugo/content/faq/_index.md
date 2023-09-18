@@ -48,3 +48,4 @@ _DORA Core is an ongoing effort. Learn more, and provide feedback, in the [DORA 
     2. Prior DORA research revealed the importance of incorporating software supply-chain security measures early, and throughout the development process. In 2021, for example, our data showed that elite performers excel in implementing security best practices, and that development teams that embrace security see significant value driven to the business.
 
 > Do you have a question that is not answered here? Discuss it with the [DORA community](https://dora.community)!
+> 
