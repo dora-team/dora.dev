@@ -24,9 +24,9 @@ steps:
 
       # get the url of this preview channel
       # (it returns in format `i  hosting:channel: https://<url>`)
-      CHANNEL_DATA="$(firebase hosting:channel:open ${PREVIEW_CHANNEL})"
+      CHANNEL_DATA="$(firebase hosting:channel:open ${PREVIEW_CHANNEL} --project=${PROJECT_ID})"
 
-      # Add header for better communications
+      # Add header for communications clarity
       echo "Cloud Build time: $(date)" > /workspace/gh-pr-comment-message.txt
 
       # extract the URL from the channel data and save it to /workspace
@@ -52,7 +52,8 @@ steps:
 
       # get the url of this preview channel .
       # (it returns in format `i  hosting:channel: https://<url>`)
-      CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL)"
+      CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL --project=${PROJECT_ID})"
+      echo "CHANNEL_DATA: $CHANNEL_DATA"
 
       # extract the URL from the channel data and save it to /workspace
       echo "Preview this PR [published content only] at ${CHANNEL_DATA##* }" >> /workspace/gh-pr-comment-message.txt

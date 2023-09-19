@@ -12,6 +12,8 @@ Also, a secret named `github_token` must exist in Secret Manager, which contains
 
 ## CI pipelines
 ### Pipelines run on Pull Requests (PRs)
+_All pipelines are run as user: [dora-machine-user](https://github.com/dora-machine-user)_
+
 #### Content preview
 If a PR includes changes to files in the `/hugo` directory, the pipeline `/ci/preview-content.cloudbuild.yaml` is executed in project `doradotdev`. This pipeline:
 
