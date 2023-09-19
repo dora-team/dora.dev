@@ -26,4 +26,3 @@ If a PR includes changes to files _outside_ the `/hugo` directory, the pipeline 
 
 ### Pipeline run on merge to `main`
 When a PR is merged to `main`, the pipeline `/ci/cloudbuild.yaml` is executed in project `doradotdev`. This pipeline renders the site and deploys all Firebase components to `dora.dev`.
-
