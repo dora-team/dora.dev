@@ -58,6 +58,11 @@
             "source": "/concepts/wellbeing",
             "destination": "/devops-capabilities/cultural/wellbeing/",
             "type": 302
+        },
+        {
+            "source": "/research/archives/:year*",
+            "destination": "/research/:year",
+            "type": 302
         }
       ]
     }

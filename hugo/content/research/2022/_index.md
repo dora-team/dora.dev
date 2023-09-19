@@ -11,4 +11,4 @@ type: research_archives
 ---
 
 # DORA's Research Program: 2022
-In 2022, DORA continued its investigation into software developmend and operations, and the capabilities which drive performance. This year's deep-dive investigations included Security, Reliability, and Culture. You can [read the 2022 report here](https://bit.ly/dora-sodr). Below are some of the analytical tools used in producing the report.
+In 2022, DORA continued its investigation into software development and operations, and the capabilities which drive performance. This year's deep-dive investigations included Security, Reliability, and Culture. You can [read the 2022 report here](https://bit.ly/dora-sodr). Below are some of the analytical tools used in producing the report.

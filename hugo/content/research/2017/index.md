@@ -2,13 +2,10 @@
 title: "DORA Research: 2017 and earlier"
 date: 2017-10-01
 draft: false
-research_year: 2017 and earlier
-# SEM and survey questions are included via template: templates/research_archives/single.html, if specified in front matter. The data for survey questions can be found at data/survey_questions.json
-sections_to_display:
 type: research_archives
+research_year: 2017 and earlier
 ---
 
-# 2017 and earlier
 Prior to 2018, research was conducted in partnership with Puppet, as an extension of their original State of DevOps research. Read the [history of Puppet's DevOps Reports](https://www.puppet.com/resources/history-of-devops-reports)
 
 #### State of DevOps Reports published in partnership with Puppet:

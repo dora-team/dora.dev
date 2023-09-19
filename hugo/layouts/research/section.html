@@ -104,16 +104,8 @@
     {{ end }}
 </div>
 
-
-
     <h3>DORA Research Archives</h3>
-    {{ $archives := where $.Site.RegularPages "Type" "research_archives" }}
-
-    <ul>
-        {{ range $archives }}
-            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-        {{ end }}
-    </ul>
+    {{- partial "research_archives" . -}}
 
     <h3>Meet the team</h3>
     <p>Learn more about <a href='{{ "/research/team/" | relURL }}'>DORA's Research Team</a></p>

@@ -1,0 +1,7 @@
+{{ $archives := where $.Site.Pages "Type" "research_archives" }}
+
+<ul>
+    {{ range $archives }}
+        <li><a href="{{ .RelPermalink }}">{{ .Params.research_year }}</a></li>
+    {{ end }}
+</ul>
