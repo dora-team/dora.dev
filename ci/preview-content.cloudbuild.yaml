@@ -20,16 +20,18 @@ steps:
       - 'PROJECT_ID=$PROJECT_ID'
     script: |
       PREVIEW_CHANNEL="PR$_PR_NUMBER-DRAFT"
-      firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=${PROJECT_ID}
+      firebase hosting:channel:deploy ${PREVIEW_CHANNEL} --project=${PROJECT_ID}
 
       # get the url of this preview channel
       # (it returns in format `i  hosting:channel: https://<url>`)
-      CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL  --project=${PROJECT_ID})"
-      echo "CHANNEL_DATA: $CHANNEL_DATA"
+      CHANNEL_DATA="$(firebase hosting:channel:open ${PREVIEW_CHANNEL} --project=${PROJECT_ID})"
+
+      # Add header for communications clarity
+      echo "Cloud Build time: $(date)" > /workspace/gh-pr-comment-message.txt
 
       # extract the URL from the channel data and save it to /workspace
-      echo "${CHANNEL_DATA##* }" > /workspace/preview-draft-url.txt
-      cat /workspace/preview-draft-url.txt
+      echo "Preview this PR [including DRAFT content] at ${CHANNEL_DATA##* }" >> /workspace/gh-pr-comment-message.txt
+      echo ${CHANNEL_DATA##* }
 
   - id: 'Hugo Build PREVIEW_CHANNEL (w/o Drafts) Site'
     name: gcr.io/$PROJECT_ID/hugo
@@ -43,24 +45,25 @@ steps:
     env:
       - '_PR_NUMBER=$_PR_NUMBER'
       - 'PROJECT_ID=$PROJECT_ID'
+      - 'REPO_FULL_NAME=${REPO_FULL_NAME}'
     script: |
       PREVIEW_CHANNEL="PR$_PR_NUMBER"
-      firebase hosting:channel:deploy $PREVIEW_CHANNEL --project=${PROJECT_ID}
+      firebase hosting:channel:deploy ${PREVIEW_CHANNEL} --project=${PROJECT_ID}
 
-      # get the url of this preview channel
+      # get the url of this preview channel .
       # (it returns in format `i  hosting:channel: https://<url>`)
       CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL --project=${PROJECT_ID})"
       echo "CHANNEL_DATA: $CHANNEL_DATA"
 
       # extract the URL from the channel data and save it to /workspace
-      echo "${CHANNEL_DATA##* }" > /workspace/preview-published-url.txt
-      cat /workspace/preview-published-url.txt
+      echo "Preview this PR [published content only] at ${CHANNEL_DATA##* }" >> /workspace/gh-pr-comment-message.txt
+      echo ${CHANNEL_DATA##* }
 
   - id: 'Write PR URL back to github'
     name: 'bash'
     env:
     - '_PR_NUMBER=$_PR_NUMBER'
-    - 'REPO_NAME=$REPO_NAME'
+    - 'REPO_FULL_NAME=$REPO_FULL_NAME'
     script: |
       # install github cli
       apk update && apk add github-cli
@@ -74,9 +77,12 @@ steps:
       unset GH_TOKEN
       gh auth login --with-token < .githubtoken
 
-      # add preview URLs as comment
-      gh pr comment $_PR_NUMBER --repo=dora-team/$REPO_NAME --body "Preview this PR [including DRAFT content] at $(cat /workspace/preview-draft-url.txt)"
-      gh pr comment $_PR_NUMBER --repo=dora-team/$REPO_NAME --body "Preview this PR [published content only] at $(cat /workspace/preview-published-url.txt)"
+      # add preview URLs as comment.
+      gh pr comment ${_PR_NUMBER} --repo=${REPO_FULL_NAME} --edit-last --body-file /workspace/gh-pr-comment-message.txt
+      if [ $? -ne 0 ]; then
+        gh pr comment $_PR_NUMBER --repo=${REPO_FULL_NAME} --body-file /workspace/gh-pr-comment-message.txt
+      fi
+
     secretEnv: ['GH_TOKEN']
 
 availableSecrets:
