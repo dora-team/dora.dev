@@ -10,4 +10,4 @@ type: research_archives
 ---
 
 # DORA's Research Program: 2019
-DORA's research program continued in 2019. [Read the 2019 report here](/publications/pdf/state-of-devops-2019.pdf)
+DORA's research program continued in 2019. [Read the 2019 report here]({{< relref "dora-report" >}})
