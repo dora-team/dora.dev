@@ -32,7 +32,7 @@ DORA Core represents the most well-established findings across the history and b
     title="The 2022 Accelerate State of DevOps Report" 
     url="https://bit.ly/dora-sodr"
     cta="Read the Report"
-    img-src="/img/sodr/sodr-2022-thumb.png"  
+    img-src="/research/2022/dora-report/2022-dora-accelerate-state-of-devops-report.png"  
     img-alt="The Accelerate State of DevOps Report 2022" 
     img-align="right"
     img-stroke="true"
