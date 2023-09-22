@@ -1,12 +1,10 @@
-This folder contains an experimental/wip effort to make an interactive version of the DORA Core Model -- it's intended to replace the "spider diagram" on `/research` ... see https://github.com/dora-team/dora.dev/discussions/265
-
 ### Changelog of Core Model content
 
 - **v1.1.0** (2023-08-07) Added connector between Continuous Delivery and Generative Organizational Culture, and moved those elements closer to facilitate the connection. This connection is motivated by findings across several years of study. It lacks directional arrowheads because there is ongoing research to understand the predictive pathway between these constructs.
 - **v1.0.0** (2023-07-19) Initial version proposed for GA
 
 
-### Ongoing dev process (speculative/experimental)
+### Ongoing dev process
 
 1. Using Figma, export the Core diagram as SVG, to `dora-core-model-v<version>.svg`, e.g. `dora-core-model-v1.1.0.svg`
   * the resulting file will look pretty, but will be lacking key features, including usable `class` and `id` attributes.
