@@ -3,7 +3,8 @@ title: "DORA Research: 2022"
 date: 2022-10-01
 draft: false
 research_year: 2022
-# SEM and survey questions are included via template: templates/research_archives/single.html, if specified in front matter. The data for survey questions can be found at data/survey_questions.json
+# SEM and survey questions are included via template: templates/research_archives/single.html, if specified in front matter. 
+# The data for survey questions can be found at data/survey_questions.json
 sections_to_display:
     - 'Structural Equation Model'
     - 'Questions'
@@ -11,4 +12,4 @@ type: research_archives
 ---
 
 # DORA's Research Program: 2022
-In 2022, DORA continued its investigation into software development and operations, and the capabilities which drive performance. This year's deep-dive investigations included Security, Reliability, and Culture. You can [read the 2022 report here](https://bit.ly/dora-sodr). Below are some of the analytical tools used in producing the report.
+In 2022, DORA continued its investigation into software development and operations, and the capabilities which drive performance. This year's deep-dive investigations included Security, Reliability, and Culture. You can [download the 2022 report here]({{< relref "dora-report" >}}). Below are some of the analytical tools used in producing the report.
