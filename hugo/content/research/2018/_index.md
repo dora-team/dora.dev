@@ -8,4 +8,4 @@ type: research_archives
 ---
 
 # DORA's Research Program: 2018
-2018 saw the release of the first Accelerate State of DevOps Report independently published by DORA. [Read the 2018 report here](/publications/pdf/state-of-devops-2018.pdf)
+2018 saw the release of the first Accelerate State of DevOps Report independently published by DORA. [Read the 2018 report here]({{< relref "dora-report" >}})

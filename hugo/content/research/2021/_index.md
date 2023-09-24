@@ -10,4 +10,4 @@ type: research_archives
 ---
 
 # DORA's Research Program: 2021
-In 2021, DORA did deep-dive investigations into security, reliability, documentation, and more. You can [read the 2021 report here](/publications/pdf/state-of-devops-2021.pdf). Below are some of the analytical tools used in producing the report.
+In 2021, DORA did deep-dive investigations into security, reliability, documentation, and more. You can [read the 2021 report here]({{< relref "dora-report" >}}). Below are some of the analytical tools used in producing the report.

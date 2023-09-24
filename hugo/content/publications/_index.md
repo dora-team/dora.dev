@@ -16,7 +16,7 @@ stylesheets:
 
 <section class="publicationHighlight">
     <aside>
-        <a href="https://bit.ly/dora-sodr" target="_blank"><img src="/img/sodr/sodr-2022-thumb.png" alt="2022 Accelerate State of DevOps Report"></a>
+        <a href="/research/2022/dora-report/" target="_blank"><img src="/research/2022/dora-report/2022-dora-accelerate-state-of-devops-report.png" alt="2022 Accelerate State of DevOps Report"></a>
     </aside>
     <article>
        <p>Over the past eight years, more than 33,000 professionals around the world have taken part in the Accelerate State of DevOps survey, making it the largest and longest-running research of its kind. Year after year, Accelerate State of DevOps Reports provide data-driven industry insights that examine the capabilities and practices that drive software delivery, as well as operational and organizational performance.</p>
@@ -27,32 +27,37 @@ stylesheets:
 
 ## Prior State of DevOps Reports
 
-- [![2021 Accelerate State of DevOps Report](img/sodr-2021.png)](pdf/state-of-devops-2021.pdf)
-  #### [2021 Accelerate State of DevOps Report](pdf/state-of-devops-2021.pdf)
-  [Read PDF](pdf/state-of-devops-2021.pdf)
-- [![2019 Accelerate State of DevOps Report](img/sodr-2019.png)](pdf/state-of-devops-2019.pdf)
-  #### [2019 Accelerate State of DevOps Report](pdf/state-of-devops-2019.pdf)
-  [Read PDF](pdf/state-of-devops-2019.pdf)
-- [![2018 Accelerate State of DevOps Report](img/sodr-2018.png)](pdf/state-of-devops-2018.pdf)
-  #### [2018 Accelerate State of DevOps Report](pdf/state-of-devops-2018.pdf)
-  [Read PDF](pdf/state-of-devops-2018.pdf)
-- [![2017 State of DevOps Report](img/sodr-2017.png)](pdf/state-of-devops-2017.pdf)
-  #### [2017 State of DevOps Report](pdf/state-of-devops-2017.pdf)
-  (in partnership with Puppet)
-  [Read PDF](pdf/state-of-devops-2017.pdf)
-- [![2016 State of DevOps Report](img/sodr-2016.png)](pdf/state-of-devops-2016.pdf)
-  #### [2016 State of DevOps Report](pdf/state-of-devops-2016.pdf)
-  (in partnership with Puppet)
-  [Read PDF](pdf/state-of-devops-2016.pdf)
-- [![2015 State of DevOps Report](img/sodr-2015.png)](pdf/state-of-devops-2015.pdf)
-  #### [2015 State of DevOps Report](pdf/state-of-devops-2015.pdf)
-  (in partnership with Puppet)
-  [Read PDF](pdf/state-of-devops-2015.pdf)
-- [![2014 State of DevOps Report](img/sodr-2014.png)](pdf/state-of-devops-2014.pdf)
-  #### [2014 State of DevOps Report](pdf/state-of-devops-2014.pdf)
-  (in partnership with Puppet)
-  [Read PDF](pdf/state-of-devops-2014.pdf)
+- [![2021 Accelerate State of DevOps Report](/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.png)](/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.pdf)
+  #### [2021 Accelerate State of DevOps Report](/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.pdf)
+  [Read PDF](/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.pdf)
 
+- [![2019 Accelerate State of DevOps Report](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.png)](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf)
+  #### [2019 Accelerate State of DevOps Report](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf)
+  [Read PDF](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf)
+
+- [![2018 Accelerate State of DevOps Report](/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.png)](/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf)
+  #### [2018 Accelerate State of DevOps Report](/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf)
+  [Read PDF](/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf)
+
+- [![2017 State of DevOps Report](/research/2017-and-earlier/2017-state-of-devops-report.png)](/research/2017-and-earlier/2017-state-of-devops-report.pdf)
+  #### [2017 State of DevOps Report](/research/2017-and-earlier/2017-state-of-devops-report.pdf)
+  (in partnership with Puppet)
+  [Read PDF](/research/2017-and-earlier/2017-state-of-devops-report.pdf)
+
+- [![2016 State of DevOps Report](/research/2017-and-earlier/2016-state-of-devops-report.png)](/research/2017-and-earlier/2016-state-of-devops-report.pdf)
+  #### [2016 State of DevOps Report](/research/2017-and-earlier/2016-state-of-devops-report.pdf)
+  (in partnership with Puppet)
+  [Read PDF](/research/2017-and-earlier/2016-state-of-devops-report.pdf)
+
+- [![2015 State of DevOps Report](/research/2017-and-earlier/2015-state-of-devops-report.png)](/research/2017-and-earlier/2015-state-of-devops-report.pdf)
+  #### [2015 State of DevOps Report](/research/2017-and-earlier/2015-state-of-devops-report.pdf)
+  (in partnership with Puppet)
+  [Read PDF](/research/2017-and-earlier/2015-state-of-devops-report.pdf)
+
+- [![2014 State of DevOps Report](/research/2017-and-earlier/2014-state-of-devops-report.png)](/research/2017-and-earlier/2014-state-of-devops-report.pdf)
+  #### [2014 State of DevOps Report](/research/2017-and-earlier/2014-state-of-devops-report.pdf)
+  (in partnership with Puppet)
+  [Read PDF](/research/2017-and-earlier/2014-state-of-devops-report.pdf)
 
 ## Additional Publications
 <!-- add publications as list items, using markdown syntax (list items are designated with a leading dash) -->

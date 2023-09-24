@@ -63,6 +63,16 @@
             "source": "/research/archives/:year*",
             "destination": "/research/:year",
             "type": 302
+        },
+        {
+            "source": "/research/2022/dora-report",
+            "destination": "https://cloud.google.com/devops/state-of-devops",
+            "type": 302
+        },
+        {
+            "source": "/dora-report-:year",
+            "destination": "/research/:year/dora-report",
+            "type": 302
         }
       ]
     }
