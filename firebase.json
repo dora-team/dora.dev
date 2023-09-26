@@ -52,7 +52,7 @@
         {
             "source": "/core",
             "destination": "/research/",
-            "type": 302
+            "type": 301
         },
         {
             "source": "/concepts/wellbeing",
@@ -65,13 +65,13 @@
             "type": 302
         },
         {
-            "source": "/research/2022/dora-report",
-            "destination": "https://cloud.google.com/devops/state-of-devops",
+            "source": "/dora-report-:year",
+            "destination": "/research/:year/dora-report",
             "type": 302
         },
         {
-            "source": "/dora-report-:year",
-            "destination": "/research/:year/dora-report",
+            "source": "/dora-report",
+            "destination": "https://cloud.google.com/devops/state-of-devops",
             "type": 302
         }
       ]
