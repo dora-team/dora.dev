@@ -1,11 +1,13 @@
 {{ define "main" }}
-    <!-- if 'errata_pub' is passed in the URL querystring, set form values accordingly -->
+    <!-- if 'inquiry_type' or 'errata_pub' is passed in the URL querystring, set form values accordingly -->
     <form id="inquiry-form"   
         x-data="{
-            inquiry_type: '',
+            inquiry_type: new URLSearchParams(location.search).get('inquiry_type'),
             errata_pub: new URLSearchParams(location.search).get('errata_pub'),
             init() {
-                $data.inquiry_type = $data.errata_pub ? 'Report an error in a publication' : ''
+                if ($data.errata_pub) {
+                    $data.inquiry_type = 'Errata'
+                }
             }
         }">
             <h1>Contact DORA</h1>
@@ -24,15 +26,16 @@
                         <option value="Sponsorship">Accelerate State of DevOps Report sponsorship</option>
                         <option value="Speaker Request">Speaker request</option>
                         <option value="Workshop or Assessment">Workshop or assessment inquiry</option>
-                        <option value="Report an error in a publication">Report an error in a publication</option>
+                        <option value="Errata">Report an error in a publication</option>
                         <option value="(Other)">General Inquiry</option>
                     </select>
                 </div>
-                <label x-show="inquiry_type=='Report an error in a publication'">Publication:</label>
-                <div x-show="inquiry_type=='Report an error in a publication'">
-                    <select x-model="errata_pub" id="errata_pub" x-bind:required="inquiry_type=='Report an error in a publication'">
+                <label x-show="inquiry_type=='Errata'">Publication:</label>
+                <div x-show="inquiry_type=='Errata'">
+                    <select x-model="errata_pub" id="errata_pub" x-bind:required="inquiry_type=='Errata'">
                         <option value="">- select -</option>
                         <!-- TODO: populate publications dynamically -->
+                        <option value="Accelerate State of DevOps Report 2023">Accelerate State of DevOps Report 2023</option>
                         <option value="Accelerate State of DevOps Report 2022">Accelerate State of DevOps Report 2022</option>
                         <option value="Accelerate State of DevOps Report 2021">Accelerate State of DevOps Report 2021</option>
                         <option value="Accelerate State of DevOps Report 2019">Accelerate State of DevOps Report 2019</option>
