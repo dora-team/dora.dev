@@ -54,7 +54,7 @@ If the software was created to reduce response times, these response times shoul
 
 Continuous improvement is an ideal metric for a C-suite leader's OKR. During times of rapid market change, mergers and acquisitions, and shifting focus, the ability of an organization to deliver change remains an objective measure.
 
-The DORA Core Model shows that investment in specific capabilities is required to sustain continuous improvement. While the software delivery managers will assess the impact on software delivery performance, the c-suite should be able to see the impact on organizational performance—namely, the attainment of commercial and non-commercial goals.
+The DORA Core Model shows that investment in specific capabilities is required to sustain continuous improvement. While the software delivery managers will assess the impact on software delivery performance, the C-suite should be able to see the impact on organizational performance—namely, the attainment of commercial and non-commercial goals.
 
 ### How top performers win
 An organization with a healthy culture and teams of highly satisfied individuals will outperform competitors. Software delivery teams will find that detailed measurements help them generate high-quality improvement ideas. However, measurement brings risk: The same metrics that are vital to high performance and good outcomes can directly damage the cultural conditions necessary for success.
