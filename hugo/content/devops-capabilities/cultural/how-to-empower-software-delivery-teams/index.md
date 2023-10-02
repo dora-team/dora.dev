@@ -7,7 +7,7 @@ authors:
     1: {name: 'Steve Fenton', url: 'https://linkedin.com/in/stevefenton'}
     2: {name: 'Mark Kropf', url: 'https://www.linkedin.com/in/markkropf/'}
     3: {name: 'Denali Lumma', url: 'https://www.linkedin.com/in/denali-lumma/'}
-draft: true
+draft: false
 slug: how-to-empower-software-delivery-teams
 core: false
 headline: Measure and enable performance to help teams deliver value.
@@ -60,3 +60,9 @@ The DORA Core Model shows that investment in specific capabilities is required t
 An organization with a healthy culture and teams of highly satisfied individuals will outperform competitors. Software delivery teams will find that detailed measurements help them generate high-quality improvement ideas. However, measurement brings risk: The same metrics that are vital to high performance and good outcomes can directly damage the cultural conditions necessary for success.
 
 We’ve observed that alignment and autonomy are a potent combination. The strong link between software delivery performance and organizational outcomes means teams can be empowered to reflect on their own practices and make improvements over time.
+
+## Next steps
+
+* Explore the [DORA Core model]({{< relref "/research" >}}), a collection of the most firmly-established findings from troughout DORA's history
+* Read the latest [DORA Research Reports]({{< relref "/publications" >}})
+* Join the [DORA Community of Practice](https://dora.community) to share your experience with fellow travelers
