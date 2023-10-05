@@ -22,7 +22,7 @@ stylesheets:
        <p>For the last nine years, we’ve produced the State of DevOps report, hearing from over 36,000 professionals worldwide.</p>
         <p>We’ve outlined the DevOps practices that drive successful software delivery and operational performance, with a deep focus on user-centric design in the 2023 report.</p>
         <p>Use these findings to accelerate organizational performance while reducing burnout.</p>
-       <a href="https://cloud.google.com/devops/state-of-devops"><button class="secondary">Read the Report</button></a>
+       <a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><button class="secondary">Read the Report</button></a>
     </article>
 </section>
 
