@@ -7,4 +7,4 @@ type: research_archives
 ---
 
 # DORA's Research Program: 2023
-Research and publication are currently in progress. The Accelerate State of DevOps Report is scheduled to be published in Q4 2023.
+[![Download the Accelerate State of DevOps 2023](2023-dora-accelerate-state-of-devops-report.png)](https://cloud.google.com/devops/state-of-devops)

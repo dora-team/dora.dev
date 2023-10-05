@@ -7,6 +7,7 @@
     img-alt -- alt text for image; (required if img-src is set)
     img-align -- position of image [left|right] (optional; defaults to "left")
     img-stroke -- if this param is present, a stroke will be drawn around image
+    text-size-ratio -- if specified, text size will be modified by this multiplier (option; defaults to "1")
 -->
 
 {{ $url := .Get "url" }}
@@ -14,12 +15,13 @@
 {{ if or (strings.HasPrefix $url "http") (strings.HasPrefix $url "https") (strings.HasPrefix $url "/pdf") }} 
     {{ $target = "_blank" }}
 {{ end }}
+{{ $text_size_ratio := .Get "text-size-ratio" | default "1" }}
 
 <article class='cols_{{ .Get "columns"}}'>
     <h2>
         {{- if $url -}}<a href='{{ $url }}' target="{{ $target }}">{{- end -}}{{ .Get "title" }}{{- if $url -}}</a>{{- end -}}
     </h2>
-    <div class='content image-{{ .Get "img-align" }}'>
+    <div class='content image-{{ .Get "img-align" }}' style='font-size:{{ $text_size_ratio }}rem'>
         <div class="text">
             <p>
             {{ .Inner | markdownify }}

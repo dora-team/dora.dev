@@ -8,6 +8,23 @@ stylesheets:
     - name: "homepage"
 ---
 
+{{< article columns="2" 
+    title="The Accelerate State of DevOps Report 2023" 
+    url="https://cloud.google.com/devops/state-of-devops"
+    cta="Read the Report"
+    img-src="/research/2023/dora-report/2023-dora-accelerate-state-of-devops-report.png"  
+    img-alt="The Accelerate State of DevOps Report 2023" 
+    img-align="right"
+    img-stroke="true"
+    text-size-ratio="1.15"
+    >}}
+For the last nine years, we've produced the State of DevOps report, hearing from over 36,000 professionals worldwide. 
+
+We've outlined the DevOps practices that drive successful software delivery and operational performance, with a deep focus on user-centric design in the 2023 report.
+
+Use these findings to accelerate organizational performance while reducing burnout.
+{{< /article >}}
+
 {{< article columns="1" 
     title="DevOps Quick Check" 
     url="/quickcheck/"
@@ -26,20 +43,6 @@ Use our quick check tool to discover how you compare to industry peers, identify
     img-align="left" 
     >}}
 DORA Core represents the most well-established findings across the history and breadth our research program. Use it to guide transformation efforts in your organization.
-{{< /article >}}
-
-{{< article columns="2" 
-    title="The 2022 Accelerate State of DevOps Report" 
-    url="/research/2022/dora-report/"
-    cta="Read the Report"
-    img-src="/research/2022/dora-report/2022-dora-accelerate-state-of-devops-report.png"  
-    img-alt="The Accelerate State of DevOps Report 2022" 
-    img-align="right"
-    img-stroke="true"
-    >}}
-Over the past eight years, more than 33,000 professionals around the world have taken part in the Accelerate State of DevOps survey, making it the largest and longest-running research of its kind. Year after year, Accelerate State of DevOps Reports provide data-driven industry insights that examine the capabilities and practices that drive software delivery, as well as operational and organizational performance.
-
-In 2021, more than [22 billion records were exposed](https://www.securitymagazine.com/articles/97046-over-22-billion-records-exposed-in-2021) because of data breaches, with several huge companies falling victim. Between that and [other malicious attacks](https://www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack), security continues to be top of mind for organizations as they work to keep customer data safe and their businesses up and running. With this in mind, we decided to focus on security for the **[2022 Accelerate State of DevOps Report](/research/2022/dora-report/)**.
 {{< /article >}}
 
 {{< article 
