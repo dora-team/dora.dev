@@ -1,13 +1,12 @@
 @import "_variables.scss";
 
-// TODO: use the grid.scss styles instead
-section.features {
+grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5em;
     place-items: stretch;
 
-    article {
+    item {
         padding: 0;
         border: 1px solid $border-light;
         border-radius: 8px;
@@ -25,28 +24,23 @@ section.features {
             }
         }
 
-        div.content {
+        content {
             display: flex;
             flex-direction: row;
+            align-items: center;
 
-            .text {
+            p {
                 padding:1rem;
             }
 
-            .image {
-                
-                text-align: center;
+            img {
+                margin:1rem;
 
-                img {
-                    margin:1rem;
-
-                    &.stroke {
-                        border:1px solid $border-light;
-                    }
+                &.stroke {
+                    border:1px solid $border-light;
                 }
-
-
             }
+
 
             &.image-left {
                 flex-direction: row-reverse;
@@ -87,4 +81,11 @@ section.features {
         }
     
     }
+
+    &.border_none {
+        item {
+            border:none;
+        }
+    }
+
 }

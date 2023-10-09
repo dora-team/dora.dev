@@ -6,7 +6,7 @@ bannerTitle: "Resources"
 bannerSubtitle: "Here are some of the many resources available to help you understand and apply DORA research in your organization."
 ---
 
-<h2> Tools </h2> 
+## Tools
 
 
 
@@ -26,7 +26,7 @@ bannerSubtitle: "Here are some of the many resources available to help you under
 
 -----
 
-<h2> Books </h2> 
+## Books
 
 <section>
     <article>
@@ -50,3 +50,31 @@ bannerSubtitle: "Here are some of the many resources available to help you under
     </aside>
     </article>
 </section>
+
+-----
+## Graphics
+
+<grid class="border_none">
+    <item>
+        <h3>Postcard (5x7)</h3>
+        <content>
+        <a href="img/DORA_Postcard_2023-10.pdf" target="_blank"><img src="img/DORA_Postcard_2023-10_thumb.png" style="max-width:120px;"></a>
+        <p>
+            Print this postcard (native size: 5" high by 7" wide) and use it to share DORA with your colleagues and communities.
+            <br>
+            <a href="img/DORA_Postcard_2023-10.pdf" target="_blank">DORA Postcard</a>
+        </p>
+        </content>
+    </item>
+    <item>
+        <h3 id="graphics">2023 State of DevOps Infographic</h3>
+        <content>
+        <a href="img/2023-DORA-Report-Infographic.v10.pdf" target="_blank"><img src="img/2023-DORA-Report-Infographic_thumb.png " style="max-width:120px;"></a>
+        <p>
+            This infographic summarizes key findings from DORA's 2023 Accelerate State of DevOps Report.
+            <br>
+            <a href="img/2023-DORA-Report-Infographic.v10.pdf" target="_blank">Infographic</a>
+        </p>
+        </content>
+    </item>
+</grid>
