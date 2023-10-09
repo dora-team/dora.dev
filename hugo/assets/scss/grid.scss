@@ -27,14 +27,14 @@ grid {
         content {
             display: flex;
             flex-direction: row;
-            align-items: center;
+            align-items: stretch;
 
             p {
-                padding:1rem;
+                padding:.5rem;
             }
 
             img {
-                margin:1rem;
+                margin:.5rem;
 
                 &.stroke {
                     border:1px solid $border-light;
