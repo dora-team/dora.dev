@@ -16,4 +16,4 @@ We've outlined the DevOps practices that drive successful software delivery and 
 
 Use these findings to accelerate organizational performance while reducing burnout.
 
-<a href='{{< relref "dora-report" >}}' class="button secondary">Download the 2023 DORA Report</a>
+<a href='{{< relref "dora-report" >}}' class="button secondary" target="_blank">Download the 2023 DORA Report</a>
