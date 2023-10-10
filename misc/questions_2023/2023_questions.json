@@ -1,0 +1,205 @@
+Architecture
+Think about how your team and work are structured. For the primary application or service you work on, please rate how strongly you agree or disagree with the following statements.
+"My team can deploy and release our product or service on demand, independently of other services it depends upon",
+"On my team, we can make large-scale changes to the design of our system without creating significant work for other teams",
+"On my team, we can make large-scale changes to the design of our system without depending on other teams to make changes in their systems",
+"On my team, we perform deployments during normal business hours with negligible downtime",
+"We can do most of our testing on demand, without requiring an integrated test environment"
+
+Artificial Intelligence	
+For the primary application or service you work on, how important is the role of Artificial Intelligence (AI) in contributing to each of the following tasks today?
+"Analyzing data",
+"Analyzing logs",
+"Analyzing security",
+"Collaborating with teammates",
+"Identifying bugs",
+"Learning new skills  (for example, a new programming language)",
+"Making decisions",
+"Managing my coding environment (for example, helps me organize files, libraries, classes, functions, dependencies)",
+"Managing projects (for example, managing deliverables and deadlines)",
+"Monitoring logs",
+"Optimizing code (for example, reducing the complexity of a function)",
+"Organizing user feedback",
+"Recovering from incidents",
+"Responding to incidents",
+"Scaling running services",
+"Solving file path issues",
+"Writing code blocks or functions (for example, auto-completion, auto-generation or auto-formatting)",
+"Writing documentation",
+"Writing tests"
+
+Burnout	
+Sustainability of work is important, and burnout is an important indicator of this. Please answer a few questions about how your work has affected you. Please rate how strongly you agree or disagree with the following statements:
+"I am indifferent or cynical about my work",
+"I feel burned out from my work",
+"I feel exhausted",
+"I feel like I am ineffective in my work"
+
+Cloud
+The application or service that I primarily work on runs on...
+"Select all that apply.|hybrid cloud,multiple public clouds,on prem,other,private cloud,public cloud,server under desk"
+
+Code Review
+"For the primary application or service you work on, how long does it generally take to complete the code review process?"
+
+Continuous Delivery
+For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements
+"A failing test will stop the team from deploying the system",
+"Fast feedback on the deployability of the system is available to anyone on the team",
+"My team prioritizes keeping the software deployable over working on new features",
+"Our software is in a deployable state throughout its lifecycle",
+"We can deploy our system to production, or to end users, at any time, on demand",
+"When people get feedback that the system is not deployable (such as failing builds or tests), they make fixing these issues their highest priority",
+
+Continuous Integration
+Think about committing code and building software at work. For the primary application or service you work on, please rate how strongly you agree or disagree with the following statements.
+"Automated test failures will block a commit's progress through the pipeline",
+"Automated tests are executed at least daily",
+"Code commits result in a series of automated tests being run",
+"Code commits result in an automated build of the software",
+"The application is built automatically at least daily",
+
+Culture
+How much do you agree or disagree with the following statement:
+"Often I worry about my job security"
+
+Think about your organization and rate how strongly you agree or disagree with the following statements. In my organization...
+"Cross-functional collaboration is encouraged and rewarded",
+"Failures are treated primarily as opportunities to improve the system",
+"Information is actively sought",
+"Messengers are not punished when they deliver news of failures or other bad news",
+"New ideas are welcomed",
+"Responsibilities are shared"
+
+To what extent do you agree or disagree with the following statements?
+"Engineering tasks are distributed evenly on my team",
+"My team has a formal process to distribute documentation work",
+"My team has a formal process to equitably distribute burdensome tasks / toil",
+"My team has a formal process to equitably distribute code reviews"
+
+We want to understand more about your work arrangements. Please rate how strongly you agree or disagree with the following statements.
+"My organization provides flexibility in terms of how we work",
+"My organization provides flexibility in terms of when we work",
+"My organization provides flexibility in terms of where we work"
+
+
+"How stable or unstable of an environment do you think your organization provides employees?"
+
+Demographics and Firmographics
+"Do you have difficulty doing certain activities?|List of disabilities per Washington Group"
+"Do you identify as a member of an underrepresented group?"
+"For the primary application or service you work on, what best describes your employment status with the organization that owns the application or service?",
+"How many employees work at your organization?",
+"How many years have you worked on the team you're currently on?",
+"How many years of working experience do you have?",
+"Move the slider to a position that best describes your work location?",
+"Where do you reside? (Country)",
+"Which most closely describes your work role?",
+"Which of the following describe you, if any? Please check all that apply.|African,Asian,Biracial,Black,Caribbean,Central American,Central Asian,East Asian,Ethnoreligious group,European,Hispanic or Latino/a,I don't know,Indian,Indigenous (such as Native American or Indigenous Australian),Middle Eastern,Multiracial,North African,North American,Or, in your own words:Text,Pacific Islander,South American,South Asian,Southeast Asian,White,Prefer not to say",
+"Which of the following describe you, if any? Please check all that apply.|Woman,Man,Or in your own words,Prefer not to say"
+
+Some contractors report being embedded in the team they work with. This means they work closely with team members every day. The difference between them and a full-time employee is negligible. To what extent do you agree or disagree with the following statement:
+"For my current role, I am embedded on the team I work with."
+
+Documentation
+Think about the documentation you use. We define documentation as internal documentation for the services or applications you work on (for example, manuals, readmes, code comments, etc.). End-users are not the audience for these documents. Please rate how strongly you agree or disagree with the following statements.
+"I can rely on our technical documentation when I need to use or work with the services or applications I work on",
+"It is easy to find the right technical document when I need to understand something about the services or applications I work on",
+"Technical documentation is updated as changes are made",
+"When there's an incident or problem that needs troubleshooting, I reach for the documentation"
+
+Flexible Infrastructure
+Think about the infrastructure or platform where the primary application or service you work on runs. Please rate how strongly you agree or disagree with the following statements
+"Computing resources are pooled and shared by multiple applications with resources and capabilities dynamically assigned and re-assigned based on demand.",
+"I can access and modify resources (compute, storage, etc.) and capabilities (APIs, monitoring, etc.) from a broad range of devices (for example smartphones, tablets, laptops) over the network without the need for proprietary plug-ins or protocols.",
+"I can dynamically increase or decrease the resources available for the service or product that I primarily support on demand.",
+"I can monitor or control the quantity and/or cost of resources used by the service or product that I primarily support.",
+"Once I have access, I can independently provision and configure resources (compute, storage, etc.) and capabilities (APIs, monitoring, etc.) on demand, without raising tickets or requiring human interaction."
+
+Focus on Users
+Organizations manage work in different ways. Thinking about the primary application or service you work on, to what extent do you agree with the following statements?
+"My team has a clear understanding of what our users want to accomplish with our application or service",
+"My team's success is evaluated according to the value we provide to our users and our organization",
+"Specifications (for example, requirements, planning)  are continuously revisited and reprioritized according to user signals"
+
+Job Satisfaction
+"Taking everything into consideration, how do you feel about your job as a whole?"
+
+Knowledge Sharing
+Please rate your level of agreement with the following statements:
+"I often find myself answering questions that I've already answered before",
+"Please rate your level of agreement with the following statements:",
+"Waiting on answers to questions often causes interruptions and disrupts my workflow"
+
+Organizational Performance
+For each of the following performance indicators, how well did your organization meet its goals over the past year?
+"Achieving our organizational and mission goals",
+"Customer satisfaction",
+"Increased number of customers",
+"Operating efficiency",
+"Other measures that demonstrate to external parties that your organization achieve intended results",
+"Quality of products or services provided",
+"Quantity of products or services",
+"Relative market share for primary products",
+"Your organization's overall performance",
+"Your organization's overall profitability"
+
+Productivity
+Thinking about the work you do, please rate how strongly you agree or disagree with the following statements.
+"I am able to do my work in the most effective way possible",
+"I am productive at work",
+"My work creates value",
+"My work is aligned with my set of skills",
+
+Reliability
+We're interested about reliability and how both you and your team think about it. For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.
+"We have mitigation plans for our dependencies (for example, internal and/or external service dependencies, internal and/or external cloud platform dependencies, etc.)",
+"We have well-defined targets for reliability (such as Service Level Objectives or Service Level Agreements)",
+"We regularly test our disaster recovery preparedness through simulated disruptions, failover exercises, table-top exercises, etc.",
+"When we miss our reliability targets, we perform improvement work, adjust our development work, and/or re-prioritize"
+
+How often does the primary service or application you work on encounter the following events?
+"End users report being dissatisfied with the reliability of our system",
+"Meets reliability targets (for example, Service Level Objectives)",
+"The service or application is unavailable, performs slower than expected or performs incorrectly"
+
+Software Delivery Performance
+"how long does it generally take to restore service after a change to production or release to users results in degraded service  (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward, or patch)?",
+"how often does your organization deploy code to production or release it to end users?",
+"what is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?",
+"what percentage of changes to production or released to users result in degraded service (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward or patch)?",
+
+Team Performance
+We recognize that “team” has many different connotations and definitions. When we say “team”, we are talking about the people who work with you on the same primary application or service. To what extent do you agree or disagree with the following statements about how your team performed over the past year?
+"We delivered innovative solutions",
+"We were able to adapt to change",
+"We were able to effectively collaborate with each other",
+"We were able to rely on each other",
+"We worked efficiently"
+
+Trunk-Based Development
+We are interested in the development practices and patterns you follow at work. Please rate how strongly you agree or disagree with the following statements.
+"All developers on my team push code to trunk / main branch at least daily",
+"Branches and forks have very short lifetimes (less than a day) before being merged to the main branch",
+"Our team is not subject to code freezes when no one can push to trunk / main",
+"There are fewer than three active branches on the application's code repo",
+
+Work Type
+Approximately what percentage of your time is spent on... Please consider each question independent of the others.
+"Repetitive work such as manually restarting services or writing boilerplate code",
+"Rework or unplanned work. This may include interruptions, errors, outages, and other emergencies that require you to shift your attention to unplanned work",
+"Work that is visible to my peers and leadership",
+"Work that requires specific skills related to my profession",
+"Work that's beneficial to my organization but that falls outside of my primary job responsibility. This may include mentoring others, organizing events, serving on committees, interviewing, or helping resolve conflicts between peers",
+
+Think about your average week at work. Approximately what proportion of your time do you spend doing the following. Your answer should sum to 100.
+"Administrative tasks (for example, scheduling meetings and managing budget)",
+"Analyzing data",
+"Coding",
+"Emailing & Chat (for example, Slack, Microsoft Teams, Google Chat)",
+"Meetings",
+"Mentoring or helping onboard new employees",
+"People management (for example, writing performance reviews)",
+"Reviewing code",
+"Writing internal documentation (include end-user documents only if the end-users of your service are internal)",
+"Other (please specify)"
