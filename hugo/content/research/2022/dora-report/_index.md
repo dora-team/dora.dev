@@ -27,6 +27,7 @@ type: research_archives/report
     <li style="font-size:1.25rem;"><a href="2022-dora-accelerate-state-of-devops-report-port-br-bma.pdf" target="_blank">Português - Brasil</a></li>
     <li style="font-size:1.25rem;"><a href="2022-dora-accelerate-state-of-devops-report-zh-cn.pdf" target="_blank">中文 – 简体</a></li>
     <li style="font-size:1.25rem;"><a href="2022-dora-accelerate-state-of-devops-report-ja.pdf" target="_blank">日本語</a></li>
+    <li style="font-size:1.25rem;"><a href="2022-dora-accelerate-state-of-devops-report-ko.pdf" target="_blank">한국어</a></li>
 </ul>
 
 </item>
