@@ -75,11 +75,12 @@
                 "heading": "Software Delivery Performance",
                 "question_groups": [
                     {
+                        "description": "The next set of questions are about various outcomes of your work. For the primary application or service you work on, ...",
                         "questions": [
-                            "For the primary application or service you work on, how long does it generally take to restore service when a service incident or a defect that impacts users occurs (e.g., unplanned outage, service impairment)?",
-                            "For the primary application or service you work on, what is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?",
-                            "For the primary application or service you work on, how often does your organization deploy code to production or release it to end users?",
-                            "For the primary application or service you work on, what percentage of changes to production or released to users result in degraded service (e.g., lead to service impairment or service outage) and subsequently require remediation (e.g., require a hotfix, rollback, fix forward, patch)?"
+                            "For the primary application or service you work on, how long does it generally take to restore service when a service incident or a defect that impacts users occurs (e.g., unplanned outage, service impairment)?|More than six months, One to six months, One week to one month, One day to one week, Less than one day, Less than one hour",
+                            "For the primary application or service you work on, what is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?|More than six months, One to six months, One week to one month, One day to one week, Less than one day, Less than one hour",
+                            "For the primary application or service you work on, how often does your organization deploy code to production or release it to end users?|Fewer than once per six months, Between once per month and once every six months, Between once per week and once per month, Between once per day and once per week, Between once per hour and once per day, On demand (multiple deploys per day)",
+                            "For the primary application or service you work on, what percentage of changes to production or released to users result in degraded service (e.g., lead to service impairment or service outage) and subsequently require remediation (e.g., require a hotfix, rollback, fix forward, patch)?|0-15%, 16-30%, 31-45%, 46-60%, 61-75%, 76-100%"
                         ]
                     }
                 ]
