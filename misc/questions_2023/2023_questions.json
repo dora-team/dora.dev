@@ -51,6 +51,7 @@
                 {
                     "description": "Sustainability of work is important, and burnout is an important indicator of this. Please answer a few questions about how your work has affected you. Please rate how strongly you agree or disagree with the following statements:",
                     "questions": [
+                        "My feelings about work negatively affect my life outside of work",
                         "I am indifferent or cynical about my work",
                         "I feel burned out from my work",
                         "I feel exhausted",
