@@ -75,12 +75,12 @@
                 "heading": "Software Delivery Performance",
                 "question_groups": [
                     {
-                        "description": "The next set of questions are about various outcomes of your work. For the primary application or service you work on, ...",
+                        "description": "The next set of questions are about various outcomes of your work. For the primary application or service you work on...",
                         "questions": [
-                            "For the primary application or service you work on, how long does it generally take to restore service when a service incident or a defect that impacts users occurs (e.g., unplanned outage, service impairment)?|More than six months, One to six months, One week to one month, One day to one week, Less than one day, Less than one hour",
-                            "For the primary application or service you work on, what is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?|More than six months, One to six months, One week to one month, One day to one week, Less than one day, Less than one hour",
-                            "For the primary application or service you work on, how often does your organization deploy code to production or release it to end users?|Fewer than once per six months, Between once per month and once every six months, Between once per week and once per month, Between once per day and once per week, Between once per hour and once per day, On demand (multiple deploys per day)",
-                            "For the primary application or service you work on, what percentage of changes to production or released to users result in degraded service (e.g., lead to service impairment or service outage) and subsequently require remediation (e.g., require a hotfix, rollback, fix forward, patch)?|0-15%, 16-30%, 31-45%, 46-60%, 61-75%, 76-100%"
+                            "How long does it generally take to restore service when a service incident or a defect that impacts users occurs (e.g., unplanned outage, service impairment)?|More than six months, One to six months, One week to one month, One day to one week, Less than one day, Less than one hour",
+                            "What is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?|More than six months, One to six months, One week to one month, One day to one week, Less than one day, Less than one hour",
+                            "How often does your organization deploy code to production or release it to end users?|Fewer than once per six months, Between once per month and once every six months, Between once per week and once per month, Between once per day and once per week, Between once per hour and once per day, On demand (multiple deploys per day)",
+                            "What percentage of changes to production or released to users result in degraded service (e.g., lead to service impairment or service outage) and subsequently require remediation (e.g., require a hotfix, rollback, fix forward, patch)?|0-15%, 16-30%, 31-45%, 46-60%, 61-75%, 76-100%"
                         ]
                     }
                 ]
@@ -301,7 +301,7 @@
                             "User Language",
                             "What is your gender?",
                             "What is the principal industry of your organization?",
-                            "Which most closely describes your work role?|Development or Engineering,DevOps or SRE,I am a C-level executive,I am a consultant, coach, or trainer,I am a student,I do not belong to any department,Information Security,IT Operations or Infrastructure,Manager,Network Operations,Other (please specify),Prefer not to answer,Product Management,Professional Services,Quality Engineering or Assurance,Release Engineering,Sales Engineering,Sales or Marketing,User experience or software analysis",
+                            "Which most closely describes your work role?|Development or Engineering,DevOps or SRE,I am a C-level executive,I am a consultant coach or trainer,I am a student,I do not belong to any department,Information Security,IT Operations or Infrastructure,Manager,Network Operations,Other (please specify),Prefer not to answer,Product Management,Professional Services,Quality Engineering or Assurance,Release Engineering,Sales Engineering,Sales or Marketing,User experience or software analysis",
                             "With which racial or ethnic groups do you identify? Select all that apply|American Indian or Alaska Native, Asian, Black or African American, Hispanic, Latino, or Spanish origin, Middle Eastern or North African, Native Hawaiian or Pacific Islander, Other (please specify), Prefer not to respond, White"
                         ]
                     }
@@ -375,9 +375,9 @@
                 "heading": "Cloud",
                 "question_groups": [
                     {
-                        "description": "The application or service that I primarily work on runs on..",
+                        "description": "The application or service that I primarily work on runs on...",
                         "questions": [
-                            "Select all that apply.|hybrid cloud,multiple public clouds,on prem,other,private cloud,public cloud,server under desk"
+                            "Select all that apply:|hybrid cloud,multiple public clouds,on prem,other,private cloud,public cloud,server under desk"
                         ]
                     }
                 ]
@@ -387,7 +387,7 @@
                 "question_groups": [
                     {
                         "questions": [
-                            "For the primary application or service you work on, how long does it generally take to complete the code review process?"
+                            "For the primary application or service you work on, how long does it generally take to complete the code review process?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don't know,We do not do code reviews"
                         ]
                     }
                 ]
@@ -481,8 +481,8 @@
                             "Move the slider to a position that best describes your work location?",
                             "Where do you reside? (Country)",
                             "Which most closely describes your work role?",
-                            "Which of the following describe you, if any? Please check all that apply.|African,Asian,Biracial,Black,Caribbean,Central American,Central Asian,East Asian,Ethnoreligious group,European,Hispanic or Latino/a,I don't know,Indian,Indigenous (such as Native American or Indigenous Australian),Middle Eastern,Multiracial,North African,North American,Or, in your own words:Text,Pacific Islander,South American,South Asian,Southeast Asian,White,Prefer not to say",
-                            "Which of the following describe you, if any? Please check all that apply.|Woman,Man,Or in your own words,Prefer not to say"
+                            "Which of the following describe you, if any? Please check all that apply.|African,Asian,Biracial,Black,Caribbean,Central American,Central Asian,East Asian,Ethnoreligious group,European,Hispanic or Latino/a,I don't know,Indian,Indigenous (such as Native American or Indigenous Australian),Middle Eastern,Multiracial,North African,North American,Or in your own words (text),Pacific Islander,South American,South Asian,Southeast Asian,White,Prefer not to say",
+                            "Which of the following describe you, if any? Please check all that apply.|Woman,Man,Or in your own words (text),Prefer not to say"
                         ]
                     },
                     {
@@ -618,12 +618,12 @@
                 "heading": "Software Delivery Performance",
                 "question_groups": [
                     {
-                        "description": "The next set of questions are about various outcomes of your work. For the primary application or service you work on, ...",
+                        "description": "The next set of questions are about various outcomes of your work. For the primary application or service you work on...",
                         "questions": [
-                            "what is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?|More than six months, Between one month and six months, Between one week and one month, Between one day and one week, Less than one day, Less than one hour, I don't know or not applicable",
-                            "how often does your organization deploy code to production or release it to end users?|Fewer than once per six months, Between once per month and once every 6 months, Between once per week and once per month, Between once per day and once per week, Between once per hour and once per day, On demand (multiple deploys per day), I don't know or not applicable",
-                            "what percentage of changes to production or released to users result in degraded service (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward or patch)?|slider offering choices between 0% and 100%",
-                            "how long does it generally take to restore service after a change to production or release to users results in degraded service  (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward, or patch)?|More than six months, Between one month and six months, Between one week and one month, Between one day and one week, Less than one day, Less than one hour, I don't know or not applicable"
+                            "What is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?|More than six months, Between one month and six months, Between one week and one month, Between one day and one week, Less than one day, Less than one hour, I don't know or not applicable",
+                            "How often does your organization deploy code to production or release it to end users?|Fewer than once per six months, Between once per month and once every 6 months, Between once per week and once per month, Between once per day and once per week, Between once per hour and once per day, On demand (multiple deploys per day), I don't know or not applicable",
+                            "What percentage of changes to production or released to users result in degraded service (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward or patch)?|(value between 0% and 100%)",
+                            "How long does it generally take to restore service after a change to production or release to users results in degraded service  (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward, or patch)?|More than six months, Between one month and six months, Between one week and one month, Between one day and one week, Less than one day, Less than one hour, I don't know or not applicable"
                         ]
                     }
                 ]
