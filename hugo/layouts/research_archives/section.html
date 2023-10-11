@@ -1,25 +1,7 @@
 {{ define "main" }}
-<style type="text/css">
-    h3 {
-        font-size:1.25em;
-    }
-
-    h4 {
-        color:#666;
-        margin-bottom: 1em;
-    }
-    .mainContent li {
-        font-weight:300;
-        font-family: "Roboto";
-        font-size: 14px;
-    }
-    p.description {
-        border-top: 1px solid lightgray;
-    }
-    li div:not(:first-child) {
-        font-size: 85%;
-    }
-</style>
+<!-- TODO: #121 make a partial to process scss files and render <link> tags -->
+{{ $stylesheet := printf "scss/research.scss" | resources.Get | toCSS | fingerprint }}
+<link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
 
 <section class="hasSidebar">
     <div class="mainContent">
@@ -52,9 +34,17 @@
                                     <ul>
                                         {{ range sort .questions }}
                                             {{ $thisQuestion := split . "|" }}
+                                            {{ $thisQuestionText := index $thisQuestion 0 }}
+                                            {{ $thisQuestionResponses := index $thisQuestion 1 }}
                                             <li>
-                                                {{ range $thisQuestion }}
-                                                    <div>{{ . }}</div>
+                                                <div>{{ $thisQuestionText }}</div>
+                                                {{ if $thisQuestionResponses }}
+                                                    <div class="responses">
+                                                        {{ $responsesSlice := split $thisQuestionResponses "," }}
+                                                        {{ range $responsesSlice }}
+                                                            <span class="answer">{{ . }}</span>
+                                                        {{ end }}
+                                                    </div>
                                                 {{ end }}
                                             </li>
                                         {{ end }}
