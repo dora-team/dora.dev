@@ -199,7 +199,7 @@
                             "Every change in a revision's history must be individually reviewed and approved by two trusted persons prior to submission",
                             "Build metadata (e.g., dependencies, build process, build environment) about an artifact cannot be edited by build services users",
                             "Build definitions and configurations are defined in text files stored in a version control system",
-                            "Production releases are built by using a centralized CI/CD system, never on a developer’s workstation",
+                            "Production releases are built by using a centralized CI/CD system, never on a developer's workstation",
                             "Build metadata (e.g., dependencies, build process, build environment) about an artifact documents all dependencies",
                             "Revisions and their change history are preserved indefinitely",
                             "Builds are isolated; they cannot interfere with concurrent or subsequent builds",
