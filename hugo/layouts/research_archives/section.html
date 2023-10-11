@@ -43,7 +43,7 @@
                 {{ if in .Params.sections_to_display "Questions" }}
                     <article id="questions" class="tab" x-show="activeTabs.archives == 'questions'">
                         <h2>Survey Questions</h2>
-                        <h4>Responses to the following questions were used in the analysis published in the {{ .Params.research_year }} Accelerate State of DevOps Report</h4>
+                        <h4>Responses to the following questions were used in the analysis published in the <a href="/research/{{ .Params.research_year }}/dora-report/">{{ .Params.research_year }} Accelerate State of DevOps Report</a></h4>
                         {{ range where .Site.Data.survey_questions "year" .Params.research_year }}
                             {{ range sort .categories "heading" }}
                                 <h3>{{ .heading }}</h3>
