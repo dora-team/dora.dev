@@ -78,6 +78,16 @@
             "source": "/dora-report",
             "destination": "https://cloud.google.com/devops/state-of-devops",
             "type": 302
+        },
+        {
+          "source": "/:year-infographic",
+          "destination": "/research/:year/infographic/",
+          "type": 302
+        },
+        {
+          "source": "/infographic-:year",
+          "destination": "/research/:year/infographic/",
+          "type": 302
         }
       ]
     }
