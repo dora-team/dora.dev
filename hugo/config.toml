@@ -1,5 +1,6 @@
 baseURL = 'https://dora.dev/'
 languageCode = 'en-us'
+theme = 'dora-team'
 
 [markup.goldmark.renderer]
 unsafe= true
