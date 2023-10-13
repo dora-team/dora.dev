@@ -20,9 +20,7 @@
 
 <!-- add page-specific stylesheets (TODO: stop using these and just put <style> tags in the body, which is acceptable per HTML5) -->
 {{ range .Params.stylesheets }}
-    {{ $options := (dict "targetPath" (printf "css/%s.css" .name) "outputStyle" "normal") }}
-    {{ $scss_path := printf "scss/%s.scss" .name }}
-    {{- partial "partials/link_styles" (dict "scss" $scss_path  "options" $options) -}}
+    {{- partial "partials/link_styles" (dict "scss" (printf "scss/%s.scss" .name )) -}}
 {{ end }}
 
 <meta name="description" content="{{ .Site.Params.Description }}">
