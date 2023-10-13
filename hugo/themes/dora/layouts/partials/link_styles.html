@@ -1,2 +1,4 @@
-{{ $styles := resources.Get .scss | toCSS .options | fingerprint }}
+{{ $options := .options | default "" }}
+
+{{ $styles := resources.Get .scss | toCSS $options | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
