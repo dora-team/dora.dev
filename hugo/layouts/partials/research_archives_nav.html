@@ -4,10 +4,12 @@
     To set display order and display text, use the `tab_order` and `tab_title` parameters on each page's front matter.
     -->
 <tab_links>
-    <!-- loop over pages which have a tab order specified-->
-    {{ range (collections.Sort .Site.Pages ".Params.tab_order") }}
+    {{ $currentPage := .Page }}
+    {{ $researchYear := .Params.research_year }}
+    <!-- loop over pages with the same research year,  which have a tab order specified-->
+    {{ range (collections.Sort (where .Site.Pages ".Params.research_year" "eq" $researchYear) ".Params.tab_order") }}
         {{ if .Params.tab_order }}
-            <a href="{{ .RelPermalink }}">{{ .Params.tab_title }}</a>
+            <a href="{{ .RelPermalink }}" {{ if eq .Page $currentPage }}style="color:red"{{ end }}>{{ .Params.tab_title }}</a>
         {{ end }}
     {{ end }}
 </tab_links>

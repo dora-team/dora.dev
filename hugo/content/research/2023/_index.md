@@ -8,7 +8,10 @@ tab_order: "0"
 tab_title: "Snapshot"
 layout: single
 ---
+<object data="dora-report/2023-dora-report-infographic.svg" id="dora-core-model" type="image/svg+xml" style="width:100%"></object>
 
-TODO: add words here, and embed infographic as SVG
+-----
 
-<a href="/resources/img/2023-DORA-Report-Infographic.v10.pdf" target="_blank"><img src="/resources/img/2023-DORA-Report-Infographic_thumb.png" style="max-width:24em;"></a>
+Download infographic as PDF:
+
+<a href="/resources/img/2023-DORA-Report-Infographic.v10.pdf" target="_blank"><img src="/resources/img/2023-DORA-Report-Infographic_thumb.png" style="max-width:6em;"></a>
