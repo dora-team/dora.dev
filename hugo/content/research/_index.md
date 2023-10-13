@@ -2,7 +2,7 @@
 title: "Research"
 bannerTitle: DORA’s Research Program
 bannerSubtitle: |
-    DORA is the longest running academically rigorous research investigation of its kind. Our [research team](/research/team/) applies behavioral science methodology to uncover the predictive pathways which connect ways of working, via software delivery performance, to organizational goals and individual wellbeing. Explore our findings using the interactive diagram below: click any item to learn more about why it matters, how to measure it, and how to improve.
+    DORA is the longest running academically rigorous research investigation of its kind. Our [research team](/research/team/) applies behavioral science methodology to uncover the predictive pathways which connect ways of working, via software delivery performance, to organizational goals and individual well-being. Explore our findings using the interactive diagram below: click any item to learn more about why it matters, how to measure it, and how to improve.
 date: 2023-02-02T18:23:33Z
 draft: false
 aliases: 
