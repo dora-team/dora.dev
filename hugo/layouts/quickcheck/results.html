@@ -1,7 +1,7 @@
 {{ define "main" }}
 
     <!-- TODO: #121 made as partial to process scss files and render <link> tags -->
-    {{- partial "partials/link_styles.html" (dict "scss" "scss/quickcheck.scss" "options" "") -}}
+    {{- partial "partials/link_styles" (dict "scss" "scss/quickcheck.scss" "options" "") -}}
 
     <h1 id="results_h1">Your software delivery&nbsp;performance</h1>
     {{- partial "quickcheck/percentile_graph" . -}}
