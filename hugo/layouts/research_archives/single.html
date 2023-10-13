@@ -5,9 +5,15 @@
 
 <section class="hasSidebar">
     <div class="mainContent">
+        <h1>DORA Research: {{ .Params.research_year }}</h1>
+        {{- partial "research_archives_nav" . -}}
+
         <article>
             {{ .Content }}
         </article>
+
+
+<!--
         {{ if .Params.sections_to_display }}
             {{- partial "tab_navigation.v2" (dict 
                 "tabs" .Params.sections_to_display 
@@ -56,6 +62,7 @@
                 {{ end }}
             </div>
         {{ end }}
+        -->
     </div>
     <sidebar>
         {{ partial "research_sidebar.html" . }}
