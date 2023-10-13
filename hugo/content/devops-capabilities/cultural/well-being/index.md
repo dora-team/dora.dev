@@ -1,12 +1,12 @@
 ---
 draft: false
-slug: wellbeing
-title: "Wellbeing"
+slug: well-being
+title: "Well-being"
 category: cultural
 core: true
 headline: A focus on employee happiness and work environment can improve organizational performance while helping retain talent.
 summary: |
-    Wellbeing is a reflection of individuals' happiness and job satisfaction. Increased wellbeing predicts organizational performance and employees' job tenure. DORA has studied the impact of deployment pain, rework, and burnout on wellbeing.
+    Well-being is a reflection of individuals' happiness and job satisfaction. Increased well-being predicts organizational performance and employees' job tenure. DORA has studied the impact of deployment pain, rework, and burnout on well-being.
 
     **Deployment pain** is a measure of the fear and anxiety that engineers and technical staff feel when they push code into production.
 
@@ -15,7 +15,7 @@ summary: |
     **Burnout** is physical, mental, or emotional exhaustion caused by overwork or stress.
 ---
 
-Wellbeing is a reflection of individuals' happiness and job satisfaction. Increased wellbeing predicts organizational performance and employees' job tenure. DORA has studied the impact of deployment pain, rework, and burnout on wellbeing.
+Well-being is a reflection of individuals' happiness and job satisfaction. Increased well-being predicts organizational performance and employees' job tenure. DORA has studied the impact of deployment pain, rework, and burnout on well-being.
 
 ## Deployment pain
 Deployment pain is a measure of the fear and anxiety that engineers and technical staff feel when they push code into production. It also measures the extent to which deployments are disruptive rather than easy and pain-free. Where deployments are most painful, you'll find the poorest software delivery performance, organizational performance, and organizational culture.
