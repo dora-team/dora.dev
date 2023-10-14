@@ -9,8 +9,8 @@ section.hasSidebar {
     }
 
     sidebar {
-        width:20%;
-        min-width:14em;
+        width:12em;
+        min-width:12em;
 
         a {
             text-decoration: none;
@@ -20,13 +20,6 @@ section.hasSidebar {
             padding: 0.5em 0.1em 0.5em 1em;
             margin-left: 1em;
             border-left: 1px solid $border-light;
-
-            .snipe {
-                border: 1px solid $border-light;
-                border-radius: 0.5em;
-                padding: 0.5em 1em;
-                font-weight: 500;
-            }
         }
     }
 

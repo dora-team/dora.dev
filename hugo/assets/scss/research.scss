@@ -48,4 +48,29 @@
 tab_links {
     display:block;
     width:100%;
+    border-bottom: 1px solid $border-light;
+
+    a {
+        display: inline-block;
+        padding: 4px 18px;
+        cursor:pointer;
+
+        font-family: $font-roboto;
+        font-weight: 400;
+        font-size: 0.85rem;
+        text-decoration: none;
+        color: $color-text-light;
+        text-transform: uppercase;
+        border-bottom: 2px solid white;
+        transition: border-bottom 400ms ease-out;
+
+        &:hover {
+            color: $color-text;
+        }
+
+        &.selected {
+            color: $color-text;
+            border-bottom: 2px solid $color-link;
+        }
+    }
 }

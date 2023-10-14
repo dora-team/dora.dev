@@ -8,7 +8,8 @@ tab_order: "0"
 tab_title: "Snapshot"
 layout: single
 ---
-<object data="dora-report/2023-dora-report-infographic.svg" id="dora-core-model" type="image/svg+xml" style="width:100%"></object>
+
+<object data="dora-report/2023-dora-report-infographic.svg" id="dora-core-model" type="image/svg+xml" style="width:100%;margin-top:1em;"></object>
 
 -----
 
