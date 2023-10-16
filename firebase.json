@@ -86,6 +86,11 @@
         },
         {
             "source": "/dora-report",
+            "destination": "/report",
+            "type": 302
+        },
+        {
+            "source": "/report",
             "destination": "https://cloud.google.com/devops/state-of-devops",
             "type": 302
         },
