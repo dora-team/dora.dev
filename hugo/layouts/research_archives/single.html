@@ -4,63 +4,11 @@
 <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
 
 <h1>DORA Research: {{ .Params.research_year }}</h1>
-{{- partial "research_archives_nav" . -}}
+{{- partial "research_archives_tabs" . -}}
 
 <section class="hasSidebar">
     <article>
         {{ .Content }}
-
-
-<!--
-        {{ if .Params.sections_to_display }}
-            {{- partial "tab_navigation.v2" (dict 
-                "tabs" .Params.sections_to_display 
-                "tabSet" "archives"
-                ) -}}
-        
-                {{ if in .Params.sections_to_display "Structural Equation Model" }}
-                    <article id="sem" class="tab" x-show="activeTabs.archives == 'structural-equation-model'">
-                        <h2>Structural Equation Model</h2>
-                        <p>The DORA research program uses structural equation modeling (SEM), a predictive statistical modeling technique used to test relationships. We utilize PLS-PM (partial least squares path modeling) for our analysis, for several reasons: it does not require assumptions of normality in the data, it is will suited to exploratory and incremental research, and the analysis optimizes for prediction of the dependent variable (vs. testing for model fit of the data). All paths shown in the SEM figures are p &lt; .05.</p>
-                        
-                        <a href="{{ .Params.research_year }}-structural-equation-model.png" target="_blank"><img src="{{ .Params.research_year }}-structural-equation-model.png" style="max-width:100%"></a>
-                    </article>
-                {{ end }}
-                {{ if in .Params.sections_to_display "Questions" }}
-                    <article id="questions" class="tab" x-show="activeTabs.archives == 'questions'">
-                        <h2>Survey Questions</h2>
-                        <h4>Responses to the following questions were used in the analysis published in the <a href="/research/{{ .Params.research_year }}/dora-report/">{{ .Params.research_year }} Accelerate State of DevOps Report</a></h4>
-                        {{ range where .Site.Data.survey_questions "year" .Params.research_year }}
-                            {{ range sort .categories "heading" }}
-                                <h3>{{ .heading }}</h3>
-                                {{ range sort .question_groups "description" }}
-                                    <p class="description">{{ .description }}</p>
-                                    <ul>
-                                        {{ range sort .questions }}
-                                            {{ $thisQuestion := split . "|" }}
-                                            {{ $thisQuestionText := index $thisQuestion 0 }}
-                                            {{ $thisQuestionResponses := index $thisQuestion 1 }}
-                                            <li>
-                                                <div>{{ $thisQuestionText }}</div>
-                                                {{ if $thisQuestionResponses }}
-                                                    <div class="responses">
-                                                        {{ $responsesSlice := split $thisQuestionResponses "," }}
-                                                        {{ range $responsesSlice }}
-                                                            <span class="answer">{{ . }}</span>
-                                                        {{ end }}
-                                                    </div>
-                                                {{ end }}
-                                            </li>
-                                        {{ end }}
-                                    </ul>
-                                {{ end }}
-                            {{ end }}
-                        {{ end }}
-                    </article> 
-                {{ end }}
-            </div>
-        {{ end }}
-        -->
     </article>
     <sidebar>
         {{ partial "research_sidebar.html" . }}

@@ -12,4 +12,6 @@
             <a href="{{ .RelPermalink }}" {{ if eq .Page $currentPage }}class="selected"{{ end }}>{{ .Params.tab_title }}</a>
         {{ end }}
     {{ end }}
+    <!-- empty element to standardize height of parent, even if there are no links -->
+    <a style="visibility:hidden;">&nbsp;</a>
 </tab_links>

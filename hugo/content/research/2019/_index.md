@@ -3,11 +3,10 @@ title: "DORA Research: 2019"
 date: 2019-10-01
 draft: false
 research_year: 2019
-# SEM and survey questions are included via template: templates/research_archives/single.html, if specified in front matter. The data for survey questions can be found at data/survey_questions.json
-sections_to_display:
-    - 'Structural Equation Model'
 type: research_archives
+layout: single
+tab_order: "0"
+tab_title: "Overview"
 ---
 
-# DORA's Research Program: 2019
 DORA's research program continued in 2019. [Read the 2019 report here]({{< relref "dora-report" >}})

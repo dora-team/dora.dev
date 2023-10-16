@@ -1,7 +1,10 @@
-{{ $archives := where $.Site.Pages "Type" "research_archives" }}
-
 <ul>
-    {{ range $archives }}
-        <li><a href="{{ .RelPermalink }}">{{ .Params.research_year }}</a></li>
-    {{ end }}
+    <!-- years are hard-coded because that's simpler than trying to query .Site.Pages to get only the relevant pages -->
+    <li><a href='{{ relref . "/research/2023/" }}'>2023</a></li>
+    <li><a href='{{ relref . "/research/2022/" }}'>2022</a></li>
+    <li><a href='{{ relref . "/research/2021/" }}'>2021</a></li>
+    <li><a href='{{ relref . "/research/2020/" }}'>2020</a></li>
+    <li><a href='{{ relref . "/research/2019/" }}'>2019</a></li>
+    <li><a href='{{ relref . "/research/2018/" }}'>2018</a></li>
+    <li><a href='{{ relref . "/research/2017-and-earlier/" }}'>2017 and earlier</a></li>
 </ul>

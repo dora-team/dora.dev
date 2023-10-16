@@ -5,11 +5,11 @@ draft: false
 research_year: 2023
 type: "research_archives"
 tab_order: "0"
-tab_title: "Snapshot"
+tab_title: "Overview"
 layout: single
 ---
 
-<object data="dora-report/2023-dora-report-infographic.svg" id="dora-core-model" type="image/svg+xml" style="width:100%;margin-top:1em;"></object>
+<object data="dora-report/2023-dora-report-infographic.svg" id="dora-core-model" type="image/svg+xml" style="width:100%;"></object>
 
 -----
 
