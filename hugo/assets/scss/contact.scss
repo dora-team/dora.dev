@@ -1,24 +1,27 @@
 @import "_variables.scss";
 
 form {
-    margin:0 auto;
-    
-    h1 { 
-        margin-bottom:.5em;
+    margin: 0 auto;
+
+    h1 {
+        margin-bottom: 0.5em;
     }
 
     #inquiry-form-fields {
         display: inline-grid;
         grid-template-columns: auto auto;
-        gap:1em .5em;
+        gap: 1em 0.5em;
+        margin: 2em;
     }
 
-    input:not([type=submit]), select, textarea {
-        width:24em;
+    input:not([type="submit"]),
+    select,
+    textarea {
+        width: 24em;
         border-color: 1px solid $border-light;
 
         &.name {
-            width:11.5em;
+            width: 11.5em;
         }
     }
 
@@ -27,19 +30,21 @@ form {
         display: none;
     }
 
-    @include media-small {
-
+    @include media-medium {
         #inquiry-form-fields {
-            display:flex;
+            display: flex;
             flex-direction: column;
-            gap:.5em 0;
-    
+            gap: 0.5em 0;
+            margin: 0;
+
             label {
-                display:none;
+                display: none;
             }
 
-            input:not([type=submit]), select, textarea {
-                width:100%;
+            input:not([type="submit"]),
+            select,
+            textarea {
+                width: 100%;
             }
 
             div {
