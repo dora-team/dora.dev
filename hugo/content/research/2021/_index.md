@@ -22,7 +22,7 @@ Elite performers now make up 26% of teams, and have decreased their lead times f
 Teams that leverage modern operations practices outlined by our Site Reliability Engineering (SRE) friends report higher operational performance. Teams that prioritize both delivery and operational excellence report the highest organizational performance. 
 
 #### More teams are leveraging the cloud and see significant benefits from doing so. 
-Teams continue to move workloads to the cloud and those that leverage all five capabilities of cloud see increases in software delivery and operational (SDO) performance and organizational performance. Multi-cloud adoption is also on the rise so that teams can leverage the unique capabilities of each provider.
+Teams continue to move workloads to the cloud and those that leverage all five capabilities of cloud see increases in software delivery and operational performance and organizational performance. Multi-cloud adoption is also on the rise so that teams can leverage the unique capabilities of each provider.
 
 #### A secure software supply chain is both essential and drives performance. 
 Given the significant increase in malicious attacks in recent years, it is even more pressing for organizations to shift from reactive practices to proactive and diagnostic measures. Teams that integrate security practices throughout their software supply chain to deliver software quickly, reliability, and safely. 
