@@ -9,4 +9,8 @@ tab_order: "0"
 tab_title: "Overview"
 ---
 
-DORA's research program continued in 2019. [Read the 2019 report here]({{< relref "dora-report" >}})
+![Infographic p1](infographic/2019-DORA-Report-Infographic-1.svg)
+![Infographic p2](infographic/2019-DORA-Report-Infographic-2.svg)
+
+-----
+[Download as PDF](infographic/2019-DORA-Report-Infographic.pdf)
