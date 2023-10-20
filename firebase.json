@@ -75,8 +75,8 @@
             "type": 302
         },
         {
-            "source": "/research/2023/dora-report",
-            "destination": "https://cloud.google.com/devops/state-of-devops",
+            "source": "/research/:year/?tab_archives=:tab",
+            "destination": "/research/:year/:tab",
             "type": 302
         },
         {

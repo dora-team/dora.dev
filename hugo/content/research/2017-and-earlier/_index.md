@@ -4,6 +4,7 @@ date: 2017-10-01
 draft: false
 type: research_archives
 research_year: 2017 and earlier
+layout: single
 ---
 
 Prior to 2018, research was conducted in partnership with Puppet, as an extension of their original State of DevOps research. Read the [history of Puppet's DevOps Reports](https://www.puppet.com/resources/history-of-devops-reports)
