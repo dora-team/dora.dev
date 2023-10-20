@@ -9,8 +9,9 @@ tab_order: "0"
 tab_title: "Overview"
 ---
 
-![Infographic p1](infographic/2019-DORA-Report-Infographic-1.svg)
-![Infographic p2](infographic/2019-DORA-Report-Infographic-2.svg)
+<div style="border:1px solid #ddd;">
+<object data="infographic/2019-DORA-Report-Infographic-1.svg" type="image/svg+xml" style="width:100%;"></object>
+<object data="infographic/2019-DORA-Report-Infographic-2.svg" type="image/svg+xml" style="width:100%;"></object>
+</div>
 
------
 [Download as PDF](infographic/2019-DORA-Report-Infographic.pdf)
