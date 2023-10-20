@@ -25,7 +25,7 @@ High-trust and low-blame cultures tend to have higher organizational performance
 Both the practices we associate with reliability engineering and the extent to which people report meeting their reliability expectations are powerful predictors of high levels of organizational performance.
 
 **Cloud**
-Teams continue to move workloads to the cloud and those that leverage all five capabilities of cloud see increases in software delivery and operational (SDO) performance and organizational performance. Multi-cloud adoption is also on the rise so that teams can leverage the unique capabilities of each provider.
+Teams continue to move workloads to the cloud and those that leverage all five capabilities of cloud see increases in software delivery and operational performance and organizational performance. Multi-cloud adoption is also on the rise so that teams can leverage the unique capabilities of each provider.
 
 #### Context matters
 DORA has long postulated that many of these effects depend on a team’s broader context. For example, a technical capability in one context could empower a team, but in another context, could have deleterious effects.
