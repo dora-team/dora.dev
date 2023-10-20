@@ -12,6 +12,8 @@ In 2022, DORA continued its investigation into software development and operatio
 
 ### Key Findings
 
+{{< image src="dora-report/2022-dora-accelerate-state-of-devops-report.png" url="dora-report" float="right" width="14em" border="1px solid #eee" >}}
+
 #### The biggest predictor of an organization's application-development security practices is cultural, not technical
 High trust, low-blame cultures focused on performance were significantly more likely to adopt emerging security practices. We noticed that teams who focus on establishing these security practices demonstrate reduced developer burnout; teams with low levels of security practices have 1.4x greater odds of having high levels of burnout than teams with high levels of security practices. Further, teams with high levels of security practices are 1.6x more likely to have high levels of organizational performance than teams with low levels of security practices.
 

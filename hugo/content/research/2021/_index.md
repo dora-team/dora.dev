@@ -13,6 +13,8 @@ In 2021, DORA did deep-dive investigations into security, reliability, documenta
 
 ### Key Findings
 
+{{< image src="dora-report/2021-dora-accelerate-state-of-devops-report.png" url="dora-report" float="right" width="18em" border="1px solid #eee" >}}
+
 #### The highest performers are growing and continue to raise the bar. 
 Elite performers now make up 26% of teams, and have decreased their lead times for changes to production. The industry continues to accelerate, and teams see meaningful benefits from doing so. 
 
