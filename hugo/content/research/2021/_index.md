@@ -19,7 +19,7 @@ In 2021, DORA did deep-dive investigations into security, reliability, documenta
 Elite performers now make up 26% of teams, and have decreased their lead times for changes to production. The industry continues to accelerate, and teams see meaningful benefits from doing so. 
 
 #### SRE and DevOps are complementary philosophies. 
-Teams that leverage modern operations practices outlined by our Site Reliability Engineering (SRE) friends report higher operational performance. Teams that prioritize both delivery and operational excellence report the highest organizational performance. 
+Teams that leverage modern operations practices, outlined by our Site Reliability Engineering (SRE) friends, report higher operational performance. Teams that prioritize both delivery and operational excellence report the highest organizational performance. 
 
 #### More teams are leveraging the cloud and see significant benefits from doing so. 
 Teams continue to move workloads to the cloud and those that leverage all five capabilities of cloud see increases in software delivery and operational performance and organizational performance. Multi-cloud adoption is also on the rise so that teams can leverage the unique capabilities of each provider.
