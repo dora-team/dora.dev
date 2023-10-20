@@ -8,7 +8,7 @@ tab_order: "0"
 tab_title: "Overview"
 layout: single
 ---
-In 2022, DORA continued its investigation into software development and operations, and the capabilities which drive performance. This year's deep-dive investigations included Security, Reliability, and Culture. You can [download the 2022 report here]({{< relref "dora-report" >}}).
+In 2022, DORA continued its investigation into software development and operations, and the capabilities which drive performance. This year's deep-dive investigations included security, reliability, and culture. You can [download the 2022 report here]({{< relref "dora-report" >}}).
 
 ### Key Findings
 
