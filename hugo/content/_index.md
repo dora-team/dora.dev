@@ -26,7 +26,7 @@ Use these findings to accelerate organizational performance while reducing burno
 {{< /article >}}
 
 {{< article columns="1" 
-    title="DevOps Quick Check" 
+    title="DORA Quick Check" 
     url="/quickcheck/"
     cta="Take the Quick Check" 
     img-src="/img/quickcheck/hero_illustration.svg" 
