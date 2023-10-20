@@ -30,6 +30,7 @@ body {
     letter-spacing: 0.2px;
 
     main {
+        width:100%;
         flex-grow: 1;
         max-width: $layout-breakpoint-max;
         padding: 1.5rem 4rem 0.5rem 4rem;

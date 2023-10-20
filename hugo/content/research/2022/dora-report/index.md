@@ -2,9 +2,12 @@
 title: "Accelerate State of DevOps Report 2022"
 date: 2022-09-01
 draft: false
-type: research_archives/report
+type: research_archives
+tab_order: "1"
+tab_title: "DORA Report"
+layout: single
+research_year: 2022
 ---
-# Accelerate State of DevOps Report 2022
 ## Download the 2022 DORA Report
 
 <grid class="border_none" style="margin-top:1rem;">

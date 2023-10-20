@@ -3,9 +3,10 @@ title: "DORA Research: 2018"
 date: 2018-10-01
 draft: false
 research_year: 2018
-# SEM and survey questions are included via template: templates/research_archives/single.html, if specified in front matter. The data for survey questions can be found at data/survey_questions.json
 type: research_archives
+layout: single
+tab_order: "0"
+tab_title: "Overview"
 ---
 
-# DORA's Research Program: 2018
 2018 saw the release of the first Accelerate State of DevOps Report independently published by DORA. [Read the 2018 report here]({{< relref "dora-report" >}})
