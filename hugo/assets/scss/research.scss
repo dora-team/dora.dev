@@ -16,6 +16,11 @@ article {
     img {
         max-width:100%;
     }
+
+    li {
+        font-family: $font-roboto;
+        font-weight:300;
+    }
 }
 
 #questions {

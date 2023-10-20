@@ -8,6 +8,16 @@ tab_title: "Structural Equation Models"
 type: "research_archives"
 ---
 
-The DORA research program uses structural equation modeling (SEM), a predictive statistical modeling technique used to test relationships. We utilize PLS-PM (partial least squares path modeling) for our analysis, for several reasons: it does not require assumptions of normality in the data, it is will suited to exploratory and incremental research, and the analysis optimizes for prediction of the dependent variable (vs. testing for model fit of the data). All paths shown in the SEM figures are p < .05.
+Traditionally, we created one giant model. This year we decided to break it down into multiple models for the following reasons:
 
-TODO: Models.
+* Huge models can become unwieldy, fast. Every added variable changes the way the model functions. This can lead to inaccurate estimates and makes it difficult to locate the reason for a change.
+* We created our hypotheses section-by-section this year. Thus, it makes sense to just create a model for each section. 
+* It isn’t obvious what the benefit of a giant model is in estimating the effect of X on Y. To understand the impact of X on Y, we used directed acyclic graphs to help understand what covariates we should and shouldn’t include in the model.
+* The number of hypotheses we addressed this year would make it very difficult for the reader to make sense of the giant model. Imagine combining all the visualizations below into one visualization. 
+
+![Structural Equation Model 1](structural-equation-models-2023_01.png)
+![Structural Equation Model 2](structural-equation-models-2023_02.png)
+![Structural Equation Model 3](structural-equation-models-2023_03.png)
+![Structural Equation Model 4](structural-equation-models-2023_04.png)
+![Structural Equation Model 5](structural-equation-models-2023_05.png)
+![Structural Equation Model 6](structural-equation-models-2023_06.png)
