@@ -1,12 +1,12 @@
 <svg width="2112" height="1188" viewBox="0 0 2112 1188" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="dora-core-model-v1.2.1" clip-path="url(#clip0_5_88)">
+<g id="dora-core-model-v1.2.2" clip-path="url(#clip0_5_88)">
 <rect width="2112" height="1188" fill="white"/>
 <rect id="Rectangle 13" width="303" height="101" fill="#F5F5F5"/>
 <g id="construct#technical-capabilities">
 <rect id="Rectangle 1" x="82" y="253" width="500" height="916" rx="16" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="TECHNICAL CAPABILITIES" fill="#202124" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="24" font-weight="500" letter-spacing="0.225em"><tspan x="127.429" y="296.16">TECHNICAL CAPABILITIES</tspan></text>
 </g>
-<g id="construct#wellbeing">
+<g id="construct#well-being">
 <g id="Group 1">
 <rect id="Rectangle 6" x="1677" y="663" width="382" height="279" rx="25" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <path id="Rectangle 7" d="M1677 688C1677 674.193 1688.19 663 1702 663H2034C2047.81 663 2059 674.193 2059 688V738H1677V688Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
@@ -123,7 +123,7 @@
 </g>
 </g>
 <g id="footer">
-<text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="2003.51" y="1133.26">version 1.2.1&#10;</tspan></text>
+<text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="2000.76" y="1133.26">version 1.2.2&#10;</tspan></text>
 <text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="1964.09" y="1154.26"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></tspan></text>
 <text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="1755.06" y="1154.26"> Licensed by Google LLC under </tspan><tspan x="2081" y="1154.26"> </tspan></text>
 </g>
