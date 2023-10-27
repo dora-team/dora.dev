@@ -13,6 +13,45 @@
 </script>
 {{ end }}
 
+<!-- display anchor links on all headers which have ids-->
+<script>
+    window.onload = function() {
+        let headers = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+        headers.forEach((header) => {
+            let anchorLink = document.createElement('a');
+            let anchorText = header.getAttribute('id');
+            anchorLink.setAttribute('href','#' + anchorText);
+            anchorLink.setAttribute('class','header-link');
+            anchorLink.innerHTML='<span class="google-material-icons" title="click to copy link to this section">link</span>';
+            header.append(anchorLink);
+            header.addEventListener("mouseover",
+                (event) => {anchorLink.classList.add('show')}
+                );
+            header.addEventListener("mouseout",
+                (event) => {anchorLink.classList.remove('show')}
+                );
+            anchorLink.addEventListener("click",
+                (event) => {
+                    let anchorURL = window.location.href;
+                    navigator.clipboard.writeText(anchorURL);
+                }
+            )
+        })
+    }
+</script>
+
+<style>
+    .header-link {
+        visibility:hidden;
+    }
+
+    .header-link.show {
+        visibility:visible;
+    }
+</style>
+
+
+
 <title>DORA | {{ if .Params.TitleForHTMLHead }}{{ .Params.TitleForHTMLHead }}{{ else }}{{ .Title }}{{ end }}</title>
 {{ $options := (dict "targetPath" "css/main.css" "outputStyle" "normal") }}
 {{ $styles := resources.Get "scss/main.scss" | toCSS $options | fingerprint }}
