@@ -13,93 +13,6 @@
 </script>
 {{ end }}
 
-<!-- display anchor links on all headings which have ids-->
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
-        headings.forEach((heading) => {
-            let anchorLink = document.createElement('a');
-            let anchorText = heading.getAttribute('id');
-            anchorLink.setAttribute('href', '#' + anchorText);
-            anchorLink.setAttribute('class', 'heading-link');
-            anchorLink.innerHTML = '<span class="google-material-icons">link</span> <span class="click-to-copy">click to copy link</span>';
-            heading.append(anchorLink);
-            heading.addEventListener("mouseover",
-                (event) => { anchorLink.classList.add('show') }
-            );
-            heading.addEventListener("mouseout",
-                (event) => { 
-                    anchorLink.classList.remove('show') 
-                    anchorLink.lastChild.innerHTML='click to copy link';
-                }
-            );
-            anchorLink.addEventListener("mouseover",
-                (event) => {
-                    anchorLink.lastChild.classList.add('show');
-                }
-            );
-            anchorLink.addEventListener("mouseout",
-                (event) => {
-                    anchorLink.lastChild.classList.remove('show');
-                }
-            );
-            anchorLink.addEventListener("click",
-                (event) => {
-                    event.preventDefault();
-                    let currentBaseUrl = location.href.split('#')[0];
-                    let targetURL = `${currentBaseUrl}#${anchorText}`;
-                    navigator.clipboard.writeText(targetURL);
-                    console.debug(`copied to clipboard: ${targetURL}`);
-                    anchorLink.lastChild.innerHTML='<em>copied!</em>';
-                }
-            );
-            // if the URL contains an anchor link, and a heading on the page exists matching that link, highlight it
-            let selectedAnchor = location.href.split('#')[1];
-            if (selectedAnchor) {
-                document.querySelector(`#${selectedAnchor}`).classList.add('heading-highlight');
-            }
-        })
-    });
-</script>
-
-<style>
-
-    .heading-link {
-        visibility: hidden;
-        text-decoration: none;
-        padding-left:1rem;
-    }
-
-    .heading-link.show {
-        visibility: visible;
-    }
-
-    .heading-link .google-material-icons {
-        color:#666;
-    }
-
-    .heading-link .google-material-icons:hover {
-        color:#1a73e8;
-    }
-
-    .click-to-copy {
-        font-size:.75rem;
-        color:#666;
-        text-decoration: none;
-        visibility: hidden;
-        vertical-align: middle;
-    }
-
-    .click-to-copy.show {
-        visibility: visible;
-    }
-
-    .heading-highlight {
-        background-color: rgb(255, 255, 220);
-    }
-</style>
-
-
 
 <title>DORA | {{ if .Params.TitleForHTMLHead }}{{ .Params.TitleForHTMLHead }}{{ else }}{{ .Title }}{{ end }}</title>
 {{ $options := (dict "targetPath" "css/main.css" "outputStyle" "normal") }}
@@ -132,3 +45,5 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
+
+{{- partial "heading_anchor_links" . -}}
