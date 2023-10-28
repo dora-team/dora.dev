@@ -13,24 +13,24 @@
 </script>
 {{ end }}
 
-<!-- display anchor links on all headers which have ids-->
+<!-- display anchor links on all headings which have ids-->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        let headers = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
-        headers.forEach((header) => {
+        let headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+        headings.forEach((heading) => {
             let anchorLink = document.createElement('a');
-            let anchorText = header.getAttribute('id');
+            let anchorText = heading.getAttribute('id');
             anchorLink.setAttribute('href', '#' + anchorText);
-            anchorLink.setAttribute('class', 'header-link');
-            anchorLink.innerHTML = '<span class="google-material-icons">link</span> <span class="click-to-copy">click to copy</span>';
-            header.append(anchorLink);
-            header.addEventListener("mouseover",
+            anchorLink.setAttribute('class', 'heading-link');
+            anchorLink.innerHTML = '<span class="google-material-icons">link</span> <span class="click-to-copy">click to copy link</span>';
+            heading.append(anchorLink);
+            heading.addEventListener("mouseover",
                 (event) => { anchorLink.classList.add('show') }
             );
-            header.addEventListener("mouseout",
+            heading.addEventListener("mouseout",
                 (event) => { 
                     anchorLink.classList.remove('show') 
-                    anchorLink.lastChild.innerHTML='click to copy';
+                    anchorLink.lastChild.innerHTML='click to copy link';
                 }
             );
             anchorLink.addEventListener("mouseover",
@@ -53,10 +53,10 @@
                     anchorLink.lastChild.innerHTML='<em>copied!</em>';
                 }
             );
-            // if the URL contains an anchor link, and a header on the page exists matching that link, highlight it
+            // if the URL contains an anchor link, and a heading on the page exists matching that link, highlight it
             let selectedAnchor = location.href.split('#')[1];
             if (selectedAnchor) {
-                document.querySelector(`#${selectedAnchor}`).classList.add('highlight');
+                document.querySelector(`#${selectedAnchor}`).classList.add('heading-highlight');
             }
         })
     });
@@ -64,39 +64,38 @@
 
 <style>
 
-    .header-link {
+    .heading-link {
         visibility: hidden;
         text-decoration: none;
         padding-left:1rem;
     }
 
-    .header-link.show {
+    .heading-link.show {
         visibility: visible;
     }
 
-    .header-link .google-material-icons {
+    .heading-link .google-material-icons {
         color:#666;
     }
 
-    .header-link .google-material-icons:hover {
+    .heading-link .google-material-icons:hover {
         color:#1a73e8;
     }
 
     .click-to-copy {
         font-size:.75rem;
-        line-height: 1rem;
         color:#666;
         text-decoration: none;
         visibility: hidden;
+        vertical-align: middle;
     }
 
     .click-to-copy.show {
         visibility: visible;
     }
 
-    .highlight {
+    .heading-highlight {
         background-color: rgb(255, 255, 220);
-        background: linear-gradient(90deg, rgba(255, 255, 220, 1) 0%, rgba(255, 255, 220, 1) 35%, rgba(255, 255, 200, 0) 100%);
     }
 </style>
 
