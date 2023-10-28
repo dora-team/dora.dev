@@ -5,48 +5,79 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWLXSJLRVQ"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-HWLXSJLRVQ');
+    gtag('config', 'G-HWLXSJLRVQ');
 </script>
 {{ end }}
 
 <!-- display anchor links on all headers which have ids-->
 <script>
-    window.onload = function() {
+    window.onload = function () {
         let headers = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
         headers.forEach((header) => {
             let anchorLink = document.createElement('a');
             let anchorText = header.getAttribute('id');
-            anchorLink.setAttribute('href','#' + anchorText);
-            anchorLink.setAttribute('class','header-link');
-            anchorLink.innerHTML='<span class="google-material-icons" title="click to copy link to this section">link</span>';
+            anchorLink.setAttribute('href', '#' + anchorText);
+            anchorLink.setAttribute('class', 'header-link');
+            anchorLink.innerHTML = '<span class="google-material-icons">link</span> <span class="click-to-copy">click to copy</span>';
             header.append(anchorLink);
             header.addEventListener("mouseover",
-                (event) => {anchorLink.classList.add('show')}
-                );
+                (event) => { anchorLink.classList.add('show') }
+            );
             header.addEventListener("mouseout",
-                (event) => {anchorLink.classList.remove('show')}
-                );
-            anchorLink.addEventListener("click",
+                (event) => { 
+                    anchorLink.classList.remove('show') 
+                    anchorLink.lastChild.innerHTML='click to copy';
+                }
+            );
+            header.addEventListener("click",
                 (event) => {
-                    let anchorURL = window.location.href;
-                    navigator.clipboard.writeText(anchorURL);
+                    event.preventDefault();
+                    let currentBaseUrl = location.href.split('#')[0];
+                    let targetURL = `${currentBaseUrl}#${anchorText}`;
+                    navigator.clipboard.writeText(targetURL);
+                    anchorLink.lastChild.innerHTML='<em>copied!</em>';
                 }
             )
+            // if the URL contains an anchor link, and a header on the page exists matching that link, highlight it
+            let selectedAnchor = location.href.split('#')[1];
+            if (selectedAnchor) {
+                document.querySelector(`#${selectedAnchor}`).classList.add('highlight');
+            }
         })
     }
 </script>
 
 <style>
+    h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
+        cursor:pointer;
+    }
     .header-link {
-        visibility:hidden;
+        visibility: hidden;
+        text-decoration: none;
+        padding-left:1rem;
     }
 
     .header-link.show {
-        visibility:visible;
+        visibility: visible;
+    }
+
+    .click-to-copy {
+        font-size:.75rem;
+        line-height: 1rem;
+        color:#666;
+        text-decoration: none;
+    }
+
+    .highlight {
+        background-color: rgb(255, 255, 220);
+        background: linear-gradient(90deg, rgba(255, 255, 220, 1) 0%, rgba(255, 255, 220, 1) 35%, rgba(255, 255, 200, 0) 100%);
+        transform: translateX(-.5em);
+        padding-left: .5em;
+        border-left: .25em solid rgb(200, 200, 100);
     }
 </style>
 
@@ -59,8 +90,8 @@
 
 <!-- add page-specific stylesheets (TODO: stop using these and just put <style> tags in the body, which is acceptable per HTML5) -->
 {{ range .Params.stylesheets }}
-    {{ $stylesheet := printf "scss/%s.scss" .name | resources.Get | toCSS | fingerprint }}
-    <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
+{{ $stylesheet := printf "scss/%s.scss" .name | resources.Get | toCSS | fingerprint }}
+<link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
 {{ end }}
 
 <meta name="description" content="{{ .Site.Params.Description }}">
