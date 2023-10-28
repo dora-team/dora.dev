@@ -15,7 +15,7 @@
 
 <!-- display anchor links on all headers which have ids-->
 <script>
-    window.onload = function () {
+    document.addEventListener("DOMContentLoaded", function () {
         let headers = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
         headers.forEach((header) => {
             let anchorLink = document.createElement('a');
@@ -33,28 +33,37 @@
                     anchorLink.lastChild.innerHTML='click to copy';
                 }
             );
-            header.addEventListener("click",
+            anchorLink.addEventListener("mouseover",
+                (event) => {
+                    anchorLink.lastChild.classList.add('show');
+                }
+            );
+            anchorLink.addEventListener("mouseout",
+                (event) => {
+                    anchorLink.lastChild.classList.remove('show');
+                }
+            );
+            anchorLink.addEventListener("click",
                 (event) => {
                     event.preventDefault();
                     let currentBaseUrl = location.href.split('#')[0];
                     let targetURL = `${currentBaseUrl}#${anchorText}`;
                     navigator.clipboard.writeText(targetURL);
+                    console.debug(`copied to clipboard: ${targetURL}`);
                     anchorLink.lastChild.innerHTML='<em>copied!</em>';
                 }
-            )
+            );
             // if the URL contains an anchor link, and a header on the page exists matching that link, highlight it
             let selectedAnchor = location.href.split('#')[1];
             if (selectedAnchor) {
                 document.querySelector(`#${selectedAnchor}`).classList.add('highlight');
             }
         })
-    }
+    });
 </script>
 
 <style>
-    h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
-        cursor:pointer;
-    }
+
     .header-link {
         visibility: hidden;
         text-decoration: none;
@@ -65,19 +74,29 @@
         visibility: visible;
     }
 
+    .header-link .google-material-icons {
+        color:#666;
+    }
+
+    .header-link .google-material-icons:hover {
+        color:#1a73e8;
+    }
+
     .click-to-copy {
         font-size:.75rem;
         line-height: 1rem;
         color:#666;
         text-decoration: none;
+        visibility: hidden;
+    }
+
+    .click-to-copy.show {
+        visibility: visible;
     }
 
     .highlight {
         background-color: rgb(255, 255, 220);
         background: linear-gradient(90deg, rgba(255, 255, 220, 1) 0%, rgba(255, 255, 220, 1) 35%, rgba(255, 255, 200, 0) 100%);
-        transform: translateX(-.5em);
-        padding-left: .5em;
-        border-left: .25em solid rgb(200, 200, 100);
     }
 </style>
 
