@@ -5,13 +5,14 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWLXSJLRVQ"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-HWLXSJLRVQ');
+    gtag('config', 'G-HWLXSJLRVQ');
 </script>
 {{ end }}
+
 
 <title>DORA | {{ if .Params.TitleForHTMLHead }}{{ .Params.TitleForHTMLHead }}{{ else }}{{ .Title }}{{ end }}</title>
 {{ $options := (dict "targetPath" "css/main.css" "outputStyle" "normal") }}
@@ -20,8 +21,8 @@
 
 <!-- add page-specific stylesheets (TODO: stop using these and just put <style> tags in the body, which is acceptable per HTML5) -->
 {{ range .Params.stylesheets }}
-    {{ $stylesheet := printf "scss/%s.scss" .name | resources.Get | toCSS | fingerprint }}
-    <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
+{{ $stylesheet := printf "scss/%s.scss" .name | resources.Get | toCSS | fingerprint }}
+<link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
 {{ end }}
 
 <meta name="description" content="{{ .Site.Params.Description }}">
@@ -44,3 +45,5 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
+
+{{- partial "heading_anchor_links" . -}}
