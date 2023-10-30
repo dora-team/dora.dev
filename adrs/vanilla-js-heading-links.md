@@ -9,7 +9,7 @@ consulted: jesseduke
 ## Context and Problem Statement
 On informational/technical sites, there is a common pattern in which HTML heading elements are decorated with anchor link elements that make it easy to copy links to that specific heading. This facilitates sharing: _User A_ can browse the site and find a specific section that they wish to share with a colleague, then copy the link to that section and send the "deeplinked" URL to _User B_. When _User B_ makes a request to that URL, their browser scrolls directly to the target section.
 
-Some examples of sites that use this pattern are cloud.google.com, and README files as rendered on github.com.
+Some examples of sites that use this pattern are the documentation pages on cloud.google.com, and README files as rendered on github.com.
 
 For dora.dev, this is relevant for use cases like the FAQ or research questions, which are long pages with multiple specific sections that users may wish to access directly.
 
