@@ -28,23 +28,23 @@
         heading.append(anchorLink);
         
         heading.addEventListener("mouseover",
-            (event) => { anchorLink.classList.add('show') }
+            (event) => { anchorLink.style.visibility='visible' }
         );
         heading.addEventListener("mouseout",
             (event) => { 
-                anchorLink.classList.remove('show') 
+                anchorLink.style.visibility='hidden';
                 anchorLink.lastChild.innerHTML='click to copy link';
             }
         );
         
         anchorLink.addEventListener("mouseover",
             (event) => {
-                anchorLink.lastChild.classList.add('show');
+                anchorLink.lastChild.style.visibility='visible';
             }
         );
         anchorLink.addEventListener("mouseout",
             (event) => {
-                anchorLink.lastChild.classList.remove('show');
+                anchorLink.lastChild.style.visibility='hidden';
             }
         );
         anchorLink.addEventListener("click",
@@ -76,10 +76,6 @@
         padding-left:1rem;
     }
 
-    .heading-link.show {
-        visibility: visible;
-    }
-
     .heading-link .google-material-icons {
         color:#666;
     }
@@ -94,10 +90,6 @@
         text-decoration: none;
         visibility: hidden;
         vertical-align: middle;
-    }
-
-    .click-to-copy.show {
-        visibility: visible;
     }
 
     .heading-highlight {
