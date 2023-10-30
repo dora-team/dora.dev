@@ -14,7 +14,7 @@
         <h4>Responses to the following questions were used in the analysis published in the <a href="/research/{{ .Params.research_year }}/dora-report/">{{ .Params.research_year }} Accelerate State of DevOps Report</a></h4>
         {{ range where .Site.Data.survey_questions "year" .Params.research_year }}
             {{ range sort .categories "heading" }}
-                <h3>{{ .heading }}</h3>
+                <h3 id="{{ .heading | anchorize }}">{{ .heading }}</h3>
                 {{ range sort .question_groups "description" }}
                     <p class="description">{{ .description }}</p>
                     <ul>
