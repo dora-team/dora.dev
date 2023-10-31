@@ -56,12 +56,32 @@
         },
         {
             "source": "/concepts/wellbeing",
-            "destination": "/devops-capabilities/cultural/wellbeing/",
+            "destination": "/devops-capabilities/cultural/well-being/",
             "type": 302
+        },
+        {
+          "source": "/concepts/well-being",
+          "destination": "/devops-capabilities/cultural/well-being/",
+          "type": 302
+        },
+        {
+          "source": "/devops-capabilities/cultural/wellbeing",
+          "destination": "/devops-capabilities/cultural/well-being/",
+          "type": 302
         },
         {
             "source": "/research/archives/:year*",
             "destination": "/research/:year",
+            "type": 302
+        },
+        {
+            "source": "/research/:year/?tab_archives=:tab",
+            "destination": "/research/:year/:tab",
+            "type": 302
+        },
+        {
+            "source": "/dora-report",
+            "destination": "/report",
             "type": 302
         },
         {
@@ -70,13 +90,13 @@
             "type": 302
         },
         {
-            "source": "/research/2023/dora-report",
+            "source": "/report",
             "destination": "https://cloud.google.com/devops/state-of-devops",
             "type": 302
         },
         {
-            "source": "/dora-report",
-            "destination": "https://cloud.google.com/devops/state-of-devops",
+            "source": "/report/:year",
+            "destination": "/research/:year/dora-report",
             "type": 302
         },
         {

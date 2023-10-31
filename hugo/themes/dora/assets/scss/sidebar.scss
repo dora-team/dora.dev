@@ -1,12 +1,16 @@
 @import "_variables.scss";
 
 section.hasSidebar {
-    display: grid;
-    grid-template-columns: 1fr 20%;
-    gap: 1em;
+    display: flex;
+    flex-direction: row;
+
+    article {
+        flex-grow:1;
+    }
 
     sidebar {
-        min-width: 200px;
+        width:12em;
+        min-width:12em;
 
         a {
             text-decoration: none;
@@ -16,18 +20,6 @@ section.hasSidebar {
             padding: 0.5em 0.1em 0.5em 1em;
             margin-left: 1em;
             border-left: 1px solid $border-light;
-
-            .snipe {
-                border: 1px solid $border-light;
-                border-radius: 0.5em;
-                padding: 0.5em 1em;
-                font-weight: 500;
-                transition: all 0.25s;
-
-                &:hover {
-                    box-shadow: 3px 3px 3px 0px rgba(153, 153, 153, 1);
-                }
-            }
         }
     }
 
@@ -36,7 +28,7 @@ section.hasSidebar {
     }
 
     @include media-medium {
-        grid-template-columns: 1fr;
+        flex-direction:column;
 
         article {
             width: 100%;

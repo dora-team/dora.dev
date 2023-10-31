@@ -1,0 +1,11 @@
+<!-- shortcode for placing an image into markdown content, with some parameters -->
+
+{{ if .Get "url"}}
+<a href='{{ .Get "url" }}'>
+{{ end }}
+
+<img src='{{ .Get "src" }}' style='max-width:{{ .Get "width" }};float:{{ .Get "float"}};border:{{ .Get "border" }};margin:.5rem;'>
+
+{{ if .Get "url" }}
+</a>
+{{ end }}

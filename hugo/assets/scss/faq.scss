@@ -18,18 +18,12 @@ main {
         font-size: 1.5em;
     }
 
-    ul {
-        padding-left: 0;
+    ol {
+        font-family: $font-roboto;
+        font-weight: 300;
+    }
 
-        & > li {
-            line-height: 150%;
-            list-style-type: none;
-
-            &:nth-child(even) {
-                font-family: $font-roboto;
-                font-weight: 300;
-                margin-bottom: 0.75em;
-            }
-        }
+    p {
+        margin-bottom:2rem;
     }
 }

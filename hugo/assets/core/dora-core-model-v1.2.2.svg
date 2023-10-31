@@ -1,12 +1,12 @@
 <svg width="2112" height="1188" viewBox="0 0 2112 1188" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="dora-core-model-v1.1.1" clip-path="url(#clip0_5_88)">
+<g id="dora-core-model-v1.2.2" clip-path="url(#clip0_5_88)">
 <rect width="2112" height="1188" fill="white"/>
 <rect id="Rectangle 13" width="303" height="101" fill="#F5F5F5"/>
 <g id="construct#technical-capabilities">
 <rect id="Rectangle 1" x="82" y="253" width="500" height="916" rx="16" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <text id="TECHNICAL CAPABILITIES" fill="#202124" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="24" font-weight="500" letter-spacing="0.225em"><tspan x="127.429" y="296.16">TECHNICAL CAPABILITIES</tspan></text>
 </g>
-<g id="construct#wellbeing">
+<g id="construct#well-being">
 <g id="Group 1">
 <rect id="Rectangle 6" x="1677" y="663" width="382" height="279" rx="25" fill="#FCFCFC" stroke="#CCCCCC" stroke-width="2"/>
 <path id="Rectangle 7" d="M1677 688C1677 674.193 1688.19 663 1702 663H2034C2047.81 663 2059 674.193 2059 688V738H1677V688Z" fill="#005E8D" stroke="#005E8D" stroke-width="2"/>
@@ -34,7 +34,7 @@
 <path id="icon_3" d="M1723.7 894.533L1714.8 903.43L1709.95 898.597L1708.05 900.5L1714.8 907.25L1725.6 896.45L1723.7 894.533ZM1717.5 887C1710.05 887 1704 893.048 1704 900.5C1704 907.952 1710.05 914 1717.5 914C1724.95 914 1731 907.952 1731 900.5C1731 893.048 1724.95 887 1717.5 887ZM1717.5 911.3C1711.53 911.3 1706.7 906.467 1706.7 900.5C1706.7 894.533 1711.53 889.7 1717.5 889.7C1723.47 889.7 1728.3 894.533 1728.3 900.5C1728.3 906.467 1723.47 911.3 1717.5 911.3Z" fill="#FCFCFC"/>
 </g>
 </g>
-<text id="Wellbeing" fill="#FCFCFC" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1700" y="711.02">Wellbeing</tspan></text>
+<text id="Well-being" fill="#FCFCFC" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="28" font-weight="500" letter-spacing="0em"><tspan x="1700" y="711.02">Well-being</tspan></text>
 </g>
 </g>
 <g id="construct#measuring-and-improving">
@@ -123,7 +123,7 @@
 </g>
 </g>
 <g id="footer">
-<text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="2006.26" y="1133.26">version 1.1.1&#10;</tspan></text>
+<text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="2000.76" y="1133.26">version 1.2.2&#10;</tspan></text>
 <text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="1964.09" y="1154.26"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></tspan></text>
 <text fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="14" font-weight="500" letter-spacing="0em"><tspan x="1755.06" y="1154.26"> Licensed by Google LLC under </tspan><tspan x="2081" y="1154.26"> </tspan></text>
 </g>
@@ -247,18 +247,6 @@
 <path id="Vector_5" d="M62.9963 41.0605H56.0631V56.9113H62.9963C65.2718 56.9113 67.1178 55.0653 67.1178 52.7897V45.1856C67.1178 42.9101 65.2718 41.0641 62.9963 41.0641V41.0605ZM63.9122 52.2182C63.9122 53.0027 63.2767 53.6382 62.4922 53.6382H59.2688V44.3336H62.4922C63.2767 44.3336 63.9122 44.9691 63.9122 45.7536V52.2182Z" fill="white"/>
 </g>
 </g>
-<g id="legend#capabilities">
-<path id="Rectangle 8" d="M741 49.7068C741 38.8635 749.79 30.0733 760.634 30.0733H908.867C919.71 30.0733 928.5 38.8635 928.5 49.7068C928.5 60.5501 919.71 69.3403 908.866 69.3403H760.634C749.79 69.3403 741 60.5501 741 49.7068Z" fill="#33484F"/>
-<text id="capabilities" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="25" font-weight="500" letter-spacing="0em"><tspan x="765.114" y="57.3233">capabilities</tspan></text>
-</g>
-<g id="legend#performance">
-<path id="Rectangle 9" d="M1244 49.7068C1244 38.8635 1252.79 30.0733 1263.63 30.0733H1411.87C1422.71 30.0733 1431.5 38.8635 1431.5 49.7068C1431.5 60.5501 1422.71 69.3403 1411.87 69.3403H1263.63C1252.79 69.3403 1244 60.5501 1244 49.7068Z" fill="#63A657"/>
-<text id="performance" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="25" font-weight="500" letter-spacing="0em"><tspan x="1261.48" y="56.0733">performance</tspan></text>
-</g>
-<g id="legend#outcomes">
-<path id="Rectangle 10" d="M1775 49.7068C1775 38.8635 1783.79 30.0733 1794.63 30.0733H1942.87C1953.71 30.0733 1962.5 38.8635 1962.5 49.7068C1962.5 60.5501 1953.71 69.3403 1942.87 69.3403H1794.63C1783.79 69.3403 1775 60.5501 1775 49.7068Z" fill="#005E8D"/>
-<text id="outcomes" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="25" font-weight="500" letter-spacing="0em"><tspan x="1810.52" y="57.3233">outcomes</tspan></text>
-</g>
 <line id="Line 1" y1="100.5" x2="2112" y2="100.5" stroke="#CCCCCC"/>
 <text id="url" fill="#33484F" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="24" letter-spacing="0em"><tspan x="353" y="58.16"><a href="https://dora.dev/research">dora.dev/research</a></tspan></text>
 <path id="entity.capability.technical#continuous-delivery --&#62; entity.capability.technical#generative-organizational-culture" d="M834.5 685V760" stroke="#999999" stroke-width="2"/>
@@ -275,6 +263,20 @@
 <path id="entity.capability.technical#streamlining-change-approval --&#62; construct#job-satisfaction" d="M1676 802.5L1665.97 796.785L1666.03 808.331L1676 802.5ZM989 996C1159.48 996 1245.53 948.7 1330.71 901.007C1415.79 853.374 1499.99 805.36 1666.98 803.552L1666.96 801.552C1499.46 803.366 1414.9 851.576 1329.73 899.262C1244.67 946.887 1158.98 994 989 994V996Z" fill="#999999"/>
 <path id="entity.capability.technical#continuous-delivery --&#62; construct#job-satisfaction" d="M1676 802.5L1666.81 795.503L1665.35 806.956L1676 802.5ZM989 632C1159.08 632 1244.81 663.554 1329.85 700.606C1414.98 737.698 1499.49 780.342 1666.94 802.348L1667.2 800.365C1500.06 778.4 1415.78 735.867 1330.65 698.773C1245.42 661.639 1159.42 630 989 630V632Z" fill="#999999"/>
 <path id="entity.capability.technical#streamlining-change-approval --&#62; construct#software-delivery-performance" d="M1146 450L1134.8 447.181L1137.96 458.288L1146 450ZM989 996C999.046 996 1007.6 987.65 1015.06 973.786C1022.56 959.845 1029.17 939.947 1035.16 916.04C1047.16 868.211 1056.79 804.052 1066.24 738.722C1075.69 673.363 1084.96 606.824 1096.24 554.147C1101.88 527.807 1108.01 504.976 1114.9 487.51C1118.35 478.778 1121.97 471.414 1125.8 465.634C1129.64 459.846 1133.64 455.702 1137.82 453.334L1136.84 451.594C1132.28 454.175 1128.06 458.599 1124.13 464.529C1120.2 470.466 1116.52 477.967 1113.04 486.776C1106.09 504.393 1099.93 527.35 1094.29 553.728C1082.99 606.488 1073.71 673.11 1064.26 738.436C1054.81 803.791 1045.19 867.842 1033.22 915.553C1027.24 939.415 1020.68 959.12 1013.3 972.838C1005.88 986.633 997.829 994 989 994V996Z" fill="#999999"/>
+<text id="Core Model" fill="#202124" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="24" font-weight="bold" letter-spacing="-0.01em"><tspan x="121" y="57.16">Core Model</tspan></text>
+<g id="Group 3">
+<g id="legend#capabilities">
+<path id="Rectangle 8" d="M741 49.7068C741 38.8635 749.79 30.0733 760.634 30.0733H908.867C919.71 30.0733 928.5 38.8635 928.5 49.7068C928.5 60.5501 919.71 69.3403 908.866 69.3403H760.634C749.79 69.3403 741 60.5501 741 49.7068Z" fill="#33484F"/>
+<text id="capabilities" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="25" font-weight="500" letter-spacing="0em"><tspan x="765.114" y="57.3233">capabilities</tspan></text>
+</g>
+<g id="legend#performance">
+<path id="Rectangle 9" d="M1244 49.7068C1244 38.8635 1252.79 30.0733 1263.63 30.0733H1411.87C1422.71 30.0733 1431.5 38.8635 1431.5 49.7068C1431.5 60.5501 1422.71 69.3403 1411.87 69.3403H1263.63C1252.79 69.3403 1244 60.5501 1244 49.7068Z" fill="#63A657"/>
+<text id="performance" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="25" font-weight="500" letter-spacing="0em"><tspan x="1261.48" y="56.0733">performance</tspan></text>
+</g>
+<g id="legend#outcomes">
+<path id="Rectangle 10" d="M1775 49.7068C1775 38.8635 1783.79 30.0733 1794.63 30.0733H1942.87C1953.71 30.0733 1962.5 38.8635 1962.5 49.7068C1962.5 60.5501 1953.71 69.3403 1942.87 69.3403H1794.63C1783.79 69.3403 1775 60.5501 1775 49.7068Z" fill="#005E8D"/>
+<text id="outcomes" fill="white" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="25" font-weight="500" letter-spacing="0em"><tspan x="1810.52" y="57.3233">outcomes</tspan></text>
+</g>
 <path id="legend#capabilities --&#62; legend#performance" d="M1244 49.7068L1234 43.9333V55.4804L1244 49.7068ZM928.5 50.7068H1235V48.7068H928.5V50.7068Z" fill="#999999"/>
 <path id="legend#performance --&#62; legend#outcomes" d="M1775 49.7068L1765 43.9333V55.4804L1775 49.7068ZM1431.5 50.7068H1766V48.7068H1431.5V50.7068Z" fill="#999999"/>
 <g id="legend#predict">
@@ -285,7 +287,7 @@
 <rect id="Rectangle 12" x="1543.25" y="35" width="119.143" height="30" rx="5" fill="white" stroke="#999999" stroke-width="2.5"/>
 <text id="predicts" fill="#202124" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="20" font-weight="500" letter-spacing="0em"><tspan x="1563.69" y="55.55">predicts</tspan></text>
 </g>
-<text id="Core Model" fill="#202124" xml:space="preserve" style="white-space: pre" font-family="Google Sans Text" font-size="24" font-weight="bold" letter-spacing="-0.01em"><tspan x="121" y="57.16">Core Model</tspan></text>
+</g>
 </g>
 <defs>
 <clipPath id="clip0_5_88">
