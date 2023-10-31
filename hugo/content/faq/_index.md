@@ -32,6 +32,10 @@ No. Some findings have proven to be extremely durable, replicating year after ye
 
 _DORA Core is an ongoing effort. Learn more, and provide feedback, in the [DORA Core GitHub Discussion](https://github.com/dora-team/dora.dev/discussions/265)._
 
+### Accelerate State of DevOps Report 2023
+#### I found an error in the report. How can I report it?
+If you've found an error in the Accelerate State of DevOps Report 2023, or any other DORA publication, please [submit a correction](/contact/?inquiry_type=Errata&errata_pub=Accelerate+State+of+DevOps+Report+2023). Thank you!
+
 ### Accelerate State of DevOps Report 2022
 #### What is different in this year's Accelerate State of DevOps Report?
 Comparing the 2022 results to the 2021 results, there are a number of findings that did not follow trends that we have seen consistently over the past several years. In fact, there were enough of these that we chose to add a section to the report—"Surprises"—summarizing them.
