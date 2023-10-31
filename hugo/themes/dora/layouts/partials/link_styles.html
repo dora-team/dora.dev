@@ -1,3 +1,20 @@
+<!--
+    In this Hugo partial, we take a REQUIRED variable defined as [.scss]
+    then, based upon that we apply use Hugo resources.Get features
+    to look-up the value reference from within the assets/ directory
+
+    Example:
+        .css = `scss/main.scss`
+            would apply the href to the Hugo transpiled version of the file
+            reference `assets/scss/main.scss` to something like the following:
+
+            href="/scss/main.{ramdom-hash}.css"
+
+    [Optionally], the partial support the toCSS options feature.
+        More information: https://gohugo.io/hugo-pipes/transpile-sass-to-css/
+
+-->
+
 {{ $options := .options | default "" }}
 
 {{ $styles := resources.Get .scss | toCSS $options | fingerprint }}

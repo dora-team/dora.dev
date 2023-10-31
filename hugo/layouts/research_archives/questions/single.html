@@ -1,7 +1,5 @@
 {{ define "main" }}
-<!-- TODO: #121 make a partial to process scss files and render <link> tags -->
-{{ $stylesheet := printf "scss/research.scss" | resources.Get | toCSS | fingerprint }}
-<link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
+{{- partial "partials/link_styles" (dict "scss" "scss/research.scss") -}}
 
 <h1>DORA Research: {{ .Params.research_year }}</h1>
 {{- partial "research_archives_tabs" . -}}

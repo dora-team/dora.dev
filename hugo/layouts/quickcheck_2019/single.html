@@ -1,5 +1,5 @@
 {{ define "main" }}
-
+{{- partial "partials/link_styles" (dict "scss" "scss/quickcheck_2019.scss") -}}
     {{ .Content }}
 
     {{- partial "pagefooter_gofurther" . -}}
@@ -14,5 +14,4 @@
 
     <script defer src="https://www.gstatic.com/charts/loader.js"></script>
     <script defer src="{{ $jsBundle.RelPermalink }}" integrity="{{ $jsBundle.Data.Integrity }}" defer></script>
-    
 {{ end }}

@@ -2,9 +2,7 @@
 title: "Research Team"
 date: 2023-02-02T18:23:33Z
 draft: false
-type: research_team
-stylesheets:
-    - name: headshots
+layout: research_team
 ---
 
 # Meet DORA’s Research Team

@@ -15,14 +15,7 @@
 
 
 <title>DORA | {{ if .Params.TitleForHTMLHead }}{{ .Params.TitleForHTMLHead }}{{ else }}{{ .Title }}{{ end }}</title>
-{{ $options := (dict "targetPath" "css/main.css" "outputStyle" "normal") }}
-
-{{- partial "partials/link_styles" (dict "scss" "scss/main.scss" "options" $options) -}}
-
-<!-- add page-specific stylesheets (TODO: stop using these and just put <style> tags in the body, which is acceptable per HTML5) -->
-{{ range .Params.stylesheets }}
-    {{- partial "partials/link_styles" (dict "scss" (printf "scss/%s.scss" .name )) -}}
-{{ end }}
+{{- partial "partials/link_styles" (dict "scss" "scss/main.scss") -}}
 
 <meta name="description" content="{{ .Site.Params.Description }}">
 <meta name="keywords" content="{{ .Site.Params.Keywords }}">
