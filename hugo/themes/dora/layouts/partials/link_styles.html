@@ -1,21 +1,33 @@
 <!--
-    In this Hugo partial, we take a REQUIRED variable defined as [.scss]
-    then, based upon that we apply use Hugo resources.Get features
-    to look-up the value reference from within the assets/ directory
+    In this Hugo partial, we take one REQUIRED variable [.].
+    Based upon the received value we use Hugo `resources.Get` function
+    to obtain a reference to the CSS file from within the assets directory and
+    pass into the 'ToCSS' pipe to transpile Sass to CSS using the LibSass
+    transpiler included in Hugo’s extended edition.
 
     Example:
-        .css = `scss/main.scss`
-            would apply the href to the Hugo transpiled version of the file
+    Given the following Layout or top level partial:
+            partial "partials/link_styles" "scss/homepage.scss"
+
+        This, this partial will receive '.' as `scss/main.scss`.  Then, this partial
+            will apply the href to the Hugo transpiled version of the file
             reference `assets/scss/main.scss` to something like the following:
 
             href="/scss/main.{ramdom-hash}.css"
 
-    [Optionally], the partial support the toCSS options feature.
-        More information: https://gohugo.io/hugo-pipes/transpile-sass-to-css/
+    [NOTE] This partial does NOT support the Options argument for Hugo's toCSS.
+        To support options, you would need to refactor the Layouts to pass in a
+        Dictionary object.
 
+        e.g.,  partial "partials/link_styles" (dict "scss" "scss/main.scss")
+
+        then in this file:
+            1) add a default for options:  $options := .options | default ""
+            2) Set the styles pipeline to $styles := resources.Get .scss | toCSS $options | fingerprint
+
+         More information: https://gohugo.io/hugo-pipes/transpile-sass-to-css/
 -->
-
-{{ $options := .options | default "" }}
-
-{{ $styles := resources.Get .scss | toCSS $options | fingerprint }}
+{{ $scss := . }}
+{{ $options := "" }}
+{{ $styles := resources.Get . | toCSS $options | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">

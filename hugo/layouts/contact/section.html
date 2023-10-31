@@ -1,6 +1,6 @@
 
 {{ define "main" }}
-{{- partial "partials/link_styles" (dict "scss" "scss/contact.scss") -}}
+{{- partial "partials/link_styles" "scss/contact.scss" -}}
     <!-- if 'inquiry_type' or 'errata_pub' is passed in the URL querystring, set form values accordingly -->
     <form id="inquiry-form"   
         x-data="{

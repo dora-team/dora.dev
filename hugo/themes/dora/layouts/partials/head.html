@@ -15,7 +15,7 @@
 
 
 <title>DORA | {{ if .Params.TitleForHTMLHead }}{{ .Params.TitleForHTMLHead }}{{ else }}{{ .Title }}{{ end }}</title>
-{{- partial "partials/link_styles" (dict "scss" "scss/main.scss") -}}
+{{- partial "partials/link_styles" "scss/main.scss" -}}
 
 <meta name="description" content="{{ .Site.Params.Description }}">
 <meta name="keywords" content="{{ .Site.Params.Keywords }}">

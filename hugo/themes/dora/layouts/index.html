@@ -3,7 +3,7 @@
     <p>{{ .Params.bannerSubtitle }}</p>
 {{ end }}
 {{ define "main" }}
-    {{- partial "partials/link_styles" (dict "scss" "scss/homepage.scss") -}}
+    {{- partial "partials/link_styles" "scss/homepage.scss" -}}
     <section class="features">
         {{ .Content }}
     </section>

@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{- partial "partials/link_styles" (dict "scss" "scss/research.scss") -}}
+{{- partial "partials/link_styles" "scss/research.scss" -}}
 
 <h1>DORA Research: {{ .Params.research_year }}</h1>
 {{- partial "research_archives_tabs" . -}}
