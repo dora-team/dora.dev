@@ -1,8 +1,5 @@
 {{ define "main" }}
-
-    <!-- TODO: #121 make a partial to process scss files and render <link> tags -->
-    {{ $stylesheet := printf "scss/quickcheck.scss" | resources.Get | toCSS | fingerprint }}
-    <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
+   {{- partial "partials/link_styles" "scss/quickcheck.scss" -}}
 
     <h1 id="results_h1">Your software delivery&nbsp;performance</h1>
     {{- partial "quickcheck/percentile_graph" . -}}

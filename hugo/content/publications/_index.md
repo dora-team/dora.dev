@@ -4,10 +4,7 @@ date: 2023-02-01
 draft: false
 bannerTitle: "Publications by DORA"
 bannerSubtitle: "Findings from DORA's research program are made available through a series of publications, including the Accelerate State of DevOps Report."
-stylesheets:
-    - name: publications
 ---
-
 > Interested in being a sponsor of one of our upcoming Accelerate State of DevOps Reports?
 > 
 > Please reach out to sponsor-dora@google.com for more information on the sponsorship opportunities!
