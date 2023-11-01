@@ -1,23 +1,5 @@
-10/31/23, 11:02 AM Qualtrics Survey Software
-  intro
-Consent for data collection Why do we want your input?
-We want to hear your voice to understand the factors that impact software delivery performance and organizational performance.
-We use this data to create the State of DevOps Report, to inform research and development of our assessment product, and for peer-reviewed academic research including academic conferences and journals.
-How do we ensure your privacy?
-Your responses include no personally identifying information and we do not store your IP address or other tracking data.
-After analysis for research purposes, including generating the State of DevOps Report, we will go through additional steps to anonymize the data. We will not combine your responses with any other data or use it to identify you. Your responses will only be reported in aggregate and anonymously. Because we store no information in our systems which we can use to identify any individual, we have no way to change or delete your response to the survey.
-In the event you have a question about our use of your data, you may contact us at state-of-devops@google.com. Read our full privacy policy.
-firmographics
-Welcome to the State of DevOps worldwide industry survey for 2021.
-We are interested in understanding how you do your work and what your workplace is like.
-There are no right or wrong answers.
-   https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 1/25
+Demographics and Firmographics
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- The survey should take about 25 minutes to complete.
-If you need to take a break, you can always leave the survey and come back.
-If you don't know an answer, you can select "I don't know" or "NA" and your responses for that question will be discarded.
-Thank you very much for your time in helping us understand what makes technology better!
 What is the principal industry of your organization?
 Education
 Energy
@@ -26,19 +8,10 @@ Healthcare & Pharmaceuticals Industrials & Manufacturing Insurance
 Media & Entertainment Non-profit
 Retail / Consumer / e-Commerce Technology Telecommunications
 Other (please specify)
-How many employees work at your organization?
-1-4
-5-9
-10-19 20-99 100-499 500-1,999 2,000-4,999 5,000-9,999 10,000+
-I don’t know
- https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 2/25
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- How many people are on your immediate team?
-I am the only person on my team 2-5
-6-10
-11-20
-21-30 31+
+How many employees work at your organization?
+
+How many people are on your immediate team?
 Which server operating systems have you deployed? Select all that apply.
 Windows 2003/2003R2 Windows 2008/2008R2 Windows 2012/2012R2 Other Windows
 Linux Debian/Ubuntu variants
@@ -52,17 +25,17 @@ FreeBSD / NetBSD / OpenBSD
 AIX
 Solaris
 Other (please specify)
+
 Where are you deploying your applications or services currently? Select all that apply.
 Containers, e.g. Docker, Kubernetes
 FaaS (function as a service), e.g. AWS Lambda, Google Cloud Functions
- https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 3/25
-
-10/31/23, 11:02 AM Qualtrics Survey Software
  PaaS (platform as a service), e.g. Heroku, App Engine, Elastic Beanstalk Servers (bare metal)
 VM’s
 Others (please specify)
+
+Organizational Performance
 For each of the following performance indicators, how well did your organization meet its goals over the past year?
- Your organization’s overall performance
+Your organization’s overall performance
 Your organization’s overall profitability
 Relative market share for primary products
 Increased number of customers
@@ -74,7 +47,7 @@ Performed slightly below goals
 Performed below goals
 Performed well below goals
 I don't know/ NA
-We are also interested in learning about a few other goals.
+
 Select the option that indicates how your organization performed for the following goals over the past year.
 Quantity of products or services
 Operating efficiency
@@ -82,43 +55,28 @@ Customer satisfaction
 Quality of products or services provided
 Achieving our organizational and mission goals
 Other measures that demonstrate to external parties that your organization
-Performed well above goals
-Performed above goals
-Performed slightly above goals
-Met goals
-Performed slightly below goals
-Performed below goals
-Performed well below goals
-I don't know/ NA
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 4/25
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- achieve intended results
-ITPERF, burnout
-Performed well above goals
-Performed above goals
-Performed slightly above goals
-Met goals
-Performed slightly below goals
-Performed below goals
-Performed well below goals
-I don't know/ NA
-This page contains questions about your work, the outcomes of your work, and how it affects you.
+Software Delivery Performance
 For the primary application or service you work on, what is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?
 More than six months
-Between one month and six months Between one week and one month Between one day and one week Less than one day
+Between one month and six months 
+Between one week and one month 
+Between one day and one week
+Less than one day
 Less than one hour
 I don't know / NA
+
 For the primary application or service you work on, how often does your organization deploy code to production or release it to end users?
 Fewer than once per six months
-Between once per month and once every 6 months Between once per week and once per month Between once per day and once per week Between once per hour and once per day
+Between once per month and once every 6 months
+Between once per week and once per month
+Between once per day and once per week 
+Between once per hour and once per day
 On demand (multiple deploys per day)
 I don't know / NA
-For the primary application or service you work on, how long does it generally take to restore service when a service incident or a defect that impacts users occurs (e.g., unplanned outage, service impairment)?
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 5/25
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- More than six months
+For the primary application or service you work on, how long does it generally take to restore service when a service incident or a defect that impacts users occurs (e.g., unplanned outage, service impairment)?
+More than six months
 Between one month and six months Between one week and one month Between one day and one week Less than one day
 Less than one hour
 I don't know / NA
