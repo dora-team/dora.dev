@@ -1,0 +1,18 @@
+[
+    {
+        "year": 2021,
+        "categories": [
+            {
+                "heading": "Demographics and Firmographics",
+                "question_groups": [
+                    {
+                        "description": "Please rate how strongly you agree or disagree with the following statement.",
+                        "questions": [
+                            "The product or service I primarily work on was originally designed and architected to run in the cloud."
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
