@@ -12,6 +12,28 @@ Other (please specify)
 How many employees work at your organization?
 
 How many people are on your immediate team?
+
+What is your gender?
+Male
+Female
+Non-binary
+Prefer not to respond
+
+What is the percentage of women who work on your team? Please enter a number between 0 and 100.
+Do you identify as a member of an underrepresented group?
+Do you identify as a person with a disability? This includes disabilities associated with seeing, hearing, walking, remembering/concentrating, self-care, or communication.
+
+How many years of experience do you have?
+Please select the geographic region and country you work in
+Choose one or more races that you consider yourself to be:
+White
+Black or African American
+American Indian or Alaska Native Asian
+Native Hawaiian or Pacific Islander Other (please specify)
+Prefer not to respond
+
+Application runtime
+
 Which server operating systems have you deployed? Select all that apply.
 Windows 2003/2003R2 Windows 2008/2008R2 Windows 2012/2012R2 Other Windows
 Linux Debian/Ubuntu variants
@@ -29,11 +51,12 @@ Other (please specify)
 Where are you deploying your applications or services currently? Select all that apply.
 Containers, e.g. Docker, Kubernetes
 FaaS (function as a service), e.g. AWS Lambda, Google Cloud Functions
- PaaS (platform as a service), e.g. Heroku, App Engine, Elastic Beanstalk Servers (bare metal)
+PaaS (platform as a service), e.g. Heroku, App Engine, Elastic Beanstalk Servers (bare metal)
 VM’s
 Others (please specify)
 
 Organizational Performance
+
 For each of the following performance indicators, how well did your organization meet its goals over the past year?
 Your organization’s overall performance
 Your organization’s overall profitability
@@ -57,6 +80,7 @@ Achieving our organizational and mission goals
 Other measures that demonstrate to external parties that your organization
 
 Software Delivery Performance
+
 For the primary application or service you work on, what is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?
 More than six months
 Between one month and six months 
@@ -80,35 +104,25 @@ More than six months
 Between one month and six months Between one week and one month Between one day and one week Less than one day
 Less than one hour
 I don't know / NA
+
 For the primary application or service you work on, what percentage of changes to production or released to users result in degraded service (e.g., lead to service impairment or service outage) and subsequently require remediation (e.g., require a hotfix, rollback, fix forward, patch)?
-0%-15% 16%-30% 31%-45% 46%-60% 61%-75% 76%-100%
+0%-15%
+16%-30%
+31%-45%
+46%-60%
+61%-75%
+76%-100%
 I don't know / NA
+
 Sustainability of work is important, and burnout is an important indicator of this. Please answer a few questions about how your work has affected you.
 Please rate how strongly you agree or disagree with the following statements:
 I feel burned out from my work.
 I feel exhausted.
 I am indifferent or cynical about my work. I feel like I am ineffective in my work.
-My feelings about work negatively affect
-Strongly agree
-Agree
-Somewhat agree
-Neither agree nor disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-I don't know or NA
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 6/25
+My feelings about work negatively affect my life outside of work.
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- my life outside of work.
-SRE
-These next questions ask about reliability, and how you and your team think about it.
-Strongly Somewhat agree Agree agree
-Neither agree nor disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-I don't know or NA
+Reliability
+
 For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.
 My team actively identifies and eliminates, automates, or streamlines repetitive manual work.
 Reliability reviews are performed throughout the development process for all major features on the applications I work on.
@@ -118,19 +132,8 @@ I know what its reliability actually was in the most recent period.
 It has well-defined targets for reliability (such as Service Level Agreements / Service Level Objectives) that are clearly communicated among the team and to customers.
 My team met or exceeded our target for reliability in the most recent period.
 My team is empowered to maintain reliability standards throughout the product development process.
-Now let's focus on your team's alerting strategy.
-Strongly agree
-Agree
-Neither agree
-Somewhat nor agree disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-I don't know or NA
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 7/25
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.
+For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.
 Alerts are configured so that humans are only paged when an immediate response is needed.
 Alerts are generated based on service degradation from the perspective of end users or dependent systems (as opposed to system metrics like CPU %, ICMP latency, or disk IO)
 We'd also like to understand how your team prepares for incidents or changes in capacity needs.
@@ -139,27 +142,11 @@ My team has well-defined protocols and tools for responding to production incide
 My team regularly practices incident response procedures.
 My team proactively plans for capacity demand using data from multiple sources.
 My service development team is responsible for the reliability of their service and are included in defined incident escalation paths.
-What percentage of your time is spent on rework or unplanned work?
-Strongly agree
-Agree
-Neither agree
-Somewhat nor agree disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-I don't know or NA
-Strongly agree
-Agree
-Neither agree
-Somewhat nor agree disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-I don't know or NA
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 8/25
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- culture
+What percentage of your time is spent on rework or unplanned work?
+
+Culture
+
 Think about your organization when you answer the following questions and rate how strongly you agree or disagree with the following statements. In my organization...
 Information is actively sought.
 Messengers are not punished when they deliver news of failures or other bad news.
@@ -167,45 +154,15 @@ Responsibilities are shared.
 Cross-functional collaboration is encouraged and rewarded.
 New ideas are welcomed.
 Failures are treated primarily as opportunities to improve the system.
-Strongly agree
-Agree
-Somewhat agree
-Neither agree nor disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-Prefer
-not to answer or NA
+
 Think about your experiences on your team when you answer the following questions and rate how strongly you agree or disagree with the following statements.
 I am treated as a valued member of my team.
 I belong in my team.
 I feel connected to the members of my team. People in my team really care about me.
 I feel like an outsider in my team.
-Strongly agree
-Agree
-Somewhat agree
-Neither agree nor disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-Prefer
-not to answer or NA
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 9/25
-
-10/31/23, 11:02 AM Qualtrics Survey Software
- Sometimes I worry that I do not belong in my team.
+Sometimes I worry that I do not belong in my team.
 I fit well in my team.
 I am accepted by the members in my team.
-Strongly agree
-Agree
-Somewhat agree
-Neither agree nor disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-Prefer
-not to answer or NA
-Think about your experiences at work when answering the following questions and rate how strongly you agree or disagree with the following statements.
 My organization is a place where I can succeed to my full ability.
 My organization is a place where all types of employees (e.g., all genders, ethnicities, cultural backgrounds) can succeed to their full abilities.
 When I speak up in my organization, my opinion is valued.
@@ -214,20 +171,9 @@ I feel comfortable sharing a perspective on work issues that might be different 
 I feel comfortable being myself at work, even when I am different from others.
 While at work, I am comfortable expressing opinions that diverge from my team.
 People like me can succeed in my organization.
-process
-Strongly agree
-Agree
-Somewhat agree
-Neither agree nor disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-Prefer
-not to answer or NA
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 10/25
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- Think about how your team and work are structured.
+Team Structure and Architecture
+
 For the primary application or service you work on, please rate how strongly you agree or disagree with the following statements.
 To complete my own work, I don’t need to communicate and coordinate with people outside my team.
 On my team, we can make large-scale changes to the design of our system without creating significant work for other teams.
@@ -235,83 +181,42 @@ My team can deploy and release our product or service on demand, independently o
 We can do most of our testing on demand, without requiring an integrated test environment.
 On my team, we perform deployments during normal business hours with negligible downtime.
 On my team, we can make large-scale changes to the design of our system without depending on other teams to make changes in their systems.
-Strongly agree
-Agree
-Somewhat agree
-Neither agree nor disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-I don't know or NA
-In an average week, approximately what percent of your time at work is spent actively coding (e.g., writing new code, improving existing code, fixing bugs, testing, designing and architecting code), if any?
-76% to 100% of the time
-51% to 75% of the time
-26% to 50% of the time
-1% to 25% of the time
-None of my time is spent coding
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 11/25
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- In an average week, approximately what percent of your time at work is spent completing operations related tasks (e.g., troubleshooting production problems, collecting metrics and logs, monitoring dashboards, monitoring logs, responding to incidents), if any?
-76% to 100% of the time
-51% to 75% of the time
-26% to 50% of the time
-1% to 25% of the time
-None of my time is spent on operations related tasks
+Work Characteristics
+
+In an average week, approximately what percent of your time at work is spent actively coding (e.g., writing new code, improving existing code, fixing bugs, testing, designing and architecting code), if any?
+In an average week, approximately what percent of your time at work is spent completing operations related tasks (e.g., troubleshooting production problems, collecting metrics and logs, monitoring dashboards, monitoring logs, responding to incidents), if any?
 In an average week, approximately what percent of your time at work is spent completing administrative tasks (e.g., planning, meetings, emails), if any?
-76% to 100% of the time
-51% to 75% of the time
-26% to 50% of the time
-1% to 25% of the time
-None of my time is spent on administrative tasks
-cloud
-This page will ask questions about you and your organization’s use of the cloud.
+
+Cloud
+
 The product or service that I primarily work on runs on... Select all that apply.
 A public cloud
 Multiple public clouds
 A private cloud
 Hybrid cloud (combination of public cloud with private cloud / datacenter / on premises) In a datacenter or on premises (not a cloud)
 A small server under my desk
- Other (please specify)
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 12/25
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- Please rate how strongly you agree or disagree with the following statement.
+Please rate how strongly you agree or disagree with the following statement.
 The product or service I primarily work on was originally designed and architected to run in the cloud.
+
 What is your primary driver for adopting multiple cloud providers?
-We only have one cloud provider or we are not using public cloud Legal compliance
+We only have one cloud provider or we are not using public cloud
+Legal compliance
 Disaster recovery
 Availability
 Lack of trust in one provider
 Leverage unique benefits of each provider Negotiation tactic or procurement requirement
 Other (please specify)
-Strongly agree
-Somewhat agree
-Agree
-Neither agree nor disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-I don't know or NA
- Please rate how strongly you agree or disagree with the following statements in relation to your use of cloud services.
+
+Please rate how strongly you agree or disagree with the following statements in relation to your use of cloud services.
 Once I have access, I can independently provision and configure the cloud resources and capabilities required for my product or service on demand without raising tickets or requiring human interaction.
 The service or product that I primarily work on is designed to be accessed from a broad range of devices (e.g. smartphones, tablets, laptops) over the network without the need for proprietary plug-ins or protocols.
-The cloud my product or service runs on serves multiple teams and applications, with compute and infrastructure resources dynamically assigned
-Strongly agree
-Agree
-Neither agree
-Somewhat nor agree disagree
-Somewhat disagree
-Disagree
-I don't know
-Strongly or disagree NA
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 13/25
-
-10/31/23, 11:02 AM Qualtrics Survey Software
- and re-assigned based on demand.
+The cloud my product or service runs on serves multiple teams and applications, with compute and infrastructure resources dynamically assigned and re-assigned based on demand.
 I can dynamically increase or decrease the cloud resources available for the service or product that I primarily support based on demand.
 I can monitor or control the quantity and/or cost of cloud resources used by the service or product that I primarily support.
-documentation quality
+
+Documentation
 The following questions ask about documentation. We define documentation as internal documentation for the services or applications you work on (e.g., manuals, readmes, code comments, etc.). End-users are not the audience for these documents.
 Please rate how strongly you agree or disagree with the following statements.
 I can rely on our technical documentation when I need to use or work with the services or applications I work on.
@@ -320,26 +225,8 @@ Technical documentation is updated as changes are made.
 It is easy to find the right technical document when I need to understand something about the services or applications I work on.
 Most of the code for the services or applications I work with is documented. Our technical documentation is well organized.
 It is easy for me to understand our technical documentation.
-Strongly agree
-Agree
-Neither agree
-Somewhat nor agree disagree
-Somewhat disagree
-Disagree
-I don't know
-Strongly or disagree NA
-Strongly agree
-Agree
-Neither agree
-Somewhat nor agree disagree
-Somewhat disagree
-Disagree
-I don't know
-Strongly or disagree NA
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 14/25
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- Which of the following types of documentation are available at your organization? Select all that apply.
+Which of the following types of documentation are available at your organization? Select all that apply.
 Outage playbooks
 Key conceptual information about the product / service I work on
 Getting started material for new team members
@@ -348,6 +235,7 @@ Critical use cases for products / services
 API documentation
 Procedures for tasks my team is responsible for
 None of the above or NA
+
 Which of the following practices are used at your organization? Select all that apply.
 Documentation that is out of date is archived or removed.
 Documentation is written for all major features on the applications I work on.
@@ -361,12 +249,10 @@ Clearly defined ownership of documentation.
 Readability of code is enforced and valued.
 Documentation is stored in the same repository as our source code.
 None of the above or NA
+
 Which of the following resources are available at your organization for helping your team write and maintain technical documentation? Select all that apply.
 Templates or example documentation
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 15/25
-
-10/31/23, 11:02 AM Qualtrics Survey Software
- Templates or guidelines for filing bugs / defects
+Templates or guidelines for filing bugs / defects
 A system that generates reference documentation from the codebase
 Training to help engineers write and maintain documentation
 Guidelines for writing for a global audience
@@ -375,28 +261,20 @@ Guidelines for inclusive documentation
 Technical writers who support internal documentation
 Documentation style guide
 Any automated testing for code samples or incomplete documentation in the code base None of the above or NA
-technical stuff
-Now let’s talk about the technical work that you and your team do.
+
+Trunk-Based Development
+
 We are interested in the development practices and patterns you follow at work.
 Please rate how strongly you agree or disagree with the following statements.
 There are fewer than three active branches on the application's code repo.
 All developers on my team push code to trunk / master at least daily.
 Branches and forks have very short lifetimes (less than a day) before being merged to master.
 Our application team never has code lock periods when no one can check in code or do pull requests due to merging conflicts.
-The next set of questions ask about committing code and building and deploying software at work.
-For the primary application or service you work on, please rate how strongly you agree or disagree with the following statements.
-Strongly agree
-Agree
-Somewhat agree
-Neither agree nor disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-I don't know or NA
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 16/25
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- Automated builds and tests are executed successfully every day.
+Continuous Integration
+
+For the primary application or service you work on, please rate how strongly you agree or disagree with the following statements.
+Automated builds and tests are executed successfully every day.
 Code commits result in an automated build of the software.
 Automated test failures will block a commit’s progress through the pipeline.
 Code commits result in a series of automated tests being run.
@@ -408,7 +286,9 @@ Somewhat disagree
 Disagree
 Strongly disagree
 I don't know or NA
-Many teams use automated testing to make their software better.
+
+Automated Testing
+
 Please think about your own testing process and rate how strongly you agree or disagree with each of the following statements.
 We have the test data necessary to run our automated tests easily at every step.
 When the automated tests pass, I am confident the software is releasable.
@@ -416,169 +296,83 @@ It is easy for developers to reproduce and fix acceptance test failures.
 We regularly use data from previous test runs to improve the quality of our automated test suite
 I can get feedback from automated tests in less than ten minutes
 Automated test failures are likely to indicate a real defect.
-Strongly agree
-Agree
-Somewhat agree
-Neither agree nor disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-I don't know or NA
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 17/25
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.
+Continuous Delivery
+
+For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.
 My team prioritizes keeping the software deployable over working on new features.
 When people get feedback that the system is not deployable (such as failing builds or tests), they make fixing these issues their highest priority.
 Fast feedback on the quality and deployability of the system is available to anyone on the team.
 Our software is in a deployable state throughout its lifecycle.
 We can deploy our system to production, or to end users, at any time, on demand.
-Strongly agree
-Agree
-Somewhat agree
-Neither agree nor disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-I don't know or NA
-For the primary application or service you work on, what percentage of your deployments to production or end users are fully automated?
-0%-15%
-16%-30% 31%-45% 46%-60% 61%-75% 76%-100%
-I don't know or NA
-These questions are about how you watch and understand your systems at work.
-Please rate how strongly you agree or disagree with the following statements:
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 18/25
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- My team has a tech solution in place to report on system state as experienced by customers (e.g., Do my customers know if my system is down and have a bad experience?).
+For the primary application or service you work on, what percentage of your deployments to production or end users are fully automated?
+
+Monitoring and observability
+
+Please rate how strongly you agree or disagree with the following statements:
+My team has a tech solution in place to report on system state as experienced by customers (e.g., Do my customers know if my system is down and have a bad experience?).
 My team has tooling in place that can help us with understanding and debugging our systems in production.
 My team has access to tools and data which help us trace, understand, and diagnose infrastructure problems in our production environment, including interactions between services.
 My team has tooling in place that provides the ability to find information about things we did not previously know (e.g., we can identify “unknown unknowns").
 My team has a tech solution in place to report on the overall health of systems (e.g, Are my systems functioning? Do my systems have sufficient resources available?).
 My team has a tech solution in place for monitoring key business and systems metrics.
+
+Security
+
 Please rate how strongly you agree or disagree with the following statements:
 Security reviews are performed throughout the development process.
 Information Security has input in the design of the applications that I work on.
 Our information security team works with us throughout the development process.
 I have access to the same tooling and technologies as the security engineering team.
 The security review process does not slow down the development process for the applications that I work on.
-Strongly agree
-Agree
-Somewhat agree
-Neither agree nor disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-I don't know or NA
-Strongly agree
-Agree
-Somewhat agree
-Neither agree nor disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-I don't know or NA
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 19/25
-
-10/31/23, 11:02 AM Qualtrics Survey Software
- Security review is conducted for all major features on the applications I work on.
+Security review is conducted for all major features on the applications I work on.
 I have a single point-of-contact for all security reviews during the lifecycle of my product or feature development.
 Information Security has made easy-to-consume pre- approved libraries, packages and/or toolchains and processes for developers and IT operations.
 Tests to help us discover security problems are run throughout the software development process.
-moar technical stuff
-This page asks about a few more details regarding your technical environment and work.
-Strongly agree
-Agree
-Somewhat agree
-Neither agree nor disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-I don't know or NA
+
+Tools and Automation
+
 Choose which option best represents who has responsibility for creating and maintaining the CI / CD / Test automation toolchain and its configuration. All build/test/deploy for the software we build is handled by a centralized team.
 We are required to use a centralized toolchain with preconfigured scripts and steps for the build/test/deploy process that we can override or customize if needed.
 We are required to use a centralized toolchain with preconfigured scripts and steps, and we have little ability to override it. Our team has complete autonomy to choose and configure its own toolchain for CI/CD/test automation.
 We are required to use a centralized toolchain, but we maintain our own scripts for the build/test/deploy process and have a lot of autonomy in how it is configured.
-I don't know or NA
-My toolchain includes the following:
-Select all that apply.
+
+My toolchain includes the following (select all that apply):
 Automated unit tests
 Integration with chatbots / Slack Automated acceptance tests
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 20/25
-
-10/31/23, 11:02 AM Qualtrics Survey Software
- Automated build
+Automated build
 Automated deployment to production
 Automated performance tests
-Integration with production monitoring and observability tools Automated security tests
-Automated provisioning and deployment to testing environments None of the above
-These questions ask how your team manages database changes.
+Integration with production monitoring and observability tools
+Automated security tests
+Automated provisioning and deployment to testing environments
+None of the above
+
+Database change automation
+
 For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.
 Everyone in our engineering org has visibility into the progress of pending database changes.
 Production database changes are managed in the same way as production application changes.
 All database changes are stored as scripts in version control.
 Database changes DO NOT slow us down or cause problems when we do code deployments.
 When changes to the application require database changes, we always discuss them with the people responsible for the production database.
-Strongly agree
-Agree
-Somewhat agree
-Neither agree nor disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-I don't know or NA
-These questions ask how you make use of open source technologies.
-For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 21/25
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- My team plans to expand our use of open source software.
+Open Source Technologies
+
+For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.
+My team plans to expand our use of open source software.
 My team makes extensive use of open source components, libraries, and platforms.
 My organization has formal initiatives in place to expand our use of open source software.
-demographics
-Last page! Please take a few minutes to tell us about yourself.
-Strongly agree
-Agree
-Somewhat agree
-Neither agree nor disagree
-Somewhat disagree
-Disagree
-Strongly disagree
-I don't know or NA
-Please note this data is only used for research purposes. This survey is anonymous and is only reported anonymously and in aggregate. What is your gender?
-Male
-Female
-Non-binary
-Prefer not to respond
-What is the percentage of women who work on your team? Please enter a number between 0 and 100.
-Percentage of women on team:
-Prefer not to respond
-Do you identify as a member of an underrepresented group?
-Yes
-No
-Prefer not to respond
- https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 22/25
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- Do you identify as a person with a disability?
-This includes disabilities associated with seeing, hearing, walking, remembering/concentrating, self-care, or communication.
-Yes
-No
-Prefer not to respond
+
+COVID-19
+
 During the COVID-19 pandemic, did you work or are you currently working from home?
-Yes
-No
-Prefer not to respond
 Before the COVID-19 pandemic, how often did you work from home?
-Very Often Fairly Often Sometimes Almost Never Never
-Prefer not to respond
 Before the COVID-19 pandemic, how often did you work with coworkers remotely (e.g., conference or video call)?
-Very Often Fairly Often Sometimes Almost Never Never
-Prefer not to respond
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 23/25
 
-10/31/23, 11:02 AM Qualtrics Survey Software
- Which most closely describes your work role?
+Which most closely describes your work role?
 Development or Engineering DevOps or SRE
 Information Security
 IT Operations or Infrastructure Network Operations
@@ -594,33 +388,4 @@ I am a student
 I do not belong to any department
 Other (please specify)
 Prefer not to answer
-How many years of experience do you have?
-0-2
-3-5
-6-10
-11-15
-More than 16
-Prefer not to respond
- Please select the geographic region you work in:
-https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9 24/25
 
-10/31/23, 11:02 AM
-Africa
-Asia
-Central America Eastern Europe European Union Middle East North America Oceana
-South America The Caribbean
-Which country do you live in?
-Canada
-Mexico
-The United States of America
-Choose one or more races that you consider yourself to be:
-White
-Black or African American
-American Indian or Alaska Native Asian
-Qualtrics Survey Software
- https://google.co1.qualtrics.com/Q/EditSection/Blocks/Ajax/GetSurveyPrintPreview?ContextSurveyID=SV_cIb0SmhJPfm8H7n&ContextLibraryID=UR_cTq0te34hGRi7U9
-25/25
-Native Hawaiian or Pacific Islander Other (please specify)
-Prefer not to respond
-Powered by Qualtrics
- 
