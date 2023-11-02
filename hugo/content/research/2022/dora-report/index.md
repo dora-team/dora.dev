@@ -6,7 +6,7 @@ type: research_archives
 tab_order: "1"
 tab_title: "DORA Report"
 layout: single
-research_year: 2022
+research_year: "2022"
 ---
 ## Download the 2022 DORA Report
 
