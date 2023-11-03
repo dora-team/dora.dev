@@ -13,6 +13,7 @@
         {{ with index .Site.Data.survey_questions .Params.research_year }}
             {{  range sort .categories "heading" }}
                 <h3 id="{{ .heading | anchorize }}">{{ .heading }}</h3>
+                {{ if .description }}<p>{{ .description }}</p>{{ end }}
                 {{ range sort .question_groups "description" }}
                     <p class="description">{{ .description }}</p>
                     <ul>
