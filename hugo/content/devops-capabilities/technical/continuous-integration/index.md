@@ -93,7 +93,7 @@ software delivery performance:
     They merge their work into a shared trunk/mainline at least daily, rather
     than working on long-lived feature branches.
 -   An agreement that when the build breaks, fixing it should
-    [take priority over any other work](/devops-capabilities/technical/trunk-based-development).
+    [take priority over any other work](/devops-capabilities/technical/continuous-delivery/).
 
 CI requires
 [automated unit tests](/devops-capabilities/technical/test-automation).
