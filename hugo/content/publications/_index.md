@@ -25,12 +25,12 @@ bannerSubtitle: "Findings from DORA's research program are made available throug
 
 ## Prior State of DevOps Reports
 
-- [![2022 Accelerate State of DevOps Report](/research/2022/dora-report/2022-dora-accelerate-state-of-devops-report_landscape.png)](/research/2022/dora-report/2022-dora-accelerate-state-of-devops-report.pdf)
-  **[2022 Accelerate State of DevOps Report](/research/2022/dora-report/2022-dora-accelerate-state-of-devops-report.pdf)**
+- [![2022 Accelerate State of DevOps Report](/research/2022/dora-report/2022-dora-accelerate-state-of-devops-report_landscape.png)](/research/2022/dora-report/)
+  **[2022 Accelerate State of DevOps Report](/research/2022/dora-report/)**
   [Download the report](/research/2022/dora-report/)
 
-- [![2021 Accelerate State of DevOps Report](/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.png)](/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.pdf)
-  **[2021 Accelerate State of DevOps Report](/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.pdf)**
+- [![2021 Accelerate State of DevOps Report](/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.png)](/research/2021/dora-report/)
+  **[2021 Accelerate State of DevOps Report](/research/2021/dora-report/)**
   [Download the report](/research/2021/dora-report/)
 
 - [![2019 Accelerate State of DevOps Report](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.png)](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf)
