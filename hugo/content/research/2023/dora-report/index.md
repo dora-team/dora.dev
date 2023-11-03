@@ -3,7 +3,7 @@ title: "Accelerate State of DevOps Report 2023"
 date: 2023-09-01
 draft: false
 type: research_archives
-research_year: 2023
+research_year: "2023"
 tab_order: "2"
 tab_title: "DORA Report"
 type: "research_archives"
