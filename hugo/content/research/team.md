@@ -37,7 +37,7 @@ The collective includes current and former leaders, researchers, authors, and su
   - Jessie Frazelle
   - Jez Humble
   - John Speed Mayers
-  - Kevin Storer
+  - Kevin Storer, PhD
   - Lolly Chessie
   - Nathen Harvey
   - Nicole Forsgren, PhD
