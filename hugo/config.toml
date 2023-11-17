@@ -1,6 +1,7 @@
 baseURL = 'https://dora.dev/'
 languageCode = 'en-us'
 theme = 'dora'
+rssLimit = 10
 
 [markup.goldmark.renderer]
 unsafe= true
