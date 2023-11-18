@@ -87,7 +87,7 @@ the following benefits:
     are disruptive rather than easy and pain-free, as well as the fear and
     anxiety that engineers and technical staff feel when they push code into
     production.
--   Impacts culture, leading to greater levels of [psychological safety](https://rework.withgoogle.com/print/guides/5721312655835136/) and a
+-   Impacts culture, leading to greater levels of [psychological safety](https://en.wikipedia.org/wiki/Psychological_safety) and a
     more [mission-driven organizational culture](/devops-capabilities/cultural/generative-organizational-culture).
 
 The following diagram shows how a set of technical practices impacts
