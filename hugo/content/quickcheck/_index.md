@@ -1,5 +1,5 @@
 ---
-title: "DevOps Quick Check"
+title: "DORA Quick Check"
 date: 2022-09-01
 draft: false
 bannerTitle: "Take the DORA Quick Check"

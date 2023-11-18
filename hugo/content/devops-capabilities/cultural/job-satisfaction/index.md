@@ -107,5 +107,5 @@ signal that something is wrong and it's worth looking into.
 -   Explore our DevOps
     [research program](/).
 -   Take the
-    [DevOps quick check](/quickcheck/)
+    [DORA quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.

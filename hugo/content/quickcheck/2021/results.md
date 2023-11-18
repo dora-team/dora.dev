@@ -1,5 +1,5 @@
 ---
-title: "DevOps Quick Check: Results"
+title: "DORA Quick Check: Results"
 date: 2021-09-01
 draft: false
 layout: results

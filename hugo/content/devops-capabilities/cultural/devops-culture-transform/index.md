@@ -388,5 +388,5 @@ by Jez Humble, Joanne Molesky, and Barry O'Reilly (O'Reilly, 2014).
 -   Explore our DevOps
     [research program](https://www.devops-research.com/research.html).
 -   Take the
-    [DevOps quick check](/quickcheck/) to
+    [DORA quick check](/quickcheck/) to
     understand where you stand in comparison with the rest of the industry.

@@ -19,5 +19,5 @@ summary: |
     
     ---
 
-    Want to assess your team's software delivery performance? Try our [DevOps Quick Check](/quickcheck) for insights on how to improve.
+    Want to assess your team's software delivery performance? Try our [DORA Quick Check](/quickcheck) for insights on how to improve.
 ---

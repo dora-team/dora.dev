@@ -107,5 +107,5 @@ a good bet for organizations.
 -   Explore our DevOps
     [research program](https://www.devops-research.com/research.html).
 -   Take the
-    [DevOps quick check](/quickcheck/)
+    [DORA quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.
