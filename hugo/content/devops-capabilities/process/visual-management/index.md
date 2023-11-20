@@ -161,5 +161,5 @@ If the answer to any of these questions is no, investigate further:
 -   Explore our DevOps
     [research program](/).
 -   Take the
-    [DevOps quick check](/quickcheck/)
+    [DORA quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.

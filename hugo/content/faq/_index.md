@@ -7,7 +7,7 @@ type: faq
 
 # Frequently Asked Questions
 
-### DevOps Quick Check
+### DORA Quick Check
 #### What data are used to calculate my results?
 Quick Check results are based on data collected from respondents to the Accelerate State of DevOps survey (the same survey on which the Accelerate State of DevOps Report is based). Your results are based on findings from the 2022 survey; you can also take the Quick Check based on results from [2019](/quickcheck/?year=2019) or [2021](/quickcheck/?year=2021). <small><em>(There was no Accelerate State of DevOps study in 2020.)</em></small>
 

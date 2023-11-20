@@ -275,7 +275,7 @@ or releases, so this is something that is important to measure.
 
 How well you are doing at continuous delivery is reflected in the outcomes that
 you achieve. You can take the
-[DORA DevOps quick check](/quickcheck/)
+[DORA quick check](/quickcheck/)
 to see how you're doing with the key continuous delivery metrics:
 
 -   Short lead times for both regular and emergency changes, with a goal
@@ -300,5 +300,5 @@ time spent doing rework and unplanned work.
 -   Explore our DevOps
     [research program](/).
 -   Take the
-    [DevOps quick check](/quickcheck/)
+    [DORA quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.

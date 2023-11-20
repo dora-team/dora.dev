@@ -177,6 +177,5 @@ changes in order to preserve the statistical properties.
     by Ron Westrum.
 -   Explore our DevOps
     [research program](https://www.devops-research.com/research.html).
--   Take the
-    [DevOps quick check](/quickcheck/)
+-   Take the [DORA quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.
