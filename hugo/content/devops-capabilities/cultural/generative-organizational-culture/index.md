@@ -47,9 +47,9 @@ generative culture predicts software delivery and organizational performance in
 technology.
 
 Research from
-[a large two-year study at Google](https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/)
+[a large two-year study at Google](https://www.nytimes.com/2016/02/28/magazine/what-google-learned-from-its-quest-to-build-the-perfect-team.html)
 found similar results: that high performing teams need a culture of trust and
-[psychological safety](https://rework.withgoogle.com/guides/understanding-team-effectiveness/steps/foster-psychological-safety/),
+[psychological safety](https://en.wikipedia.org/wiki/Psychological_safety),
 meaningful work, and clarity. In the
 [2019 State of DevOps Report](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf)
 further analysis shows that a culture of psychological safety is predictive of
@@ -177,8 +177,5 @@ changes in order to preserve the statistical properties.
     by Ron Westrum.
 -   Explore our DevOps
     [research program](https://www.devops-research.com/research.html).
--   Take the
-    [DORA quick check](/quickcheck/)
+-   Take the [DORA quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.
--   Check out Google's
-    [guide to understanding team effectiveness](https://rework.withgoogle.com/guides/understanding-team-effectiveness/steps/introduction/).
