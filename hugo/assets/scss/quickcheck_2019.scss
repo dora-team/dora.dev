@@ -141,9 +141,11 @@ section.quickcheck_results {
             margin: 0.5rem;
             padding: 0.5rem 0.5rem 1rem 0.5rem;
 
-            h3 {
+            p {
                 color: $color-text;
-                font-weight: 500;
+                font-weight: 300;
+                font-family: $font-google-sans;
+                font-size: 1.5rem;
             }
 
             a {
