@@ -36,7 +36,7 @@ organization.
 There are many frameworks for executing and measuring organizational change,
 such as
 [balanced scorecard](https://wikipedia.org/wiki/Balanced_scorecard),
-[objectives and key results (OKRs)](https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/),
+[objectives and key results (OKRs)](https://en.wikipedia.org/wiki/Objectives_and_key_results),
 and the
 [improvement kata](http://www-personal.umich.edu/~mrother/The_Improvement_Kata.html)
 and
@@ -131,7 +131,7 @@ will be addressed.
 Some important points about this pattern are the following:
 
 -   A team's own target conditions or
-    [OKRs](https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/)
+    [OKRs](https://en.wikipedia.org/wiki/Objectives_and_key_results)
     must be set by the team. If they are set in a top-down way, teams won't have
     a stake in the outcome and thus won't be as invested in achieving them.
     Instead, the team might "game" them—that is, manipulate the outcome to meet
