@@ -213,7 +213,7 @@ increase test coverage and extend your deployment pipeline as your product or
 service evolves.
 
 If you're already working on a
-[brownfield system](https://wikipedia.org/wiki/Brownfield_\(software_development\)),
+[brownfield system](https://wikipedia.org/wiki/Brownfield_(software_development)),
 follow the guidance in this article, but don't stop to retrofit a comprehensive
 suite of automated tests. Instead, write a small number of acceptance tests for
 the high-value functionality. Then, make sure you require developers to write
