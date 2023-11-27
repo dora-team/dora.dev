@@ -25,3 +25,5 @@ steps:
       - 'PROJECT_ID=$PROJECT_ID'
     script: |
       firebase deploy --non-interactive  --force --project=${PROJECT_ID}
+options:
+  logging: CLOUD_LOGGING_ONLY
