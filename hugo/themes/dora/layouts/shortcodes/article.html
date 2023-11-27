@@ -11,10 +11,7 @@
     delete_on [date] -- if specified, the article will be suppressed after this date
 -->
 
-{{ $delete_on := "2999-12-31" | time.AsTime}}
-{{ if .Get "delete_on" }}
-    {{ $delete_on = .Get "delete_on" | time.AsTime }}
-{{ end }}
+{{ $delete_on := (.Get "delete_on" | default "2999-12-31") | time.AsTime }}
 
 {{ if lt now $delete_on }}
     {{ $url := .Get "url" }}
