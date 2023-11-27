@@ -73,5 +73,5 @@ Organizations are constantly grappling to quantify the value of technology trans
     delete_on="2024-01-01" >}}
 DORA's Accelerate State of DevOps Report has been nominated for *Best DevOps Survey/Analysis/Research*, which recognizes "research that has significantly and positively impacted the DevOps community." And DORA Advocate Amanda Lewis has been nominated for *Top DevOps Evangelist* in recognition of her leadership in the DORA Community.
 
-Public voting is now open. **Cast your vote** to share how DORA's research and community have benefited you!
+Public voting is now open. [**Cast your vote**](https://www.surveymonkey.com/r/DevOpsDozen2023) to share how DORA's research and community have benefited you!
 {{< /article >}}
