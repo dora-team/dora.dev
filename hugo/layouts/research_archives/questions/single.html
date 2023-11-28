@@ -15,7 +15,17 @@
                 <h3 id="{{ .heading | anchorize }}">{{ .heading }}</h3>
                 {{ if .description }}<p>{{ .description }}</p>{{ end }}
                 {{ range sort .question_groups "description" }}
-                    <p class="description">{{ .description }}</p>
+                    <p class="description">
+                        {{ .description }}
+                        {{ if .group_responses }}
+                            <div class="responses">
+                                <label>Response options:</label> {{ $responsesSlice := split .group_responses "," }}
+                                {{ range $responsesSlice }}
+                                    <span class="answer">{{ . }}</span>
+                                {{ end }}
+                            </div>
+                        {{ end }}
+                    </p>
                     <ul>
                         {{ range sort .questions }}
                             {{ $thisQuestion := split . "|" }}

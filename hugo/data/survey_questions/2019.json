@@ -1,12 +1,307 @@
 {
     "categories": [
         {
-            "heading": "I",
+            "heading": "Loosely Coupled Architecture",
+            "question_groups": [
+                {
+                    "questions": [
+                        "To complete my own work, I don't need to communicate and coordinate with people outside my team.",
+                        "On my team, we can make large-scale changes to the design of our system without creating significant work for other teams.",
+                        "On my team, we can make large-scale changes to the design of our system without depending on other teams to make changes in their systems.",
+                        "My team can deploy and release our product or service on demand, independently of other services it depends upon.",
+                        "We can do most of our testing on demand, without requiring an integrated test environment."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Burnout",
+            "question_groups": [
+                {
+                    "questions": [
+                        "I feel burned out from my work.",
+                        "I feel exhausted.",
+                        "I am indifferent or cynical about my work.",
+                        "I feel like I am ineffective in my work.",
+                        "My feelings about work negatively affect my life outside of work."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Work Recovery",
+            "question_groups": [
+                {
+                    "questions": [
+                        "I am able to cope effectively with work-related stress.",
+                        "I am able to detach from work during non-work time (i.e., when I choose not to be working)."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Change Approvals",
+            "question_groups": [
+                {
+                    "questions": [
+                        "Production changes must be approved by an external body (e.g., change approval board, manager, etc.) before implementation or deployment.",
+                        "My organization has a formal process to approve changes to applications or production systems prior to implementation or release.",
+                        "All significant changes must be approved by a senior manager prior to implementation.",
+                        "I have a clear understanding of the process to get changes approved for implementation.",
+                        "I am confident I can get changes through the approval process in a timely manner.",
+                        "For all the types of changes that I typically make, I know the steps it takes to go from “submitted” to “accepted” every time."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Continuous Delivery",
+            "question_groups": [
+                {
+                    "questions": [
+                        "Our software is in a deployable state throughout its lifecycle.",
+                        "My team prioritizes keeping the software deployable over working on new features.",
+                        "Fast feedback on the quality and deployability of the system is available to anyone on the team.",
+                        "When people get feedback that the system is not deployable (such as failing builds or tests), they make fixing these issues their highest priority.",
+                        "We can deploy our system to production, or to end users, at any time, on demand."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Continuous Integration",
             "question_groups": [
                 {
                     "description": "",
                     "questions": [
-                        ""
+                        "Code commits result in an automated build of the software.",
+                        "Code commits result in a series of automated tests being run.",
+                        "Automated builds and tests are executed successfully every day."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Cloud",
+            "question_groups": [
+                {
+                    "questions": [
+                        "Once I have access, I can independently provision and configure the cloud resources and capabilities required for my product or service on demand without raising tickets or requiring human interaction.",
+                        "The service or product that I primarily work on is designed to be accessed from a broad range of devices (e.g. smartphones, tablets, laptops) over the network without the need for proprietary plug-ins or protocols.",
+                        "The cloud my product or service runs on serves multiple teams and applications, with compute and infrastructure resources dynamically assigned and re-assigned based on demand.",
+                        "I can dynamically increase or decrease the cloud resources available for the service or product that I primarily support based on demand.",
+                        "I can monitor or control the quantity and/or cost of cloud resources used by the service or product that I primarily support."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Culture",
+            "question_groups": [
+                {
+                    "questions": [
+                        "If I make a mistake on our team, it is not held against me.",
+                        "Members of our team are able to bring up problems and tough issues.",
+                        "Members of our team do not reject each other for being different.",
+                        "It is safe to take a risk on our team.",
+                        "It is not difficult to ask other members of our team for help.",
+                        "No one on our team would deliberately act in a way that undermines my work efforts.",
+                        "My unique skills and talents are valued on our team.",
+                        "Our team is able to resolve conflict when it arises.",
+                        "There is a high level of trust within our team.",
+                        "When there are conflicting opinions among members of my team, we treat each other with respect.",
+                        "I can depend on my team to deliver high-quality results.",
+                        "My team provides an environment where I can be innovative.",
+                        "My team has clear roles and responsibilities."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Useful, Easy-To-Use Tools",
+            "question_groups": [
+                {
+                    "description": "When deploying software through a CI/CD/test automation toolchain:",
+                    "questions": [
+                        "My interaction with the toolchain is clear and understandable.",
+                        "Interacting with the toolchain does not require a lot of my mental effort.",
+                        "I find the toolchain to be easy to use.",
+                        "I find it easy to get the toolchain to do what I want it to do."
+                    ]
+                },
+                {
+                    "description": "When deploying software through a CI/CD toolchain:",
+                    "questions": [
+                        "Using the CI/CD toolchain improves my performance in my job.",
+                        "Using the CI/CD toolchain in my job increases my productivity.",
+                        "Using the CI/CD toolchain enhances my effectiveness in my job.",
+                        "I find the CI/CD toolchain to be useful in my job."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Disaster Recovery Test Frequency",
+            "question_groups": [
+                {
+                    "group_responses": "Never,Only at initial deployment,Weekly,Monthly,Yearly,Less than once a year,N/A or I don't know",
+                    "questions": [
+                        "How often does your organization perform simulations that disrupt production systems (including failure injection such as degrading network links, turning off routers, etc.)?",
+                        "How often does your organization perform infrastructure (including datacenter) failover to test for resiliency?",
+                        "How often does your organization perform application failover to test for resiliency?"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Search",
+            "question_groups": [
+                {
+                    "description": "Internal Search",
+                    "questions": [
+                        "I often refer to internal knowledge bases or tools for help finding solutions when I work on a task.",
+                        "I often search internal tools or code repositories for solutions to similar problems or examples when I'm working on a challenging problem.",
+                        "I frequently search my organization's source code repositories when I have questions or am looking for code examples.",
+                        "I search internal docs when I have a question or a challenging problem."
+                    ]
+                },
+                {
+                    "description": "External Search",
+                    "questions": [
+                        "I frequently check externally (e.g., Stack Overflow, Google, etc.) when I need to improve my knowledge on how to solve a problem.",
+                        "I often search externally (e.g., Stack Overflow, Google, etc.) to find solutions to similar problems when I am working on a challenging problem."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Monitoring",
+            "question_groups": [
+                {
+                    "questions": [
+                        "My team has a tech solution in place to report on the overall health of systems (e.g, Are my systems functioning? Do my systems have sufficient resources available?).",
+                        "My team has a tech solution in place to report on system state as experienced by customers (e.g., “do my customers know if my system is down and have a bad experience?”).",
+                        "My team has a tech solution in place for monitoring key business and systems metrics.",
+                        "My team has tooling in place that can help us with understanding and debugging our systems in production."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Code Maintainability",
+            "question_groups": [
+                {
+                    "questions": [
+                        "It's easy for us to change code maintained by other teams if we need to.",
+                        "It is easy for me to find examples in our codebase.",
+                        "It is easy for me to reuse other people's code.",
+                        "It is easy for me to add new dependencies to my project.",
+                        "It is easy for me to migrate to a new version of a dependency.",
+                        "My dependencies are stable and rarely break my code."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Availability",
+            "question_groups": [
+                {
+                    "description": "For the primary application or service you work on:",
+                    "questions": [
+                        "It has well-defined targets for availability (such as Service Level Agreements / Service Level Objectives) that are clearly communicated among the team and to customers.",
+                        "I know what its availability actually was in the most recent period.",
+                        "My team met or exceeded our target for availability in the most recent period.",
+                        "When we miss our availability targets, we perform improvement work and/or re-prioritize."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Organizational Performance",
+            "question_groups": [
+                {
+                    "description": "For each of the following performance indicators, how well did your organization meet its goals over the past year?",
+                    "questions": [
+                        "Your organization's overall performance",
+                        "Your organization's overall profitability",
+                        "Relative market share for primary products",
+                        "Increased number of customers",
+                        "Quantity of products or services",
+                        "Operating efficiency",
+                        "Customer satisfaction",
+                        "Quality of products or services provided",
+                        "Achieving our organizational and mission goals",
+                        "Other measures that demonstrate to external parties that your organization achieve intended results"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Productivity",
+            "question_groups": [
+                {
+                    "questions": [
+                        "I regularly reach a high level of productivity.",
+                        "I am often able to get into a good \"flow\", where I can get complex, time-consuming tasks completed with minimal distractions and interruptions."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Software Delivery Performance",
+            "question_groups": [
+                {
+                    "description": "For the primary application or service you work on...",
+                    "questions": [
+                        "What is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don't know or not applicable",
+                        "For the primary application or service you work on, how often does your organization deploy code to production or release it to end users?|Fewer than once per six months,Between once per month and once every six months,Between once per week and once per month,Between once per day and once per week,Between once per hour and once per day,On demand (multiple deploys per day),I don't know or not applicable",
+                        "For the primary application or service you work on, how long does it generally take to restore service when a service incident or a defect that impacts users occurs (e.g., unplanned outage, service impairment)?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don't know or not applicable",
+                        "For the primary application or service you work on, what percentage of changes to production or released to users result in degraded service (e.g., lead to service impairment or service outage) and subsequently require remediation (e.g., require a hotfix, rollback, fix forward, patch)?|0%-15%,16%-30%,31%-45%,46%-60%,61%-75%,76%-100%,I don't know / NA"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Tech Debt",
+            "question_groups": [
+                {
+                    "description": "[In my work during the past year,] I encountered code, scripts, configuration, or systems ...",
+                    "questions": [
+                        "That contained known bugs that went unfixed in favor of new feature development.",
+                        "That had insufficient tests or test coverage.",
+                        "That had problems related to low code quality or design.",
+                        "That had not been cleaned up after the cancellation or abandonment of a project.",
+                        "That no one on my team had expertise to understand.",
+                        "That were incompletely or incorrectly migrated.",
+                        "That used obsolete technology.",
+                        "Where documentation and/or comments were missing, incomplete, or outdated."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Automated Testing",
+            "question_groups": [
+                {
+                    "questions": [
+                        "When the automated tests pass, I am confident the software is releasable.",
+                        "Automated test failures are likely to indicate a real defect.",
+                        "It is easy for developers to reproduce and fix acceptance test failures.",
+                        "We have the test data necessary to run our automated tests easily at every step.",
+                        "I can get feedback from automated tests in less than ten minutes.",
+                        "We regularly use data from previous test runs to improve the quality of our automated test suite."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Trunk-Based Development",
+            "question_groups": [
+                {
+                    "questions": [
+                        "All developers on my team push code to trunk/master at least daily.",
+                        "There are fewer than three active branches on the application's code repo.",
+                        "Branches and forks have very short lifetimes (less than a day) before being merged to master."
                     ]
                 }
             ]

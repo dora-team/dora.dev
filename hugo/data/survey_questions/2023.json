@@ -294,10 +294,11 @@
                 },
                 {
                     "description": "How often does the primary service or application you work on encounter the following events?",
+                    "group_responses": "Never,Rarely,Sometimes,Often,Always,I don't know or NA",
                     "questions": [
                         "End users report being dissatisfied with the reliability of our system",
                         "Meets reliability targets (for example, Service Level Objectives)",
-                        "The service or application is unavailable, performs slower than expected or performs incorrectly|Never,Rarely,Sometimes,Often,Always,I don't know or NA"
+                        "The service or application is unavailable, performs slower than expected or performs incorrectly"
                     ]
                 }
             ]

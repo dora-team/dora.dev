@@ -45,6 +45,12 @@ article {
 
         margin-bottom:.5rem;
 
+        label {
+            font-family: $font-roboto;
+            font-size:.75rem;
+            font-weight: normal;
+        }
+
         .answer {
             display: inline-block;
             font-size:.8rem;
