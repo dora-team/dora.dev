@@ -309,7 +309,7 @@ a service like Gmail, there's five or six other layers of services underneath
 it, each very focused on a very specific function. Each service is
 supported by a small team, who builds it and runs their functionality, with
 each group potentially making different technology choices. Another example
-is the { service, which is one of the largest NoSQL
+is the Datastore service, which is one of the largest NoSQL
 services in the world, and yet it is supported by a team of only about
 eight people, largely because it is based on layers upon layers of
 dependable services built upon each other."
