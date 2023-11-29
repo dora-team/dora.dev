@@ -2,6 +2,7 @@ baseURL = 'https://dora.dev/'
 languageCode = 'en-us'
 theme = 'dora'
 rssLimit = 10
+ignoreFiles = "README.md"
 
 [markup.goldmark.renderer]
 unsafe= true
