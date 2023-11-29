@@ -1,12 +1,366 @@
 {
     "categories": [
         {
-            "heading": "I",
+            "heading": "Availability",
             "question_groups": [
                 {
-                    "description": "",
+                    "description": "For the primary application or service you work on:",
                     "questions": [
-                        ""
+                        "It has well-defined targets for availability (such as Service Level Agreements / Service Level Objectives) that are clearly communicated among the team and to customers.",
+"I know what its availability actually was in the most recent period.",
+"My team met or exceeded our target for availability in the most recent period.",
+"When we miss our availability targets, we perform improvement work and/or re-prioritize."
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Burnout",
+            "question_groups": [
+                {
+                    "questions": [
+                        "I feel burned out from my work.",
+"I feel exhausted.",
+"I am indifferent or cynical about my work.",
+"I feel like I am ineffective in my work.",
+"My feelings about work negatively affect my life outside of work."
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Continuous Delivery",
+            "question_groups": [
+                {
+                    "questions": [
+                        "Our software is in a deployable state throughout its lifecycle.",
+"My team prioritizes keeping the software deployable over working on new features.",
+"Fast feedback on the quality and deployability of the system is available to anyone on the team.",
+"When people get feedback that the system is not deployable (such as failing builds or tests), they make fixing these issues their highest priority. ",
+"We can deploy our system to production, or to end users, at any time, on demand."
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Continuous Integration",
+            "question_groups": [
+                {
+                    "questions": [
+                        "Code commits result in an automated build of the software. ",
+"Code commits result in a series of automated tests being run. ",
+"Automated builds and tests are executed successfully every day. "
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Continuous Testing",
+            "question_groups": [
+                {
+                    "questions": [
+                        "Developers primarily create and maintain acceptance tests.",
+"When the automated tests pass, I am confident the software is releasable.",
+"Test failures are likely to indicate a real defect.",
+"It is easy for developers to fix acceptance test failures.",
+"Developers use their own development environment to reproduce acceptance failures.",
+"Automated tests are seamlessly integrated into our software delivery toolchain.",
+"Automated tests are seamlessly integrated into our software delivery toolchain.",
+"We have the test data necessary to run our tests easily at every step.",
+"Testers work alongside developers throughout the software development and delivery process.",
+"Manual test activities such as exploratory testing, usability testing, and acceptance testing are performed continuously throughout the delivery process.",
+"Developers practice test-driven development by writing unit tests before writing production code for all changes to the codebase.",
+"I can get feedback from automated tests in less than ten minutes both on my local workstation and from the CI server."
+
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Cloud",
+            "question_groups": [
+                {
+                    "questions": [
+                        "Once I have access, I can independently provision and configure the cloud resources and capabilities required for my product or service on demand without raising tickets or requiring human interaction.",
+"The service or product that I primarily work on is designed to be accessed from a broad range of devices (e.g. smartphones, tablets, laptops) over the network without the need for proprietary plug-ins or protocols.",
+"The cloud my product or service runs on serves multiple teams and applications, with compute and infrastructure resources dynamically assigned and re-assigned based on demand.",
+"I can dynamically increase or decrease the cloud resources available for the service or product that I primarily support based on demand.",
+"I can monitor or control the quantity and/or cost of cloud resources used by the service or product that I primarily support."
+
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Customer Value",
+            "question_groups": [
+                {
+                    "questions": [
+                        "My organization collects customer satisfaction metrics regularly.",
+"Customer feedback on product and feature quality is important to my company.",
+"Customer insights on quality of products and features are actively sought.",
+"Customer feedback is used to inform the design of products and features."
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Database Change Management",
+            "question_groups": [
+                {
+                    "questions": [
+                        "When changes to the application require database changes, we always discuss them with the people responsible for the production database.",
+"Database changes DO NOT slow us down or cause problems when we do code deployments.",
+"Everyone in our engineering org has visibility into the progress of pending database changes.",
+"Production database changes are managed in the same way as production application changes.",
+"All database changes are stored as scripts in version control."
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Deployment Pain",
+            "question_groups": [
+                {
+                    "questions": [
+                        "Code deployments are not feared.",
+"Code deployments are not at all disruptive.",
+"Code deployments are relatively easy and pain-free."
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Manual Work",
+            "question_groups": [
+                {
+                    "questions": [
+                        "What percentage of your configuration management is done manually?",
+"What percentage of your testing suite is done manually?",
+"What percentage of your deployment is done manually?",
+"What percentage of your change approval processes are done manually?"
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Working In Small Batches",
+            "question_groups": [
+                {
+                    "questions": [
+                        "Our features are sliced in a way that lend themselves to frequent production releases.",
+"Our features are decomposed in a way that allows a developer to complete the work in a week or less.",
+"Our work is decomposed into features that allow for minimum viable products (MVPs) and rapid development, rathr than complex and lengthy processes (an MVP has just enough features to get validated learning about the product & its continued development)."
+                ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Climate For Learning",
+            "question_groups": [
+                {
+                    "questions": [
+                        "Learning is the key to improvement.",
+"Once we quit learning we endanger our future.",
+"Learning is viewed as an investment, not an expense."
+
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Loosely Coupled Architecture",
+            "question_groups": [
+                {
+                    "questions": [
+                        "To complete my own work, I don’t need to communicate and coordinate with people outside my team.",
+"On my team, we can make large-scale changes to the design of our system without creating significant work for other teams.",
+"On my team, we can make large-scale changes to the design of our system without depending on other teams to make changes in their systems.",
+"My team can deploy and release our product or service on demand, independently of other services it depends upon.",
+"We can do most of our testing on demand, without requiring an integrated test environment."
+
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Monitoring & Observability",
+            "question_groups": [
+                {
+                    "questions": [
+                        "My team has a tech solution in place to report on the overall health of systems (e.g, Are my systems functioning? Do my systems have sufficient resources available?).",
+"My team has a tech solution in place to report on system state as experienced by customers (e.g., \"do my customers know if my system is down and have a bad experience?\").",
+"My team has a tech solution in place for monitoring key business and systems metrics.",
+"My team has tooling in place that can help us with understanding and debugging our systems in production.",
+"My team has tooling in place that provides the ability to find information about things we did not previously know (e.g., we can identify \"unknown unknowns\").",
+"My team has access to tools and data which help us trace, understand, and diagnose infrastructure problems in our production environment, including interactions between services."
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Organizational Performance",
+            "question_groups": [
+                {
+                    "description": "For each of the following performance indicators, how well did your organization meet its goals over the past year?",
+                    "questions": [
+                        "Your organization's overall performance",
+"Your organization's overall profitability",
+"Relative market share for primary products",
+"Increased number of customers",
+"Quantity of products or services",
+"Operating efficiency",
+"Customer satisfaction",
+"Quality of products or services provided",
+"Achieving our organizational and mission goals",
+"Other measures that demonstrate to external parties that your organization achieve intended results"
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Open Source Software",
+            "question_groups": [
+                {
+                    "questions": [
+"My team makes extensive use of open source components, libraries, and platforms.",
+"My team plans to expand our use of open source software.",
+"My organization has formal initiatives in place to expand our use of open source software."
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Outsourcing",
+            "question_groups": [
+                {
+                    "questions": [
+                        "My organization outsources all or a significant portion of our application development.",
+"My organization outsources all or a significant portion of our IT Operations work.",
+"My organization outsources all or a significant portion of our testing and QA."
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Platform As A Service",
+            "question_groups": [
+                {
+                    "questions": [
+                        "Most of my work takes place on a platform in the cloud (PaaS).",
+"My team uses libraries and infrastructure defined by the PaaS as the basis for our applications.",
+"My team can deploy our application into the cloud on demand using a single step.",
+"My team can perform self-service changes on demand for databases and other services required by our application which is using the PaaS."
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Retrospectives",
+            "question_groups": [
+                {
+                    "questions": [
+                        "My team consistently holds post-mortems (also known as learning reviews or retrospectives) following major outages.",
+"My team conducts post-mortems to learn from our mistakes and failures and improve how we work.",
+"My organization regularly takes the lessons learned from our post-mortems and implements changes to tooling, processes, or procedures to improve how we work."
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Security",
+            "question_groups": [
+                {
+                    "questions": [
+                        "Security review is conducted for all major features on the applications I work on.",
+"The security review process does not slow down the development process for the applications that I work on.",
+"Information Security has input in the design of the applications that I work on.",
+"Tests to help us discover security problems are run throughout the software development process.",
+"Our information security team works with us throughout the development process.",
+"Security reviews are performed throughout the development process.",
+"Information Security has made easy-to-consume pre-approved libraries, packages and toolchains and processes for developers and IT operations."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Software Delivery Performance",
+            "question_groups": [
+                {
+                    "description": "For the primary application or service you work on...",
+                    "questions": [
+                        "What is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don't know or not applicable",
+                        "How often does your organization deploy code to production or release it to end users?|Fewer than once per six months,Between once per month and once every six months,Between once per week and once per month,Between once per day and once per week,Between once per hour and once per day,On demand (multiple deploys per day),I don't know or not applicable",
+                        "How long does it generally take to restore service when a service incident or a defect that impacts users occurs (e.g., unplanned outage, service impairment)?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don't know or not applicable",
+                        "What percentage of changes to production or released to users result in degraded service (e.g., lead to service impairment or service outage) and subsequently require remediation (e.g., require a hotfix, rollback, fix forward, patch)?|0%-15%,16%-30%,31%-45%,46%-60%,61%-75%,76%-100%,I don't know / NA"
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Team Experimentation",
+            "question_groups": [
+                {
+                    "questions": [
+                        "We can work on new ideas without the permission of people outside the team.",
+"We discuss specifications or stories and make changes to them as part of the development process.",
+"We write specifications or stories as part of the development process.",
+"We can make changes to specifications or stories without the permission of people outside the team."
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Trunk Based Development",
+            "question_groups": [
+                {
+                    "questions": [
+                        "All developers on my team push code to trunk/master at least daily.",
+"There are fewer than three active branches on the application's code repo.",
+"Our application team never has code lock periods when no one can check in code or do pull requests due to merging conflicts.",
+"Branches and forks have very short lifetimes (less than a day) before being merged to master."
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Version Control",
+            "question_groups": [
+                {
+                    "questions": [
+                        "Our application code is in a version control system.",
+"Our system configurations are in a version control system.",
+"Our application configurations are in a version control system.",
+"Our scripts for automating build and configuration are in a version control system."
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Generative Culture",
+            "question_groups": [
+                {
+                    "questions": [
+                        "Information is actively sought.",
+"Messengers are not punished when they deliver news of failures or other bad news.",
+"Responsibilities are shared.",
+"Cross-functional collaboration is encouraged and rewarded.",
+"New ideas are welcomed.",
+"Failures are treated primarily as opportunities to improve the system."
+                    ]
+                }
+            ]
+        }
+        ,{
+            "heading": "Work In Process (WIP) Limits",
+            "question_groups": [
+                {
+                    "questions": [
+                        "As a team, we are good at limiting our WIP.",
+"We strive to limit our WIP, and have processes in place to do so.",
+"Our WIP limits make obstacles to higher flow visible.",
+"Our WIP limits lead to process improvement.",
+"WIP limits are used as a way to improve our throughput."
                     ]
                 }
             ]
