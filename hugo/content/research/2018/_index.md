@@ -9,4 +9,4 @@ tab_order: "0"
 tab_title: "Overview"
 ---
 
-2018 saw the release of the first Accelerate State of DevOps Report independently published by DORA. [Read the 2018 report here]({{< relref "dora-report" >}})
+2018 saw the release of the first Accelerate State of DevOps Report independently published by DORA. [Read the 2018 report here]({{< relref "dora-report/index" >}}).
