@@ -65,7 +65,6 @@
 "It is easy for developers to fix acceptance test failures.",
 "Developers use their own development environment to reproduce acceptance failures.",
 "Automated tests are seamlessly integrated into our software delivery toolchain.",
-"Automated tests are seamlessly integrated into our software delivery toolchain.",
 "We have the test data necessary to run our tests easily at every step.",
 "Testers work alongside developers throughout the software development and delivery process.",
 "Manual test activities such as exploratory testing, usability testing, and acceptance testing are performed continuously throughout the delivery process.",
