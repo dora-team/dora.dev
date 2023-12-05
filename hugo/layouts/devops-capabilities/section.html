@@ -3,7 +3,7 @@
     {{- partial "partials/link_styles" "scss/devops-capabilities.scss" -}}
 
     {{ range (slice "technical" "process" "cultural") }}
-        <h2>{{ . | title }} capabilities</h2>
+        <h2 id="{{ . }}">{{ . | title }} capabilities</h2>
         <section class="capabilitiesGrid">
             {{ $capabilities := where site.RegularPages "Params.category" . }}
             {{ range ($capabilities.ByParam "title") }}
