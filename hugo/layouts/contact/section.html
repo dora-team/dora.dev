@@ -36,6 +36,7 @@
                         <option value="Errata">Report an error in a publication</option>
                         <option value="(Other)">General Inquiry</option>
                     </select>
+                    <div x-show="inquiry_type=='Errata'"><em style="font-size:.75rem;font-weight:300">TIP: before reporting an error, check to see if it's already in <a href='{{ relref . "/publications/errata"}}'>reported errata</a></em></div>
                 </div>
                 <label x-show="inquiry_type=='Errata'">Publication:</label>
                 <div x-show="inquiry_type=='Errata'">
