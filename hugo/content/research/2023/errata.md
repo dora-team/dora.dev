@@ -14,7 +14,7 @@ This page lists errors and corrections to the 2023 Accelerate State of DevOps Re
 
 **p.1** On the cover, the Sleuth logo is cut off _[Corrected in `v.2023-12`]_
 
-**p.9** The Knowledge sharing stats are incorrect (Mean: 3.7 IQR: 1.7 - 5 Median: 7.9). They should be as follows: Mean = 6.4 IQR = 5.0 - 8.3 Median = 6.7 _[Corrected in `v.2023-12`]_
+**p.9** The Knowledge sharing stats are incorrect (Mean: 3.7; IQR: 1.7-5; Median: 7.9). They should be as follows: Mean: 6.4; IQR: 5.0-8.3; Median: 6.7 _[Corrected in `v.2023-12`]_
 
 **p.25** The footnote description of "Mediation" is unspecific and would benefit from an example. It should be changed to: "Mediation is a test that evaluates possible mechanisms or pathways underlying an effect. You can say, for example, 'the data supports the hypothesis that the effect of trunk-based development on software delivery performance occurs through continuous deployment (the mediator)'. Complete mediation is when the entire effect looks to be explained through the mediator. Partial mediation is when only some of the effect is explained through the mediator." _[Corrected in `v.2023-12`]_
 
