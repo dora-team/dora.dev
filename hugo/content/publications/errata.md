@@ -6,10 +6,12 @@ draft: false
 
 # DORA Publications Errata
 
+### <a href='{{<ref "/research/2023/errata">}}'>Accelerate State of DevOps 2023</a>
+
+-----
+
 <div style="text-align:center; margin-top:2em;">
 Have you found an error in a publication by DORA? 
 
 <a href='{{< relref "/contact/" >}}?inquiry_type=Errata' class='button'>Submit a change or correction</a>
-
-Thank you!
 </div>
