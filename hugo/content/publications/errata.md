@@ -6,7 +6,7 @@ draft: false
 
 # DORA Publications Errata
 
-### <a href='{{<ref "/research/2023/errata">}}'>Accelerate State of DevOps 2023</a>
+### <a href='{{<relref "/research/2023/errata">}}'>Accelerate State of DevOps 2023</a>
 
 -----
 
