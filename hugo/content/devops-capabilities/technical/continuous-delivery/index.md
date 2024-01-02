@@ -133,7 +133,7 @@ following continuous delivery practices:
     demonstration process for
     applications, using pre-approved security libraries and packages, and
     testing security features as a part of the automated test suite.
--   [A loosely coupled architecture](/devops-capabilities/technical/architecture/):
+-   [A loosely coupled architecture](/devops-capabilities/technical/loosely-coupled-architecture/):
     Architecture that lets teams test and deploy their applications on demand,
     without requiring orchestration with other services. Having a loosely
     coupled architecture allows your teams to work independently without

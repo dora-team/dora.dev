@@ -10,7 +10,7 @@ aliases:
 core: true
 headline: "Find out how to manage cloud infrastructure effectively so you can achieve higher levels of agility, availability, and cost visibility."
 summary: |
-    Infrastructure flexibility is often a motivation for organizations to adopt cloud computing. However, the use of a cloud provider alone may not be sufficient to achieve the desired agility. DORA's research uses [a definition](https://csrc.nist.gov/publications/detail/sp/800-145/final) from The USA's National Institute of Standards and Technology (NIST) to establish the five essential characteristics that enable cloud computing to provide its full potential benefit to an organization:
+    Infrastructure flexibility is often a motivation for organizations to adopt cloud computing. However, the use of a cloud provider alone may not be sufficient to achieve the desired agility. DORA's research uses [a definition](https://csrc.nist.gov/pubs/sp/800/145/final) from The USA's National Institute of Standards and Technology (NIST) to establish the five essential characteristics that enable cloud computing to provide its full potential benefit to an organization:
 
     - On-demand self-service
     - Broad network access
@@ -22,7 +22,7 @@ summary: |
 Many organizations seek flexible technical infrastructure, often in the form of cloud computing. But there's more to it than
 buying your infrastructure from a cloud provider. The US National Institute of
 Standards and Technologies (NIST)
-[defines](https://csrc.nist.gov/publications/detail/sp/800-145/final)
+[defines](https://csrc.nist.gov/pubs/sp/800/145/final)
 five essential characteristics of cloud computing:
 
 -   **On demand self-service:** Consumers can provision computing resources
