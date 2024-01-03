@@ -61,9 +61,12 @@ bannerSubtitle: "Findings from DORA's research program are made available throug
   (in partnership with Puppet)
   [Read PDF](/research/2017-and-earlier/2014-state-of-devops-report.pdf)
 
-## Additional Publication
+## Additional Publications
 <!-- add publications as list items, using markdown syntax (list items are designated with a leading dash) -->
 
+- [![ROI of DevOps Whitepaper](img/whitepaper-roi.png)](https://bit.ly/roi-of-devops)
+  **[The ROI of DevOps Transformation](https://bit.ly/roi-of-devops)**
+  [Get the Whitepaper](https://bit.ly/roi-of-devops)
 - [![DevOps Awards Winners 2021](img/devops_awards_fullebook.png)](https://services.google.com/fh/files/misc/devops_awards_fullebook_final.pdf)
   **[DevOps Awards Winners 2021](https://services.google.com/fh/files/misc/devops_awards_fullebook_final.pdf)**
   [Read the ebook](https://services.google.com/fh/files/misc/devops_awards_fullebook_final.pdf)
