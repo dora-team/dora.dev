@@ -1,0 +1,1 @@
+This folder contains the new Quick Check implementation for 2024 (reflecting 2023 data). It's a Single Page Application (SPA), using the [svelte](svelte.dev) framework. It's built outside the flow of the main Hugo site implementation, and then embedded as a static asset into the site content.
