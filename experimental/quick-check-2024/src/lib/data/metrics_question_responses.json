@@ -1,0 +1,26 @@
+{
+    "leadtime": {
+        "1": "More than six months",
+        "2": "One to six months",
+        "3": "One week to one month",
+        "4": "One day to one week",
+        "5": "Less than one day",
+        "6": "Less than one hour"
+    },
+    "deployfreq": {
+        "1": "Fewer than once per six months",
+        "2": "Between once per month and once every six months",
+        "3": "Between once per week and once per month",
+        "4": "Between once per day and once per week",
+        "5": "Between once per hour and once per day day",
+        "6": "On demand (multiple deploys per day)"
+    },
+    "failurerecovery": {
+        "1": "More than six months",
+        "2": "One to six months",
+        "3": "One week to one month",
+        "4": "One day to one week",
+        "5": "Less than one day",
+        "6": "Less than one hour"
+    }
+}
