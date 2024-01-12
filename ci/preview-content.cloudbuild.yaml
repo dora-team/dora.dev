@@ -8,10 +8,31 @@ steps:
       cp -v ci/firebase-config.${PROJECT_ID}.js /workspace/hugo/static/js/firebase-config.js
 
   - id: 'Hugo Build PREVIEW_CHANNEL (w/ Drafts) Site'
-    name: gcr.io/$PROJECT_ID/hugo
+    name: 'ubuntu'
     script: |
+      # Install utils
+      apt update && apt upgrade
+      apt install wget -y
+
+      # Install Hugo
+      export HUGO_VERSION=0.114.1
+      export HUGO_TYPE=_extended
+
+      export HUGO_ID=hugo${HUGO_TYPE}_${HUGO_VERSION}
+
+      wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_ID}_Linux-amd64.tar.gz -O /tmp/hugo.tar.gz && \
+      mkdir -p /workspace/tools && \
+      tar -xf /tmp/hugo.tar.gz -C /workspace/tools && \
+      ls -la /workspace/tools
+
       # Build draft site
-      hugo -v -s ./hugo -d /workspace/hugo/public --debug -D
+      /workspace/tools/hugo -v -s ./hugo -d /workspace/hugo/public --debug -D
+
+  # - id: 'Hugo Build PREVIEW_CHANNEL (w/ Drafts) Site'
+  #   name: gcr.io/$PROJECT_ID/hugo
+  #   script: |
+  #     # Build draft site
+  #     hugo -v -s ./hugo -d /workspace/hugo/public --debug -D
 
   - id: 'Firebase deploy PREVIEW_CHANNEL (w/ Drafts) Hosting'
     name: gcr.io/$PROJECT_ID/firebase
