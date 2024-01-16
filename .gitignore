@@ -30,4 +30,9 @@ ui-debug.log
 
 #exclude secrets
 secrets/*
+
+# exclude svelte build outputs
 experimental/quick-check-2023/dist/
+
+# exclude vite config
+**/.vite/**
