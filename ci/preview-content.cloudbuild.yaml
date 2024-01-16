@@ -7,57 +7,56 @@ steps:
       # Copy correct Firestore config per project
       cp -v ci/firebase-config.${PROJECT_ID}.js /workspace/hugo/static/js/firebase-config.js
 
-  - id: 'Hugo Build PREVIEW_CHANNEL (w/ Drafts) Site'
-    name: gcr.io/$PROJECT_ID/hugo
+  - id: 'Hugo Build'
+    name: 'ubuntu'
     script: |
-      # Build draft site
-      hugo -v -s ./hugo -d /workspace/hugo/public --debug -D
+      #! /usr/bin/env bash
 
-  - id: 'Firebase deploy PREVIEW_CHANNEL (w/ Drafts) Hosting'
+      apt update && apt install wget -y
+
+      # install hugo "extended"
+      HUGO_VERSION=0.114.1
+      wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb -O /tmp/hugo.deb
+
+      apt install /tmp/hugo.deb
+
+      # Build site w/ drafts
+      hugo --source=./hugo --destination=/workspace/hugo/public_drafts_on --logLevel=debug --buildDrafts
+
+      # Build site w/o drafts
+      hugo --source=./hugo --destination=/workspace/hugo/public_drafts_off --logLevel=debug
+
+  - id: 'Firebase Deploy'
     name: gcr.io/$PROJECT_ID/firebase
     env:
       - '_PR_NUMBER=$_PR_NUMBER'
       - 'PROJECT_ID=$PROJECT_ID'
     script: |
-      PREVIEW_CHANNEL="PR$_PR_NUMBER-DRAFT"
-      firebase hosting:channel:deploy ${PREVIEW_CHANNEL} --project=${PROJECT_ID}
-
-      # get the url of this preview channel
-      # (it returns in format `i  hosting:channel: https://<url>`)
-      CHANNEL_DATA="$(firebase hosting:channel:open ${PREVIEW_CHANNEL} --project=${PROJECT_ID})"
-
-      # Add header for communications clarity
+      echo "Using firebase version: "$(firebase --version)
+      
+      # Create text file to be posted to PR message
       echo "Cloud Build time: $(date)" > /workspace/gh-pr-comment-message.txt
 
-      # extract the URL from the channel data and save it to /workspace
-      echo "Preview this PR [including DRAFT content] at ${CHANNEL_DATA##* }" >> /workspace/gh-pr-comment-message.txt
-      echo ${CHANNEL_DATA##* }
+      for DRAFTS_MODE in "on" "off"; do
+        PREVIEW_CHANNEL="pr${_PR_NUMBER}_drafts-${DRAFTS_MODE}"
+        
+        # move draft version of site into "public" folder
+        mkdir -p /workspace/hugo/public
+        rm -rf /workspace/hugo/public/*
+        cp -R /workspace/hugo/public_drafts_${DRAFTS_MODE}/* /workspace/hugo/public/
 
-  - id: 'Hugo Build PREVIEW_CHANNEL (w/o Drafts) Site'
-    name: gcr.io/$PROJECT_ID/hugo
-    script: |
-      # Build published site
-      rm -rf /workspace/hugo/public
-      hugo -v -s ./hugo -d /workspace/hugo/public --debug
+        # deploy
+        firebase hosting:channel:deploy ${PREVIEW_CHANNEL} --project=${PROJECT_ID}
 
-  - id: 'Firebase deploy PREVIEW_CHANNEL (w/o Drafts) Hosting'
-    name: gcr.io/$PROJECT_ID/firebase
-    env:
-      - '_PR_NUMBER=$_PR_NUMBER'
-      - 'PROJECT_ID=$PROJECT_ID'
-      - 'REPO_FULL_NAME=${REPO_FULL_NAME}'
-    script: |
-      PREVIEW_CHANNEL="PR$_PR_NUMBER"
-      firebase hosting:channel:deploy ${PREVIEW_CHANNEL} --project=${PROJECT_ID}
+        # get the url of this preview channel
+        # (it returns in format `i  hosting:channel: https://<url>`)
+        CHANNEL_DATA="$(firebase hosting:channel:open ${PREVIEW_CHANNEL} --project=${PROJECT_ID})"
 
-      # get the url of this preview channel .
-      # (it returns in format `i  hosting:channel: https://<url>`)
-      CHANNEL_DATA="$(firebase hosting:channel:open $PREVIEW_CHANNEL --project=${PROJECT_ID})"
-      echo "CHANNEL_DATA: $CHANNEL_DATA"
+        # extract the URL from the channel data and save it to /workspace
+        echo "Preview this PR [with drafts ${DRAFTS_MODE}] at ${CHANNEL_DATA##* }" >> /workspace/gh-pr-comment-message.txt
+      done
 
-      # extract the URL from the channel data and save it to /workspace
-      echo "Preview this PR [published content only] at ${CHANNEL_DATA##* }" >> /workspace/gh-pr-comment-message.txt
-      echo ${CHANNEL_DATA##* }
+      cat /workspace/gh-pr-comment-message.txt
 
   - id: 'Write PR URL back to github'
     name: 'bash'
