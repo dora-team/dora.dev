@@ -1,5 +1,5 @@
 <script>
-    import Performancegraph from "./Performancegraph.2.svelte";
+    import PerformanceGraph from "./PerformanceGraph.svelte";
     import { recode_numeric_range } from "./utils.js";
     import metrics_question_responses from "./data/metrics_question_responses.json";
     import industry_metrics from "./data/industry_metrics.json";
@@ -84,7 +84,7 @@
         <span class="performance-average">{performance_average}</span>
     </aside>
     <div class="graph">
-        <Performancegraph
+        <PerformanceGraph
             user_score={performance_average}
             industry_score={selected_industry_metrics.performance_average.mean}
             std={selected_industry_metrics.performance_average.std}
@@ -97,7 +97,7 @@
         {metrics_question_responses.leadtime[metrics.leadtime]}
     </aside>
     <div class="graph">
-        <Performancegraph
+        <PerformanceGraph
             user_score={Number(metrics_recoded.leadtime.toFixed(1))}
             industry_score={selected_industry_metrics.leadtime.mean}
             std={selected_industry_metrics.leadtime.std}
@@ -109,7 +109,7 @@
         {metrics_question_responses.deployfreq[metrics.deployfreq]}
     </aside>
     <div class="graph">
-        <Performancegraph
+        <PerformanceGraph
             user_score={Number(metrics_recoded.deployfreq.toFixed(1))}
             industry_score={selected_industry_metrics.deployfreq.mean}
             std={selected_industry_metrics.deployfreq.std}
@@ -128,7 +128,7 @@
         {metrics.changefailure}% of changes fail
     </aside>
     <div class="graph">
-        <Performancegraph
+        <PerformanceGraph
             user_score={Number(metrics_recoded.changefailure.toFixed(1))}
             industry_score={selected_industry_metrics.changefailure.mean}
             std={selected_industry_metrics.changefailure.std}
@@ -152,7 +152,7 @@
         {metrics_question_responses.failurerecovery[metrics.failurerecovery]}
     </aside>
     <div class="graph">
-        <Performancegraph
+        <PerformanceGraph
             user_score={Number(metrics_recoded.failurerecovery.toFixed(1))}
             industry_score={selected_industry_metrics.failurerecovery.mean}
             std={selected_industry_metrics.failurerecovery.std}
