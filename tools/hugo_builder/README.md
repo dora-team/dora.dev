@@ -1,2 +1,0 @@
-This folder contains a Dockerfile which creates a container with the Hugo binary.
-To build and push to Container Registry (so it can be used by Cloud Build, run `gcloud builds submit --tag=gcr.io/<project_id>/hugo`)
