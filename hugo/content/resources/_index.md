@@ -16,7 +16,7 @@ bannerSubtitle: "Here are some of the many resources available to help you under
         <img src="img/fourkeys.png" width="120">
     </a>
     <aside>
-    <h4>The Four Keys: Instrument your Software Delivery Performance</h4>
+    <h4>The Four Keys: Instrument your Software Delivery Performance.</h4>
     <p align="justify">The Four Keys is an open source project which provides a bootstrapper to create a metrics aggregator and dashboard for the four key DORA software delivery metrics (Deployment Frequency, Lead Time for Changes, Time to Restore Services, Change Failure Rate). Visit <a href="https://bit.ly/dora-fourkeys" target="_blank">bit.ly/dora-fourkeys </a>to learn how to install it and connect it to data sources including your version control and CI/CD systems.</p>
     </aside>
     </article>
