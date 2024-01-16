@@ -5,6 +5,7 @@
     import MetricsQuestions from "./lib/MetricsQuestions.svelte";
     import Debug from "./lib/Debug.svelte";
     import YourPerformance from "./lib/YourPerformance.svelte";
+    import HelpMePrioritize from "./lib/HelpMePrioritize.svelte";
 
     let metrics = {
         leadtime: -1,
@@ -47,6 +48,7 @@
         <MetricsQuestions bind:metrics bind:step />
     {:else if step === 2}
         <YourPerformance {metrics} bind:industry />
+        <HelpMePrioritize />
     {/if}
 </main>
 
