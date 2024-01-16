@@ -7,12 +7,14 @@ steps:
       # Copy correct Firestore config per project
       cp -v ci/firebase-config.${PROJECT_ID}.js /workspace/hugo/static/js/firebase-config.js
 
-  - id: 'Hugo Build Prod'
-    name: 'ubuntu'
+  - id: 'Svelte / Hugo Build Prod'
+    name: 'node'
     script: |
       #! /usr/bin/env bash
 
-      apt update && apt install wget -y
+      # Build Quick Check and move generated files into position
+      echo "Using Node version $(node --version)"
+      ./experimental/quick-check-2023/build-quick-check.sh
 
       # install hugo "extended"
       HUGO_VERSION=0.114.1

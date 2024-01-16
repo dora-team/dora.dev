@@ -30,3 +30,4 @@ ui-debug.log
 
 #exclude secrets
 secrets/*
+experimental/quick-check-2023/dist/
