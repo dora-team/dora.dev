@@ -2,9 +2,10 @@
     // @ts-nocheck
 
     import { onMount } from "svelte";
-    import Metricsquestions from "./lib/Metricsquestions.svelte";
+    import MetricsQuestions from "./lib/MetricsQuestions.svelte";
     import Debug from "./lib/Debug.svelte";
-    import Yourperformance from "./lib/Yourperformance.svelte";
+    import YourPerformance from "./lib/YourPerformance.svelte";
+    import HelpMePrioritize from "./lib/HelpMePrioritize.svelte";
 
     let metrics = {
         leadtime: -1,
@@ -44,9 +45,10 @@
     <Debug {step} {metrics} {industry} />
 
     {#if step === 1}
-        <Metricsquestions bind:metrics bind:step />
+        <MetricsQuestions bind:metrics bind:step />
     {:else if step === 2}
-        <Yourperformance {metrics} bind:industry />
+        <YourPerformance {metrics} bind:industry />
+        <HelpMePrioritize />
     {/if}
 </main>
 
