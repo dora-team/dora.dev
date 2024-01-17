@@ -73,9 +73,9 @@
     <h1>Your software delivery performance</h1>
     Compare to industry benchmark:
     <select bind:value={industry}>
-        <option value="all">All industries</option>
-        <option value="media_entertainment">Media & Entertainment</option>
-        <option value="all">(other industries TODO)</option>
+        {#each Object.entries(industry_metrics) as [industry, industry_data]}
+            <option value="{industry}">{industry_data['name']}</option>
+        {/each}
     </select>
 </div>
 <section class="performance-graphs">
@@ -195,12 +195,7 @@
                 font-size: 2.75rem;
                 padding: 0.25rem 1.5rem;
                 border-radius: 1rem;
-                margin-top: 0.25rem;
-                margin-bottom: 1.5rem;
             }
-        }
-        .graph {
-            padding-top: 3rem;
         }
     }
 

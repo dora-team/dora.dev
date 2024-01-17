@@ -1,5 +1,5 @@
 <script>
-    export let metrics, step;
+    export let metrics;
     import metrics_question_responses from "./data/metrics_question_responses.json";
 </script>
 
