@@ -73,9 +73,9 @@
     <h1>Your software delivery performance</h1>
     Compare to industry benchmark:
     <select bind:value={industry}>
-        <option value="all">All industries</option>
-        <option value="media_entertainment">Media & Entertainment</option>
-        <option value="all">(other industries TODO)</option>
+        {#each Object.entries(industry_metrics) as [industry, industry_data]}
+            <option value="{industry}">{industry_data['name']}</option>
+        {/each}
     </select>
 </div>
 <section class="performance-graphs">
