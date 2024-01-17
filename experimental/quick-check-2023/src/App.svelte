@@ -66,4 +66,10 @@
         --metric-border: white;
         --user-score-bg: white;
     }
+
+    /* override page-level styles for padding b/c it causes graphs to be mispositioned */
+    :global(body main) {
+        padding-left:0;
+        padding-right:0;
+    }
 </style>

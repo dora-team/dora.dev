@@ -169,7 +169,7 @@
 </section>
 <section class="legend">
     <div>
-        2023 {industry_metrics[industry]["name"]} industry baseline: 
+        2023 Industry baseline ({industry_metrics[industry]["name"]}): 
         <span class="industry">&nbsp;</span> Average
         <span class="std">&nbsp;</span> Standard deviation
     </div>
