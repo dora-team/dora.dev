@@ -42,7 +42,7 @@
 </script>
 
 <main>
-    <Debug {step} {metrics} {industry} />
+    <Debug bind:step bind:metrics bind:industry />
 
     {#if step === 1}
         <MetricsQuestions bind:metrics bind:step />
@@ -53,7 +53,17 @@
 </main>
 
 <style>
-    :global(:root){
-       --dora-blue: #005D8D;
+    :global(:root) {
+        --dora-blue: #005d8d;
+        --performance-spectrum: linear-gradient(
+            90deg,
+            #e62f23 0%,
+            #7a23e6 50%,
+            #1785e6 100%
+        );
+        --std-background: rgba(81, 196, 255, 0.2);
+        --metric-background: #999;
+        --metric-border: white;
+        --user-score-bg: white;
     }
 </style>
