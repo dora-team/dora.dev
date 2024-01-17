@@ -195,12 +195,7 @@
                 font-size: 2.75rem;
                 padding: 0.25rem 1.5rem;
                 border-radius: 1rem;
-                margin-top: 0.25rem;
-                margin-bottom: 1.5rem;
             }
-        }
-        .graph {
-            padding-top: 3rem;
         }
     }
 

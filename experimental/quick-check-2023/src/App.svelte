@@ -55,6 +55,5 @@
 <style>
     :global(:root){
        --dora-blue: #005D8D;
-       --std-background: rgba(81,196,255,.2);
     }
 </style>

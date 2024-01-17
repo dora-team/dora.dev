@@ -6,7 +6,87 @@
     export let featured = false;
 </script>
 
-<div class="graph" class:featured>
+<div class="graph">
+    <div class="axis"></div>
+    <div
+        class="std"
+        style:left="{Math.max((industry_score - std) * 10,0)}%"
+        style:right="{Math.max(100-((industry_score + std) * 10),0)}%"
+    ></div>
+    <div class="metric industry" style:left="{industry_score * 10}%"></div>
+    <div class="metric user" style:left="{user_score * 10}%"></div>
+    <div class="user_score" style:left="{user_score * 10}%">{user_score}</div>
+</div>
+
+<style lang="scss">
+    :root {
+        --std-background: rgba(81, 196, 255, 0.2);
+        --metric-background: #666;
+        --metric-border: white;
+        --user-score-bg: white;
+    }
+
+    .graph {
+        position: relative;
+        width: 100%;
+        height: 6rem;
+
+        .axis {
+            background-color: #eee;
+            height: 0.3rem;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 0.15rem;
+        }
+
+        .std {
+            height: 0.9rem;
+            position: absolute;
+            background-color: var(--std-background);
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease-out;
+            border-radius: 0.2rem;
+        }
+
+        .metric {
+            position: absolute;
+            height: 2.5rem;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 1px;
+            background-color: var(--metric-background);
+            border-left: 1px solid var(--metric-border);
+            border-right: 1px solid var(--metric-border);
+            transition: all 0.3s ease-out;
+
+            &.user {
+                background-color:var(--dora-blue);
+                height:3rem;
+                width:.2rem;
+                border-bottom:1px solid var(--metric-border);
+                border-radius:.2rem;
+            }
+        }
+
+        .user_score {
+            font-size:.85rem;
+            color: var(--dora-blue);
+            position:absolute;
+            top:50%;
+            transform: translateX(-50%) translateY(calc(-50% - 2rem));
+            background-color: var(--user-score-bg);
+            border:2px solid var(--dora-blue);
+            padding:0 .25rem;
+            border-radius: .35rem;
+        }
+    }
+</style>
+
+<!-- <div class="graph" class:featured>
     <div class="graph_contents">
         <div class="metric user" style:left="{user_score * 10}%">
             <div class="value">{user_score}</div>
@@ -191,4 +271,4 @@
             }
         }
     }
-</style>
+</style> -->
