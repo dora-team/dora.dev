@@ -58,11 +58,11 @@ bannerSubtitle: "Here are some of the many resources available to help you under
     <item>
         <h3>Postcard (5x7)</h3>
         <content>
-        <a href="img/DORA_Postcard_2023-10.pdf" target="_blank"><img src="img/DORA_Postcard_2023-10_thumb.png" style="max-width:120px;"></a>
+        <a href="/postcard" target="_blank"><img src="img/DORA_Postcard_2023-10_thumb.png" style="max-width:120px;"></a>
         <p>
             Print this postcard (native size: 5" high by 7" wide) and use it to share DORA with your colleagues and communities.
             <br>
-            <a href="img/DORA_Postcard_2023-10.pdf" target="_blank">DORA Postcard</a>
+            <a href="/postcard" target="_blank">DORA Postcard</a>
         </p>
         </content>
     </item>

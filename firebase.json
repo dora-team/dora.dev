@@ -108,6 +108,11 @@
           "source": "/infographic-:year",
           "destination": "/research/:year/infographic/",
           "type": 302
+        },
+        {
+          "source": "/postcard",
+          "destination": "/resources/img/DORA_Postcard_2023-10.pdf",
+          "type": 302
         }
       ]
     }
