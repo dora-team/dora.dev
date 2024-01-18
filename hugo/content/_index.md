@@ -23,6 +23,18 @@ We've outlined the DevOps practices that drive successful software delivery and 
 Use these findings to accelerate organizational performance while reducing burnout.
 {{< /article >}}
 
+{{< article 
+    columns="2" 
+    title="DevOps Dozen Winner" 
+    url="https://devopsdozen.com/"
+    img-src="/resources/img/best-devops-research.png"
+    img-align="left" 
+    delete_on="2024-03-01" >}}
+DORA's Accelerate State of DevOps Report was selected for *Best DevOps Survey/Analysis/Research*, which recognizes "research that has significantly and positively impacted the DevOps community." 
+
+Congratulations to all of the [2024 DevOps Dozen winners](https://devopsdozen.com/)!
+{{< /article >}}
+
 {{< article columns="1" 
     title="DORA Quick Check" 
     url="/quickcheck/"
@@ -61,17 +73,4 @@ The Winners of the DevOps Awards are implementing DevOps practices to drive orga
     img-align="left"
     img-stroke="true" >}}
 Organizations are constantly grappling to quantify the value of technology transformation. The whitepaper takes an analytical, data-driven approach to forecast the value and justify investment in DevOps transformations.
-{{< /article >}}
-
-{{< article 
-    columns="2" 
-    title="Vote for DORA in the DevOps Dozen Awards" 
-    url="https://www.surveymonkey.com/r/DevOpsDozen2023"
-    cta="Cast your vote"
-    img-src="/resources/img/2023_devopsdozen_vote.png"
-    img-align="left" 
-    delete_on="2024-01-01" >}}
-DORA's Accelerate State of DevOps Report has been nominated for *Best DevOps Survey/Analysis/Research*, which recognizes "research that has significantly and positively impacted the DevOps community." And DORA Advocate Amanda Lewis has been nominated for *Top DevOps Evangelist* in recognition of her leadership in the DORA Community.
-
-Public voting is now open. [**Cast your vote**](https://www.surveymonkey.com/r/DevOpsDozen2023) to share how DORA's research and community have benefited you!
 {{< /article >}}
