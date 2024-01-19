@@ -13,26 +13,26 @@
         changefailure: -1,
         failurerecovery: -1,
     };
-    let performance_average;
+    let performance_average = 0;
 
     const calculate_recoded_metrics = () => {
         // inputs for these metrics range from 1 to 6; recode to a 0-10 scale
         metrics_recoded.leadtime = recode_numeric_range(
-            metrics.leadtime,
+            parseInt(metrics.leadtime),
             1, // input_min
             6, // input_max
             0, // output_min
             10, // output_max
         );
         metrics_recoded.deployfreq = recode_numeric_range(
-            metrics.deployfreq,
+            parseInt(metrics.deployfreq),
             1, // input_min
             6, // input_max
             0, // output_min
             10, // output_max
         );
         metrics_recoded.failurerecovery = recode_numeric_range(
-            metrics.failurerecovery,
+            parseInt(metrics.failurerecovery),
             1, // input_min
             6, // input_max
             0, // output_min
@@ -40,12 +40,14 @@
         );
 
         // inputs for change failure range from 0 to 100, and higher is worse; recode to a 10-0 scale
-        metrics_recoded.changefailure = recode_numeric_range(
-            metrics.changefailure,
-            0, // input_min
-            100, // input_max
-            10, // output_min
-            0, // output_max
+        metrics_recoded.changefailure = parseFloat(
+            recode_numeric_range(
+                parseInt(metrics.changefailure),
+                0, // input_min
+                100, // input_max
+                10, // output_min
+                0, // output_max
+            ),
         );
     };
 
@@ -65,6 +67,7 @@
             metrics_recoded.failurerecovery) /
         4
     ).toFixed(1);
+    $: console.log(performance_average);
     $: selected_industry_metrics = industry_metrics[industry];
     $: setIndustryInURL(industry);
 </script>
@@ -74,14 +77,18 @@
     Compare to industry benchmark:
     <select bind:value={industry}>
         {#each Object.entries(industry_metrics) as [industry, industry_data]}
-            <option value="{industry}">{industry_data['name']}</option>
+            <option value={industry}>{industry_data["name"]}</option>
         {/each}
     </select>
 </div>
 <section class="performance-graphs">
     <aside>
         <b>Your performance</b>
-        <span class="performance-average">{performance_average}</span>
+        <span
+            class="performance-average"
+            style:background-position={`${performance_average * 10}%`}
+            >{performance_average}</span
+        >
     </aside>
     <div class="graph">
         <PerformanceGraph
@@ -98,7 +105,7 @@
     </aside>
     <div class="graph">
         <PerformanceGraph
-            user_score={Number(metrics_recoded.leadtime.toFixed(1))}
+            user_score={metrics_recoded.leadtime}
             industry_score={selected_industry_metrics.leadtime.mean}
             std={selected_industry_metrics.leadtime.std}
             tickmarks={[">6mo", "1-6mo", "1w-1mo", "1d-1w", "<1d", "<1h"]}
@@ -110,7 +117,7 @@
     </aside>
     <div class="graph">
         <PerformanceGraph
-            user_score={Number(metrics_recoded.deployfreq.toFixed(1))}
+            user_score={metrics_recoded.deployfreq}
             industry_score={selected_industry_metrics.deployfreq.mean}
             std={selected_industry_metrics.deployfreq.std}
             tickmarks={[
@@ -129,7 +136,7 @@
     </aside>
     <div class="graph">
         <PerformanceGraph
-            user_score={Number(metrics_recoded.changefailure.toFixed(1))}
+            user_score={metrics_recoded.changefailure.toFixed(1)}
             industry_score={selected_industry_metrics.changefailure.mean}
             std={selected_industry_metrics.changefailure.std}
             tickmarks={[
@@ -153,7 +160,7 @@
     </aside>
     <div class="graph">
         <PerformanceGraph
-            user_score={Number(metrics_recoded.failurerecovery.toFixed(1))}
+            user_score={metrics_recoded.failurerecovery}
             industry_score={selected_industry_metrics.failurerecovery.mean}
             std={selected_industry_metrics.failurerecovery.std}
             tickmarks={[">6mo", "1-6mo", "1w-1mo", "1d-1w", "<1d", "<1h"]}
@@ -161,9 +168,14 @@
     </div>
 </section>
 <section class="legend">
-    <span class="your">&nbsp;</span> Your performance
-    <span class="industry">&nbsp;</span> Industry average
-    <span class="std">&nbsp;</span> Industry standard deviation
+    <div>
+        2023 Industry baseline ({industry_metrics[industry]["name"]}): 
+        <span class="industry">&nbsp;</span> Average
+        <span class="std">&nbsp;</span> Standard deviation
+    </div>
+    <div>
+        <span class="your">&nbsp;</span> Your performance
+    </div>
 </section>
 
 <style lang="scss">
@@ -174,7 +186,7 @@
         display: grid;
         align-items: center;
         grid-template-columns: 20rem calc(100% - 20rem);
-        gap: 1.5rem 1rem;
+        gap: 2rem 1rem;
         margin-top: 2rem;
 
         aside {
@@ -190,7 +202,8 @@
 
             .performance-average {
                 display: inline-block;
-                background-color: var(--dora-blue);
+                background: var(--performance-spectrum);
+                background-size: 100vw;
                 color: white;
                 font-size: 2.75rem;
                 padding: 0.25rem 1.5rem;
@@ -198,32 +211,40 @@
             }
         }
     }
-
     .legend {
-        text-align: center;
-        padding-top: 3rem;
-        font-size: 75%;
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+        font-size: 0.75rem;
+        color:#666;
+        div {
+            margin:0 1.5rem;
+            span {
+                display: inline-block;
+                height: 1.5rem;
+                vertical-align: middle;
+                margin-left:.5rem;
+                margin-right:.25rem;
 
-        span {
-            display: inline-block;
-            width: 4rem;
-            margin-left: 3rem;
-            margin-right: 0.5rem;
-            vertical-align: middle;
+                &.your {
+                    width: 4px;
+                    height: 1rem;
+                    background-color: var(--dora-blue);
+                    border-radius: 2px;
+                }
 
-            &.your {
-                background-color: var(--dora-blue);
-                height:.75em;
-                border-radius: 1em;
-            }
+                &.industry {
+                    background-color: var(--metric-background) !important;
+                    width:1px;
+                    height:1rem;
+                }
 
-            &.industry {
-                background-color: #666;
-                height: 1px;
-            }
-
-            &.std {
-                background-color: var(--std-background);
+                &.std {
+                    background-color: var(--std-background);
+                    width:32px;
+                    height:1rem;
+                    border-radius: .25rem;
+                }
             }
         }
     }

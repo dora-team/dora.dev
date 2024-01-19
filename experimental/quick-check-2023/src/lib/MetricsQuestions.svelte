@@ -12,7 +12,7 @@
     personal information.
 </p>
 
-<form method="get">
+<form method="get" action="">
 <h3>For the primary application or service you work on...</h3>
 <h5>Question 1 of 4</h5>
 <section class="question">
@@ -139,9 +139,7 @@
             metrics["deployfreq"] > -1 &&
             metrics["changefailure"] > -1 &&
             metrics["failurerecovery"] > -1
-        )}
-        on:click={() => {
-        }}>View Results</button
+        )}>View Results</button
     >
 </section>
 </form>

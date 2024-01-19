@@ -18,10 +18,10 @@
         style="background-color:lightgray;width:max-content;padding:1em;font-family:monospace"
         transition:slide
     >
-        leadtime: {metrics["leadtime"]}<br />
-        deployfreq: {metrics["deployfreq"]}<br />
-        changefailure: {metrics["changefailure"]}<br />
-        failurerecovery: {metrics["failurerecovery"]}<br />
+        leadtime: <input type="number" min="1" max="6" value={metrics["leadtime"]} on:change={(e) => {metrics["leadtime"] = e.target.value}}><br />
+        deployfreq: <input type="number" min="1" max="6" value={metrics["deployfreq"]} on:change={(e) => {metrics["deployfreq"] = e.target.value}}><br />
+        changefailure: <input type="number" min="0" max="100" value={metrics["changefailure"]} on:change={(e) => {metrics["changefailure"] = e.target.value}}><br />
+        failurerecovery: <input type="number" min="1" max="6" value={metrics["failurerecovery"]} on:change={(e) => {metrics["failurerecovery"] = e.target.value}}><br />
         step: {step}<br />
         industry: {industry}<br>
         <a href="/">start over</a>
