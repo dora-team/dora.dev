@@ -95,6 +95,16 @@
             "type": 302
         },
         {
+          "source": "/report/roi",
+          "destination": "https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper",
+          "type": 302
+        },
+        {
+          "source": "/roi-report",
+          "destination": "https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper",
+          "type": 302
+        },
+        {
             "source": "/report/:year",
             "destination": "/research/:year/dora-report",
             "type": 302
