@@ -13,7 +13,7 @@
         changefailure: -1,
         failurerecovery: -1,
     };
-    let step = 1;
+    let step = 'input';
     let industry = "all";
 
     onMount(() => {
@@ -30,23 +30,18 @@
             industry = searchParams.get("industry");
         }
 
-        if (
-            metrics.leadtime > -1 &&
-            metrics.deployfreq > -1 &&
-            metrics.changefailure > -1 &&
-            metrics.failurerecovery > -1
-        ) {
-            step = 2;
-        }
+        if (searchParams.has("step")) { step = searchParams.get("step")}
+
+        // TODO: add error handling w/r/t URL params (e.g. if step == "results" but metrics values not present, bounce to input)
     });
 </script>
 
 <main>
     <Debug bind:step bind:metrics bind:industry />
 
-    {#if step === 1}
-        <MetricsQuestions bind:metrics bind:step />
-    {:else if step === 2}
+    {#if step === "input"}
+        <MetricsQuestions bind:metrics />
+    {:else if step === "results"}
         <YourPerformance {metrics} bind:industry />
         <HelpMePrioritize />
     {/if}

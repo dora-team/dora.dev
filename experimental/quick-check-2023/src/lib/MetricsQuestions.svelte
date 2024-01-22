@@ -133,6 +133,7 @@
     </fieldset>
 </section>
 <section class="submit">
+    <input type="hidden" name="step" value="results">
     <button
         disabled={!(
             metrics["leadtime"] > -1 &&
