@@ -64,6 +64,11 @@
                 this.stepValues[3] = url.searchParams.get('step3').split('');
                 currentStep=4;
             }
+
+            // send a `prioritization` event to Generative
+            if (currentStep == 4 && typeof gtag !== 'undefined') {
+                gtag('event', 'quick_check_prioritization');
+            }
         }"
     >
     <div class="prioritize_contents">
