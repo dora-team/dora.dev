@@ -67,9 +67,9 @@
 
             $watch('currentStep', (stepValue) => {
                 if(stepValue == 4) {
-                    console.log('send `prioritization` event to GA (disabled if `gtag` not found [e.g. when developing locally])')
+                    console.log('send `priorities` event to GA (disabled if `gtag` not found [e.g. when developing locally])')
                     if(typeof gtag !== 'undefined') {
-                        gtag('event', 'quick_check_prioritization');
+                        gtag('event', 'priorities');
                     }
                 }
             })
