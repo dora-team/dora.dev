@@ -65,10 +65,14 @@
                 currentStep=4;
             }
 
-            // send a `prioritization` event to Generative
-            if (currentStep == 4 && typeof gtag !== 'undefined') {
-                gtag('event', 'quick_check_prioritization');
-            }
+            $watch('currentStep', (stepValue) => {
+                if(stepValue == 4) {
+                    console.log('send `priorities` event to GA (disabled if `gtag` not found [e.g. when developing locally])')
+                    if(typeof gtag !== 'undefined') {
+                        gtag('event', 'quick_check_priorities');
+                    }
+                }
+            })
         }"
     >
     <div class="prioritize_contents">
