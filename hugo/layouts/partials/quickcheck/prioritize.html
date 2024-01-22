@@ -69,7 +69,7 @@
                 if(stepValue == 4) {
                     console.log('send `priorities` event to GA (disabled if `gtag` not found [e.g. when developing locally])')
                     if(typeof gtag !== 'undefined') {
-                        gtag('event', 'priorities');
+                        gtag('event', 'quick_check_priorities');
                     }
                 }
             })
