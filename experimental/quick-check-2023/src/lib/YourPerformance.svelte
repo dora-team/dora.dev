@@ -73,7 +73,7 @@
 </script>
 
 <div class="heading">
-    <h1>Your software delivery performance</h1>
+    <h1 id="results">Your software delivery performance</h1>
     Compare to industry benchmark:
     <select bind:value={industry}>
         {#each Object.entries(industry_metrics) as [industry, industry_data]}
