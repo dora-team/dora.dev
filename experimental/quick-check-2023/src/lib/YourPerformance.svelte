@@ -67,7 +67,6 @@
             metrics_recoded.failurerecovery) /
         4
     ).toFixed(1);
-    $: console.log(performance_average);
     $: selected_industry_metrics = industry_metrics[industry];
     $: setIndustryInURL(industry);
 </script>

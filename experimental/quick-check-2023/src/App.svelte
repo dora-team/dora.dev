@@ -6,6 +6,7 @@
     import Debug from "./lib/Debug.svelte";
     import YourPerformance from "./lib/YourPerformance.svelte";
     import HelpMePrioritize from "./lib/HelpMePrioritize.svelte";
+    import GoFurther from "./lib/GoFurther.svelte";
 
     let metrics = {
         leadtime: -1,
@@ -37,13 +38,14 @@
 </script>
 
 <main>
-    <Debug bind:step bind:metrics bind:industry />
-
     {#if step === "input"}
         <MetricsQuestions bind:metrics />
     {:else if step === "results"}
         <YourPerformance {metrics} bind:industry />
         <HelpMePrioritize />
+    {/if}
+    {#if step !== "input"}
+        <GoFurther />
     {/if}
 </main>
 
@@ -60,6 +62,7 @@
         --metric-background: #999;
         --metric-border: white;
         --user-score-bg: white;
+        --border-color-medium: #ccc;
     }
 
     /* override page-level styles for padding b/c it causes graphs to be mispositioned */
