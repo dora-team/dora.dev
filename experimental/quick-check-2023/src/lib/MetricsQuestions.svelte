@@ -3,7 +3,7 @@
     import metrics_question_responses from "./data/metrics_question_responses.json";
 </script>
 
-<form method="get" action="">
+<form method="get" action="#results">
     <h3>For the primary application or service you work on...</h3>
     <h5>Question 1 of 4</h5>
     <section class="question">
