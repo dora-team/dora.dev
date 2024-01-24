@@ -1,6 +1,5 @@
 <script>
     import { createEventDispatcher } from "svelte";
-    import Debug from "./Debug.svelte";
 
     export let capability;
     export let capability_count;
@@ -25,7 +24,7 @@
     ];
 
     // has user entered a value for every question of this capability?
-    $: thisCapabilityCompleted = responses.every(x => x > -1)
+    $: thisCapabilityCompleted = responses.every((x) => x > -1);
 </script>
 
 <section>
@@ -56,7 +55,7 @@
                                     type="radio"
                                     name={`${capability.shortname}_${question.number}`}
                                     value={idx + 1}
-                                    bind:group={responses[question.number-1]}
+                                    bind:group={responses[question.number - 1]}
                                 /><span>{option_text}</span></label
                             >
                         </td>
@@ -65,19 +64,25 @@
             {/each}
         </tbody>
     </table>
-</section>
 
-<div class="next">
-    {#if index < capability_count - 1}
-        <button on:click={nextCapability} disabled={!thisCapabilityCompleted}>Next</button>
-    {:else}
-        (SUBMIT)
-    {/if}
-    <br />
-    debug: index = {index}
-    debug: thisCapabilityCompleted = {thisCapabilityCompleted}
-    debug: mode = {import.meta.env.MODE}
-</div>
+    <div class="next">
+        {#if index < capability_count - 1}
+            <button
+                on:click={nextCapability}
+                disabled={!thisCapabilityCompleted}>Next</button
+            >
+        {:else}
+            <button>View Results</button>
+        {/if}
+        <br />
+        <!-- Vite provides environment variables; if running in dev, show some debug -->
+        {#if typeof import.meta.env.MODE != "undefined" && import.meta.env.MODE === "development"}
+            debug: index = {index}<br>
+            debug: thisCapabilityCompleted = {thisCapabilityCompleted}<br>
+            debug: mode = {import.meta.env.MODE}
+        {/if}
+    </div>
+</section>
 
 <style lang="scss">
     table {

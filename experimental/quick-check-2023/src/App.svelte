@@ -3,7 +3,6 @@
 
     import { onMount } from "svelte";
     import MetricsQuestions from "./lib/MetricsQuestions.svelte";
-    import Debug from "./lib/Debug.svelte";
     import YourPerformance from "./lib/YourPerformance.svelte";
     import HelpMePrioritize from "./lib/HelpMePrioritize.svelte";
     import GoFurther from "./lib/GoFurther.svelte";
@@ -39,7 +38,7 @@
 
 <main>
     {#if step === "input"}
-        <MetricsQuestions bind:metrics />
+        <MetricsQuestions bind:metrics bind:step/>
     {:else if step === "results"}
         <YourPerformance {metrics} bind:industry />
         <HelpMePrioritize />
