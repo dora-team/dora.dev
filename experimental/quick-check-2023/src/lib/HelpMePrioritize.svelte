@@ -10,6 +10,8 @@
 
     function nextCapability() {
         index++;
+
+        // move the previous question out of the way, and the next question into place.
         if (index < question_count) {
             if (capabilities[index - 1]) {
                 capabilities[index - 1].style.transform = "translateX(-100%)";
@@ -19,7 +21,7 @@
             capabilities[index].style.opacity = "1";
 
             // resize container to fit its contents
-            capability_container.style.height = "40rem";
+            capability_container.style.height = `${capabilities[index].offsetHeight}px`;
         }
     }
 
