@@ -8,18 +8,12 @@
 
     // initialize user response data with dummy values
     let responses = Array(capability.questions.length).fill(-1);
-    console.log(responses.toString())
+    let thisCapabilityCompleted = false;
 
     const dispatch = createEventDispatcher();
 
     function nextCapability() {
-        console.debug('nextCapability');
         dispatch("nextCapability");
-    }
-
-    // has user entered a value for every question of this capability?
-    function thisCapabilityCompleted() {
-        return responses.every(x => x > -1)
     }
 
     let response_options = [
@@ -29,6 +23,9 @@
         "Agree",
         "Strongly agree",
     ];
+
+    // has user entered a value for every question of this capability?
+    $: thisCapabilityCompleted = responses.every(x => x > -1)
 </script>
 
 <section>
@@ -60,72 +57,12 @@
                                     name={`${capability.shortname}_${question.number}`}
                                     value={idx + 1}
                                     bind:group={responses[question.number-1]}
-                                    on:click={thisCapabilityCompleted}
                                 /><span>{option_text}</span></label
                             >
                         </td>
                     {/each}
                 </tr>
             {/each}
-            <!-- <tr>
-                <td
-                    >Code commits result in an automated build of the software.</td
-                >
-                <td>
-                    <label for="question_1_1_1">
-                        <input
-                            type="radio"
-                            name="question_1_1"
-                            id="question_1_1_1"
-                            value="1"
-                        /> <span>Strongly disagree</span>
-                    </label>
-                </td>
-
-                <td>
-                    <label for="question_1_1_2">
-                        <input
-                            type="radio"
-                            name="question_1_1"
-                            id="question_1_1_2"
-                            value="2"
-                        /> <span>Disagree</span>
-                    </label>
-                </td>
-
-                <td>
-                    <label for="question_1_1_3">
-                        <input
-                            type="radio"
-                            name="question_1_1"
-                            id="question_1_1_3"
-                            value="3"
-                        /> <span>Neither agree nor disagree</span>
-                    </label>
-                </td>
-
-                <td>
-                    <label for="question_1_1_4">
-                        <input
-                            type="radio"
-                            name="question_1_1"
-                            id="question_1_1_4"
-                            value="4"
-                        /> <span>Agree</span>
-                    </label>
-                </td>
-
-                <td>
-                    <label for="question_1_1_5">
-                        <input
-                            type="radio"
-                            name="question_1_1"
-                            id="question_1_1_5"
-                            value="5"
-                        /> <span>Strongly agree</span>
-                    </label>
-                </td>
-            </tr> -->
         </tbody>
     </table>
 </section>
@@ -138,6 +75,8 @@
     {/if}
     <br />
     debug: index = {index}
+    debug: thisCapabilityCompleted = {thisCapabilityCompleted}
+    debug: mode = {import.meta.env.MODE}
 </div>
 
 <style lang="scss">
