@@ -1,6 +1,17 @@
 <script>
+    import { createEventDispatcher } from "svelte";
+    import Debug from "./Debug.svelte";
+
     export let capability;
     export let question_count;
+    export let index;
+
+    const dispatch = createEventDispatcher();
+
+    function nextCapability() {
+        console.debug('nextCapability');
+        dispatch("nextCapability");
+    }
 
     let response_options = [
         "Strongly disagree",
@@ -32,9 +43,14 @@
             {#each capability.questions as question}
                 <tr>
                     <td>{question.question_text}</td>
-                    {#each response_options as option, idx}
+                    {#each response_options as option_text, idx}
                         <td>
-                            <label><input type="radio" value={idx + 1} /></label
+                            <label
+                                ><input
+                                    type="radio"
+                                    name={capability.shortname}
+                                    value={idx + 1}
+                                /><span>{option_text}</span></label
                             >
                         </td>
                     {/each}
@@ -103,6 +119,16 @@
     </table>
 </section>
 
+<div class="next">
+    {#if index < question_count - 1}
+        <button on:click={nextCapability}>Next</button>
+    {:else}
+        (SUBMIT)
+    {/if}
+    <br />
+    debug: index = {index}
+</div>
+
 <style lang="scss">
     table {
         font-weight: 300;
@@ -149,5 +175,8 @@
                 }
             }
         }
+    }
+    div.next {
+        text-align: center;
     }
 </style>

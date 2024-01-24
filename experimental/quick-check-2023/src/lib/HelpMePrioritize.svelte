@@ -5,7 +5,7 @@
 
     let index = -1;
     let question_count = capability_prioritization_questions.length;
-    let capabilities = [];
+    let capability_dom_elements = [];
     let capability_container;
 
     function nextCapability() {
@@ -13,15 +13,15 @@
 
         // move the previous question out of the way, and the next question into place.
         if (index < question_count) {
-            if (capabilities[index - 1]) {
-                capabilities[index - 1].style.transform = "translateX(-100%)";
-                capabilities[index - 1].style.opacity = "0";
+            if (capability_dom_elements[index - 1]) {
+                capability_dom_elements[index - 1].style.transform = "translateX(-100%)";
+                capability_dom_elements[index - 1].style.opacity = "0";
             }
-            capabilities[index].style.transform = "translateX(0%)";
-            capabilities[index].style.opacity = "1";
+            capability_dom_elements[index].style.transform = "translateX(0%)";
+            capability_dom_elements[index].style.opacity = "1";
 
             // resize container to fit its contents
-            capability_container.style.height = `${capabilities[index].offsetHeight}px`;
+            capability_container.style.height = `${capability_dom_elements[index].offsetHeight}px`;
         }
     }
 
@@ -53,22 +53,12 @@
             style:transform={counter == 0
                 ? "translateX(0)"
                 : "translateX(100%)"}
-            bind:this={capabilities[counter]}
+            bind:this={capability_dom_elements[counter]}
         >
-            <Capability {capability} {question_count} />
+            <!-- render each set of capabilty questions; listen for the 'next Capability' event  -->
+            <Capability {capability} {question_count} bind:index on:nextCapability={nextCapability} />
         </div>
     {/each}
-</div>
-
-<!-- TODO: move this into the Capability component so it will always be positioned right below the form -->
-<div class="next">
-    {#if index < question_count - 1}
-        <button on:click={nextCapability}>Next</button>
-    {:else}
-        (SUBMIT)
-    {/if}
-    <br />
-    debug: index = {index}
 </div>
 
 <style lang="scss">
@@ -87,9 +77,5 @@
             opacity: 0;
             transition: all 0.5s ease-in-out;
         }
-    }
-
-    div.next {
-        text-align: center;
     }
 </style>
