@@ -3,14 +3,20 @@
 
     export let question;
     export let this_capability_responses = [0];
-    export let this_capability_recoded_average = 0;
-    $: this_capability_recoded_average = recode_numeric_range(
-        arrayAverage(this_capability_responses),
-        1,
-        5,
-        0,
-        10,
-    );
+    let this_capability_recoded_average = 0;
+
+    let this_capability_recoded_responses = [];
+
+    $: this_capability_responses.forEach((response, _) => {
+        this_capability_recoded_responses = [
+            ...this_capability_recoded_responses,
+            recode_numeric_range(response, 1, 5, 0, 10),
+        ];
+    });
+
+    $: this_capability_recoded_average = this_capability_recoded_responses.length ? arrayAverage(
+        this_capability_recoded_responses,
+    ).toFixed(1): 0;
 </script>
 
 <div class="prioritization_result">
@@ -21,8 +27,13 @@
         >
     </div>
     <div class="capability_score">
-        <div class="score_bar_container">
-            <div class="score_bar_value" style:width={`${this_capability_recoded_average*10}%`} style:background-position={`${this_capability_recoded_average * 10}%`}
+        <div class="score_bar_container" class:zero={this_capability_recoded_average==0}>
+            <div
+                class="score_bar_value"
+                style:width={`${this_capability_recoded_average * 10}%`}
+                style:background-position={`${
+                    this_capability_recoded_average * 10
+                }%`}
             ></div>
         </div>
         <div class="score_text">
@@ -60,10 +71,13 @@
                 overflow: hidden;
                 border: 1px solid var(--border-color-medium);
 
+                &.zero {
+                    border:1px solid red;
+                }
+
                 .score_bar_value {
                     position: absolute;
                     width: 5rem;
-                    min-width:5%; // always show a wee bit in case the score is zero
                     height: 2rem;
                     background: var(--performance-spectrum);
                     background-size: 100vw;
