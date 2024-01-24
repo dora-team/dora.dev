@@ -3,14 +3,23 @@
     import Debug from "./Debug.svelte";
 
     export let capability;
-    export let question_count;
+    export let capability_count;
     export let index;
+
+    // initialize user response data with dummy values
+    let responses = Array(capability.questions.length).fill(-1);
+    console.log(responses.toString())
 
     const dispatch = createEventDispatcher();
 
     function nextCapability() {
         console.debug('nextCapability');
         dispatch("nextCapability");
+    }
+
+    // has user entered a value for every question of this capability?
+    function thisCapabilityCompleted() {
+        return responses.every(x => x > -1)
     }
 
     let response_options = [
@@ -24,7 +33,7 @@
 
 <section>
     <h3>
-        Capability {capability.number} of {question_count}: {capability.capability_name}
+        Capability {capability.number} of {capability_count}: {capability.capability_name}
     </h3>
     <p>
         {capability.description}
@@ -48,8 +57,10 @@
                             <label
                                 ><input
                                     type="radio"
-                                    name={capability.shortname}
+                                    name={`${capability.shortname}_${question.number}`}
                                     value={idx + 1}
+                                    bind:group={responses[question.number-1]}
+                                    on:click={thisCapabilityCompleted}
                                 /><span>{option_text}</span></label
                             >
                         </td>
@@ -120,8 +131,8 @@
 </section>
 
 <div class="next">
-    {#if index < question_count - 1}
-        <button on:click={nextCapability}>Next</button>
+    {#if index < capability_count - 1}
+        <button on:click={nextCapability} disabled={!thisCapabilityCompleted}>Next</button>
     {:else}
         (SUBMIT)
     {/if}

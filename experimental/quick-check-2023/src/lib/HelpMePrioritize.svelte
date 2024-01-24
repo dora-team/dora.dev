@@ -4,7 +4,7 @@
     import capability_prioritization_questions from "./data/capability_prioritization_questions.json";
 
     let index = -1;
-    let question_count = capability_prioritization_questions.length;
+    let capability_count = capability_prioritization_questions.length;
     let capability_dom_elements = [];
     let capability_container;
 
@@ -12,7 +12,7 @@
         index++;
 
         // move the previous question out of the way, and the next question into place.
-        if (index < question_count) {
+        if (index < capability_count) {
             if (capability_dom_elements[index - 1]) {
                 capability_dom_elements[index - 1].style.transform = "translateX(-100%)";
                 capability_dom_elements[index - 1].style.opacity = "0";
@@ -56,7 +56,7 @@
             bind:this={capability_dom_elements[counter]}
         >
             <!-- render each set of capabilty questions; listen for the 'next Capability' event  -->
-            <Capability {capability} {question_count} bind:index on:nextCapability={nextCapability} />
+            <Capability {capability} {capability_count} bind:index on:nextCapability={nextCapability} />
         </div>
     {/each}
 </div>
