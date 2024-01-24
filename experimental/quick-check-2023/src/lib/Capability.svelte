@@ -1,19 +1,43 @@
 <script>
     import { createEventDispatcher } from "svelte";
+    import { onMount } from "svelte";
 
     export let capability;
     export let capability_count;
-    export let index;
+    export let current_capability_index;
 
     // initialize user response data with dummy values
-    let responses = Array(capability.questions.length).fill(-1);
+    // let responses = Array(capability.questions.length).fill(-1);
+    export let this_capability_responses = [];
     let thisCapabilityCompleted = false;
 
     const dispatch = createEventDispatcher();
 
     function nextCapability() {
+        // push data to URL
+        if (typeof window !== "undefined") {
+            const url = new URL(window.location);
+            url.searchParams.set(capability.shortname, this_capability_responses.join(""));
+            if (current_capability_index == capability_count - 1) {
+                url.searchParams.set("step", "priorities");
+            }
+            window.history.replaceState({}, "", url);
+        }
         dispatch("nextCapability");
     }
+
+    onMount(() => {
+        // extract responses from URL and cast as Int
+        if (typeof window !== "undefined") {
+            const url = new URL(window.location);
+            if (url.searchParams.has(capability.shortname)) {
+                this_capability_responses = url.searchParams
+                    .get(capability.shortname)
+                    .split("")
+                    .map((x) => parseInt(x));
+            }
+        }
+    });
 
     let response_options = [
         "Strongly disagree",
@@ -24,7 +48,7 @@
     ];
 
     // has user entered a value for every question of this capability?
-    $: thisCapabilityCompleted = responses.every((x) => x > -1);
+    $: thisCapabilityCompleted = this_capability_responses.every((x) => x > -1);
 </script>
 
 <section>
@@ -55,7 +79,7 @@
                                     type="radio"
                                     name={`${capability.shortname}_${question.number}`}
                                     value={idx + 1}
-                                    bind:group={responses[question.number - 1]}
+                                    bind:group={this_capability_responses[question.number - 1]}
                                 /><span>{option_text}</span></label
                             >
                         </td>
@@ -66,20 +90,17 @@
     </table>
 
     <div class="next">
-        {#if index < capability_count - 1}
-            <button
-                on:click={nextCapability}
-                disabled={!thisCapabilityCompleted}>Next</button
-            >
-        {:else}
-            <button>View Results</button>
-        {/if}
-        <br />
+        <button on:click={nextCapability} disabled={!thisCapabilityCompleted}>
+            {#if current_capability_index < capability_count - 1}Next{:else}View
+                Results{/if}</button
+        >
         <!-- Vite provides environment variables; if running in dev, show some debug -->
         {#if typeof import.meta.env.MODE != "undefined" && import.meta.env.MODE === "development"}
-            debug: index = {index}<br>
-            debug: thisCapabilityCompleted = {thisCapabilityCompleted}<br>
-            debug: mode = {import.meta.env.MODE}
+            <div>
+                debug: index = {current_capability_index}<br />
+                debug: thisCapabilityCompleted = {thisCapabilityCompleted}<br />
+                debug: mode = {import.meta.env.MODE}
+            </div>
         {/if}
     </div>
 </section>
