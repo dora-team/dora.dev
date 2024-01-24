@@ -14,10 +14,14 @@ export const recode_numeric_range = (
     if (input_value >= input_min && input_value <= input_max) {
         return (
             ((input_value - input_min) / (input_max - input_min)) *
-                (output_max - output_min) +
-                output_min
+            (output_max - output_min) +
+            output_min
         );
     } else {
         return null;
     }
 };
+
+export const arrayAverage = (array) => {
+    if (array.length) { return array.reduce((a, b) => parseFloat(a) + parseFloat(b)) / array.length } else { return null }
+}

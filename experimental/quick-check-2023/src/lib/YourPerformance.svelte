@@ -1,4 +1,6 @@
 <script>
+    import { onMount } from "svelte";
+
     import PerformanceGraph from "./PerformanceGraph.svelte";
     import { recode_numeric_range } from "./utils.js";
     import metrics_question_responses from "./data/metrics_question_responses.json";
@@ -59,6 +61,13 @@
         }
     };
 
+    onMount(() => {
+        window.scrollTo({
+            top: document.getElementById("results").offsetTop,
+            behavior: "smooth",
+        });
+    });
+
     $: metrics, calculate_recoded_metrics();
     $: performance_average = (
         (metrics_recoded.leadtime +
@@ -67,7 +76,6 @@
             metrics_recoded.failurerecovery) /
         4
     ).toFixed(1);
-    $: console.log(performance_average);
     $: selected_industry_metrics = industry_metrics[industry];
     $: setIndustryInURL(industry);
 </script>
@@ -169,7 +177,7 @@
 </section>
 <section class="legend">
     <div>
-        2023 Industry baseline ({industry_metrics[industry]["name"]}): 
+        2023 Industry baseline ({industry_metrics[industry]["name"]}):
         <span class="industry">&nbsp;</span> Average
         <span class="std">&nbsp;</span> Standard deviation
     </div>
@@ -216,15 +224,15 @@
         justify-content: center;
         margin-top: 3rem;
         font-size: 0.75rem;
-        color:#666;
+        color: #666;
         div {
-            margin:0 1.5rem;
+            margin: 0 1.5rem;
             span {
                 display: inline-block;
                 height: 1.5rem;
                 vertical-align: middle;
-                margin-left:.5rem;
-                margin-right:.25rem;
+                margin-left: 0.5rem;
+                margin-right: 0.25rem;
 
                 &.your {
                     width: 4px;
@@ -235,15 +243,15 @@
 
                 &.industry {
                     background-color: var(--metric-background) !important;
-                    width:1px;
-                    height:1rem;
+                    width: 1px;
+                    height: 1rem;
                 }
 
                 &.std {
                     background-color: var(--std-background);
-                    width:32px;
-                    height:1rem;
-                    border-radius: .25rem;
+                    width: 32px;
+                    height: 1rem;
+                    border-radius: 0.25rem;
                 }
             }
         }

@@ -1,0 +1,97 @@
+[
+    {
+        "number": 1,
+        "capability_name": "Continuous Integration",
+        "shortname": "ci",
+        "description": "Continuous integration (CI) is the first step towards continuous delivery. This is a development practice where code is regularly checked in, and each check-in triggers a set of quick tests to discover serious regressions, which developers fix immediately. The CI process creates canonical builds and packages that are ultimately deployed and released.",
+        "article_url": "/devops-capabilities/technical/continuous-integration/",
+        "questions": [
+            {
+                "number": 1,
+                "question_text": "Code commits result in an automated build of the software."
+            },
+            {
+                "number": 2,
+                "question_text": "Code commits result in a series of automated tests being run."
+            },
+            {
+                "number": 3,
+                "question_text": "Automated builds and tests are executed successfully every day."
+            },
+            {
+                "number": 4,
+                "question_text": "Current builds are available to testers for exploratory testing."
+            },
+            {
+                "number": 5,
+                "question_text": "Developers get feedback from the acceptance and performance tests every day."
+            }
+        ]
+    },
+    {
+        "number": 2,
+        "capability_name": "Loosely Coupled Architecture",
+        "shortname": "arch",
+        "description": "Architecture that lets teams test and deploy their applications on demand, without requiring orchestration with other services. Having a loosely coupled architecture allows your teams to work independently without relying on other teams for support and services, which in turn enables them to work quickly and deliver value to the organization.",
+        "article_url": "/devops-capabilities/technical/loosely-coupled-architecture/",
+        "questions": [
+            {
+                "number": 1,
+                "question_text": "On my team, we can make large-scale changes to the design of our system without creating significant work for other teams."
+            },
+            {
+                "number": 2,
+                "question_text": "To complete my own work, I don't need to communicate and coordinate with people outside my team."
+            },
+            {
+                "number": 3,
+                "question_text": "My team can deploy and release our product or service on demand, independently of other services it depends upon."
+            },
+            {
+                "number": 4,
+                "question_text": "We can do most of our testing on demand, without requiring an integrated test environment."
+            },
+            {
+                "number": 5,
+                "question_text": "On my team, we can make large-scale changes to the design of our system without depending on other teams to make changes in their systems."
+            },
+            {
+                "number": 6,
+                "question_text": "On my team, we perform deployments during normal business hours with negligible downtime."
+            }
+        ]
+    },
+    {
+        "number": 3,
+        "capability_name": "Generative Organizational Culture",
+        "shortname": "culture",
+        "description": "Westrum's measure of organizational culture is predictive of IT performance, organizational performance, and decreasing burnout. Hallmarks of this measure include good information flow, high cooperation and trust, bridging between teams, and conscious inquiry.",
+        "article_url": "/devops-capabilities/cultural/generative-organizational-culture/",
+        "questions": [
+            {
+                "number": 1,
+                "question_text": "Information is actively sought."
+            },
+            {
+                "number": 2,
+                "question_text": "Messengers are not punished when they deliver news of failures or other bad news."
+            },
+            {
+                "number": 3,
+                "question_text": "Responsibilities are shared."
+            },
+            {
+                "number": 4,
+                "question_text": "Cross-functional collaboration is encouraged and rewarded."
+            },
+            {
+                "number": 5,
+                "question_text": "Failures are treated primarily as opportunities to improve the system."
+            },
+            {
+                "number": 6,
+                "question_text": "New ideas are welcomed."
+            }
+        ]
+    }
+]

@@ -3,9 +3,9 @@
 
     import { onMount } from "svelte";
     import MetricsQuestions from "./lib/MetricsQuestions.svelte";
-    import Debug from "./lib/Debug.svelte";
     import YourPerformance from "./lib/YourPerformance.svelte";
     import HelpMePrioritize from "./lib/HelpMePrioritize.svelte";
+    import GoFurther from "./lib/GoFurther.svelte";
 
     let metrics = {
         leadtime: -1,
@@ -13,8 +13,9 @@
         changefailure: -1,
         failurerecovery: -1,
     };
-    let step = 'input';
+    let step = "input";
     let industry = "all";
+    let current_capability = -1;
 
     onMount(() => {
         const searchParams = new URLSearchParams(window.location.search);
@@ -30,20 +31,27 @@
             industry = searchParams.get("industry");
         }
 
-        if (searchParams.has("step")) { step = searchParams.get("step")}
+        if (searchParams.has("step")) {
+            step = searchParams.get("step");
+            if (step == "priorities") {
+                // initialize at the last capability; then that module's onMount will advance to show the scores
+                current_capability = 2;
+            }
+        }
 
         // TODO: add error handling w/r/t URL params (e.g. if step == "results" but metrics values not present, bounce to input)
     });
 </script>
 
 <main>
-    <Debug bind:step bind:metrics bind:industry />
-
     {#if step === "input"}
-        <MetricsQuestions bind:metrics />
-    {:else if step === "results"}
+        <MetricsQuestions bind:metrics bind:step />
+    {:else if step === "results" || step === "priorities"}
         <YourPerformance {metrics} bind:industry />
-        <HelpMePrioritize />
+        <HelpMePrioritize bind:current_capability />
+    {/if}
+    {#if step !== "input"}
+        <GoFurther />
     {/if}
 </main>
 
@@ -60,11 +68,13 @@
         --metric-background: #999;
         --metric-border: white;
         --user-score-bg: white;
+        --border-color-medium: #ccc;
+        --border-color-light: #eee;
     }
 
     /* override page-level styles for padding b/c it causes graphs to be mispositioned */
     :global(body main) {
-        padding-left:0;
-        padding-right:0;
+        padding-left: 0;
+        padding-right: 0;
     }
 </style>
