@@ -14,7 +14,7 @@ steps:
 
       # Build Quick Check and move generated files into position
       echo "Using Node version $(node --version)"
-      ./experimental/quick-check-2023/build-quick-check.sh
+      ./svelte/quick-check-2023/build-quick-check.sh
 
       # install hugo "extended"
       HUGO_VERSION=0.114.1
