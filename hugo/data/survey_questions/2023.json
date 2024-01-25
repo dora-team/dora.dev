@@ -228,7 +228,7 @@
             "question_groups": [
                 {
                     "questions": [
-                        "Taking everything into consideration, how do you feel about your job as a whole?"
+                        "Taking everything into consideration, how do you feel about your job as a whole?|Extremely satisfied,Satisfied,Slightly satisfied,Neither satisfied nor dissatisfied,Slightly dissatisfied,Dissatisfied,Extremely dissatisfied,I don't know or prefer not to answer"
                     ]
                 }
             ]
