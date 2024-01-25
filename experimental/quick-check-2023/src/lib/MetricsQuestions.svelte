@@ -22,7 +22,6 @@
 
 <!-- TODO: images on this page are inlined from "metrics_image.json" ... we should be able to use Vite to inline them automatically from static image files, which will make the source cleaner -->
 
-<h3>For the primary application or service you work on...</h3>
 <h5>Question 1 of 4</h5>
 <section class="question">
     <aside>
@@ -31,7 +30,7 @@
     </aside>
     <fieldset class="paragraph">
         <legend
-            >What is your lead time for changes (that is, how long does it take
+            >For the primary application or service you work on, what is your lead time for changes (that is, how long does it take
             to go from code committed to code successfully running in
             production)?</legend
         >
@@ -55,7 +54,7 @@
     </aside>
     <fieldset class="paragraph">
         <legend>
-            How often does your organization deploy code to production or
+            For the primary application or service you work on, how often does your organization deploy code to production or
             release it to end users?
         </legend>
         {#each Object.entries(metrics_question_responses["deployfreq"]) as [value, text]}
@@ -81,7 +80,7 @@
     </aside>
     <fieldset class="paragraph">
         <legend>
-            What percentage of changes to production or released to users result
+            For the primary application or service you work on, what percentage of changes to production or released to users result
             in degraded service (for example, lead to service impairment or
             service outage) and subsequently require remediation (for example,
             require a hotfix, rollback, fix forward or patch)?
@@ -129,7 +128,7 @@
     </aside>
     <fieldset class="paragraph">
         <legend>
-            How long does it generally take to restore service after a change to
+            For the primary application or service you work on, how long does it generally take to restore service after a change to
             production or release to users results in degraded service (for
             example, lead to service impairment or service outage) and
             subsequently require remediation (for example, require a hotfix,
