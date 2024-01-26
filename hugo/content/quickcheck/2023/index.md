@@ -11,5 +11,3 @@ bannerHighlightImage: "/img/quickcheck/hero_illustration.svg"
 <script type="module" src="quickcheck.js"></script>
 <link rel="stylesheet" href="quickcheck.css">
 <div id="app"></div>
-
-<div style="text-align:center;padding-top:1.5rem;font-size:85%"><a href="/faq/quickcheck_2023/#whats-new-in-the-2023-quick-check">Quick Check FAQ</a></div>

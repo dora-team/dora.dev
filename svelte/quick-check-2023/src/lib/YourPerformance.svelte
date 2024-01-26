@@ -193,9 +193,10 @@
     .performance-graphs {
         display: grid;
         align-items: center;
-        grid-template-columns: 20rem calc(100% - 20rem);
-        gap: 2rem 1rem;
+        grid-template-columns: fit-content(20rem) auto;
+        gap: 2rem 2rem;
         margin-top: 2rem;
+        padding-right:1.25em; // make room for offsets in the graphs (which overhang their boundaries)
 
         aside {
             text-align: center;
