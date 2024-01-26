@@ -17,7 +17,10 @@
         // push data to URL
         if (typeof window !== "undefined") {
             const url = new URL(window.location);
-            url.searchParams.set(capability.shortname, this_capability_responses.join(""));
+            url.searchParams.set(
+                capability.shortname,
+                this_capability_responses.join(""),
+            );
             if (current_capability_index == capability_count - 1) {
                 url.searchParams.set("step", "priorities");
             }
@@ -79,7 +82,9 @@
                                     type="radio"
                                     name={`${capability.shortname}_${question.number}`}
                                     value={idx + 1}
-                                    bind:group={this_capability_responses[question.number - 1]}
+                                    bind:group={this_capability_responses[
+                                        question.number - 1
+                                    ]}
                                 /><span>{option_text}</span></label
                             >
                         </td>
@@ -154,5 +159,38 @@
     }
     div.next {
         text-align: center;
+    }
+
+    /* There's no elegant way to use global variables for media queries (css variables aren't supported for this purpose, 
+    and SCSS vars are hard to propagate between different svelte components).
+    So we'll use a "magic number" of 800px, in each file */
+    @media (max-width: 800px) {
+        table {
+            tr {
+                display:block;
+                margin-bottom:.5rem;
+            }
+            th {
+                display: none;
+            }
+            tbody {
+                td,
+                td:not(:first-child) {
+                    text-align: left;
+                    display: block;
+                    width: 100%;
+                    span {
+                        display: inline;
+                    }
+                    label {
+                        padding: 0 0 0 1.5rem;
+                    }
+                }
+                td:first-child {
+                    font-weight: 500;
+                    padding-left: 0.25rem;
+                }
+            }
+        }
     }
 </style>

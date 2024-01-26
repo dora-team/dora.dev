@@ -14,7 +14,7 @@
                 url.searchParams.set(metric, metrics[metric]);
             });
             url.searchParams.set("step", "results");
-            url.searchParams.set("v","2023");
+            url.searchParams.set("v", "2023");
             window.history.pushState({}, "", url);
         }
     }
@@ -30,9 +30,9 @@
     </aside>
     <fieldset class="paragraph">
         <legend
-            >For the primary application or service you work on, what is your lead time for changes (that is, how long does it take
-            to go from code committed to code successfully running in
-            production)?</legend
+            >For the primary application or service you work on, what is your
+            lead time for changes (that is, how long does it take to go from
+            code committed to code successfully running in production)?</legend
         >
         {#each Object.entries(metrics_question_responses["leadtime"]) as [value, text]}
             <label
@@ -54,8 +54,9 @@
     </aside>
     <fieldset class="paragraph">
         <legend>
-            For the primary application or service you work on, how often does your organization deploy code to production or
-            release it to end users?
+            For the primary application or service you work on, how often does
+            your organization deploy code to production or release it to end
+            users?
         </legend>
         {#each Object.entries(metrics_question_responses["deployfreq"]) as [value, text]}
             <label
@@ -80,10 +81,11 @@
     </aside>
     <fieldset class="paragraph">
         <legend>
-            For the primary application or service you work on, what percentage of changes to production or released to users result
-            in degraded service (for example, lead to service impairment or
-            service outage) and subsequently require remediation (for example,
-            require a hotfix, rollback, fix forward or patch)?
+            For the primary application or service you work on, what percentage
+            of changes to production or released to users result in degraded
+            service (for example, lead to service impairment or service outage)
+            and subsequently require remediation (for example, require a hotfix,
+            rollback, fix forward or patch)?
         </legend>
         <input
             type="range"
@@ -94,11 +96,6 @@
             bind:value={metrics["changefailure"]}
             style="width:100%;max-width:600px"
         />
-        <span
-            >{metrics["changefailure"] > -1
-                ? metrics["changefailure"]
-                : ""}</span
-        >
         <datalist
             id="markers"
             style="display:flex;width:100%;max-width:600px;justify-content:space-between"
@@ -128,11 +125,12 @@
     </aside>
     <fieldset class="paragraph">
         <legend>
-            For the primary application or service you work on, how long does it generally take to restore service after a change to
-            production or release to users results in degraded service (for
-            example, lead to service impairment or service outage) and
-            subsequently require remediation (for example, require a hotfix,
-            rollback, fix forward, or patch)?
+            For the primary application or service you work on, how long does it
+            generally take to restore service after a change to production or
+            release to users results in degraded service (for example, lead to
+            service impairment or service outage) and subsequently require
+            remediation (for example, require a hotfix, rollback, fix forward,
+            or patch)?
         </legend>
         {#each Object.entries(metrics_question_responses["failurerecovery"]) as [value, text]}
             <label
@@ -192,6 +190,30 @@
 
             label {
                 margin-bottom: 6px;
+            }
+        }
+    }
+
+    /* There's no elegant way to use global variables for media queries (css variables aren't supported for this purpose, 
+    and SCSS vars are cumbersome to propagate between different svelte components).
+    So we'll use a "magic number" of 800px, in each file */
+    @media (max-width: 800px) {
+        section.question {
+            flex-direction: column;
+            aside {
+                width:100%;
+                padding:.5rem;
+                img {
+                    display:none;
+                }
+            }
+
+            fieldset {
+                width:100%;
+                padding:.5rem;
+                label {
+                    padding-left:1.5rem;
+                }
             }
         }
     }

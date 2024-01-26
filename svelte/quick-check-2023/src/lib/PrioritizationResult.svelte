@@ -14,20 +14,21 @@
         ];
     });
 
-    $: this_capability_recoded_average = this_capability_recoded_responses.length ? arrayAverage(
-        this_capability_recoded_responses,
-    ).toFixed(1): 0;
+    $: this_capability_recoded_average =
+        this_capability_recoded_responses.length
+            ? arrayAverage(this_capability_recoded_responses).toFixed(1)
+            : 0;
 </script>
 
 <div class="prioritization_result">
     <div class="capability_name">
         <h2>{question.capability_name}</h2>
-        <a href={question.article_url}
-            >Learn more about {question.capability_name}</a
-        >
     </div>
     <div class="capability_score">
-        <div class="score_bar_container" class:zero={this_capability_recoded_average==0}>
+        <div
+            class="score_bar_container"
+            class:zero={this_capability_recoded_average == 0}
+        >
             <div
                 class="score_bar_value"
                 style:width={`${this_capability_recoded_average * 10}%`}
@@ -39,6 +40,9 @@
         <div class="score_text">
             {this_capability_recoded_average} <span class="range">/ 10</span>
         </div>
+    </div>
+    <div class="learn_more">
+        <a href={question.article_url}>Learn more about {question.capability_name}</a>
     </div>
 </div>
 
@@ -72,7 +76,7 @@
                 border: 1px solid var(--border-color-medium);
 
                 &.zero {
-                    border:1px solid red;
+                    border: 1px solid red;
                 }
 
                 .score_bar_value {
@@ -92,6 +96,15 @@
                     color: #999;
                 }
             }
+        }
+    }
+
+    /* There's no elegant way to use global variables for media queries (css variables aren't supported for this purpose, 
+    and SCSS vars are hard to propagate between different svelte components).
+    So we'll use a "magic number" of 800px, in each file */
+    @media (max-width: 800px) {
+        .prioritization_result {
+            grid-template-columns: 1fr;
         }
     }
 </style>
