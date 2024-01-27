@@ -50,6 +50,11 @@
         <YourPerformance {metrics} bind:industry />
         <HelpMePrioritize bind:current_capability />
     {/if}
+    <div class="faq">
+        <a href="/faq/quickcheck_2023/#whats-new-in-the-2023-quick-check"
+            >Quick Check FAQ</a
+        >
+    </div>
     {#if step !== "input"}
         <GoFurther />
     {/if}
@@ -76,5 +81,11 @@
     :global(body main) {
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .faq {
+        text-align: center;
+        padding-top: 1.5rem;
+        font-size: 85%;
     }
 </style>

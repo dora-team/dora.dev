@@ -33,7 +33,6 @@
 <style lang="scss">
     .graph {
         position: relative;
-        width: 100%;
         height: 5.5rem;
 
         .axis {
@@ -101,7 +100,6 @@
                     text-wrap: nowrap;
                     font-size: 0.65rem;
                     color: #999;
-                    border:1px solid white;
                     transform:translateX(-50%);
                 }
             }

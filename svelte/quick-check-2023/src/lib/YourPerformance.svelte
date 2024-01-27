@@ -109,7 +109,7 @@
     </div>
     <aside>
         <b>Lead time</b>
-        {metrics_question_responses.leadtime[metrics.leadtime]}
+        <span class="metric_description">{metrics_question_responses.leadtime[metrics.leadtime]}</span>
     </aside>
     <div class="graph">
         <PerformanceGraph
@@ -121,7 +121,7 @@
     </div>
     <aside>
         <b>Deploy frequency</b>
-        {metrics_question_responses.deployfreq[metrics.deployfreq]}
+        <span class="metric_description">{metrics_question_responses.deployfreq[metrics.deployfreq]}</span>
     </aside>
     <div class="graph">
         <PerformanceGraph
@@ -140,7 +140,7 @@
     </div>
     <aside>
         <b>Change fail rate</b>
-        {metrics.changefailure}% of changes fail
+        <span class="metric_description">{metrics.changefailure}% of changes fail</span>
     </aside>
     <div class="graph">
         <PerformanceGraph
@@ -164,7 +164,7 @@
     </div>
     <aside>
         <b>Failed deployment recovery time</b>
-        {metrics_question_responses.failurerecovery[metrics.failurerecovery]}
+        <span class="metric_description">{metrics_question_responses.failurerecovery[metrics.failurerecovery]}</span>
     </aside>
     <div class="graph">
         <PerformanceGraph
@@ -177,7 +177,7 @@
 </section>
 <section class="legend">
     <div>
-        2023 Industry baseline ({industry_metrics[industry]["name"]}):
+        <span class="legend_header">2023 Industry baseline ({industry_metrics[industry]["name"]}):</span>
         <span class="industry">&nbsp;</span> Average
         <span class="std">&nbsp;</span> Standard deviation
     </div>
@@ -193,9 +193,10 @@
     .performance-graphs {
         display: grid;
         align-items: center;
-        grid-template-columns: 20rem calc(100% - 20rem);
-        gap: 2rem 1rem;
+        grid-template-columns: fit-content(20rem) auto;
+        gap: 2rem 2rem;
         margin-top: 2rem;
+        padding: 0 1.25em;
 
         aside {
             text-align: center;
@@ -253,6 +254,42 @@
                     height: 1rem;
                     border-radius: 0.25rem;
                 }
+            }
+        }
+    }
+
+    /* There's no elegant way to use global variables for media queries (css variables aren't supported for this purpose, 
+    and SCSS vars are hard to propagate between different svelte components).
+    So we'll use a "magic number" of 800px, in each file */
+    @media (max-width: 800px) {
+        .performance-graphs {
+            grid-template-columns: 1fr;
+            padding:0 2rem;
+            gap: 1rem 0;
+
+            aside {
+                b {
+                    display:inline-block;
+                    margin-right:1rem;
+                }
+
+                .metric_description {
+                    white-space: nowrap;
+                }
+                
+            }
+
+            .graph {
+                border-bottom: 1px dotted var(--border-color-light);
+                padding-bottom:1.25rem;
+                margin-bottom:1.25rem;
+            }
+        }
+        .legend {
+            flex-direction: column;
+
+            .legend_header {
+                display:block;
             }
         }
     }

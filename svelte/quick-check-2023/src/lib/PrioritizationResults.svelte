@@ -2,8 +2,9 @@
     import PrioritizationResult from "./PrioritizationResult.svelte";
 
     export let capability_prioritization_questions;
-    export let capability_responses = Array(capability_prioritization_questions.length).fill([0]);
-
+    export let capability_responses = Array(
+        capability_prioritization_questions.length,
+    ).fill([0]);
 </script>
 
 <div class="prioritize_step">
@@ -11,7 +12,12 @@
     <p>Based on your responses, here's how your team is performing:</p>
     <div class="results">
         {#each capability_prioritization_questions as question, idx}
-            <PrioritizationResult {question} this_capability_responses={capability_responses[question.shortname]}/>
+            <PrioritizationResult
+                {question}
+                this_capability_responses={capability_responses[
+                    question.shortname
+                ]}
+            />
         {/each}
     </div>
     <div>
@@ -41,9 +47,7 @@
                         >Read the latest Accelerate State of DevOps Report</a
                     >
                 </h3>
-                <p>
-                    Explore recent findings from DORA's research project.
-                </p>
+                <p>Explore recent findings from DORA's research project.</p>
             </li>
             <li>
                 <h3>
@@ -52,7 +56,8 @@
                     >
                 </h3>
                 <p>
-                    Learn, discuss, and collaborate on strategies for leveraging DORA research in your organization.
+                    Learn, discuss, and collaborate on strategies for leveraging
+                    DORA research in your organization.
                 </p>
             </li>
         </ul>
@@ -62,5 +67,14 @@
 <style lang="scss">
     .results {
         padding: 2rem 4rem;
+    }
+
+    /* There's no elegant way to use global variables for media queries (css variables aren't supported for this purpose, 
+    and SCSS vars are hard to propagate between different svelte components).
+    So we'll use a "magic number" of 800px, in each file */
+    @media (max-width: 800px) {
+        .results {
+            padding: 1rem 0.5rem;
+        }
     }
 </style>
