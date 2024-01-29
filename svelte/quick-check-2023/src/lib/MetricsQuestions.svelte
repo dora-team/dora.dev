@@ -200,6 +200,8 @@
                 }
                 echo {
                     padding: 0 0.5rem;
+                    height:1.5rem;
+                    vertical-align: middle;
                 }
             }
             tickmarks {
@@ -208,15 +210,15 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+                margin-left:0rem;
+                margin-right:-3rem;
                 tick {
                     display: inline-block;
                     text-align: right;
                     font-size: 0.65rem;
                     color: #666;
                     text-align: center;
-                    &:not(:last-child) {
-                        transform: translateX(50%);
-                    }
+                    width:1rem;
                 }
             }
         }
