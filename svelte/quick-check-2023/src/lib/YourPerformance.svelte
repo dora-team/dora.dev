@@ -2,7 +2,7 @@
     import { onMount } from "svelte";
 
     import PerformanceGraph from "./PerformanceGraph.svelte";
-    import { recode_numeric_range } from "./utils.js";
+    import { recode_numeric_range, sendAnalyticsEvent } from "./utils.js";
     import metrics_question_responses from "./data/metrics_question_responses.json";
     import industry_metrics from "./data/industry_metrics.json";
 
@@ -66,6 +66,8 @@
             top: document.getElementById("results").offsetTop,
             behavior: "smooth",
         });
+
+        sendAnalyticsEvent("quick_check_results");
     });
 
     $: metrics, calculate_recoded_metrics();

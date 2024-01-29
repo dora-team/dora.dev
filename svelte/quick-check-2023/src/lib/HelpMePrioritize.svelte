@@ -1,6 +1,8 @@
 <script>
     import { onMount } from "svelte";
 
+    import { sendAnalyticsEvent } from "./utils.js";
+
     import Capability from "./Capability.svelte";
     import PrioritizationResults from "./PrioritizationResults.svelte";
 
@@ -38,6 +40,10 @@
                 top: document.getElementById("help-me-prioritize").offsetTop,
                 behavior: "smooth",
             });
+
+            if (current_capability == capability_count) {
+                sendAnalyticsEvent("quick_check_priorities");
+            }
         }
     }
 
@@ -45,7 +51,6 @@
         nextCapability();
     });
 
-    $: console.log(capability_responses);
 </script>
 
 <section id="help-me-prioritize">
