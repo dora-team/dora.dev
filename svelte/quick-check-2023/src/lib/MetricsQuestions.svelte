@@ -87,31 +87,31 @@
             and subsequently require remediation (for example, require a hotfix,
             rollback, fix forward or patch)?
         </legend>
-        <input
-            type="range"
-            name="changefailure"
-            min="0"
-            max="100"
-            list="markers"
-            bind:value={metrics["changefailure"]}
-            style="width:100%;max-width:600px"
-        />
-        <datalist
-            id="markers"
-            style="display:flex;width:100%;max-width:600px;justify-content:space-between"
-        >
-            <option value="0" label="0"></option>
-            <option value="10"></option>
-            <option value="20" label="20"></option>
-            <option value="30"></option>
-            <option value="40" label="40"></option>
-            <option value="50"></option>
-            <option value="60" label="60"></option>
-            <option value="70"></option>
-            <option value="80" label="80"></option>
-            <option value="90"></option>
-            <option value="100" label="100"></option>
-        </datalist>
+        <slider>
+            <input
+                type="range"
+                name="changefailure"
+                min="0"
+                max="100"
+                bind:value={metrics["changefailure"]}
+            />
+            <echo>
+                {#if metrics["changefailure"] >= 0}{metrics["changefailure"]}{/if}
+            </echo>
+            <tickmarks>
+                <tick>|<br />0</tick>
+                <tick>|</tick>
+                <tick>|<br />20</tick>
+                <tick>|</tick>
+                <tick>|<br />40</tick>
+                <tick>|</tick>
+                <tick>|<br />60</tick>
+                <tick>|</tick>
+                <tick>|<br />80</tick>
+                <tick>|</tick>
+                <tick>|<br />100</tick>
+            </tickmarks>
+        </slider>
     </fieldset>
 </section>
 <h5>Question 4 of 4</h5>
@@ -191,6 +191,34 @@
             label {
                 margin-bottom: 6px;
             }
+            slider {
+                display: grid;
+                max-width: 600px;
+                grid-template-columns: auto 2rem;
+                input[type="range"] {
+                    width: 100%;
+                }
+                echo {
+                    padding: 0 0.5rem;
+                }
+            }
+            tickmarks {
+                width: 100%;
+                max-width: 600px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                tick {
+                    display: inline-block;
+                    text-align: right;
+                    font-size: 0.65rem;
+                    color: #666;
+                    text-align: center;
+                    &:not(:last-child) {
+                        transform: translateX(50%);
+                    }
+                }
+            }
         }
     }
 
@@ -201,18 +229,18 @@
         section.question {
             flex-direction: column;
             aside {
-                width:100%;
-                padding:.5rem;
+                width: 100%;
+                padding: 0.5rem;
                 img {
-                    display:none;
+                    display: none;
                 }
             }
 
             fieldset {
-                width:100%;
-                padding:.5rem;
+                width: 100%;
+                padding: 0.5rem;
                 label {
-                    padding-left:1.5rem;
+                    padding-left: 1.5rem;
                 }
             }
         }
