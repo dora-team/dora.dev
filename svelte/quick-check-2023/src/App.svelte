@@ -6,6 +6,7 @@
     import YourPerformance from "./lib/YourPerformance.svelte";
     import HelpMePrioritize from "./lib/HelpMePrioritize.svelte";
     import GoFurther from "./lib/GoFurther.svelte";
+    import { sendAnalyticsEvent } from "./lib/utils.js";
 
     let metrics = {
         leadtime: -1,
@@ -38,6 +39,8 @@
                 current_capability = 2;
             }
         }
+
+        sendAnalyticsEvent("quick_check_start");
 
         // TODO: add error handling w/r/t URL params (e.g. if step == "results" but metrics values not present, bounce to input)
     });

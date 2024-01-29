@@ -25,3 +25,12 @@ export const recode_numeric_range = (
 export const arrayAverage = (array) => {
     if (array.length) { return array.reduce((a, b) => parseFloat(a) + parseFloat(b)) / array.length } else { return null }
 }
+
+export const sendAnalyticsEvent = (eventName) => {
+    console.debug(`send "${eventName}" event to GA`)
+    if (typeof import.meta.env.MODE !== "undefined" && import.meta.env.MODE === "development") {
+        console.debug(`(sendAnalyticsEvent disabled in dev environment)`)
+    } else if (typeof gtag !== 'undefined') {
+        gtag('event', eventName);
+    }
+}
