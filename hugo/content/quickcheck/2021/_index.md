@@ -8,7 +8,7 @@ bannerHighlightImage: "/img/quickcheck/hero_illustration.svg"
 type: quickcheck
 ---
 
-<form action={{% ref "/quickcheck/2021/results.html" %}} method="get" id="quickcheck_form">
+<form action={{% relref "/quickcheck/2021/results.html" %}} method="get" id="quickcheck_form">
 
 <h5>Question 1 of 5</h5>
 <section class="question">
