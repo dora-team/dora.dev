@@ -149,7 +149,7 @@
                     "questions": [
                         "Our features are sliced in a way that lend themselves to frequent production releases.",
 "Our features are decomposed in a way that allows a developer to complete the work in a week or less.",
-"Our work is decomposed into features that allow for minimum viable products (MVPs) and rapid development, rathr than complex and lengthy processes (an MVP has just enough features to get validated learning about the product & its continued development)."
+"Our work is decomposed into features that allow for minimum viable products (MVPs) and rapid development, rather than complex and lengthy processes (an MVP has just enough features to get validated learning about the product & its continued development)."
                 ]
                 }
             ]
