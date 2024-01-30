@@ -5,7 +5,7 @@ draft: false
 bannerTitle: "Take the DORA Quick Check"
 bannerSubtitle: "Measure your team's software delivery performance in less than a minute! Compare it to the rest of the industry by responding to **five multiple-choice questions**. Compare your team's performance to others, and discover which capabilities you should focus on improving. We don't store your answers or personal information."
 bannerHighlightImage: "/img/quickcheck/hero_illustration.svg"
-type: quickcheck
+type: quickcheck_archive
 ---
 
 <form action={{% relref "/quickcheck/2019/results.html" %}} method="get" id="quickcheck_form">
