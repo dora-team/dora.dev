@@ -52,7 +52,7 @@
             <li>
                 <h3>
                     <a href="https://dora.community" target="_blank"
-                        >Join DORA's global community of pratice</a
+                        >Join DORA's global community of practice</a
                     >
                 </h3>
                 <p>
