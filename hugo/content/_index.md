@@ -42,6 +42,8 @@ Congratulations to all of the [2024 DevOps Dozen winners](https://devopsdozen.co
     img-src="/img/quickcheck/hero_illustration.svg" 
     img-align="left" 
     >}}
+**Updated with 2023 findings**
+
 Use our quick check tool to discover how you compare to industry peers, identify specific capabilities you can use to improve performance, and make progress on your software delivery goals.
 {{< /article >}}
 
