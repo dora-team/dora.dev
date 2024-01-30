@@ -65,8 +65,8 @@
             height: 2.5rem;
             top: 50%;
             transform: translateX(-50%) translateY(-50%);
+            width:.2%;
             min-width: 1px;
-            width: 0.1rem;
             background-color: var(--metric-background);
             border-left: 1px solid var(--metric-border);
             border-right: 1px solid var(--metric-border);
