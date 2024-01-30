@@ -58,6 +58,7 @@
 
         .metric {
             position: absolute;
+            box-sizing: content-box;
             height: 2.5rem;
             top: 50%;
             transform: translateX(-50%) translateY(-50%);
