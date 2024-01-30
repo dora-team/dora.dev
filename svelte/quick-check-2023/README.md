@@ -1,4 +1,4 @@
-This folder contains the new Quick Check implementation (reflecting 2023 data). It's a Single Page Application (SPA), using the [svelte](svelte.dev) framework. It's built outside the flow of the main Hugo site implementation, and then embedded as a static asset into the site content.
+This folder contains the new Quick Check implementation (reflecting 2023 data). It's a Single Page Application (SPA), using the [svelte](svelte.dev) framework. It's built outside the flow of the main Hugo site implementation, and then embedded at build time as a static asset into the site content (see `/ci` for build config).
 
 ### To develop the quick check only:
 
