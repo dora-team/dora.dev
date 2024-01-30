@@ -54,7 +54,7 @@
         <HelpMePrioritize bind:current_capability />
     {/if}
     <div class="faq">
-        <a href="/faq/quickcheck_2023/#whats-new-in-the-2023-quick-check"
+        <a href="/faq/#whats-new-in-the-2023-quick-check"
             >Quick Check FAQ</a
         >
     </div>

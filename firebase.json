@@ -8,6 +8,12 @@
         "**/.*",
         "**/node_modules/**"
       ],
+      "rewrites": [
+        {
+          "source": "/quickcheck",
+          "destination": "/quickcheck/2023/"
+        }
+      ],
       "redirects": [
         {
           "source": "/capabilities",
