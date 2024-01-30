@@ -25,6 +25,11 @@
           "type": 301
         },
         {
+          "source": "/quickcheck/2023",
+          "destination": "/quickcheck/",
+          "type": 302
+        },
+        {
           "source": "/research.html",
           "destination": "/",
           "type": 301
