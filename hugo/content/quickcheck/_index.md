@@ -1,5 +1,5 @@
 ---
-title: "DORA Quick Check: Results"
+title: "DORA Quick Check"
 date: 2024-01-01
 draft: false
 bannerTitle: "Take the DORA Quick Check"
