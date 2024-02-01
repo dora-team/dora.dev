@@ -4,7 +4,7 @@ titleForHTMLHead: "DevOps Capabilities: Shifting Left on Security" # TODO: can w
 slug: shifting-left-on-security
 core: true
 date: 2023-03-27T09:48:50+01:00
-category: technical
+category: process
 draft: false
 headline: "Build security into the software development lifecycle without compromising delivery speed."
 summary: |

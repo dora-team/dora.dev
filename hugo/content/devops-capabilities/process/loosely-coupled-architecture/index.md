@@ -4,7 +4,7 @@ titleForHTMLHead: "DevOps Capabilities: Loosely Coupled Architecture" # TODO: ca
 slug: loosely-coupled-architecture
 core: true
 date: 2023-03-27T09:48:50+01:00
-category: technical
+category: process
 draft: false
 headline: "Learn about moving from a tightly coupled architecture to service-oriented and microservice architectures without re-architecting everything at once"
 summary: "Architecture that lets teams test and deploy their applications on demand, without requiring orchestration with other services. Having a loosely coupled architecture allows your teams to work independently without relying on other teams for support and services, which in turn enables them to work quickly and deliver value to the organization."
