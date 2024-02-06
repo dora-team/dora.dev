@@ -138,6 +138,11 @@
             "source": "/devops-capabilities/technical/shifting-left-on-security",
             "destination": "/devops-capabilities/process/shifting-left-on-security/",
             "type": 302
+          },
+          {
+            "source": "/assets/transformation_practices.pdf",
+            "destination":"https://itrevolution.com/wp-content/uploads/2022/06/transformation_practices.pdf",
+            "type":301
           }
       ]
     }
