@@ -145,8 +145,9 @@
         <span class="metric_description">{metrics.changefailure}% of changes fail</span>
     </aside>
     <div class="graph">
+        <!-- display change fail score with zero decimal places if it's a round number, else round to 1 decimal place -->
         <PerformanceGraph
-            user_score={metrics_recoded.changefailure.toFixed(1)}
+            user_score={+metrics_recoded.changefailure.toFixed(1)}
             industry_score={selected_industry_metrics.changefailure.mean}
             std={selected_industry_metrics.changefailure.std}
             tickmarks={[
