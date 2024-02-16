@@ -27,8 +27,8 @@ steps:
 
       apt install /tmp/hugo.deb
 
-      # Build the prod version of the site (this will omit content where the front matter specifies Draft: true)
-      hugo -s ./hugo -d /workspace/hugo/public --logLevel=debug
+      # Build the prod version of the site, with drafts enabled
+      hugo -s ./hugo -d /workspace/hugo/public --logLevel=debug --buildDrafts
 
   - id: 'Node Install'
     name: 'gcr.io/cloud-builders/npm:node-18.12.0'
