@@ -1,0 +1,16 @@
+{
+  "name": "test-redirects",
+  "version": "1.0.0",
+  "description": "A script to test the redirects in the redirects.csv file.",
+  "main": "test-redirects.js",
+  "scripts": {
+    "test": "mocha test-redirects.js"
+  },
+  "author": "Nathen Harvey",
+  "license": "MIT",
+  "dependencies": {
+    "mocha": "^9.1.3",
+    "chai": "^4.3.6",
+    "node-fetch":"^3.3.2"
+  }
+}
