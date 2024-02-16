@@ -27,7 +27,7 @@ steps:
 
       apt install /tmp/hugo.deb
 
-      # Build the prod version of the site, with drafts enabled
+      # Build the staging version of the site, with drafts enabled
       hugo -s ./hugo -d /workspace/hugo/public --logLevel=debug --buildDrafts
 
   - id: 'Node Install'
