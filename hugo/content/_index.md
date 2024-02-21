@@ -3,7 +3,7 @@ title: "DevOps Research and Assessment"
 date: 2022-11-22
 draft: false
 bannerTitle: "Get Better at Getting Better"
-bannerSubtitle: "DevOps Research and Assessment (DORA) is the largest and longest running research program of its kind, that seeks to understand the capabilities that drive software delivery and operations performance. DORA helps teams apply those capabilities, leading to better organizational performance."
+bannerSubtitle: "DORA is the largest and longest running research program of its kind, that seeks to understand the capabilities that drive software delivery and operations performance. DORA helps teams apply those capabilities, leading to better organizational performance."
 ---
 
 {{< article columns="2" 
