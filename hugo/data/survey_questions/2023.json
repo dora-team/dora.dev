@@ -20,6 +20,7 @@
             "question_groups": [
                 {
                     "description": "For the primary application or service you work on, how important is the role of Artificial Intelligence (AI) in contributing to each of the following tasks today?",
+                    "group_responses": "Not at all important,Slightly important,Moderately important,Very important,Extremely important,I don't know or NA",
                     "questions": [
                         "Analyzing data",
                         "Analyzing logs",
