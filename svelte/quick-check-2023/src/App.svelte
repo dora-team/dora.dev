@@ -17,21 +17,25 @@
     let step = "input";
     let industry = "all";
     let current_capability = -1;
-    let displayMode = "embedded";
+    let displayMode = "kiosk"; // TODO: return default to "embedded"
 
     onMount(() => {
-        if(document.getElementsByName('displayMode').length) {
-            displayMode = document.getElementsByName('displayMode')[0].content;
-        } 
+        // quick check may be running on a kiosk or tablet, as specified in a meta tag from the calling page
+        if (document.getElementsByName("displayMode").length) {
+            displayMode = document.getElementsByName("displayMode")[0].content;
+        }
 
         const searchParams = new URLSearchParams(window.location.search);
-        ["leadtime", "deployfreq", "changefailure", "failurerecovery"].forEach(
-            (metric) => {
-                if (searchParams.has(metric)) {
-                    metrics[metric] = searchParams.get(metric);
-                }
-            },
-        );
+        for (const metric of [
+            "leadtime",
+            "deployfreq",
+            "changefailure",
+            "failurerecovery",
+        ]) {
+            if (searchParams.has(metric)) {
+                metrics[metric] = searchParams.get(metric);
+            }
+        }
 
         if (searchParams.has("industry")) {
             industry = searchParams.get("industry");
@@ -51,6 +55,11 @@
     });
 </script>
 
+{#if displayMode === "kiosk"}
+    <main>
+        TODO: implement Kiosk mode
+    </main>
+{:else}
 <main>
     {#if step === "input"}
         <MetricsQuestions bind:metrics bind:step />
@@ -65,6 +74,7 @@
         <GoFurther />
     {/if}
 </main>
+{/if}
 
 <style>
     :global(:root) {
