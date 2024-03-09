@@ -17,8 +17,13 @@
     let step = "input";
     let industry = "all";
     let current_capability = -1;
+    let displayMode = "embedded";
 
     onMount(() => {
+        if(document.getElementsByName('displayMode').length) {
+            displayMode = document.getElementsByName('displayMode')[0].content;
+        } 
+
         const searchParams = new URLSearchParams(window.location.search);
         ["leadtime", "deployfreq", "changefailure", "failurerecovery"].forEach(
             (metric) => {
@@ -54,9 +59,7 @@
         <HelpMePrioritize bind:current_capability />
     {/if}
     <div class="faq">
-        <a href="/faq/#whats-new-in-the-2023-quick-check"
-            >Quick Check FAQ</a
-        >
+        <a href="/faq/#whats-new-in-the-2023-quick-check">Quick Check FAQ</a>
     </div>
     {#if step !== "input"}
         <GoFurther />
