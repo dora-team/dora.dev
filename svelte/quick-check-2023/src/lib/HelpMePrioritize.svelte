@@ -1,4 +1,5 @@
 <script>
+    // @ts-nocheck
     import { onMount } from "svelte";
 
     import { sendAnalyticsEvent } from "./utils.js";
@@ -48,9 +49,22 @@
     }
 
     onMount(() => {
+        // extract responses from URL and cast as Int
+        if (typeof window !== "undefined") {
+            const url = new URL(window.location);
+            capability_prioritization_questions.forEach((capability) => {
+                if (url.searchParams.has(capability.shortname)) {
+                    capability_responses[capability.shortname] =
+                        url.searchParams
+                            .get(capability.shortname)
+                            .split("")
+                            .map((x) => parseInt(x));
+                }
+            });
+        }
+        console.log(capability_responses)
         nextCapability();
     });
-
 </script>
 
 <section id="help-me-prioritize">

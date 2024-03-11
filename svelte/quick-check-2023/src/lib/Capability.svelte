@@ -1,13 +1,12 @@
 <script>
+    //@ts-nocheck
     import { createEventDispatcher } from "svelte";
-    import { onMount } from "svelte";
-
     export let capability;
     export let capability_count;
     export let current_capability_index;
 
     // initialize user response data with dummy values
-    export let this_capability_responses = Array(capability.questions.length).fill([-1])
+    export let this_capability_responses;
     let thisCapabilityCompleted = false;
 
     const dispatch = createEventDispatcher();
@@ -28,19 +27,6 @@
         dispatch("nextCapability");
     }
 
-    onMount(() => {
-        // extract responses from URL and cast as Int
-        if (typeof window !== "undefined") {
-            const url = new URL(window.location);
-            if (url.searchParams.has(capability.shortname)) {
-                this_capability_responses = url.searchParams
-                    .get(capability.shortname)
-                    .split("")
-                    .map((x) => parseInt(x));
-            }
-        }
-    });
-
     let response_options = [
         "Strongly disagree",
         "Disagree",
@@ -50,7 +36,9 @@
     ];
 
     // has user entered a value for every question of this capability?
-    $: thisCapabilityCompleted = this_capability_responses.every((x) => x != -1);
+    $: thisCapabilityCompleted = this_capability_responses.length == capability.questions.length && this_capability_responses.every(
+        (x) => x !== -1,
+    );
 </script>
 
 <section>
@@ -166,8 +154,8 @@
     @media (max-width: 800px) {
         table {
             tr {
-                display:block;
-                margin-bottom:.5rem;
+                display: block;
+                margin-bottom: 0.5rem;
             }
             th {
                 display: none;

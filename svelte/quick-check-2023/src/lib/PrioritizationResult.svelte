@@ -1,8 +1,9 @@
 <script>
+    //@ts-nocheck
     import { arrayAverage, recode_numeric_range } from "./utils";
 
     export let question;
-    export let this_capability_responses = [0];
+    export let this_capability_responses;
     let this_capability_recoded_average = 0;
 
     let this_capability_recoded_responses = [];
