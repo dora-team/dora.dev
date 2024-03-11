@@ -113,6 +113,10 @@
             width: 35%;
         }
 
+        p.description {
+            padding-top: 1.5rem;
+        }
+
         fieldset {
             width: 65%;
         }
@@ -168,6 +172,10 @@
         &.kiosk {
             flex-direction: column;
 
+            p.description {
+                padding-top: 0;
+            }
+
             h2 {
                 display: none;
             }
@@ -193,6 +201,9 @@
                 img {
                     display: none;
                 }
+            }
+            p.description {
+                padding-top: 0;
             }
 
             fieldset {
