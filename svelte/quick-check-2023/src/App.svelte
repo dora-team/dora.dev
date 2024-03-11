@@ -2,7 +2,7 @@
     // @ts-nocheck
 
     import { onMount } from "svelte";
-    import MetricsQuestions from "./lib/MetricsQuestions.svelte";
+    import MetricsQuestion from "./lib/MetricsQuestion.svelte";
     import YourPerformance from "./lib/YourPerformance.svelte";
     import HelpMePrioritize from "./lib/HelpMePrioritize.svelte";
     import GoFurther from "./lib/GoFurther.svelte";
@@ -14,10 +14,24 @@
         changefailure: -1,
         failurerecovery: -1,
     };
+
     let step = "input";
     let industry = "all";
     let current_capability = -1;
-    let displayMode = "kiosk"; // TODO: return default to "embedded"
+    let metric_names = Object.keys(metrics);
+    let current_metric = 0; // in kiosk mode, metrics questions are presented one at a time
+    let displayMode = "embedded"; // TODO: return default to "embedded"
+
+    function saveURLParams() {
+        if (typeof window !== "undefined") {
+            const url = new URL(window.location);
+            metric_names.forEach((metric) =>
+                url.searchParams.set(metric, metrics[metric]),
+            );
+            url.searchParams.set("v", "2023");
+            window.history.pushState({}, "", url);
+        }
+    }
 
     onMount(() => {
         // quick check may be running on a kiosk or tablet, as specified in a meta tag from the calling page
@@ -26,55 +40,82 @@
         }
 
         const searchParams = new URLSearchParams(window.location.search);
-        for (const metric of [
-            "leadtime",
-            "deployfreq",
-            "changefailure",
-            "failurerecovery",
-        ]) {
-            if (searchParams.has(metric)) {
+
+        // if the metric values are passed on the URL, save them to local vars and advance to results
+        if (metric_names.every((metric) => searchParams.has(metric))) {
+            metric_names.forEach((metric) => {
                 metrics[metric] = searchParams.get(metric);
-            }
+            });
+            step = "results";
+        }
+
+        // if the capability alues are passed on the URL, advance to priorities
+        // !!!This is a hack using hard-coded values. TODO: make more elegant
+        if (
+            ["ci", "arch", "culture"].every((param) => searchParams.has(param))
+        ) {
+            current_capability = 2;
         }
 
         if (searchParams.has("industry")) {
             industry = searchParams.get("industry");
         }
 
-        if (searchParams.has("step")) {
-            step = searchParams.get("step");
-            if (step == "priorities") {
-                // initialize at the last capability; then that module's onMount will advance to show the scores
-                current_capability = 2;
-            }
-        }
-
         sendAnalyticsEvent("quick_check_start");
 
         // TODO: add error handling w/r/t URL params (e.g. if step == "results" but metrics values not present, bounce to input)
     });
+
+    $: if (current_metric > 3) {
+        step = "results";
+    }
 </script>
 
-{#if displayMode === "kiosk"}
-    <main>
-        TODO: implement Kiosk mode
-    </main>
-{:else}
 <main>
-    {#if step === "input"}
-        <MetricsQuestions bind:metrics bind:step />
-    {:else if step === "results" || step === "priorities"}
-        <YourPerformance {metrics} bind:industry />
-        <HelpMePrioritize bind:current_capability />
-    {/if}
-    <div class="faq">
-        <a href="/faq/#whats-new-in-the-2023-quick-check">Quick Check FAQ</a>
-    </div>
-    {#if step !== "input"}
-        <GoFurther />
+    {#if displayMode === "kiosk"}
+        {#if step === "input"}0-
+            <MetricsQuestion
+                bind:metrics
+                bind:current_metric
+                metric_name={metric_names[current_metric]}
+                metric_position={current_metric}
+            />
+        {:else if step === "results"}
+            RESULTS
+        {/if}
+    {:else}
+        {#if step === "input"}
+            {#each metric_names as metric, idx}
+                <MetricsQuestion
+                    bind:metrics
+                    metric_name={metric}
+                    metric_position={idx}
+                />
+            {/each}
+            <section class="submit">
+                <button
+                    disabled={!metric_names.every(
+                        (metric) => metrics[metric] != -1,
+                    )}
+                    on:click={() => {
+                        saveURLParams();
+                        step = "results";
+                    }}>View Results</button
+                >
+            </section>
+        {:else if step === "results" || step === "priorities"}
+            <YourPerformance {metrics} bind:industry />
+            <HelpMePrioritize bind:current_capability />
+        {/if}
+        <div class="faq">
+            <a href="/faq/#whats-new-in-the-2023-quick-check">Quick Check FAQ</a
+            >
+        </div>
+        {#if step !== "input"}
+            <GoFurther />
+        {/if}
     {/if}
 </main>
-{/if}
 
 <style>
     :global(:root) {
@@ -103,5 +144,9 @@
         text-align: center;
         padding-top: 1.5rem;
         font-size: 85%;
+    }
+
+    section.submit {
+        text-align: center;
     }
 </style>

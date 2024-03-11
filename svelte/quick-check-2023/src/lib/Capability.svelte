@@ -7,8 +7,7 @@
     export let current_capability_index;
 
     // initialize user response data with dummy values
-    // let responses = Array(capability.questions.length).fill(-1);
-    export let this_capability_responses = [];
+    export let this_capability_responses = Array(capability.questions.length).fill([-1])
     let thisCapabilityCompleted = false;
 
     const dispatch = createEventDispatcher();
@@ -51,7 +50,7 @@
     ];
 
     // has user entered a value for every question of this capability?
-    $: thisCapabilityCompleted = this_capability_responses.every((x) => x > -1);
+    $: thisCapabilityCompleted = this_capability_responses.every((x) => x != -1);
 </script>
 
 <section>
