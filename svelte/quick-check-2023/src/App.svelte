@@ -20,7 +20,7 @@
     let current_capability = -1;
     let metric_names = Object.keys(metrics);
     let current_metric = 0; // in kiosk mode, metrics questions are presented one at a time
-    let displayMode = "embedded"; // TODO: return default to "embedded"
+    let displayMode = "embedded";
 
     function saveURLParams() {
         if (typeof window !== "undefined") {
@@ -35,7 +35,8 @@
 
     onMount(() => {
         // quick check may be running on a kiosk or tablet, as specified in a meta tag from the calling page
-        if (document.getElementsByName("displayMode").length) {
+        if (document.getElementsByName("displayMode").length && document.getElementsByName("displayMode")[0].content) {
+            console.log("displayMode provided via <meta> tag")
             displayMode = document.getElementsByName("displayMode")[0].content;
         }
 
@@ -71,18 +72,51 @@
     }
 </script>
 
-<main>
+<!-- Vite provides environment variables; if running in dev, show some debug -->
+{#if typeof import.meta.env.MODE !== "undefined" && import.meta.env.MODE === "development"}
+DisplayMode: {displayMode}<br />
+    <label
+        ><input
+            type="radio"
+            name="displayMode"
+            value={"embedded"}
+            bind:group={displayMode}
+        />
+        embedded<br /></label
+    >
+    <label
+    ><input
+        type="radio"
+        name="displayMode"
+        bind:group={displayMode}
+        value={"kiosk"}
+    />
+    kiosk<br /></label
+    >
+{/if}
+
+<hr />
+<!--- END debug -->
+
+<main class={displayMode}>
     {#if displayMode === "kiosk"}
-        {#if step === "input"}0-
+    <div class="kioskMetricsQuestions">
+        <aside>
+            Take the
+            <h1>DORA Quick Check</h1>
+        </aside>
+        {#if step === "input"}
             <MetricsQuestion
                 bind:metrics
                 bind:current_metric
                 metric_name={metric_names[current_metric]}
                 metric_position={current_metric}
+                {displayMode}
             />
         {:else if step === "results"}
             RESULTS
         {/if}
+    </div>
     {:else}
         {#if step === "input"}
             {#each metric_names as metric, idx}
@@ -148,5 +182,14 @@
 
     section.submit {
         text-align: center;
+    }
+
+    .kioskMetricsQuestions {
+        display:flex;
+        flex-direction: row;
+    }
+
+    aside {
+        width:30%;
     }
 </style>

@@ -2,139 +2,99 @@
     export let metrics;
     export let metric_name = "METRIC",
         metric_position = 1,
-        current_metric = 0;
+        current_metric = 0,
+        displayMode = "embedded";
     import metrics_question_responses from "./data/metrics_question_responses.json";
     import metrics_images from "./data/metrics_images.json";
+    const metrics_details = {
+        leadtime: {
+            friendly_name: "Lead time",
+            description:
+                "For the primary application or service you work on, what is your lead time for changes (that is, how long does it take to go from code committed to code successfully running in production)?",
+        },
+        deployfreq: {
+            friendly_name: "Deploy frequency",
+            description:
+                "For the primary application or service you work on, how often does your organization deploy code to production or release it to end users?",
+        },
+        changefailure: {
+            friendly_name: "Change fail percentage",
+            description:
+                "For the primary application or service you work on, what percentage of changes to production or released to users result in degraded service (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward or patch)?",
+        },
+        failurerecovery: {
+            friendly_name: "Failed deployment recovery time",
+            description:
+                "For the primary application or service you work on, what is your lead time for changes (that is, how long does it take to go from code committed to code successfully running in production)?",
+        },
+    };
+
+    let metric_friendly_name = metrics_details[metric_name]["friendly_name"];
 </script>
 
 <!-- TODO: images on this page are inlined from "metrics_image.json" ... we should be able to use Vite to inline them automatically from static image files, which will make the source cleaner -->
-
-<h5>Question {metric_position + 1} of 4</h5>
-<section class="question">
-    {#if metric_name === "leadtime"}
+<div>
+    <section class="question {displayMode}">
         <aside>
-            <h2>Lead time</h2>
-            <img alt="lead time" src={metrics_images.leadtime} />
-        </aside>
-        <fieldset class="paragraph">
-            <legend
-                >For the primary application or service you work on, what is
-                your lead time for changes (that is, how long does it take to go
-                from code committed to code successfully running in production)?</legend
-            >
-            {#each Object.entries(metrics_question_responses["leadtime"]) as [value, text]}
-                <label
-                    ><input
-                        name="leadtime"
-                        type="radio"
-                        bind:group={metrics["leadtime"]}
-                        on:click={() => current_metric++}
-                        {value}
-                    />{text}</label
+            <h5>
+                Question {metric_position + 1} of 4<span class="friendly_name"
+                    >: {metric_friendly_name}</span
                 >
-            {/each}
-        </fieldset>
-    {:else if metric_name === "deployfreq"}
-        <aside>
-            <h2>Deploy frequency</h2>
-            <img alt="deployment frequency" src={metrics_images.deployfreq} />
+            </h5>
+            <h2>{metric_friendly_name}</h2>
+            <img alt={metric_friendly_name} src={metrics_images[metric_name]} />
         </aside>
-        <fieldset class="paragraph">
+        <fieldset>
             <legend>
-                For the primary application or service you work on, how often
-                does your organization deploy code to production or release it
-                to end users?
+                <p class="description">
+                    {metrics_details[metric_name].description}
+                </p>
             </legend>
-            {#each Object.entries(metrics_question_responses["deployfreq"]) as [value, text]}
-                <label
-                    ><input
-                        name="deployfreq"
-                        type="radio"
-                        bind:group={metrics["deployfreq"]}
-                        on:click={() => current_metric++}
-                        {value}
-                    />{text}</label
-                >
-            {/each}
+            {#if metric_name === "changefailure"}
+                <slider>
+                    <input
+                        type="range"
+                        name="changefailure"
+                        min="0"
+                        max="100"
+                        on:change={() => current_metric++}
+                        bind:value={metrics["changefailure"]}
+                    />
+                    <echo>
+                        {#if metrics["changefailure"] >= 0}{metrics[
+                                "changefailure"
+                            ]}{/if}
+                    </echo>
+                    <tickmarks>
+                        <tick>|<br />0</tick>
+                        <tick>|</tick>
+                        <tick>|<br />20</tick>
+                        <tick>|</tick>
+                        <tick>|<br />40</tick>
+                        <tick>|</tick>
+                        <tick>|<br />60</tick>
+                        <tick>|</tick>
+                        <tick>|<br />80</tick>
+                        <tick>|</tick>
+                        <tick>|<br />100</tick>
+                    </tickmarks>
+                </slider>
+            {:else}
+                {#each Object.entries(metrics_question_responses[metric_name]) as [value, text]}
+                    <label
+                        ><input
+                            name={metric_name}
+                            type="radio"
+                            bind:group={metrics[metric_name]}
+                            on:click={() => current_metric++}
+                            {value}
+                        />{text}</label
+                    >
+                {/each}
+            {/if}
         </fieldset>
-    {:else if metric_name === "changefailure"}
-        <aside>
-            <h2>Change fail percentage</h2>
-            <img
-                alt="change failure percentage"
-                src={metrics_images.changefailure}
-            />
-        </aside>
-        <fieldset class="paragraph">
-            <legend>
-                For the primary application or service you work on, what
-                percentage of changes to production or released to users result
-                in degraded service (for example, lead to service impairment or
-                service outage) and subsequently require remediation (for
-                example, require a hotfix, rollback, fix forward or patch)?
-            </legend>
-            <slider>
-                <input
-                    type="range"
-                    name="changefailure"
-                    min="0"
-                    max="100"
-                    on:change={() => current_metric++}
-                    bind:value={metrics["changefailure"]}
-                />
-                <echo>
-                    {#if metrics["changefailure"] >= 0}{metrics[
-                            "changefailure"
-                        ]}{/if}
-                </echo>
-                <tickmarks>
-                    <tick>|<br />0</tick>
-                    <tick>|</tick>
-                    <tick>|<br />20</tick>
-                    <tick>|</tick>
-                    <tick>|<br />40</tick>
-                    <tick>|</tick>
-                    <tick>|<br />60</tick>
-                    <tick>|</tick>
-                    <tick>|<br />80</tick>
-                    <tick>|</tick>
-                    <tick>|<br />100</tick>
-                </tickmarks>
-            </slider>
-        </fieldset>
-    {:else if metric_name === "failurerecovery"}
-        <aside>
-            <h2>Failed deployment recovery time</h2>
-            <img
-                alt="failed deployment recovery time"
-                src={metrics_images.failurerecovery}
-            />
-        </aside>
-        <fieldset class="paragraph">
-            <legend>
-                For the primary application or service you work on, how long
-                does it generally take to restore service after a change to
-                production or release to users results in degraded service (for
-                example, lead to service impairment or service outage) and
-                subsequently require remediation (for example, require a hotfix,
-                rollback, fix forward, or patch)?
-            </legend>
-            {#each Object.entries(metrics_question_responses["failurerecovery"]) as [value, text]}
-                <label
-                    ><input
-                        name="failurerecovery"
-                        type="radio"
-                        bind:group={metrics["failurerecovery"]}
-                        on:click={() => current_metric++}
-                        {value}
-                    />{text}</label
-                >
-            {/each}
-        </fieldset>
-    {:else}
-        (Unknown metric: {metric_name})
-    {/if}
-</section>
+    </section>
+</div>
 
 <style lang="scss">
     label {
@@ -149,54 +109,74 @@
         margin-bottom: 32px;
 
         aside {
-            flex-grow: 0;
+            padding-right: 3rem;
             width: 35%;
-
-            img {
-                margin: 1rem;
-            }
         }
 
         fieldset {
-            flex-grow: 1;
             width: 65%;
+        }
 
-            legend {
-                margin-bottom: 1.5em;
-            }
+        span.friendly_name {
+            display: none;
+        }
 
-            label {
-                margin-bottom: 6px;
-            }
-            slider {
-                display: grid;
-                max-width: 600px;
-                grid-template-columns: auto 2rem;
-                input[type="range"] {
-                    width: 100%;
-                }
-                echo {
-                    padding: 0 0.5rem;
-                    height: 1.5rem;
-                    vertical-align: middle;
-                }
-            }
-            tickmarks {
+        img {
+            padding: 1rem;
+        }
+
+        legend {
+            margin-bottom: 1.5em;
+        }
+
+        label {
+            margin-bottom: 6px;
+            padding-left: 0.5rem;
+        }
+
+        slider {
+            display: grid;
+            max-width: 600px;
+            grid-template-columns: auto 2rem;
+            input[type="range"] {
                 width: 100%;
-                max-width: 600px;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                margin-left: 0rem;
-                margin-right: -3rem;
-                tick {
-                    display: inline-block;
-                    text-align: right;
-                    font-size: 0.65rem;
-                    color: #666;
-                    text-align: center;
-                    width: 1rem;
-                }
+            }
+            echo {
+                padding: 0 0.5rem;
+                height: 1.5rem;
+                vertical-align: middle;
+            }
+        }
+        tickmarks {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-left: 0rem;
+            margin-right: -3rem;
+            tick {
+                display: inline-block;
+                text-align: right;
+                font-size: 0.65rem;
+                color: #666;
+                text-align: center;
+                width: 1rem;
+            }
+        }
+
+        &.kiosk {
+            flex-direction: column;
+
+            h2 {
+                display: none;
+            }
+
+            img {
+                display: none;
+            }
+            span.friendly_name {
+                display: inline;
             }
         }
     }
@@ -219,7 +199,7 @@
                 width: 100%;
                 padding: 0.5rem;
                 label {
-                    padding-left: 1.5rem;
+                    padding-left: 0.5rem;
                 }
             }
         }

@@ -1,7 +1,7 @@
 ---
 title: "DORA Quick Check"
 date: 2024-03-09
-draft: false
+draft: true
 ---
 
 <!-- sources for the Quick Check single-page application are generated from the /svelte/quick-check-2023 folder, then copied here. -->
