@@ -2,9 +2,8 @@
     import PrioritizationResult from "./PrioritizationResult.svelte";
 
     export let capability_prioritization_questions;
-    export let capability_responses = Array(
-        capability_prioritization_questions.length,
-    ).fill([0]);
+    
+    export let capability_responses;
 </script>
 
 <div class="prioritize_step">
