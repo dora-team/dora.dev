@@ -95,7 +95,6 @@ DisplayMode: {displayMode}<br />
     >
 {/if}
 
-<hr />
 <!--- END debug -->
 
 <main class={displayMode}>
