@@ -62,7 +62,6 @@
                 }
             });
         }
-        console.log(capability_responses)
         nextCapability();
     });
 </script>
