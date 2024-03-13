@@ -25,7 +25,7 @@
         failurerecovery: {
             friendly_name: "Failed deployment recovery time",
             description:
-                "How long does it generally take to restore service after a change to production or release to users results in degraded service (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward, or patch)?",
+                "For the primary application or service you work on, how long does it generally take to restore service after a change to production or release to users results in degraded service (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward, or patch)?",
         },
     };
 
