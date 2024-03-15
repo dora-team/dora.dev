@@ -90,6 +90,11 @@
             "type": 302
         },
         {
+            "source": "/dora-report/[2017|2016|2015|2014]",
+            "destination": "/research/2017-and-earlier/:year-state-of-devops-report.pdf",
+            "type": 302
+        },
+        {
             "source": "/dora-report-:year",
             "destination": "/research/:year/dora-report",
             "type": 302
