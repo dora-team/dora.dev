@@ -113,7 +113,7 @@ DisplayMode: {displayMode}<br />
                 {displayMode}
             />
         {:else if step === "results"}
-            RESULTS
+            RESULTS (TODO)
         {/if}
     </div>
     {:else}
@@ -150,7 +150,7 @@ DisplayMode: {displayMode}<br />
     {/if}
 </main>
 
-<style>
+<style lang="scss">
     :global(:root) {
         --dora-blue: #005d8d;
         --performance-spectrum: linear-gradient(
@@ -171,6 +171,7 @@ DisplayMode: {displayMode}<br />
     :global(body main) {
         padding-left: 0;
         padding-right: 0;
+        max-width: 100%;
     }
 
     .faq {
@@ -183,9 +184,27 @@ DisplayMode: {displayMode}<br />
         text-align: center;
     }
 
+    main.kiosk {
+        max-width: 100%;
+        margin:0 1.5rem;
+        padding:0;
+    }
+
     .kioskMetricsQuestions {
         display:flex;
         flex-direction: row;
+
+        aside {
+            margin:0rem 2rem;
+            border-right:1px solid #ccd;
+            padding-right:2rem;
+        }
+
+        h1 {
+            font-size:7.5rem;
+        }
+
+        
     }
 
     aside {
