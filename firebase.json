@@ -143,6 +143,11 @@
             "source": "/assets/transformation_practices.pdf",
             "destination":"https://itrevolution.com/wp-content/uploads/2022/06/transformation_practices.pdf",
             "type":301
+          },
+          {
+            "source": "/next24",
+            "destination": "/survey",
+            "type": 302
           }
       ]
     }
