@@ -35,9 +35,12 @@
 
     onMount(() => {
         // quick check may be running on a kiosk or tablet, as specified in a meta tag from the calling page
-        if (document.getElementsByName("displayMode").length && document.getElementsByName("displayMode")[0].content) {
-            console.log("displayMode provided via <meta> tag")
+        if (
+            document.getElementsByName("displayMode").length &&
+            document.getElementsByName("displayMode")[0].content
+        ) {
             displayMode = document.getElementsByName("displayMode")[0].content;
+            console.log(`displayMode: ${displayMode} provided via <meta> tag`);
         }
 
         const searchParams = new URLSearchParams(window.location.search);
@@ -74,7 +77,7 @@
 
 <!-- Vite provides environment variables; if running in dev, show some debug -->
 {#if typeof import.meta.env.MODE !== "undefined" && import.meta.env.MODE === "development"}
-DisplayMode: {displayMode}<br />
+    DisplayMode: {displayMode}<br />
     <label
         ><input
             type="radio"
@@ -85,37 +88,37 @@ DisplayMode: {displayMode}<br />
         embedded<br /></label
     >
     <label
-    ><input
-        type="radio"
-        name="displayMode"
-        bind:group={displayMode}
-        value={"kiosk"}
-    />
-    kiosk<br /></label
+        ><input
+            type="radio"
+            name="displayMode"
+            bind:group={displayMode}
+            value={"kiosk"}
+        />
+        kiosk<br /></label
     >
 {/if}
 
 <!--- END debug -->
 
-<main class={displayMode}>
+<div class="quickcheck" class:displayMode>
     {#if displayMode === "kiosk"}
-    <div class="kioskMetricsQuestions">
-        <aside>
-            Take the
-            <h1>DORA Quick Check</h1>
-        </aside>
-        {#if step === "input"}
-            <MetricsQuestion
-                bind:metrics
-                bind:current_metric
-                metric_name={metric_names[current_metric]}
-                metric_position={current_metric}
-                {displayMode}
-            />
-        {:else if step === "results"}
-            RESULTS (TODO)
-        {/if}
-    </div>
+        <div class="kioskMetricsQuestions">
+            <aside>
+                Take the
+                <h1>DORA Quick Check</h1>
+            </aside>
+            {#if step === "input"}
+                <MetricsQuestion
+                    bind:metrics
+                    bind:current_metric
+                    metric_name={metric_names[current_metric]}
+                    metric_position={current_metric}
+                    {displayMode}
+                />
+            {:else if step === "results"}
+                RESULTS (TODO)
+            {/if}
+        </div>
     {:else}
         {#if step === "input"}
             {#each metric_names as metric, idx}
@@ -148,7 +151,7 @@ DisplayMode: {displayMode}<br />
             <GoFurther />
         {/if}
     {/if}
-</main>
+    </div>
 
 <style lang="scss">
     :global(:root) {
@@ -168,10 +171,9 @@ DisplayMode: {displayMode}<br />
     }
 
     /* override page-level styles for padding b/c it causes graphs to be mispositioned */
-    :global(body main) {
+    :global(body div.quickcheck) {
         padding-left: 0;
         padding-right: 0;
-        max-width: 100%;
     }
 
     .faq {
@@ -184,30 +186,22 @@ DisplayMode: {displayMode}<br />
         text-align: center;
     }
 
-    main.kiosk {
-        max-width: 100%;
-        margin:0 1.5rem;
-        padding:0;
-    }
-
     .kioskMetricsQuestions {
-        display:flex;
+        display: flex;
         flex-direction: row;
 
         aside {
-            margin:0rem 2rem;
-            border-right:1px solid #ccd;
-            padding-right:2rem;
+            margin: 0rem 2rem;
+            border-right: 1px solid #ccd;
+            padding-right: 2rem;
         }
 
         h1 {
-            font-size:7.5rem;
+            font-size: 7.5rem;
         }
-
-        
     }
 
     aside {
-        width:30%;
+        width: 30%;
     }
 </style>
