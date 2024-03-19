@@ -90,9 +90,29 @@
             "type": 302
         },
         {
-            "source": "/dora-report/[2017|2016|2015|2014]",
-            "destination": "/research/2017-and-earlier/:year-state-of-devops-report.pdf",
+            "source": "/dora-report-2014",
+            "destination": "/research/2017-and-earlier/2014-state-of-devops-report.pdf",
             "type": 302
+        },
+        {
+          "source": "/dora-report-2015",
+          "destination": "/research/2017-and-earlier/2015-state-of-devops-report.pdf",
+          "type": 302
+        },
+        {
+          "source": "/dora-report-2016",
+          "destination": "/research/2017-and-earlier/2016-state-of-devops-report.pdf",
+          "type": 302
+        },
+        {
+          "source": "/dora-report-2017",
+          "destination": "/research/2017-and-earlier/2017-state-of-devops-report.pdf",
+          "type": 302
+        },
+        {
+          "source": "/dora-report-2020",
+          "destination": "/research/2020/",
+          "type": 302
         },
         {
             "source": "/dora-report-:year",
