@@ -171,9 +171,15 @@
 
         &.kiosk {
             flex-direction: column;
+            border-bottom: none;
 
             p.description {
                 padding-top: 0;
+                font-size:1.5rem;
+            }
+
+            fieldset {
+                width:90%;
             }
 
             h2 {
@@ -185,6 +191,19 @@
             }
             span.friendly_name {
                 display: inline;
+            }
+
+            // show radio options as buttons
+            input[type=radio] {
+                display:none;
+            }
+
+            label {
+                font-size:1.65rem;
+                background-color:#eef;
+                border-radius:.5rem;
+                border:1px solid #e9e9f0;
+                padding:.5rem 1rem;
             }
         }
     }

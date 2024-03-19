@@ -8,6 +8,7 @@ bannerHighlightImage: "/img/quickcheck/hero_illustration.svg"
 ---
 
 <!-- sources for the Quick Check single-page application are generated from the /svelte/quick-check-2023 folder, then copied here. -->
-<script type="module" src="quickcheck.js"></script>
-<link rel="stylesheet" href="quickcheck.css">
+<!-- the timestamp shortcode is appended as a cache buster -->
+<script type="module" src="quickcheck.js?t={{% timestamp %}}"></script>
+<link rel="stylesheet" href="quickcheck.css?t={{% timestamp %}}">
 <div id="app"></div>
