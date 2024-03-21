@@ -204,6 +204,12 @@
                 border-radius:.5rem;
                 border:1px solid #e9e9f0;
                 padding:.5rem 1rem;
+                user-select: none;
+
+                &:focus {
+                    background-color: var(--dora-blue);
+                    color:white;
+                }
             }
         }
     }
