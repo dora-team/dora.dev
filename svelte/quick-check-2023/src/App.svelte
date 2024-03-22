@@ -6,9 +6,8 @@
     import YourPerformance from "./lib/YourPerformance.svelte";
     import HelpMePrioritize from "./lib/HelpMePrioritize.svelte";
     import GoFurther from "./lib/GoFurther.svelte";
-    import Fullscreen from "./lib/Fullscreen.svelte";
     import { sendAnalyticsEvent } from "./lib/utils.js";
-    import FullScreen from "./lib/Fullscreen.svelte";
+    import FullScreen from "./lib/FullScreen.svelte";
 
     let metrics = {
         leadtime: -1,
@@ -43,10 +42,6 @@
         ) {
             displayMode = document.getElementsByName("displayMode")[0].content;
             console.log(`displayMode: ${displayMode} provided via <meta> tag`);
-        }
-
-        if (displayMode === "kiosk" && document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen()
         }
 
         const searchParams = new URLSearchParams(window.location.search);
