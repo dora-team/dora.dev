@@ -17,6 +17,7 @@
     }
 </script>
 
+{#if document.fullscreenEnabled}
 <span
     class="google-material-icons"
     id="fullscreen_container"
@@ -24,14 +25,16 @@
         toggleFullScreen();
     }}>{fullscreen_modes[!fullscreen]}</span
 >
+{/if}
 
 <style>
     #fullscreen_container {
         display: block;
         padding: 1rem;
-        position: absolute;
-        top: 0;
-        right: 1rem;
+        position: fixed;
+        top: .5rem;
+        right: .5rem;
+        z-index: 1000;
     }
 
     .google-material-icons {

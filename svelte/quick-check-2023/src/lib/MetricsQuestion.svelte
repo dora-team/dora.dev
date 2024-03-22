@@ -1,4 +1,5 @@
 <script>
+    import { fade } from "svelte/transition";
     export let metrics;
     export let metric_name = "METRIC",
         metric_position = 1,
@@ -33,7 +34,10 @@
 </script>
 
 <!-- TODO: images on this page are inlined from "metrics_image.json" ... we should be able to use Vite to inline them automatically from static image files, which will make the source cleaner -->
-<div>
+<div
+    in:fade={{ delay: 350, duration: 100 }}
+    out:fade={{ delay: 250, duration: 100 }}
+>
     <section class="question {displayMode}">
         <aside>
             <h5>
@@ -50,48 +54,64 @@
                     {metrics_details[metric_name].description}
                 </p>
             </legend>
-            {#if metric_name === "changefailure"}
-                <slider>
-                    <input
-                        type="range"
-                        name="changefailure"
-                        min="0"
-                        max="100"
-                        on:change={() => current_metric++}
-                        bind:value={metrics["changefailure"]}
-                    />
-                    <echo>
-                        {#if metrics["changefailure"] >= 0}{metrics[
-                                "changefailure"
-                            ]}{/if}
-                    </echo>
-                    <tickmarks>
-                        <tick>|<br />0</tick>
-                        <tick>|</tick>
-                        <tick>|<br />20</tick>
-                        <tick>|</tick>
-                        <tick>|<br />40</tick>
-                        <tick>|</tick>
-                        <tick>|<br />60</tick>
-                        <tick>|</tick>
-                        <tick>|<br />80</tick>
-                        <tick>|</tick>
-                        <tick>|<br />100</tick>
-                    </tickmarks>
-                </slider>
-            {:else}
-                {#each Object.entries(metrics_question_responses[metric_name]) as [value, text]}
-                    <label
-                        ><input
-                            name={metric_name}
-                            type="radio"
-                            bind:group={metrics[metric_name]}
-                            on:click={() => current_metric++}
-                            {value}
-                        />{text}</label
-                    >
-                {/each}
-            {/if}
+            <div class="inputs">
+                {#if metric_name === "changefailure"}
+                    {#if displayMode === "embedded"}
+                        <slider>
+                            <input
+                                type="range"
+                                name="changefailure"
+                                min="0"
+                                max="100"
+                                on:change={() => current_metric++}
+                                bind:value={metrics["changefailure"]}
+                            />
+                            <echo>
+                                {#if metrics["changefailure"] >= 0}{metrics[
+                                        "changefailure"
+                                    ]}{/if}
+                            </echo>
+                            <tickmarks>
+                                <tick>|<br />0</tick>
+                                <tick>|</tick>
+                                <tick>|<br />20</tick>
+                                <tick>|</tick>
+                                <tick>|<br />40</tick>
+                                <tick>|</tick>
+                                <tick>|<br />60</tick>
+                                <tick>|</tick>
+                                <tick>|<br />80</tick>
+                                <tick>|</tick>
+                                <tick>|<br />100</tick>
+                            </tickmarks>
+                        </slider>
+                    {:else}
+                        {#each { length: 11 } as _, value}
+                            <label
+                                ><input
+                                    name="changefailure"
+                                    type="radio"
+                                    bind:group={metrics["changefailure"]}
+                                    on:click={() => current_metric++}
+                                    value={value * 10}
+                                />{value * 10}%</label
+                            >
+                        {/each}
+                    {/if}
+                {:else}
+                    {#each Object.entries(metrics_question_responses[metric_name]) as [value, text]}
+                        <label
+                            ><input
+                                name={metric_name}
+                                type="radio"
+                                bind:group={metrics[metric_name]}
+                                on:click={() => current_metric++}
+                                {value}
+                            />{text}</label
+                        >
+                    {/each}
+                {/if}
+            </div>
         </fieldset>
     </section>
 </div>
@@ -172,14 +192,21 @@
         &.kiosk {
             flex-direction: column;
             border-bottom: none;
+            position: absolute;
+            top: 0;
+            left: 40vw;
+
+            aside {
+                width: 35vw;
+            }
 
             p.description {
                 padding-top: 0;
-                font-size:1.5rem;
+                font-size: 1.5rem;
             }
 
             fieldset {
-                width:90%;
+                width: calc(100% - 1rem);
             }
 
             h2 {
@@ -194,22 +221,39 @@
             }
 
             // show radio options as buttons
-            input[type=radio] {
-                display:none;
+            input[type="radio"] {
+                display: none;
             }
 
             label {
-                font-size:1.65rem;
-                background-color:#eef;
-                border-radius:.5rem;
-                border:1px solid #e9e9f0;
-                padding:.5rem 1rem;
+                font-size: 1.65rem;
+                background-color: #eef;
+                border-radius: 0.5rem;
+                border: 1px solid #e9e9f0;
+                padding: 0.5rem 1rem;
                 user-select: none;
 
-                &:active {
+                &:active,
+                &:has(:checked) {
                     background-color: var(--dora-blue);
-                    color:white;
+                    color: white;
                 }
+
+                &:has(input[type="radio"][name="changefailure"]) {
+                    display: inline-block;
+                    font-size: 2rem;
+                    border-radius: 50%;
+                    width: 6rem;
+                    height: 6rem;
+                    text-align: center;
+                    line-height: 6rem;
+                    padding: 0;
+                    margin: 0.5rem;
+                }
+            }
+
+            div.inputs:has(input[type="radio"][name="changefailure"]) {
+                text-align: center;
             }
         }
     }

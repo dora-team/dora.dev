@@ -1,14 +1,14 @@
 ---
 title: "DORA Quick Check"
 date: 2024-03-09
-draft: true
+draft: false
 ---
 
 <!-- resize `main`; hide the header/footer nav -->
 <style>
     main {
         max-width: 100% !important;
-        margin: 1rem 1.5rem .5rem 1rem !important;
+        margin: 0 !important;
         padding: 0 !important;
     }
     footer {display:none}

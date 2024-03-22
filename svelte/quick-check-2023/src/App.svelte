@@ -7,7 +7,7 @@
     import HelpMePrioritize from "./lib/HelpMePrioritize.svelte";
     import GoFurther from "./lib/GoFurther.svelte";
     import { sendAnalyticsEvent } from "./lib/utils.js";
-    import FullScreen from "./lib/FullScreen.svelte";
+    import FullScreenButton from "./lib/FullScreenButton.svelte";
 
     let metrics = {
         leadtime: -1,
@@ -101,24 +101,31 @@
 
 <!--- END debug -->
 
+{#if displayMode === "kiosk"}
+    <FullScreenButton />
+{/if}
+
 <div class="quickcheck" class:displayMode>
     {#if displayMode === "kiosk"}
-        <FullScreen />
         <div class="kioskMetricsQuestions">
             <aside>
                 Take the
                 <h1>DORA Quick Check</h1>
             </aside>
             {#if step === "input"}
-                <MetricsQuestion
-                    bind:metrics
-                    bind:current_metric
-                    metric_name={metric_names[current_metric]}
-                    metric_position={current_metric}
-                    {displayMode}
-                />
+                {#key current_metric}
+                    <MetricsQuestion
+                        bind:metrics
+                        bind:current_metric
+                        metric_name={metric_names[current_metric]}
+                        metric_position={current_metric}
+                        {displayMode}
+                    />
+                {/key}
             {:else if step === "results"}
-                RESULTS (TODO)
+                <div>
+                    <YourPerformance {metrics} bind:industry />
+                </div>
             {/if}
         </div>
     {:else}
@@ -153,7 +160,7 @@
             <GoFurther />
         {/if}
     {/if}
-    </div>
+</div>
 
 <style lang="scss">
     :global(:root) {
