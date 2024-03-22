@@ -4,7 +4,7 @@ date: 2024-03-09
 draft: true
 ---
 
-<!-- resize `main`; hide the footer nav -->
+<!-- resize `main`; hide the header/footer nav -->
 <style>
     main {
         max-width: 100% !important;
@@ -12,6 +12,7 @@ draft: true
         padding: 0 !important;
     }
     footer {display:none}
+    header {display:none}
 </style>
 
 <meta name="displayMode" content="kiosk" />
