@@ -12,7 +12,7 @@
             fullscreen = true;
         } else if (document.exitFullscreen) {
             document.exitFullscreen();
-            fullscreen=false;
+            fullscreen = false;
         }
     }
 </script>
@@ -24,8 +24,6 @@
         toggleFullScreen();
     }}>{fullscreen_modes[!fullscreen]}</span
 >
-
-{fullscreen_modes[fullscreen]}
 
 <style>
     #fullscreen_container {
