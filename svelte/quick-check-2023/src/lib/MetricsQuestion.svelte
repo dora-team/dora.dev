@@ -206,7 +206,7 @@
                 padding:.5rem 1rem;
                 user-select: none;
 
-                &:focus {
+                &:active {
                     background-color: var(--dora-blue);
                     color:white;
                 }

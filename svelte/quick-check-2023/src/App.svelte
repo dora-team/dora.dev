@@ -6,7 +6,9 @@
     import YourPerformance from "./lib/YourPerformance.svelte";
     import HelpMePrioritize from "./lib/HelpMePrioritize.svelte";
     import GoFurther from "./lib/GoFurther.svelte";
+    import Fullscreen from "./lib/Fullscreen.svelte";
     import { sendAnalyticsEvent } from "./lib/utils.js";
+    import FullScreen from "./lib/Fullscreen.svelte";
 
     let metrics = {
         leadtime: -1,
@@ -20,7 +22,7 @@
     let current_capability = -1;
     let metric_names = Object.keys(metrics);
     let current_metric = 0; // in kiosk mode, metrics questions are presented one at a time
-    let displayMode = "embedded";
+    let displayMode = "kiosk";
 
     function saveURLParams() {
         if (typeof window !== "undefined") {
@@ -41,6 +43,10 @@
         ) {
             displayMode = document.getElementsByName("displayMode")[0].content;
             console.log(`displayMode: ${displayMode} provided via <meta> tag`);
+        }
+
+        if (displayMode === "kiosk" && document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen()
         }
 
         const searchParams = new URLSearchParams(window.location.search);
@@ -102,6 +108,7 @@
 
 <div class="quickcheck" class:displayMode>
     {#if displayMode === "kiosk"}
+        <FullScreen />
         <div class="kioskMetricsQuestions">
             <aside>
                 Take the
@@ -174,6 +181,7 @@
     :global(body div.quickcheck) {
         padding-left: 0;
         padding-right: 0;
+        position: relative;
     }
 
     .faq {
