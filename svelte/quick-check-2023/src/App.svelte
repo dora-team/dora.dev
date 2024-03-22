@@ -22,7 +22,7 @@
     let current_capability = -1;
     let metric_names = Object.keys(metrics);
     let current_metric = 0; // in kiosk mode, metrics questions are presented one at a time
-    let displayMode = "kiosk";
+    let displayMode = "embedded";
 
     function saveURLParams() {
         if (typeof window !== "undefined") {
