@@ -1,4 +1,5 @@
 <script>
+    //@ts-nocheck
     import { onMount } from "svelte";
 
     import PerformanceGraph from "./PerformanceGraph.svelte";

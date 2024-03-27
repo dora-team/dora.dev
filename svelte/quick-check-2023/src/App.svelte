@@ -8,6 +8,7 @@
     import GoFurther from "./lib/GoFurther.svelte";
     import { sendAnalyticsEvent } from "./lib/utils.js";
     import FullScreenButton from "./lib/FullScreenButton.svelte";
+    import StartOver from "./lib/StartOver.svelte";
 
     let metrics = {
         leadtime: -1,
@@ -35,16 +36,21 @@
     }
 
     onMount(() => {
-        // quick check may be running on a kiosk or tablet, as specified in a meta tag from the calling page
-        if (
+        const searchParams = new URLSearchParams(window.location.search);
+
+        // quick check may be running on a kiosk or tablet, as specified via URL param or in a meta tag from the calling page
+        if (searchParams.has("displayMode")) {
+            displayMode = searchParams.get("displayMode");
+            console.log(
+                `displayMode: ${displayMode} provided via querystring parameter`,
+            );
+        } else if (
             document.getElementsByName("displayMode").length &&
             document.getElementsByName("displayMode")[0].content
         ) {
             displayMode = document.getElementsByName("displayMode")[0].content;
             console.log(`displayMode: ${displayMode} provided via <meta> tag`);
         }
-
-        const searchParams = new URLSearchParams(window.location.search);
 
         // if the metric values are passed on the URL, save them to local vars and advance to results
         if (metric_names.every((metric) => searchParams.has(metric))) {
@@ -108,11 +114,12 @@
 <div class="quickcheck" class:displayMode>
     {#if displayMode === "kiosk"}
         <div class="kioskMetricsQuestions">
-            <aside>
-                Take the
-                <h1>DORA Quick Check</h1>
-            </aside>
             {#if step === "input"}
+                <aside>
+                    Take the
+                    <h1>DORA Quick Check</h1>
+                    <StartOver {displayMode} />
+                </aside>
                 {#key current_metric}
                     <MetricsQuestion
                         bind:metrics
@@ -125,6 +132,7 @@
             {:else if step === "results"}
                 <div>
                     <YourPerformance {metrics} bind:industry />
+                    <StartOver {displayMode} />
                 </div>
             {/if}
         </div>
@@ -213,5 +221,6 @@
 
     aside {
         width: 30%;
+        font-size:2rem;
     }
 </style>
