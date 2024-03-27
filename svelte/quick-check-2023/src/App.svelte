@@ -7,8 +7,9 @@
     import HelpMePrioritize from "./lib/HelpMePrioritize.svelte";
     import GoFurther from "./lib/GoFurther.svelte";
     import { sendAnalyticsEvent } from "./lib/utils.js";
-    import FullScreenButton from "./lib/FullScreenButton.svelte";
-    import StartOver from "./lib/StartOver.svelte";
+    import FullScreenButton from "./lib/kiosk/FullScreenButton.svelte";
+    import StartOver from "./lib/kiosk/StartOver.svelte";
+    import NextSteps from "./lib/kiosk/NextSteps.svelte";
 
     let metrics = {
         leadtime: -1,
@@ -77,7 +78,17 @@
         // TODO: add error handling w/r/t URL params (e.g. if step == "results" but metrics values not present, bounce to input)
     });
 
-    $: if (current_metric > 3) {
+    function nextMetric() {
+        if (current_metric < 3) {
+            current_metric++;
+        } else if (displayMode === "kiosk") {
+            // in kiosk mode, user automatially advances to results after last answer
+            showResults()
+        }
+    }
+
+    function showResults() {
+        saveURLParams();
         step = "results";
     }
 </script>
@@ -111,10 +122,10 @@
     <FullScreenButton />
 {/if}
 
-<div class="quickcheck" class:displayMode>
+<div class="quickcheck {displayMode}">
     {#if displayMode === "kiosk"}
-        <div class="kioskMetricsQuestions">
-            {#if step === "input"}
+        {#if step === "input"}
+            <div class="kioskMetricsQuestions">
                 <aside>
                     Take the
                     <h1>DORA Quick Check</h1>
@@ -127,15 +138,16 @@
                         metric_name={metric_names[current_metric]}
                         metric_position={current_metric}
                         {displayMode}
+                        on:nextMetric={nextMetric}
                     />
                 {/key}
-            {:else if step === "results"}
-                <div>
-                    <YourPerformance {metrics} bind:industry />
-                    <StartOver {displayMode} />
-                </div>
-            {/if}
-        </div>
+            </div>
+        {:else if step === "results"}
+            <div class="yourPerformance">
+                <YourPerformance {metrics} bind:industry {displayMode} />
+                <NextSteps {displayMode} />
+            </div>
+        {/if}
     {:else}
         {#if step === "input"}
             {#each metric_names as metric, idx}
@@ -143,6 +155,7 @@
                     bind:metrics
                     metric_name={metric}
                     metric_position={idx}
+                    on:nextMetric={nextMetric}
                 />
             {/each}
             <section class="submit">
@@ -150,14 +163,11 @@
                     disabled={!metric_names.every(
                         (metric) => metrics[metric] != -1,
                     )}
-                    on:click={() => {
-                        saveURLParams();
-                        step = "results";
-                    }}>View Results</button
+                    on:click={showResults}>View Results</button
                 >
             </section>
         {:else if step === "results" || step === "priorities"}
-            <YourPerformance {metrics} bind:industry />
+            <YourPerformance {metrics} bind:industry {displayMode} />
             <HelpMePrioritize bind:current_capability />
         {/if}
         <div class="faq">
@@ -221,6 +231,12 @@
 
     aside {
         width: 30%;
-        font-size:2rem;
+        font-size: 2rem;
+    }
+
+    .kiosk {
+        .yourPerformance {
+            margin: 0 2rem 0.5rem 0;
+        }
     }
 </style>
