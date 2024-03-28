@@ -1,7 +1,7 @@
 <script>
     //@ts-nocheck
     import { onMount } from "svelte";
-    
+
     import PerformanceGraph from "./PerformanceGraph.svelte";
     import { recode_numeric_range, sendAnalyticsEvent } from "./utils.js";
     import metrics_question_responses from "./data/metrics_question_responses.json";
@@ -313,33 +313,35 @@
     and SCSS vars are hard to propagate between different svelte components).
     So we'll use a "magic number" of 800px, in each file */
     @media (max-width: 800px) {
-        .performance-graphs {
-            grid-template-columns: 1fr;
-            padding: 0 2rem;
-            gap: 1rem 0;
+        .YourPerformance {
+            .performance-graphs {
+                grid-template-columns: 1fr;
+                padding: 0 2rem;
+                gap: 1rem 0;
 
-            aside {
-                b {
-                    display: inline-block;
-                    margin-right: 1rem;
+                aside {
+                    b {
+                        display: inline-block;
+                        margin-right: 1rem;
+                    }
+
+                    .metric_description {
+                        white-space: nowrap;
+                    }
                 }
 
-                .metric_description {
-                    white-space: nowrap;
+                .graph {
+                    border-bottom: 1px dotted var(--border-color-light);
+                    padding-bottom: 1.25rem;
+                    margin-bottom: 1.25rem;
                 }
             }
+            .legend {
+                flex-direction: column;
 
-            .graph {
-                border-bottom: 1px dotted var(--border-color-light);
-                padding-bottom: 1.25rem;
-                margin-bottom: 1.25rem;
-            }
-        }
-        .legend {
-            flex-direction: column;
-
-            .legend_header {
-                display: block;
+                .legend_header {
+                    display: block;
+                }
             }
         }
     }
