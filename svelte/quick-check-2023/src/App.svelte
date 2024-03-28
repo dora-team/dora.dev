@@ -8,8 +8,8 @@
     import GoFurther from "./lib/GoFurther.svelte";
     import { sendAnalyticsEvent } from "./lib/utils.js";
     import FullScreenButton from "./lib/kiosk/FullScreenButton.svelte";
-    import StartOver from "./lib/kiosk/StartOver.svelte";
     import NextSteps from "./lib/kiosk/NextSteps.svelte";
+    import StartOver from "./lib/kiosk/StartOver.svelte";
 
     let metrics = {
         leadtime: -1,
@@ -26,7 +26,8 @@
     let displayMode = "embedded";
 
     function saveURLParams() {
-        if (typeof window !== "undefined") {
+        // in kiosk mode, don't populate URL (b/c user can't easily copy-paste it)
+        if (typeof window !== "undefined" && displayMode === "embedded") {
             const url = new URL(window.location);
             metric_names.forEach((metric) =>
                 url.searchParams.set(metric, metrics[metric]),
@@ -83,13 +84,24 @@
             current_metric++;
         } else if (displayMode === "kiosk") {
             // in kiosk mode, user automatially advances to results after last answer
-            showResults()
+            showResults();
         }
     }
 
     function showResults() {
         saveURLParams();
         step = "results";
+    }
+
+    function reset() {
+        metric_names.forEach((metric) => {
+            metrics[metric] = -1;
+        });
+        step = "input";
+        industry = "all";
+        current_capability = -1;
+        current_metric = 0;
+        saveURLParams();
     }
 </script>
 
@@ -129,7 +141,9 @@
                 <aside>
                     Take the
                     <h1>DORA Quick Check</h1>
-                    <StartOver {displayMode} />
+                    {#if current_metric > 0}
+                        <StartOver on:reset={reset} {displayMode} />
+                    {/if}
                 </aside>
                 {#key current_metric}
                     <MetricsQuestion
@@ -145,7 +159,7 @@
         {:else if step === "results"}
             <div class="yourPerformance">
                 <YourPerformance {metrics} bind:industry {displayMode} />
-                <NextSteps {displayMode} />
+                <NextSteps {displayMode} on:reset={reset} />
             </div>
         {/if}
     {:else}

@@ -1,7 +1,7 @@
 <script>
     //@ts-nocheck
     import { onMount } from "svelte";
-
+    
     import PerformanceGraph from "./PerformanceGraph.svelte";
     import { recode_numeric_range, sendAnalyticsEvent } from "./utils.js";
     import metrics_question_responses from "./data/metrics_question_responses.json";
