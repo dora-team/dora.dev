@@ -8,7 +8,7 @@ draft: false
 <style>
     main {
         max-width: 100% !important;
-        margin: 0 !important;
+        margin: 2.5rem 0 0 0 !important;
         padding: 0 !important;
     }
     footer {display:none}

@@ -1,5 +1,8 @@
 <script>
+    //@ts-nocheck
+    import { createEventDispatcher } from 'svelte';
     import { fade } from "svelte/transition";
+    import Markdown from '@magidoc/plugin-svelte-marked'
     export let metrics;
     export let metric_name = "METRIC",
         metric_position = 1,
@@ -11,32 +14,39 @@
         leadtime: {
             friendly_name: "Lead time",
             description:
-                "For the primary application or service you work on, what is your lead time for changes (that is, how long does it take to go from code committed to code successfully running in production)?",
+                "For the primary application or service you work on, what is your **lead time for changes** (that is, how long does it take to go from code committed to code successfully running in production)?",
         },
         deployfreq: {
             friendly_name: "Deploy frequency",
             description:
-                "For the primary application or service you work on, how often does your organization deploy code to production or release it to end users?",
+                "For the primary application or service you work on, **how often does your organization deploy code** to production or release it to end users?",
         },
         changefailure: {
             friendly_name: "Change fail percentage",
             description:
-                "For the primary application or service you work on, what percentage of changes to production or released to users result in degraded service (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward or patch)?",
+                "For the primary application or service you work on, **what percentage of changes to production or released to users result in degraded service** (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward or patch)?",
         },
         failurerecovery: {
             friendly_name: "Failed deployment recovery time",
             description:
-                "For the primary application or service you work on, how long does it generally take to restore service after a change to production or release to users results in degraded service (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward, or patch)?",
+                "For the primary application or service you work on, **how long does it generally take to restore service** after a change to production or release to users results in degraded service (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward, or patch)?",
         },
     };
 
     let metric_friendly_name = metrics_details[metric_name]["friendly_name"];
+    let metric_question_text = metrics_details[metric_name].description;
+
+
+    const dispatch = createEventDispatcher()
+
+    const nextMetric = () => dispatch('nextMetric')
+
 </script>
 
 <!-- TODO: images on this page are inlined from "metrics_image.json" ... we should be able to use Vite to inline them automatically from static image files, which will make the source cleaner -->
 <div
-    in:fade={{ delay: 350, duration: 100 }}
-    out:fade={{ delay: 250, duration: 100 }}
+    in:fade={{ delay: 250, duration: 100 }}
+    out:fade={{ delay: 150, duration: 100 }}
 >
     <section class="question {displayMode}">
         <aside>
@@ -51,7 +61,7 @@
         <fieldset>
             <legend>
                 <p class="description">
-                    {metrics_details[metric_name].description}
+                    <Markdown source={metric_question_text} />
                 </p>
             </legend>
             <div class="inputs">
@@ -63,7 +73,7 @@
                                 name="changefailure"
                                 min="0"
                                 max="100"
-                                on:change={() => current_metric++}
+                                on:change={nextMetric}
                                 bind:value={metrics["changefailure"]}
                             />
                             <echo>
@@ -92,7 +102,7 @@
                                     name="changefailure"
                                     type="radio"
                                     bind:group={metrics["changefailure"]}
-                                    on:click={() => current_metric++}
+                                    on:change={nextMetric}
                                     value={value * 10}
                                 />{value * 10}%</label
                             >
@@ -105,7 +115,7 @@
                                 name={metric_name}
                                 type="radio"
                                 bind:group={metrics[metric_name]}
-                                on:click={() => current_metric++}
+                                on:change={nextMetric}
                                 {value}
                             />{text}</label
                         >
