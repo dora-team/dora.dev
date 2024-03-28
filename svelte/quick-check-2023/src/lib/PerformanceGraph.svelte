@@ -1,7 +1,7 @@
 <script>
-    import { onMount } from "svelte";
     export let user_score,
         industry_score,
+        displayMode,
         std = 0,
         tickmarks = [];
     export let featured = false;
@@ -11,7 +11,7 @@
     $: user_score_position = `${user_score * 10}%`;
 </script>
 
-<div class="graph" class:featured>
+<div class="graph {displayMode}" class:featured>
     <div class="axis"></div>
     <div
         class="std"
@@ -65,7 +65,7 @@
             height: 2.5rem;
             top: 50%;
             transform: translateX(-50%) translateY(-50%);
-            width:.2%;
+            width: 0.2%;
             min-width: 1px;
             background-color: var(--metric-background);
             border-left: 1px solid var(--metric-border);
@@ -141,5 +141,12 @@
                 color: white;
             }
         }
+
+        &.kiosk {
+            .tickmarks {
+                display:none;
+            }
+        }
+
     }
 </style>

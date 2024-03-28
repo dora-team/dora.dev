@@ -7,7 +7,9 @@
     import HelpMePrioritize from "./lib/HelpMePrioritize.svelte";
     import GoFurther from "./lib/GoFurther.svelte";
     import { sendAnalyticsEvent } from "./lib/utils.js";
-    import FullScreenButton from "./lib/FullScreenButton.svelte";
+    import FullScreenButton from "./lib/kiosk/FullScreenButton.svelte";
+    import NextSteps from "./lib/kiosk/NextSteps.svelte";
+    import StartOver from "./lib/kiosk/StartOver.svelte";
 
     let metrics = {
         leadtime: -1,
@@ -24,7 +26,8 @@
     let displayMode = "embedded";
 
     function saveURLParams() {
-        if (typeof window !== "undefined") {
+        // in kiosk mode, don't populate URL (b/c user can't easily copy-paste it)
+        if (typeof window !== "undefined" && displayMode === "embedded") {
             const url = new URL(window.location);
             metric_names.forEach((metric) =>
                 url.searchParams.set(metric, metrics[metric]),
@@ -35,16 +38,21 @@
     }
 
     onMount(() => {
-        // quick check may be running on a kiosk or tablet, as specified in a meta tag from the calling page
-        if (
+        const searchParams = new URLSearchParams(window.location.search);
+
+        // quick check may be running on a kiosk or tablet, as specified via URL param or in a meta tag from the calling page
+        if (searchParams.has("displayMode")) {
+            displayMode = searchParams.get("displayMode");
+            console.log(
+                `displayMode: ${displayMode} provided via querystring parameter`,
+            );
+        } else if (
             document.getElementsByName("displayMode").length &&
             document.getElementsByName("displayMode")[0].content
         ) {
             displayMode = document.getElementsByName("displayMode")[0].content;
             console.log(`displayMode: ${displayMode} provided via <meta> tag`);
         }
-
-        const searchParams = new URLSearchParams(window.location.search);
 
         // if the metric values are passed on the URL, save them to local vars and advance to results
         if (metric_names.every((metric) => searchParams.has(metric))) {
@@ -71,8 +79,29 @@
         // TODO: add error handling w/r/t URL params (e.g. if step == "results" but metrics values not present, bounce to input)
     });
 
-    $: if (current_metric > 3) {
+    function nextMetric() {
+        if (current_metric < 3) {
+            current_metric++;
+        } else if (displayMode === "kiosk") {
+            // in kiosk mode, user automatially advances to results after last answer
+            showResults();
+        }
+    }
+
+    function showResults() {
+        saveURLParams();
         step = "results";
+    }
+
+    function reset() {
+        metric_names.forEach((metric) => {
+            metrics[metric] = -1;
+        });
+        step = "input";
+        industry = "all";
+        current_capability = -1;
+        current_metric = 0;
+        saveURLParams();
     }
 </script>
 
@@ -105,14 +134,17 @@
     <FullScreenButton />
 {/if}
 
-<div class="quickcheck" class:displayMode>
+<div class="quickcheck {displayMode}">
     {#if displayMode === "kiosk"}
-        <div class="kioskMetricsQuestions">
-            <aside>
-                Take the
-                <h1>DORA Quick Check</h1>
-            </aside>
-            {#if step === "input"}
+        {#if step === "input"}
+            <div class="kioskMetricsQuestions">
+                <aside>
+                    Take the
+                    <h1>DORA Quick Check</h1>
+                    {#if current_metric > 0}
+                        <StartOver on:reset={reset} {displayMode} />
+                    {/if}
+                </aside>
                 {#key current_metric}
                     <MetricsQuestion
                         bind:metrics
@@ -120,14 +152,16 @@
                         metric_name={metric_names[current_metric]}
                         metric_position={current_metric}
                         {displayMode}
+                        on:nextMetric={nextMetric}
                     />
                 {/key}
-            {:else if step === "results"}
-                <div>
-                    <YourPerformance {metrics} bind:industry />
-                </div>
-            {/if}
-        </div>
+            </div>
+        {:else if step === "results"}
+            <div class="yourPerformance">
+                <YourPerformance {metrics} bind:industry {displayMode} />
+                <NextSteps {displayMode} on:reset={reset} />
+            </div>
+        {/if}
     {:else}
         {#if step === "input"}
             {#each metric_names as metric, idx}
@@ -135,6 +169,7 @@
                     bind:metrics
                     metric_name={metric}
                     metric_position={idx}
+                    on:nextMetric={nextMetric}
                 />
             {/each}
             <section class="submit">
@@ -142,14 +177,11 @@
                     disabled={!metric_names.every(
                         (metric) => metrics[metric] != -1,
                     )}
-                    on:click={() => {
-                        saveURLParams();
-                        step = "results";
-                    }}>View Results</button
+                    on:click={showResults}>View Results</button
                 >
             </section>
         {:else if step === "results" || step === "priorities"}
-            <YourPerformance {metrics} bind:industry />
+            <YourPerformance {metrics} bind:industry {displayMode} />
             <HelpMePrioritize bind:current_capability />
         {/if}
         <div class="faq">
@@ -213,5 +245,12 @@
 
     aside {
         width: 30%;
+        font-size: 2rem;
+    }
+
+    .kiosk {
+        .yourPerformance {
+            margin: 0 2rem 0.5rem 0;
+        }
     }
 </style>

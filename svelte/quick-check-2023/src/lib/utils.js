@@ -1,3 +1,4 @@
+//@ts-nocheck
 export const recode_numeric_range = (
     input_value,
     input_min,
