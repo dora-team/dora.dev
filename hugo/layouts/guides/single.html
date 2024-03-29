@@ -1,0 +1,15 @@
+{{ define "main" }}
+{{- partial "partials/link_styles" "scss/devops-capabilities.scss" -}}
+
+<h1>
+    {{ .Params.headline }}
+</h1>
+{{ if .Params.authors }}
+<div class="authors">
+    {{ range .Params.authors }}
+    <a href="{{ .url }}" target="blank">{{ .name }}</a>
+    {{ end }}
+</div>
+{{ end }}
+{{ .Content }}
+{{ end }}
