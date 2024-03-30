@@ -10,7 +10,7 @@ headline: "DORA’s software delivery metrics: the four keys"
 
 Technology-driven teams need ways to measure performance so that they can assess how they're doing today, prioritize improvements, and validate their progress. DORA has identified four software delivery metrics—the _four keys_—that provide an effective way of measuring the outcomes of the software delivery process. DORA's [research](dora.dev/research) shows that these performance metrics predict better organizational performance and well-being for team members.
 
-The four keys  can be viewed as both _leading_ and _lagging_ indicators. Leading indicators typically signal potential future changes in a system while lagging indicators reflect past performance and outcomes. 
+The four keys can be viewed as both _leading_ and _lagging_ indicators. Leading indicators typically signal potential future changes in a system while lagging indicators reflect past performance and outcomes. 
 
 <!-- TODO
 Replace the following bullet points with a GRAPHIC (which might look a lot like DORA Core)
@@ -21,7 +21,7 @@ Replace the following bullet points with a GRAPHIC (which might look a lot like 
 
 ## Throughput and stability
 
-DORA's four keys can be divided into metrics that show the throughput of software changes,  and metrics that show stability of software changes. This includes changes of any kind, including changes to configuration and changes to code. 
+DORA's four keys can be divided into metrics that show the throughput of software changes, and metrics that show stability of software changes. This includes changes of any kind, including changes to configuration and changes to code. 
 
 ### Throughput
 
@@ -39,7 +39,7 @@ Stability measures the quality of the changes delivered and the team's ability t
 
 ## Key insights
 
-DORA's research has repeatedly demonstrated that speed and stability are not tradeoffs. In fact, we see that the  metrics that the four keys focus on are correlated for most teams. Top performers dowell across all four metrics, and low performers do poorly.
+DORA's research has repeatedly demonstrated that speed and stability are not tradeoffs. In fact, we see that the  metrics that the four keys focus on are correlated for most teams. Top performers do well across all four metrics, and low performers do poorly.
 
 These metrics work for any type of technology your organization is delivering, but are best suited for measuring one application or service at a time. Whether you are building large language models, retail banking applications, mobile food ordering applications, or mainframe-based travel systems, the four keys can help you assess the delivery performance of your application.
 
@@ -52,7 +52,7 @@ Context matters. Apply the metrics in the context of the application or service 
 There are some pitfalls to watch out for as your team adopts DORA’s software delivery metrics, including the following:
 
 * **Setting metrics as a goal.** Ignoring [Goodhart's law](https://en.wikipedia.org/wiki/Goodhart%27s_law) and making broad statements like, "Every application must deploy multiple times per day by year's end," increases the likelihood that teams will try to game the metrics.
-* **Having one metric to rule them all.** Attempting to measure complex systems with the idea that only one metric matters.Teams should identify multiple metrics, including some with a healthy amount of tension between them. The [SPACE framework](https://queue.acm.org/detail.cfm?id=3454124) can guide your discovery of a set of metrics.
+* **Having one metric to rule them all.** Attempting to measure complex systems with the idea that only one metric matters. Teams should identify multiple metrics, including some with a healthy amount of tension between them. The [SPACE framework](https://queue.acm.org/detail.cfm?id=3454124) can guide your discovery of a set of metrics.
 * **Using industry as a shield against improving.** For example, some teams in highly regulated industries might claim that compliance requirements prevent them from disrupting the status quo.
 * **Making disparate comparisons.** These metrics are meant to be applied at the application or service level. Comparing metrics between vastly different applications (for example, a mobile app and a mainframe system) can be misleading.
 * **Having siloed ownership.** Sharing all four metrics across development, operations, and release teams fosters collaboration and shared ownership of the delivery process. Isolating teams with specific metrics can lead to friction and finger-pointing.
