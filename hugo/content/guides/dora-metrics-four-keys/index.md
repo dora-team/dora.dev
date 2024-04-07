@@ -21,6 +21,8 @@ Replace the following bullet points with a GRAPHIC (which might look a lot like 
 
 ## Throughput and stability
 
+![DORA's four keys](four-keys.png)
+
 DORA's four keys can be divided into metrics that show the throughput of software changes,  and metrics that show stability of software changes. This includes changes of any kind, including changes to configuration and changes to code. 
 
 ### Throughput
