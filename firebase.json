@@ -171,7 +171,7 @@
           },
           {
             "source": "/next24",
-            "destination": "/survey",
+            "destination": "https://google.qualtrics.com/jfe/form/SV_8uCHA4aRzcGDjg2?source=next24?Q_lang=EN",
             "type": 302
           }
       ]
