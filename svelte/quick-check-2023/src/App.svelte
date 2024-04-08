@@ -142,7 +142,11 @@
                     Take the
                     <h1>DORA Quick Check</h1>
                     {#if current_metric > 0}
-                        <StartOver on:reset={reset} {displayMode} />
+                        {#key step} <!-- re initialize this widget on every change of step or current_metric -->
+                            {#key current_metric}
+                                <StartOver on:reset={reset} {displayMode} />
+                            {/key}
+                        {/key}
                     {/if}
                 </aside>
                 {#key current_metric}
