@@ -13,6 +13,7 @@ draft: false
     }
     footer {display:none}
     header {display:none}
+    .site-banner {display:none}
 </style>
 
 <meta name="displayMode" content="kiosk" />
