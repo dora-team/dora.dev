@@ -1,5 +1,7 @@
 {{ define "main" }}
+<!-- TODO: remove this devops-capabilities stylesheet -->
 {{- partial "partials/link_styles" "scss/devops-capabilities.scss" -}}
+{{- partial "partials/link_styles" "scss/guides.scss" -}}
 
 <h1>
     {{ .Params.headline }}
@@ -9,6 +11,9 @@
     {{ range .Params.authors }}
     <a href="{{ .url }}" target="blank">{{ .name }}</a>
     {{ end }}
+</div>
+<div class="hero-image">
+    <img src="{{ .Params.heroimage }}">
 </div>
 {{ end }}
 {{ .Content }}

@@ -5,6 +5,7 @@ draft: false
 authors: 
     1: {name: 'Nathen Harvey', url: 'https://linkedin.com/in/nathenharvey'}
 headline: "DORA’s software delivery metrics: the four keys"
+heroimage: measurement_hero.png
 ---
 ## Effective measures
 
