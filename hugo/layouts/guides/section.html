@@ -1,0 +1,23 @@
+{{ define "main" }}
+{{- partial "partials/link_styles" "scss/guides.scss" -}}
+<h1>DORA Guides</h1>
+For a successful journey of continuous improvement—getting better at getting better!—you'll need the right equipment. These guides, written by members of the DORA research project and friends from throughout our <a href="https://dora.community/" target="_blank">community of practice</a>, offer advice from practioners on how to apply DORA's findings in your own unique context. 
+{{ .Content }}
+<grid class="guides-index">
+    {{ range .Pages }}
+    <item>
+        <a href="{{.RelPermalink}}">
+            {{ if .Params.heroimage }}
+            <div>
+                <img src="{{ .RelPermalink }}{{ .Params.heroimage }}">
+            </div>
+            {{ end }}
+            <div>
+                <h2>{{.Title}}</h2>
+                <h4>{{ .Params.subhead }}</h4>
+            </div>
+        </a>
+    </item>
+    {{ end }}
+</grid>
+{{ end }}

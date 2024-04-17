@@ -3,3 +3,21 @@
 .hero-image img {
     max-width: 100%;
 }
+
+.guides-index {
+    a {
+        text-decoration: none;
+        color: $color-text;
+    }
+    img {
+        width:100%;
+    }
+
+    h2 {
+        background-color: transparent;
+    }
+    h4 {
+        color: $color-text-medium;
+        padding:1rem;
+    }
+}

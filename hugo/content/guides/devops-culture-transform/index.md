@@ -1,11 +1,13 @@
 ---
-title: "How to transform"
+title: "How to transform your organization"
 titleForHTMLHead: "DevOps Capabilities: Transform" # TODO: can we DRY this out?
 date: 2023-03-22T13:43:36Z
-category: cultural
 draft: false
-headline: "Find out about the importance of ensuring your people have the tools and resources to do their job, and of making good use of their skills and abilities."
-summary: "Find out about the importance of ensuring your people have the tools and resources to do their job, and of making good use of their skills and abilities."
+headline: "How to transform your organization"
+subhead: "Find out about the importance of ensuring your people have the tools and resources to do their job, and of making good use of their skills and abilities."
+authors: 
+    1: {name: 'Jez Humble', url: 'https://www.linkedin.com/in/jez-humble'}
+heroimage: "devops-culture-transform.png"
 ---
 
 Every organization is constantly undergoing change. Therefore, some questions to
@@ -382,11 +384,7 @@ Source: CC-BY:
 by Jez Humble, Joanne Molesky, and Barry O'Reilly (O'Reilly, 2014).
 
 ## What's next
-
--   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
 -   Explore our DevOps
-    [research program](https://www.devops-research.com/research.html).
+    [research program](/research).
 -   Take the
-    [DORA quick check](/quickcheck/) to
-    understand where you stand in comparison with the rest of the industry.
+    [DORA quick check](/quickcheck/) to learn where you stand and identify opportunities for improvement

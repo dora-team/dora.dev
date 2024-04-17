@@ -7,14 +7,21 @@
     {{ .Params.headline }}
 </h1>
 {{ if .Params.authors }}
-<div class="authors">
+<h4 class="authors">
+    A <a href="/guides/">DORA Guide</a> by 
     {{ range .Params.authors }}
-    <a href="{{ .url }}" target="blank">{{ .name }}</a>
+    <a href="{{ .url }}" class="author" target="blank">{{ .name }}</a>
     {{ end }}
-</div>
+</h4>
+{{ if .Params.heroimage }}
 <div class="hero-image">
-    <img src="{{ .Params.heroimage }}">
+    <img src="{{ .Params.heroimage }}" alt="{{.Params.headline}}">
 </div>
+{{ end }}
+{{ if .Params.subhead }}
+<h2>{{ .Params.subhead }}</h2>
+{{ end }}
+
 {{ end }}
 {{ .Content }}
 {{ end }}

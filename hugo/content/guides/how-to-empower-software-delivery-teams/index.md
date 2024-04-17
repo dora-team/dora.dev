@@ -2,19 +2,16 @@
 title: "How to empower software delivery teams as a business leader"
 titleForHTMLHead: "How to empower software delivery teams as a business leader" # TODO: can we DRY this out?
 date: 2023-10-01T13:45:46-04:00
-category: cultural
 authors: 
     1: {name: 'Steve Fenton', url: 'https://linkedin.com/in/stevefenton'}
     2: {name: 'Mark Kropf', url: 'https://www.linkedin.com/in/markkropf/'}
     3: {name: 'Denali Lumma', url: 'https://www.linkedin.com/in/denali-lumma/'}
 draft: false
-slug: how-to-empower-software-delivery-teams
-core: false
-headline: Measure and enable performance to help teams deliver value.
+headline: "How to empower software delivery teams as a business leader"
+subhead: A guide to facilitating the flow of value
+heroimage: "how-to-empower-software-delivery-teams.png"
 
 ---
-## A guide to facilitating the flow of value
-
 Measurement is vital for developing high-performance software delivery teams. Without metrics to inform the process, learning from experiments is limited. In the worst case, the attempt could result in a worse outcome. Let's explore the impact of measuring for performance versus measuring for productivity on your ability to meet your goals.
 
 ### Productivity and performance
