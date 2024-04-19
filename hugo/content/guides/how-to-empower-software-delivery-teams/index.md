@@ -29,7 +29,7 @@ Let’s look at how leaders at all levels of an organization can leverage these 
 ### Software delivery managers
 Software delivery managers often get praised for burning down a backlog as fast as possible, and scolded when quality issues manifest downstream. Evaluation along these lines can impede deeper progress. To achieve a successful outcome over the long term, the manager needs to nurture sustainable team performance, of the kind that can only result from investing in the team itself.
 
-The DORA metrics (the four keys) are a great way to assess your software delivery performance. You can use the [quick check]({{< relref "/quickcheck" >}}) to discover the performance of each of your applications. You can collaborate with your team to find improvement opportunities, and the [DORA Core Model]({{< relref "/research" >}}) has a menu of capabilities you can draw on to help generate improvement ideas. Your team may think that a lack of deployment automation is causing infrequent deployments, so you could introduce this capability and measure its impact.
+The DORA metrics (the four keys) are a great way to assess your software delivery performance. You can use the [quick check](/quickcheck) to discover the performance of each of your applications. You can collaborate with your team to find improvement opportunities, and the [DORA Core Model](/research) has a menu of capabilities you can draw on to help generate improvement ideas. Your team may think that a lack of deployment automation is causing infrequent deployments, so you could introduce this capability and measure its impact.
 
 > The best use of the DORA metrics is to track the same application over time.
 
@@ -60,6 +60,6 @@ We’ve observed that alignment and autonomy are a potent combination. The stron
 
 ## Next steps
 
-* Explore the [DORA Core model]({{< relref "/research" >}}), a collection of the most firmly-established findings from throughout DORA's history
-* Read the latest [DORA Research Reports]({{< relref "/publications" >}})
+* Explore the [DORA Core model](/research), a collection of the most firmly-established findings from throughout DORA's history
+* Read the latest [DORA Research Reports](/publications)
 * Join the [DORA Community of Practice](https://dora.community) to share your experience with fellow travelers
