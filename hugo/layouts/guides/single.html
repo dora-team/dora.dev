@@ -8,7 +8,7 @@
 </h1>
 {{ if .Params.authors }}
 <h4 class="authors">
-    A <a href="/guides/">DORA Guide</a> by 
+    A <a href="/guides/">DORA Guide</a> by
     {{ range .Params.authors }}
     <a href="{{ .url }}" class="author" target="blank">{{ .name }}</a>
     {{ end }}
@@ -24,4 +24,7 @@
 
 {{ end }}
 {{ .Content }}
+{{ if .Params.updated }}
+<div class="updated">Last updated: {{ .Params.updated | time.Format ":date_long" }}</div>
+{{ end }}
 {{ end }}
