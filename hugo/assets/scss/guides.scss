@@ -1,0 +1,38 @@
+@import "_variables.scss";
+
+.hero-image img {
+    max-width: 100%;
+}
+
+.guides-index {
+    a {
+        text-decoration: none;
+        color: $color-text;
+    }
+    img {
+        width:100%;
+    }
+
+    h2 {
+        background-color: transparent;
+    }
+    h4 {
+        color: $color-text-medium;
+        padding:1rem;
+    }
+}
+
+.updated {
+    font-size:12px;
+    color:$color-text-light;
+    font-weight:200;
+}
+
+main li {
+    font-family: $font-roboto;
+    font-weight: 300;
+
+    strong {
+        font-family: $font-google-sans;
+    }
+}
