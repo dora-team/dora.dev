@@ -27,3 +27,12 @@
     color:$color-text-light;
     font-weight:200;
 }
+
+li {
+    font-family: $font-roboto;
+    font-weight: 300;
+
+    strong {
+        font-family: $font-google-sans;
+    }
+}
