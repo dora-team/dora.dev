@@ -185,7 +185,7 @@ There will be many obstacles on this journey to overcome, including:
     non-cloud-based systems, including mainframes and packaged software/COTS
 
 Overcoming these obstacles requires a
-[substantial change program](/devops-capabilities/cultural/devops-culture-transform)
+[substantial change program](/guides/devops-culture-transform)
 involving sustained investment and collaboration between people at every level
 of the organization.
 
