@@ -2,19 +2,17 @@
 title: "How to empower software delivery teams as a business leader"
 titleForHTMLHead: "How to empower software delivery teams as a business leader" # TODO: can we DRY this out?
 date: 2023-10-01T13:45:46-04:00
-category: cultural
+updated: 2024-04-19T00:00:00Z
 authors: 
     1: {name: 'Steve Fenton', url: 'https://linkedin.com/in/stevefenton'}
     2: {name: 'Mark Kropf', url: 'https://www.linkedin.com/in/markkropf/'}
     3: {name: 'Denali Lumma', url: 'https://www.linkedin.com/in/denali-lumma/'}
 draft: false
-slug: how-to-empower-software-delivery-teams
-core: false
-headline: Measure and enable performance to help teams deliver value.
+headline: "How to empower software delivery teams as a business leader"
+subhead: A guide to facilitating the flow of value
+heroimage: "how-to-empower-software-delivery-teams.png"
 
 ---
-## A guide to facilitating the flow of value
-
 Measurement is vital for developing high-performance software delivery teams. Without metrics to inform the process, learning from experiments is limited. In the worst case, the attempt could result in a worse outcome. Let's explore the impact of measuring for performance versus measuring for productivity on your ability to meet your goals.
 
 ### Productivity and performance
@@ -32,7 +30,7 @@ Let’s look at how leaders at all levels of an organization can leverage these 
 ### Software delivery managers
 Software delivery managers often get praised for burning down a backlog as fast as possible, and scolded when quality issues manifest downstream. Evaluation along these lines can impede deeper progress. To achieve a successful outcome over the long term, the manager needs to nurture sustainable team performance, of the kind that can only result from investing in the team itself.
 
-The DORA metrics (the four keys) are a great way to assess your software delivery performance. You can use the [quick check]({{< relref "/quickcheck" >}}) to discover the performance of each of your applications. You can collaborate with your team to find improvement opportunities, and the [DORA Core Model]({{< relref "/research" >}}) has a menu of capabilities you can draw on to help generate improvement ideas. Your team may think that a lack of deployment automation is causing infrequent deployments, so you could introduce this capability and measure its impact.
+The DORA metrics (the four keys) are a great way to assess your software delivery performance. You can use the [quick check](/quickcheck) to discover the performance of each of your applications. You can collaborate with your team to find improvement opportunities, and the [DORA Core Model](/research) has a menu of capabilities you can draw on to help generate improvement ideas. Your team may think that a lack of deployment automation is causing infrequent deployments, so you could introduce this capability and measure its impact.
 
 > The best use of the DORA metrics is to track the same application over time.
 
@@ -63,6 +61,6 @@ We’ve observed that alignment and autonomy are a potent combination. The stron
 
 ## Next steps
 
-* Explore the [DORA Core model]({{< relref "/research" >}}), a collection of the most firmly-established findings from throughout DORA's history
-* Read the latest [DORA Research Reports]({{< relref "/publications" >}})
+* Explore the [DORA Core model](/research), a collection of the most firmly-established findings from throughout DORA's history
+* Read the latest [DORA Research Reports](/publications)
 * Join the [DORA Community of Practice](https://dora.community) to share your experience with fellow travelers

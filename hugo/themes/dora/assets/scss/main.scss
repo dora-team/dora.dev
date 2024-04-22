@@ -30,18 +30,20 @@ body {
     letter-spacing: 0.2px;
 
     main {
-        width:100%;
+        width: 100%;
         flex-grow: 1;
         max-width: $layout-breakpoint-max;
         padding: 1.5rem 4rem 0.5rem 4rem;
         margin: auto;
 
         @include media-medium {
-            padding: .75em;
+            padding: 0.75em;
+            width: auto;
         }
 
         @include media-small {
-            padding: .5em;
+            padding: 0.5em;
+            width: auto;
         }
     }
 }
@@ -56,7 +58,7 @@ select {
     font-size: 1em;
 
     @include media-medium {
-        line-height:1.35;
+        line-height: 1.35;
     }
 }
 
@@ -126,7 +128,7 @@ section.banner {
     display: flex;
     flex-direction: row;
     margin-top: 3em;
-    border-top:1px solid $border-light;
+    border-top: 1px solid $border-light;
 
     @include media-medium {
         flex-direction: column;
@@ -143,12 +145,11 @@ section.banner {
             min-width: 25%;
             flex-grow: 1;
         }
-
     }
 }
 
 .google-material-icons {
-    font-family: 'Google Material Icons';
+    font-family: "Google Material Icons";
     font-weight: normal;
     font-style: normal;
     font-size: 24px;
@@ -159,14 +160,16 @@ section.banner {
     white-space: nowrap;
     word-wrap: normal;
     direction: ltr;
-    -webkit-font-feature-settings: 'liga';
+    -webkit-font-feature-settings: "liga";
     -webkit-font-smoothing: antialiased;
     vertical-align: middle;
 
     &.divider-before {
-        border-left:1px solid $border-light;
+        border-left: 1px solid $border-light;
     }
 }
 
 // for alpinejs: hide cloaked elements while page is loading
-[x-cloak] { display: none !important; }
+[x-cloak] {
+    display: none !important;
+}

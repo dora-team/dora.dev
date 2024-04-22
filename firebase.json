@@ -1,206 +1,216 @@
 {
-  "hosting": [
-    {
-      "target": "prod",
-      "public": "hugo/public",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
-      "redirects": [
+    "hosting": [
         {
-          "source": "/capabilities",
-          "destination": "/devops-capabilities/",
-          "type": 301
-        },
-        {
-          "source": "/quickcheck.html",
-          "destination": "/quickcheck/",
-          "type": 301
-        },
-        {
-          "source": "/performance.html**",
-          "destination": "/quickcheck/2019/results/",
-          "type": 301
-        },
-        {
-          "source": "/quickcheck/2023",
-          "destination": "/quickcheck/",
-          "type": 302
-        },
-        {
-          "source": "/research.html",
-          "destination": "/",
-          "type": 301
-        },
-        {
-          "source": "/models.html",
-          "destination": "/research/",
-          "type": 301
-        },
-        {
-          "source": "/faq.html",
-          "destination": "/faq/",
-          "type": 301
-        },
-        {
-          "source": "/dora-joins-google-cloud.html",
-          "destination": "/news/dora-joins-google-cloud/",
-          "type": 301
-        },
-        {
-          "source": "/2018/12/dora-joins-google-cloud/",
-          "destination": "/news/dora-joins-google-cloud/",
-          "type": 301
-        },        
-        {
-            "source": "/core",
-            "destination": "/research/",
-            "type": 301
-        },
-        {
-            "source": "/concepts/wellbeing",
-            "destination": "/devops-capabilities/cultural/well-being/",
-            "type": 302
-        },
-        {
-          "source": "/concepts/well-being",
-          "destination": "/devops-capabilities/cultural/well-being/",
-          "type": 302
-        },
-        {
-          "source": "/devops-capabilities/cultural/wellbeing",
-          "destination": "/devops-capabilities/cultural/well-being/",
-          "type": 302
-        },
-        {
-            "source": "/research/archives/:year*",
-            "destination": "/research/:year",
-            "type": 302
-        },
-        {
-            "source": "/research/:year/?tab_archives=:tab",
-            "destination": "/research/:year/:tab",
-            "type": 302
-        },
-        {
-            "source": "/dora-report",
-            "destination": "/report",
-            "type": 302
-        },
-        {
-            "source": "/dora-report-2014",
-            "destination": "/research/2017-and-earlier/2014-state-of-devops-report.pdf",
-            "type": 302
-        },
-        {
-          "source": "/dora-report-2015",
-          "destination": "/research/2017-and-earlier/2015-state-of-devops-report.pdf",
-          "type": 302
-        },
-        {
-          "source": "/dora-report-2016",
-          "destination": "/research/2017-and-earlier/2016-state-of-devops-report.pdf",
-          "type": 302
-        },
-        {
-          "source": "/dora-report-2017",
-          "destination": "/research/2017-and-earlier/2017-state-of-devops-report.pdf",
-          "type": 302
-        },
-        {
-          "source": "/dora-report-2020",
-          "destination": "/research/2020/",
-          "type": 302
-        },
-        {
-            "source": "/dora-report-:year",
-            "destination": "/research/:year/dora-report",
-            "type": 302
-        },
-        {
-            "source": "/report",
-            "destination": "https://cloud.google.com/devops/state-of-devops",
-            "type": 302
-        },
-        {
-          "source": "/report/roi",
-          "destination": "https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper",
-          "type": 302
-        },
-        {
-          "source": "/roi-report",
-          "destination": "https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper",
-          "type": 302
-        },
-        {
-            "source": "/report/:year",
-            "destination": "/research/:year/dora-report",
-            "type": 302
-        },
-        {
-          "source": "/:year-infographic",
-          "destination": "/research/:year/infographic/",
-          "type": 302
-        },
-        {
-          "source": "/infographic-:year",
-          "destination": "/research/:year/infographic/",
-          "type": 302
-        },
-        {
-          "source": "/postcard",
-          "destination": "/resources/img/DORA_Postcard_2023-10.pdf",
-          "type": 302
-        },
-        {
-            "source": "/devops-capabilities/technical/loosely-coupled-architecture",
-            "destination": "/devops-capabilities/process/loosely-coupled-architecture/",
-            "type": 302
-          },
-        {
-            "source": "/devops-capabilities/technical/shifting-left-on-security",
-            "destination": "/devops-capabilities/process/shifting-left-on-security/",
-            "type": 302
-          },
-          {
-            "source": "/assets/transformation_practices.pdf",
-            "destination":"https://itrevolution.com/wp-content/uploads/2022/06/transformation_practices.pdf",
-            "type":301
-          },
-          {
-            "source": "/next24",
-            "destination": "https://google.qualtrics.com/jfe/form/SV_8uCHA4aRzcGDjg2?source=next24",
-            "type": 302
-          }
-      ]
-    }
-  ],
-  "firestore": {
-    "rules": "rules/firestore.rules"
-  },
-  "functions": {
-    "source": "functions/inquiry-monitor",
-    "codebase": "inquiry-monitor"
-  },
-  "extensions": {
-    "firestore-send-email": "firebase/firestore-send-email@0.1.27"
-  },
-  "emulators": {
-    "hosting": {
-      "port": 6001
-    },
-    "ui": {
-      "enabled": true,
-      "port": 6002
-    },
-    "singleProjectMode": true,
+            "target": "prod",
+            "public": "hugo/public",
+            "ignore": [
+                "firebase.json",
+                "**/.*",
+                "**/node_modules/**"
+            ],
+            "redirects": [
+                {
+                    "source": "/capabilities",
+                    "destination": "/devops-capabilities/",
+                    "type": 301
+                },
+                {
+                    "source": "/quickcheck.html",
+                    "destination": "/quickcheck/",
+                    "type": 301
+                },
+                {
+                    "source": "/performance.html**",
+                    "destination": "/quickcheck/2019/results/",
+                    "type": 301
+                },
+                {
+                    "source": "/quickcheck/2023",
+                    "destination": "/quickcheck/",
+                    "type": 302
+                },
+                {
+                    "source": "/research.html",
+                    "destination": "/",
+                    "type": 301
+                },
+                {
+                    "source": "/models.html",
+                    "destination": "/research/",
+                    "type": 301
+                },
+                {
+                    "source": "/faq.html",
+                    "destination": "/faq/",
+                    "type": 301
+                },
+                {
+                    "source": "/dora-joins-google-cloud.html",
+                    "destination": "/news/dora-joins-google-cloud/",
+                    "type": 301
+                },
+                {
+                    "source": "/2018/12/dora-joins-google-cloud/",
+                    "destination": "/news/dora-joins-google-cloud/",
+                    "type": 301
+                },
+                {
+                    "source": "/core",
+                    "destination": "/research/",
+                    "type": 301
+                },
+                {
+                    "source": "/concepts/wellbeing",
+                    "destination": "/devops-capabilities/cultural/well-being/",
+                    "type": 302
+                },
+                {
+                    "source": "/concepts/well-being",
+                    "destination": "/devops-capabilities/cultural/well-being/",
+                    "type": 302
+                },
+                {
+                    "source": "/devops-capabilities/cultural/wellbeing",
+                    "destination": "/devops-capabilities/cultural/well-being/",
+                    "type": 302
+                },
+                {
+                    "source": "/research/archives/:year*",
+                    "destination": "/research/:year",
+                    "type": 302
+                },
+                {
+                    "source": "/research/:year/?tab_archives=:tab",
+                    "destination": "/research/:year/:tab",
+                    "type": 302
+                },
+                {
+                    "source": "/dora-report",
+                    "destination": "/report",
+                    "type": 302
+                },
+                {
+                    "source": "/dora-report-2014",
+                    "destination": "/research/2017-and-earlier/2014-state-of-devops-report.pdf",
+                    "type": 302
+                },
+                {
+                    "source": "/dora-report-2015",
+                    "destination": "/research/2017-and-earlier/2015-state-of-devops-report.pdf",
+                    "type": 302
+                },
+                {
+                    "source": "/dora-report-2016",
+                    "destination": "/research/2017-and-earlier/2016-state-of-devops-report.pdf",
+                    "type": 302
+                },
+                {
+                    "source": "/dora-report-2017",
+                    "destination": "/research/2017-and-earlier/2017-state-of-devops-report.pdf",
+                    "type": 302
+                },
+                {
+                    "source": "/dora-report-2020",
+                    "destination": "/research/2020/",
+                    "type": 302
+                },
+                {
+                    "source": "/dora-report-:year",
+                    "destination": "/research/:year/dora-report",
+                    "type": 302
+                },
+                {
+                    "source": "/report",
+                    "destination": "https://cloud.google.com/devops/state-of-devops",
+                    "type": 302
+                },
+                {
+                    "source": "/report/roi",
+                    "destination": "https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper",
+                    "type": 302
+                },
+                {
+                    "source": "/roi-report",
+                    "destination": "https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper",
+                    "type": 302
+                },
+                {
+                    "source": "/report/:year",
+                    "destination": "/research/:year/dora-report",
+                    "type": 302
+                },
+                {
+                    "source": "/:year-infographic",
+                    "destination": "/research/:year/infographic/",
+                    "type": 302
+                },
+                {
+                    "source": "/infographic-:year",
+                    "destination": "/research/:year/infographic/",
+                    "type": 302
+                },
+                {
+                    "source": "/postcard",
+                    "destination": "/resources/img/DORA_Postcard_2023-10.pdf",
+                    "type": 302
+                },
+                {
+                    "source": "/devops-capabilities/technical/loosely-coupled-architecture",
+                    "destination": "/devops-capabilities/process/loosely-coupled-architecture/",
+                    "type": 302
+                },
+                {
+                    "source": "/devops-capabilities/technical/shifting-left-on-security",
+                    "destination": "/devops-capabilities/process/shifting-left-on-security/",
+                    "type": 302
+                },
+                {
+                    "source": "/assets/transformation_practices.pdf",
+                    "destination": "https://itrevolution.com/wp-content/uploads/2022/06/transformation_practices.pdf",
+                    "type": 301
+                },
+                {
+                    "source": "/next24",
+                    "destination": "https://google.qualtrics.com/jfe/form/SV_8uCHA4aRzcGDjg2?source=next24",
+                    "type": 302
+                },
+                {
+                    "source": "/devops-capabilities/cultural/how-to-empower-software-delivery-teams/",
+                    "destination": "/guides/how-to-empower-software-delivery-teams/",
+                    "type": 302
+                },
+                {
+                    "source": "/devops-capabilities/cultural/devops-culture-transform/",
+                    "destination": "/guides/devops-culture-transform/",
+                    "type": 302
+                }
+            ]
+        }
+    ],
     "firestore": {
-      "port": 6100
+        "rules": "rules/firestore.rules"
     },
     "functions": {
-      "port": 6003
+        "source": "functions/inquiry-monitor",
+        "codebase": "inquiry-monitor"
+    },
+    "extensions": {
+        "firestore-send-email": "firebase/firestore-send-email@0.1.27"
+    },
+    "emulators": {
+        "hosting": {
+            "port": 6001
+        },
+        "ui": {
+            "enabled": true,
+            "port": 6002
+        },
+        "singleProjectMode": true,
+        "firestore": {
+            "port": 6100
+        },
+        "functions": {
+            "port": 6003
+        }
     }
-  }
 }

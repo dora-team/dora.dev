@@ -1,27 +1,23 @@
 ---
-title: "Dora Metrics Four Keys"
+title: "DORA’s software delivery metrics: the four keys"
 date: 2024-03-29T16:06:31-04:00
+updated: 2024-04-19T00:00:00Z
 draft: false
 authors: 
-    1: {name: 'Nathen Harvey', url: 'https://linkedin.com/in/nathenharvey'}
+    1: {name: 'Nathen Harvey', url: 'https://linkedin.com/in/nathen'}
 headline: "DORA’s software delivery metrics: the four keys"
+subhead: "Discover the essential measurements that can inform your ongoing journey of continuous improvement"
+heroimage: "dora-metrics-four-keys.png"
 ---
-## Effective measures
-
 Technology-driven teams need ways to measure performance so that they can assess how they're doing today, prioritize improvements, and validate their progress. DORA has identified four software delivery metrics—the _four keys_—that provide an effective way of measuring the outcomes of the software delivery process. DORA's [research](/research) shows that these performance metrics predict better organizational performance and well-being for team members.
 
 The four keys can be viewed as both _leading_ and _lagging_ indicators. Leading indicators typically signal potential future changes in a system while lagging indicators reflect past performance and outcomes. 
 
-<!-- TODO
-Replace the following bullet points with a GRAPHIC (which might look a lot like DORA Core)
--->
-
-* Leading indicators for organizational performance and employee well-being
-* Lagging indicators for software development and delivery practices.
+> The four key metrics are:
+>   * Leading indicators for organizational performance and employee well-being
+>   * Lagging indicators for software development and delivery practices.
 
 ## Throughput and stability
-
-![DORA's four keys](four-keys.png)
 
 DORA's four keys can be divided into metrics that show the throughput of software changes,  and metrics that show stability of software changes. This includes changes of any kind, including changes to configuration and changes to code. 
 

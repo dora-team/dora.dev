@@ -1,0 +1,21 @@
+{{ define "main" }}
+{{- partial "partials/link_styles" "scss/guides.scss" -}}
+{{ .Content }}
+<grid class="guides-index">
+    {{ range .Pages }}
+    <item>
+        <a href="{{.RelPermalink}}">
+            {{ if .Params.heroimage }}
+            <div>
+                <img src="{{ .RelPermalink }}{{ .Params.heroimage }}">
+            </div>
+            {{ end }}
+            <div>
+                <h2>{{.Title}}</h2>
+                <h4>{{ .Params.subhead }}</h4>
+            </div>
+        </a>
+    </item>
+    {{ end }}
+</grid>
+{{ end }}
