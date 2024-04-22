@@ -56,7 +56,7 @@ pitfalls when implementing visual management include the following:
     will be used more often. In addition, if teams can have input into the
     metrics that are displayed on their visual displays by participating in
     selecting their goals (for example, some teams
-    [use OKRs](/devops-capabilities/cultural/devops-culture-transform/)),
+    [use OKRs](/guides/devops-culture-transform/)),
     they will be more motivated to drive progress toward those goals.
 -   **Creating displays that are complex, hard to understand, or do not
     provide actionable information**. It's easy to create displays using tools

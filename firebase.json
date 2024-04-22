@@ -182,7 +182,7 @@
                 {
                     "source": "/devops-capabilities/cultural/devops-culture-transform/",
                     "destination": "/guides/devops-culture-transform/",
-                    "type": 302
+                    "type": 301
                 }
             ]
         }
