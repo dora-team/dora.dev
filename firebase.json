@@ -80,11 +80,6 @@
                     "type": 302
                 },
                 {
-                    "source": "/research/:year/?tab_archives=:tab",
-                    "destination": "/research/:year/:tab",
-                    "type": 302
-                },
-                {
                     "source": "/dora-report",
                     "destination": "/report",
                     "type": 302
