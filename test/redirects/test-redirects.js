@@ -34,9 +34,3 @@ describe(`Redirects for ${baseUrl}`, () => {
     });
   });
 });
-
-// TODO:
-// Handle this case
-// "source": "/research/:year/?tab_archives=:tab",
-// "destination": "/research/:year/:tab",
-// "type": 302
