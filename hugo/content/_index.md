@@ -1,5 +1,5 @@
 ---
-title: "DevOps Research and Assessment"
+title: "Get Better at Getting Better"
 date: 2022-11-22
 draft: false
 bannerTitle: "Get Better at Getting Better"
