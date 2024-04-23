@@ -41,7 +41,7 @@
 <!-- Facebook Meta Tags -->
 <meta property="og:url" content="https://dora.dev">
 <meta property="og:type" content="website">
-<meta property="og:title" content="DORA | Get Better at Getting Better">
+<meta property="og:title" content="DORA | {{ if .Params.TitleForHTMLHead }}{{ .Params.TitleForHTMLHead }}{{ else }}{{ .Title }}{{ end }}">
 <meta property="og:description" content="{{ .Site.Params.Description }}">
 <meta property="og:image" content="{{ if .Params.heroimage}}{{.Page.RelPermalink }}{{.Params.heroimage}}{{ else }}{{ .Site.Params.DefaultSocialImage }}{{ end }}">
 
@@ -49,7 +49,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:domain" content="dora.dev">
 <meta property="twitter:url" content="https://dora.dev">
-<meta name="twitter:title" content="DORA | Get Better at Getting Better">
+<meta name="twitter:title" content="DORA | {{ if .Params.TitleForHTMLHead }}{{ .Params.TitleForHTMLHead }}{{ else }}{{ .Title }}{{ end }}">
 <meta name="twitter:description" content="{{ .Site.Params.Description }}">
 <meta name="twitter:image" content="{{ if .Params.heroimage}}{{.Page.RelPermalink }}{{.Params.heroimage}}{{ else }}{{ .Site.Params.DefaultSocialImage }}{{ end }}">
 
