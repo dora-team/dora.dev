@@ -27,9 +27,6 @@
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
 
-<!-- 2023-08-09: @davidstanke is disabling these and moving the webfont requests into `main.scss`. If nothing bad happens as a result, delete these: -->
-<!-- <link href="https://fonts.googleapis.com/css2?family=Google+Sans:400,500,700|Google+Sans+Text:300,400,500,700" rel="stylesheet"> -->
-<!-- <link href="https://fonts.googleapis.com/css?family=Roboto:wght@100,300,400,500,700|Google+Material+Icons&amp;lang=en" rel="stylesheet"> -->
 <link href="https://fonts.googleapis.com/css?family=Google+Material+Icons&amp;lang=en" rel="stylesheet">
 
 <!-- favicons -->
@@ -40,5 +37,23 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://dora.dev">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DORA | {{ if .Params.TitleForHTMLHead }}{{ .Params.TitleForHTMLHead }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:description" content="{{ .Site.Params.Description }}">
+<meta property="og:image" content="{{ if .Params.heroimage}}{{.Page.RelPermalink }}{{.Params.heroimage}}{{ else }}{{ .Site.Params.DefaultSocialImage }}{{ end }}">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="dora.dev">
+<meta property="twitter:url" content="https://dora.dev">
+<meta name="twitter:title" content="DORA | {{ if .Params.TitleForHTMLHead }}{{ .Params.TitleForHTMLHead }}{{ else }}{{ .Title }}{{ end }}">
+<meta name="twitter:description" content="{{ .Site.Params.Description }}">
+<meta name="twitter:image" content="{{ if .Params.heroimage}}{{.Page.RelPermalink }}{{.Params.heroimage}}{{ else }}{{ .Site.Params.DefaultSocialImage }}{{ end }}">
+
+<!-- Social Meta Tags Generated via https://www.opengraph.xyz -->
+
 
 {{- partial "heading_anchor_links" . -}}
