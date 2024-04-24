@@ -178,6 +178,11 @@
                     "source": "/devops-capabilities/cultural/devops-culture-transform/",
                     "destination": "/guides/devops-culture-transform/",
                     "type": 301
+                },
+                {
+                    "source": "/sponsor",
+                    "destination": "/sponsors/",
+                    "type": 301
                 }
             ]
         }
