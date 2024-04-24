@@ -36,6 +36,16 @@ body {
         padding: 1.5rem 4rem 0.5rem 4rem;
         margin: auto;
 
+        li {
+            font-family: $font-roboto;
+            font-weight: 300;
+        
+            strong, b, a {
+                font-family: $font-google-sans;
+                font-weight: 500;
+            }
+        }
+
         @include media-medium {
             padding: 0.75em;
             width: auto;
