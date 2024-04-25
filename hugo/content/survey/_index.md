@@ -4,11 +4,9 @@ date: 2024-04-08T23:26:21Z
 draft: false
 ---
 
-# Participate in the 2024 DORA Survey
+[![2024 DORA Survey - Shape the future of tech](1920x1080_survey_future_white.png)](https://google.qualtrics.com/jfe/form/SV_8uCHA4aRzcGDjg2?source=doradotdev-survey)
 
 **The survey is now open!** Take a moment to reflect on your work, and share your experience to enrich this year's research. Most participants are able to complete the survey in about 15 minutes.
-
-{{< button href="https://google.qualtrics.com/jfe/form/SV_8uCHA4aRzcGDjg2?source=doradotdev-survey" target="_blank" >}}Take the 2024 DORA Survey now!{{< /button >}}
 
 ### What's new for 2024?
 
