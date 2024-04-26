@@ -54,11 +54,24 @@ steps:
         # (it returns in format `i  hosting:channel: https://<url>`)
         CHANNEL_DATA="$(firebase hosting:channel:open ${PREVIEW_CHANNEL} --project=${PROJECT_ID})"
 
-        # extract the URL from the channel data and save it to /workspace
-        echo "Preview this PR [with drafts ${DRAFTS_MODE}] at ${CHANNEL_DATA##* }" >> /workspace/gh-pr-comment-message.txt
+        # extract the URL from the channel data
+        touch /workspace/preview-url-drafts-${DRAFTS_MODE}.txt
+        echo "${CHANNEL_DATA##* }" > /workspace/preview-url-drafts-${DRAFTS_MODE}.txt
+
+        echo "Preview this PR [with drafts ${DRAFTS_MODE}] at $(cat /workspace/preview-url-drafts-${DRAFTS_MODE}.txt)" >> /workspace/gh-pr-comment-message.txt
       done
 
       cat /workspace/gh-pr-comment-message.txt
+
+  - id: 'Playwright tests'
+    name: mcr.microsoft.com/playwright:v1.43.0-jammy
+    env:
+    - 'CI=true'
+    script: |
+      cd test/playwright
+      npm ci
+      npx playwright install --with-deps
+      PLAYWRIGHT_BASE_URL=$(cat /workspace/preview-url-drafts-on.txt) npx playwright test
 
   - id: 'Write PR URL back to github'
     name: 'bash'
