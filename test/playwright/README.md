@@ -1,5 +1,9 @@
 This folder contains tests for use with [Playwright](https://playwright.dev).
 
+### Initial set-up
+* `npm install`
+* `npx playwright install`
+
 ### To run locally:
 * Start a local dev server (see /docs/README.md)
 * from this folder, run `npx playwright test`
