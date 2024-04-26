@@ -76,3 +76,4 @@ The Winners of the DevOps Awards are implementing DevOps practices to drive orga
     img-stroke="true" >}}
 Organizations are constantly grappling to quantify the value of technology transformation. The whitepaper takes an analytical, data-driven approach to forecast the value and justify investment in DevOps transformations.
 {{< /article >}}
+
