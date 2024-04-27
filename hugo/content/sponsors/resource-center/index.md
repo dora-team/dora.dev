@@ -13,7 +13,7 @@ Each sponsor has agreed to launch a campaign with the exclusive purpose of promo
 
 Our experience also shows us that the most effective driver of survey participation is direct contact with potential participants. This is why we specifically request that you leverage your contact database for the purposes of a campaign promoting participation in the survey. 
 
-## Why should people take the survey?
+## Why take the survey?
 There are lots of reasons your customers and community should participate in this year's survey.  Participation helps all of us hear from additional voices and take even more experiences into consideration as we identify the practices and capabilities that drive technology performance. Additionally, participation provides teams a moment to reflect on how they're doing today.
 
 ## Assets for reuse
