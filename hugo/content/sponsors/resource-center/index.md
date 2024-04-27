@@ -22,7 +22,7 @@ There are lots of reasons your customers and community should participate in thi
 
 You are welcome to take inspiration and copy from our [blog post announcing the survey](https://cloud.google.com/blog/products/devops-sre/2024-dora-survey-now-open) as you craft a message that is suitable for your own audience.
 
-Additionally, we have made a number of [DORA Survey Graphics](https://storage.googleapis.com/dora-sponsor-resources/DORA-Survey-Graphics.zip) available for download and use.
+Additionally, we have made a number of [DORA Survey Graphics](https://storage.googleapis.com/dora-sponsor-resources/DORA-Survey-Graphics.zip) <small>(ZIP, 175MB)</small> available for download and use.
 
 ## Sponsor distribution list
 
