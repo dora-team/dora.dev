@@ -30,4 +30,4 @@ Announcements and updates will be sent to the `dora-sponsors-2024@` distribution
 
 ## Contact us
 
-What questions do you have? What additional ideas to you have for collaboration this year?  Contact us at [mailto:sponsor-dora@google.com](sponsor-dora@google.com).
+What questions do you have? What additional ideas do you have for collaboration this year?  Contact us at [mailto:sponsor-dora@google.com](sponsor-dora@google.com).
