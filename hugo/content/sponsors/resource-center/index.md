@@ -26,7 +26,7 @@ Additionally, we have made a number of [DORA Survey Graphics](https://storage.go
 
 ## Sponsor distribution list
 
-Announcements and updates will be sent to the dora-sponsors-2024@googlegroups.com distribution list.  Reach out to [mailto:sponsor-dora@google.com](sponsor-dora@google.com) with the names and email addresses of anyone else from your organization who should be added to this distribution list.
+Announcements and updates will be sent to the `dora-sponsors-2024@` distribution list.  Reach out to [mailto:sponsor-dora@google.com](sponsor-dora@google.com) with the names and email addresses of anyone else from your organization who should be added to this distribution list.
 
 ## Contact us
 
