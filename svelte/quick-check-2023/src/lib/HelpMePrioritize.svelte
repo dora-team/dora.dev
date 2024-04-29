@@ -87,7 +87,7 @@
     <div id="capability_container" bind:this={capability_container}>
         {#each capability_prioritization_questions as capability, counter}
             <div
-                class="capability"
+                class="capability {capability.shortname}"
                 style:transform={counter == 0
                     ? "translateX(0)"
                     : "translateX(100%)"}

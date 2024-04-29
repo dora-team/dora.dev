@@ -38,7 +38,7 @@
                 }%`}
             ></div>
         </div>
-        <div class="score_text">
+        <div class="score_text {question.shortname}">
             {this_capability_recoded_average} <span class="range">/ 10</span>
         </div>
     </div>
