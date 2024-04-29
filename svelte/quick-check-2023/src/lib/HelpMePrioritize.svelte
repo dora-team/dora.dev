@@ -88,6 +88,7 @@
         {#each capability_prioritization_questions as capability, counter}
             <div
                 class="capability"
+                id="{capability.shortname}"
                 style:transform={counter == 0
                     ? "translateX(0)"
                     : "translateX(100%)"}
