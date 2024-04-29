@@ -4,6 +4,7 @@ date: 2024-04-24T09:58:12-04:00
 draft: false
 bannerTitle: Sponsor DORA research
 bannerSubtitle: Partner with DORA and Google Cloud to shape the future of software development
+layout: single
 ---
 Software delivery and operational performance are critical to driving organizational success.  At DORA, we've been at the forefront of research in this field for over a decade, providing data-driven insights that empower organizations to improve their technology practices.
 
