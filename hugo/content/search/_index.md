@@ -4,31 +4,23 @@ date: 2024-02-15T18:39:17-05:00
 draft: true
 ---
 
-## TEST page for search.dora.dev
-
 <script>
+    let searchServer="https://search.dora.dev/";
+
     window.addEventListener('DOMContentLoaded', (event) => {
-        let searchServer="https://search.dora.dev/";
         let inputBox = document.querySelector("#searchQuery");
         let resultsBox = document.querySelector('#searchResults');
+        let resultsHeader = document.querySelector('#resultsHeader')
+        let searchQuery = ''
         let searchURI = '';
-
-        function makeDelay(ms) {
-            var timer = 0;
-            return function(callback){
-                clearTimeout (timer);
-                timer = setTimeout(callback, ms);
-            };
-        };
         
-
-        inputBox.addEventListener('keyup', (event) => {
-            if(inputBox.value.length >= 3) {
-                query(inputBox.value)
-            }
-        })
+        let params = new URLSearchParams(window.location.search);
+        if(params.has("q")) {
+            searchQuery=params.get("q");
+        }
 
         function query(searchTerm) {
+            resultsBox.innerHTML = `<span class="searching">Searching "${searchQuery}..."</span>`;
             console.log(`searching ${searchTerm}...`)
             searchURI = `${searchServer}?query=${searchTerm}`;
             fetch(searchURI)
@@ -42,11 +34,11 @@ draft: true
                     resultsBox.innerHTML = '';
                     data.forEach((result) => {
                         thisResult = `
-                            <div>
+                            <div class="searchResults">
                                 <div><a href="${result.link}">${result.title}</a></div>
-                                <div>
+                                <p>
                                     ${result.snippet}
-                                </div>
+                                </p>
                             </div>
                             `;
                         resultsBox.innerHTML += thisResult;
@@ -56,12 +48,41 @@ draft: true
                 .catch(error => {
                     resultsBox.innerHTML = "(error fetching search results)"
                 });
+            resultsHeader.innerHTML = `Search results: <b>${searchQuery}</b>`;
         }
+
+        inputBox.value = searchQuery;
+        if(searchQuery.length) {
+            query(searchQuery);
+        }
+
     });
 </script>
 
-<input type="text" name="query" id="searchQuery" placeholder="(enter a search query)">
 
-<div id="searchResults" style="width:80%;border:1px solid grey;padding:.5rem;height:40rem;overflow-y:auto">
-    (results will appear here)
-</div>
+<h2 id="resultsHeader">Search</h2>
+
+<form action="." method="get">
+    <input type="search" name="q" id="searchQuery" placeholder="Search dora.dev for..."> <input type="submit" value="search" id="searchButton" />
+</form>
+
+<div id="searchResults"></div>
+
+<style>
+    #resultsHeader {
+        color:#666;
+    }
+
+    #resultsHeader b {
+        color:rgb(32, 33, 36);
+    }
+
+    .searching {
+        color:#999;
+        font-style:italic;
+    }
+    .searchResults:not(last-child) {
+        padding:.75rem 0;
+        border-bottom:1px solid #eee;
+    }
+</style>
