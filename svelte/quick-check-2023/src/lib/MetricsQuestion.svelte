@@ -289,7 +289,7 @@
                 width: calc(100% - 1rem);
                 padding: 0.5rem;
                 label {
-                    padding-inline: 0.5rem;
+                    padding-left: 0.5rem;
                 }
             }
         }
