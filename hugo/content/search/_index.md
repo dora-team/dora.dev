@@ -4,6 +4,8 @@ date: 2024-02-15T18:39:17-05:00
 draft: true
 ---
 
+> This is an early preview of DORA search. Neither the functionality or UX are complete!
+
 <script>
     let searchServer="https://search.dora.dev/";
 
