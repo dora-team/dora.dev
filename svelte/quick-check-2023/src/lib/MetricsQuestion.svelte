@@ -165,7 +165,7 @@
 
         label {
             margin-bottom: 6px;
-            padding-left: 0.5rem;
+            padding-inline: 0.5rem;
         }
 
         slider {
@@ -286,7 +286,7 @@
             }
 
             fieldset {
-                width: 100%;
+                width: calc(100% - 1rem);
                 padding: 0.5rem;
                 label {
                     padding-left: 0.5rem;
