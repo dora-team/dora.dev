@@ -8,7 +8,7 @@
         "6": "Less than one hour"
     },
     "deployfreq": {
-        "1": "Fewer than once per six months",
+        "1": "Less than once per six months",
         "2": "Between once per month and once every six months",
         "3": "Between once per week and once per month",
         "4": "Between once per day and once per week",
