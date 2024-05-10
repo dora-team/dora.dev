@@ -162,7 +162,7 @@ Some important points about this pattern are the following:
 After teams have discovered better ways of working, the next task is to spread
 lessons learned throughout the organization. There are many ways to do this. In
 the
-[2019 State of DevOps Report](https://cloud.google.com/devops/state-of-devops)
+[2019 State of DevOps Report](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf)
 researchers asked respondents to share how their teams and organizations spread
 DevOps and Agile methods by selecting from one or more of the following
 approaches (see Appendix B of the 2019 State of DevOps Report for detailed
