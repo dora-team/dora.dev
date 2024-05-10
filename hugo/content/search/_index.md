@@ -87,8 +87,11 @@ draft: true
 </div>
 
 <style>
-    #searchResultsContainer {
+    main {
         width:100%;
+    }
+
+    #searchResultsContainer {
         display: grid;
         grid-template-areas:
             "a a"
