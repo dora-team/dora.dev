@@ -57,6 +57,7 @@ Use our quick check tool to discover how you compare to industry peers, identify
 DORA Core represents the most well-established findings across the history and breadth our research program. Use it to guide transformation efforts in your organization.
 {{< /article >}}
 
+<!--
 {{< article 
     columns="1" 
     title="DevOps Awards" 
@@ -64,6 +65,19 @@ DORA Core represents the most well-established findings across the history and b
     url="https://cloud.google.com/blog/topics/devops-awards" 
     >}}
 The Winners of the DevOps Awards are implementing DevOps practices to drive organizational success and deliver high-quality customer experiences. Read about their journeys and learn how they applied a philosophy of continuous improvement.
+{{< /article >}} -->
+
+
+{{< article 
+    columns="1" 
+    title="2024 DORA Awards" 
+    cta="Submit your story now"
+    url="https://docs.google.com/forms/d/e/1FAIpQLSfqR-4fS9MlqjhgYmdDcrGqEkGccA_8MJoRXevYO1xJoXSkTA/viewform" 
+    img-src="/img/features/dora-awards-2024.png"
+    img-align="left"
+    img-stroke="false"
+    >}}
+The Google Cloud DORA Awards applications are now open! Featuring 10 different categories including DevOps, AI innovation, and more, the awards celebrate Google Cloud customers putting DORA insights into practice.
 {{< /article >}}
 
 {{< article 

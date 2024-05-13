@@ -45,10 +45,6 @@ body {
             }
         }
 
-        img {
-            max-width: 100%;
-        }
-
         @include media-medium {
             padding: 0.75em;
             width: auto;
