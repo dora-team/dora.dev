@@ -1,7 +1,7 @@
 ---
 title: "Search"
 date: 2024-02-15T18:39:17-05:00
-draft: true
+draft: false
 ---
 
 > This is an early preview of DORA search.
@@ -18,6 +18,7 @@ draft: true
         let askDora = document.querySelector('#askDora');
         let searchQuery = ''
         let searchURI = '';
+        let max_web_records = 12; // pagination support is limited; for now, just return 12 and display all on one page
         
         let params = new URLSearchParams(window.location.search);
         if(params.has("q")) {
@@ -31,7 +32,7 @@ draft: true
             askDora.style.display = 'none';
             resultsBox.innerHTML = `<span class="searching">Searching "${searchQuery}..."</span>`;
             console.log(`searching ${searchTerm}...`)
-            searchURI = `${searchServer}?query=${searchTerm}`;
+            searchURI = `${searchServer}?query=${searchTerm}&max_web_records=${max_web_records}`;
             fetch(searchURI)
                 .then(response => {
                     if (!response.ok) {
@@ -47,11 +48,11 @@ draft: true
                         data["links"].forEach((result) => {
                             thisResult = `
                                 <a href="${result.link}" class="webResults">
-                                    <span class="url">${result.link}</span>
                                     <h4>${result.title}</h4>
                                     <p>
                                         ${result.snippet}
                                     </p>
+                                    <span class="url">${result.link}</span>
                                 </a>
                                 `;
                             resultsBox.innerHTML += thisResult;})
@@ -62,11 +63,25 @@ draft: true
                         publicationResultsHeader.innerHTML = '<h3>DORA publications</h3>';
                         let year = 0;
                         data["pdfs"].forEach((result) => {
-                            year = result.publication_year
+                            year = result.publication_year;
+                            snippet = result.snippet;
+                            page_number = result.page_number;
+                            // URL `/dora-report-${year}` requires Firebase redirect, so it won't work if site is served by Hugo
                             publicationResultsBox.innerHTML += `
-                                <div>
-                                    <img src="/img/sodr_thumbnails/${year}.png">
-                                </div>
+                                <a href="/dora-report-${year}" target="_blank">
+                                    <div class="publication">
+                                        <div class="thumbnail">
+                                            <img src="/img/sodr_thumbnails/${year}.png">
+                                            <br>
+                                            <h3>State of DevOps Report ${year}</h3>
+                                            <h4>p. ${page_number}</h4>
+                                        </div>
+                                        <div class="snippet">
+                                            <div class="snippetText">${snippet.split(" ").slice(0,1000).join(" ")}</div>
+                                            <small>Read the full report</small>
+                                        </div>
+                                    </div>
+                                </a>
                             `
                         })
                     }
@@ -163,11 +178,51 @@ draft: true
         grid-template-columns:1fr 1fr 1fr;
     }
 
-    #publicationResults div {
+    #publicationResults div.publication {
         display: flex;
+        margin-right:1em;
     }
 
-    #publicationResults div img {
+    #publicationResults div.snippet {
+        font-family:roboto;
+        line-height:1.25;
+        font-weight:300;
+    }
+
+    #publicationResults div.snippetText {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 9;
+        overflow: hidden;
+    }
+
+    #publicationResults div.publication small {
+        color:#1a73e8;
+    }
+
+    #publicationResults div.thumbnail {
+        margin-right:.25em;
+    }
+
+    #publicationResults h3 {
+        font-size:1em;
+        font-weight:bold;
+        border:none;
+        display:inline;
+    }
+
+    #publicationResults h4 {
+        font-size:.75em;
+        color:#999;
+        display:inline;
+    }
+
+    #publicationResults a {
+        text-decoration:none;
+        color:#333;
+    }
+
+    #publicationResults img {
         max-width:8em;
         max-height:8em;
         margin-right:.5em;
@@ -194,8 +249,11 @@ draft: true
         margin-right:2em;
     }
 
-    .webResults:not(last-child) {
+    .webResults {
         padding:.75rem 0;
+    }
+
+    .webResults:not(last-child) {
         border-bottom:1px solid #eee;
     }
 
@@ -210,12 +268,16 @@ draft: true
         font-weight:bold;
     }
 
-    .webResults:hover h4 {
-        color:#1a73e8;
-    }
-
     .webResults .url {
         font-size:.75rem;
+    }
+
+    .webResults:hover {
+        color:#333;
+    }
+
+    .webResults:hover h4, .webResults:hover .url {
+        color:#1a73e8;
     }
 
     #askDoraContainer a {
