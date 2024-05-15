@@ -11,9 +11,11 @@ draft: true
 
     window.addEventListener('DOMContentLoaded', (event) => {
         let inputBox = document.querySelector("#searchQuery");
-        let resultsBox = document.querySelector('#webResults');
+        let resultsBox = document.querySelector('#webResultsContainer');
         let resultsHeader = document.querySelector('#resultsHeader')
+        let publicationResultsHeader = document.querySelector('#publicationResultsHeader');
         let publicationResultsBox = document.querySelector('#publicationResults');
+        let askDora = document.querySelector('#askDora');
         let searchQuery = ''
         let searchURI = '';
         
@@ -23,6 +25,10 @@ draft: true
         }
 
         function query(searchTerm) {
+            publicationResultsHeader.innerHTML = '';
+            publicationResultsBox.innerHTML = '';
+            resultsBox.innerHTML = '';
+            askDora.style.display = 'none';
             resultsBox.innerHTML = `<span class="searching">Searching "${searchQuery}..."</span>`;
             console.log(`searching ${searchTerm}...`)
             searchURI = `${searchServer}?query=${searchTerm}`;
@@ -34,10 +40,10 @@ draft: true
                     return response.json();
                 })
                 .then(data => {
-                    resultsBox.innerHTML = '';
-                    publicationResultsBox.innerHTML = '';
                     // populate website results
                     if(data["links"].length) {
+                        askDora.style.display = 'block';
+                        resultsBox.innerHTML = '<h3>Guides, capabilities, and more</h3>';
                         data["links"].forEach((result) => {
                             thisResult = `
                                 <a href="${result.link}" class="webResults">
@@ -53,10 +59,13 @@ draft: true
                             resultsBox.innerHTML = `No results for ${searchTerm}`
                         }
                     if(data["pdfs"].length) {
+                        publicationResultsHeader.innerHTML = '<h3>DORA publications</h3>';
+                        let year = 0;
                         data["pdfs"].forEach((result) => {
+                            year = result.publication_year
                             publicationResultsBox.innerHTML += `
-                                <div style="width:33%;line-height:4em;height:4em;text-align:center">
-                                    PDF
+                                <div>
+                                    <img src="/img/sodr_thumbnails/${year}.png">
                                 </div>
                             `
                         })
@@ -67,6 +76,7 @@ draft: true
                     console.log(error);
                 });
             resultsHeader.innerHTML = `Search results: <b>${searchQuery}</b>`;
+            resultsHeader.style.display = 'block';
         }
 
         inputBox.value = searchQuery;
@@ -81,42 +91,40 @@ draft: true
 
 <h2 id="resultsHeader">Search</h2>
 <div id="searchResultsContainer">
+    <div id="publicationResultsHeader"></div>
     <div id="publicationResults"></div>
-    <div id="webResults"></div>
-    <div id="askDora">[put ask.dora.dev snipe here]</div>
+    <div id="webAndGenerativeResults">
+        <div id="webResultsContainer"></div>
+        <div id="askDoraContainer">
+            <a href="https://ask.dora.dev/" target=_blank>
+                <div id="askDora">
+                    <img src="communitycritter-green.png">
+                    <h3>Explore further</h3>
+                    <h4>
+                        Try DORA’s new<br>
+                        Generative AI search experience
+                    </h4>
+                    ask.dora.dev
+                </div>
+            </a>
+        </div>
+    </div>
 </div>
 
 <style>
+    /* TODO: move these to a linked stylesheet and add mobile styles */
+
     main {
         width:100%;
     }
 
     #searchResultsContainer {
-        display: grid;
-        grid-template-areas:
-            "a a"
-            "b c";
+        margin: 0 1em;
     }
 
-    #publicationResults {
-        grid-area: a;
-        display:grid;
-        grid-gap:1em;
-        grid-template-columns:1fr 1fr 1fr;
-    }
-
-    #publicationResults div {
-        border:1px solid #999;
-        width:33%;
-        border-radius:1em;
-    }
-
-    #webResults {
-        grid-area: b;
-    }
-
-    #askDora {
-        grid-area: c;
+    #searchResultsContainer h3 {
+        border-bottom:1px solid #ccc;
+        color:#666;
     }
 
     #searchForm {
@@ -142,16 +150,50 @@ draft: true
 
     #resultsHeader {
         color:#666;
+        display:none;
     }
 
     #resultsHeader b {
         color:rgb(32, 33, 36);
     }
 
+    #publicationResults {
+        display:grid;
+        grid-gap:1em;
+        grid-template-columns:1fr 1fr 1fr;
+    }
+
+    #publicationResults div {
+        display: flex;
+    }
+
+    #publicationResults div img {
+        max-width:8em;
+        max-height:8em;
+        margin-right:.5em;
+        border:1px solid #999;
+    }
+
+    #webAndGenerativeResults {
+        display:flex;
+        flex-direction:row;
+        margin-top:1em;
+    }
+
+    #askDoraContainer {
+        text-align:center;
+    }
+
     .searching {
         color:#999;
         font-style:italic;
     }
+
+    #webResultsContainer {
+        flex-grow:1;
+        margin-right:2em;
+    }
+
     .webResults:not(last-child) {
         padding:.75rem 0;
         border-bottom:1px solid #eee;
@@ -174,5 +216,38 @@ draft: true
 
     .webResults .url {
         font-size:.75rem;
+    }
+
+    #askDoraContainer a {
+        text-decoration:none;
+    }
+
+    #askDora {
+        background-color:#eee;
+        border:1px solid #ccc;
+        border-radius:1em;
+        text-align:center;
+        margin-top:6em;
+        padding:.5rem;
+        width:16rem;
+        display:none;
+    }
+
+    #askDora img {
+        width:8rem;
+    }
+
+    #askDora h3, #askDora h4 {
+        color:#333;
+    }
+
+    #askDora h3 {
+        font-size:1.25rem;
+        font-weight:bold;
+        border:none;
+    }
+
+    #askDora h4 {
+        font-size:.85rem;
     }
 </style>
