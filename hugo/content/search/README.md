@@ -1,3 +1,1 @@
-# Experimental
-
-This search widget is experimental; the `_index.md` file in this directory only builds in draft mode. It can be previewed on `staging.dora.dev`
+This page depends on a search service hosted at search.dora.dev. The source code and deployment config (terraform) can be found at https://github.com/dora-team/search.dora.dev, which is a private repo. If you're interested in contributing to that service, reach out to @davidstanke.
