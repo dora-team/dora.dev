@@ -19,7 +19,12 @@ There are lots of reasons your customers and community should participate in thi
 ## Assets for reuse
 You are welcome to take inspiration and copy from our [blog post announcing the survey](https://cloud.google.com/blog/products/devops-sre/2024-dora-survey-now-open) as you craft a message that is suitable for your own audience.
 
-Additionally, we have made a number of [DORA Survey Graphics](https://storage.googleapis.com/dora-sponsor-resources/DORA-Survey-Graphics.zip) <small>(ZIP, 175MB)</small> available for download and use.
+**Graphics**
+
+* [DORA Survey Graphics](https://storage.googleapis.com/dora-sponsor-resources/DORA-Survey-Graphics.zip) <small>(ZIP, 175MB)</small>
+* [DORA Logos](https://storage.googleapis.com/dora-sponsor-resources/DORA-Logos.zip) <small>(ZIP, 150KB)</small>
+
+
 
 ## Sponsor distribution list
 Announcements and updates will be sent to the `dora-sponsors-2024@` distribution list.  Reach out to [sponsor-dora@google.com](mailto:sponsor-dora@google.com) with the names and email addresses of anyone else from your organization who should be added to this distribution list.
