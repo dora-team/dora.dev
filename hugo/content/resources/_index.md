@@ -6,23 +6,63 @@ bannerTitle: "Resources"
 bannerSubtitle: "Here are some of the many resources available to help you understand and apply DORA research in your organization."
 ---
 
-## Tools
+## Source-available tools
 
-
+Each of these tools will help your team collect and visualize <a href="/guides/dora-metrics-four-keys/">DORA’s software delivery metrics: the four keys</a>. The source code for each is available free of charge.
 
 <section>
     <article>
-    <a href="https://github.com/dora-team/fourkeys" target="_blank">
-        <img src="img/fourkeys.png" width="120">
+    <a href="https://devlake.apache.org/" target="_blank">
+        <img src="img/apache-devlake.png" width="60">
     </a>
     <aside>
-    <h4>The Four Keys: Instrument your Software Delivery Performance</h4>
-    <p align="justify">The Four Keys is an open source project which provides a bootstrapper to create a metrics aggregator and dashboard for the four key DORA software delivery metrics (Deployment Frequency, Lead Time for Changes, Time to Restore Services, Change Failure Rate). Visit <a href="https://bit.ly/dora-fourkeys" target="_blank">bit.ly/dora-fourkeys </a>to learn how to install it and connect it to data sources including your version control and CI/CD systems.</p>
+    <h4>Apache DevLake&#8482;</h4>
+    <p align="justify">Apache DevLake™ (Incubating) ingests, analyzes, and visualizes the fragmented data from DevOps tools to distill insights for engineering excellence. Debug engineering processes and discover opportunities with DORA, Community Growth, Engineering Throughput and more DevLake dashboards. <a href="https://github.com/apache/incubator-devlake" target="_blank">Source repository</a></p>
     </aside>
     </article>
 </section>
 
+-----
 
+<section>
+    <article>
+    <a href="https://github.com/middlewarehq/middleware" target="_blank">
+        <img src="img/middleware-logo.png" width="120" height="33">
+    </a>
+    <aside>
+    <h4>middleware</h4>
+    <p align="justify">Middleware is an open-source tool designed to help engineering leaders measure and analyze the effectiveness of their teams using the DORA  metrics. The DORA metrics are a set of <a href="/guides/dora-metrics-four-keys/">four key values</a> that provide insights into software delivery performance and operational efficiency. <a href="https://github.com/middlewarehq/middleware" target="_blank">Source repository</a></p>
+    </aside>
+    </article>
+</section>
+
+-----
+
+<section>
+    <article>
+    <a href="https://github.com/OkayHQ/backstage-plugin" target="_blank">
+        <img src="img/okay.png" width="120">
+    </a>
+    <aside>
+    <h4>Okay Backstage Plugin</h4>
+    <p align="justify">This plugin connects <a href="https://backstage.io/" target="_blank">Backstage</a> with your <a href="https://www.okayhq.com/" target="_blank">Okay</a> account to visualize your team analytics. Embed dashboards (including <a href="/guides/dora-metrics-four-keys/">DORA metrics</a>) alongside your team or service pages. <a href="https://github.com/OkayHQ/backstage-plugin" target="_blank">Source repository</a></p>
+    </aside>
+    </article>
+</section>
+
+-----
+
+<section>
+    <article>
+    <a href="https://github.com/DevoteamNL/opendora" target="_blank">
+        <img src="img/devoteam-logo.png" width="60">
+    </a>
+    <aside>
+    <h4>OpenDORA</h4>
+    <p align="justify">OpenDORA includes an open-source plugin for <a href="https://backstage.io/" target="_blank">Backstage</a>, a popular developer portal platform. It integrates with <a href="https://devlake.apache.org/" target="_blank">Apache DevLake</a> to organize and aggregate data from deployment and project management tooling like Gitlab, GitHub, Jira, and Jenkins. OpenDORA extracts meaningful insights from this data through its API, and renders dashboards within Backstage that provide insights on the teams' performance. <a href="https://github.com/DevoteamNL/opendora" target="_blank">Source repository</a></p>
+    </aside>
+    </article>
+</section>
 
 -----
 
