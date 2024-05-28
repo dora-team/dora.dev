@@ -16,7 +16,7 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
         <img src="img/apache-devlake.png" width="60">
     </a>
     <aside>
-    <h4 class="source-available-project"><a href="https://devlake.apache.org/" target="_blank">Apache DevLake&#8482;</a><a class="google-material-icons" href="https://devlake.apache.org/" target="_blank" aria-label="Apache DevLake&#8482;'s website">open_in_new</a></h4>
+    <h4 class="source-available-project"><a href="https://devlake.apache.org/" target="_blank">Apache DevLake&#8482;</a> <a class="google-material-icons" href="https://devlake.apache.org/" target="_blank" aria-label="Apache DevLake&#8482;'s website">open_in_new</a></h4>
     <p align="justify">Apache DevLake™ (Incubating) ingests, analyzes, and visualizes the fragmented data from DevOps tools to distill insights for engineering excellence. Debug engineering processes and discover opportunities with DORA, Community Growth, Engineering Throughput and more DevLake dashboards. <a class="google-material-icons source-available-repo" href="https://github.com/apache/incubator-devlake" target="_blank" aria-label="Apache DevLake&#8482;'s source code">github</a></p>
     </aside>
     </article>
@@ -30,7 +30,7 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
         <img src="img/middleware-logo.png" width="120" height="33">
     </a>
     <aside>
-    <h4 class="source-available-project"><a href="https://github.com/middlewarehq/middleware" target="_blank">Middleware</a><a class="google-material-icons" href="https://github.com/middlewarehq/middleware" target="_blank" aria-label="Middleware's code repository">open_in_new</a></h4>
+    <h4 class="source-available-project"><a href="https://github.com/middlewarehq/middleware" target="_blank">Middleware</a> <a class="google-material-icons" href="https://github.com/middlewarehq/middleware" target="_blank" aria-label="Middleware's code repository">open_in_new</a></h4>
     <p align="justify">Middleware is an open-source tool designed to help engineering leaders measure and analyze the effectiveness of their teams using the DORA  metrics. The DORA metrics are a set of <a href="/guides/dora-metrics-four-keys/">four key values</a> that provide insights into software delivery performance and operational efficiency. <a class="google-material-icons source-available-repo" href="https://github.com/middlewarehq/middleware" target="_blank" aria-label="Middleware's source code">github</a></p>
     </aside>
     </article>
@@ -44,7 +44,7 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
         <img src="img/okay.png" width="120">
     </a>
     <aside>
-    <h4 class="source-available-project"><a href="https://github.com/OkayHQ/backstage-plugin" target="_blank">Okay Backstage Plugin</a><a class="google-material-icons" href="https://github.com/OkayHQ/backstage-plugin"" target="_blank" aria-label="Okay Backstage Plugin's code repository">open_in_new</a></h4>
+    <h4 class="source-available-project"><a href="https://github.com/OkayHQ/backstage-plugin" target="_blank">Okay Backstage Plugin</a> <a class="google-material-icons" href="https://github.com/OkayHQ/backstage-plugin"" target="_blank" aria-label="Okay Backstage Plugin's code repository">open_in_new</a></h4>
     <p align="justify">This plugin connects <a href="https://backstage.io/" target="_blank">Backstage</a> with your <a href="https://www.okayhq.com/" target="_blank">Okay</a> account to visualize your team analytics. Embed dashboards (including <a href="/guides/dora-metrics-four-keys/">DORA metrics</a>) alongside your team or service pages. <a class="google-material-icons source-available-repo" href="https://github.com/OkayHQ/backstage-plugin" target="_blank" aria-label="Okay Backstage Plugin's source code">github</a></p>
     </aside>
     </article>
@@ -58,7 +58,7 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
         <img src="img/devoteam-logo.png" width="60">
     </a>
     <aside>
-    <h4 class="source-available-project"><a href="https://github.com/DevoteamNL/opendora" target="_blank">OpenDORA</a><a class="google-material-icons" href="https://github.com/DevoteamNL/opendora"" target="_blank" aria-label="OpenDORA's code repository">open_in_new</a></h4>
+    <h4 class="source-available-project"><a href="https://github.com/DevoteamNL/opendora" target="_blank">OpenDORA</a> <a class="google-material-icons" href="https://github.com/DevoteamNL/opendora"" target="_blank" aria-label="OpenDORA's code repository">open_in_new</a></h4>
     <p align="justify">OpenDORA includes an open-source plugin for <a href="https://backstage.io/" target="_blank">Backstage</a>, a popular developer portal platform. It integrates with <a href="https://devlake.apache.org/" target="_blank">Apache DevLake</a> to organize and aggregate data from deployment and project management tooling like Gitlab, GitHub, Jira, and Jenkins. OpenDORA extracts meaningful insights from this data through its API, and renders dashboards within Backstage that provide insights on the teams' performance. <a class="google-material-icons source-available-repo" href="https://github.com/DevoteamNL/opendora" target="_blank" aria-label="OpenDORA's source code">github</a></p>
     </aside>
     </article>
