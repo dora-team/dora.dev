@@ -13,7 +13,7 @@ Technology-driven teams need ways to measure performance so that they can assess
 
 The four keys can be viewed as both _leading_ and _lagging_ indicators. Leading indicators typically signal potential future changes in a system while lagging indicators reflect past performance and outcomes. 
 
-> The four key metrics are:
+> The four key metrics function as:
 >   * Leading indicators for organizational performance and employee well-being
 >   * Lagging indicators for software development and delivery practices.
 
