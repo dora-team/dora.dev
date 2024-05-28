@@ -178,6 +178,23 @@ section.banner {
     }
 }
 
+.source-available-repo {
+    text-decoration:none;
+    color:#5b5e66;
+}
+
+.source-available-project {
+    a {
+        text-decoration: none;
+        color:#202124;
+    }
+
+    .google-material-icons {
+        font-size: 10px;
+        text-decoration: none;
+    }
+}
+
 // for alpinejs: hide cloaked elements while page is loading
 [x-cloak] {
     display: none !important;
