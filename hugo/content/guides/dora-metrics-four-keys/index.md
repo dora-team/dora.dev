@@ -1,7 +1,7 @@
 ---
 title: "DORA’s software delivery metrics: the four keys"
 date: 2024-03-29T16:06:31-04:00
-updated: 2024-05-28T00:00:00Z
+updated: 2024-05-30T00:00:00Z
 draft: false
 authors: 
     1: {name: 'Nathen Harvey', url: 'https://linkedin.com/in/nathen'}
@@ -73,7 +73,7 @@ A common approach to improving the four key metrics discussed in this guide is [
 
 We have found that an effective way of making changes is to gather the cross-functional team that is responsible for prioritizing, building, delivering, and operating an application for a discussion about improving their software delivery performance. Once the team is gathered, walk through the following steps:
 
-* **Set a baseline** for your application's current performance using the [DORA Quick Check](/quickcheck)
+* **Set a baseline** for your application's current performance using the [DORA Quick Check](/quickcheck).
 * **Have a conversation** about the friction points in the delivery process. [Mapping out the delivery process](/devops-capabilities/process/work-visibility-in-value-stream/) may help facilitate this part of the process.
 * **Have the whole team  commit to making an improvement** in the most significant constraint or bottleneck.
 * **Turn that commitment into a plan**, which may include some more specific measures that can serve as leading indicators for the software delivery metrics. For example, you may decide to measure how long code reviews take or the quality of your tests.
