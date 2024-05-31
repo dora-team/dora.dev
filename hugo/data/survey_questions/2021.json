@@ -49,6 +49,7 @@
             "question_groups": [
                 {
                     "description": "For each of the following performance indicators, how well did your organization meet its goals over the past year?",
+                    "group_responses": "Performed well above goals,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals,N/A or I don’t know",
                     "questions": [
                         "Your organization's overall performance",
 "Your organization's overall profitability",
@@ -57,6 +58,7 @@
                 },
                 {
                     "description": "Select the option that indicates how your organization performed for the following goals over the past year.",
+                    "group_responses": "Performed well above goals,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals,N/A or I don’t know",
                     "questions": [
                         "Quantity of products or services",
 "Operating efficiency",
