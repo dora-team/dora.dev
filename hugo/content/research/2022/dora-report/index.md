@@ -35,3 +35,9 @@ research_year: "2022"
 
 </item>
 </grid>
+
+### Some additional exploration of the 2022 research
+
+* [Reliability and SRE in the 2022 State of DevOps Report](https://cloud.google.com/blog/products/devops-sre/sre-in-the-2022-state-of-devops-report)
+* [2022 State of DevOps Report data deep dive: good team culture](https://cloud.google.com/blog/products/devops-sre/2022-sodr-deep-dive-culture)
+* [2022 State of DevOps Report data deep dive: Documentation is like sunshine](https://cloud.google.com/blog/products/devops-sre/deep-dive-into-2022-state-of-devops-report-on-documentation)
