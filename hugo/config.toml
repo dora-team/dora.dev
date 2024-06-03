@@ -4,8 +4,12 @@ theme = 'dora'
 rssLimit = 10
 ignoreFiles = "README.md"
 
-[markup.goldmark.renderer]
-unsafe= true
+[markup]
+    [markup.highlight]
+        noClasses = false
+
+    [markup.goldmark.renderer]
+        unsafe= true
 
 [params]
     Keywords = "DevOps, Lead time, Deploy frequency, Change fail rate, MTTR, Time to restore, metrics, DORA"
