@@ -66,7 +66,7 @@ domains. Continuous delivery has been successfully applied many times in highly
 regulated domains such as financial services and government.
 
 Although continuous delivery is possible for all kinds of software, it is hard
-work. Nevertheless it provides significant benefits. [DevOps Research and Assessment (DORA)](https://cloud.google.com/devops) research shows that doing well at continuous delivery provides
+work. Nevertheless it provides significant benefits. [DevOps Research and Assessment (DORA)](https://dora.dev) research shows that doing well at continuous delivery provides
 the following benefits:
 
 -   Improves software delivery performance, measured in terms of the
@@ -293,7 +293,7 @@ time spent doing rework and unplanned work.
 ## What's next
 
 -  For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [DevOps page](https://dora.dev).
 -  Learn more about continuous delivery in Martin Fowler's
     [Software delivery guide](https://martinfowler.com/delivery.html).
 -   Read [*Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation*](https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ) by Karen Martin and Mike Osterling.
