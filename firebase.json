@@ -180,6 +180,11 @@
                     "type": 301
                 },
                 {
+                    "source": "/guides/how-to-transform",
+                    "destination": "/guides/devops-culture-transform/",
+                    "type": 301
+                },
+                {
                     "source": "/sponsor",
                     "destination": "/sponsors/",
                     "type": 301
