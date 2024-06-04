@@ -36,7 +36,7 @@ performance.
 
 ## How to implement team experimentation
 
-[DevOps Research and Assessment (DORA) research](https://cloud.google.com/devops)
+[DevOps Research and Assessment (DORA) research](https://dora.dev)
 identifies three key components to team experimentation that drive software
 delivery performance:
 
