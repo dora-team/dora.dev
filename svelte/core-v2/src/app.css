@@ -1,4 +1,7 @@
 @import url("./assets/colors.css");
+/* link to dora.dev stylesheet so that when served by Vite, we will see how it will look when served within the hugo site content
+    this stylesheet was pulled from prod on june 6, 2024 */
+@import url("./styles-dora-dev_2024-06-06.css");
 @import url(//fonts.googleapis.com/css2?family=Google+Sans:wght@200..900);
 
 :root {
@@ -6,7 +9,6 @@
     line-height: 1.5;
     font-weight: 400;
 
-    color-scheme: light dark;
     color: var(--color-text);
     background-color: var(--color-background);
 
@@ -16,6 +18,7 @@
     -moz-osx-font-smoothing: grayscale;
 
     box-sizing:border-box;
+    letter-spacing: normal;
 }
 
 body {
@@ -33,6 +36,5 @@ h1 {
 #app {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem;
     text-align: center;
 }

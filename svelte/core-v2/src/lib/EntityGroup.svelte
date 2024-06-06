@@ -17,7 +17,7 @@
     <h3 on:click={() => openPopover(entity_group_id)}>
         {entity_group["name"]}
         {#if entity_group["measured_by"]}
-            <small>measured by:</small>
+            <small>measured by</small>
             <h5>
                 {entity_group["measured_by"]}{#if view_mode === "detail"}:{/if}
             </h5>
@@ -35,9 +35,10 @@
         transition: all 0.3s linear;
         margin: 0.25rem 0.5rem;
         border-radius: 0.5rem;
-        padding: 0.25rem 0.5rem;
+        padding: 0.25rem ;
 
         h3 {
+            font-size:1.15rem;
             padding: 0;
             margin: 0;
             font-weight: 500;
@@ -49,6 +50,7 @@
             overflow: hidden;
             transition: height 0.3s linear;
             font-style: italic;
+            font-size:.85rem;
             color: var(--color-grey-medium);
         }
 
@@ -56,8 +58,11 @@
             padding: 0;
             margin: 0;
             font-weight: 500;
-            font-size: 1rem;
+            font-size: .85rem;
             color: var(--color-grey-dark);
+            text-transform: none;
+            letter-spacing: normal;
+            white-space: nowrap;
         }
 
         .entities {

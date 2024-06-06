@@ -50,6 +50,7 @@
             background-color: var(--color-background);
             display: flex;
             flex-direction: column;
+            justify-content: center;
         }
     }
     section.capabilities {
@@ -60,13 +61,11 @@
         }
 
         &.summary {
-            width: 18rem;
-            height: 13.5rem;
+            height: 13rem;
         }
 
         &.detail {
-            width: 30rem;
-            height: 40rem;
+            height: 36rem;
         }
     }
     section.performance {
@@ -76,12 +75,10 @@
             background-color: var(--color-performance);
         }
         &.summary {
-            width: 18rem;
-            height: 12rem;
+            height: 11rem;
         }
 
         &.detail {
-            width: 18rem;
             height: 32rem;
         }
     }
@@ -92,13 +89,11 @@
             background-color: var(--color-outcomes);
         }
         &.summary {
-            width: 18rem;
-            height: 9rem;
+            height:9.5rem;
         }
 
         &.detail {
-            width: 18rem;
-            height: 22rem;
+            height: 22.5rem;
         }
     }
 </style>
