@@ -22,7 +22,7 @@ steps:
       ./svelte/quick-check-2023/build-quick-check.sh
 
       # Build Core Model and move generated files into position
-      ./svelte/core-v2/build-quick-check.sh
+      ./svelte/core-v2/build-core.sh
 
       # install hugo "extended"
       HUGO_VERSION=0.114.1
