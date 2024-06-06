@@ -1,0 +1,12 @@
+:root {
+    --color-background: white;
+    --color-capabilities: rgb(51, 72, 79);
+    --color-performance: rgb(99, 166, 87);
+    --color-outcomes: rgb(0, 94, 141);
+    --color-grey-lighter: rgb(248, 249, 250);
+    --color-grey-light: rgb(232, 234, 237);
+    --color-grey-medium: rgb(154, 160, 166);
+    --color-grey-dark: rgb(95, 99, 104);
+    --color-text: rgb(32, 33, 36);
+    --popover-backdrop: rgba(32, 33, 36, 0.7);
+}

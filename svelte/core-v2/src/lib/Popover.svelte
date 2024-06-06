@@ -1,0 +1,118 @@
+<script>
+    import core_data from "./core_data.json";
+
+    export let selected_entity = "unspecified";
+
+    let name = "";
+    let summary = "";
+    let link = "";
+
+    // TODO: this can probably be made more spiffy/functional
+    function populateDetails(entity) {
+        for (const column in core_data) {
+            for (const entity_group in core_data[column]) {
+                if (entity_group === selected_entity) {
+                    // user has clicked on a group title
+                    name = core_data[column][entity_group]["name"];
+                    summary = core_data[column][entity_group]["summary"];
+                    link = core_data[column][entity_group]["link"];
+                } else {
+                    // user has clicked on an entity title
+                    for (const entity in core_data[column][entity_group][
+                        "entities"
+                    ]) {
+                        if (entity === selected_entity) {
+                            name =
+                                core_data[column][entity_group]["entities"][
+                                    entity
+                                ]["name"];
+                            summary =
+                                core_data[column][entity_group]["entities"][
+                                    entity
+                                ]["summary"];
+                            link =
+                                core_data[column][entity_group]["entities"][
+                                    entity
+                                ]["link"];
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // when the selected entity changes, find its associated info
+    $: populateDetails(selected_entity);
+</script>
+
+<div id="popover" popover="auto">
+    <div class="header">
+        <h1>{name}</h1>
+        <div>
+            <a on:click={() => document.getElementById("popover").hidePopover()}
+                >&times;</a
+            >
+        </div>
+    </div>
+
+    <p>{@html summary}</p>
+    <div class="footer">
+        <a href={link} target="_blank">Learn more about {name}</a>
+    </div>
+</div>
+
+<style lang="scss">
+    #popover {
+        max-width: 80%;
+        border: none;
+        border-radius: 1em;
+        text-align: justify;
+        padding: 0;
+
+        &:popover-open {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            margin: 0;
+            background-color: var(--color-grey-light);
+            display: flex;
+            flex-direction: row;
+            h1 {
+                flex-grow: 1;
+                padding-left: 1rem;
+            }
+            a {
+                font-size: 2em;
+                text-decoration: none;
+                color: var(--color-grey-dark);
+                background-color: var(--color-grey-lighter);
+                // border:1px solid var(--color-grey-medium);
+                border-radius: 0.5rem;
+                display: block;
+                height: 1.25em;
+                line-height: 1.25em;
+                width: 1.25em;
+                text-align: center;
+                margin: 0.5em;
+                cursor: pointer;
+            }
+        }
+
+        p {
+            flex-grow: 1;
+            padding: 1rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        &::backdrop {
+            background-color: var(--popover-backdrop);
+            backdrop-filter: blur(2px);
+        }
+    }
+</style>
