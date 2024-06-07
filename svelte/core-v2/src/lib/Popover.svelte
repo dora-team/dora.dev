@@ -66,7 +66,7 @@
         max-width: 80%;
         border: none;
         border-radius: 1em;
-        text-align: justify;
+        text-align: left;
         padding: 0;
 
         &:popover-open {
