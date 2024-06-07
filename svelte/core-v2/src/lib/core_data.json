@@ -173,45 +173,44 @@
     "outcomes": {
         "organizational_performance": {
             "name": "Organizational performance",
-            "link": "/capabilities/",
-            "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit mi facilisis velit ultrices, eu congue odio bibendum. Etiam laoreet ac arcu a ultricies. Quisque congue fermentum facilisis. Curabitur non molestie ex. Etiam auctor porta porta. Donec porta bibendum metus at venenatis. Fusce lobortis commodo tortor. Aliquam vel mauris urna. Proin consequat justo sed nisi pulvinar fermentum. Phasellus in nunc molestie, finibus quam ut, dictum odio.\n\nDuis dapibus gravida dui, eget efficitur sem varius eget. Vestibulum sem nisl, varius quis ante vel, auctor vestibulum justo. Maecenas odio purus, congue ac volutpat vitae, interdum id diam. Cras bibendum pharetra elit in tempus. Vivamus egestas eros vitae varius faucibus. Duis mauris neque, luctus in vestibulum eget, auctor in sapien. Integer dui nunc, ultrices at nibh eget, aliquam faucibus dolor. Aliquam porttitor justo quis dolor lobortis, non commodo elit rutrum. Donec eu ante ac enim finibus fringilla eget sit amet lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse rhoncus convallis efficitur. Praesent ante diam, congue non arcu quis, ultrices pellentesque velit. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+            "link": "https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper",
+            "summary": "Organizational performance measures the ability of an organization to achieve commercial and non-commercial goals. Academic research has validated this measure and found it to be highly correlated to measures of return on investment (ROI), and it is robust to economic cycles.\n\nSeveral years of analysis shows that, compared to low performers, organizations with the highest level of software delivery performance are twice as likely to exceed their goals. Employee well-being also contributes to organizational performance.",
             "entities": {
-                "item_1": {
-                    "name": "Todo",
-                    "link": "/capabilities/",
-                    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit mi facilisis velit ultrices, eu congue odio bibendum. Etiam laoreet ac arcu a ultricies. Quisque congue fermentum facilisis. Curabitur non molestie ex. Etiam auctor porta porta. Donec porta bibendum metus at venenatis. Fusce lobortis commodo tortor. Aliquam vel mauris urna. Proin consequat justo sed nisi pulvinar fermentum. Phasellus in nunc molestie, finibus quam ut, dictum odio.\n\nDuis dapibus gravida dui, eget efficitur sem varius eget. Vestibulum sem nisl, varius quis ante vel, auctor vestibulum justo. Maecenas odio purus, congue ac volutpat vitae, interdum id diam. Cras bibendum pharetra elit in tempus. Vivamus egestas eros vitae varius faucibus. Duis mauris neque, luctus in vestibulum eget, auctor in sapien. Integer dui nunc, ultrices at nibh eget, aliquam faucibus dolor. Aliquam porttitor justo quis dolor lobortis, non commodo elit rutrum. Donec eu ante ac enim finibus fringilla eget sit amet lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse rhoncus convallis efficitur. Praesent ante diam, congue non arcu quis, ultrices pellentesque velit. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                "commercial-performance": {
+                    "name": "Commercial Performance",
+                    "link": "https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper",
+                    "summary": "Commercial goals may include:<ul><li>Profitability</li><li>Productivity</li><li>Market share</li><li>Number of customers</li><li>Quantity of products or services</li></ul>"
                 },
-                "item_2": {
-                    "name": "Todo",
-                    "link": "/capabilities/",
-                    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit mi facilisis velit ultrices, eu congue odio bibendum. Etiam laoreet ac arcu a ultricies. Quisque congue fermentum facilisis. Curabitur non molestie ex. Etiam auctor porta porta. Donec porta bibendum metus at venenatis. Fusce lobortis commodo tortor. Aliquam vel mauris urna. Proin consequat justo sed nisi pulvinar fermentum. Phasellus in nunc molestie, finibus quam ut, dictum odio.\n\nDuis dapibus gravida dui, eget efficitur sem varius eget. Vestibulum sem nisl, varius quis ante vel, auctor vestibulum justo. Maecenas odio purus, congue ac volutpat vitae, interdum id diam. Cras bibendum pharetra elit in tempus. Vivamus egestas eros vitae varius faucibus. Duis mauris neque, luctus in vestibulum eget, auctor in sapien. Integer dui nunc, ultrices at nibh eget, aliquam faucibus dolor. Aliquam porttitor justo quis dolor lobortis, non commodo elit rutrum. Donec eu ante ac enim finibus fringilla eget sit amet lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse rhoncus convallis efficitur. Praesent ante diam, congue non arcu quis, ultrices pellentesque velit. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                "noncommercial-performance": {
+                    "name": "Non-commercial performance",
+                    "summary": "Non-commercial goals may include:<ul><li>Operating efficiency</li><li>Customer satisfaction</li><li>Quality of products or services provided</li><li>Achieving organization or mission goals</li></ul>"
                 }
             }
         },
         "wellbeing": {
             "name": "Well-being",
-            "link": "/capabilities/",
-            "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit mi facilisis velit ultrices, eu congue odio bibendum. Etiam laoreet ac arcu a ultricies. Quisque congue fermentum facilisis. Curabitur non molestie ex. Etiam auctor porta porta. Donec porta bibendum metus at venenatis. Fusce lobortis commodo tortor. Aliquam vel mauris urna. Proin consequat justo sed nisi pulvinar fermentum. Phasellus in nunc molestie, finibus quam ut, dictum odio.\n\nDuis dapibus gravida dui, eget efficitur sem varius eget. Vestibulum sem nisl, varius quis ante vel, auctor vestibulum justo. Maecenas odio purus, congue ac volutpat vitae, interdum id diam. Cras bibendum pharetra elit in tempus. Vivamus egestas eros vitae varius faucibus. Duis mauris neque, luctus in vestibulum eget, auctor in sapien. Integer dui nunc, ultrices at nibh eget, aliquam faucibus dolor. Aliquam porttitor justo quis dolor lobortis, non commodo elit rutrum. Donec eu ante ac enim finibus fringilla eget sit amet lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse rhoncus convallis efficitur. Praesent ante diam, congue non arcu quis, ultrices pellentesque velit. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+            "link": "/capabilities/well-being/",
+            "summary": "Well-being is a reflection of individuals’ happiness and job satisfaction. Increased well-being predicts organizational performance and employees’ job tenure. DORA has studied the impact of deployment pain, rework, and burnout on well-being.",
             "entities": {
-                "item_1": {
-                    "name": "Todo",
-                    "link": "/capabilities/",
+                "job-satisfaction": {
+                    "name": "Job satisfaction",
+                    "link": "/capabilities/well-being/",
                     "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit mi facilisis velit ultrices, eu congue odio bibendum. Etiam laoreet ac arcu a ultricies. Quisque congue fermentum facilisis. Curabitur non molestie ex. Etiam auctor porta porta. Donec porta bibendum metus at venenatis. Fusce lobortis commodo tortor. Aliquam vel mauris urna. Proin consequat justo sed nisi pulvinar fermentum. Phasellus in nunc molestie, finibus quam ut, dictum odio.\n\nDuis dapibus gravida dui, eget efficitur sem varius eget. Vestibulum sem nisl, varius quis ante vel, auctor vestibulum justo. Maecenas odio purus, congue ac volutpat vitae, interdum id diam. Cras bibendum pharetra elit in tempus. Vivamus egestas eros vitae varius faucibus. Duis mauris neque, luctus in vestibulum eget, auctor in sapien. Integer dui nunc, ultrices at nibh eget, aliquam faucibus dolor. Aliquam porttitor justo quis dolor lobortis, non commodo elit rutrum. Donec eu ante ac enim finibus fringilla eget sit amet lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse rhoncus convallis efficitur. Praesent ante diam, congue non arcu quis, ultrices pellentesque velit. Interdum et malesuada fames ac ante ipsum primis in faucibus."
                 },
-                "item_2": {
-                    "name": "Todo",
-                    "link": "/capabilities/",
+                "productivity": {
+                    "name": "Productivity",
+                    "link": "/capabilities/well-being/",
                     "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit mi facilisis velit ultrices, eu congue odio bibendum. Etiam laoreet ac arcu a ultricies. Quisque congue fermentum facilisis. Curabitur non molestie ex. Etiam auctor porta porta. Donec porta bibendum metus at venenatis. Fusce lobortis commodo tortor. Aliquam vel mauris urna. Proin consequat justo sed nisi pulvinar fermentum. Phasellus in nunc molestie, finibus quam ut, dictum odio.\n\nDuis dapibus gravida dui, eget efficitur sem varius eget. Vestibulum sem nisl, varius quis ante vel, auctor vestibulum justo. Maecenas odio purus, congue ac volutpat vitae, interdum id diam. Cras bibendum pharetra elit in tempus. Vivamus egestas eros vitae varius faucibus. Duis mauris neque, luctus in vestibulum eget, auctor in sapien. Integer dui nunc, ultrices at nibh eget, aliquam faucibus dolor. Aliquam porttitor justo quis dolor lobortis, non commodo elit rutrum. Donec eu ante ac enim finibus fringilla eget sit amet lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse rhoncus convallis efficitur. Praesent ante diam, congue non arcu quis, ultrices pellentesque velit. Interdum et malesuada fames ac ante ipsum primis in faucibus."
                 },
-                "item_3": {
-                    "name": "Todo",
-                    "link": "/capabilities/",
-                    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit mi facilisis velit ultrices, eu congue odio bibendum. Etiam laoreet ac arcu a ultricies. Quisque congue fermentum facilisis. Curabitur non molestie ex. Etiam auctor porta porta. Donec porta bibendum metus at venenatis. Fusce lobortis commodo tortor. Aliquam vel mauris urna. Proin consequat justo sed nisi pulvinar fermentum. Phasellus in nunc molestie, finibus quam ut, dictum odio.\n\nDuis dapibus gravida dui, eget efficitur sem varius eget. Vestibulum sem nisl, varius quis ante vel, auctor vestibulum justo. Maecenas odio purus, congue ac volutpat vitae, interdum id diam. Cras bibendum pharetra elit in tempus. Vivamus egestas eros vitae varius faucibus. Duis mauris neque, luctus in vestibulum eget, auctor in sapien. Integer dui nunc, ultrices at nibh eget, aliquam faucibus dolor. Aliquam porttitor justo quis dolor lobortis, non commodo elit rutrum. Donec eu ante ac enim finibus fringilla eget sit amet lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse rhoncus convallis efficitur. Praesent ante diam, congue non arcu quis, ultrices pellentesque velit. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                "reduced-burnout": {
+                    "name": "Reduced burnout",
+                    "link": "/capabilities/reduced-burnout/",
+                    "summary": "Burnout is physical, mental, or emotional exhaustion caused by overwork or stress."
                 },
-                "item_4": {
-                    "name": "Todo",
-                    "link": "/capabilities/",
-                    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit mi facilisis velit ultrices, eu congue odio bibendum. Etiam laoreet ac arcu a ultricies. Quisque congue fermentum facilisis. Curabitur non molestie ex. Etiam auctor porta porta. Donec porta bibendum metus at venenatis. Fusce lobortis commodo tortor. Aliquam vel mauris urna. Proin consequat justo sed nisi pulvinar fermentum. Phasellus in nunc molestie, finibus quam ut, dictum odio.\n\nDuis dapibus gravida dui, eget efficitur sem varius eget. Vestibulum sem nisl, varius quis ante vel, auctor vestibulum justo. Maecenas odio purus, congue ac volutpat vitae, interdum id diam. Cras bibendum pharetra elit in tempus. Vivamus egestas eros vitae varius faucibus. Duis mauris neque, luctus in vestibulum eget, auctor in sapien. Integer dui nunc, ultrices at nibh eget, aliquam faucibus dolor. Aliquam porttitor justo quis dolor lobortis, non commodo elit rutrum. Donec eu ante ac enim finibus fringilla eget sit amet lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse rhoncus convallis efficitur. Praesent ante diam, congue non arcu quis, ultrices pellentesque velit. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                "reduced-rework": {
+                    "name": "Reduced rework",
+                    "link": "/capabilities/reduced-rework/",
+                    "summary": "Rework is reactive unplanned work, including any break/fix work, emergency software deployments and patches, responding to urgent audit documentation requests, and so on."
                 }
             }
         }
