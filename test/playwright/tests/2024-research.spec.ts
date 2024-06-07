@@ -7,7 +7,6 @@ test('Verify the page title', async ({ page }) => {
 
 test('Survey Image', async ({ page }) => {
   await page.goto('/research/2024/');
-  await page.waitForLoadState("domcontentloaded");
   const surveyImage = await page.locator('img[alt="2024 DORA Survey - Shape the future of tech"]');
   const imgSrc = await surveyImage.getAttribute('src');
   const res = await page.request.get(imgSrc);
