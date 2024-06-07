@@ -50,7 +50,6 @@
             background-color: var(--color-background);
             display: flex;
             flex-direction: column;
-            justify-content: center;
         }
     }
     section.capabilities {
@@ -61,21 +60,25 @@
         }
 
         &.summary {
-            height: 13rem;
+            height: 12.5rem;
+            width:20rem;
         }
 
         &.detail {
             height: 36rem;
+            width:30rem;
         }
     }
     section.performance {
         background-color: var(--color-performance);
         border-color: var(--color-performance);
+
+        width: 16rem;
         .heading {
             background-color: var(--color-performance);
         }
         &.summary {
-            height: 11rem;
+            height: 10.5rem;
         }
 
         &.detail {
@@ -85,11 +88,12 @@
     section.outcomes {
         background-color: var(--color-outcomes);
         border-color: var(--color-outcomes);
+        width: 16rem;
         .heading {
             background-color: var(--color-outcomes);
         }
         &.summary {
-            height:9.5rem;
+            height: 9.75rem;
         }
 
         &.detail {

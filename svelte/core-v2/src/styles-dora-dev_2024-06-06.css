@@ -677,7 +677,7 @@ ul.tabs {
       color: #9aa0a6;
       text-transform: uppercase;
       border-bottom: 2px solid white;
-      transition: border-bottom 400ms ease-out; }
+      transition: border-bottom 400ms linear; }
       ul.tabs li a:hover {
         color: #202124; }
       ul.tabs li a.selected {
