@@ -41,3 +41,6 @@ svelte/core-v2/dist/assets/index-B3bI9Fb5.js
 svelte/core-v2/dist/assets/index-D9BU-4Vg.js
 svelte/core-v2/dist/assets/index-DXN4eDBi.css
 svelte/core-v2/dist/assets/index-Ln08zho_.css
+
+# playwright test results
+test-results/
