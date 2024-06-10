@@ -1,6 +1,6 @@
 ---
 title: "How to transform your organization"
-titleForHTMLHead: "How to transform your organizatio" # TODO: can we DRY this out?
+titleForHTMLHead: "How to transform your organization" # TODO: can we DRY this out?
 date: 2023-03-22T13:43:36Z
 updated: 2024-06-10T00:00:00Z
 draft: false
