@@ -1,8 +1,8 @@
 ---
 title: "How to transform your organization"
-titleForHTMLHead: "DevOps Capabilities: Transform" # TODO: can we DRY this out?
+titleForHTMLHead: "How to transform your organization" # TODO: can we DRY this out?
 date: 2023-03-22T13:43:36Z
-updated: 2024-04-19T00:00:00Z
+updated: 2024-06-10T00:00:00Z
 draft: false
 headline: "How to transform your organization"
 subhead: "Find out about the importance of ensuring your people have the tools and resources to do their job, and of making good use of their skills and abilities."
@@ -237,17 +237,12 @@ resources to ensure their success (time, money, and executive and champion
 practitioner sponsorship). In contrast to mashups, very few people report use of
 a big bang strategy, although it was most common in low performers.
 
-Additional analysis identified four patterns used by high performers:
+Additional analysis identified four patterns used by high performers, ordered by
+prevalence:
 
 -   **Community builders:** This group focuses on communities of practice,
     grassroots, and proofs of concept (as a template and as a seed, as described
     earlier). This occurs 46% of the time.
--   **University:** This group focuses on education and training, with the
-    majority of their efforts going into centers of excellence, communities of
-    practice, and training centers. This pattern was only observed 9% of the
-    time, suggesting that while this strategy can be successful, it is not
-    common and requires significant investment and planning to ensure that
-    lessons learned are scaled throughout the organization.
 -   **Emergent:** This group has focused on grassroots efforts and communities
     of practice. This appears to be the most hands-off group and appears in 23%
     of cases.
@@ -257,6 +252,13 @@ Additional analysis identified four patterns used by high performers:
     levels in PoCs that stall. The fact they are able to leverage this activity
     and remain high performers suggests they use this strategy to experiment and
     test out ideas quickly.
+-   **University:** This group focuses on education and training, with the
+    majority of their efforts going into centers of excellence, communities of
+    practice, and training centers. This pattern was only observed 9% of the
+    time, suggesting that while this strategy can be successful, it is not
+    common and requires significant investment and planning to ensure that
+    lessons learned are scaled throughout the organization.
+
 
 ## Principles of effective organizational change management
 
