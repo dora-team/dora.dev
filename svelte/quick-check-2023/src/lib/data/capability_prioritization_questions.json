@@ -5,6 +5,7 @@
         "shortname": "ci",
         "description": "Continuous integration (CI) is the first step towards continuous delivery. This is a development practice where code is regularly checked in, and each check-in triggers a set of quick tests to discover serious regressions, which developers fix immediately. The CI process creates canonical builds and packages that are ultimately deployed and released.",
         "article_url": "/devops-capabilities/technical/continuous-integration/",
+        "response_prompt": "For the primary application or service you work on:",
         "questions": [
             {
                 "number": 1,
@@ -34,6 +35,7 @@
         "shortname": "arch",
         "description": "Architecture that lets teams test and deploy their applications on demand, without requiring orchestration with other services. Having a loosely coupled architecture allows your teams to work independently without relying on other teams for support and services, which in turn enables them to work quickly and deliver value to the organization.",
         "article_url": "/devops-capabilities/technical/loosely-coupled-architecture/",
+        "response_prompt": "",
         "questions": [
             {
                 "number": 1,
@@ -67,6 +69,7 @@
         "shortname": "culture",
         "description": "Westrum's measure of organizational culture is predictive of IT performance, organizational performance, and decreasing burnout. Hallmarks of this measure include good information flow, high cooperation and trust, bridging between teams, and conscious inquiry.",
         "article_url": "/devops-capabilities/cultural/generative-organizational-culture/",
+        "response_prompt": "In my organization...",   
         "questions": [
             {
                 "number": 1,
