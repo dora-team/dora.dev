@@ -13,7 +13,7 @@
 <!-- css transitions require specified heights, so we'll make an educated guess as to whether to put items on one line or two-->
 <div
     class={view_mode}
-    class:twolines={details["name"].length > 30}
+    class:twolines={details["name"].length > 24}
     on:click={() => openPopover(entity)}
 >
     {details["name"]}
@@ -29,6 +29,7 @@
         align-items: center;
         cursor: pointer;
         font-size:1rem;
+        overflow: hidden;
     }
 
     .summary {

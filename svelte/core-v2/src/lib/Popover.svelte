@@ -49,8 +49,12 @@
     <div class="header">
         <h1>{name}</h1>
         <div>
-            <a on:click={() => document.getElementById("popover").hidePopover()}
-                >&times;</a
+            <a
+                href="."
+                on:click={(e) => {
+                    e.preventDefault();
+                    document.getElementById("popover").hidePopover();
+                }}>&times;</a
             >
         </div>
     </div>
@@ -61,12 +65,36 @@
     </div>
 </div>
 
+<!-- this is a hack! the HTML native `popover` function provides for a `::backdrop` pseudo-element (see below)
+    which obscures everything under the popover. BUT it doesn't deactivate links underneath the backdrop.
+    So, we add this full-page div, and use styles (see `#link-blocker` styles below) to show it whenever the
+    popover is visible.
+    -->
+<div id="link-blocker"></div>
+
 <style lang="scss">
+    :global(#link-blocker) {
+        z-index: 999;
+        width: 100vw;
+        height: 100vh;
+        opacity: 0;
+        position: fixed;
+        left: 0;
+        top: 0;
+        display: none;
+    }
+
+    :global(body:has(:popover-open) #link-blocker) {
+        display: block;
+    }
+
     #popover {
-        max-width: 80%;
+        min-width:40vw;
+        max-width: min(960px, calc(100vw - 2rem));
+        margin: 10vh auto;
         border: none;
         border-radius: 1em;
-        text-align: justify;
+        text-align: left;
         padding: 0;
 
         &:popover-open {
