@@ -30,7 +30,15 @@ What may be more exciting, however, is how documentation quality interacts with 
 
 This interaction and impact applies to every single technical capability we studied in 2022. In the table below, check out the lift to organizational performance as various technical capabilities are implemented. The lift is significantly amplified for teams with above-average documentation quality.
 
-![Documentation lifts organizational performance](./impact-of-documentation.jpg)
+| Technical Capability               | Teams with below-average documentation quality | Teams with above-average documentation quality |
+|------------------------------------|:----------------------------------------------:|:----------------------------------------------:|
+| Continuous delivery                | 63%                                            | 656%                                           |
+| Continuous integration             | 34%                                            | 750%                                           |
+| Loosely coupled architecture       | 46%                                            | 313%                                           |
+| Site Reliability Engineering (SRE) | 79%                                            | 343%                                           |
+| Supply chain security              | 37%                                            | 451%                                           |
+| Trunk-based development            | 36%                                            | 1525%                                          |
+| Version Control                    | 27%                                            | 278%                                           |
 
 ## Creating quality documentation
 Documentation needs to be actively created and maintained, which takes work.
