@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Perform a search for "generative"', async ({ page }) => {
-    await page.goto('http://localhost:1313/search/');
+    await page.goto('/search/');
     await expect(page.locator('#searchButton')).toContainText('search');
     await page.locator('#searchQuery').fill('generative');
     await page.getByRole('button', { name: 'search' }).click();
