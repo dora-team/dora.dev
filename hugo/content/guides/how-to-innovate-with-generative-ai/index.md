@@ -2,7 +2,7 @@
 title: "How to enable your software delivery teams to innovate with generative AI"
 titleForHTMLHead: "How to enable your software delivery teams to innovate with generative AI" 
 date: 2024-06-122024-06-12
-updated: 2024-06-12
+updated: 2024-06-13
 authors: 
     1: {name: 'Amanda Lewis', url: 'https://linkedin.com/in/lewisamanda'}
 draft: false
@@ -29,7 +29,7 @@ DORA found that teams that focus on the user have [40% higher organizational per
 The foundation for exploring how to integrate generative AI features into the software for your users, or within your software development life cycle, involves the ability to continuously implement small changes, observe their impact on users, evaluate their outcomes, and then iterate as needed. Combining a culture of continuous improvement with user focus requires involvement from all roles across all levels of your organization. Though the specific contributions of each role might differ (for example, a customer support agent can provide crucial insights about users to developers), all roles in all levels must combine their efforts so that software delivery can improve your organizational performance. The following sections of this guide outline how different levels in your organization can apply the DORA findings towards using generative AI.
 
 ## Ways that teams can innovate with generative AI
-The DORA research shows that high-performing teams use a combination of technical, cultural, and process [capabilities](/devops-capabilities) to continuously improve their software delivery and operations performance. Improving these capabilities predict better software delivery performance, team well-being, and organizational performance. Teams that use the DORA research are able to baseline their software delivery performance and identify bottlenecks. They can then use this information along with generative AI to improve their capabilities. 
+DORA research shows that high-performing teams use a combination of technical, cultural, and process [capabilities](/devops-capabilities) to continuously improve their software delivery and operations performance. Improving these capabilities predict better software delivery performance, team well-being, and organizational performance. Teams that use the DORA research are able to baseline their software delivery performance and identify bottlenecks. They can then use this information along with generative AI to improve their capabilities. 
 
 ### Monitor software delivery performance 
 The [DORA metrics](/guides/dora-metrics-four-keys) (the four keys) measure the software delivery performance for an application or service. The DORA research is grounded in understanding the capabilities that predict improved software delivery performance.  
@@ -125,7 +125,7 @@ Your organization’s teams can adapt more quickly to changes in the market and 
 ## Outcomes define success
 As your organization explores integrating generative AI into your software delivery and operations process, foster an outcome-oriented mindset within your teams. Improvements take time. Ensure that your organization allocates enough time, resources, and space so these improvements can yield tangible results. 
 
-Instead of solely defining success by the adoption of generative AI, it's more beneficial to base success based on the impact of generative AI on specific outcomes. These outcomes should directly influence software delivery performance, overall well-being, and the organization's performance as a whole. 
+Instead of solely defining success by the adoption of generative AI, it's more beneficial to base success on the impact of generative AI on specific outcomes. These outcomes should directly influence software delivery performance, overall well-being, and the organization's performance as a whole. 
 
 When you integrate generative AI into your workflow, it's important to remember the [J-curve effect](/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf#page=30). Initially, productivity might dip as you invest time in learning, adjusting processes, and potentially facing unforeseen challenges. This is the downward slope of the "J." However, the downward slope is not necessarily the final outcome. With persistence and strategic implementation, you can climb the upward curve and benefit from the efficiency, innovation, and problem-solving capabilities of generative AI. 
 
