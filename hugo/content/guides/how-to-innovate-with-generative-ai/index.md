@@ -1,11 +1,11 @@
 ---
 title: "How to enable your software delivery teams to innovate with generative AI"
 titleForHTMLHead: "How to enable your software delivery teams to innovate with generative AI" 
-date: 2024-06-12
+date: 2024-06-122024-06-12
 updated: 2024-06-12
 authors: 
     1: {name: 'Amanda Lewis', url: 'https://linkedin.com/in/lewisamanda'}
-draft: true
+draft: false
 headline: "How to enable your software delivery teams to innovate with generative AI"
 subhead: A guide to innovating with generative AI
 heroimage: "how-to-innovate-with-ai.png"
@@ -86,7 +86,6 @@ Generative AI can provide both you and your organization proper informational co
 In contrast, the second comment is written as a prompt so you could use generative AI to assist with code generation. This type of generative AI prompt results in a comment that provides detailed information about what the function does and how the function needs to be refactored.
 
 ```python 
-
 # This function calculates and returns the average of a list of numbers.
 # Without altering its functionality, refactor it:
 # - handle potential division by zero errors gracefully, instead of crashing
@@ -97,9 +96,9 @@ In contrast, the second comment is written as a prompt so you could use generati
 After you refactor the function, you can easily revise the comments to provide brief context on the purpose of the code. This revised comment provides context for future users of the function, and you could even refer to it to refresh your memory if you need to revisit the code. 
 
 ```python 
-#calculates and returns the average of a list of numbers
-#handles potential division by zero errors 
-#optimizes performance for larger inputs
+# calculates and returns the average of a list of numbers
+# handles potential division by zero errors 
+# optimizes performance for larger inputs
 ```
 
 
