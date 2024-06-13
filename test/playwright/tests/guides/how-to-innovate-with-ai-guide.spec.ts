@@ -1,4 +1,4 @@
-const { test, expect } = require('@playwright/test');
+import { test, expect } from '@playwright/test';
 
 test('Page title should be "How to enable your software delivery teams to innovate with generative AI"', async ({ page }) => {
   await page.goto('/guides/how-to-innovate-with-generative-ai/');
