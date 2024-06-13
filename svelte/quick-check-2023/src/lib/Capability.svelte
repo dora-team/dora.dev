@@ -52,7 +52,7 @@
     <table>
         <thead>
             <tr>
-                <th>For the primary application or service you work on:</th>
+                <th>{capability.response_prompt}</th>
                 {#each response_options as option}
                     <th>{option}</th>
                 {/each}
