@@ -70,6 +70,7 @@
             grid-template-columns: 1fr;
             gap: 0.25rem 0.5rem;
             transition: all 0.3s linear;
+            align-items: stretch;
         }
 
         &.capabilities {

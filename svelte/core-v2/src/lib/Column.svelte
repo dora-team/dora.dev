@@ -97,7 +97,7 @@
         }
 
         &.detail {
-            height: 22.5rem;
+            height: 24rem;
         }
     }
 </style>
