@@ -1,14 +1,5 @@
-<form action="." method="get" id="searchForm">
+<form action="/search/" method="get" id="searchForm">
     <div class="searchInputContainer"><input type="search" name="q" class="searchQuery"
-            placeholder="Search dora.dev for..."><input type="submit" value="search" id="searchButton"
+            placeholder="Search dora.dev for..." required><input type="submit" value="search" id="searchButton"
             class="searchButton" /></div>
 </form>
-
-<script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-        let params = new URLSearchParams(window.location.search);
-        if (params.has("q")) {
-            document.querySelectorAll('.searchQuery').forEach((input) => input.value = params.get("q"))
-        }
-    });
-</script>

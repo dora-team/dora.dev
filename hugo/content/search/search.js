@@ -14,8 +14,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let params = new URLSearchParams(window.location.search);
     if (params.has("q")) {
         searchQuery = params.get("q");
+        inputBox.value = searchQuery;
     } else {
-        // the page has been accessed directly, with no search query. auto-focus on search box
         inputBox.focus();
     }
 
