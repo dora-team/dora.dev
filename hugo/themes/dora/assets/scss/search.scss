@@ -12,13 +12,12 @@ main {
     }
 }
 
-#searchForm {
+.searchInputContainer {
     display: flex;
-    // width: 100%;
     margin:0 1em;
 }
 
-#searchQuery {
+.searchQuery {
     display: block;
     flex-grow: 1;
     margin: 0;
@@ -27,11 +26,12 @@ main {
     border-radius: 10vmin 0 0 10vmin;
 }
 
-#searchButton {
-    display: block;
-    margin: 0;
-    border-radius: 0 10vmin 10vmin 0;
-    font-size: 1rem;
+.searchButton {
+    // !important is needed to override default button styles
+    display: block !important; 
+    margin: 0  !important;
+    border-radius: 0 10vmin 10vmin 0  !important;
+    font-size: 1rem  !important;
 }
 
 #resultsHeader {

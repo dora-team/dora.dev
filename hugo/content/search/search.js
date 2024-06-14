@@ -1,7 +1,7 @@
 let searchServer = "https://search.dora.dev/"; ``
 
 window.addEventListener('DOMContentLoaded', (event) => {
-    let inputBox = document.querySelector("#searchQuery");
+    let inputBox = document.querySelector("#searchPage .searchQuery");
     let resultsBox = document.querySelector('#webResultsContainer');
     let resultsHeader = document.querySelector('#resultsHeader')
     let publicationResultsHeader = document.querySelector('#publicationResultsHeader');
@@ -14,7 +14,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let params = new URLSearchParams(window.location.search);
     if (params.has("q")) {
         searchQuery = params.get("q");
-        inputBox.value = searchQuery;
     } else {
         // the page has been accessed directly, with no search query. auto-focus on search box
         inputBox.focus();
