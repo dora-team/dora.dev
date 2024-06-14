@@ -48,25 +48,14 @@ Use our quick check tool to discover how you compare to industry peers, identify
 {{< /article >}}
 
 {{< article columns="1" 
-    title="DORA Core" 
-    url="/research/"
-    cta="Explore the model" 
-    img-src="/img/features/homepage-core-snipe.png" 
+    title="Generative AI" 
+    url="/guides/how-to-innovate-with-generative-ai/"
+    cta="Read the guide" 
+    img-src="/guides/how-to-innovate-with-generative-ai/how-to-innovate-with-ai.png" 
     img-align="left" 
     >}}
-DORA Core represents the most well-established findings across the history and breadth our research program. Use it to guide transformation efforts in your organization.
+Leverage DORA's research findings to apply a holistic, iterative strategy as you experiment with and adopt emerging AI technologies. Learn how a focus on users can help ensure positive outcomes.
 {{< /article >}}
-
-<!--
-{{< article 
-    columns="1" 
-    title="DevOps Awards" 
-    cta="See the Winners"
-    url="https://cloud.google.com/blog/topics/devops-awards" 
-    >}}
-The Winners of the DevOps Awards are implementing DevOps practices to drive organizational success and deliver high-quality customer experiences. Read about their journeys and learn how they applied a philosophy of continuous improvement.
-{{< /article >}} -->
-
 
 {{< article 
     columns="1" 
@@ -80,13 +69,12 @@ The Winners of the DevOps Awards are implementing DevOps practices to drive orga
 The Google Cloud DORA Awards applications are now open! Featuring 10 different categories including DevOps, AI innovation, and more, the awards celebrate Google Cloud customers putting DORA insights into practice.
 {{< /article >}}
 
-{{< article 
-    columns="1" 
-    title="The ROI of DevOps" 
-    url="https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper"
-    cta="Read the Whitepaper"
-    img-src="/img/features/whitepaper-roi.png"
-    img-align="left"
-    img-stroke="true" >}}
-Organizations are constantly grappling to quantify the value of technology transformation. The whitepaper takes an analytical, data-driven approach to forecast the value and justify investment in DevOps transformations.
+{{< article columns="1" 
+    title="DORA Core" 
+    url="/research/"
+    cta="Explore the model" 
+    img-src="/img/features/homepage-core-snipe.png" 
+    img-align="left" 
+    >}}
+DORA Core represents the most well-established findings across the history and breadth our research program. Use it to guide transformation efforts in your organization.
 {{< /article >}}
