@@ -45,7 +45,7 @@
     $: populateDetails(selected_entity);
 </script>
 
-<div id="popover" popover="auto">
+<div id="entityPopover" popover="auto">
     <div class="header">
         <h1>{name}</h1>
         <div>
@@ -53,7 +53,7 @@
                 href="."
                 on:click={(e) => {
                     e.preventDefault();
-                    document.getElementById("popover").hidePopover();
+                    document.getElementById("entityPopover").hidePopover();
                 }}>&times;</a
             >
         </div>
@@ -73,23 +73,25 @@
 <div id="link-blocker"></div>
 
 <style lang="scss">
-    :global(#link-blocker) {
-        z-index: 999;
-        width: 100vw;
-        height: 100vh;
-        opacity: 0;
-        position: fixed;
-        left: 0;
-        top: 0;
-        display: none;
+    :global(:root) {
+        #link-blocker {
+            z-index: 999;
+            width: 100vw;
+            height: 100vh;
+            opacity: 0;
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+
+        &:has(:popover-open) #link-blocker {
+            display: block;
+        }
     }
 
-    :global(body:has(:popover-open) #link-blocker) {
-        display: block;
-    }
-
-    #popover {
-        min-width:40vw;
+    #entityPopover {
+        min-width: 40vw;
         max-width: min(960px, calc(100vw - 2rem));
         margin: 10vh auto;
         border: none;

@@ -6,7 +6,7 @@
 
     function openPopover(entity) {
         selected_entity = entity;
-        document.getElementById('popover').showPopover();
+        document.getElementById('entityPopover').showPopover();
     }
 </script>
 

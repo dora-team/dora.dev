@@ -1,7 +1,7 @@
 ---
 title: "Core V2 [preview]"
 date: 2024-06-06
-draft: true
+draft: false
 ---
 
 <!-- sources for the Core V2 single-page application are generated from the /svelte/core-v2 folder, then copied to /hugo/assets. -->
