@@ -12,28 +12,6 @@ main {
     }
 }
 
-#searchForm {
-    display: flex;
-    // width: 100%;
-    margin:0 1em;
-}
-
-#searchQuery {
-    display: block;
-    flex-grow: 1;
-    margin: 0;
-    padding-inline: 1rem;
-    border: 1px solid #999;
-    border-radius: 10vmin 0 0 10vmin;
-}
-
-#searchButton {
-    display: block;
-    margin: 0;
-    border-radius: 0 10vmin 10vmin 0;
-    font-size: 1rem;
-}
-
 #resultsHeader {
     color: #666;
     display: none;

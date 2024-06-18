@@ -4,10 +4,6 @@ date: 2024-02-15T18:39:17-05:00
 draft: false
 ---
 
-> This is a preview of DORA search.
-
-<form action="." method="get" id="searchForm"><input type="search" name="q" id="searchQuery" placeholder="Search dora.dev for..."><input type="submit" value="search" id="searchButton" /></form>
-
 <h2 id="resultsHeader">Search</h2>
 <div id="searchResultsContainer">
     <div id="publicationResultsHeader"></div>

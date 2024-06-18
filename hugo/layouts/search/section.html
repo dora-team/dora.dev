@@ -1,5 +1,7 @@
-
 {{ define "main" }}
-{{- partial "partials/link_styles" "scss/search.scss" -}}
-{{ .Content }}
+<div id="searchPage">
+    {{- partial "partials/link_styles" "scss/search.scss" -}}
+    {{- partial "partials/search_input" -}}
+    {{ .Content }}
+</div>
 {{ end }}

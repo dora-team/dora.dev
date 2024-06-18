@@ -1,0 +1,21 @@
+.searchInputContainer {
+    display: flex;
+    margin:0 1em;
+}
+
+.searchQuery {
+    display: block;
+    flex-grow: 1;
+    margin: 0;
+    padding-inline: 1rem;
+    border: 1px solid #999;
+    border-radius: 10vmin 0 0 10vmin;
+}
+
+.searchButton {
+    // !important is needed to override default button styles
+    display: block !important; 
+    margin: 0  !important;
+    border-radius: 0 10vmin 10vmin 0  !important;
+    font-size: 1rem  !important;
+}
