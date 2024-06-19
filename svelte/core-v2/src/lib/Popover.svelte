@@ -61,7 +61,9 @@
 
     <p>{@html summary}</p>
     <div class="footer">
-        <a href={link} target="_blank">Learn more about {name}</a>
+        {#if link}
+            <a href={link} target="_blank">Learn more about {name}</a>
+        {/if}
     </div>
 </div>
 
