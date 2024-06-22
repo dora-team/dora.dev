@@ -9,4 +9,5 @@
     --color-grey-dark: rgb(95, 99, 104);
     --color-text: rgb(32, 33, 36);
     --popover-backdrop: rgba(32, 33, 36, 0.7);
+    --default-transition: all .5s ease-out;
 }

@@ -15,7 +15,7 @@
 
 <div class="entity-group {view_mode} {column}">
     <h3 on:click={() => openPopover(entity_group_id)}>
-        {entity_group["name"]}
+        <span class="entity-group-name">{entity_group["name"]}</span>
         {#if entity_group["measured_by"]}
             <small>measured by</small>
             <h5>
@@ -23,22 +23,33 @@
             </h5>
         {/if}
     </h3>
-    <div class="entities">
-        {#each Object.entries(entity_group["entities"]) as [entity, details]}
-            <Entity {entity} {details} {view_mode} bind:selected_entity />
-        {/each}
+    <div class="entities-wrapper" id={entity_group_id}>
+        <div class="entities">
+            {#each Object.entries(entity_group["entities"]) as [entity, details]}
+                <Entity {entity} {details} {view_mode} bind:selected_entity />
+            {/each}
+        </div>
     </div>
 </div>
 
 <style lang="scss">
     .entity-group {
-        transition: all 0.3s linear;
-        margin: 0.25rem 0.5rem;
+        transition: var(--default-transition);
+        margin: 0.25rem .5rem;
         border-radius: 0.5rem;
-        padding: 0.25rem ;
+        padding: 0.25rem 0.25rem 0.15rem 0.25rem;
+        border: 1px solid var(--color-grey-light);
+        overflow: hidden;
+
+        .entity-group-name {
+            display: block;
+            border-bottom: 1px solid var(--color-background);
+            transition: var(--default-transition);
+            padding-bottom: 0.25rem;
+        }
 
         h3 {
-            font-size:1.15rem;
+            font-size: 1.15rem;
             padding: 0;
             margin: 0;
             font-weight: 500;
@@ -48,72 +59,103 @@
         small {
             display: block;
             overflow: hidden;
-            transition: height 0.3s linear;
-            font-style: italic;
-            font-size:.85rem;
+            font-variant: italic;
+            font-size: 0.85rem;
+            height: 0;
             color: var(--color-grey-medium);
+            transition: var(--default-transition);
         }
 
         h5 {
             padding: 0;
             margin: 0;
             font-weight: 500;
-            font-size: .85rem;
+            font-size: 0.85rem;
             color: var(--color-grey-dark);
             text-transform: none;
             letter-spacing: normal;
             white-space: nowrap;
         }
 
-        .entities {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.25rem 0.5rem;
-            transition: all 0.3s linear;
-            align-items: stretch;
+        .entities-wrapper {
+            height: 0;
+            overflow: hidden;
+            transition: var(--default-transition);
+            width: 14rem;
+            margin: auto;
+
+            .entities {
+                display: grid;
+                margin-top: 0.5rem;
+                grid-template-columns: 1fr;
+                gap: 0.25rem 0.5rem;
+                transition: var(--default-transition);
+                align-items: stretch;
+                opacity: 0;
+            }
         }
 
         &.capabilities {
-            &.summary {
-                /* we want the Capabilities column to be taller than the Performance column, so cheat it a bit here */
-                padding-top: 0.5rem;
-                padding-bottom: 0.5rem;
-            }
-
             .entities {
                 grid-template-columns: 1fr 1fr;
             }
         }
 
-        &.summary {
-            border: 1px solid var(--color-grey-light);
-            small {
-                height: 0lh;
-            }
-
-            .entities {
-                gap: 0;
-            }
-        }
-
         &.detail {
             border: 1px solid var(--color-background);
-
-            &:not(:last-child) {
-                border-radius: 0;
-                &.capabilities {
-                    border-bottom: 1px solid var(--color-capabilities);
-                }
-                &.performance {
-                    border-bottom: 1px solid var(--color-performance);
-                }
-                &.outcomes {
-                    border-bottom: 1px solid var(--color-outcomes);
-                }
+            .entity-group-name {
+                border-bottom: 1px solid var(--color-grey-medium);
             }
             small {
                 height: 1lh;
             }
+            .entities-wrapper {
+                height: 3rem;
+            }
+            .entities {
+                opacity: 1;
+            }
         }
     }
+
+        // cababilities is two-column, so entities-wrapper needs to be wider
+        .capabilities .entities-wrapper {
+        width:28rem;
+    }
+        .performance .entities-wrapper {
+        width:13.5rem;
+    }
+        .outcomes .entities-wrapper {
+        width:15rem;
+    }
+    
+
+    // group-specific entity-group sizes in detail / expanded mode
+    .entity-group.detail {
+        .entities-wrapper {
+            &#climate-for-learning {
+                height: 6.5rem;
+            }
+            &#fast-flow {
+                height: 12.5rem;
+            }
+            &#fast-feedback {
+                height: 7.25rem;
+            }
+            &#software-delivery {
+                height: 7.25rem;
+            }
+            &#reliability {
+                height: 7.25rem;
+            }
+            &#organizational-performance {
+                height: 6.5rem;
+            }
+            &#well-being {
+                height: 9.5rem;
+            }
+        }
+    }
+
+
 </style>
