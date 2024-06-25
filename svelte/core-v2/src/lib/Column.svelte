@@ -28,12 +28,14 @@
 <style lang="scss">
     section {
         display: flex;
+        width:100%;
         flex-direction: column;
         background-color: black; /* default; this may be overridden per instance */
         border: 2px solid black; /* default; this may be overridden per instance */
         border-radius: 1rem;
         overflow: hidden;
-        transition: all 0.3s linear;
+        width:18rem;
+        transition: var(--default-transition);
 
         .heading {
             display: block;
@@ -50,54 +52,41 @@
             background-color: var(--color-background);
             display: flex;
             flex-direction: column;
+            padding-bottom:.25rem;
         }
     }
     section.capabilities {
+
+        &.detail {
+            width:35rem;
+        }
         background-color: var(--color-capabilities);
         border-color: var(--color-capabilities);
+
         .heading {
             background-color: var(--color-capabilities);
         }
-
-        &.summary {
-            height: 12.5rem;
-            width:20rem;
-        }
-
-        &.detail {
-            height: 36rem;
-            width:30rem;
-        }
     }
     section.performance {
+        &.detail {
+            width:22.25rem;
+        }
         background-color: var(--color-performance);
         border-color: var(--color-performance);
-
-        width: 16rem;
         .heading {
             background-color: var(--color-performance);
         }
-        &.summary {
-            height: 10.5rem;
-        }
-
-        &.detail {
-            height: 32rem;
-        }
     }
     section.outcomes {
-        background-color: var(--color-outcomes);
-        border-color: var(--color-outcomes);
-        width: 16rem;
-        .heading {
-            background-color: var(--color-outcomes);
-        }
-        &.summary {
-            height: 9.75rem;
-        }
 
         &.detail {
-            height: 24rem;
+            width:21rem;
+        }
+
+        background-color: var(--color-outcomes);
+        border-color: var(--color-outcomes);
+        .heading {
+            background-color: var(--color-outcomes);
         }
     }
 </style>

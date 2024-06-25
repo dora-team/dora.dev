@@ -1,4 +1,4 @@
-@import url("./assets/colors.css");
+@import url("./assets/_variables.css");
 /* link to dora.dev stylesheet so that when served by Vite, we will see how it will look when served within the hugo site content
     this stylesheet was pulled from prod on june 6, 2024 */
 @import url("./styles-dora-dev_2024-06-06.css");

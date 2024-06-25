@@ -62,7 +62,8 @@
     <p>{@html summary}</p>
     <div class="footer">
         {#if link}
-            <a href={link} target="_blank">Learn more about {name}</a>
+            <a href={link}>Learn more about {name}</a>
+            <small>[links temporarily disabled]</small>
         {/if}
     </div>
 </div>
@@ -93,8 +94,7 @@
     }
 
     #entityPopover {
-        min-width: 40vw;
-        max-width: min(960px, calc(100vw - 2rem));
+        width: min(960px, calc(100vw - 2rem));
         margin: 10vh auto;
         border: none;
         border-radius: 1em;
@@ -114,6 +114,8 @@
             h1 {
                 flex-grow: 1;
                 padding-left: 1rem;
+                font-size: 2rem;
+                line-height: 3rem;
             }
             a {
                 font-size: 2em;
@@ -140,6 +142,19 @@
         .footer {
             text-align: center;
             padding: 0.5rem;
+
+            // Begin TEMPORARY styles; remove these when #659 is closed
+            a {
+                pointer-events: none;
+                cursor:not-allowed;
+            }
+
+            small {
+                color: var(--color-grey-medium);
+                font-variant: italic;
+            }
+
+            //End TEMPORARY styles
         }
 
         &::backdrop {
