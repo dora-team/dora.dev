@@ -68,6 +68,9 @@
         }
     }
     section.performance {
+        &.detail {
+            width:22.25rem;
+        }
         background-color: var(--color-performance);
         border-color: var(--color-performance);
         .heading {
@@ -77,7 +80,7 @@
     section.outcomes {
 
         &.detail {
-            width:20rem;
+            width:21rem;
         }
 
         background-color: var(--color-outcomes);

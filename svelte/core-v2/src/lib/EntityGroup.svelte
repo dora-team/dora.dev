@@ -35,8 +35,8 @@
 <style lang="scss">
     .entity-group {
         transition: var(--default-transition);
-        margin: 0.25rem .5rem;
         border-radius: 0.5rem;
+        margin: 0.25rem 0.5rem;
         padding: 0.25rem 0.25rem 0.15rem 0.25rem;
         border: 1px solid var(--color-grey-light);
         overflow: hidden;
@@ -103,6 +103,7 @@
 
         &.detail {
             border: 1px solid var(--color-background);
+            margin: 0;
             .entity-group-name {
                 border-bottom: 1px solid var(--color-grey-medium);
             }
@@ -118,17 +119,16 @@
         }
     }
 
-        // cababilities is two-column, so entities-wrapper needs to be wider
-        .capabilities .entities-wrapper {
-        width:28rem;
+    // cababilities is two-column, so entities-wrapper needs to be wider
+    .capabilities .entities-wrapper {
+        width: 26rem;
     }
-        .performance .entities-wrapper {
-        width:13.5rem;
+    .performance .entities-wrapper {
+        width: 16rem;
     }
-        .outcomes .entities-wrapper {
-        width:15rem;
+    .outcomes .entities-wrapper {
+        width: 15rem;
     }
-    
 
     // group-specific entity-group sizes in detail / expanded mode
     .entity-group.detail {
@@ -140,13 +140,13 @@
                 height: 12.5rem;
             }
             &#fast-feedback {
-                height: 7.25rem;
+                height: 9rem;
             }
             &#software-delivery {
-                height: 7.25rem;
+                height: 9.75rem;
             }
             &#reliability {
-                height: 7.25rem;
+                height: 9.5rem;
             }
             &#organizational-performance {
                 height: 6.5rem;
@@ -156,6 +156,4 @@
             }
         }
     }
-
-
 </style>

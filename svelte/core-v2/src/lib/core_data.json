@@ -91,7 +91,6 @@
                 },
                 "resilience-engineering": {
                     "name": "Resilience engineering",
-                    "link": "https://sre.google/",
                     "summary": "Resilience Engineering is not just about preventing failures, but about <b>embracing them</b> by designing, building, and running systems that can withstand them. Some principles include: accepting failure, continuous improvement, fault tolerance, data integrity, loadbalancing, replication, autoscaling, and automated recovery. By implementing its practices and principles, you can build internet-based distributed systems that are reliable, able to deliver consistent performance even in the face of unexpected events."
                 },
                 "pervasive-security": {
@@ -143,28 +142,23 @@
         },
         "reliability": {
             "name": "Reliability",
-            "link": "https://sre.google/",
             "measured_by": "Service Level Objectives (SLOs)",
             "summary": "Reliability is a system's ability to consistently perform its intended function without interruption or failure. This implies that the system is available, performant, correct, and predictable.  In Cloud computing, this requires attention to many parts of the software development lifecycle, including:  design, implementation, monitoring, automation, testing.  This might include practices like capacity planning, incident management, and release engineering.",
             "entities": {
                 "measurement-coverage": {
                     "name": "Measurement coverage",
-                    "link": "https://sre.google/",
                     "summary": "Are reliability measurements (SLIs) in place for all critical services/applications/components?"
                 },
                 "measurement-focus": {
                     "name": "Measurement focus",
-                    "link": "https://sre.google/",
                     "summary": "Do reliability measurement (SLI) definitions reflect system behavior as experienced by users?"
                 },
                 "target-optimization": {
                     "name": "Target optimization",
-                    "link": "https://sre.google/",
                     "summary": "Are reliability targets (SLOs) set appropriately, reflecting user sentiment and organizational capability?"
                 },
                 "target-compliance": {
                     "name": "Target compliance",
-                    "link": "https://sre.google/",
                     "summary": "Are reliability targets (SLOs) consistently met?"
                 }
             }
