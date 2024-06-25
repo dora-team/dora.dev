@@ -59,6 +59,7 @@
             margin: 0;
             font-weight: 500;
             cursor: pointer;
+            outline:none;
         }
 
         small {
