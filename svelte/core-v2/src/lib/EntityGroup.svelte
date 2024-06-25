@@ -14,7 +14,13 @@
 </script>
 
 <div class="entity-group {view_mode} {column}">
-    <h3 on:click={() => openPopover(entity_group_id)}>
+    <div
+        class="group-name"
+        on:click={() => openPopover(entity_group_id)}
+        on:keyup={() => openPopover(entity_group_id)}
+        role="link"
+        tabindex="-1"
+    >
         <span class="entity-group-name">{entity_group["name"]}</span>
         {#if entity_group["measured_by"]}
             <small>measured by</small>
@@ -22,7 +28,7 @@
                 {entity_group["measured_by"]}{#if view_mode === "detail"}:{/if}
             </h5>
         {/if}
-    </h3>
+    </div>
     <div class="entities-wrapper" id={entity_group_id}>
         <div class="entities">
             {#each Object.entries(entity_group["entities"]) as [entity, details]}
@@ -48,7 +54,7 @@
             padding-bottom: 0.25rem;
         }
 
-        h3 {
+        .group-name {
             font-size: 1.15rem;
             padding: 0;
             margin: 0;
@@ -149,7 +155,7 @@
                 height: 9.5rem;
             }
             &#organizational-performance {
-                height: 6.5rem;
+                height: 5.25rem;
             }
             &#well-being {
                 height: 9.5rem;

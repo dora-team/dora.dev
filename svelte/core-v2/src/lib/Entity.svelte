@@ -10,8 +10,13 @@
     }
 </script>
 
-<!-- css transitions require specified heights, so we'll make an educated guess as to whether to put items on one line or two-->
-<div class={view_mode} on:click={() => openPopover(entity)}>
+<div
+    class={view_mode}
+    on:click={() => openPopover(entity)}
+    on:keyup={() => openPopover(entity)}
+    role="link"
+    tabindex="-1"
+>
     {details["name"]}
 </div>
 
