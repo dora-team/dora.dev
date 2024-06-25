@@ -13,7 +13,6 @@
 <div
     class={view_mode}
     on:click={() => openPopover(entity)}
-    on:keyup={() => openPopover(entity)}
     role="link"
     tabindex="-1"
 >

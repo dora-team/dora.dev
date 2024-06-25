@@ -17,7 +17,6 @@
     <div
         class="group-name"
         on:click={() => openPopover(entity_group_id)}
-        on:keyup={() => openPopover(entity_group_id)}
         role="link"
         tabindex="-1"
     >
