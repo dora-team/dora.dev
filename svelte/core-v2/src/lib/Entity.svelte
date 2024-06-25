@@ -27,5 +27,6 @@
         display: grid;
         align-items: center;
         cursor: pointer;
+        outline:none;
     }
 </style>
