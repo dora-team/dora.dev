@@ -24,14 +24,12 @@ The production site (and pre-prod environments) are hosted in Firebase. Some hos
 ### **Firebase Emulation**
 Many Firebase features may be run locally through the Firebase emulator.  This requires two terminal windows and some knowledge about specific Firebase options desired to test.
 
-_NOTE:_ Firebase hosting uses non-standard port 6001 because Dave was having trouble with the standard port, 5000 (it may be because MacOS now leverages port 5000 for AirPlay).
-
 #### **Firestore and Hosting**
 To emulate Firestore and Firebase hosting (to see features like server-side redirects), and user form collection
   - in terminal 1, run `watch -n 2 hugo -s hugo -e development`
     - _this will continuously rebuild the site and save it to `/public` (which is the firebase hosting serving root)_
   - in terminal 2, run `firebase emulators:start --only firestore,hosting`
-  - access the site at `http://localhost:6001`
+  - access the site at `http://localhost:5000`
     - _in this configuration, the browser will not auto-reload when source files are changed_
 
 #### **Cloud Functions**

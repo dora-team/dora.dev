@@ -58,7 +58,7 @@
             x-on:keydown.escape.window="$store.coreModal.open=false" x-transition>
 
             <!-- there are modals for all of the capabilities, plus the grouped concepts like outcomes; grab all the relevant pages and render the modals -->
-            {{ $capabilities := where (where $.Site.RegularPages "Section" "devops-capabilities") "Params.core" true}}
+            {{ $capabilities := where (where $.Site.RegularPages "Section" "capabilities") "Params.core" true}}
             {{ $concepts := where $.Site.RegularPages "Section" "concepts" }}
             {{ $modals := union $capabilities $concepts }}
 

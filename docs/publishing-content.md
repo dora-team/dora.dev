@@ -10,9 +10,9 @@ From the repo root:
 - Choose a category: one of [`technical`, `process`, `cultural`] (note that the "measurement" category is being deprecated; those capabilities should be moved to "process" or "technical")
 - Choose a path name for the capability. This should be a descriptive title, in [`kebab-case`](https://www.theserverside.com/definition/Kebab-case). Don't include generic terms like "DORA," "DevOps," or "Capability;" these are provided by the template.
     - example: `streamlining-change-approval`
-- run `hugo new devops-capabilities/<CATEGORY>/<PATH_NAME>/index.md`
-  - example: `hugo new devops-capabilities/streamlining-change-approval/index.md`
-- A folder will be created within "devops-capabilities" which contains your article as markdown
+- run `hugo new capabilities/<PATH_NAME>/index.md`
+  - example: `hugo new capabilities/streamlining-change-approval/index.md`
+- A folder will be created within "capabilities" which contains your article as markdown
 - Edit the markdown file
   - In the front matter (the metadata between the `---` separators), edit the following:
     - title -- This will be auto-generated from the path name but may be edited if desired.
