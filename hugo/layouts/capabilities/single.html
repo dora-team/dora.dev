@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{- partial "partials/link_styles"  "scss/capabilities.scss" -}}
 
-<h4><a href="/capabilities">DevOps capabilities</a>: {{ .Params.category }}</h4>
+<h4><a href="/capabilities">Capabilities</a>: {{ .Params.category }}</h4>
 <h1>
     {{ .Title }}
     {{ if .Params.core }}<a class="core" href='{{ relref . "/research/" }}'>core</a>{{ end }}
@@ -19,7 +19,7 @@
     </article>
     <sidebar>
         <section>
-            <h4>DevOps Capabilities</h4>
+            <h4>Capabilities</h4>
             <h5>Technical</h5>
             <ul>
                 {{ range (where (where .Site.RegularPages "Section" .Section) "Params.Category" "technical").ByParam "Title" }}
