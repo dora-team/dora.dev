@@ -10,13 +10,28 @@
             ],
             "redirects": [
                 {
-                    "source": "/devops-capabilities",
-                    "destination": "/capabilities/",
+                    "source": "/concepts/wellbeing",
+                    "destination": "/capabilities/well-being/",
                     "type": 302
                 },
                 {
-                    "source": "/devops-capabilities/*/:capability",
-                    "destination": "/capabilities/:capability",
+                    "source": "/capabilities/wellbeing",
+                    "destination": "/capabilities/well-being/",
+                    "type": 302
+                },
+                {
+                    "source": "/concepts/well-being",
+                    "destination": "/capabilities/well-being/",
+                    "type": 302
+                },
+                {
+                    "source": "/devops-capabilities/cultural/wellbeing",
+                    "destination": "/capabilities/well-being/",
+                    "type": 302
+                },
+                {
+                    "source": "/devops-capabilities",
+                    "destination": "/capabilities/",
                     "type": 302
                 },
                 {
@@ -63,21 +78,6 @@
                     "source": "/core",
                     "destination": "/research/",
                     "type": 301
-                },
-                {
-                    "source": "/concepts/wellbeing",
-                    "destination": "/capabilities/well-being/",
-                    "type": 302
-                },
-                {
-                    "source": "/concepts/well-being",
-                    "destination": "/capabilities/well-being/",
-                    "type": 302
-                },
-                {
-                    "source": "/devops-capabilities/cultural/wellbeing",
-                    "destination": "/capabilities/well-being/",
-                    "type": 302
                 },
                 {
                     "source": "/research/archives/:year*",
@@ -188,6 +188,11 @@
                     "source": "/sponsor",
                     "destination": "/sponsors/",
                     "type": 301
+                },
+                {
+                    "source": "/devops-capabilities/*/:capability",
+                    "destination": "/capabilities/:capability/",
+                    "type": 302
                 }
             ]
         }
