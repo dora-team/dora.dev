@@ -10,9 +10,14 @@
             ],
             "redirects": [
                 {
-                    "source": "/capabilities",
-                    "destination": "/devops-capabilities/",
-                    "type": 301
+                    "source": "/devops-capabilities",
+                    "destination": "/capabilities/",
+                    "type": 302
+                },
+                {
+                    "source": "/devops-capabilities/*/:capability",
+                    "destination": "/capabilities/:capability",
+                    "type": 302
                 },
                 {
                     "source": "/quickcheck.html",
