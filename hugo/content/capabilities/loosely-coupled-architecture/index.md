@@ -157,9 +157,9 @@ Building cross-functional teams, with representation from across the
 organization (product, dev, test, and operations) enables teams to work
 independently and facilitates building around team boundaries. When your teams
 are cross-functional, they can function autonomously,
-[experiment with ideas](/devops-capabilities/process/team-experimentation),
+[experiment with ideas](/capabilities/team-experimentation),
 and
-[choose their own tools](/devops-capabilities/technical/teams-empowered-to-choose-tools).
+[choose their own tools](/capabilities/teams-empowered-to-choose-tools).
 To help with cross-team communication and testing, it can be helpful to
 have well-defined contracts between services.
 
@@ -177,7 +177,7 @@ tested and deployed from the services it depends on.
 
 To enable deploy-anytime capabilities, consider implementing blue/green or
 rolling deployment models, with high degrees of
-[automation](/devops-capabilities/technical/deployment-automation).
+[automation](/capabilities/deployment-automation).
 With these models, at least two or more versions of the product or service
 are running simultaneously. These deployment models allow teams to validate
 changes and deploy to production with little or no downtime. An important
@@ -332,9 +332,9 @@ time for changes to reach production.
 
 Aside from taking these deployment and service measures, teams that operate
 more independently demonstrate improvements in
-[job satisfaction](/devops-capabilities/cultural/job-satisfaction)
+[job satisfaction](/capabilities/job-satisfaction)
 and
-[team experimentation](/devops-capabilities/process/team-experimentation),
+[team experimentation](/capabilities/team-experimentation),
 and tend to select different technologies and tools based on their needs.
 
 ## What's next

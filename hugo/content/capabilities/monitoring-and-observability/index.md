@@ -15,7 +15,7 @@ Good monitoring is a staple of high-performing teams.
 [research](/publications/pdf/state-of-devops-2018.pdf)
 shows that a comprehensive monitoring and observability solution, along with a
 number of other technical practices, positively contributes to
-[continuous delivery.](/devops-capabilities/technical/continuous-delivery)
+[continuous delivery.](/capabilities/continuous-delivery)
 
 DORA's research defined these terms as follows:
 
@@ -219,17 +219,17 @@ monitoring. It is critical to a fast-moving organization to allow their
 monitoring systems to be updated quickly and efficiently by anyone within the
 organization. Monitoring configuration is critical, so changes should be
 tracked by means of
-[review and approval](/devops-capabilities/process/streamlining-change-approval),
+[review and approval](/capabilities/streamlining-change-approval),
 just as with code development and delivery. Keeping your monitoring
 configuration in a
-[version control system](/devops-capabilities/technical/version-control)
+[version control system](/capabilities/version-control)
 is a good first step in allowing broad access to the system, while maintaining
 control on this critical part of your system. Developing automation around
 deploying monitoring configuration through an automation pipeline can also
 improve your ability to ensure these configurations are valid and applied
 consistently. After you treat your monitoring configuration as code, these
 improvements can all be accomplished by means of a
-[deployment automation](/devops-capabilities/technical/deployment-automation)
+[deployment automation](/capabilities/deployment-automation)
 process, ideally the same system used by the rest of your team.
 
 ## Common pitfalls of implementing monitoring and observability
@@ -350,7 +350,7 @@ health of your products but also your processes and your people.
 
 -   For links to other articles and resources, see the
     [DevOps page](https://cloud.google.com/devops).
--   Learn more about generating proactive alerts with [proactive failure notification](/devops-capabilities/process/proactive-failure-notification).
+-   Learn more about generating proactive alerts with [proactive failure notification](/capabilities/proactive-failure-notification).
 -   Visit
     [Google Site Reliability Engineering Resources](https://landing.google.com/sre/resources/) to find the following SRE books:
     -   Site Reliability Engineering

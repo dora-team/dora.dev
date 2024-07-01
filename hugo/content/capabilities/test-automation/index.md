@@ -91,7 +91,7 @@ shows the types of automated and manual tests to run.
 ![image](ta-image1.png)
 
 The automated tests highlighted in the preceding diagram fit in a
-[continuous delivery](/devops-capabilities/technical/continuous-delivery)
+[continuous delivery](/capabilities/continuous-delivery)
 [deployment pipeline](https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline).
 In such pipelines, every change runs a build that creates software packages,
 executes unit tests, and possibly performs other checks, such as static
@@ -168,7 +168,7 @@ production, the pipeline must be improved, perhaps by adding or updating tests.
         to decouple your tests from the system under test.
     -   If your tests are expensive to maintain, this could point to problems
         with your software's
-        [architecture](/devops-capabilities/technical/loosely-coupled-architecture). Make sure
+        [architecture](/capabilities/loosely-coupled-architecture). Make sure
         you continue to invest in making your software easy to test, including
         incorporating
         [refactoring](https://refactoring.com/)

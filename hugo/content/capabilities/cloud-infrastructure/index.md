@@ -87,7 +87,7 @@ identify and resolve conflicting aims.
 For example, many developers expect complete control over production
 infrastructure when using cloud platforms. Information security professionals
 oppose this practice, and with good reason — without disciplined
-[change management](/devops-capabilities/process/streamlining-change-approval),
+[change management](/capabilities/streamlining-change-approval),
 cloud infrastructure can turn into a fragile work of art that is hard to manage,
 vulnerable to external threats, and does not meet regulatory requirements.
 
@@ -106,7 +106,7 @@ Infrastructure-as-code allows you to manage changes effectively, and to apply
 information security controls. For example, you can implement segregation of
 duties by requiring all changes to the configuration specified in version
 control to be
-[approved by someone from a specified group of people](/devops-capabilities/process/streamlining-change-approval)
+[approved by someone from a specified group of people](/capabilities/streamlining-change-approval)
 (as is done at Google). However, moving to Infrastructure-as-code requires
 significant engineering effort and process change, including changing policies
 for implementing information security controls.
@@ -139,7 +139,7 @@ Google Cloud's white paper,
 
 The most crucial consideration is whether your cloud deployment has actually
 helped your organization achieve more
-[rapid, reliable releases](/devops-capabilities/technical/continuous-delivery),
+[rapid, reliable releases](/capabilities/continuous-delivery),
 and higher levels of availability,
 [velocity, and reliability](/quickcheck/).
 

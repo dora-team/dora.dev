@@ -66,17 +66,17 @@
                 },
                 {
                     "source": "/concepts/wellbeing",
-                    "destination": "/devops-capabilities/cultural/well-being/",
+                    "destination": "/capabilities/well-being/",
                     "type": 302
                 },
                 {
                     "source": "/concepts/well-being",
-                    "destination": "/devops-capabilities/cultural/well-being/",
+                    "destination": "/capabilities/well-being/",
                     "type": 302
                 },
                 {
                     "source": "/devops-capabilities/cultural/wellbeing",
-                    "destination": "/devops-capabilities/cultural/well-being/",
+                    "destination": "/capabilities/well-being/",
                     "type": 302
                 },
                 {
@@ -156,12 +156,12 @@
                 },
                 {
                     "source": "/devops-capabilities/technical/loosely-coupled-architecture",
-                    "destination": "/devops-capabilities/process/loosely-coupled-architecture/",
+                    "destination": "/capabilities/loosely-coupled-architecture/",
                     "type": 302
                 },
                 {
                     "source": "/devops-capabilities/technical/shifting-left-on-security",
-                    "destination": "/devops-capabilities/process/shifting-left-on-security/",
+                    "destination": "/capabilities/shifting-left-on-security/",
                     "type": 302
                 },
                 {

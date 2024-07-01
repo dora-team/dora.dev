@@ -90,15 +90,15 @@ Organizations implementing WIP limits often encounter the following pitfalls:
 DevOps Research & Assessment
 research shows that WIP limits help drive improvements in software delivery
 performance, particularly when they are combined with
-[the use of visual displays](/devops-capabilities/process/visual-management)
+[the use of visual displays](/capabilities/visual-management)
 and
-[feedback loops from monitoring](/devops-capabilities/process/monitoring-systems).
+[feedback loops from monitoring](/capabilities/monitoring-systems).
 
 ## Ways to improve work in process limits
 
 -  **Make your work visible.** As you do this, try to surface all of your
     work, making all of it visible, to several teams and stakeholders. (See
-    [visual displays](/devops-capabilities/process/visual-management)
+    [visual displays](/capabilities/visual-management)
     for details).
 -  **Set WIP limits that match your team's capacity for work.**
     -   Account for activities like production support, meeting time

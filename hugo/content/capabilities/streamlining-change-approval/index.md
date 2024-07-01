@@ -30,10 +30,10 @@ Research by DevOps Research and Assessment (DORA), presented in the
 finds that change approvals are best implemented through peer review during the
 development process, supplemented by automation to detect, prevent, and correct
 bad changes early in the software delivery life cycle. Techniques such as
-[continuous testing](/devops-capabilities/technical/test-automation),
-[continuous integration](/devops-capabilities/technical/continuous-integration),
+[continuous testing](/capabilities/test-automation),
+[continuous integration](/capabilities/continuous-integration),
 and
-[comprehensive monitoring and observability](/devops-capabilities/technical/monitoring-and-observability)
+[comprehensive monitoring and observability](/capabilities/monitoring-and-observability)
 provide early and automated detection, visibility, and fast feedback.
 
 Further, organizations can improve their performance by doing a better job of
@@ -66,12 +66,12 @@ Instead, teams should:
 
 *   Use peer review to meet the goal of segregation of duties, with reviews,
     comments, and approvals captured in the team's
-    [development platform](/devops-capabilities/technical/code-maintainability)
+    [development platform](/capabilities/code-maintainability)
     as part of the development process.
-*   Employ [continuous testing](/devops-capabilities/technical/test-automation),
-    [continuous integration](/devops-capabilities/technical/continuous-integration),
+*   Employ [continuous testing](/capabilities/test-automation),
+    [continuous integration](/capabilities/continuous-integration),
     and
-    [comprehensive monitoring and observability](/devops-capabilities/technical/monitoring-and-observability)
+    [comprehensive monitoring and observability](/capabilities/monitoring-and-observability)
     to rapidly detect, prevent, and correct bad changes.
 *   Treat your development platform as a product that makes it easy for
     developers to get fast feedback on the impact of their changes on multiple
@@ -80,7 +80,7 @@ Instead, teams should:
 Your goal should be to make your regular change management process fast and
 reliable enough that you can use it to make emergency changes too.
 
-In the [continuous delivery](/devops-capabilities/technical/continuous-delivery)
+In the [continuous delivery](/capabilities/continuous-delivery)
 paradigm the CAB still has a vital role, which includes:
 
 *   Facilitating notification and coordination between teams.

@@ -7,7 +7,7 @@ authors:
 draft: true
 slug: {{ .Name }}
 core: false
-headline: "A one sentence description, used on the `/devops-capabilities` section page"
+headline: "A one sentence description, used on the `/capabilities` section page"
 summary: |
     [If core == false, delete this] A paragraph-length summary of the concepts in this article; used in the modal pop-ups linked from the Core diagram.
 

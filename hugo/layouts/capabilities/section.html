@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-    {{- partial "partials/link_styles" "scss/devops-capabilities.scss" -}}
+    {{- partial "partials/link_styles" "scss/capabilities.scss" -}}
 
     {{ range (slice "technical" "process" "cultural") }}
         <h2 id="{{ . }}">{{ . | title }} capabilities</h2>

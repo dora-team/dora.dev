@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Documentation quality page loads correctly', async ({ page }) => {
-  await page.goto('/devops-capabilities/process/documentation-quality/');
+  await page.goto('/capabilities/documentation-quality/');
 
   // Check for page title
   await expect(page).toHaveTitle('DORA | DevOps Capabilities: Documentation quality');

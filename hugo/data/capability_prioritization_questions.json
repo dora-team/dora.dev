@@ -4,7 +4,7 @@
         "capability": "Continuous Integration",
         "shortname": "ci",
         "description": "Continuous integration (CI) is the first step towards continuous delivery. This is a development practice where code is regularly checked in, and each check-in triggers a set of quick tests to discover serious regressions, which developers fix immediately. The CI process creates canonical builds and packages that are ultimately deployed and released.",
-        "article_url": "/devops-capabilities/technical/continuous-integration/",
+        "article_url": "/capabilities/continuous-integration/",
         "questions": [
             {
                 "number": 1,
@@ -33,7 +33,7 @@
         "capability": "Loosely Coupled Architecture",
         "shortname": "arch",
         "description": "Architecture that lets teams test and deploy their applications on demand, without requiring orchestration with other services. Having a loosely coupled architecture allows your teams to work independently without relying on other teams for support and services, which in turn enables them to work quickly and deliver value to the organization.",
-        "article_url": "/devops-capabilities/technical/loosely-coupled-architecture/",
+        "article_url": "/capabilities/loosely-coupled-architecture/",
         "questions": [
             {
                 "number": 1,
@@ -66,7 +66,7 @@
         "capability": "Generative Organizational Culture",
         "shortname": "culture",
         "description": "Westrum's measure of organizational culture is predictive of IT performance, organizational performance, and decreasing burnout. Hallmarks of this measure include good information flow, high cooperation and trust, bridging between teams, and conscious inquiry.",
-        "article_url": "/devops-capabilities/cultural/generative-organizational-culture/",
+        "article_url": "/capabilities/generative-organizational-culture/",
         "questions": [
             {
                 "number": 1,

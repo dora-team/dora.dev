@@ -29,7 +29,7 @@ suffers.
 specific *alerting rules.* Alerting rules define the conditions under which an
 alert is generated and the notification channel for that alert. Read more about 
 generating alerts in
-[Monitoring and observability](/devops-capabilities/technical/monitoring-and-observability).
+[Monitoring and observability](/capabilities/monitoring-and-observability).
 
 **Use thresholds.** Alerting rules should use thresholds for the metrics you
 monitor that indicate real trouble. Monitoring thresholds trigger alerting
@@ -99,7 +99,7 @@ rate is higher or lower than expected.
 
 -   For links to other articles and resources, see the
     [DevOps page](https://cloud.google.com/devops).
--   Learn more about generating alerts in [Monitoring and observability](/devops-capabilities/technical/monitoring-and-observability).
+-   Learn more about generating alerts in [Monitoring and observability](/capabilities/monitoring-and-observability).
 -   Read the
     [Site Reliability Engineering (SRE) book](https://landing.google.com/sre/books/).
 -   Explore our DevOps

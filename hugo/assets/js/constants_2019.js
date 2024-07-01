@@ -43,7 +43,7 @@ const allCapabilities = {
         "description": "Westrum&rsquo;s measure of organizational culture is predictive of IT performance, organizational performance, and decreasing burnout. Hallmarks of this measure include good information flow, high cooperation and trust, bridging between teams, and conscious inquiry.",
         "mean": 77,
         "profile-mean": 85,
-        "url": "/devops-capabilities/cultural/generative-organizational-culture/",
+        "url": "/capabilities/generative-organizational-culture/",
         "img": "https://www.google.com/images/icons/material/system/svg/support_24px.svg",
         "context": "How strongly do you agree or disagree with the following? On my team:",
         "questions": [
@@ -59,7 +59,7 @@ const allCapabilities = {
         "description": "A comprehensive monitoring and observability system allows teams to understand the health of their systems. Effective solutions enable monitoring predefined metrics, including system state as experienced by users as well as allowing engineers to interactively debug systems and explore properties and patterns as they emerge.",
         "mean": 67,
         "profile-mean": 75,
-        "url": "/devops-capabilities/technical/monitoring-and-observability/",
+        "url": "/capabilities/monitoring-and-observability/",
         "img": "https://www.google.com/images/icons/material/system/svg/analytics_24px.svg",
         "context": "How do you watch and understand your systems at work? Please rate how strongly you agree or disagree with the following statements:",
         "questions": [
@@ -75,7 +75,7 @@ const allCapabilities = {
         "description": "Teams should slice work into small pieces that can be completed in a week or less. The key is to have work decomposed into small features that allow for rapid development, instead of developing complex features on branches and releasing them infrequently. This idea can be applied at the feature and the product level. (An MVP is a prototype of a product with just enough features to enable validated learning about the product and its business model.) Working in small batches enables short lead times and faster feedback loops.",
         "mean": 61,
         "profile-mean": 83,
-        "url": "/devops-capabilities/process/working-in-small-batches/",
+        "url": "/capabilities/working-in-small-batches/",
         "img": "https://www.google.com/images/icons/material/system/svg/communities_24px.svg",
         "context": "The following questions ask about how work is sized. Please rate how strongly you agree or disagree with the following statements.",
         "questions": [
@@ -89,7 +89,7 @@ const allCapabilities = {
         "description": "Is learning, in your culture, considered essential for continued progress? Is learning thought of as a cost or an investment? This is a measure of an organization&rsquo;s learning culture.",
         "mean": 82,
         "profile-mean": 85,
-        "url": "/devops-capabilities/cultural/learning-culture/",
+        "url": "/capabilities/learning-culture/",
         "img": "https://www.google.com/images/icons/material/system/svg/school_24px.svg",
         "context": "Please rate how strongly you agree or disagree with the following statements as descriptive of your organization.",
         "questions": [
@@ -102,7 +102,7 @@ const allCapabilities = {
         "description": "The use of work-in-process limits to manage the flow of work is well known in the Lean community. When used effectively, this drives process improvement, increases throughput, and makes constraints visible in the system.",
         "mean": 54,
         "profile-mean": 56,
-        "url": "/devops-capabilities/process/wip-limits/",
+        "url": "/capabilities/wip-limits/",
         "img": "https://www.google.com/images/icons/material/system/svg/compress_24px.svg",
         "context": "Please rate how strongly you agree or disagree with the following statements:",
         "questions": [
@@ -117,7 +117,7 @@ const allCapabilities = {
         "description": "Trunk-based development has been shown to be a predictor of high performance in software development and delivery. It is characterized by fewer than three active branches in a code repository; branches and forks having very short lifetimes (e.g., less than a day) before being merged into master; and application teams rarely or never having &ldquo;code lock&rdquo; periods when no one can check in code or do pull requests due to merging conflicts, code freezes, or stabilization phases.",
         "mean": 54,
         "profile-mean": 60,
-        "url": "/devops-capabilities/technical/trunk-based-development/",
+        "url": "/capabilities/trunk-based-development/",
         "img": "https://www.google.com/images/icons/material/system/svg/integration_instructions_24px.svg",
         "context": "For the primary application or service you work on:",
         "questions": [
@@ -132,7 +132,7 @@ const allCapabilities = {
         "description": "Continuous integration (CI) is the first step towards continuous delivery. This is a development practice where code is regularly checked in, and each check-in triggers a set of quick tests to discover serious regressions, which developers fix immediately. The CI process creates canonical builds and packages that are ultimately deployed and released.",
         "mean": 66,
         "profile-mean": 61,
-        "url": "/devops-capabilities/technical/continuous-integration/",
+        "url": "/capabilities/continuous-integration/",
         "img": "https://www.google.com/images/icons/material/system/svg/all_inclusive_24px.svg",
         "context": "For the primary application or service you work on:",
         "questions": [
@@ -147,7 +147,7 @@ const allCapabilities = {
         "description": "Continuous delivery (CD) is the ability to release changes of all kinds on demand quickly, safely, and sustainably. Teams that practice continuous delivery well are able to release software and make changes to production in a low-risk way at any time &mdash; including during normal business hours &mdash; without impacting users.",
         "mean": 65,
         "profile-mean": 61,
-        "url": "/devops-capabilities/technical/continuous-delivery/",
+        "url": "/capabilities/continuous-delivery/",
         "img": "https://www.google.com/images/icons/material/system/svg/swap_driving_apps_wheel_24px.svg",
         "context": "For the primary application or service you work on:",
         "questions": [
@@ -162,7 +162,7 @@ const allCapabilities = {
         "description": "Having a loosely coupled architecture allows your teams to work independently, without relying on other teams for support and services, which in turn enables them to work quickly and deliver value to the organization. It affects the extent to which a team can test and deploy their applications on demand, without requiring orchestration with other services.",
         "mean": 56,
         "profile-mean": 51,
-        "url": "/devops-capabilities/technical/loosely-coupled-architecture/",
+        "url": "/capabilities/loosely-coupled-architecture/",
         "img": "https://www.google.com/images/icons/material/system/svg/grid_view_24px.svg",
         "context": "For the primary application or service you work on:",
         "questions": [
@@ -180,7 +180,7 @@ const allCapabilities = {
         "description": "Continuous testing means teams build quality in by testing throughout the software delivery lifecycle, using a combination of automated and manual tests to gain visibility into the quality of the software, and curating their test suites to make them more effective and to keep complexity and cost under control.",
         "mean": 63,
         "profile-mean": 53,
-        "url": "/devops-capabilities/technical/test-automation/",
+        "url": "/capabilities/test-automation/",
         "img": "https://www.google.com/images/icons/material/system/svg/assignment_turned_in_24px.svg",
         "context": "For the primary application or service you work on:",
         "questions": [
@@ -202,7 +202,7 @@ const allCapabilities = {
         "description": "We find that use of the cloud drives software delivery performance &mdash; but only if they follow the five essential characteristics of cloud computing as outlined by NIST: on-demand self-service, broad network access, resource pooling, rapid elasticity, and measured service.",
         "mean": 64,
         "profile-mean": 55,
-        "url": "/devops-capabilities/technical/cloud-infrastructure/",
+        "url": "/capabilities/cloud-infrastructure/",
         "img": "https://www.google.com/images/icons/material/system/svg/cloud_24px.svg",
         "context": "Please rate how strongly you agree or disagree with the following statements.",
         "questions": [
@@ -217,7 +217,7 @@ const allCapabilities = {
         "description": "Teams that manage code maintainability well have systems and tools that make it easy for developers to change code maintained by other teams, find examples in the codebase, reuse other people&rsquo;s code, as well as add, upgrade, and migrate to new versions of dependencies without breaking their code.",
         "mean": 65,
         "profile-mean": 56,
-        "url": "/devops-capabilities/technical/code-maintainability/",
+        "url": "/capabilities/code-maintainability/",
         "img": "https://www.google.com/images/icons/material/system/svg/code_24px.svg",
         "context": "Please rate how strongly you agree or disagree with the following statements:",
         "questions": [

@@ -1,4 +1,3 @@
-/capabilities,/devops-capabilities/,301
 /quickcheck.html,/quickcheck/,301
 /performance.html**,/quickcheck/2019/results/,301
 /quickcheck/2023,/quickcheck/,302
@@ -8,8 +7,8 @@
 /dora-joins-google-cloud.html,/news/dora-joins-google-cloud/,301
 /2018/12/dora-joins-google-cloud/,/news/dora-joins-google-cloud/,301
 /core,/research/,301
-/concepts/wellbeing,/devops-capabilities/cultural/well-being/,302
-/devops-capabilities/cultural/wellbeing,/devops-capabilities/cultural/well-being/,302
+/concepts/wellbeing,/capabilities/well-being/,302
+/capabilities/wellbeing,/capabilities/well-being/,302
 /dora-report,/report,302
 /report,https://cloud.google.com/devops/state-of-devops,302
 /report/roi,https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper,302
@@ -18,8 +17,8 @@
 /:year-infographic,/research/:year/infographic/,302
 /infographic-:year,/research/:year/infographic/,302
 /postcard,/resources/img/DORA_Postcard_2023-10.pdf,302
-/devops-capabilities/technical/loosely-coupled-architecture,/devops-capabilities/process/loosely-coupled-architecture/,302
-/devops-capabilities/technical/shifting-left-on-security,/devops-capabilities/process/shifting-left-on-security/,302
+/capabilities/loosely-coupled-architecture,/capabilities/loosely-coupled-architecture/,302
+/capabilities/shifting-left-on-security,/capabilities/shifting-left-on-security/,302
 /assets/transformation_practices.pdf,https://itrevolution.com/wp-content/uploads/2022/06/transformation_practices.pdf,301
 /research/archives/2023,/research/2023,302
 /research/archives/2022,/research/2022,302
@@ -38,6 +37,6 @@
 /dora-report-2015,/research/2017-and-earlier/2015-state-of-devops-report.pdf,302
 /dora-report-2014,/research/2017-and-earlier/2014-state-of-devops-report.pdf,302
 /next24,https://google.qualtrics.com/jfe/form/SV_8uCHA4aRzcGDjg2?source=next24,302
-/devops-capabilities/cultural/how-to-empower-software-delivery-teams/,/guides/how-to-empower-software-delivery-teams/,302
-/devops-capabilities/cultural/devops-culture-transform/,/guides/devops-culture-transform/,301
+/capabilities/how-to-empower-software-delivery-teams/,/guides/how-to-empower-software-delivery-teams/,302
+/capabilities/devops-culture-transform/,/guides/devops-culture-transform/,301
 /sponsor,/sponsors/,301

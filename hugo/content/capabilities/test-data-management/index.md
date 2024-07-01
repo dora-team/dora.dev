@@ -10,7 +10,7 @@ headline: "Understand the right strategies for managing test data effectively al
 summary: "The management of test data is an increasingly important part of automated testing. Effective practices include having adequate data to run your test suite, the ability to acquire necessary data on demand, and the data not limiting the number of tests you can run. We caution that your teams should minimize, whenever possible, the amount of test data needed to run automated tests."
 ---
 
-[Automated testing](/devops-capabilities/technical/test-automation)
+[Automated testing](/capabilities/test-automation)
 is a key component of modern software delivery practices. The ability to execute
 a comprehensive set of unit, integration, and system tests is essential to
 verify that your app or service behaves as expected, and can be safely deployed
@@ -44,9 +44,9 @@ core principles:
 To improve test data management processes, strive to meet each of these
 conditions in all of your development teams. These practices can also positively
 contribute to your overall
-[test automation](/devops-capabilities/technical/test-automation)
+[test automation](/capabilities/test-automation)
 and
-[continuous integration](/devops-capabilities/technical/continuous-integration)
+[continuous integration](/capabilities/continuous-integration)
 capabilities.
 
 ## Common pitfalls in test data management

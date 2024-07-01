@@ -1,7 +1,7 @@
 {{ define "main" }}
-{{- partial "partials/link_styles"  "scss/devops-capabilities.scss" -}}
+{{- partial "partials/link_styles"  "scss/capabilities.scss" -}}
 
-<h4><a href="/devops-capabilities">DevOps capabilities</a>: {{ .Params.category }}</h4>
+<h4><a href="/capabilities">DevOps capabilities</a>: {{ .Params.category }}</h4>
 <h1>
     {{ .Title }}
     {{ if .Params.core }}<a class="core" href='{{ relref . "/research/" }}'>core</a>{{ end }}

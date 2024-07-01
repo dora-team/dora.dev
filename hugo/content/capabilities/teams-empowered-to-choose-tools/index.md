@@ -11,7 +11,7 @@ summary: "Teams that can choose which tools to use do better at continuous deliv
 ---
 
 If you want to achieve higher software delivery performance and increase the
-[job satisfaction](/devops-capabilities/cultural/job-satisfaction)
+[job satisfaction](/capabilities/job-satisfaction)
 of your technical staff, you should empower them to make informed choices about
 the tools and technologies they use to do their work.
 [Research](/publications/pdf/state-of-devops-2017.pdf)
@@ -79,7 +79,7 @@ or giving your engineers too much choice.
 Forcing tools and technologies on practitioners can improve standardization.
 However, what works in some cases is not necessarily the best solution in every
 case. This approach also limits opportunities for
-[experimentation and growth](/devops-capabilities/process/team-experimentation),
+[experimentation and growth](/capabilities/team-experimentation),
 where emerging technologies can be tried and tested. Often, experimenting with
 new technologies and adopting them results in large performance gains. For
 example, if no teams had been allowed to experiment with containerization or

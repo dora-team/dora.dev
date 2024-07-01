@@ -117,7 +117,7 @@ incidents, and quarter the number of high impact incidents."
 There may be significant obstacles to achieving goals like the ones set by
 Richard Herbert. Again, leaders can use intellectual stimulation to help teams
 identify and remove obstacles to achieving higher performance. Perhaps team
-members believe that implementing [continuous testing](/devops-capabilities/technical/test-automation)
+members believe that implementing [continuous testing](/capabilities/test-automation)
 will help them, but they've
 tried before and failed. Leaders can ask teams questions such as: "Why did it
 fail last time?", "What lessons did you learn?", "What would you do differently

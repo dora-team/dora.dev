@@ -15,7 +15,7 @@ deployments. [DevOps Research and Assessment (DORA)](https://dora.dev) investiga
 
 DORA's research found that integrating database work into the software delivery
 process positively contributes to
-[continuous delivery](/devops-capabilities/technical/continuous-delivery).
+[continuous delivery](/capabilities/continuous-delivery).
 But how can your teams improve your database delivery as part of implementing
 continuous delivery? A few practices predict performance outcomes.
 
@@ -183,7 +183,7 @@ strategies to make database schema changes without downtime:
 
 As well as eliminating scheduled downtime, you also want to avoid unscheduled
 downtime. Make sure you test every schema change against a
-[production-like data set](/devops-capabilities/technical/test-data-management)
+[production-like data set](/capabilities/test-data-management)
 (with any personal or confidential information scrubbed, of course) to make sure
 your application behaves the way you expect during and after migration. Some
 organizations create a scrubbed version of their  production database on a daily
@@ -221,7 +221,7 @@ situation. However, it involves careful planning and rollout.
 
 Finally, implementing both migration-based database change management and
 zero-downtime deployments can involve significant
-[architectural change](/devops-capabilities/technical/loosely-coupled-architecture).
+[architectural change](/capabilities/loosely-coupled-architecture).
 This should be taken into consideration when estimating the effort required to
 implement these practices.
 

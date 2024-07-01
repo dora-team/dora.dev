@@ -28,9 +28,9 @@ maintenance, and to increase the productivity of the teams.
 
 When your organization practices CI, your developers integrate all their work
 into the
-[main version of the code base](/devops-capabilities/technical/trunk-based-development)
+[main version of the code base](/capabilities/trunk-based-development)
 (known as
-[*trunk*](/devops-capabilities/technical/trunk-based-development),
+[*trunk*](/capabilities/trunk-based-development),
 *main*, or *mainline*) on a regular basis. DevOps Research and Assessment
 (DORA)
 [research](/publications/pdf/state-of-devops-2015.pdf#page=20)
@@ -61,7 +61,7 @@ To implement these elements, you need the following:
     and used by all downstream processes. These builds should be numbered and
     repeatable. You should run your build process successfully at least once a day.
 -   **A suite of
-    [automated tests](/devops-capabilities/technical/test-automation)**.
+    [automated tests](/capabilities/test-automation)**.
     If you don't have any, start by writing a handful of unit and
     [acceptance tests](/publications/pdf/state-of-devops-2014.pdf#page=14)
     (PDF) that cover the high-value functionality of your system. Make sure that
@@ -87,16 +87,16 @@ also includes two further practices, which are also predictive of higher
 software delivery performance:
 
 -   The practice of
-    [trunk-based development](/devops-capabilities/technical/trunk-based-development)
+    [trunk-based development](/capabilities/trunk-based-development)
     in which developers work off trunk/mainline in
-    [small batches](/devops-capabilities/process/working-in-small-batches).
+    [small batches](/capabilities/working-in-small-batches).
     They merge their work into a shared trunk/mainline at least daily, rather
     than working on long-lived feature branches.
 -   An agreement that when the build breaks, fixing it should
-    [take priority over any other work](/devops-capabilities/technical/continuous-delivery/).
+    [take priority over any other work](/capabilities/continuous-delivery/).
 
 CI requires
-[automated unit tests](/devops-capabilities/technical/test-automation).
+[automated unit tests](/capabilities/test-automation).
 These tests should be comprehensive enough to give you confidence that the
 software works as expected. The tests must also run in a few minutes or less. If
 the automated unit tests take longer to run, developers won't want to run them
@@ -118,7 +118,7 @@ despite that, still don't practice TDD.
 
 As described earlier, CI is sometimes considered a controversial practice. CI
 requires your developers to break up large features and other changes into
-[smaller incremental steps](/devops-capabilities/process/working-in-small-batches)
+[smaller incremental steps](/capabilities/working-in-small-batches)
 that can be integrated frequently into trunk. This is a change for developers
 who aren't used to working in this way. In addition, when teams switch to using
 small steps, it can take longer to get large features completed. However, in

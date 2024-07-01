@@ -38,7 +38,7 @@ context of software delivery:
     errors, and which pages are most popular.
 
 When combined with the use of
-[WIP limits](/devops-capabilities/process/wip-limits)
+[WIP limits](/capabilities/wip-limits)
 and using feedback from production to make business decisions, visual management
 displays can contribute to
 [higher levels of delivery performance](/publications/pdf/state-of-devops-2015.pdf#page=15)
