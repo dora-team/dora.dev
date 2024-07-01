@@ -23,7 +23,7 @@ ignoreFiles = "README.md"
 
 [[cascade]]
   [cascade._target]
-    path = "**/README.md"
+    path = "**/docs"
   [cascade._build]
     render = "never"
     list = "never"
