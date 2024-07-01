@@ -30,7 +30,7 @@
         <ul>
             <li>
                 <h3>
-                    <a href="/devops-capabilities/" target="_blank"
+                    <a href="/capabilities/" target="_blank"
                         >Explore DORA's Capabilities Catalog</a
                     >
                 </h3>
