@@ -196,21 +196,5 @@
     },
     "extensions": {
         "firestore-send-email": "firebase/firestore-send-email@0.1.27"
-    },
-    "emulators": {
-        "hosting": {
-            "port": 6001
-        },
-        "ui": {
-            "enabled": true,
-            "port": 6002
-        },
-        "singleProjectMode": true,
-        "firestore": {
-            "port": 6100
-        },
-        "functions": {
-            "port": 6003
-        }
     }
 }
