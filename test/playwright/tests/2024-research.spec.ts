@@ -5,10 +5,7 @@ test('Verify the page title', async ({ page }) => {
   await expect(page).toHaveTitle('DORA | DORA Research: 2024');
 });
 
-test('Survey Image', async ({ page }) => {
+test('The 2024 research page heading', async ({ page }) => {
   await page.goto('/research/2024/');
-  const surveyImage = await page.locator('img[alt="2024 DORA Survey - Shape the future of tech"]');
-  const imgSrc = await surveyImage.getAttribute('src');
-  const res = await page.request.get(imgSrc);
-  expect(res.status()).toBe(200);
+  await expect(page.locator('h1')).toContainText('DORA Research: 2024');
 });
