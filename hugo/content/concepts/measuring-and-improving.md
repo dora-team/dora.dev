@@ -16,6 +16,8 @@ summary: |
     **Change failure rate:** What percentage of changes to production or released to users result in degraded service (e.g., lead to service impairment or service outage) and subsequently require remediation (e.g., require a hotfix, rollback, fix forward, patch)?
 
     **Time to restore service:** How long does it generally take to restore service when a service incident or a defect that impacts users occurs (e.g., unplanned outage, service impairment)?
+
+    <div class="core-model-learn-more"><a href="/guides/dora-metrics-four-keys/">Learn more about software delivery performance.</a></div>
     
     ---
 
