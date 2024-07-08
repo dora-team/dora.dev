@@ -63,7 +63,6 @@
     <div class="footer">
         {#if link}
             <a href={link}>Learn more about {name}</a>
-            <small>[links temporarily disabled]</small>
         {/if}
     </div>
 </div>
@@ -142,19 +141,6 @@
         .footer {
             text-align: center;
             padding: 0.5rem;
-
-            // Begin TEMPORARY styles; remove these when #659 is closed
-            a {
-                pointer-events: none;
-                cursor:not-allowed;
-            }
-
-            small {
-                color: var(--color-grey-medium);
-                font-variant: italic;
-            }
-
-            //End TEMPORARY styles
         }
 
         &::backdrop {

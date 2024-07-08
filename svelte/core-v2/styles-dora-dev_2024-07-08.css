@@ -335,6 +335,8 @@ header nav {
       header nav ul li a.active {
         color: black;
         font-weight: 600; }
+    header nav ul li#searchLinkMobile {
+      display: none; }
 
 header > nav > label > input[type="checkbox"] {
   display: none; }
@@ -411,7 +413,11 @@ header > nav > label > input[type="checkbox"] {
     visibility: hidden; }
   label input:checked + .menu + ul + .page-overlay {
     background-color: rgba(0, 0, 0, 0.4);
-    visibility: visible; } }
+    visibility: visible; }
+  #searchLinkMobile {
+    display: block !important; }
+  #searchLinkDesktop {
+    display: none; } }
 
 .site-banner {
   background-color: #fde293;
@@ -419,10 +425,38 @@ header > nav > label > input[type="checkbox"] {
   text-align: center; }
   .site-banner a {
     display: inline-block;
-    border-radius: .2em;
+    border-radius: 0.2em;
     padding: 2pt 6pt;
     color: #202124;
     font-weight: 500; }
+
+#searchInputPopover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
+  height: 64px;
+  background-color: transparent;
+  width: 100%; }
+  #searchInputPopover:popover-open {
+    display: flex; }
+  #searchInputPopover #searchInputPopoverFields {
+    display: grid;
+    justify-items: right;
+    align-items: center;
+    height: 100%;
+    animation: popoverAppear .2s ease-in;
+    width: 100%; }
+    #searchInputPopover #searchInputPopoverFields #searchForm {
+      width: 50em; }
+
+@keyframes popoverAppear {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 h1,
 h2,
@@ -677,7 +711,7 @@ ul.tabs {
       color: #9aa0a6;
       text-transform: uppercase;
       border-bottom: 2px solid white;
-      transition: border-bottom 400ms linear; }
+      transition: border-bottom 400ms ease-out; }
       ul.tabs li a:hover {
         color: #202124; }
       ul.tabs li a.selected {
@@ -1140,6 +1174,24 @@ pre:has(code) {
   border-radius: 1em;
   padding: 1.5em; }
 
+.searchInputContainer {
+  display: flex;
+  margin: 0 1em; }
+
+.searchQuery {
+  display: block;
+  flex-grow: 1;
+  margin: 0;
+  padding-inline: 1rem;
+  border: 1px solid #999;
+  border-radius: 10vmin 0 0 10vmin; }
+
+.searchButton {
+  display: block !important;
+  margin: 0  !important;
+  border-radius: 0 10vmin 10vmin 0  !important;
+  font-size: 1rem  !important; }
+
 html {
   scrollbar-gutter: stable; }
 
@@ -1258,7 +1310,8 @@ section.banner {
   direction: ltr;
   -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
-  vertical-align: middle; }
+  vertical-align: middle;
+  cursor: pointer; }
   .google-material-icons.divider-before {
     border-left: 1px solid #dadce0; }
 

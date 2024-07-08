@@ -114,28 +114,28 @@
     "performance": {
         "software-delivery": {
             "name": "Software delivery",
-            "link": "https://dora.dev/guides/dora-metrics-four-keys/",
+            "link": "/guides/dora-metrics-four-keys/",
             "summary": "DORA’s research has consistently found that a team’s software delivery capability reliably predicts the value that the team provides to their organization. Survey respondents who achieve high levels of software delivery performance report that their organizations perform better on business objectives. Performance can be assessed according to four software delivery metrics:",
             "measured_by": "Four key metrics",
             "entities": {
                 "changelead": {
                     "name": "Change lead time",
-                    "link": "https://dora.dev/guides/dora-metrics-four-keys/",
+                    "link": "/guides/dora-metrics-four-keys/",
                     "summary": "This metric measures the time it takes for a code commit or change to be successfully deployed to production. It reflects the efficiency of your delivery pipeline."
                 },
                 "deployfrequency": {
                     "name": "Deployment frequency",
-                    "link": "https://dora.dev/guides/dora-metrics-four-keys/",
+                    "link": "/guides/dora-metrics-four-keys/",
                     "summary": "This metric measures how often application changes are deployed to production. Higher deployment frequency indicates a more agile and responsive delivery process."
                 },
                 "changefail": {
                     "name": "Change fail percentage",
-                    "link": "https://dora.dev/guides/dora-metrics-four-keys/",
+                    "link": "/guides/dora-metrics-four-keys/",
                     "summary": " This metric measures the percentage of deployments that cause failures in production, requiring hotfixes or rollbacks. A lower change failure rate indicates a more reliable delivery process."
                 },
                 "recoverytime": {
                     "name": "Failed deployment recovery time",
-                    "link": "https://dora.dev/guides/dora-metrics-four-keys/",
+                    "link": "/guides/dora-metrics-four-keys/",
                     "summary": "This metric measures the time it takes to recover from a failed deployment. A lower recovery time indicates a more resilient and responsive system."
                 }
             }

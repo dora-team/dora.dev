@@ -1,8 +1,4 @@
 @import url("./assets/_variables.css");
-/* link to dora.dev stylesheet so that when served by Vite, we will see how it will look when served within the hugo site content
-    this stylesheet was pulled from prod on june 6, 2024 */
-@import url("./styles-dora-dev_2024-06-06.css");
-@import url(//fonts.googleapis.com/css2?family=Google+Sans:wght@200..900);
 
 :root {
     font-family: "Google Sans", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
