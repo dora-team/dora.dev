@@ -4,7 +4,7 @@ test('Documentation quality page loads correctly', async ({ page }) => {
   await page.goto('/capabilities/documentation-quality/');
 
   // Check for page title
-  await expect(page).toHaveTitle('DORA | DevOps Capabilities: Documentation quality');
+  await expect(page).toHaveTitle('DORA | Capabilities: Documentation quality');
 
   // Check for page heading
   await expect(page.locator('h1')).toContainText('Documentation quality');

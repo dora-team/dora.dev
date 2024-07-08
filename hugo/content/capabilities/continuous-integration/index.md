@@ -1,6 +1,6 @@
 ---
 title: "Continuous integration"
-titleForHTMLHead: "DevOps Capabilities: Continuous Integration" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Continuous Integration" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical
 draft: false

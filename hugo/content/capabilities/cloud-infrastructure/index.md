@@ -1,6 +1,6 @@
 ---
 title: "Flexible infrastructure"
-titleForHTMLHead: "DevOps Capabilities: Flexible Infrastructure" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Flexible Infrastructure" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 category: technical
 draft: false
