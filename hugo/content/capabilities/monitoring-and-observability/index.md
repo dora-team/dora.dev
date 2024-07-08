@@ -52,7 +52,7 @@ Monitoring and observability solutions are designed to do the following:
 -   Identify long-term trends for capacity planning and business purposes.
 -   Expose unexpected side effects of changes or added functionality.
 
-As with all Capabilities, installing a tool is not enough to achieve the
+As with all capabilities, installing a tool is not enough to achieve the
 objectives, but tools can help or hinder the effort.  Monitoring systems should
 not be confined to a single individual or team within an organization.
 Empowering all developers to be proficient with monitoring helps develop a
