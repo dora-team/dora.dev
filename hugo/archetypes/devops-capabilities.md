@@ -1,6 +1,6 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-titleForHTMLHead: "DevOps Capabilities: {{ replace .Name "-" " " | title }}" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: {{ replace .Name "-" " " | title }}" # TODO: can we DRY this out?
 date: {{ .Date }}
 category: 
 authors: 

@@ -1,6 +1,6 @@
 ---
 title: "Shifting left on security"
-titleForHTMLHead: "DevOps Capabilities: Shifting Left on Security" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Shifting Left on Security" # TODO: can we DRY this out?
 slug: shifting-left-on-security
 core: true
 date: 2023-03-27T09:48:50+01:00

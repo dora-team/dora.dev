@@ -1,6 +1,6 @@
 ---
 title: "Visibility of work in the value stream"
-titleForHTMLHead: "DevOps Capabilities: Visibility of work in the value stream" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Visibility of work in the value stream" # TODO: can we DRY this out?
 date: 2023-03-24T12:54:18Z
 category: process
 draft: false

@@ -27,7 +27,7 @@ Teams continue to move workloads to the cloud and those that leverage all five c
 #### A secure software supply chain is both essential and drives performance. 
 Given the significant increase in malicious attacks in recent years, it is even more pressing for organizations to shift from reactive practices to proactive and diagnostic measures. Teams that integrate security practices throughout their software supply chain to deliver software quickly, reliability, and safely. 
 
-#### Good documentation is foundational for successfully implementing DevOps capabilities. 
+#### Good documentation is foundational for successfully implementing capabilities. 
 For the first time, we measured the quality of internal documentation and practices that contribute to this quality. Teams with high quality documentation are better able to implement technical best practices and perform better as a whole. 
 
 #### A healthy team culture mitigates burnout during challenging circumstances. 

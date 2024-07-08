@@ -1,5 +1,5 @@
 ---
-title: DevOps capabilities
+title: Capabilities
 bannerTitle: Capability catalog
 bannerSubtitle: |
     Explore the technical, process, and cultural capabilities which drive higher software delivery and organizational performance. Each of the articles below presents a capability, discusses how to implement it, and how to overcome common obstacles. 
