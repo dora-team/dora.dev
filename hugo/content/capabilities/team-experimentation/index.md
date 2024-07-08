@@ -1,6 +1,6 @@
 ---
 title: "Team experimentation"
-titleForHTMLHead: "DevOps Capabilities: Team Experimentation" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Team Experimentation" # TODO: can we DRY this out?
 date: 2023-03-24T12:54:18Z
 category: process
 draft: false

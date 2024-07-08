@@ -1,6 +1,6 @@
 ---
 title: "Work in process limits"
-titleForHTMLHead: "DevOps Capabilities: Work in process limits" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Work in process limits" # TODO: can we DRY this out?
 date: 2023-03-25T16:35:37Z
 category: process
 draft: false

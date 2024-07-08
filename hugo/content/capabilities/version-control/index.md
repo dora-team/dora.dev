@@ -1,6 +1,6 @@
 ---
 title: "Version control"
-titleForHTMLHead: "DevOps Capabilities: Version Control" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Version Control" # TODO: can we DRY this out?
 slug: version-control
 core: true
 date: 2023-03-27T09:48:51+01:00

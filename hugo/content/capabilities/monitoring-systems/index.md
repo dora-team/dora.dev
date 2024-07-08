@@ -1,6 +1,6 @@
 ---
 title: "Monitoring systems to inform business decisions"
-titleForHTMLHead: "DevOps Capabilities: Monitoring systems to inform business decisions" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Monitoring systems to inform business decisions" # TODO: can we DRY this out?
 date: 2023-03-25T16:35:37Z
 category: process
 draft: false
