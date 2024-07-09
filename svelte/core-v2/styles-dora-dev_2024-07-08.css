@@ -540,7 +540,7 @@ button,
 input[type="submit"],
 .button {
   display: inline-block;
-  font-family: "Google Sans Text", "Google Sans", "Roboto", Arial, Helvetica, sans-serif;
+  font-family: "Google Sans", "Roboto", Arial, Helvetica, sans-serif;
   border: none;
   border-radius: 2px;
   font-size: 14px;
@@ -1267,7 +1267,7 @@ section.banner {
     margin: auto;
     line-height: 1.75; }
     section.banner .content p {
-      font-family: "Google Sans Text", "Google Sans", "Roboto", Arial, Helvetica, sans-serif;
+      font-family: "Google Sans", "Roboto", Arial, Helvetica, sans-serif;
       font-weight: 300; }
     @media (max-width: 800px) {
       section.banner .content {
