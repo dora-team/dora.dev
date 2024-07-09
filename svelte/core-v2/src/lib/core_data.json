@@ -12,7 +12,7 @@
                 },
                 "documentation-quality": {
                     "name": "Documentation quality",
-                    "link": "/capabilities/documentation-qualtity/",
+                    "link": "/capabilities/documentation-quality/",
                     "summary": "<p>Documentation quality interacts with technical capabilities to improve organizational performance. This interaction dramatically amplifies the impact that software teams can deliver toward achieving an organization&rsquo;s overarching goals. Practices which contribute to documentation quality include:</p><ul><li>Documenting critical use cases for your products and services.</li><li>Creating clear guidelines for updating and editing existing documentation.</li><li>Defining owners.</li><li>Including documentation as part of the software development process.</li><li>Recognizing documentation work during performance reviews and promotions.</li></ul>"
                 },
                 "teams-empowered-to-choose-tools": {
