@@ -1,17 +1,17 @@
 ---
-title: "Loosely coupled architecture"
-titleForHTMLHead: "Capabilities: Loosely Coupled Architecture" # TODO: can we DRY this out?
-slug: loosely-coupled-architecture
+title: "Loosely coupled teams"
+titleForHTMLHead: "Capabilities: Loosely Coupled Teams" # TODO: can we DRY this out?
+slug: loosely-coupled-teams
 core: true
 date: 2023-03-27T09:48:50+01:00
 category: process
 draft: false
 headline: "Learn about moving from a tightly coupled architecture to service-oriented and microservice architectures without re-architecting everything at once"
-summary: "Architecture that lets teams test and deploy their applications on demand, without requiring orchestration with other services. Having a loosely coupled architecture allows your teams to work independently without relying on other teams for support and services, which in turn enables them to work quickly and deliver value to the organization."
+summary: "An organizational structure that allows teams to test and deploy their applications on demand, without requiring orchestration with other services. Team structure and technical architecture are highly interrelated: having a loosely coupled architecture allows your teams to work independently without relying on other teams for support and services, which in turn enables them to work quickly and deliver value to the organization."
 ---
 
 Research from the [DevOps Research and Assessment (DORA)](https://dora.dev) team shows that
-architecture is an important predictor for achieving continuous delivery.
+effective organizational and technical structures are predictors for achieving continuous delivery.
 Whether you're using Kubernetes or mainframes, your architecture enables teams
 to adopt practices that foster higher levels of software delivery performance.
 
@@ -300,7 +300,7 @@ because each service also has a well-defined API, it enables easier testing of
 services and the creation of contracts and service level agreements (SLAs)
 between teams.
 
-![Loosely coupled architecture.](loosely-coupled-architecture.svg)
+![Loosely coupled teams.](loosely-coupled-architecture.svg)
 
 Randy Shoup describes this architecture as follows:
 

@@ -31,10 +31,10 @@
     },
     {
         "number": 2,
-        "capability_name": "Loosely Coupled Architecture",
+        "capability_name": "Loosely Coupled Teams",
         "shortname": "arch",
-        "description": "Architecture that lets teams test and deploy their applications on demand, without requiring orchestration with other services. Having a loosely coupled architecture allows your teams to work independently without relying on other teams for support and services, which in turn enables them to work quickly and deliver value to the organization.",
-        "article_url": "/capabilities/loosely-coupled-architecture/",
+        "description": "An organizational structure that allows teams to test and deploy their applications on demand, without requiring orchestration with other services. Team structure and technical architecture are highly interrelated: having a loosely coupled architecture allows your teams to work independently without relying on other teams for support and services, which in turn enables them to work quickly and deliver value to the organization.",
+        "article_url": "/capabilities/loosely-coupled-teams/",
         "response_prompt": "",
         "questions": [
             {

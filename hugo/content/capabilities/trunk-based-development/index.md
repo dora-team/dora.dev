@@ -159,7 +159,7 @@ improve trunk-based development:
     [a few minutes](https://www.infoq.com/presentations/Crazy-Fast-Build-Times-or-When-10-Seconds-Starts-to-Make-You-Nervous/).
     If this seems hard to achieve, it probably indicates opportunities for
     improvement in the
-    [architecture](/capabilities/loosely-coupled-architecture)
+    [architecture](/capabilities/loosely-coupled-teams)
     of the system.
 -   **Create a core group of advocates and mentors**. Trunk-based
     development is a substantial change for many developers, and you should

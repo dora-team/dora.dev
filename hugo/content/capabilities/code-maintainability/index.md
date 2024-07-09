@@ -278,7 +278,7 @@ When considering what to measure, there are three use cases to focus on:
 -   Patching vulnerabilities.
 
 As codebases grow, technical debt is a major concern. It's important to be able
-to refactor and [re-architect code](/capabilities/loosely-coupled-architecture/)
+to refactor and [re-architect code](/capabilities/loosely-coupled-teams/)
 as organizations and the products they and
 their customers rely on evolve. For large codebases, this can be complex and
 painful without significant tool support. It is also important to be able to
