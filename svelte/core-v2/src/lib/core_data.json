@@ -188,22 +188,21 @@
             "entities": {
                 "job-satisfaction": {
                     "name": "Job satisfaction",
-                    "link": "/capabilities/well-being/",
+                    "link": "/capabilities/job-satisfaction/",
                     "summary": "Job satisfaction represents employees feelings of fulfillment derived from engaging in challenging and meaningful work that utilizes their skills and expertise. When employees are empowered and provided with the necessary tools and resources, they produce better work, leading to improved software delivery performance and overall organizational success. To foster job satisfaction, ensure your people have the tools and resources to do their job, and can make good use of their skills and abilities."
                 },
                 "productivity": {
                     "name": "Productivity",
-                    "link": "/capabilities/well-being/",
                     "summary": "A productive team is a thriving team. Productivity reflects the ability to work effectively, experiment, iterate, and learn from those iterations to continuously improve the user experience. This approach fosters a sense of well-being among team members as they witness the positive impact of their work on users. Productivity in this sense is a holistic measure that encompasses both the team's efficiency and the value they create for others, resulting in a fulfilling and impactful work experience."
                 },
                 "reduced-burnout": {
                     "name": "Reduced burnout",
-                    "link": "/capabilities/reduced-burnout/",
+                    "link": "/capabilities/well-being/#burnout",
                     "summary": "Burnout is physical, mental, or emotional exhaustion caused by overwork or stress."
                 },
                 "reduced-rework": {
                     "name": "Reduced rework",
-                    "link": "/capabilities/reduced-rework/",
+                    "link": "/capabilities/well-being/#rework",
                     "summary": "Rework is reactive unplanned work, including any break/fix work, emergency software deployments and patches, responding to urgent audit documentation requests, and so on."
                 }
             }
