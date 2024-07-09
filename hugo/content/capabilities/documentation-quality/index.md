@@ -34,7 +34,7 @@ This interaction and impact applies to every single technical capability we stud
 |------------------------------------|:----------------------------------------------:|:----------------------------------------------:|
 | Continuous delivery                | 63%                                            | 656%                                           |
 | Continuous integration             | 34%                                            | 750%                                           |
-| Loosely coupled architecture       | 46%                                            | 313%                                           |
+| Loosely coupled teams              | 46%                                            | 313%                                           |
 | Site Reliability Engineering (SRE) | 79%                                            | 343%                                           |
 | Supply chain security              | 37%                                            | 451%                                           |
 | Trunk-based development            | 36%                                            | 1525%                                          |

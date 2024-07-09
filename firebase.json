@@ -161,7 +161,7 @@
                 },
                 {
                     "source": "/devops-capabilities/technical/loosely-coupled-architecture",
-                    "destination": "/capabilities/loosely-coupled-architecture/",
+                    "destination": "/capabilities/loosely-coupled-teams/",
                     "type": 302
                 },
                 {

@@ -133,12 +133,8 @@ following continuous delivery practices:
     demonstration process for
     applications, using pre-approved security libraries and packages, and
     testing security features as a part of the automated test suite.
--   [A loosely coupled architecture](/capabilities/loosely-coupled-architecture/):
-    Architecture that lets teams test and deploy their applications on demand,
-    without requiring orchestration with other services. Having a loosely
-    coupled architecture allows your teams to work independently without
-    relying on other teams for support and services, which in turn enables them
-    to work quickly and deliver value to the organization.
+-   [Loosely coupled teams](/capabilities/loosely-coupled-teams/):
+    An organizational structure that allows teams to test and deploy their applications on demand, without requiring orchestration with other services. Team structure and technical architecture are highly interrelated: having a loosely coupled architecture allows your teams to work independently without relying on other teams for support and services, which in turn enables them to work quickly and deliver value to the organization.
 -   [Empowering teams to choose tools](/capabilities/teams-empowered-to-choose-tools/):
     Teams that can choose which tools to use do better at continuous delivery.
     No one knows better than practitioners what they need to be effective.
