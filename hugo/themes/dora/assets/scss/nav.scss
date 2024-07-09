@@ -14,9 +14,9 @@ header {
 
                 a {
                     text-decoration: none;
-                    color: rgb(95, 99, 104);
+                    color: hsl(208, 5%, 45%);
                     white-space: nowrap;
-                    font-weight: 400;
+                    font-weight: 500;
                     font-size: 1em;
                     line-height: 1em;
 
@@ -28,18 +28,21 @@ header {
                 }
 
                 a:hover {
-                    color: rgb(0, 0, 0);
+                    color: hsl(208, 5%, 25%);
+                    text-decoration: underline solid hsl(208, 5%, 80%);
+                    text-underline-offset: 0.5em;
                 }
 
                 a.active {
-                    color: black;
-                    font-weight: 600;
+                    color: hsl(208, 5%, 0%);
+                    text-decoration: underline solid hsl(208, 5%, 50%);
+                    text-underline-offset: 0.5em;
                 }
             }
 
             li#searchLinkMobile {
                 // if full menu shown, don't show mobile search link
-                display:none;
+                display: none;
             }
         }
     }
@@ -155,10 +158,10 @@ header > nav > label > input[type="checkbox"] {
 
     #searchLinkMobile {
         // if full menu hidden, search is a regular menu item
-        display:block !important;
+        display: block !important;
     }
     #searchLinkDesktop {
-        display:none;
+        display: none;
     }
 }
 
@@ -185,10 +188,10 @@ header > nav > label > input[type="checkbox"] {
     padding: 0;
     height: 64px;
     background-color: transparent;
-    width:100%;
+    width: 100%;
 
     &:popover-open {
-        display:flex;
+        display: flex;
     }
 
     #searchInputPopoverFields {
@@ -196,11 +199,11 @@ header > nav > label > input[type="checkbox"] {
         justify-items: right;
         align-items: center;
         height: 100%;
-        animation: popoverAppear .2s ease-in;
-        width:100%;
+        animation: popoverAppear 0.2s ease-in;
+        width: 100%;
 
         #searchForm {
-            width:50em;
+            width: 50em;
         }
     }
 }
