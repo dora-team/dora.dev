@@ -161,7 +161,7 @@
                 },
                 {
                     "source": "/devops-capabilities/technical/shifting-left-on-security",
-                    "destination": "/capabilities/shifting-left-on-security/",
+                    "destination": "/capabilities/pervasive-security/",
                     "type": 302
                 },
                 {

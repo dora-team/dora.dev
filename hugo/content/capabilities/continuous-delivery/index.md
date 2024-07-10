@@ -60,7 +60,7 @@ and not suited to regulated or safety critical domains. In fact, the goal of
 continuous delivery is to reduce software risk, and DORA research has shown
 consistently that high performers achieve higher levels of reliability and
 availability. The technical practices that drive continuous delivery—continuous
-testing, shifting left on security, and comprehensive testing and
+testing, pervasive security, and comprehensive testing and
 observability—are even more important in highly regulated and safety-critical
 domains. Continuous delivery has been successfully applied many times in highly
 regulated domains such as financial services and government.
@@ -126,7 +126,7 @@ following continuous delivery practices:
     before being merged into mainline; and application teams rarely or never
     having *code lock* periods when no one can check in code or do pull
     requests due to merging conflicts, code freezes, or stabilization phases.
--   [Shift left on security](/capabilities/shifting-left-on-security/):
+-   [Pervasive security](/capabilities/pervasive-security/):
     Integrating security into the design and testing phases of the software
     development process. This process includes conducting security reviews of
     applications, including the information security team in the design and
