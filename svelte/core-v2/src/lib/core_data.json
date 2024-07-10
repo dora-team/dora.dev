@@ -11,7 +11,7 @@
                 },
                 "documentation-quality": {
                     "name": "Documentation quality",
-                    "link": "/capabilities/documentation-qualtity/",
+                    "link": "/capabilities/documentation-quality/",
                     "summary": "<p>Documentation quality interacts with technical capabilities to improve organizational performance. This interaction dramatically amplifies the impact that software teams can deliver toward achieving an organization&rsquo;s overarching goals. Practices which contribute to documentation quality include:</p><ul><li>Documenting critical use cases for your products and services.</li><li>Creating clear guidelines for updating and editing existing documentation.</li><li>Defining owners.</li><li>Including documentation as part of the software development process.</li><li>Recognizing documentation work during performance reviews and promotions.</li></ul>"
                 },
                 "teams-empowered-to-choose-tools": {
@@ -111,28 +111,28 @@
     "performance": {
         "software-delivery": {
             "name": "Software delivery",
-            "link": "https://dora.dev/guides/dora-metrics-four-keys/",
+            "link": "/guides/dora-metrics-four-keys/",
             "summary": "DORA’s research has consistently found that a team’s software delivery capability reliably predicts the value that the team provides to their organization. Survey respondents who achieve high levels of software delivery performance report that their organizations perform better on business objectives. Performance can be assessed according to four software delivery metrics:",
             "measured_by": "Four key metrics",
             "entities": {
                 "changelead": {
                     "name": "Change lead time",
-                    "link": "https://dora.dev/guides/dora-metrics-four-keys/",
+                    "link": "/guides/dora-metrics-four-keys/",
                     "summary": "This metric measures the time it takes for a code commit or change to be successfully deployed to production. It reflects the efficiency of your delivery pipeline."
                 },
                 "deployfrequency": {
                     "name": "Deployment frequency",
-                    "link": "https://dora.dev/guides/dora-metrics-four-keys/",
+                    "link": "/guides/dora-metrics-four-keys/",
                     "summary": "This metric measures how often application changes are deployed to production. Higher deployment frequency indicates a more agile and responsive delivery process."
                 },
                 "changefail": {
                     "name": "Change fail percentage",
-                    "link": "https://dora.dev/guides/dora-metrics-four-keys/",
+                    "link": "/guides/dora-metrics-four-keys/",
                     "summary": " This metric measures the percentage of deployments that cause failures in production, requiring hotfixes or rollbacks. A lower change failure rate indicates a more reliable delivery process."
                 },
                 "recoverytime": {
                     "name": "Failed deployment recovery time",
-                    "link": "https://dora.dev/guides/dora-metrics-four-keys/",
+                    "link": "/guides/dora-metrics-four-keys/",
                     "summary": "This metric measures the time it takes to recover from a failed deployment. A lower recovery time indicates a more resilient and responsive system."
                 }
             }
@@ -185,22 +185,21 @@
             "entities": {
                 "job-satisfaction": {
                     "name": "Job satisfaction",
-                    "link": "/capabilities/well-being/",
+                    "link": "/capabilities/job-satisfaction/",
                     "summary": "Job satisfaction represents employees feelings of fulfillment derived from engaging in challenging and meaningful work that utilizes their skills and expertise. When employees are empowered and provided with the necessary tools and resources, they produce better work, leading to improved software delivery performance and overall organizational success. To foster job satisfaction, ensure your people have the tools and resources to do their job, and can make good use of their skills and abilities."
                 },
                 "productivity": {
                     "name": "Productivity",
-                    "link": "/capabilities/well-being/",
                     "summary": "A productive team is a thriving team. Productivity reflects the ability to work effectively, experiment, iterate, and learn from those iterations to continuously improve the user experience. This approach fosters a sense of well-being among team members as they witness the positive impact of their work on users. Productivity in this sense is a holistic measure that encompasses both the team's efficiency and the value they create for others, resulting in a fulfilling and impactful work experience."
                 },
                 "reduced-burnout": {
                     "name": "Reduced burnout",
-                    "link": "/capabilities/reduced-burnout/",
+                    "link": "/capabilities/well-being/#burnout",
                     "summary": "Burnout is physical, mental, or emotional exhaustion caused by overwork or stress."
                 },
                 "reduced-rework": {
                     "name": "Reduced rework",
-                    "link": "/capabilities/reduced-rework/",
+                    "link": "/capabilities/well-being/#rework",
                     "summary": "Rework is reactive unplanned work, including any break/fix work, emergency software deployments and patches, responding to urgent audit documentation requests, and so on."
                 }
             }

@@ -243,6 +243,7 @@
                     display: block;
                     font-size: 1rem;
                     color: #333;
+                    font-weight:500;
                 }
 
                 .performance-average {
