@@ -3,8 +3,9 @@
     import Arrow from "./lib/Arrow.svelte";
     import Popover from "./lib/Popover.svelte";
     import ViewControl from "./lib/ViewControl.svelte";
+    import Footer from "./lib/Footer.svelte";
 
-    import DORAlogo from "./assets/icon-color-alt.svg";
+    import DORAlogo from "./assets/dora-icon-color-alt.svg";
 
     let selected_entity = "unspecified";
 
@@ -26,7 +27,7 @@
     <Arrow text="predicts" {view_mode} />
     <Column column="outcomes" {view_mode} bind:selected_entity />
 </div>
-<div class="version">DORA Core model v2.0.0</div>
+<Footer {view_mode} />
 
 <style lang="scss">
     .header {
@@ -61,11 +62,5 @@
         flex-direction: row;
         column-gap: 0.25em;
         align-items: center;
-    }
-    .version {
-        font-size: 0.75rem;
-        color: var(--color-grey-medium);
-        text-align: right;
-        margin-bottom:2rem;
     }
 </style>
