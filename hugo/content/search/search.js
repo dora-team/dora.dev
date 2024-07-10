@@ -12,18 +12,28 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let max_web_records = 12; // pagination support is limited; for now, just return 12 and display all on one page
 
     let params = new URLSearchParams(window.location.search);
+
+    function sanitizeQuery(str) {
+        // remove any characters that aren't letters, numbers, spaces, dashes, periods, or question marks
+        return str.replace(/[^a-zA-Z0-9\s\-\.\?\%\'\"\:\(\)\[\]]/g, ' ');
+    }
+
     if (params.has("q")) {
         searchQuery = params.get("q");
-        inputBox.value = searchQuery;
+        inputBox.value = sanitizeQuery(searchQuery);
     } else {
         inputBox.focus();
     }
 
     function query(searchTerm) {
+
+        searchTerm = sanitizeQuery(searchTerm);
+
         resetPage();
-        resultsBox.innerHTML = `<span class="searching">Searching "${searchQuery}..."</span>`;
+        resultsBox.innerHTML = `<span class="searching">Searching "${searchTerm}..."</span>`;
         console.log(`searching ${searchTerm}...`)
         searchURI = `${searchServer}?query=${searchTerm}&max_web_records=${max_web_records}`;
+        
         fetch(searchURI)
             .then(response => {
                 if (!response.ok) {
@@ -45,7 +55,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 resultsBox.innerHTML = "(error fetching search results)";
                 console.log(error);
             });
-        resultsHeader.innerHTML = `Search results: <b>${searchQuery}</b>`;
+        resultsHeader.innerHTML = `Search results: <b>${searchTerm}</b>`;
         resultsHeader.style.display = 'block';
     }
 
