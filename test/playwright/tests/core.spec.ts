@@ -6,7 +6,7 @@ test('explore core model', async ({ page }) => {
     await page.getByLabel('detail').check();
     await expect(page.locator('main')).toContainText('Failed deployment recovery time');
     await page.getByRole('link', { name: 'Failed deployment recovery' }).click();
-    await expect(page.locator('main')).toContainText('Learn more about Failed deployment recovery time');
+    await expect(page.locator('main')).toContainText('Learn more about failed deployment recovery time');
     await page.getByRole('link', { name: 'Failed deployment recovery time', exact: true }).press('Escape');
     const page1Promise = page.waitForEvent('popup');
     await page.getByRole('link', { name: 'download as PNG' }).click();
