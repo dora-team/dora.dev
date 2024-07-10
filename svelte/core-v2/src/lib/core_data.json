@@ -147,19 +147,19 @@
             "entities": {
                 "measurement-coverage": {
                     "name": "Measurement coverage",
-                    "summary": "Are reliability measurements (SLIs) in place for all critical services/applications/components?"
+                    "summary": "Are reliability measurements (SLIs) in place for all critical services/applications/components? The goal here should be to have *a set of SLIs that represent customer happiness for each critical service*. How close to \"full coverage\" are you?"
                 },
                 "measurement-focus": {
                     "name": "Measurement focus",
-                    "summary": "Do reliability measurement (SLI) definitions reflect system behavior as experienced by users?"
+                    "summary": "Do reliability measurement (SLI) definitions reflect system behavior as experienced by users?  For each of your existing SLIs, which ones can you say are really customer-centric?  For example, `response-time` is customer-centric because the customer is waiting.  Try not to use infrastructure-centric (like `cpu-time`) or application-internal-centric (like `queue-length`) metrics.  For each SLI, try writing a small comment describing *why it matters* to the end user. These measures should be *implementation independent*."
                 },
                 "target-optimization": {
                     "name": "Target optimization",
-                    "summary": "Are reliability targets (SLOs) set appropriately, reflecting user sentiment and organizational capability?"
+                    "summary": "Are reliability targets (SLOs) set appropriately, reflecting user sentiment and organizational capability? A good litmus test is to imagine changing the SLO, either higher or lower. What would be the impact? Who would you have to talk to about this?  What is the effect on the business?  If you are able to answer all of these (ideally through documentation) and make a well-informed decision to change or not, you're on the right track."
                 },
                 "target-compliance": {
                     "name": "Target compliance",
-                    "summary": "Are reliability targets (SLOs) consistently met?"
+                    "summary": "Are reliability targets (SLOs) consistently met? How do you know? Can others in your organization find these numbers, and do they make sense?  If you're not sure, ask people to give it a shot and see how they do. Be careful when trying to \"roll up\" SLOs as aggregates can be misleading."
                 }
             }
         }
