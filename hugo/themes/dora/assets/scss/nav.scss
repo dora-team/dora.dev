@@ -19,6 +19,8 @@ header {
                     font-weight: 500;
                     font-size: 1em;
                     line-height: 1em;
+                    transition: all .3s ease;
+                    text-decoration: underline solid white;
 
                     span.google-material-icons {
                         font-size: 1em;
