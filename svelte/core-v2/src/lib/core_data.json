@@ -2,7 +2,6 @@
     "capabilities": {
         "climate-for-learning": {
             "name": "Climate for learning",
-            "link": "",
             "summary": "A climate for learning is an atmosphere within an organization that fosters a culture of continuous improvement and knowledge sharing. It's not just about formal training programs, but a mindset where learning is seen as a strategic investment, essential for growth and success. A strong climate for learning is directly linked to better software delivery performance, including increased deployment frequency, reduced lead time for changes, and improved team culture. It also contributes to overall organizational performance, making it a valuable investment for any organization.",
             "entities": {
                 "code-maintainability": {
@@ -29,7 +28,6 @@
         },
         "fast-flow": {
             "name": "Fast flow",
-            "link": "",
             "summary": "Flow is the ultimate state of focus and productivity for software development teams. It's a continuous delivery approach that enables your team to consistently deliver high-quality software at speed. By embracing Fast Flow, your team can achieve the state of \"flow\" – a heightened level of focus where time seems to melt away, and productivity soars. This translates to improved software delivery performance as measured by DORA's research, helping your organization stay ahead of the competition and deliver greater value to your customers.",
             "entities": {
                 "continuous-delivery": {
@@ -76,7 +74,6 @@
         },
         "fast-feedback": {
             "name": "Fast feedback",
-            "link": "",
             "summary": "Fast feedback enables a comprehensive approach that ensures your team receives rapid, actionable insights throughout the entire software delivery lifecycle.  Build confidence in the changes the team is making, leading to faster iteration and higher quality software. This translates to improved software delivery performance, helping your organization stay ahead of the curve and deliver exceptional value to your customers.",
             "entities": {
                 "continuous-integration": {
@@ -147,19 +144,19 @@
             "entities": {
                 "measurement-coverage": {
                     "name": "Measurement coverage",
-                    "summary": "Are reliability measurements (SLIs) in place for all critical services/applications/components?"
+                    "summary": "Are reliability measurements (SLIs) in place for all critical services/applications/components? The goal here should be to have <b>a set of SLIs that represent customer happiness for each critical service</b>. <br/><br/>How close to \"full coverage\" are you?"
                 },
                 "measurement-focus": {
                     "name": "Measurement focus",
-                    "summary": "Do reliability measurement (SLI) definitions reflect system behavior as experienced by users?"
+                    "summary": "Do reliability measurement (SLI) definitions reflect system behavior as experienced by users?  For each of your existing SLIs, which ones can you say are really customer-centric? <br/><br/>For example, 'response-time' is customer-centric because the customer is waiting.  Try not to use infrastructure-centric (like 'cpu-time') or application-internal-centric (like 'queue-length') metrics.  <br/><br/>For each SLI, try writing a small comment describing <b>why it matters</b> to the end user. These measures should be <b>implementation independent</b>."
                 },
                 "target-optimization": {
                     "name": "Target optimization",
-                    "summary": "Are reliability targets (SLOs) set appropriately, reflecting user sentiment and organizational capability?"
+                    "summary": "Are reliability targets (SLOs) set appropriately, reflecting user sentiment and organizational capability? A good litmus test is to imagine changing the SLO, either higher or lower. <br/><br/>What would be the impact? Who would you have to talk to about this?  What is the effect on the business?  <br/><br/>If you are able to answer all of these (ideally through documentation) and make a well-informed decision to change or not, you're on the right track."
                 },
                 "target-compliance": {
                     "name": "Target compliance",
-                    "summary": "Are reliability targets (SLOs) consistently met?"
+                    "summary": "Are reliability targets (SLOs) consistently met? How do you know, is there a single dashboard somewhere? One per team? <br/><br/>Can others in your organization find these numbers, and do they make sense to them?  If you're not sure, ask people to give it a shot and see how they do. Be careful when trying to \"roll up\" SLOs as aggregates can be misleading."
                 }
             }
         }
