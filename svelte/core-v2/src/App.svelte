@@ -26,7 +26,7 @@
     <Arrow text="predicts" {view_mode} />
     <Column column="outcomes" {view_mode} bind:selected_entity />
 </div>
-<div class="version">DORA Core model v2.0</div>
+<div class="version">DORA Core model v2.0.0</div>
 
 <style lang="scss">
     .header {
