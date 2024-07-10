@@ -62,8 +62,7 @@
     <p>{@html summary}</p>
     <div class="footer">
         {#if link}
-            <a href={link}>Learn more about {name}</a>
-            <small>[links temporarily disabled]</small>
+            <a href={link} target="_blank">Learn more about {name}</a>
         {/if}
     </div>
 </div>
@@ -116,6 +115,7 @@
                 padding-left: 1rem;
                 font-size: 2rem;
                 line-height: 3rem;
+                font-weight: 500;
             }
             a {
                 font-size: 2em;
@@ -137,24 +137,13 @@
         p {
             flex-grow: 1;
             padding: 1rem;
+            padding-inline: 2.5rem;
+            line-height: 1.75;
         }
 
         .footer {
             text-align: center;
             padding: 0.5rem;
-
-            // Begin TEMPORARY styles; remove these when #659 is closed
-            a {
-                pointer-events: none;
-                cursor:not-allowed;
-            }
-
-            small {
-                color: var(--color-grey-medium);
-                font-variant: italic;
-            }
-
-            //End TEMPORARY styles
         }
 
         &::backdrop {

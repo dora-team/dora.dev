@@ -26,7 +26,7 @@
 
 <style lang="scss">
     .viewcontrol {
-        margin: 2em;
+        text-align: right;
         label {
             border: 1px solid var(--color-grey-light);
             padding: 0.5em;

@@ -80,6 +80,11 @@
                     "type": 301
                 },
                 {
+                    "source": "/core-v2",
+                    "destination": "/research/",
+                    "type": 301
+                },
+                {
                     "source": "/research/archives/:year*",
                     "destination": "/research/:year",
                     "type": 302
