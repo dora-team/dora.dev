@@ -2,7 +2,6 @@
     "capabilities": {
         "climate-for-learning": {
             "name": "Climate for learning",
-            "link": "",
             "summary": "A climate for learning is an atmosphere within an organization that fosters a culture of continuous improvement and knowledge sharing. It's not just about formal training programs, but a mindset where learning is seen as a strategic investment, essential for growth and success. A strong climate for learning is directly linked to better software delivery performance, including increased deployment frequency, reduced lead time for changes, and improved team culture. It also contributes to overall organizational performance, making it a valuable investment for any organization.",
             "entities": {
                 "code-maintainability": {
@@ -29,7 +28,6 @@
         },
         "fast-flow": {
             "name": "Fast flow",
-            "link": "",
             "summary": "Flow is the ultimate state of focus and productivity for software development teams. It's a continuous delivery approach that enables your team to consistently deliver high-quality software at speed. By embracing Fast Flow, your team can achieve the state of \"flow\" – a heightened level of focus where time seems to melt away, and productivity soars. This translates to improved software delivery performance as measured by DORA's research, helping your organization stay ahead of the competition and deliver greater value to your customers.",
             "entities": {
                 "continuous-delivery": {
@@ -76,7 +74,6 @@
         },
         "fast-feedback": {
             "name": "Fast feedback",
-            "link": "",
             "summary": "Fast feedback enables a comprehensive approach that ensures your team receives rapid, actionable insights throughout the entire software delivery lifecycle.  Build confidence in the changes the team is making, leading to faster iteration and higher quality software. This translates to improved software delivery performance, helping your organization stay ahead of the curve and deliver exceptional value to your customers.",
             "entities": {
                 "continuous-integration": {
