@@ -62,7 +62,7 @@
     <p>{@html summary}</p>
     <div class="footer">
         {#if link}
-            <a href={link} target="_blank">Learn more about {name}</a>
+            <a href={link} target="_blank">Learn more about {name.toLowerCase()}</a>
         {/if}
     </div>
 </div>
