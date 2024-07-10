@@ -168,7 +168,7 @@ production, the pipeline must be improved, perhaps by adding or updating tests.
         to decouple your tests from the system under test.
     -   If your tests are expensive to maintain, this could point to problems
         with your software's
-        [architecture](/capabilities/loosely-coupled-architecture). Make sure
+        [architecture](/capabilities/loosely-coupled-teams). Make sure
         you continue to invest in making your software easy to test, including
         incorporating
         [refactoring](https://refactoring.com/)

@@ -79,7 +79,7 @@
             team will take a different journey, we have identified three
             capabilities that are often beneficial to improve:
             <strong>Continuous Integration</strong>,
-            <strong>Loosely Coupled Architecture</strong>, and
+            <strong>Loosely Coupled Teams</strong>, and
             <strong>Generative Organizational Culture</strong>.
         </p>
     </div>

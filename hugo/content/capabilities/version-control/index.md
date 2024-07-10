@@ -166,7 +166,7 @@ control to production? Are your builds too slow? Is it hard to re-create
 deployable packages? Is it difficult to create production-like test
 environments? These constraints can make it hard to achieve your goals, and
 might indicate a problem to work on with your system's
-[architecture](/capabilities/loosely-coupled-architecture).
+[architecture](/capabilities/loosely-coupled-teams).
 
 ## Ways to measure version control
 

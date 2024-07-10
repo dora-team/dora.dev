@@ -32,7 +32,7 @@ DORA has long postulated that many of these effects depend on a team’s broader
 
 Software delivery performance’s effect on organizational performance depends on operational performance (reliability), such that high software delivery performance is only beneficial to organizational performance when operational performance is also high. Implementing software supply chain security controls like those recommended by the SLSA framework has a positive effect on software delivery performance, but only when continuous integration is firmly established as a capability. 
 
-Technical capabilities build upon one another. Continuous delivery and version control amplify each other’s ability to promote high levels of software delivery performance. Combining continuous delivery, loosely coupled architecture, version control, and continuous integration fosters software delivery performance that is greater than the sum of its parts.
+Technical capabilities build upon one another. Continuous delivery and version control amplify each other’s ability to promote high levels of software delivery performance. Combining continuous delivery, loosely coupled teams, version control, and continuous integration fosters software delivery performance that is greater than the sum of its parts.
 
 #### Perceptions matter
 Teams that recognize the need to continuously improve tend to have higher organizational performance than those that don’t.

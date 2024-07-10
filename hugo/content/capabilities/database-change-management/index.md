@@ -221,7 +221,7 @@ situation. However, it involves careful planning and rollout.
 
 Finally, implementing both migration-based database change management and
 zero-downtime deployments can involve significant
-[architectural change](/capabilities/loosely-coupled-architecture).
+[architectural change](/capabilities/loosely-coupled-teams).
 This should be taken into consideration when estimating the effort required to
 implement these practices.
 
