@@ -147,15 +147,15 @@
             "entities": {
                 "measurement-coverage": {
                     "name": "Measurement coverage",
-                    "summary": "Are reliability measurements (SLIs) in place for all critical services/applications/components? The goal here should be to have <b>a set of SLIs that represent customer happiness for each critical service</b>. How close to \"full coverage\" are you?"
+                    "summary": "Are reliability measurements (SLIs) in place for all critical services/applications/components? The goal here should be to have <b>a set of SLIs that represent customer happiness for each critical service</b>. <br/>How close to \"full coverage\" are you?"
                 },
                 "measurement-focus": {
                     "name": "Measurement focus",
-                    "summary": "Do reliability measurement (SLI) definitions reflect system behavior as experienced by users?  For each of your existing SLIs, which ones can you say are really customer-centric? <br/>For example, <pre>response-time</pre> is customer-centric because the customer is waiting.  Try not to use infrastructure-centric (like <pre>cpu-time</pre>) or application-internal-centric (like <pre>queue-length</pre>) metrics.  <br/>For each SLI, try writing a small comment describing <b>why it matters</b> to the end user. These measures should be <b>implementation independent</b>."
+                    "summary": "Do reliability measurement (SLI) definitions reflect system behavior as experienced by users?  For each of your existing SLIs, which ones can you say are really customer-centric? <br/>For example, 'response-time' is customer-centric because the customer is waiting.  Try not to use infrastructure-centric (like 'cpu-time') or application-internal-centric (like 'queue-length') metrics.  <br/>For each SLI, try writing a small comment describing <b>why it matters</b> to the end user. These measures should be <b>implementation independent</b>."
                 },
                 "target-optimization": {
                     "name": "Target optimization",
-                    "summary": "Are reliability targets (SLOs) set appropriately, reflecting user sentiment and organizational capability? A good litmus test is to imagine changing the SLO, either higher or lower. What would be the impact? Who would you have to talk to about this?  What is the effect on the business?  <br/>If you are able to answer all of these (ideally through documentation) and make a well-informed decision to change or not, you're on the right track."
+                    "summary": "Are reliability targets (SLOs) set appropriately, reflecting user sentiment and organizational capability? A good litmus test is to imagine changing the SLO, either higher or lower. <br/>What would be the impact? Who would you have to talk to about this?  What is the effect on the business?  <br/>If you are able to answer all of these (ideally through documentation) and make a well-informed decision to change or not, you're on the right track."
                 },
                 "target-compliance": {
                     "name": "Target compliance",
