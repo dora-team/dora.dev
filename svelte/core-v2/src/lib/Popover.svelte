@@ -143,7 +143,15 @@
 
         .footer {
             text-align: center;
-            padding: 0.5rem;
+            padding: 0 .5rem 1rem .5rem;
+
+            a {
+                border:1px solid var(--color-grey-light);
+                display:inline-block;
+                border-radius: .25rem;
+                padding:.25rem .75rem;
+                text-decoration: none;
+            }
         }
 
         &::backdrop {

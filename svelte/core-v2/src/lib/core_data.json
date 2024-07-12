@@ -112,28 +112,28 @@
         "software-delivery": {
             "name": "Software delivery",
             "link": "/guides/dora-metrics-four-keys/",
-            "summary": "DORA’s research has consistently found that a team’s software delivery capability reliably predicts the value that the team provides to their organization. Survey respondents who achieve high levels of software delivery performance report that their organizations perform better on business objectives. Performance can be assessed according to four software delivery metrics:",
+            "summary": "DORA’s research has consistently found that a team’s software delivery capability reliably predicts the value that the team provides to their organization. Survey respondents who achieve high levels of software delivery performance report that their organizations perform better on business objectives. Performance can be assessed according to four software delivery metrics.<br><br>Want to assess your team’s software delivery performance? Try our <a href='/quickcheck' target='_blank'>DORA Quick Check</a> for insights on how to improve.",
             "measured_by": "Four key metrics",
             "entities": {
                 "changelead": {
                     "name": "Change lead time",
                     "link": "/guides/dora-metrics-four-keys/",
-                    "summary": "This metric measures the time it takes for a code commit or change to be successfully deployed to production. It reflects the efficiency of your delivery pipeline."
+                    "summary": "This metric measures the time it takes for a code commit or change to be successfully deployed to production. It reflects the efficiency of your delivery pipeline.<br><br>Want to assess your team’s software delivery performance? Try our <a href='/quickcheck' target='_blank'>DORA Quick Check</a> for insights on how to improve."
                 },
                 "deployfrequency": {
                     "name": "Deployment frequency",
                     "link": "/guides/dora-metrics-four-keys/",
-                    "summary": "This metric measures how often application changes are deployed to production. Higher deployment frequency indicates a more agile and responsive delivery process."
+                    "summary": "This metric measures how often application changes are deployed to production. Higher deployment frequency indicates a more agile and responsive delivery process.<br><br>Want to assess your team’s software delivery performance? Try our <a href='/quickcheck' target='_blank'>DORA Quick Check</a> for insights on how to improve."
                 },
                 "changefail": {
                     "name": "Change fail percentage",
                     "link": "/guides/dora-metrics-four-keys/",
-                    "summary": " This metric measures the percentage of deployments that cause failures in production, requiring hotfixes or rollbacks. A lower change failure rate indicates a more reliable delivery process."
+                    "summary": " This metric measures the percentage of deployments that cause failures in production, requiring hotfixes or rollbacks. A lower change failure rate indicates a more reliable delivery process.<br><br>Want to assess your team’s software delivery performance? Try our <a href='/quickcheck' target='_blank'>DORA Quick Check</a> for insights on how to improve."
                 },
                 "recoverytime": {
                     "name": "Failed deployment recovery time",
                     "link": "/guides/dora-metrics-four-keys/",
-                    "summary": "This metric measures the time it takes to recover from a failed deployment. A lower recovery time indicates a more resilient and responsive system."
+                    "summary": "This metric measures the time it takes to recover from a failed deployment. A lower recovery time indicates a more resilient and responsive system.<br><br>Want to assess your team’s software delivery performance? Try our <a href='/quickcheck' target='_blank'>DORA Quick Check</a> for insights on how to improve."
                 }
             }
         },
