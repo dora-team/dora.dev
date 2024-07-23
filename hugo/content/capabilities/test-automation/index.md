@@ -4,7 +4,7 @@ titleForHTMLHead: "Capabilities: Test automation" # TODO: can we DRY this out?
 slug: test-automation
 core: true
 date: 2023-03-27T09:48:50+01:00
-category: technical
+category: fast feedback
 draft: false
 headline: "Improve software quality by building reliable automated test suites and performing all kinds of testing throughout the software delivery lifecycle."
 summary: |

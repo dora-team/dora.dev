@@ -2,7 +2,7 @@
 title: "Generative organizational culture"
 titleForHTMLHead: "Capabilities: Generative Organizational Culture" # TODO: can we DRY this out?
 date: 2023-03-22T13:43:36Z
-category: cultural
+category: climate for learning
 slug: generative-organizational-culture
 core: true
 draft: false

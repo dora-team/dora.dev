@@ -4,7 +4,7 @@ titleForHTMLHead: "Capabilities: Monitoring and Observability" # TODO: can we DR
 slug: monitoring-and-observability
 core: true
 date: 2023-03-25T16:35:37Z
-category: technical
+category: fast feedback
 draft: false
 headline: "Learn how to build tooling to help you understand and debug your production systems."
 summary: "Monitoring and observability tooling allows teams to understand the health of their systems. Effective solutions enable teams to monitor predefined metrics, including system state as experienced by users, as well as allowing engineers to interactively debug systems and explore properties and patterns as they emerge."

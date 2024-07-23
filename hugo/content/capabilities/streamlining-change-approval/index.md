@@ -4,7 +4,7 @@ titleForHTMLHead: "Capabilities: Streamlining Change Approval" # TODO: can we DR
 slug: streamlining-change-approval
 core: true
 date: 2023-03-22T11:02:58Z
-category: process
+category: fast flow
 draft: false
 headline: "Replace heavyweight change-approval processes with peer review, to get the benefits of a more reliable, compliant release process without sacrificing speed."
 summary: |

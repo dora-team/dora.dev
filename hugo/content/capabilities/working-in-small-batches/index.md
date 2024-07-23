@@ -2,7 +2,7 @@
 title: "Working in small batches"
 titleForHTMLHead: "Capabilities: Working in Small Batches" # TODO: can we DRY this out?
 date: 2023-03-24T12:54:18Z
-category: process
+category: fast flow
 draft: false
 headline: "Create shorter lead times and faster feedback loops by working in small batches. Learn common obstacles to this critical capability and how to overcome them."
 summary: "Create shorter lead times and faster feedback loops by working in small batches. Learn common obstacles to this critical capability and how to overcome them."
