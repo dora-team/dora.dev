@@ -2,8 +2,12 @@
 
     {{- partial "partials/link_styles" "scss/capabilities.scss" -}}
 
-    {{ range (slice "technical" "process" "cultural") }}
-        <h2 id="{{ . }}">{{ . | title }} capabilities</h2>
+    {{ range (slice "climate for learning" "fast flow" "fast feedback") }}
+        {{ if eq . "climate for learning" }}
+            <h2 id="{{ . }}">Capabilities that enable a {{ . | title }}</h2>
+        {{ else }}
+            <h2 id="{{ . }}">Capabilities that enable {{ . | title }}</h2>
+        {{ end  }}
         <section class="capabilitiesGrid">
             {{ $capabilities := where site.RegularPages "Params.category" . }}
             {{ range ($capabilities.ByParam "title") }}
