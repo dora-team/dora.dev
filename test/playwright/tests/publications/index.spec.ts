@@ -17,27 +17,3 @@ test('Publications page loads correctly', async ({ page }) => {
 
   await expect(currentReportPage).toHaveURL('https://cloud.google.com/devops/state-of-devops');
 });
-
-// test('test', async ({ page }) => {
-//   await page.goto('/publications/');
-//   await page.getByRole('link', { name: 'Download the report' }).first().click();
-//   const page1Promise = page.waitForEvent('popup');
-//   await page.getByRole('link', { name: 'English' }).click();
-//   const page1 = await page1Promise;
-//   await page.locator('body').press('ControlOrMeta+ArrowLeft');
-//   await page.getByRole('link', { name: '2022', exact: true }).click();
-//   await page.getByRole('link', { name: 'DORA Report' }).click();
-//   const page2Promise = page.waitForEvent('popup');
-//   await page.getByRole('link', { name: 'English' }).click();
-//   const page2 = await page2Promise;
-//   await page.getByRole('link', { name: '2021' }).click();
-//   await page.getByRole('link', { name: 'DORA Report' }).click();
-//   const page3Promise = page.waitForEvent('popup');
-//   await page.getByRole('link', { name: 'English' }).click();
-//   const page3 = await page3Promise;
-//   await page.getByRole('link', { name: '2019' }).click();
-//   await page.getByRole('link', { name: 'DORA Report' }).click();
-//   const page4Promise = page.waitForEvent('popup');
-//   await page.getByRole('link', { name: 'Accelerate State of DevOps Report' }).click();
-//   const page4 = await page4Promise;
-// });
