@@ -10,7 +10,7 @@ test('Publications page loads correctly', async ({ page }) => {
   await expect(page.locator('h1')).toContainText('Publications by DORA');
 
   // Check for the email link
-  await expect(page.getByText('sponsor-dora@google.com')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'sponsor-dora@google.com'})).toBeVisible();
 
   // Click the "read the report" link and expect to be directed to https://cloud.google.com/devops/state-of-devops in a new tab
   const [currentReportPage] = await Promise.all([
