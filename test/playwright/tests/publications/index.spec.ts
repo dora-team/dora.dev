@@ -27,4 +27,9 @@ test('Publications page loads correctly', async ({ page }) => {
   ]);
 
   await expect(roiReportPage).toHaveURL('https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper');
+
+  // Test the "Read the ebook" link
+  const ebookLink = page.getByRole('link', { name: 'Read the ebook' });
+  const ebookLinkHref = await ebookLink.getAttribute('href');
+  await expect(ebookLinkHref).toBe('https://services.google.com/fh/files/misc/devops_awards_fullebook_final.pdf');
 });
