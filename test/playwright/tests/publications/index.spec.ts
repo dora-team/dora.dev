@@ -10,12 +10,12 @@ test('Publications page loads correctly', async ({ page }) => {
   await expect(page.locator('h1')).toContainText('Publications by DORA');
 
   // Click the "read the report" link and expect to be directed to https://cloud.google.com/devops/state-of-devops in a new tab
-  const [newPage] = await Promise.all([
+  const [currentReportPage] = await Promise.all([
     page.waitForEvent('popup'),
     page.getByRole('link', { name: 'Read the report' }).click(),
   ]);
 
-  await expect(newPage).toHaveURL('https://cloud.google.com/devops/state-of-devops');
+  await expect(currentReportPage).toHaveURL('https://cloud.google.com/devops/state-of-devops');
 });
 
 // test('test', async ({ page }) => {
