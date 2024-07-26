@@ -15,7 +15,7 @@ test('Documentation quality page loads correctly', async ({ page }) => {
   // Check for links
   await expect(page.locator('a[href="/research/archives/2022/?tab_archives=questions"]')).toBeVisible();
   await expect(page.locator('a[href="/research/archives/2022/?tab_archives=structural-equation-model"]')).toBeVisible();
-  await expect(page.locator('a[href="/publications/pdf/state-of-devops-2021.pdf"]')).toBeVisible();
+  await expect(page.locator('a[href="/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.pdf"]')).toBeVisible();
   await expect(page.locator('a[href="https://developers.google.com/tech-writing"]')).toBeVisible();
   await expect(page.locator('a[href="https://developers.google.com/style"]')).toBeVisible();
   await expect(page.locator('a[href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/"]')).toBeVisible();
