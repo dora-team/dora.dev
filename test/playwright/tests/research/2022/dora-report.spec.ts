@@ -31,7 +31,7 @@ const blogToUrlMap = {
   '2022 State of DevOps Report data deep dive: Documentation is like sunshine': 'https://cloud.google.com/blog/products/devops-sre/deep-dive-into-2022-state-of-devops-report-on-documentation'
 };
 
-test('2022 Research page loads correctly', async ({ page }) => {
+test('2022 report page loads correctly', async ({ page }) => {
   await page.goto('/research/2022/dora-report/');
 
   // Check for page title
