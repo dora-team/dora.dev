@@ -43,7 +43,7 @@ This interaction and impact applies to every single technical capability we stud
 ## Creating quality documentation
 Documentation needs to be actively created and maintained, which takes work.
 
-For guidance from our research, you can review the [2021 State of DevOps Report](/publications/pdf/state-of-devops-2021.pdf) for practices that you can implement to improve documentation quality.
+For guidance from our research, you can review the [2021 State of DevOps Report](/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.pdf) for practices that you can implement to improve documentation quality.
 
 This research doesn’t investigate individual resources, but there are plenty out there to help you create useful documentation. In your own organization, you may have documentation guidelines and training. You may also have technical writers or other documentation champions to work with. Here at Google, our documentation resources include: 
 

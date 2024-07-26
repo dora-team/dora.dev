@@ -135,7 +135,7 @@ When you break down work into small batches, you encounter two pitfalls:
 
 When you slice work into small batches that can be completed in hours, you can
 typically
-[test and deploy those batches to production in less than an hour](https://services.google.com/fh/files/misc/state-of-devops-2016.pdf)
+[test and deploy those batches to production in less than an hour](/research/2017-and-earlier/2016-state-of-devops-report.pdf)
 (PDF). The key is to decompose the work into small features that allow for rapid
 development, rather than developing complex features on branches and releasing
 them infrequently.

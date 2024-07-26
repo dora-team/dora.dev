@@ -41,7 +41,7 @@ When combined with the use of
 [WIP limits](/capabilities/wip-limits)
 and using feedback from production to make business decisions, visual management
 displays can contribute to
-[higher levels of delivery performance](/publications/pdf/state-of-devops-2015.pdf#page=15)
+[higher levels of delivery performance](/research/2017-and-earlier/2015-state-of-devops-report.pdf#page=15)
 (PDF).
 
 ## Common pitfalls with visual management
