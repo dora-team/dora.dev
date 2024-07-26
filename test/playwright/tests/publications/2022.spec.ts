@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const sidbarLinks = [
+const sidebarLinks = [
   'Meet DORA\'s Research Team',
   '2024',
   '2023',
@@ -12,7 +12,7 @@ const sidbarLinks = [
   '2017 and earlier'
 ];
 
-const languageToUrlMap: { [key: string]: string } = {
+const languageToUrlMap = {
   'Deutsch': '2022-dora-accelerate-state-of-devops-report-de.pdf',
   'English': '2022-dora-accelerate-state-of-devops-report.pdf',
   'Español': '2022-dora-accelerate-state-of-devops-report-es.pdf',
@@ -25,34 +25,11 @@ const languageToUrlMap: { [key: string]: string } = {
   '한국어': '2022-dora-accelerate-state-of-devops-report-ko.pdf'
 };
 
-async function checkLanguageLinks(page: any) {
-  for (const language in languageToUrlMap) {
-    if (languageToUrlMap.hasOwnProperty(language)) {
-      const url = languageToUrlMap[language];
-      const languageLink = page.getByRole('link', { name: language, exact: true })
-      const languageLinkHref = await languageLink.getAttribute('href');
-      await expect(languageLinkHref).toBe(url);
-    }
-  }
-}
-
-const blogToUrlMap: { [key: string]: string } = {
+const blogToUrlMap = {
   'Reliability and SRE in the 2022 State of DevOps Report': 'https://cloud.google.com/blog/products/devops-sre/sre-in-the-2022-state-of-devops-report',
   '2022 State of DevOps Report data deep dive: good team culture': 'https://cloud.google.com/blog/products/devops-sre/2022-sodr-deep-dive-culture',
   '2022 State of DevOps Report data deep dive: Documentation is like sunshine': 'https://cloud.google.com/blog/products/devops-sre/deep-dive-into-2022-state-of-devops-report-on-documentation'
-}
-
-async function checkBlogLinks(page: any) {
-  for (const blog in blogToUrlMap) {
-    if (blogToUrlMap.hasOwnProperty(blog)) {
-      const url = blogToUrlMap[blog];
-      const blogLink = page.getByRole('link', { name: blog, exact: true })
-      const blogLinkHref = await blogLink.getAttribute('href');
-      await expect(blogLinkHref).toBe(url);
-    }
-  }
-}
-
+};
 
 test('2022 Research page loads correctly', async ({ page }) => {
   await page.goto('/research/2022/dora-report/');
@@ -63,14 +40,22 @@ test('2022 Research page loads correctly', async ({ page }) => {
   // Check for page heading
   await expect(page.locator('h1')).toContainText('DORA Research: 2022');
 
-  //Check the languages
-  await checkLanguageLinks(page); // Call the async function
+  // Check languages
+  for (const language in languageToUrlMap) {
+    const url = languageToUrlMap[language];
+    const languageLink = page.getByRole('link', { name: language, exact: true });
+    await expect(languageLink).toHaveAttribute('href', url);
+  }
 
-  //Check blog links
-  await checkBlogLinks(page); // Call the async function
+  // Check blog links
+  for (const blog in blogToUrlMap) {
+    const url = blogToUrlMap[blog];
+    const blogLink = page.getByRole('link', { name: blog, exact: true });
+    await expect(blogLink).toHaveAttribute('href', url);
+  }
 
-  //Check the sidebar
-  for (const sidbarLink of sidbarLinks) {
-    await expect(page.getByRole('link', { name: sidbarLink, exact: true })).toBeVisible();
+  // Check the sidebar
+  for (const sidebarLink of sidebarLinks) {
+    await expect(page.getByRole('link', { name: sidebarLink, exact: true })).toBeVisible();
   }
 });
