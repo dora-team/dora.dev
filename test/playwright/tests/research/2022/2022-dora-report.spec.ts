@@ -20,16 +20,19 @@ const blogToUrlMap = {
   '2022 State of DevOps Report data deep dive: Documentation is like sunshine': 'https://cloud.google.com/blog/products/devops-sre/deep-dive-into-2022-state-of-devops-report-on-documentation'
 };
 
-test('2022 report page loads correctly', async ({ page }) => {
+test.beforeEach(async ({ page }) => {
   await page.goto('/research/2022/dora-report/');
+});
 
-  // Check for page title
+test('2022 DORA report page has the correct title.', async ({ page }) => {
   await expect(page).toHaveTitle('DORA | Accelerate State of DevOps Report 2022');
+});
 
-  // Check for page heading
+test('2022 DORA report page has the correct header.', async ({ page }) => {
   await expect(page.locator('h1')).toContainText('DORA Research: 2022');
+});
 
-  // Check languages
+test('2022 DORA report page has the correct language.', async ({ page }) => {
   const languageOptions = await page.locator('item ul li').count();
   await expect(languageOptions).toBe(10);
 
@@ -38,8 +41,9 @@ test('2022 report page loads correctly', async ({ page }) => {
     const languageLink = page.getByRole('link', { name: language, exact: true });
     await expect(languageLink).toHaveAttribute('href', url);
   }
+});
 
-  // Check blog links
+test('2022 DORA report page has the correct blog links.', async ({ page }) => {
   const blogLinks = await page.locator('h3 + ul li a').count();
   await expect(blogLinks).toBe(3);
 
@@ -48,8 +52,9 @@ test('2022 report page loads correctly', async ({ page }) => {
     const blogLink = page.getByRole('link', { name: blog, exact: true });
     await expect(blogLink).toHaveAttribute('href', url);
   }
+});
 
-  // Check the sidebar
+test('2022 DORA report page has the correct sidebar.', async ({ page }) => {
   for (const sidebarLink of sidebarLinks) {
     await expect(page.getByRole('link', { name: sidebarLink, exact: true })).toBeVisible();
   }

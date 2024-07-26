@@ -1,16 +1,19 @@
 import { test, expect } from '@playwright/test';
 import { sidebarLinks } from '../sidebarLinks';
 
-test('2024 research overive page loads correctly', async ({ page }) => {
+test.beforeEach(async ({ page }) => {
   await page.goto('/research/2024/');
+});
 
-  // Check for page title
+test('2024 research overview has the correct title.', async ({ page }) => {
   await expect(page).toHaveTitle('DORA | DORA Research: 2024');
+});
 
-  // Check for page heading
+test('2024 research overview has the correct header.', async ({ page }) => {
   await expect(page.locator('h1')).toContainText('DORA Research: 2024');
+});
 
-  // Check the sidebar
+test('2024 research overview has the correct sidebar.', async ({ page }) => {
   for (const sidebarLink of sidebarLinks) {
     await expect(page.getByRole('link', { name: sidebarLink, exact: true })).toBeVisible();
   }

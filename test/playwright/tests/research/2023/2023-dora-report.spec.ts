@@ -13,16 +13,19 @@ const languageToUrlMap = {
   '한국어': 'https://cloud.google.com/devops/state-of-devops/?hl=ko&region=KR'
 };
 
-test('2023 report page loads correctly', async ({ page }) => {
+test.beforeEach(async ({ page }) => {
   await page.goto('/research/2023/dora-report/');
+});
 
-  // Check for page title
+test('2023 DORA report page has the correct title.', async ({ page }) => {
   await expect(page).toHaveTitle('DORA | Accelerate State of DevOps Report 2023');
+});
 
-  // Check for page heading
+test('2023 DORA report page has the correct header.', async ({ page }) => {
   await expect(page.locator('h1')).toContainText('DORA Research: 2023');
+});
 
-  // Check languages
+test('2023 DORA report page has the correct language.', async ({ page }) => {
   const languageOptions = await page.locator('item ul li').count();
   await expect(languageOptions).toBe(9);
 
@@ -31,8 +34,9 @@ test('2023 report page loads correctly', async ({ page }) => {
     const languageLink = page.getByRole('link', { name: language, exact: true });
     await expect(languageLink).toHaveAttribute('href', url);
   }
+});
 
-  // Check the sidebar
+test('2023 DORA report page has the correct sidebar.', async ({ page }) => {
   for (const sidebarLink of sidebarLinks) {
     await expect(page.getByRole('link', { name: sidebarLink, exact: true })).toBeVisible();
   }
