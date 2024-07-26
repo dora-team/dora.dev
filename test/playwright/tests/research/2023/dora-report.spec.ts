@@ -1,16 +1,5 @@
 import { test, expect } from '@playwright/test';
-
-const sidebarLinks = [
-  'Meet DORA\'s Research Team',
-  '2024',
-  '2023',
-  '2022',
-  '2021',
-  '2020',
-  '2019',
-  '2018',
-  '2017 and earlier'
-];
+import { sidebarLinks } from '../sidebarLinks';
 
 const languageToUrlMap = {
   'English': 'https://cloud.google.com/devops/state-of-devops/?hl=en&region=US',
