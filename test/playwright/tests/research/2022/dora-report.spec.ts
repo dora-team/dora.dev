@@ -41,6 +41,9 @@ test('2022 report page loads correctly', async ({ page }) => {
   await expect(page.locator('h1')).toContainText('DORA Research: 2022');
 
   // Check languages
+  const languageOptions = await page.locator('item ul li').count();
+  await expect(languageOptions).toBe(10);
+
   for (const language in languageToUrlMap) {
     const url = languageToUrlMap[language];
     const languageLink = page.getByRole('link', { name: language, exact: true });
@@ -48,6 +51,9 @@ test('2022 report page loads correctly', async ({ page }) => {
   }
 
   // Check blog links
+  const resourceLinks = await page.locator('h3 + ul li a').count();
+  await expect(resourceLinks).toBe(3);
+
   for (const blog in blogToUrlMap) {
     const url = blogToUrlMap[blog];
     const blogLink = page.getByRole('link', { name: blog, exact: true });
