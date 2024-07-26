@@ -51,8 +51,8 @@ test('2022 report page loads correctly', async ({ page }) => {
   }
 
   // Check blog links
-  const resourceLinks = await page.locator('h3 + ul li a').count();
-  await expect(resourceLinks).toBe(3);
+  const blogLinks = await page.locator('h3 + ul li a').count();
+  await expect(blogLinks).toBe(3);
 
   for (const blog in blogToUrlMap) {
     const url = blogToUrlMap[blog];
