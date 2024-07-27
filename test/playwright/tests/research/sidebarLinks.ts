@@ -1,4 +1,3 @@
-// /Users/nathenharvey/projects/dora-team/dora.dev/test/playwright/tests/research/sidebarLinks.ts
 export const sidebarLinks = [
   'Meet DORA\'s Research Team',
   '2024',
