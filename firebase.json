@@ -131,12 +131,22 @@
                 },
                 {
                     "source": "/report/roi",
-                    "destination": "https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper",
+                    "destination": "/research/2020",
                     "type": 302
                 },
                 {
                     "source": "/roi-report",
-                    "destination": "https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper",
+                    "destination": "/research/2020",
+                    "type": 302
+                },
+                {
+                    "source": "/dora-report-roi",
+                    "destination": "/research/2020",
+                    "type": 302
+                },
+                {
+                    "source": "/dora-report-2020",
+                    "destination": "/research/2020",
                     "type": 302
                 },
                 {
