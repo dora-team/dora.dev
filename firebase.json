@@ -115,18 +115,8 @@
                     "type": 302
                 },
                 {
-                    "source": "/dora-report-2020",
-                    "destination": "/research/2020/",
-                    "type": 302
-                },
-                {
-                    "source": "/dora-report-:year",
-                    "destination": "/research/:year/dora-report",
-                    "type": 302
-                },
-                {
-                    "source": "/report",
-                    "destination": "https://cloud.google.com/devops/state-of-devops",
+                    "source": "/dora-report-roi",
+                    "destination": "/research/2020",
                     "type": 302
                 },
                 {
@@ -140,13 +130,18 @@
                     "type": 302
                 },
                 {
-                    "source": "/dora-report-roi",
+                    "source": "/dora-report-2020",
                     "destination": "/research/2020",
                     "type": 302
                 },
                 {
-                    "source": "/dora-report-2020",
-                    "destination": "/research/2020",
+                    "source": "/dora-report-:year",
+                    "destination": "/research/:year/dora-report",
+                    "type": 302
+                },
+                {
+                    "source": "/report",
+                    "destination": "https://cloud.google.com/devops/state-of-devops",
                     "type": 302
                 },
                 {
