@@ -4,7 +4,7 @@ titleForHTMLHead: "Capabilities: Database Change Management" # TODO: can we DRY 
 slug: database-change-management
 core: true
 date: 2023-03-27T09:48:50+01:00
-category: technical
+category: fast flow
 draft: false
 headline: "Make sure database changes don't cause problems or slow you down."
 summary: "Database changes don't slow teams down if they follow a few key practices, including storing database changes as scripts in version control (and managing these changes the same way as production application changes), making database changes visible to everyone in the software delivery lifecycle (including engineers), and communicating with all parties when changes to the application require database changes."

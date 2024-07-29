@@ -2,7 +2,7 @@
 title: "Flexible infrastructure"
 titleForHTMLHead: "Capabilities: Flexible Infrastructure" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
-category: technical
+category: fast flow
 draft: false
 slug: flexible-infrastructure
 aliases:
@@ -40,7 +40,7 @@ five essential characteristics of cloud computing:
     report resource use based on the type of service such as storage,
     processing, bandwidth, and active user accounts.
 
-The [2019 State of DevOps Report](/publications/pdf/state-of-devops-2019.pdf) found that only 29% of people who claim to have
+The [2019 State of DevOps Report](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf) found that only 29% of people who claim to have
 adopted cloud technologies agreed or strongly agreed that they met all five of
 the characteristics defined above. In both 2018 and 2019, DORA's research found
 that elite performers were more than 23 times more likely to have met all five

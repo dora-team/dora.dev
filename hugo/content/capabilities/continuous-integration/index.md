@@ -2,7 +2,7 @@
 title: "Continuous integration"
 titleForHTMLHead: "Capabilities: Continuous Integration" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
-category: technical
+category: fast feedback
 draft: false
 core: true
 headline: "Learn about common mistakes, ways to measure, and how to improve on your continuous integration efforts."
@@ -33,7 +33,7 @@ into the
 [*trunk*](/capabilities/trunk-based-development),
 *main*, or *mainline*) on a regular basis. DevOps Research and Assessment
 (DORA)
-[research](/publications/pdf/state-of-devops-2015.pdf#page=20)
+[research](/research/2017-and-earlier/2015-state-of-devops-report.pdf#page=20)
 (PDF) shows that teams perform better when developers merge their work into
 trunk at least daily. A set of automated tests is run both before and after the
 merge in order to validate that the changes don't introduce regression bugs. If
@@ -43,7 +43,7 @@ problem immediately.
 CI ensures that the software is always in a working state, and that developer
 branches don't diverge significantly from trunk. The benefits of CI are
 significant:
-[research](/publications/pdf/state-of-devops-2015.pdf#page=16)
+[research](/research/2017-and-earlier/2015-state-of-devops-report.pdf#page=16)
 (PDF) shows that it leads to higher deployment frequency, more stable systems,
 and higher quality software.
 
@@ -63,7 +63,7 @@ To implement these elements, you need the following:
 -   **A suite of
     [automated tests](/capabilities/test-automation)**.
     If you don't have any, start by writing a handful of unit and
-    [acceptance tests](/publications/pdf/state-of-devops-2014.pdf#page=14)
+    [acceptance tests](/research/2017-and-earlier/2014-state-of-devops-report.pdf#page=14)
     (PDF) that cover the high-value functionality of your system. Make sure that
     the tests are reliable. That way, when they fail, you know there's a real
     problem, and when they pass, you're confident there are no serious problems
@@ -126,7 +126,7 @@ general, you don't want to optimize for the speed at which developers can
 declare a large feature as completed on a branch. Rather, you want to be able to
 get changes reviewed, integrated, tested, and deployed as fast as possible. This
 process results in software development and delivery that is
-[faster and more stable](/publications/pdf/state-of-devops-2016.pdf#page=35)
+[faster and more stable](/research/2017-and-earlier/2016-state-of-devops-report.pdf#page=35)
 (PDF) when the changes are small and self-contained, and the branches they live
 on are short-lived. Working in small batches also ensures that developers get
 regular feedback on the impact of their work on the system as a whole—from other
@@ -157,7 +157,7 @@ Some common pitfalls that prevent wide adoption of CI include the following:
     identified and reverted.
 -   **Having tests that take too long to run**. The tests should not take
     more than a few minutes to run, with an upper limit of about 10 minutes
-    [according to DORA's research](/publications/pdf/state-of-devops-2018.pdf#page=56)
+    [according to DORA's research](/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf#page=56)
     (PDF). If your build takes longer than this, you should improve the
     efficiency of your tests, add more compute resources so you can run them in
     parallel, or split out longer-running tests into a separate build using the

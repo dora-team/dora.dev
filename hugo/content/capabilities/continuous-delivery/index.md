@@ -3,7 +3,7 @@ title: "Continuous delivery"
 slug: "continuous-delivery"
 titleForHTMLHead: "Capabilities: Continuous Delivery" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
-category: technical
+category: fast flow
 draft: false
 core: true
 headline: "Make deploying software a reliable, low-risk process that can be performed on demand at any time."
@@ -74,9 +74,9 @@ the following benefits:
     as well as higher levels of availability.
 -   Leads to higher levels of quality, measured by the percentage of time
     teams spend on rework or unplanned work (as shown in the
-    [2016 State of DevOps Report](/publications/pdf/state-of-devops-2016.pdf)
+    [2016 State of DevOps Report](/research/2017-and-earlier/2016-state-of-devops-report.pdf)
     pp25-26, and the
-    [2018 State of DevOps Report](/publications/pdf/state-of-devops-2018.pdf)
+    [2018 State of DevOps Report](/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf)
     pp27-29).
 -   Predicts lower levels of burnout (physical, mental, or emotional
     exhaustion caused by overwork or stress), higher levels of

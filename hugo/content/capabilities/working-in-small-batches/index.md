@@ -2,7 +2,8 @@
 title: "Working in small batches"
 titleForHTMLHead: "Capabilities: Working in Small Batches" # TODO: can we DRY this out?
 date: 2023-03-24T12:54:18Z
-category: process
+category: fast flow
+core: true
 draft: false
 headline: "Create shorter lead times and faster feedback loops by working in small batches. Learn common obstacles to this critical capability and how to overcome them."
 summary: "Create shorter lead times and faster feedback loops by working in small batches. Learn common obstacles to this critical capability and how to overcome them."
@@ -135,7 +136,7 @@ When you break down work into small batches, you encounter two pitfalls:
 
 When you slice work into small batches that can be completed in hours, you can
 typically
-[test and deploy those batches to production in less than an hour](https://services.google.com/fh/files/misc/state-of-devops-2016.pdf)
+[test and deploy those batches to production in less than an hour](/research/2017-and-earlier/2016-state-of-devops-report.pdf)
 (PDF). The key is to decompose the work into small features that allow for rapid
 development, rather than developing complex features on branches and releasing
 them infrequently.

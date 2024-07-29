@@ -2,7 +2,7 @@
 title: "Visual management"
 titleForHTMLHead: "Capabilities: Visual Management" # TODO: can we DRY this out?
 date: 2023-03-25T16:35:37Z
-category: process
+category: fast flow
 draft: false
 headline: "Learn about the principles of visual management to promote information sharing, get a common understanding of where the team is, and how to improve."
 summary: "Learn about the principles of visual management to promote information sharing, get a common understanding of where the team is, and how to improve."
@@ -41,7 +41,7 @@ When combined with the use of
 [WIP limits](/capabilities/wip-limits)
 and using feedback from production to make business decisions, visual management
 displays can contribute to
-[higher levels of delivery performance](/publications/pdf/state-of-devops-2015.pdf#page=15)
+[higher levels of delivery performance](/research/2017-and-earlier/2015-state-of-devops-report.pdf#page=15)
 (PDF).
 
 ## Common pitfalls with visual management

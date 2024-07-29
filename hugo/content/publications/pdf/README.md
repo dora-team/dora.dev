@@ -2,5 +2,5 @@ As per [#390](https://github.com/dora-team/dora.dev/issues/390), these PDFs shou
 
 TODO:
 - [x] duplicate them into their new locations
-- [ ] add redirects from old locations to new locations
+- [x] add redirects from old locations to new locations
 - [ ] delete old files

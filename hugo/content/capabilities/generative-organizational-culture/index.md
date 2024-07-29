@@ -2,7 +2,7 @@
 title: "Generative organizational culture"
 titleForHTMLHead: "Capabilities: Generative Organizational Culture" # TODO: can we DRY this out?
 date: 2023-03-22T13:43:36Z
-category: cultural
+category: climate for learning
 slug: generative-organizational-culture
 core: true
 draft: false
@@ -51,7 +51,7 @@ Research from
 found similar results: that high performing teams need a culture of trust and
 [psychological safety](https://en.wikipedia.org/wiki/Psychological_safety),
 meaningful work, and clarity. In the
-[2019 State of DevOps Report](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf)
+[2019 State of DevOps Report](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf)
 further analysis shows that a culture of psychological safety is predictive of
 software delivery performance, organizational performance, and productivity.
 

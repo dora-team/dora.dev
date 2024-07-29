@@ -4,7 +4,7 @@ titleForHTMLHead: "Capabilities: Empowering teams to choose tools" # TODO: can w
 slug: teams-empowered-to-choose-tools
 core: true
 date: 2023-03-27T09:48:50+01:00
-category: technical
+category: climate for learning
 draft: false
 headline: "Empower teams to make informed decisions on tools and technologies. Learn how these decisions drive more effective software delivery."
 summary: "Teams that can choose which tools to use do better at continuous delivery. No one knows better than practitioners what they need to be effective."
@@ -14,7 +14,7 @@ If you want to achieve higher software delivery performance and increase the
 [job satisfaction](/capabilities/job-satisfaction)
 of your technical staff, you should empower them to make informed choices about
 the tools and technologies they use to do their work.
-[Research](/publications/pdf/state-of-devops-2017.pdf)
+[Research](/research/2017-and-earlier/2017-state-of-devops-report.pdf)
 (PDF) from the DevOps Research and Assessment (DORA) team shows this contributes
 to better continuous delivery and higher software delivery performance. Teams
 that can choose their own tools are able to make these choices based on how they

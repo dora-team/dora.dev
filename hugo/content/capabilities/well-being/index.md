@@ -2,7 +2,7 @@
 draft: false
 slug: well-being
 title: "Well-being"
-category: cultural
+category: climate for learning
 core: true
 headline: A focus on employee happiness and work environment can improve organizational performance while helping retain talent.
 summary: |
@@ -28,11 +28,11 @@ One measure of whether teams are building quality into their work is the  how th
 
 The second category is called reactive unplanned work, or rework. Unplanned work includes any break/fix work, emergency software deployments and patches, responding to urgent audit documentation requests, and so on. Rework is fixing things that weren't done right the first time and, like change fail rate, is a proxy measure for quality.
     
-In the [2016 State of DevOps survey](/publications/pdf/state-of-devops-2016.pdf), we asked people about the percentage of time they spent on rework and unplanned work, and on new work such as designing and building new features. High performers reported spending 49 percent of their time on new work and 21 percent on unplanned work or rework. By contrast, low performers spend 38 percent of their time on new work and 27 percent on unplanned work or rework. Thus, high performers spend 29 percent more time on new work than low performers, and 22 percent less time on unplanned work and rework.
+In the [2016 State of DevOps survey](/research/2017-and-earlier/2016-state-of-devops-report.pdf), we asked people about the percentage of time they spent on rework and unplanned work, and on new work such as designing and building new features. High performers reported spending 49 percent of their time on new work and 21 percent on unplanned work or rework. By contrast, low performers spend 38 percent of their time on new work and 27 percent on unplanned work or rework. Thus, high performers spend 29 percent more time on new work than low performers, and 22 percent less time on unplanned work and rework.
     
 [Continuous delivery](/capabilities/continuous-delivery) predicts lower levels of unplanned work and rework in a statistically significant way, showing that implementing the technical practices behind continuous delivery drives higher quality.
     
-In the [2018 Accelerate State of DevOps survey](/publications/pdf/state-of-devops-2018.pdf), we asked our respondents how they spend their time and found that across the board, elite performers are getting the most value-add time out of their days and are spending the least amount of time doing non-value-add work of all groups, followed by high performers and medium performers. Low performers are doing the worst on all dimensions in terms of value-add vs. non-value-add time, as shown in the table below.
+In the [2018 Accelerate State of DevOps survey](/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf), we asked our respondents how they spend their time and found that across the board, elite performers are getting the most value-add time out of their days and are spending the least amount of time doing non-value-add work of all groups, followed by high performers and medium performers. Low performers are doing the worst on all dimensions in terms of value-add vs. non-value-add time, as shown in the table below.
 
 <!-- TODO: #323 remove inline styles -->
 <style>

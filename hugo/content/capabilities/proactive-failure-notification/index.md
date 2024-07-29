@@ -2,7 +2,7 @@
 title: "Proactive failure notification"
 titleForHTMLHead: "Capabilities: Proactive Failure Notification" # TODO: can we DRY this out?
 date: 2023-03-25T16:35:37Z
-category: process
+category: fast feedback
 draft: false
 headline: "Set proactive failure notifications to identify critical issues and act on problems before they arise."
 summary: "Set proactive failure notifications to identify critical issues and act on problems before they arise."
@@ -14,7 +14,7 @@ system to alert you it has already failed — or worse, to find out from custome
 that your application or service is down.
 Using this approach, you can identify and potentially resolve issues before they
 become serious or start to impact your users. The
-[2014 DevOps Research and Assessment (DORA)](/publications/pdf/state-of-devops-2014.pdf)
+[2014 DevOps Research and Assessment (DORA)](/research/2017-and-earlier/2014-state-of-devops-report.pdf)
 (PDF) research showed that proactive monitoring is a significant predictor of software
 delivery performance.
 According to DORA research, teams that use proactive notification can diagnose

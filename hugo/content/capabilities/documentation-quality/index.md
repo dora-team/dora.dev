@@ -2,7 +2,7 @@
 title: "Documentation quality"
 titleForHTMLHead: "Capabilities: Documentation quality" # TODO: can we DRY this out?
 date: 2023-03-24T12:54:18Z
-category: process
+category: climate for learning
 draft: false
 slug: documentation-quality
 core: true
@@ -43,7 +43,7 @@ This interaction and impact applies to every single technical capability we stud
 ## Creating quality documentation
 Documentation needs to be actively created and maintained, which takes work.
 
-For guidance from our research, you can review the [2021 State of DevOps Report](/publications/pdf/state-of-devops-2021.pdf) for practices that you can implement to improve documentation quality.
+For guidance from our research, you can review the [2021 State of DevOps Report](/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.pdf) for practices that you can implement to improve documentation quality.
 
 This research doesn’t investigate individual resources, but there are plenty out there to help you create useful documentation. In your own organization, you may have documentation guidelines and training. You may also have technical writers or other documentation champions to work with. Here at Google, our documentation resources include: 
 
@@ -56,4 +56,4 @@ This research doesn’t investigate individual resources, but there are plenty o
 If you’re lucky enough to work in an environment with plenty of quality documentation, it’s because you or people in your organization create that content. But if your organization has poor quality documentation, there’s good news. By implementing the practices linked above, you can improve your documentation quality and make it shine.
 
 
-_Excerpted from [2022 State of DevOps Report data deep dive: Documentation is like sunshine](https://cloud.google.com/blog/products/devops-sre/deep-dive-into-2022-state-of-devops-report-on-documentation) by [Michelle Irvine](/research/team/#michelle-irvine) and [Derek DeBellis](/research/team/#derek-debellis)_
+_Excerpted from [2022 State of DevOps Report data deep dive: Documentation is like sunshine](https://cloud.google.com/blog/products/devops-sre/deep-dive-into-2022-state-of-devops-report-on-documentation) by [Michelle Irvine](/research/team/#michelle-irvine) and [Derek DeBellis](/research/team/#derek-debellis)_.
