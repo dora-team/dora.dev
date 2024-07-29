@@ -15,6 +15,7 @@ Your responses are being analyzed and will provide the basis for this year's DOR
 * **Platform Engineering** - We want to better understand how your organization is approaching platform engineering. Platform engineering may include both technologies and teams. How does platform engineering impact software delivery performance?
 * **Developer Experience** - We want to learn more about your overall experience as you work to deliver for your customers. How does your experience impact the value you're able to deliver?
 
+We expect to publish the 2024 DORA report sometime in October, 2024. [Join the DORA community](https://dora.community) to be notified when the report is published, for discussions with the rest of the community, and for future research study participation opportunities.
 
 <!--
 ### The 2023 Accelerate State of DevOps survey is now closed.
