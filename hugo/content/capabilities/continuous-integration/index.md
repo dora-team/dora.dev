@@ -63,7 +63,7 @@ To implement these elements, you need the following:
 -   **A suite of
     [automated tests](/capabilities/test-automation)**.
     If you don't have any, start by writing a handful of unit and
-    [acceptance tests](/research/2017-and-earlier/2014-state-of-devops-report.pdf#page=14)
+    [acceptance tests](/research/2014/2014-state-of-devops-report.pdf#page=14)
     (PDF) that cover the high-value functionality of your system. Make sure that
     the tests are reliable. That way, when they fail, you know there's a real
     problem, and when they pass, you're confident there are no serious problems
@@ -232,7 +232,7 @@ change.</td>
     [SRE Book](https://landing.google.com/sre/books/),
     in particular
     [Chapter 8 - Release Engineering](https://landing.google.com/sre/sre-book/chapters/release-engineering/).
--   Read James Shore's article 
+-   Read James Shore's article
     [CI on a dollar a day](https://www.jamesshore.com/Blog/Continuous-Integration-on-a-Dollar-a-Day.html).
 -   Watch Google's John Penix describe
     [how Google practices CI at scale](https://www.infoq.com/presentations/Continuous-Testing-Build-Cloud/).

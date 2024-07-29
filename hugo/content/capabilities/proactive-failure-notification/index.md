@@ -14,7 +14,7 @@ system to alert you it has already failed — or worse, to find out from custome
 that your application or service is down.
 Using this approach, you can identify and potentially resolve issues before they
 become serious or start to impact your users. The
-[2014 DevOps Research and Assessment (DORA)](/research/2017-and-earlier/2014-state-of-devops-report.pdf)
+[2014 DevOps Research and Assessment (DORA)](/research/2014/2014-state-of-devops-report.pdf)
 (PDF) research showed that proactive monitoring is a significant predictor of software
 delivery performance.
 According to DORA research, teams that use proactive notification can diagnose
@@ -27,7 +27,7 @@ suffers.
 
 **Use alerting rules.** You should generate failure notifications using
 specific *alerting rules.* Alerting rules define the conditions under which an
-alert is generated and the notification channel for that alert. Read more about 
+alert is generated and the notification channel for that alert. Read more about
 generating alerts in
 [Monitoring and observability](/capabilities/monitoring-and-observability).
 
