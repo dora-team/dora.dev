@@ -29,7 +29,7 @@ When these capabilities are applied together, they help predict the following:
     market share, and productivity.
 
 DevOps Research and Assessment (DORA) research
-[shows](/publications/pdf/state-of-devops-2016.pdf#page=35)
+[shows](/research/2017-and-earlier/2016-state-of-devops-report.pdf#page=35)
 (PDF) that teams achieve higher performance when they work in organizations that
 utilize those capabilities and also do the following:
 
@@ -93,7 +93,7 @@ successfully solving customer problems:
 Success requires you to not only deploy and release software quickly, but to
 address customer needs better, smarter, and faster. This can be achieved by
 experimenting more thoroughly than your competition. Retail is one industry that
-[has seen particular success with this](/publications/pdf/state-of-devops-2019.pdf)
+[has seen particular success with this](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf).
 (PDF).
 Techniques such as
 [hypothesis-driven development](https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development),
@@ -103,7 +103,7 @@ innovation, and create organizational learning.
 
 Increased engagement with customers and participation in product management
 processes contributes to stronger identification with your organization's
-[goals and values](/publications/pdf/state-of-devops-2019.pdf#page=37)
+[goals and values](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf#page=37)
 (PDF). This in turn helps contribute to organizational performance.
 
 ## Common pitfalls

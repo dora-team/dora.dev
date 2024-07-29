@@ -83,9 +83,9 @@ This is a significant change for developers who aren't used to working in this
 way.
 
 Analysis of DevOps Research and Assessment (DORA) data from
-[2016](/publications/pdf/state-of-devops-2016.pdf#page=31)
+[2016](/research/2017-and-earlier/2016-state-of-devops-report.pdf#page=31)
 (PDF) and
-[2017](/publications/pdf/state-of-devops-2017.pdf#page=40)
+[2017](/research/2017-and-earlier/2017-state-of-devops-report.pdf#page=40)
 (PDF) shows that teams achieve higher levels of software delivery and operational
 performance (delivery speed, stability, and availability) if they follow these
 practices:
