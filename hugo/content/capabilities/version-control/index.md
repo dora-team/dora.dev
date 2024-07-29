@@ -4,7 +4,7 @@ titleForHTMLHead: "Capabilities: Version Control" # TODO: can we DRY this out?
 slug: version-control
 core: true
 date: 2023-03-27T09:48:51+01:00
-category: technical
+category: fast flow
 draft: false
 headline: "A guide to implementing the right version control practices for reproducibility and traceability."
 summary: "The use of a version control system, such as Git or Subversion, for all production artifacts, including application code, application configurations, system configurations, and scripts for automating build and configuration of environments."

@@ -2,8 +2,8 @@
 title: Capabilities
 bannerTitle: Capability catalog
 bannerSubtitle: |
-    Explore the technical, process, and cultural capabilities which drive higher software delivery and organizational performance. Each of the articles below presents a capability, discusses how to implement it, and how to overcome common obstacles. 
+    Explore the practices and capabilities that foster a learning environment, efficient processes, and rapid feedback, all of which accelerate software delivery and enhance overall organizational performance. Each of these articles presentes specific practices, providing implementation guidance and strategies to overcome common challenges. 
     
-    You can also learn how to deploy a program to implement these capabilities in our article ["How to Transform."](/guides/devops-culture-transform/)
+    You can also learn how to deploy a program to implement these capabilities in our guide ["How to Transform."](/guides/devops-culture-transform/)
 ---
 

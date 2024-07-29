@@ -2,7 +2,7 @@
 title: "Customer feedback"
 titleForHTMLHead: "Capabilities: Customer Feedback" # TODO: can we DRY this out?
 date: 2023-03-24T12:54:18Z
-category: process
+category: fast feedback
 draft: false
 headline: "Drive better organizational outcomes by gathering customer feedback and incorporating it into product and feature design."
 summary: "A summary (150-250 words) that describes this capability."

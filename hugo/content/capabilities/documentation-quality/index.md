@@ -2,7 +2,7 @@
 title: "Documentation quality"
 titleForHTMLHead: "Capabilities: Documentation quality" # TODO: can we DRY this out?
 date: 2023-03-24T12:54:18Z
-category: process
+category: climate for learning
 draft: false
 slug: documentation-quality
 core: true

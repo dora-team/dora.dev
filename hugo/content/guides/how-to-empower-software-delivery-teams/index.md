@@ -39,7 +39,7 @@ Software delivery performance is not an individual measure; it measures your abi
 ### Directors
 When you move up a level in your organization's hierarchy, your focus naturally shifts, too. If the software delivery managers report to you, your job is to help these managers build successful teams. Directors are often asked about the health of applications or product lines, which trends in DORA metrics can reveal.
 
-The DORA Core Model reveals the impact of cultural capabilities on organizational outcomes, and directors are in the best position to drive those capabilities and to lead software delivery managers to create the conditions that drive performance. Directors can incentivize capability experimentation and create a shared vision around organizational goals.
+The DORA Core Model reveals the impact of capabilities on organizational outcomes, and directors are in the best position to drive those capabilities and to lead software delivery managers to create the conditions that drive performance. Directors can incentivize capability experimentation and create a shared vision around organizational goals.
 
 This kind of participation helps directors stay informed at a faster frequency than the annual review cycle and will make them more responsive when peers or the C-suite ask for changes.
 
