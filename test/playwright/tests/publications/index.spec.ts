@@ -21,12 +21,10 @@ test('Publications page loads correctly', async ({ page }) => {
   await expect(currentReportPage).toHaveURL('https://cloud.google.com/devops/state-of-devops');
 
   // Check the ROI Report
-  const [roiReportPage] = await Promise.all([
-    page.waitForEvent('popup'),
-    page.getByRole('link', { name: 'Get the Whitepaper' }).click(),
-  ]);
-
-  await expect(roiReportPage).toHaveURL('https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper');
+  expect(page.getByRole('link', { name: 'Download the Whitepaper' })).toHaveAttribute(
+    'href',
+    '/research/2020/'
+  )
 
   // Test the "Read the ebook" link
   const ebookLink = page.getByRole('link', { name: 'Read the ebook' });

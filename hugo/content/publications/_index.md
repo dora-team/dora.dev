@@ -6,7 +6,7 @@ bannerTitle: "Publications by DORA"
 bannerSubtitle: "Findings from DORA's research program are made available through a series of publications, including the Accelerate State of DevOps Report."
 ---
 > Interested in being a sponsor of one of our upcoming Accelerate State of DevOps Reports?
-> 
+>
 > Please reach out to sponsor-dora@google.com for more information on the sponsorship opportunities!
 
 ## 2023 Accelerate State of DevOps Report
@@ -64,9 +64,9 @@ bannerSubtitle: "Findings from DORA's research program are made available throug
 ## Additional Publications
 <!-- add publications as list items, using markdown syntax (list items are designated with a leading dash) -->
 
-- [![ROI of DevOps Whitepaper](img/whitepaper-roi.png)](https://bit.ly/roi-of-devops)
-  **[The ROI of DevOps Transformation](https://bit.ly/roi-of-devops)**
-  [Get the Whitepaper](https://bit.ly/roi-of-devops)
+- [![ROI of DevOps Whitepaper](img/whitepaper-roi.png)](/research/2020/)
+  **[The ROI of DevOps Transformation](/research/2020/)**
+  [Download the Whitepaper](/research/2020/)
 - [![DevOps Awards Winners 2021](img/devops_awards_fullebook.png)](https://services.google.com/fh/files/misc/devops_awards_fullebook_final.pdf)
   **[DevOps Awards Winners 2021](https://services.google.com/fh/files/misc/devops_awards_fullebook_final.pdf)**
   [Read the ebook](https://services.google.com/fh/files/misc/devops_awards_fullebook_final.pdf)
