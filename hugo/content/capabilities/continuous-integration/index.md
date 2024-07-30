@@ -33,7 +33,7 @@ into the
 [*trunk*](/capabilities/trunk-based-development),
 *main*, or *mainline*) on a regular basis. DevOps Research and Assessment
 (DORA)
-[research](/research/2017-and-earlier/2015-state-of-devops-report.pdf#page=20)
+[research](/research/2015/2015-state-of-devops-report.pdf#page=20)
 (PDF) shows that teams perform better when developers merge their work into
 trunk at least daily. A set of automated tests is run both before and after the
 merge in order to validate that the changes don't introduce regression bugs. If
@@ -43,7 +43,7 @@ problem immediately.
 CI ensures that the software is always in a working state, and that developer
 branches don't diverge significantly from trunk. The benefits of CI are
 significant:
-[research](/research/2017-and-earlier/2015-state-of-devops-report.pdf#page=16)
+[research](/research/2015/2015-state-of-devops-report.pdf#page=16)
 (PDF) shows that it leads to higher deployment frequency, more stable systems,
 and higher quality software.
 
@@ -232,7 +232,7 @@ change.</td>
     [SRE Book](https://landing.google.com/sre/books/),
     in particular
     [Chapter 8 - Release Engineering](https://landing.google.com/sre/sre-book/chapters/release-engineering/).
--   Read James Shore's article 
+-   Read James Shore's article
     [CI on a dollar a day](https://www.jamesshore.com/Blog/Continuous-Integration-on-a-Dollar-a-Day.html).
 -   Watch Google's John Penix describe
     [how Google practices CI at scale](https://www.infoq.com/presentations/Continuous-Testing-Build-Cloud/).
