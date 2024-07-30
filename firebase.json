@@ -96,7 +96,7 @@
                 },
                 {
                     "source": "/dora-report-2014",
-                    "destination": "/research/2017-and-earlier/2014-state-of-devops-report.pdf",
+                    "destination": "/research/2014",
                     "type": 302
                 },
                 {
@@ -206,8 +206,14 @@
                 },
                 {
                     "source": "/publications/pdf/state-of-devops-2014.pdf",
-                    "destination": "/research/2017-and-earlier/2014-state-of-devops-report.pdf",
+                    "destination": "/research/2014/2014-state-of-devops-report.pdf",
                     "type": 301
+                },
+                {
+                    "source": "/research/2017-and-earlier/2014-state-of-devops-report.pdf",
+                    "destination": "/research/2014/2014-state-of-devops-report.pdf",
+                    "type": 301
+
                 },
                 {
                     "source": "/publications/pdf/state-of-devops-2015.pdf",
