@@ -12,5 +12,5 @@ Prior to 2018, research was conducted in partnership with Puppet, as an extensio
 #### State of DevOps Reports published in partnership with Puppet:
 - [2017 State of DevOps Report](2017-state-of-devops-report.pdf)
 - [2016 State of DevOps Report](2016-state-of-devops-report.pdf)
-- [2015 State of DevOps Report](2015-state-of-devops-report.pdf)
+- [2015 State of DevOps Report](/research/2015)
 - [2014 State of DevOps Report](2014-state-of-devops-report.pdf)
