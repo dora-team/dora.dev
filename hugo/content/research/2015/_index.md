@@ -7,7 +7,7 @@ type: research_archives
 layout: single
 ---
 
-[![2015 State of DevOps Report](2015-state-of-devops-report.png)](2015-state-of-devops-report.pdf)
+[![2015 State of DevOps Report](/research/2015/2015-state-of-devops-report.png)](2015-state-of-devops-report.pdf)
 
 The 2015 State of DevOps Report presents compelling evidence for the transformative power of DevOps in the IT industry. The report emphasizes that high-performing IT organizations consistently outperform their counterparts in terms of deployment frequency, lead time, failure rates, and recovery speed. These superior results are attributed to the adoption of practices, which streamline software delivery and enhance operational efficiency.
 
