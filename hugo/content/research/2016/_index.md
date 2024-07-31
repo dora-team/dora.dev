@@ -11,9 +11,7 @@ layout: single
 
 The 2016 State of DevOps Report reveals that high-performing organizations significantly outperform low performers in terms of IT performance and employee engagement. The report emphasizes benefits of integrating quality into every stage of development. The report also highlights the benefits of an experimental approach to product development, which involves breaking down products into smaller batches, ensuring visibility into the workflow, and actively seeking customer feedback.
 
-The report explores the relationship between IT performance and employee engagement, emphasizing the positive correlation between high performance and employee Net Promoter Scores (eNPS). It underscores the importance of integrating security practices throughout the software development lifecycle and advocates for lean product management practices, emphasizing the value of small batches, visibility, and customer feedback.
-
-Finally, the report provieds calculations for potential savings and discussing how these savings can be reinvested to foster innovation and drive business value. This work was later expaned in [The ROI of DevOps Transformation](/research/2020/) whitepaper.
+The report provides calculations for potential savings and discussing how these savings can be reinvested to foster innovation and drive business value. This work was later expanded in [The ROI of DevOps Transformation](/research/2020/) whitepaper.
 
 The key findings of the report are:
 * High-performing organizations significantly outperform low-performing organizations in terms of throughput, stability, and employee loyalty.
