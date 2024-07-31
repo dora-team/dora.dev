@@ -36,7 +36,7 @@ export const downloadTheReportMap = {
   '0': '/research/2023/dora-report/',
   '1': '/research/2022/dora-report/',
   '2': '/research/2021/dora-report/',
-  '3': '/researc/2016/',
+  '3': '/research/2016/',
   '4': '/research/2015/',
   '5': '/research/2014/'
 }

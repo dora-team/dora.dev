@@ -46,10 +46,10 @@ bannerSubtitle: "Findings from DORA's research program are made available throug
   (in partnership with Puppet)
   [Read PDF](/research/2017-and-earlier/2017-state-of-devops-report.pdf)
 
-- [![2016 State of DevOps Report](/research/2016/2016-state-of-devops-report.png)](/researc/2016/)
-  **[2016 State of DevOps Report](/researc/2016/)**
+- [![2016 State of DevOps Report](/research/2016/2016-state-of-devops-report.png)](/research/2016/)
+  **[2016 State of DevOps Report](/research/2016/)**
   (in partnership with Puppet)
-  [Download the report](/researc/2016/)
+  [Download the report](/research/2016/)
 
 - [![2015 State of DevOps Report](/research/2015/2015-state-of-devops-report.png)](/research/2015)
   **[2015 State of DevOps Report](/research/2015)**
