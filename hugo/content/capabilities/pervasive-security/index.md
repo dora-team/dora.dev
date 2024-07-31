@@ -12,7 +12,7 @@ summary: |
 ---
 
 Security is everyone's responsibility. The
-[2016 State of DevOps Report](/research/2017-and-earlier/2016-state-of-devops-report.pdf)
+[2016 State of DevOps Report](/research/2016/2016-state-of-devops-report.pdf)
 (PDF) research shows that high-performing teams spend 50 percent less time
 remediating security issues than low-performing teams. By better integrating
 information security (InfoSec) objectives into daily work, teams can achieve
@@ -46,7 +46,7 @@ work with security and testing experts to design and deliver
 throughout the product lifecycle.
 
 Research from
-[DevOps Research and Assessment (DORA)](/research/2017-and-earlier/2016-state-of-devops-report.pdf)
+[DevOps Research and Assessment (DORA)](/research/2016/2016-state-of-devops-report.pdf)
 (PDF) shows that teams can achieve better outcomes by making security a part of
 everyone's daily work instead of testing for security concerns at the end of the
 process. This means integrating security testing and controls into the daily

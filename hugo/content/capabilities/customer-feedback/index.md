@@ -29,7 +29,7 @@ When these capabilities are applied together, they help predict the following:
     market share, and productivity.
 
 DevOps Research and Assessment (DORA) research
-[shows](/research/2017-and-earlier/2016-state-of-devops-report.pdf#page=35)
+[shows](/research/2016/2016-state-of-devops-report.pdf#page=35)
 (PDF) that teams achieve higher performance when they work in organizations that
 utilize those capabilities and also do the following:
 

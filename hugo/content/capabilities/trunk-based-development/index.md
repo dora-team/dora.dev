@@ -83,7 +83,7 @@ This is a significant change for developers who aren't used to working in this
 way.
 
 Analysis of DevOps Research and Assessment (DORA) data from
-[2016](/research/2017-and-earlier/2016-state-of-devops-report.pdf#page=31)
+[2016](/research/2016/2016-state-of-devops-report.pdf#page=31)
 (PDF) and
 [2017](/research/2017-and-earlier/2017-state-of-devops-report.pdf#page=40)
 (PDF) shows that teams achieve higher levels of software delivery and operational
@@ -153,7 +153,7 @@ improve trunk-based development:
     [Running builds with GitHub Checks](https://cloud.google.com/build/docs/run-builds-with-github-checks)
     tutorial shows  how to integrate
     [GitHub Checks](https://developer.github.com/v3/checks/)
-    with 
+    with
     [Cloud Build](https://cloud.google.com/build/).
 -   **Have a fast build**. The build and test process should execute in
     [a few minutes](https://www.infoq.com/presentations/Crazy-Fast-Build-Times-or-When-10-Seconds-Starts-to-Make-You-Nervous/).
