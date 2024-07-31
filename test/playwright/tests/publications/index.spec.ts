@@ -1,33 +1,38 @@
 import { test, expect } from '@playwright/test';
 
-test('Publications page loads correctly', async ({ page }) => {
+test.beforeEach(async ({ page }) => {
   await page.goto('/publications/');
+});
 
-  // Check for page title
+test('Publications page has the correct title.', async ({ page }) => {
   await expect(page).toHaveTitle('DORA | DORA Publications');
+});
 
-  // Check for page heading
+test('Publications page has the correct header.', async ({ page }) => {
   await expect(page.locator('h1')).toContainText('Publications by DORA');
+});
 
-  // Check for the email link
+test('Publications page has a link to the sponsor email alias.', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'sponsor-dora@google.com'})).toBeVisible();
+});
 
-  // Click the "read the report" link and expect to be directed to https://cloud.google.com/devops/state-of-devops in a new tab
-  const [currentReportPage] = await Promise.all([
-    page.waitForEvent('popup'),
-    page.getByRole('link', { name: 'Read the report' }).click(),
-  ]);
-
-  await expect(currentReportPage).toHaveURL('https://cloud.google.com/devops/state-of-devops');
-
-  // Check the ROI Report
-  expect(page.getByRole('link', { name: 'Download the Whitepaper' })).toHaveAttribute(
+test('Publications page links to the ROI report.', async ({ page }) => {
+  await expect(page.getByRole('link', { name: 'Download the Whitepaper' })).toHaveAttribute(
     'href',
     '/research/2020/'
   )
+});
 
-  // Test the "Read the ebook" link
-  const ebookLink = page.getByRole('link', { name: 'Read the ebook' });
-  const ebookLinkHref = await ebookLink.getAttribute('href');
-  await expect(ebookLinkHref).toBe('https://services.google.com/fh/files/misc/devops_awards_fullebook_final.pdf');
+test('Publications page links to the DORA awards ebook.', async ({ page }) => {
+  await expect(page.getByRole('link', { name: 'Read the ebook' })).toHaveAttribute(
+    'href',
+    'https://services.google.com/fh/files/misc/devops_awards_fullebook_final.pdf'
+  )
+});
+
+test('Publications page links to the latest DORA Report', async ({ page }) => {
+  await expect(page.getByRole('link', { name: 'Read the Report' })).toHaveAttribute(
+    'href',
+    'https://cloud.google.com/devops/state-of-devops'
+  )
 });
