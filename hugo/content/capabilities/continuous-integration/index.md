@@ -126,7 +126,7 @@ general, you don't want to optimize for the speed at which developers can
 declare a large feature as completed on a branch. Rather, you want to be able to
 get changes reviewed, integrated, tested, and deployed as fast as possible. This
 process results in software development and delivery that is
-[faster and more stable](/research/2017-and-earlier/2016-state-of-devops-report.pdf#page=35)
+[faster and more stable](/research/2016/2016-state-of-devops-report.pdf#page=35)
 (PDF) when the changes are small and self-contained, and the branches they live
 on are short-lived. Working in small batches also ensures that developers get
 regular feedback on the impact of their work on the system as a whole—from other
