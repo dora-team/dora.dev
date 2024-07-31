@@ -13,13 +13,13 @@ bannerSubtitle: "Findings from DORA's research program are made available throug
 
 <section class="publicationHighlight">
     <aside>
-        <a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><img src="/research/2023/dora-report/2023-dora-accelerate-state-of-devops-report.png" alt="2023 Accelerate State of DevOps Report"></a>
+        <a href="/research/2023/dora-report/" target="_blank"><img src="/research/2023/dora-report/2023-dora-accelerate-state-of-devops-report.png" alt="2023 Accelerate State of DevOps Report"></a>
     </aside>
     <article>
        <p>For the last nine years, we’ve produced the State of DevOps report, hearing from over 36,000 professionals worldwide.</p>
         <p>We’ve outlined the DevOps practices that drive successful software delivery and operational performance, with a deep focus on user-centric design in the 2023 report.</p>
         <p>Use these findings to accelerate organizational performance while reducing burnout.</p>
-       <a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><button class="secondary">Read the Report</button></a>
+       <a href="/research/2023/dora-report/" target="_blank"><button class="secondary">Download the report</button></a>
     </article>
 </section>
 
@@ -46,20 +46,20 @@ bannerSubtitle: "Findings from DORA's research program are made available throug
   (in partnership with Puppet)
   [Read PDF](/research/2017-and-earlier/2017-state-of-devops-report.pdf)
 
-- [![2016 State of DevOps Report](/research/2017-and-earlier/2016-state-of-devops-report.png)](/research/2017-and-earlier/2016-state-of-devops-report.pdf)
-  **[2016 State of DevOps Report](/research/2017-and-earlier/2016-state-of-devops-report.pdf)**
+- [![2016 State of DevOps Report](/research/2016/2016-state-of-devops-report.png)](/researc/2016/)
+  **[2016 State of DevOps Report](/researc/2016/)**
   (in partnership with Puppet)
-  [Read PDF](/research/2017-and-earlier/2016-state-of-devops-report.pdf)
+  [Download the report](/researc/2016/)
 
 - [![2015 State of DevOps Report](/research/2015/2015-state-of-devops-report.png)](/research/2015)
   **[2015 State of DevOps Report](/research/2015)**
   (in partnership with Puppet)
-  [Download the report](/research/2015)
+  [Download the report](/research/2015/)
 
 - [![2014 State of DevOps Report](/research/2014/2014-state-of-devops-report.png)](/research/2014)
   **[2014 State of DevOps Report](/research/2014)**
   (in partnership with Puppet)
-  [Download the report](/research/2014)
+  [Download the report](/research/2014/)
 
 ## Additional Publications
 <!-- add publications as list items, using markdown syntax (list items are designated with a leading dash) -->
