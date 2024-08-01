@@ -13,10 +13,10 @@ The 2014 State of DevOps Report provides compelling evidence that DevOps is not 
 
 Key findings of the report include:
 * High-performing IT organizations were twice as likely to exceed their profitability, market share, and productivity goals.
-* DevOps practices, such as version control and continuous delivery, are correlated with high IT performance.
-* Organizational culture is a strong predictor of IT and organizational performance, with high-trust cultures leading to better results.
-* Job satisfaction is the number one predictor of organizational performance and is highly correlated with DevOps practices and culture.
-* Continuous integration and continuous delivery, along with automated testing and version control, are key practices that impact IT performance.
+* DevOps practices, such as [version control](/capabilities/version-control/) and [continuous delivery](/capabilities/continuous-delivery/), are correlated with high IT performance.
+* [Organizational culture](/capabilities/generative-organizational-culture/] is a strong predictor of IT and organizational performance, with high-trust cultures leading to better results.
+* [Job satisfaction](/capabilities/job-satisfaction/] is the number one predictor of organizational performance and is highly correlated with DevOps practices and culture.
+* [Continuous integration](/capabilities/continuous-integration/) and [continuous delivery](/capabilities/continuous-delivery/), along with [automated testing](/capabilities/test-automation/) and [version control](/capabilities/version-control/), are key practices that impact IT performance.
 * The longer an organization practices DevOps, the more its IT performance improves.
 * A virtuous circle exists between IT performance and organizational performance, where each positively influences the other.
 
