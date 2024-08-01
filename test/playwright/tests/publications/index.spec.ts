@@ -36,9 +36,10 @@ export const downloadTheReportMap = {
   '0': '/research/2023/dora-report/',
   '1': '/research/2022/dora-report/',
   '2': '/research/2021/dora-report/',
-  '3': '/research/2016/',
-  '4': '/research/2015/',
-  '5': '/research/2014/'
+  '3': '/research/2017',
+  '4': '/research/2016/',
+  '5': '/research/2015/',
+  '6': '/research/2014/'
 }
 
 test('Publications page links to the DORA Report landing pages', async ({ page }) => {
@@ -54,8 +55,7 @@ test('Publications page links to the DORA Report landing pages', async ({ page }
 // TODO - #698 calls for a landing page for each report. These should all move to the downloadTheReportMap
 export const readPDFMap = {
   '0': '/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf',
-  '1': '/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf',
-  '2': '/research/2017-and-earlier/2017-state-of-devops-report.pdf'
+  '1': '/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf'
 }
 
 test('Publications page links directly to DORA Reports', async ({ page }) => {
