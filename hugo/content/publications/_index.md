@@ -41,10 +41,10 @@ bannerSubtitle: "Findings from DORA's research program are made available throug
   **[2018 Accelerate State of DevOps Report](/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf)**
   [Read PDF](/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf)
 
-- [![2017 State of DevOps Report](/research/2017-and-earlier/2017-state-of-devops-report.png)](/research/2017-and-earlier/2017-state-of-devops-report.pdf)
-  **[2017 State of DevOps Report](/research/2017-and-earlier/2017-state-of-devops-report.pdf)**
+- [![2017 State of DevOps Report](/research/2017/2017-state-of-devops-report.png)](/research/2017)
+  **[2017 State of DevOps Report](/research/2017)**
   (in partnership with Puppet)
-  [Read PDF](/research/2017-and-earlier/2017-state-of-devops-report.pdf)
+  [Download the report](/research/2017)
 
 - [![2016 State of DevOps Report](/research/2016/2016-state-of-devops-report.png)](/research/2016/)
   **[2016 State of DevOps Report](/research/2016/)**
