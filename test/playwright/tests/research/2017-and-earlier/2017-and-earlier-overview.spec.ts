@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { sidebarLinks } from '../sidebarLinks';
 
 export const reportsMap = {
-  '2017 State of DevOps Report': '2017-state-of-devops-report.pdf',
+  '2017 State of DevOps Report': '/research/2017',
   '2016 State of DevOps Report': '/research/2016',
   '2015 State of DevOps Report': '/research/2015',
   '2014 State of DevOps Report': '/research/2014/'

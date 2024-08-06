@@ -111,7 +111,7 @@
                 },
                 {
                     "source": "/dora-report-2017",
-                    "destination": "/research/2017-and-earlier/2017-state-of-devops-report.pdf",
+                    "destination": "/research/2017",
                     "type": 302
                 },
                 {
@@ -237,7 +237,12 @@
                 },
                 {
                     "source": "/publications/pdf/state-of-devops-2017.pdf",
-                    "destination": "/research/2017-and-earlier/2017-state-of-devops-report.pdf",
+                    "destination": "/research/2017/2017-state-of-devops-report.pdf",
+                    "type": 301
+                },
+                {
+                    "source": "/research/2017-and-earlier/2017-state-of-devops-report.pdf",
+                    "destination": "/research/2017/2017-state-of-devops-report.pdf",
                     "type": 301
                 },
                 {
