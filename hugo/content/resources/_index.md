@@ -40,20 +40,6 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
 
 <section>
     <article>
-    <a href="https://github.com/OkayHQ/backstage-plugin" target="_blank">
-        <img src="img/okay.png" width="120">
-    </a>
-    <aside>
-    <h4 class="source-available-project"><a href="https://github.com/OkayHQ/backstage-plugin" target="_blank">Okay Backstage Plugin</a> <a class="google-material-icons" href="https://github.com/OkayHQ/backstage-plugin"" target="_blank" aria-label="Okay Backstage Plugin's code repository">open_in_new</a></h4>
-    <p align="justify">This plugin connects <a href="https://backstage.io/" target="_blank">Backstage</a> with your <a href="https://www.okayhq.com/" target="_blank">Okay</a> account to visualize your team analytics. Embed dashboards (including <a href="/guides/dora-metrics-four-keys/">DORA metrics</a>) alongside your team or service pages. <a class="google-material-icons source-available-repo" href="https://github.com/OkayHQ/backstage-plugin" target="_blank" aria-label="Okay Backstage Plugin's source code">github</a></p>
-    </aside>
-    </article>
-</section>
-
------
-
-<section>
-    <article>
     <a href="https://github.com/DevoteamNL/opendora" target="_blank">
         <img src="img/devoteam-logo.png" width="60">
     </a>
