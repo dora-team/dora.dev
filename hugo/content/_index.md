@@ -58,14 +58,11 @@ Leverage DORA's research findings to apply a holistic, iterative strategy as you
 
 {{< article
     columns="1"
-    title="2024 DORA Awards"
-    cta="Submit your story now"
-    url="https://docs.google.com/forms/d/e/1FAIpQLSfqR-4fS9MlqjhgYmdDcrGqEkGccA_8MJoRXevYO1xJoXSkTA/viewform"
-    img-src="/img/features/dora-awards-2024.png"
-    img-align="left"
-    img-stroke="false"
+    title="DevOps Awards"
+    cta="See the Winners"
+    url="https://cloud.google.com/blog/topics/devops-awards"
     >}}
-The Google Cloud DORA Awards applications are now open! Featuring 10 different categories including DevOps, AI innovation, and more, the awards celebrate Google Cloud customers putting DORA insights into practice.
+The Winners of the DevOps Awards are implementing DevOps practices to drive organizational success and deliver high-quality customer experiences. Read about their journeys and learn how they applied a philosophy of continuous improvement.
 {{< /article >}}
 
 {{< article columns="1"
