@@ -259,12 +259,15 @@
         }
         .legend {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             margin-top: 3rem;
             font-size: 0.75rem;
             color: #666;
             div {
                 margin: 0 1.5rem;
+                display: flex; /* Add flexbox to the div */
+                align-items: center; /* Align items vertically */
                 span {
                     display: inline-block;
                     height: 1.5rem;
@@ -277,12 +280,14 @@
                         height: 1rem;
                         background-color: var(--dora-blue);
                         border-radius: 2px;
+                        margin-right: 31px; /* add spacing to align the labels */
                     }
 
                     &.industry {
                         background-color: var(--metric-background) !important;
                         width: 1px;
                         height: 1rem;
+                        margin-right: 35px; /* add spacing to align the labels */
                     }
 
                     &.std {
@@ -294,6 +299,7 @@
                 }
             }
         }
+
         &.kiosk {
             flex-direction: row;
             .performance-graphs {
@@ -310,7 +316,7 @@
         }
     }
 
-    /* There's no elegant way to use global variables for media queries (css variables aren't supported for this purpose, 
+    /* There's no elegant way to use global variables for media queries (css variables aren't supported for this purpose,
     and SCSS vars are hard to propagate between different svelte components).
     So we'll use a "magic number" of 800px, in each file */
     @media (max-width: 800px) {
