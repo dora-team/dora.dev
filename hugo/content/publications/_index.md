@@ -33,9 +33,9 @@ bannerSubtitle: "Findings from DORA's research program are made available throug
   **[2021 Accelerate State of DevOps Report](/research/2021/dora-report/)**
   [Download the report](/research/2021/dora-report/)
 
-- [![2019 Accelerate State of DevOps Report](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.png)](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf)
+- [![2019 Accelerate State of DevOps Report](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.png)](/research/2019/dora-report/)
   **[2019 Accelerate State of DevOps Report](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf)**
-  [Read PDF](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf)
+  [Download the report](/research/2019/dora-report/)
 
 - [![2018 Accelerate State of DevOps Report](/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.png)](/research/2018/dora-report/)
   **[2018 Accelerate State of DevOps Report](/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf)**
