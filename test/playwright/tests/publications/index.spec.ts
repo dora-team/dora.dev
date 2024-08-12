@@ -31,24 +31,24 @@ test('Publications page links to the DORA awards ebook.', async ({ page }) => {
 });
 
 // Mapping for "Download the report" links which, by convention, got to /research/:year or /research/:year/dora-report
-// TODO - make this an array of maps and generate an isolated test for each
-export const downloadTheReportMap = {
-  '0': '/research/2023/dora-report/',
-  '1': '/research/2022/dora-report/',
-  '2': '/research/2021/dora-report/',
-  '3': '/research/2019/dora-report/',
-  '4': '/research/2018/dora-report/',
-  '5': '/research/2017',
-  '6': '/research/2016/',
-  '7': '/research/2015/',
-  '8': '/research/2014/'
-}
+const downloadTheReportMap = [
+  { year: 2023, url: '/research/2023/dora-report/' },
+  { year: 2022, url: '/research/2022/dora-report/' },
+  { year: 2021, url: '/research/2021/dora-report/' },
+  { year: 2019, url: '/research/2019/dora-report/' },
+  { year: 2018, url: '/research/2018/dora-report/' },
+  { year: 2017, url: '/research/2017' },
+  { year: 2016, url: '/research/2016/' },
+  { year: 2015, url: '/research/2015/' },
+  { year: 2014, url: '/research/2014/' },
+];
 
-test('Publications page links to the DORA Report landing pages', async ({ page }) => {
-  for (const report in downloadTheReportMap) {
-    const url = downloadTheReportMap[report];
-    const reportLink = page.getByRole('link', { name: 'Download the report' }).nth(report)
+downloadTheReportMap.forEach(({ year, url }, index) => {
+  test(`Publications page links to the DORA Report landing page for ${year}`, async ({ page }) => {
+    await page.goto('/publications/');
+    // Get the nth link with the text "Download the report"
+    const reportLink = page.getByRole('link', { name: 'Download the report' }).nth(index);
     await expect(reportLink).toHaveAttribute('href', url);
     await expect(reportLink).toBeVisible();
-  }
+  });
 });
