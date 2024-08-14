@@ -16,14 +16,7 @@ The report emphasizes the importance of continuous delivery (CD) as a key techni
 
 Key findings include:
 
-* Delivering software quickly, reliably, and safely is crucial for technology transformation and organizational performance, with elite performers being twice as likely to meet or exceed their performance goals.
-* Cloud continues to be a differentiator for elite performers and drives high performance, with elite performers 24 times more likely than low performers to utilize all five essential cloud computing capabilities.
-* Productivity can drive improvements in work/life balance and reductions in burnout, and organizations can support it by investing in tooling, information search, reducing technical debt, and fostering a culture of psychological safety.
-* Scaling DevOps effectively requires structural solutions that build communities, with high performers favoring strategies such as Communities of Practice and Grassroots initiatives.
-
-
-
-* Elite performers excel: The proportion of elite performers has almost tripled, highlighting that excellence in software delivery and organizational performance is achievable through adopting key capabilities.
+* Elite performers excel: Excellence in software delivery and organizational performance is achievable through adopting key capabilities.
 * Speed and stability go hand-in-hand: High performers achieve both speed and stability in software delivery, refuting the notion that there's an inherent trade-off between the two.
 * Cloud computing is a differentiator: Elite performance is closely linked to effective cloud adoption, with elite performers 24 times more likely to utilize all five essential cloud computing capabilities.
 * Invest in productivity: Organizations can improve productivity by investing in tooling, facilitating information search, reducing technical debt, and fostering a culture of psychological safety. This in turn leads to improvements in work/life balance and reductions in burnout.
