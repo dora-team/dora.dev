@@ -198,20 +198,18 @@
         </div>
     </section>
     <section class="legend">
-        <div>
-            <span class="legend_header"
-                >2023 Industry baseline ({industry_metrics[industry][
-                    "name"
-                ]}):</span
-            >
+        <div class="legend-header">
+            <span>
+            2023 Industry baseline ({industry_metrics[industry]["name"]}):
+            </span>
         </div>
-        <div>
+        <div class="legend-item">
             <span class="industry">&nbsp;</span> Average
         </div>
-        <div>
+        <div class="legend-item">
             <span class="std">&nbsp;</span> Standard deviation
         </div>
-        <div>
+        <div class="legend-item">
             <span class="your">&nbsp;</span> Your performance
         </div>
     </section>
@@ -259,30 +257,45 @@
         }
         .legend {
             display: flex;
-            justify-content: center;
+            flex-direction: column; /* Stack items vertically */
+            align-items: flex-start; /* Align items to the start of the container */
+            align-items: center; /* Center align items vertically */
             margin-top: 3rem;
             font-size: 0.75rem;
             color: #666;
-            div {
-                margin: 0 1.5rem;
+            justify-content: center;
+
+                .legend-header {
+                    margin-right: 1.5rem; /* Add spacing between header and items */
+                    margin-bottom: 1rem; /* Add spacing below the header */
+                }
+
+                .legend-item {
+                    margin-right: 1.5rem; /* Add spacing between legend items */
+                    margin-bottom: 0.5rem; /* Add spacing between legend items */
+                    display: flex;
+                    align-items: center;
+                }
+
                 span {
                     display: inline-block;
                     height: 1.5rem;
                     vertical-align: middle;
                     margin-left: 0.5rem;
-                    margin-right: 0.25rem;
 
                     &.your {
                         width: 4px;
                         height: 1rem;
                         background-color: var(--dora-blue);
                         border-radius: 2px;
+                        margin-right: 0.5rem;
                     }
 
                     &.industry {
                         background-color: var(--metric-background) !important;
                         width: 1px;
                         height: 1rem;
+                        margin-right: 0.5rem;
                     }
 
                     &.std {
@@ -290,10 +303,11 @@
                         width: 32px;
                         height: 1rem;
                         border-radius: 0.25rem;
+                        margin-right: 0.5rem;
                     }
-                }
             }
         }
+
         &.kiosk {
             flex-direction: row;
             .performance-graphs {
@@ -310,7 +324,7 @@
         }
     }
 
-    /* There's no elegant way to use global variables for media queries (css variables aren't supported for this purpose, 
+    /* There's no elegant way to use global variables for media queries (css variables aren't supported for this purpose,
     and SCSS vars are hard to propagate between different svelte components).
     So we'll use a "magic number" of 800px, in each file */
     @media (max-width: 800px) {
