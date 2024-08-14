@@ -11,6 +11,10 @@ layout: research_team
 ![Derek Debellis](/img/headshots/derek-debellis.jpeg)
 Derek DeBellis is a quantitative researcher at Google. At Google, Derek focuses on survey research, logs analysis, and figuring out ways to measure concepts central to product development. Derek has recently published on Human-AI interaction, the impact of COVID-19's onset on smoking cessation, designing for NLP errors, and the role of UX in privacy discussions.
 
+### Dr. Kevin M. Storer
+![Dr. Kevin M. Storer](/img/headshots/kevin-storer.jpeg)
+Dr. Kevin M. Storer is a Qualitative Researcher at Google, where he leads ethnographic research for the DORA team. Kevin has been conducting human-centered studies of software developers since 2015, spanning diverse problem contexts, participant profiles, and research methods. Kevin’s research has been published in top scientific venues on the topics of Artificial Intelligence, Ubiquitous Computing, and Interaction Design.
+
 ### Kim Castillo
 ![Kim Castillo](/img/headshots/kim-castillo.jpeg)
 Kim Castillo is a UXR program manager at Google and drives the cross-functional effort behind the Accelerate State of DevOps Report. Kim likewise supports developer experience UX research in Google Cloud. The DORA program combines Kim's passion for research, software delivery practice, and coaching. Prior to Google, Kim worked as a delivery lead/technical program manager for several backend service teams, and as an agile development practices coach.
@@ -37,7 +41,6 @@ The collective includes current and former leaders, researchers, authors, and su
   - Jessie Frazelle
   - Jez Humble
   - John Speed Mayers
-  - Kevin Storer, PhD
   - Lolly Chessie
   - Nathen Harvey
   - Nicole Forsgren, PhD

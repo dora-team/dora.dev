@@ -14,7 +14,7 @@ test('Research Team page has the correct heading', async ({ page }) => {
 
 test('Research Team page has correct number of researchers', async ({ page }) => {
   const sizeOfResearchTeam = await page.locator('h3').count();
-  await expect(sizeOfResearchTeam).toBe(3);
+  await expect(sizeOfResearchTeam).toBe(4);
 });
 
 test('Research Team page lists the DORA Collective', async ({ page }) => {
