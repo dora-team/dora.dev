@@ -1,5 +1,5 @@
 ---
-title: "2024 DORA Report Previews"
+title: "2024 DORA Report Preview"
 date: 2024-08-14
 research_year: "2024"
 draft: false
