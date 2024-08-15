@@ -82,10 +82,6 @@ We examined the extent to which developers rely on AI for various tasks related 
 
 The majority of respondents reported at least some reliance on AI for tasks like code explanation, documentation, writing code, code optimization, and code explanation. This suggests a growing acceptance and integration of AI tools into the core activities of software development.
 
-#### Hypothesis
-
-The types of tasks developers rely on AI for might be influenced by factors such as the maturity of AI tools available for those specific tasks and the perceived reliability of AI in performing those functions. Additionally, we suspect as more developers use more AI, they will naturally become more reliant on it.
-
 ### Surfaces of interaction: where AI meets development
 
 We investigated the "surfaces" where developers interact with AI, focusing on the environments and tools where AI is most commonly encountered.
@@ -134,10 +130,6 @@ The development environment (IDE) and internal web interfaces emerged as the mos
 AI was prevalent in IDEs and internal web interfaces suggesting that organizations are increasingly incorporating AI features directly into the tools developers use daily, likely to streamline workflows and enhance productivity.
 
 However, it's worth noting that a significant portion of respondents reported not interacting with AI as an automated part of their tool chain.
-
-#### Hypothesis
-
-The limited interaction with AI through tool chains could also be due to a lack of awareness about the specific benefits of using AI for certain tasks, leading developers to rely on traditional methods. It may also be a reflection of the early emphasis of using AI to generate code.
 
 ### Attitudes: trust and transparency in the age of AI
 
@@ -210,10 +202,6 @@ Beyond its current applications, AI's potential impact on the future of work, pr
 * The perception of a negative impact on career trajectories increases over longer timeframes, with more respondents expressing concern about the long-term (10+ years) effects of AI on their career. This could reflect anxieties about job displacement or the changing skill sets required in an AI-driven workplace.
 * Concerns about AI's negative impact on product quality and software delivery processes remain relatively low across all timeframes. This suggests a degree of confidence in AI's ability to enhance these aspects of software development.
 * Concerns about the broader societal and environmental impacts of AI are more pronounced, especially in the long term. This aligns with wider public discourse surrounding the ethical implications and potential risks associated with AI development and deployment.
-
-#### Hypothesis
-
-The increasing concern about AI's impact on careers over time may be driven by a combination of factors, including media narratives around job automation, evolving job roles, and the need for continuous upskilling to stay relevant in a rapidly changing technological landscape.
 
 ### Conclusions and looking ahead
 
