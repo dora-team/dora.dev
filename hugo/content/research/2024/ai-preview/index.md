@@ -31,6 +31,134 @@ We examined the extent to which developers rely on AI for various tasks related 
 
 For the primary application or service you work on, how much have you relied on Artificial Intelligence (AI) for the completion of each of the following tasks over the last 3 months?
 
+<p class="description">
+<div class="responses">
+<label>Response options:</label>
+
+<span class="answer">Not at all relied on</span>
+
+<span class="answer">Minimally relied on</span>
+
+<span class="answer">Somewhat relied on</span>
+
+<span class="answer">Extremely relied on</span>
+
+<span class="answer">I don't know or NA</span>
+
+</div>
+
+</p>
+<ul>
+
+
+
+
+<li>
+<div>Code explanation</div>
+
+</li>
+
+
+
+
+<li>
+<div>Optimizing code (for example, reducing the complexity of a function)</div>
+
+</li>
+
+
+
+
+<li>
+<div>Debugging</div>
+
+</li>
+
+
+
+
+<li>
+<div>Summarizing or accessing information</div>
+
+</li>
+
+
+
+
+<li>
+<div>Analyzing data (for example, logs)</div>
+
+</li>
+
+
+
+
+<li>
+<div>Analyzing security</div>
+
+</li>
+
+
+
+
+<li>
+<div>Writing code blocks or functions (for example, auto-completion, auto-generation or auto-formatting)</div>
+
+</li>
+
+
+
+
+<li>
+<div>Writing tests</div>
+
+</li>
+
+
+
+
+<li>
+<div>Writing documentation</div>
+
+</li>
+
+
+
+
+<li>
+<div>Migrating from one language to another</div>
+
+</li>
+
+
+
+
+<li>
+<div>Modernizing legacy codebases</div>
+
+</li>
+
+
+
+
+<li>
+<div>Code reviews</div>
+
+</li>
+
+</ul>
+
+
+
+
+### Reliance: a shift in the development landscape
+
+We examined the extent to which developers rely on AI for various tasks related to software development. The results revealed a significant increase in AI adoption across a range of activities compared to last year's data.
+
+#### Question
+
+For the primary application or service you work on, how much have you relied on Artificial Intelligence (AI) for the completion of each of the following tasks over the last 3 months?
+
 Response options:
 
 Not at all relied on, Minimally relied on, Somewhat relied on, Extremely relied on, I don't know, We do not perform this task,
