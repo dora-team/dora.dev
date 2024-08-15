@@ -47,6 +47,16 @@ Use our quick check tool to discover how you compare to industry peers, identify
 {{< /article >}}
 
 {{< article columns="1"
+    title="AI in the Workplace"
+    url="/research/2024/ai-preview/"
+    cta="Read the preview"
+    img-src="research/2024/ai-preview/dora-report-ai-preview-hero.png"
+    img-align="left"
+    >}}
+AI has dominated the tech landscape in recent years. But how has this powerful technology infiltrated the everyday lives of developers? Read an early preview into some findings about AI in the workplace.
+{{< /article >}}
+
+{{< article columns="1"
     title="Generative AI"
     url="/guides/how-to-innovate-with-generative-ai/"
     cta="Read the guide"
@@ -54,15 +64,6 @@ Use our quick check tool to discover how you compare to industry peers, identify
     img-align="left"
     >}}
 Leverage DORA's research findings to apply a holistic, iterative strategy as you experiment with and adopt emerging AI technologies. Learn how a focus on users can help ensure positive outcomes.
-{{< /article >}}
-
-{{< article
-    columns="1"
-    title="DevOps Awards"
-    cta="See the Winners"
-    url="https://cloud.google.com/blog/topics/devops-awards"
-    >}}
-The Winners of the DevOps Awards are implementing DevOps practices to drive organizational success and deliver high-quality customer experiences. Read about their journeys and learn how they applied a philosophy of continuous improvement.
 {{< /article >}}
 
 {{< article columns="1"
