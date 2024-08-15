@@ -1,5 +1,9 @@
 {{ define "main" }}
 {{- partial "partials/link_styles" "scss/research.scss" -}}
+
+<h1>DORA Research: {{ .Params.research_year }}</h1>
+{{- partial "research_archives_tabs" . -}}
+
 <style type="text/css">
     h3 {
         font-size:1.25em;
