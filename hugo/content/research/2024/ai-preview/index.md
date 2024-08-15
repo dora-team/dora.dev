@@ -5,6 +5,8 @@ research_year: "2024"
 draft: false
 tab_order: "5"
 tab_title: "AI Preview"
+headline: "DORA Report Preview - AI in the workplace"
+heroimage: "dora-report-ai-preview-hero.png"
 type: "research_archives/preview"
 ---
 

@@ -4,6 +4,12 @@
 <h1>DORA Research: {{ .Params.research_year }}</h1>
 {{- partial "research_archives_tabs" . -}}
 
+{{ if .Params.heroimage }}
+<div class="hero-image">
+    <img src="{{ .Params.heroimage }}" alt="{{.Params.headline}}">
+</div>
+{{ end }}
+
 <style type="text/css">
     h3 {
         font-size:1.25em;
