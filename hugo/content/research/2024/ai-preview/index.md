@@ -5,7 +5,7 @@ research_year: "2024"
 draft: false
 tab_order: "5"
 tab_title: "AI Preview"
-type: "research_archives"
+type: "research_archives/preview"
 ---
 
 ## AI in the workplace: Adoption and impact
@@ -27,154 +27,56 @@ We'll explore various aspects of AI adoption, including:
 
 We examined the extent to which developers rely on AI for various tasks related to software development. The results revealed a significant increase in AI adoption across a range of activities compared to last year's data.
 
-#### Question
-
-For the primary application or service you work on, how much have you relied on Artificial Intelligence (AI) for the completion of each of the following tasks over the last 3 months?
-
+##### Question
 <p class="description">
-<div class="responses">
-<label>Response options:</label>
-
-<span class="answer">Not at all relied on</span>
-
-<span class="answer">Minimally relied on</span>
-
-<span class="answer">Somewhat relied on</span>
-
-<span class="answer">Extremely relied on</span>
-
-<span class="answer">I don't know or NA</span>
-
-</div>
-
+    For the primary application or service you work on, how much have you relied on Artificial Intelligence (AI) for the completion of each of the following tasks over the last 3 months?
+    <div class="responses">
+        <label>Response options:</label>
+        <span class="answer">Not at all relied on</span>
+        <span class="answer">Minimally relied on</span>
+        <span class="answer">Somewhat relied on</span>
+        <span class="answer">Extremely relied on</span>
+        <span class="answer">I don't know or NA</span>
+    </div>
 </p>
 <ul>
-
-
-
-
-<li>
-<div>Code explanation</div>
-
-</li>
-
-
-
-
-<li>
-<div>Optimizing code (for example, reducing the complexity of a function)</div>
-
-</li>
-
-
-
-
-<li>
-<div>Debugging</div>
-
-</li>
-
-
-
-
-<li>
-<div>Summarizing or accessing information</div>
-
-</li>
-
-
-
-
-<li>
-<div>Analyzing data (for example, logs)</div>
-
-</li>
-
-
-
-
-<li>
-<div>Analyzing security</div>
-
-</li>
-
-
-
-
-<li>
-<div>Writing code blocks or functions (for example, auto-completion, auto-generation or auto-formatting)</div>
-
-</li>
-
-
-
-
-<li>
-<div>Writing tests</div>
-
-</li>
-
-
-
-
-<li>
-<div>Writing documentation</div>
-
-</li>
-
-
-
-
-<li>
-<div>Migrating from one language to another</div>
-
-</li>
-
-
-
-
-<li>
-<div>Modernizing legacy codebases</div>
-
-</li>
-
-
-
-
-<li>
-<div>Code reviews</div>
-
-</li>
-
+    <li>
+        <div>Code explanation</div>
+    </li>
+    <li>
+        <div>Optimizing code (for example, reducing the complexity of a function)</div>
+    </li>
+    <li>
+        <div>Debugging</div>
+    </li>
+    <li>
+        <div>Summarizing or accessing information</div>
+    </li>
+    <li>
+        <div>Analyzing data (for example, logs)</div>
+    </li>
+    <li>
+        <div>Analyzing security</div>
+    </li>
+    <li>
+        <div>Writing code blocks or functions (for example, auto-completion, auto-generation or auto-formatting)</div>
+    </li>
+    <li>
+        <div>Writing tests</div>
+    </li>
+    <li>
+        <div>Writing documentation</div>
+    </li>
+    <li>
+        <div>Migrating from one language to another</div>
+    </li>
+    <li>
+        <div>Modernizing legacy codebases</div>
+    </li>
+    <li>
+        <div>Code reviews</div>
+    </li>
 </ul>
-
-
-
-
-### Reliance: a shift in the development landscape
-
-We examined the extent to which developers rely on AI for various tasks related to software development. The results revealed a significant increase in AI adoption across a range of activities compared to last year's data.
-
-#### Question
-
-For the primary application or service you work on, how much have you relied on Artificial Intelligence (AI) for the completion of each of the following tasks over the last 3 months?
-
-Response options:
-
-Not at all relied on, Minimally relied on, Somewhat relied on, Extremely relied on, I don't know, We do not perform this task,
-
-* Code explanation
-* Optimizing code (for example, reducing the complexity of a function)
-* Debugging
-* Summarizing or accessing information
-* Analyzing data (for example, logs)
-* Analyzing security
-* Writing code blocks or functions (for example, auto-completion, auto-generation or auto-formatting)
-* Writing tests
-* Writing documentation
-* Migrating from one language to another
-* Modernizing legacy codebases
-* Code reviews
 
 #### Observation
 
@@ -188,18 +90,43 @@ The types of tasks developers rely on AI for might be influenced by factors such
 
 We investigated the "surfaces" where developers interact with AI, focusing on the environments and tools where AI is most commonly encountered.
 
-#### Question
-At work in the last three months, how frequently have you interacted with AI in each of the following areas:
+##### Question
+<p class="description">
+    At work in the last three months, how frequently have you interacted with AI in each of the following areas:
+    <div class="responses">
+        <label>Response options:</label>
+        <span class="answer">Never</span>
+        <span class="answer">Rarely</span>
+        <span class="answer">Sometimes</span>
+        <span class="answer">Often</span>
+        <span class="answer">Always</span>
+        <span class="answer">I don't know or NA</span>
+    </div>
+</p>
+<ul>
+    <li>
+        <div>My development environment (your code editor or IDE)</div>
+    </li>
+    <li>
+        <div>Internal web interfaces (for example, internal websites, portals, and documentation)</div>
+    </li>
+    <li>
+        <div>External web interfaces (for example, external websites, portals, and documentation)</div>
+    </li>
+    <li>
+        <div>Conversational AI interfaces (for example, chatbots in my IDE or on websites)</div>
+    </li>
+    <li>
+        <div>As an automated part of our tool chain (for example, our integration, build, or test services)</div>
+    </li>
+    <li>
+        <div>Within 3rd-party tools and platforms I use for development (excluding my IDE)</div>
+    </li>
+    <li>
+        <div>Other</div>
+    </li>
+</ul>
 
-Response options: Never, Rarely, Sometimes, Often, Always, I don't know or NA
-
-* My development environment (your code editor or IDE)
-* Internal web interfaces (for example, internal websites, portals, and documentation)
-* External web interfaces (for example, external websites, portals, and documentation)
-* Conversational AI interfaces (for example, chatbots in my IDE or on websites)
-* As an automated part of our tool chain (for example, our integration, build, or test services)
-* Within 3rd-party tools and platforms I use for development (excluding my IDE)
-* Other
 
 The development environment (IDE) and internal web interfaces emerged as the most common surfaces for AI interaction, followed by external web interfaces and chatbots.
 
@@ -216,11 +143,20 @@ The limited interaction with AI through tool chains could also be due to a lack 
 
 We explored developer attitudes towards AI, focusing on trust and transparency. We asked respondents about their level of trust in the quality of AI-generated code and their organization's transparency regarding AI implementation.
 
-#### Question
+##### Question
 
-In the last 3 months, how much did you trust the quality of the output from AI-generated code as part of your development work?
-
-Response options: Not at all, A little, Somewhat, A lot, A great deal, I don't know or NA
+<p class="description">
+    In the last 3 months, how much did you trust the quality of the output from AI-generated code as part of your development work?
+    <div class="responses">
+        <label>Response options:</label>
+        <span class="answer">Not at all</span>
+        <span class="answer">A little</span>
+        <span class="answer">Somewhat</span>
+        <span class="answer">A lot</span>
+        <span class="answer">A great deal</span>
+        <span class="answer">I don't know or NA</span>
+    </div>
+</p>
 
 #### Observation
 
@@ -228,11 +164,22 @@ There is a relatively low level of trust in AI-generated code. More than half of
 
 We also investigated developer perceptions of organizational transparency regarding AI.
 
-#### Question
+##### Question
 
-My organization is being transparent about how AI is being used.
-
-Response options: Strongly agree, Mostly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Mostly disagree, Strongly disagree, I don't know or NA
+<p class="description">
+    My organization is being transparent about how AI is being used.
+    <div class="responses">
+        <label>Response options:</label>
+        <span class="answer">Strongly agree</span>
+        <span class="answer">Mostly agree</span>
+        <span class="answer">Somewhat agree</span>
+        <span class="answer">Neither agree nor disagree</span>
+        <span class="answer">Somewhat disagree</span>
+        <span class="answer">Mostly disagree</span>
+        <span class="answer">Strongly disagree</span>
+        <span class="answer">I don't know or NA</span>
+    </div>
+</p>
 
 #### Observation
 
@@ -243,10 +190,20 @@ Google Cloud's Office of the Chief Information Security Officer (CISO) published
 ### Future reflections: navigating the impact of AI
 Beyond its current applications, AI's potential impact on the future of work, productivity, and society is a topic of much discussion and speculation. To explore developer sentiments on this issue, we asked them to predict the impact of AI on various aspects of their lives within different timeframes: the next year, the next five years, and the next ten years.
 
-#### Question
-When you think about the following areas, what kind of impact do you think AI will have within the next [year, five years, ten years]?
+##### Question
 
-Response options: Extremely negative impact, Somewhat negative impact, No impact, Somewhat positive impact, Extremely positive impact, I don't know.
+<p class="description">
+    When you think about the following areas, what kind of impact do you think AI will have within the next [year, five years, ten years]?
+    <div class="responses">
+        <label>Response options:</label>
+        <span class="answer">Extremely negative impact</span>
+        <span class="answer">Somewhat negative impact</span>
+        <span class="answer">No impact</span>
+        <span class="answer">Somewhat positive impact</span>
+        <span class="answer">Extremely positive impact</span>
+        <span class="answer">I don't know</span>
+    </div>
+</p>
 
 #### Observations
 
