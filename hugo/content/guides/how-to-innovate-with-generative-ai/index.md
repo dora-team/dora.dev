@@ -2,8 +2,8 @@
 title: "How to enable your software delivery teams to innovate with generative AI"
 titleForHTMLHead: "How to enable your software delivery teams to innovate with generative AI" 
 date: 2024-06-122024-06-12
-updated: 2024-06-13
 authors: 
+updated: 2024-08-16
     1: {name: 'Amanda Lewis', url: 'https://linkedin.com/in/lewisamanda'}
 draft: false
 headline: "How to enable your software delivery teams to innovate with generative AI"
@@ -133,8 +133,9 @@ When you integrate generative AI into your workflow, it's important to remember 
 To innovate your software delivery and operations with generative AI, a culture of continuous improvement and user-centricity is essential. Begin by establishing a baseline, nurture curiosity and experimentation, and cultivate a collaborative community of practice.  
 
 * **Set a baseline**: it's always good to know where you are before you start introducing new practices and capabilities. Be sure you know the software delivery performance of your team so that you can see how introducing generative AI affects your development and delivery processes. The [DORA Quick Check](/quickcheck) is a great place to start your baselining efforts, and you can bookmark your results for easy reference.
-* **Encourage curiosity and experimentation**: the early findings show that generative AI can improve [well-being](/capabilities/well-being). Remember the importance of having a generative and learning culture when you introduce generative AI into your organization. Foster a space where your teams can see this technology as an opportunity for experimenting and innovating, and not as a threat. 
-* **Establish a generative AI community of practice**: high-performing teams prioritize strategies that foster a sense of community across various organizational levels. These strategies include establishing [communities of practice](/guides/devops-culture-transform/#build-community-structures-to-spread-knowledge) and supporting proofs of concept. As your organization experiments with generative AI, encourage collaboration based on best practices, knowledge sharing, and learning from failures. 
+* **Encourage curiosity and experimentation**: the early findings show that generative AI can improve [well-being](/capabilities/well-being). Remember the importance of having a generative and learning culture when you introduce generative AI into your organization. Foster a space where your teams can see this technology as an opportunity for experimenting and innovating, and not as a threat.
+* **Establish a generative AI community of practice**: high-performing teams prioritize strategies that foster a sense of community across various organizational levels. These strategies include establishing [communities of practice](/guides/devops-culture-transform/#build-community-structures-to-spread-knowledge) and supporting proofs of concept. As your organization experiments with generative AI, encourage collaboration based on best practices, knowledge sharing, and learning from failures.
+* **Read a preview of or most recent reseach**: [AI in the workplace: Adoption and impact](/research/2024/ai-preview/) provides an early preview of our most recent findings.
 * **Join the [DORA Community of Practice](https://dora.community)**: share your experience with fellow travelers
 
 

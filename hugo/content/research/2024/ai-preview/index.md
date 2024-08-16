@@ -75,4 +75,7 @@ The **2024 DORA Report will include a deeper exploration of the impacts AI is ha
 
 As AI continues to reshape the software development landscape, understanding these nuances will be essential for maximizing the benefits of AI while mitigating potential risks.
 
-[Join the DORA Community](https://dora.community) to continue this discussion and be notified when the 2024 DORA Report is published.
+### Next steps
+
+* [Enable your software delivery teams to innovate with generative AI](/guides/how-to-innovate-with-generative-ai/) with insights from this DORA Guide.
+* [Join the DORA Community](https://dora.community) to continue this discussion and be notified when the 2024 DORA Report is published.
