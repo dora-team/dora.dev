@@ -29,7 +29,7 @@ This preview will close with some insights into the [impact of AI](#impact-of-ai
 
 We examined the extent to which developers rely on AI for various tasks related to software development. The results revealed a significant increase in AI adoption across a range of activities compared to last year's data.
 
-The majority of respondents reported at least some reliance on AI for tasks like code explanation, documentation, writing code, code optimization, and code explanation. This suggests a growing acceptance and integration of AI tools into the core activities of software development.
+The majority of respondents reported at least some reliance on AI for tasks like code explanation, documentation, writing code, and code optimization. This suggests a growing acceptance and integration of AI tools into the core activities of software development.
 
 ### Surfaces of interaction: where AI meets development
 
