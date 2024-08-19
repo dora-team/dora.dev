@@ -1,12 +1,13 @@
 import { test, expect } from '@playwright/test';
 
-test('DevOps Culture Transform page loads correctly', async ({ page }) => {
+test.beforeEach(async ({ page }) => {
   await page.goto('/guides/devops-culture-transform/');
+});
 
-  // Check for page title
+test('DevOps Culture Transform guide has the correct title', async ({ page }) => {
   await expect(page).toHaveTitle('DORA | How to transform your organization');
+});
 
-  // Check for page heading
+test('DevOps Culture Transform guide has the correct header', async ({ page }) => {
   await expect(page.locator('h1')).toContainText('How to transform your organization');
-
 });
