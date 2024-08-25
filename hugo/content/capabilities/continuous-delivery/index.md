@@ -74,10 +74,10 @@ the following benefits:
     as well as higher levels of availability.
 -   Leads to higher levels of quality, measured by the percentage of time
     teams spend on rework or unplanned work (as shown in the
-    [2016 State of DevOps Report](/research/2016/2016-state-of-devops-report.pdf)
-    pp25-26, and the
-    [2018 State of DevOps Report](/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf)
-    pp27-29).
+    [2016 State of DevOps Report](/research/2016/2016-state-of-devops-report.pdf#page=25)
+     (pp. 25-26), and the
+    [2018 State of DevOps Report](/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf#page=27)
+     (pp. 27-29).
 -   Predicts lower levels of burnout (physical, mental, or emotional
     exhaustion caused by overwork or stress), higher levels of
     [job satisfaction](/capabilities/job-satisfaction),
@@ -134,7 +134,7 @@ following continuous delivery practices:
     applications, using pre-approved security libraries and packages, and
     testing security features as a part of the automated test suite.
 -   [Loosely coupled teams](/capabilities/loosely-coupled-teams/):
-    An organizational structure that allows teams to test and deploy their applications on demand, without requiring orchestration with other services. Team structure and technical architecture are highly interrelated: having a loosely coupled architecture allows your teams to work independently without relying on other teams for support and services, which in turn enables them to work quickly and deliver value to the organization.
+    An organizational structure that allows teams to test and deploy their applications on demand, without requiring orchestration with other services. Team structure and technical architecture are highly interrelated: having a loosely coupled architecture allows your teams to work independently without relying on other teams for support and services, which in turn enables them to work quickly and deliver value to the organization. The [2021 DORA report](/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.pdf#page=26) (p. 26) shows that a loosely coupled architecture is one of strongest predictors of successful continuous delivery: elite teams who meet their reliability targets are three times more likely to have adopted such an architecture than low-performing teams.
 -   [Empowering teams to choose tools](/capabilities/teams-empowered-to-choose-tools/):
     Teams that can choose which tools to use do better at continuous delivery.
     No one knows better than practitioners what they need to be effective.
