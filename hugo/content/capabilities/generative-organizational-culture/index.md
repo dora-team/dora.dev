@@ -34,7 +34,7 @@ In his research, he developed the following typology of organizational cultures.
 | :---                          | :---                      | :---                      |
 | Power oriented                | Rule oriented             | Performance oriented      |
 | Low cooperation               | Modest cooperation        | High cooperation          |
-| Messengers "shot"             | Messengers neglected      | Messengers trained        |
+| Messengers punished           | Messengers neglected      | Messengers trained        |
 | Responsibilities shirked      | Narrow responsibilities   | Risks are shared          |
 | Bridging discouraged          | Bridging tolerated        | Bridging encouraged       |
 | Failure leads to scapegoating | Failure leads to justice  | Failure leads to inquiry  |
