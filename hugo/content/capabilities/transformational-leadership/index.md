@@ -46,7 +46,7 @@ In fact, DORA observed statistically significant differences in leadership
 characteristics between high-, medium- and low- performing software delivery
 teams (see the
 [2017 State of DevOps Report](/research/2017-and-earlier/2017-state-of-devops-report.pdf#page=12)
-pp12-19). High-performing teams reported having leaders with the strongest
+pp. 12-19). High-performing teams reported having leaders with the strongest
 behaviors across all dimensions. In
 contrast, low-performing teams reported the lowest levels of these leadership
 characteristics.
