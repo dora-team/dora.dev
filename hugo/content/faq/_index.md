@@ -35,6 +35,16 @@ No. Some findings have proven to be extremely durable, replicating year after ye
 
 _DORA Core is an ongoing effort. Learn more, and provide feedback, in [DORA GitHub Discussions](https://github.com/dora-team/dora.dev/discussions)._
 
+## Research and data
+### How can I access DORA's research findings and data?
+DORA is committed to sharing our research insights and methodologies to benefit the broader community. We believe in the power of transparency and collaboration to drive continuous improvement in software delivery and organizational performance.
+
+* **Our research reports**: We publish [detailed reports](/publications/) that contain in-depth analyses, key findings, and actionable recommendations based on our research programs.
+* **Research methods and survey questions**: We make our research methods and survey questions available under a Creative Commons license, allowing others to learn from our approach and potentially replicate or adapt our studies. You can find these resources within our reports and annual research archives. For example, [the questions used in our 2023 survey](/research/2023/questions/).
+* **DORA Community and ecosystem**: Our findings have fostered a vibrant community and ecosystem. Organizations worldwide have leveraged our research to conduct their own internal studies, further validating and extending our findings. We encourage you to [join the DORA community](https://dora.community) to connect with like-minded individuals, share your experiences, and learn from others who are applying DORA's principles and insights.
+
+While we openly share our research insights and methodologies, we do not share the raw data collected from our studies. This is to ensure the privacy and confidentiality of the organizations and individuals who participate in our research.
+
 ## Accelerate State of DevOps Report 2023
 ### I found an error in the report. How can I report it?
 If you've found an error in the Accelerate State of DevOps Report 2023, or any other DORA publication, please [submit a correction](/contact/?inquiry_type=Errata&errata_pub=Accelerate+State+of+DevOps+Report+2023). Thank you!
