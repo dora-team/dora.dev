@@ -4,6 +4,7 @@ titleForHTMLHead: "How to transform your organization" # TODO: can we DRY this o
 date: 2023-03-22T13:43:36Z
 updated: 2024-06-10T00:00:00Z
 draft: false
+weight: 400
 headline: "How to transform your organization"
 subhead: "Find out about the importance of ensuring your people have the tools and resources to do their job, and of making good use of their skills and abilities."
 authors: 
