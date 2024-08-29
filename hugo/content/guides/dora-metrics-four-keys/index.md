@@ -7,7 +7,7 @@ weight: 100
 authors:
     1: {name: 'Nathen Harvey', url: 'https://linkedin.com/in/nathen'}
 headline: "DORA’s software delivery metrics: the four keys"
-subhead: "Discover the essential measurements that can inform your ongoing journey of continuous improvement"
+subhead: "Discover the essential measurements that can inform your ongoing journey of continuous improvement."
 heroimage: "dora-metrics-four-keys.png"
 ---
 Technology-driven teams need ways to measure performance so that they can assess how they're doing today, prioritize improvements, and validate their progress. DORA has identified four software delivery metrics—the _four keys_—that provide an effective way of measuring the outcomes of the software delivery process. DORA's [research](/research) shows that these performance metrics predict better organizational performance and well-being for team members.
