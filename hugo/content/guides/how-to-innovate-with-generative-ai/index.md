@@ -8,7 +8,7 @@ authors:
 draft: false
 weight: 200
 headline: "How to enable your software delivery teams to innovate with generative AI"
-subhead: A guide to innovating with generative AI
+subhead: A guide to innovating with generative AI.
 heroimage: "how-to-innovate-with-ai.png"
 
 ---
