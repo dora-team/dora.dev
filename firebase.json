@@ -170,6 +170,11 @@
                     "type": 302
                 },
                 {
+                    "source": "/capabilities/loosely-coupled-architecture",
+                    "destination": "/capabilities/loosely-coupled-teams/",
+                    "type": 301
+                },
+                {
                     "source": "/devops-capabilities/technical/shifting-left-on-security",
                     "destination": "/capabilities/pervasive-security/",
                     "type": 302
