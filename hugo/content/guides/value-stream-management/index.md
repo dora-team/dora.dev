@@ -38,7 +38,7 @@ The practice of visualizing flow through VSM brings enormous benefits for organi
 * **Identifies areas for improvement**: Visualization using VSM makes it easier to visually identify bottlenecks in the software delivery process and track the impact of improvements. By highlighting bottlenecks, waste, and inefficiencies, VSM enables teams to target their improvement efforts effectively.
 * **Promotes continuous improvement**: VSM and flow optimization encourage a culture of continuous improvement by providing a frameworkfor identifying and iteratively implementing improvements. Visualizations help track the impact of these improvements and make adjustments as needed.
 * **Supports data-driven decision making**: VSM provides quantitative data on key metrics, allowing teams to make informed decisions based on evidence.
-* **Documentation**: Documentation is a fundamental part of software development. Creating VSMs helps provide a clear understanding over time and a reminder of the journey that has been taken. Being able to look back and see improvements over time helps build the confidence and morale necessary for a continuous improvement culture.
+* **Documentation**: Keeping an accurate, current record of [how software has been developed](/capabilities/documentation-quality/) is a fundamental part of the process. Creating VSMs helps provide a clear understanding over time and a reminder of the journey that has been taken. Being able to look back and see improvements over time helps build the confidence and morale necessary for a continuous improvement culture.
 
 ## Defining your outcomes
 
@@ -48,15 +48,15 @@ Performance improvements made in isolation can be a complete waste of time. Inve
 
 The first thing a team should focus on visualizing is not the value stream, but rather the outcomes the team is seeking to achieve. This can be accomplished through the practice of Outcome Mapping:
 
-* Gather representatives of the key stakeholders involved in a process (aim for no more than ten people)
+* Gather representatives of the key stakeholders involved in a process (aim for no more than ten people).
 * Begin by clearly stating what strategic improvement mandate(s) the group has been asked to accomplish.
-* Set a timer and give the group time to brainstorm ideas and concerns about achieving this goal. What concerns are on the team's mind about this goal: problems, questions, ideas, context, etc. Using sticky notes on a physical or digital whiteboard is a great way to allow everyone to contribute ideas in parallel. We recommend a relatively brief period such as 5 minutes to maintain a sense of momentum for the group.
-* Group those concerns into categories and vote on the primary area of concern. Restate that concern as an outcome that the group is seeking to achieve. Validate that achieving this outcome would be relevant to the key strategic goals that the team is responsible for delivering
-* Having clearly stated the outcome to be achieved, take time to enumerate the benefits of achieving that, obstacles that stand in the way, and next steps that the team should consider
+* Set a timer and give the group time to brainstorm ideas and concerns about achieving this goal. What concerns are on the team's mind about this goal: problems, questions, ideas, context, etc. Using sticky notes on a physical or digital whiteboard is a great way to allow everyone to contribute ideas in parallel. We recommend a relatively brief period such as five minutes to maintain a sense of momentum for the group.
+* Group those concerns into categories and vote on the primary area of concern. Restate that concern as an outcome that the group is seeking to achieve. Validate that achieving this outcome would be relevant to the key strategic goals that the team is responsible for delivering.
+* Having clearly stated the outcome to be achieved, take time to enumerate the benefits of achieving that, obstacles that stand in the way, and next steps that the team should consider.
 
 You can use any comparable approach to help the group clarify their target outcome. For more detail on this exercise, refer to the book Flow Engineering.
 
-The outcome should be stated specifically. For example, rather than saying “_improve software delivery performance_” or “_get better at operations_” set outcomes such as “_Reduce the percentage of deployments that cause failures in production to <10% within the next 3 months_”. See the diagrams below for more examples.
+The outcome should be stated specifically. For example, rather than saying “_improve software delivery performance_” or “_get better at operations_,” set outcomes such as, “_Reduce the percentage of deployments that cause failures in production to <10% within the next 3 months_.” See the diagrams below for more examples.
 
 ![Example 1 - Reduce time to production, Example 2 - Reduce change failure rate](outcome-mapping-1.jpg)
 
@@ -82,7 +82,7 @@ Now that you have clear outcomes and a path you want to map out, it's time to cr
 
 * **Start simple**: Begin with a blank canvas – a whiteboard, a large sheet of paper, or a digital collaboration tool.
 * **Follow the flow**: Map out each distinct step in your software delivery process (or break/fix), from the moment code is committed to when it's deployed to users.
-* **Find the right level of detail**: Strive for a balance between too much detail (overwhelming) and too little (missing improvement opportunities). If a step like "CI Build" seems problematic, break it down further in a second pass (e.g., "unit test," "linting," "integration test," "code analysis").
+* **Find the right level of detail**: Strive for a balance between too much detail (overwhelming) and too little (missing improvement opportunities). If a step like "CI Build" seems problematic, break it down further in a second pass (such as "unit test," "linting," "integration test," "code analysis").
 
 ![Simple VSM example mapping the “happy path” flow from code commit to production deployment.](vsm-title.png)
 Simple VSM example mapping the “happy path” flow from code commit to production deployment.
@@ -122,7 +122,7 @@ Utilize the [DORA capabilities catalog](/capabilities/) as a shared language and
 
 Once you've completed an experiment, cycle back through the process, select the next initiative, and iterate. This establishes a continuous cycle of improvement and learning.
 
-## The long-term effects of applying value stream mapping
+## The long-term effects of value stream mapping
 
 Value stream mapping, when integrated with the practices emphasized by DORA, yield lasting benefits:
 
@@ -132,7 +132,7 @@ Value stream mapping, when integrated with the practices emphasized by DORA, yie
 
 ## Next Steps
 
-The goal of transformational leadership is to set a strategic course and then empower and enable those around you to accomplish this goal. Outcome mapping is a powerful tool for helping a group to reconcile an organization's strategic goals with the immediate felt challenges of the group. Value stream mapping is a powerful way of helping the group build the clarity they need to pinpoint areas for improvement.  The DORA guides and capabilities offer robust, scientifically validated recommendations to steer your efforts toward success.
+The goal of transformational leadership is to set a strategic course and then empower and enable those around you to accomplish this goal. Outcome mapping is a powerful tool for helping a group to reconcile an organization's strategic goals with the immediate felt challenges of the group. Value stream mapping is a powerful way of helping the group build the clarity they need to pinpoint areas for improvement. The DORA guides and capabilities offer robust, scientifically validated recommendations to steer your efforts toward success.
 
 To ensure impartiality and avoid potential organizational roadblocks or bias, consider engaging an impartial facilitator to guide the VSM process. This can help sidestep any internal politics that might hinder collaborative decision-making.
 
