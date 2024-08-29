@@ -3,7 +3,8 @@ title: "DORA’s software delivery metrics: the four keys"
 date: 2024-03-29T16:06:31-04:00
 updated: 2024-05-30T00:00:00Z
 draft: false
-authors: 
+weight: 100
+authors:
     1: {name: 'Nathen Harvey', url: 'https://linkedin.com/in/nathen'}
 headline: "DORA’s software delivery metrics: the four keys"
 subhead: "Discover the essential measurements that can inform your ongoing journey of continuous improvement"
