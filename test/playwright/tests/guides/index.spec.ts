@@ -13,11 +13,11 @@ test('Guides page has the correct header.', async ({ page }) => {
 });
 
 export const guideTitles = [
-    "Value stream mapping for software delivery",
     "DORA’s software delivery metrics: the four keys",
-    "How to empower software delivery teams as a business leader",
+    "How to enable your software delivery teams to innovate with generative AI",
+    "Value stream mapping for software delivery",
     "How to transform your organization",
-    "How to enable your software delivery teams to innovate with generative AI"
+    "How to empower software delivery teams as a business leader"
 ];
 
 // Loop over guideTitles and create a test for each one
