@@ -10,7 +10,7 @@ authors:
 draft: false
 weight: 500
 headline: "How to empower software delivery teams as a business leader"
-subhead: A guide to facilitating the flow of value
+subhead: A guide to facilitating the flow of value.
 heroimage: "how-to-empower-software-delivery-teams.png"
 
 ---

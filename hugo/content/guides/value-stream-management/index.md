@@ -9,7 +9,7 @@ authors:
 draft: false
 weight: 300
 headline: "How to use value stream mapping to improve software delivery"
-subhead: A guide to value stream mapping
+subhead: A guide to value stream mapping.
 heroimage: "value-stream-mapping.png"
 
 ---
