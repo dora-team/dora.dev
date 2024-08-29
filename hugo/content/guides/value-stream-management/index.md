@@ -7,6 +7,7 @@ authors:
     1: {name: 'Andrew Davis', url: 'https://www.linkedin.com/in/andrewdavis-io/'}
     2: {name: 'Rob Edwards', url: 'https://www.linkedin.com/in/robedwards/'}
 draft: false
+weight: 300
 headline: "How to use value stream mapping to improve software delivery"
 subhead: A guide to value stream mapping
 heroimage: "value-stream-mapping.png"

@@ -2,7 +2,7 @@
 {{- partial "partials/link_styles" "scss/guides.scss" -}}
 {{ .Content }}
 <grid class="guides-index">
-    {{ range .Pages }}
+    {{ range sort .Pages }}
     <item>
         <a href="{{.RelPermalink}}">
             {{ if .Params.heroimage }}

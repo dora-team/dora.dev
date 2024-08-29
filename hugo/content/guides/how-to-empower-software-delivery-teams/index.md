@@ -8,6 +8,7 @@ authors:
     2: {name: 'Mark Kropf', url: 'https://www.linkedin.com/in/markkropf/'}
     3: {name: 'Denali Lumma', url: 'https://www.linkedin.com/in/denali-lumma/'}
 draft: false
+weight: 500
 headline: "How to empower software delivery teams as a business leader"
 subhead: A guide to facilitating the flow of value
 heroimage: "how-to-empower-software-delivery-teams.png"
