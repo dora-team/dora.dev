@@ -12,7 +12,7 @@ heroimage: "dora-metrics-four-keys.png"
 ---
 Technology-driven teams need ways to measure performance so that they can assess how they're doing today, prioritize improvements, and validate their progress. DORA has identified four software delivery metrics—the _four keys_—that provide an effective way of measuring the outcomes of the software delivery process. DORA's [research](/research) shows that these performance metrics predict better organizational performance and well-being for team members.
 
-The four keys can be viewed as both _leading_ and _lagging_ indicators. Leading indicators typically signal potential future changes in a system while lagging indicators reflect past performance and outcomes. 
+The four keys can be viewed as both _leading_ and _lagging_ indicators. Leading indicators typically signal potential future changes in a system while lagging indicators reflect past performance and outcomes.
 
 > The four key metrics function as:
 >   * Leading indicators for organizational performance and employee well-being
@@ -20,7 +20,7 @@ The four keys can be viewed as both _leading_ and _lagging_ indicators. Leading 
 
 ## Throughput and stability
 
-DORA's four keys can be divided into metrics that show the throughput of software changes,  and metrics that show stability of software changes. This includes changes of any kind, including changes to configuration and changes to code. 
+DORA's four keys can be divided into metrics that show the throughput of software changes,  and metrics that show stability of software changes. This includes changes of any kind, including changes to configuration and changes to code.
 
 ### Throughput
 
@@ -44,7 +44,7 @@ These metrics work for any type of technology your organization is delivering, b
 
 Context matters. Apply the metrics in the context of the application or service your team is delivering. The context for your application, organization, and users will vary from other applications that your organization is delivering. While it may be tempting to blend metrics across multiple teams—or entire organizations—these differences in context mean that doing so can be problematic.
 
-> "…the real trade-off, over long periods of time, is between _better software faster_ and _worse software slower._" —Farley, D. (2021). [Modern Software Engineering: Doing what works to build better software faster](https://www.google.com/books/edition/Modern_Software_Engineering/rtnPEAAAQBAJ) (p. 154). Addison-Wesley. 
+> "…the real trade-off, over long periods of time, is between _better software faster_ and _worse software slower._" —Farley, D. (2021). [Modern Software Engineering: Doing what works to build better software faster](https://www.google.com/books/edition/Modern_Software_Engineering/rtnPEAAAQBAJ) (p. 154). Addison-Wesley.
 
 ## Common pitfalls
 
@@ -80,6 +80,6 @@ We have found that an effective way of making changes is to gather the cross-fun
 * **Turn that commitment into a plan**, which may include some more specific measures that can serve as leading indicators for the software delivery metrics. For example, you may decide to measure how long code reviews take or the quality of your tests.
 * **Do the work**. There are very few shortcuts, to make progress your team may need to change the way they work.
 * **Check your progress**. Use the [DORA Quick Check](/quickcheck), conversations, and team retrospectives to validate the progress you've made.
-* **Repeat** the process as a way to continue the learning and improvement. 
+* **Repeat** the process as a way to continue the learning and improvement.
 
 Join us in the [DORA Community](https://dora.community) for ongoing discussions about how to implement DORA metrics in your organization!
