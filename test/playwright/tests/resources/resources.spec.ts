@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 
 export const toolsMap = {
   'Apache DevLake™': 'https://devlake.apache.org/',
+  'Liatrio backstage-dora-plugin': 'https://github.com/liatrio/backstage-dora-plugin',
   'Middleware': 'https://github.com/middlewarehq/middleware',
   'OpenDORA': 'https://github.com/DevoteamNL/opendora'
 };
