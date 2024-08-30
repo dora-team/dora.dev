@@ -28,7 +28,8 @@ This preview will close with some insights into the [impact of AI](#impact-of-ai
 
 ### Reliance: a shift in the development landscape
 
-This year's report examines the extent to which developers rely on AI for various tasks related to software development. Comparing this year's results to last year's demonstrates that AI adoption has — and this might not be surprising to you — continued on a steady rise. Last year's question, however, is different from this year's question, making a direct comparison difficult.
+This year's report examines the extent to which developers rely on AI for various tasks related to software development. Comparing this year's results to last year's demonstrates that AI adoption has — and this might not be surprising to you — continued on a steady rise.
+Last year's questions, however, areis different from this year's questions, making a direct comparison difficult.
 
 The majority of respondents reported at least some reliance on AI for tasks including code explanation, documentation, writing code, and code optimization. This finding suggests a growing acceptance and integration of AI tools into the core activities of software development.
 
@@ -36,7 +37,7 @@ The majority of respondents reported at least some reliance on AI for tasks incl
 
 We investigated the "surfaces" where developers interact with AI, focusing on the environments and tools where AI is most commonly encountered.
 
-AI was prevalent in integrated development environments (IDE) and internal web interfaces, which suggests that organizations want to streamline workflows and enhance productivity by incorporating AI features directly into the tools that developers use daily.
+AI was prevalent in integrated development environments (IDEs) and internal web interfaces, which suggests that organizations want to streamline workflows and enhance productivity by incorporating AI features directly into the tools that developers use daily.
 
 However, we also noted roughly half of respondents reported not interacting with AI as an automated part of their tool chain.
 
