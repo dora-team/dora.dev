@@ -29,7 +29,7 @@ This preview will close with some insights into the [impact of AI](#impact-of-ai
 ### Reliance: a shift in the development landscape
 
 This year's report examines the extent to which developers rely on AI for various tasks related to software development. Comparing this year's results to last year's demonstrates that AI adoption has — and this might not be surprising to you — continued on a steady rise.
-Last year's questions, however, areis different from this year's questions, making a direct comparison difficult.
+Last year's questions, however, are different from this year's questions, making a direct comparison difficult.
 
 The majority of respondents reported at least some reliance on AI for tasks including code explanation, documentation, writing code, and code optimization. This finding suggests a growing acceptance and integration of AI tools into the core activities of software development.
 
