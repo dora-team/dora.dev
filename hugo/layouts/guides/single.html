@@ -1,30 +1,38 @@
 {{ define "main" }}
-<!-- TODO: remove this capabilities stylesheet -->
-{{- partial "partials/link_styles" "scss/capabilities.scss" -}}
-{{- partial "partials/link_styles" "scss/guides.scss" -}}
+    <!-- TODO: remove this capabilities stylesheet -->
+    {{- partial "partials/link_styles" "scss/capabilities.scss" -}}
+    {{- partial "partials/link_styles" "scss/guides.scss" -}}
 
-<h1>
-    {{ .Params.headline }}
-</h1>
-{{ if .Params.authors }}
-<h4 class="authors">
-    A <a href="/guides/">DORA Guide</a> by
-    {{ range .Params.authors }}
-    <a href="{{ .url }}" class="author" target="blank">{{ .name }}</a>
-    {{ end }}
-</h4>
-{{ if .Params.heroimage }}
-<div class="hero-image">
-    <img src="{{ .Params.heroimage }}" alt="{{.Params.headline}}">
-</div>
-{{ end }}
-{{ if .Params.subhead }}
-<h2>{{ .Params.subhead }}</h2>
-{{ end }}
+    <div class="guides-article">
+        <div class="guides-header">
+            <a href="/guides/">DORA Guides</a>
+            <h1>
+                {{ .Params.headline }}
+            </h1>
+            {{ if .Params.subhead }}
+                <h2>{{ .Params.subhead }}</h2>
+            {{ end }}
 
-{{ end }}
-{{ .Content }}
-{{ if .Params.updated }}
-<div class="updated">Last updated: {{ .Params.updated | time.Format ":date_long" }}</div>
-{{ end }}
+            {{ if .Params.authors }}
+                <h4 class="authors">
+                    by
+                    {{ range .Params.authors }}
+                    <a href="{{ .url }}" class="author" target="blank">{{ .name }}</a>
+                    {{ end }}
+                </h4>
+            {{ end }}
+            
+            {{ if .Params.heroimage }}
+                <div class="hero-image">
+                    <img src="{{ .Params.heroimage }}" alt="{{.Params.headline}}">
+                </div>
+            {{ end }}
+        </div>
+
+        {{ .Content }}
+        
+        {{ if .Params.updated }}
+        <div class="updated">Last updated: {{ .Params.updated | time.Format ":date_long" }}</div>
+        {{ end }}
+    </div>
 {{ end }}
