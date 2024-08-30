@@ -13,7 +13,7 @@ subhead: A guide to value stream mapping.
 heroimage: "value-stream-mapping.png"
 
 ---
-## Visualization to improve organizational performance?
+## Visualization to improve organizational performance
 The DORA research has repeatedly affirmed the power of improved software delivery and operational performance as key predictors of organizational success. This correlation holds true for both commercial and non-commercial goals, extending to positive impacts on well-being, such as reduced burnout and increased productivity.
 
 ![Capibilities predict performace, performance predicts outcomes](capabilities-performance-outcomes.png)
