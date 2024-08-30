@@ -49,7 +49,7 @@ Performance improvements made in isolation can be a complete waste of time. Inve
 
 The first thing a team should focus on visualizing is not the value stream, but rather the outcomes the team is seeking to achieve. This can be accomplished through the practice of Outcome Mapping:
 
-* Gather representatives of the key stakeholders involved in a process (aim for no more than ten people).
+* Gather representatives of the key stakeholders involved in a process (aim for no more than ten people<sup><a href="#fn1" id="ref1">1</a></sup>).
 * Begin by clearly stating what strategic improvement mandate(s) the group has been asked to accomplish.
 * Set a timer and give the group time to brainstorm ideas and concerns about achieving this goal. What concerns are on the team's mind about this goal: problems, questions, ideas, context, etc. Using sticky notes on a physical or digital whiteboard is a great way to allow everyone to contribute ideas in parallel. We recommend a relatively brief period such as five minutes to maintain a sense of momentum for the group.
 * Group those concerns into categories and vote on the primary area of concern. Restate that concern as an outcome that the group is seeking to achieve. Validate that achieving this outcome would be relevant to the key strategic goals that the team is responsible for delivering.
@@ -148,3 +148,6 @@ DORA's research provides a shared language and framework for improving software 
 * **Lean software development: Learn about lean principles and practices that can be applied to software development.
 * **Lean product development: Discover how lean principles can be used to create valuable products efficiently.
 * Join the [DORA Community of Practice](https://dora.community/): Share your experiences and learn from others on a similar journey.
+
+
+<sup id="fn1">1. Pereira, Steve and Davis, Andrew. [Flow Engineering: From Value Stream Mapping to Effective Action](https://itrevolution.com/product/flow-engineering/) (IT Revolution Press, 2024), 63.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
