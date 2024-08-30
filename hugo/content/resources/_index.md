@@ -31,7 +31,7 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
     </a>
     <aside>
     <h4 class="source-available-project"><a href="https://github.com/liatrio/backstage-dora-plugin" target="_blank">Liatrio backstage-dora-plugin</a> <a class="google-material-icons" href="https://github.com/liatrio/backstage-dora-plugin" target="_blank" aria-label="Liatrio backstage-dora-plugin's code repository">open_in_new</a></h4>
-    <p align="justify">This is a plugin for the <a href="https://backstage.io/" target="_blank">BackStage Project</a> that provides a seamless way to display <a href="/guides/dora-metrics-four-keys/">DORA Metrics</a> in your developer portals.. <a class="google-material-icons source-available-repo" href="https://github.com/liatrio/backstage-dora-plugin"" target="_blank" aria-label="Liatrio backstage-dora-plugin's code repository">github</a></p>
+    <p align="justify">This is a plugin for the <a href="https://backstage.io/" target="_blank">Backstage project</a> that provides a seamless way to display <a href="/guides/dora-metrics-four-keys/">DORA Metrics</a> in your developer portals. <a class="google-material-icons source-available-repo" href="https://github.com/liatrio/backstage-dora-plugin"" target="_blank" aria-label="Liatrio backstage-dora-plugin's code repository">github</a></p>
     </aside>
     </article>
 </section>
