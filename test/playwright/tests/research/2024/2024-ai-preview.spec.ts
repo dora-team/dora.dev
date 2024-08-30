@@ -18,3 +18,7 @@ test('2024 AI preview has the correct sidebar.', async ({ page }) => {
     await expect(page.getByRole('link', { name: sidebarLink, exact: true })).toBeVisible();
   }
 });
+
+test('2024 AI preview displays its last updated date', async ({ page }) => {
+  await expect(page.locator('.updated')).toContainText('Last updated: ')
+});

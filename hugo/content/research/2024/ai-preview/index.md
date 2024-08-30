@@ -1,6 +1,7 @@
 ---
 title: "2024 DORA Report Preview"
 date: 2024-08-14
+updated: 2024-08-30T00:00:00Z
 research_year: "2024"
 draft: false
 tab_order: "5"
