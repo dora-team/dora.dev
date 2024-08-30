@@ -12,7 +12,7 @@
     "@magidoc/plugin-svelte-marked": "^4.1.4",
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
     "sass": "^1.69.7",
-    "svelte": "^4.2.8",
+    "svelte": "^4.2.19",
     "vite": "^5.0.13"
   },
   "dependencies": {
