@@ -7,7 +7,7 @@ Start by creating a git branch in which to work.
 
 From the repo root:
 - `cd hugo`
-- Choose a category: one of [`technical`, `process`, `cultural`] (note that the "measurement" category is being deprecated; those capabilities should be moved to "process" or "technical")
+- Choose a category: one of [`fast flow`, `fast feedback`, `climate for learning`]
 - Choose a path name for the capability. This should be a descriptive title, in [`kebab-case`](https://www.theserverside.com/definition/Kebab-case). Don't include generic terms like "DORA," "DevOps," or "Capability;" these are provided by the template.
     - example: `streamlining-change-approval`
 - run `hugo new capabilities/<PATH_NAME>/index.md`
@@ -16,6 +16,9 @@ From the repo root:
 - Edit the markdown file
   - In the front matter (the metadata between the `---` separators), edit the following:
     - title -- This will be auto-generated from the path name but may be edited if desired.
+    - titleForHTMLHead -- usually "`Capabilities: <title>`"
+    - slug -- a kebab-case short reference for the URL. Example:  `flexible-infrastructure`
+    - core -- set to `true` if this capability is a part of DORA Core
     - headline -- a brief snippet to augment the title. Example: `Replace heavyweight change-approval processes with peer review, to get the benefits of a more reliable, compliant release process without sacrificing speed.`
     - summary -- This is a summary (150-250 words) of the content which will appear in certain views. It should stand on its own, as well as serving as a teaser to encourage readers to click through to the full article to learn more.
     - draft -- leave this as `true` until you're ready to make it visible to everyone (see below)

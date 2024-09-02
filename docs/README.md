@@ -1,6 +1,6 @@
 ## Hugo
 The following development with Hugo will be sufficient for most of the DORA.dev website development efforts.
-To build and preview the site locally, you'll need [hugo](https://gohugo.io/) (recommended version: [v0.114.1](https://github.com/gohugoio/hugo/releases/tag/v0.114.1)).
+To build and preview the site locally, you'll need [hugo](https://gohugo.io/) (recommended version: [v0.133.1](https://github.com/gohugoio/hugo/releases/tag/v0.133.1)).
 
 - The recommended command to start the local hugo server is `hugo serve -D -s hugo --disableFastRender --debug --watch`.
   - This will render and live-reload all pages, including drafts. _To suppress rendering of drafts, omit the `-D` flag._
@@ -42,8 +42,8 @@ Firebase emulation for extensions is available by adjusting the CLI option (i.e.
 
 For local development extension configuration, you may be set certain Extension variables by adding them in the following file: `extensions/${EXTENSION_NAME}.env.local` (e.g., `extensions/firestore-send-email.env.local`).  More specifically, for the Fire Store Send Email extension, you will two files:
  - `firestore-send-email.env.local` - You can copy keys from the src `firestore-send-email.env.doradotdev`
- - `firestore-send-email.secret.local` - is a special file used for local development that contains only one entry: 
- `SMTP_PASSWORD=my_smtp_password_in_clear_text`  
+ - `firestore-send-email.secret.local` - is a special file used for local development that contains only one entry:
+ `SMTP_PASSWORD=my_smtp_password_in_clear_text`
  This file and value will be used for the local Firebase emulator as a substitute for the Secret Manager reference.
 
 In a hosted environment:

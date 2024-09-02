@@ -14,7 +14,7 @@ Also, a secret named `github_token` must exist in Secret Manager, which contains
 All CI is handled by Google Cloud Build. Triggers in the prod project use a custom service account: `ci-service-account@doradotdev.iam.gserviceaccount.com`, which is needed in order to run scheduled builds. (In the staging project, we're still using the default Cloud Build service account because I [dave] haven't added the scheduled build there yet.)
 
 ### Pipelines run on Pull Requests (PRs)
-_Pipelines are use machine user: [dora-machine-user](https://github.com/dora-machine-user)_ to post comments to PRs.
+_Pipelines use machine user: [dora-machine-user](https://github.com/dora-machine-user)_ to post comments to PRs.
 
 #### Content preview
 If a PR includes changes to files in the `/hugo` or `/svelte` directories, the pipeline `/ci/preview-content.cloudbuild.yaml` is executed in project `doradotdev`. This pipeline:
