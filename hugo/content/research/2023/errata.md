@@ -63,5 +63,5 @@ This page lists errors and corrections to the 2023 Accelerate State of DevOps Re
 <div style="text-align:center; margin-top:2em;">
 Have you found an error the 2023 Accelerate State of DevOps Report? 
 
-<a href='{{< relref "/contact/" >}}?inquiry_type=Errata&errata_pub=Accelerate+State+of+DevOps+Report+2023' class='button'>Submit a change or correction</a>
+<a href='mailto:dora-advocacy@google.com?subject=DORA+State+of+DevOps+Report+2023+error+report' class='button' target="_blank">Submit a change or correction</a>
 </div>
