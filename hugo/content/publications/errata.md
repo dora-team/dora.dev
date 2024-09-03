@@ -13,5 +13,5 @@ draft: false
 <div style="text-align:center; margin-top:2em;">
 Have you found an error in a publication by DORA? 
 
-<a href='{{< relref "/contact/" >}}?inquiry_type=Errata' class='button'>Submit a change or correction</a>
+<a href='mailto:dora-advocacy@google.com?subject=DORA+Publication+error+report' class='button' target="_blank">Submit a change or correction</a>
 </div>

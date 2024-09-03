@@ -47,7 +47,7 @@ While we openly share our research insights and methodologies, we do not share t
 
 ## Accelerate State of DevOps Report 2023
 ### I found an error in the report. How can I report it?
-If you've found an error in the Accelerate State of DevOps Report 2023, or any other DORA publication, please [submit a correction](/contact/?inquiry_type=Errata&errata_pub=Accelerate+State+of+DevOps+Report+2023). Thank you!
+If you've found an error in the Accelerate State of DevOps Report 2023, or any other DORA publication, please [submit a correction](mailto:dora-advocacy@google.com?subject=DORA+State+of+DevOps+Report+2023+error+report). Thank you!
 
 ## Accelerate State of DevOps Report 2022
 ### What is different in this year's Accelerate State of DevOps Report?
