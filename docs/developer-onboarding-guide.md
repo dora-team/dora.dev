@@ -1,16 +1,15 @@
-# Onboarding Guide for New Developers to the dora.dev Codebase
-
+# Onboarding Guide for New Developers to the dora.dev codebase
 Welcome to the dora.dev codebase! This guide will help you get started contributing to the project.
 
 ## 1. Understanding the Project
 
-Purpose: dora.dev is the public-facing knowledge site of DORA (
-DevOps Research and Assessment). It serves as a central hub for sharing research findings, best practices, and resources related to DevOps.
+Purpose: dora.dev is the public-facing knowledge site of DORA. It serves as a central hub for sharing research findings, best practices, and resources related to DevOps.
 
 ### Technology Stack:
-* **Hugo:** A static site generator used to transform content from markdown files into HTML, CSS, and JavaScript.
-* **Svelte:** A JavaScript framework used to build interactive components like the Quick Check tool and Core Model
-diagram. * Firebase: A suite of Google Cloud services used for hosting, data storage (Firestore), serverless functions, and deployment.
+* [**Hugo:**](https://gohugo.io) A static site generator used to transform content from markdown files into HTML, CSS, and JavaScript.
+* [**Svelte:**](https://svelte.dev/) A JavaScript framework used to build interactive components like the Quick Check tool and Core Model
+diagram. 
+* [**Firebase:**](https://firebase.google.com/) A suite of Google Cloud services used for hosting, data storage (Firestore), serverless functions, and deployment.
 
 ## 2. Setting Up Your Development Environment
 
@@ -21,12 +20,10 @@ diagram. * Firebase: A suite of Google Cloud services used for hosting, data sto
 * *Firebase CLI*: For interacting with Firebase ([https://firebase.google.com/docs/cli](https://firebase.google.com/docs/cli)).
 
 ### Steps:
-
-* Clone the repository: git clone https://github.com/dora-team/dora.dev.git
+* Clone the repository: `git clone https://github.com/dora-team/dora.dev.git`
 * Navigate to the project directory: `cd dora.dev`
 
 **Install Node.js dependencies:**
-
 * For the Quick Check (Svelte): `cd svelte/quick-check-2023 && npm install`
 * For the Core Model (Svelte): `cd svelte/core-v2 && npm install`
 * For the contact form functions (Node.js): `cd functions/inquiry-monitor && npm install`
@@ -49,7 +46,6 @@ diagram. * Firebase: A suite of Google Cloud services used for hosting, data sto
 ## 4. Workflow
 
 **Content changes**:
-
 1. Create a new branch for your work.
 1. Edit the relevant markdown files in `/hugo/content`.
 1. Use `hugo serve -s hugo -D --disableFastRender --debug --watch` to preview your changes locally.
@@ -62,8 +58,8 @@ diagram. * Firebase: A suite of Google Cloud services used for hosting, data sto
 2. Develop your changes in the relevant Svelte or Node.js directory.
 3. Build the component:
     * For Quick Check: `cd svelte/quick-check-2023 && npm run build`
-    * For Core Model: `cd svelte/core-v2 && npm run build4`.
-4. Copy the built artifacts to the/hugodirectory (see build scripts insvelte` directories).
+    * For Core Model: `cd svelte/core-v2 && npm run build`.
+4. Copy the built artifacts to the appropriate directory within `hugo` (see build scripts in svelte directories).
 5. Preview the changes in a local Hugo server.
 6. Commit your changes and open a pull request.
 7. The CI/CD pipeline will build and deploy a preview environment.
