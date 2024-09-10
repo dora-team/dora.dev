@@ -106,3 +106,6 @@ availableSecrets:
   secretManager:
   - versionName: projects/$PROJECT_ID/secrets/github_token/versions/latest
     env: 'GH_TOKEN'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
