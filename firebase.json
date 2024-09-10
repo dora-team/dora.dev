@@ -264,6 +264,11 @@
                     "source": "/publications/pdf/state-of-devops-2021.pdf",
                     "destination": "/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.pdf",
                     "type": 301
+                },
+                {
+                    "source": "/example",
+                    "destination": "http://example.com/",
+                    "type": 302
                 }
             ]
         }
