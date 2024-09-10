@@ -1,7 +1,7 @@
 # Hosting / Deployment / Continuous Integration
 
 ## Environments
-There are two persistent hosting environments (powered by Firebase): [Staging](https://staging.dora.dev/) and [Prod](https://dora.dev/).
+There is one persistent environment: [Prod](https://dora.dev/).
 _Also, ephemeral environments are created during CI (see below)._
 
 ## Publishing
@@ -9,9 +9,8 @@ This site is hosted on Firebase, so deployment requires a Firebase builder for C
 
 Also, a secret named `github_token` must exist in Secret Manager, which contains a GH deploy key and is accessible to the Cloud Build service account.
 
-
 ## CI pipelines
-All CI is handled by Google Cloud Build. Triggers in the prod project use a custom service account: `ci-service-account@doradotdev.iam.gserviceaccount.com`, which is needed in order to run scheduled builds. (In the staging project, we're still using the default Cloud Build service account because I [dave] haven't added the scheduled build there yet.)
+All CI is handled by Google Cloud Build. Triggers in the prod project use a custom service account: `ci-service-account@doradotdev.iam.gserviceaccount.com`, which is needed in order to run scheduled builds.
 
 ### Pipelines run on Pull Requests (PRs)
 _Pipelines use machine user: [dora-machine-user](https://github.com/dora-machine-user)_ to post comments to PRs.
@@ -22,9 +21,6 @@ If a PR includes changes to files in the `/hugo` or `/svelte` directories, the p
 1. Renders the site in _draft_ mode (including content where "Draft" is true), and publishes it to a Firebase preview channel
 1. Renders the site in _production_ mode (excluding content where "Draft" is true) and publishes it to a different Firebase preview channel
 1. Posts both preview channel links to the PR as comments
-
-#### Infra preview
-If a PR includes changes to files _outside_ the `/hugo` directory (or a handful of other directories, like `/svelte` or `/docs`), the pipeline `/ci/preview-infra.cloudbuild.yaml` is executed in project `doradotdev-staging`. This pipeline renders the site in production mode and deploys all Firebase components (hosting, functions, extensions, storage, etc.) to `staging.dora.dev`.
 
 ### Pipeline run on merge to `main`
 When a PR is merged to `main`, the pipeline `/ci/cloudbuild.yaml` is executed in project `doradotdev`. This pipeline renders the site and deploys all Firebase components to `dora.dev`.
