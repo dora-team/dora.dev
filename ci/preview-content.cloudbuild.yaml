@@ -99,9 +99,9 @@ steps:
       echo "...anything?"
 
       # add preview URLs as comment.
-      gh pr comment ${_PR_NUMBER} --repo=${REPO_FULL_NAME} --edit-last --body-file /workspace/gh-pr-comment-message.txt
+      gh pr comment $${_PR_NUMBER} --repo=${REPO_FULL_NAME} --edit-last --body-file /workspace/gh-pr-comment-message.txt
       if [ $? -ne 0 ]; then
-        gh pr comment ${_PR_NUMBER} --repo=${REPO_FULL_NAME} --body-file /workspace/gh-pr-comment-message.txt
+        gh pr comment $${_PR_NUMBER} --repo=${REPO_FULL_NAME} --body-file /workspace/gh-pr-comment-message.txt
       fi
 
     secretEnv: ['GH_TOKEN']
