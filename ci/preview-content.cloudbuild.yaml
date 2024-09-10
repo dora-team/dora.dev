@@ -86,10 +86,6 @@ steps:
       unset GH_TOKEN
       gh auth login --with-token < .githubtoken
 
-      echo "PR NUMBER..."
-      echo ${_PR_NUMBER}
-      echo "...anything?"
-
       # add preview URLs as comment.
       gh pr comment ${_PR_NUMBER} --repo=${REPO_FULL_NAME} --edit-last --body-file /workspace/gh-pr-comment-message.txt
       if [ $? -ne 0 ]; then
