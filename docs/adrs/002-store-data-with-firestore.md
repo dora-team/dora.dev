@@ -1,6 +1,6 @@
 ---
-status: accepted
-date: 2022-02-15
+status: superseded by [ADR 007](007-static-content-us-page.md)
+date: 2024-09-11
 deciders: @davidstanke
 consulted: @nathenharvey
 ---
@@ -20,7 +20,7 @@ For example, the site's [contact form](https://dora.dev/contact/) creates an inq
 
 Chosen option: **Firestore**, because: 
 
-* we've already chosen [Firebase Hosting](serve-content-with-firebase.md), and Firestore is integrated into the same admin console, runs in the same [emulator package](https://firebase.google.com/docs/emulator-suite), etc.
+* we've already chosen [Firebase Hosting](001-serve-content-with-firebase.md), and Firestore is integrated into the same admin console, runs in the same [emulator package](https://firebase.google.com/docs/emulator-suite), etc.
 * administration overhead is minimal
 * pricing is per unit of storage
 
