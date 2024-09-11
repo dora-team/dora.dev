@@ -9,25 +9,6 @@
           "doradotdev"
         ]
       }
-    },
-    "doradotdev-staging": {
-      "hosting": {
-        "prod": [
-          "doradotdev-staging"
-        ]
-      }
-    }
-  },
-  "etags": {
-    "doradotdev-staging": {
-      "extensionInstances": {
-        "firestore-send-email": "e454c6869b1d6c05ac318fc9347178c13b457fa22f299f7e70fd49a1b324880e"
-      }
-    },
-    "doradotdev": {
-      "extensionInstances": {
-        "firestore-send-email": "f4d6ab6ee00f295ac25a38c461ef0826996ce45ddf5f6ea524a25c45750a124c"
-      }
     }
   }
 }
