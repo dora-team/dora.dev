@@ -267,15 +267,5 @@
                 }
             ]
         }
-    ],
-    "firestore": {
-        "rules": "rules/firestore.rules"
-    },
-    "functions": {
-        "source": "functions/inquiry-monitor",
-        "codebase": "inquiry-monitor"
-    },
-    "extensions": {
-        "firestore-send-email": "firebase/firestore-send-email@0.1.27"
-    }
+    ]
 }
