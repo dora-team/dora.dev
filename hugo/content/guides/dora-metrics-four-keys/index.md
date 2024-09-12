@@ -1,7 +1,7 @@
 ---
 title: "DORA’s software delivery metrics: the four keys"
 date: 2024-03-29T16:06:31-04:00
-updated: 2024-05-30T00:00:00Z
+updated: 2024-09-12T00:00:00Z
 draft: false
 weight: 100
 authors:
@@ -31,7 +31,7 @@ Throughput measures the velocity of changes that are being made. DORA assesses t
 
 ### Stability
 
-Stability measures the quality of the changes delivered and the team's ability to repair failures. DORA assesses throughput using the following metrics:
+Stability measures the quality of the changes delivered and the team's ability to repair failures. DORA assesses stability using the following metrics:
 
 * **Change fail percentage** - This metric measures the percentage of deployments that cause failures in production, requiring hotfixes or rollbacks. A lower change failure rate indicates a more reliable delivery process.
 * **Failed deployment recovery time** - This metric measures the time it takes to recover from a failed deployment. A lower recovery time indicates a more resilient and responsive system.
