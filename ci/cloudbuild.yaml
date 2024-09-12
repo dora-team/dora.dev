@@ -1,11 +1,4 @@
 steps:
-  - id: 'Stage FirebaseConfig'
-    name: 'bash'
-    env:
-      - 'PROJECT_ID=$PROJECT_ID'
-    script: |
-      # Copy correct Firestore config per project
-      cp -v ci/firebase-config.${PROJECT_ID}.js /workspace/hugo/static/js/firebase-config.js
 
   - id: 'Svelte / Hugo Build Prod'
     name: 'node'
