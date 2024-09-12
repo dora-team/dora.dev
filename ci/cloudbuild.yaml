@@ -21,17 +21,11 @@ steps:
       # Build the prod version of the site (this will omit content where the front matter specifies Draft: true)
       hugo --source=./hugo --destination=/workspace/hugo/public --logLevel=debug
 
-  - id: 'Node Install'
-    name: 'gcr.io/cloud-builders/npm:node-18.12.0'
-    entrypoint: npm
-    dir: 'functions/inquiry-monitor'
-    args: ['install']
-
   - id: 'Firebase (re)Deploy ALL'
     name: gcr.io/$PROJECT_ID/firebase
     env:
       - 'PROJECT_ID=$PROJECT_ID'
     script: |
       firebase deploy --non-interactive  --force --project=${PROJECT_ID}
-options:
-  logging: CLOUD_LOGGING_ONLY
+
+logsBucket: 'doradotdev-cloudbuild-logs'
