@@ -7,7 +7,7 @@ draft: false
 tab_order: "5"
 tab_title: "AI Preview"
 headline: "DORA Report Preview - AI in the workplace"
-heroimage: "dora-report-ai-preview-hero.png"
+heroimage: "/research/2024/dora-report-ai-preview-hero.png"
 type: "research_archives/preview"
 ---
 
