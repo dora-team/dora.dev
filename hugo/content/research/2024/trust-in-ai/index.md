@@ -12,3 +12,5 @@ type: "research_archives/preview"
 ---
 
 ## Fostering Developers’ Trust in Generative Artificial Intelligence
+
+![AI's perceived impact on productivity](ai-productivity-attitudes.png "AI's perceived impact on productivity")
