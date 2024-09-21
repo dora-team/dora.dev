@@ -10,7 +10,7 @@ test('Trust in AI has the correct title.', async ({ page }) => {
 });
 
 test('Trust in AI has the correct header.', async ({ page }) => {
-  await expect(page.locator('h2')).toContainText("Fostering Developers’ Trust in Generative Artificial Intelligence");
+  await expect(page.locator('h2')).toContainText("Fostering developers’ trust in generative artificial intelligence");
 });
 
 test('Trust in AI has the correct sidebar.', async ({ page }) => {
