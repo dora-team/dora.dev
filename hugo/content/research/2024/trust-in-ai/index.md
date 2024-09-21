@@ -35,7 +35,7 @@ Unfortunately, developers' trust in GenAI is relatively low. According to [Stack
 
 We find these low levels of trust concerning, because they suggest that a subset of developers may not be experiencing the productivity gains they could from GenAI.
 
-### Five strategies for fostering developers' trust in genai
+### Five strategies for fostering developers' trust in GenAI
 
 Given the significant investment many organizations are making in GenAI, and the likelihood that increasing developers' trust in GenAI would improve returns on those investments, we believe it is important to reflect on our prior research and offer the following five strategies organizations might take to foster developers' trust in GenAI:
 
