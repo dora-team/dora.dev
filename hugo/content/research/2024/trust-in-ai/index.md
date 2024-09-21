@@ -19,7 +19,7 @@ It's no secret that generative artificial intelligence (GenAI) is rapidly changi
 
 On the surface, this finding may seem somewhat... obvious. But, for us, it highlighted the deep need to better understand the factors that impact developers' trust in GenAI systems and ways to foster that trust, so that developers and development firms can yield the most benefit from their investment in GenAI development tools.
 
-Here, we reflect on findings from several studies conducted at Google, regarding the productivity gains of GenAI use in development, the impacts of developers' trust on GenAI use, and the factors we've observed which positively impact developers' trust in GenAI. We conclude with five suggested strategies that organizations engaged in software development might employ to foster their developers' trust in GenAI, thereby increasing their GenAI use and maximizing GenAI-related productivity gains.
+Here, we reflect on findings from several studies conducted at Google, regarding the productivity gains of GenAI use in development, the impacts of developers' trust on GenAI use, and the factors we've observed which positively impact developers' trust in GenAI. We conclude with [five suggested strategies](/research/2024/trust-in-ai/#five-strategies-for-fostering-developers-trust-in-genai) that organizations engaged in software development might employ to foster their developers' trust in GenAI, thereby increasing their GenAI use and maximizing GenAI-related productivity gains.
 
 ### Trust and productivity
 
