@@ -50,7 +50,7 @@ Use our quick check tool to discover how you compare to industry peers, identify
     title="AI in the Workplace"
     url="/research/2024/ai-preview/"
     cta="Read the preview"
-    img-src="research/2024/ai-preview/dora-report-ai-preview-hero.png"
+    img-src="/research/2024/dora-report-ai-preview-hero.png"
     img-align="left"
     >}}
 AI has dominated the tech landscape in recent years. But how has this powerful technology infiltrated the everyday lives of developers? Read an early preview into some findings about AI in the workplace.
