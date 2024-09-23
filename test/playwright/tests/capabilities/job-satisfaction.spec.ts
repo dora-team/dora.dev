@@ -1,18 +1,22 @@
 import { test, expect } from '@playwright/test';
 
-test('Job satisfaction page loads correctly', async ({ page }) => {
-  await page.goto('capabilities/job-satisfaction/');
+test.beforeEach(async ({ page }) => {
+  await page.goto('/capabilities/job-satisfaction/');
+});
 
-  // Check for page title
+test('2Job satisfaction page has the correct title.', async ({ page }) => {
   await expect(page).toHaveTitle('DORA | Capabilities: Job Satisfaction');
+});
 
-  // Check for page heading
+test('Job satisfaction page has the correct header.', async ({ page }) => {
   await expect(page.locator('h1')).toContainText('Job satisfaction');
+});
 
-  // This is a core capability
+test('Job satisfaction is a core capability.', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'core', exact: true })).toBeVisible();
+});
 
-  //Check the sidebar
+test('Job satisfaction page displays a sidebar', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Climate for Learning', exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Fast Flow', exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Fast Feedback', exact: true })).toBeVisible();
