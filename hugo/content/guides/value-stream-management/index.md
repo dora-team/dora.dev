@@ -16,7 +16,7 @@ heroimage: "value-stream-mapping.png"
 ## Visualization to improve organizational performance
 The DORA research has repeatedly affirmed the power of improved software delivery and operational performance as key predictors of organizational success. This correlation holds true for both commercial and non-commercial goals, extending to positive impacts on well-being, such as reduced burnout and increased productivity.
 
-![Capibilities predict performace, performance predicts outcomes](capabilities-performance-outcomes.png)
+![Capabilities predict performace, performance predicts outcomes](capabilities-performance-outcomes.png)
 
 
 DORA emphasizes the role of effective [leadership](/guides/how-to-empower-software-delivery-teams/), [communication](/capabilities/generative-organizational-culture/), [product management](/capabilities/work-visibility-in-value-stream/), and [visualization](/capabilities/work-visibility-in-value-stream/) techniques in enhancing software delivery. Value Stream Mapping (VSM) is a prime example of how visualization can improve flow and performance.
@@ -27,7 +27,7 @@ Visualization can support organizational performance improvement by fostering co
 
 Visualizing the flow of work through Value Stream Mapping (VSM) can help improve software delivery performance by enabling shared understanding and empathy regarding the software development process and identifying areas for improvement.
 
-*8Flow**, in the context of software development and operations, refers to the smooth and continuous movement of work through the value stream. When work flows smoothly, it means that there are minimal delays or impediments, leading to faster delivery times and improved efficiency. Continuous Delivery (CD) is a key enabler of flow, as it focuses on automating the software delivery process and establishing fast feedback loops, allowing teams to release software frequently and reliably.
+**Flow**, in the context of software development and operations, refers to the smooth and continuous movement of work through the value stream. When work flows smoothly, it means that there are minimal delays or impediments, leading to faster delivery times and improved efficiency. Continuous Delivery (CD) is a key enabler of flow, as it focuses on automating the software delivery process and establishing fast feedback loops, allowing teams to release software frequently and reliably.
 
 **Value Stream Mapping (VSM)** is a lean management practice that helps visualize the entire flow of work, from idea to production, and identify bottlenecks and areas for improvement. By mapping out the value stream, organizations can gain a clear understanding of how work flows through their systems and identify areas where they can reduce waste, improve efficiency, and optimize for faster and more reliable software delivery.
 
@@ -37,7 +37,7 @@ The practice of visualizing flow through VSM brings enormous benefits for organi
 
 * **Facilitates conversations**: Visual representations of the value stream, workflow, and key metrics facilitate better communication and collaboration among team members. This shared understanding helps teams have meaningful discussions about the software delivery process, which helps align everyone towards the common goal of delivering software quickly and reliably.
 * **Identifies areas for improvement**: Visualization using VSM makes it easier to visually identify bottlenecks in the software delivery process and track the impact of improvements. By highlighting bottlenecks, waste, and inefficiencies, VSM enables teams to target their improvement efforts effectively.
-* **Promotes continuous improvement**: VSM and flow optimization encourage a culture of continuous improvement by providing a frameworkfor identifying and iteratively implementing improvements. Visualizations help track the impact of these improvements and make adjustments as needed.
+* **Promotes continuous improvement**: VSM and flow optimization encourage a culture of continuous improvement by providing a framework for identifying and iteratively implementing improvements. Visualizations help track the impact of these improvements and make adjustments as needed.
 * **Supports data-driven decision making**: VSM provides quantitative data on key metrics, allowing teams to make informed decisions based on evidence.
 * **Documentation**: Keeping an accurate, current record of [how software has been developed](/capabilities/documentation-quality/) is a fundamental part of the process. Creating VSMs helps provide a clear understanding over time and a reminder of the journey that has been taken. Being able to look back and see improvements over time helps build the confidence and morale necessary for a continuous improvement culture.
 
@@ -144,9 +144,9 @@ DORA's research provides a shared language and framework for improving software 
 ### Resources or further reading
 
 * **Flow Engineering**: Dive into the book [Flow Engineering: From Value Stream Mapping to Effective Action](https://itrevolution.com/product/flow-engineering/) for a comprehensive guide to optimizing flow in software delivery.
-* **Outcome mapping: Leverage outcome mapping to define and track the desired outcomes of your improvement initiatives.
-* **Lean software development: Learn about lean principles and practices that can be applied to software development.
-* **Lean product development: Discover how lean principles can be used to create valuable products efficiently.
+* **Outcome mapping**: Leverage outcome mapping to define and track the desired outcomes of your improvement initiatives.
+* **Lean software development**: Learn about lean principles and practices that can be applied to software development.
+* **Lean product development**: Discover how lean principles can be used to create valuable products efficiently.
 * Join the [DORA Community of Practice](https://dora.community/): Share your experiences and learn from others on a similar journey.
 
 
