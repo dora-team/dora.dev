@@ -24,4 +24,4 @@ The key findings of the report are:
 * Generative culture is essential: A culture characterized by cooperation, trust, voice, and a focus on learning leads to superior SDO performance and organizational outcomes.
 * Leadership and autonomy empower teams: Teams with greater autonomy, fueled by trust in their leaders, are more likely to achieve high performance and contribute to a stronger organizational culture.
 
-[Download the 2018 Accelerate:  State of DevOps Report](2018-state-of-devops-report.pdf)
+[Download the 2018 Accelerate:  State of DevOps Report](2018-dora-accelerate-state-of-devops-report.pdf)
