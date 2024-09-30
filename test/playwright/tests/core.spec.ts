@@ -9,7 +9,7 @@ test('explore core model', async ({ page }) => {
     await expect(page.locator('main')).toContainText('Learn more about failed deployment recovery time');
     await page.getByRole('link', { name: 'Failed deployment recovery time', exact: true }).press('Escape');
     const page1Promise = page.waitForEvent('popup');
-    await page.getByRole('link', { name: 'download as PNG' }).click();
+    await page.getByRole('link', { name: 'PNG' }).click();
     const page1 = await page1Promise;
     await expect(page1.getByRole('img')).toBeVisible();
 });
