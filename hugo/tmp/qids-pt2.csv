@@ -1,0 +1,276 @@
+QID298_Answer1,Strongly disagree
+QID298_Answer2,Disagree
+QID298_Answer3,Somewhat disagree
+QID298_Answer4,Neither agree nor disagree
+QID298_Answer5,Somewhat agree
+QID298_Answer6,Agree
+QID298_Answer7,Strongly agree
+QID298_Answer8,I don't know or NA
+QID298_Choice1,I feel burned out from my work.
+QID298_Choice4,I feel like I am ineffective in my work.
+QID298_Choice5,My feelings about work negatively affect my life outside of work.
+QID298_Choice9,I am indifferent or cynical about my work.
+QID298_QuestionText, Please rate how strongly you agree or disagree with the following statements:
+QID301_Answer1,Strongly agree
+QID301_Answer10,I don't know or NA
+QID301_Answer4,Mostly agree
+QID301_Answer5,Somewhat agree
+QID301_Answer6,Neither agree nor disagree
+QID301_Answer7,Somewhat disagree
+QID301_Answer8,Mostly disagree
+QID301_Answer9,Strongly disagree
+QID301_Choice1,Code deployments are not at all disruptive.
+QID301_Choice5,Code deployments are relatively easy and pain-free.
+QID301_QuestionText,"For the primary application or service you work on, to what extent do you agree or disagree with the following statements?"
+QID302_Answer1,Strongly agree
+QID302_Answer10,I don't know or NA
+QID302_Answer4,Mostly agree
+QID302_Answer5,Somewhat agree
+QID302_Answer6,Neither agree nor disagree
+QID302_Answer7,Somewhat disagree
+QID302_Answer8,Mostly disagree
+QID302_Answer9,Strongly disagree
+QID302_Choice1,I can acquire test data for my automated test suite on demand.
+QID302_Choice6,My team has adequate test data to run our full automated test suite.
+QID302_QuestionText,
+QID303_Choice4,&nbsp
+QID303_Label1,0%
+QID303_Label2,100%
+QID303_LabelNA,I don't know or NA
+QID303_QuestionText,"For the primary application or service you work on, what percentage of your deployments are fully automated?"
+QID304_Answer1,Strongly agree
+QID304_Answer10,I don't know or NA
+QID304_Answer4,Mostly agree
+QID304_Answer5,Somewhat agree
+QID304_Answer6,Neither agree nor disagree
+QID304_Answer7,Somewhat disagree
+QID304_Answer8,Mostly disagree
+QID304_Answer9,Strongly disagree
+QID304_Choice1,Our features are decomposed in a way that allows a developer to complete the work in a week or less.
+QID304_Choice8,Our features are decomposed in a way that enables frequent production releases.
+QID304_QuestionText,
+QID306_Answer1,Never
+QID306_Answer4,Rarely
+QID306_Answer5,Sometimes
+QID306_Answer6,Often
+QID306_Answer7,Always
+QID306_Answer8,I don't know or NA
+QID306_Choice1,My development environment (your code editor or IDE)
+QID306_Choice4,"Internal web interfaces (for example, internal websites, portals, and documentation)"
+QID306_Choice5,"External web interfaces (for example, external websites and documentation)"
+QID306_Choice6,"Conversational AI interfaces (for example, chatbots in my IDE or on websites)"
+QID306_Choice7,"As an automated part of our tool chain (for example, our integration, build, or test services)"
+QID306_Choice8,"Within other tools and platforms I use for development, excluding my IDE"
+QID306_Choice9,Other
+QID308_Choice1,Extremely satisfied
+QID308_Choice10,I don’t know or NA
+QID308_Choice4,Satisfied
+QID308_Choice5,Slightly satisfied
+QID308_Choice6,Neither satisfied or dissatisfied
+QID308_Choice7,Slightly dissatisfied
+QID308_Choice8,Dissatisfied
+QID308_Choice9,Extremely dissatisfied
+QID308_QuestionText,"In the last 6 months, how satisfied or dissatisfied have you been with the quality of code underlying your primary service or application?"
+QID312_Choice1,JavaScript
+QID312_Choice10,C#
+QID312_Choice11,C++
+QID312_Choice12,PHP
+QID312_Choice13,C
+QID312_Choice14,Go
+QID312_Choice15,PowerShell
+QID312_Choice16,Rust
+QID312_Choice17,Kotlin
+QID312_Choice18,Ruby
+QID312_Choice19,Dart
+QID312_Choice20,Lua
+QID312_Choice21,Swift
+QID312_Choice22,Assembly
+QID312_Choice23,HashiCorp Configuration Language (HCL)
+QID312_Choice24,Other
+QID312_Choice25,I don't code
+QID312_Choice4,HTML/CSS
+QID312_Choice5,SQL
+QID312_Choice6,Python
+QID312_Choice7,TypeScript
+QID312_Choice8,Bash/Shell (all shells)
+QID312_Choice9,Java
+QID312_QuestionText,Which are the top 3 programming languages that you use at work? Pick up to 3.
+QID314_Choice1,Strongly agree
+QID314_Choice10,Somewhat disagree
+QID314_Choice11,Mostly disagree
+QID314_Choice12,Strongly disagree
+QID314_Choice13,I don't know or NA
+QID314_Choice7,Mostly agree
+QID314_Choice8,Somewhat agree
+QID314_Choice9,Neither agree nor disagree
+QID314_QuestionText,"To what extent do you agree or disagree with the following statement about AI?""I trust my organization to be transparent with how they plan on using AI."""
+QID315_Answer10,Somewhat negative impact
+QID315_Answer11,No impact
+QID315_Answer12,Somewhat positive impact
+QID315_Answer13,Extremely positive impact
+QID315_Answer14,I don't know
+QID315_Answer9,Extremely negative impact
+QID315_Choice1,The speed and stability of the software delivery process
+QID315_Choice2,The performance of your organization
+QID315_Choice3,Society as a whole
+QID315_Choice4,The quality of your product
+QID315_Choice5,"The environment (for example, ecosystems and climate)"
+QID315_Choice8,Your career
+QID315_QuestionText,"When you think about the following areas, what kind of impact do you think AI will have within the next year."
+QID320_Choice1,I don’t know or NA
+QID320_Choice4,Not at all hindered
+QID320_Choice5,Slightly hindered
+QID320_Choice6,Moderately hindered
+QID320_Choice7,Very hindered
+QID320_Choice8,Extremely hindered
+QID320_QuestionText,"In the last 6 months, how much did technical debt inside your primary application or service hinder your productivity if at all?"
+QID324_QuestionText,"In the last 3 months, approximately what percentage of your time at work was spent on work that you consider valuable. Leave response empty if NA or you prefer not to answer."
+QID325_Answer10,Somewhat negative impact
+QID325_Answer11,No impact
+QID325_Answer12,Somewhat positive impact
+QID325_Answer13,Extremely positive impact
+QID325_Answer14,I don't know
+QID325_Answer9,Extremely negative impact
+QID325_Choice1,The speed and stability of the software delivery process
+QID325_Choice2,The performance of your organization
+QID325_Choice3,Society as a whole
+QID325_Choice4,The quality of your product
+QID325_Choice5,"The environment (for example, ecosystems and climate)"
+QID325_Choice8,Your career
+QID325_QuestionText,"When you think about the following areas, what kind of impact do you think AI will have within the next 5 years."
+QID326_Answer10,Somewhat negative impact
+QID326_Answer11,No impact
+QID326_Answer12,Somewhat positive impact
+QID326_Answer13,Extremely positive impact
+QID326_Answer14,I don't know
+QID326_Answer9,Extremely negative impact
+QID326_Choice1,The speed and stability of the software delivery process
+QID326_Choice2,The performance of your organization
+QID326_Choice3,Society as a whole
+QID326_Choice4,The quality of your product
+QID326_Choice5,"The environment (for example, ecosystems and climate)"
+QID326_Choice8,Your career
+QID326_QuestionText,"When you think about the following areas, what kind of impact do you think AI will have within the next 10 years."
+QID327_Answer1,Strongly agree
+QID327_Answer2,Agree
+QID327_Answer3,Slightly agree
+QID327_Answer4,Neither agree nor disagree
+QID327_Answer5,Slightly disagree
+QID327_Answer6,Disagree
+QID327_Answer7,Strongly disagree
+QID327_Answer8,I don't know or NA
+QID327_Choice16,Our application code and configurations are in a version control system.
+QID327_Choice17,Our system configurations and scripts are in a version control system.
+QID327_QuestionText,"For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements"
+QID39_Choice1,Man
+QID39_Choice5,Woman
+QID39_Choice6,Non-Binary
+QID39_Choice7,Prefer not to say
+QID39_Choice8,"Or, in your own words"
+QID39_QuestionText,"Which of the following describe you, if any? Please check all that apply."
+QID43_Choice1,African
+QID43_Choice10,Asian
+QID43_Choice11,Biracial
+QID43_Choice12,Black
+QID43_Choice13,Caribbean
+QID43_Choice14,Central American
+QID43_Choice15,Central Asian
+QID43_Choice16,East Asian
+QID43_Choice17,Ethnoreligious group
+QID43_Choice18,European
+QID43_Choice19,Hispanic or Latino/a
+QID43_Choice20,Indian
+QID43_Choice21,Indigenous (such as Native American or Indigenous Australian)
+QID43_Choice22,Middle Eastern
+QID43_Choice23,Multiracial
+QID43_Choice24,North African
+QID43_Choice25,North American
+QID43_Choice26,Pacific Islander
+QID43_Choice27,South American
+QID43_Choice28,South Asian
+QID43_Choice29,Southeast Asian
+QID43_Choice30,White
+QID43_Choice31,I don't know
+QID43_Choice32,"Or, in your own words:"
+QID43_Choice33,Prefer not to say
+QID43_QuestionText,"Which of the following describes you, if any? Please check all that apply."
+QID44_Choice1,I am blind / have difficulty seeing
+QID44_Choice4,I am deaf / hard of hearing
+QID44_Choice5,I am unable to / find it difficult to type
+QID44_Choice6,I am unable to / find it difficult to walk or stand without assistance
+QID44_Choice7,"Or, in your own words:"
+QID44_Choice8,Prefer not to say
+QID44_Choice9,None of the above apply
+QID44_QuestionText,"Which of the following describe you, if any? ➘ ➘ Please check all that apply."
+QID45_Choice1,"Developer, full-stack"
+QID45_Choice18,Other (please specify)
+QID45_Choice19,Prefer not to answer
+QID45_Choice21,"Developer, back-end"
+QID45_Choice22,"Developer, front-end"
+QID45_Choice23,"Developer, desktop or enterprise applications"
+QID45_Choice24,"Developer, mobile"
+QID45_Choice25,Engineering manager
+QID45_Choice26,Student
+QID45_Choice27,"Developer, embedded applications or devices"
+QID45_Choice28,Data scientist or machine learning specialist
+QID45_Choice29,DevOps specialist
+QID45_Choice30,Academic researcher
+QID45_Choice31,Research & Development role
+QID45_Choice32,"Senior Executive (C-Suite, VP, etc.)"
+QID45_Choice33,Data Engineer
+QID45_Choice34,Cloud infrastructure engineer
+QID45_Choice35,"Developer, game or graphics"
+QID45_Choice36,Data analyst
+QID45_Choice37,Business analyst
+QID45_Choice38,System administrator
+QID45_Choice39,Project manager
+QID45_Choice40,"Developer, QA or test"
+QID45_Choice41,Security professional
+QID45_Choice42,Product manager
+QID45_Choice43,Site Reliability Engineer
+QID45_Choice44,Educator
+QID45_Choice45,Scientist
+QID45_Choice46,Developer Experience
+QID45_Choice47,Blockchain Engineer
+QID45_Choice48,Hardware Engineer
+QID45_Choice49,Designer
+QID45_Choice50,Database administrator
+QID45_Choice51,Developer Advocate
+QID45_Choice52,Marketing professional
+QID45_Choice53,Sales professional
+QID45_QuestionText,"Which of the following describes your current job, the one you do most of the time? ➘ ➘ Please select only one."
+QID47_QuestionText,How many years of working experience do you have?
+QID6_Choice1,"Just me - I am a freelancer, sole proprietor, etc."
+QID6_Choice12,2 to 9 employees
+QID6_Choice13,10 to 19 employees
+QID6_Choice14,20 to 99 employees
+QID6_Choice15,100 to 499 employees
+QID6_Choice16,500 to 999 employees
+QID6_Choice17,"1,000 to 4,999 employees"
+QID6_Choice18,"5,000 to 9,999 employees"
+QID6_Choice19,"10,000 or more employees"
+QID6_QuestionText, Approximately how many people are employed by the organization you currently work for?➘
+QID60_Answer1,Strongly disagree
+QID60_Answer2,Disagree
+QID60_Answer3,Somewhat disagree
+QID60_Answer4,Neither agree nor disagree
+QID60_Answer5,Somewhat agree
+QID60_Answer6,Agree
+QID60_Answer7,Strongly agree
+QID60_Answer8,I don't know or NA
+QID60_Choice1,All developers on my team push code to the trunk or main branch at least daily.
+QID60_Choice3,Our team is not subject to code freezes when no one can push to trunk or main.
+QID60_QuestionText,
+QID94_Answer1,Strongly disagree
+QID94_Answer2,Mostly disagree
+QID94_Answer3,Somewhat disagree
+QID94_Answer35,Neither agree nor disagree
+QID94_Answer36,Somewhat agree
+QID94_Answer37,Mostly agree
+QID94_Answer38,Strongly agree
+QID94_Answer39,I don't know or NA
+QID94_Choice1,I can rely on our technical documentation when I need to use or work with the services or applications I work on.
+QID94_Choice2,It is easy to find the right technical document when I need to understand something about the services or applications I work on.
+QID94_Choice5,Technical documentation is updated as changes are made.
+QID94_Choice8,"When there’s an incident or problem that needs troubleshooting, I reach for the documentation."
+QID94_QuestionText,"Think about the documentation you use. We define documentation as internal documentation for the services or applications you work on (for example, manuals, readmes, and code comments). End users are not the audience for these documents. Please rate how strongly you agree or disagree with the following statements."

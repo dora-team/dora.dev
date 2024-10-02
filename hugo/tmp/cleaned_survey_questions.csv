@@ -1,0 +1,416 @@
+QID158_Answer1,Strongly agree
+QID158_Answer2,Agree
+QID158_Answer3,Somewhat agree
+QID158_Answer4,Neither agree nor disagree
+QID158_Answer5,Somewhat disagree
+QID158_Answer6,Disagree
+QID158_Answer7,Strongly disagree
+QID158_Answer8,I don't know or NA
+QID158_Choice1,Our software is in a deployable state throughout its lifecycle.
+QID158_Choice7,A failing test will stop the team from deploying the system.
+QID158_Choice8,"We can deploy our system to production, or to end users, at any time, on demand."
+QID158_QuestionText,&nbsp;
+QID159_Answer1,Strongly agree
+QID159_Answer2,Agree
+QID159_Answer3,Somewhat agree
+QID159_Answer4,Neither agree nor disagree
+QID159_Answer5,Somewhat disagree
+QID159_Answer6,Disagree
+QID159_Answer7,Strongly disagree
+QID159_Answer8,I don't know or NA
+QID159_Choice1,Code commits result in an automated build of the software.
+QID159_Choice10,The application is built and tested automatically at least daily.
+QID159_QuestionText,"Think about&nbsp;<b>building and deploying software</b> at work. For the <b>primary application or service</b> you work on, please rate how strongly you agree or disagree with the following statements."
+QID163_Choice1,More than six months
+QID163_Choice10,We do not do code reviews
+QID163_Choice4,Between one month and six months
+QID163_Choice5,Between one week and one month
+QID163_Choice6,Between one day and one week
+QID163_Choice7,Less than one day
+QID163_Choice8,Less than one hour
+QID163_Choice9,I don’t know
+QID163_QuestionText,"For the <b>primary application or service</b> you work on, how long does it generally take to complete the <b>code review</b> process?"
+QID170_Answer1,Performed well above goals
+QID170_Answer10,I don't know or NA
+QID170_Answer4,Performed above goals
+QID170_Answer5,Performed slightly above goals
+QID170_Answer6,Met goals
+QID170_Answer7,Performed slightly below goals
+QID170_Answer8,Performed below goals
+QID170_Answer9,Performed well below goals
+QID170_Choice1,Your organization’s overall performance
+QID170_Choice4,Your organization’s overall profitability
+QID170_Choice5,Relative market share for primary products
+QID170_Choice6,Increased number of customers
+QID170_QuestionText,"For each of the following performance indicators, how well did your <b>organization</b> meet its goals over the past year?"
+QID171_Answer1,Performed well above goals
+QID171_Answer10,I don't know or NA
+QID171_Answer4,Performed above goals
+QID171_Answer5,Performed slightly above goals
+QID171_Answer6,Met goals
+QID171_Answer7,Performed slightly below goals
+QID171_Answer8,Performed below goals
+QID171_Answer9,Performed well below goals
+QID171_Choice10,Achievement of organizational and mission goals
+QID171_Choice7,Operating efficiency
+QID171_Choice8,Customer satisfaction
+QID171_Choice9,Quality of products or services provided
+QID171_QuestionText,"For each of the following performance indicators, how well did your <b>organization</b> meet its goals over the <b>past year</b>?"
+QID178_Answer1,Strongly agree
+QID178_Answer2,Mostly agree
+QID178_Answer3,Slightly agree
+QID178_Answer4,Neither agree nor disagree
+QID178_Answer5,Slightly disagree
+QID178_Answer6,Mostly disagree
+QID178_Answer7,Strongly disagree
+QID178_Answer8,I don't know or NA
+QID178_Choice1,"Once I have access, I can independently provision and configure resources (compute, storage, etc.) and capabilities (APIs, monitoring, etc.) on demand, without raising tickets or requiring human interaction."
+QID178_Choice4,"I can access and modify resources (compute, storage, etc.) and capabilities (APIs, monitoring, etc.) from a broad range of devices over the network without the need for proprietary plug-ins or protocols."
+QID178_Choice5,Computing resources are pooled and shared by multiple applications with resources and capabilities dynamically assigned and re-assigned based on demand.
+QID178_Choice6,I can dynamically increase or decrease the resources available for the service or product that I primarily support on demand.
+QID178_Choice7,I can monitor or control the quantity and/or cost of resources used by the service or product that I primarily support.
+QID178_QuestionText,Think about the <b>infrastructure or platform</b> where the<b> primary application or service&nbsp;</b>your work on runs.  Please rate the extent you agree or disagree with the following statements:
+QID179_Choice1,More than six months
+QID179_Choice4,Between one month and six months
+QID179_Choice5,Between one week and one month
+QID179_Choice6,Between one day and one week
+QID179_Choice7,Less than one day
+QID179_Choice8,Less than one hour
+QID179_Choice9,I don’t know or NA
+QID179_QuestionText,"For the <b>primary application or service</b> you work on, what is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?"
+QID182_Choice1,First Click
+QID182_Choice2,Last Click
+QID182_Choice3,Page Submit
+QID182_Choice4,Click Count
+QID182_QuestionText,Timing
+QID184_Answer1,Strongly agree
+QID184_Answer2,Agree
+QID184_Answer3,Slightly agree
+QID184_Answer4,Neither agree nor disagree
+QID184_Answer5,Slightly disagree
+QID184_Answer6,Disagree
+QID184_Answer7,Strongly disagree
+QID184_Answer8,I don't know or NA
+QID184_Choice11,We were able to rely on each other.
+QID184_Choice14,We were able to adapt to change.
+QID184_Choice4,We were able to effectively collaborate with each other.
+QID184_Choice7,We delivered innovative solutions.
+QID184_Choice8,We worked efficiently.
+QID184_QuestionText,To what extent do you agree or disagree with the following statements about how <b>your team</b> performed over the <b>last year</b>?
+QID186_Choice1,First Click
+QID186_Choice2,Last Click
+QID186_Choice3,Page Submit
+QID186_Choice4,Click Count
+QID186_QuestionText,Timing
+QID189_Choice1,First Click
+QID189_Choice2,Last Click
+QID189_Choice3,Page Submit
+QID189_Choice4,Click Count
+QID189_QuestionText,Timing
+QID190_Choice1,First Click
+QID190_Choice2,Last Click
+QID190_Choice3,Page Submit
+QID190_Choice4,Click Count
+QID190_QuestionText,Timing
+QID191_Choice1,First Click
+QID191_Choice2,Last Click
+QID191_Choice3,Page Submit
+QID191_Choice4,Click Count
+QID191_QuestionText,Timing
+QID192_Choice1,Full-time employee
+QID192_Choice4,Part-time employee
+QID192_Choice5,Full-time contractor
+QID192_Choice6,Part-time contractor
+QID192_QuestionText,"For the <b>primary application or service</b> you work on, what best describes your <b>employment status</b> with the organization that owns the application or service?"
+QID194_Answer1,Strongly disagree
+QID194_Answer2,Disagree
+QID194_Answer3,Somewhat disagree
+QID194_Answer4,Neither agree nor disagree
+QID194_Answer5,Somewhat agree
+QID194_Answer6,Agree
+QID194_Answer7,Strongly agree
+QID194_Answer8,I don't know or NA
+QID194_Choice1,I am able to do my work in the most effective way possible.
+QID194_Choice20,I am productive at work.
+QID194_Choice21,My work creates value.
+QID194_Choice22,My work is aligned with my set of skills.
+QID194_QuestionText,"Thinking about the work you do, please rate how strongly you agree or disagree with the following statements."
+QID198_Choice1,Extremely satisfied
+QID198_Choice2,Satisfied
+QID198_Choice3,Slightly satisfied
+QID198_Choice4,Neither satisfied nor dissatisfied
+QID198_Choice5,Slightly dissatisfied
+QID198_Choice6,Dissatisfied
+QID198_Choice7,Extremely dissatisfied
+QID198_Choice8,I don't know or prefer not to answer
+QID198_QuestionText,How do you feel about your <b>job as a whole</b>?
+QID199_Choice1,More than six months
+QID199_Choice14,Between one month and six months
+QID199_Choice15,Between one week and one month
+QID199_Choice16,Between one day and one week
+QID199_Choice17,Less than one day
+QID199_Choice18,Less than one hour
+QID199_Choice19,I don’t know or NA
+QID199_QuestionText,"For the <b>primary application or service</b> you work on, how long does it generally take to restore service after a change to production or release to users results in degraded service  (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward, or patch)?"
+QID202_Answer1,Not at all relied on
+QID202_Answer10,Minimally relied on
+QID202_Answer11,Somewhat relied on
+QID202_Answer12,Moderately relied on
+QID202_Answer13,Extensively relied on
+QID202_Answer14,I don't know
+QID202_Answer15,We do not perform this task
+QID202_Choice1,Code explanation
+QID202_Choice14,"Optimizing code (for example, reducing the complexity of a function)"
+QID202_Choice15,Debugging
+QID202_Choice16, Summarizing or accessing information
+QID202_Choice17,"Analyzing data (for example, logs)"
+QID202_Choice18,Analyzing security
+QID202_Choice19,"Writing code blocks or functions (for example, auto-completion, auto-generation or auto-formatting)"
+QID202_Choice20,Writing tests
+QID202_Choice21,Writing documentation
+QID202_Choice22,Migrating from one language to another
+QID202_Choice23,Modernizing legacy codebases
+QID202_Choice24,Code reviews
+QID202_QuestionText,"For the <b>primary application or service</b> you work on, how much have you relied on Artificial Intelligence (AI) for each of the following tasks over the <b>last 3 months?</b>"
+QID209_Choice1,Extremely increased my productivity
+QID209_Choice10,I don’t know or NA
+QID209_Choice4,Moderately increased my productivity
+QID209_Choice5,Slightly increased my productivity
+QID209_Choice6,No impact on my  productivity
+QID209_Choice7,Slightly decreased my productivity
+QID209_Choice8,Moderately decreased my productivity
+QID209_Choice9,Extremely decreased my productivity
+QID209_QuestionText,"In the <b>last 3 months</b>, how has AI impacted your productivity at work?"
+QID210_Choice1,Significant increase in AI prioritization
+QID210_Choice10,I don’t know or NA
+QID210_Choice4,Moderate increase in AI prioritization
+QID210_Choice5,Slight increase in AI prioritization
+QID210_Choice6,No change in AI prioritization
+QID210_Choice7,Slight decrease in AI prioritization
+QID210_Choice8,Moderate decrease in AI prioritization
+QID210_Choice9,Significant decrease in AI prioritization
+QID210_QuestionText,"In the <b>last 3 months</b>, to what extent has your <b>organization</b> shifted priorities to incorporate AI into its applications and services?"
+QID212_Choice1,Extremely improved my ability to write code
+QID212_Choice10,I don’t know or NA
+QID212_Choice11,I don’t use AI to write code
+QID212_Choice4,Moderately improved my ability to write code
+QID212_Choice5,Slightly improved my ability to write code
+QID212_Choice6,No impact on my ability to write code
+QID212_Choice7,Slightly worsened my ability to write code
+QID212_Choice8,Moderately worsened my ability to write code
+QID212_Choice9,Extremely worsened my ability to write code
+QID212_QuestionText,"In the <b>last 3 months</b>, how has AI impacted your ability to <b>write</b> code?"
+QID214_QuestionText,"<b>We want to better understand how your organization is approaching platform engineering. Platform engineering may include both technologies and teams.<br></b><br>A platform is a set of capabilities that is shared across multiple applications or services. The platform's goal is to improve the efficiency and productivity of software delivery. A company may have multiple overlapping platforms, but we refer to these overall as “the platform”. A platform engineering team is a group of people dedicated to building and running the platform. A dedicated platform engineering team is not required."
+QID216_Choice1,Talk to a person
+QID216_Choice10,I don't know
+QID216_Choice4,Ticket
+QID216_Choice5,CLI
+QID216_Choice6,API
+QID216_Choice7,Code (including infrastructure as code)
+QID216_Choice8,UI
+QID216_Choice9,I don’t have a platform
+QID216_QuestionText,"<b>In the past 3 months</b>, how have you interacted with your <b>internal developer platform</b>?&nbsp;<br><br><i>Please select all that apply.&nbsp;</i><br>"
+QID217_Answer1,Strongly agree
+QID217_Answer10,I don't know or NA
+QID217_Answer4,Mostly agree
+QID217_Answer5,Somewhat agree
+QID217_Answer6,Neither agree nor disagree
+QID217_Answer7,Somewhat disagree
+QID217_Answer8,Mostly disagree
+QID217_Answer9,Strongly disagree
+QID217_Choice1,"Existing users can perform their tasks for the entire application lifecycle, without relying on an enabling team."
+QID217_Choice4,I am required to exclusively use the platform to perform tasks for the entire app lifecycle.
+QID217_Choice5,My organization has a dedicated platform engineering team.
+QID217_QuestionText,To what extent do you agree or disagree with the following statements about your <b>internal developer platform</b>?<br>
+QID218_Choice1,Informal conversations
+QID218_Choice10,Other (please specify)
+QID218_Choice11,Platform owners don’t collect feedback
+QID218_Choice12,
+QID218_Choice13,I don't know
+QID218_Choice4,Interviews of users
+QID218_Choice5,Issue trackers
+QID218_Choice6,"Periodic, ongoing surveys"
+QID218_Choice7,Co-development of platform (ongoing user engagement with platform team)
+QID218_Choice8,Hackathons (fixed duration co-development)
+QID218_Choice9,Platform telemetry / user analytics
+QID218_QuestionText,How do platform owners collect feedback from platform users?➘<br><br><i>Select all that apply.</i><br>
+QID219_Choice4,less than a year
+QID219_Choice5,1-2 years
+QID219_Choice6,2-5 years
+QID219_Choice7,more than 5 years
+QID219_Choice8,I don't know
+QID219_QuestionText,How old is your current <b>internal developer platform</b>?
+QID222_QuestionText,<b>The following questions are going to dive into the attitudes and practices of your workplace.</b>
+
+
+
+QID240_Choice4,&nbsp
+QID240_Label1,0%
+QID240_Label2,100%
+QID240_LabelNA,I don't know or NA
+QID240_QuestionText,"For the <b>primary application or service </b>you work on, approximately what percentage of deployments in the <b>last 6 months</b> were not planned but were performed to address a user-facing bug in the application?"
+
+
+QID250_QuestionText,"<b>“Team” can have many different meanings. When we say “team,” we are talking about the people who work with you on the same primary application or service.</b>"
+QID251_QuestionText,"<b>For the following questions, we are interested in your understanding your workplace and your experience of it.&nbsp;</b>"
+
+QID264_QuestionText,<b>We are interested in learning more about some of the characteristics of the primary application and service you work on.</b>
+
+QID275_Choice1,More than six months
+QID275_Choice10,We do not do code reviews
+QID275_Choice4,Between one month and six months
+QID275_Choice5,Between one week and one month
+QID275_Choice6,Between one day and one week
+QID275_Choice7,Less than one day
+QID275_Choice8,Less than one hour
+QID275_Choice9,I don’t know
+QID275_QuestionText,"For the <b>primary application or service</b> you work on, how long does it generally take to complete the <b>code review</b> process?"
+
+
+QID278_Answer1,Strongly disagree
+QID278_Answer2,Disagree
+QID278_Answer3,Somewhat disagree
+QID278_Answer4,Neither agree nor disagree
+QID278_Answer5,Somewhat agree
+QID278_Answer6,Agree
+QID278_Answer7,Strongly agree
+QID278_Answer8,Prefer not to answer or NA
+QID278_Choice10,New ideas are welcomed.
+QID278_Choice11,Failures are treated primarily as opportunities to improve the system.
+QID278_Choice9,Cross-functional collaboration is encouraged and rewarded.
+QID278_QuestionText,<p><b>&nbsp;</b></p>➘➘<p>Think about your <b>organization&nbsp;</b>and&nbsp;rate how strongly you agree or disagree with the following statements.&nbsp;</p><p><br></p>➘➘<p><i>In my organization...</i></p>
+QID279_Answer1,Strongly disagree
+QID279_Answer2,Disagree
+QID279_Answer3,Somewhat disagree
+QID279_Answer4,Neither agree nor disagree
+QID279_Answer5,Somewhat agree
+QID279_Answer6,Agree
+QID279_Answer7,Strongly agree
+QID279_Answer8,Prefer not to answer or NA
+QID279_Choice10,We have well-defined targets for reliability.
+QID279_Choice12,Our reliability targets are based on measures which directly relate to user satisfaction (rather than proxy metrics or internal metrics).
+QID279_Choice13,"When we fail to meet our reliability targets, our users are dissatisfied with the reliability of our services."
+QID279_Choice14,Our services consistently meet reliability targets.
+QID279_QuestionText,"<p><b></b></p>For the <b>primary application or service</b> you work on, please rate how strongly you agree or disagree with each of the following statements.<br><br>These statements refer to <b>targets for reliability,</b>&nbsp;such as <b>Service Level Objectives (SLO)</b>.<br><p><i></i></p>"
+QID283_Choice21,&nbsp;
+QID283_Label1,0%
+QID283_Label2,100%
+QID283_LabelNA,I don't know or NA
+QID283_QuestionText,"<p>For the <b>primary application or service</b> you work on, what percentage of changes to production or released to users <b>result in degraded service</b> (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward or patch), if at all?➘</p>"
+QID284_Choice1,More than six months
+QID284_Choice4,One to six months
+QID284_Choice5,One week to one month
+QID284_Choice6,One day to one week
+QID284_Choice7,Less than one day
+QID284_Choice8,Less than one hour
+QID284_Choice9,I don’t know or NA
+QID284_QuestionText,"For the <b>primary application or service</b> you work on, how long does it generally take to restore service after<b> a change to production or release to users results in degraded service</b> (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward, or patch)?"
+QID285_Choice4,&nbsp
+QID285_Label1,0%
+QID285_Label2,100%
+QID285_LabelNA,I don't know or NA
+QID285_QuestionText,"For the <b>primary application or service</b> you work on, approximately how many deployments in the <b>last 6 months</b> were not planned but were performed to address a user-facing bug in the application?"
+QID286_Choice1,More than six months
+QID286_Choice4,Between one month and six months
+QID286_Choice5,Between one week and one month
+QID286_Choice6,Between one day and one week
+QID286_Choice7,Less than one day
+QID286_Choice8,Less than one hour
+QID286_Choice9,I don’t know or NA
+QID286_QuestionText,"For the <b>primary application or service</b> you work on, what is your <b>lead time for changes</b> (i.e., how long does it take to go from code committed to code successfully running in production)?"
+QID287_Choice1,Fewer than once per six months
+QID287_Choice2,Between once per month and once every 6 months
+QID287_Choice3,Between once per week and once per month
+QID287_Choice4,Between once per day and once per week
+QID287_Choice5,Between once per hour and once per day
+QID287_Choice6,On demand (multiple deploys per day)
+QID287_Choice7,I don't know or NA
+QID287_QuestionText,"<p>For the <b>primary application or service</b> you work on, how often does your organization <b>deploy code to production</b> or release it to end users?</p>"
+
+
+QID290_Answer1,Strongly agree
+QID290_Answer2,Agree
+QID290_Answer3,Slightly agree
+QID290_Answer4,Neither agree nor disagree
+QID290_Answer5,Slightly disagree
+QID290_Answer6,Disagree
+QID290_Answer7,Strongly disagree
+QID290_Answer8,I don't know or NA
+QID290_Choice1,"I can independently provision and configure resources (compute, storage, etc.) and capabilities (APIs, monitoring, etc.) on demand, without raising tickets or requiring human interaction."
+QID290_Choice5,Computing resources are pooled across multiple applications and dynamically assigned and re-assigned based on demand.
+QID290_QuestionText,Think about the <b>infrastructure or platform</b> where the<b> primary application or service&nbsp;</b>you work on runs.  Please rate how strongly you agree or disagree with the following statements.
+
+
+
+QID299_Answer1,Strongly disagree
+QID299_Answer2,Disagree
+QID299_Answer3,Somewhat disagree
+QID299_Answer4,Neither agree nor disagree
+QID299_Answer5,Somewhat agree
+QID299_Answer6,Agree
+QID299_Answer7,Strongly agree
+QID299_Answer8,I don't know or NA
+QID299_Choice1,I am able to do my work in the most effective way possible.
+QID299_Choice20,I am productive at work.
+QID299_Choice21,My work creates value.
+QID299_QuestionText,"Thinking about the work you do, please rate how strongly you agree or disagree with the following statements."
+QID300_Choice1,Extremely satisfied
+QID300_Choice2,Satisfied
+QID300_Choice3,Slightly satisfied
+QID300_Choice4,Neither satisfied nor dissatisfied
+QID300_Choice5,Slightly dissatisfied
+QID300_Choice6,Dissatisfied
+QID300_Choice7,Extremely dissatisfied
+QID300_Choice8,I don't know or prefer not to answer
+QID300_QuestionText,"Taking everything into consideration, <b>how do you feel about your job as a whole?</b>"
+
+QID305_Choice1,Not at all relied on AI
+QID305_Choice4,Minimally relied on AI
+QID305_Choice5,Somewhat relied on AI
+QID305_Choice6,Moderately relied on AI
+QID305_Choice7,Extensively relied on AI
+QID305_Choice8,I don't know or NA
+QID305_QuestionText,"For the <b>primary application or service </b>you work on, how much have you relied on AI over the<b> last 3 months</b>?"
+QID306_QuestionText,"In the <b>last 3 months</b>, how frequently have you interacted with AI at work in each of the following:"
+
+
+
+QID322_QuestionText,"<b>The following questions are about your work and team processes.<br><br>Questions are independent of each other, and your answers don’t need to add up to 100%. <br></b>"
+
+QID328_Choice1,First Click
+QID328_Choice2,Last Click
+QID328_Choice3,Page Submit
+QID328_Choice4,Click Count
+QID328_QuestionText,Timing
+QID329_Choice1,First Click
+QID329_Choice2,Last Click
+QID329_Choice3,Page Submit
+QID329_Choice4,Click Count
+QID329_QuestionText,Timing
+QID33_Choice1,Fewer than once per six months
+QID33_Choice2,Between once per month and once every 6 months
+QID33_Choice3,Between once per week and once per month
+QID33_Choice4,Between once per day and once per week
+QID33_Choice5,Between once per hour and once per day
+QID33_Choice6,On demand (multiple deploys per day)
+QID33_Choice7,I don't know or NA
+QID33_QuestionText,"<p>For the <b>primary application or service</b> you work on, how often does your organization deploy code to production or release it to end users?</p>"
+QID37_Answer1,Strongly disagree
+QID37_Answer2,Disagree
+QID37_Answer3,Somewhat disagree
+QID37_Answer4,Neither agree nor disagree
+QID37_Answer5,Somewhat agree
+QID37_Answer6,Agree
+QID37_Answer7,Strongly agree
+QID37_Answer8,I don't know or NA
+QID37_Choice1,I feel burned out from my work.
+QID37_Choice2,I feel exhausted.
+QID37_Choice3,I am indifferent or cynical about my work.
+QID37_Choice4,I feel like I am ineffective in my work.
+QID37_Choice5,My feelings about work negatively affect my life outside of work.
+QID37_QuestionText,<p>Please rate how strongly you agree or disagree with the following statements:<br></p>
+QID38_QuestionText,"<p><b>We're on the last set of questions! Over the next few pages, tell us about yourself.</b></p><p><br></p><p>This data is only used for research purposes. This survey is anonymous and is only reported anonymously and in aggregate.</p>"
+
+QID49_QuestionText,"Welcome to DORA's worldwide industry survey for 2024.➘We are interested in understanding your work and your workplace.<br><br>There are no right or wrong answers.<br><br>We recommend setting aside between 10 and 15 minutes to complete.<br><br>If you need to take a break, you can always leave the survey and come back.<br><br>If you don't know an answer, none are applicable to you, or you don't want to answer, you can select ""I don't know or NA"" or ""Prefer not to answer"" and your responses for that question will be discarded.<br><br><b>Thank you very much for your time in helping us understand what makes technology-driven teams better!</b><p><b><i></i></b></p>"
+QID80_QuestionText,Google cloud dora
+QID86_QuestionText,"<p style=""text-align: left;""><strong>Consent for data collection</strong></p>➘➘<p><br>➘<strong>Why do we want your input?</strong></p>➘➘<ul>➘ <li>We want to hear your voice to understand the factors that impact software delivery performance and organizational performance. We use this data to create the DORA reports such as the <a target=""_blank"" rel=""noopener"" href=""https://dora.dev/dora-report-2023"">Accelerate State of DevOps Report</a>, to inform research and development of our assessment product, and for peer-reviewed academic research including academic conferences and journals.&nbsp;</li>➘</ul>➘➘<p><strong><br>How do we ensure your privacy?</strong></p>➘➘<ul>➘ <li>Your responses include no personally identifying information and we do not store your IP address or other tracking data. After analysis for research purposes, including generating the Accelerate State of DevOps Report, we will go through additional steps to anonymize the data. We will not combine your responses with any other data or use it to identify you. Your responses will only be reported in aggregate and anonymously. Because we store no information in our systems which we can use to identify any individual, we have no way to change or delete your response to the survey.</li>➘</ul>➘&nbsp;➘➘<p>In the event you have a question about our use of your data, you may contact us at <a href=""mailto:dora-data@google.com"">dora-data@google.com</a>. Read our <a target=""_blank"" rel=""noopener"" href=""https://policies.google.com/privacy"">full privacy policy</a>.&nbsp;</p>"

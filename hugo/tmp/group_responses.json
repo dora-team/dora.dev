@@ -1,0 +1,301 @@
+{
+    "categories": [
+        {
+            "heading": "Continuous Delivery",
+                "question_groups": [
+                    {
+                        "description": "&nbsp;",
+                        "group_responses": "Strongly agree,Agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Disagree,Strongly disagree,I don't know or NA",
+                        "questions": [
+                            "Our software is in a deployable state throughout its lifecycle.",
+                            "A failing test will stop the team from deploying the system.",
+                            "We can deploy our system to production, or to end users, at any time, on demand."
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Continuous Integration",
+                "question_groups": [
+                    {
+                        "description": "Think about&nbsp;<b>building and deploying software</b> at work. For the <b>primary application or service</b> you work on, please rate how strongly you agree or disagree with the following statements.",
+                        "group_responses": "Strongly agree,Agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Disagree,Strongly disagree,I don't know or NA",
+                        "questions": [
+                            "Code commits result in an automated build of the software.",
+                            "Code commits result in a series of automated tests being run.",
+                            "The application is built and tested automatically at least daily."
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Code review time",
+                "question_groups":[
+                    {
+                        "description": "For the <b>primary application or service</b> you work on, how long does it generally take to complete the <b>code review</b> process?",
+                        "group_responses": "More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don’t know,We do not do code reviews",
+                    }
+                ]
+            },
+            {
+                "heading": "Organizational performance",
+                "question_groups":[
+                    {
+                        "description": "For each of the following performance indicators, how well did your <b>organization</b> meet its goals over the past year?",
+                        "group_responses": "Performed well above goals,I don't know or NA,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals",
+                        "questions": [
+                        "Your organization’s overall performance",
+                        "Your organization’s overall profitability",
+                        "Relative market share for primary products",
+                        "Increased number of customers"
+                        ]
+                    },
+                    {
+                        "description": "For each of the following performance indicators, how well did your <b>organization</b> meet its goals over the <b>past year</b>?",
+                        "group_responses": "Performed well above goals,I don't know or NA,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals",
+                        "questions": [
+                        "Operating efficiency",
+                        "Customer satisfaction",
+                        "Quality of products or services provided",
+                        "Achievement of organizational and mission goals"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Flexible infrastructure",
+                "question_groups": [
+                    {
+                        "description": "Think about the <b>infrastructure or platform</b> where the<b> primary application or service&nbsp;</b>your work on runs.  Please rate the extent you agree or disagree with the following statements:",
+                        "group_responses": "Strongly agree,Mostly agree,Slightly agree,Neither agree nor disagree,Slightly disagree,Mostly disagree,Strongly disagree,I don't know or NA",
+                        "questions": [
+                        "Once I have access, I can independently provision and configure resources (compute, storage, etc.) and capabilities (APIs, monitoring, etc.) on demand, without raising tickets or requiring human interaction.",
+                        "I can access and modify resources (compute, storage, etc.) and capabilities (APIs, monitoring, etc.) from a broad range of devices over the network without the need for proprietary plug-ins or protocols.",
+                        "Computing resources are pooled and shared by multiple applications with resources and capabilities dynamically assigned and re-assigned based on demand.",
+                        "I can dynamically increase or decrease the resources available for the service or product that I primarily support on demand.",
+                        "I can monitor or control the quantity and/or cost of resources used by the service or product that I primarily support."
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Software delivery performance",
+                "question_groups": [
+                    {
+                        "description": "For the <b>primary application or service</b> you work on, what is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?",
+                        "group_responses": "More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don’t know or NA",
+                        "questions": [
+                        "More than six months",
+                        "Between one month and six months",
+                        "Between one week and one month",
+                        "Between one day and one week",
+                        "Less than one day",
+                        "Less than one hour",
+                        "I don’t know or NA"
+                        ]
+                    },
+                    {
+                        "description": "For the <b>primary application or service</b> you work on, how long does it generally take to restore service after a change to production or release to users results in degraded service  (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward, or patch)?",
+                        "group_responses": "More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don’t know or NA",
+                        "questions": [
+                            "More than six months",
+                            "Between one month and six months",
+                            "Between one week and one month",
+                            "Between one day and one week",
+                            "Less than one day",
+                            "Less than one hour",
+                            "I don’t know or NA"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Team performance",
+                "question_groups": [
+                    {
+                        "description": "To what extent do you agree or disagree with the following statements about how <b>your team</b> performed over the <b>last year</b>?",
+                        "group_responses": "Strongly agree,Agree,Slightly agree,Neither agree nor disagree,Slightly disagree,Disagree,Strongly disagree,I don't know or NA",
+                        "questions": [
+                        "We were able to effectively collaborate with each other.",
+                        "We delivered innovative solutions.",
+                        "We worked efficiently.",
+                        "We were able to rely on each other.",
+                        "We were able to adapt to change."
+                        ]
+                    }
+                ]
+
+            },
+            {
+                "heading": "Employment status",
+                "question_groups": [
+                    {
+                        "description": "For the <b>primary application or service</b> you work on, what best describes your <b>employment status</b> with the organization that owns the application or service?",
+                        "group_responses": "Full-time employee,Part-time employee,Full-time contractor,Part-time contractor",
+                        "questions": [
+                        "Full-time employee",
+                        "Part-time employee",
+                        "Full-time contractor",
+                        "Part-time contractor"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Productivity",
+                "question_groups": [
+                    {
+                        "description": "Thinking about the work you do, please rate how strongly you agree or disagree with the following statements.",
+                        "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                        "questions": [
+                        "I am able to do my work in the most effective way possible.",
+                        "I am productive at work.",
+                        "My work creates value.",
+                        "My work is aligned with my set of skills."
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Job satisfaction",
+                "question_groups": [
+                    {
+                        "description": "How do you feel about your <b>job as a whole</b>?",
+                        "group_responses": "Extremely satisfied,Satisfied,Slightly satisfied,Neither satisfied nor dissatisfied,Slightly dissatisfied,Dissatisfied,Extremely dissatisfied,I don't know or prefer not to answer",
+                        "questions": [
+                        "Extremely satisfied",
+                        "Satisfied",
+                        "Slightly satisfied",
+                        "Neither satisfied nor dissatisfied",
+                        "Slightly dissatisfied",
+                        "Dissatisfied",
+                        "Extremely dissatisfied",
+                        "I don't know or prefer not to answer"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Artificial Intelligence (AI)",
+                "question_groups": [
+                    {
+                        "description": "For the <b>primary application or service</b> you work on, how much have you relied on Artificial Intelligence (AI) for each of the following tasks over the <b>last 3 months?</b>",
+                        "group_responses": "Not at all relied on,Minimally relied on,Somewhat relied on,Moderately relied on,Extensively relied on,I don't know,We do not perform this task",
+                        "questions": [
+                            "Code explanation",
+                            "Optimizing code (for example, reducing the complexity of a function)",
+                            "Debugging",
+                            " Summarizing or accessing information",
+                            "Analyzing data (for example, logs)",
+                            "Analyzing security",
+                            "Writing code blocks or functions (for example, auto-completion, auto-generation or auto-formatting)",
+                            "Writing tests",
+                            "Writing documentation",
+                            "Migrating from one language to another",
+                            "Modernizing legacy codebases",
+                            "Code reviews"
+                        ]
+                    },
+                    {
+                        "description": "In the <b>last 3 months</b>, how has AI impacted your productivity at work?",
+                        "group_responses": "Extremely increased my productivity,Moderately increased my productivity,Slightly increased my productivity,No impact on my  productivity,Slightly decreased my productivity,Moderately decreased my productivity,Extremely decreased my productivity,I don’t know or NA",
+                        "questions": [
+                            "Extremely increased my productivity",
+                            "Moderately increased my productivity",
+                            "Slightly increased my productivity",
+                            "No impact on my  productivity",
+                            "Slightly decreased my productivity",
+                            "Moderately decreased my productivity",
+                            "Extremely decreased my productivity",
+                            "I don’t know or NA"
+                        ]
+                    },
+                    {
+                        "description": "In the <b>last 3 months</b>, to what extent has your <b>organization</b> shifted priorities to incorporate AI into its applications and services?",
+                        "group_responses": "Significant increase in AI prioritization,Moderate increase in AI prioritization,Slight increase in AI prioritization,No change in AI prioritization,Slight decrease in AI prioritization,Moderate decrease in AI prioritization,Significant decrease in AI prioritization,I don’t know or NA",
+                        "questions": [
+                            "Significant increase in AI prioritization",
+                            "Moderate increase in AI prioritization",
+                            "Slight increase in AI prioritization",
+                            "No change in AI prioritization",
+                            "Slight decrease in AI prioritization",
+                            "Moderate decrease in AI prioritization",
+                            "Significant decrease in AI prioritization",
+                            "I don’t know or NA"
+                        ]
+                    },
+                    {
+                        "description": "In the <b>last 3 months</b>, how has AI impacted your ability to <b>write</b> code?",
+                        "group_responses": "Extremely improved my ability to write code,Moderately improved my ability to write code,Slightly improved my ability to write code,No impact on my ability to write code,Slightly worsened my ability to write code,Moderately worsened my ability to write code,Extremely worsened my ability to write code,I don’t know or NA,I don’t use AI to write code",
+                        "questions": [
+                            "Extremely improved my ability to write code",
+                            "Moderately improved my ability to write code",
+                            "Slightly improved my ability to write code",
+                            "No impact on my ability to write code",
+                            "Slightly worsened my ability to write code",
+                            "Moderately worsened my ability to write code",
+                            "Extremely worsened my ability to write code",
+                            "I don’t know or NA",
+                            "I don’t use AI to write code"
+                        ]
+                    }
+                ]
+            },
+            {
+                "heading": "Platform engineering",
+                "question_groups": [
+                    {
+                        "description": "<b>In the past 3 months</b>, how have you interacted with your <b>internal developer platform</b>?&nbsp;<br><br><i>Please select all that apply.&nbsp;</i><br>",
+                        "group_responses": "Talk to a person,Ticket,CLI,API ,Code (including infrastructure as code),UI,I don’t have a platform,I don't know",
+                        "questions": [
+                            "Talk to a person",
+                            "Ticket",
+                            "CLI",
+                            "API ",
+                            "Code (including infrastructure as code)",
+                            "UI",
+                            "I don’t have a platform",
+                            "I don't know"
+                        ]
+                    },
+                    {
+                        "description": "To what extent do you agree or disagree with the following statements about your <b>internal developer platform</b>?<br>",
+                        "group_responses": "Strongly agree,I don't know or NA,Mostly agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Mostly disagree,Strongly disagree",
+                        "questions": [
+                            "Existing users can perform their tasks for the entire application lifecycle, without relying on an enabling team.",
+                            "I am required to exclusively use the platform to perform tasks for the entire app lifecycle.",
+                            "My organization has a dedicated platform engineering team."
+                        ]
+                    },
+                    {
+                        "description": "How do platform owners collect feedback from platform users?➘<br><br><i>Select all that apply.</i><br>",
+                        "group_responses": "Informal conversations,Interviews of users,Issue trackers,Periodic, ongoing surveys,Co-development of platform (ongoing user engagement with platform team),Hackathons (fixed duration co-development),Platform telemetry / user analytics,Other (please specify),Platform owners don’t collect feedback,I don't know",
+                        "questions": [
+                            "Informal conversations",
+                            "Interviews of users",
+                            "Issue trackers",
+                            "Periodic, ongoing surveys",
+                            "Co-development of platform (ongoing user engagement with platform team)",
+                            "Hackathons (fixed duration co-development)",
+                            "Platform telemetry / user analytics",
+                            "Other (please specify)",
+                            "Platform owners don’t collect feedback",
+                            "I don't know"
+                        ]
+                    },
+                    {
+                        "description": "How old is your current <b>internal developer platform</b>?",
+                        "group_responses": "less than a year,1-2 years,2-5 years,more than 5 years,I don't know",
+                        "questions": [
+                            "less than a year",
+                            "1-2 years",
+                            "2-5 years",
+                            "more than 5 years",
+                            "I don't know"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

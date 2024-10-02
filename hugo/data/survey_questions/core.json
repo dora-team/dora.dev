@@ -1,0 +1,571 @@
+{
+    "categories": [
+        {
+            "heading": "Automated deployments",
+            "core": true,
+            "survey_keys": [
+                {
+                    "2024": "core_dep_auto"
+                }
+            ],
+            "question_groups": [
+                {
+                    "questions": [
+                        "For the primary application or service you work on, what percentage of your deployments are fully automated?|(value between 0% and 100%)"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Burnout",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_burnout"
+                        }
+                    ],
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "I feel burned out from my work.",
+                        "I feel like I am ineffective in my work.",
+                        "My feelings about work negatively affect my life outside of work.",
+                        "I am indifferent or cynical about my work."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Change approval process",
+            "core": true,
+            "survey_keys": [
+                {
+                    "2024": "core_str"
+                }
+            ],
+            "description": "Think about your organization and rate how strongly you agree or disagree with the following statements.",
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Mostly Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Mostly Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "All significant changes must be approved by a senior manager prior to implementation.",
+                        "Production changes must be approved by an external body (for example, change approval board) before implementation or deployment."
+                      ]
+                }
+            ]
+        },
+        {
+            "heading": "Code maintainability",
+            "description": "For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_mnt"
+                        }
+                    ],
+                    "group_responses": "Strongly agree,Agree,Slightly agree,Neither agree nor disagree,Slightly disagree,Disagree,Strongly disagree,I don't know or NA",
+                    "questions": [
+                        "It’s easy for me to add new dependencies to my project.",
+                        "It’s easy for me to find examples in our codebase.",
+                        "It’s easy for us to change code maintained by other teams if we need to."
+                      ]
+                }
+            ]
+        },
+        {
+            "heading": "Code review time",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_code_review"
+                        }
+                    ],
+                    "questions": [
+                        "For the primary application or service you work on, how long does it generally take to complete the code review process?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don’t know,We do not do code reviews"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Continuous Delivery",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_cd"
+                        }
+                    ],
+                    "description": "For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements",
+                    "group_responses": "Strongly agree,Agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Disagree,Strongly disagree,I don't know or NA",
+                    "questions": [
+                        "Our software is in a deployable state throughout its lifecycle.",
+                        "A failing test will stop the team from deploying the system.",
+                        "We can deploy our system to production, or to end users, at any time, on demand."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Continuous Integration",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_ci"
+                        }
+                    ],
+                    "description": "Think about&nbsp;building and deploying software at work. For the primary application or service you work on, please rate how strongly you agree or disagree with the following statements.",
+                    "group_responses": "Strongly agree,Agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Disagree,Strongly disagree,I don't know or NA",
+                    "questions": [
+                        "Code commits result in an automated build of the software.",
+                        "The application is built and tested automatically at least daily."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Culture",
+            "core": true,
+            "survey_keys": [
+                {
+                    "2024": "core_westrum (first 3 only)"
+                }
+            ],
+            "question_groups": [
+                {
+                    "description": "Think about your organization and rate how strongly you agree or disagree with the following statements. In my organization...",
+                    "group_responses": "Strongly agree,Agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Disagree,Strongly disagree,Prefer not to answer or NA",
+                    "questions": [
+                        "Cross-functional collaboration is encouraged and rewarded",
+                        "New ideas are welcomed",
+                        "Failures are treated primarily as opportunities to improve the system",
+                        "Information is actively sought",
+                        "Messengers are not punished when they deliver news of failures or other bad news",
+                        "Responsibilities are shared"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Database change management",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_dbc"
+                        }
+                    ],
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "Everyone in our engineering org has visibility into the progress of pending database changes.",
+                        "Production database changes are managed in the same way as production application changes."
+                      ]
+                }
+            ]
+        },
+        {
+            "heading": "Deployment Pain",
+            "core": true,
+            "survey_keys": [
+                {
+                    "2024": "core_deployment_pain"
+                }
+            ],
+            "question_groups": [
+                {
+                    "group_responses": "Strongly agree,I don't know or NA,Mostly agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Mostly disagree,Strongly disagree",
+                    "questions": [
+                        "Code deployments are not at all disruptive.",
+                        "Code deployments are relatively easy and pain-free."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Documentation",
+            "description": "Think about the documentation you use. We define documentation as internal documentation for the services or applications you work on (for example, manuals, readmes, code comments, etc.). End users are not the audience for these documents. Please rate how strongly you agree or disagree with the following statements.",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_docs"
+                        }
+                    ],
+                    "group_responses": "Strongly disagree,Mostly disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Mostly agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "I can rely on our technical documentation.",
+                        "It is easy to find the right technical document when I need it.",
+                        "When there’s an incident or problem that needs troubleshooting, I reach for the documentation."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Empowering teams to choose tools",
+            "description": "Think about the tools you use to do your work. To what extent do you agree with the following statements?",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_emp"
+                        }
+                    ],
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "On my team, our tool choices are based on what is best for the people who use the tools.",
+                        "On my team, we can decide which tools we use."
+                      ]
+                }
+            ]
+        },
+        {
+            "heading": "Flexible infrastructure",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_inf"
+                        }
+                    ],
+                    "description": "Think about the infrastructure or platform where the primary application or service you work on runs.  Please rate the extent you agree or disagree with the following statements:",
+                    "group_responses": "Strongly agree,Mostly agree,Slightly agree,Neither agree nor disagree,Slightly disagree,Mostly disagree,Strongly disagree,I don't know or NA",
+                    "questions": [
+                        "I can independently provision and configure resources (compute, storage, etc.) and capabilities (APIs, monitoring, etc.) on demand, without raising tickets or requiring human interaction.",
+                        "Computing resources are pooled across multiple applications and dynamically assigned and re-assigned based on demand."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Job satisfaction",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_job_sat"
+                        }
+                    ],
+                    "questions": [
+                        "Taking everything into consideration, how do you feel about your job as a whole?|Extremely satisfied,Satisfied,Slightly satisfied,Neither satisfied nor dissatisfied,Slightly dissatisfied,Dissatisfied,Extremely dissatisfied,I don't know or prefer not to answer"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Leadership",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_leadership"
+                        }
+                    ],
+                    "description": "Think about your experiences with your organization’s leadership when answering the following questions. Rate how strongly you agree or disagree with the following statements about your organization’s leadership.",
+                    "group_responses": "Strongly agree,Mostly agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Mostly disagree,Strongly disagree,I don't know or NA",
+                    "questions": [
+                      "They understand where the organization is going, and where we want to be.",
+                      "They encourage people to see changing conditions as situations full of opportunities.",
+                      "They consider others’ personal feelings before acting."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Loosely coupled teams",
+            "core": true,
+            "survey_keys": [
+                {
+                    "2024": "core_lct"
+                }
+            ],
+            "description": "Think about how your team and work are structured. For the you work on, please rate how strongly you agree or disagree with the following statements.",
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Mostly Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Mostly Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "My team can deploy and release our product or service on demand, independently of other services it depends upon.",
+                        "We can do most of our testing on demand, without requiring an integrated test environment."
+                        ]
+                }
+            ]
+        },
+        {
+            "heading": "Monitoring and observability",
+            "description": "For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_mon"
+                        }
+                    ],
+                    "group_responses": "Strongly agree,Agree,Slightly agree,Neither agree nor disagree,Slightly disagree,Disagree,Strongly disagree,I don't know or NA",
+                    "questions": [
+                        "My team has tooling in place that can help us with understanding and debugging our systems in production.",
+                        "My team has tooling in place that provides the ability to find information about things we did not previously know (“unknown unknowns“)."
+                      ]
+                }
+            ]
+        },
+        {
+            "heading": "Organizational performance",
+            "description": "For the following questions, we are interested in your organization's performance. If you are in a contract position, consider your current client to be your organization.",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_forprofit_perf"
+                        }
+                    ],
+                    "description": "For each of the following performance indicators, how well did your organization meet its goals over the past year?",
+                    "group_responses": "Performed well above goals,I don't know or NA,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals",
+                    "questions": [
+                        "My organization is profitable.",
+                        "My organization has a strong position in the market for our primary products or services."
+                    ]
+                },
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_dbc"
+                        }
+                    ],
+                    "description": "For the following questions, we are interested in hearing about your organization's performance. If you are in a contract position, consider your current client to be your organization.",
+                    "group_responses": "Performed well above goals,I don't know or NA,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals",
+                    "questions": [
+                        "My organization achieves its overall organizational and mission goals.",
+                        "My organization operates efficiently.",
+                        "My organization delivers high quality products or services."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Productivity",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_prod"
+                        }
+                    ],
+                    "description": "Thinking about the work you do, please rate how strongly you agree or disagree with the following statements.",
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "I am able to do my work in the most effective way possible.",
+                        "I am productive at work.",
+                        "My work creates value."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Reliability",
+            "description": "We're interested in learning about how both you and your team think about reliability. For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_reliability"
+                        }
+                    ],
+                    "description": "These statements refer to targets for reliability, such as Service Level Objectives (SLO).",
+                    "questions": [
+                        "We have well-defined targets for reliability.",
+                        "Our reliability targets are based on measures which directly relate to user satisfaction (rather than proxy metrics or internal metrics).",
+                        "When we fail to meet our reliability targets, our users are dissatisfied with the reliability of our services.",
+                        "Our services consistently meet reliability targets."
+                    ]
+                },
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_reliability_eng"
+                        }
+                    ],
+                    "questions": [
+                        "My team regularly reviews and revises reliability targets based on evidence.",
+                        "My team works to improve the reliability of an existing system throughout the lifetime of the product (not only during initial design, or immediately after an outage).",
+                        "We regularly test our reliability incident preparedness through simulated disruptions, failover exercises, table-top exercises, etc.",
+                        "My team has well-defined procedures for incident management (for example, responder roles, communications channels, or playbooks).",
+                        "When we miss our reliability targets, we perform improvement work, adjust our development work, and/or re-prioritize."
+                      ],
+                      "group_responses": "Strongly agree,Agree,Slightly agree,Neither agree nor disagree,Slightly disagree,Disagree,Strongly disagree,I don't know or NA"
+                }
+            ]
+        },
+        {
+            "heading": "Security",
+            "core": true,
+            "survey_keys": [
+                {
+                    "2024": "core_sec"
+                }
+            ],
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Mostly Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Mostly Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "Tests to help us discover security problems are run throughout the software development process.",
+                        "Information Security has made easy-to-consume pre-approved libraries, packages, and/or toolchains and processes for developers and IT operations.",
+                        "Our information security team works with us throughout the development process."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Software delivery performance",
+            "question_groups": [
+                {
+                    "survey_keys": [
+                        {
+                            "2024": "core_change_fail,core_recovery_time,core_rework_rat,core_lead_time,core_deploy_freq"
+                        }
+                    ],
+                    "description": "The next set of questions are about various outcomes of your work. For the primary application or service you work on...",
+                    "questions": [
+                        "What is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don’t know or NA",
+                        "How often does your organization deploy code to production or release it to end users?|Fewer than once per six months, Between once per month and once every 6 months, Between once per week and once per month, Between once per day and once per week, Between once per hour and once per day, On demand (multiple deploys per day), I don't know or NA",
+                        "Approximately what percentage of changes to production or released to users result in degraded service (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward or patch), if at all? |(value between 0% and 100%)",
+                        "How long does it generally take to restore service after a change to production or release to users results in degraded service  (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward, or patch)?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don’t know or NA",
+                        "Approximately what percentage of deployments in the last 6 months were not planned but were performed to address a user-facing bug in the application?|(value between 0% and 100%)"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Test automation",
+            "description": "For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_tau"
+                        }
+                    ],
+                    "group_responses": "Strongly agree,Agree,Slightly agree,Neither agree nor disagree,Slightly disagree,Disagree,Strongly disagree,I don't know or NA",
+                    "questions": [
+                        "Developers use their own development environment to reproduce acceptance test failures.",
+                        "When the automated tests pass, I am confident the software is releasable."
+                      ]
+                }
+            ]
+        },
+        {
+            "heading": "Test data management",
+            "core": true,
+            "2024": false,
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_tdm"
+                        }
+                    ],
+                    "group_responses": "Strongly agree,I don't know or NA,Mostly agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Mostly disagree,Strongly disagree",
+                    "questions": [
+                        "I can acquire test data for my automated test suite on demand.",
+                        "My team has adequate test data to run our full automated test suite."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Trunk-based development",
+            "core": true,
+            "survey_keys": [
+                {
+                    "2024": "core_trunk"
+                }
+            ],
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "All developers on my team push code to the trunk or main branch at least daily.",
+                        "Our team is not subject to code freezes when no one can push to trunk or main."
+                    ]
+                }
+            ]
+        },
+
+        {
+            "heading": "User-centricity",
+            "question_groups": [
+                {
+                    "core": true,
+                    "survey_keys": [
+                        {
+                            "2024": "core_user_centric"
+                        }
+                    ],
+                    "description": "Thinking about the primary application or service you work on, to what extent do you agree with the following statements?",
+                    "group_responses": "Strongly agree,Mostly agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Mostly disagree,Strongly disagree,I don't know or NA",
+                    "questions": [
+                        "We leverage user feedback to continuously revisit and reprioritize features.",
+                        "We believe that focusing on the user is key to the success of the business.",
+                        "Creating value for our users is our focus."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Version control system",
+            "core": true,
+            "survey_keys": [
+                {
+                    "2024": "core_vcs"
+                }
+            ],
+            "description": "For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements",
+            "question_groups": [
+                {
+                    "group_responses": "Strongly agree,Agree,Slightly agree,Neither agree nor disagree,Slightly disagree,Disagree,Strongly disagree,I don't know or NA",
+                    "questions": [
+                        "Our application code and configurations are in a version control system.",
+                        "Our system configurations and scripts are in a version control system."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Working in small batches",
+            "core": true,
+            "survey_keys": [
+                {
+                    "2024": "core_small_batch"
+                }
+            ],
+            "question_groups": [
+                {
+                    "group_responses": "Strongly agree,I don't know or NA,Mostly agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Mostly disagree,Strongly disagree",
+                    "questions": [
+                        "Our features are decomposed in a way that allows a developer to complete the work in a week or less.",
+                        "Our features are decomposed in a way that enables frequent production releases."
+                    ]
+                }
+            ]
+        }
+    ]
+}
