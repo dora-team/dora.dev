@@ -1,0 +1,621 @@
+{
+    "categories": [
+        {
+            "heading": "Application or service",
+            "description": "We are interested in learning more about some of the characteristics of the primary application and service you work on.",
+            "question_groups": [
+                {
+                    "survey_key": "service_user_type",
+                    "questions": [
+                        "What are some of the characteristics of your primary end users for your primary application or service that you work on? Please select all that apply.|Internal (people from within my own organization),External (people from outside of my own organization),Consumers (people who use it for personal reasons),Business (people who use it for business reasons)"
+                    ]
+                },
+                {
+                    "survey_key": "service_ai",
+                    "questions": [
+                        "In the last 3 months, we have been actively adding AI-powered experiences, such as chatbots, for the end users of the primary application or service that I work on.|Strongly agree,Agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Disagree,Strongly disagree,I don't know or NA"
+                    ]
+                },
+                {
+                    "survey_key": "Service_ai_",
+                    "questions": [
+                        "Which statement best describes the state of AI for your primary application or service today?|We are developing new AI-powered applications.,We are extending existing products or services to incorporate AI-powered features.,We are experimenting with AI but are not actively developing AI-powered features or applications.,We are interested in using AI but are facing barriers getting started.,We are not interested in using AI.,I don't know or NA"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Approval process",
+            "question_groups": [
+                {
+                    "survey_key": "m_approval_time",
+                    "questions": [
+                        "For the primary application or service you work on, how long does it typically take to receive feedback from the approvals process (that is, how long does it take from when a code change is proposed to when it is approved for production use)?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,We do not receive feedback,I don't know"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Artificial Intelligence (AI)",
+            "question_groups": [
+                {
+                    "survey_key": "ai_task_contribution",
+                    "core": false,
+                    "description": "For the primary application or service you work on, how much have you relied on AI for each of the following tasks over the last 3 months?",
+                    "group_responses": "Not at all relied on,Minimally relied on,Somewhat relied on,Moderately relied on,Extensively relied on,I don't know,We do not perform this task",
+                    "questions": [
+                        "Code explanation",
+                        "Optimizing code (for example, reducing the complexity of a function)",
+                        "Debugging",
+                        " Summarizing or accessing information",
+                        "Analyzing data (for example, logs)",
+                        "Analyzing security",
+                        "Writing code blocks or functions (for example, auto-completion, auto-generation or auto-formatting)",
+                        "Writing tests",
+                        "Writing documentation",
+                        "Migrating from one language to another",
+                        "Modernizing legacy codebases",
+                        "Code reviews"
+                    ]
+                },
+                {
+                    "survey_key": "ai_surfaces",
+                    "description": "In the last 3 months, how frequently have you interacted with AI at work in each of the following:",
+                    "group_responses": "Never,Rarely,Sometimes,Often,Always,I don't know or NA",
+                    "questions": [
+                        "My development environment (your code editor or IDE)",
+                        "Internal web interfaces (for example, internal websites, portals, and documentation)",
+                        "External web interfaces (for example, external websites and documentation)",
+                        "Conversational AI interfaces (for example, chatbots in my IDE or on websites)",
+                        "As an automated part of our tool chain (for example, our integration, build, or test services)",
+                        "Within other tools and platforms I use for development, excluding my IDE",
+                        "Other"
+                    ]
+                },
+                {
+                    "survey_keys": [
+                        "ai_perceptions_near",
+                        "ai_perceptions_mid",
+                        "ai_perceptions_far "
+                    ],
+                    "description": "When you think about the following areas, what kind of impact do you think AI will have within the next [year | five years | ten years]. (respondents were randomly selected to answer for one of the three time horizons.)",
+                    "group_responses": "Extremely negative impact,Somewhat negative impact,No impact,Somewhat positive impact,Extremely positive impact,I don't know",
+                    "questions": [
+                        "The speed and stability of the software delivery process",
+                        "The performance of your organization",
+                        "Society as a whole",
+                        "The quality of your product",
+                        "The environment (for example, ecosystems and climate)",
+                        "Your career"
+                    ]
+                },
+                {
+                    "survey_key": "ai_contribution",
+                    "core": false,
+                    "questions": [
+                        "For the primary application or service you work on, how much have you relied on AI over the last 3 months?|Not at all relied on AI,Minimally relied on AI,Somewhat relied on AI,Moderately relied on AI,Extensively relied on AI,I don't know or NA"
+                    ]
+                },
+                {
+                    "survey_key": "ai_impact_prod",
+                    "questions": [
+                        "In the last 3 months, how has AI impacted your productivity at work?|Extremely increased my productivity,Moderately increased my productivity,Slightly increased my productivity,No impact on my  productivity,Slightly decreased my productivity,Moderately decreased my productivity,Extremely decreased my productivity,I don’t know or NA"
+                    ]
+                },
+                {
+                    "survey_key": "ai_shift",
+                    "questions": [
+                        "In the last 3 months, to what extent has your organization shifted priorities to incorporate AI into its applications and services?|Significant increase in AI prioritization,Moderate increase in AI prioritization,Slight increase in AI prioritization,No change in AI prioritization,Slight decrease in AI prioritization,Moderate decrease in AI prioritization,Significant decrease in AI prioritization,I don’t know or NA"
+                    ]
+                },
+                {
+                    "survey_key": "ai_write_code",
+                    "questions": [
+                        "In the last 3 months, how has AI impacted your ability to write code?|Extremely improved my ability to write code,Moderately improved my ability to write code,Slightly improved my ability to write code,No impact on my ability to write code,Slightly worsened my ability to write code,Moderately worsened my ability to write code,Extremely worsened my ability to write code,I don’t know or NA,I don’t use AI to write code"
+                    ]
+                },
+                {
+                    "survey_key": "ai_trust",
+                    "questions": [
+                        "In the last 3 months, how much did you trust the quality of the output from AI-generated code as part of your development work?|Not at all,A little,Somewhat,A lot,A great deal,I don’t know or NA"
+                    ]
+                },
+
+                {
+                    "survey_key": "ai_transparency",
+                    "questions": [
+                            "I trust my organization to be transparent with how they plan on using AI.|Strongly agree,Mostly agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Mostly disagree,Strongly disagree,I don't know or NA"
+                        ]
+                }
+            ]
+        },
+        {
+            "heading": "Burnout",
+            "core": true,
+            "2024": true,
+            "question_groups": [
+                {
+                    "survey_key": "q_wb_burnout",
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "I feel burned out from my work.",
+                        "I feel like I am ineffective in my work.",
+                        "My feelings about work negatively affect my life outside of work.",
+                        "I am indifferent or cynical about my work."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Code complexity",
+            "question_groups": [
+                {
+                    "survey_key": "q_cb_complex",
+                    "questions": [
+                        "In the last 6 months, how much has your primary application or service been hindered by code complexity if at all?|Not at all hindered,Slightly hindered,Moderately hindered,Very hindered,Extremely hindered,I don’t know or NA"
+                    ]
+                }
+            ]
+
+        },
+        {
+            "heading": "Code quality",
+            "core": false,
+            "2024": true,
+            "question_groups": [
+                {
+                    "survey_key": "q_cb_quality",
+                    "questions": [
+                        "In the last 6 months, how satisfied or dissatisfied have you been with the quality of code underlying your primary service or application?|Extremely satisfied,I don’t know or NA,Satisfied,Slightly satisfied,Neither satisfied or dissatisfied,Slightly dissatisfied,Dissatisfied,Extremely dissatisfied"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Code review time",
+            "question_groups": [
+                {
+                    "survey_key": "m_code_review_time",
+                    "questions": [
+                        "For the primary application or service you work on, how long does it generally take to complete the code review process?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don’t know,We do not do code reviews"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Cross-functional coordination",
+            "description": "Many people work as part of a cross-functional team that may include project managers, product managers, test engineers, software developers, technical writers, or user experience (UX designers / researchers). Thinking about the cross-functional team you work on, how much do you agree with the following statement?",
+            "question_groups": [
+                {
+                    "survey_key": "m_xfn_coordination",
+                    "questions": [
+                        "Over the last 3 months, I have been able to effectively collaborate with cross-functional team members.|Strongly agree,Mostly agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Mostly disagree,Strongly disagree,I don't know or NA"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Demographics and firmographics",
+            "question_groups": [
+                {
+                    "survey_key": "ind_country",
+                    "questions": [
+                        "In which country do you reside?"
+                    ]
+                },
+                {
+                    "survey_key": "ind_gender",
+                    "questions": [
+                        "Which of the following describe you, if any? Please check all that apply.|Man,Woman,Non-Binary,Prefer not to say,In your own words"
+                    ]
+                },
+                {
+                    "survey_key": "Ind_ethnicity",
+                    "questions": [
+                        "Which of the following describes you, if any? Please check all that apply.|African,Asian,Biracial,Black,Caribbean,Central American,Central Asian,East Asian,Ethnoreligious group,European,Hispanic or Latino/a,Indian,Indigenous (such as Native American or Indigenous Australian),Middle Eastern,Multiracial,North African,North American,Pacific Islander,South American,South Asian,Southeast Asian,White,I don't know,In your own words,Prefer not to say"
+                    ]
+                },
+                {
+                    "survey_key": "ind_disability",
+                    "questions": [
+                        "Which of the following describes you, if any? Please check all that apply.|I am blind / have difficulty seeing,I am deaf / hard of hearing,I am unable to / find it difficult to type,I am unable to / find it difficult to walk or stand without assistance,In your own words,Prefer not to say,None of the above apply"
+                    ]
+                },
+                {
+                    "survey_key": "ind_role",
+                    "questions": [
+                        "Which of the following describes your current job, the one you do most of the time? Please select only one.|Academic researcher,Back-end developer,Blockchain Engineer,Business analyst,Cloud infrastructure engineer,Data analyst,Data Engineer,Data scientist or machine learning specialist,Database administrator,Designer,Desktop or enterprise applications developer,Developer Advocate,Developer Experience,DevOps specialist,Educator,Embedded applications or devices developer,Engineering manager,Front=end developer,Full-stack developer,Game or graphics developer,Hardware Engineer,Marketing professional,Mobile developer,Product manager,Project manager,QA or test developer,Research & Development role,Sales professional,Scientist,Security professional,Senior Executive,Site Reliability Engineer,Student,System administrator,Prefer not to answer,Other (please specify)"
+                    ]
+                },
+                {
+                    "survey_key": "structure_org_size",
+                    "questions": [
+                        "Approximately how many people are employed by the organization you currently work for?|Just me - I am a freelancer or sole proprietor2 to 9 employees,10 to 19 employees,20 to 99 employees,100 to 499 employees,500 to 999 employees,1000 to 4999 employees,5000 to 9999 employees,10000 or more employees"
+                    ]
+                },
+                {
+                    "survey_key": "ind_contract",
+                    "questions": [
+                        "For the primary application or service you work on, what best describes your employment status with the organization that owns the application or service?|Full-time employee,Part-time employee,Full-time contractor,Part-time contractor"
+                    ]
+                },
+                {
+                    "survey_key": "Structure_industry",
+                    "questions": [
+                        "What is the principal industry of your organization?|Education,Energy,Financial Services,Government,Healthcare & Pharmaceuticals,Industrials & Manufacturing,Insurance,Media & Entertainment,Non-profit,Retail / Consumer / e-Commerce,Technology,Telecommunications,Other"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Documentation",
+            "description": "Think about the documentation you use. We define documentation as internal documentation for the services or applications you work on (for example, manuals, readmes, code comments, etc.). End users are not the audience for these documents. Please rate how strongly you agree or disagree with the following statements.",
+            "question_groups": [
+                {
+                    "survey_key": "env_docs",
+                    "group_responses": "Strongly disagree,Mostly disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Mostly agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "I can rely on our technical documentation when I need to use or work with the services or applications I work on.",
+                        "It is easy to find the right technical document when I need to understand something about the services or applications I work on.",
+                        "Technical documentation is updated as changes are made.",
+                        "When there’s an incident or problem that needs troubleshooting, I reach for the documentation."
+
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Flexible infrastructure",
+            "question_groups": [
+                {
+                    "survey_key": "quality_infra",
+                    "description": "Think about the infrastructure or platform where the primary application or service you work on runs.  Please rate the extent you agree or disagree with the following statements:",
+                    "group_responses": "Strongly agree,Mostly agree,Slightly agree,Neither agree nor disagree,Slightly disagree,Mostly disagree,Strongly disagree,I don't know or NA",
+                    "questions": [
+                        "Once I have access, I can independently provision and configure resources (compute, storage, etc.) and capabilities (APIs, monitoring, etc.) on demand, without raising tickets or requiring human interaction.",
+                        "I can access and modify resources (compute, storage, etc.) and capabilities (APIs, monitoring, etc.) from a broad range of devices over the network without the need for proprietary plug-ins or protocols.",
+                        "Computing resources are pooled and shared by multiple applications with resources and capabilities dynamically assigned and re-assigned based on demand.",
+                        "I can dynamically increase or decrease the resources available for the service or product that I primarily support on demand.",
+                        "I can monitor or control the quantity and/or cost of resources used by the service or product that I primarily support."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Flow",
+            "question_groups": [
+                {
+                    "survey_key": "q_wb_flow",
+                    "questions": [
+                        "In the last 3 months, how often were you able to reach a high level of focus or achieve 'flow' during development tasks?|Always,Frequently,Occasionally,Rarely,Never,I don’t know or prefer not to answer"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Job satisfaction",
+            "question_groups": [
+                {
+                    "survey_key": "q_wb_job_sat",
+                    "questions": [
+                        "How do you feel about your job as a whole?|Extremely satisfied,Satisfied,Slightly satisfied,Neither satisfied nor dissatisfied,Slightly dissatisfied,Dissatisfied,Extremely dissatisfied,I don't know or prefer not to answer"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Leadership",
+            "question_groups": [
+                {
+                    "survey_key": "env_transform_leader",
+                    "description": "Think about your experiences with your organization’s leadership when answering the following questions. Rate how strongly you agree or disagree with the following statements about your organization’s leadership.",
+                    "group_responses": "Strongly agree,Mostly agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Mostly disagree,Strongly disagree,I don't know or NA",
+                    "questions": [
+                      "My organization's leadership understands where the organization is going and where we want to be.",
+                      "My organization's leadership encourages people to see changing conditions as situations full of opportunities.",
+                      "My organization's leadership challenges team members to think about old problems in new ways and to rethink some of their basic assumptions about their work."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Organizational performance",
+            "description": "For the following questions, we are interested in your organization's performance. If you are in a contract position, consider your current client to be your organization.",
+            "question_groups": [
+                {
+                    "survey_key": "op_org_perf",
+                    "description": "For each of the following performance indicators, how well did your organization meet its goals over the past year?",
+                    "group_responses": "Performed well above goals,I don't know or NA,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals",
+                    "questions": [
+                        "Your organization’s overall performance",
+                        "Your organization’s overall profitability",
+                        "Relative market share for primary products",
+                        "Increased number of customers"
+                    ]
+                },
+                {
+                    "survey_key": "op_gov_perf",
+                    "description": "For the following questions, we are interested in hearing about your organization's performance. If you are in a contract position, consider your current client to be your organization.",
+                    "group_responses": "Performed well above goals,I don't know or NA,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals",
+                    "questions": [
+                        "Operating efficiency",
+                        "Customer satisfaction",
+                        "Quality of products or services provided",
+                        "Achievement of organizational and mission goals"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Organizational priorities",
+            "question_groups": [
+                {
+                    "survey_key": "env_objectives",
+                    "questions": [
+                        "How stable or unstable are the priorities of your organization?|Extremely stable,Very stable,Somewhat stable,Neither stable nor unstable,Somewhat unstable,Very unstable,Extremely unstable,I don’t know or NA"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Platform engineering",
+            "description": "A platform is a set of capabilities that is shared across multiple applications or services. The platform's goal is to improve the efficiency and productivity of software delivery. A company may have multiple overlapping platforms, but we refer to these overall as “the platform”. A platform engineering team is a group of people dedicated to building and running the platform. A dedicated platform engineering team is not required.",
+            "question_groups": [
+                {
+                    "survey_key": "plt_interactions",
+                    "questions": [
+                        "In the past 3 months, how have you interacted with your internal developer platform? (Please select all that apply)|Talk to a person,Ticket,CLI,API ,Code (including infrastructure as code),UI,I don’t have a platform,I don't know"
+                    ]
+                },
+                {
+                    "survey_key": "plt_feedback",
+                    "description": "How do platform owners collect feedback from platform users? (Select all that apply.)",
+                    "questions": [
+                        "Informal conversations",
+                        "Interviews of users",
+                        "Issue trackers",
+                        "Periodic, ongoing surveys",
+                        "Co-development of platform (ongoing user engagement with platform team)",
+                        "Hackathons (fixed duration co-development)",
+                        "Platform telemetry / user analytics",
+                        "Other (please specify)",
+                        "Platform owners don’t collect feedback",
+                        "I don't know",
+                        "NA"
+                      ]
+                },
+                {
+                    "survey_key": "plt_age",
+                    "questions": [
+                        "How old is your current internal developer platform?|less than a year,1-2 years,2-5 years,more than 5 years,I don't know"
+                      ]
+                },
+                {
+                    "survey_key": "plt_capabilities",
+                    "description": "To what extent do you agree or disagree with the following statements about your internal developer platform?",
+                    "group_responses": "Strongly agree,Agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Disagree,Strongly disagree,I don't know or NA",
+                    "questions": [
+                        "Existing users can perform their tasks for the entire application lifecycle, without relying on an enabling team.",
+                        "I am required to exclusively use the platform to perform tasks for the entire app lifecycle.",
+                        "My organization has a dedicated platform engineering team."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading":"Product performance",
+            "question_groups": [
+                {
+                    "survey_key": "q_prod_perf",
+                    "description": "The following question is about your primary service or application and how it performs for your end users. The primary application or service I work on...",
+                    "group_responses": "Strongly agree,Mostly agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Mostly disagree,Strongly disagree,I don't know or NA",
+                    "questions": [
+                        "is usable and easy to navigate",
+                        "does what it is supposed to do",
+                        "helps people accomplish what is important to them",
+                        "reliably available for users",
+                        "does well on performance metrics like latency",
+                        "keeps users’ information safe"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Productivity",
+            "question_groups": [
+                {
+                    "survey_key": "q_wb_productive",
+                    "description": "Thinking about the work you do, please rate how strongly you agree or disagree with the following statements.",
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "I am able to do my work in the most effective way possible.",
+                        "I am productive at work.",
+                        "My work creates value.",
+                        "My work is aligned with my set of skills."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Programming languages",
+            "description": "Which are the top 3 programming languages that you use at work? Pick up to 3.",
+            "question_groups": [
+                {
+                    "survey_key": "ind_coding_lang",
+                    "questions": [
+                        "JavaScript",
+                        "HTML/CSS",
+                        "SQL",
+                        "Python",
+                        "TypeScript",
+                        "Bash/Shell (all shells)",
+                        "Java",
+                        "C#",
+                        "C++",
+                        "PHP",
+                        "C",
+                        "Go",
+                        "PowerShell",
+                        "Rust",
+                        "Kotlin",
+                        "Ruby",
+                        "Dart",
+                        "Lua",
+                        "Swift",
+                        "Assembly",
+                        "HashiCorp Configuration Language (HCL)",
+                        "Other",
+                        "I don't code"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Reliability",
+            "description": "We're interested in learning about how both you and your team think about reliability. For the primary application or service you work on, please rate how strongly you agree or disagree with each of the following statements.",
+            "question_groups": [
+                {
+                    "questions": [
+                        "My team regularly reviews and revises reliability targets based on evidence.",
+                        "My team works to improve the reliability of an existing system throughout the lifetime of the product (not only during initial design, or immediately after an outage).",
+                        "We regularly test our reliability incident preparedness through simulated disruptions, failover exercises, table-top exercises, etc.",
+                        "My team has well-defined procedures for incident management (for example, responder roles, communications channels, or playbooks).",
+                        "When we miss our reliability targets, we perform improvement work, adjust our development work, and/or re-prioritize."
+                      ],
+                      "group_responses": "Strongly agree,Agree,Slightly agree,Neither agree nor disagree,Slightly disagree,Disagree,Strongly disagree,I don't know or NA"
+                }
+            ]
+        },
+        {
+            "heading": "Software delivery performance",
+            "question_groups": [
+                {
+                    "survey_keys": [
+                        "q_lead_time",
+                        "q_deploy_freq",
+                        "q_change_fail",
+                        "sdo_deploy_ttr",
+                        "q_rework_rate"
+                    ],
+                    "description": "The next set of questions are about various outcomes of your work. For the primary application or service you work on...",
+                    "questions": [
+                        "What is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don’t know or NA",
+                        "How often does your organization deploy code to production or release it to end users?|Fewer than once per six months, Between once per month and once every 6 months, Between once per week and once per month, Between once per day and once per week, Between once per hour and once per day, On demand (multiple deploys per day), I don't know or NA",
+                        "Approximately what percentage of changes to production or released to users result in degraded service (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward or patch), if at all? |(value between 0% and 100%)",
+                        "How long does it generally take to restore service after a change to production or release to users results in degraded service  (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward, or patch)?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don’t know or NA",
+                        "Approximately what percentage of deployments in the last 6 months were not planned but were performed to address a user-facing bug in the application?|(value between 0% and 100%)"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Team performance",
+            "question_groups": [
+                {
+                    "survey_keys": [
+                        "q_team_perf",
+                        "intro_team_perf"
+                    ],
+                    "description": "'Team' can have many different meanings. When we say 'team,' we are talking about the people who work with you on the same primary application or service. To what extent do you agree or disagree with the following statements about how your team performed over the last year?",
+                    "group_responses": "Strongly agree,Agree,Slightly agree,Neither agree nor disagree,Slightly disagree,Disagree,Strongly disagree,I don't know or NA",
+                    "questions": [
+                    "We were able to effectively collaborate with each other.",
+                    "We delivered innovative solutions.",
+                    "We worked efficiently.",
+                    "We were able to rely on each other.",
+                    "We were able to adapt to change."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Team stability",
+            "question_groups": [
+                {
+                    "survey_key": "q_team_stability",
+                    "questions": [
+                        "In the last 3 months, to what extent has your team experienced unnecessary churn from frustration caused by internal sources?|To a very high extent,To a high extent,To a moderate extent,To a slight extent,Not at all,I don’t know or NA"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Technical debt",
+            "core": false,
+            "2024": true,
+            "question_groups": [
+                {
+                    "survey_key": "q_tech_debt",
+                    "questions": [
+                        "In the last 6 months, how much did technical debt inside your primary application or service hinder your productivity if at all?|I don’t know or NA,Not at all hindered,Slightly hindered,Moderately hindered,Very hindered,Extremely hindered"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "User-centricity",
+            "question_groups": [
+                {
+                    "survey_key": "env_user_centric",
+                    "description": "Thinking about the primary application or service you work on, to what extent do you agree with the following statements?",
+                    "group_responses": "Strongly agree,Mostly agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Mostly disagree,Strongly disagree,I don't know or NA",
+                    "questions": [
+                        "We leverage user feedback to continuously revisit and reprioritize features.",
+                        "We have a clear understanding of what our users want to accomplish with our application or service.",
+                        "We believe that focusing on the user is key to the success of the business.",
+                        "The experience of our users is our top priority.",
+                        "Creating value for our users is our focus."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Work characteristics",
+            "question_groups": [
+                {
+                    "survey_key": "ind_work_arrangement",
+                    "questions": [
+                        "Move the slider to a position that best describes your work location|Fully Remote,About 50/50,Fully in Office,I don't know or NA"
+                    ]
+                },
+                {
+                    "survey_key": "ind_team_time",
+                    "questions": [
+                        "In your current role, how often do you work together, in the same location, with members of your team? For example, this could be working in the same office, meeting at an off-site event, or meeting with clients together.|Almost every day,At least once a week,At least once a month,At least once every 6 months,At least once every 12 months,Never,I don't know or NA"
+                    ]
+                },
+                {
+                    "survey_key": "ind_work_exp",
+                    "questions": [
+                        "How many years of working experience do you have?"
+                    ]
+                },
+                {
+                    "survey_key": "ind_team_exp",
+                    "questions": [
+                        "How many years have you worked on the team you’re currently on?"
+                    ]
+                },
+                {
+                    "survey_key": "ind_role_exp",
+                    "questions": [
+                        "How many years have you worked on your team in a role similar to your current role?"
+                    ]
+                },
+                {
+                    "survey_keys": [
+                    "m_time_visible",
+                    "m_time_toil",
+                    "m_time_creative"
+                    ],
+                    "group_responses": "value between 0% and 100%,Empty if NA or you prefer not to answer.",
+                    "questions": [
+                        "In the last 3 months, approximately what percentage of your time at work was spent on high profile projects or initiatives.",
+                        "In the last 3 months, approximately what percentage of your time at work was spent on repetitive and manual work with limited long-term value (also known as toil). Leave response empty if NA or you prefer not to answer.",
+                        "In the last 3 months, approximately what percentage of your time at work was spent on work that you consider valuable. Leave response empty if NA or you prefer not to answer."
+                    ]
+                }
+            ]
+        }
+    ]
+}
