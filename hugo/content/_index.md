@@ -35,13 +35,15 @@ Use our quick check tool to discover how you compare to industry peers, identify
 {{< /article >}}
 
 {{< article columns="1"
-    title="AI in the Workplace"
-    url="/research/2024/ai-preview/"
-    cta="Read the preview"
+    title="Fostering trust in generative AI"
+    url="/research/2024/trust-in-ai/"
+    cta="Read more..."
     img-src="/research/2024/dora-report-ai-preview-hero.png"
     img-align="left"
     >}}
-AI has dominated the tech landscape in recent years. But how has this powerful technology infiltrated the everyday lives of developers? Read an early preview into some findings about AI in the workplace.
+Using gen AI makes developers feel more productive, and developers who trust gen AI use it more.
+
+Read our findings and strategies to foster trust in gen AI.
 {{< /article >}}
 
 {{< article columns="1"
