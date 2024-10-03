@@ -23,18 +23,6 @@ We've outlined the DevOps practices that drive successful software delivery and 
 Use these findings to accelerate organizational performance while reducing burnout.
 {{< /article >}}
 
-{{< article
-    columns="2"
-    title="DevOps Dozen Winner"
-    url="https://devopsdozen.com/"
-    img-src="/resources/img/best-devops-research.png"
-    img-align="left"
-    delete_on="2024-03-01" >}}
-DORA's Accelerate State of DevOps Report was selected for *Best DevOps Survey/Analysis/Research*, which recognizes "research that has significantly and positively impacted the DevOps community."
-
-Congratulations to all of the [2024 DevOps Dozen winners](https://devopsdozen.com/)!
-{{< /article >}}
-
 {{< article columns="1"
     title="DORA Quick Check"
     url="/quickcheck/"
