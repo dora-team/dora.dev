@@ -45,7 +45,7 @@ body {
         li {
             font-family: $font-roboto;
             font-weight: 300;
-        
+
             strong, b, a {
                 font-family: $font-google-sans;
                 font-weight: 500;
@@ -206,4 +206,10 @@ section.banner {
 // for alpinejs: hide cloaked elements while page is loading
 [x-cloak] {
     display: none !important;
+}
+
+.updated {
+    font-size:12px;
+    color:$color-text-light;
+    font-weight:200;
 }
