@@ -9,8 +9,8 @@ test('2024 survey questions page has the correct title.', async ({ page }) => {
   await expect(page).toHaveTitle('DORA | DORA Research Questions');
 });
 
-test('2024 survey questions page has the correct header.', async ({ page }) => {
-  await expect(page.locator('h2')).toContainText('Coming soon!');
+test('2024 questions page lists the correct report.', async ({ page }) => {
+  await expect(page.locator('h4')).toContainText('Responses to the following questions were used in the analysis published in the 2024 Accelerate State of DevOps Report.');
 });
 
 test('2024 survey questions page has the correct sidebar.', async ({ page }) => {
