@@ -1,17 +1,16 @@
 ---
-title: "DORA Research: 2024"
-date: 2024-07-02
+title: "Accelerate State of DevOps Report 2024"
+date: 2024-10-06
 draft: false
+type: research_archives
 research_year: "2024"
+tab_order: "2"
+tab_title: "DORA Report"
 type: "research_archives"
-tab_order: "0"
-tab_title: "Overview"
 layout: single
 ---
 
-Thank you to everyone who took the time to participate in the 2024 DORA survey!
-
-Your responses are being analyzed and will provide the basis for this year's DORA Report.
+## Coming Soon!
 
 ### What's new for 2024?
 
@@ -22,9 +21,3 @@ Your responses are being analyzed and will provide the basis for this year's DOR
 * **Developer Experience** - We want to learn more about your overall experience as you work to deliver for your customers. How does your experience impact the value you're able to deliver?
 
 We expect to publish the 2024 DORA report sometime in October, 2024. [Join the DORA community](https://dora.community) to be notified when the report is published, for discussions with the rest of the community, and for future research study participation opportunities.
-<!--
-### The 2023 Accelerate State of DevOps survey is now closed.
-Thank you to everyone who participated! Your responses informed the [Accelerate State of DevOps 2023 Report](/dora-report-2023).
-
-To be notified of future research study participation opportunities, [join the DORA community](https://dora.community).
--->
