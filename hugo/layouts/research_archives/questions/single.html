@@ -53,6 +53,11 @@
                 {{ end }}
             {{ end }}
         {{ end }}
+
+        {{ if .Params.updated }}
+        <div class="updated">Last updated: {{ .Params.updated | time.Format ":date_long" }}</div>
+        {{ end }}
+
         </article>
     <sidebar>
         {{ partial "research_sidebar.html" . }}
