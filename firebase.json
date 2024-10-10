@@ -10,6 +10,16 @@
             ],
             "redirects": [
                 {
+                    "source": "/dora-brand-guidelines",
+                    "destination": "/brand-guidelines/",
+                    "type": 301
+                },
+                {
+                    "source": "/sponsors/dora-brand-guidelines",
+                    "destination": "/brand-guidelines/",
+                    "type": 301
+                },
+                {
                     "source": "/concepts/wellbeing",
                     "destination": "/capabilities/well-being/",
                     "type": 302
