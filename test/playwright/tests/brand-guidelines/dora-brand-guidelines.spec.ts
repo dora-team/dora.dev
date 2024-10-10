@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 // baseURL default is defined in playwright.config.ts
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/sponsors/dora-brand-guidelines/');
+  await page.goto('/brand-guidelines/');
 });
 
 test('DORA brand guidelines has the correct title.', async ({ page }) => {
