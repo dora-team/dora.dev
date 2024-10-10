@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { sidebarLinks } from '../sidebarLinks';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/research/2024/dora-report/');
+  await page.goto('/research/2024/');
 });
 
 test('2024 research overview has the correct title.', async ({ page }) => {

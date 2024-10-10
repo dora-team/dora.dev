@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('2024 research overview has the correct title.', async ({ page }) => {
-  await expect(page).toHaveTitle('DORA | DORA Research: 2024');
+  await expect(page).toHaveTitle('DORA | Accelerate State of DevOps Report 2024');
 });
 
 test('2024 research overview has the correct header.', async ({ page }) => {
