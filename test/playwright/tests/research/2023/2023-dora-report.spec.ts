@@ -2,15 +2,15 @@ import { test, expect } from '@playwright/test';
 import { sidebarLinks } from '../sidebarLinks';
 
 const languageToUrlMap = {
-  'English': 'https://cloud.google.com/devops/state-of-devops/?hl=en&region=US',
-  'Español': 'https://cloud.google.com/devops/state-of-devops/?hl=es&region=ES',
-  'Español - América Latina': 'https://cloud.google.com/devops/state-of-devops/?hl=es-419&region=MX',
-  'Français': 'https://cloud.google.com/devops/state-of-devops/?hl=fr&region=FR',
-  'Italiano': 'https://cloud.google.com/devops/state-of-devops/?hl=it&region=IT',
-  'Português - Brasil': 'https://cloud.google.com/devops/state-of-devops/?hl=pt-br&region=BR',
-  '中文 – 简体': 'https://cloud.google.com/devops/state-of-devops/?hl=zh-tw&region=TW',
-  '日本語': 'https://cloud.google.com/devops/state-of-devops/?hl=ja&region=JP',
-  '한국어': 'https://cloud.google.com/devops/state-of-devops/?hl=ko&region=KR'
+  'English': '2023-dora-accelerate-state-of-devops-report.pdf',
+  'Español': '2023-dora-accelerate-state-of-devops-report_es.pdf',
+  'Español - América Latina': '2023-dora-accelerate-state-of-devops-report_es-419.pdf',
+  'Français': '2023-dora-accelerate-state-of-devops-report_fr.pdf',
+  'Italiano': '2023-dora-accelerate-state-of-devops-report_it.pdf',
+  'Português - Brasil': '2023-dora-accelerate-state-of-devops-report_pt-BR.pdf',
+  '中文 – 简体': '2023-dora-accelerate-state-of-devops-report_zh-TW.pdf' ,
+  '日本語': '2023-dora-accelerate-state-of-devops-report_ja.pdf',
+  '한국어': '2023-dora-accelerate-state-of-devops-report_ko.pdf'
 };
 
 test.beforeEach(async ({ page }) => {
