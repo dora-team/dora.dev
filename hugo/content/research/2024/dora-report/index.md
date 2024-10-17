@@ -37,6 +37,6 @@ type: "research_archives"
 <a href="https://www.excella.com/" target="_blank"><img src="sponsors/excella.png" style="max-width:8em; max-height:2.5em;" alt="Excella"></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://gearset.com/" target="_blank"><img src="sponsors/gearset.png" style="max-width:8em; max-height:2.5em;" alt="Gearset"></a>
 
-<a href="https://www.liatrio.com/" target="_blank"><img src="sponsors/liatrio.png" style="max-width:8em; max-height:2.5em;" alt="Liatrio"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.liatrio.com/" target="_blank"><img src="sponsors/liatrio.png" style="max-width:8em; max-height:2.5em;" alt="Liatrio"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://middlewarehq.com/" target="_blank"><img src="sponsors/middleware.png" style="max-width:8em; max-height:2.5em;" alt="Middleware"></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://www.opsera.io/" target="_blank"><img src="sponsors/opseara.png" style="max-width:8em; max-height:2.5em;" alt="Opsera"></a>
