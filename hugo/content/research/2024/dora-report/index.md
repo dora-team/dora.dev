@@ -13,7 +13,7 @@ type: "research_archives"
 <grid class="border_none" style="margin-top:1rem;">
 <item>
 
-<a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><img src="2023-dora-accelerate-state-of-devops-report.png" style="max-width:24em;"></a>
+<a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><img src="2024-dora-accelerate-state-of-devops-report.png" style="max-width:24em;"></a>
 
 </item>
 <item>
@@ -26,3 +26,21 @@ type: "research_archives"
 
 </item>
 </grid>
+
+### Gold Sponsors
+
+<a href="https://www.catchpoint.com/" target="_blank"><img src="sponsors/catchpoint.png" style="max-width:8em;" alt="Catchpoint"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://chronosphere.io/" target="_blank"><img src="sponsors/chronosphere.png" style="max-width:8em;" alt="chronosphere"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.datadoghq.com/" target="_blank"><img src="sponsors/datadog.png" style="max-width:8em;" alt="Datadog"></a>
+
+<a href="https://www2.deloitte.com/" target="_blank"><img src="sponsors/deloitte.png" style="max-width:8em;" alt="Deloitte"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.excella.com/" target="_blank"><img src="sponsors/excella.png" style="max-width:8em;" alt="Excella"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://gearset.com/" target="_blank"><img src="sponsors/gearset.png" style="max-width:8em;" alt="Gearset"></a>
+
+<a href="https://www.liatrio.com/" target="_blank"><img src="sponsors/liatrio.png" style="max-width:8em;" alt="Liatrio"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://middlewarehq.com/" target="_blank"><img src="sponsors/middleware.png" style="max-width:8em;" alt="Middleware"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.opsera.io/" target="_blank"><img src="sponsors/opseara.png" style="max-width:8em;" alt="Opsera"></a>
+
+
+
+
