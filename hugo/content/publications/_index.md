@@ -9,21 +9,28 @@ bannerSubtitle: "Findings from DORA's research program are made available throug
 >
 > Please reach out to sponsor-dora@google.com for more information on the sponsorship opportunities!
 
-## 2023 Accelerate State of DevOps Report
+## Accelerate State of DevOps Report
 
 <section class="publicationHighlight">
     <aside>
-        <a href="/research/2023/dora-report/" target="_blank"><img src="/research/2023/dora-report/2023-dora-accelerate-state-of-devops-report.png" alt="2023 Accelerate State of DevOps Report"></a>
+        <a href="/research/2024/dora-report/"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 Accelerate State of DevOps Report"></a>
     </aside>
     <article>
-       <p>For the last nine years, we’ve produced the State of DevOps report, hearing from over 36,000 professionals worldwide.</p>
-        <p>We’ve outlined the DevOps practices that drive successful software delivery and operational performance, with a deep focus on user-centric design in the 2023 report.</p>
-        <p>Use these findings to accelerate organizational performance while reducing burnout.</p>
-       <a href="/research/2023/dora-report/" target="_blank"><button class="secondary">Download the report</button></a>
+       <p>
+         DORA has been investigating the capabilities, practices, and measures of high-performing technology-driven teams and organizations for over a decade. This is our tenth DORA report. We have heard from more than 39,000 professionals working at organizations of every size and across many different industries globally.
+       </p>
+       <p>
+         This report highlights the significant impact of AI on software development, explores platform engineering's promises and challenges, and emphasizes user-centricity and stable priorities for organizational success.
+       </p>
+        <p>Findings from our research can help inform your team's continuous improvement journey.</p>
+       <a href="/research/2024/dora-report/"><button class="secondary">Download the report</button></a>
     </article>
 </section>
 
 ## Prior State of DevOps Reports
+- [![2023 Accelerate State of DevOps Report](/research/2023/dora-report/2023-dora-accelerate-state-of-devops-report_landscape.png)](/research/2023/dora-report/)
+  **[2023 Accelerate State of DevOps Report](/research/2023/dora-report/)**
+  [Download the report](/research/2023/dora-report/)
 
 - [![2022 Accelerate State of DevOps Report](/research/2022/dora-report/2022-dora-accelerate-state-of-devops-report_landscape.png)](/research/2022/dora-report/)
   **[2022 Accelerate State of DevOps Report](/research/2022/dora-report/)**
