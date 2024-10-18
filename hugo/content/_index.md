@@ -7,20 +7,19 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 ---
 
 {{< article columns="2"
-    title="The Accelerate State of DevOps Report 2023"
+    title="Accelerate State of DevOps Report 2024"
     url="https://cloud.google.com/devops/state-of-devops"
     cta="Read the Report"
-    img-src="/research/2023/dora-report/2023-dora-accelerate-state-of-devops-report.png"
-    img-alt="The Accelerate State of DevOps Report 2023"
+    img-src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png"
+    img-alt="The Accelerate State of DevOps Report 2024"
     img-align="right"
     img-stroke="true"
     text-size-ratio="1.15"
     >}}
-For the last nine years, we've produced the State of DevOps report, hearing from over 36,000 professionals worldwide.
+DORA has been investigating the capabilities, practices, and measures of high-performing technology-driven teams and organizations for over a decade. This is our tenth DORA report. We have heard from more than 39,000 professionals working at organizations of every size and across many different industries globally.
 
-We've outlined the DevOps practices that drive successful software delivery and operational performance, with a deep focus on user-centric design in the 2023 report.
+This report highlights the significant impact of AI on software development, explores platform engineering's promises and challenges, and emphasizes user-centricity and stable priorities for organizational success.
 
-Use these findings to accelerate organizational performance while reducing burnout.
 {{< /article >}}
 
 {{< article columns="1"
