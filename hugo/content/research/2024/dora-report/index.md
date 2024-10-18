@@ -16,16 +16,14 @@ type: "research_archives"
 <a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><img src="2024-dora-accelerate-state-of-devops-report.png" style="max-width:24em;"></a>
 
 </item>
+
 <item>
-
-#### The 2024 DORA Report is available in the following languages:
-
-<ul>
-    <li style="font-size:1.25rem;"><a href="https://cloud.google.com/devops/state-of-devops/?hl=en&region=US" target="_blank">English</a></li>
-    <li>Other languages will be available soon.</li>
-</ul>
-
-</item>
+<p>
+DORA has been investigating the capabilities, practices, and measures of high-performing technology-driven teams and organizations for over a decade. This is our tenth DORA report. We have heard from more than 39,000 professionals working at organizations of every size and across many different industries globally.
+</p>
+<p>
+This report highlights the significant impact of AI on software development, explores platform engineering’s promises and challenges, and emphasizes user-centricity and stable priorities for organizational success.
+</p>
 </grid>
 
 ### Gold Sponsors
