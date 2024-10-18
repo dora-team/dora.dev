@@ -15,4 +15,4 @@ layout: single
 
 Download infographic as PDF:
 
-<a href="2024-DORA-Report-Infographic.pdf" target="_blank"><img src="2024-dora-report-infographic-thumb.png" style="max-width:6em;"></a>
+<a href="2024-DORA-Report-Infographic.pdf" target="_blank"><img src="2024-dora-report-infographic-thumb.png" style="max-width:10em;"></a>
