@@ -29,6 +29,8 @@ type: "research_archives"
 
 ### Gold Sponsors
 
+The DORA report is published by Google Cloud with support from the following gold sponsors.
+
 <grid class="border_none" style="margin-top:1rem;grid-template-columns: 1fr 1fr 1fr;">
 
 <item style="display:flex; align-items:center;">
