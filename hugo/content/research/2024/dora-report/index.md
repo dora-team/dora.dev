@@ -22,6 +22,7 @@ type: "research_archives"
 
 <ul>
     <li style="font-size:1.25rem;"><a href="https://cloud.google.com/devops/state-of-devops/?hl=en&region=US" target="_blank">English</a></li>
+    <li>Other languages will be available soon.</li>
 </ul>
 
 </item>
