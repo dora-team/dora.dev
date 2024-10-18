@@ -13,8 +13,15 @@ test('2024 research overview has the correct header.', async ({ page }) => {
   await expect(page.locator('h1')).toContainText('DORA Research: 2024');
 });
 
-test('2024 report is coming soon.', async ({ page }) => {
-    await expect(page.locator('h2')).toContainText('Coming Soon!');
+test('2024 DORA report page has the correct language.', async ({ page }) => {
+  const languageOptions = await page.locator('item ul li').count();
+  await expect(languageOptions).toBe(1);
+
+  for (const language in languageToUrlMap) {
+    const url = languageToUrlMap[language];
+    const languageLink = page.getByRole('link', { name: language, exact: true });
+    await expect(languageLink).toHaveAttribute('href', url);
+  }
 });
 
 test('2024 research overview has the correct sidebar.', async ({ page }) => {
