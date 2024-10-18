@@ -29,14 +29,42 @@ type: "research_archives"
 
 ### Gold Sponsors
 
-<a href="https://www.catchpoint.com/" target="_blank"><img src="sponsors/catchpoint.png" style="max-width:8em; max-height:2.5em;" alt="Catchpoint"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://chronosphere.io/" target="_blank"><img src="sponsors/chronosphere.png" style="max-width:8em; max-height:2.5em;" alt="chronosphere"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<grid class="border_none" style="margin-top:1rem;grid-template-columns: 1fr 1fr 1fr;">
+
+<item style="display:flex; align-items:center;">
+<a href="https://www.catchpoint.com/" target="_blank"><img src="sponsors/catchpoint.png" style="max-width:8em; max-height:2.5em;" alt="Catchpoint"></a>
+</item>
+
+<item style="display:flex; align-items:center;">
+<a href="https://chronosphere.io/" target="_blank"><img src="sponsors/chronosphere.png" style="max-width:8em; max-height:2.5em;" alt="chronosphere"></a>
+</item>
+
+<item style="display:flex; align-items:center;">
 <a href="https://www.datadoghq.com/" target="_blank"><img src="sponsors/datadog.png" style="max-width:8em; max-height:2.5em;" alt="Datadog"></a>
+</item>
 
-<a href="https://www2.deloitte.com/" target="_blank"><img src="sponsors/deloitte.png" style="max-width:8em; max-height:2.5em;" alt="Deloitte"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.excella.com/" target="_blank"><img src="sponsors/excella.png" style="max-width:8em; max-height:2.5em;" alt="Excella"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<item style="display:flex; align-items:center;">
+<a href="https://www2.deloitte.com/" target="_blank"><img src="sponsors/deloitte.png" style="max-width:8em; max-height:2.5em;" alt="Deloitte"></a>
+</item>
+
+<item style="display:flex; align-items:center;">
+<a href="https://www.excella.com/" target="_blank"><img src="sponsors/excella.png" style="max-width:8em; max-height:2.5em;" alt="Excella"></a>
+</item>
+
+<item style="display:flex; align-items:center;">
 <a href="https://gearset.com/" target="_blank"><img src="sponsors/gearset.png" style="max-width:8em; max-height:2.5em;" alt="Gearset"></a>
+</item>
 
-<a href="https://www.liatrio.com/" target="_blank"><img src="sponsors/liatrio.png" style="max-width:8em; max-height:2.5em;" alt="Liatrio"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://middlewarehq.com/" target="_blank"><img src="sponsors/middleware.png" style="max-width:8em; max-height:2.5em;" alt="Middleware"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<item style="display:flex; align-items:center;">
+<a href="https://www.liatrio.com/" target="_blank"><img src="sponsors/liatrio.png" style="max-width:8em; max-height:2.5em;" alt="Liatrio"></a>
+</item>
+
+<item style="display:flex; align-items:center;">
+<a href="https://middlewarehq.com/" target="_blank"><img src="sponsors/middleware.png" style="max-width:8em; max-height:2.5em;" alt="Middleware"></a>
+</item>
+
+<item style="display:flex; align-items:center;">
 <a href="https://www.opsera.io/" target="_blank"><img src="sponsors/opseara.png" style="max-width:8em; max-height:2.5em;" alt="Opsera"></a>
+</item>
+
+</grid>
