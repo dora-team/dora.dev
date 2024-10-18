@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 // baseURL default is defined in playwright.config.ts
 
 export const heroImages = [
-  '/research/2023/dora-report/2023-dora-accelerate-state-of-devops-report.png',
+  '/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png',
   '/img/quickcheck/hero_illustration.svg',
   '/research/2024/dora-report-ai-preview-hero.png',
   '/guides/how-to-innovate-with-generative-ai/how-to-innovate-with-ai.png',
