@@ -4,7 +4,7 @@ date: 2024-09-13
 updated: 2024-09-26T00:00:00Z
 research_year: "2024"
 draft: false
-tab_order: "6"
+tab_order: "8"
 tab_title: "Fostering Trust in AI"
 headline: "DORA Report Preview - Fostering Trust in AI"
 heroimage: "/research/2024/dora-report-ai-preview-hero.png"
