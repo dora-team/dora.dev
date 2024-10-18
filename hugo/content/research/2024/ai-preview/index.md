@@ -4,7 +4,7 @@ date: 2024-08-14
 updated: 2024-08-30T00:00:00Z
 research_year: "2024"
 draft: false
-tab_order: "5"
+tab_order: "6"
 tab_title: "AI Preview"
 headline: "DORA Report Preview - AI in the workplace"
 heroimage: "/research/2024/dora-report-ai-preview-hero.png"
