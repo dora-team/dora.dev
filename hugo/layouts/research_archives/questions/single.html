@@ -1,6 +1,8 @@
 {{ define "main" }}
 {{- partial "partials/link_styles" "scss/research.scss" -}}
 
+{{ $researchYear := .Params.research_year }}
+
 <h1>DORA Research: {{ .Params.research_year }}</h1>
 {{- partial "research_archives_tabs" . -}}
 
@@ -9,7 +11,11 @@
 <section class="hasSidebar">
     <article id="questions">
         <h2>Survey Questions</h2>
-        <h4>Responses to the following questions were used in the analysis published in the <a href="/research/{{ .Params.research_year }}/dora-report/">{{ .Params.research_year }} Accelerate State of DevOps Report</a>.</h4>
+        {{ if eq $researchYear "core" }}
+          <h4>Responses to the following questions were used in the analysis of the <a href="/research/">DORA Core Model</a>.</h4>
+        {{ else }}
+            <h4>Responses to the following questions were used in the analysis published in the <a href="/research/{{ $researchYear }}/dora-report/">{{ $researchYear }} Accelerate State of DevOps Report</a>.</h4>
+        {{ end }}
         {{ with index .Site.Data.survey_questions .Params.research_year }}
             {{  range sort .categories "heading" }}
                 <h3 id="{{ .heading | anchorize }}">{{ .heading }}</h3>
@@ -47,6 +53,11 @@
                 {{ end }}
             {{ end }}
         {{ end }}
+
+        {{ if .Params.updated }}
+        <div class="updated">Last updated: {{ .Params.updated | time.Format ":date_long" }}</div>
+        {{ end }}
+
         </article>
     <sidebar>
         {{ partial "research_sidebar.html" . }}

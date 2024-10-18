@@ -13,6 +13,10 @@ test('2024 research overview has the correct header.', async ({ page }) => {
   await expect(page.locator('h1')).toContainText('DORA Research: 2024');
 });
 
+test('2024 report is coming soon.', async ({ page }) => {
+    await expect(page.locator('h2')).toContainText('Coming Soon!');
+});
+
 test('2024 research overview has the correct sidebar.', async ({ page }) => {
   for (const sidebarLink of sidebarLinks) {
     await expect(page.getByRole('link', { name: sidebarLink, exact: true })).toBeVisible();
