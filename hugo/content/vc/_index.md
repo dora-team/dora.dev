@@ -19,14 +19,14 @@ bannerSubtitle: "Check if you have the most recent version of the DORA Report."
   <a href="/research/2024/dora-report"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 DORA Report Cover" style="max-width:12em;"></a>
 </div>
 
-<!-- version is 2024-10 -->
-<div class="version-content" data-version="2024-10">
+<!-- version is 2024.1 -->
+<div class="version-content" data-version="2024.1">
   <h2>2024 DORA Report</h2>
-  <p>You have the latest version of the 2024 report, <code>v.2024-10</code>.</p>
+  <p>You have the latest version of the 2024 report, <code>v.2024.1</code>.</p>
   <a href="/research/2024/dora-report"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 DORA Report Cover" style="max-width:18em;"></a>
 </div>
 
-<!-- version starts with 2023- and matches 2023-12 -->
+<!-- version is 2023-12 -->
 <div class="version-content" data-version="2023-12">
   <h2>2023 DORA Report</h2>
   <p>You have the latest version of the 2023 report, <code>v.2023-12</code>.</p>
@@ -37,7 +37,7 @@ bannerSubtitle: "Check if you have the most recent version of the DORA Report."
   <a href="/research/2024/dora-report"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 DORA Report Cover" style="max-width:12em;"></a>
 </div>
 
-<!-- version starts with 2023- and matches 2023-10 -->
+<!-- version is 2023-10 -->
 <div class="version-content" data-version="2023-10">
   <h2>2023 DORA Report</h2>
   <p>You have an outdated version of the 2023 report. We encourage you to <a href="/research/2023/dora-report">download the latest version</a>, <code>v.2023-12</code>.</p>
