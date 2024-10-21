@@ -8,6 +8,8 @@ informed:
 ---
 # Use AlpineJS as a lightweight JS framework for decorating HTML elements
 
+> Update 2024-10-21: We plan to [remove Alpine](https://github.com/dora-team/dora.dev/issues/647)
+
 ## Context and Problem Statement
 
 Much of the DORA.dev site is static HTML and various assets/resources (i.e., PDF and images). For good UX and to move away from custom (hard to maintain) javascript, we need a lightweight javascript framework to assist in the decoration and visibility of DOM objects (e.g., modal windows)
