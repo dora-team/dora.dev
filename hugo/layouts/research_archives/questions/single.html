@@ -13,6 +13,8 @@
         <h2>Survey Questions</h2>
         {{ if eq $researchYear "core" }}
           <h4>Responses to the following questions were used in the analysis of the <a href="/research/">DORA Core Model</a>.</h4>
+        {{ else if eq $researchYear "2024" }}
+        <h4>Responses to the following questions were used in the analysis published in the {{ $researchYear }} Accelerate State of DevOps Report (coming soon).</h4>
         {{ else }}
             <h4>Responses to the following questions were used in the analysis published in the <a href="/research/{{ $researchYear }}/dora-report/">{{ $researchYear }} Accelerate State of DevOps Report</a>.</h4>
         {{ end }}
