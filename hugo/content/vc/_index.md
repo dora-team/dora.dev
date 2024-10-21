@@ -22,8 +22,8 @@ bannerSubtitle: "Check if you have the most recent version of the DORA Report."
   <p>The following versions of the DORA Report are available via this version checker:</p>
   <ul>
     <li><a href="/vc?v=2024.1">2024 DORA Report <code>v. 2024.1</code></a></li>
-    <li><a href="/vc?v=2023-12">2024 DORA Report <code>v. 2023-12</code></a></li>
-    <li><a href="/vc?v=2023-10">2024 DORA Report <code>v. 2023-10</code></a></li>
+    <li><a href="/vc?v=2023-12">2023 DORA Report <code>v. 2023-12</code></a></li>
+    <li><a href="/vc?v=2023-10">2023 DORA Report <code>v. 2023-10</code></a></li>
   </ul>
 </div>
 
