@@ -1,7 +1,7 @@
 ---
 title: "A Decade with DORA"
 date: 2024-10-17
-updated: 2024-10-18
+updated: 2024-10-21
 draft: false
 bannerTitle: A decade with DORA
 layout: single
