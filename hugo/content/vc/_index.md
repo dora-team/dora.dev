@@ -17,6 +17,14 @@ bannerSubtitle: "Check if you have the most recent version of the DORA Report."
   <h2>Unrecognized version</h2>
   <p>We do not recognize that version of the DORA Report. The <a href="/research/2024/dora-report">2024 DORA Report</a> is now available for download.</p>
   <a href="/research/2024/dora-report"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 DORA Report Cover" style="max-width:12em;"></a>
+
+  <h3>Known versions</h3>
+  <p>The following versions of the DORA Report are available via this version checker:</p>
+  <ul>
+    <li><a href="/vc?v=2024.1">2024 DORA Report <code>v. 2024.1</code></a></li>
+    <li><a href="/vc?v=2023-12">2024 DORA Report <code>v. 2023-12</code></a></li>
+    <li><a href="/vc?v=2023-10">2024 DORA Report <code>v. 2023-10</code></a></li>
+  </ul>
 </div>
 
 <!-- version is 2024.1 -->
