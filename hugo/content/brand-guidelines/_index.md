@@ -1,7 +1,7 @@
 ---
 title: "DORA Brand Guidelines"
 date: 2024-10-01T20:58:12-04:00
-updated: 2024-10-18T00:00:00Z
+updated: 2024-10-21
 draft: false
 bannerTitle: DORA Brand Guidelines
 layout: single
