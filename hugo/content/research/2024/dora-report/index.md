@@ -24,6 +24,9 @@ DORA has been investigating the capabilities, practices, and measures of high-pe
 <p>
 This report highlights the significant impact of AI on software development, explores platform engineering’s promises and challenges, and emphasizes user-centricity and stable priorities for organizational success.
 </p>
+<p>
+<a href="https://cloud.google.com/resources/devops/state-of-devops" target="_blank"><button class="secondary">Download the report</button></a>
+</p>
 </grid>
 
 ### Gold Sponsors
