@@ -13,7 +13,7 @@ type: "research_archives"
 <grid class="border_none" style="margin-top:1rem;">
 <item>
 
-<a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><img src="2024-dora-accelerate-state-of-devops-report.png" style="max-width:24em;"></a>
+<a href="https://cloud.google.com/resources/devops/state-of-devops" target="_blank"><img src="2024-dora-accelerate-state-of-devops-report.png" style="max-width:24em;"></a>
 
 </item>
 

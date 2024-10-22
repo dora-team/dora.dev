@@ -13,7 +13,7 @@ bannerSubtitle: "Findings from DORA's research program are made available throug
 
 <section class="publicationHighlight">
     <aside>
-        <a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 Accelerate State of DevOps Report"></a>
+        <a href="https://cloud.google.com/resources/devops/state-of-devops" target="_blank"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 Accelerate State of DevOps Report"></a>
     </aside>
     <article>
        <p>
@@ -23,7 +23,7 @@ bannerSubtitle: "Findings from DORA's research program are made available throug
          This report highlights the significant impact of AI on software development, explores platform engineering's promises and challenges, and emphasizes user-centricity and stable priorities for organizational success.
        </p>
         <p>Findings from our research can help inform your team's continuous improvement journey.</p>
-       <a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><button class="secondary">Download the report</button></a>
+       <a href="https://cloud.google.com/resources/devops/state-of-devops" target="_blank"><button class="secondary">Download the report</button></a>
     </article>
 </section>
 
