@@ -9,7 +9,7 @@ tab_title: "Errata"
 type: "research_archives"
 ---
 
-This page lists errors and corrections to the 2024 Accelerate State of DevOps Report. To track revisions, report PDFs are stamped with a version number. The initial version of the 2024 report is `v.2024-10`.
+This page lists errors and corrections to the 2024 Accelerate State of DevOps Report. To track revisions, report PDFs are stamped with a version number. The initial version of the 2024 report is `v.2024.1`.
 
 
 -----
