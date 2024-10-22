@@ -8,7 +8,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 
 {{< article columns="2"
     title="Accelerate State of DevOps Report 2024"
-    url="https://cloud.google.com/devops/state-of-devops"
+    url="https://cloud.google.com/resources/devops/state-of-devops"
     cta="Read the Report"
     img-src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png"
     img-alt="The Accelerate State of DevOps Report 2024"

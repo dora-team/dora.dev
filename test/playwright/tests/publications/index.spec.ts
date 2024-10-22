@@ -32,7 +32,7 @@ test('Publications page links to the DORA awards ebook.', async ({ page }) => {
 
 // Mapping for "Download the report" links which, by convention, got to /research/:year or /research/:year/dora-report
 const downloadTheReportMap = [
-  { year: 2024, url: 'https://cloud.google.com/devops/state-of-devops' },
+  { year: 2024, url: 'https://cloud.google.com/resources/devops/state-of-devops' },
   { year: 2023, url: '/research/2023/dora-report/' },
   { year: 2022, url: '/research/2022/dora-report/' },
   { year: 2021, url: '/research/2021/dora-report/' },

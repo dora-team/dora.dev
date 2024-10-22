@@ -13,7 +13,7 @@ type: "research_archives"
 <grid class="border_none" style="margin-top:1rem;">
 <item>
 
-<a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><img src="2023-dora-accelerate-state-of-devops-report.png" style="max-width:24em;"></a>
+<a href="2023-dora-accelerate-state-of-devops-report.pdf" target="_blank"><img src="2023-dora-accelerate-state-of-devops-report.png" style="max-width:24em;"></a>
 
 </item>
 <item>
@@ -37,7 +37,7 @@ type: "research_archives"
 
 A healthy culture is foundational, positively impacting technical capabilities, performance goals, and employee success. Teams prioritizing user needs tend to build the right things and build them right, demonstrating a balance of software delivery and operational performance.
 
-The report emphasizes continuous improvement. Using metrics to understand strengths and weaknesses is a starting point. Teams should prioritize learning and adapting based on feedback rather than solely focusing on hitting performance targets. 
+The report emphasizes continuous improvement. Using metrics to understand strengths and weaknesses is a starting point. Teams should prioritize learning and adapting based on feedback rather than solely focusing on hitting performance targets.
 
 Key findings include
 
