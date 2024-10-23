@@ -10,8 +10,7 @@ type: "research_archives"
 layout: single
 ---
 
-<img src="2024-dora-report-infographic.png" style="width:51em" />
-<!-- <object data="2024-dora-report-infographic.svg" id="dora-core-model" type="image/svg+xml" style="width:100%;"></object> -->
+<object data="2024-dora-report-infographic.svg" id="dora-core-model" type="image/svg+xml" style="width:100%;"></object>
 
 -----
 
