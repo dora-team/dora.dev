@@ -7,8 +7,8 @@ bannerTitle: A decade with DORA
 layout: single
 ---
 
-
-<object data="decade-with-dora-infographic.svg" id="dora-core-model" type="image/svg+xml" style="width:200%;"></object>
+<img src="decade-with-dora-infographic.png" style="width:50em" />
+<!-- <object data="decade-with-dora-infographic.svg" id="dora-core-model" type="image/svg+xml" style="width:200%;"></object> -->
 
 -----
 
