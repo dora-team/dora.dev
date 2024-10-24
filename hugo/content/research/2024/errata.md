@@ -25,6 +25,8 @@ This page lists errors and corrections to the 2024 Accelerate State of DevOps Re
 
 **p.67** Figure 17 should have a description: "Figure 17. Software delivery stability as a function of adding AI-powered experiences to service or application"
 
+**p.72** The estimated value for Burnout in Figure 18 should be "-9.9%"
+
 **p.95** A list or table of survey respondents by role is missing.
 
 -----
