@@ -64,7 +64,7 @@ The DORA report is published by Google Cloud with support from the following gol
 </item>
 
 <item style="display:flex; align-items:center;">
-<a href="https://middlewarehq.com/" target="_blank"><img src="sponsors/middleware.png" style="max-width:8em; max-height:2.5em;" alt="Middleware"></a>
+<a href="https://www.middlewarehq.com/middleware-open-source?utm_source=dora_report" target="_blank"><img src="sponsors/middleware.png" style="max-width:8em; max-height:2.5em;" alt="Middleware"></a>
 </item>
 
 <item style="display:flex; align-items:center;">
