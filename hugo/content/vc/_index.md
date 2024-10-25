@@ -21,16 +21,24 @@ bannerSubtitle: "Check if you have the most recent version of the DORA Report."
   <h3>Known versions</h3>
   <p>The following versions of the DORA Report are available via this version checker:</p>
   <ul>
+    <li><a href="/vc?v=2024.2">2024 DORA Report <code>v. 2024.2</code></a></li>
     <li><a href="/vc?v=2024.1">2024 DORA Report <code>v. 2024.1</code></a></li>
     <li><a href="/vc?v=2023-12">2023 DORA Report <code>v. 2023-12</code></a></li>
     <li><a href="/vc?v=2023-10">2023 DORA Report <code>v. 2023-10</code></a></li>
   </ul>
 </div>
 
+<!-- version is 2024.2 -->
+<div class="version-content" data-version="2024.2">
+  <h2>2024 DORA Report</h2>
+  <p>You have the latest version of the 2024 report, <code>v.2024.2</code>.</p>
+  <a href="/research/2024/dora-report"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 DORA Report Cover" style="max-width:18em;"></a>
+</div>
+
 <!-- version is 2024.1 -->
 <div class="version-content" data-version="2024.1">
   <h2>2024 DORA Report</h2>
-  <p>You have the latest version of the 2024 report, <code>v.2024.1</code>.</p>
+  <p>You have an outdated version of the 2024 report. We encourage you to <a href="/research/2024/dora-report">download the latest version</a>, <code>v.2024.2</code>.</p>
   <p>There are some <a href="/research/2024/errata/#errata-in-v2024.1">errata</a> in this version that you should be aware of.</p>
   <a href="/research/2024/dora-report"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 DORA Report Cover" style="max-width:18em;"></a>
 </div>
