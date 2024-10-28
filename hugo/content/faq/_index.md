@@ -40,26 +40,30 @@ _DORA Core is an ongoing effort. Learn more, and provide feedback, in [DORA GitH
 DORA is committed to sharing our research insights and methodologies to benefit the broader community. We believe in the power of transparency and collaboration to drive continuous improvement in software delivery and organizational performance.
 
 * **Our research reports**: We publish [detailed reports](/publications/) that contain in-depth analyses, key findings, and actionable recommendations based on our research programs.
-* **Research methods and survey questions**: We make our research methods and survey questions available under a Creative Commons license, allowing others to learn from our approach and potentially replicate or adapt our studies. You can find these resources within our reports and annual research archives. For example, [the questions used in our 2023 survey](/research/2023/questions/).
+* **Research methods and survey questions**: We make our research methods and survey questions available under a Creative Commons license, allowing others to learn from our approach and potentially replicate or adapt our studies. You can find these resources within our reports and annual research archives. For example, [the questions used in our 2024 survey](/research/2024/questions/).
 * **DORA Community and ecosystem**: Our findings have fostered a vibrant community and ecosystem. Organizations worldwide have leveraged our research to conduct their own internal studies, further validating and extending our findings. We encourage you to [join the DORA community](https://dora.community) to connect with like-minded individuals, share your experiences, and learn from others who are applying DORA's principles and insights.
 
 While we openly share our research insights and methodologies, we do not share the raw data collected from our studies. This is to ensure the privacy and confidentiality of the organizations and individuals who participate in our research.
 
+## Accelerate State of DevOps Report 2024
+### I found an error in the report. How can I report it?
+The report has a version number printed in the footer of every page, for example `v. 2024.2`. Check that you have the [latest version of the report](/vc) and the [list of errata for the 2024 report](/research/2024/errata/) before submitting a correction. If you've found an error in the Accelerate State of DevOps Report 2024, or any other DORA publication, please [submit a correction](mailto:dora-advocacy@google.com?subject=DORA+State+of+DevOps+Report+2024+error+report). Thank you!
+
 ## Accelerate State of DevOps Report 2023
 ### I found an error in the report. How can I report it?
-If you've found an error in the Accelerate State of DevOps Report 2023, or any other DORA publication, please [submit a correction](mailto:dora-advocacy@google.com?subject=DORA+State+of+DevOps+Report+2023+error+report). Thank you!
+The report has a version number printed in the footer of every page, for example `v. 2023-12`. Check that you have the [latest version of the report](/vc) and the [list of errata for the 2023 report](/research/2023/errata/) before submitting a correction. If you've found an error in the Accelerate State of DevOps Report 2023, or any other DORA publication, please [submit a correction](mailto:dora-advocacy@google.com?subject=DORA+State+of+DevOps+Report+2023+error+report). Thank you!
 
 ## Accelerate State of DevOps Report 2022
-### What is different in this year's Accelerate State of DevOps Report?
+### What is different in the 2022 Accelerate State of DevOps Report?
 Comparing the 2022 results to the 2021 results, there are a number of findings that did not follow trends that we have seen consistently over the past several years. In fact, there were enough of these that we chose to add a section to the report—"Surprises"—summarizing them.
 
 ### _Why_ are things different?
 In a word: science. Fundamentally, our data collection methods are the same as they have been since the beginning of this research project, in 2014. But each year, there is a different (though likely overlapping) set of respondents, and we ask new or updated questions, and we perform different analyses. And of course, the world is always changing. We attempt to make sense of the data as we see it, and the data offered some surprises this year. In some cases, these major shifts reflect changes in the external reality of our respondents' practices and outcomes. In other cases, these may be artifacts of sampling and analysis methods. We cannot know for sure which is which, but we offer potential explanations that attempt to make sense of what the data tell us.
 
-### Why are there only three clusters of performance this year?
-The analytic methods we use objectively reveal clusters of similar respondents within the set of responses. We have never dictated the number of clusters; they are emergent from the patterns in the data. In fact, before 2018, we consistently found three clusters (Low, Medium, High). From 2018 to 2021, there were four. This year, we again see three. The report speculates on why this is the case, but it is too soon to tell if it is a lasting effect.
+### Why were there only three clusters of performance in 2022?
+The analytic methods we use objectively reveal clusters of similar respondents within the set of responses. We have never dictated the number of clusters; they are emergent from the patterns in the data. In fact, before 2018, we consistently found three clusters (Low, Medium, High). From 2018 to 2021, there were four. In [2022](/research/2022/dora-report/), we found only three. The report speculates on why this is the case. You may have noticed that the [2023](/research/2023/dora-report/) and [2024](/research/2024/dora-report/) reports found four clusters.
 
-### Why is this year's report focused so heavily on security?
+### Why is the 2022  report focused so heavily on security?
 We dove deep on security in this year's research for two reasons:
 1. In the past two years, multiple high-profile, catastrophic security breaches (see: [SolarWinds](https://www.businessinsider.com/solarwinds-hack-explained-government-agencies-cyber-security-2020-12), [Codecov](https://www.reuters.com/technology/codecov-hackers-breached-hundreds-restricted-customer-sites-sources-2021-04-19/), and [Colonial Pipeline](https://www.bloomberg.com/news/articles/2021-06-04/hackers-breached-colonial-pipeline-using-compromised-password) attacks) have brought the dangers of a vulnerable software supply chain to the public's attention.
 2. Prior DORA research revealed the importance of incorporating software supply-chain security measures early, and throughout the development process. In 2021, for example, our data showed that elite performers excel in implementing security best practices, and that development teams that embrace security see significant value driven to the business.
