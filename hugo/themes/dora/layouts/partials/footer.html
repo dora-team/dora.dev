@@ -3,8 +3,8 @@
         <div class="logo"><a href="https://cloud.google.com/" target="_blank"><img src="/img/cloud-logo-dark.svg"></a></div>
         <div class="links">
             <span class="linkGroup">
-                <a class="google-material-icons" href="https://twitter.com/devops_research" target="_blank" aria-label="Follow us on Twitter">post_twitter</a>
-                <a class="google-material-icons" href="https://www.linkedin.com/company/devops-research-and-assessment/" target="_blank" aria-label="Follow us on LinkedIn">post_linkedin</a>
+                <a class="google-material-icons" href="https://twitter.com/doradotdev" target="_blank" aria-label="Follow us on Twitter">post_twitter</a>
+                <a class="google-material-icons" href="https://www.linkedin.com/company/doradotdev/" target="_blank" aria-label="Follow us on LinkedIn">post_linkedin</a>
                 <a class="google-material-icons" href="https://www.youtube.com/@dora-dev" target="_blank" aria-label="Watch DORA videos on YouTube">post_youtube</a>
             </span>
             <span class="linkGroup">
@@ -16,13 +16,13 @@
         </div>
     </nav>
     <div class="content-license">
-        <strong>DORA is a program run by Google Cloud.</strong> 
+        <strong>DORA is a program run by Google Cloud.</strong>
         All content on this site is licensed by Google LLC under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>, unless otherwise specified.
     </div>
 </footer>
 
 {{- $widgets := resources.Get "js/widgets.js" -}}
-    
+
 {{- $jsFiles := slice $widgets}}
 {{- $jsBundle := $jsFiles | resources.Concat "js/core" | fingerprint -}}
 
