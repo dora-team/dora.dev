@@ -27,6 +27,7 @@ Michelle Irvine is a technical writer at Google. She has been part of the DORA p
 The collective includes current and former leaders, researchers, authors, and subject matter experts who have all made significant contributions to the research program.
 
   - Amanda Lewis
+  - Benjamin Good
   - Brenna Washington
   - Claire Peters
   - Daniella Villalba, PhD
