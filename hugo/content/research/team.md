@@ -1,6 +1,7 @@
 ---
 title: "Research Team"
 date: 2023-02-02T18:23:33Z
+updated: 2024-11-01
 draft: false
 layout: research_team
 ---
