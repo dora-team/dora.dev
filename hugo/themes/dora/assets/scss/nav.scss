@@ -168,7 +168,7 @@ header > nav > label > input[type="checkbox"] {
 }
 
 .site-banner {
-    background-color: $background-snipe;
+    background-color: var(--dora-highlight);
     padding: 2pt;
     text-align: center;
 
@@ -176,7 +176,7 @@ header > nav > label > input[type="checkbox"] {
         display: inline-block;
         border-radius: 0.2em;
         padding: 2pt 6pt;
-        color: $color-text;
+        color: var(--dora-primary-dark);
         font-weight: 500;
     }
 }
