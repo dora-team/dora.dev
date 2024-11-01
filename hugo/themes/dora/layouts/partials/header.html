@@ -34,5 +34,7 @@
         })
     </script>
 </header>
-{{- partial "site_banner" . -}}
+{{ if not .Params.hideSiteBanner }}
+    {{- partial "site_banner" . -}}
+{{ end }}
 {{- partial "page_banner" . -}}
