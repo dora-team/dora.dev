@@ -151,7 +151,7 @@
                 },
                 {
                     "source": "/report",
-                    "destination": "https://cloud.google.com/resources/devops/state-of-devops",
+                    "destination": "https://cloud.google.com/devops/state-of-devops",
                     "type": 302
                 },
                 {

@@ -14,7 +14,7 @@ hideSiteBanner: true
 <grid class="border_none" style="margin-top:1rem;">
 <item>
 
-<a href="https://cloud.google.com/resources/devops/state-of-devops" target="_blank"><img src="2024-dora-accelerate-state-of-devops-report.png" style="max-width:24em;"></a>
+<a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><img src="2024-dora-accelerate-state-of-devops-report.png" style="max-width:24em;"></a>
 
 </item>
 
@@ -26,7 +26,7 @@ DORA has been investigating the capabilities, practices, and measures of high-pe
 This report highlights the significant impact of AI on software development, explores platform engineering’s promises and challenges, and emphasizes user-centricity and stable priorities for organizational success.
 </p>
 <p>
-<a href="https://cloud.google.com/resources/devops/state-of-devops" target="_blank"><button class="secondary">Download the report</button></a>
+<a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><button class="secondary">Download the report</button></a>
 </p>
 </grid>
 
