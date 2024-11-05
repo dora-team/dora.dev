@@ -6,6 +6,16 @@
 
 <section class="hasSidebar">
     <article>
+        {{ if le .Params.research_year 2017 }}
+            <div class="research-note">
+                <p>
+                    Prior to 2018, research was conducted in partnership with Puppet, as an
+                    extension of their original State of DevOps research. Read the
+                    <a href="https://www.puppet.com/resources/history-of-devops-reports" target="_blank">history of Puppet's DevOps
+                    Reports</a>.
+                </p>
+            </div>
+        {{ end }}
         {{ .Content }}
     </article>
     <sidebar>
