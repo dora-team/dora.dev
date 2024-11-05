@@ -20,11 +20,11 @@ the propagation of beliefs and power.
 
 ### Dr. Kevin M. Storer
 ![Dr. Kevin M. Storer](/img/headshots/kevin-storer.jpeg)
-Dr. Kevin M. Storer is a Qualitative Researcher at Google, where he leads ethnographic research for
+Dr. Kevin M. Storer is a qualitative researcher at Google, where he leads ethnographic research for
 the DORA team. Kevin has been conducting human-centered studies of software developers since 2015,
 spanning diverse problem contexts, participant profiles, and research methods. Kevin’s research has
-been published in top scientific venues on the topics of Artificial Intelligence, Ubiquitous
-Computing, and Interaction Design.
+been published in top scientific venues on the topics of artificial intelligence, ubiquitous
+computing, and interaction design.
 
 ### Daniella Villalba, PhD
 ![Daniella Villalba, PhD](/img/headshots/daniella-villalba.jpeg)
