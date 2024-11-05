@@ -1,6 +1,6 @@
 ---
 title: "DORA Research Structural Equation Models 2023"
-date: structural-equation-model-01-01
+date: 2023-01-01
 research_year: "2023"
 draft: false
 tab_order: "3"

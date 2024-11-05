@@ -1,7 +1,7 @@
 ---
 title: "How to enable your software delivery teams to innovate with generative AI"
 titleForHTMLHead: "How to enable your software delivery teams to innovate with generative AI"
-date: 2024-06-122024-06-12
+date: 2024-06-12
 updated: 2024-08-16
 authors:
     1: {name: 'Amanda Lewis', url: 'https://linkedin.com/in/lewisamanda'}
