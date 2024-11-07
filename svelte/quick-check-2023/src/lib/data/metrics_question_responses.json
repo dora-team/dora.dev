@@ -12,7 +12,7 @@
         "2": "Between once per month and once every six months",
         "3": "Between once per week and once per month",
         "4": "Between once per day and once per week",
-        "5": "Between once per hour and once per day day",
+        "5": "Between once per hour and once per day",
         "6": "On demand (multiple deploys per day)"
     },
     "failurerecovery": {
