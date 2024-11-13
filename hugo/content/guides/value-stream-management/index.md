@@ -2,7 +2,7 @@
 title: "Value stream mapping for software delivery"
 titleForHTMLHead: "Value stream mapping for software delivery"
 date: 2024-08-19
-updated: 2024-08-19
+updated: 2024-11-13
 authors:
     1: {name: 'Andrew Davis', url: 'https://www.linkedin.com/in/andrewdavis-io/'}
     2: {name: 'Rob Edwards', url: 'https://www.linkedin.com/in/robedwards/'}
@@ -141,8 +141,13 @@ By following this framework and leveraging the available resources, organization
 
 DORA's research provides a shared language and framework for improving software delivery and operations, while VSM offers a visual language that the whole team can understand. The key to success lies in strong leadership that advocates for change, clear agreement on the most impactful constraint, and an empowered team inspired to take action and measure the results.
 
+### Guide Discussion
+This guide was discussed during a [dora.community](https://dora.community) meeting in October 2024, the recording can be found here;
+{{< youtube HBEtKSIznn0 >}}
+
 ### Resources or further reading
 
+* **Community Discussion**: [Discussion](https://youtu.be/HBEtKSIznn0?si=GCKN9otgtktOgqD2) on Value Stream Mapping (VSM), a methodology for visualizing and improving workflow processes (summary of this guide).
 * **Flow Engineering**: Dive into the book [Flow Engineering: From Value Stream Mapping to Effective Action](https://itrevolution.com/product/flow-engineering/) for a comprehensive guide to optimizing flow in software delivery.
 * **Outcome mapping**: Leverage outcome mapping to define and track the desired outcomes of your improvement initiatives.
 * **Lean software development**: Learn about lean principles and practices that can be applied to software development.
