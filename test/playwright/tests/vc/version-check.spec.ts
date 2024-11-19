@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 const versions = [
+  { version: '2024.3', expectedText: '2024 DORA Report' },
   { version: '2024.2', expectedText: '2024 DORA Report' },
   { version: '2024.1', expectedText: '2024 DORA Report' },
   { version: '2023-12', expectedText: '2023 DORA Report' },
@@ -45,14 +46,14 @@ invalidVersions.forEach((version) => {
 test('Version checker handles extra data in the query string', async ({ page }) => {
   const randomNumber = Math.floor(Math.random() * 1000) + 1;
   const randomNumber2 = Math.floor(Math.random() * 1000) + 1;
-  await page.goto(`/vc/?foo=${randomNumber}&bar=${randomNumber2}&v=2024.2`);
+  await page.goto(`/vc/?foo=${randomNumber}&bar=${randomNumber2}&v=2024.3`);
 
   // Check the correct version is displayed
-  await expect(page.locator('div[data-version="2024.2"]')).toBeVisible();
+  await expect(page.locator('div[data-version="2024.3"]')).toBeVisible();
 
   // Check other versions are hidden
   versions
-    .filter((v) => v.version !== '2024.2')
+    .filter((v) => v.version !== '2024.3')
     .forEach(async ({ version }) => {
       await expect(page.locator(`div[data-version="${version}"]`)).toBeHidden();
     });
