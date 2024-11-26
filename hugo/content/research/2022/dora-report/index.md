@@ -36,6 +36,18 @@ research_year: "2022"
 </item>
 </grid>
 
+The report uses a theory-based inferential predictive design, acknowledging that a one-size-fits-all approach isn't feasible. It expands its scope beyond the traditional focus on software delivery and operational performance (SDO) to include security, burnout, and employee recommendations of their teams. The research emphasizes the context-dependent nature of DevOps practices, highlighting how factors like organizational culture and the maturity of SRE adoption influence outcomes.
+
+Key findings include
+
+* High-trust, low-blame cultures lead to better organizational performance.
+* High software delivery performance only benefits organizational performance when operational performance (reliability) is high.
+* Implementing software supply chain security controls positively affects software delivery performance, but only when [continuous integration](/capabilities/continuous-integration/) is established.
+* Teams that recognize the need to continuously improve tend to have higher organizational performance.
+* The use of the [five characteristics of cloud computing](/capabilities/flexible-infrastructure/) positively impacts overall organizational performance.
+* Teams that combine [version control](/capabilities/version-control/) and [continuous delivery](/capabilities/continuous-delivery/) are 2.5x more likely to have high software delivery performance.
+
+
 ### Some additional exploration of the 2022 research
 
 * [Reliability and SRE in the 2022 State of DevOps Report](https://cloud.google.com/blog/products/devops-sre/sre-in-the-2022-state-of-devops-report)
