@@ -11,6 +11,14 @@ type: "research_archives"
 
 This page lists errors and corrections to the 2024 Accelerate State of DevOps Report. To track revisions, report PDFs are stamped with a version number. The initial version of the 2024 report was `v.2024.1`. The latest version is [`v.2024.3`]({{< ref "/research/2024/dora-report" >}}).
 
+### Errata in `v.2024.3`
+
+**p. 116** "Individual Performance and" should be "Individual Performance and Well-being"
+
+**p. 116** "Product Performanc" should be "Product Performance"
+
+**p. 116** "Team Performanc" should be "Team Performance"
+
 ### Errata in `v.2024.2`
 
 **p. 2** Rename the "Artificial intelligence: adoption and attitudes" chapter to "Artificial intelligence: Adoption and attitudes" _[Corrected in `v.2024.3`]_
