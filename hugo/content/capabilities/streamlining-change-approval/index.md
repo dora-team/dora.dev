@@ -25,7 +25,7 @@ Compliance managers and security managers rely on change management processes to
 validate compliance requirements, which typically require evidence that all
 changes are appropriately authorized.
 
-Research by DevOps Research and Assessment (DORA), presented in the
+Research by DORA, presented in the
 [2019 State of DevOps Report (PDF)](/publications/),
 finds that change approvals are best implemented through peer review during the
 development process, supplemented by automation to detect, prevent, and correct

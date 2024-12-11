@@ -13,7 +13,7 @@ their engagement, their creativity, and their strongest thinking."
 ---
 
 Early analysis performed by
-[DevOps Research and Assessment (DORA)](https://dora.dev)
+[DORA](https://dora.dev)
 found that job satisfaction is a predictor of organizational
 performance. Having engaged employees doing meaningful work drives business
 value.
