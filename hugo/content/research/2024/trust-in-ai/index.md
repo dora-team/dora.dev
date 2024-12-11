@@ -6,12 +6,15 @@ research_year: "2024"
 draft: false
 tab_order: "8"
 tab_title: "Fostering Trust in AI"
-headline: "DORA Report Preview - Fostering Trust in AI"
+authors:
+    1: {name: 'Dr. Kevin M. Storer', url: '/research/team/#dr-kevin-m-storer'}
+    2: {name: 'Derek DeBellis', url: '/research/team/#derek-debellis'}
+    3: {name: "Sarah D'Angelo", url: 'https://www.linkedin.com/in/sarahrdangelo/'}
+    4: {name: 'Adam Brown', url: 'https://www.linkedin.com/in/adambrovvn/'}
+headline: "Fostering developers' trust in generative artificial intelligence"
 heroimage: "/research/2024/dora-report-ai-preview-hero.png"
 type: "research_archives/preview"
 ---
-
-## Fostering developers' trust in generative artificial intelligence
 
 It's no secret that generative artificial intelligence (gen AI) is rapidly changing the landscape of software development, with discussions about best practices for applying this transformative technology dominating the popular press. Perhaps nowhere on Earth have these discussions been more frequent and passionate than inside the organizations dedicated to making gen AI accessible and useful to developers, including at Google. During one such discussion between researchers on our [DORA](/research/team) and Engineering Productivity Research (EPR) teams, we were struck by a recurring finding common to development professionals both inside and outside of Google:
 

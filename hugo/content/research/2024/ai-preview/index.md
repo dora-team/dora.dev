@@ -6,12 +6,13 @@ research_year: "2024"
 draft: false
 tab_order: "6"
 tab_title: "AI Preview"
-headline: "DORA Report Preview - AI in the workplace"
+headline: "DORA Report Preview - AI in the workplace: Adoption and impact"
+authors:
+    1: {name: 'Derek DeBellis', url: '/research/team/#derek-debellis'}
+    2: {name: 'Dr. Kevin M. Storer', url: '/research/team/#dr-kevin-m-storer'}
 heroimage: "/research/2024/dora-report-ai-preview-hero.png"
 type: "research_archives/preview"
 ---
-
-## AI in the workplace: Adoption and impact
 
 Artificial Intelligence (AI) has dominated the tech landscape in recent years. But how has this powerful technology infiltrated the everyday lives of developers? DORA's recent survey sheds light on the current state of AI adoption and its perceived impact in the workplace.
 
