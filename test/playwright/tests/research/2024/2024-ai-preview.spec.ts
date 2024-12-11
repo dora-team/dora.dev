@@ -10,7 +10,7 @@ test('2024 AI preview has the correct title.', async ({ page }) => {
 });
 
 test('2024 AI preview has the correct header.', async ({ page }) => {
-  await expect(page.locator('h2')).toContainText('AI in the workplace: Adoption and impact');
+  await expect(page.locator('h1 >> nth=1')).toContainText('AI in the workplace: Adoption and impact');
 });
 
 test('2024 AI preview has the correct sidebar.', async ({ page }) => {
