@@ -32,7 +32,7 @@ manage your test data carefully and strategically.
 ## How to implement test data management
 
 Analysis done by
-[DevOps Research and Assessment (DORA)](https://dora.dev)
+[DORA](https://dora.dev)
 shows that successful teams approach test data management with the following
 core principles:
 

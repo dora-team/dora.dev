@@ -46,7 +46,7 @@ work with security and testing experts to design and deliver
 throughout the product lifecycle.
 
 Research from
-[DevOps Research and Assessment (DORA)](/research/2016/2016-state-of-devops-report.pdf)
+[DORA](/research/2016/2016-state-of-devops-report.pdf)
 (PDF) shows that teams can achieve better outcomes by making security a part of
 everyone's daily work instead of testing for security concerns at the end of the
 process. This means integrating security testing and controls into the daily

@@ -8,7 +8,7 @@ headline: "Grow a learning culture and understand its impact on your organizatio
 summary: "A culture’s attitudes towards learning and if it is valued. For example, is learning considered essential for continued progress? Is learning thought of as a cost, or an investment? This is a measure of an organization’s learning culture."
 ---
 
-Research from the [DevOps Research and Assessment (DORA)](https://dora.dev) team shows that an
+Research from the [DORA](https://dora.dev) team shows that an
 organizational culture that values learning contributes to
 software delivery performance with the following:
 

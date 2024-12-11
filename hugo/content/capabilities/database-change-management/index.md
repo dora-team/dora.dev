@@ -11,7 +11,7 @@ summary: "Database changes don't slow teams down if they follow a few key practi
 ---
 
 Database changes are often a major source of risk and delay when performing
-deployments. [DevOps Research and Assessment (DORA)](https://dora.dev) investigated which database-related practices help during the process of implementing continuous delivery, improving both software delivery performance and availability.
+deployments. [DORA](https://dora.dev) investigated which database-related practices help during the process of implementing continuous delivery, improving both software delivery performance and availability.
 
 DORA's research found that integrating database work into the software delivery
 process positively contributes to

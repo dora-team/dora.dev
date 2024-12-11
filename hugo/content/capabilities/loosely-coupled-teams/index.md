@@ -10,7 +10,7 @@ headline: "Learn about moving from a tightly coupled architecture to service-ori
 summary: "An organizational structure that allows teams to test and deploy their applications on demand, without requiring orchestration with other services. Team structure and technical architecture are highly interrelated: having a loosely coupled architecture allows your teams to work independently without relying on other teams for support and services, which in turn enables them to work quickly and deliver value to the organization."
 ---
 
-Research from the [DevOps Research and Assessment (DORA)](https://dora.dev) team shows that
+Research from the [DORA](https://dora.dev) team shows that
 effective organizational and technical structures are predictors for achieving continuous delivery.
 Whether you're using Kubernetes or mainframes, your architecture enables teams
 to adopt practices that foster higher levels of software delivery performance.
