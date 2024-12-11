@@ -66,7 +66,7 @@ domains. Continuous delivery has been successfully applied many times in highly
 regulated domains such as financial services and government.
 
 Although continuous delivery is possible for all kinds of software, it is hard
-work. Nevertheless it provides significant benefits. [DevOps Research and Assessment (DORA)](https://dora.dev) research shows that doing well at continuous delivery provides
+work. Nevertheless it provides significant benefits. [DORA](https://dora.dev) research shows that doing well at continuous delivery provides
 the following benefits:
 
 -   Improves software delivery performance, measured in terms of the

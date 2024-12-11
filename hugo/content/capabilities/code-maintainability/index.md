@@ -16,7 +16,7 @@ to run the systems we build: The Android operating system runs on 12 to 15
 million lines of code, Google's monolithic code repository contains over 1
 billion lines of code, and a typical smartphone app has 50,000 lines of code.
 
-The 2019 State of DevOps Report from [DevOps Research and Assessment (DORA)](https://dora.dev) research shows that the ability of teams to maintain their code
+The 2019 State of DevOps Report from [DORA](https://dora.dev) research shows that the ability of teams to maintain their code
 effectively is one of a number of technical practices that contribute positively
 to success with
 [continuous delivery](/capabilities/continuous-delivery).

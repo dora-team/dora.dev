@@ -28,7 +28,7 @@ When these capabilities are applied together, they help predict the following:
 -   Organizational performance, which is measured in terms of profitability,
     market share, and productivity.
 
-DevOps Research and Assessment (DORA) research
+DORA research
 [shows](/research/2016/2016-state-of-devops-report.pdf#page=35)
 (PDF) that teams achieve higher performance when they work in organizations that
 utilize those capabilities and also do the following:

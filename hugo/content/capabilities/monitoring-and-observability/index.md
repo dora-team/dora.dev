@@ -11,8 +11,7 @@ summary: "Monitoring and observability tooling allows teams to understand the he
 ---
 
 Good monitoring is a staple of high-performing teams.
-[DevOps Research and Assessment (DORA)](https://dora.dev)
-[research](/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf)
+[DORA research](/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf)
 shows that a comprehensive monitoring and observability solution, along with a
 number of other technical practices, positively contributes to
 [continuous delivery.](/capabilities/continuous-delivery)

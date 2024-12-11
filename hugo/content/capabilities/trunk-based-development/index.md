@@ -82,7 +82,7 @@ how to
 This is a significant change for developers who aren't used to working in this
 way.
 
-Analysis of DevOps Research and Assessment (DORA) data from
+Analysis of DORA data from
 [2016](/research/2016/2016-state-of-devops-report.pdf#page=31)
 (PDF) and
 [2017](/research/2017-and-earlier/2017-state-of-devops-report.pdf#page=40)
