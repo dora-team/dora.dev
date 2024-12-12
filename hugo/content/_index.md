@@ -34,15 +34,14 @@ Use our quick check tool to discover how you compare to industry peers, identify
 {{< /article >}}
 
 {{< article columns="1"
-    title="Fostering trust in generative AI"
-    url="/research/2024/trust-in-ai/"
+    title="How Gen AI Affects the Value of Development Work"
+    url="/research/2024/value-of-development-work/"
     cta="Read more..."
     img-src="/research/2024/dora-report-ai-preview-hero.png"
     img-align="left"
     >}}
-Using gen AI makes developers feel more productive, and developers who trust gen AI use it more.
+Discover the five key views of value and how organizations can help developers thrive with AI.
 
-Read our findings and strategies to foster trust in gen AI.
 {{< /article >}}
 
 {{< article columns="1"
