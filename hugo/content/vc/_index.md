@@ -20,6 +20,9 @@ bannerSubtitle: "Check if you have the most recent version of the DORA Report."
   <p>The following versions of the DORA Report are available via this version checker:</p>
   <ul>
     <li>
+      <span class="google-material-icons" style="color: green; font-size:1em;">check_circle</span> <a href="/vc?v=2024.3.p">2024 DORA Report (Printed Version) <code>v. 2024.3.p</code></a>
+    </li>
+    <li>
       <span class="google-material-icons" style="color: green; font-size:1em;">check_circle</span> <a href="/vc?v=2024.3">2024 DORA Report <code>v. 2024.3</code></a>
     </li>
     <li>
@@ -37,11 +40,27 @@ bannerSubtitle: "Check if you have the most recent version of the DORA Report."
   </ul>
 </div>
 
+<!-- version is 2024.3.p -->
+<div class="version-content" data-version="2024.3.p">
+  <h2><span class="google-material-icons" style="color: green; font-size:1em;">check_circle</span>2024 DORA Report (Printed Version)</h2>
+  <p>
+    You have the most recent printed version of the 2024 report.
+  </p>
+  <p>
+    Your version: <code>v.2024.3.p</code><br />
+    Latest version: <code>v.2024.3.p</code>
+  </p>
+  <p>
+    <a href="/research/2024/dora-report">Download the latest digital version of the 2024 DORA report</a>.
+  </p>
+  <a href="/research/2024/dora-report"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 DORA Report Cover" style="max-width:18em;"></a>
+</div>
+
 <!-- version is 2024.3 -->
 <div class="version-content" data-version="2024.3">
-  <h2><span class="google-material-icons" style="color: green; font-size:1em;">check_circle</span>2024 DORA Report</h2>
+  <h2><span class="google-material-icons" style="color: green; font-size:1em;">check_circle</span>2024 DORA Report (Digital Version)</h2>
   <p>
-    You have the most recent version of the 2024 report.
+    You have the most recent digital version of the 2024 report.
   </p>
   <p>
     Your version: <code>v.2024.3</code><br />
