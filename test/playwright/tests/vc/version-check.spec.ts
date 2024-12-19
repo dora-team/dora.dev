@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 
 const versions = [
   { version: '2024.3', expectedText: '2024 DORA Report' },
+  { version: '2024.3.p', expectedText: '2024 DORA Report (Printed Version)' },
   { version: '2024.2', expectedText: '2024 DORA Report' },
   { version: '2024.1', expectedText: '2024 DORA Report' },
   { version: '2023-12', expectedText: '2023 DORA Report' },
