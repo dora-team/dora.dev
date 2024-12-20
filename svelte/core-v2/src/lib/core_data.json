@@ -164,12 +164,12 @@
     "outcomes": {
         "organizational-performance": {
             "name": "Organizational performance",
-            "link": "https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper",
+            "link": "/research/2020/",
             "summary": "Organizational performance measures the ability of an organization to achieve commercial and non-commercial goals. Academic research has validated this measure and found it to be highly correlated to measures of return on investment (ROI), and it is robust to economic cycles.\n\nSeveral years of analysis shows that, compared to low performers, organizations with the highest level of software delivery performance are twice as likely to exceed their goals. Employee well-being also contributes to organizational performance.",
             "entities": {
                 "commercial-performance": {
                     "name": "Commercial Performance",
-                    "link": "https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper",
+                    "link": "/research/2020/",
                     "summary": "Commercial goals may include:<ul><li>Profitability</li><li>Productivity</li><li>Market share</li><li>Number of customers</li><li>Quantity of products or services</li></ul>"
                 },
                 "noncommercial-performance": {

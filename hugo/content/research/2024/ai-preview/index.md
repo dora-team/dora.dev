@@ -52,7 +52,7 @@ There is a relatively low level of trust in AI-generated code, with only 24% of 
 When asked if their organization is being transparent about how AI is being used, the majority of respondents agreed or somewhat agreed, but a substantial portion expressed neutral or negative sentiments. This suggests room for improvement in terms of how organizations communicate their AI strategies and plans to their development teams.
 
 
-Google Cloud's Office of the Chief Information Security Officer (CISO) published [How to craft an Acceptable Use Policy for gen AI (and look smart doing it)](https://cloud.google.com/transform/how-to-craft-an-acceptable-use-policy-for-gen-ai-and-look-smart-doing-it?e=48754805). This article recommends having a well-defined Acceptable Use Policy (AUP) to help with risk mitigation, strategic organizational alignment, and promoting compliance.
+Google Cloud's Office of the Chief Information Security Officer (CISO) published [How to craft an Acceptable Use Policy for gen AI (and look smart doing it)](https://cloud.google.com/transform/how-to-craft-an-acceptable-use-policy-for-gen-ai-and-look-smart-doing-it). This article recommends having a well-defined Acceptable Use Policy (AUP) to help with risk mitigation, strategic organizational alignment, and promoting compliance.
 
 ### Future reflections: navigating the impact of AI
 Beyond its current applications, AI's potential impact on the future of work, productivity, and society is a topic of much discussion and speculation. To explore developer sentiments on this issue, we asked them to predict the impact of AI on various aspects of their lives in the next year, the next five years, and the next ten years.

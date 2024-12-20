@@ -17,7 +17,7 @@ test('2020 Research page has the correct header.', async ({ page }) => {
 test('2020 Research page links to the ROI Report.', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'Download The ROI of DevOps Whitepaper' }).nth(1)).toHaveAttribute(
     'href',
-    'https://cloud.google.com/resources/roi-of-devops-transformation-whitepaper'
+    'the-roi-of-devops-transformation-google-cloud-dora.pdf'
   )
 });
 
