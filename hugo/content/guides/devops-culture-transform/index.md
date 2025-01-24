@@ -7,7 +7,7 @@ draft: false
 weight: 400
 headline: "How to transform your organization"
 subhead: "Find out about the importance of ensuring your people have the tools and resources to do their job, and of making good use of their skills and abilities."
-authors: 
+authors:
     1: {name: 'Jez Humble', url: 'https://www.linkedin.com/in/jez-humble'}
 heroimage: "devops-culture-transform.png"
 ---
@@ -166,8 +166,8 @@ the
 [2019 State of DevOps Report](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf)
 researchers asked respondents to share how their teams and organizations spread
 DevOps and Agile methods by selecting from one or more of the following
-approaches (see Appendix B of the 2019 State of DevOps Report for detailed
-descriptions):
+approaches (see [Appendix B of the 2019 State of DevOps Report](/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf#page=82)
+for detailed descriptions):
 
 -   Training center (sometimes referred to as a *dojo*)
 -   Center of excellence (CoE)
