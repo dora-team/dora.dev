@@ -25,6 +25,17 @@ h3 {
         font-family: $font-roboto;
         font-weight:300;
     }
+
+    .responsive-svg {
+        width: 100%;
+        min-width: 815px;
+    }
+
+    @media (max-width: 799px) {  /* Adjust breakpoint as needed */
+        .responsive-svg {
+            min-width: 0; /* Or min-width: auto; */
+        }
+    }
 }
 
 #questions {

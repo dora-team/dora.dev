@@ -11,7 +11,10 @@ layout: single
 comment: This file is also hosted at https://services.google.com/fh/files/misc/dora_one_pager_2024.pdf update both together. allisonpark@ can update the PDF at services.google.com using go/gumdrop.
 ---
 
-<object data="2024-dora-report-infographic.svg" id="dora-core-model" type="image/svg+xml" style="width: 100%; min-width: 800px;"></object>
+<!-- <object data="2024-dora-report-infographic.svg" id="dora-core-model" type="image/svg+xml" style="width: 100%; min-width: 800px; max-width: 100%;"></object> -->
+
+<object data="2024-dora-report-infographic.svg" id="dora-core-model" type="image/svg+xml" class="responsive-svg"></object>
+
 
 
 -----
