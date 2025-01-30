@@ -22,8 +22,7 @@ test('All archive links are valid', async ({ page }) => {
 test('All expected years are listed', async ({ page }) => {
     await page.goto('/research/');
 
-    const expectedYears = ['Artificial \
-Intelligence', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014'];
+    const expectedYears = ['Artificial Intelligence', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014'];
 
      const actualYears = await page.$$eval('//span[@id="_pw-research-archives"]//a', (links) => links.map((link) => link.textContent.trim()));
 
