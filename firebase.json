@@ -145,6 +145,16 @@
                     "type": 302
                 },
                 {
+                    "source": "/research/2024/trust-in-ai/",
+                    "destination": "/research/ai/trust-in-ai/",
+                    "type": 301
+                },
+                {
+                    "source": "/research/2024/value-of-development-work/",
+                    "destination": "/research/ai/value-of-development-work/",
+                    "type": 301
+                },
+                {
                     "source": "/dora-report-:year",
                     "destination": "/research/:year/dora-report",
                     "type": 302
