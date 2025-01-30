@@ -1,7 +1,7 @@
 ---
 title: "DORA Research Errata"
 date: 2023-12-07
-research_year: "2023"
+research_collection: "2023"
 draft: false
 tab_order: "5"
 tab_title: "Errata"

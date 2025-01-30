@@ -1,5 +1,6 @@
 export const sidebarLinks = [
   'Meet DORA\'s Research Team',
+  'Artificial Intelligence',
   '2024',
   '2023',
   '2022',

@@ -1,20 +1,22 @@
 {{ define "main" }}
 {{- partial "partials/link_styles" "scss/research.scss" -}}
 
-<h1>DORA Research: {{ .Params.research_year }}</h1>
+<h1>DORA Research: {{ .Params.research_collection }}</h1>
 {{- partial "research_archives_tabs" . -}}
 
 <section class="hasSidebar">
     <article>
-        {{ if le .Params.research_year 2017 }}
-            <div class="research-note">
-                <p>
-                    Prior to 2018, research was conducted in partnership with Puppet, as an
-                    extension of their original State of DevOps research. Read the
-                    <a href="https://www.puppet.com/resources/history-of-devops-reports" target="_blank">history of Puppet's DevOps
-                    Reports</a>.
-                </p>
-            </div>
+        {{ if (ne .Params.research_collection "Artificial Intelligence") }}
+            {{ if le .Params.research_collection 2017 }}
+                <div class="research-note">
+                    <p>
+                        Prior to 2018, research was conducted in partnership with Puppet, as an
+                        extension of their original State of DevOps research. Read the
+                        <a href="https://www.puppet.com/resources/history-of-devops-reports" target="_blank">history of Puppet's DevOps
+                        Reports</a>.
+                    </p>
+                </div>
+            {{ end }}
         {{ end }}
         {{ .Content }}
     </article>

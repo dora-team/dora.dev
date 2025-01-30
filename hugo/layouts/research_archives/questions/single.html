@@ -1,9 +1,9 @@
 {{ define "main" }}
 {{- partial "partials/link_styles" "scss/research.scss" -}}
 
-{{ $researchYear := .Params.research_year }}
+{{ $researchYear := .Params.research_collection }}
 
-<h1>DORA Research: {{ .Params.research_year }}</h1>
+<h1>DORA Research: {{ .Params.research_collection }}</h1>
 {{- partial "research_archives_tabs" . -}}
 
         {{ .Content }}
@@ -18,7 +18,7 @@
         {{ else }}
             <h4>Responses to the following questions were used in the analysis published in the <a href="/research/{{ $researchYear }}/dora-report/">{{ $researchYear }} Accelerate State of DevOps Report</a>.</h4>
         {{ end }}
-        {{ with index .Site.Data.survey_questions .Params.research_year }}
+        {{ with index .Site.Data.survey_questions .Params.research_collection }}
             {{  range sort .categories "heading" }}
                 <h3 id="{{ .heading | anchorize }}">{{ .heading }}</h3>
                 {{ if .description }}<p>{{ .description }}</p>{{ end }}

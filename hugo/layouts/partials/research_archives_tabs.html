@@ -5,9 +5,9 @@
     -->
 <tab_links>
     {{ $currentPage := .Page }}
-    {{ $researchYear := .Params.research_year }}
+    {{ $researchYear := .Params.research_collection }}
     <!-- loop over pages with the same research year,  which have a tab order specified-->
-    {{ range (collections.Sort (where .Site.Pages ".Params.research_year" "eq" $researchYear) ".Params.tab_order") }}
+    {{ range (collections.Sort (where .Site.Pages ".Params.research_collection" "eq" $researchYear) ".Params.tab_order") }}
         {{ if .Params.tab_order }}
             <a href="{{ .RelPermalink }}" {{ if eq .Page $currentPage }}class="selected"{{ end }}>{{ .Params.tab_title }}</a>
         {{ end }}

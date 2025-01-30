@@ -3,7 +3,7 @@ title: "Accelerate State of DevOps Report 2024"
 date: 2024-10-06
 draft: false
 type: research_archives
-research_year: "2024"
+research_collection: "2024"
 tab_order: "2"
 tab_title: "Overview"
 type: "research_archives"

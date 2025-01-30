@@ -3,7 +3,7 @@ title: "DORA Research: 2017 and earlier"
 date: 2017-10-01
 draft: false
 type: research_archives
-research_year: 2017 and earlier
+research_collection: 2017 and earlier
 layout: single
 comment: this page is no longer used but is kept here for any bookmarks that people may have.
 ---

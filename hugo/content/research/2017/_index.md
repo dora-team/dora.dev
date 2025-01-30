@@ -2,7 +2,7 @@
 title: "DORA Research: 2017"
 date: 2024-07-31
 draft: false
-research_year: "2017"
+research_collection: "2017"
 type: research_archives
 layout: single
 ---

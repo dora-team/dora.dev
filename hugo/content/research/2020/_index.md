@@ -2,7 +2,7 @@
 title: "DORA Research: 2020"
 date: 2020-10-01
 draft: false
-research_year: "2020"
+research_collection: "2020"
 # SEM and survey questions are included via template: templates/research_archives/single.html, if specified in front matter. The data for survey questions can be found at data/survey_questions.json
 type: research_archives
 layout: single

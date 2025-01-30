@@ -2,7 +2,7 @@
 title: "DORA Research Errata"
 date: 2024-10-07
 updated: 2024-10-08
-research_year: "2024"
+research_collection: "2024"
 draft: false
 tab_order: "10"
 tab_title: "Errata"
