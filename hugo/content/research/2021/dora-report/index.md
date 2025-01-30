@@ -3,7 +3,7 @@ title: "Accelerate State of DevOps Report 2021"
 date: 2021-09-01
 draft: false
 type: research_archives
-research_year: "2021"
+research_collection: "2021"
 tab_order: "2"
 tab_title: "DORA Report"
 ---

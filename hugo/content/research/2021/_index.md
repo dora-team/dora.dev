@@ -2,7 +2,7 @@
 title: "DORA Research: 2021"
 date: 2021-10-01
 draft: false
-research_year: "2021"
+research_collection: "2021"
 type: research_archives
 layout: single
 tab_order: "0"

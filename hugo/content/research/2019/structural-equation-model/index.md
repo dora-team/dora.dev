@@ -1,7 +1,7 @@
 ---
 title: "DORA Research Structural Equation Models 2019"
 date: 2019-01-01
-research_year: "2019"
+research_collection: "2019"
 draft: false
 tab_order: "3"
 tab_title: "Structural Equation Model"

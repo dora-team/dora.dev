@@ -1,7 +1,7 @@
 ---
 title: "DORA Research Structural Equation Models 2021"
 date: 2021-01-01
-research_year: "2021"
+research_collection: "2021"
 draft: false
 tab_order: "3"
 tab_title: "Structural Equation Model"

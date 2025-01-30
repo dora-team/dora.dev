@@ -2,7 +2,7 @@
 title: "DORA Research: 2019"
 date: 2019-10-01
 draft: false
-research_year: "2019"
+research_collection: "2019"
 type: research_archives
 layout: single
 tab_order: "0"
