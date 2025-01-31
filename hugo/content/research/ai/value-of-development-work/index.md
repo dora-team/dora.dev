@@ -1,14 +1,14 @@
 ---
-title: "How Gen AI Affects the Value of Development Work"
+title: "How gen AI affects the value of development work"
 date: 2024-12-10
-updated: 2024-12-10T00:00:00Z
+updated: 2025-01-31T00:00:00Z
 research_collection: "Artificial Intelligence"
 draft: false
 authors:
     1: {name: 'Dr. Kevin M. Storer', url: '/research/team/#dr-kevin-m-storer'}
 tab_order: "10"
 tab_title: "Value of Development Work"
-headline: "How Gen AI Affects the Value of Development Work"
+headline: "How gen AI affects the value of development work"
 # heroimage: "/research/2024/dora-report-ai-preview-hero.png"
 type: "research_archives/preview"
 ---
@@ -39,31 +39,31 @@ After debating this paradox for some time, and generating several plausible hypo
 
 So, in September 2024, we conducted a series of 10 in-depth interviews with development professionals, each lasting approximately 90 minutes. Participants were asked about the types of development tasks that they found valuable and nonvaluable, how they made assessments about whether specific tasks had value, and whether using gen AI to perform those tasks changed, or would change, their evaluation.
 
-### Five Views of "Value" in Development Work
+### Five views of "value" in development work
 
 Across these interviews, developers described the value of their work using five main views of "value," from which a framework was derived for understanding the value of development work and gen AI's impacts on those facets of value. This framework is visualized in Table 1 and further described below.
 
 ![Five "Views" of Value in Development Work](five-views.png 'The five views of "value" of development work described by participants, their meanings, and the anticipated impacts of Gen AI on each of these perspectives.')
 
-**Utilitarian Value** describes the impact that the work has on the world.
+**Utilitarian value** describes the impact that the work has on the world.
 * Utilitarian Value is determined by the impact that developers perceive their product having in the world and the impact of specific development tasks on the creation of that product.
 * Gen AI can be anticipated to have a potentially positive impact on the Utilitarian Value of development work, *by increasing the pace at which developers work*.
 
-**Reputational Value** describes the recognition that an individual performed work.
+**Reputational value** describes the recognition that an individual performed work.
 * Reputational Value is determined by the Utilitarian Value of that work and whether its performance can be ascribed to/owned by any individual developer.
 * Gen AI can be anticipated to have a potentially positive impact on the Reputational Value of development work, by *increasing the Utilitarian Value of an individual developer's labor*.
 * However, Gen AI can also be anticipated to have a potentially negative impact on the Reputational Value of development work, by *calling into question the ownership of the labor performed with Gen AI.*
 
-**Economic Value** describes the pay associated with performing development work.
+**Economic value** describes the pay associated with performing development work.
 * Economic Value is determined by the Utilitarian Value of the work, the Reputational Value of the work, and the (in)accessibility of the skillset, where niche skillsets are more highly valued.
 * Gen AI can be anticipated to have a potentially positive impact on the Economic Value of development work, by *increasing the Utilitarian Value of an individual developer's labor*.
 * However, Gen AI can also be anticipated to have a potentially negative impact on the Economic Value of development work, by *reducing the Reputational Value of development work* and by *making the requisite skillset more accessible*.
 
-**Intrinsic Value** describes the inherent worthwhileness of performing development work.
+**Intrinsic value** describes the inherent worthwhileness of performing development work.
 * Intrinsic Value is highly subjective, deeply personal, and often argued from a perspective of valuing traditional ways of learning and achieving.
 * Gen AI can be anticipated to have a neutral impact on the Intrinsic Value of development work, because *historical examples suggest novel technologies change norms around educational and knowledge standards* (consider wayfinding pre-GPS or mental math pre-mobile phone calculator).
 
-**Hedonistic Value**  describes the enjoyment resultant from performing development work.
+**Hedonistic value**  describes the enjoyment resultant from performing development work.
 * Hedonistic Value is highly subjective and dependent upon the personal interests of the developer in question.
 * Gen AI can be anticipated to have a potentially positive impact on the Hedonistic Value of development work, if the *developer enjoys using Gen AI or Gen AI makes enjoyable tasks accessible*.
 * Gen AI can also be anticipated to have a potentially negative impact on the Hedonistic Value of development work, if the *developer enjoys performing a task Gen AI renders obsolete*.
@@ -71,7 +71,7 @@ Across these interviews, developers described the value of their work using five
 
 Put simply, Gen AI has variable and interconnected impacts on how developers, and the world, perceive the value of development work.
 
-### Five Strategies for Ensuring AI Amplifies Developers’ Value
+### Five strategies for ensuring ai amplifies developers’ value
 
 #### Allow use of gen AI throughout the software development and delivery process.
 Developers who prioritized the Utilitarian Value of their work—emphasizing their individual impact on the world—perceived gen AI as a clear value-booster. That is, by increasing the speed at which developers can change an application, the time taken to produce an impact in the world is reduced. So, allowing the use of gen AI in as many development tasks as possible may increase the perceived Utilitarian Value of development work by expediting the completion of more steps throughout the development process.

@@ -9,14 +9,19 @@ tab_title: "Overview"
 # type: "research_archives"
 type: "research_archives/preview"
 layout: single
+heroimage: "/research/2024/dora-report-ai-preview-hero.png"
 ---
 
-## Research
-* [2024 DORA report](/research/2024/dora-report/)
-* [Helping developers adopt generative AI: Four practical strategies for organizations](/research/ai/adopt-gen-ai)
-* [Fostering developers' trust in generative artificial intelligence](/research/ai/trust-in-ai/)
-* [How Gen AI Affects the Value of Development Work](/research/ai/value-of-development-work/)
+## AI Research
 
-## DORA Guide
+The [2024 DORA report](/research/2024/dora-report/) includes deep dives into the adoption, attitudes, and downstream impacts of AI. A [preview of the AI findings](/research/2024/ai-preview) was published prior to the report's release.
+
+Following the 2024 DORA report, the research into AI continues.
+
+* [Helping developers adopt generative AI: Four practical strategies for organizations](/research/ai/adopt-gen-ai).
+* [How gen AI affects the value of development work](/research/ai/value-of-development-work/).
+* [Fostering developers' trust in generative artificial intelligence](/research/ai/trust-in-ai./)
+
+## Generative AI Guide
 
 * [How to enable your software delivery teams to innovate with generative AI](/guides/how-to-innovate-with-generative-ai/)
