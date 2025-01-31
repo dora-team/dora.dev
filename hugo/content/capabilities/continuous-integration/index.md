@@ -225,7 +225,7 @@ change.</td>
 
 ## What's next?
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   Read more about Google Cloud
     [continuous integration solutions](https://cloud.google.com/solutions/continuous-integration).
 -   Read the

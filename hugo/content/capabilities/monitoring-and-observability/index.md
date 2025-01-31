@@ -348,7 +348,7 @@ health of your products but also your processes and your people.
 ## What's next
 
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   Learn more about generating proactive alerts with [proactive failure notification](/capabilities/proactive-failure-notification).
 -   Visit
     [Google Site Reliability Engineering Resources](https://landing.google.com/sre/resources/) to find the following SRE books:

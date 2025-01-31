@@ -203,7 +203,7 @@ product design:
 ## What's next
 
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   Read the article [Online Experimentation at Microsoft](http://ai.stanford.edu/~ronnyk/ExPThinkWeek2009Public.pdf)
     (PDF), by Ronny Kohavi.
 -   Read the article [Hypothesis-driven development](https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development),

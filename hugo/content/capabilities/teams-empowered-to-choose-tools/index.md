@@ -146,7 +146,7 @@ because they are being told they have to.
 ## What's next
 
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   Explore our DevOps
     [research program](/).
 -   Take the

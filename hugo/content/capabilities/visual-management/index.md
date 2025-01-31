@@ -154,7 +154,7 @@ If the answer to any of these questions is no, investigate further:
 ## What's next
 
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   Read the book
     [*Making Work Visible*](https://itrevolution.com/book/making-work-visible/),
     by Dominica DeGrandis.

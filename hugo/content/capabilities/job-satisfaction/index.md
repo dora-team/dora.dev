@@ -96,7 +96,7 @@ signal that something is wrong and it's worth looking into.
 ## What's next
 
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   Read [Accepting Lower Salaries for Meaningful Work](https://www.frontiersin.org/articles/10.3389/fpsyg.2017.01649/full), by
     Jing Hu and Jacob B. Hirsh.
 -   Read [The Search for Meaning](https://www.shrm.org/hr-today/news/all-things-work/pages/the-search-for-meaning.aspx), by

@@ -199,7 +199,7 @@ Measuring deployment automation is straightforward.
 ## What's next
 
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   Read more about Google Cloud's
     [continuous delivery solutions](https://cloud.google.com/solutions/continuous-delivery).
 -   Read the

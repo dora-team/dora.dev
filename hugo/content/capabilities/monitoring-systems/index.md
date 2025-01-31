@@ -133,7 +133,7 @@ the extent to which people agree or disagree with the following statements:
 ## What's next
 
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   Read the
     [Site Reliability Engineering (SRE) book](https://landing.google.com/sre/books/).
 -   Explore our DevOps

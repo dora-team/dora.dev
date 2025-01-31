@@ -205,7 +205,7 @@ team uses all the tools that InfoSec has created or approved. </td>
 ## What's next
 
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   See the
     [OWASP Top 10](https://owasp.org/www-project-top-ten/)
     for a list of the 10 most critical web application security risks.
