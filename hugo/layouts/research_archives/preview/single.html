@@ -4,29 +4,6 @@
 <h1>DORA Research: {{ .Params.research_collection }}</h1>
 {{- partial "research_archives_tabs" . -}}
 
-<h1>
-    {{ .Params.headline }}
-</h1>
-{{ if .Params.subhead }}
-    <h2>{{ .Params.subhead }}</h2>
-{{ end }}
-
-{{ if .Params.authors }}
-<h4 class="authors">
-    by
-    {{ range .Params.authors }}
-    <a href="{{ .url }}" class="author" {{ if ne (substr .url 0 1) "/" }}target="blank"{{ end }}>{{ .name }}</a>
-    {{ end }}
-</h4>
-{{ end }}
-
-{{ if .Params.heroimage }}
-<div class="hero-image">
-    <img src="{{ .Params.heroimage }}" alt="{{.Params.headline}}">
-</div>
-{{ end }}
-
-
 <style type="text/css">
     h3 {
         font-size:1.25em;
@@ -51,6 +28,28 @@
 
 <section class="hasSidebar">
     <div class="mainContent">
+        <h1>
+            {{ .Params.headline }}
+        </h1>
+        {{ if .Params.subhead }}
+            <h2>{{ .Params.subhead }}</h2>
+        {{ end }}
+
+        {{ if .Params.authors }}
+        <h4 class="authors">
+            by
+            {{ range .Params.authors }}
+            <a href="{{ .url }}" class="author" {{ if ne (substr .url 0 1) "/" }}target="blank"{{ end }}>{{ .name }}</a>
+            {{ end }}
+        </h4>
+        {{ end }}
+
+        {{ if .Params.heroimage }}
+            <div class="hero-image">
+                <img src="{{ .Params.heroimage }}" alt="{{.Params.headline}}">
+            </div>
+        {{ end }}
+
         <article id="questions">
             {{ .Content }}
         </article>
