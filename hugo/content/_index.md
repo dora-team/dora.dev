@@ -34,13 +34,13 @@ Use our quick check tool to discover how you compare to industry peers, identify
 {{< /article >}}
 
 {{< article columns="1"
-    title="How Gen AI Affects the Value of Development Work"
-    url="/research/2024/value-of-development-work/"
-    cta="Read more..."
+    title="Research into the impact of AI"
+    url="/research/ai/"
+    cta="Read the latest research..."
     img-src="/research/2024/dora-report-ai-preview-hero.png"
     img-align="left"
     >}}
-Discover the five key views of value and how organizations can help developers thrive with AI.
+DORA's latest research into AI looks at adoption strategies, the impact of AI, fostering trust, and more. <br /><br /><br />
 
 {{< /article >}}
 
@@ -74,5 +74,5 @@ DORA Core represents the most well-established findings across the history and b
     img-src="/merch/images/dora-fitted-spotlight-yellow.png"
     img-align="left"
     >}}
-Limited-edition DORA tees are here! Two designs (DORA & DORA Community), multiple colors, straight cut & fitted styles. Get yours before they disappear!
+Limited-edition DORA tees are here! Two designs (DORA & DORA Community), multiple colors, straight cut & fitted styles. Get yours before they disappear!<br />
 {{< /article >}}
