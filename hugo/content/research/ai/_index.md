@@ -13,6 +13,7 @@ layout: single
 
 ## Research
 * [2024 DORA report](/research/2024/dora-report/)
+* [Helping developers adopt generative AI: Four practical strategies for organizations](/research/ai/adopt-gen-ai)
 * [Fostering developers' trust in generative artificial intelligence](/research/ai/trust-in-ai/)
 * [How Gen AI Affects the Value of Development Work](/research/ai/value-of-development-work/)
 
