@@ -82,7 +82,7 @@ Implementing these guidelines may lead to some near-term decreases in the adopti
 
 This isn’t necessarily a bad thing! It might even be a sign that developers are exercising thoughtful discretion when deciding when to use and not use AI. Identifying use cases where developers are incorporating AI alongside use cases where developers are choosing to not adopt AI may help organizations identify a sustainable, long-term approach that uses ongoing feedback to iterate as necessary.
 
-Google has shared guidance on how to [craft an acceptable use policy for gen AI](https://cloud.google.com/transform/how-to-craft-an-acceptable-use-policy-for-gen-ai-and-look-smart-doing-it), including recommendations for specifying scope, enforcement responsibilities, and delegating accountability for data governance and information security. Google has also published a [Secure AI Framework (SAIF)](https://safety.google/cybersecurity-advancements/saif/), a conceptual framework to secure AI systems. Both of these may help inform your own policies.
+Google has shared guidance on how to [craft an acceptable use policy for gen AI](https://cloud.google.com/transform/how-to-craft-an-acceptable-use-policy-for-gen-ai-and-look-smart-doing-it), including recommendations for specifying scope, enforcement responsibilities, and delegating accountability for data governance and information security. Google has also published the [Secure AI Framework](https://safety.google/cybersecurity-advancements/saif/) (SAIF), a conceptual framework to secure AI systems. Both of these may help inform your own policies.
 
 ## What we’ve learned
 
