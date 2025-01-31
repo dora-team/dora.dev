@@ -226,7 +226,7 @@ part of development.</td>
 ## What's next
 
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   See
     [Running builds with GitHub Checks](https://cloud.google.com/build/docs/run-builds-with-github-checks)
     for learning how to connect Google Cloud to GitHub using

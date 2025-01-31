@@ -171,7 +171,7 @@ changes in order to preserve the statistical properties.
 ## What's next
 
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   Read
     [A typology of organisational culture](https://qualitysafety.bmj.com/content/13/suppl_2/ii22.short),
     by Ron Westrum.

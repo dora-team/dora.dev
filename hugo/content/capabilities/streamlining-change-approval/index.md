@@ -173,7 +173,7 @@ While you consider your own environment, you will likely develop your own measur
     [perform vulnerability scanning as part of your deployment pipeline](https://cloud.google.com/binary-authorization/docs/vulnerability-scanning-kritis)
     with Cloud Build, Container Analysis, and Kritis Signer.
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   Explore our DevOps
     [research program](/).
 -   Take the

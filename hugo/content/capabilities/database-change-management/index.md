@@ -248,7 +248,7 @@ process. The goal should be that 100% of database changes are made in this way.
 ## What's next
 
 -  For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   Read about
     [evolutionary database design](https://www.martinfowler.com/articles/evodb.html).
 -   Read about

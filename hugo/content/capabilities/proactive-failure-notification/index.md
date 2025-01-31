@@ -98,7 +98,7 @@ rate is higher or lower than expected.
 ## What's next
 
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   Learn more about generating alerts in [Monitoring and observability](/capabilities/monitoring-and-observability).
 -   Read the
     [Site Reliability Engineering (SRE) book](https://landing.google.com/sre/books/).

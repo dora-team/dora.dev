@@ -289,7 +289,7 @@ time spent doing rework and unplanned work.
 ## What's next
 
 -  For links to other articles and resources, see the
-    [DevOps page](https://dora.dev).
+    [Google Cloud DevOps page](https://dora.dev).
 -  Learn more about continuous delivery in Martin Fowler's
     [Software delivery guide](https://martinfowler.com/delivery.html).
 -   Read [*Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation*](https://books.google.com/books/about/Value_Stream_Mapping_How_to_Visualize_Wo.html?id=ll7imAEACAAJ) by Karen Martin and Mike Osterling.

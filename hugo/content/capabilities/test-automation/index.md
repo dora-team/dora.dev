@@ -276,7 +276,7 @@ and the quantity which were poorly coded.</td>
 ## What's next
 
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   Find out more about testing at Google by reading
     [Software Engineering at Google](https://books.google.com/books/about/Software_Engineering_at_Google.html?id=WXTTDwAAQBAJ).
 -   Learn how to continuously build, test, and deploy your system using

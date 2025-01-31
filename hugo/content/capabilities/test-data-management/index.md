@@ -130,7 +130,7 @@ your progress against the core principles outlined earlier.
 ## What's next
 
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   See how testing and CI/CD can help
     [keep bugs out of production](https://cloud.google.com/blog/products/application-development/release-with-confidence-how-testing-and-cicd-can-keep-bugs-out-of-production).
 -   Explore our DevOps

@@ -315,7 +315,7 @@ upgraded in the event of vulnerabilities being discovered.
 ## What's next
 
 -  For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   [Why Google Stores Billions of Lines of Code in a Single Repository](https://research.google/pubs/pub45424/)
 -    [Rachel Potvin's presentation on Google's monolithic code repository](https://www.youtube.com/watch?v=W71BTkUbdqE)
 -   Explore our DevOps

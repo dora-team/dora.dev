@@ -153,7 +153,7 @@ consistent way without having to look it up.
 
 ## What's next
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   Read [*Leadership and Performance Beyond Expectations*](https://books.google.com/books/about/Leadership_and_Performance_Beyond_Expect.html?id=NCd-QgAACAAJ) by Bernad M. Bass (Free Press, 1985.)
 -   Check out the article [How to transform your organization.](/guides/devops-culture-transform)
 -   Explore our DevOps

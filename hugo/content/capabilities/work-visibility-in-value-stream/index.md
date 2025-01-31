@@ -186,7 +186,7 @@ value stream, ask these questions:
 ## What's next
 
 -   For links to other articles and resources, see the
-    [DevOps page](https://cloud.google.com/devops).
+    [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   Read the book
     [*Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation*](https://www.oreilly.com/library/view/value-stream-mapping/9780071828918/),
     by Karen Martin and Mike Osterling.
