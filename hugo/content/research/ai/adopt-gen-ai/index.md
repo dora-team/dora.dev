@@ -41,7 +41,8 @@ You’ll notice a call towards transparency reappearing in the strategies that f
 ## Alleviate anxieties about AI-related job <br />displacement
 
 The rise of AI has sparked concerns among developers that organizations will use it to automate jobs and reduce headcount. DORA found that nearly 15% of respondents expect AI to have a detrimental effect in their careers.
-This belief might drive some developers to learn AI tools not out of genuine interest or recognition of its potential benefits, but rather out of a reactive need to protect their careers.
+
+This belief might drive some developers to adopt AI not out of genuine interest or recognition of its potential benefits, but rather out of a reactive need to protect their careers.
 
 One developer we spoke to said, "I think, over the past year or so, people have realized that generative AI is at the point where it actually works for a lot of things. And now... **no one wants to get left behind**."
 
