@@ -35,9 +35,10 @@ Each of these strategies assumes that AI tooling is available to practitioners, 
 ## Share and be transparent about how the organization plans to use AI
 
 Our research suggests that organizations that apply this strategy can gain an estimated 11.4% increase in team adoption of AI compared to companies that do not openly communicate their AI plans to employees. We recommend that organizations provide employees with transparent information about their AI mission, goals, and adoption plan. By articulating both the overarching vision and specific policies, including addressing procedural concerns such as permitted code placement and available tools, you can alleviate employee apprehension and position AI as a means to help everyone focus on more valuable, fulfilling, and creative work.
+
 You’ll notice a call towards transparency reappearing in the strategies that follow. Transparency is part of a healthy organizational culture, and over the years DORA has consistently shown it can help teams be more successful at implementing [technical capabilities associated with improved outcomes](/research/2023/dora-report/).
 
-## Alleviate anxieties about AI-related job displacement
+## Alleviate anxieties about AI-related job <br />displacement
 
 The rise of AI has sparked concerns among developers that organizations will use it to automate jobs and reduce headcount. DORA found that nearly 15% of respondents expect AI to have a detrimental effect in their careers.
 This belief might drive some developers to learn AI tools not out of genuine interest or recognition of its potential benefits, but rather out of a reactive need to protect their careers.
@@ -52,7 +53,7 @@ We recommend that organizations work towards alleviating developer concerns abou
 
 AI is here to help improve their work lives, not replace them.
 
-## Allow ample time for developers to learn how to use AI
+## Allow ample time for developers to learn how to<br /> use AI
 
 Integrating AI into developer workflows has a learning curve. Our data indicates that individual reliance on AI peaks at around 15 to 20 months into using the tool, suggesting that learning how to use AI requires dedicated time for experimentation, practice, and integration with existing workflows.
 
@@ -91,6 +92,11 @@ All of these strategies suggest that fostering widespread and effective AI adopt
 The strategies we recommend will help ensure that AI is used strategically and responsibly to enhance productivity, foster innovation, and drive organizational success.
 
 <object data="policy_impact.svg" id="policy_impact" type="image/svg+xml" class="responsive-svg"></object>
+
+<small>This image displays Bayesian posterior distributions, which represent our updated understanding of a value after considering new evidence. The height of each curve over a value indicates the relative plausibility of that value. Taller, narrower curves mean we're more certain about our estimates, while shorter, broader curves reflect greater uncertainty.</small>
+
+<small>The value we're examining is how a specific strategy impacts a team's adoption of AI, measured by their response to the survey question: 'Over the last 3 months, approximately what percentage of your team’s work is supported by AI?' Each curve represents 4000 simulated scenarios, comparing teams that haven't adopted the strategy at all with those that have thoroughly integrated it.
+</small>
 
 ## Next steps
 
