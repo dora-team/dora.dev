@@ -9,8 +9,8 @@ test('AI research overview has the correct title.', async ({ page }) => {
   await expect(page).toHaveTitle('DORA | Artificial Intelligence');
 });
 
-test.skip('AI research overview has the correct header.', async ({ page }) => {
-  await expect(page.locator('h1')).toContainText('Research into Artificial Intelligence');
+test('AI research overview has the correct header.', async ({ page }) => {
+  await expect(page.locator('h2 >> nth=0')).toContainText('AI Research');
 });
 
 test('AI research overview has the correct sidebar.', async ({ page }) => {
