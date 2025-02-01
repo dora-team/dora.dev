@@ -51,7 +51,7 @@ test.describe('Core Model interactions', () => {
 });
 
 test('explore core model', async ({ page }) => {
-    await page.goto('/research/');
+    await page.goto(url);
     await expect(page.locator('main')).toContainText('Core Model');
     await page.getByLabel('detail').check();
     await expect(page.locator('main')).toContainText('Failed deployment recovery time');
@@ -63,3 +63,45 @@ test('explore core model', async ({ page }) => {
     const page1 = await page1Promise;
     await expect(page1.getByRole('img')).toBeVisible();
 });
+
+const coreCapabilitiesPopupTests = [
+  {
+    linkText: 'Climate for learning',
+    learnMoreLink: 'Learn more about climate for learning',
+    expectedH2: 'Capabilities that enable a Climate for Learning',
+    expectedURLFragment: '#climate%20for%20learning',
+  },
+  {
+    linkText: 'Fast flow',
+    learnMoreLink: 'Learn more about fast flow',
+    expectedH2: 'Capabilities that enable Fast Flow',
+    expectedURLFragment: '#fast%20flow',
+  },
+  {
+    linkText: 'Fast feedback',
+    learnMoreLink: 'Learn more about fast feedback',
+    expectedH2: 'Capabilities that enable Fast Feedback',
+    expectedURLFragment: '#fast%20feedback',
+  },
+];
+
+test.describe('Core capabilities popup tests', () => {
+    test.beforeEach(async ({ page }) => {
+        await page.goto('/research/'); // Navigate to the main page before each test
+      });
+
+  coreCapabilitiesPopupTests.forEach(({ linkText, learnMoreLink, expectedH2, expectedURLFragment }, index) => {
+    test(`Popup test for ${linkText}`, async ({ page }) => {
+      await page.getByRole('link', { name: linkText }).click();
+      const page1Promise = page.waitForEvent('popup');
+      await page.getByRole('link', { name: learnMoreLink }).click();
+      const page1 = await page1Promise;
+
+      // Use the index to select the correct h2:
+      await expect(page1.locator(`h2 >> nth=${index}`)).toContainText(expectedH2);
+
+      await expect(page1.url()).toContain(expectedURLFragment);
+    });
+  });
+});
+
