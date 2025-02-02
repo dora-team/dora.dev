@@ -32,13 +32,13 @@ Ultimately, the goal is to create an environment where developers feel confident
 
 Each of these strategies assumes that AI tooling is available to practitioners, and that initial experiments have indicated success in driving beneficial outcomes to practitioners and the organization, including improving productivity and job satisfaction.
 
-## Share and be transparent about how the organization plans to use AI
+### Share and be transparent about how the organization plans to use AI
 
 Our research suggests that organizations that apply this strategy can gain an estimated 11.4% increase in team adoption of AI compared to companies that do not openly communicate their AI plans to employees. We recommend that organizations provide employees with transparent information about their AI mission, goals, and adoption plan. By articulating both the overarching vision and specific policies, including addressing procedural concerns such as permitted code placement and available tools, you can alleviate employee apprehension and position AI as a means to help everyone focus on more valuable, fulfilling, and creative work.
 
 You’ll notice a call towards transparency reappearing in the strategies that follow. Transparency is part of a healthy organizational culture, and over the years DORA has consistently shown it can help teams be more successful at implementing [technical capabilities associated with improved outcomes](/research/2023/dora-report/).
 
-## Alleviate anxieties about AI-related job <br />displacement
+### Alleviate anxieties about AI-related job displacement
 
 The rise of AI has sparked concerns among developers that organizations will use it to automate jobs and reduce headcount. DORA found that nearly 15% of respondents expect AI to have a detrimental effect in their careers.
 
@@ -54,7 +54,7 @@ We recommend that organizations work towards alleviating developer concerns abou
 
 AI is here to help improve their work lives, not replace them.
 
-## Allow ample time for developers to learn how to<br /> use AI
+### Allow ample time for developers to learn how to use AI
 
 Integrating AI into developer workflows has a learning curve. Our data indicates that individual reliance on AI peaks at around 15 to 20 months into using the tool, suggesting that learning how to use AI requires dedicated time for experimentation, practice, and integration with existing workflows.
 
@@ -68,7 +68,7 @@ Providing dedicated time for developers to learn and experiment with AI can crea
 
 While our findings indicate that mandatory training does lead to small increases in AI adoption, we do not believe this to be a sustainable or fruitful strategy. Widespread adoption requires developers to embrace this technology, and to believe its adoption will lead to better outcomes for them and their organizations.
 
-## Create policies that govern the adoption of AI
+### Create policies that govern the adoption of AI
 
 Establishing clear organizational policies around AI usage can provide developers with a framework to confidently, responsibly, and effectively use these tools. Well-defined policies outline appropriate use cases, ethical considerations, and potential risks, guiding developers in making informed decisions about how to best use AI in their workflows.
 
@@ -84,7 +84,7 @@ This isn’t necessarily a bad thing! It might even be a sign that developers ar
 
 Google has shared guidance on how to [craft an acceptable use policy for gen AI](https://cloud.google.com/transform/how-to-craft-an-acceptable-use-policy-for-gen-ai-and-look-smart-doing-it), including recommendations for specifying scope, enforcement responsibilities, and delegating accountability for data governance and information security. Google has also published the [Secure AI Framework](https://safety.google/cybersecurity-advancements/saif/) (SAIF), a conceptual framework to secure AI systems. Both of these may help inform your own policies.
 
-## What we’ve learned
+### What we’ve learned
 
 DORA's research found AI adoption success in organizations who effectively communicate their vision and provide clear guidelines for AI usage. Based on this insight, we propose four strategies for increasing AI adoption among developers.
 
@@ -99,7 +99,7 @@ The strategies we recommend will help ensure that AI is used strategically and r
 <small>The value we're examining is how a specific strategy impacts a team's adoption of AI, measured by their response to the survey question: 'Over the last 3 months, approximately what percentage of your team’s work is supported by AI?' Each curve represents 4000 simulated scenarios, comparing teams that haven't adopted the strategy at all with those that have thoroughly integrated it.
 </small>
 
-## Next steps
+### Next steps
 
 * [Download and read the 2024 DORA Report](/research/2024/dora-report/) for additional findings from the research program.
 * [Read more about how to transform your organization](/guides/devops-culture-transform/) for perspective into the importance of ensuring teams have the tools and resources to do their job, and of making good use of their skills and abilities.
