@@ -19,7 +19,7 @@
         {{ if eq .Params.research_collection "core" }}
             <h4>Responses to the following questions were used in the analysis of the <a href="/research/">DORA Core Model</a>.</h4>
         {{ else if eq  .Params.research_collection "ai-adoption" }}
-            <h4>Responses to the following questions were used in the analysis for <a href="/research/ai/adopt-gen-ai">Helping developers adopt generative AI: Four practical strategies for organizations</a>.</h4>
+            <h4>Responses to the following questions were used in the analysis of <a href="/research/ai/adopt-gen-ai">Helping developers adopt generative AI: Four practical strategies for organizations</a>.</h4>
         {{ else }}
             <h4>Responses to the following questions were used in the analysis published in the <a href="/research/{{ $researchCollectionTitle }}/dora-report/">{{ $researchCollectionTitle }} Accelerate State of DevOps Report</a>.</h4>
         {{ end }}
