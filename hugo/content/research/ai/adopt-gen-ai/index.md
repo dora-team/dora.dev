@@ -1,7 +1,7 @@
 ---
 title: "Adopt generative AI"
 date: 2025-01-31
-updated: 2025-01-31T00:00:00Z
+updated: 2025-02-04
 research_collection: "Artificial Intelligence"
 draft: false
 tab_order: "8"
@@ -99,6 +99,9 @@ The strategies we recommend will help ensure that AI is used strategically and r
 <small>The value we're examining is how a specific strategy impacts a team's adoption of AI, measured by their response to the survey question: 'Over the last 3 months, approximately what percentage of your team’s work is supported by AI?' Each curve represents 4000 simulated scenarios, comparing teams that haven't adopted the strategy at all with those that have thoroughly integrated it.
 </small>
 
+### Methodology
+
+This research was conducted via a survey that included [questions about AI adoption](/research/ai/adopt-gen-ai/questions/).
 ### Next steps
 
 * [Download and read the 2024 DORA Report](/research/2024/dora-report/) for additional findings from the research program.
