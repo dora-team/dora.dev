@@ -10,7 +10,7 @@ test('AI adoption survey questions page has the correct title.', async ({ page }
 });
 
 test('AI adoption questions page lists the correct research collection.', async ({ page }) => {
-  await expect(page.locator('h4')).toContainText('Responses to the following questions were used in the analysis of Helping developers adopt generative AI: Four practical strategies for organizations.');
+  await expect(page.locator('h4')).toContainText('Responses to the following questions were used in the analysis for Helping developers adopt generative AI: Four practical strategies for organizations.');
 });
 
 test('AI adoption survey questions page has the correct sidebar.', async ({ page }) => {
