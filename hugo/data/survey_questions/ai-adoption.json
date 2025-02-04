@@ -1,0 +1,160 @@
+{
+    "categories": [
+        {
+            "heading": "AI adoption",
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "My organization has policies that govern the adoption of AI-powered tools and services.",
+                        "My organization has policies that allow employees to clearly understand how and when to use AI tools.",
+                        "My organization provides guidelines regarding how to mitigate security and privacy risks when engaging with AI",
+                        "My organization has proactively established safeguards against security and privacy breaches when utilizing AI.",
+                        "My organization has taken concrete steps to alleviate developers' worries about job displacement as a result of AI adoption.",
+                        "My organization allows employees to take time during their work hours to learn to use AI tools.",
+                        "My organization actively encourages employees to incorporate AI tools into their workflow.",
+                        "My organization provides resources (courses, webinars, etc.) for employees to learn how to best incorporate AI into their workflows.",
+                        "My organization is committed to the professional development of its employees.",
+                        "My organization requires employees to complete trainings that provide no inside or outside value to their job roles.",
+                        "My organization is transparent about how AI is being used.",
+                        "My organization has developed metrics for measuring the impact AI has on employee productivity",
+                        "My organization's leadership has clear goals regarding how it expects AI to impact organizational performance"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Clear AI policies",
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "My organization has policies that govern the adoption of AI-powered tools and services."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Policies on when and where to use AI",
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "My organization has policies that allow employees to clearly understand how and when to use AI tools."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Guidelines to mitigate privacy issues",
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "My organization provides guidelines regarding how to mitigate security and privacy risks when engaging with AI"
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Safeguards against sec & privacy breaches",
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "My organization has proactively established safeguards against security and privacy breaches when utilizing AI."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Alleviate displacement worries",
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "My organization has taken concrete steps to alleviate developers' worries about job displacement as a result of AI adoption."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Time to learn",
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "My organization allows employees to take time during their work hours to learn to use AI tools."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Encourage AI in workflows",
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "My organization actively encourages employees to incorporate AI tools into their workflow."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Resources to learn about AI",
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "My organization provides resources (courses, webinars, etc.) for employees to learn how to best incorporate AI into their workflows."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Invest in employee development",
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "My organization is committed to the professional development of its employees."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Mandatory trainings",
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "My organization requires employees to complete trainings that provide no inside or outside value to their job roles."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "Transparent about AI plans",
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "My organization is transparent about how AI is being used."
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": "AI adoption goals",
+            "question_groups": [
+                {
+                    "group_responses": "Strongly disagree,Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Agree,Strongly agree,I don't know or NA",
+                    "questions": [
+                        "My organization has developed metrics for measuring the impact AI has on employee productivity",
+                        "My organization's leadership has clear goals regarding how it expects AI to impact organizational performance"
+                    ]
+                }
+            ]
+        }
+    ]
+}
