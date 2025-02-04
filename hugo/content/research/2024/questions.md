@@ -1,7 +1,7 @@
 ---
 title: "DORA Research Questions"
 date: 2024-10-01
-updated: 2024-10-07
+updated: 2025-02-04
 research_collection: "2024"
 draft: false
 tab_order: "4"
