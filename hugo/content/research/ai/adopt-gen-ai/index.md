@@ -105,10 +105,6 @@ The value we're examining is how a specific strategy impacts a team's adoption o
 </small>
 </p>
 
-### Methodology
-
-This research was conducted via a survey that included [questions about AI adoption](/research/ai/questions/).
-
 ### Next steps
 
 * [Download and read the 2024 DORA Report](/research/2024/dora-report/) for additional findings from the research program.
@@ -116,7 +112,7 @@ This research was conducted via a survey that included [questions about AI adopt
 * Read about strategies the DORA team has identified for [ensuring AI amplifies developer value](/research/ai/value-of-development-work/). This article provides further guidance for  ensuring job satisfaction and productivity among developers.
 * [Join the dora.community](https://dora.community) to share your approaches and learn about how other organizations are encouraging their developers to adopt AI.
 
-### Notes on method
+#### Further Reading - notes on data analytic method
 
 This research was conducted via a survey that included [questions about AI adoption](/research/ai/questions/). We obtained 1000 responses from developer and developer-adjacent roles.
 
