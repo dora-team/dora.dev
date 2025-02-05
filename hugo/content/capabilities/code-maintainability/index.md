@@ -168,7 +168,7 @@ reviewers for any given change. Each directory in the Google repository has an
 OWNERS file that lists the people or groups who can approve changes to files in
 that directory (similar functionality is available in
 [GitHub](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners),
-[GitLab](https://docs.gitlab.com/ee/user/project/code_owners.html),
+[GitLab](https://docs.gitlab.com/ee/user/project/codeowners/),
 and
 [Bitbucket](https://marketplace.atlassian.com/apps/1218598/code-owners-for-bitbucket-server?hosting=server&tab=overview)).
 Fast search, approver suggestions, and automated tests make proposing changes,
