@@ -20,7 +20,7 @@ Following the 2024 DORA report, the research into AI continues.
 
 * [Helping developers adopt generative AI: Four practical strategies for organizations](/research/ai/adopt-gen-ai).
 * [How gen AI affects the value of development work](/research/ai/value-of-development-work/).
-* [Fostering developers' trust in generative artificial intelligence](/research/ai/trust-in-ai./)
+* [Fostering developers' trust in generative artificial intelligence](/research/ai/trust-in-ai/).
 
 ## Generative AI Guide
 
