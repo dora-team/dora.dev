@@ -13,6 +13,8 @@ This page lists errors and corrections to the 2024 Accelerate State of DevOps Re
 
 ### Errata in `v.2024.3`
 
+**p. 37** The description of Figure 9 should be "Impacts of AI adoption on development workflows."
+
 **p. 116** "Individual Performance and" should be "Individual Performance and Well-being"
 
 **p. 116** "Product Performanc" should be "Product Performance"
