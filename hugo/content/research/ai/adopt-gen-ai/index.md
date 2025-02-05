@@ -1,7 +1,7 @@
 ---
 title: "Adopt generative AI"
 date: 2025-01-31
-updated: 2025-02-04
+updated: 2025-02-05
 research_collection: "Artificial Intelligence"
 draft: false
 tab_order: "8"
@@ -94,14 +94,16 @@ The strategies we recommend will help ensure that AI is used strategically and r
 
 <object data="policy_impact.svg" id="policy_impact" type="image/svg+xml" class="responsive-svg"></object>
 
-<small>This image displays Bayesian posterior distributions, which represent our updated understanding of a value after considering new evidence. The height of each curve over a value indicates the relative plausibility of that value. Taller, narrower curves mean we're more certain about our estimates, while shorter, broader curves reflect greater uncertainty.</small>
-
-<small>The value we're examining is how a specific strategy impacts a team's adoption of AI, measured by their response to the survey question: 'Over the last 3 months, approximately what percentage of your team’s work is supported by AI?' Each curve represents 4000 simulated scenarios, comparing teams that haven't adopted the strategy at all with those that have thoroughly integrated it.
+<p style="padding-left:15em;">
+<small>
+This graph displays Bayesian posterior distributions, which represent our updated understanding of a value after considering new evidence. The height of each curve over a value indicates the relative plausibility of that value. Taller, narrower curves mean we're more certain about our estimates, while shorter, broader curves reflect greater uncertainty.
 </small>
-
-### Methodology
-
-This research was conducted via a survey that included [questions about AI adoption](/research/ai/questions/).
+</p>
+<p style="padding-left:15em;">
+<small>
+The value we're examining is how a specific strategy impacts a team's adoption of AI, measured by their response to the survey question: 'Over the last 3 months, approximately what percentage of your team’s work is supported by AI?' Each curve represents 4000 simulated scenarios, comparing teams that haven't adopted the strategy at all with those that have thoroughly integrated it.
+</small>
+</p>
 
 ### Next steps
 
@@ -109,3 +111,15 @@ This research was conducted via a survey that included [questions about AI adopt
 * [Read more about how to transform your organization](/guides/devops-culture-transform/) for perspective into the importance of ensuring teams have the tools and resources to do their job, and of making good use of their skills and abilities.
 * Read about strategies the DORA team has identified for [ensuring AI amplifies developer value](/research/ai/value-of-development-work/). This article provides further guidance for  ensuring job satisfaction and productivity among developers.
 * [Join the dora.community](https://dora.community) to share your approaches and learn about how other organizations are encouraging their developers to adopt AI.
+
+### Notes on method
+
+This research was conducted via a survey that included [questions about AI adoption](/research/ai/questions/). We obtained 1000 responses from developer and developer-adjacent roles.
+
+Data was analyzed using a Bayesian regression model to quantify the effect of various AI adoption strategies on team-level AI usage.  AI usage was measured as a self-reported percentage of team work supported by AI over the past three months.
+
+The adoption strategies were measured using Likert-scale responses (e.g., 1-7, Strongly Disagree to Strongly Agree). We treated these strategy variables as ordinal predictors. While R's implementation of ordinal regression allows for non-linear relationships (testing for `k-1` curves, where `k` is the number of response levels), we found that the linear effects provided the best balance of interpretability and predictive accuracy.
+
+To isolate the effect of each strategy, we accounted for several potential confounding variables: organizational size, industry, months of individual AI experience, and the presence of other adoption strategies.
+
+The model output provides posterior distributions for the regression coefficients of each strategy. These distributions represent the range of plausible values for the effect of a strategy's presence on the percentage of team work supported by AI, _holding all other variables constant_.
