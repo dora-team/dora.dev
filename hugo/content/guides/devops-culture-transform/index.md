@@ -61,7 +61,7 @@ organizational or division level. This is an aspirational, system-level business
 goal set by
 [leadership](/capabilities/transformational-leadership).
 It could be an ideal that can't be achieved, such as zero injuries (the
-[goal](https://hbswk.hbs.edu/archive/paul-o-neill-values-into-action)
+[goal](https://hbr.org/2024/09/safety-should-be-a-performance-driver)
 chosen by Alcoa's CEO Paul O'Neill). Or it could be a tough goal that is one to
 three years out, such as a tenfold increase in productivity (the
 [goal](https://continuousdelivery.com/evidence-case-studies/#the-hp-futuresmart-case-study)
