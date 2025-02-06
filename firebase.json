@@ -215,7 +215,7 @@
                     "type": 302
                 },
                 {
-                    "source": "/devops-capabilities/cultural/devops-culture-transform/",
+                    "source": "/capabilities/cultural/devops-culture-transform/",
                     "destination": "/guides/devops-culture-transform/",
                     "type": 301
                 },
@@ -228,6 +228,11 @@
                     "source": "/devops-capabilities/*/:capability",
                     "destination": "/capabilities/:capability/",
                     "type": 302
+                },
+                {
+                    "source": "/capabilities/how-to-empower-software-delivery-teams/",
+                    "destination": "/guides/how-to-empower-software-delivery-teams/",
+                    "type": 301
                 },
                 {
                     "source": "/publications/pdf/state-of-devops-2014.pdf",
