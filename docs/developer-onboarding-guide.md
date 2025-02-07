@@ -8,7 +8,7 @@ Purpose: dora.dev is the public-facing knowledge site of DORA. It serves as a ce
 ### Technology Stack:
 * [**Hugo:**](https://gohugo.io) A static site generator used to transform content from markdown files into HTML, CSS, and JavaScript.
 * [**Svelte:**](https://svelte.dev/) A JavaScript framework used to build interactive components like the Quick Check tool and Core Model
-diagram. 
+diagram.
 * [**Firebase:**](https://firebase.google.com/) A suite of Google Cloud services used for hosting, data storage (Firestore), serverless functions, and deployment.
 
 ## 2. Setting Up Your Development Environment
@@ -17,7 +17,8 @@ diagram.
 * *Git*: For version control (https://git-scm.com/).
 * *Node.js*: For running JavaScript (https://nodejs.org/).
 * *Hugo* (extended): For static site generation (https://gohugo.io/). Install the "extended" version, which includes additional functionality required for this project.
-* *Firebase CLI*: For interacting with Firebase ([https://firebase.google.com/docs/cli](https://firebase.google.com/docs/cli)).
+* Optional: *Firebase CLI*: For interacting with Firebase ([https://firebase.google.com/docs/cli](https://firebase.google.com/docs/cli)).
+  * Only required for some scenarios, such as configuring and testing redirects.
 
 ### Steps:
 * Clone the repository: `git clone https://github.com/dora-team/dora.dev.git`
@@ -26,7 +27,6 @@ diagram.
 **Install Node.js dependencies:**
 * For the Quick Check (Svelte): `cd svelte/quick-check-2023 && npm install`
 * For the Core Model (Svelte): `cd svelte/core-v2 && npm install`
-* For the contact form functions (Node.js): `cd functions/inquiry-monitor && npm install`
 * Review `/ci/README.md` for CI/CD pipeline setup.
 * Optionally review `/docs/README.md` for instructions on using Firebase emulators to preview certain features locally.
 
