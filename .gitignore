@@ -39,3 +39,6 @@ svelte/quick-check-2023/dist/
 svelte/core-v2/dist/**
 
 .venv/**
+
+# IDE files
+.idea/
