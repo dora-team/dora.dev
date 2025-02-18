@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         resultsBox.innerHTML = `<span class="searching">Searching "${searchTerm}..."</span>`;
         console.log(`searching ${searchTerm}...`)
         searchURI = `${searchServer}?query=${searchTerm}&max_web_records=${max_web_records}`;
-        
+
         fetch(searchURI)
             .then(response => {
                 if (!response.ok) {
@@ -90,6 +90,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
             year = result.publication_year;
             snippet = result.snippet;
             page_number = result.page_number;
+            let title = ""
+            if (year === "2020") {
+                title = "ROI of DevOps Transformation"
+            } else if (year < 2018) {
+                title = `State of DevOps Report ${year}`
+            } else {
+                title = `Accelerate State of DevOps Report ${year}`
+            }
             // URL `/dora-report-${year}` requires Firebase redirect, so it won't work if site is served by Hugo
             publicationResultsBox.innerHTML += `
             <a href="/dora-report-${year}" target="_blank">
@@ -97,7 +105,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     <div class="thumbnail">
                         <img src="/img/sodr_thumbnails/${year}.png">
                         <br>
-                        <h3>State of DevOps Report ${year}</h3>
+                        <h3>${title}</h3>
                         <h4>p. ${page_number}</h4>
                     </div>
                     <div class="snippet">
