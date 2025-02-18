@@ -44,8 +44,6 @@ DORA's latest research into AI looks at adoption strategies, the impact of AI, f
 
 {{< /article >}}
 
-<!--
-Removed while the t-shirts are available. Restore this on or after Feb 14, 2025.
 {{< article columns="1"
     title="Generative AI"
     url="/guides/how-to-innovate-with-generative-ai/"
@@ -55,7 +53,6 @@ Removed while the t-shirts are available. Restore this on or after Feb 14, 2025.
     >}}
 Leverage DORA's research findings to apply a holistic, iterative strategy as you experiment with and adopt emerging AI technologies. Learn how a focus on users can help ensure positive outcomes.
 {{< /article >}}
--->
 
 {{< article columns="1"
     title="DORA Core"
@@ -65,14 +62,4 @@ Leverage DORA's research findings to apply a holistic, iterative strategy as you
     img-align="left"
     >}}
 DORA Core represents the most well-established findings across the history and breadth our research program. Use it to guide transformation efforts in your organization.
-{{< /article >}}
-
-{{< article columns="1"
-    title="DORA T-shirts"
-    url="/merch/"
-    cta="Order t-shirts"
-    img-src="/merch/images/dora-fitted-spotlight-yellow.png"
-    img-align="left"
-    >}}
-Limited-edition DORA tees are here! Two designs (DORA & DORA Community), multiple colors, straight cut & fitted styles. Get yours before they disappear!<br />
 {{< /article >}}

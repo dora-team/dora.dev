@@ -6,8 +6,7 @@ export const heroImages = [
   '/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png',
   '/img/quickcheck/hero_illustration.svg',
   '/research/2024/dora-report-ai-preview-hero.png',
-  // '/guides/how-to-innovate-with-generative-ai/how-to-innovate-with-ai.png', removed while t-shirts are available.
-  '/merch/images/dora-fitted-spotlight-yellow.png',
+  '/guides/how-to-innovate-with-generative-ai/how-to-innovate-with-ai.png',
   '/img/features/homepage-core-snipe.png'
 ];
 
