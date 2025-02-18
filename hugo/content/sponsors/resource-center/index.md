@@ -10,7 +10,7 @@ Thank you for your support of the 2024 DORA Report. We appreciate your commitmen
 
 ## Graphics
 
-* [DORA Logos](https://storage.googleapis.com/dora-sponsor-resources/DORA-Logos.zip) <small>(ZIP, 150KB)</small>
+The [DORA Brand Guidelines](/brand-guidelines/) include graphics that can be used in promotional materials.
 
 ## Sponsor distribution list
 Announcements and updates will be sent to the `dora-sponsors-2024@` distribution list.  Reach out to [sponsor-dora@google.com](mailto:sponsor-dora@google.com) with the names and email addresses of anyone else from your organization who should be added to this distribution list.
