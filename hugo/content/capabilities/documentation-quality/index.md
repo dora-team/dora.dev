@@ -10,14 +10,14 @@ headline: "Maintain accurate, well-organized, user-centric internal documentatio
 summary: |
     Documentation quality interacts with technical capabilities to improve organizational performance. This interaction dramatically amplifies the impact that software teams can deliver toward achieving an organization's overarching goals. Practices which contribute to documentation quality include:
 
-    - Documenting critical use cases for your products and services. 
+    - Documenting critical use cases for your products and services.
     - Creating clear guidelines for updating and editing existing documentation.
     - Defining owners.
     - Including documentation as part of the software development process.
     - Recognizing documentation work during performance reviews and promotions.
 ---
 
-Internal documentation is a fundamental part of software development. Analysis by DORA has found a clear link between documentation quality and organizational performance — the organization’s ability to meet their performance and profitability goals. Documentation is highly technical work, and our findings show just how much this work pays off. 
+Internal documentation is a fundamental part of software development. Analysis by DORA has found a clear link between documentation quality and organizational performance — the organization’s ability to meet their performance and profitability goals. Documentation is highly technical work, and our findings show just how much this work pays off.
 
 ## Measuring documentation quality
 For our research, we used a set of eight metrics that assess documentation attributes like clarity, findability, and reliability. You can review the [questions from 2022](/research/archives/2022/?tab_archives=questions) for the statements we used to assess these attributes.
@@ -29,6 +29,9 @@ Similar to our research from 2021, we see documentation quality driving the impl
 What may be more exciting, however, is how documentation quality interacts with these capabilities to impact organizational performance.
 
 This interaction and impact applies to every single technical capability we studied in 2022. In the table below, check out the lift to organizational performance as various technical capabilities are implemented. The lift is significantly amplified for teams with above-average documentation quality.
+
+
+**Lift to organizational performance as technical capabilities are implemented:**
 
 | Technical Capability               | Teams with below-average documentation quality | Teams with above-average documentation quality |
 |------------------------------------|:----------------------------------------------:|:----------------------------------------------:|
@@ -45,7 +48,7 @@ Documentation needs to be actively created and maintained, which takes work.
 
 For guidance from our research, you can review the [2021 State of DevOps Report](/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.pdf) for practices that you can implement to improve documentation quality.
 
-This research doesn’t investigate individual resources, but there are plenty out there to help you create useful documentation. In your own organization, you may have documentation guidelines and training. You may also have technical writers or other documentation champions to work with. Here at Google, our documentation resources include: 
+This research doesn’t investigate individual resources, but there are plenty out there to help you create useful documentation. In your own organization, you may have documentation guidelines and training. You may also have technical writers or other documentation champions to work with. Here at Google, our documentation resources include:
 
 - [Technical Writing Courses](https://developers.google.com/tech-writing) for software engineers
 
