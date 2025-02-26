@@ -15,8 +15,3 @@ Optionally set a `BASE_URL` environment varilable to test redirects against a di
 
 `BASE_URL=https://staging.dora.dev npx mocha test-redirects.js`
 `docker run -it --env BASE_URL=https://staging.dora.dev test-redirects`
-
-## TODO
-The following cases need to be handled:
-
-"source": "/research/:year/?tab_archives=:tab", "destination": "/research/:year/:tab", "type": 302

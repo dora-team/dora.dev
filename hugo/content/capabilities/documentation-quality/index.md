@@ -20,11 +20,11 @@ summary: |
 Internal documentation is a fundamental part of software development. Analysis by DORA has found a clear link between documentation quality and organizational performance — the organization’s ability to meet their performance and profitability goals. Documentation is highly technical work, and our findings show just how much this work pays off.
 
 ## Measuring documentation quality
-For our research, we used a set of eight metrics that assess documentation attributes like clarity, findability, and reliability. You can review the [questions from 2022](/research/archives/2022/?tab_archives=questions) for the statements we used to assess these attributes.
+For our research, we used a set of eight metrics that assess documentation attributes like clarity, findability, and reliability. You can review the [questions from 2022](/research/2022/questions/) for the statements we used to assess these attributes.
 
 
 ## The impact of documentation
-Similar to our research from 2021, we see documentation quality driving the implementation of every single technical practice we studied. [Our model from 2022](/research/archives/2022/?tab_archives=structural-equation-model) shows documentation underpinning these technical capabilities.
+Similar to our research from 2021, we see documentation quality driving the implementation of every single technical practice we studied. [Our model from 2022](/research/2022/structural-equation-model/) shows documentation underpinning these technical capabilities.
 
 What may be more exciting, however, is how documentation quality interacts with these capabilities to impact organizational performance.
 
@@ -46,7 +46,7 @@ This interaction and impact applies to every single technical capability we stud
 ## Creating quality documentation
 Documentation needs to be actively created and maintained, which takes work.
 
-For guidance from our research, you can review the [2021 State of DevOps Report](/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.pdf) for practices that you can implement to improve documentation quality.
+For guidance from our research, you can review the [2021 State of DevOps Report](/research/2021/dora-report/) for practices that you can implement to improve documentation quality.
 
 This research doesn’t investigate individual resources, but there are plenty out there to help you create useful documentation. In your own organization, you may have documentation guidelines and training. You may also have technical writers or other documentation champions to work with. Here at Google, our documentation resources include:
 
