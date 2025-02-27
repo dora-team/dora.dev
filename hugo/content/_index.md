@@ -45,13 +45,15 @@ DORA's latest research into AI looks at adoption strategies, the impact of AI, f
 {{< /article >}}
 
 {{< article columns="1"
-    title="Generative AI"
-    url="/guides/how-to-innovate-with-generative-ai/"
-    cta="Read the guide"
-    img-src="/guides/how-to-innovate-with-generative-ai/how-to-innovate-with-ai.png"
+    title="Google Cloud Next"
+    url="https://cloud.withgoogle.com/next/25?utm_source=gamma&utm_medium=email&utm_campaign=FY25-Q2-global-EXP106-physicalevent-er-next25-mc&utm_content=dora-community-letter&utm_term=-"
+    cta="Register now"
+    img-src="/img/google-cloud-next.png"
     img-align="left"
     >}}
-Leverage DORA's research findings to apply a holistic, iterative strategy as you experiment with and adopt emerging AI technologies. Learn how a focus on users can help ensure positive outcomes.
+Connect <em>in person</em> at Google Cloud Next, April 9-11 in Las Vegas!<br/><br/>
+Meet fellow community members, explore AI, and improve your cloud skills.<br/><br/>
+Join the <a href="https://cloud.withgoogle.com/next/25/session-library?session=MTUP210&utm_source=gamma&utm_medium=email&utm_campaign=FY25-Q2-global-EXP106-physicalevent-er-next25-mc&utm_content=dora-community-letter&utm_term=-" target="_blank">DORA Community meetup</a>, keynotes, and many technical sessions.
 {{< /article >}}
 
 {{< article columns="1"
@@ -61,5 +63,5 @@ Leverage DORA's research findings to apply a holistic, iterative strategy as you
     img-src="/img/features/homepage-core-snipe.png"
     img-align="left"
     >}}
-DORA Core represents the most well-established findings across the history and breadth our research program. Use it to guide transformation efforts in your organization.
+DORA Core represents the most well-established findings across the history and breadth our research program. Use it to guide transformation efforts in your organization.<br /><br /><br /><br />
 {{< /article >}}
