@@ -1,7 +1,7 @@
 ---
 title: "DORA’s software delivery metrics: the four keys"
 date: 2024-03-29T16:06:31-04:00
-updated: 2024-09-21T00:00:00Z
+updated: 2025-03-05T00:00:00Z
 draft: false
 weight: 100
 authors:
@@ -26,7 +26,7 @@ DORA's four keys can be divided into metrics that show the throughput of softwar
 
 Throughput measures the velocity of changes that are being made. DORA assesses throughput using the following metrics:
 
-* **Change lead time** - This metric measures the time it takes for a code commit or change to be successfully deployed to production. It reflects the efficiency of your delivery pipeline.
+* **Change lead time** - This metric measures the time it takes for a code commit or change to be successfully deployed to production. It reflects the efficiency of your software delivery process.
 * **Deployment frequency** - This metric measures how often application changes are deployed to production. Higher deployment frequency indicates a more efficient and responsive delivery process.
 
 ### Stability

@@ -121,7 +121,7 @@
                 "changelead": {
                     "name": "Change lead time",
                     "link": "/guides/dora-metrics-four-keys/",
-                    "summary": "This metric measures the time it takes for a code commit or change to be successfully deployed to production. It reflects the efficiency of your delivery pipeline.<br><br>Want to assess your team’s software delivery performance? Try our <a href='/quickcheck' target='_blank'>DORA Quick Check</a> for insights on how to improve."
+                    "summary": "This metric measures the time it takes for a code commit or change to be successfully deployed to production. It reflects the efficiency of your software delivery process.<br><br>Want to assess your team’s software delivery performance? Try our <a href='/quickcheck' target='_blank'>DORA Quick Check</a> for insights on how to improve."
                 },
                 "deployfrequency": {
                     "name": "Deployment frequency",
