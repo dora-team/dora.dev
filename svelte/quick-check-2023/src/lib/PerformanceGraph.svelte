@@ -33,7 +33,6 @@
     </div>
 </div>
 
-<style lang="scss">
     .graph {
         position: relative;
         height: 5.5rem;
