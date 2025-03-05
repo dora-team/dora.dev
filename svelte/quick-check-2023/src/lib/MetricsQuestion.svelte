@@ -135,7 +135,7 @@
         display: flex;
         flex-direction: row;
         padding-bottom: 24px;
-        border-bottom: 1px solid #dadce0;
+        border-bottom: 1px solid var(--border-color-medium);
         margin-bottom: 32px;
 
         aside {
