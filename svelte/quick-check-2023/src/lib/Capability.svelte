@@ -104,7 +104,7 @@
         border-collapse: collapse;
 
         th {
-            border-bottom: 1px solid var(--border-color-medium);
+            border-bottom: 1px solid #dadce0;
             vertical-align: bottom;
 
             &:first-child {
