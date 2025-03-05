@@ -199,22 +199,6 @@
 </div>
 
 <style lang="scss">
-    :global(:root) {
-        --dora-blue: #005d8d;
-        --performance-spectrum: linear-gradient(
-            90deg,
-            #e62f23 0%,
-            #7a23e6 50%,
-            #1785e6 100%
-        );
-        --std-background: rgba(81, 196, 255, 0.2);
-        --metric-background: #999;
-        --metric-border: white;
-        --user-score-bg: white;
-        --border-color-medium: #ccc;
-        --border-color-light: #eee;
-    }
-
     /* override page-level styles for padding b/c it causes graphs to be mispositioned */
     :global(body div.quickcheck) {
         padding-left: 0;
