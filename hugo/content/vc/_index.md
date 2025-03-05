@@ -4,6 +4,7 @@ date: 2024-10-17
 draft: false
 bannerTitle: "DORA Report Version Check"
 bannerSubtitle: "Check if you have the most recent version of the DORA Report."
+layout: single
 ---
 
 <style>
@@ -135,41 +136,12 @@ bannerSubtitle: "Check if you have the most recent version of the DORA Report."
   <a href="/research/2024/dora-report"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 DORA Report Cover" style="max-width:12em;"></a>
 </div>
 
+<script src="/js/version-check-utils.js"></script>
 <script>
-  function getParameterByName(name, url = window.location.href) {
-    name = name.replace(/[\[\]]/g, '\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-  }
-
-  function showContent(version) {
-    // Show content for exact version match
-    document.querySelectorAll(`.version-content[data-version="${version}"]`).forEach(el => el.style.display = 'block');
-
-    // Show content for version prefix match
-    document.querySelectorAll(`.version-content[data-version-prefix^="${version.substring(0, 4)}-"]`).forEach(el => {
-      // Hide if excluded version
-      if (el.dataset.exclude && el.dataset.exclude.includes(version)) {
-        return;
-      }
-      el.style.display = 'block';
-    });
-
-      // Show default content if no version match
-      const defaultContent = document.querySelector('.version-content[data-default]');
-      if (defaultContent && !document.querySelector('.version-content[style="display: block;"]')) {
-        defaultContent.style.display = 'block';
-      }
-  }
-
   const version = getParameterByName('v');
   if (version) {
     showContent(version);
   } else {
-    // Show default content if no version is specified or undefined
-    document.querySelector('.version-content[data-default]').style.display = 'block';
+     showContent();
   }
 </script>
