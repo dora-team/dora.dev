@@ -6,6 +6,7 @@ draft: false
 
 # DORA Publications Errata
 
+### <a href='{{<relref "/research/ai/errata">}}'>Impact of Generative AI in Software Development</a>
 ### <a href='{{<relref "/research/2024/errata">}}'>Accelerate State of DevOps 2024</a>
 ### <a href='{{<relref "/research/2023/errata">}}'>Accelerate State of DevOps 2023</a>
 

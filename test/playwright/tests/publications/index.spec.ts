@@ -32,6 +32,8 @@ test('Publications page links to the DORA awards ebook.', async ({ page }) => {
 
 // Mapping for "Download the report" links which, by convention, got to /research/:year or /research/:year/dora-report
 const downloadTheReportMap = [
+  // TODO: Update the url
+  { year: 'Generative AI', url: '#' },
   { year: 2024, url: 'https://cloud.google.com/devops/state-of-devops' },
   { year: 2023, url: '/research/2023/dora-report/' },
   { year: 2022, url: '/research/2022/dora-report/' },
@@ -45,7 +47,7 @@ const downloadTheReportMap = [
 ];
 
 downloadTheReportMap.forEach(({ year, url }, index) => {
-  test(`Publications page links to the DORA Report landing page for ${year}`, async ({ page }) => {
+  test(`Publications page links to the ${year} Report landing page.`, async ({ page }) => {
     await page.goto('/publications/');
     // Get the nth link with the text "Download the report"
     const reportLink = page.getByRole('link', { name: 'Download the report' }).nth(index);
