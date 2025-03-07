@@ -7,7 +7,6 @@ research_collection: "2024"
 tab_order: "2"
 tab_title: "DORA Report"
 type: "research_archives"
-hideSiteBanner: true
 ---
 ## Download the 2024 DORA Report
 

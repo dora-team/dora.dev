@@ -9,6 +9,29 @@ bannerSubtitle: "Findings from DORA's research program are made available throug
 >
 > Please reach out to sponsor-dora@google.com for more information on the sponsorship opportunities!
 
+## Impact of Generative AI in Software Development
+
+<section class="publicationHighlight">
+    <aside>
+        <!-- TODO: Update URL -->
+        <a href="#" target="_blank"><img src="/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png" alt="Impact of Generative AI in Software Development"></a>
+    </aside>
+    <article>
+<p>
+  Generative AI is rapidly reshaping the software development landscape, presenting both exciting opportunities and complex challenges.
+</p>
+<p>
+  This report offers research-backed guidance for leaders and practitioners to effectively navigate this transformation, providing actionable insights to maximize AI's benefits while mitigating potential risks.
+</p>
+
+<p>
+  Based on extensive data and developer interviews, the report moves beyond the hype to offer a nuanced perspective on AI's impact on individuals, teams, and organizations.
+</p>
+      <!-- TODO: Update URL -->
+      <a href="#" target="_blank"><button class="secondary">Download the report</button></a>
+    </article>
+</section>
+
 ## Accelerate State of DevOps Report
 
 <section class="publicationHighlight">

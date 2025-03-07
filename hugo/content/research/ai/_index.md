@@ -12,6 +12,10 @@ layout: single
 heroimage: "/research/2024/dora-report-ai-preview-hero.png"
 ---
 
+## AI Report
+
+Download the [Impact of Generative AI in Software Development](/research/ai/gen-ai-report/) report.
+
 ## AI Research
 
 The [2024 DORA report](/research/2024/dora-report/) includes deep dives into the adoption, attitudes, and downstream impacts of AI. A [preview of the AI findings](/research/2024/ai-preview) was published prior to the report's release.
