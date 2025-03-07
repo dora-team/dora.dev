@@ -48,7 +48,7 @@ DORA's latest research into AI looks at adoption strategies, the impact of AI, f
     title="Google Cloud Next"
     url="https://cloud.withgoogle.com/next/25?utm_source=gamma&utm_medium=email&utm_campaign=FY25-Q2-global-EXP106-physicalevent-er-next25-mc&utm_content=dora-community-letter&utm_term=-"
     cta="Register now"
-    img-src="/img/google-cloud-next.png"
+    img-src="/img/features/google-cloud-next.png"
     img-align="left"
     >}}
 Connect <em>in person</em> at Google Cloud Next, April 9-11 in Las Vegas!<br/><br/>
