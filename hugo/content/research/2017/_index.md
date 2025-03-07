@@ -7,7 +7,7 @@ type: research_archives
 layout: single
 ---
 
-[![2017 State of DevOps Report](/research/2017/2017-state-of-devops-report.png)](2017-state-of-devops-report.pdf)
+[![State of DevOps Report 2017](/research/2017/2017-state-of-devops-report.png)](2017-state-of-devops-report.pdf)
 
 The 2017 State of DevOps Report highlights the critical role of transformational leadership in fostering a culture of high performance. Leaders who exhibit vision, inspirational communication, intellectual stimulation, supportive leadership, and personal recognition are more likely to cultivate successful teams. The research also underscores the importance of automation in achieving faster throughput and improved stability. High-performing teams automate significantly more of their configuration management, testing, deployments, and change approval processes, freeing up time for innovation.
 

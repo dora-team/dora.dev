@@ -32,6 +32,12 @@ test('2022 DORA report page has the correct header.', async ({ page }) => {
   await expect(page.locator('h1')).toContainText('DORA Research: 2022');
 });
 
+test('2022 DORA report page has the correct report image', async ({ page }) => {
+  const reportImage = page.locator('img[src="2022-dora-accelerate-state-of-devops-report.png"]');
+  await expect(reportImage).toBeVisible();
+  await expect(reportImage).toHaveAttribute('alt', 'Accelerate State of DevOps Report 2022');
+});
+
 test('2022 DORA report page has the correct language.', async ({ page }) => {
   const languageOptions = await page.locator('item ul li').count();
   await expect(languageOptions).toBe(10);

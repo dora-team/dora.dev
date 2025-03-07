@@ -13,7 +13,7 @@ type: "research_archives"
 <grid class="border_none" style="margin-top:1rem;">
 <item>
 
-<a href="2023-dora-accelerate-state-of-devops-report.pdf" target="_blank"><img src="2023-dora-accelerate-state-of-devops-report.png" style="max-width:24em;"></a>
+<a href="2023-dora-accelerate-state-of-devops-report.pdf" target="_blank"><img src="2023-dora-accelerate-state-of-devops-report.png" alt="Accelerate State of DevOps Report 2023" style="max-width:24em;"></a>
 
 </item>
 <item>
