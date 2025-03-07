@@ -7,7 +7,7 @@ bannerTitle: DORA Brand Guidelines
 layout: single
 ---
 
-![DORA](/img/DORA-Horizontal-Logo.svg)
+![DORA](DORA-Horizontal-Logo.svg)
 
 DORA is in the process of rebranding it's look and feel. The new brand will be used in the 2024 DORA Report and will roll out across the rest of the DORA properties in the coming months.
 
