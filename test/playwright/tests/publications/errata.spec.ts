@@ -4,7 +4,8 @@ import { test, expect } from '@playwright/test';
 
 const yearToURLMap = {
     'Accelerate State of DevOps 2023': '/research/2023/errata/',
-    'Accelerate State of DevOps 2024': '/research/2024/errata/'
+    'Accelerate State of DevOps 2024': '/research/2024/errata/',
+    'Impact of Generative AI in Software Development': '/research/ai/errata/'
 };
 
 test.beforeEach(async ({ page }) => {

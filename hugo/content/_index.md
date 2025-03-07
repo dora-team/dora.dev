@@ -6,20 +6,22 @@ bannerTitle: "Get Better at Getting Better"
 bannerSubtitle: "DORA is the largest and longest running research program of its kind, that seeks to understand the capabilities that drive software delivery and operations performance. DORA helps teams apply those capabilities, leading to better organizational performance."
 ---
 
+<!-- TODO: Update the url -->
 {{< article columns="2"
-    title="Accelerate State of DevOps Report 2024"
-    url="https://cloud.google.com/devops/state-of-devops"
+    title="Impact of Generative AI in Software Development"
+    url="#"
     cta="Read the Report"
-    img-src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png"
-    img-alt="The Accelerate State of DevOps Report 2024"
+    img-src="/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png"
+    img-alt="Impact of Generative AI in Software Development"
     img-align="right"
     img-stroke="true"
     text-size-ratio="1.15"
     >}}
-DORA has been investigating the capabilities, practices, and measures of high-performing technology-driven teams and organizations for over a decade. This is our tenth DORA report. We have heard from more than 39,000 professionals working at organizations of every size and across many different industries globally.
+Generative AI is rapidly reshaping the software development landscape, presenting both exciting opportunities and complex challenges.
 
-This report highlights the significant impact of AI on software development, explores platform engineering's promises and challenges, and emphasizes user-centricity and stable priorities for organizational success.
+This report offers research-backed guidance for leaders and practitioners to effectively navigate this transformation, providing actionable insights to maximize AI's benefits while mitigating potential risks.
 
+Based on extensive data and developer interviews, the report moves beyond the hype to offer a nuanced perspective on AI's impact on individuals, teams, and organizations.
 {{< /article >}}
 
 {{< article columns="1"
