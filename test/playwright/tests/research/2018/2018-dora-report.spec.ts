@@ -17,6 +17,12 @@ test('2018 DORA report page has the correct sub header.', async ({ page }) => {
   await expect(page.locator('h2')).toContainText('Download the 2018 DORA Report');
 });
 
+test('2018 DORA report page has the correct report image', async ({ page }) => {
+  const reportImage = page.locator('img[src="2018-dora-accelerate-state-of-devops-report.png"]');
+  await expect(reportImage).toBeVisible();
+  await expect(reportImage).toHaveAttribute('alt', 'Accelerate State of DevOps Report 2018');
+});
+
 test('2018 DORA report page links to the 2018 DORA Report.', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'Accelerate State of DevOps Report' })).toHaveAttribute(
     'href',

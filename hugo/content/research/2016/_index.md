@@ -7,7 +7,7 @@ type: research_archives
 layout: single
 ---
 
-[![2016 State of DevOps Report](/research/2016/2016-state-of-devops-report.png)](2016-state-of-devops-report.pdf)
+[![State of DevOps Report 2016](/research/2016/2016-state-of-devops-report.png)](2016-state-of-devops-report.pdf)
 
 The 2016 State of DevOps Report reveals that high-performing organizations significantly outperform low performers in terms of IT performance and employee engagement. The report emphasizes benefits of integrating quality into every stage of development. The report also highlights the benefits of an experimental approach to product development, which involves breaking down products into smaller batches, ensuring visibility into the workflow, and actively seeking customer feedback.
 

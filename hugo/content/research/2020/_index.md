@@ -10,7 +10,7 @@ layout: single
 
 In 2020, DORA didn't write an Accelerate State of DevOps Report. We did, however, produce a whitepaper which explores the return on investment (ROI) that can be realized through a DevOps transformation project. [Download The ROI of DevOps Whitepaper](the-roi-of-devops-transformation-google-cloud-dora.pdf).
 
-{{< image src="/img/features/whitepaper-roi.png" url="the-roi-of-devops-transformation-google-cloud-dora.pdf" width="16em" border="1px solid #ccc">}}
+<a href="the-roi-of-devops-transformation-google-cloud-dora.pdf" target="_blank"><img src="whitepaper-roi.png" alt="The ROI of DevOps Transformation" width="260em" style="border: 1px solid #ccc"/></a>
 
 Technology transformations can yield substantial returns for organizations. The paper encourages a focus on value-driven approaches, reinvesting gains from efficiency improvements into innovation and value creation. It also highlights the positive impact on employee morale and organizational culture when teams spend less time on rework and more time on value-added development.
 
