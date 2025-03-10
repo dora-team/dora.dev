@@ -5,7 +5,7 @@ draft: false
 type: research_archives
 research_collection: "Artificial Intelligence"
 tab_order: "2"
-tab_title: "Generative AI Report"
+tab_title: "Gen AI Report"
 type: "research_archives"
 hideSiteBanner: true
 ---
