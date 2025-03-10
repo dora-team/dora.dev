@@ -8,6 +8,19 @@
     {{ $researchCollectionTitle = .Params.research_collection }}
 {{ end }}
 
+{{/* dataLookupKey is a local variable for data lookup, similar to $researchCollectionTitle */}}
+{{ $dataLookupKey := .Params.research_collection }}
+{{ if eq .Params.research_collection "core" }}
+  {{ $dataLookupKey = "core" }}
+{{ else if eq  .Params.research_collection "ai-adoption" }}
+    {{ $dataLookupKey = "ai-adoption" }}
+{{ else if eq  .Params.research_collection "Artificial Intelligence" }}
+    {{ $dataLookupKey = "gen-ai-report" }}
+{{ else }}
+    {{ $dataLookupKey = .Params.research_collection }}
+{{ end }}
+
+
 <h1>DORA Research: {{ $researchCollectionTitle }}</h1>
 {{- partial "research_archives_tabs" . -}}
 
@@ -16,14 +29,16 @@
 <section class="hasSidebar">
     <article id="questions">
         <h2>Survey Questions</h2>
-        {{ if eq .Params.research_collection "core" }}
+        {{ if eq $dataLookupKey "core" }}
             <h4>Responses to the following questions were used in the analysis of the <a href="/research/">DORA Core Model</a>.</h4>
-        {{ else if eq  .Params.research_collection "ai-adoption" }}
+        {{ else if eq $dataLookupKey "ai-adoption" }}
             <h4>Responses to the following questions were used in the analysis for <a href="/research/ai/adopt-gen-ai">Helping developers adopt generative AI: Four practical strategies for organizations</a>.</h4>
+        {{ else if eq $dataLookupKey "gen-ai-report" }}
+            <h4>Responses to the following questions were to inform the analysis published in the <a href="/research/ai/gen-ai-report/">Impact of Generative AI in Software Development report</a>.</h4>
         {{ else }}
             <h4>Responses to the following questions were used in the analysis published in the <a href="/research/{{ $researchCollectionTitle }}/dora-report/">{{ $researchCollectionTitle }} Accelerate State of DevOps Report</a>.</h4>
         {{ end }}
-        {{ with index .Site.Data.survey_questions .Params.research_collection }}
+        {{ with index .Site.Data.survey_questions $dataLookupKey }}
             {{  range sort .categories "heading" }}
                 <h3 id="{{ .heading | anchorize }}">{{ .heading }}</h3>
                 {{ if .description }}<p>{{ .description }}</p>{{ end }}

@@ -10,7 +10,7 @@ test('AI research overview has the correct title.', async ({ page }) => {
 });
 
 test('AI research overview has the correct header.', async ({ page }) => {
-  await expect(page.locator('h2 >> nth=0')).toContainText('AI Research');
+  await expect(page.locator('h2 >> nth=0')).toContainText('AI Report');
 });
 
 test('AI research overview has the correct sidebar.', async ({ page }) => {
