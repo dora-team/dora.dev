@@ -6,10 +6,9 @@ bannerTitle: "Get Better at Getting Better"
 bannerSubtitle: "DORA is the largest and longest running research program of its kind, that seeks to understand the capabilities that drive software delivery and operations performance. DORA helps teams apply those capabilities, leading to better organizational performance."
 ---
 
-<!-- TODO: Update the url -->
 {{< article columns="2"
     title="Impact of Generative AI in Software Development"
-    url="#"
+    url="https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development"
     cta="Read the Report"
     img-src="/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png"
     img-alt="Impact of Generative AI in Software Development"
