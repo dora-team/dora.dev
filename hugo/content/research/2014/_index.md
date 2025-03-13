@@ -7,7 +7,7 @@ type: research_archives
 layout: single
 ---
 
-[![2014 State of DevOps Report](2014-state-of-devops-report.png)](2014-state-of-devops-report.pdf)
+[![State of DevOps Report 2014](2014-state-of-devops-report.png)](2014-state-of-devops-report.pdf)
 
 The 2014 State of DevOps Report provides compelling evidence that DevOps is not just a set of technical practices but a cultural shift that can drive significant improvements in IT and organizational performance. By adopting DevOps practices and fostering a culture of collaboration and continuous improvement, organizations can achieve higher levels of productivity, profitability, and market share.
 

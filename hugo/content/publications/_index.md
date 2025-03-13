@@ -71,7 +71,7 @@ bannerSubtitle: "Findings from DORA's research program are made available throug
 ## Additional Publications
 <!-- add publications as list items, using markdown syntax (list items are designated with a leading dash) -->
 
-- [![ROI of DevOps Whitepaper](img/whitepaper-roi.png)](/research/2020/)
+- [![ROI of DevOps Whitepaper](/research/2020/whitepaper-roi.png)](/research/2020/)
   **[The ROI of DevOps Transformation](/research/2020/)**
   [Download the Whitepaper](/research/2020/)
 - [![DevOps Awards Winners 2021](img/devops_awards_fullebook.png)](https://services.google.com/fh/files/misc/devops_awards_fullebook_final.pdf)
