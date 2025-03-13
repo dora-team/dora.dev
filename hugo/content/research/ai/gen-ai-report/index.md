@@ -14,9 +14,7 @@ hideSiteBanner: true
 <grid class="border_none" style="margin-top:1rem;">
 <item>
 
-<!-- TODO: Update the link to the report -->
-
-<a href="#" target="_blank"><img src="dora-impact-of-generative-ai-in-software-development-report.png" alt="Impact of Generative AI in Software Development" style="max-width:24em;"></a>
+<a href="https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development" target="_blank"><img src="dora-impact-of-generative-ai-in-software-development-report.png" alt="Impact of Generative AI in Software Development" style="max-width:24em;"></a>
 
 </item>
 
@@ -35,9 +33,7 @@ Based on extensive data and developer interviews, the report moves beyond the hy
 
 <p>
 
-<!-- TODO: Update the link to the report -->
-
-<a href="#" target="_blank"><button class="secondary">Download the report</button></a>
+<a href="https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development" target="_blank"><button class="secondary">Download the report</button></a>
 
 </p>
 </grid>

@@ -32,8 +32,7 @@ test('Publications page links to the DORA awards ebook.', async ({ page }) => {
 
 // Mapping for "Download the report" links which, by convention, got to /research/:year or /research/:year/dora-report
 const downloadTheReportMap = [
-  // TODO: Update the url
-  { year: 'Generative AI', url: '#' },
+  { year: 'Generative AI', url: 'https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development' },
   { year: 2024, url: 'https://cloud.google.com/devops/state-of-devops' },
   { year: 2023, url: '/research/2023/dora-report/' },
   { year: 2022, url: '/research/2022/dora-report/' },
