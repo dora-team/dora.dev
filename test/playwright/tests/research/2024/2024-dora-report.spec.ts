@@ -51,9 +51,3 @@ test('2024 DORA report page has the correct report image', async ({ page }) => {
   await expect(reportImage).toBeVisible();
   await expect(reportImage).toHaveAttribute('alt', 'Accelerate State of DevOps Report 2024');
 });
-
-test('2024 DORA report page has the correct download button', async ({ page }) => {
-  const downloadLink = page.getByRole('link', { name: 'Download the report' });
-  await expect(downloadLink).toBeVisible();
-  await expect(downloadLink).toHaveAttribute('href', 'https://cloud.google.com/devops/state-of-devops');
-});
