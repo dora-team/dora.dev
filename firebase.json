@@ -1,301 +1,300 @@
 {
-    "hosting": [
+  "hosting": [
+    {
+      "target": "prod",
+      "public": "hugo/public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "redirects": [
         {
-            "target": "prod",
-            "public": "hugo/public",
-            "ignore": [
-                "firebase.json",
-                "**/.*",
-                "**/node_modules/**"
-            ],
-            "redirects": [
-                {
-                    "source": "/dora-brand-guidelines",
-                    "destination": "/brand-guidelines/",
-                    "type": 301
-                },
-                {
-                    "source": "/sponsors/dora-brand-guidelines",
-                    "destination": "/brand-guidelines/",
-                    "type": 301
-                },
-                {
-                    "source": "/concepts/wellbeing",
-                    "destination": "/capabilities/well-being/",
-                    "type": 302
-                },
-                {
-                    "source": "/capabilities/wellbeing",
-                    "destination": "/capabilities/well-being/",
-                    "type": 302
-                },
-                {
-                    "source": "/concepts/well-being",
-                    "destination": "/capabilities/well-being/",
-                    "type": 302
-                },
-                {
-                    "source": "/devops-capabilities/cultural/wellbeing",
-                    "destination": "/capabilities/well-being/",
-                    "type": 302
-                },
-                {
-                    "source": "/devops-capabilities",
-                    "destination": "/capabilities/",
-                    "type": 302
-                },
-                {
-                    "source": "/quickcheck.html",
-                    "destination": "/quickcheck/",
-                    "type": 301
-                },
-                {
-                    "source": "/performance.html**",
-                    "destination": "/quickcheck/2019/results/",
-                    "type": 301
-                },
-                {
-                    "source": "/quickcheck/2023",
-                    "destination": "/quickcheck/",
-                    "type": 302
-                },
-                {
-                    "source": "/research.html",
-                    "destination": "/",
-                    "type": 301
-                },
-                {
-                    "source": "/models.html",
-                    "destination": "/research/",
-                    "type": 301
-                },
-                {
-                    "source": "/faq.html",
-                    "destination": "/faq/",
-                    "type": 301
-                },
-                {
-                    "source": "/dora-joins-google-cloud.html",
-                    "destination": "/news/dora-joins-google-cloud/",
-                    "type": 301
-                },
-                {
-                    "source": "/2018/12/dora-joins-google-cloud/",
-                    "destination": "/news/dora-joins-google-cloud/",
-                    "type": 301
-                },
-                {
-                    "source": "/core",
-                    "destination": "/research/",
-                    "type": 301
-                },
-                {
-                    "source": "/core-v2",
-                    "destination": "/research/",
-                    "type": 301
-                },
-                {
-                    "source": "/research/archives/:year*",
-                    "destination": "/research/:year",
-                    "type": 302
-                },
-                {
-                    "source": "/dora-report",
-                    "destination": "/report",
-                    "type": 302
-                },
-                {
-                    "source": "/dora-report-2014",
-                    "destination": "/research/2014",
-                    "type": 302
-                },
-                {
-                    "source": "/dora-report-2015",
-                    "destination": "/research/2015",
-                    "type": 302
-                },
-                {
-                    "source": "/dora-report-2016",
-                    "destination": "/research/2016",
-                    "type": 302
-                },
-                {
-                    "source": "/dora-report-2017",
-                    "destination": "/research/2017",
-                    "type": 302
-                },
-                {
-                    "source": "/dora-report-roi",
-                    "destination": "/research/2020",
-                    "type": 302
-                },
-                {
-                    "source": "/report/roi",
-                    "destination": "/research/2020",
-                    "type": 302
-                },
-                {
-                    "source": "/roi-report",
-                    "destination": "/research/2020",
-                    "type": 302
-                },
-                {
-                    "source": "/dora-report-2020",
-                    "destination": "/research/2020",
-                    "type": 302
-                },
-                {
-                    "source": "/research/2024/trust-in-ai/",
-                    "destination": "/research/ai/trust-in-ai/",
-                    "type": 301
-                },
-                {
-                    "source": "/research/2024/value-of-development-work/",
-                    "destination": "/research/ai/value-of-development-work/",
-                    "type": 301
-                },
-                {
-                    "source": "/dora-report-:year",
-                    "destination": "/research/:year/dora-report",
-                    "type": 302
-                },
-                {
-                    "source": "/report",
-                    "destination": "https://cloud.google.com/devops/state-of-devops",
-                    "type": 302
-                },
-                {
-                    "source": "/report/:year",
-                    "destination": "/research/:year/dora-report",
-                    "type": 302
-                },
-                {
-                    "source": "/:year-infographic",
-                    "destination": "/research/:year/infographic/",
-                    "type": 302
-                },
-                {
-                    "source": "/infographic-:year",
-                    "destination": "/research/:year/infographic/",
-                    "type": 302
-                },
-                {
-                    "source": "/postcard",
-                    "destination": "/resources/img/DORA_Postcard_2023-10.pdf",
-                    "type": 302
-                },
-                {
-                    "source": "/devops-capabilities/technical/loosely-coupled-architecture",
-                    "destination": "/capabilities/loosely-coupled-teams/",
-                    "type": 302
-                },
-                {
-                    "source": "/capabilities/loosely-coupled-architecture",
-                    "destination": "/capabilities/loosely-coupled-teams/",
-                    "type": 301
-                },
-                {
-                    "source": "/devops-capabilities/technical/shifting-left-on-security",
-                    "destination": "/capabilities/pervasive-security/",
-                    "type": 302
-                },
-                {
-                    "source": "/assets/transformation_practices.pdf",
-                    "destination": "https://itrevolution.com/wp-content/uploads/2022/06/transformation_practices.pdf",
-                    "type": 301
-                },
-                {
-                    "source": "/next24",
-                    "destination": "https://google.qualtrics.com/jfe/form/SV_8uCHA4aRzcGDjg2?source=next24",
-                    "type": 302
-                },
-                {
-                    "source": "/devops-capabilities/cultural/how-to-empower-software-delivery-teams/",
-                    "destination": "/guides/how-to-empower-software-delivery-teams/",
-                    "type": 302
-                },
-                {
-                    "source": "/devops-capabilities/cultural/devops-culture-transform/",
-                    "destination": "/guides/devops-culture-transform/",
-                    "type": 301
-                },
-                {
-                    "source": "/capabilities/cultural/devops-culture-transform/",
-                    "destination": "/guides/devops-culture-transform/",
-                    "type": 301
-                },
-                {
-                    "source": "/sponsor",
-                    "destination": "/sponsors/",
-                    "type": 301
-                },
-                {
-                    "source": "/devops-capabilities/*/:capability",
-                    "destination": "/capabilities/:capability/",
-                    "type": 302
-                },
-                {
-                    "source": "/capabilities/how-to-empower-software-delivery-teams/",
-                    "destination": "/guides/how-to-empower-software-delivery-teams/",
-                    "type": 301
-                },
-                {
-                    "source": "/publications/pdf/state-of-devops-2014.pdf",
-                    "destination": "/research/2014/2014-state-of-devops-report.pdf",
-                    "type": 301
-                },
-                {
-                    "source": "/research/2017-and-earlier/2014-state-of-devops-report.pdf",
-                    "destination": "/research/2014/2014-state-of-devops-report.pdf",
-                    "type": 301
-
-                },
-                {
-                    "source": "/publications/pdf/state-of-devops-2015.pdf",
-                    "destination": "/research/2015/2015-state-of-devops-report.pdf",
-                    "type": 301
-                },
-                {
-                    "source": "/research/2017-and-earlier/2015-state-of-devops-report.pdf",
-                    "destination": "/research/2015/2015-state-of-devops-report.pdf",
-                    "type": 301
-                },
-                {
-                    "source": "/publications/pdf/state-of-devops-2016.pdf",
-                    "destination": "/research/2016/2016-state-of-devops-report.pdf",
-                    "type": 301
-                },
-                {
-                    "source": "/research/2017-and-earlier/2016-state-of-devops-report.pdf",
-                    "destination": "/research/2016/2016-state-of-devops-report.pdf",
-                    "type": 301
-                },
-                {
-                    "source": "/publications/pdf/state-of-devops-2017.pdf",
-                    "destination": "/research/2017/2017-state-of-devops-report.pdf",
-                    "type": 301
-                },
-                {
-                    "source": "/research/2017-and-earlier/2017-state-of-devops-report.pdf",
-                    "destination": "/research/2017/2017-state-of-devops-report.pdf",
-                    "type": 301
-                },
-                {
-                    "source": "/publications/pdf/state-of-devops-2018.pdf",
-                    "destination": "/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf",
-                    "type": 301
-                },
-                {
-                    "source": "/publications/pdf/state-of-devops-2019.pdf",
-                    "destination": "/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf",
-                    "type": 301
-                },
-                {
-                    "source": "/publications/pdf/state-of-devops-2021.pdf",
-                    "destination": "/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.pdf",
-                    "type": 301
-                }
-            ]
+          "source": "/dora-brand-guidelines",
+          "destination": "/brand-guidelines/",
+          "type": 301
+        },
+        {
+          "source": "/sponsors/dora-brand-guidelines",
+          "destination": "/brand-guidelines/",
+          "type": 301
+        },
+        {
+          "source": "/concepts/wellbeing",
+          "destination": "/capabilities/well-being/",
+          "type": 302
+        },
+        {
+          "source": "/capabilities/wellbeing",
+          "destination": "/capabilities/well-being/",
+          "type": 302
+        },
+        {
+          "source": "/concepts/well-being",
+          "destination": "/capabilities/well-being/",
+          "type": 302
+        },
+        {
+          "source": "/devops-capabilities/cultural/wellbeing",
+          "destination": "/capabilities/well-being/",
+          "type": 302
+        },
+        {
+          "source": "/devops-capabilities",
+          "destination": "/capabilities/",
+          "type": 302
+        },
+        {
+          "source": "/quickcheck.html",
+          "destination": "/quickcheck/",
+          "type": 301
+        },
+        {
+          "source": "/performance.html**",
+          "destination": "/quickcheck/",
+          "type": 301
+        },
+        {
+          "regex": "\/quickcheck\/[0-9]+(.*)?",
+          "destination": "/quickcheck/",
+          "type": 301
+        },
+        {
+          "source": "/research.html",
+          "destination": "/",
+          "type": 301
+        },
+        {
+          "source": "/models.html",
+          "destination": "/research/",
+          "type": 301
+        },
+        {
+          "source": "/faq.html",
+          "destination": "/faq/",
+          "type": 301
+        },
+        {
+          "source": "/dora-joins-google-cloud.html",
+          "destination": "/news/dora-joins-google-cloud/",
+          "type": 301
+        },
+        {
+          "source": "/2018/12/dora-joins-google-cloud/",
+          "destination": "/news/dora-joins-google-cloud/",
+          "type": 301
+        },
+        {
+          "source": "/core",
+          "destination": "/research/",
+          "type": 301
+        },
+        {
+          "source": "/core-v2",
+          "destination": "/research/",
+          "type": 301
+        },
+        {
+          "source": "/research/archives/:year*",
+          "destination": "/research/:year",
+          "type": 302
+        },
+        {
+          "source": "/dora-report",
+          "destination": "/report",
+          "type": 302
+        },
+        {
+          "source": "/dora-report-2014",
+          "destination": "/research/2014",
+          "type": 302
+        },
+        {
+          "source": "/dora-report-2015",
+          "destination": "/research/2015",
+          "type": 302
+        },
+        {
+          "source": "/dora-report-2016",
+          "destination": "/research/2016",
+          "type": 302
+        },
+        {
+          "source": "/dora-report-2017",
+          "destination": "/research/2017",
+          "type": 302
+        },
+        {
+          "source": "/dora-report-roi",
+          "destination": "/research/2020",
+          "type": 302
+        },
+        {
+          "source": "/report/roi",
+          "destination": "/research/2020",
+          "type": 302
+        },
+        {
+          "source": "/roi-report",
+          "destination": "/research/2020",
+          "type": 302
+        },
+        {
+          "source": "/dora-report-2020",
+          "destination": "/research/2020",
+          "type": 302
+        },
+        {
+          "source": "/research/2024/trust-in-ai/",
+          "destination": "/research/ai/trust-in-ai/",
+          "type": 301
+        },
+        {
+          "source": "/research/2024/value-of-development-work/",
+          "destination": "/research/ai/value-of-development-work/",
+          "type": 301
+        },
+        {
+          "source": "/dora-report-:year",
+          "destination": "/research/:year/dora-report",
+          "type": 302
+        },
+        {
+          "source": "/report",
+          "destination": "https://cloud.google.com/devops/state-of-devops",
+          "type": 302
+        },
+        {
+          "source": "/report/:year",
+          "destination": "/research/:year/dora-report",
+          "type": 302
+        },
+        {
+          "source": "/:year-infographic",
+          "destination": "/research/:year/infographic/",
+          "type": 302
+        },
+        {
+          "source": "/infographic-:year",
+          "destination": "/research/:year/infographic/",
+          "type": 302
+        },
+        {
+          "source": "/postcard",
+          "destination": "/resources/img/DORA_Postcard_2023-10.pdf",
+          "type": 302
+        },
+        {
+          "source": "/devops-capabilities/technical/loosely-coupled-architecture",
+          "destination": "/capabilities/loosely-coupled-teams/",
+          "type": 302
+        },
+        {
+          "source": "/capabilities/loosely-coupled-architecture",
+          "destination": "/capabilities/loosely-coupled-teams/",
+          "type": 301
+        },
+        {
+          "source": "/devops-capabilities/technical/shifting-left-on-security",
+          "destination": "/capabilities/pervasive-security/",
+          "type": 302
+        },
+        {
+          "source": "/assets/transformation_practices.pdf",
+          "destination": "https://itrevolution.com/wp-content/uploads/2022/06/transformation_practices.pdf",
+          "type": 301
+        },
+        {
+          "source": "/next24",
+          "destination": "https://google.qualtrics.com/jfe/form/SV_8uCHA4aRzcGDjg2?source=next24",
+          "type": 302
+        },
+        {
+          "source": "/devops-capabilities/cultural/how-to-empower-software-delivery-teams/",
+          "destination": "/guides/how-to-empower-software-delivery-teams/",
+          "type": 302
+        },
+        {
+          "source": "/devops-capabilities/cultural/devops-culture-transform/",
+          "destination": "/guides/devops-culture-transform/",
+          "type": 301
+        },
+        {
+          "source": "/capabilities/cultural/devops-culture-transform/",
+          "destination": "/guides/devops-culture-transform/",
+          "type": 301
+        },
+        {
+          "source": "/sponsor",
+          "destination": "/sponsors/",
+          "type": 301
+        },
+        {
+          "source": "/devops-capabilities/*/:capability",
+          "destination": "/capabilities/:capability/",
+          "type": 302
+        },
+        {
+          "source": "/capabilities/how-to-empower-software-delivery-teams/",
+          "destination": "/guides/how-to-empower-software-delivery-teams/",
+          "type": 301
+        },
+        {
+          "source": "/publications/pdf/state-of-devops-2014.pdf",
+          "destination": "/research/2014/2014-state-of-devops-report.pdf",
+          "type": 301
+        },
+        {
+          "source": "/research/2017-and-earlier/2014-state-of-devops-report.pdf",
+          "destination": "/research/2014/2014-state-of-devops-report.pdf",
+          "type": 301
+        },
+        {
+          "source": "/publications/pdf/state-of-devops-2015.pdf",
+          "destination": "/research/2015/2015-state-of-devops-report.pdf",
+          "type": 301
+        },
+        {
+          "source": "/research/2017-and-earlier/2015-state-of-devops-report.pdf",
+          "destination": "/research/2015/2015-state-of-devops-report.pdf",
+          "type": 301
+        },
+        {
+          "source": "/publications/pdf/state-of-devops-2016.pdf",
+          "destination": "/research/2016/2016-state-of-devops-report.pdf",
+          "type": 301
+        },
+        {
+          "source": "/research/2017-and-earlier/2016-state-of-devops-report.pdf",
+          "destination": "/research/2016/2016-state-of-devops-report.pdf",
+          "type": 301
+        },
+        {
+          "source": "/publications/pdf/state-of-devops-2017.pdf",
+          "destination": "/research/2017/2017-state-of-devops-report.pdf",
+          "type": 301
+        },
+        {
+          "source": "/research/2017-and-earlier/2017-state-of-devops-report.pdf",
+          "destination": "/research/2017/2017-state-of-devops-report.pdf",
+          "type": 301
+        },
+        {
+          "source": "/publications/pdf/state-of-devops-2018.pdf",
+          "destination": "/research/2018/dora-report/2018-dora-accelerate-state-of-devops-report.pdf",
+          "type": 301
+        },
+        {
+          "source": "/publications/pdf/state-of-devops-2019.pdf",
+          "destination": "/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf",
+          "type": 301
+        },
+        {
+          "source": "/publications/pdf/state-of-devops-2021.pdf",
+          "destination": "/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.pdf",
+          "type": 301
         }
-    ]
+      ]
+    }
+  ]
 }

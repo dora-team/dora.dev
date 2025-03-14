@@ -9,6 +9,14 @@
           "doradotdev"
         ]
       }
+    },
+    "doradotdev-staging": {
+      "hosting": {
+        "prod": [
+          "dora.dev"
+        ]
+      }
     }
-  }
+  },
+  "etags": {}
 }
