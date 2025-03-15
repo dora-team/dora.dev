@@ -96,57 +96,67 @@
         },
         {
           "source": "/research/archives/:year*",
-          "destination": "/research/:year",
+          "destination": "/research/:year/",
           "type": 302
         },
         {
           "source": "/dora-report",
-          "destination": "/report",
+          "destination": "https://cloud.google.com/devops/state-of-devops",
           "type": 302
         },
         {
           "source": "/dora-report-2014",
-          "destination": "/research/2014",
+          "destination": "/research/2014/",
           "type": 302
         },
         {
           "source": "/dora-report-2015",
-          "destination": "/research/2015",
+          "destination": "/research/2015/",
           "type": 302
         },
         {
           "source": "/dora-report-2016",
-          "destination": "/research/2016",
+          "destination": "/research/2016/",
           "type": 302
         },
         {
           "source": "/dora-report-2017",
-          "destination": "/research/2017",
+          "destination": "/research/2017/",
           "type": 302
         },
         {
           "source": "/dora-report-roi",
-          "destination": "/research/2020",
+          "destination": "/research/2020/",
           "type": 302
         },
         {
           "source": "/report/roi",
-          "destination": "/research/2020",
+          "destination": "/research/2020/",
           "type": 302
         },
         {
           "source": "/roi-report",
-          "destination": "/research/2020",
+          "destination": "/research/2020/",
           "type": 302
         },
         {
           "source": "/dora-report-2020",
-          "destination": "/research/2020",
+          "destination": "/research/2020/",
           "type": 302
+        },
+        {
+          "source": "/research/2024/trust-in-ai",
+          "destination": "/research/ai/trust-in-ai/",
+          "type": 301
         },
         {
           "source": "/research/2024/trust-in-ai/",
           "destination": "/research/ai/trust-in-ai/",
+          "type": 301
+        },
+        {
+          "source": "/research/2024/value-of-development-work",
+          "destination": "/research/ai/value-of-development-work/",
           "type": 301
         },
         {
@@ -156,7 +166,7 @@
         },
         {
           "source": "/dora-report-:year",
-          "destination": "/research/:year/dora-report",
+          "destination": "/research/:year/dora-report/",
           "type": 302
         },
         {
@@ -166,7 +176,7 @@
         },
         {
           "source": "/report/:year",
-          "destination": "/research/:year/dora-report",
+          "destination": "/research/:year/dora-report/",
           "type": 302
         },
         {
@@ -210,12 +220,27 @@
           "type": 302
         },
         {
+          "source": "/devops-capabilities/cultural/how-to-empower-software-delivery-teams",
+          "destination": "/guides/how-to-empower-software-delivery-teams/",
+          "type": 302
+        },
+        {
           "source": "/devops-capabilities/cultural/how-to-empower-software-delivery-teams/",
           "destination": "/guides/how-to-empower-software-delivery-teams/",
           "type": 302
         },
         {
+          "source": "/devops-capabilities/cultural/devops-culture-transform",
+          "destination": "/guides/devops-culture-transform/",
+          "type": 301
+        },
+        {
           "source": "/devops-capabilities/cultural/devops-culture-transform/",
+          "destination": "/guides/devops-culture-transform/",
+          "type": 301
+        },
+        {
+          "source": "/capabilities/cultural/devops-culture-transform",
           "destination": "/guides/devops-culture-transform/",
           "type": 301
         },
@@ -233,6 +258,11 @@
           "source": "/devops-capabilities/*/:capability",
           "destination": "/capabilities/:capability/",
           "type": 302
+        },
+        {
+          "source": "/capabilities/how-to-empower-software-delivery-teams",
+          "destination": "/guides/how-to-empower-software-delivery-teams/",
+          "type": 301
         },
         {
           "source": "/capabilities/how-to-empower-software-delivery-teams/",
