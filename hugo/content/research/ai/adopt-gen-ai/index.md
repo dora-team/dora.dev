@@ -1,7 +1,7 @@
 ---
 title: "Adopt generative AI"
 date: 2025-01-31
-updated: 2025-02-05
+updated: 2025-03-19
 research_collection: "Artificial Intelligence"
 draft: false
 tab_order: "8"
@@ -24,7 +24,7 @@ However, this doesn’t have to happen with AI. Here are four practical, researc
 When you look at these strategies, you might notice that there are many ways you could apply them. This might seem daunting, but it’s by design. While our findings offer guidance and specific approaches to follow, the successful implementation of these strategies requires a deep understanding of the organization seeking to use them, and a willingness to experiment and iterate.
 
 1. [Share and be transparent about how your organization plans to use AI](#share-and-be-transparent-about-how-the-organization-plans-to-use-ai)
-1. [Alleviate anxieties about AI-related job displacement](#alleviate-anxieties-about-ai-related-job-displacement)
+1. [Address developer concerns about AI's impact](#address-developer-concerns-about-ais-impact)
 1. [Allow ample time for developers to learn how to use AI](#allow-ample-time-for-developers-to-learn-how-to-use-ai)
 1. [Create policies that govern the adoption of AI](#create-policies-that-govern-the-adoption-of-ai)
 
@@ -38,21 +38,19 @@ Our research suggests that organizations that apply this strategy can gain an es
 
 You’ll notice a call towards transparency reappearing in the strategies that follow. Transparency is part of a healthy organizational culture, and over the years DORA has consistently shown it can help teams be more successful at implementing [technical capabilities associated with improved outcomes](/research/2023/dora-report/).
 
-### Alleviate anxieties about AI-related job displacement
+### Address developer concerns about AI's impact
 
-The rise of AI has sparked concerns among developers that organizations will use it to automate jobs and reduce headcount. DORA found that nearly 15% of respondents expect AI to have a detrimental effect in their careers.
+The rise of AI has sparked concerns among developers. DORA found that nearly 15% of respondents expect AI to have a detrimental effect in their careers.
 
 This belief might drive some developers to adopt AI not out of genuine interest or recognition of its potential benefits, but rather out of a reactive need to protect their careers.
 
 One developer we spoke to said, "I think, over the past year or so, people have realized that generative AI is at the point where it actually works for a lot of things. And now... **no one wants to get left behind**."
 
-This reactionary approach, fueled by anxieties about job displacement, can hinder the true potential of AI. However, DORA research indicates that organizational leaders who address these concerns in clear terms can enable developers to focus on learning how to best use AI, rather than worrying about its impact on job security.
+This reactionary approach, which may be fueled by anxieties about job displacement, can hinder the true potential of AI. However, DORA research indicates that organizational leaders who address these concerns in clear terms can enable developers to focus on learning how to best use AI, rather than worrying about its impact on job security.
 
 Our findings indicate that organizations that take steps to alleviate developer anxieties are estimated to have 125% more team adoption of AI than those who ignore those concerns.
 
-We recommend that organizations work towards alleviating developer concerns about job displacement by increasing transparency and communication on how they plan to use AI. This approach can help organizations maintain and even enhance a culture of psychological safety, where developers feel supported as they work to embrace collaborative human-AI partnerships.
-
-AI is here to help improve their work lives, not replace them.
+We recommend that organizations work towards alleviating developer concerns about job displacement by increasing transparency and communication on how they plan to use AI. This approach can help organizations maintain and even enhance a culture of psychological safety, where developers feel supported as they work to embrace new tools.
 
 ### Allow ample time for developers to learn how to use AI
 
