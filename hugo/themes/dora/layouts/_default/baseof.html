@@ -6,6 +6,7 @@
     </head>
     <body>
         {{- partial "header" . -}}
+        <!-- tabs relies on alpine to select active tab -->
         <main x-data="{ activeTabs: {} }">
             {{- block "main" . }}{{- end }}
         </main>
