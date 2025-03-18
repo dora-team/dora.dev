@@ -1,7 +1,11 @@
 {{/* 
     partial: tab_navigation 
-    to use this partial, declare an object in the `x-data` attribute at the page level: `x-data="{ activeTabs: {} }"`
-    also: this partial opens a <div> that needs to be closed. So in the template that calls this partial, add a `</div>` tag after the end of the last tab content.
+    description: 
+        This partial creates a tabbed navigation for the tabs passed to it. 
+        It uses Alpine.js to manage the state of the tabs and update the URL when a tab is selected.
+    usage:
+      to use this partial, declare an object in the `x-data` attribute at the page level: `x-data="{ activeTabs: {} }"`
+      also: this partial opens a <div> that needs to be closed. So in the template that calls this partial, add a `</div>` tag after the end of the last tab content.
 */}}
 
 {{ if len .tabs }}
