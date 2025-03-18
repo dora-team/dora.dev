@@ -1,7 +1,7 @@
 ---
 title: "Fostering Trust in AI"
 date: 2024-09-13
-updated: 2025-01-28T00:00:00Z
+updated: 2025-03-19
 research_collection: "Artificial Intelligence"
 draft: false
 tab_order: "8"
@@ -34,7 +34,7 @@ The DORA team found that, outside of Google, 75% of 2024 DORA survey respondents
 
 Importantly, developers who trust gen AI more reap more positive productivity benefits from its use. In a logs-based exploration of Google developers' trust in AI code completion, our EPR team found that developers who frequently accepted suggestions from a gen AI-assisted coding tool submitted more change lists (CLs) and spent less time seeking information than developers who infrequently accepted suggestions from the same tool. This was true even when controlling for confounding factors, including job level, tenure, development type, programming language, and CL count. Put simply, **developers who trust gen AI more are more productive**.
 
-Unfortunately, developers' trust in gen AI is relatively low. According to [StackOverflow's 2024 Developer Survey](https://survey.stackoverflow.co/2024/ai#developer-tools), trusting the output of gen AI is presently developers' number one challenge with AI at work, and Google's research supports this finding. The DORA team found 39% of developers outside of Google trust the quality of gen AI output only "a little" or "not at all," and these numbers are similar amongst developers at Google.
+Unfortunately, developers' trust in gen AI appears to be relatively low. According to [StackOverflow's 2024 Developer Survey](https://survey.stackoverflow.co/2024/ai#developer-tools), trusting the output of gen AI is presently developers' number one challenge with AI at work, and Google's research supports this finding. The DORA team found 39% of developers outside of Google trust the quality of gen AI output only "a little" or "not at all."
 
 We find these low levels of trust concerning, because they suggest that a subset of developers may not be experiencing the productivity gains they could from gen AI.
 
