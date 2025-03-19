@@ -1,0 +1,8 @@
+/* This file wraps 'syntax.scss' which is generated via `hugogen chromastyles` */
+
+@import "syntax.scss";
+
+pre:has(code) {
+    border-radius: 1em;
+    padding:1.5em;
+}
