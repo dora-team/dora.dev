@@ -46,7 +46,7 @@ This belief might drive some developers to adopt AI not out of genuine interest 
 
 One developer we spoke to said, "I think, over the past year or so, people have realized that generative AI is at the point where it actually works for a lot of things. And now... **no one wants to get left behind**."
 
-This reactionary approach, which may be fueled by anxieties about job displacement, can hinder the true potential of AI. However, DORA research indicates that organizational leaders who address these concerns in clear terms can enable developers to focus on learning how to best use AI, rather than worrying about its impact on job security.
+This reactionary approach, which may be fueled by anxieties about job displacement, can hinder the true potential of AI. However, DORA research indicates that organizational leaders who address these concerns in clear terms can enable developers to focus on learning how to best use AI.
 
 Our findings indicate that organizations that take steps to alleviate developer anxieties are estimated to have 125% more team adoption of AI than those who ignore those concerns.
 
