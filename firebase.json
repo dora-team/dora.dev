@@ -165,6 +165,26 @@
           "type": 301
         },
         {
+          "source": "/dora-report-gen-ai",
+          "destination": "/research/ai/gen-ai-report/",
+          "type": 302
+        },
+        {
+          "source": "/dora-report-gen-ai/",
+          "destination": "/research/ai/gen-ai-report/",
+          "type": 302
+        },
+        {
+          "source": "/dora-gen-ai-report",
+          "destination": "/research/ai/gen-ai-report/",
+          "type": 302
+        },
+        {
+          "source": "/dora-gen-ai-report/",
+          "destination": "/research/ai/gen-ai-report/",
+          "type": 302
+        },
+        {
           "source": "/dora-report-:year",
           "destination": "/research/:year/dora-report/",
           "type": 302
@@ -181,12 +201,12 @@
         },
         {
           "source": "/:year-infographic",
-          "destination": "/research/:year/infographic/",
+          "destination": "/research/:year/",
           "type": 302
         },
         {
           "source": "/infographic-:year",
-          "destination": "/research/:year/infographic/",
+          "destination": "/research/:year/",
           "type": 302
         },
         {
