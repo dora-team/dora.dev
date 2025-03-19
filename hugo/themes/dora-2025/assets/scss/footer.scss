@@ -1,0 +1,71 @@
+@import "_variables.scss";
+
+footer {
+    background-color: $background-light;
+    padding: 24px 24px 16px 24px;
+    margin-top: 4rem;
+    align-items:center;
+
+    a {
+        color:$color-text-medium;
+        text-decoration: none;
+    }
+
+    .logo {
+        display:flex;
+        align-items: center;
+
+        img {
+            display:block;
+        }
+    }
+
+}
+
+
+.linkContainer {
+
+    display:flex;
+    justify-content: space-between;
+
+    .logo {
+        vertical-align: middle;
+        font-size:14px;
+        font-family: $font-roboto;
+        font-weight:300;
+        display:flex;
+    }
+
+    .links {
+
+        a {
+            display:inline-block;
+            padding:.5em;
+            line-height: 1;
+            vertical-align: middle;
+        }
+    }
+
+    @include media-small {
+        flex-direction: column;
+
+        .linkGroup {
+            display:block;
+        }
+
+        .logo, .linkGroup {
+            text-align: center;
+            margin:auto;
+        }
+
+    }
+
+}
+
+.content-license {
+    padding-top:1em;
+    text-align:center;
+    font-family: $font-roboto;
+    font-size:12px;
+    color:$color-text-medium;
+}

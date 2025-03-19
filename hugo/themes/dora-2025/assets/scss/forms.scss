@@ -1,0 +1,73 @@
+@import "_variables.scss";
+
+fieldset {
+    padding: 0;
+    border: none;
+
+    ul {
+        padding: 0;
+
+        li {
+            list-style-type: none;
+            margin-bottom: 6px;
+        }
+    }
+}
+
+input[type="radio"] {
+    transform: scale(1.25);
+    margin-right: 0.5em;
+}
+
+select {
+    padding: 2px 4px;
+    border-color: $border-medium;
+    border-radius: 4px;
+}
+
+button,
+input[type="submit"],
+.button {
+    display: inline-block;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1;
+    vertical-align: middle;
+    margin: 8px 4px;
+    padding: 15px 24px;
+    transition: color 0.15s linear, background-color 0.15s linear;
+    color: white;
+    background-color: $color-link;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:disabled {
+        background-color: $border-light;
+        cursor: default;
+    }
+
+    &:hover:not(:disabled) {
+        background-color: $color-link-hover;
+        color: $color-text-knockout;
+    }
+}
+
+button.secondary,
+.button.secondary {
+    background-color: $color-text-knockout;
+    color: $color-text-highlight;
+    border: 1px solid $border-light;
+
+    &:hover {
+        color: $color-text-highlight;
+        background-color: $background-soft;
+    }
+}
+
+::placeholder{
+    font-weight:200;
+    color:$color-text-light;
+}

@@ -1,0 +1,58 @@
+@import "_variables.scss";
+
+section.hasSidebar {
+    display: flex;
+    flex-direction: row;
+
+    article {
+        flex-grow:1;
+    }
+
+    sidebar {
+        width:12em;
+        min-width:12em;
+
+        a {
+            text-decoration: none;
+        }
+
+        section {
+            padding: 0.5em 0.1em 0.5em 1em;
+            margin-left: 1em;
+            border-left: 1px solid $border-light;
+        }
+    }
+
+    .double-wide {
+        grid-column: span 2;
+    }
+
+    @include media-medium {
+        flex-direction:column;
+
+        article {
+            width: 100%;
+        }
+
+        sidebar {
+            order: 1;
+            width: 100%;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+
+            section {
+                padding: 1em 0;
+                margin-left: 0;
+                border-left: none;
+                border-bottom: 1px solid $border-light;
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+
+        .double-wide {
+            grid-column: span 1;
+        }
+    }
+}

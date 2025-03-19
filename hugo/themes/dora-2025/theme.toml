@@ -1,0 +1,20 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "dora-2025"
+license = "CC BY-NC-SA 4.0 DEED"
+licenselink = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+description = ""
+homepage = ""
+tags = []
+features = []
+min_version = "v0.114.1+extended"
+
+[author]
+  name = "DevOps Research + Assessment"
+  homepage = "https://dora.dev/"
+
+[original]
+  name = "dora.dev"
+  homepage = "https://dora.dev"
+  repo = "https://github.com/dora-team/dora.dev"

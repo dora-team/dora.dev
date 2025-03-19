@@ -1,0 +1,14 @@
+<!doctype html>
+<meta charset="utf-8">
+<html lang="en">
+    <head>
+        {{- partial "head" . -}}
+    </head>
+    <body>
+        {{- partial "header" . -}}
+        <main>
+            {{- block "main" . }}{{- end }}
+        </main>
+        {{- partial "footer" . -}}
+    </body>
+</html>

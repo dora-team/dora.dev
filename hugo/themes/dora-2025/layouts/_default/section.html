@@ -1,0 +1,8 @@
+{{ define "main" }}
+    {{ .Content }}
+    {{ range .Pages }}
+    <li>
+        <a href="{{.RelPermalink}}">{{ .Date.Format "Mon, Jan 2, 2006" }} | {{.Title}}</a>
+    </li>
+    {{ end }}
+{{ end }}
