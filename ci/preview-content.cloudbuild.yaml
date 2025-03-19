@@ -98,3 +98,4 @@ logsBucket: 'doradotdev-cloudbuild-logs'
 
 options:
   automapSubstitutions: true
+  machineType: 'E2_HIGHCPU_8'
