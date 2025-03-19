@@ -1,9 +1,8 @@
 ---
-# These are optional elements. Feel free to remove any of them.
-status: proposed
+status: superseded by [ADR 009](009-discontinue-alpine.md)
 date: 2023-04-07
 deciders: davidstanke
-consulted: jesseguke
+consulted: jesseduke
 informed:
 ---
 # Use AlpineJS as a lightweight JS framework for decorating HTML elements
