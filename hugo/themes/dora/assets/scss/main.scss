@@ -203,11 +203,6 @@ section.banner {
     }
 }
 
-// for alpinejs: hide cloaked elements while page is loading
-[x-cloak] {
-    display: none !important;
-}
-
 .updated {
     font-size:12px;
     color:$color-text-light;
