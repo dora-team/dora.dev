@@ -13,8 +13,11 @@ versions.forEach(({ version, expectedText }) => {
   test(`Version checker recognizes v ${version}`, async ({ page }) => {
     await page.goto(`/vc/?v=${version}`);
 
-    // Check the correct version is displayed
-    await expect(page.locator(`div[data-version="${version}"]`)).toBeVisible();
+    const versionDiv = page.locator(`div[data-version="${version}"]`);
+    await expect(versionDiv).toBeVisible();
+
+    // Check the correct header text is displayed
+    await expect(versionDiv.locator('h2')).toContainText(expectedText);
 
     // Check other versions are hidden
     versions

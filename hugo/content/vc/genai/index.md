@@ -20,6 +20,9 @@ bannerSubtitle: "Check if you have the most recent version of the report."
   <p>The following versions of the Impact of Generative AI on Software Development report are available via this version checker:</p>
   <ul>
     <li>
+      <span class="google-material-icons" style="color: green; font-size:1em;">check_circle</span> <a href="/vc/genai/?v=2025.1.p">Impact of Generative AI on Software Development (Printed Version) <code>v. 2025.1.p</code></a>
+    </li>
+    <li>
       <span class="google-material-icons" style="color: green; font-size:1em;">check_circle</span> <a href="/vc/genai/?v=2025.1">Impact of Generative AI on Software Development <code>v. 2025.1</code></a>
     </li>
   </ul>
@@ -36,6 +39,23 @@ bannerSubtitle: "Check if you have the most recent version of the report."
     Latest version: <code>v.2025.1</code>
   </p>
 </div>
+
+<!-- version is 2025.1.p -->
+<div class="version-content" data-version="2025.1.p">
+  <h2><span class="google-material-icons" style="color: green; font-size:1em;">check_circle</span>Impact of Generative AI on Software Development (Printed Version)</h2>
+  <p>
+    You have the most recent printed version of the Impact of Generative AI on Software Development report.
+  </p>
+  <p>
+    Your version: <code>v.2025.1.p</code><br />
+    Latest version: <code>v.2025.1.p</code>
+  </p>
+  <p>
+    <a href="/research/ai/gen-ai-report/">Download the latest digital version of the Impact of Generative AI on Software Development</a>.
+  </p>
+  <a href="/research/ai/gen-ai-report/"><img src="/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png" alt="Impact of Generative AI on Software Development Cover" style="max-width:18em;"></a>
+</div>
+
 
 <script src="/js/version-check-utils.js"></script>
 <script>
