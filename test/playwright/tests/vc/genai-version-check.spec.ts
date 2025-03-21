@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 
 const versions = [
   { version: '2025.1', expectedText: 'Impact of Generative AI on Software Development' },
+  { version: '2025.1.p', expectedText: 'Impact of Generative AI on Software Development (Printed Version)' }
 ];
 
 versions.forEach(({ version, expectedText }) => {
@@ -9,7 +10,11 @@ versions.forEach(({ version, expectedText }) => {
     await page.goto(`/vc/genai/?v=${version}`);
 
     // Check the correct version is displayed
-    await expect(page.locator(`div[data-version="${version}"]`)).toBeVisible();
+    const versionDiv = page.locator(`div[data-version="${version}"]`);
+    await expect(versionDiv).toBeVisible();
+
+    // Check the correct header text is displayed
+    await expect(versionDiv.locator('h2')).toContainText(expectedText);
 
     // Check other versions are hidden
     versions
