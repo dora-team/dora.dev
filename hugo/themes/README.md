@@ -6,5 +6,5 @@ This folder contains themes used by DORA:
 
 ### To see/develop the `dora-2025` theme, run:
 ```
-hugo serve -s hugo --debug --theme dora-2025
+hugo serve -s hugo --logLevel debug --theme dora-2025
 ```
