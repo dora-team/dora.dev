@@ -22,6 +22,9 @@
   --dora-primary-medium: color-mix(in srgb, var(--dora-primary-light), var(--dora-primary-dark) 30%);
 }
 
+// TODO: consider removing Roboto and using Google Sans everywhere
+$font-roboto: "Roboto", Arial, Helvetica, sans-serif;
+
 // TODO: consider removing these variables and using CSS variables all the way down
 // colors
 $color-text:var(--dora-primary-dark);
