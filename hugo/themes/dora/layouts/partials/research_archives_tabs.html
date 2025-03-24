@@ -1,0 +1,17 @@
+<!-- TODO: create styles for the `tab_links` element -->
+<!--- 
+    Display a tabbed navigation for the pages in this section. 
+    To set display order and display text, use the `tab_order` and `tab_title` parameters on each page's front matter.
+    -->
+<tab_links>
+    {{ $currentPage := .Page }}
+    {{ $researchYear := .Params.research_collection }}
+    <!-- loop over pages with the same research year,  which have a tab order specified-->
+    {{ range (collections.Sort (where .Site.Pages ".Params.research_collection" "eq" $researchYear) ".Params.tab_order") }}
+        {{ if .Params.tab_order }}
+            <a href="{{ .RelPermalink }}" {{ if eq .Page $currentPage }}class="selected"{{ end }}>{{ .Params.tab_title }}</a>
+        {{ end }}
+    {{ end }}
+    <!-- empty element to standardize height of parent, even if there are no links -->
+    <a style="visibility:hidden;">&nbsp;</a>
+</tab_links>
