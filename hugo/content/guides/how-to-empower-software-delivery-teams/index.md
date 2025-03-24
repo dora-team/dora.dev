@@ -11,8 +11,8 @@ draft: false
 weight: 500
 headline: "How to empower software delivery teams as a business leader"
 subhead: A guide to facilitating the flow of value.
-heroimage: "how-to-empower-software-delivery-teams.png"
-
+heroimage: "hero-empower.png"
+herocolor: "yellow"  # choose one of "yellow","blue","red","purple" 
 ---
 Measurement is vital for developing high-performance software delivery teams. Without metrics to inform the process, learning from experiments is limited. In the worst case, the attempt could result in a worse outcome. Let's explore the impact of measuring for performance versus measuring for productivity on your ability to meet your goals.
 

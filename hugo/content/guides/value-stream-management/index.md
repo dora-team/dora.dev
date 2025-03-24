@@ -10,7 +10,8 @@ draft: false
 weight: 300
 headline: "How to use value stream mapping to improve software delivery"
 subhead: A guide to value stream mapping.
-heroimage: "value-stream-mapping.png"
+heroimage: "hero-vsm.png"
+herocolor: "red"  # choose one of "yellow","blue","red","purple"
 
 ---
 ## Visualization to improve organizational performance

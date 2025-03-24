@@ -168,16 +168,25 @@ header > nav > label > input[type="checkbox"] {
 }
 
 .site-banner {
-    background-color: var(--dora-highlight);
+    background-color: var(--dora-primary-dark);
     padding: 2pt;
     text-align: center;
 
     a {
         display: inline-block;
         border-radius: 0.2em;
-        padding: 2pt 6pt;
-        color: var(--dora-primary-dark);
+        padding: 4pt 6pt;
+        color: var(--dora-primary-light);
         font-weight: 500;
+        text-decoration: none;
+
+        &:visited {
+            color: var(--dora-primary-light);
+        }
+
+        &:hover {
+            color: var(--dora-highlight);
+        }
     }
 }
 
