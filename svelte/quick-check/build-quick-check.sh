@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # run this script from the project root
-cd svelte/quick-check-2023
+cd svelte/quick-check
 
 # build production assets
 npm install

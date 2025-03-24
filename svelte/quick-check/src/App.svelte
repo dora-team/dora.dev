@@ -32,7 +32,7 @@
             metric_names.forEach((metric) =>
                 url.searchParams.set(metric, metrics[metric]),
             );
-            url.searchParams.set("v", "2023");
+            url.searchParams.set("v", "2024");
             window.history.pushState({}, "", url);
         }
     }
@@ -189,8 +189,7 @@
             <HelpMePrioritize bind:current_capability />
         {/if}
         <div class="faq">
-            <a href="/faq/#whats-new-in-the-2023-quick-check">Quick Check FAQ</a
-            >
+            <a href="/faq/#dora-quick-check">Quick Check FAQ</a>
         </div>
         {#if step !== "input"}
             <GoFurther />

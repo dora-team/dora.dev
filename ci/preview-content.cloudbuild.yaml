@@ -7,7 +7,7 @@ steps:
 
       # Build Quick Check and move generated files into position
       echo "Using Node version $(node --version)"
-      ./svelte/quick-check-2023/build-quick-check.sh
+      ./svelte/quick-check/build-quick-check.sh
 
       # Build Core Model and move generated files into position
       ./svelte/core-v2/build-core.sh
@@ -28,13 +28,13 @@ steps:
     name: gcr.io/$PROJECT_ID/firebase
     script: |
       echo "Using firebase version: "$(firebase --version)
-      
+
       # Create text file to be posted to PR message
       echo "Cloud Build time: $(date)" > /workspace/gh-pr-comment-message.txt
 
       for DRAFTS_MODE in "on" "off"; do
         PREVIEW_CHANNEL="pr${_PR_NUMBER}_drafts-${DRAFTS_MODE}"
-        
+
         # move draft version of site into "public" folder
         mkdir -p /workspace/hugo/public
         rm -rf /workspace/hugo/public/*
