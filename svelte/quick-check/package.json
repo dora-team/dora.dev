@@ -10,10 +10,10 @@
   },
   "devDependencies": {
     "@magidoc/plugin-svelte-marked": "^4.1.4",
-    "@sveltejs/vite-plugin-svelte": "^3.0.1",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "sass": "^1.69.7",
     "svelte": "^4.2.19",
-    "vite": "^5.4.14"
+    "vite": "^6.2.3"
   },
   "dependencies": {
     "vite-plugin-svelte-monorepo": "github:sveltejs/vite-plugin-svelte"
