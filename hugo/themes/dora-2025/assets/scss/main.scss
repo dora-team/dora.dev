@@ -1,5 +1,4 @@
-@import url(//fonts.googleapis.com/css2?family=Google+Sans:wght@100;200;300;400;500;600;700;800;900);
-@import url(//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap");
 
 @import "_variables.scss";
 
@@ -15,196 +14,201 @@
 @import "search-input.scss";
 
 :root {
-    text-rendering: optimizeLegibility;
-    font-synthesis: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: "Google Sans Flex", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
-    scrollbar-gutter: stable;
+  scrollbar-gutter: stable;
 }
 
 body {
-    font-family: $font-google-sans;
-    color: $color-text;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
+  color: var(--dora-black);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 
-    // use flex so footer sticks to bottom of page
-    display: flex;
-    flex-direction: column;
+  // use flex so footer sticks to bottom of page
+  display: flex;
+  flex-direction: column;
 
-    main {
-        flex-grow: 1;
-        max-width: $layout-breakpoint-max;
-        padding: 1.5rem 4rem 0.5rem 4rem;
-        margin: auto;
+  main {
+    flex-grow: 1;
+    max-width: $layout-breakpoint-max;
+    padding: 1.5rem 4rem 0.5rem 4rem;
+    margin: auto;
 
-        li {
-            font-family: $font-roboto;
-            font-weight: 300;
+    li {
+      font-family: $font-roboto;
+      font-weight: 300;
 
-            strong, b, a {
-                font-family: $font-google-sans;
-                font-weight: 500;
-            }
-        }
-
-        @include media-medium {
-            padding: 0.75em;
-            width: auto;
-        }
-
-        @include media-small {
-            padding: 0.5em;
-            width: auto;
-        }
+      strong,
+      b,
+      a {
+        font-family: $font-google-sans;
+        font-weight: 500;
+      }
     }
+
+    @include media-medium {
+      padding: 0.75em;
+      width: auto;
+    }
+
+    @include media-small {
+      padding: 0.5em;
+      width: auto;
+    }
+  }
 }
 
 p,
 .paragraph,
 select {
-    font-family: $font-roboto;
-    font-weight: 300;
-    margin: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1em;
+  font-family: $font-roboto;
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1em;
 
-    @include media-medium {
-        line-height: 1.35;
-    }
+  @include media-medium {
+    line-height: 1.35;
+  }
 }
 
 p > strong {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 a {
-    color: $color-link;
+  color: $color-link;
 
-    &:hover {
-        color: $color-link-hover;
-    }
-    &:focus {
-        color: $color-link-focus;
-    }
+  &:hover {
+    color: $color-link-hover;
+  }
+  &:focus {
+    color: $color-link-focus;
+  }
 }
 
 header {
-    display: flex;
-    align-items: center;
-    height: 64px;
-    @include box-shadow-light;
-    z-index: 100;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  @include box-shadow-light;
+  z-index: 100;
 
-    .dora-logo {
-        margin: 2px 8px;
-    }
+  .dora-logo {
+    margin: 2px 8px;
+  }
 }
 
 .capitalize {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 section.banner {
-    background-color: $background-light;
+  background-color: $background-light;
 
-    .content {
-        display: flex;
-        max-width: $layout-breakpoint-max;
-        padding: 2rem 4rem 0.5rem 2rem;
-        margin: auto;
-        line-height: 1.75;
+  .content {
+    display: flex;
+    max-width: $layout-breakpoint-max;
+    padding: 2rem 4rem 0.5rem 2rem;
+    margin: auto;
+    line-height: 1.75;
 
-        p {
-            font-family: $font-google-sans;
-            font-weight: 300;
-        }
-
-        @include media-medium {
-            padding: 1rem;
-        }
-
-        img.highlight {
-            width: 40%;
-            max-width: 400px;
-            margin-left: 1.5em;
-
-            @include media-medium {
-                display: none;
-            }
-        }
+    p {
+      font-family: $font-google-sans;
+      font-weight: 300;
     }
+
+    @include media-medium {
+      padding: 1rem;
+    }
+
+    img.highlight {
+      width: 40%;
+      max-width: 400px;
+      margin-left: 1.5em;
+
+      @include media-medium {
+        display: none;
+      }
+    }
+  }
 }
 
 .pagefooter {
-    display: flex;
-    flex-direction: row;
-    margin-top: 3em;
-    border-top: 1px solid $border-light;
+  display: flex;
+  flex-direction: row;
+  margin-top: 3em;
+  border-top: 1px solid $border-light;
+
+  @include media-medium {
+    flex-direction: column;
+  }
+
+  div {
+    margin: 2rem;
 
     @include media-medium {
-        flex-direction: column;
+      margin: 0.5rem 1rem;
     }
 
-    div {
-        margin: 2rem;
-
-        @include media-medium {
-            margin: 0.5rem 1rem;
-        }
-
-        &:has(h2) {
-            min-width: 25%;
-            flex-grow: 1;
-        }
+    &:has(h2) {
+      min-width: 25%;
+      flex-grow: 1;
     }
+  }
 }
 
 .google-material-icons {
-    font-family: "Google Material Icons";
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    -webkit-font-feature-settings: "liga";
-    -webkit-font-smoothing: antialiased;
-    vertical-align: middle;
-    cursor:pointer;
+  font-family: "Google Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+  cursor: pointer;
 
-    &.divider-before {
-        border-left: 1px solid $border-light;
-    }
+  &.divider-before {
+    border-left: 1px solid $border-light;
+  }
 }
 
 .source-available-repo {
-    text-decoration:none;
-    color:#5b5e66;
+  text-decoration: none;
+  color: #5b5e66;
 }
 
 .source-available-project {
-    a {
-        text-decoration: none;
-        color:#202124;
-    }
+  a {
+    text-decoration: none;
+    color: #202124;
+  }
 
-    .google-material-icons {
-        font-size: 14px;
-        text-decoration: none;
-    }
+  .google-material-icons {
+    font-size: 14px;
+    text-decoration: none;
+  }
 }
 
 .updated {
-    font-size:12px;
-    color:$color-text-light;
-    font-weight:200;
+  font-size: 12px;
+  color: $color-text-light;
+  font-weight: 200;
 }
