@@ -200,7 +200,7 @@
     <section class="legend">
         <div class="legend-header">
             <span>
-            2023 Industry baseline ({industry_metrics[industry]["name"]}):
+            2024 Industry baseline ({industry_metrics[industry]["name"]}):
             </span>
         </div>
         <div class="legend-item">

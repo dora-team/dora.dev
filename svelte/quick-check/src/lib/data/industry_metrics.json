@@ -2,322 +2,322 @@
     "all": {
         "name": "All industries",
         "performance_average": {
-            "mean": 6.3,
-            "std": 2.0
-        },
-        "leadtime": {
-            "mean": 5.2,
-            "std": 2.6
-        },
-        "deployfreq": {
-            "mean": 5.2,
-            "std": 2.8
-        },
-        "changefailure": {
-            "mean": 7.8,
-            "std": 2.4
-        },
-        "failurerecovery": {
-            "mean": 7.1,
-            "std": 2.5
-        }
-    },
-    "education": {
-        "name": "Education",
-        "performance_average": {
-            "mean": 6.5,
-            "std": 2.4
-        },
-        "leadtime": {
-            "mean": 5.5,
-            "std": 3.1
-        },
-        "deployfreq": {
-            "mean": 5.6,
-            "std": 3.3
-        },
-        "changefailure": {
-            "mean": 8.2,
-            "std": 2.1
-        },
-        "failurerecovery": {
             "mean": 6.7,
-            "std": 3.1
-        }
-    },
-    "energy": {
-        "name": "Energy",
-        "performance_average": {
-            "mean": 6.1,
-            "std": 2.1
-        },
-        "leadtime": {
-            "mean": 5.0,
-            "std": 2.4
-        },
-        "deployfreq": {
-            "mean": 4.9,
-            "std": 3.0
-        },
-        "changefailure": {
-            "mean": 7.3,
-            "std": 2.7
-        },
-        "failurerecovery": {
-            "mean": 6.6,
-            "std": 2.3
-        }
-    },
-    "financial_services": {
-        "name": "Financial Services",
-        "performance_average": {
-            "mean": 6.5,
             "std": 1.8
         },
         "leadtime": {
-            "mean": 5.2,
-            "std": 2.5
-        },
-        "deployfreq": {
-            "mean": 5.2,
-            "std": 2.7
-        },
-        "changefailure": {
-            "mean": 7.8,
-            "std": 2.3
-        },
-        "failurerecovery": {
-            "mean": 7.4,
-            "std": 2.3
-        }
-    },
-    "government": {
-        "name": "Government",
-        "performance_average": {
-            "mean": 6.2,
-            "std": 1.8
-        },
-        "leadtime": {
-            "mean": 4.8,
-            "std": 2.9
-        },
-        "deployfreq": {
-            "mean": 4.6,
-            "std": 3.0
-        },
-        "changefailure": {
-            "mean": 8.0,
-            "std": 2.3
-        },
-        "failurerecovery": {
-            "mean": 6.9,
-            "std": 2.5
-        }
-    },
-    "healthcare_pharmaceuticals": {
-        "name": "Healthcare & Pharmaceuticals",
-        "performance_average": {
-            "mean": 6.0,
-            "std": 1.8
-        },
-        "leadtime": {
-            "mean": 4.5,
-            "std": 2.4
-        },
-        "deployfreq": {
-            "mean": 4.7,
-            "std": 2.6
-        },
-        "changefailure": {
-            "mean": 7.7,
-            "std": 2.4
-        },
-        "failurerecovery": {
-            "mean": 6.9,
-            "std": 2.3
-        }
-    },
-    "industrials_manufacturing": {
-        "name": "Industrials & Manufacturing",
-        "performance_average": {
-            "mean": 5.7,
-            "std": 1.7
-        },
-        "leadtime": {
-            "mean": 4.7,
-            "std": 2.4
-        },
-        "deployfreq": {
-            "mean": 3.9,
-            "std": 2.3
-        },
-        "changefailure": {
-            "mean": 7.5,
-            "std": 2.5
-        },
-        "failurerecovery": {
-            "mean": 6.6,
-            "std": 2.4
-        }
-    },
-    "insurance": {
-        "name":"Insurance",
-        "performance_average": {
-            "mean": 6.2,
-            "std": 1.7
-        },
-        "leadtime": {
-            "mean": 4.6,
-            "std": 2.3
-        },
-        "deployfreq": {
             "mean": 5.1,
-            "std": 2.7
-        },
-        "changefailure": {
-            "mean": 7.7,
-            "std": 2.2
-        },
-        "failurerecovery": {
-            "mean": 7.3,
-            "std": 2.1
-        }
-    },
-    "media_entertainment": {
-        "name": "Media/Entertainment",
-        "performance_average": {
-            "mean": 7.2,
-            "std": 1.9
-        },
-        "leadtime": {
-            "mean": 6.2,
             "std": 2.6
         },
         "deployfreq": {
-            "mean": 6.2,
-            "std": 3.1
+            "mean": 5.3,
+            "std": 2.9
         },
         "changefailure": {
             "mean": 8.3,
             "std": 2.0
         },
         "failurerecovery": {
-            "mean": 7.9,
-            "std": 2.1
+            "mean": 7.5,
+            "std": 2.3
         }
     },
-    "non_profit": {
-        "name":"Non-profit",
+    "education": {
+        "name": "Education",
         "performance_average": {
-            "mean": 6.2,
-            "std": 2.5
-        },
-        "leadtime": {
-            "mean": 5.4,
-            "std": 3.0
-        },
-        "deployfreq": {
-            "mean": 4.8,
-            "std": 3.5
-        },
-        "changefailure": {
-            "mean": 7.4,
-            "std": 3.0
-        },
-        "failurerecovery": {
-            "mean": 7.0,
-            "std": 2.9
-        }
-    },
-    "consumer": {
-        "name": "Retail/Consumer/e-Commerce",
-        "performance_average": {
-            "mean": 6.5,
-            "std": 2.1
-        },
-        "leadtime": {
-            "mean": 5.5,
-            "std": 2.6
-        },
-        "deployfreq": {
-            "mean": 5.6,
-            "std": 2.9
-        },
-        "changefailure": {
-            "mean": 7.8,
-            "std": 2.5
-        },
-        "failurerecovery": {
-            "mean": 7.2,
-            "std": 2.7
-        }
-    },
-    "technology": {
-        "name":"Technology",
-        "performance_average": {
-            "mean": 6.3,
+            "mean": 6.7,
             "std": 2.0
         },
         "leadtime": {
-            "mean": 5.3,
-            "std": 2.6
+            "mean": 4.8,
+            "std": 3.1
         },
         "deployfreq": {
-            "mean": 5.3,
-            "std": 2.8
+            "mean": 5.1,
+            "std": 3.2
         },
         "changefailure": {
-            "mean": 7.6,
-            "std": 2.5
+            "mean": 8.4,
+            "std": 2.1
         },
         "failurerecovery": {
-            "mean": 7.0,
-            "std": 2.5
+            "mean": 6.6,
+            "std": 3.0
         }
     },
-    "telecommunications": {
-        "name":"Telecommunications",
+    "energy": {
+        "name": "Energy",
         "performance_average": {
-            "mean": 6.2,
-            "std": 1.7
+            "mean": 6.1,
+            "std": 2.3
         },
         "leadtime": {
-            "mean": 4.7,
+            "mean": 4.6,
+            "std": 2.5
+        },
+        "deployfreq": {
+            "mean": 4.9,
+            "std": 3.1
+        },
+        "changefailure": {
+            "mean": 7.3,
+            "std": 2.7
+        },
+        "failurerecovery": {
+            "mean": 6.6,
+            "std": 2.9
+        }
+    },
+    "financial_services": {
+        "name": "Financial Services",
+        "performance_average": {
+            "mean": 6.6,
+            "std": 1.6
+        },
+        "leadtime": {
+            "mean": 4.9,
             "std": 2.4
         },
         "deployfreq": {
-            "mean": 4.6,
+            "mean": 5.2,
             "std": 2.7
         },
         "changefailure": {
-            "mean": 8.0,
-            "std": 2.0
+            "mean": 8.4,
+            "std": 1.8
         },
         "failurerecovery": {
-            "mean": 7.0,
+            "mean": 7.9,
+            "std": 1.9
+        }
+    },
+    "government": {
+        "name": "Government",
+        "performance_average": {
+            "mean": 5.9,
+            "std": 1.6
+        },
+        "leadtime": {
+            "mean": 4.6,
+            "std": 2.6
+        },
+        "deployfreq": {
+            "mean": 4.4,
+            "std": 2.6
+        },
+        "changefailure": {
+            "mean": 7.6,
+            "std": 2.3
+        },
+        "failurerecovery": {
+            "mean": 6.8,
+            "std": 2.1
+        }
+    },
+    "healthcare_pharmaceuticals": {
+        "name": "Healthcare & Pharmaceuticals",
+        "performance_average": {
+            "mean": 6.4,
+            "std": 1.6
+        },
+        "leadtime": {
+            "mean": 4.6,
+            "std": 2.6
+        },
+        "deployfreq": {
+            "mean": 4.4,
+            "std": 2.6
+        },
+        "changefailure": {
+            "mean": 8.6,
+            "std": 1.5
+        },
+        "failurerecovery": {
+            "mean": 7.4,
             "std": 2.5
         }
     },
-    "other": {
-        "name":"Other",
+    "industrials_manufacturing": {
+        "name": "Industrials & Manufacturing",
         "performance_average": {
-            "mean": 6.7,
+            "mean": 6.4,
             "std": 1.8
         },
         "leadtime": {
-            "mean": 5.0,
+            "mean": 4.8,
+            "std": 2.4
+        },
+        "deployfreq": {
+            "mean": 4.9,
+            "std": 2.9
+        },
+        "changefailure": {
+            "mean": 8.3,
+            "std": 1.9
+        },
+        "failurerecovery": {
+            "mean": 6.6,
+            "std": 2.6
+        }
+    },
+    "insurance": {
+        "name":"Insurance",
+        "performance_average": {
+            "mean": 6.3,
+            "std": 1.6
+        },
+        "leadtime": {
+            "mean": 4.4,
             "std": 2.5
         },
         "deployfreq": {
-            "mean": 5.4,
-            "std": 2.9
+            "mean": 4.9,
+            "std": 3.0
         },
         "changefailure": {
             "mean": 8.2,
             "std": 2.2
         },
         "failurerecovery": {
+            "mean": 6.9,
+            "std": 2.6
+        }
+    },
+    "media_entertainment": {
+        "name": "Media/Entertainment",
+        "performance_average": {
+            "mean": 7.2,
+            "std": 1.8
+        },
+        "leadtime": {
+            "mean": 5.7,
+            "std": 2.7
+        },
+        "deployfreq": {
+            "mean": 5.7,
+            "std": 2.7
+        },
+        "changefailure": {
+            "mean": 8.5,
+            "std": 1.9
+        },
+        "failurerecovery": {
+            "mean": 7.9,
+            "std": 2.4
+        }
+    },
+    "non_profit": {
+        "name":"Non-profit",
+        "performance_average": {
+            "mean": 7.1,
+            "std": 1.8
+        },
+        "leadtime": {
+            "mean": 5.6,
+            "std": 3.1
+        },
+        "deployfreq": {
+            "mean": 4.9,
+            "std": 2.5
+        },
+        "changefailure": {
+            "mean": 8.5,
+            "std": 2.3
+        },
+        "failurerecovery": {
             "mean": 7.6,
+            "std": 2.0
+        }
+    },
+    "consumer": {
+        "name": "Retail/Consumer/e-Commerce",
+        "performance_average": {
+            "mean": 7.3,
+            "std": 1.7
+        },
+        "leadtime": {
+            "mean": 5.8,
+            "std": 2.6
+        },
+        "deployfreq": {
+            "mean": 6.3,
+            "std": 3.0
+        },
+        "changefailure": {
+            "mean": 8.5,
+            "std": 1.6
+        },
+        "failurerecovery": {
+            "mean": 8.0,
+            "std": 1.9
+        }
+    },
+    "technology": {
+        "name":"Technology",
+        "performance_average": {
+            "mean": 6.8,
+            "std": 1.8
+        },
+        "leadtime": {
+            "mean": 5.4,
+            "std": 2.5
+        },
+        "deployfreq": {
+            "mean": 5.5,
+            "std": 2.9
+        },
+        "changefailure": {
+            "mean": 8.4,
+            "std": 1.9
+        },
+        "failurerecovery": {
+            "mean": 7.7,
+            "std": 2.1
+        }
+    },
+    "telecommunications": {
+        "name":"Telecommunications",
+        "performance_average": {
+            "mean": 6.3,
+            "std": 1.8
+        },
+        "leadtime": {
+            "mean": 4.8,
+            "std": 2.5
+        },
+        "deployfreq": {
+            "mean": 4.9,
+            "std": 2.7
+        },
+        "changefailure": {
+            "mean": 8.1,
+            "std": 2.0
+        },
+        "failurerecovery": {
+            "mean": 7.2,
+            "std": 2.3
+        }
+    },
+    "other": {
+        "name":"Other",
+        "performance_average": {
+            "mean": 6.9,
+            "std": 1.7
+        },
+        "leadtime": {
+            "mean": 5.5,
+            "std": 2.4
+        },
+        "deployfreq": {
+            "mean": 5.6,
+            "std": 2.9
+        },
+        "changefailure": {
+            "mean": 8.3,
+            "std": 1.9
+        },
+        "failurerecovery": {
+            "mean": 7.8,
             "std": 2.1
         }
     }

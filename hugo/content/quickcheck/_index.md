@@ -7,7 +7,7 @@ bannerSubtitle: "Measure your team's software delivery performance in less than 
 bannerHighlightImage: "/img/quickcheck/hero_illustration.svg"
 ---
 
-<!-- sources for the Quick Check single-page application are generated from the /svelte/quick-check-2023 folder, then copied here. -->
+<!-- sources for the Quick Check single-page application are generated from the /svelte/quick-check folder, then copied here. -->
 <!-- the timestamp shortcode is appended as a cache buster -->
 <script type="module" src="quickcheck.js?t={{% timestamp %}}"></script>
 <link rel="stylesheet" href="quickcheck.css?t={{% timestamp %}}">

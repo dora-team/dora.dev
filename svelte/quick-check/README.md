@@ -10,7 +10,7 @@ This folder contains the Quick Check implementation. It's a Single Page Applicat
 ### To preview the quick check within Hugo (recommended before committing):
 
 1. develop quick check per above
-2. from the repo root, run `svelte/quick-check-2023/build-quick-check.sh`
+2. from the repo root, run `svelte/quick-check/build-quick-check.sh`
   * _This will build the quick check SPA application and place the generated files into the appropriate place inside /hugo/content_
 3. from the repo root, run `hugo serve -s hugo`
 4. preview the site per instructions in the terminal
