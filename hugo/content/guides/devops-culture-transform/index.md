@@ -9,7 +9,8 @@ headline: "How to transform your organization"
 subhead: "Find out about the importance of ensuring your people have the tools and resources to do their job, and of making good use of their skills and abilities."
 authors:
     1: {name: 'Jez Humble', url: 'https://www.linkedin.com/in/jez-humble'}
-heroimage: "devops-culture-transform.png"
+heroimage: "hero-transform.png"
+herocolor: "purple"  # choose one of "yellow","blue","red","purple"
 ---
 
 Every organization is constantly undergoing change. Therefore, some questions to

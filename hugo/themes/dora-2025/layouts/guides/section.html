@@ -6,7 +6,7 @@
     <item>
         <a href="{{.RelPermalink}}">
             {{ if .Params.heroimage }}
-            <div>
+            <div class="{{ if .Params.herocolor }}{{ .Params.herocolor }}{{ end }}">
                 <img src="{{ .RelPermalink }}{{ .Params.heroimage }}">
             </div>
             {{ end }}

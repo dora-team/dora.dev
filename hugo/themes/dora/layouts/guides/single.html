@@ -23,7 +23,7 @@
             {{ end }}
             
             {{ if .Params.heroimage }}
-                <div class="hero-image">
+                <div class="hero-image {{ if .Params.herocolor }}{{ .Params.herocolor }}{{ end }}">
                     <img src="{{ .Params.heroimage }}" alt="{{.Params.headline}}">
                 </div>
             {{ end }}

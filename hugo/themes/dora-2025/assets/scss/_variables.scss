@@ -1,51 +1,49 @@
 :root {
-  // DORA brand colors 2024
-  --dora-black: rgb(34, 30, 39);
-  --dora-warm-white: rgb(240, 238, 234);
-  --dora-sky-blue: rgb(73, 160, 236);
-  --dora-vermillion: rgb(245, 90, 36);
-  --dora-spotlight-yellow: rgb(240, 225, 90);
-  --dora-mauve: rgb(184, 175, 254);
-  --dora-deep-plum: rgb(114, 2, 92);
-  --dora-prussian-blue: rgb(11, 57, 84);
+    // DORA brand colors 2024
+    --dora-black: rgb(34, 30, 39);
+    --dora-warm-white: rgb(240, 238, 234);
+    --dora-sky-blue: rgb(73, 160, 236);
+    --dora-vermillion: rgb(245, 90, 36);
+    --dora-spotlight-yellow: rgb(240, 225, 90);
+    --dora-mauve: rgb(184, 175, 254);
+    --dora-deep-plum: rgb(114, 2, 92);
+    --dora-prussian-blue: rgb(11, 57, 84);
 
-  // map brand colors to semantic definitions
-  --dora-primary-dark: var(--dora-black);
-  --dora-primary-light: var(--dora-warm-white);
-  --dora-highlight: var(--dora-spotlight-yellow);
-  --dora-secondary-a: var(--dora-vermillion);
-  --dora-secondary-b: var(--dora-sky-blue);
-  --dora-secondary-c: var(--dora-mauve);
-  --dora-tertiary-a: var(--dora-deep-plum);
-  --dora-tertiary-b: var(--dora-prussian-blue);
-
-  --dora-primary-medium: color-mix(in srgb, var(--dora-primary-light), var(--dora-primary-dark) 30%);
+    // map brand colors to semantic definitions
+    --dora-primary-dark: var(--dora-black);
+    --dora-primary-light: var(--dora-warm-white);
+    --dora-highlight: var(--dora-spotlight-yellow);
+    --dora-secondary-a: var(--dora-vermillion);
+    --dora-secondary-b: var(--dora-sky-blue);
+    --dora-secondary-c: var(--dora-mauve);
+    --dora-tertiary-a: var(--dora-deep-plum);
+    --dora-tertiary-b: var(--dora-prussian-blue);
 }
 
-// TODO: consider removing Roboto and using Google Sans everywhere
-$font-roboto: "Roboto", Arial, Helvetica, sans-serif;
-
-// TODO: consider removing these variables and using CSS variables all the way down
 // colors
-$color-text:var(--dora-primary-dark);
-$color-text-light:var(--dora-primary-light);
-$color-text-medium: var(--dora-primary-medium);
-$color-text-highlight: var(--dora-secondary-a);
-$color-text-knockout: var(--dora-primary-light);
+$color-text: #202124;
+$color-text-light: #9aa0a6;
+$color-text-medium: #5b5e66;
+$color-text-highlight: #174EA6;
+$color-text-knockout: white;
 
-$color-link: var(--dora-secondary-b);
-$color-link-hover: var(--dora-tertiary-a);
-$color-link-focus: var(--dora-secondary-a);
+$color-link: #1a73e8;
+$color-link-hover: #174ea6;
+$color-link-focus: $color-link-hover;
 
-$color-popover-background: var(--dora-primary-medium);
+$color-popover-background: #f8f9fa;
 
-$background-light: var(--dora-primary-light);
-$background-medium: var(--dora-primary-medium);
-$background-highlight: var(--dora-highlight);
-$background-soft: var(--dora-primary-medium);
+$background-light: #f8f9fa;
+$background-medium: #f0f1f2;
+$background-highlight: #e8f0fe;
+$background-soft: #e1f3fc;
 
-$border-light: var(--dora-primary-medium);
-$border-medium: var(--dora-primary-medium);
+$border-light: #dadce0;
+$border-medium: #aeb0b7;
+
+// fonts
+$font-google-sans: "Google Sans", "Roboto", Arial, Helvetica, sans-serif;
+$font-roboto: "Roboto", Arial, Helvetica, sans-serif;
 
 // breakpoints for responsive
 $layout-breakpoint-max: 1040px;
@@ -55,31 +53,29 @@ $layout-breakpoint-small: 480px;
 
 // mixins for responsive layout; allows specification of media queries inline
 @mixin media-small {
-  @media (max-width: #{$layout-breakpoint-small}) {
-    @content;
-  }
+    @media (max-width: #{$layout-breakpoint-small}) {
+        @content;
+    }
 }
 
 @mixin media-medium {
-  @media (max-width: #{$layout-breakpoint-medium}) {
-    @content;
-  }
+    @media (max-width: #{$layout-breakpoint-medium}) {
+        @content;
+    }
 }
 
 @mixin media-large {
-  @media (max-width: #{$layout-breakpoint-large}) {
-    @content;
-  }
+    @media (max-width: #{$layout-breakpoint-large}) {
+        @content;
+    }
 }
 
 @mixin media-max {
-  @media (max-width: #{$layout-breakpoint-max}) {
-    @content;
-  }
+    @media (max-width: #{$layout-breakpoint-max}) {
+        @content;
+    }
 }
 
 @mixin box-shadow-light {
-  box-shadow:
-    0 2px 6px 0 var(--dora-primary-dark),
-    inset 0 -1px 0 0 var(--dora-primary-light);
-}
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), inset 0 -1px 0 0 #dadce0;
+    }
