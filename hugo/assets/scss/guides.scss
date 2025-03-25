@@ -1,14 +1,13 @@
 @import "_variables.scss";
 
-.hero-image {
-  border-radius: 18px;
-  img {
-    max-width: 100%;
+img {
+  max-width: 100%;
+  &.heroimage {
+    border-radius: 18px;
   }
 }
 
 .guides-index {
-
   a {
     text-decoration: none;
     color: $color-text;
@@ -24,6 +23,10 @@
     color: $color-text-medium;
     padding: 1rem;
   }
+
+  item {
+    border-radius: 0px;
+  }
 }
 
 .guides-article {
@@ -38,21 +41,4 @@
   .authors {
     margin-bottom: 0.5em;
   }
-}
-
-.yellow {
-  background-color: var(--dora-spotlight-yellow);
-  outline: 1px solid var(--dora-spotlight-yellow);
-}
-.blue {
-  background-color: var(--dora-sky-blue);
-  outline: 1px solid var(--dora-sky-blue);
-}
-.red {
-  background-color: var(--dora-vermillion);
-  outline: 1px solid var(--dora-vermillion);
-}
-.purple {
-  background-color: var(--dora-mauve);
-  outline: 1px solid var(--dora-mauve);
 }

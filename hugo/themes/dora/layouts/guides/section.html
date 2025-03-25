@@ -2,20 +2,18 @@
 {{- partial "partials/link_styles" "scss/guides.scss" -}}
 {{ .Content }}
 <grid class="guides-index">
-    {{ range sort .Pages }}
-    <item>
-        <a href="{{.RelPermalink}}">
-            {{ if .Params.heroimage }}
-            <div {{ if .Params.herocolor }}class="{{ .Params.herocolor }}"{{ end }}>
-                <img src="{{ .RelPermalink }}{{ .Params.heroimage }}">
-            </div>
-            {{ end }}
-            <div>
-                <h2>{{.Title}}</h2>
-                <h4>{{ .Params.subhead }}</h4>
-            </div>
-        </a>
-    </item>
-    {{ end }}
+  {{ range sort .Pages }}
+  <item>
+    <a href="{{.RelPermalink}}">
+      {{ if .Params.heroimage }}
+      <img src="{{ .RelPermalink }}{{ .Params.heroimage }}">
+      {{ end }}
+      <div>
+        <h2>{{.Title}}</h2>
+        <h4>{{ .Params.subhead }}</h4>
+      </div>
+    </a>
+  </item>
+  {{ end }}
 </grid>
 {{ end }}
