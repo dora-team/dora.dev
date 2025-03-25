@@ -10,7 +10,6 @@ subhead: "Find out about the importance of ensuring your people have the tools a
 authors:
     1: {name: 'Jez Humble', url: 'https://www.linkedin.com/in/jez-humble'}
 heroimage: "hero-transform.png"
-herocolor: "purple"  # choose one of "yellow","blue","red","purple"
 ---
 
 Every organization is constantly undergoing change. Therefore, some questions to
