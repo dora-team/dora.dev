@@ -230,7 +230,7 @@
                 {
                     "survey_key": "structure_org_size",
                     "questions": [
-                        "Approximately how many people are employed by the organization you currently work for?|Just me - I am a freelancer or sole proprietor2 to 9 employees,10 to 19 employees,20 to 99 employees,100 to 499 employees,500 to 999 employees,1000 to 4999 employees,5000 to 9999 employees,10000 or more employees"
+                        "Approximately how many people are employed by the organization you currently work for?|Just me - I am a freelancer or sole proprietor,2 to 9 employees,10 to 19 employees,20 to 99 employees,100 to 499 employees,500 to 999 employees,1000 to 4999 employees,5000 to 9999 employees,10000 or more employees"
                     ]
                 },
                 {
