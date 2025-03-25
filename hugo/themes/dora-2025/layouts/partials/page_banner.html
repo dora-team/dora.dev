@@ -1,5 +1,5 @@
 {{ if or (.Params.bannerTitle) (.Params.bannerSubtitle) }}
-<section class="banner">
+<section class="banner {{ .Params.bannerBackgroundColor}}">
     <div class="content">
         <article>
             <h1>{{ .Params.bannerTitle }}</h1>

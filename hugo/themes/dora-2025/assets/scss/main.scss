@@ -118,15 +118,37 @@ header {
 section.banner {
   background-color: var(--dora-primary-light);
 
+  &.yellow {
+    background-color: var(--dora-spotlight-yellow);
+  }
+
+  &.blue {
+    background-color: var(--dora-sky-blue);
+  }
+
+  &.red {
+    background-color: var(--dora-vermillion);
+  }
+
+  &.purple {
+    background-color: var(--dora-mauve);
+  }
+
+  a {
+    color: var(--dora-primary-dark);
+    &:hover {
+      color: var(--dora-primary-light);
+    }
+  }
+
   .content {
     display: flex;
     max-width: $layout-breakpoint-max;
-    margin: auto;
+    margin: 2em auto 1em auto;
     line-height: 1.75;
 
     article {
-      padding:36px;
-      margin-top:48px;
+      padding-top: 1em;
       h1 {
         font-size: 68px;
         font-weight: 600;
@@ -134,9 +156,9 @@ section.banner {
 
       p {
         font-family: $font-google-sans;
-        line-height:1.35;
+        line-height: 1.35;
         font-weight: 500;
-        font-size:16px;
+        font-size: 16px;
       }
     }
 
@@ -145,8 +167,9 @@ section.banner {
     }
 
     img.highlight {
-      width: 50%;
-      margin-left: 1.5em;
+      max-width: 40%;
+      max-height: 24em;
+      margin-left: 2em;
       margin-right: -6em;
 
       @include media-medium {
