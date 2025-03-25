@@ -146,11 +146,13 @@ section.banner {
     max-width: $layout-breakpoint-max;
     margin: 2em auto 1em auto;
     line-height: 1.75;
+    padding: 1em 0;
 
     article {
-      padding-top: 1em;
+      padding: 1em 0.5em;
+      margin: auto 0;
       h1 {
-        font-size: 68px;
+        font-size: 72px;
         font-weight: 600;
       }
 
@@ -162,17 +164,17 @@ section.banner {
       }
     }
 
-    @include media-medium {
-      padding: 1rem;
+    div.highlightImageContainer {
+      margin-left:2em;
+      margin-top:2em;
     }
 
     img.highlight {
-      max-width: 40%;
-      max-height: 24em;
-      margin-left: 2em;
+      max-width: 24em;
+      max-height: 18em;
       margin-right: -6em;
 
-      @include media-medium {
+      @include media-large {
         display: none;
       }
     }

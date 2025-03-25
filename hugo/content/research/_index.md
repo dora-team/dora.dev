@@ -8,6 +8,8 @@ draft: false
 aliases: 
     /core/
     /core-v2/
+# bannerHighlightImage: banner-research.png
+bannerBackgroundColor: yellow  # choose one of "yellow", "blue", "red", "purple"
 ---
 
 <!-- sources for the Core V2 single-page application are generated from the /svelte/core-v2 folder, then copied to this folder. -->
