@@ -5,7 +5,8 @@
     import PerformanceGraph from "./PerformanceGraph.svelte";
     import { recode_numeric_range, sendAnalyticsEvent } from "./utils.js";
     import metrics_question_responses from "./data/metrics_question_responses.json";
-    import industry_metrics from "./data/industry_metrics.json";
+    import organization_size_metrics from "./data/organization_size_metrics.json";
+    import industry_metrics_data from "./data/industry_metrics.json";
 
     export let metrics, industry, displayMode;
 
@@ -16,6 +17,9 @@
         failurerecovery: -1,
     };
     let performance_average = 0;
+    let industry_metrics = industry_metrics_data; // Default to industry_metrics
+    let comparisonType = "industry"; // Default comparison type
+    let currentIndustry = industry; // Track the current industry value
 
     const calculate_recoded_metrics = () => {
         // inputs for these metrics range from 1 to 6; recode to a 0-10 scale
@@ -68,6 +72,19 @@
         });
 
         sendAnalyticsEvent("quick_check_results");
+
+         // Check for "comp" in query string on mount
+         if (typeof window !== "undefined") {
+            const urlParams = new URLSearchParams(window.location.search);
+            const comp = urlParams.get("comp");
+            if (comp === "size") {
+                industry_metrics = organization_size_metrics;
+                comparisonType = "size";
+            } else {
+                industry_metrics = industry_metrics_data;
+                comparisonType = "industry";
+            }
+        }
     });
 
     $: metrics, calculate_recoded_metrics();
@@ -78,13 +95,25 @@
             metrics_recoded.failurerecovery) /
         4
     ).toFixed(1);
-    $: selected_industry_metrics = industry_metrics[industry];
-    $: setIndustryInURL(industry);
+    $: {
+        if (!industry_metrics[industry]) {
+            currentIndustry = "all"; // Reset to "all" if not found
+            console.warn(`Industry "${industry}" not found in ${comparisonType} dataset. Resetting to "all".`);
+            industry = "all";
+            setIndustryInURL(currentIndustry);
+        } else {
+            currentIndustry = industry;
+        }
+    }
+    $: selected_industry_metrics = industry_metrics[currentIndustry];
+    $: setIndustryInURL(currentIndustry);
+    $: comparisonText = comparisonType === "industry" ? "Compare to industry benchmark:" : "Compare to organization size benchmark:";
+    $: baselineText = comparisonType === "industry" ? `2024 Industry baseline (${industry_metrics[industry]["name"]}):` : `2024 Organization size benchmark (${industry_metrics[currentIndustry]["name"]}):`;
 </script>
 
 <div class="heading">
     <h1 id="results">Your software delivery performance</h1>
-    Compare to industry benchmark:
+    {comparisonText}
     <select bind:value={industry}>
         {#each Object.entries(industry_metrics) as [industry, industry_data]}
             <option value={industry}>{industry_data["name"]}</option>
@@ -200,7 +229,7 @@
     <section class="legend">
         <div class="legend-header">
             <span>
-            2024 Industry baseline ({industry_metrics[industry]["name"]}):
+            {baselineText}
             </span>
         </div>
         <div class="legend-item">
