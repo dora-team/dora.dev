@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test';
 
 const versions = [
+  { version: '2025.2', expectedText: 'Impact of Generative AI on Software Development' },
   { version: '2025.1', expectedText: 'Impact of Generative AI on Software Development' },
-  { version: '2025.1.p', expectedText: 'Impact of Generative AI on Software Development (Printed Version)' }
+  { version: '2025.2.p', expectedText: 'Impact of Generative AI on Software Development (Printed Version)' }
 ];
 
 versions.forEach(({ version, expectedText }) => {
