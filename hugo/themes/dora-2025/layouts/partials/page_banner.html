@@ -1,13 +1,15 @@
 {{ if or (.Params.bannerTitle) (.Params.bannerSubtitle) }}
-<section class="banner">
-    <div class="content">
-        <article>
-            <h1>{{ .Params.bannerTitle }}</h1>
-            <p>{{ .Params.bannerSubtitle | markdownify }}</p>
-        </article>
-        {{ if .Params.bannerHighlightImage }}
-            <img src="{{ .Params.bannerHighlightImage }}" class="highlight">
-        {{ end }}
+<section class="banner {{ .Params.bannerBackgroundColor}}">
+  <div class="content">
+    <article>
+      <h1>{{ .Params.bannerTitle }}</h1>
+      <p>{{ .Params.bannerSubtitle | markdownify }}</p>
+    </article>
+    {{ if .Params.bannerHighlightImage }}
+    <div class="highlightImageContainer">
+      <img src="{{ .Params.bannerHighlightImage }}" class="highlight">
     </div>
+    {{ end }}
+  </div>
 </section>
 {{ end }}

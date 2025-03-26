@@ -11,8 +11,6 @@ weight: 300
 headline: "How to use value stream mapping to improve software delivery"
 subhead: A guide to value stream mapping.
 heroimage: "hero-vsm.png"
-herocolor: "red"  # choose one of "yellow","blue","red","purple"
-
 ---
 ## Visualization to improve organizational performance
 The DORA research has repeatedly affirmed the power of improved software delivery and operational performance as key predictors of organizational success. This correlation holds true for both commercial and non-commercial goals, extending to positive impacts on well-being, such as reduced burnout and increased productivity.

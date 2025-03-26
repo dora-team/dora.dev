@@ -10,7 +10,6 @@ weight: 200
 headline: "How to enable your software delivery teams to innovate with generative AI"
 subhead: A guide to innovating with generative AI.
 heroimage: "hero-genai.png"
-herocolor: "blue"  # choose one of "yellow","blue","red","purple"
 ---
 
 Experimenting with or adopting a new process or technology--such as generative AI--requires a strategic approach across the entire organization. For all roles, it's important to start small, plan for measuring the impact, and be able to iterate as necessary. If you want to enable your software teams to innovate with generative AI, a strategic approach is critical. Focusing on impact and iteration, you can then measure success through clearly defined outcomes that capture the effectiveness of this new technology. You can understand if it's meeting the needs of your organization.

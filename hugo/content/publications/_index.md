@@ -4,6 +4,8 @@ date: 2023-02-01
 draft: false
 bannerTitle: "Publications by DORA"
 bannerSubtitle: "Findings from DORA's research program are made available through a series of publications, including the Accelerate State of DevOps Report."
+# bannerHighlightImage: banner-publications.png
+bannerBackgroundColor: purple  # choose one of "yellow", "blue", "red", "purple"
 ---
 > Interested in being a sponsor of one of our upcoming Accelerate State of DevOps Reports?
 >
