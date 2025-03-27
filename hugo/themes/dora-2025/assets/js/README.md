@@ -1,1 +1,0 @@
-Template js assets that are required for the DORA theme
