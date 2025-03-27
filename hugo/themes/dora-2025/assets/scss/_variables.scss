@@ -1,30 +1,42 @@
 :root {
-    // DORA brand colors 2024
-    --dora-black: rgb(34, 30, 39);
-    --dora-warm-white: rgb(240, 238, 234);
-    --dora-sky-blue: rgb(73, 160, 236);
-    --dora-vermillion: rgb(245, 90, 36);
-    --dora-spotlight-yellow: rgb(240, 225, 90);
-    --dora-mauve: rgb(184, 175, 254);
-    --dora-deep-plum: rgb(114, 2, 92);
-    --dora-prussian-blue: rgb(11, 57, 84);
+  // DORA brand colors 2024
+  --dora-black: rgb(34, 30, 39);
+  --dora-warm-white: rgb(240, 238, 234);
+  --dora-sky-blue: rgb(73, 160, 236);
+  --dora-vermillion: rgb(245, 90, 36);
+  --dora-spotlight-yellow: rgb(240, 225, 90);
+  --dora-mauve: rgb(184, 175, 254);
+  --dora-deep-plum: rgb(114, 2, 92);
+  --dora-prussian-blue: rgb(11, 57, 84);
 
-    // map brand colors to semantic definitions
-    --dora-primary-dark: var(--dora-black);
-    --dora-primary-light: var(--dora-warm-white);
-    --dora-highlight: var(--dora-spotlight-yellow);
-    --dora-secondary-a: var(--dora-vermillion);
-    --dora-secondary-b: var(--dora-sky-blue);
-    --dora-secondary-c: var(--dora-mauve);
-    --dora-tertiary-a: var(--dora-deep-plum);
-    --dora-tertiary-b: var(--dora-prussian-blue);
+  // map brand colors to semantic definitions
+  --dora-primary-dark: var(--dora-black);
+  --dora-primary-light: var(--dora-warm-white);
+  --dora-highlight: var(--dora-spotlight-yellow);
+  --dora-secondary-a: var(--dora-vermillion);
+  --dora-secondary-b: var(--dora-sky-blue);
+  --dora-secondary-c: var(--dora-mauve);
+  --dora-tertiary-a: var(--dora-deep-plum);
+  --dora-tertiary-b: var(--dora-prussian-blue);
+
+  // a variety of greys
+  --grey-10: color-mix(in srgb, var(--dora-black), white 90%);
+  --grey-15: color-mix(in srgb, var(--dora-black), white 85%);
+  --grey-20: color-mix(in srgb, var(--dora-black), white 80%);
+  --grey-30: color-mix(in srgb, var(--dora-black), white 70%);
+  --grey-40: color-mix(in srgb, var(--dora-black), white 60%);
+  --grey-50: color-mix(in srgb, var(--dora-black), white 50%);
+  --grey-60: color-mix(in srgb, var(--dora-black), white 40%);
+  --grey-70: color-mix(in srgb, var(--dora-black), white 30%);
+  --grey-80: color-mix(in srgb, var(--dora-black), white 20%);
+  --grey-90: color-mix(in srgb, var(--dora-black), white 10%);
 }
 
 // colors
 $color-text: #202124;
 $color-text-light: #9aa0a6;
 $color-text-medium: #5b5e66;
-$color-text-highlight: #174EA6;
+$color-text-highlight: #174ea6;
 $color-text-knockout: white;
 
 $color-link: #1a73e8;
@@ -38,7 +50,7 @@ $background-medium: #f0f1f2;
 $background-highlight: #e8f0fe;
 $background-soft: #e1f3fc;
 
-$border-light: #dadce0;
+$border-light: var(--grey-15);
 $border-medium: #aeb0b7;
 
 // fonts
@@ -53,29 +65,31 @@ $layout-breakpoint-small: 480px;
 
 // mixins for responsive layout; allows specification of media queries inline
 @mixin media-small {
-    @media (max-width: #{$layout-breakpoint-small}) {
-        @content;
-    }
+  @media (max-width: #{$layout-breakpoint-small}) {
+    @content;
+  }
 }
 
 @mixin media-medium {
-    @media (max-width: #{$layout-breakpoint-medium}) {
-        @content;
-    }
+  @media (max-width: #{$layout-breakpoint-medium}) {
+    @content;
+  }
 }
 
 @mixin media-large {
-    @media (max-width: #{$layout-breakpoint-large}) {
-        @content;
-    }
+  @media (max-width: #{$layout-breakpoint-large}) {
+    @content;
+  }
 }
 
 @mixin media-max {
-    @media (max-width: #{$layout-breakpoint-max}) {
-        @content;
-    }
+  @media (max-width: #{$layout-breakpoint-max}) {
+    @content;
+  }
 }
 
 @mixin box-shadow-light {
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), inset 0 -1px 0 0 #dadce0;
-    }
+  box-shadow:
+    0 2px 6px 0 rgba(0, 0, 0, 0.12),
+    inset 0 -1px 0 0 #dadce0;
+}

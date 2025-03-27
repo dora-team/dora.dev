@@ -165,8 +165,8 @@ section.banner {
     }
 
     div.highlightImageContainer {
-      margin-left:2em;
-      margin-top:2em;
+      margin-left: 2em;
+      margin-top: 2em;
     }
 
     img.highlight {
@@ -221,10 +221,6 @@ section.banner {
   -webkit-font-smoothing: antialiased;
   vertical-align: middle;
   cursor: pointer;
-
-  &.divider-before {
-    border-left: 1px solid $border-light;
-  }
 }
 
 .source-available-repo {
