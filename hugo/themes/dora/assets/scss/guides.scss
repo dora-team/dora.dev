@@ -1,0 +1,45 @@
+@import "_variables.scss";
+
+img {
+  max-width: 100%;
+  &.heroimage {
+    border-radius: 18px;
+  }
+}
+
+.guides-index {
+  a {
+    text-decoration: none;
+    color: $color-text;
+  }
+  img {
+    max-width: 100%;
+  }
+
+  h2 {
+    background-color: transparent;
+  }
+  h4 {
+    color: $color-text-medium;
+    padding: 1rem;
+  }
+
+  // override default card style (with rounded corners) b/c we want to show the hero images with straight corners
+  item {
+    border-radius: 0px;
+  }
+}
+
+.guides-article {
+  .guides-header {
+    h2 {
+      color: $color-text-medium;
+      font-size: 1.75rem;
+    }
+    margin-bottom: 0.5em;
+  }
+
+  .authors {
+    margin-bottom: 0.5em;
+  }
+}
