@@ -8,4 +8,5 @@ npm install
 npm run build
 
 # copy artifacts to a location from which they're statically served
-cp dist/assets/* ../../hugo/content/research/
+mkdir -p ../../hugo/content/research/core/assets/
+cp dist/assets/* ../../hugo/content/research/core/assets/
