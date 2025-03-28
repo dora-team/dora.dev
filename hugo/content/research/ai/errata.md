@@ -11,7 +11,13 @@ type: "research_archives"
 
 This page lists errors and corrections to the Impact of Generative AI in Software Development. To track revisions, report PDFs are stamped with a version number. The current version of the report is [`v.2025.2`](/research/ai/gen-ai-report).
 
+### Errata in `v.2025.2`
+
+**p. 29** In footnote 2, the link to  "AI in software engineering at Google: Progress and the path ahead" is incorrect. It should link to  - https://research.google/blog/ai-in-software-engineering-at-google-progress-and-the-path-ahead/
+
 ### Errata in `v.2025.1`
+
+**p. 29** In footnote 2, the link to  "AI in software engineering at Google: Progress and the path ahead" is incorrect. It should link to  - https://research.google/blog/ai-in-software-engineering-at-google-progress-and-the-path-ahead/
 
 **p. 49** The word "acquire" is broken with a line break. The sentence should read "Frame AI as an opportunity for developers to acquire new skills and expand their expertise." _[Corrected in `v.2025.2`]_
 
