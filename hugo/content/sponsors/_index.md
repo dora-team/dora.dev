@@ -22,7 +22,7 @@ By becoming a sponsor of the 2025 DORA report, you have the unique opportunity t
 
 ### We offer various sponsorship levels to suit your needs and budget:
 
-#### Premiere (Limited Availability)
+#### Platinum (Limited Availability)
 
 * Prominent logo placement on the report cover.
 * Logo and description on dora.dev website.
@@ -32,6 +32,7 @@ By becoming a sponsor of the 2025 DORA report, you have the unique opportunity t
 * All benefits included in Gold sponsorship.
 
 #### Gold
+
 * Logo placement on the report cover.
 * Logo and description on dora.dev website.
 * Co-branded infographic of the 2025 DORA Report.
@@ -39,6 +40,7 @@ By becoming a sponsor of the 2025 DORA report, you have the unique opportunity t
 * All benefits included in Silver sponsorship.
 
 #### Silver
+
 * Logo in the report.
 * Logo on dora.dev website.
 * Report author participation in a sponsored webinar, with opportunity for extended discussion and Q&A.
