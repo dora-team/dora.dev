@@ -6,13 +6,34 @@
   background-color: var(--dora-highlight);
 
   .hero-content {
-    margin: auto;
+    margin: 0 auto 12px auto;
     width:fit-content;
 
     div.dora {
       display: flex;
       flex-direction: row;
+
+      div {
+
+        .letter {
+          display:block;
+          margin-top:55px;
+        }
+
+        .illustration {
+          width:480px;
+          display:block;
+          margin-left:-52px;
+          margin-right:-50px;
+        }
+
+      }
     }
+
+    div.hero-link {
+      text-align: right;
+    }
+
   }
 }
 
