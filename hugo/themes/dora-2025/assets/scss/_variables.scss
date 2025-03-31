@@ -19,7 +19,8 @@
   --dora-tertiary-a: var(--dora-deep-plum);
   --dora-tertiary-b: var(--dora-prussian-blue);
 
-  // a variety of greys
+  // other useful colors
+  --background: white;
   --grey-10: color-mix(in srgb, var(--dora-black), white 90%);
   --grey-15: color-mix(in srgb, var(--dora-black), white 85%);
   --grey-20: color-mix(in srgb, var(--dora-black), white 80%);

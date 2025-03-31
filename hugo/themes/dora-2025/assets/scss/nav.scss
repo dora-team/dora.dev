@@ -1,196 +1,180 @@
 header {
-    nav {
-        display: flex;
-        flex-grow: 1;
-        justify-content: flex-end;
-        margin-right: 16px;
-        font-size: 0.9em;
-        ul {
-            display: flex;
-            margin: 0;
-            li {
-                list-style-type: none;
-                padding: 0 1em;
-
-                a {
-                    text-decoration: none;
-                    color: hsl(208, 5%, 45%);
-                    white-space: nowrap;
-                    font-weight: 500;
-                    font-size: 1em;
-                    line-height: 1em;
-                    transition: all .3s ease;
-                    text-decoration: underline solid white;
-
-                    span.google-material-icons {
-                        font-size: 1em;
-                        line-height: 1em;
-                        vertical-align: middle;
-                    }
-                }
-
-                a:hover {
-                    color: hsl(208, 5%, 25%);
-                    text-decoration: underline solid hsl(208, 5%, 80%);
-                    text-underline-offset: 0.5em;
-                }
-
-                a.active {
-                    color: hsl(208, 5%, 0%);
-                    text-decoration: underline solid hsl(208, 5%, 50%);
-                    text-underline-offset: 0.5em;
-                }
-            }
-
-            li#searchLinkMobile {
-                // if full menu shown, don't show mobile search link
-                display: none;
-            }
-        }
+  position: sticky;
+  top: 0;
+  background-color: var(--background);
+  z-index: 999;
+  border-bottom: 4px solid var(--dora-primary-dark); 
+  
+  .navContainer {
+    div.dora-logo-link a {
+      display: block;
+      line-height: 1;
     }
-}
+    nav {
+      display: flex;
+      flex-grow: 1;
+      justify-content: flex-end;
+      margin-right: 16px;
+      font-size: 0.9em;
 
-// hamburger menu for mobile
-header > nav > label > input[type="checkbox"] {
+      ul {
+        display: flex;
+        margin: 0;
+        li {
+          list-style-type: none;
+          padding: 0 1em;
+
+          a {
+            text-decoration: none;
+            color: hsl(208, 5%, 45%);
+            white-space: nowrap;
+            font-weight: 500;
+            font-size: 1em;
+            line-height: 1em;
+            transition: all 0.3s ease;
+            text-decoration: underline solid white;
+          }
+
+          a:hover {
+            color: hsl(208, 5%, 25%);
+            text-decoration: underline solid hsl(208, 5%, 80%);
+            text-underline-offset: 0.5em;
+          }
+
+          a.active {
+            color: hsl(208, 5%, 0%);
+            text-decoration: underline solid hsl(208, 5%, 50%);
+            text-underline-offset: 0.5em;
+          }
+        }
+
+        li#searchLinkMobile {
+          // if full menu shown, don't show mobile search link
+          display: none;
+        }
+      }
+    }
+    #searchIcon {
+      font-size: 24px;
+    }
+  }
+
+  // hamburger menu for mobile
+  .navContainer > nav > label > input[type="checkbox"] {
     display: none;
-}
+  }
 
-@include media-large {
+  @include media-large {
     $mobile-menu-width: 180px;
 
-    header nav label {
-        ul {
-            position: absolute;
-            top: 64px;
-            right: 0px;
-            background-color: white;
-            visibility: hidden;
-            opacity: 0;
-            width: $mobile-menu-width;
-            height: calc(100% - 64px);
-            display: block;
-            opacity: 0;
-            padding: 0;
-            z-index: 300;
+    .navContainer nav label {
+      ul {
+        position: absolute;
+        top: 64px;
+        right: 0px;
+        visibility: hidden;
+        opacity: 0;
+        width: $mobile-menu-width;
+        height: calc(100% - 64px);
+        display: block;
+        opacity: 0;
+        padding: 0;
+        z-index: 300;
 
-            li {
-                padding: 24px 4px 24px 24px;
-                border-bottom: 1px solid #dadce0;
-            }
+        li {
+          padding: 24px 4px 24px 24px;
+          border-bottom: 1px solid #dadce0;
+          background-color: var(--background);
         }
+      }
     }
 
     label .menu {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 64px;
-        height: 64px;
-        transition: 0.5s ease-in-out;
-        cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
     }
 
     label .hamburger {
-        position: absolute;
-        top: 32px;
-        left: 16px;
-        width: 32px;
-        height: 2px;
-        background: rgb(95, 99, 104);
-        display: block;
-        transform-origin: center;
-        transition: 0.5s ease-in-out;
+      position: absolute;
+      top: 32px;
+      left: 16px;
+      width: 32px;
+      height: 2px;
+      background: rgb(95, 99, 104);
+      display: block;
+      transform-origin: center;
+      transition: 0.5s ease-in-out;
     }
 
     label .hamburger:after,
     label .hamburger:before {
-        transition: 0.35s ease-in-out;
-        content: "";
-        position: absolute;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: rgb(95, 99, 104);
+      transition: 0.35s ease-in-out;
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: rgb(95, 99, 104);
     }
 
     label .hamburger:before {
-        top: -10px;
+      top: -10px;
     }
 
     label .hamburger:after {
-        bottom: -10px;
+      bottom: -10px;
     }
 
     label input:checked + .menu .hamburger {
-        transform: rotate(45deg);
+      transform: rotate(45deg);
     }
 
     label input:checked + .menu .hamburger:after {
-        transform: rotate(90deg);
-        bottom: 0;
+      transform: rotate(90deg);
+      bottom: 0;
     }
 
     label input:checked + .menu .hamburger:before {
-        transform: rotate(90deg);
-        top: 0;
+      transform: rotate(90deg);
+      top: 0;
     }
 
     label input:checked + .menu + ul {
-        opacity: 1;
-        transition: 0.25s ease;
-        visibility: visible;
+      opacity: 1;
+      transition: 0.25s ease;
+      visibility: visible;
     }
 
     .page-overlay {
-        transition: 0.35s ease;
-        background-color: rgba(0, 0, 0, 0);
-        position: absolute;
-        top: 64px;
-        left: 0;
-        width: 100%;
-        bottom: 0;
-        z-index: 100;
-        visibility: hidden;
+      transition: 0.35s ease;
+      background-color: rgba(0, 0, 0, 0);
+      position: absolute;
+      top: 64px;
+      left: 0;
+      width: 100%;
+      bottom: 0;
+      z-index: 100;
+      visibility: hidden;
     }
 
     label input:checked + .menu + ul + .page-overlay {
-        background-color: rgba(0, 0, 0, 0.4);
-        visibility: visible;
+      background-color: rgba(0, 0, 0, 0.4);
+      visibility: visible;
     }
 
     #searchLinkMobile {
-        // if full menu hidden, search is a regular menu item
-        display: block !important;
+      // if full menu hidden, search is a regular menu item
+      display: block !important;
     }
     #searchLinkDesktop {
-        display: none;
+      display: none;
     }
-}
+  }
 
-.site-banner {
-    background-color: var(--dora-primary-dark);
-    padding: 2pt;
-    text-align: center;
-
-    a {
-        display: inline-block;
-        border-radius: 0.2em;
-        padding: 4pt 6pt;
-        color: var(--dora-primary-light);
-        font-weight: 500;
-        text-decoration: none;
-
-        &:visited {
-            color: var(--dora-primary-light);
-        }
-
-        &:hover {
-            color: var(--dora-highlight);
-        }
-    }
-}
-
-#searchInputPopover {
+  #searchInputPopover {
     position: fixed;
     top: 0;
     left: 0;
@@ -202,28 +186,53 @@ header > nav > label > input[type="checkbox"] {
     width: 100%;
 
     &:popover-open {
-        display: flex;
+      display: flex;
     }
 
     #searchInputPopoverFields {
-        display: grid;
-        justify-items: right;
-        align-items: center;
-        height: 100%;
-        animation: popoverAppear 0.2s ease-in;
-        width: 100%;
+      display: grid;
+      justify-items: right;
+      align-items: center;
+      height: 100%;
+      animation: popoverAppear 0.2s ease-in;
+      width: 100%;
 
-        #searchForm {
-            width: 50em;
-        }
+      #searchForm {
+        width: 52em;
+      }
     }
-}
+  }
 
-@keyframes popoverAppear {
+  @keyframes popoverAppear {
     from {
-        opacity: 0;
+      opacity: 0;
     }
     to {
-        opacity: 1;
+      opacity: 1;
     }
+  }
+}
+
+
+.site-banner {
+  background-color: var(--dora-primary-dark);
+  padding: 0 0 2px 0;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    border-radius: 0.2em;
+    padding: 4pt 6pt;
+    color: var(--dora-primary-light);
+    font-weight: 500;
+    text-decoration: none;
+
+    &:visited {
+      color: var(--dora-primary-light);
+    }
+
+    &:hover {
+      color: var(--dora-highlight);
+    }
+  }
 }

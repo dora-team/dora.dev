@@ -100,7 +100,7 @@ a {
   }
 }
 
-header {
+.navContainer {
   display: flex;
   align-items: center;
   height: 64px;
@@ -217,7 +217,7 @@ section.banner {
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
   vertical-align: middle;
   cursor: pointer;
