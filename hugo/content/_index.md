@@ -9,6 +9,11 @@ homepageHeroLinkText: "Read our latest report"
 homepageHeroLinkTarget: "_blank"
 ---
 
+<!-- 
+with the dora-2025 theme, most homepage text is specified using frontmatter params (above), 
+then rendered via the /hugo/themes/dora-2025/default/home.html template.
+-->
+
 {{< article columns="2"
     title="Impact of Generative AI in Software Development"
     url="https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development"
