@@ -33,6 +33,10 @@ header {
             line-height: 1em;
             transition: all 0.3s ease;
             text-decoration: underline solid white;
+
+            .open_in_new {
+              font-size:1em;
+            }
           }
 
           a:hover {
