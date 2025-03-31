@@ -1,0 +1,33 @@
+<!doctype html>
+<meta charset="utf-8">
+<html lang="en">
+
+<head>
+  {{- partial "head" . -}}
+</head>
+
+<body>
+  {{- partial "header" . -}}
+  <div class="homepage-hero">
+    <div class="hero-content">
+      <div class="dora">
+        <div><img src=/img/hp/d.svg></div>
+        <div><img src=/img/hp/o.gif width="50"></div>
+        <div><img src=/img/hp/r.svg></div>
+        <div><img src=/img/hp/a.svg></div>
+      </div>
+      <div class="hero-link">
+        <a href="{{ .Params.homepageHeroHref }}" target="{{ .Params.homepageHeroLinkTarget }}">{{ .Params.homepageHeroLinkText }}</a>
+      </div>
+    </div>
+  </div>
+  <main>
+    {{- partial "partials/link_styles" "scss/homepage.scss" -}}
+    <section class="features">
+      {{ .Content }}
+    </section>
+  </main>
+  {{- partial "footer" . -}}
+</body>
+
+</html>
