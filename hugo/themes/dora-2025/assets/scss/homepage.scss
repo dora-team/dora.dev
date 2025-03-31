@@ -1,90 +1,103 @@
 @import "_variables.scss";
 
+// BEGIN: new styles for theme dora-2025
+
+.homepage-hero {
+  background-color: var(--dora-highlight);
+
+  .hero-content {
+    margin: auto;
+    width:fit-content;
+
+    div.dora {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+// END: new styles for theme dora-2025
+
 // TODO: use the grid.scss styles instead
 section.features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5em;
-    place-items: stretch;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+  place-items: stretch;
 
-    article {
-        padding: 0;
-        border: 1px solid $border-light;
-        border-radius: 8px;
+  article {
+    padding: 0;
+    border: 1px solid $border-light;
+    border-radius: 8px;
 
-        h2 {
-            background-color: $background-light;
-            margin:0;
-            padding:1rem 1rem .5rem 1rem;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
+    h2 {
+      background-color: $background-light;
+      margin: 0;
+      padding: 1rem 1rem 0.5rem 1rem;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
 
-            a {
-                color:$color-text;
-                text-decoration: none;
-            }
-        }
-
-        div.content {
-            display: flex;
-            flex-direction: row;
-
-            .text {
-                padding:1rem;
-            }
-
-            .image {
-                
-                text-align: center;
-
-                img {
-                    margin:1rem;
-
-                    &.stroke {
-                        border:1px solid $border-light;
-                    }
-                }
-
-
-            }
-
-            &.image-left {
-                flex-direction: row-reverse;
-
-                @include media-medium {
-                    flex-direction: column-reverse;
-                }
-            }
-
-            @include media-medium {
-                flex-direction: column-reverse;
-            }
-        }
-    
-        &.cols_1 {
-
-            img.feature {
-                width:10rem;
-                @include media-large {
-                    width:8rem;
-                }
-            }
-    
-            @include media-medium {
-                grid-column: span 2;
-            }
-        }
-    
-        &.cols_2 {
-            grid-column: span 2;
-
-            img.feature {
-                width:16rem;
-                @include media-large {
-                    width:12rem;
-                }
-            }
-        }
-    
+      a {
+        color: $color-text;
+        text-decoration: none;
+      }
     }
+
+    div.content {
+      display: flex;
+      flex-direction: row;
+
+      .text {
+        padding: 1rem;
+      }
+
+      .image {
+        text-align: center;
+
+        img {
+          margin: 1rem;
+
+          &.stroke {
+            border: 1px solid $border-light;
+          }
+        }
+      }
+
+      &.image-left {
+        flex-direction: row-reverse;
+
+        @include media-medium {
+          flex-direction: column-reverse;
+        }
+      }
+
+      @include media-medium {
+        flex-direction: column-reverse;
+      }
+    }
+
+    &.cols_1 {
+      img.feature {
+        width: 10rem;
+        @include media-large {
+          width: 8rem;
+        }
+      }
+
+      @include media-medium {
+        grid-column: span 2;
+      }
+    }
+
+    &.cols_2 {
+      grid-column: span 2;
+
+      img.feature {
+        width: 16rem;
+        @include media-large {
+          width: 12rem;
+        }
+      }
+    }
+  }
 }
