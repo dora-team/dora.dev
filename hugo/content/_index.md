@@ -4,16 +4,26 @@ date: 2022-11-22
 draft: false
 bannerTitle: "Get Better at Getting Better"
 bannerSubtitle: "DORA is the largest and longest running research program of its kind, that seeks to understand the capabilities that drive software delivery and operations performance. DORA helps teams apply those capabilities, leading to better organizational performance."
-homepageHeroHref: "https://cloud.google.com/devops/state-of-devops"
-homepageHeroLinkText: "Read our latest report"
-homepageHeroLinkTarget: "_blank"
 ---
 
-<!-- 
-with the dora-2025 theme, most homepage text is specified using frontmatter params (above), 
-then rendered via the /hugo/themes/dora-2025/default/home.html template.
--->
+<!-- {{/* BEGIN content for 2025 homepage (does not appear when dora theme is used) */}} -->
 
+{{< homepage/hero 
+  href="https://cloud.google.com/devops/state-of-devops"
+  text="Read our latest report"
+  target="_blank"
+  >}}
+
+{{< homepage/lede
+  headline="Get better at getting better"
+  >}}
+  DORA is the largest and longest running research program of its kind, that seeks to understand the capabilities that drive software delivery and operations performance. DORA helps teams apply those capabilities, leading to better organizational performance.
+  {{< /homepage/lede >}}
+
+
+<!-- END content for 2025 homepage (does not appear when dora theme is used) -->
+
+<!-- BEGIN content for pre-2025 homepage (does not appear when dora-2025 theme is used) -->
 {{< article columns="2"
     title="Impact of Generative AI in Software Development"
     url="https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development"
@@ -74,3 +84,5 @@ Join the <a href="https://cloud.withgoogle.com/next/25/session-library?session=M
     >}}
 DORA Core represents the most well-established findings across the history and breadth our research program. Use it to guide transformation efforts in your organization.<br /><br /><br /><br />
 {{< /article >}}
+
+<!-- END content for pre-2025 homepage (does not appear when dora-2025 theme is used) -->

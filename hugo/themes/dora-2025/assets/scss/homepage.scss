@@ -7,33 +7,57 @@
 
   .hero-content {
     margin: 0 auto 12px auto;
-    width:fit-content;
+    width: fit-content;
 
     div.dora {
       display: flex;
       flex-direction: row;
 
-      div {
+      div.letter {
+        width: 240px;
+        height: 400px;
+        margin-top: 55px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
 
-        .letter {
-          display:block;
-          margin-top:55px;
+        &.d {
+          background-image: url(/img/homepage/d.svg);
         }
-
-        .illustration {
-          width:480px;
-          display:block;
-          margin-left:-52px;
-          margin-right:-50px;
+        &.o {
+          background-image: url(/img/homepage/o.gif);
         }
+        &.r {
+          background-image: url(/img/homepage/r.svg);
+        }
+        &.a {
+          background-image: url(/img/homepage/a.svg);
+        }
+      }
 
+      .illustration {
+        width: 480px;
+        display: block;
+        margin-left: -52px;
+        margin-right: -50px;
       }
     }
+  }
 
-    div.hero-link {
-      text-align: right;
+  div.hero-link {
+    text-align: right;
+  }
+}
+
+.homepage-lede {
+  background-color: var(--dora-primary-light);
+  .lede-content-container {
+    max-width: $layout-breakpoint-maxplus;
+    margin: 48px auto;
+    .lede-content {
+      margin: 12px;
+      max-width: 100%;
     }
-
   }
 }
 
