@@ -142,142 +142,179 @@
   }
 }
 
-.homepage-snipes-container {
-  width: $layout-breakpoint-maxplus;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin: auto;
-  padding: 48px;
-  .homepage-snipes {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+.homepage-snipes-wrapper {
+  background-color: var(--dora-primary-light);
 
-    .homepage-snipe {
-      background-color: var(--grey-50);
+  .homepage-snipes-container {
+    width: $layout-breakpoint-maxplus;
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: auto;
+    padding: 48px;
 
-      a {
-        text-decoration: none;
-        color: var(--dora-primary-dark);
-      }
+    .homepage-snipes {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
 
-      .image {
-        border-bottom: 3px solid var(--dora-primary-dark);
-        img {
-          max-width: 100%;
-        }
-      }
+      .homepage-snipe {
+        background-color: var(--grey-50);
 
-      h3 {
-        line-height: 18px;
-        font-size: 14px;
-        margin: 0 0 0 auto;
-        width:fit-content;
-        padding: 2px 8px;
-        color: var(--dora-primary-light);
-        background-color: var(--dora-primary-dark);
-      }
-
-      .text {
-        padding:18px 24px;
-
-        h2 {
-          font-size: 24px;
-          font-weight: 500;
-          margin: 0;
-          margin-bottom: 12px;
+        &:nth-child(1) {
+          background-color: var(--dora-secondary-a);
+          h3 {
+            color: var(--dora-secondary-a);
+          }
         }
 
-        p {
-          font-family: $font-google-sans;
-          font-size: 16px;
-          line-height: 1.35;
-          font-weight: 400;
+        &:nth-child(2) {
+          background-color: var(--dora-secondary-b);
+          h3 {
+            color: var(--dora-secondary-b);
+          }
+        }
+
+        &:nth-child(3) {
+          background-color: var(--dora-secondary-c);
+          h3 {
+            color: var(--dora-secondary-c);
+          }
+        }
+
+        &:nth-child(4) {
+          background-color: var(--dora-highlight);
+          h3 {
+            color: var(--dora-highlight);
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: var(--dora-primary-dark);
+        }
+
+        .image {
+          border-bottom: 3px solid var(--dora-primary-dark);
+          img {
+            width: 320px;
+            display: block;
+            margin: auto;
+            max-width: 100%;
+          }
+        }
+
+        h3 {
+          line-height: 18px;
+          font-size: 14px;
+          margin: 0 0 0 auto;
+          width: fit-content;
+          padding: 4px 12px;
+          color: var(--dora-primary-light);
+          background-color: var(--dora-primary-dark);
+        }
+
+        .text {
+          padding: 18px 24px;
+
+          h2 {
+            font-size: 24px;
+            font-weight: 500;
+            margin: 0;
+            margin-bottom: 12px;
+          }
+
+          p {
+            font-family: $font-google-sans;
+            font-size: 16px;
+            line-height: 1.35;
+            font-weight: 400;
+          }
         }
       }
     }
   }
-}
 
-// END: new styles for theme dora-2025
+  // END: new styles for theme dora-2025
 
-// TODO: use the grid.scss styles instead
-section.features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5em;
-  place-items: stretch;
+  // TODO: use the grid.scss styles instead
+  section.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5em;
+    place-items: stretch;
 
-  article {
-    padding: 0;
-    border: 1px solid $border-light;
-    border-radius: 8px;
+    article {
+      padding: 0;
+      border: 1px solid $border-light;
+      border-radius: 8px;
 
-    h2 {
-      background-color: $background-light;
-      margin: 0;
-      padding: 1rem 1rem 0.5rem 1rem;
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
+      h2 {
+        background-color: $background-light;
+        margin: 0;
+        padding: 1rem 1rem 0.5rem 1rem;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
 
-      a {
-        color: $color-text;
-        text-decoration: none;
-      }
-    }
-
-    div.content {
-      display: flex;
-      flex-direction: row;
-
-      .text {
-        padding: 1rem;
-      }
-
-      .image {
-        text-align: center;
-
-        img {
-          margin: 1rem;
-
-          &.stroke {
-            border: 1px solid $border-light;
-          }
+        a {
+          color: $color-text;
+          text-decoration: none;
         }
       }
 
-      &.image-left {
-        flex-direction: row-reverse;
+      div.content {
+        display: flex;
+        flex-direction: row;
+
+        .text {
+          padding: 1rem;
+        }
+
+        .image {
+          text-align: center;
+
+          img {
+            margin: 1rem;
+
+            &.stroke {
+              border: 1px solid $border-light;
+            }
+          }
+        }
+
+        &.image-left {
+          flex-direction: row-reverse;
+
+          @include media-medium {
+            flex-direction: column-reverse;
+          }
+        }
 
         @include media-medium {
           flex-direction: column-reverse;
         }
       }
 
-      @include media-medium {
-        flex-direction: column-reverse;
-      }
-    }
+      &.cols_1 {
+        img.feature {
+          width: 10rem;
+          @include media-large {
+            width: 8rem;
+          }
+        }
 
-    &.cols_1 {
-      img.feature {
-        width: 10rem;
-        @include media-large {
-          width: 8rem;
+        @include media-medium {
+          grid-column: span 2;
         }
       }
 
-      @include media-medium {
+      &.cols_2 {
         grid-column: span 2;
-      }
-    }
 
-    &.cols_2 {
-      grid-column: span 2;
-
-      img.feature {
-        width: 16rem;
-        @include media-large {
-          width: 12rem;
+        img.feature {
+          width: 16rem;
+          @include media-large {
+            width: 12rem;
+          }
         }
       }
     }

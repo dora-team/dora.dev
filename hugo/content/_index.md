@@ -38,7 +38,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
   {{< /homepage/feature >}}
 
 <!-- DO NOT DELETE the following line; this container is necessary for snipes to render correctly -->
-<div class="homepage-snipes-container"><h1>Resources</h1><div class="homepage-snipes">
+<div class="homepage-snipes-wrapper"><div class="homepage-snipes-container"><h1>Resources</h1><div class="homepage-snipes">
 
   {{< homepage/snipe
     img_src="/img/homepage/snipes/quickcheck.png"
@@ -49,8 +49,35 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
     Use our quick check tool to discover how you compare to industry peers, identify specific capabilities you can use to improve performance, and make progress on your software delivery goals.
     {{< /homepage/snipe >}}
 
+  {{< homepage/snipe
+    img_src="/img/homepage/snipes/airesearch.png"
+    eyebrow="Research"
+    headline="The Impact of AI"
+    url="https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development"
+  >}}
+    DORA’s latest research into AI looks at adoption strategies, the impact of AI, fostering trust, and more.
+    {{< /homepage/snipe >}}
+
+  {{< homepage/snipe
+    img_src="/img/homepage/snipes/genai.png"
+    eyebrow="Guide"
+    headline="Generative AI"
+    url="/research/ai/"
+  >}}
+    Leverage DORA’s research findings to apply a holistic, iterative strategy as you experiment with and adopt emerging AI technologies. Learn how a focus on users can help ensure positive outcomes.
+    {{< /homepage/snipe >}}
+
+  {{< homepage/snipe
+    img_src="/img/homepage/snipes/core.png"
+    eyebrow="Framework"
+    headline="DORA Core"
+    url="/research/"
+  >}}
+    DORA Core represents the most well-established findings across the history and breadth our research program. Use it to guide transformation efforts in your organization.
+    {{< /homepage/snipe >}}
+
 <!-- DO NOT DELETE the following line; this container is necessary for snipes to render correctly -->
-</div></div>
+</div></div></div>
 
 <!-- END content for 2025 homepage (does not appear when dora theme is used) -->
 
