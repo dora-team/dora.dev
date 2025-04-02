@@ -8,14 +8,14 @@
 
   .hero-content {
     margin: auto;
-    margin-bottom:24px;
+    margin-bottom: 24px;
     width: $layout-breakpoint-maxplus;
     max-width: 100vw;
 
     div.dora {
-      width:100%;
+      width: 100%;
       aspect-ratio: 1440 / 610;
-      position:relative;
+      position: relative;
       div.letters {
         position: absolute;
         top: 0;
@@ -49,23 +49,79 @@
     .lede-content {
       margin: 12px 36px;
       max-width: 100%;
-      width:fit-content;
+      width: fit-content;
       display: flex;
       flex-direction: row;
       align-items: center;
-      h1, p {
+      h1,
+      p {
         flex: 1 0 50%;
-        text-wrap:balance;
+        text-wrap: balance;
       }
 
       h1 {
-        font-size:72px;
+        font-size: 72px;
+        font-weight: 600;
       }
 
-      p{
-        font-family:$font-google-sans;
-        font-size:20px;
-        font-weight:500;
+      p {
+        font-family: $font-google-sans;
+        font-size: 20px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.homepage-feature-container {
+  background-color: var(--dora-primary-dark);
+  
+  .homepage-feature {
+    margin:auto;
+    max-width: $layout-breakpoint-maxplus;
+    box-sizing: border-box;
+    color: var(--dora-primary-light);
+    padding: 48px;
+
+    display: flex;
+    align-items: center;
+
+    .content {
+      flex-basis: 50%;
+      font-size: 14px;
+      line-height: 1.35;
+
+      h3 {
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 300;
+        letter-spacing: 1px;
+      }
+
+      button {
+        margin-top: 40px;
+      }
+    }
+
+    .image {
+      flex-basis: 50%;
+      img {
+        width: 340px;
+        max-width: 40vw;
+      }
+    }
+
+    &.image-align-right {
+      flex-direction: row;
+      .image {
+        text-align: right;
+      }
+    }
+
+    &.image-align-left {
+      flex-direction: row-reverse;
+      .image {
+        text-align: left;
       }
     }
   }

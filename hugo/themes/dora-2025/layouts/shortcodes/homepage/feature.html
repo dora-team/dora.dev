@@ -1,0 +1,45 @@
+<!---
+    params:
+    eyebrow -- text for above headline (optional)
+    headline -- text for headline
+    url -- destination that header and image will link to (optional)
+    cta -- text for the "Call to Action" button (optional; if omitted, no CTA button will be displayed)
+    img_src -- source of image
+    img_alt -- alt text for image; (required if img-src is set)
+    img_align -- position of image [left|right] (optional; defaults to "right")
+    delete_on [date] -- if specified, the article will be suppressed after this date
+-->
+
+{{ $delete_on := (.Get "delete_on" | default "2999-12-31") | time.AsTime }}
+{{ $url := .Get "url" }}
+{{ $target := "" }}
+{{ if or (strings.HasPrefix $url "http") (strings.HasPrefix $url "https") (strings.HasPrefix $url "/pdf") }} 
+    {{ $target = "_blank" }}
+{{ end }}
+
+{{ $img_align := .Get "img_align" | default "right" }}
+
+{{ if lt now $delete_on }}
+<div class="homepage-feature-container">
+<div class="homepage-feature image-align-{{ $img_align }}">
+  <div class="content">
+    {{ if .Get "eyebrow" }}
+      <h3>{{ .Get "eyebrow" }}</h3>
+    {{ end }}
+    <h1>{{ .Get "headline" }}</h1>
+    {{ .Inner }}
+    {{- if and (.Get "cta") ($url) -}}
+      <br>
+      <a href='{{ $url }}' target="{{ $target }}">
+        <button class="inverted">{{ .Get "cta" }}</button>
+      </a>
+    {{- end -}}
+  </div>
+  <div class="image">
+    <a href='{{ $url }}' target="{{ $target }}">
+      <img src='{{ .Get "img_src" }}' alt='{{ .Get "img_alt" }}'>
+    </a>
+  </div>
+</div>
+</div>
+{{ end }}

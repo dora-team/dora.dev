@@ -56,6 +56,11 @@ input[type="submit"],
     background-color: var(--dora-primary-dark);
     color: $color-text-knockout;
   }
+
+  &.inverted {
+    color: var(--dora-primary-light);
+    border-color: var(--dora-primary-light);
+  }
 }
 
 button.secondary,

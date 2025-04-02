@@ -7,6 +7,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 ---
 
 <!-- {{/* BEGIN content for 2025 homepage (dora-2025 theme).  This content does not appear when the default 'dora' theme is used. */}} -->
+
 {{< homepage/hero 
   href="https://cloud.google.com/devops/state-of-devops"
   text="Read our latest report"
@@ -19,9 +20,25 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
   DORA is the largest and longest running research program of its kind, that seeks to understand the capabilities that drive software delivery and operations performance. DORA helps teams apply those capabilities, leading to better organizational performance.
   {{< /homepage/lede >}}
 
+{{< homepage/feature
+  eyebrow="our latest report"
+  headline="Impact of Generative AI in Software Development"
+  url="https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development"
+  cta="Learn more"
+  img_src="/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png"
+  img_align="right"
+  >}}
+  Generative AI is rapidly reshaping the software development landscape, presenting both exciting opportunities and complex challenges.
+
+  This report offers research-backed guidance for leaders and practitioners to effectively navigate this transformation, providing actionable insights to maximize AI’s benefits while mitigating potential risks.
+
+  Based on extensive data and developer interviews, the report moves beyond the hype to offer a nuanced perspective on AI’s impact on individuals, teams, and organizations.
+  {{< /homepage/feature >}}
 
 <!-- END content for 2025 homepage (does not appear when dora theme is used) -->
+
 <!-- {{/* BEGIN content for pre-2025 homepage (default 'dora' theme). This content does not appear when the dora-2025 theme is used. */}} -->
+
 {{< article columns="2"
     title="Impact of Generative AI in Software Development"
     url="https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development"
