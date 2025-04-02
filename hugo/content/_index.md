@@ -21,8 +21,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 
 
 <!-- END content for 2025 homepage (does not appear when dora theme is used) -->
-
-<!-- BEGIN content for pre-2025 homepage (does not appear when dora-2025 theme is used) -->
+<!-- {{/* BEGIN content for pre-2025 homepage (default 'dora' theme). This content does not appear when the dora-2025 theme is used. */}} -->
 {{< article columns="2"
     title="Impact of Generative AI in Software Development"
     url="https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development"
