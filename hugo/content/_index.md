@@ -27,6 +27,8 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
   cta="Learn more"
   img_src="/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png"
   img_align="right"
+  img_stroke="true"
+  delete_on=""
   >}}
   Generative AI is rapidly reshaping the software development landscape, presenting both exciting opportunities and complex challenges.
 
@@ -34,6 +36,21 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 
   Based on extensive data and developer interviews, the report moves beyond the hype to offer a nuanced perspective on AI’s impact on individuals, teams, and organizations.
   {{< /homepage/feature >}}
+
+<!-- DO NOT DELETE the following line; this container is necessary for snipes to render correctly -->
+<div class="homepage-snipes-container"><h1>Resources</h1><div class="homepage-snipes">
+
+  {{< homepage/snipe
+    img_src="/img/homepage/snipes/quickcheck.png"
+    eyebrow="Diagnostic"
+    headline="DORA Quick Check"
+    url="/quickcheck/"
+  >}}
+    Use our quick check tool to discover how you compare to industry peers, identify specific capabilities you can use to improve performance, and make progress on your software delivery goals.
+    {{< /homepage/snipe >}}
+
+<!-- DO NOT DELETE the following line; this container is necessary for snipes to render correctly -->
+</div></div>
 
 <!-- END content for 2025 homepage (does not appear when dora theme is used) -->
 

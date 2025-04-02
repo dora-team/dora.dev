@@ -1,0 +1,33 @@
+<!---
+    params:
+    eyebrow -- text for above headline (optional)
+    headline -- text for headline
+    url -- destination that header and image will link to
+    img_src -- source of image
+    delete_on [date] -- if specified, the article will be suppressed after this date
+-->
+
+{{ $delete_on := (.Get "delete_on" | default "2999-12-31") | time.AsTime }}
+{{ $url := .Get "url" }}
+{{ $target := "" }}
+{{ if or (strings.HasPrefix $url "http") (strings.HasPrefix $url "https") (strings.HasPrefix $url "/pdf") }}
+{{ $target = "_blank" }}
+{{ end }}
+
+
+{{ if lt now $delete_on }}
+<div class="homepage-snipe">
+  <a href='{{ $url }}' target="{{ $target }}">
+    <div class="image">
+      <img src='{{ .Get "img_src" }}' alt='{{ .Get "headline" }}'>
+    </div>
+    {{ if .Get "eyebrow" }}
+    <h3>{{ .Get "eyebrow" }}</h3>
+    {{ end }}
+    <div class="text">
+      <h2>{{ .Get "headline" }}</h2>
+      <p>{{ .Inner }}</p>
+    </div>
+  </a>
+</div>
+{{ end }}

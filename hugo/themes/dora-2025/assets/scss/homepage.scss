@@ -75,9 +75,9 @@
 
 .homepage-feature-container {
   background-color: var(--dora-primary-dark);
-  
+
   .homepage-feature {
-    margin:auto;
+    margin: auto;
     max-width: $layout-breakpoint-maxplus;
     box-sizing: border-box;
     color: var(--dora-primary-light);
@@ -88,8 +88,6 @@
 
     .content {
       flex-basis: 50%;
-      font-size: 14px;
-      line-height: 1.35;
 
       h3 {
         font-size: 12px;
@@ -98,8 +96,21 @@
         letter-spacing: 1px;
       }
 
+      p {
+        font-family: $font-google-sans;
+        font-size: 16px;
+        line-height: 1.35;
+        font-weight: 400;
+      }
+
       button {
-        margin-top: 40px;
+        // display:block;
+        margin-top: 20px;
+
+        &:hover {
+          background-color: var(--dora-primary-light);
+          color: var(--dora-primary-dark);
+        }
       }
     }
 
@@ -108,6 +119,10 @@
       img {
         width: 340px;
         max-width: 40vw;
+
+        &.stroke {
+          border: 0.5px solid var(--dora-primary-light);
+        }
       }
     }
 
@@ -122,6 +137,61 @@
       flex-direction: row-reverse;
       .image {
         text-align: left;
+      }
+    }
+  }
+}
+
+.homepage-snipes-container {
+  width: $layout-breakpoint-maxplus;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: auto;
+  padding: 48px;
+  .homepage-snipes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    .homepage-snipe {
+      background-color: var(--grey-50);
+
+      a {
+        text-decoration: none;
+        color: var(--dora-primary-dark);
+      }
+
+      .image {
+        border-bottom: 3px solid var(--dora-primary-dark);
+        img {
+          max-width: 100%;
+        }
+      }
+
+      h3 {
+        line-height: 18px;
+        font-size: 14px;
+        margin: 0 0 0 auto;
+        width:fit-content;
+        padding: 2px 8px;
+        color: var(--dora-primary-light);
+        background-color: var(--dora-primary-dark);
+      }
+
+      .text {
+        padding:12px;
+
+        h2 {
+          font-size: 20px;
+          font-weight: 500;
+          margin: 12px 0;
+        }
+
+        p {
+          font-family: $font-google-sans;
+          font-size: 16px;
+          line-height: 1.35;
+          font-weight: 400;
+        }
       }
     }
   }
