@@ -1,49 +1,17 @@
-<!---
-    params:
-    title -- content of header (optional)
-    url -- destination that header and image will link to (optional)
-    cta -- text for the "Call to Action" button (optional; if omitted, no CTA button will be displayed)
-    img-src -- source of image (optional)
-    img-alt -- alt text for image; (required if img-src is set)
-    img-align -- position of image [left|right] (optional; defaults to "left")
-    img-stroke -- if this param is present, a stroke will be drawn around image
-    text-size-ratio -- if specified, text size will be modified by this multiplier (option; defaults to "1")
-    delete_on [date] -- if specified, the article will be suppressed after this date
--->
+<!-- {{/* 
+Update for dora-2025 theme. This shortcode is no longer used.
+During the transition, it will exist in both themes, but won't 
+generate any output in the new theme. This way the old content
+will show with the old theme, and the new content will show 
+with the new theme.
 
-{{ $delete_on := (.Get "delete_on" | default "2999-12-31") | time.AsTime }}
+The invserse mechansim will be used to populate new content
+when the new theme is used.
 
-{{ if lt now $delete_on }}
-    {{ $url := .Get "url" }}
-    {{ $target := "" }}
-    {{ if or (strings.HasPrefix $url "http") (strings.HasPrefix $url "https") (strings.HasPrefix $url "/pdf") }} 
-        {{ $target = "_blank" }}
-    {{ end }}
-    {{ $text_size_ratio := .Get "text-size-ratio" | default "1" }}
+TODO: remove {{< article >}} tags, and this file, when the old
+theme is deleted.
+*/}} -->
 
-    <article class='cols_{{ .Get "columns"}}'>
-        <h2>
-            {{- if $url -}}<a href='{{ $url }}' target="{{ $target }}">{{- end -}}{{ .Get "title" }}{{- if $url -}}</a>{{- end -}}
-        </h2>
-        <div class='content image-{{ .Get "img-align" }}' style='font-size:{{ $text_size_ratio }}rem'>
-            <div class="text">
-                <p>
-                {{ .Inner | markdownify }}
-                {{- if and (.Get "cta") ($url) -}}
-                <br>
-                <a href='{{ $url}}' target="{{ $target }}"><button class="secondary">{{ .Get "cta" }}</button></a>
-                {{- end -}}
-                {{- if and (.Get "cta_2") (.Get "url_2") -}}
-                <a href='{{ .Get "url_2"}}' target="{{ $target }}"><button class="secondary">{{ .Get "cta_2" }}</button></a>
-                {{- end -}}
-                </p>
-            </div>
-            
-            {{- if .Get "img-src" -}}
-            <div class="image">
-                <a href='{{ $url }}' target="{{ $target }}"><img src='{{ .Get "img-src" }}' alt='{{ .Get "img-alt" }}' class='feature {{ if .Get "img-stroke" }} stroke{{ end }}'></a>
-            </div>
-            {{- end -}}
-        </div>
-    </article>
-{{ end }}
+
+<!-- render `.Inner` (invisibly) to make Hugo happy -->
+<!-- {{.Inner}} -->

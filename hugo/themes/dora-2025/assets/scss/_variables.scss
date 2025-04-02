@@ -59,6 +59,7 @@ $font-google-sans: "Google Sans", "Roboto", Arial, Helvetica, sans-serif;
 $font-roboto: "Roboto", Arial, Helvetica, sans-serif;
 
 // breakpoints for responsive
+$layout-breakpoint-maxplus: 1440px;  // used for dora-2025, esp. on homepage
 $layout-breakpoint-max: 1040px;
 $layout-breakpoint-large: 960px;
 $layout-breakpoint-medium: 800px;
