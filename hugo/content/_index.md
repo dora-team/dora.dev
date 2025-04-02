@@ -6,8 +6,7 @@ bannerTitle: "Get Better at Getting Better"
 bannerSubtitle: "DORA is the largest and longest running research program of its kind, that seeks to understand the capabilities that drive software delivery and operations performance. DORA helps teams apply those capabilities, leading to better organizational performance."
 ---
 
-<!-- {{/* BEGIN content for 2025 homepage (does not appear when dora theme is used) */}} -->
-
+<!-- {{/* BEGIN content for 2025 homepage (dora-2025 theme).  This content does not appear when the default 'dora' theme is used. */}} -->
 {{< homepage/hero 
   href="https://cloud.google.com/devops/state-of-devops"
   text="Read our latest report"
