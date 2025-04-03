@@ -47,7 +47,7 @@
   background-color: var(--dora-primary-light);
   .lede-content-container {
     max-width: $layout-breakpoint-maxplus;
-    margin: 48px auto;
+    margin: calc(min(48px, 8vw)) auto;
     .lede-content {
       margin: 12px 36px;
       max-width: 100%;
@@ -74,7 +74,7 @@
 
       p {
         font-family: $font-google-sans;
-        font-size: calc(clamp(10px, 2.5vw, 20px));
+        font-size: calc(clamp(16px, 2.5vw, 20px));
         font-weight: 500;
       }
     }
@@ -185,7 +185,7 @@
       @include media-large {
         grid-template-columns: 1fr 1fr;
       }
-      @include media-small {
+      @include media-medium {
         grid-template-columns: 1fr;
       }
 
