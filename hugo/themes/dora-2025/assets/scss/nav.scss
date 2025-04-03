@@ -1,3 +1,84 @@
+// the following styles control the show/hide of the mobile menu.
+// They're listed out here because the mobile menu exists
+// outside of the regular nav.
+
+#hamburgerContainer {
+  display: none;
+  @include media-medium {
+    display: block;
+  }
+
+  #hamburgerIcon {
+    display: block;
+    font-size: 36px;
+    height: 48px;
+    width: 48px;
+    line-height: 48px;
+    text-align: center;
+
+    .menu {
+      display: block;
+    }
+
+    .close {
+      display: none;
+    }
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+}
+
+.menuLinksMobile {
+  height: 0;
+  overflow: hidden;
+
+  ul {
+    margin: 0;
+    margin-block-start: 0.5em;
+    padding-inline-start: 0;
+    li {
+      list-style-type: none;
+      padding: 0.5em 1em;
+      margin: 0;
+      border-bottom: 1px solid var(--grey-40);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--grey-70);
+        white-space: nowrap;
+        font-weight: 500;
+        font-size: 1em;
+        line-height: 1em;
+
+        .open_in_new {
+          font-size: 1.25em;
+        }
+      }
+    }
+  }
+}
+
+body:has(#mobileMenuController:checked) {
+  .menuLinksMobile {
+    height: fit-content;
+    padding: 0 18px 12px 18px;
+  }
+  #hamburgerContainer {
+    #hamburgerIcon .close {
+      display: block;
+    }
+    #hamburgerIcon .menu {
+      display: none;
+    }
+  }
+}
+
 header {
   position: sticky;
   top: 0;
@@ -6,10 +87,9 @@ header {
   box-shadow: 0 0 6px color-mix(in srgb, var(--dora-primary-dark), transparent 70%);
 
   @include media-small {
-    position:relative;
+    position: relative;
   }
 
-  
   .navContainer {
     div.dora-logo-link a {
       display: block;
@@ -22,16 +102,22 @@ header {
       margin-right: 16px;
       font-size: 0.9em;
 
-      ul {
+      ul.menuLinksDesktop {
         display: flex;
+        align-items: center;
         margin: 0;
         li {
           list-style-type: none;
           padding: 0 1em;
 
+          @include media-large {
+            font-size:.85em;
+            padding: 0 .7em;
+          }
+
           a {
             text-decoration: none;
-            color: hsl(208, 5%, 45%);
+            color: var(--grey-70);
             white-space: nowrap;
             font-weight: 500;
             font-size: 1em;
@@ -40,7 +126,7 @@ header {
             text-decoration: underline solid white;
 
             .open_in_new {
-              font-size:1em;
+              font-size: 1em;
             }
           }
 
@@ -56,11 +142,6 @@ header {
             text-underline-offset: 0.5em;
           }
         }
-
-        li#searchLinkMobile {
-          // if full menu shown, don't show mobile search link
-          display: none;
-        }
       }
     }
     #searchIcon {
@@ -68,118 +149,13 @@ header {
     }
   }
 
-  // hamburger menu for mobile
-  .navContainer > nav > label > input[type="checkbox"] {
-    display: none;
-  }
-
-  @include media-large {
-    $mobile-menu-width: 180px;
-
-    .navContainer nav label {
-      ul {
-        position: absolute;
-        top: 64px;
-        right: 0px;
-        visibility: hidden;
-        opacity: 0;
-        width: $mobile-menu-width;
-        height: calc(100% - 64px);
-        display: block;
-        opacity: 0;
-        padding: 0;
-        z-index: 300;
-
-        li {
-          padding: 24px 4px 24px 24px;
-          border-bottom: 1px solid #dadce0;
-          background-color: var(--background);
+  @include media-medium {
+    .navContainer {
+      nav {
+        ul.menuLinksDesktop {
+          display: none;
         }
       }
-    }
-
-    label .menu {
-      position: absolute;
-      top: 0;
-      right: 0;
-      transition: 0.5s ease-in-out;
-      cursor: pointer;
-    }
-
-    label .hamburger {
-      position: absolute;
-      top: 32px;
-      left: 16px;
-      width: 32px;
-      height: 2px;
-      background: rgb(95, 99, 104);
-      display: block;
-      transform-origin: center;
-      transition: 0.5s ease-in-out;
-    }
-
-    label .hamburger:after,
-    label .hamburger:before {
-      transition: 0.35s ease-in-out;
-      content: "";
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 100%;
-      background: rgb(95, 99, 104);
-    }
-
-    label .hamburger:before {
-      top: -10px;
-    }
-
-    label .hamburger:after {
-      bottom: -10px;
-    }
-
-    label input:checked + .menu .hamburger {
-      transform: rotate(45deg);
-    }
-
-    label input:checked + .menu .hamburger:after {
-      transform: rotate(90deg);
-      bottom: 0;
-    }
-
-    label input:checked + .menu .hamburger:before {
-      transform: rotate(90deg);
-      top: 0;
-    }
-
-    label input:checked + .menu + ul {
-      opacity: 1;
-      transition: 0.25s ease;
-      visibility: visible;
-    }
-
-    .page-overlay {
-      transition: 0.35s ease;
-      background-color: rgba(0, 0, 0, 0);
-      position: absolute;
-      top: 64px;
-      left: 0;
-      width: 100%;
-      bottom: 0;
-      z-index: 100;
-      visibility: hidden;
-    }
-
-    label input:checked + .menu + ul + .page-overlay {
-      background-color: rgba(0, 0, 0, 0.4);
-      visibility: visible;
-    }
-
-    #searchLinkMobile {
-      // if full menu hidden, search is a regular menu item
-      display: block !important;
-    }
-    #searchLinkDesktop {
-      display: none;
     }
   }
 
@@ -221,7 +197,6 @@ header {
     }
   }
 }
-
 
 .site-banner {
   background-color: var(--dora-primary-dark);
