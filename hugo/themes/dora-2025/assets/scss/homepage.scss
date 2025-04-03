@@ -125,7 +125,7 @@
         }
       }
     }
-
+  }
     &.image-align-right {
       flex-direction: row;
       .image {
@@ -137,10 +137,12 @@
       flex-direction: row-reverse;
       .image {
         text-align: left;
-      }
-    }
+  div.hero-link {
+    text-align: right;
+    margin-right: 24px;
   }
 }
+
 
 .homepage-snipes-wrapper {
   background-color: var(--dora-primary-light);
