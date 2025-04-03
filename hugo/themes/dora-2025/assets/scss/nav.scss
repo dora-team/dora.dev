@@ -3,7 +3,12 @@ header {
   top: 0;
   background-color: var(--background);
   z-index: 999;
-  border-bottom: 4px solid var(--dora-primary-dark); 
+  box-shadow: 0 0 6px color-mix(in srgb, var(--dora-primary-dark), transparent 70%);
+
+  @include media-small {
+    position:relative;
+  }
+
   
   .navContainer {
     div.dora-logo-link a {

@@ -36,10 +36,14 @@
   div.hero-link {
     text-align: right;
     margin-right: 24px;
+    @include media-medium {
+      display:none;
+    }
   }
 }
 
 .homepage-lede {
+  box-sizing: border-box;
   background-color: var(--dora-primary-light);
   .lede-content-container {
     max-width: $layout-breakpoint-maxplus;
@@ -51,6 +55,11 @@
       display: flex;
       flex-direction: row;
       align-items: center;
+
+      @include media-medium {
+        flex-direction: column;
+      }
+
       h1,
       p {
         flex: 1 0 50%;
@@ -58,13 +67,14 @@
       }
 
       h1 {
-        font-size: 72px;
+        font-size: calc(min(72px, 7vw));
         font-weight: 600;
+        padding-right: 12px;
       }
 
       p {
         font-family: $font-google-sans;
-        font-size: 20px;
+        font-size: calc(clamp(10px, 2.5vw, 20px));
         font-weight: 500;
       }
     }
@@ -140,6 +150,20 @@
         }
       }
     }
+
+    @include media-medium {
+      flex-direction: column-reverse;
+
+      &.image-align-right , &.image-align-left {
+        flex-direction: column-reverse;
+      }
+
+      .image {
+        text-align: center;
+        margin-bottom: 24px;
+      }
+
+    }
   }
 }
 
@@ -157,6 +181,13 @@
       display: grid;
       gap: 24px;
       grid-template-columns: 1fr 1fr 1fr 1fr;
+
+      @include media-large {
+        grid-template-columns: 1fr 1fr;
+      }
+      @include media-small {
+        grid-template-columns: 1fr;
+      }
 
       .homepage-snipe {
         background-color: var(--grey-50);
