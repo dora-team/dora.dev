@@ -8,8 +8,13 @@
     flex-grow: 1;
     margin: 0;
     padding-inline: 1rem;
-    border: 1px solid #999;
+    background-color: var(--dora-primary-light);
+    border-color: var(--dora-primary-dark);
+    outline:none;
     border-radius: 10vmin 0 0 10vmin;
+    &::placeholder {
+      color: var(--grey-70);
+    }
 }
 
 .searchButton {
@@ -18,4 +23,6 @@
     margin: 0  !important;
     border-radius: 0 10vmin 10vmin 0  !important;
     font-size: 1rem  !important;
+    background-color:var(--dora-primary-dark) !important;
+    color:var(--dora-primary-light) !important;
 }
