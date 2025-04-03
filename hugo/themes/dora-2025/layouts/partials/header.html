@@ -19,6 +19,12 @@
         <li><a href="https://dora.community/" target="_blank">Community&nbsp;&nbsp;<span
               class="google-material-icons open_in_new">open_in_new</span></a></li>
       </ul>
+      <div id="searchInputPopover" popover>
+        <div id="searchInputPopoverFields">
+          {{- partial "search_input" -}}
+        </div>
+      </div>
+      <div class="page-overlay"></div>
       <label id="hamburgerContainer">
         <input type="checkbox" id="mobileMenuController" onchange="console.log(this.checked)" />
         <span class="google-material-icons" aria-label="menu" id="hamburgerIcon">
@@ -45,13 +51,6 @@
           class="google-material-icons open_in_new">open_in_new</span></a></li>
   </ul>
 </div>
-
-<div id="searchInputPopover" popover>
-  <div id="searchInputPopoverFields">
-    {{- partial "search_input" -}}
-  </div>
-</div>
-<div class="page-overlay"></div>
 
 <script>
   document.querySelector('#searchIcon').addEventListener('click', (e) => {
