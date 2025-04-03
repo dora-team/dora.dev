@@ -61,12 +61,14 @@ body {
 
     @include media-medium {
       padding: 0.75em;
-      width: auto;
+      width:100%;
+      margin:0;
     }
 
     @include media-small {
       padding: 0.5em;
-      width: auto;
+      width:100%;
+      margin:0;
     }
   }
 }
@@ -152,7 +154,7 @@ section.banner {
       padding: 1em 0.5em;
       margin: auto 0;
       h1 {
-        font-size: 72px;
+        font-size: calc(min(72px,12vw));
         font-weight: 600;
       }
 
@@ -160,7 +162,7 @@ section.banner {
         font-family: $font-google-sans;
         line-height: 1.35;
         font-weight: 500;
-        font-size: 16px;
+        font-size: calc(clamp(12px, 5vw, 16px));
       }
     }
 
