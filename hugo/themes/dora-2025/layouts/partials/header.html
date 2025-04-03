@@ -4,43 +4,64 @@
       <a href="/"><img src="/img/dora-logo.svg" height="48px" class="dora-logo" alt="DORA"></a>
     </div>
     <nav>
-      <label>
-        <input type="checkbox">
-        <span class="menu"><span class="hamburger"></span></span>
-        <ul id="menuLinks">
-          <li><a href="/publications/" {{ if (eq .Section "publications" ) }}class="active" {{ end }}>Publications</a>
-          </li>
-          <li><a href="/research/" {{ if (eq .Section "research" ) }}class="active" {{ end }}>Research</a></li>
-          <li><a href="/capabilities/" {{ if (eq .Section "capabilities" ) }}class="active" {{ end }}>Capabilities</a>
-          </li>
-          <li><a href="/guides/" {{ if (eq .Section "guides" ) }}class="active" {{ end }}>Guides</a></li>
-          <li><a href="/quickcheck/" {{ if (eq .Section "quickcheck" ) }}class="active" {{ end }}>Quick Check</a>
-          </li>
-          <li id="searchLinkDesktop"><a class="google-material-icons" id="searchIcon"
-              aria-label="Search dora.dev">search</a></li>
-          <li id="searchLinkMobile"><a href="/search/" {{ if (eq .Section "search" ) }}class="active" {{ end
-              }}>Search</a>
-          </li>
-          <li><a href="https://dora.community/" target="_blank">Community&nbsp;&nbsp;<span
-                class="google-material-icons open_in_new">open_in_new</span></a></li>
-        </ul>
-        <div id="searchInputPopover" popover>
-          <div id="searchInputPopoverFields">
-            {{- partial "search_input" -}}
-          </div>
-        </div>
-        <div class="page-overlay"></div>
+      <ul class="menuLinksDesktop">
+        <li><a href="/publications/" {{ if (eq .Section "publications" ) }}class="active" {{ end }}>Publications</a>
+        </li>
+        <li><a href="/research/" {{ if (eq .Section "research" ) }}class="active" {{ end }}>Research</a></li>
+        <li><a href="/capabilities/" {{ if (eq .Section "capabilities" ) }}class="active" {{ end }}>Capabilities</a>
+        </li>
+        <li><a href="/guides/" {{ if (eq .Section "guides" ) }}class="active" {{ end }}>Guides</a></li>
+        <li><a href="/quickcheck/" {{ if (eq .Section "quickcheck" ) }}class="active" {{ end }}>Quick Check</a>
+        </li>
+        <li id="searchLinkDesktop"><a class="google-material-icons" id="searchIcon"
+            aria-label="Search dora.dev">search</a></li>
+        </li>
+        <li><a href="https://dora.community/" target="_blank">Community&nbsp;&nbsp;<span
+              class="google-material-icons open_in_new">open_in_new</span></a></li>
+      </ul>
+      <label id="hamburgerContainer">
+        <input type="checkbox" id="mobileMenuController" onchange="console.log(this.checked)" />
+        <span class="google-material-icons" aria-label="menu" id="hamburgerIcon">
+          <span class="menu">menu</span>
+          <span class="close">close</span>
+        </span>
       </label>
     </nav>
-    <script>
-      document.querySelector('#searchIcon').addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelector('#searchInputPopover').showPopover();
-        document.querySelector('#searchInputPopover .searchQuery').focus();
-      })
-    </script>
   </div>
 </header>
+<div class="menuLinksMobile">
+  <ul>
+    <li><a href="/publications/" {{ if (eq .Section "publications" ) }}class="active" {{ end }}>Publications</a>
+    </li>
+    <li><a href="/research/" {{ if (eq .Section "research" ) }}class="active" {{ end }}>Research</a></li>
+    <li><a href="/capabilities/" {{ if (eq .Section "capabilities" ) }}class="active" {{ end }}>Capabilities</a>
+    </li>
+    <li><a href="/guides/" {{ if (eq .Section "guides" ) }}class="active" {{ end }}>Guides</a></li>
+    <li><a href="/quickcheck/" {{ if (eq .Section "quickcheck" ) }}class="active" {{ end }}>Quick Check</a>
+    </li>
+    <li id="searchLinkMobile"><a href="/search/" {{ if (eq .Section "search" ) }}class="active" {{ end }}>Search</a>
+    </li>
+    <li><a href="https://dora.community/" target="_blank">Community&nbsp;&nbsp;<span
+          class="google-material-icons open_in_new">open_in_new</span></a></li>
+  </ul>
+</div>
+
+<div id="searchInputPopover" popover>
+  <div id="searchInputPopoverFields">
+    {{- partial "search_input" -}}
+  </div>
+</div>
+<div class="page-overlay"></div>
+
+<script>
+  document.querySelector('#searchIcon').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('#searchInputPopover').showPopover();
+    document.querySelector('#searchInputPopover .searchQuery').focus();
+  })
+</script>
+
+
 {{ if not .Params.hideSiteBanner }}
-  {{- partial "site_banner" . -}}
+{{- partial "site_banner" . -}}
 {{ end }}

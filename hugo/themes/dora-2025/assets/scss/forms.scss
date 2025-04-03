@@ -68,17 +68,17 @@ input[type="submit"],
   }
 }
 
-button.secondary,
-.button.secondary {
-  background-color: $color-text-knockout;
-  color: $color-text-highlight;
-  border: 1px solid $border-light;
+// button.secondary,
+// .button.secondary {
+//   background-color: $color-text-knockout;
+//   color: $color-text-highlight;
+//   border: 1px solid $border-light;
 
-  &:hover {
-    color: $color-text-highlight;
-    background-color: $background-soft;
-  }
-}
+//   &:hover {
+//     color: $color-text-highlight;
+//     background-color: $background-soft;
+//   }
+// }
 
 ::placeholder {
   font-weight: 200;
