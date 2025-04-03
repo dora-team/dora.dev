@@ -123,20 +123,21 @@
         }
       }
     }
-  }
-  &.image-align-right {
-    flex-direction: row;
-    .image {
-      text-align: right;
-    }
-  }
-  &.image-align-left {
-    flex-direction: row-reverse;
-    .image {
-      text-align: left;
-      div.hero-link {
+
+    &.image-align-right {
+      flex-direction: row;
+      .image {
         text-align: right;
-        margin-right: 24px;
+      }
+    }
+    &.image-align-left {
+      flex-direction: row-reverse;
+      .image {
+        text-align: left;
+        div.hero-link {
+          text-align: right;
+          margin-right: 24px;
+        }
       }
     }
   }
