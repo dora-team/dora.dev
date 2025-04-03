@@ -46,6 +46,11 @@ input[type="submit"],
   cursor: pointer;
   text-decoration: none;
 
+  @include media-small {
+    font-size: 18px;
+    padding: 10px 16px;
+  }
+
   &:disabled {
     border-color: var(--grey-50);
     color: var(--grey-50);
