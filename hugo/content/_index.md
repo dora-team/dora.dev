@@ -37,8 +37,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
   Based on extensive data and developer interviews, the report moves beyond the hype to offer a nuanced perspective on AI’s impact on individuals, teams, and organizations.
   {{< /homepage/feature >}}
 
-<!-- DO NOT DELETE the following line; this container is necessary for snipes to render correctly -->
-<div class="homepage-snipes-wrapper"><div class="homepage-snipes-container"><h1>Resources</h1><div class="homepage-snipes">
+{{< homepage/snipe-wrapper mode="start" >}}
 
   {{< homepage/snipe
     img_src="/img/homepage/snipes/quickcheck.png"
@@ -76,8 +75,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
     DORA Core represents the most well-established findings across the history and breadth our research program. Use it to guide transformation efforts in your organization.
     {{< /homepage/snipe >}}
 
-<!-- DO NOT DELETE the following line; this container is necessary for snipes to render correctly -->
-</div></div></div>
+{{< homepage/snipe-wrapper mode="end" >}}
 
 <!-- END content for 2025 homepage (does not appear when dora theme is used) -->
 

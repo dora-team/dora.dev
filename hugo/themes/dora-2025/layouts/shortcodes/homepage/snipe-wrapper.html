@@ -1,0 +1,7 @@
+<!--- this shortcode creates elements to contain the snipes at the bottom of the homepage (which are specified via the "snipe" shortcode) -->
+
+{{- if eq .Params.mode "start" -}}
+<div class="homepage-snipes-wrapper"><div class="homepage-snipes-container"><h1>Resources</h1><div class="homepage-snipes">
+{{- else -}}
+</div></div></div>
+{{- end -}}
