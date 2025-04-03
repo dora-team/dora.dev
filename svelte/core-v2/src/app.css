@@ -1,27 +1,5 @@
 @import url("./assets/_variables.css");
 
-:root {
-    font-family: "Google Sans", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-
-    color: var(--color-text);
-    background-color: var(--color-background);
-
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-
-    box-sizing:border-box;
-    letter-spacing: normal;
-}
-
-body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-width: 320px;
-}
-
 #app {
     max-width: 1280px;
     margin: 0 auto;
