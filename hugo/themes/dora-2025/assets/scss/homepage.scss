@@ -123,14 +123,14 @@
         }
       }
     }
-  }
-  &.image-align-right {
-    flex-direction: row;
-    .image {
-      text-align: right;
+
+    &.image-align-right {
+      flex-direction: row;
+      .image {
+        text-align: right;
+      }
     }
   }
-
   &.image-align-left {
     flex-direction: row-reverse;
     .image {
