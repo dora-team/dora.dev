@@ -86,7 +86,7 @@ header {
   z-index: 999;
   box-shadow: 0 0 6px color-mix(in srgb, var(--dora-primary-dark), transparent 70%);
 
-  @include media-small {
+  @include media-medium {
     position: relative;
   }
 

@@ -1,6 +1,6 @@
 baseURL = 'https://dora.dev/'
 languageCode = 'en-us'
-theme = 'dora'
+theme = 'dora-2025'
 rssLimit = 10
 ignoreFiles = "README.md"
 

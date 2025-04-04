@@ -8,7 +8,7 @@ draft: false
 aliases: 
     /core/
     /core-v2/
-# bannerHighlightImage: banner-research.png
+bannerHighlightImage: banner-research.png
 bannerBackgroundColor: yellow  # choose one of "yellow", "blue", "red", "purple"
 ---
 
