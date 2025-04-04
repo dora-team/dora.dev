@@ -157,7 +157,7 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 16px;
-    background-color: var(--dora-primary-light);
+    background-color: color-mix(in srgb, var(--dora-primary-light), transparent 50%);
 
     aside {
       padding: 1rem;
