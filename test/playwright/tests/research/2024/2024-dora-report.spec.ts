@@ -8,7 +8,8 @@ const languageToUrlMap = {
   'Français': 'https://cloud.google.com/devops/state-of-devops/?hl=fr&region=FR',
   'Italiano': 'https://cloud.google.com/devops/state-of-devops/?hl=it&region=IT',
   'Português - Brasil': 'https://cloud.google.com/devops/state-of-devops/?hl=pt-br&region=BR',
-  '中文 – 简体': 'https://cloud.google.com/devops/state-of-devops/?hl=zh-tw&region=TW' ,
+  '中文 – 简体': 'https://cloud.google.com/devops/state-of-devops/?hl=zh-cn&region=CN' ,
+  '繁體中文': 'https://cloud.google.com/devops/state-of-devops/?hl=zh-tw&region=TW',
   '日本語': 'https://cloud.google.com/devops/state-of-devops/?hl=ja&region=JP',
   '한국어': 'https://cloud.google.com/devops/state-of-devops/?hl=ko&region=KR'
 };
