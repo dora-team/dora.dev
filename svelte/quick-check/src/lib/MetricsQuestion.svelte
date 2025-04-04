@@ -2,7 +2,6 @@
   //@ts-nocheck
   import { createEventDispatcher } from "svelte";
   import { fade } from "svelte/transition";
-  import Markdown from "@magidoc/plugin-svelte-marked";
   export let metrics;
   export let metric_name = "METRIC",
     metric_position = 1,
@@ -14,22 +13,22 @@
     leadtime: {
       friendly_name: "Lead time",
       description:
-        "For the primary application or service you work on, what is your **lead time for changes** (that is, how long does it take to go from code committed to code successfully running in production)?",
+        "For the primary application or service you work on, what is your <b>lead time for changes</b> (that is, how long does it take to go from code committed to code successfully running in production)?",
     },
     deployfreq: {
       friendly_name: "Deploy frequency",
       description:
-        "For the primary application or service you work on, **how often does your organization deploy code** to production or release it to end users?",
+        "For the primary application or service you work on, <b>how often does your organization deploy code</b> to production or release it to end users?",
     },
     changefailure: {
       friendly_name: "Change fail percentage",
       description:
-        "For the primary application or service you work on, **what percentage of changes to production or released to users result in degraded service** (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward or patch)?",
+        "For the primary application or service you work on, <b>what percentage of changes to production or released to users result in degraded service</b> (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward or patch)?",
     },
     failurerecovery: {
       friendly_name: "Failed deployment recovery time",
       description:
-        "For the primary application or service you work on, **how long does it generally take to restore service** after a change to production or release to users results in degraded service (for example, lead to service impairment or service outage) and subsequently requires remediation (for example, require a hotfix, rollback, fix forward, or patch)?",
+        "For the primary application or service you work on, <b>how long does it generally take to restore service</b> after a change to production or release to users results in degraded service (for example, lead to service impairment or service outage) and subsequently requires remediation (for example, require a hotfix, rollback, fix forward, or patch)?",
     },
   };
 
@@ -59,9 +58,7 @@
     </aside>
     <fieldset>
       <legend>
-        <p class="description">
-          <Markdown source={metric_question_text} />
-        </p>
+        <div class="description">{@html metric_question_text}</div>
       </legend>
       <div class="inputs">
         {#if metric_name === "changefailure"}
@@ -159,26 +156,30 @@
   section.question {
     display: flex;
     flex-direction: row;
-    padding-bottom: 24px;
     margin-bottom: 16px;
+    background-color: var(--dora-primary-light);
 
     aside {
       padding: 1rem;
-      margin-right:2rem;
+      margin-right: 1rem;
       width: 35%;
-      max-width:320px;
+      max-width: 320px;
 
       h5 {
-        color:var(--dora-primary-dark);
+        color: var(--dora-primary-dark);
       }
     }
 
-    p.description {
+    .description {
       padding-top: 1.5rem;
+      font-size: calc(clamp(16px, 1.25vw, 20px));
+      line-height:1.4;
+      font-weight: 400;
     }
 
     fieldset {
       width: 65%;
+      padding: 12px;
     }
 
     span.friendly_name {
@@ -190,7 +191,7 @@
     }
 
     legend {
-      margin-bottom: 1.5em;
+      margin-bottom: .5em;
     }
 
     label {
@@ -235,9 +236,11 @@
       position: absolute;
       top: 0;
       left: 40vw;
+      background-color: transparent;
 
       aside {
         width: 35vw;
+        background-color: transparent !important;
       }
 
       p.description {
