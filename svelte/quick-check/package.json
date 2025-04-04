@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@magidoc/plugin-svelte-marked": "^4.1.4",
     "@sveltejs/vite-plugin-svelte": "5.x.x",
     "sass": "^1.69.7",
     "svelte": "5.0.x",
