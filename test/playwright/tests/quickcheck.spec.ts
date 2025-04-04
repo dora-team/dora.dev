@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('quick check test', async ({ page }) => {
     await page.goto('/');
-    await page.getByRole('link', { name: 'Quick Check', exact: true }).click();
+    await page.getByRole('link', { name: 'Quick Check', exact: true }).first().click();
     await page.click('input[name="leadtime"][value="6"]')
     await page.click('input[name="deployfreq"][value="6"]')
     await page.getByRole('slider').fill('0');
