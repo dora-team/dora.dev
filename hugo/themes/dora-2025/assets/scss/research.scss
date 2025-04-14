@@ -79,6 +79,11 @@ h3 {
     }
 }
 
+// Wider page allows room for Core diagram
+main:has(#app) {
+  max-width:1200px;
+}
+
 tab_links {
     display:block;
     width:100%;
