@@ -31,9 +31,8 @@ into the
 [main version of the code base](/capabilities/trunk-based-development)
 (known as
 [*trunk*](/capabilities/trunk-based-development),
-*main*, or *mainline*) on a regular basis. DevOps Research and Assessment
-(DORA)
-[research](/research/2015/2015-state-of-devops-report.pdf#page=20)
+*main*, or *mainline*) on a regular basis. The [2015 State of DevOps
+Report](/research/2015/2015-state-of-devops-report.pdf#page=20)
 (PDF) shows that teams perform better when developers merge their work into
 trunk at least daily. A set of automated tests is run both before and after the
 merge in order to validate that the changes don't introduce regression bugs. If
