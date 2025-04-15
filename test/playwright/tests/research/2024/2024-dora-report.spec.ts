@@ -34,7 +34,7 @@ test('2024 DORA report page has the correct number of language options.', async 
 
 for (const language in languageToUrlMap) {
   const url = languageToUrlMap[language];
-  test(`2024 DORA report is available in ${language}`, async ({ page }) => {
+  test(`2024 DORA report should link to the correct ${language} URL`, async ({ page }) => {
     const url = languageToUrlMap[language];
     const languageLink = page.getByRole('link', { name: language, exact: true });
     await expect(languageLink).toHaveAttribute('href', url);
