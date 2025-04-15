@@ -16,18 +16,26 @@ type: "research_archives"
 <a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><img src="2024-dora-accelerate-state-of-devops-report.png" alt="Accelerate State of DevOps Report 2024" style="max-width:24em;"></a>
 
 </item>
-
 <item>
-<p>
-DORA has been investigating the capabilities, practices, and measures of high-performing technology-driven teams and organizations for over a decade. This is our tenth DORA report. We have heard from more than 39,000 professionals working at organizations of every size and across many different industries globally.
-</p>
-<p>
-This report highlights the significant impact of AI on software development, explores platform engineering’s promises and challenges, and emphasizes user-centricity and stable priorities for organizational success.
-</p>
-<p>
-<a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><button class="secondary">Download the report</button></a>
-</p>
+  <h4>The 2024 DORA Report is available in the following languages:</h4>
+  <ul>
+    <li style="font-size:1.25rem;"><a href="https://cloud.google.com/devops/state-of-devops/?hl=en&region=US" target="_blank">English</a></li>
+    <li style="font-size:1.25rem;"><a href="https://cloud.google.com/devops/state-of-devops/?hl=es&region=ES" target="_blank">Español</a></li>
+    <li style="font-size:1.25rem;"><a href="https://cloud.google.com/devops/state-of-devops/?hl=es-419&region=MX" target="_blank">Español - América Latina</a></li>
+    <li style="font-size:1.25rem;"><a href="https://cloud.google.com/devops/state-of-devops/?hl=fr&region=FR" target="_blank">Français</a></li>
+    <li style="font-size:1.25rem;"><a href="https://cloud.google.com/devops/state-of-devops/?hl=it&region=IT" target="_blank">Italiano</a></li>
+    <li style="font-size:1.25rem;"><a href="https://cloud.google.com/devops/state-of-devops/?hl=pt-br&region=BR" target="_blank">Português - Brasil</a></li>
+    <li style="font-size:1.25rem;"><a href="https://cloud.google.com/devops/state-of-devops/?hl=zh-cn&region=CN" target="_blank">中文 – 简体</a></li>
+    <li style="font-size:1.25rem;"><a href="https://cloud.google.com/devops/state-of-devops/?hl=zh-tw&region=TW" target="_blank">繁體中文</a></li>
+    <li style="font-size:1.25rem;"><a href="https://cloud.google.com/devops/state-of-devops/?hl=ja&region=JP" target="_blank">日本語</a></li>
+    <li style="font-size:1.25rem;"><a href="https://cloud.google.com/devops/state-of-devops/?hl=ko&region=KR" target="_blank">한국어</a></li>
+  </ul>
+</item>
 </grid>
+
+DORA has been investigating the capabilities, practices, and measures of high-performing technology-driven teams and organizations for over a decade. This is our tenth DORA report. We have heard from more than 39,000 professionals working at organizations of every size and across many different industries globally.
+
+This report highlights the significant impact of AI on software development, explores platform engineering’s promises and challenges, and emphasizes user-centricity and stable priorities for organizational success.
 
 ### Gold Sponsors
 
