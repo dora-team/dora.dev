@@ -5,7 +5,8 @@ import { test, expect } from '@playwright/test';
 export const pageHeaders = [
   'Branding Guidelines',
   'Graphics',
-  '2024 DORA Report Graphics'
+  'Impact of Generative AI on Software Development report graphics',
+  '2024 DORA Report graphics'
 ];
 
 test.beforeEach(async ({ page }) => {
