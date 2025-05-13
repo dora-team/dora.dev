@@ -291,7 +291,7 @@
                     "2024": "core_lct"
                 }
             ],
-            "description": "Think about how your team and work are structured. For the you work on, please rate how strongly you agree or disagree with the following statements.",
+            "description": "Think about how your team and work are structured. For the primary application or service you work on, please rate how strongly you agree or disagree with the following statements.",
             "question_groups": [
                 {
                     "group_responses": "Strongly disagree,Mostly Disagree,Somewhat disagree,Neither agree nor disagree,Somewhat agree,Mostly Agree,Strongly agree,I don't know or NA",
