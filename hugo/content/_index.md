@@ -7,7 +7,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 ---
 
 <!-- {{/* BEGIN content for 2025 homepage (dora-2025 theme).  This content does not appear when the default 'dora' theme is used. */}} -->
-{{< homepage/hero 
+{{< homepage/hero
   href="https://cloud.google.com/devops/state-of-devops"
   text="Read our latest report"
   target="_blank"
@@ -48,12 +48,12 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
     {{< /homepage/snipe >}}
 
   {{< homepage/snipe
-    img_src="/img/homepage/snipes/airesearch.png"
-    eyebrow="Research"
-    headline="The Impact of AI"
-    url="https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development"
+    img_src="/img/homepage/snipes/award.png"
+    eyebrow="Celebration"
+    headline="DORA Awards"
+    url="https://cloud.google.com/awards/devops/"
   >}}
-    DORA’s latest research into AI looks at adoption strategies, the impact of AI, fostering trust, and more.
+    Celebrate your team's remarkable success! Nominations for the Google Cloud DORA Awards are open now.
     {{< /homepage/snipe >}}
 
   {{< homepage/snipe
