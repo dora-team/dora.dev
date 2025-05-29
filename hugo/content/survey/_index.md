@@ -6,7 +6,7 @@ draft: false
 
 # The 2025 DORA Survey is coming soon
 
-The 2025 DORA Survey is coming soon. Please join the [DORA Community](https://dora.community) [Google Group](https://groups.google.com/g/dora-community/about) to be notified when the survey opens.
+The 2025 DORA Survey is coming soon. Please join the DORA Community [Google Group](https://groups.google.com/g/dora-community/about) to be notified when the survey opens.
 
 ### 2025 research program
 
@@ -18,4 +18,4 @@ We will continue to **prioritize the human aspects of technology**. Our research
 
 Our goal remains unchanged: to provide the community with **actionable, platform-agnostic, data-driven insights** that empower teams and organizations to continuously improve and thrive amidst technological transformation. We look forward to uncovering new findings and sharing them as we collectively navigate the future of software development.
 
-Join the [DORA Community](https://dora.comunity) [Google Group](https://groups.google.com/g/dora-community/about) to be notified when the survey opens.
+Join the DORA Community [Google Group](https://groups.google.com/g/dora-community/about) to be notified when the survey opens.
