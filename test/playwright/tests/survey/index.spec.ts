@@ -7,5 +7,5 @@ test('Verify the page title', async ({ page }) => {
 
 test('The 2025 survey is coming soon', async ({ page }) => {
   await page.goto('/survey/');
-  await expect(page.locator('h1')).toContainText('The 2025 DORA Survey is coming soon');
+  await expect(page.locator('h1')).toContainText('DORA survey is coming soon');
 });
