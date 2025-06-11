@@ -22,7 +22,7 @@ By becoming a sponsor of the 2025 DORA report, you have the unique opportunity t
 
 ### We offer various sponsorship levels to suit your needs and budget:
 
-#### Platinum (Limited Availability)
+<h4 class="sold-out">Platinum (Limited Availability)</h4>  {{< sold_out >}}
 
 * Prominent logo placement on the report cover.
 * Logo and description on dora.dev website.
@@ -31,7 +31,7 @@ By becoming a sponsor of the 2025 DORA report, you have the unique opportunity t
 * Report author participation in a sponsored webinar, with opportunity for extended discussion and Q&A.
 * All benefits included in Gold sponsorship.
 
-#### Gold
+<h4 class="sold-out">Gold</h4>  {{< sold_out >}}
 
 * Logo placement on the report cover.
 * Logo and description on dora.dev website.
@@ -39,7 +39,7 @@ By becoming a sponsor of the 2025 DORA report, you have the unique opportunity t
 * Report author participation in a sponsored webinar, with opportunity for extended discussion and Q&A.
 * All benefits included in Silver sponsorship.
 
-#### Silver
+<h4 class="sold-out">Silver</h4>  {{< sold_out >}}
 
 * Logo in the report.
 * Logo on dora.dev website.
