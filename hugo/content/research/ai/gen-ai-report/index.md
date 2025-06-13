@@ -7,7 +7,6 @@ research_collection: "Artificial Intelligence"
 tab_order: "2"
 tab_title: "Gen AI Report"
 type: "research_archives"
-hideSiteBanner: true
 ---
 ## Impact of Generative AI in Software Development
 
