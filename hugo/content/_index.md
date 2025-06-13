@@ -39,6 +39,17 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 {{< homepage/snipe-wrapper mode="start" >}}
 
   {{< homepage/snipe
+    img_src="/img/homepage/snipes/survey.png"
+    eyebrow="Reflection"
+    headline="2025 DORA Survey"
+    url="/survey/"
+  >}}
+    Contribute to the latest research by taking the DORA Survey.<br /><br />
+
+    Use this a unique opportunity to pause and evaluate your team's ways of working.
+    {{< /homepage/snipe >}}
+
+  {{< homepage/snipe
     img_src="/img/homepage/snipes/quickcheck.png"
     eyebrow="Diagnostic"
     headline="DORA Quick Check"
@@ -56,14 +67,14 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
     Celebrate your team's remarkable success! Nominations for the Google Cloud DORA Awards are open now.
     {{< /homepage/snipe >}}
 
-  {{< homepage/snipe
+  <!-- {{< homepage/snipe
     img_src="/img/homepage/snipes/genai.png"
     eyebrow="Guide"
     headline="Generative AI"
     url="/research/ai/"
   >}}
     Leverage DORA’s research findings to apply a holistic, iterative strategy as you experiment with and adopt emerging AI technologies. Learn how a focus on users can help ensure positive outcomes.
-    {{< /homepage/snipe >}}
+    {{< /homepage/snipe >}} -->
 
   {{< homepage/snipe
     img_src="/img/homepage/snipes/core.png"
