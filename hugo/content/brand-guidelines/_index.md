@@ -21,6 +21,8 @@ Please refer to our [brand guidelines](https://storage.googleapis.com/dora-brand
 
 * [DORA Community Logos](https://storage.googleapis.com/dora-brand-2024/DORA-Community-Logo.zip) <small>(ZIP, 4.9MB)</small>
 
+* [DORA Survey Logos](https://storage.googleapis.com/dora-sponsor-resources/DORA-survey-graphics-2025.zip) <small>(ZIP, 249KB)</small>
+
 ## Impact of Generative AI on Software Development report graphics
 
 * [Impact of Generative AI on Software Development report graphics](https://storage.googleapis.com/dora-report-gen-ai-2025/impact-of-generative-ai-in-software-development-report-cover-art.zip) <small>(ZIP, 398KB)</small>
