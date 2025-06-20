@@ -6,7 +6,6 @@ const languageToUrlMap = {
   'Español': 'https://cloud.google.com/devops/state-of-devops/?hl=es&region=ES',
   'Español - América Latina': 'https://cloud.google.com/devops/state-of-devops/?hl=es-419&region=MX',
   'Français': 'https://cloud.google.com/devops/state-of-devops/?hl=fr&region=FR',
-  'Italiano': 'https://cloud.google.com/devops/state-of-devops/?hl=it&region=IT',
   'Português - Brasil': 'https://cloud.google.com/devops/state-of-devops/?hl=pt-br&region=BR',
   '中文 – 简体': 'https://cloud.google.com/devops/state-of-devops/?hl=zh-cn&region=CN' ,
   '繁體中文': 'https://cloud.google.com/devops/state-of-devops/?hl=zh-tw&region=TW',
