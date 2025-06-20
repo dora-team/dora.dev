@@ -9,7 +9,6 @@ tab_title: "Overview"
 # type: "research_archives"
 type: "research_archives/preview"
 layout: single
-heroimage: "/research/2024/dora-report-ai-preview-hero.png"
 ---
 
 ## Impact of Gen AI in Software Development
