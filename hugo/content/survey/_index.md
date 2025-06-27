@@ -2,6 +2,7 @@
 title: "The 2025 DORA Survey"
 date: 2024-04-08T23:26:21Z
 draft: false
+layout: single
 hideSiteBanner: true
 ---
 
@@ -9,7 +10,7 @@ hideSiteBanner: true
 
 # The DORA survey is open now
 
-<a href="https://google.qualtrics.com/jfe/form/SV_40i28bp9qIMfNjw?source=doradotdev-survey" target="_blank"><button class="secondary">Take the 2025 DORA Survey</button></a>
+<a href="https://google.qualtrics.com/jfe/form/SV_40i28bp9qIMfNjw?source=doradotdev-survey" target="_blank" rel="noopener noreferrer"><button class="secondary">Take the 2025 DORA Survey</button></a>
 
 The DORA research program is dedicated to helping technology teams get better at getting better. That journey often starts with a moment of reflection.
 
@@ -27,5 +28,6 @@ This research is strongest when it includes diverse perspectives. Whether you're
 
 Thank you for helping us all get better at getting better.
 
-<a href="https://google.qualtrics.com/jfe/form/SV_40i28bp9qIMfNjw?source=doradotdev-survey" target="_blank"><button class="secondary">Take the 2025 DORA Survey</button></a>
+<a href="https://google.qualtrics.com/jfe/form/SV_40i28bp9qIMfNjw?source=doradotdev-survey" target="_blank" rel="noopener noreferrer"><button class="secondary">Take the 2025 DORA Survey</button></a>
 
+Consider holding a team discussion about the survey using our [discussion guide](discussion-guide).
