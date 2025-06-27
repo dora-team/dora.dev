@@ -24,7 +24,7 @@ By participating, you:
 * Shape the industry's understanding of what defines elite performance in 2025.
 * Help create the benchmark you and your peers will use to drive change.
 
-This research is strongest when it includes diverse perspectives. Whether you're a Software Engineer, Data Scientist, Product Manager, QA Developer, or anyone else who participates in the creation and delivery of software your voice is critical.
+This research is strongest when it includes diverse perspectives. Whether you're a Software Engineer, Data Scientist, Product Manager, Quality Engineer, or anyone else who participates in the creation and delivery of software, your voice is critical.
 
 Thank you for helping us all get better at getting better.
 
