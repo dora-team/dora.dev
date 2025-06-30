@@ -45,7 +45,7 @@ Remind everyone that the goal of this discussion isn't to share their specific a
 
 ## Suggested discussion questions (40 minutes)
 
-Use the questions below as potential discussion questions with the group. You may not have time to get through all of them. Give the group time to share lots of perspectives and insights.
+Use the questions below as potential discussion questions with the group. You may not have time to get through all of them. Give the group time to share lots of perspectives and insights. Alternatively, use [conversations.dora.dev/survey](https://conversations.dora.dev/survey) as a guide through the discussion questions.
 
 Pick a selection of the eight questions listed below that you would like to discuss as a group. We strongly recommend that you use at least these two:
 
