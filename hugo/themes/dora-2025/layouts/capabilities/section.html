@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-    {{- partial "partials/link_styles" "scss/capabilities.scss" -}}
+    {{- partial "link_styles" "scss/capabilities.scss" -}}
 
     {{ range (slice "climate for learning" "fast flow" "fast feedback") }}
         {{ if eq . "climate for learning" }}

@@ -7,7 +7,7 @@
 
     Example:
     Given the following Layout or top level partial:
-            partial "partials/link_styles" "scss/homepage.scss"
+            partial "link_styles" "scss/homepage.scss"
 
         This, this partial will receive '.' as `scss/main.scss`.  Then, this partial
             will apply the href to the Hugo transpiled version of the file
@@ -19,7 +19,7 @@
         To support options, you would need to refactor the Layouts to pass in a
         Dictionary object.
 
-        e.g.,  partial "partials/link_styles" (dict "scss" "scss/main.scss")
+        e.g.,  partial "link_styles" (dict "scss" "scss/main.scss")
 
         then in this file:
             1) add a default for options:  $options := .options | default ""
