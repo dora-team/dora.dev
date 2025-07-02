@@ -1,6 +1,6 @@
 ## Hugo
 The following development with Hugo will be sufficient for most of the DORA.dev website development efforts.
-To build and preview the site locally, you'll need [hugo](https://gohugo.io/) (recommended version: [v0.133.1](https://github.com/gohugoio/hugo/releases/tag/v0.133.1)).
+To build and preview the site locally, you'll need [hugo](https://gohugo.io/) (recommended version: [v0.147.9](https://github.com/gohugoio/hugo/releases/tag/v0.147.9)).
 
 - The recommended command to start the local hugo server is `hugo serve -D -s hugo --disableFastRender --logLevel debug --watch`.
   - This will render and live-reload all pages, including drafts. _To suppress rendering of drafts, omit the `-D` flag._
