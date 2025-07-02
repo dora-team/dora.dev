@@ -8,7 +8,7 @@ description = ""
 homepage = ""
 tags = []
 features = []
-min_version = "v0.114.1+extended"
+min_version = "v0.147.9+extended"
 
 [author]
   name = "DevOps Research + Assessment"
