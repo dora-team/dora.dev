@@ -93,6 +93,8 @@ tab_links {
         display: inline-block;
         padding: 4px 18px;
         cursor:pointer;
+        margin-bottom: -1px; // Sit on the main border line
+        border: 1px solid $border-light;
 
         font-family: $font-roboto;
         font-weight: 400;
@@ -100,8 +102,9 @@ tab_links {
         text-decoration: none;
         color: $color-text-light;
         text-transform: uppercase;
-        border-bottom: 2px solid white;
-        transition: border-bottom 400ms ease-out;
+        transition: border-color 400ms ease-out;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
 
         &:hover {
             color: $color-text;
@@ -109,7 +112,10 @@ tab_links {
 
         &.selected {
             color: $color-text;
-            border-bottom: 2px solid $color-link;
+            background: white;
+            border-color: $color-link;
+            position: relative;
+            z-index: 1;
         }
     }
 }
