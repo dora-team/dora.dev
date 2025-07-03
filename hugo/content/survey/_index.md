@@ -14,7 +14,7 @@ hideSiteBanner: true
 
 The DORA research program is dedicated to helping technology teams get better at getting better. That journey often starts with a moment of reflection.
 
-We invite you to take 10 minutes for that reflection with the 2025 DORA Survey. Participants often tell us the survey itself is a valuable self-assessment, sparking immediate ideas for how their team can improve.
+We invite you to take 15 minutes for that reflection with the 2025 DORA Survey. Participants often tell us the survey itself is a valuable self-assessment, sparking immediate ideas for how their team can improve.
 
 Your anonymous contribution will also power the industry's most trusted research on software delivery performance. This year, we're exploring crucial topics like AI integration, platform engineering, and developer well-being.
 

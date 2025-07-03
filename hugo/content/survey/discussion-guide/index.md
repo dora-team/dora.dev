@@ -17,9 +17,9 @@ insights from the survey into immediate action.
 
 Schedule a one-hour meeting with your extended team or community of practice. Invite everyone who plays a role in your organization's creation and delivery of software, including, but certainly not limited to, software engineers, data scientists, product managers, quality engineers, site reliability engineers, and devops engineers.
 
-## Prework
+## Prework (15 minutes)
 
-All meeting attendees should set aside 15 minutes to complete the 2025 DORA Survey. Participants often tell us the survey itself is a valuable self-assessment, sparking immediate ideas for how their team can improve.
+All meeting attendees should complete the 2025 DORA Survey prior to joining the discussion. Participants often tell us the survey itself is a valuable self-assessment, sparking immediate ideas for how their team can improve.
 
 <a href="https://google.qualtrics.com/jfe/form/SV_40i28bp9qIMfNjw?source=doradotdev-survey-discussion-guide" target="_blank" rel="noopener noreferrer"><button class="secondary">Take the 2025 DORA Survey</button></a>
 
