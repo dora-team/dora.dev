@@ -21,7 +21,7 @@ Your anonymous contribution will also power the industry's most trusted research
 By participating, you:
 
 * Discover potential improvements for your team just by taking the survey.
-* Shape the industry's understanding of what defines elite performance in 2025.
+* Shape the industry’s understanding of what defines high-performing teams in 2025.
 * Help create the benchmark you and your peers will use to drive change.
 
 This research is strongest when it includes diverse perspectives. Whether you're a Software Engineer, Data Scientist, Product Manager, Quality Engineer, or anyone else who participates in the creation and delivery of software, your voice is critical.

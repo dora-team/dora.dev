@@ -26,7 +26,7 @@ All meeting attendees should complete the 2025 DORA Survey prior to joining the 
 By participating, team members will:
 
 * Discover potential improvements for your team just by taking the survey.
-* Shape the industry’s understanding of what defines elite performance in 2025\.
+* Shape the industry’s understanding of what defines high-performing teams in 2025.
 * Help create the benchmark you and your peers will use to drive change.
 
 It is best if this prework is completed immediately prior to the team meeting where you will discuss insights from the survey.
@@ -91,7 +91,7 @@ Depending on the size of your group, you may want to break out into smaller grou
 
 ### The view from 30,000 feet
 
-* **Question:** Stepping back, what did you learn about what 'elite performance' means in 2025 simply by the *types* of questions the DORA research program is asking?
+* **Question:** Stepping back, what did you learn about high-performing teams in 2025 simply by the *types* of questions the DORA research program is asking?
 * **Purpose:** This is a great concluding question. It encourages meta-reflection on the industry benchmarks themselves, helping the team understand the "why" behind these concepts and solidifying the value of the exercise.
 
 ## Next steps (10 minutes)
