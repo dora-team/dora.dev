@@ -26,7 +26,7 @@ test('2024 research overview has the correct header.', async ({ page }) => {
 });
 
 test('2024 DORA report page has the correct number of language options.', async ({ page }) => {
-  const languageOptions = await page.locator('item ul li').count();
+  const languageOptions = await page.locator('item a.button').count();
   const expectedLanguageCount = Object.keys(languageToUrlMap).length;
   await expect(languageOptions).toBe(expectedLanguageCount);
 });

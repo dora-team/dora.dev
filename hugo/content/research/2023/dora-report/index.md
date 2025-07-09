@@ -18,19 +18,17 @@ type: "research_archives"
 </item>
 <item>
 
-#### The 2023 DORA Report is available in the following languages:
+<p>The 2023 DORA Report is available in the following languages:</p>
 
-<ul>
-    <li style="font-size:1.25rem;"><a href="2023-dora-accelerate-state-of-devops-report.pdf" target="_blank">English</a></li>
-    <li style="font-size:1.25rem;"><a href="2023-dora-accelerate-state-of-devops-report_es.pdf" target="_blank">Español</a></li>
-    <li style="font-size:1.25rem;"><a href="2023-dora-accelerate-state-of-devops-report_es-419.pdf" target="_blank">Español - América Latina</a></li>
-    <li style="font-size:1.25rem;"><a href="2023-dora-accelerate-state-of-devops-report_fr.pdf" target="_blank">Français</a></li>
-    <li style="font-size:1.25rem;"><a href="2023-dora-accelerate-state-of-devops-report_it.pdf" target="_blank">Italiano</a></li>
-    <li style="font-size:1.25rem;"><a href="2023-dora-accelerate-state-of-devops-report_pt-BR.pdf" target="_blank">Português - Brasil</a></li>
-    <li style="font-size:1.25rem;"><a href="2023-dora-accelerate-state-of-devops-report_zh-TW.pdf" target="_blank">中文 – 简体</a></li>
-    <li style="font-size:1.25rem;"><a href="2023-dora-accelerate-state-of-devops-report_ja.pdf" target="_blank">日本語</a></li>
-    <li style="font-size:1.25rem;"><a href="2023-dora-accelerate-state-of-devops-report_ko.pdf" target="_blank">한국어</a></li>
-</ul>
+<a href="2023-dora-accelerate-state-of-devops-report.pdf" target="_blank" class="button secondary">English</a>
+<a href="2023-dora-accelerate-state-of-devops-report_es.pdf" target="_blank" class="button secondary">Español</a>
+<a href="2023-dora-accelerate-state-of-devops-report_es-419.pdf" target="_blank" class="button secondary">Español - América Latina</a>
+<a href="2023-dora-accelerate-state-of-devops-report_fr.pdf" target="_blank" class="button secondary">Français</a>
+<a href="2023-dora-accelerate-state-of-devops-report_it.pdf" target="_blank" class="button secondary">Italiano</a>
+<a href="2023-dora-accelerate-state-of-devops-report_pt-BR.pdf" target="_blank" class="button secondary">Português - Brasil</a>
+<a href="2023-dora-accelerate-state-of-devops-report_zh-TW.pdf" target="_blank" class="button secondary">中文 – 简体</a>
+<a href="2023-dora-accelerate-state-of-devops-report_ja.pdf" target="_blank" class="button secondary">日本語</a>
+<a href="2023-dora-accelerate-state-of-devops-report_ko.pdf" target="_blank" class="button secondary">한국어</a>
 
 </item>
 </grid>
