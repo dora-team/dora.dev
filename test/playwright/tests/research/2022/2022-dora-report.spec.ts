@@ -39,8 +39,9 @@ test('2022 DORA report page has the correct report image', async ({ page }) => {
 });
 
 test('2022 DORA report page has the correct language.', async ({ page }) => {
-  const languageOptions = await page.locator('item ul li').count();
-  await expect(languageOptions).toBe(10);
+  const languageOptions = await page.locator('item a.button').count();
+  const expectedLanguageCount = Object.keys(languageToUrlMap).length;
+  await expect(languageOptions).toBe(expectedLanguageCount);
 
   for (const language in languageToUrlMap) {
     const url = languageToUrlMap[language];
