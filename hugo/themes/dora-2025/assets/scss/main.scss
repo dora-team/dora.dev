@@ -29,7 +29,7 @@
 }
 
 html {
-  scroll-padding-top: 64px;
+  scroll-padding-top: var(--header-height);
   scrollbar-gutter: stable;
 }
 
@@ -107,7 +107,7 @@ a {
 .navContainer {
   display: flex;
   align-items: center;
-  height: 64px;
+  height: var(--header-height);
   z-index: 100;
 
   .dora-logo {
