@@ -51,3 +51,24 @@ test('2024 DORA report page has the correct report image', async ({ page }) => {
   await expect(reportImage).toBeVisible();
   await expect(reportImage).toHaveAttribute('alt', 'Accelerate State of DevOps Report 2024');
 });
+
+test('2024 DORA report page has the correct sponsors.', async ({ page }) => {
+  const sponsors = [
+    { name: 'Catchpoint', src: 'sponsors/catchpoint.png', href: 'https://www.catchpoint.com/' },
+    { name: 'chronosphere', src: 'sponsors/chronosphere.png', href: 'https://chronosphere.io/' },
+    { name: 'Datadog', src: 'sponsors/datadog.png', href: 'https://www.datadoghq.com/' },
+    { name: 'Deloitte', src: 'sponsors/deloitte.png', href: 'https://www2.deloitte.com/' },
+    { name: 'Excella', src: 'sponsors/excella.png', href: 'https://www.excella.com/' },
+    { name: 'Gearset', src: 'sponsors/gearset.png', href: 'https://gearset.com/' },
+    { name: 'Liatrio', src: 'sponsors/liatrio.png', href: 'https://www.liatrio.com/' },
+    { name: 'Middleware', src: 'sponsors/middleware.png', href: 'https://www.middlewarehq.com/middleware-open-source?utm_source=dora_report' },
+    { name: 'Opsera', src: 'sponsors/opsera.png', href: 'https://www.opsera.io/' },
+  ];
+
+  for (const sponsor of sponsors) {
+    const sponsorLink = page.getByRole('link', { name: sponsor.name });
+    await expect(sponsorLink).toBeVisible();
+    await expect(sponsorLink).toHaveAttribute('href', sponsor.href);
+    await expect(sponsorLink.locator('img')).toHaveAttribute('src', sponsor.src);
+  }
+});

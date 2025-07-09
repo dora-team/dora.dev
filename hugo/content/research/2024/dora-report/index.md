@@ -75,7 +75,7 @@ The DORA report is published by Google Cloud with support from the following gol
 </item>
 
 <item style="display:flex; align-items:center;">
-<a href="https://www.opsera.io/" target="_blank"><img src="sponsors/opseara.png" style="max-width:8em; max-height:2.5em;" alt="Opsera"></a>
+<a href="https://www.opsera.io/" target="_blank"><img src="sponsors/opsera.png" style="max-width:8em; max-height:2.5em;" alt="Opsera"></a>
 </item>
 
 </grid>
