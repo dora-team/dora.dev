@@ -8,7 +8,18 @@ tab_title: "DORA Report"
 research_collection: "2018"
 ---
 ## Download the 2018 DORA Report
-[![Accelerate State of DevOps Report 2018](2018-dora-accelerate-state-of-devops-report.png)](2018-dora-accelerate-state-of-devops-report.pdf)
+<grid class="border_none" style="margin-top:1rem;">
+
+<a href="2018-dora-accelerate-state-of-devops-report.pdf" target="_blank"><img src="2018-dora-accelerate-state-of-devops-report.png" alt="Accelerate State of DevOps Report 2018"  style="border: 1px solid #ccc"/></a>
+
+</item>
+
+<item>
+<p>
+<a href="2018-dora-accelerate-state-of-devops-report.pdf" target="_blank"><button class="secondary">Download the report</button></a>
+</p>
+</item>
+</grid>
 
 The 2018 Accelerate State of DevOps Report identifies capabilities and practices that drive high performance in software delivery and operational performance (SDO) across all industries.
 
@@ -24,4 +35,4 @@ The key findings of the report are:
 * Generative culture is essential: A culture characterized by cooperation, trust, voice, and a focus on learning leads to superior SDO performance and organizational outcomes.
 * Leadership and autonomy empower teams: Teams with greater autonomy, fueled by trust in their leaders, are more likely to achieve high performance and contribute to a stronger organizational culture.
 
-[Download the 2018 Accelerate:  State of DevOps Report](2018-dora-accelerate-state-of-devops-report.pdf)
+<a href="2018-dora-accelerate-state-of-devops-report.pdf" target="_blank"><button class="secondary">Download the 2018 Accelerate:  State of DevOps Report</button></a>

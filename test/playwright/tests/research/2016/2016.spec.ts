@@ -14,7 +14,7 @@ test('2016 Research page has the correct header.', async ({ page }) => {
 });
 
 test('2016 DORA report page has the correct report image', async ({ page }) => {
-  const reportImage = page.locator('img[src="/research/2016/2016-state-of-devops-report.png"]');
+  const reportImage = page.locator('img[src="2016-state-of-devops-report.png"]');
   await expect(reportImage).toBeVisible();
   await expect(reportImage).toHaveAttribute('alt', 'State of DevOps Report 2016');
 });
