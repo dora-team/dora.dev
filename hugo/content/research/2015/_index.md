@@ -7,7 +7,19 @@ type: research_archives
 layout: single
 ---
 
-[![State of DevOps Report 2015](/research/2015/2015-state-of-devops-report.png)](2015-state-of-devops-report.pdf)
+<grid class="border_none" style="margin-top:1rem;">
+<item>
+
+<a href="2015-state-of-devops-report.pdf" target="_blank"><img src="2015-state-of-devops-report.png" alt="State of DevOps Report 2015" style="border: 1px solid #ccc"/></a>
+
+</item>
+
+<item>
+<p>
+<a href="2015-state-of-devops-report.pdf" target="_blank"><button class="secondary">Download the report</button></a>
+</p>
+</item>
+</grid>
 
 The 2015 State of DevOps Report presents compelling evidence for the transformative power of DevOps in the IT industry. The report emphasizes that high-performing IT organizations consistently outperform their counterparts in terms of deployment frequency, lead time, failure rates, and recovery speed. These superior results are attributed to the adoption of practices, which streamline software delivery and enhance operational efficiency.
 
@@ -23,4 +35,4 @@ Key findings of the report include:
 * Deployment pain is a significant indicator of IT performance, with organizations experiencing painful deployments often exhibiting poorer IT performance, organizational performance, and culture.
 * Burnout can be effectively prevented through the implementation of practices that foster a supportive work environment, emphasize learning from failures, and promote a strong sense of purpose.
 
-[Download the 2015 State of DevOps Report](2015-state-of-devops-report.pdf)
+<a href="2015-state-of-devops-report.pdf" target="_blank"><button class="secondary">Download the 2015 State of DevOps Report</button></a>

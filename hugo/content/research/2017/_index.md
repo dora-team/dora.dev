@@ -7,7 +7,19 @@ type: research_archives
 layout: single
 ---
 
-[![State of DevOps Report 2017](/research/2017/2017-state-of-devops-report.png)](2017-state-of-devops-report.pdf)
+<grid class="border_none" style="margin-top:1rem;">
+<item>
+
+<a href="2017-state-of-devops-report.pdf" target="_blank"><img src="2017-state-of-devops-report.png" alt="State of DevOps Report 2017"  style="border: 1px solid #ccc"/></a>
+
+</item>
+
+<item>
+<p>
+<a href="2017-state-of-devops-report.pdf" target="_blank"><button class="secondary">Download the report</button></a>
+</p>
+</item>
+</grid>
 
 The 2017 State of DevOps Report highlights the critical role of transformational leadership in fostering a culture of high performance. Leaders who exhibit vision, inspirational communication, intellectual stimulation, supportive leadership, and personal recognition are more likely to cultivate successful teams. The research also underscores the importance of automation in achieving faster throughput and improved stability. High-performing teams automate significantly more of their configuration management, testing, deployments, and change approval processes, freeing up time for innovation.
 
@@ -22,5 +34,4 @@ The key findings of the report are:
 * Continuous delivery, characterized by frequent deployments, fast feedback, and high quality, significantly contributes to lower deployment pain and improved IT performance.
 * Technical practices such as version control, continuous integration, trunk-based development, and test automation are essential for achieving continuous delivery and high performance.
 
-
-[Download the 2017 State of DevOps Report](2017-state-of-devops-report.pdf)
+<a href="2017-state-of-devops-report.pdf" target="_blank"><button class="secondary">Download the 2017 State of DevOps Report</button></a>
