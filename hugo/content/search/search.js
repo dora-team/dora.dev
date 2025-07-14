@@ -1,4 +1,4 @@
-let searchServer = "https://search.dora.dev/"; ``
+let searchServer = "https://search.dora.dev/";
 
 window.addEventListener('DOMContentLoaded', (event) => {
     let inputBox = document.querySelector("#searchPage .searchQuery");
