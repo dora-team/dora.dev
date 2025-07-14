@@ -14,7 +14,9 @@ test('2025 research overview has the correct header.', async ({ page }) => {
 });
 
 test('2025 research overview has the correct sidebar.', async ({ page }) => {
-  for (const sidebarLink of sidebarLinks) {
-    await expect(page.getByRole('link', { name: sidebarLink, exact: true })).toBeVisible();
-  }
+    await Promise.all(
+    sidebarLinks.map((sidebarLink) =>
+      expect(page.getByRole('link', { name: sidebarLink, exact: true })).toBeVisible()
+    )
+  );
 });
