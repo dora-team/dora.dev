@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { sidebarLinks } from '../sidebarLinks';
+import { LAST_UPDATED_DATE_REGEX } from '../../constants';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/research/ai/value-of-development-work//');
@@ -20,5 +21,5 @@ test('Value of development work has the correct sidebar.', async ({ page }) => {
 });
 
 test('Value of development work displays its last updated date', async ({ page }) => {
-  await expect(page.locator('.updated')).toContainText('Last updated: ')
+  await expect(page.locator('.updated')).toContainText(LAST_UPDATED_DATE_REGEX);
 });

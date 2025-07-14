@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { sidebarLinks } from '../sidebarLinks';
+import { LAST_UPDATED_DATE_REGEX } from '../../constants';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/research/2024/questions');
@@ -20,5 +21,5 @@ test('2024 survey questions page has the correct sidebar.', async ({ page }) => 
 });
 
 test('2024 survey questions page displays its last updated date', async ({ page }) => {
-  await expect(page.locator('.updated')).toContainText('Last updated: ')
+  await expect(page.locator('.updated')).toContainText(LAST_UPDATED_DATE_REGEX);
 });
