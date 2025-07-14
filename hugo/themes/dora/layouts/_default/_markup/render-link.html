@@ -1,1 +1,0 @@
-<a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if or (strings.HasPrefix .Destination "http") (strings.HasPrefix .Destination "https") (strings.HasPrefix .Destination "mailto") (strings.Contains .Destination ".pdf") }} target="_blank"{{ end }} >{{ .Text | safeHTML }}</a>
