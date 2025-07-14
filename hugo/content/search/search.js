@@ -65,19 +65,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function showWebResults(links) {
-        resultsBox.innerHTML = '<h3>Guides, capabilities, and more</h3>';
-        links.forEach((result) => {
-            thisResult = `
-                <a href="${result.link}" class="webResult">
-                    <h4>${result.title}</h4>
-                    <p>
-                        ${result.snippet}
-                    </p>
-                    <span class="url">${result.link}</span>
-                </a>
-                `;
-            resultsBox.innerHTML += thisResult;
-        })
+        const resultsHTML = links.map(result => `
+            <a href="${result.link}" class="webResult">
+                <h4>${result.title}</h4>
+                <p>
+                    ${result.snippet}
+                </p>
+                <span class="url">${result.link}</span>
+            </a>
+        `).join('');
+        resultsBox.innerHTML = '<h3>Guides, capabilities, and more</h3>' + resultsHTML;
     }
 
     function showPDFResults(pdfs) {
