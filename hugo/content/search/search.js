@@ -2,11 +2,10 @@ let searchServer = "https://search.dora.dev/"; ``
 
 window.addEventListener('DOMContentLoaded', (event) => {
     let inputBox = document.querySelector("#searchPage .searchQuery");
-    let resultsBox = document.querySelector('#webResultsContainer');
+    let resultsBox = document.querySelector('#webResults');
     let resultsHeader = document.querySelector('#resultsHeader')
     let publicationResultsHeader = document.querySelector('#publicationResultsHeader');
     let publicationResultsBox = document.querySelector('#publicationResults');
-    let askDora = document.querySelector('#askDora');
     let searchQuery = ''
     let searchURI = '';
     let max_web_records = 12; // pagination support is limited; for now, just return 12 and display all on one page
@@ -63,15 +62,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
         publicationResultsHeader.innerHTML = '';
         publicationResultsBox.innerHTML = '';
         resultsBox.innerHTML = '';
-        askDora.style.display = 'none';
     }
 
     function showWebResults(links) {
-        askDora.style.display = 'block';
         resultsBox.innerHTML = '<h3>Guides, capabilities, and more</h3>';
         links.forEach((result) => {
             thisResult = `
-                <a href="${result.link}" class="webResults">
+                <a href="${result.link}" class="webResult">
                     <h4>${result.title}</h4>
                     <p>
                         ${result.snippet}
