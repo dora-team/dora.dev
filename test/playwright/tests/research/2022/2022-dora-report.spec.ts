@@ -38,17 +38,19 @@ test('2022 DORA report page has the correct report image', async ({ page }) => {
   await expect(reportImage).toHaveAttribute('alt', 'Accelerate State of DevOps Report 2022');
 });
 
-test('2022 DORA report page has the correct language.', async ({ page }) => {
+test('2022 DORA report page has the correct number of language options.', async ({ page }) => {
   const languageOptions = await page.locator('item a.button').count();
   const expectedLanguageCount = Object.keys(languageToUrlMap).length;
   await expect(languageOptions).toBe(expectedLanguageCount);
+});
 
-  for (const language in languageToUrlMap) {
-    const url = languageToUrlMap[language];
+for (const language in languageToUrlMap) {
+  const url = languageToUrlMap[language];
+  test(`2022 DORA report should link to the correct ${language} URL`, async ({ page }) => {
     const languageLink = page.getByRole('link', { name: language, exact: true });
     await expect(languageLink).toHaveAttribute('href', url);
-  }
-});
+  });
+}
 
 test('2022 DORA report page has the correct blog links.', async ({ page }) => {
   const blogLinks = await page.locator('h3 + ul li a').count();
