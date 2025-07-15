@@ -75,12 +75,6 @@ main {
     }
 }
 
-#webAndGenerativeResults {
-    display: flex;
-    flex-direction: row;
-    margin-top: 1em;
-}
-
 #askDoraContainer {
     text-align: center;
     a {
@@ -93,12 +87,13 @@ main {
     font-style: italic;
 }
 
-#webResultsContainer {
+#webResults {
     flex-grow: 1;
+    margin-top: 2em;
     margin-right: 2em;
 }
 
-.webResults {
+.webResult {
     padding: 0.75rem 0;
     display: block;
     color: rgb(99, 99, 99);
