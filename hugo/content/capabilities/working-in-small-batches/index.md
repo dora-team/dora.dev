@@ -5,6 +5,7 @@ date: 2023-03-24T12:54:18Z
 category: fast flow
 core: true
 draft: false
+updated: 2025-07-15
 headline: "Create shorter lead times and faster feedback loops by working in small batches. Learn common obstacles to this critical capability and how to overcome them."
 summary: "Create shorter lead times and faster feedback loops by working in small batches. Learn common obstacles to this critical capability and how to overcome them."
 ---
@@ -40,10 +41,10 @@ rapid progression requires working with code in small batches.
 
 Working in small batches has many benefits:
 
--   It reduces the time it takes to get feedback on changes, making it
+* It reduces the time it takes to get feedback on changes, making it
     easier to triage and remediate problems.
--   It increases efficiency and motivation.
--   It prevents your organization from succumbing to the sunk-cost fallacy.
+* It increases efficiency and motivation.
+* It prevents your organization from succumbing to the sunk-cost fallacy.
 
 You can apply the small batches approach at the feature and the product level.
 As an illustration, a minimum viable product, or MVP, is a prototype of a
@@ -63,18 +64,18 @@ completed independently and in short timeframes. We recommend that each feature
 or batch of work follow the agile concept of the
 [INVEST principle](https://wikipedia.org/wiki/INVEST_(mnemonic)):
 
--   **Independent**. Make batches of work as independent as possible from
+* **Independent**. Make batches of work as independent as possible from
     other batches, so that teams can work on them in any order, and deploy and
     validate them independent of other batches of work.
--   **Negotiable**. Each batch of work is iterable and can be renegotiated
+* **Negotiable**. Each batch of work is iterable and can be renegotiated
     as feedback is received.
--   **Valuable**. Discrete batches of work are usable and provide value to
+* **Valuable**. Discrete batches of work are usable and provide value to
     the stakeholders.
--   **Estimable**. Enough information exists about the batches of work that
+* **Estimable**. Enough information exists about the batches of work that
     you can easily estimate the scope.
--   **Small**. During a sprint, you should be able to complete batches of work
+* **Small**. During a sprint, you should be able to complete batches of work
     in small increments of time, meaning hours to a couple days.
--   **Testable**. Each batch of work can be tested, monitored, and verified
+* **Testable**. Each batch of work can be tested, monitored, and verified
     as working in the way users expect.
 
 When features are of an appropriate size, you can split the development of the
@@ -118,7 +119,7 @@ you can validate your hypothesis as quickly as possible.
 
 When you break down work into small batches, you encounter two pitfalls:
 
--   **Not breaking up work into small enough pieces**. Your first task is
+* **Not breaking up work into small enough pieces**. Your first task is
     to break down the work in a meaningful way. We recommend that you commit
     code independent of the status of the feature and that individual features
     take no more than a few days to develop. Any batch of code that takes longer
@@ -126,7 +127,7 @@ When you break down work into small batches, you encounter two pitfalls:
     process, it's essential that you analyze how to break down ideas into
     increments that you can develop iteratively.
 
--   **Working in small batches but then regrouping the batches before
+* **Working in small batches but then regrouping the batches before
     sending them downstream for testing or release**. Regrouping work in this
     way delays the feedback on whether the changes have defects, and whether
     your users and your organization agree the changes were the right thing to
@@ -135,18 +136,17 @@ When you break down work into small batches, you encounter two pitfalls:
 ## Ways to reduce the size of work batches
 
 When you slice work into small batches that can be completed in hours, you can
-typically
-[test and deploy those batches to production in less than an hour](/research/2016/2016-state-of-devops-report.pdf)
-(PDF). The key is to decompose the work into small features that allow for rapid
+typically test and deploy those batches to production in less than an hour. The
+key is to decompose the work into small features that allow for rapid
 development, rather than developing complex features on branches and releasing
 them infrequently.
 
 To improve small batch development, check your environment and confirm that the
 following conditions are true:
 
--   Work is decomposed in a way that enables teams to make more frequent
+* Work is decomposed in a way that enables teams to make more frequent
     production releases.
--   Developers are experienced in breaking down work into small changes that
+* Developers are experienced in breaking down work into small changes that
     can be completed in the space of hours, not days.
 
 To become an expert in small batch development, strive to meet each of these conditions in
@@ -164,30 +164,34 @@ and
 you can outline possible ways to measure small batch development in your systems
 and development environment.
 
--   **Application features are decomposed in a way that supports frequent
+* **Application features are decomposed in a way that supports frequent
     releases**. How often are releases possible? How does this release cadence
     differ across teams? Are delays in production related to features that are
     larger?
--   **Application features are sliced in a way that lets developers complete
+* **Application features are sliced in a way that lets developers complete
     the work in one week or less**. What proportion of features can you
     complete in one week or less? What features can't you complete in one week
     or less? Can you commit and release changes before the feature is complete?
--   **MVPs are defined and set as goals for teams**. Is the work decomposed
+* **MVPs are defined and set as goals for teams**. Is the work decomposed
     into features that allow for MVPs and rapid development, rather than
     complex and lengthy processes?
 
 Your measurements depend on the following:
 
--   Knowing your organization's processes.
--   Setting goals for reducing waste.
--   Looking for ways to reduce complexity in the development process.
+* Knowing your organization's processes.
+* Setting goals for reducing waste.
+* Looking for ways to reduce complexity in the development process.
+
+## More from DORA
+
+Read more about working in small batches in the following publications:
+
+* [Accelerate State of DevOps Report 2023](/research/2023/dora-report)
+* [State of DevOps Report 2017](/research/2017/)
+* [State of DevOps Report 2016](/research/2016/)
 
 ## What's next
 
--   For links to other articles and resources, see the
-    [Google Cloud DevOps page](https://cloud.google.com/devops).
--   Explore our DevOps
-    [research program](/).
--   Take the
+* Take the
     [DORA quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.
