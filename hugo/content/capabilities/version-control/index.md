@@ -4,6 +4,7 @@ titleForHTMLHead: "Capabilities: Version Control" # TODO: can we DRY this out?
 slug: version-control
 core: true
 date: 2023-03-27T09:48:51+01:00
+updated: 2025-07-16
 category: fast flow
 draft: false
 headline: "A guide to implementing the right version control practices for reproducibility and traceability."
@@ -13,10 +14,10 @@ summary: "The use of a version control system, such as Git or Subversion, for al
 Version control systems like Git, Subversion, and Mercurial provide a logical
 means to organize files and coordinate their creation, controlled access,
 updating, and deletion across teams and organizations. Version control is
-closely related to automation. In fact,
-[automation and continuous integration](/capabilities/continuous-integration)
-rely on these files for the source code of the automation itself, as well as
-the configuration to be automated and the data to be distributed.
+closely related to automation. In fact, automation and
+[continuous integration](/capabilities/continuous-integration) rely on these
+files for the source code of the automation itself, as well as the
+configuration to be automated and the data to be distributed.
 
 In order to improve software delivery, teams need to use version control for
 source code, test and deployment scripts, infrastructure and application
@@ -29,41 +30,41 @@ Research shows that comprehensive use of version control, among other
 capabilities, predicts continuous delivery. In particular, version control helps
 you meet these critical requirements:
 
--   **Reproducibility**. Teams must be able to provision any environment in
+* **Reproducibility**. Teams must be able to provision any environment in
     a fully automated fashion, and know that any new environment reproduced
     from the same configuration is identical. A prerequisite for achieving this
     goal is having the scripts and configuration information that are required
     to provision an environment stored in a shared, accessible system.
 
--   **Traceability**. Teams should be able to pick any environment and
+* **Traceability**. Teams should be able to pick any environment and
     determine quickly and precisely the versions of every dependency
     used to create that environment. They should also be able to compare two
     versions of an environment and see what has changed between them.
 
 These capabilities give teams several important benefits:
 
--   **Disaster recovery**. When something goes wrong with an
+* **Disaster recovery**. When something goes wrong with an
     environment—for example, a hardware failure or a security breach—teams need
     to be able to reproduce that environment in a deterministic amount of time
     in order to be able to restore service.
 
--   **Auditability**. To demonstrate the integrity of the delivery process,
+* **Auditability**. To demonstrate the integrity of the delivery process,
     teams must be able to show the path backward from every deployment to the
     elements it came from, including their version. You enable this through
     comprehensive configuration management combined with deployment pipelines.
 
--   **Higher quality**. The software delivery process is often subject to
+* **Higher quality**. The software delivery process is often subject to
     long delays waiting for development, testing, and production environments
     to be prepared. When this preparation can be done automatically from
     version control, teams can get feedback on the impact of their changes more
     rapidly, enabling teams to build quality into their software.
 
--   **Capacity management**. When teams want to add more capacity to their
+* **Capacity management**. When teams want to add more capacity to their
     environments, the ability to create reproductions of existing servers is
     essential. This capability enables the horizontal scaling of modern
     cloud-based distributed systems.
 
--   **Response to defects**. When teams discover a critical defect, or a
+* **Response to defects**. When teams discover a critical defect, or a
     vulnerability in some component of their system, they need to release a new
     version of their software as quickly as possible. Storing all artifacts in
     version control means teams can roll back to a previously verified working
@@ -98,26 +99,27 @@ Teams must be able to restore production services repeatedly and predictably
 (and, ideally, quickly) even when catastrophic events occur, so they must check
 in the following assets to their shared version control repository:
 
--   All application code and dependencies (for example, libraries and
+* All application code and dependencies (for example, libraries and
     static content)
--   Any script used to create database schemas, application reference data,
+* Any script used to create database schemas, application reference data,
     and so on
--   All environment creation tools and artifacts described in the
-    previous step (for example, VMware or AMI image building scripts or
-    Chef recipes)
--   Any file used to create and compose containers (for example, Docker
+* All environment creation tools and artifacts described in the
+    previous step (for example, VMware image building scripts or
+    Terraform files)
+* Any file used to create and compose containers (for example, Docker
     files and buildpacks)
--   All supporting automated tests and any manual test scripts
--   Any script that supports code packaging, deployment, database migration,
+* All supporting automated tests and any manual test scripts
+* Any script that supports code packaging, deployment, database migration,
     and environment provisioning
--   Supporting project artifacts (for example, requirements documentation,
+* Supporting project artifacts (for example, requirements documentation,
     deployment procedures, and release notes)
--   Container orchestration (for example, Kubernetes configuration, Mesos
+* Container orchestration (for example, Kubernetes configuration, OpenShift
     configuration, and Docker Swarm configuration)
--   All cloud configuration files (for example, AWS Cloudformation
-    templates, Cloud Deployment Manager configuration, Microsoft Azure Stack
-    DSC files, OpenStack HEAT, Terraform files, and Pulumi stacks)
--   Any other script or configuration information required to create
+* All cloud configuration files (for example,
+    [Infrastructure Manager](https://cloud.google.com/infrastructure-manager/)
+    configuration, AWS Cloudformation templates, Microsoft Azure Stack
+    DSC files, OpenStack HEAT, and Pulumi stacks)
+* Any other script or configuration information required to create
     infrastructure that supports multiple services (for example, enterprise
     service buses, database management systems, DNS zone files, configuration
     rules for firewalls, and other networking devices)
@@ -127,10 +129,11 @@ control systems like Git. Teams might have multiple repositories for different
 types of objects and services that are versioned, labeled, and tagged alongside
 their source code. For instance, they might store large virtual machine images,
 ISO files, compiled binaries, and so forth in artifact repositories such as
-Nexus or Artifactory. Alternatively, they might put objects in blob stores such
-as { or Amazon S3, or they might put Docker images into Docker
-registries. These approaches meet the requirements of reproducibility and
-traceability, and provide the same benefits.
+[Google Cloud Artifact Registry](https://cloud.google.com/artifact-registry/),
+Nexus, or Artifactory. Alternatively, they might put objects in blob stores such
+as [Google Cloud Storage](https://cloud.google.com/storage) or Amazon S3. These
+approaches meet the requirements of reproducibility and traceability, and
+provide the same benefits.
 
 More than re-creating any previous state of the production environment, teams
 must also be able to re-create the preproduction and build processes.
@@ -150,14 +153,14 @@ stored in version control.
 
 You can improve version control in many ways. Here a few we recommend:
 
--   Ensure that every commit to version control triggers the automated
+* Ensure that every commit to version control triggers the automated
     creation of packages that can be deployed to any environment using *only*
     information in version control.
--   Make it possible to create production-like test environments on demand
+* Make it possible to create production-like test environments on demand
     using only scripts and configuration information from version control, and
     to create packages using the automated process described in
     the previous approach.
--   Script testing and production infrastructure so that teams can add
+* Script testing and production infrastructure so that teams can add
     capacity or recover from disasters in a fully automated fashion.
 
 As you implement a version control system, focus on your constraints. For
@@ -173,22 +176,22 @@ might indicate a problem to work on with your system's
 To measure how effectively your teams are using version control in their
 systems, try these recommendations:
 
--   **Application code**. Do you use version control for application code?
+* **Application code**. Do you use version control for application code?
     What percentage of application code do you store in version control? How
     easily and quickly can a team recover application code from the version
     control system?
 
--   **System configurations**. Do you use version control for system
+* **System configurations**. Do you use version control for system
     configurations? What percentage of system configurations do you store in
     version control? How easily and quickly can teams reconfigure systems from
     version control?
 
--   **Application configuration**. Do you use version control for
+* **Application configuration**. Do you use version control for
     application configurations? What percentage of application configurations
     do you store in version control? How easily and quickly can teams
     reconfigure applications from code in the version control system?
 
--   **Scripts for automating build and configuration.** Do you keep scripts
+* **Scripts for automating build and configuration.** Do you keep scripts
     for automating build and configuration in version control? What percentage
     do you store in version control? How quickly and easily can you reprovision
     systems by using scripts from version control?
@@ -200,12 +203,20 @@ delivering software, and ask similar questions: What percentage of those
 artifacts are in version control? How quickly and easily can your team deploy
 new systems or configurations using assets from version control?
 
+## More from DORA
+
+Read more about version control in the following publications:
+
+* [Accelerate State of DevOps Report 2022](https://dora.dev/research/2022/dora-report/)
+* [Accelerate State of DevOps Report 2019](https://dora.dev/research/2019/dora-report/)
+* [State of DevOps Report 2014](https://dora.dev/research/2014/)
+
 ## What's next
 
--   For links to other articles and resources, see the
-    [Google Cloud DevOps page](https://cloud.google.com/devops).
--   Explore our DevOps
-    [research program](/).
--   Take the
+* Explore Google Cloud products referenced in this article
+  * [Google Cloud Artifact Registry](https://cloud.google.com/artifact-registry/)
+  * [Google Cloud Storage](https://cloud.google.com/storage)
+  * [Google Cloud Infrastructure Manager](https://cloud.google.com/infrastructure-manager/)
+* Take the
     [DORA quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.
