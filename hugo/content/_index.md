@@ -39,14 +39,12 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 {{< homepage/snipe-wrapper mode="start" >}}
 
   {{< homepage/snipe
-    img_src="/img/homepage/snipes/survey.png"
-    eyebrow="Reflection"
-    headline="2025 DORA Survey"
-    url="/survey/"
+    img_src="/img/homepage/snipes/report.png"
+    eyebrow="Research"
+    headline="The Impact of AI"
+    url="https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development"
   >}}
-    Contribute to the latest research by taking the DORA Survey.<br /><br />
-
-    Use this a unique opportunity to pause and evaluate your team's ways of working.
+    DORA’s latest research into AI looks at adoption strategies, the impact of AI, fostering trust, and more.
     {{< /homepage/snipe >}}
 
   {{< homepage/snipe
@@ -59,30 +57,21 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
     {{< /homepage/snipe >}}
 
   {{< homepage/snipe
-    img_src="/img/homepage/snipes/award.png"
-    eyebrow="Celebration"
-    headline="DORA Awards"
-    url="https://cloud.google.com/awards/devops/"
-  >}}
-    Celebrate your team's remarkable success! Nominations for the Google Cloud DORA Awards are open now.
-    {{< /homepage/snipe >}}
-
-  <!-- {{< homepage/snipe
-    img_src="/img/homepage/snipes/genai.png"
-    eyebrow="Guide"
-    headline="Generative AI"
-    url="/research/ai/"
-  >}}
-    Leverage DORA’s research findings to apply a holistic, iterative strategy as you experiment with and adopt emerging AI technologies. Learn how a focus on users can help ensure positive outcomes.
-    {{< /homepage/snipe >}} -->
-
-  {{< homepage/snipe
     img_src="/img/homepage/snipes/core.png"
     eyebrow="Framework"
     headline="DORA Core"
     url="/research/"
   >}}
     DORA Core represents the most well-established findings across the history and breadth our research program. Use it to guide transformation efforts in your organization.
+    {{< /homepage/snipe >}}
+
+  {{< homepage/snipe
+    img_src="/img/homepage/snipes/genai.png"
+    eyebrow="Guides"
+    headline="Generative AI"
+    url="/research/ai/"
+  >}}
+    Leverage DORA’s research findings to apply a holistic, iterative strategy as you experiment with and adopt emerging AI technologies. Learn how a focus on users can help ensure positive outcomes.
     {{< /homepage/snipe >}}
 
 {{< homepage/snipe-wrapper mode="end" >}}
