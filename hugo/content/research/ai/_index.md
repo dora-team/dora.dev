@@ -26,6 +26,7 @@ The [2024 DORA report](/research/2024/dora-report/) includes deep dives into the
 
 Following the 2024 DORA report, the research into AI continues.
 
+* [Concerns beyond the accuracy of AI output](/research/ai/concerns-beyond-accuracy-of-ai-output).
 * [Helping developers adopt generative AI: Four practical strategies for organizations](/research/ai/adopt-gen-ai).
 * [How gen AI affects the value of development work](/research/ai/value-of-development-work/).
 * [Fostering developers' trust in generative artificial intelligence](/research/ai/trust-in-ai/).
