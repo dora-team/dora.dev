@@ -4,6 +4,7 @@ titleForHTMLHead: "Capabilities: Test automation" # TODO: can we DRY this out?
 slug: test-automation
 core: true
 date: 2023-03-27T09:48:50+01:00
+updated: 2025-07-17
 category: fast feedback
 draft: false
 headline: "Improve software quality by building reliable automated test suites and performing all kinds of testing throughout the software delivery lifecycle."
@@ -17,30 +18,30 @@ relied on manual testing and code inspection to verify systems' correctness.
 These inspections and tests typically occurred in a separate phase after "dev
 complete." This approach has the following drawbacks:
 
--   Manual regression testing is time-consuming to execute and expensive to
+* Manual regression testing is time-consuming to execute and expensive to
     perform, which makes it a bottleneck in the process. Software can't be
     released frequently and developers can't get quick feedback.
--   Manual tests and inspections are not reliable, because people are poor at
+* Manual tests and inspections are not reliable, because people are poor at
     repetitive tasks like manual regression tests, and it is hard to predict the
     impact of changes on a complex software system through inspection.
--   Once software is "dev complete", developers have to wait a long time to get
+* Once software is "dev complete", developers have to wait a long time to get
     feedback on their changes. This usually results in substantial work to
     triage defects and fix them. Performance, security, and reliability problems
     often require design changes that are even more expensive to address when
     discovered at this stage.
--   Long feedback cycles also make it harder for developers to learn how to
+* Long feedback cycles also make it harder for developers to learn how to
     build quality code, and under schedule pressure development teams can
     sometimes treat quality as "somebody else's problem".
--   When developers aren't responsible for testing their own code it's hard for
+* When developers aren't responsible for testing their own code it's hard for
     them to learn how to write testable code.
--   For systems that evolve over time, keeping test documentation up to date
+* For systems that evolve over time, keeping test documentation up to date
     requires considerable effort.
 
 Instead, teams should:
 
--   Perform all types of testing continuously throughout the software delivery
+* Perform all types of testing continuously throughout the software delivery
     lifecycle.
--   Create and curate fast, reliable suites of automated tests which are run as
+* Create and curate fast, reliable suites of automated tests which are run as
     part of your
     [continuous delivery pipelines](https://continuousdelivery.com/implementing/patterns/#the-deployment-pipeline).
 
@@ -56,23 +57,30 @@ architecture of the system under development. This discipline has both an
 organizational and a technical component. Organizationally, DORA's research
 finds that teams do better when they:
 
--   Allow testers to work alongside developers throughout the software
+* Allow testers to work alongside developers throughout the software
     development and delivery process. (Note that "tester" is a role, not
     necessarily a full-time job, although this is a common pattern discussed
     below.)
--   Perform manual test activities such as exploratory testing, usability
+* Perform manual test activities such as exploratory testing, usability
     testing, and acceptance testing throughout the delivery process.
+* Continuously review and improve test suites to better find defects and keep
+    complexity and cost under control.
+* Have developers practice test-driven development by writing unit tests before
+    writing production code for all changes to the codebase
+* Keep the test suite fast. Developers should be able to get feedback from
+    automated tests in less than ten minutes both on local workstations and
+    from the continuous integration system.
 
 A key technical activity is building and maintaining a set of automated test
 suites, including:
 
--   **Unit tests**. These typically test a single method, class, or function in
+* **Unit tests**. These typically test a single method, class, or function in
     isolation, providing assurance to developers that their code operates as
     designed. To ensure that the code is testable and tests are maintainable,
     write your unit tests before writing code, a technique known as
-    [test-driven development](http://www.jamesshore.com/v2/books/aoad1/test_driven_development)
+    [test-driven development](http://www.jamesshore.com/v2/books/aoad2)
     (TDD).
--   **Acceptance tests**: These typically test a running app or service (usually
+* **Acceptance tests**: These typically test a running app or service (usually
     with dependencies replaced by
     [test doubles](https://testing.googleblog.com/2013/07/testing-on-toilet-know-your-test-doubles.html))
     to provide assurance that a higher level of functionality operates as
@@ -122,17 +130,17 @@ production, the pipeline must be improved, perhaps by adding or updating tests.
 
 ## Common pitfalls
 
--   **Not having developers involved in testing.** DORA's research shows that
+* **Not having developers involved in testing.** DORA's research shows that
     when developers are primarily responsible for creating and maintaining
     suites of automated tests, and when it is easy for developers to fix
     acceptance test failures, this drives improved performance. When other
     groups own the test automation, two problems often arise:
 
-    -   **Test suites are frequently in a broken state**. Code changes might
+    * **Test suites are frequently in a broken state**. Code changes might
         require tests to be updated. If developers are not responsible for test
         automation, the build pipeline stays broken until the responsible team
         fixes the tests.
-    -   **Developers write code that is hard to test.** Developers tend to solve
+    * **Developers write code that is hard to test.** Developers tend to solve
         the problem they are given without thinking about how it will be tested.
         This can lead to poorly designed code and expensive, hard-to-maintain
         test suites.
@@ -146,11 +154,11 @@ production, the pipeline must be improved, perhaps by adding or updating tests.
     an essential role performing exploratory testing and usability testing, as
     well as helping to curate test suites.
 
--   **Failing to curate your test suites.** Make sure you continuously review
+* **Failing to curate your test suites.** Make sure you continuously review
     and improve your test suites to better find defects and keep complexity and
     cost under control. For example:
 
-    -   Acceptance test suites should typically represent real
+    * Acceptance test suites should typically represent real
         [end-to-end](https://testing.googleblog.com/2016/09/testing-on-toilet-what-makes-good-end.html)
         user journeys through the system, rather than just collections of
         automated acceptance criteria. As your product evolves, so will these
@@ -158,15 +166,15 @@ production, the pipeline must be improved, perhaps by adding or updating tests.
         this process, see the video
         [Setting a Foundation For Successful Test Automation](https://www.youtube.com/watch?v=qYfI2-bC6LA)
         by Angie Jones.
-    -   If every time you change your code you must also change multiple unit
+    * If every time you change your code you must also change multiple unit
         tests, you're probably
         [over-relying on mocking](https://martinfowler.com/articles/mocksArentStubs.html),
         or failing to prune your unit test suite.
-    -   Keep your test suites well-factored. If every change to your UI causes
+    * Keep your test suites well-factored. If every change to your UI causes
         multiple acceptance tests to fail, use the
         [page object pattern](https://martinfowler.com/bliki/PageObject.html)
         to decouple your tests from the system under test.
-    -   If your tests are expensive to maintain, this could point to problems
+    * If your tests are expensive to maintain, this could point to problems
         with your software's
         [architecture](/capabilities/loosely-coupled-teams). Make sure
         you continue to invest in making your software easy to test, including
@@ -174,7 +182,7 @@ production, the pipeline must be improved, perhaps by adding or updating tests.
         [refactoring](https://refactoring.com/)
         into your team's daily work.
 
--   **Having the wrong proportion of unit and acceptance tests.** A specific
+* **Having the wrong proportion of unit and acceptance tests.** A specific
     design goal of an automated test suite is to find errors as early as
     possible. This is why faster-running unit tests run before slower-running
     acceptance tests, and both are run before any manual testing.
@@ -183,13 +191,13 @@ production, the pipeline must be improved, perhaps by adding or updating tests.
     error in an acceptance test or during exploratory testing, add a unit test
     to make sure this error is caught faster, earlier, and cheaper next time.
     Mike Cohn described the ideal
-    [test automation pyramid](https://books.google.com.br/books?id=8IglA6i_JwAC&printsec=frontcover&dq=Mike+Cohn+Succeeding+with+Agile&hl=pt-BR&sa=X&ved=0ahUKEwj9x8S8tuTiAhWjGLkGHU0GCxEQ6AEILTAA#v=onepage&q=Mike%20Cohn%20Succeeding%20with%20Agile&f=false),
+    [test automation pyramid](https://www.google.com/books/edition/Succeeding_with_Agile/IdT6AgAAQBAJ),
     shown in the following diagram, where most of the errors are caught using
     unit testing.
 
     ![image](ta-image2.png)
 
--   **Tolerating unreliable tests.** Tests should be reliable: that is, when the
+* **Tolerating unreliable tests.** Tests should be reliable: that is, when the
     tests pass we should be confident the software is releasable, and test
     failures should indicate a real defect. In particular, don't tolerate flaky
     tests.
@@ -273,18 +281,24 @@ and the quantity which were poorly coded.</td>
 </tbody>
 </table>
 
+## More from DORA
+
+Read more about test automation in the following publications:
+
+* [Capabilities: Test Data Management](/capabilities/test-data-management/)
+* [Accelerate State of DevOps Report 2019](/research/2019/dora-report/)
+* [Accelerate State of DevOps Report 2018](/research/2018/dora-report/)
+* [State of DevOps Report 2016](/research/2016/)
+* [State of DevOps Report 2014](/research/2014/)
+
 ## What's next
 
--   For links to other articles and resources, see the
-    [Google Cloud DevOps page](https://cloud.google.com/devops).
--   Find out more about testing at Google by reading
+* Find out more about testing at Google by reading
     [Software Engineering at Google](https://books.google.com/books/about/Software_Engineering_at_Google.html?id=WXTTDwAAQBAJ).
--   Learn how to continuously build, test, and deploy your system using
-    [Cloud Build](https://cloud.google.com/build/?&utm_source=google&utm_medium=cpc&utm_campaign=latam-BR-all-pt-dr-skws-all-all-trial-e-dr-1003997-LUAC0008680&utm_content=text-ad-none-none-DEV_c-CRE_325592090632-ADGP_SKWS+%7C+Multi+%7E+Dev+%7C+Build-KWID_43700040482196107-kwd-471794162766-userloc_1001743&utm_term=KW_cloud%20build-ST_Cloud+Build&gclid=Cj0KCQjw6IfoBRCiARIsAF6q06suRucypheWE5dDKAmsKDZrEVvuY0nDFS0YgbkN5XVmkEzJPl89zIIaAoJcEALw_wcB&gclsrc=aw.ds).
--   Learn how to monitor your system and tests using
-    [Cloud Monitoring](https://cloud.google.com/stackdriver).
--   Explore our DevOps
-    [research program](/).
--   Take the
+* Learn how to continuously build, test, and deploy your system using
+    [Google Cloud Build](https://cloud.google.com/build/).
+* Learn how to monitor your system and tests using
+    [Google Cloud's Observability suite](https://cloud.google.com/products/observability).
+* Take the
     [DORA quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.
