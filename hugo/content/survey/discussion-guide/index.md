@@ -2,7 +2,7 @@
 title: "Survey Discussion Guide"
 date: 2025-06-27
 draft: false
-updated:  2025-06-27
+updated:  2025-07-18
 ---
 
 [![DORA Survey Banner](/survey/survey-banner.png)](/survey)
@@ -20,8 +20,6 @@ Schedule a one-hour meeting with your extended team or community of practice. In
 ## Prework (15 minutes)
 
 All meeting attendees should complete the 2025 DORA Survey prior to joining the discussion. Participants often tell us the survey itself is a valuable self-assessment, sparking immediate ideas for how their team can improve.
-
-<a href="https://google.qualtrics.com/jfe/form/SV_40i28bp9qIMfNjw?source=doradotdev-survey-discussion-guide" target="_blank" rel="noopener noreferrer"><button class="secondary">Take the 2025 DORA Survey</button></a>
 
 By participating, team members will:
 
@@ -49,8 +47,8 @@ Use the questions below as potential discussion questions with the group. You ma
 
 Pick a selection of the eight questions listed below that you would like to discuss as a group. We strongly recommend that you use at least these two:
 
-* [The "Aha\!" Moments](#the-aha-moments)
-* [The First Small Step](#the-first-small-step)
+* [The "Aha\!" moments](#the-aha-moments)
+* [The first small step](#the-first-small-step)
 
 Depending on the size of your group, you may want to break out into smaller groups for the discussion and reconvene for the wrap-up and next steps.
 
