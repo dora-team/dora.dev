@@ -4,30 +4,31 @@ titleForHTMLHead: "Capabilities: Loosely Coupled Teams" # TODO: can we DRY this 
 slug: loosely-coupled-teams
 core: true
 date: 2023-03-27T09:48:50+01:00
+updated: 2025-08-05
 category: fast flow
 draft: false
 headline: "Learn about moving from a tightly coupled architecture to service-oriented and microservice architectures without re-architecting everything at once"
 summary: "An organizational structure that allows teams to test and deploy their applications on demand, without requiring orchestration with other services. Team structure and technical architecture are highly interrelated: having a loosely coupled architecture allows your teams to work independently without relying on other teams for support and services, which in turn enables them to work quickly and deliver value to the organization."
 ---
 
-Research from the [DORA](https://dora.dev) team shows that
-effective organizational and technical structures are predictors for achieving continuous delivery.
-Whether you're using Kubernetes or mainframes, your architecture enables teams
-to adopt practices that foster higher levels of software delivery performance.
+Research from the DORA team shows that effective organizational and technical
+structures are predictors for achieving continuous delivery. Whether you're
+using Kubernetes or mainframes, your organizational and system architecture
+enables teams to adopt practices that foster higher levels of software delivery
+performance.
 
-When teams adopt continuous delivery practices, adopting the following
-architectural practices drives successful outcomes:
+Adopting the following architectural practices drives successful outcomes:
 
--   Teams can make large-scale changes to the design of their systems
+* Teams can make large-scale changes to the design of their systems
     without the permission of somebody outside the team or depending on other teams.
--   Teams are able to complete work without needing fine-grained
+* Teams are able to complete work without needing fine-grained
     communication and coordination with people outside the team.
--   Teams deploy and release their product or service on demand,
+* Teams deploy and release their product or service on demand,
     independently of the services it depends on or of other services that
     depend on it.
--   Teams do most of their testing on demand, without requiring an
+* Teams do most of their testing on demand, without requiring an
     integrated test environment.
--   Teams can deploy during normal business hours with negligible downtime.
+* Teams can deploy during normal business hours with negligible downtime.
 
 It's possible to achieve these outcomes with mainframe technologies. It's also
 possible to fail to achieve them even when using the latest, most trendy
@@ -41,11 +42,12 @@ communication to get work done. In other words, both the architecture and the
 teams are loosely coupled.
 
 This connection between communication bandwidth and systems architecture was
-first discussed by Melvin Conway, who said, "organizations which design systems
-... are constrained to produce designs which are copies of the communication
-structures of these organizations." To counteract tightly-coupled architectures
-and help support better communication patterns, teams and organizations can use
-the
+first discussed by
+[Melvin Conway](https://en.wikipedia.org/wiki/Conway%27s_law), who said,
+"organizations which design systems ... are constrained to produce designs
+which are copies of the communication structures of these organizations." To
+counteract tightly-coupled architectures and help support better communication
+patterns, teams and organizations can use the
 [Inverse Conway Maneuver](https://medium.com/better-practices/how-to-dissolve-communication-barriers-in-your-api-development-organization-3347179b4ecc),
 whereby team structures and patterns are designed to promote the expected
 architectural state. In this way, team communication patterns support and
@@ -59,15 +61,15 @@ including navigating complex and bureaucratic change management processes.
 Microservices architectures are supposed to enable these outcomes, as should any
 true service-oriented architecture. In practice, many so-called service-oriented
 architectures don't permit testing and deploying services independently of each
-other, and thus won’t let teams achieve higher software delivery performance.
+other, and thus won't let teams achieve higher software delivery performance.
 It's essential to be strict about these outcomes when implementing
 service-oriented and microservice architectures.
 
 ## How to implement architectures for continuous delivery
 
-Consider the major architectural archetypes. Randy Shoup, formerly an
-Engineering Director for App Engine and VP of Engineering at WeWork,
-observed the following:
+Consider the major architectural archetypes.
+[Randy Shoup](https://www.linkedin.com/in/randyshoup/), formerly an
+Engineering Director for App Engine observed the following:
 
 > "There is no one perfect architecture for all products and all
 scales. Any architecture meets a particular set of goals or range of
@@ -80,68 +82,78 @@ works at scale 10x or 100x."
 Given the pros and cons of architectural archetypes, each fits a different
 evolutionary need for an organization.
 
-<table>
-<thead>
-<tr>
-<th width="25%">Archetype</th>
-<th>Pros</th>
-<th>Cons</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Monolithic v1</strong><br>
-(all functionality in one application)</td>
-<td><ul><li>Simple at first</li>
-<li>Low interprocess latencies</li>
-<li>Single codebase, one deployment unit</li>
-<li>Resource-efficient at small scales</li>
-</ul>
-</td>
-<td><ul><li>Coordination overhead increases as team grows</li>
-<li>Poor enforcement of modularity</li>
-<li>Poor scaling</li>
-<li>All-or-nothing deploy (downtime failures)</li>
-<li>Long build times</li>
-</ul>
-</td>
-</tr>
-<tr>
-  <td><strong>Monolithic v2</strong><br>
-(set of monolithic tiers: frontend presentation,
-application server, database layer)</td>
-<td><ul><li>Simple at first</li>
-<li>Join queries are easy</li>
-<li>Single schema deployment</li>
-<li>Resource-efficient at small scales</li>
-</ul>
-</td>
-<td><ul><li>Tendency for increased coupling over time</li>
-<li>Poor scaling and redundancy (all or nothing, vertical only)</li>
-<li>Difficult to tune properly</li>
-<li>All-or-nothing schema management</li>
-</ul>
-</td>
-</tr>
-<tr>
-  <td><strong>Microservice</strong><br>
-(modular, independent, graph relationship or tiers,
-isolated persistence)</td>
-<td><ul><li>Each unit is simple</li>
-<li>Independent scaling and performance</li>
-<li>Independent testing and deployment</li>
-<li>Can optimally tune performance (caching, replication, etc.)</li>
-</ul>
-</td>
-<td><ul><li>Many cooperating units</li>
-<li>Many small repos</li>
-<li>Requires more sophisticated tooling and dependency management</li>
-<li>Network latencies</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
+<div class="architecture-table">
+  <table>
+    <thead>
+      <tr>
+        <th width="25%">Archetype</th>
+        <th>Pros</th>
+        <th>Cons</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Monolithic v1</strong><br>(all functionality in one application)</td>
+        <td>
+          <ul>
+            <li>Simple at first</li>
+            <li>Low interprocess latencies</li>
+            <li>Single codebase, one deployment unit</li>
+            <li>Resource-efficient at small scales</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Coordination overhead increases as team grows</li>
+            <li>Poor enforcement of modularity</li>
+            <li>Poor scaling</li>
+            <li>All-or-nothing deploy (downtime failures)</li>
+            <li>Long build times</li>
+          </ul>
+        </td>
+      </tr>
+        <tr>
+          <td><strong>Monolithic v2</strong><br>(set of monolithic tiers: frontend presentation, application server, database layer)</td>
+          <td>
+            <ul>
+              <li>Simple at first</li>
+              <li>Join queries are easy</li>
+              <li>Single schema deployment</li>
+              <li>Resource-efficient at small scales</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Tendency for increased coupling over time</li>
+              <li>Poor scaling and redundancy (all or nothing, vertical only)</li>
+              <li>Difficult to tune properly</li>
+              <li>All-or-nothing schema management</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Microservice</strong><br>(modular, independent, graph relationship or tiers, isolated persistence)</td>
+          <td>
+            <ul>
+              <li>Each unit is simple</li>
+              <li>Independent scaling and performance</li>
+              <li>Independent testing and deployment</li>
+              <li>Can optimally tune performance (caching, replication, etc.)</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Many cooperating units</li>
+              <li>Many small repos</li>
+              <li>Requires more sophisticated tooling and dependency management</li>
+              <li>Network latencies</li>
+            </ul>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  <figcaption>Source: Shoup, "From the Monolith to Micro-services"</figcaption>
+</div>
 
 As the table shows, a monolithic architecture that supports a lean product
 development effort (for example, rapid prototyping of new features, and
@@ -199,7 +211,7 @@ test services or components in isolation.
 
 ## Common pitfalls in architectures
 
--   **Simultaneously releasing many services**. In teams where testability
+* **Simultaneously releasing many services**. In teams where testability
     and deployability are not prioritized, most testing requires the use of
     complex and expensive integrated environments. In many cases, deployments
     require that you simultaneously release many services due to complex
@@ -208,7 +220,7 @@ test services or components in isolation.
     hundreds or thousands of tasks. Big-bang deployments typically take many
     hours or even days, and require scheduling significant downtime.
 
--   **Integrating changes with the changes from hundreds, or even
+* **Integrating changes with the changes from hundreds, or even
     thousands, of other developers**. Those developers, in turn, might have
     dependencies on tens, hundreds, or thousands of interconnected systems.
     Testing is done in scarce integration test environments, which often
@@ -218,7 +230,7 @@ test services or components in isolation.
     measured in weeks or months) but also low developer productivity and poor
     deployment outcomes.
 
--   **Creating bottlenecks in the software delivery process**. Example
+* **Creating bottlenecks in the software delivery process**. Example
     bottlenecks could be a single team that many others rely on either from a
     manual process standpoint (testing, deployment, and so on) or from a
     service operation standpoint. In both examples, those bottlenecks create
@@ -249,27 +261,28 @@ architecture*. In this method, it's given that successful products and services
 will require re-architecting during their lifecycle due to the changing
 requirements placed on them.
 
-One valuable pattern in this context is the *strangler fig application*. In this
-pattern, you iteratively replace a monolithic architecture with a more
+One valuable pattern in this context is the
+[strangler fig application](https://martinfowler.com/bliki/StranglerFigApplication.html).
+In this pattern, you iteratively replace a monolithic architecture with a more
 componentized one by ensuring that new work is done following the principles of
 a service-oriented architecture. You accept that the new architecture might well
 delegate to the system it is replacing. Over time, as more and more
 functionality is performed in the new architecture, the old system is
 "strangled."
 
-![Replacing a monolithic architecture with a more componentized one.](strangler-fig-pattern.svg)
+<a href="strangler-fig-pattern.svg" target="_blank"><img src="strangler-fig-pattern.svg" alt="Replacing a monolithic architecture with a more componentized one." /></a>
 
 Product and service architectures continually evolve. There are many ways to
 decide what should be a new module or service, and the process is iterative.
 When deciding whether to make a piece of functionality into a service, consider
 if it has the following traits:
 
--   Implements a single business function or capability.
--   Performs its function with minimal interaction with other services.
--   Is built, scaled, and deployed independently from other services.
--   Interacts with other services by using lightweight communication
+* Implements a single business function or capability.
+* Performs its function with minimal interaction with other services.
+* Is built, scaled, and deployed independently from other services.
+* Interacts with other services by using lightweight communication
     methods, for example, a message bus or HTTP endpoints.
--   Can be implemented with different tools, programming languages, data
+* Can be implemented with different tools, programming languages, data
     stores, and so on.
 
 Moving to microservices or a service-oriented architecture also changes many
@@ -277,16 +290,16 @@ things through the organization as a whole. In his
 [platform rant](https://gist.github.com/chitchcock/1281611/9621c8859db00bf08b98212a109fa2dec4c6d601),
 Steve Yegge presents several critical lessons learned from moving to a SOA:
 
--   Metrics and monitoring become more important and escalations become
+* Metrics and monitoring become more important and escalations become
     more difficult because an issue surfaced in one service could be from a
     service many service calls away.
--   Internal services can produce Denial of Service (DOS) type problems, so
+* Internal services can produce Denial of Service (DOS) type problems, so
     quotas and message throttling are important in every service.
--   QA and monitoring begin to blend, because monitoring must be
+* QA and monitoring begin to blend, because monitoring must be
     comprehensive and must exercise the business logic and data of the service.
--   When there are many services, having a service-discovery mechanism
+* When there are many services, having a service-discovery mechanism
     becomes important for efficient operation of the system.
--   Without a universal standard for running a service in a debuggable
+* Without a universal standard for running a service in a debuggable
     environment, debugging issues in other people's services is much harder.
 
 ## Case study: Datastore
@@ -300,7 +313,7 @@ because each service also has a well-defined API, it enables easier testing of
 services and the creation of contracts and service level agreements (SLAs)
 between teams.
 
-![Loosely coupled teams.](loosely-coupled-architecture.svg)
+<a href="loosely-coupled-architecture.svg" target="_blank"><img src="loosely-coupled-architecture.svg" alt="Loosely coupled teams." /></a>
 
 Randy Shoup describes this architecture as follows:
 
@@ -321,28 +334,89 @@ independently, quickly, and safely.
 ## Ways to measure architectural improvement
 
 Whether on a mainframe or in microservices, facilitating the practices required
-for architectural improvement is essential for improving software delivery
-performance (increased deployment frequency with reduced lead time for changes,
-time to restore service, and change failure rate). As your services and products
-become less tightly coupled, your deployment frequency should increase. When
-measuring improvement, consider using deployment rate rather than just count,
-because deployment count naturally increases as services are added. Lastly, you
-should see a reduction in time to detect and recover from problems and in the
-time for changes to reach production.
+for architectural improvement is essential for improving
+[software delivery performance](/guides/dora-metrics-four-keys/). As your
+services and products become less tightly coupled, your deployment frequency
+should increase. Additionally, you should see a reduction in time to detect and
+recover from problems and in the time for changes to reach production.
 
-Aside from taking these deployment and service measures, teams that operate
-more independently demonstrate improvements in
+The core idea behind loosely coupled teams is that they can deliver value
+independently and quickly. This requires both a technical architecture and an
+organizational structure that minimizes dependencies and communication overhead.
+
+Here are several factors you can test and what you can measure for each.
+
+<table class="measures-table">
+  <colgroup>
+    <col width="50%">
+    <col width="50%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th><strong>Factor to test</strong></th>
+      <th><strong>What to measure</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Team autonomy and independence.</td>
+      <td>
+        <ul>
+          <li><strong>Decision-making</strong>: What percentage of design and architecture changes for your service require a formal approval process from a body outside your team (e.g., an Architecture Review Board)?</li>
+          <li><strong>Deployment dependencies</strong>: What percentage of your service's production deployments must be coordinated and released alongside other services?</li>
+          <li><strong>Testing dependencies</strong>: What percentage of your team's functional validation can be completed without a shared, integrated test environment? How long does it take to get a dedicated test environment for your service?</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Communication and coordination overhead.</td>
+      <td>
+        <ul>
+          <li><strong>Cross-team communication</strong>: On average, how many hours per week do team members spend coordinating work (in meetings, chat, or email) with other teams?</li>
+          <li><strong>Number of handoffs</strong>: Count the number of handoffs a typical feature or change requires to get from "code complete" to "released to users."</li>
+          <li><strong>Wait times</strong>: What is the average wait time for reviews, approvals, or required work from teams your team depends on?</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Architectural support for independent work.</td>
+      <td>
+        <ul>
+          <li><strong>Independent deployability</strong>: Can you deploy your service to production during normal business hours with negligible downtime?</li>
+          <li><strong>Independent testability</strong>: Can your team test your service in isolation using test doubles (stubs, mocks, fakes) for its dependencies?</li>
+          <li><strong>Service contracts</strong>: Does your team use and maintain contract tests to validate that dependencies between your service and others are met? What is the failure rate of these contract tests?</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Impact of external changes.</td>
+      <td>
+        <ul>
+          <li><strong>Upstream failures</strong>: How often do failures in a service your team depends on cause an outage or degradation in your own service?</li>
+          <li><strong>Upstream changes</strong>: How often do changes made by an upstream team require you to make unplanned changes to your own service?</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+Teams that operate more independently demonstrate improvements in
 [job satisfaction](/capabilities/job-satisfaction)
 and
 [team experimentation](/capabilities/team-experimentation),
 and tend to select different technologies and tools based on their needs.
 
+## More from DORA
+
+Read more about this capability and related research in the following publications:
+
+* [Accelerate State of DevOps Report 2023](/research/2023/dora-report/)
+* [Accelerate State of DevOps Report 2022](/research/2022/dora-report/)
+* [Accelerate State of DevOps Report 2021](/research/2021/dora-report/)
+* [State of DevOps Report 2017](/research/2017/)
+
 ## What's next
 
--   For links to other articles and resources, see the
-    [Google Cloud DevOps page](https://cloud.google.com/devops).
--   Explore our DevOps
-    [research program](/).
--   Take the
+* Take the
     [DORA quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.
