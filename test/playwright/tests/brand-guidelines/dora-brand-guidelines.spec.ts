@@ -9,20 +9,24 @@ export const pageHeaders = [
   '2024 DORA Report graphics'
 ];
 
-test.beforeEach(async ({ page }) => {
-  await page.goto('/brand-guidelines/');
-});
+test.describe('DORA brand guidelines', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/brand-guidelines/');
+  });
 
-test('DORA brand guidelines has the correct title.', async ({ page }) => {
-  await expect(page).toHaveTitle('DORA | DORA Brand Guidelines');
-});
+  test('has the correct title', async ({ page }) => {
+    await expect(page).toHaveTitle('DORA | DORA Brand Guidelines');
+  });
 
-test('DORA brand guidelines has the correct header.', async ({ page }) => {
-  await expect(page.locator('h1')).toContainText('DORA Brand Guidelines');
-});
+  test('has the correct header', async ({ page }) => {
+    await expect(page.locator('h1')).toContainText('DORA Brand Guidelines');
+  });
 
-pageHeaders.forEach((pageHeader, index) => {
-  test(`DORA brand guidelines has a ${pageHeader} header.`, async ({ page }) => {
-    await expect(page.locator('h2').nth(index)).toContainText(pageHeader);
+  pageHeaders.forEach((pageHeader) => {
+    test(`has a ${pageHeader} header`, async ({ page }) => {
+      await expect(
+        page.getByRole('heading', { name: pageHeader, level: 2, exact: true })
+      ).toBeVisible();
+    });
   });
 });
