@@ -250,3 +250,11 @@ section.banner {
   color: $color-text-light;
   font-weight: 200;
 }
+
+figcaption {
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 0.2rem;
+  color: var(--grey-50);
+  margin-bottom: 0.8rem;
+}

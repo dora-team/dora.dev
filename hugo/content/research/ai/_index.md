@@ -21,15 +21,12 @@ This report offers research-backed guidance for leaders and practitioners to eff
 <a href="https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development" target="_blank"><button class="secondary">Download the report</button></a>
 
 ## AI Research
-
-The [2024 DORA report](/research/2024/dora-report/) includes deep dives into the adoption, attitudes, and downstream impacts of AI. A [preview of the AI findings](/research/2024/ai-preview) was published prior to the report's release.
-
-Following the 2024 DORA report, the research into AI continues.
-
+* [Choosing measurement frameworks to fit your organizational goals](/research/ai/measurement-frameworks/)
 * [Concerns beyond the accuracy of AI output](/research/ai/concerns-beyond-accuracy-of-ai-output).
 * [Helping developers adopt generative AI: Four practical strategies for organizations](/research/ai/adopt-gen-ai).
 * [How gen AI affects the value of development work](/research/ai/value-of-development-work/).
 * [Fostering developers' trust in generative artificial intelligence](/research/ai/trust-in-ai/).
+* The [2024 DORA report](/research/2024/dora-report/) includes deep dives into the adoption, attitudes, and downstream impacts of AI.
 
 ## Generative AI Guide
 
