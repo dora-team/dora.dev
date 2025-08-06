@@ -8,7 +8,6 @@ layout: single
 tab_order: "0"
 tab_title: "Overview"
 ---
-
 ## A first look at the 2025 DORA research
 
 In the world of technology, change is the only constant. For [over a decade](/decade/), the DORA research program has provided data-backed insights into the [capabilities and conditions](/research/?view=detail) required for high-performing teams and organizations. Today, a new force is reshaping our industry at an unprecedented pace: Artificial Intelligence (AI).
