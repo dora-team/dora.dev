@@ -20,6 +20,7 @@ hugo.linux
 firebase-debug.log
 firestore-debug.log
 ui-debug.log
+pglite-debug.log
 
 # Local instance of Firebase Configs
 *.local
@@ -41,3 +42,4 @@ svelte/**/dist/
 
 # IDE files
 .idea/
+
