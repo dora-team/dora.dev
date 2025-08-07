@@ -343,6 +343,11 @@
           "source": "/publications/pdf/state-of-devops-2021.pdf",
           "destination": "/research/2021/dora-report/2021-dora-accelerate-state-of-devops-report.pdf",
           "type": 301
+        },
+        {
+          "source": "/leancoffee",
+          "destination": "https://www.leancoffeetable.com/TaskBoard/View/5608ed07-6945-48f2-8bab-de8630800d3d?guest=true",
+          "type": 302
         }
       ]
     }
