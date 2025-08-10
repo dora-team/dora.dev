@@ -251,22 +251,32 @@
         },
         {
           "source": "/devops-capabilities/cultural/devops-culture-transform",
-          "destination": "/guides/devops-culture-transform/",
+          "destination": "/guides/how-to-transform/",
           "type": 301
         },
         {
           "source": "/devops-capabilities/cultural/devops-culture-transform/",
-          "destination": "/guides/devops-culture-transform/",
+          "destination": "/guides/how-to-transform/",
           "type": 301
         },
         {
           "source": "/capabilities/cultural/devops-culture-transform",
-          "destination": "/guides/devops-culture-transform/",
+          "destination": "/guides/how-to-transform/",
           "type": 301
         },
         {
           "source": "/capabilities/cultural/devops-culture-transform/",
-          "destination": "/guides/devops-culture-transform/",
+          "destination": "/guides/how-to-transform/",
+          "type": 301
+        },
+        {
+          "source": "/guides/devops-culture-transform",
+          "destination": "/guides/how-to-transform/",
+          "type": 301
+        },
+        {
+          "source": "/guides/devops-culture-transform/",
+          "destination": "/guides/how-to-transform/",
           "type": 301
         },
         {

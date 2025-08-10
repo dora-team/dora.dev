@@ -86,8 +86,8 @@
 /dora-gen-ai-report/,/research/ai/gen-ai-report/,302
 /devops-capabilities/cultural/how-to-empower-software-delivery-teams/,/guides/how-to-empower-software-delivery-teams/,302
 /devops-capabilities/cultural/how-to-empower-software-delivery-teams,/guides/how-to-empower-software-delivery-teams/,302
-/devops-capabilities/cultural/devops-culture-transform/,/guides/devops-culture-transform/,301
-/devops-capabilities/cultural/devops-culture-transform,/guides/devops-culture-transform/,301
+/devops-capabilities/cultural/devops-culture-transform/,/guides/how-to-transform/,301
+/devops-capabilities/cultural/devops-culture-transform,/guides/how-to-transform/,301
 /sponsor,/sponsors/,301
 /publications/pdf/state-of-devops-2015.pdf,/research/2015/2015-state-of-devops-report.pdf,301
 /publications/pdf/state-of-devops-2014.pdf,/research/2014/2014-state-of-devops-report.pdf,301
@@ -120,3 +120,5 @@
 /quickcheck/2022/,/quickcheck/,301
 /performance.html**,/quickcheck/,301
 /leancoffee,https://www.leancoffeetable.com/TaskBoard/View/5608ed07-6945-48f2-8bab-de8630800d3d?guest=true,302
+/guides/devops-culture-transform,/guides/how-to-transform/,301
+/guides/devops-culture-transform/,/guides/how-to-transform/,301

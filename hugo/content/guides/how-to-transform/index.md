@@ -2,7 +2,7 @@
 title: "How to transform your organization"
 titleForHTMLHead: "How to transform your organization" # TODO: can we DRY this out?
 date: 2023-03-22T13:43:36Z
-updated: 2024-06-10T00:00:00Z
+updated: 2025-08-10
 draft: false
 weight: 400
 headline: "How to transform your organization"
@@ -49,7 +49,7 @@ These frameworks might seem different, but they all share key features. The
 basic dynamic is shown in the following figure, which is based on the
 improvement kata framework:
 
-![The 4-stage Kata model.](./devops-culture-transform-kata-model.png)
+![The 4-stage Kata model.](./how-to-transform-kata-model.png)
 
 Source: Reproduced by permission of Mike Rother, from [*Toyota Kata Practice
 Guide: Practice Scientific Thinking Skills for Superior Results in 20 Minutes a
@@ -120,7 +120,7 @@ nonlinear, as shown in the following diagram:
 
 ![Graph showing nonlinear progress mapping performance against iterations; the
 performance line is spiky but overall goes
-up.](./devops-culture-transform-non-linear-progress.png)
+up.](./how-to-transform-non-linear-progress.png)
 
 Source: CC-BY:
 [*Lean Enterprise: How High Performance Organizations Innovate at Scale*](https://www.google.com/books/edition/Lean_Enterprise/G_ixBQAAQBAJ)
@@ -381,7 +381,7 @@ across the organization.
 
 ![Graph of performance against time, showing performance going up during each
 change program but then declining and overall staying roughly the
-same.](./devops-culture-transform-performance-against-time.png)
+same.](./how-to-transform-performance-against-time.png)
 
 Source: CC-BY:
 [*Lean Enterprise: How High Performance Organizations Innovate at Scale*](https://www.google.com/books/edition/Lean_Enterprise/G_ixBQAAQBAJ)
