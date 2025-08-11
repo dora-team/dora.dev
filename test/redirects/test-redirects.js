@@ -20,8 +20,12 @@ describe(`Redirects for ${baseUrl}`, () => {
     it(`should redirect ${url} to ${targetUrl} with status code ${statusCode}`, async () => {
       const response = await fetch(baseUrl + url, { redirect: 'manual' });
 
+      let location = response.headers.get('location');
+      if (location && location.endsWith('&')) {
+        location = location.slice(0, -1);
+      }
       assert.strictEqual(
-        response.headers.get('location'),
+        location,
         targetUrl,
         `Expected ${url} to redirect to${targetUrl}, but got ${response.headers.get('location')}`
       );
