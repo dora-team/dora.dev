@@ -39,12 +39,12 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 {{< homepage/snipe-wrapper mode="start" >}}
 
   {{< homepage/snipe
-    img_src="/img/homepage/snipes/report.png"
-    eyebrow="Research"
-    headline="The Impact of AI"
-    url="https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development"
+    img_src="/img/homepage/snipes/genai.png"
+    eyebrow="Guides"
+    headline="Generative AI"
+    url="/research/ai/"
   >}}
-    DORA’s latest research into AI looks at adoption strategies, the impact of AI, fostering trust, and more.
+    Leverage DORA’s research findings to apply a holistic, iterative strategy as you experiment with and adopt emerging AI technologies. Learn how a focus on users can help ensure positive outcomes.
     {{< /homepage/snipe >}}
 
   {{< homepage/snipe
@@ -66,12 +66,12 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
     {{< /homepage/snipe >}}
 
   {{< homepage/snipe
-    img_src="/img/homepage/snipes/genai.png"
-    eyebrow="Guides"
-    headline="Generative AI"
-    url="/research/ai/"
+    img_src="/img/homepage/snipes/award.png"
+    eyebrow="Awards"
+    headline="Google Cloud DORA Awards"
+    url="/awards"
   >}}
-    Leverage DORA’s research findings to apply a holistic, iterative strategy as you experiment with and adopt emerging AI technologies. Learn how a focus on users can help ensure positive outcomes.
+    Read about the accomplishments of all the 2025 Google Cloud DORA Award winners!
     {{< /homepage/snipe >}}
 
 {{< homepage/snipe-wrapper mode="end" >}}
