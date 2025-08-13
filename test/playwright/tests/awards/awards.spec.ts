@@ -3,9 +3,8 @@ import { test, expect } from '@playwright/test';
 // baseURL default is defined in playwright.config.ts
 
 export const pageHeaders = [
-  'Header',
-  'Architecting for the future with AI',
-  'Augmenting human expertise with AI',
+  'Google Cloud DORA Awards',
+  'Announcing the winners of the 2025 Google Cloud DORA Awards',
 ];
 
 test.describe('DORA awards page', () => {
@@ -17,14 +16,10 @@ test.describe('DORA awards page', () => {
     await expect(page).toHaveTitle('DORA | Google Cloud DORA Awards');
   });
 
-  test('has the correct header', async ({ page }) => {
-    await expect(page.locator('h1')).toContainText('Google Cloud DORA Awards');
-  });
-
   pageHeaders.forEach((pageHeader) => {
     test(`has a ${pageHeader} header`, async ({ page }) => {
       await expect(
-        page.getByRole('heading', { name: pageHeader, level: 2, exact: true })
+        page.getByRole('heading', { name: pageHeader, level: 1, exact: true })
       ).toBeVisible();
     });
   });

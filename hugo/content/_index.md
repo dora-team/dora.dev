@@ -71,7 +71,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
     headline="Google Cloud DORA Awards"
     url="/awards"
   >}}
-    Read about the accomplishments of all the 2025 Google Cloud DORA Award winners!
+    Congratulations to the organizations who have demonstrated excellence in implementing DORA principles and capabilities with Google Cloud!
     {{< /homepage/snipe >}}
 
 {{< homepage/snipe-wrapper mode="end" >}}
