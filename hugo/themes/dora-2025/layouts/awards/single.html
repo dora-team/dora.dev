@@ -1,24 +1,22 @@
 {{ define "main" }}
+<div class="awards-article">
+  <div class="awards-header">
+    <h1>
+      {{ .Params.headline }}
+    </h1>
+    {{ if .Params.subhead }}
+    <h2>{{ .Params.subhead }}</h2>
+    {{ end }}
 
-    <div class="awards-article">
-      <div class="awards-header">
-          <h1>
-          {{ .Params.headline }}
-          </h1>
-          {{ if .Params.subhead }}
-          <h2>{{ .Params.subhead }}</h2>
-          {{ end }}
-
-          {{ if .Params.authors }}
-          <h4 class="authors">
-          by
-          {{ range .Params.authors }}
-          <a href="{{ .url }}" class="author" target="blank">{{ .name }}</a>
-          {{ end }}
-          </h4>
-          {{ end }}
-      </div>
-    </div>
+    {{ if .Params.authors }}
+    <h4 class="authors">
+      by
+      {{ range .Params.authors }}
+      <a href="{{ .url }}" class="author" target="_blank">{{ .name }}</a>
+      {{ end }}
+    </h4>
+    {{ end }}
+  </div>
 
   {{ .Content }}
 
