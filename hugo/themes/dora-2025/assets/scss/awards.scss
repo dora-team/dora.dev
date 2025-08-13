@@ -1,0 +1,13 @@
+@import "_variables.scss";
+.awards-article {
+  .awards-header {
+    h2 {
+      color: $color-text-medium;
+    }
+    margin-bottom: 0.5em;
+  }
+
+  .authors {
+    margin-bottom: 0.5em;
+  }
+}
