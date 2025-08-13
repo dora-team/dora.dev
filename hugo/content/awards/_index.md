@@ -40,6 +40,12 @@ This year's 13 winners have showcased achievements in leveraging technology to i
 
 > "**Cultural transformation** is just as critical as tooling. Success required not only introducing automation and metrics but also aligning teams around shared goals and ownership.” - **TBC Bank**
 
+## 2025 Google Cloud DORA Awards ceremony
+
+Watch the awards ceremony to see the winners accept their awards and share their insights.
+
+{{< youtube w8ovjAB3g6c >}}
+
 ## A look ahead: The 2025 DORA Report
 
 The annual DORA Report draws upon the insights and achievements of our award winners and thousands of other organizations. This year's report will once again provide a comprehensive exploration of AI, including capabilities such as AI fluency, AI policy and governance, and its impact on team performance. Get a [sneak peek into this year's report](/research/2025/) and [subscribe to the DORA Community](https://dora.community/) to be notified the moment the 2025 DORA Report is released.
