@@ -89,9 +89,9 @@
                     "link": "/capabilities/monitoring-and-observability/",
                     "summary": "Monitoring and observability tooling allows teams to understand the health of their systems. Effective solutions enable teams to monitor predefined metrics, including system state as experienced by users, as well as allowing engineers to interactively debug systems and explore properties and patterns as they emerge."
                 },
-                "resilience-engineering": {
-                    "name": "Resilience engineering",
-                    "summary": "Resilience Engineering is not just about preventing failures, but about <b>embracing them</b> by designing, building, and running systems that can withstand them. Some principles include: accepting failure, continuous improvement, fault tolerance, data integrity, loadbalancing, replication, autoscaling, and automated recovery. By implementing its practices and principles, you can build internet-based distributed systems that are reliable, able to deliver consistent performance even in the face of unexpected events."
+                "reliability-engineering": {
+                    "name": "Reliability engineering",
+                    "summary": "Reliability Engineering is not just about preventing failures, but about <b>embracing them</b> by designing, building, and running systems that can withstand them. Some principles include: accepting failure, continuous improvement, fault tolerance, data integrity, loadbalancing, replication, autoscaling, and automated recovery. By implementing its practices and principles, you can build internet-based distributed systems that are reliable, able to deliver consistent performance even in the face of unexpected events."
                 },
                 "pervasive-security": {
                     "name": "Pervasive security",
