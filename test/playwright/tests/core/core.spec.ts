@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('test', async ({ page }) => {
+test('Core model diagram interaction and content verification', async ({ page }) => {
   await page.goto('/research/');
   await expect(page.getByRole('heading', { name: 'Core Model' })).toBeVisible();
   await expect(page.locator('#app')).toContainText('Well-being');
