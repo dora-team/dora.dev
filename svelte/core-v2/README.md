@@ -14,3 +14,9 @@ This folder contains the DORA Core (v2) implementation. It's a Single Page Appli
   * _This will build the quick check SPA application and place the generated files into the appropriate place inside /hugo/content_
 3. from the repo root, run `hugo serve -s hugo`
 4. preview the site per instructions in the terminal
+
+### To update the linked PDF and PNG files:
+
+1. edit /resources/core_v*/core_v*.ai
+2. export PDF and PNG files
+3. copy into place in /svelte/core-v2/src/assets/
