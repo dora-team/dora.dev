@@ -115,7 +115,7 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
     <item>
         <h3>conversations.dora.dev</h3>
         <content>
-        <a href="https://conversations.dora.dev/" target="_blank"><img src="img/conversations_thumb.png " style="max-width:120px;"></a>
+        <a href="https://conversations.dora.dev/" target="_blank"><img src="img/conversations_thumb.png" style="max-width:120px;"></a>
         <p>
             Want better team performance and well-being? Start a conversation to understand where you are today, and discover opportunities for improvement. Use these questions to kick off a discussion and see where it takes you.
             <br>
