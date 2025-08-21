@@ -100,7 +100,7 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
         <content>
         <a href="img/dora-commit-to-prod.pdf" target="_blank"><img src="img/dora-commit-to-prod.png" style="max-width:120px;"></a>
         <p>
-            This graphic illustrates the journey that a change takes from inception to delivery. Use it to facilitate conversations and <a href="/guides/value-stream-management/">value stream mapping</a> excerises.
+            This graphic illustrates the journey that a change takes from inception to delivery. Use it to facilitate conversations and <a href="/guides/value-stream-management/">value stream mapping</a> exercises.
             <br>
             <a href="img/dora-commit-to-prod.pdf" target="_blank">Commit-to-prod</a>
         </p>
