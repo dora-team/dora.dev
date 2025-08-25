@@ -96,24 +96,30 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
 
 <grid class="border_none">
     <item>
-        <h3>Postcard (5x7)</h3>
+        <h3>Commit-to-prod</h3>
         <content>
-        <a href="/postcard" target="_blank"><img src="img/DORA_Postcard_2023-10_thumb.png" style="max-width:120px;"></a>
+        <a href="img/dora-commit-to-prod.pdf" target="_blank"><img src="img/dora-commit-to-prod.png" style="max-width:120px;"></a>
         <p>
-            Print this postcard (native size: 5" high by 7" wide) and use it to share DORA with your colleagues and communities.
+            This graphic illustrates the journey that a change takes from inception to delivery. Use it to facilitate conversations and <a href="/guides/value-stream-management/">value stream mapping</a> exercises.
             <br>
-            <a href="/postcard" target="_blank">DORA Postcard</a>
+            <a href="img/dora-commit-to-prod.pdf" target="_blank">Commit-to-prod</a>
         </p>
         </content>
     </item>
+</grid>
+
+-----
+## Websites
+
+<grid class="border_none">
     <item>
-        <h3 id="graphics">2023 State of DevOps Infographic</h3>
+        <h3>conversations.dora.dev</h3>
         <content>
-        <a href="img/2023-DORA-Report-Infographic.v10.pdf" target="_blank"><img src="img/2023-DORA-Report-Infographic_thumb.png " style="max-width:120px;"></a>
+        <a href="https://conversations.dora.dev/" target="_blank"><img src="img/conversations_thumb.png" style="max-width:120px;"></a>
         <p>
-            This infographic summarizes key findings from DORA's 2023 Accelerate State of DevOps Report.
+            Want better team performance and well-being? Start a conversation to understand where you are today, and discover opportunities for improvement. Use these questions to kick off a discussion and see where it takes you.
             <br>
-            <a href="img/2023-DORA-Report-Infographic.v10.pdf" target="_blank">Infographic</a>
+            <a href="https://conversations.dora.dev/" target="_blank">conversations</a>
         </p>
         </content>
     </item>
