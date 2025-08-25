@@ -21,6 +21,8 @@ This page lists errors and corrections to the 2024 Accelerate State of DevOps Re
 
 **p. 116** "Team Performanc" should be "Team Performance"
 
+**p. 116** "Softwear Delivery Performance" should be "Software Delivery Performance"
+
 **p. 116** The effect line connecting "AI adoption" and "Organizational Performance" is missing a label which should be "Helps".
 
 ### Errata in `v.2024.2`
