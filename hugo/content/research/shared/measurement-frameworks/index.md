@@ -12,6 +12,7 @@ The most important part is that you want to drive change in your organization th
 
 When industry and academia talk about measuring aspects of software development, they often reference frameworks such as [SPACE](https://queue.acm.org/detail.cfm?id=3454124), [DevEx](https://queue.acm.org/detail.cfm?id=3595878), [H.E.A.R.T](https://research.google/pubs/measuring-the-user-experience-on-a-large-scale-user-centered-metrics-for-web-applications/), and [DORA's software delivery metrics](/guides/dora-metrics-four-keys/). Choosing a framework to measure software development can be a difficult and confusing step, but it doesn’t have to be.
 
+### Step 1: Decide on why
 The first step is to define what goals and decisions measurement will inform, because frameworks differ in their overarching goals. For example, common frameworks in software development focus on measuring developer experience, product excellence, and organizational effectiveness. Each of these overarching goals take a slightly different lens to understanding software development (see the figure below).
 
 <object data="/research/shared/measurement-frameworks/metrics-triangle.svg" id="metrics-triangle" type="image/svg+xml" class="responsive-svg"></object>
@@ -22,6 +23,7 @@ To determine which framework is the best fit for your organization’s goals, it
 
 Frameworks provide a lens through which to view your data, ensuring your efforts are aligned with your organizational goals. To decide on a framework, you can consider: Why now? Did something change that is motivating a desire to measure? How will you act on your insights? Are there decisions or improvements you can enable with measurement?
 
+### Step 2: Decide on what and how
 Now, the “what” you’ll measure is the actual metrics, the key concepts that contribute to the overarching framework, such as a velocity or adoption metric. Generally, there are two different types of data you can collect. This is the “how” of your data collection which will help you arrive at your metrics.
 
 **Self-reported data** involves collecting information directly from developers about their experiences. This can be achieved through approaches such as:
