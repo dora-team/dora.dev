@@ -42,7 +42,7 @@
                     "survey_key": "ai_task_contribution",
                     "core": false,
                     "description": "For the primary application or service you work on, how much have you relied on AI for each of the following tasks over the last 3 months?",
-                    "group_responses": "Not at all relied on,Minimally relied on,Somewhat relied on,Moderately relied on,Extensively relied on,I don't know,We do not perform this task",
+                    "group_responses": "Not at all relied on,Minimally relied on,Somewhat relied on,Moderately relied on,Extensively relied on,We do not perform this task,I don't know",
                     "questions": [
                         "Code explanation",
                         "Optimizing code (for example, reducing the complexity of a function)",
@@ -111,7 +111,7 @@
                 {
                     "survey_key": "ai_write_code",
                     "questions": [
-                        "In the last 3 months, how has AI impacted your ability to write code?|Extremely improved my ability to write code,Moderately improved my ability to write code,Slightly improved my ability to write code,No impact on my ability to write code,Slightly worsened my ability to write code,Moderately worsened my ability to write code,Extremely worsened my ability to write code,I don’t know or NA,I don’t use AI to write code"
+                        "In the last 3 months, how has AI impacted your ability to write code?|Extremely improved my ability to write code,Moderately improved my ability to write code,Slightly improved my ability to write code,No impact on my ability to write code,Slightly worsened my ability to write code,Moderately worsened my ability to write code,Extremely worsened my ability to write code,I don’t use AI to write code,I don’t know or NA"
                     ]
                 },
                 {
@@ -166,7 +166,7 @@
                 {
                     "survey_key": "q_cb_quality",
                     "questions": [
-                        "In the last 6 months, how satisfied or dissatisfied have you been with the quality of code underlying your primary service or application?|Extremely satisfied,I don’t know or NA,Satisfied,Slightly satisfied,Neither satisfied or dissatisfied,Slightly dissatisfied,Dissatisfied,Extremely dissatisfied"
+                        "In the last 6 months, how satisfied or dissatisfied have you been with the quality of code underlying your primary service or application?|Extremely satisfied,Satisfied,Slightly satisfied,Neither satisfied or dissatisfied,Slightly dissatisfied,Dissatisfied,Extremely dissatisfied,I don’t know or NA"
                     ]
                 }
             ]
@@ -177,7 +177,7 @@
                 {
                     "survey_key": "m_code_review_time",
                     "questions": [
-                        "For the primary application or service you work on, how long does it generally take to complete the code review process?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don’t know,We do not do code reviews"
+                        "For the primary application or service you work on, how long does it generally take to complete the code review process?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,We do not do code reviews,I don’t know"
                     ]
                 }
             ]
@@ -212,7 +212,7 @@
                 {
                     "survey_key": "Ind_ethnicity",
                     "questions": [
-                        "Which of the following describes you, if any? Please check all that apply.|African,Asian,Biracial,Black,Caribbean,Central American,Central Asian,East Asian,Ethnoreligious group,European,Hispanic or Latino/a,Indian,Indigenous (such as Native American or Indigenous Australian),Middle Eastern,Multiracial,North African,North American,Pacific Islander,South American,South Asian,Southeast Asian,White,I don't know,In your own words,Prefer not to say"
+                        "Which of the following describes you, if any? Please check all that apply.|African,Asian,Biracial,Black,Caribbean,Central American,Central Asian,East Asian,Ethnoreligious group,European,Hispanic or Latino/a,Indian,Indigenous (such as Native American or Indigenous Australian),Middle Eastern,Multiracial,North African,North American,Pacific Islander,South American,South Asian,Southeast Asian,White,In your own words,Prefer not to say,I don't know"
                     ]
                 },
                 {
@@ -325,7 +325,7 @@
                 {
                     "survey_key": "op_org_perf",
                     "description": "For each of the following performance indicators, how well did your organization meet its goals over the past year?",
-                    "group_responses": "Performed well above goals,I don't know or NA,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals",
+                    "group_responses": "Performed well above goals,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals,I don't know or NA",
                     "questions": [
                         "Your organization’s overall performance",
                         "Your organization’s overall profitability",
@@ -336,7 +336,7 @@
                 {
                     "survey_key": "op_gov_perf",
                     "description": "For the following questions, we are interested in hearing about your organization's performance. If you are in a contract position, consider your current client to be your organization.",
-                    "group_responses": "Performed well above goals,I don't know or NA,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals",
+                    "group_responses": "Performed well above goals,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals,I don't know or NA",
                     "questions": [
                         "Operating efficiency",
                         "Customer satisfaction",
@@ -547,7 +547,7 @@
                 {
                     "survey_key": "q_tech_debt",
                     "questions": [
-                        "In the last 6 months, how much did technical debt inside your primary application or service hinder your productivity if at all?|I don’t know or NA,Not at all hindered,Slightly hindered,Moderately hindered,Very hindered,Extremely hindered"
+                        "In the last 6 months, how much did technical debt inside your primary application or service hinder your productivity if at all?|Not at all hindered,Slightly hindered,Moderately hindered,Very hindered,Extremely hindered,I don’t know or NA"
                     ]
                 }
             ]
