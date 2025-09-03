@@ -99,25 +99,25 @@
                 {
                     "survey_key": "ai_impact_prod",
                     "questions": [
-                        "In the last 3 months, how has AI impacted your productivity at work?|Extremely increased my productivity,Moderately increased my productivity,Slightly increased my productivity,No impact on my  productivity,Slightly decreased my productivity,Moderately decreased my productivity,Extremely decreased my productivity,I don’t know or NA"
+                        "In the last 3 months, how has AI impacted your productivity at work?|Extremely increased my productivity,Moderately increased my productivity,Slightly increased my productivity,No impact on my  productivity,Slightly decreased my productivity,Moderately decreased my productivity,Extremely decreased my productivity,I don't know or NA"
                     ]
                 },
                 {
                     "survey_key": "ai_shift",
                     "questions": [
-                        "In the last 3 months, to what extent has your organization shifted priorities to incorporate AI into its applications and services?|Significant increase in AI prioritization,Moderate increase in AI prioritization,Slight increase in AI prioritization,No change in AI prioritization,Slight decrease in AI prioritization,Moderate decrease in AI prioritization,Significant decrease in AI prioritization,I don’t know or NA"
+                        "In the last 3 months, to what extent has your organization shifted priorities to incorporate AI into its applications and services?|Significant increase in AI prioritization,Moderate increase in AI prioritization,Slight increase in AI prioritization,No change in AI prioritization,Slight decrease in AI prioritization,Moderate decrease in AI prioritization,Significant decrease in AI prioritization,I don't know or NA"
                     ]
                 },
                 {
                     "survey_key": "ai_write_code",
                     "questions": [
-                        "In the last 3 months, how has AI impacted your ability to write code?|Extremely improved my ability to write code,Moderately improved my ability to write code,Slightly improved my ability to write code,No impact on my ability to write code,Slightly worsened my ability to write code,Moderately worsened my ability to write code,Extremely worsened my ability to write code,I don’t use AI to write code,I don’t know or NA"
+                        "In the last 3 months, how has AI impacted your ability to write code?|Extremely improved my ability to write code,Moderately improved my ability to write code,Slightly improved my ability to write code,No impact on my ability to write code,Slightly worsened my ability to write code,Moderately worsened my ability to write code,Extremely worsened my ability to write code,I don't use AI to write code,I don't know or NA"
                     ]
                 },
                 {
                     "survey_key": "ai_trust",
                     "questions": [
-                        "In the last 3 months, how much did you trust the quality of the output from AI-generated code as part of your development work?|Not at all,A little,Somewhat,A lot,A great deal,I don’t know or NA"
+                        "In the last 3 months, how much did you trust the quality of the output from AI-generated code as part of your development work?|Not at all,A little,Somewhat,A lot,A great deal,I don't know or NA"
                     ]
                 },
 
@@ -152,7 +152,7 @@
                 {
                     "survey_key": "q_cb_complex",
                     "questions": [
-                        "In the last 6 months, how much has your primary application or service been hindered by code complexity if at all?|Not at all hindered,Slightly hindered,Moderately hindered,Very hindered,Extremely hindered,I don’t know or NA"
+                        "In the last 6 months, how much has your primary application or service been hindered by code complexity if at all?|Not at all hindered,Slightly hindered,Moderately hindered,Very hindered,Extremely hindered,I don't know or NA"
                     ]
                 }
             ]
@@ -166,7 +166,7 @@
                 {
                     "survey_key": "q_cb_quality",
                     "questions": [
-                        "In the last 6 months, how satisfied or dissatisfied have you been with the quality of code underlying your primary service or application?|Extremely satisfied,Satisfied,Slightly satisfied,Neither satisfied or dissatisfied,Slightly dissatisfied,Dissatisfied,Extremely dissatisfied,I don’t know or NA"
+                        "In the last 6 months, how satisfied or dissatisfied have you been with the quality of code underlying your primary service or application?|Extremely satisfied,Satisfied,Slightly satisfied,Neither satisfied or dissatisfied,Slightly dissatisfied,Dissatisfied,Extremely dissatisfied,I don't know or NA"
                     ]
                 }
             ]
@@ -177,7 +177,7 @@
                 {
                     "survey_key": "m_code_review_time",
                     "questions": [
-                        "For the primary application or service you work on, how long does it generally take to complete the code review process?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,We do not do code reviews,I don’t know"
+                        "For the primary application or service you work on, how long does it generally take to complete the code review process?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,We do not do code reviews,I don't know"
                     ]
                 }
             ]
@@ -258,7 +258,7 @@
                         "I can rely on our technical documentation when I need to use or work with the services or applications I work on.",
                         "It is easy to find the right technical document when I need to understand something about the services or applications I work on.",
                         "Technical documentation is updated as changes are made.",
-                        "When there’s an incident or problem that needs troubleshooting, I reach for the documentation."
+                        "When there's an incident or problem that needs troubleshooting, I reach for the documentation."
 
                     ]
                 }
@@ -287,7 +287,7 @@
                 {
                     "survey_key": "q_wb_flow",
                     "questions": [
-                        "In the last 3 months, how often were you able to reach a high level of focus or achieve 'flow' during development tasks?|Always,Frequently,Occasionally,Rarely,Never,I don’t know or prefer not to answer"
+                        "In the last 3 months, how often were you able to reach a high level of focus or achieve 'flow' during development tasks?|Always,Frequently,Occasionally,Rarely,Never,I don't know or prefer not to answer"
                     ]
                 }
             ]
@@ -308,7 +308,7 @@
             "question_groups": [
                 {
                     "survey_key": "env_transform_leader",
-                    "description": "Think about your experiences with your organization’s leadership when answering the following questions. Rate how strongly you agree or disagree with the following statements about your organization’s leadership.",
+                    "description": "Think about your experiences with your organization's leadership when answering the following questions. Rate how strongly you agree or disagree with the following statements about your organization's leadership.",
                     "group_responses": "Strongly agree,Mostly agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Mostly disagree,Strongly disagree,I don't know or NA",
                     "questions": [
                       "My organization's leadership understands where the organization is going and where we want to be.",
@@ -327,8 +327,8 @@
                     "description": "For each of the following performance indicators, how well did your organization meet its goals over the past year?",
                     "group_responses": "Performed well above goals,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals,I don't know or NA",
                     "questions": [
-                        "Your organization’s overall performance",
-                        "Your organization’s overall profitability",
+                        "Your organization's overall performance",
+                        "Your organization's overall profitability",
                         "Relative market share for primary products",
                         "Increased number of customers"
                     ]
@@ -352,7 +352,7 @@
                 {
                     "survey_key": "env_objectives",
                     "questions": [
-                        "How stable or unstable are the priorities of your organization?|Extremely stable,Very stable,Somewhat stable,Neither stable nor unstable,Somewhat unstable,Very unstable,Extremely unstable,I don’t know or NA"
+                        "How stable or unstable are the priorities of your organization?|Extremely stable,Very stable,Somewhat stable,Neither stable nor unstable,Somewhat unstable,Very unstable,Extremely unstable,I don't know or NA"
                     ]
                 }
             ]
@@ -364,7 +364,7 @@
                 {
                     "survey_key": "plt_interactions",
                     "questions": [
-                        "In the past 3 months, how have you interacted with your internal developer platform? (Please select all that apply)|Talk to a person,Ticket,CLI,API ,Code (including infrastructure as code),UI,I don’t have a platform,I don't know"
+                        "In the past 3 months, how have you interacted with your internal developer platform? (Please select all that apply)|Talk to a person,Ticket,CLI,API ,Code (including infrastructure as code),UI,I don't have a platform,I don't know"
                     ]
                 },
                 {
@@ -379,7 +379,7 @@
                         "Hackathons (fixed duration co-development)",
                         "Platform telemetry / user analytics",
                         "Other (please specify)",
-                        "Platform owners don’t collect feedback",
+                        "Platform owners don't collect feedback",
                         "I don't know",
                         "NA"
                       ]
@@ -415,7 +415,7 @@
                         "helps people accomplish what is important to them",
                         "reliably available for users",
                         "does well on performance metrics like latency",
-                        "keeps users’ information safe"
+                        "keeps users' information safe"
                     ]
                 }
             ]
@@ -499,10 +499,10 @@
                     ],
                     "description": "The next set of questions are about various outcomes of your work. For the primary application or service you work on...",
                     "questions": [
-                        "What is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don’t know or NA",
+                        "What is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don't know or NA",
                         "How often does your organization deploy code to production or release it to end users?|Fewer than once per six months, Between once per month and once every 6 months, Between once per week and once per month, Between once per day and once per week, Between once per hour and once per day, On demand (multiple deploys per day), I don't know or NA",
                         "Approximately what percentage of changes to production or released to users result in degraded service (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward or patch), if at all? |(value between 0% and 100%), I don't know or NA",
-                        "How long does it generally take to restore service after a change to production or release to users results in degraded service  (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward, or patch)?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don’t know or NA",
+                        "How long does it generally take to restore service after a change to production or release to users results in degraded service  (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward, or patch)?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don't know or NA",
                         "Approximately what percentage of deployments in the last 6 months were not planned but were performed to address a user-facing bug in the application?|(value between 0% and 100%), I don't know or NA"
                     ]
                 }
@@ -534,7 +534,7 @@
                 {
                     "survey_key": "q_team_stability",
                     "questions": [
-                        "In the last 3 months, to what extent has your team experienced unnecessary churn from frustration caused by internal sources?|To a very high extent,To a high extent,To a moderate extent,To a slight extent,Not at all,I don’t know or NA"
+                        "In the last 3 months, to what extent has your team experienced unnecessary churn from frustration caused by internal sources?|To a very high extent,To a high extent,To a moderate extent,To a slight extent,Not at all,I don't know or NA"
                     ]
                 }
             ]
@@ -547,7 +547,7 @@
                 {
                     "survey_key": "q_tech_debt",
                     "questions": [
-                        "In the last 6 months, how much did technical debt inside your primary application or service hinder your productivity if at all?|Not at all hindered,Slightly hindered,Moderately hindered,Very hindered,Extremely hindered,I don’t know or NA"
+                        "In the last 6 months, how much did technical debt inside your primary application or service hinder your productivity if at all?|Not at all hindered,Slightly hindered,Moderately hindered,Very hindered,Extremely hindered,I don't know or NA"
                     ]
                 }
             ]
@@ -593,7 +593,7 @@
                 {
                     "survey_key": "ind_team_exp",
                     "questions": [
-                        "How many years have you worked on the team you’re currently on?"
+                        "How many years have you worked on the team you're currently on?"
                     ]
                 },
                 {
