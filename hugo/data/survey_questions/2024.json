@@ -369,19 +369,8 @@
                 },
                 {
                     "survey_key": "plt_feedback",
-                    "description": "How do platform owners collect feedback from platform users? (Select all that apply.)",
                     "questions": [
-                        "Informal conversations",
-                        "Interviews of users",
-                        "Issue trackers",
-                        "Periodic, ongoing surveys",
-                        "Co-development of platform (ongoing user engagement with platform team)",
-                        "Hackathons (fixed duration co-development)",
-                        "Platform telemetry / user analytics",
-                        "Other (please specify)",
-                        "Platform owners don't collect feedback",
-                        "I don't know",
-                        "NA"
+                        "How do platform owners collect feedback from platform users? (Select all that apply.)|Informal conversations,Interviews of users,Issue trackers,Periodic / ongoing surveys,Co-development of platform (ongoing user engagement with platform team),Hackathons (fixed duration co-development),Platform telemetry / user analytics,Other (please specify),Platform owners don't collect feedback,I don't know,NA"
                       ]
                 },
                 {
