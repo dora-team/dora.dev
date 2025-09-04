@@ -25,8 +25,11 @@ Here’s a sneak peek at some of the key areas we're exploring:
 The goal is to understand which conditions and capabilities are proven to reduce burnout, improve team and product performance, and drive both delivery throughput and stability.
 
 ### Get a head start
+
 <a href="/research/ai/gen-ai-report"><img src="/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png" width="100em" style="float:right; margin-left: 1rem;" alt="Impact of Generative AI in Software Development"></a>
 In March of 2025, DORA published the [Impact of Generative AI on Developer Productivity](/research/ai/gen-ai-report). This report offers research-backed guidance for leaders and practitioners to effectively navigate this transformation, providing actionable insights to maximize AI's benefits while mitigating potential risks. While the full 2025 DORA Report is still on the horizon, you can get immediate insights by [downloading the report now](/research/ai/gen-ai-report).
+
+In August, we published [Choosing measurement frameworks to fit your organizational goals](/research/2025/measurement-frameworks/) which explores how to select the right framework to measure software development and drive impactful change.
 
 ### Stay connected
 Be the first to get the insights that will define the next wave of high-performance technology teams. [Subscribe to the DORA Community](https://dora.community/) to be notified the moment the 2025 DORA Report is released.
