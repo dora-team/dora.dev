@@ -55,9 +55,9 @@ test('explore core model', async ({ page }) => {
     await expect(page.locator('main')).toContainText('Core Model');
     await page.getByLabel('detail').check();
     await expect(page.locator('main')).toContainText('Failed deployment recovery time');
-    await page.getByRole('link', { name: 'Failed deployment recovery' }).click();
-    await expect(page.locator('main')).toContainText('Learn more about failed deployment recovery time');
-    await page.getByRole('link', { name: 'Failed deployment recovery time', exact: true }).press('Escape');
+    await page.getByRole('button', { name: 'Failed deployment recovery time' }).click();
+    await expect(page.locator('#entityPopover')).toContainText('Learn more about failed deployment recovery time');
+    await page.locator('#entityPopover').getByRole('link', { name: '×' }).click();
     const page1Promise = page.waitForEvent('popup');
     await page.getByRole('link', { name: 'PNG' }).click();
     const page1 = await page1Promise;
@@ -92,13 +92,14 @@ test.describe('Core capabilities popup tests', () => {
 
   coreCapabilitiesPopupTests.forEach(({ linkText, learnMoreLink, expectedH2, expectedURLFragment }, index) => {
     test(`Popup test for ${linkText}`, async ({ page }) => {
-      await page.getByRole('link', { name: linkText }).click();
+      await page.getByRole('button', { name: linkText }).click();
+      await expect(page.locator('#entityPopover')).toContainText(learnMoreLink);
       const page1Promise = page.waitForEvent('popup');
       await page.getByRole('link', { name: learnMoreLink }).click();
       const page1 = await page1Promise;
 
-      // Use the index to select the correct h2:
-      await expect(page1.locator(`h2 >> nth=${index}`)).toContainText(expectedH2);
+      const headingId = decodeURIComponent(expectedURLFragment.substring(1));
+      await expect(page1.locator(`h2[id="${headingId}"]`)).toContainText(expectedH2);
 
       await expect(page1.url()).toContain(expectedURLFragment);
     });
