@@ -7,8 +7,9 @@ test('Core model diagram interaction and content verification', async ({ page })
   await page.getByText('detail').click();
   await expect(page.locator('#app')).toContainText('Service Level Objectives (SLOs):');
   await expect(page.locator('#fast-feedback')).toContainText('Reliability engineering');
-  await page.getByRole('link', { name: 'Reliability engineering' }).click();
+  await page.getByRole('button', { name: 'Reliability engineering' }).click();
   await expect(page.locator('#entityPopover')).toContainText('embracing them');
+  await page.locator('#entityPopover').getByRole('link', { name: '×' }).click();
   const page1Promise = page.waitForEvent('popup');
   await page.getByRole('link', { name: 'PNG' }).click();
   const page1 = await page1Promise;
