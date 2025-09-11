@@ -14,11 +14,9 @@
 </script>
 
 <div class="entity-group {view_mode} {column}">
-    <div
+    <button
         class="group-name"
         on:click={() => openPopover(entity_group_id)}
-        role="link"
-        tabindex="-1"
     >
         <span class="entity-group-name">{entity_group["name"]}</span>
         {#if entity_group["measured_by"]}
@@ -27,7 +25,7 @@
                 {entity_group["measured_by"]}{#if view_mode === "detail"}:{/if}
             </h5>
         {/if}
-    </div>
+    </button>
     <div class="entities-wrapper" id={entity_group_id}>
         <div class="entities">
             {#each Object.entries(entity_group["entities"]) as [entity, details]}
@@ -60,6 +58,11 @@
             font-weight: 500;
             cursor: pointer;
             outline:none;
+            background: none;
+            border: none;
+            color: inherit;
+            text-align: left;
+            width: 100%;
         }
 
         small {
