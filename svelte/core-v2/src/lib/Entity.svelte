@@ -10,23 +10,26 @@
     }
 </script>
 
-<div
+<button
     class={view_mode}
     on:click={() => openPopover(entity)}
-    role="link"
-    tabindex="-1"
 >
     {details["name"]}
-</div>
+</button>
 
 <style lang="scss">
-    div {
+    button {
+        all: unset;
+        display: grid;
         border: 1px solid var(--color-grey-light);
         border-radius: 0.5rem;
         padding: 0.2rem;
-        display: grid;
         align-items: center;
         cursor: pointer;
-        outline:none;
+        text-align: center;
+    }
+    button:hover {
+        background-color: initial;
+        color: inherit;
     }
 </style>
