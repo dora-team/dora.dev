@@ -61,8 +61,10 @@
             background: none;
             border: none;
             color: inherit;
-            text-align: left;
             width: 100%;
+            font-family: inherit;
+            line-height: inherit;
+            letter-spacing: inherit;
         }
 
         small {
