@@ -1,5 +1,6 @@
 <script>
     import core_data from "./core_data.json";
+    import { onMount } from "svelte";
 
     export let selected_entity = "unspecified";
 
@@ -43,6 +44,17 @@
 
     // when the selected entity changes, find its associated info
     $: populateDetails(selected_entity);
+
+    onMount(() => {
+        const popover = document.getElementById('entityPopover');
+        popover.addEventListener('toggle', (event) => {
+            if (event.newState === 'open') {
+                document.body.classList.add('popover-is-open');
+            } else {
+                document.body.classList.remove('popover-is-open');
+            }
+        });
+    });
 </script>
 
 <div id="entityPopover" popover="auto">
@@ -54,8 +66,7 @@
                 on:click={(e) => {
                     e.preventDefault();
                     document.getElementById("entityPopover").hidePopover();
-                }}>&times;</a
-            >
+                }}>&times;</a>
         </div>
     </div>
 
@@ -75,21 +86,19 @@
 <div id="link-blocker"></div>
 
 <style lang="scss">
-    :global(:root) {
-        #link-blocker {
-            z-index: 999;
-            width: 100vw;
-            height: 100vh;
-            opacity: 0;
-            position: fixed;
-            left: 0;
-            top: 0;
-            display: none;
-        }
+    :global(body.popover-is-open #link-blocker) {
+        display: block;
+    }
 
-        &:has(:popover-open) #link-blocker {
-            display: block;
-        }
+    :global(#link-blocker) {
+        z-index: 999;
+        width: 100vw;
+        height: 100vh;
+        opacity: 0;
+        position: fixed;
+        left: 0;
+        top: 0;
+        display: none;
     }
 
     #entityPopover {
