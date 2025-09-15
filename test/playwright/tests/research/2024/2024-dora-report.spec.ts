@@ -17,6 +17,54 @@ const languageToUrlMap = {
   한국어: "https://cloud.google.com/devops/state-of-devops/?hl=ko&region=KR",
 };
 
+const sponsors = [
+  {
+    name: "Catchpoint",
+    src: "sponsors/catchpoint.png",
+    href: "https://www.catchpoint.com/",
+  },
+  {
+    name: "chronosphere",
+    src: "sponsors/chronosphere.png",
+    href: "https://chronosphere.io/",
+  },
+  {
+    name: "Datadog",
+    src: "sponsors/datadog.png",
+    href: "https://www.datadoghq.com/",
+  },
+  {
+    name: "Deloitte",
+    src: "sponsors/deloitte.png",
+    href: "https://www2.deloitte.com/",
+  },
+  {
+    name: "Excella",
+    src: "sponsors/excella.png",
+    href: "https://www.excella.com/",
+  },
+  {
+    name: "Gearset",
+    src: "sponsors/gearset.png",
+    href: "https://gearset.com/",
+  },
+  {
+    name: "Liatrio",
+    src: "sponsors/liatrio.png",
+    href: "https://www.liatrio.com/",
+  },
+  {
+    name: "Middleware",
+    src: "sponsors/middleware.png",
+    href: "https://www.middlewarehq.com/middleware-open-source?utm_source=dora_report",
+  },
+  {
+    name: "Opsera",
+    src: "sponsors/opsera.png",
+    href: "https://www.opsera.io/",
+  },
+];
+
 test.describe("2024 report page", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/research/2024/dora-report/");
@@ -38,10 +86,8 @@ test.describe("2024 report page", () => {
     await expect(languageOptions).toBe(expectedLanguageCount);
   });
 
-  for (const language in languageToUrlMap) {
-    const url = languageToUrlMap[language];
+  for (const [language, url] of Object.entries(languageToUrlMap)) {
     test(`links to the correct ${language} URL`, async ({ page }) => {
-      const url = languageToUrlMap[language];
       const languageLink = page.getByRole("link", {
         name: language,
         exact: true,
@@ -69,55 +115,7 @@ test.describe("2024 report page", () => {
     );
   });
 
-  test(" has the correct sponsors.", async ({ page }) => {
-    const sponsors = [
-      {
-        name: "Catchpoint",
-        src: "sponsors/catchpoint.png",
-        href: "https://www.catchpoint.com/",
-      },
-      {
-        name: "chronosphere",
-        src: "sponsors/chronosphere.png",
-        href: "https://chronosphere.io/",
-      },
-      {
-        name: "Datadog",
-        src: "sponsors/datadog.png",
-        href: "https://www.datadoghq.com/",
-      },
-      {
-        name: "Deloitte",
-        src: "sponsors/deloitte.png",
-        href: "https://www2.deloitte.com/",
-      },
-      {
-        name: "Excella",
-        src: "sponsors/excella.png",
-        href: "https://www.excella.com/",
-      },
-      {
-        name: "Gearset",
-        src: "sponsors/gearset.png",
-        href: "https://gearset.com/",
-      },
-      {
-        name: "Liatrio",
-        src: "sponsors/liatrio.png",
-        href: "https://www.liatrio.com/",
-      },
-      {
-        name: "Middleware",
-        src: "sponsors/middleware.png",
-        href: "https://www.middlewarehq.com/middleware-open-source?utm_source=dora_report",
-      },
-      {
-        name: "Opsera",
-        src: "sponsors/opsera.png",
-        href: "https://www.opsera.io/",
-      },
-    ];
-
+  test("has the correct sponsors.", async ({ page }) => {
     for (const sponsor of sponsors) {
       const sponsorLink = page.getByRole("link", { name: sponsor.name });
       await expect(sponsorLink).toBeVisible();
