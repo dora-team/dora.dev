@@ -8,7 +8,7 @@ test.describe("2025 report page", () => {
 
   test("has the correct title.", async ({ page }) => {
     await expect(page).toHaveTitle(
-      "DORA | State of AI-assisted Sotware Development 2025",
+      "DORA | State of AI-assisted Software Development 2025",
     );
   });
 
@@ -31,7 +31,7 @@ test.describe("2025 report page", () => {
     await expect(reportImage).toBeVisible();
     await expect(reportImage).toHaveAttribute(
       "alt",
-      "State of AI-assisted Sotware Development 2025",
+      "State of AI-assisted Software Development 2025",
     );
   });
 });
