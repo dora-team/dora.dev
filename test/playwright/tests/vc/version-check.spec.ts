@@ -1,81 +1,122 @@
 import { test, expect } from '@playwright/test';
 
-const versions = [
-  { version: '2024.3', expectedText: '2024 DORA Report' },
-  { version: '2024.3.p', expectedText: '2024 DORA Report (Printed Version)' },
-  { version: '2024.2', expectedText: '2024 DORA Report' },
-  { version: '2024.1', expectedText: '2024 DORA Report' },
-  { version: '2023-12', expectedText: '2023 DORA Report' },
-  { version: '2023-10', expectedText: '2023 DORA Report' },
-];
+test.describe('Version Checker', () => {
+  const versions = [
+    {
+      version: '2024.3',
+      expectedText: '2024 DORA Report (Digital Version)',
+      expectedImage:
+        '/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png',
+    },
+    {
+      version: '2024.3.p',
+      expectedText: '2024 DORA Report (Printed Version)',
+      expectedImage:
+        '/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png',
+    },
+    {
+      version: '2024.2',
+      expectedText: 'Outdated 2024 DORA Report',
+    },
+    {
+      version: '2024.1',
+      expectedText: 'Outdated 2024 DORA Report',
+    },
+    {
+      version: '2023-12',
+      expectedText: '2023 DORA Report',
+    },
+    {
+      version: '2023-10',
+      expectedText: 'Outdated 2023 DORA Report',
+    },
+  ];
 
-versions.forEach(({ version, expectedText }) => {
-  test(`Version checker recognizes v ${version}`, async ({ page }) => {
-    await page.goto(`/vc/?v=${version}`);
+  versions.forEach(
+    ({ version, expectedText, expectedImage }) => {
+      test.describe(`v ${version}`, () => {
+        test.beforeEach(async ({ page }) => {
+          await page.goto(`/vc/?v=${version}`);
+        });
 
-    const versionDiv = page.locator(`div[data-version="${version}"]`);
-    await expect(versionDiv).toBeVisible();
+        test('shows the correct version information', async ({ page }) => {
+          const versionDiv = page.locator(`div[data-version="${version}"]`);
+          await expect(versionDiv).toBeVisible();
+          await expect(versionDiv.getByRole('heading', { name: expectedText, level: 2 })).toBeVisible();
+        });
 
-    // Check the correct header text is displayed
-    await expect(versionDiv.locator('h2')).toContainText(expectedText);
+        if (expectedImage) {
+          test('shows the correct image', async ({ page }) => {
+            const versionDiv = page.locator(`div[data-version="${version}"]`);
+            await expect(versionDiv.getByRole('img')).toHaveAttribute('src', expectedImage);
+          });
+        }
+
+        test('hides other versions', async ({ page }) => {
+          for (const otherVersion of versions.filter(v => v.version !== version)) {
+            await expect(page.locator(`div[data-version="${otherVersion.version}"]`)).toBeHidden();
+          }
+        });
+
+        test('hides the "Unrecognized version" message', async ({ page }) => {
+          await expect(
+            page.getByRole('heading', { name: 'Unrecognized version', level: 2 }),
+          ).toBeHidden();
+        });
+      });
+    },
+  );
+
+  const invalidVersions = ['', 'random', '123-456', '123.456'];
+
+  invalidVersions.forEach((version) => {
+    test(`handles ${version ? `'${version}'` : 'empty'} version`, async ({
+      page,
+    }) => {
+      await page.goto(`/vc/?v=${version}`);
+
+      // Check all known versions are hidden
+      for (const { version } of versions) {
+        await expect(page.locator(`div[data-version="${version}"]`)).toBeHidden();
+      }
+
+      // Check "Unrecognized version" is visible
+      await expect(
+        page.getByRole('heading', { name: 'Unrecognized version', level: 2 }),
+      ).toBeVisible();
+    });
+  });
+
+  test('handles extra data in the query string', async ({
+    page,
+  }) => {
+    const randomNumber = Math.floor(Math.random() * 1000) + 1;
+    const randomNumber2 = Math.floor(Math.random() * 1000) + 1;
+    await page.goto(`/vc/?foo=${randomNumber}&bar=${randomNumber2}&v=2024.3`);
+
+    // Check the correct version is displayed
+    await expect(page.locator('div[data-version="2024.3"]')).toBeVisible();
 
     // Check other versions are hidden
-    versions
-      .filter((v) => v.version !== version)
-      .forEach(async ({ version }) => {
-        await expect(page.locator(`div[data-version="${version}"]`)).toBeHidden();
-      });
+    for (const otherVersion of versions.filter(v => v.version !== '2024.3')) {
+      await expect(page.locator(`div[data-version="${otherVersion.version}"]`)).toBeHidden();
+    }
 
     // Check "Unrecognized version" is hidden
-    await expect(page.locator('h2', { hasText: 'Unrecognized version' })).toBeHidden();
+    await expect(
+      page.getByRole('heading', { name: 'Unrecognized version', level: 2 }),
+    ).toBeHidden();
   });
-});
 
-const invalidVersions = ['', 'random', '123-456', '123.456'];
+  test('has the correct title', async ({ page }) => {
+    await page.goto('/vc/');
 
-invalidVersions.forEach((version) => {
-  test(`Version checker handles ${version ? `'${version}'` : 'empty'} version`, async ({ page }) => {
-    await page.goto(`/vc/?v=${version}`);
-
-    // Check all known versions are hidden
-    versions.forEach(async ({ version }) => {
-      await expect(page.locator(`div[data-version="${version}"]`)).toBeHidden();
-    });
-
-    // Check "Unrecognized version" is visible
-    await expect(page.locator('h2', { hasText: 'Unrecognized version' })).toBeVisible();
+    await expect(page).toHaveTitle('DORA | DORA Report Version Check');
   });
-});
 
-test('Version checker handles extra data in the query string', async ({ page }) => {
-  const randomNumber = Math.floor(Math.random() * 1000) + 1;
-  const randomNumber2 = Math.floor(Math.random() * 1000) + 1;
-  await page.goto(`/vc/?foo=${randomNumber}&bar=${randomNumber2}&v=2024.3`);
+  test('has the correct header', async ({ page }) => {
+    await page.goto('/vc/?v=2024.1');
 
-  // Check the correct version is displayed
-  await expect(page.locator('div[data-version="2024.3"]')).toBeVisible();
-
-  // Check other versions are hidden
-  versions
-    .filter((v) => v.version !== '2024.3')
-    .forEach(async ({ version }) => {
-      await expect(page.locator(`div[data-version="${version}"]`)).toBeHidden();
-    });
-
-  // Check "Unrecognized version" is hidden
-  await expect(page.locator('h2', { hasText: 'Unrecognized version' })).toBeHidden();
-});
-
-// No version specified
-test('Version checker has the correct title.', async ({ page }) => {
-  await page.goto('/vc/');
-
-  await expect(page).toHaveTitle('DORA | DORA Report Version Check');
-});
-
-// 2024.1 version
-test('Version checker has the correct header.', async ({ page }) => {
-  await page.goto('/vc/?v=2024.1');
-
-  await expect(page.locator('h1')).toContainText('DORA Report Version Check');
+    await expect(page.getByRole('heading', { name: 'DORA Report Version Check', level: 1 })).toBeVisible();
+  });
 });
