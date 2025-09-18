@@ -120,6 +120,7 @@ layout: single
   <p>
     Your version: <code>v.2023-12</code><br />
     Latest version: <code>v.2023-12</code><br />
+  </p>
   <h3>Newer DORA reports available</h3>
   <p><a href="/publications">View all of DORA's publications</a>.</p>
 </div>
@@ -153,7 +154,7 @@ layout: single
     Latest version: <code>v.2025.1</code>
   </p>
   <p>
-    <a href="/research/2025/dora-report">Download the latest  version of the 2025 DORA report</a>.
+    <a href="/research/2025/dora-report">Download the latest version of the 2025 DORA report</a>.
   </p>
   <a href="/research/2025/dora-report"><img src="/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report.png" alt="2025 DORA Report Cover" style="max-width:18em;"></a>
 </div>
