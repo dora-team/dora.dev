@@ -13,33 +13,39 @@ test.describe('Version Checker', () => {
       expectedText: '2024 DORA Report (Digital Version)',
       expectedImage:
         '/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png',
+      expectNewerReportsLink: true,
     },
     {
       version: '2024.3.p',
       expectedText: '2024 DORA Report (Printed Version)',
       expectedImage:
         '/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png',
+      expectNewerReportsLink: true,
     },
     {
       version: '2024.2',
       expectedText: 'Outdated 2024 DORA Report',
+      expectNewerReportsLink: true,
     },
     {
       version: '2024.1',
       expectedText: 'Outdated 2024 DORA Report',
+      expectNewerReportsLink: true,
     },
     {
       version: '2023-12',
       expectedText: '2023 DORA Report',
+      expectNewerReportsLink: true,
     },
     {
       version: '2023-10',
       expectedText: 'Outdated 2023 DORA Report',
+      expectNewerReportsLink: true,
     },
   ];
 
   versions.forEach(
-    ({ version, expectedText, expectedImage }) => {
+    ({ version, expectedText, expectedImage, expectNewerReportsLink }) => {
       test.describe(`v ${version}`, () => {
         test.beforeEach(async ({ page }) => {
           await page.goto(`/vc/?v=${version}`);
@@ -55,6 +61,24 @@ test.describe('Version Checker', () => {
           test('shows the correct image', async ({ page }) => {
             const versionDiv = page.locator(`div[data-version="${version}"]`);
             await expect(versionDiv.getByRole('img')).toHaveAttribute('src', expectedImage);
+          });
+        }
+
+        if (expectNewerReportsLink) {
+          test('shows the "Newer Reports Available" section', async ({ page }) => {
+            const versionDiv = page.locator(`div[data-version="${version}"]`);
+            await expect(
+              versionDiv.getByRole('heading', { name: 'Newer DORA reports available', level: 3 }),
+            ).toBeVisible();
+            await expect(
+              versionDiv.getByRole('link', { name: "View all of DORA's publications" }),
+            ).toHaveAttribute('href', '/publications');
+          });
+        } else {
+          test('does not show the "Newer Reports Available" section', async ({ page }) => {
+            await expect(
+              page.getByRole('heading', { name: 'Newer DORA reports available', level: 3 }),
+            ).toBeHidden();
           });
         }
 
