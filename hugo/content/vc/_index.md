@@ -58,6 +58,8 @@ layout: single
     <a href="/research/2024/dora-report">Download the latest digital version of the 2024 DORA report</a>.
   </p>
   <a href="/research/2024/dora-report"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 DORA Report Cover" style="max-width:18em;"></a>
+  <h3>Newer DORA reports available</h3>
+  <p><a href="/publications">View all of DORA's publications</a>.</p>
 </div>
 
 <!-- version is 2024.3 -->
@@ -71,6 +73,8 @@ layout: single
     Latest version: <code>v.2024.3</code>
   </p>
   <a href="/research/2024/dora-report"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 DORA Report Cover" style="max-width:18em;"></a>
+  <h3>Newer DORA reports available</h3>
+  <p><a href="/publications">View all of DORA's publications</a>.</p>
 </div>
 
 <!-- version is 2024.2 -->
@@ -86,6 +90,8 @@ layout: single
   <p>
     <a href="/research/2024/dora-report">Download the latest version of the 2024 DORA report</a>.
   </p>
+  <h3>Newer DORA reports available</h3>
+  <p><a href="/publications">View all of DORA's publications</a>.</p>
 </div>
 
 <!-- version is 2024.1 -->
@@ -101,6 +107,8 @@ layout: single
   <p>
     <a href="/research/2024/dora-report">Download the latest version of the 2024 DORA report</a>.
   </p>
+  <h3>Newer DORA reports available</h3>
+  <p><a href="/publications">View all of DORA's publications</a>.</p>
 </div>
 
 <!-- version is 2023-12 -->
@@ -112,12 +120,8 @@ layout: single
   <p>
     Your version: <code>v.2023-12</code><br />
     Latest version: <code>v.2023-12</code><br />
-    <a href="/research/2023/errata/#errata-in-v2023-12">Errata for <code>v.2023-12</code>.</a>
-  </p>
-
-  <h3>2024 DORA Report</h3>
-  <p>The <a href="/research/2024/dora-report">2024 DORA Report</a> is now available for download.</p>
-  <a href="/research/2024/dora-report"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 DORA Report Cover" style="max-width:12em;"></a>
+  <h3>Newer DORA reports available</h3>
+  <p><a href="/publications">View all of DORA's publications</a>.</p>
 </div>
 
 <!-- version is 2023-10 -->
@@ -134,9 +138,8 @@ layout: single
     <a href="/research/2023/dora-report">Download the latest version of the 2023 DORA report</a>.
   </p>
 
-  <h3>2024 DORA Report</h3>
-  <p>The <a href="/research/2024/dora-report">2024 DORA Report</a> is now available for download.</p>
-  <a href="/research/2024/dora-report"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 DORA Report Cover" style="max-width:12em;"></a>
+  <h3>Newer DORA reports available</h3>
+  <p><a href="/publications">View all of DORA's publications</a>.</p>
 </div>
 
 <!-- version is 2025.1 -->
