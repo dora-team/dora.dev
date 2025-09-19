@@ -50,6 +50,18 @@ grid {
         }
     }
 
+    &.mt-1 {
+        margin-top: 1rem;
+    }
+
+    &.grid-single {
+        grid-template-columns: 1fr;
+    }
+
+    &.grid-triple {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
 }
 
 @include media-medium {
