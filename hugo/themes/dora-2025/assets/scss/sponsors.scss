@@ -1,7 +1,12 @@
-.sold-out {
-    text-decoration: line-through;
-}
+.sponsor-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 
-.sold-out-text {
-    color: var(--dora-secondary-a);
+  img {
+    max-width: 8em;
+    max-height: 2.5em;
+    min-height: 2.5em;
+  }
 }
