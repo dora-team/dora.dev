@@ -11,46 +11,32 @@ bannerBackgroundColor: purple  # choose one of "yellow", "blue", "red", "purple"
 >
 > Please reach out to sponsor-dora@google.com for more information on the sponsorship opportunities!
 
-## Impact of Generative AI in Software Development
+## State of AI-assisted Software Development
 
 <section class="publicationHighlight">
     <aside>
-        <a href="https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development" target="_blank"><img src="/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png" alt="Impact of Generative AI in Software Development"></a>
+        <a href="https://cloud.google.com/dora" target="_blank"><img src="/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report.png" alt="State of AI-assisted Software Development"></a>
     </aside>
     <article>
-<p>
-  Generative AI is rapidly reshaping the software development landscape, presenting both exciting opportunities and complex challenges.
-</p>
-<p>
-  This report offers research-backed guidance for leaders and practitioners to effectively navigate this transformation, providing actionable insights to maximize AI's benefits while mitigating potential risks.
-</p>
-
-<p>
-  Based on extensive data and developer interviews, the report moves beyond the hype to offer a nuanced perspective on AI's impact on individuals, teams, and organizations.
-</p>
-      <a href="https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development" target="_blank"><button class="secondary">Download the report</button></a>
-    </article>
-</section>
-
-## Accelerate State of DevOps Report
-
-<section class="publicationHighlight">
-    <aside>
-        <a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 Accelerate State of DevOps Report"></a>
-    </aside>
-    <article>
-       <p>
-         DORA has been investigating the capabilities, practices, and measures of high-performing technology-driven teams and organizations for over a decade. This is our tenth DORA report. We have heard from more than 39,000 professionals working at organizations of every size and across many different industries globally.
-       </p>
-       <p>
-         This report highlights the significant impact of AI on software development, explores platform engineering's promises and challenges, and emphasizes user-centricity and stable priorities for organizational success.
-       </p>
-        <p>Findings from our research can help inform your team's continuous improvement journey.</p>
-       <a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><button class="secondary">Download the report</button></a>
+        <p>
+            The 2025 State of AI-assisted Software Development report finds that AI's primary role is that of an amplifier, magnifying the strengths of high-performing organizations and the dysfunctions of struggling ones. Download the report to explore the new DORA AI Capabilities Model, which identifies seven foundational practices that are proven to amplify the positive impact of AI on organizational performance.
+        </p>
+        <p>
+            <a href="https://cloud.google.com/dora" target="_blank"><button class="secondary">Download the report</button></a>
+        </p>
     </article>
 </section>
 
 ## Prior State of DevOps Reports
+
+- [![Impact of Generative AI in Software Development](/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report-landscape.png)](/research/ai/gen-ai-report/)
+  **[Impact of Generative AI in Software Development](/research/ai/gen-ai-report/)**
+  [Download the report](/research/ai/gen-ai-report/)
+
+- [![2024 Accelerate State of DevOps Report](/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report-landscape.png)](/research/2024/dora-report/)
+  **[2024 Accelerate State of DevOps Report](/research/2024/dora-report/)**
+  [Download the report](/research/2024/dora-report/)
+
 - [![2023 Accelerate State of DevOps Report](/research/2023/dora-report/2023-dora-accelerate-state-of-devops-report_landscape.png)](/research/2023/dora-report/)
   **[2023 Accelerate State of DevOps Report](/research/2023/dora-report/)**
   [Download the report](/research/2023/dora-report/)

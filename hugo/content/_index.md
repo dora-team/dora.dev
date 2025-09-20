@@ -8,7 +8,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 
 <!-- {{/* BEGIN content for 2025 homepage (dora-2025 theme).  This content does not appear when the default 'dora' theme is used. */}} -->
 {{< homepage/hero
-  href="https://cloud.google.com/devops/state-of-devops"
+  href="https://cloud.google.com/dora/"
   text="Read our latest report"
   target="_blank"
   >}}
@@ -22,7 +22,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 {{< homepage/feature
   eyebrow="our latest report"
   headline="Impact of Generative AI in Software Development"
-  url="https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development"
+  url="/research/ai/gen-ai-report/"
   cta="Learn more"
   img_src="/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png"
   img_align="right"
