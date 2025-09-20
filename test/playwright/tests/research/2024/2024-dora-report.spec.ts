@@ -2,19 +2,16 @@ import { test, expect } from "@playwright/test";
 import { sidebarLinks } from "../sidebarLinks";
 
 const languageToUrlMap = {
-  English: "https://cloud.google.com/devops/state-of-devops/?hl=en&region=US",
-  Español: "https://cloud.google.com/devops/state-of-devops/?hl=es&region=ES",
+  English: "2024-dora-accelerate-state-of-devops-report.pdf",
+  Español: "2024-dora-accelerate-state-of-devops-report-es.pdf",
   "Español - América Latina":
-    "https://cloud.google.com/devops/state-of-devops/?hl=es-419&region=MX",
-  Français: "https://cloud.google.com/devops/state-of-devops/?hl=fr&region=FR",
-  "Português - Brasil":
-    "https://cloud.google.com/devops/state-of-devops/?hl=pt-br&region=BR",
-  "中文 – 简体":
-    "https://cloud.google.com/devops/state-of-devops/?hl=zh-cn&region=CN",
-  繁體中文:
-    "https://cloud.google.com/devops/state-of-devops/?hl=zh-tw&region=TW",
-  日本語: "https://cloud.google.com/devops/state-of-devops/?hl=ja&region=JP",
-  한국어: "https://cloud.google.com/devops/state-of-devops/?hl=ko&region=KR",
+    "2024-dora-accelerate-state-of-devops-report-es-419.pdf",
+  Français: "2024-dora-accelerate-state-of-devops-report-fr.pdf",
+  "Português - Brasil": "2024-dora-accelerate-state-of-devops-report-ptbr.pdf",
+  "中文 – 简体": "2024-dora-accelerate-state-of-devops-report-zh-cn.pdf",
+  繁體中文: "2024-dora-accelerate-state-of-devops-report-zh-tw.pdf",
+  日本語: "2024-dora-accelerate-state-of-devops-report-ja.pdf",
+  한국어: "2024-dora-accelerate-state-of-devops-report-ko.pdf",
 };
 
 const sponsors = [

@@ -12,20 +12,20 @@ type: "research_archives"
 <grid class="border_none" style="margin-top:1rem;">
 <item>
 
-<a href="https://cloud.google.com/devops/state-of-devops" target="_blank"><img src="2024-dora-accelerate-state-of-devops-report.png" alt="Accelerate State of DevOps Report 2024" style="max-width:24em;"></a>
+<a href="2024-dora-accelerate-state-of-devops-report.pdf" target="_blank"><img src="2024-dora-accelerate-state-of-devops-report.png" alt="Accelerate State of DevOps Report 2024" style="max-width:24em;"></a>
 
 </item>
 <item>
 <p>The 2024 DORA Report is available in the following languages:</p>
-<a href="https://cloud.google.com/devops/state-of-devops/?hl=en&region=US" target="_blank" class="button secondary">English</a>
-<a href="https://cloud.google.com/devops/state-of-devops/?hl=es&region=ES" target="_blank" class="button secondary">Español</a>
-<a href="https://cloud.google.com/devops/state-of-devops/?hl=es-419&region=MX" target="_blank" class="button secondary">Español - América Latina</a>
-<a href="https://cloud.google.com/devops/state-of-devops/?hl=fr&region=FR" target="_blank" class="button secondary">Français</a>
-<a href="https://cloud.google.com/devops/state-of-devops/?hl=pt-br&region=BR" target="_blank" class="button secondary">Português - Brasil</a>
-<a href="https://cloud.google.com/devops/state-of-devops/?hl=zh-cn&region=CN" target="_blank" class="button secondary">中文 – 简体</a>
-<a href="https://cloud.google.com/devops/state-of-devops/?hl=zh-tw&region=TW" target="_blank" class="button secondary">繁體中文</a>
-<a href="https://cloud.google.com/devops/state-of-devops/?hl=ja&region=JP" target="_blank" class="button secondary">日本語</a>
-<a href="https://cloud.google.com/devops/state-of-devops/?hl=ko&region=KR" target="_blank" class="button secondary">한국어</a>
+<a href="2024-dora-accelerate-state-of-devops-report.pdf" target="_blank" class="button secondary">English</a>
+<a href="2024-dora-accelerate-state-of-devops-report-es.pdf" target="_blank" class="button secondary">Español</a>
+<a href="2024-dora-accelerate-state-of-devops-report-es-419.pdf" target="_blank" class="button secondary">Español - América Latina</a>
+<a href="2024-dora-accelerate-state-of-devops-report-fr.pdf" target="_blank" class="button secondary">Français</a>
+<a href="2024-dora-accelerate-state-of-devops-report-ptbr.pdf" target="_blank" class="button secondary">Português - Brasil</a>
+<a href="2024-dora-accelerate-state-of-devops-report-zh-cn.pdf" target="_blank" class="button secondary">中文 – 简体</a>
+<a href="2024-dora-accelerate-state-of-devops-report-zh-tw.pdf" target="_blank" class="button secondary">繁體中文</a>
+<a href="2024-dora-accelerate-state-of-devops-report-ja.pdf" target="_blank" class="button secondary">日本語</a>
+<a href="2024-dora-accelerate-state-of-devops-report-ko.pdf" target="_blank" class="button secondary">한국어</a>
 </item>
 </grid>
 

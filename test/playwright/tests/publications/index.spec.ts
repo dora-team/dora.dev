@@ -1,56 +1,110 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
-test.beforeEach(async ({ page }) => {
-  await page.goto('/publications/');
-});
+test.describe("Publications Page", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto("/publications/");
+  });
 
-test('Publications page has the correct title.', async ({ page }) => {
-  await expect(page).toHaveTitle('DORA | DORA Publications');
-});
+  test("has the correct title", async ({ page }) => {
+    await expect(page).toHaveTitle("DORA | DORA Publications");
+  });
 
-test('Publications page has the correct header.', async ({ page }) => {
-  await expect(page.locator('h1')).toContainText('Publications by DORA');
-});
+  test("has the correct header", async ({ page }) => {
+    await expect(page.locator("h1")).toContainText("Publications by DORA");
+  });
 
-test('Publications page has a link to the sponsor email alias.', async ({ page }) => {
-  await expect(page.getByRole('link', { name: 'sponsor-dora@google.com'})).toBeVisible();
-});
+  test("has a link to the sponsor email alias", async ({ page }) => {
+    await expect(
+      page.getByRole("link", { name: "sponsor-dora@google.com" }),
+    ).toBeVisible();
+  });
 
-test('Publications page links to the ROI report.', async ({ page }) => {
-  await expect(page.getByRole('link', { name: 'Download the Whitepaper' })).toHaveAttribute(
-    'href',
-    '/research/2020/'
-  )
-});
+  test.describe("State of AI-assisted Software Development", () => {
+    test("links to the report", async ({ page }) => {
+      const reportLink = page
+        .locator("section.publicationHighlight")
+        .getByRole("link", { name: "Download the report" });
+      await expect(reportLink).toHaveAttribute(
+        "href",
+        "https://cloud.google.com/dora",
+      );
+    });
+  });
 
-test('Publications page links to the DORA awards ebook.', async ({ page }) => {
-  await expect(page.getByRole('link', { name: 'Read the ebook' })).toHaveAttribute(
-    'href',
-    'https://services.google.com/fh/files/misc/devops_awards_fullebook_final.pdf'
-  )
-});
+  test.describe("Prior State of DevOps Reports", () => {
+    const reports = [
+      {
+        name: "Impact of Generative AI in Software Development",
+        url: "/research/ai/gen-ai-report/",
+      },
+      {
+        name: "2024 Accelerate State of DevOps Report",
+        url: "/research/2024/dora-report/",
+      },
+      {
+        name: "2023 Accelerate State of DevOps Report",
+        url: "/research/2023/dora-report/",
+      },
+      {
+        name: "2022 Accelerate State of DevOps Report",
+        url: "/research/2022/dora-report/",
+      },
+      {
+        name: "2021 Accelerate State of DevOps Report",
+        url: "/research/2021/dora-report/",
+      },
+      {
+        name: "2019 Accelerate State of DevOps Report",
+        url: "/research/2019/dora-report/",
+      },
+      {
+        name: "2018 Accelerate State of DevOps Report",
+        url: "/research/2018/dora-report/",
+      },
+      {
+        name: "2017 State of DevOps Report",
+        url: "/research/2017",
+      },
+      {
+        name: "2016 State of DevOps Report",
+        url: "/research/2016/",
+      },
+      {
+        name: "2015 State of DevOps Report",
+        url: "/research/2015/",
+      },
+      {
+        name: "2014 State of DevOps Report",
+        url: "/research/2014/",
+      },
+    ];
 
-// Mapping for "Download the report" links which, by convention, got to /research/:year or /research/:year/dora-report
-const downloadTheReportMap = [
-  { year: 'Generative AI', url: 'https://cloud.google.com/resources/content/dora-impact-of-gen-ai-software-development' },
-  { year: 2024, url: 'https://cloud.google.com/devops/state-of-devops' },
-  { year: 2023, url: '/research/2023/dora-report/' },
-  { year: 2022, url: '/research/2022/dora-report/' },
-  { year: 2021, url: '/research/2021/dora-report/' },
-  { year: 2019, url: '/research/2019/dora-report/' },
-  { year: 2018, url: '/research/2018/dora-report/' },
-  { year: 2017, url: '/research/2017' },
-  { year: 2016, url: '/research/2016/' },
-  { year: 2015, url: '/research/2015/' },
-  { year: 2014, url: '/research/2014/' },
-];
+    for (const report of reports) {
+      test(`links to the ${report.name}`, async ({ page }) => {
+        const reportLink = page
+          .locator("li", { hasText: report.name })
+          .getByRole("link", { name: "Download the report" });
+        await expect(reportLink).toHaveAttribute("href", report.url);
+      });
+    }
+  });
 
-downloadTheReportMap.forEach(({ year, url }, index) => {
-  test(`Publications page links to the ${year} Report landing page.`, async ({ page }) => {
-    await page.goto('/publications/');
-    // Get the nth link with the text "Download the report"
-    const reportLink = page.getByRole('link', { name: 'Download the report' }).nth(index);
-    await expect(reportLink).toHaveAttribute('href', url);
-    await expect(reportLink).toBeVisible();
+  test.describe("Additional Publications", () => {
+    test("links to the ROI report", async ({ page }) => {
+      const reportLink = page
+        .locator("li", { hasText: "The ROI of DevOps Transformation" })
+        .getByRole("link", { name: "Download the Whitepaper" });
+      await expect(reportLink).toHaveAttribute("href", "/research/2020/");
+    });
+
+    test("links to the DORA awards ebook", async ({ page }) => {
+      const reportLink = page
+        .locator("li", { hasText: "DevOps Awards Winners 2021" })
+        .getByRole("link", { name: "Read the ebook" });
+      await expect(reportLink).toHaveAttribute(
+        "href",
+        "https://services.google.com/fh/files/misc/devops_awards_fullebook_final.pdf",
+      );
+    });
   });
 });
