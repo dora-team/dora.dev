@@ -21,19 +21,17 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 
 {{< homepage/feature
   eyebrow="our latest report"
-  headline="Impact of Generative AI in Software Development"
-  url="/research/ai/gen-ai-report/"
+  headline="State of AI-assisted Software Development"
+  url="https://cloud.google.com/dora"
   cta="Learn more"
-  img_src="/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png"
+  img_src="/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report.png"
   img_align="right"
   img_stroke="true"
   delete_on=""
   >}}
-  Generative AI is rapidly reshaping the software development landscape, presenting both exciting opportunities and complex challenges.
+  The State of AI-assisted Software Development report reveals AI's primary role is as an amplifier, magnifying an organization's existing strengths and weaknesses. The greatest returns on AI investment come not from the tools themselves, but from a strategic focus on the underlying organizational system.
 
-  This report offers research-backed guidance for leaders and practitioners to effectively navigate this transformation, providing actionable insights to maximize AI’s benefits while mitigating potential risks.
-
-  Based on extensive data and developer interviews, the report moves beyond the hype to offer a nuanced perspective on AI’s impact on individuals, teams, and organizations.
+  This year's research introduces the new DORA AI Capabilities Model, which identifies the key technical and cultural practices that are proven to amplify the positive impacts of AI on performance.
   {{< /homepage/feature >}}
 
 {{< homepage/snipe-wrapper mode="start" >}}
