@@ -15,6 +15,8 @@ Do you have questions or suggestions about DORA research, or how to apply it in 
 
 **in a publication:** Have you found an error in one of our publications? Check to see if it has already been acknowledged in [DORA publications errata](/publications/errata/). If not, [contact us to report it](mailto:dora-advocacy@google.com?subject=DORA+Publication+error+report). Please include the publication title and page number.
 
+Please include the publication title and page number.
+
 #### Speaking engagement or workshop request
 Contact us at [dora-advocacy@google.com](mailto:dora-advocacy@google.com?subject=Speaking+engagement+or+workshop+request).
 
