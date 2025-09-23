@@ -4,7 +4,7 @@ date: 2025-08-06
 updated: 2025-08-26
 research_collection: "2025"
 draft: false
-tab_order: "9"
+tab_order: "6"
 tab_title: "Measurement Frameworks"
 authors:
     1: {name: "Sarah D'Angelo", url: 'https://www.linkedin.com/in/sarahrdangelo/'}
