@@ -3,7 +3,7 @@ title: "2025 Sponsors"
 date: 2025-09-15
 draft: false
 research_collection: "2025"
-tab_order: "3"
+tab_order: "8"
 tab_title: "Sponsors"
 type: "research_archives"
 ---
