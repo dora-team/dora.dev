@@ -7,13 +7,26 @@ tab_order: "2"
 tab_title: "DORA Report"
 type: "research_archives"
 ---
-## Coming soon!
+## Download the 2025 DORA Report
+
+
 
 <grid class="border_none mt-1">
 <item>
 
 <img src="2025-state-of-ai-assisted-software-development-report.png" alt="State of AI-assisted Software Development 2025" class="report-image">
 
+</item>
+<item>
+<p>
+    The State of AI-assisted Software Development report reveals AI’s primary role is as an amplifier, magnifying an organization’s existing strengths and weaknesses. The greatest returns on AI investment come not from the tools themselves, but from a strategic focus on the underlying organizational system.
+</p>
+<p>
+    This year’s research introduces the new DORA AI Capabilities Model, which identifies the key technical and cultural practices that are proven to amplify the positive impacts of AI on performance.
+</p>
+<div style="text-align: right;">
+<a href="https://cloud.google.com/dora" target="_blank" class="button secondary">Get the report</a>
+</div>
 </item>
 </grid>
 
