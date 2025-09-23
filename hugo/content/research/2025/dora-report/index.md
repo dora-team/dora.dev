@@ -15,7 +15,7 @@ hideSiteBanner: true
 <grid class="border_none mt-1">
 <item>
 
-<img src="2025-state-of-ai-assisted-software-development-report.png" alt="State of AI-assisted Software Development 2025" class="report-image">
+<a href="https://cloud.google.com/dora" target="_blank"><img src="2025-state-of-ai-assisted-software-development-report.png" alt="State of AI-assisted Software Development 2025" class="report-image"></a>
 
 </item>
 <item>
