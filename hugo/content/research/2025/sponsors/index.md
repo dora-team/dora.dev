@@ -23,7 +23,7 @@ The 2025 DORA Report was supported by the following sponsors.
 
 <item class="sponsor-item">
 <a href="https://www.thoughtworks.com" target="_blank"><img src="logos/thoughtworks.jpg" alt="Thoughtworks"></a>
-<p>Thoughtworks is a global technology consultancy that integrates design, engineering and AI to drive digital innovation. We are over 10,000 people strong across 48 offices in 19 countries. For 30 years, we’ve delivered extraordinary impact together with our clients by helping them solve complex business problems with technology as the differentiator.</p>
+<p>Thoughtworks is a global technology consultancy that integrates design, engineering and AI to drive digital innovation. We are over 10,000 people strong across 48 offices in 19 countries. For 30 years, we've delivered extraordinary impact together with our clients by helping them solve complex business problems with technology as the differentiator.</p>
 </item>
 
 </grid>
@@ -44,12 +44,12 @@ The 2025 DORA Report was supported by the following sponsors.
 
 <item class="sponsor-item">
 <a href="https://www.datadoghq.com/" target="_blank"><img src="logos/datadog.png" alt="Datadog"></a>
-<p>Datadog is the observability and security platform for cloud applications. Our SaaS platform integrates and automates infrastructure monitoring, application performance monitoring, log management, real-user monitoring, and many other capabilities to provide unified, real-time observability and security for our customers’ entire technology stack.</p>
+<p>Datadog is the observability and security platform for cloud applications. Our SaaS platform integrates and automates infrastructure monitoring, application performance monitoring, log management, real-user monitoring, and many other capabilities to provide unified, real-time observability and security for our customers' entire technology stack.</p>
 </item>
 
 <item class="sponsor-item">
 <a href="https://www.deloitte.com/us/en/services/consulting/services/engineering-ai-data.html" target="_blank"><img src="logos/deloitte.png" alt="Deloitte"></a>
-<p>Transform the heart of your business across products, platforms and operations. Organizations are facing new challenges and evolving technological disruptions. To drive progress, harness the power of Deloitte’s AI & Engineering services to help drive product and service enhancements, achieve efficiencies, improve financial performance, and accelerate speed to market.</p>
+<p>Deloitte's vision is to make an impact that matters by driving innovation and purposeful transformation. Deloitte's AI & Engineering services help organizations unlock potential through advanced technologies, robust data analytics, and modern engineering practices. Clients benefit from solutions that boost efficiency, enhance customer experiences, and accelerate innovation—all delivered with a focus on ethical, scalable, and measurable outcomes. Deloitte bridges strategic goals and technology, enabling organizations to confidently adapt, grow, and lead in a fast-evolving digital landscape.</p>
 </item>
 
 <item class="sponsor-item">
