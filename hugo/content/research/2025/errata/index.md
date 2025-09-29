@@ -17,6 +17,8 @@ This page lists errors and corrections to the 2025 State of AI-assisted Software
 
 **p. 9** There is an extra "deployments" in "This shift helped enable 136,000 deployments deployments per day in 2015"
 
+**p. 20** Figure 12: Distribution of deployment frequency responses from the 2025 DORA Survey. The deployment frequency in the second row should be "Between once per month and once every six months".
+
 **p. 44** Figure 29: Estimated effect of AI adoption score scaled on key outcomes. "Existential oonnection" on the Y-axis should be "Existential connection"
 
 **p. 46** Figure 30: Ownership. The figure does not have a key explaining the meaning of the colors.
