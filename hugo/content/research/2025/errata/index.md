@@ -1,7 +1,7 @@
 ---
 title: "DORA Research: 2025 Errata"
 date: 2025-07-14
-updated: 2025-09-25
+updated: 2025-09-29
 draft: false
 research_collection: "2025"
 type: research_archives
@@ -32,6 +32,8 @@ This page lists errors and corrections to the 2025 State of AI-assisted Software
 
 * The list includes two entries for "C". The first should be "C#” (18.5%) and the second should be "C” (3.9%).
 * It lists "C+” as a language. It should be "C++” (14.5%).
+
+**p. 115** The description for one of the core analysis variables, `ai_adoption`, is incorrect. It should state: "`ai_adoption` = a factor made of three indicators".
 
 -----
 <div style="text-align:center; margin-top:2em;">
