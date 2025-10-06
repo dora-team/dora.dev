@@ -1,6 +1,7 @@
 ---
 title: "Faq"
 date: 2023-03-23T21:26:37Z
+updated: 2025-10-06
 draft: false
 type: faq
 bannerTitle: Frequently Asked Questions
@@ -36,6 +37,14 @@ DORA is committed to sharing our research insights and methodologies to benefit 
 * **DORA Community and ecosystem**: Our findings have fostered a vibrant community and ecosystem. Organizations worldwide have leveraged our research to conduct their own internal studies, further validating and extending our findings. We encourage you to [join the DORA community](https://dora.community) to connect with like-minded individuals, share your experiences, and learn from others who are applying DORA's principles and insights.
 
 While we openly share our research insights and methodologies, we do not share the raw data collected from our studies. This is to ensure the privacy and confidentiality of the organizations and individuals who participate in our research.
+
+## State of AI-assisted Software Development 2025
+### I found an error in the report. How can I report it?
+The report has a version number printed in the footer of every page, for example `v. 2025.1`. Check that you have the [latest version of the report](/vc) and the [list of errata for the 2025 report](/research/2025/errata/) before submitting a correction. If you've found an error in the State of AI-assisted Software Development 2025, or any other DORA publication, please [submit a correction](mailto:dora-advocacy@google.com?subject=DORA+2025+State+of+AI-assisted+Software+Development+error+report). Thank you!
+
+## Impact of Generative AI in Software Development
+### I found an error in the report. How can I report it?
+The report has a version number printed in the footer of every page, for example `v. 2025.2`. Check that you have the [latest version of the report](/vc/genai) and the [list of errata for the report](/research/ai/errata/) before submitting a correction. If you've found an error in the Impact of Generative AI in Software Development, or any other DORA publication, please [submit a correction](mailto:dora-advocacy@google.com?subject=DORA+Impact+of+Generative+AI+Report+error). Thank you!
 
 ## Accelerate State of DevOps Report 2024
 ### I found an error in the report. How can I report it?
