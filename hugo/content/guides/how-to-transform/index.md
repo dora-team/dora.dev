@@ -2,7 +2,7 @@
 title: "How to transform your organization"
 titleForHTMLHead: "How to transform your organization" # TODO: can we DRY this out?
 date: 2023-03-22T13:43:36Z
-updated: 2025-08-10
+updated: 2025-10-06
 draft: false
 weight: 400
 headline: "How to transform your organization"
@@ -49,12 +49,15 @@ These frameworks might seem different, but they all share key features. The
 basic dynamic is shown in the following figure, which is based on the
 improvement kata framework:
 
-![The 4-stage Kata model.](./how-to-transform-kata-model.png)
-
-Source: Reproduced by permission of Mike Rother, from [*Toyota Kata Practice
-Guide: Practice Scientific Thinking Skills for Superior Results in 20 Minutes a
-Day*](https://www.mheducation.com/highered/product/toyota-kata-practice-guide-practicing-scientific-thinking-skills-superior-results-20-minutes-day-rother/9781259861024.html)
-by Mike Rother (McGraw-Hill 2018).
+<figure>
+    <img src="how-to-transform-kata-model.png" alt="The 4-stage Kata model.">
+    <figcaption>
+        Source: Reproduced by permission of Mike Rother, from
+        <a href="https://www.google.com/books/edition/The_Toyota_Kata_Practice_Guide_Practicin/h44tDwAAQBAJ" target="_blank"><em>Toyota
+            Kata Practice Guide: Practice Scientific Thinking Skills for Superior Results in 20 Minutes a Day</em>
+        </a> by Mike Rother (McGraw-Hill 2018).
+    </figcaption>
+</figure>
 
 All of the frameworks start with a direction (a "true north") at the
 organizational or division level. This is an aspirational, system-level business
@@ -118,13 +121,15 @@ Because the process is performed under conditions of uncertainty, it's not
 always clear how the results will be achieved. Therefore, progress is often
 nonlinear, as shown in the following diagram:
 
-![Graph showing nonlinear progress mapping performance against iterations; the
-performance line is spiky but overall goes
-up.](./how-to-transform-non-linear-progress.png)
-
-Source: CC-BY:
-[*Lean Enterprise: How High Performance Organizations Innovate at Scale*](https://www.google.com/books/edition/Lean_Enterprise/G_ixBQAAQBAJ)
-by Jez Humble, Joanne Molesky, and Barry O'Reilly (O'Reilly, 2014).
+<figure>
+    <img src="how-to-transform-non-linear-progress.png" alt="Graph showing nonlinear progress mapping performance against iterations; the performance line is spiky but overall goes up">
+    <figcaption>
+        Source: CC-BY:
+        <a href="https://www.google.com/books/edition/Lean_Enterprise/G_ixBQAAQBAJ" target="_blank"><em>Lean
+            Enterprise: How High Performance Organizations Innovate at Scale</em>
+        </a> by Jez Humble, Joanne Molesky, and Barry O'Reilly (O'Reilly, 2014).
+    </figcaption>
+</figure>
 
 In the planning meetings, participants review the target conditions or key
 results that were set in the last planning meeting. They then set new goals for
@@ -379,16 +384,20 @@ initially gets worse before improving. But then this is followed by a transition
 back to business as usual. All the while, cynicism and disengagement increases
 across the organization.
 
-![Graph of performance against time, showing performance going up during each
-change program but then declining and overall staying roughly the
-same.](./how-to-transform-performance-against-time.png)
-
-Source: CC-BY:
-[*Lean Enterprise: How High Performance Organizations Innovate at Scale*](https://www.google.com/books/edition/Lean_Enterprise/G_ixBQAAQBAJ)
-by Jez Humble, Joanne Molesky, and Barry O'Reilly (O'Reilly, 2014).
+<figure>
+    <img src="how-to-transform-performance-against-time.png" alt="Graph of
+        performance against time, showing performance going up during each
+        change program but then declining and overall staying roughly the same.">
+    <figcaption>
+        Source: CC-BY:
+        <a href="https://www.google.com/books/edition/Lean_Enterprise/G_ixBQAAQBAJ" target="_blank"><em>Lean
+            Enterprise: How High Performance Organizations Innovate at Scale</em>
+        </a> by Jez Humble, Joanne Molesky, and Barry O'Reilly (O'Reilly, 2014).
+    </figcaption>
+</figure>
 
 ## What's next
--   Explore our DevOps
+-   Explore the DORA
     [research program](/research).
 -   Take the
     [DORA quick check](/quickcheck/) to learn where you stand and identify opportunities for improvement
