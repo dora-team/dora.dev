@@ -2,4 +2,7 @@
     {{- partial "link_styles" "scss/faq.scss" -}}
 
     {{ .Content }}
+    {{ if .Params.updated }}
+        <div class="updated">Last updated: {{ .Params.updated | time.Format ":date_long" }}</div>
+    {{ end }}
 {{ end }}
