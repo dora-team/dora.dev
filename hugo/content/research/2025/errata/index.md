@@ -26,6 +26,16 @@ This page lists errors and corrections to the 2025 State of AI-assisted Software
 * Light blue ![light blue color swatch](light-blue.png) is No AI.
 * Dark purple ![dark purple color swatch](dark-purple.png) is AI.
 
+**p. 52** Figure 34 has an incorrect title and caption.
+
+* The correct title is "A clear and communicated AI stance moderates AI’s impact on software delivery throughput"
+* The correct caption is "Figure 34: A clear and communicated AI stance moderates AI’s impact on software delivery throughput"
+
+**p. 57** Figure 38 has an incorrect title and caption.
+
+* The correct title is "Version control commit frequency moderates AI’s impact on individual effectiveness"
+* The correct caption is "Figure 38: Version control commit frequency moderates AI’s impact on individual effectiveness"
+
 **p. 97** Footnote 1 should link to [https://dora.dev/research/2025/questions](/research/2025/questions).
 
 **p. 100** "He has studied the deployment of intelligent technologies since 2011." has an unnecessary space at the beginning of the sentence.
