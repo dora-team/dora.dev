@@ -615,6 +615,7 @@
       "heading": "Software delivery instability",
       "question_groups": [
         {
+          "description": "The next set of questions are about various outcomes of your work. For the primary application or service you work on...",
           "questions": [
             "Approximately what percentage of changes to production or releases to users result in degraded service (for example, leads to service impairment or service outage) and subsequently requires remediation (for example, requires a hotfix, rollback, fix forward or patch), if at all? |(value between 0% and 100%), I don't know or NA",
             "Approximately what percentage of deployments in the last 6 months were not planned but were performed to address a user-facing bug in the application?|(value between 0% and 100%), I don't know or NA"
@@ -626,6 +627,7 @@
       "heading": "Software delivery throughput",
       "question_groups": [
         {
+          "description": "The next set of questions are about various outcomes of your work. For the primary application or service you work on...",
           "questions": [
             "How long does it generally take to restore service after a change to production or release to users results in degraded service (for example, lead to service impairment or service outage) and subsequently require remediation (for example, requires a hotfix, rollback, fix forward, or patch)?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don't know or NA",
             "What is your lead time for changes (i.e., how long does it take to go from code committed to code successfully running in production)?|More than six months,Between one month and six months,Between one week and one month,Between one day and one week,Less than one day,Less than one hour,I don't know or NA",
