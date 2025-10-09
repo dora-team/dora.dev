@@ -15,9 +15,17 @@ This page lists errors and corrections to the Impact of Generative AI in Softwar
 
 **p. 29** In footnote 2, the link to  "AI in software engineering at Google: Progress and the path ahead" is incorrect. It should link to  - https://research.google/blog/ai-in-software-engineering-at-google-progress-and-the-path-ahead/
 
+**p. 40** In _Table 3: Detail view of the DORA Core model v2.0.0_, the third header in the Capabilities section is incorrect. The headers should be "Climate for learning", "Fast flow", and "Fast feedback".
+
+**p. 42** Clarify the first sentence on the page. It should be "Receiving fast feedback about quality helps build confidence and trust in new tools and processes."
+
 ### Errata in `v.2025.1`
 
 **p. 29** In footnote 2, the link to  "AI in software engineering at Google: Progress and the path ahead" is incorrect. It should link to  - https://research.google/blog/ai-in-software-engineering-at-google-progress-and-the-path-ahead/
+
+**p. 40** In _Table 3: Detail view of the DORA Core model v2.0.0_, the third header in the Capabilities section is incorrect. The headers should be "Climate for learning", "Fast flow", and "Fast feedback".
+
+**p. 42** Clarify the first sentence on the page. It should be "Receiving fast feedback about quality helps build confidence and trust in new tools and processes."
 
 **p. 49** The word "acquire" is broken with a line break. The sentence should read "Frame AI as an opportunity for developers to acquire new skills and expand their expertise." _[Corrected in `v.2025.2`]_
 
