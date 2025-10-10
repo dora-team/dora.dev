@@ -3,10 +3,14 @@ import { test, expect } from '@playwright/test';
 test.describe('Version Checker', () => {
   const versions = [
     {
-      version: '2025.1',
+      version: '2025.2',
       expectedText: '2025 DORA Report',
       expectedImage:
         '/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report.png',
+    },
+    {
+      version: '2025.1',
+      expectedText: 'Outdated 2025 DORA Report',
     },
     {
       version: '2024.3',
