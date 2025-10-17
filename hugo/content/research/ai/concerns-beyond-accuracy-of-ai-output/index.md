@@ -5,10 +5,9 @@ updated: 2025-07-31
 research_collection: "Artificial Intelligence"
 draft: false
 tab_order: "10"
-author: "Kevin Storer"
 tab_title: "Developers' Concerns"
 authors:
-    1: {name: 'Dr. Kevin M. Storer', url: '/research/team/#dr-kevin-m-storer'}
+    1: {name: "Dr. Kevin M. Storer", url: "/research/team/#dr-kevin-m-storer"}
 headline: "Concerns beyond the accuracy of AI output"
 type: "research_archives/preview"
 ---
