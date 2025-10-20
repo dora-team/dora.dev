@@ -7,11 +7,10 @@ draft: false
 tab_order: "8"
 tab_title: "Adopt gen AI"
 authors:
-    1: {name: 'Daniella Villalba', url: '/research/team/#daniella-villalba-phd'}
-    2: {name: 'Derek DeBellis', url: '/research/team/#derek-debellis'}
-    3: {name: "Nathen Harvey", url: 'https://www.linkedin.com/in/nathen/'}
+    1: {name: "Daniella Villalba", url: "/research/team/#daniella-villalba-phd"}
+    2: {name: "Derek DeBellis", url: "/research/team/#derek-debellis"}
+    3: {name: "Nathen Harvey", url: "https://www.linkedin.com/in/nathen/"}
 headline: "Helping developers adopt generative AI: Four practical strategies for organizations"
-# heroimage: "/research/2024/dora-report-ai-preview-hero.png"
 type: "research_archives/preview"
 ---
 

@@ -7,10 +7,10 @@ draft: false
 tab_order: "9"
 tab_title: "Measurement Frameworks"
 authors:
-    1: {name: "Sarah D'Angelo", url: 'https://www.linkedin.com/in/sarahrdangelo/'}
-    2: {name: 'Ambar Murillo', url: 'https://linkedin.com/in/ambarmm/'}
-    3: {name: 'Sarah Inman', url: 'https://www.linkedin.com/in/scinman/'}
-    4: {name: 'Kevin Storer', url: '/research/team/#dr-kevin-m-storer'}
+    1: {name: "Dr. Sarah D'Angelo", url: "https://www.linkedin.com/in/sarahrdangelo/"}
+    2: {name: "Ambar Murillo", url: "https://www.linkedin.com/in/ambarmm/"}
+    3: {name: "Dr. Sarah Inman", url: "https://www.linkedin.com/in/scinman/"}
+    4: {name: "Dr. Kevin M. Storer", url: "/research/team/#dr-kevin-m-storer"}
 headline: "Choosing measurement frameworks to fit your organizational goals"
 type: "research_archives/preview"
 ---
