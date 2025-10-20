@@ -196,11 +196,13 @@ changes and deploy to production with little or no downtime. An important
 consideration is how data upgrades are performed, meaning data and schema
 must be done in a backward-compatible manner.
 
-In order to aid the independent deployment of components, we recommend that
-you create backward-compatible versioned APIs. Ensuring backward
-compatibility for APIs adds complexity to systems, but the flexibility you
-gain in terms of ease of deployment pays for the added complexity many
-times over.
+In order to aid the independent deployment of components, we recommend that you create **backward-compatible versioned APIs**. An API is a **_contract_** so a well managed API versioning strategy could be reassuring for potential consumers of your API. Poorly managed changes can have a negative impact in your developer community. You only increment to a new version of your API when you _introduce significant non-breaking changes_, or you introduce a breaking change. Ensuring **backward compatibility** for APIs adds complexity to systems, but the flexibility you gain in terms of ease of deployment pays for the added complexity many times over.
+
+The recommended standard is to **maintain no more than two concurrent supported versions of the API** at any given time. A transition period for clients to migrate to the newer version should be set for **no longer than six months** before the old version is fully retired. Upon retirement, any client attempting to access a deprecated API endpoint must receive the HTTP status code **410 Gone**. This 410 error should serve as the blanket response for all unsupported API versions. Adhering to these strict limits is crucial, as supporting numerous historical API versions introduces **significant operational complexity and escalating maintenance costs**.
+
+<a href="api-versioning-strategy.png" target="_blank"><center><img style="center" src="api-versioning-strategy.png" alt="API versioning strategy" width="80%" height="80%" /></center></a>
+
+**API Analytics and Observability** are critical tools for understanding _consumer usage patterns_. By providing deep insights into which API versions are being called, how frequently, and by which clients, teams can proactively identify and engage with customers still using deprecated endpoints. This targeted approach is essential for facilitating **smooth client migration planning**. Dedicated _API management platforms_ (like Apigee) offer built-in analytics and comprehensive dashboards to support this necessary level of operational analysis. 
 
 Service-oriented and microservice architectures enable these capabilities
 because they use
