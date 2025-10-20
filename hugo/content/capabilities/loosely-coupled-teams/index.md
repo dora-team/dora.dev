@@ -200,7 +200,7 @@ In order to aid the independent deployment of components, we recommend that you 
 
 The recommended standard is to **maintain no more than two concurrent supported versions of the API** at any given time. A transition period for clients to migrate to the newer version should be set for **no longer than six months** before the old version is fully retired. Upon retirement, any client attempting to access a deprecated API endpoint must receive the HTTP status code **410 Gone**. This 410 error should serve as the blanket response for all unsupported API versions. Adhering to these strict limits is crucial, as supporting numerous historical API versions introduces **significant operational complexity and escalating maintenance costs**.
 
-<a href="api-versioning-strategy.png" target="_blank"><center><img style="center" src="api-versioning-strategy.png" alt="API versioning strategy" width="80%" height="80%" /></center></a>
+<p style="text-align: center;"><a href="api-versioning-strategy.png" target="_blank"><img src="api-versioning-strategy.png" alt="API versioning strategy" width="80%" height="80%" /></a></p>
 
 **API Analytics and Observability** are critical tools for understanding _consumer usage patterns_. By providing deep insights into which API versions are being called, how frequently, and by which clients, teams can proactively identify and engage with customers still using deprecated endpoints. This targeted approach is essential for facilitating **smooth client migration planning**. Dedicated _API management platforms_ (like Apigee) offer built-in analytics and comprehensive dashboards to support this necessary level of operational analysis. 
 
