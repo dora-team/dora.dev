@@ -7,12 +7,11 @@ draft: false
 tab_order: "8"
 tab_title: "Fostering Trust in AI"
 authors:
-    1: {name: 'Dr. Kevin M. Storer', url: '/research/team/#dr-kevin-m-storer'}
-    2: {name: 'Derek DeBellis', url: '/research/team/#derek-debellis'}
-    3: {name: "Sarah D'Angelo", url: 'https://www.linkedin.com/in/sarahrdangelo/'}
-    4: {name: 'Adam Brown', url: 'https://www.linkedin.com/in/adambrovvn/'}
+    1: {name: "Dr. Kevin M. Storer", url: "/research/team/#dr-kevin-m-storer"}
+    2: {name: "Derek DeBellis", url: "/research/team/#derek-debellis"}
+    3: {name: "Dr. Sarah D'Angelo", url: "https://www.linkedin.com/in/sarahrdangelo/"}
+    4: {name: "Adam Brown", url: "https://www.linkedin.com/in/adambrovvn/"}
 headline: "Fostering developers' trust in generative artificial intelligence"
-# heroimage: "/research/2024/dora-report-ai-preview-hero.png"
 type: "research_archives/preview"
 ---
 

@@ -5,11 +5,10 @@ updated: 2025-03-05T00:00:00Z
 research_collection: "Artificial Intelligence"
 draft: false
 authors:
-    1: {name: 'Dr. Kevin M. Storer', url: '/research/team/#dr-kevin-m-storer'}
+    1: {name: "Dr. Kevin M. Storer", url: "/research/team/#dr-kevin-m-storer"}
 tab_order: "10"
 tab_title: "Value of Development Work"
 headline: "How gen AI affects the value of development work"
-# heroimage: "/research/2024/dora-report-ai-preview-hero.png"
 type: "research_archives/preview"
 ---
 
