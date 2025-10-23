@@ -1,0 +1,32 @@
+{
+  "capabilities": [
+    { "name": "User-centric Focus", "id": "user-centric-focus" },
+    {
+      "name": "Strong Version Control Practices",
+      "id": "strong-version-control-practices"
+    },
+    {
+      "name": "AI-accessible Internal Data",
+      "id": "ai-accessible-internal-data"
+    },
+    { "name": "Working in Small Batches", "id": "working-in-small-batches" },
+    {
+      "name": "Clear + Communicated AI Stance",
+      "id": "clear-communicated-ai-stance"
+    },
+    { "name": "Quality Internal Platform", "id": "quality-internal-platform" },
+    { "name": "Healthy Data Ecosystems", "id": "healthy-data-ecosystems" }
+  ],
+  "outcomes": [
+    { "name": "Team Performance", "id": "team-performance" },
+    { "name": "Code Quality", "id": "code-quality" },
+    { "name": "Individual Effectiveness", "id": "individual-effectiveness" },
+    { "name": "Product Performance", "id": "product-performance" },
+    { "name": "Friction", "id": "friction" },
+    { "name": "Throughput", "id": "throughput" },
+    {
+      "name": "Organizational Performance",
+      "id": "organizational-performance"
+    }
+  ]
+}
