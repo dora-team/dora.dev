@@ -1,8 +1,7 @@
 <script>
-  import { onMount, tick } from 'svelte';
-
   let { fromId, toId, index, hoveredCapabilityId = null, hoveredOutcomeId = null } = $props();
   const yOffsetPx = 8;
+  const rightMargin = 12;
 
   let x1 = $state(0);
   let y1 = $state(0);
@@ -22,16 +21,14 @@
       const toRect = toEl.getBoundingClientRect();
       const containerRect = container.getBoundingClientRect();
 
-      const arrowMargin = 14;
       x1 = fromRect.right - containerRect.left;
       y1 = fromRect.top + fromRect.height / 2 - containerRect.top;
-      x2 = toRect.left - containerRect.left - arrowMargin;
+      x2 = toRect.left - containerRect.left - rightMargin;
       y2 = (toRect.top + toRect.height / 2 - containerRect.top) + index * yOffsetPx;
     }
   }
 
-  onMount(async () => {
-    await tick();
+  $effect(() => {
     updateConnector();
     window.addEventListener('resize', updateConnector);
 
@@ -56,7 +53,7 @@
       <polyline points="0 0 8 6 0 12" fill="transparent" stroke="rgb(34,34,39)" stroke-width="1.5"/>
     </marker>
   </defs>
-  <line {x1} {y1} {x2} {y2} stroke="rgb(34,34,39)" stroke-width="1" marker-end="url(#arrow)" class:dimmed/>
+  <line {x1} {y1} {x2} {y2} stroke="rgb(34,34,39)" stroke-width="1" marker-end="url(#arrow)" class={{dimmed}}/>
 </svg>
 
 <style>

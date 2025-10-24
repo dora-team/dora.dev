@@ -9,13 +9,15 @@
 
   let connectedOutcomeIds = $derived(
     hoveredCapabilityId
-      ? connections.filter((c) => c.from === hoveredCapabilityId).map((c) => c.to)
-      : []
+      ? connections
+          .filter((c) => c.from === hoveredCapabilityId)
+          .map((c) => c.to)
+      : [],
   );
   let connectedCapabilityIds = $derived(
     hoveredOutcomeId
       ? connections.filter((c) => c.to === hoveredOutcomeId).map((c) => c.from)
-      : []
+      : [],
   );
 </script>
 
@@ -35,15 +37,26 @@
         >
           <Capability
             {capability}
-            dimmed={(hoveredCapabilityId && hoveredCapabilityId !== capability.id) || (hoveredOutcomeId && !connectedCapabilityIds.includes(capability.id))}
-            hovered={hoveredCapabilityId === capability.id || (hoveredOutcomeId && connectedCapabilityIds.includes(capability.id))}
+            dimmed={(hoveredCapabilityId &&
+              hoveredCapabilityId !== capability.id) ||
+              (hoveredOutcomeId &&
+                !connectedCapabilityIds.includes(capability.id))}
+            hovered={hoveredCapabilityId === capability.id ||
+              (hoveredOutcomeId &&
+                connectedCapabilityIds.includes(capability.id))}
           />
         </div>
       {/each}
     </div>
     <div class="connectors">
       {#each connections as connection}
-        <Connector fromId={connection.from} toId={connection.to} index={connection.index} {hoveredCapabilityId} {hoveredOutcomeId}/>
+        <Connector
+          fromId={connection.from}
+          toId={connection.to}
+          index={connection.index}
+          {hoveredCapabilityId}
+          {hoveredOutcomeId}
+        />
       {/each}
     </div>
     <div class="outcomes">
@@ -52,7 +65,12 @@
           onmouseover={() => (hoveredOutcomeId = outcome.id)}
           onmouseout={() => (hoveredOutcomeId = null)}
         >
-          <Outcome {outcome} dimmed={(hoveredCapabilityId && !connectedOutcomeIds.includes(outcome.id)) || (hoveredOutcomeId && hoveredOutcomeId !== outcome.id)} />
+          <Outcome
+            {outcome}
+            dimmed={(hoveredCapabilityId &&
+              !connectedOutcomeIds.includes(outcome.id)) ||
+              (hoveredOutcomeId && hoveredOutcomeId !== outcome.id)}
+          />
         </div>
       {/each}
     </div>
@@ -64,12 +82,13 @@
     background-color: var(--dora-primary-light);
   }
   :global(.model) {
+    width:fit-content;
     border: 1px solid var(--dora-primary-dark);
+    max-width: 800px;
     border-radius: 24px;
-    padding: 24px;
+    padding: 12px 6px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     background-color: white;
 
@@ -78,18 +97,22 @@
       border-radius: 4px;
       padding: 4px 12px;
       margin: 12px;
-      font-size:14px;
+      font-size: 14px;
       font-weight: 500;
-      text-wrap: nowrap;
-      transition:all 0.2s ease-in-out;
+      /* text-wrap: nowrap; */
+      transition: all 0.2s ease-in-out;
       cursor: pointer;
+      font-size: clamp(0.6rem, .8vw, 1rem);
     }
 
     .connectors {
       width: 120px;
-      padding-right:4px;
       position: relative;
       align-self: stretch;
+    }
+
+    .x .entity {
+      margin:0px;
     }
   }
 </style>

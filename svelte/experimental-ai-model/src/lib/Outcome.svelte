@@ -2,7 +2,7 @@
   let { outcome, dimmed = false } = $props();
 </script>
 
-<div class="entity" class:dimmed id={outcome.id}>{outcome.name}</div>
+<div class={["entity", { dimmed }]} id={outcome.id}>{outcome.name}</div>
 
 <style>
   .entity {
