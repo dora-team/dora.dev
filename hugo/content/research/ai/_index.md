@@ -30,7 +30,7 @@ This report offers research-backed guidance for leaders and practitioners to eff
 ## AI Research
 * [Report: State of AI-assisted Software Development](https://cloud.google.com/dora)
 * [Report: Impact of Gen AI in Software Development](/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development.pdf)
-* [Understanding builder intent in the AI era](/research/ai/builder-mindset)
+* [Understanding builder intent in the AI era](/research/ai/builder-mindset/)
 * [Choosing measurement frameworks to fit your organizational goals](/research/ai/measurement-frameworks/)
 * [Concerns beyond the accuracy of AI output](/research/ai/concerns-beyond-accuracy-of-ai-output)
 * [Helping developers adopt generative AI: Four practical strategies for organizations](/research/ai/adopt-gen-ai)
