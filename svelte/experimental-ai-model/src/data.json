@@ -28,5 +28,24 @@
       "name": "Organizational Performance",
       "id": "organizational-performance"
     }
+  ],
+  "connections": [
+    { "from": "user-centric-focus", "to": "team-performance", "index": 0 },
+    { "from": "strong-version-control-practices", "to": "team-performance", "index": 1 },
+    { "from": "strong-version-control-practices", "to": "individual-effectiveness", "index": -1 },
+    { "from": "ai-accessible-internal-data", "to": "code-quality", "index": 0 },
+    { "from": "ai-accessible-internal-data", "to": "individual-effectiveness", "index": 0 },
+    { "from": "ai-accessible-internal-data", "to": "product-performance", "index": -1 },
+    { "from": "working-in-small-batches", "to": "individual-effectiveness", "index": 1 },
+    { "from": "working-in-small-batches", "to": "product-performance", "index": 0 },
+    { "from": "working-in-small-batches", "to": "friction", "index": -1 },
+    { "from": "clear-communicated-ai-stance", "to": "individual-effectiveness", "index": 2 },
+    { "from": "clear-communicated-ai-stance", "to": "product-performance", "index": 1 },
+    { "from": "clear-communicated-ai-stance", "to": "friction", "index": 0 },
+    { "from": "clear-communicated-ai-stance", "to": "throughput", "index": 0 },
+    { "from": "clear-communicated-ai-stance", "to": "organizational-performance", "index": -2 },
+    { "from": "quality-internal-platform", "to": "friction", "index": 1 },
+    { "from": "quality-internal-platform", "to": "organizational-performance", "index": -1 },
+    { "from": "healthy-data-ecosystems", "to": "organizational-performance", "index": 0 }
   ]
 }
