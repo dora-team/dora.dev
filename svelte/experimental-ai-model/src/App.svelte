@@ -1,6 +1,7 @@
 <script>
   import data from "./data.json";
   import Connector from "./lib/Connector.svelte";
+  import Capability from "./lib/Capability.svelte";
   const { capabilities, outcomes } = data;
 </script>
 
@@ -14,7 +15,7 @@
     </div>
     <div class="capabilities">
       {#each capabilities as capability}
-        <div class="entity" id={capability.id}>{capability.name}</div>
+        <Capability {capability} />
       {/each}
     </div>
     <div class="connectors">
@@ -47,7 +48,7 @@
   :root {
     background-color: var(--dora-primary-light);
   }
-  .model {
+  :global(.model) {
     border: 1px solid var(--dora-primary-dark);
     border-radius: 24px;
     padding: 24px;
@@ -58,7 +59,7 @@
     /* column-gap: 12px; */
     background-color: white;
 
-    .entity {
+    :global(.entity) {
       border: 1px solid var(--dora-primary-dark);
       border-radius: 4px;
       padding: 4px 12px;
