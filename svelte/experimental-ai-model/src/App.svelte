@@ -4,6 +4,7 @@
   import Capability from "./lib/Capability.svelte";
   import Outcome from "./lib/Outcome.svelte";
   const { capabilities, outcomes } = data;
+  let hoveredCapabilityId = null;
 </script>
 
 <main>
@@ -16,7 +17,15 @@
     </div>
     <div class="capabilities">
       {#each capabilities as capability}
-        <Capability {capability} />
+        <div
+          on:mouseover={() => (hoveredCapabilityId = capability.id)}
+          on:mouseout={() => (hoveredCapabilityId = null)}
+        >
+          <Capability
+            {capability}
+            dimmed={hoveredCapabilityId && hoveredCapabilityId !== capability.id}
+          />
+        </div>
       {/each}
     </div>
     <div class="connectors">
@@ -68,6 +77,8 @@
       font-size:14px;
       font-weight: 400;
       text-wrap: nowrap;
+      transition:opacity 0.2s ease-in-out;
+      cursor: pointer;
     }
 
     .connectors {
