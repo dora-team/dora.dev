@@ -18,6 +18,7 @@
     { from: "working-in-small-batches", to: "friction" },
     { from: "clear-communicated-ai-stance", to: "individual-effectiveness" },
     { from: "clear-communicated-ai-stance", to: "product-performance" },
+    { from: "clear-communicated-ai-stance", to: "friction" },
     { from: "clear-communicated-ai-stance", to: "throughput" },
     { from: "clear-communicated-ai-stance", to: "organizational-performance" },
     { from: "quality-internal-platform", to: "friction" },
