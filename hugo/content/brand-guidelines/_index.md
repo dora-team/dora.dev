@@ -25,7 +25,7 @@ Please refer to our [brand guidelines](https://storage.googleapis.com/dora-brand
 
 * [2025 State of AI-assisted Software Development report graphics](https://storage.googleapis.com/dora-brand-2024/2025-dora-state-of-ai-assisted-software-development-report-cover-art.zip) <small>(ZIP, 5.1MB)</small>
 
-<a href="https://storage.googleapis.com/dora-brand-2024/2025-dora-state-of-ai-assisted-software-development-report-cover-art.zip"><img src="/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report.png" alt="Cover art for the 2025 State of AI-assisted Software Development report" style="max-width:24em;"></a>
+<a href="https://storage.googleapis.com/dora-brand-2024/2025-dora-state-of-ai-assisted-software-development-report-cover-art.zip"><img src="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png" alt="Cover art for the 2025 State of AI-assisted Software Development report" style="max-width:24em;"></a>
 
 ## Impact of Generative AI on Software Development report graphics
 
