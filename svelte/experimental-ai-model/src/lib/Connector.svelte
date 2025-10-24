@@ -4,6 +4,7 @@
   export let fromId;
   export let toId;
   export let index; // vertically, which # arrow is this (from the PoV of the "to" element)
+  const yOffsetPx = 8;
 
   let x1 = 0, y1 = 0, x2 = 0, y2 = 0;
   let svgElement;
@@ -20,11 +21,11 @@
       const toRect = toEl.getBoundingClientRect();
       const containerRect = container.getBoundingClientRect();
 
-      const arrowMargin = 40;
+      const arrowMargin = 14;
       x1 = fromRect.right - containerRect.left;
       y1 = fromRect.top + fromRect.height / 2 - containerRect.top;
       x2 = toRect.left - containerRect.left - arrowMargin;
-      y2 = (toRect.top + toRect.height / 2 - containerRect.top) + index * 10;
+      y2 = (toRect.top + toRect.height / 2 - containerRect.top) + index * yOffsetPx;
     }
   }
 
@@ -44,13 +45,13 @@
     <marker
       id="arrow"
       viewBox="-1 -1 11 21"
-      refX="10"
-      refY="8"
-      markerWidth="10"
-      markerHeight="16"
+      refX="8"
+      refY="6"
+      markerWidth="8"
+      markerHeight="12"
       orient="auto-start-reverse">
-      <polyline points="0 0 10 8 0 16" fill="transparent" stroke="rgb(34,34,39)" stroke-width="1.25"/>
+      <polyline points="0 0 8 6 0 12" fill="transparent" stroke="rgb(34,34,39)" stroke-width="1.5"/>
     </marker>
   </defs>
-  <line {x1} {y1} {x2} {y2} stroke="rgb(34,34,39)" stroke-width="1.25" marker-end="url(#arrow)" />
+  <line {x1} {y1} {x2} {y2} stroke="rgb(34,34,39)" stroke-width="1" marker-end="url(#arrow)" />
 </svg>
