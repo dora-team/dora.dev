@@ -5,6 +5,7 @@
   export let toId;
   export let index; // vertically, which # arrow is this (from the PoV of the "to" element)
   export let hoveredCapabilityId = null;
+  export let hoveredOutcomeId = null;
   const yOffsetPx = 8;
 
   let x1 = 0, y1 = 0, x2 = 0, y2 = 0;
@@ -40,7 +41,7 @@
     };
   });
 
-  $: dimmed = hoveredCapabilityId && hoveredCapabilityId !== fromId && hoveredCapabilityId !== toId;
+  $: dimmed = (hoveredCapabilityId && hoveredCapabilityId !== fromId) || (hoveredOutcomeId && hoveredOutcomeId !== toId);
 </script>
 
 <svg bind:this={svgElement} style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
