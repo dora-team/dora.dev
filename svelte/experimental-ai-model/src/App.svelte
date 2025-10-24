@@ -7,23 +7,23 @@
   let hoveredCapabilityId = null;
 
   const connections = [
-    { from: "user-centric-focus", to: "team-performance" },
-    { from: "strong-version-control-practices", to: "team-performance" },
-    { from: "strong-version-control-practices", to: "individual-effectiveness" },
-    { from: "ai-accessible-internal-data", to: "code-quality" },
-    { from: "ai-accessible-internal-data", to: "individual-effectiveness" },
-    { from: "ai-accessible-internal-data", to: "product-performance" },
-    { from: "working-in-small-batches", to: "individual-effectiveness" },
-    { from: "working-in-small-batches", to: "product-performance" },
-    { from: "working-in-small-batches", to: "friction" },
-    { from: "clear-communicated-ai-stance", to: "individual-effectiveness" },
-    { from: "clear-communicated-ai-stance", to: "product-performance" },
-    { from: "clear-communicated-ai-stance", to: "friction" },
-    { from: "clear-communicated-ai-stance", to: "throughput" },
-    { from: "clear-communicated-ai-stance", to: "organizational-performance" },
-    { from: "quality-internal-platform", to: "friction" },
-    { from: "quality-internal-platform", to: "organizational-performance" },
-    { from: "healthy-data-ecosystems", to: "organizational-performance" },
+    { from: "user-centric-focus", to: "team-performance", index: 0 },
+    { from: "strong-version-control-practices", to: "team-performance", index: 1 },
+    { from: "strong-version-control-practices", to: "individual-effectiveness", index: -1 },
+    { from: "ai-accessible-internal-data", to: "code-quality", index: 0 },
+    { from: "ai-accessible-internal-data", to: "individual-effectiveness", index: 0 },
+    { from: "ai-accessible-internal-data", to: "product-performance", index: -1 },
+    { from: "working-in-small-batches", to: "individual-effectiveness", index: 1 },
+    { from: "working-in-small-batches", to: "product-performance", index: 0 },
+    { from: "working-in-small-batches", to: "friction", index: -1 },
+    { from: "clear-communicated-ai-stance", to: "individual-effectiveness", index: 2 },
+    { from: "clear-communicated-ai-stance", to: "product-performance", index: 1 },
+    { from: "clear-communicated-ai-stance", to: "friction", index: 0 },
+    { from: "clear-communicated-ai-stance", to: "throughput", index: 0 },
+    { from: "clear-communicated-ai-stance", to: "organizational-performance", index: -2 },
+    { from: "quality-internal-platform", to: "friction", index: 1 },
+    { from: "quality-internal-platform", to: "organizational-performance", index: -1 },
+    { from: "healthy-data-ecosystems", to: "organizational-performance", index: 0 },
   ];
 
   let connectedOutcomeIds = [];
@@ -60,23 +60,9 @@
       {/each}
     </div>
     <div class="connectors">
-      <Connector fromId="user-centric-focus" toId="team-performance" index="0" {hoveredCapabilityId}/>
-      <Connector fromId="strong-version-control-practices" toId="team-performance" index="1" {hoveredCapabilityId}/>
-      <Connector fromId="strong-version-control-practices" toId="individual-effectiveness" index="-1" {hoveredCapabilityId}/>
-      <Connector fromId="ai-accessible-internal-data" toId="code-quality" index="0" {hoveredCapabilityId}/>
-      <Connector fromId="ai-accessible-internal-data" toId="individual-effectiveness" index="0" {hoveredCapabilityId}/>
-      <Connector fromId="ai-accessible-internal-data" toId="product-performance" index="-1" {hoveredCapabilityId}/>
-      <Connector fromId="working-in-small-batches" toId="individual-effectiveness" index="1" {hoveredCapabilityId}/>
-      <Connector fromId="working-in-small-batches" toId="product-performance" index="0" {hoveredCapabilityId}/>
-      <Connector fromId="working-in-small-batches" toId="friction" index="-1" {hoveredCapabilityId}/>
-      <Connector fromId="clear-communicated-ai-stance" toId="individual-effectiveness" index="2" {hoveredCapabilityId}/>
-      <Connector fromId="clear-communicated-ai-stance" toId="product-performance" index="1" {hoveredCapabilityId}/>
-      <Connector fromId="clear-communicated-ai-stance" toId="friction" index="0" {hoveredCapabilityId}/>
-      <Connector fromId="clear-communicated-ai-stance" toId="throughput" index="0" {hoveredCapabilityId}/>
-      <Connector fromId="clear-communicated-ai-stance" toId="organizational-performance" index="-2" {hoveredCapabilityId}/>
-      <Connector fromId="quality-internal-platform" toId="friction" index="1" {hoveredCapabilityId}/>
-      <Connector fromId="quality-internal-platform" toId="organizational-performance" index="-1" {hoveredCapabilityId}/>
-      <Connector fromId="healthy-data-ecosystems" toId="organizational-performance" index="0" {hoveredCapabilityId}/>
+      {#each connections as connection}
+        <Connector fromId={connection.from} toId={connection.to} index={connection.index} {hoveredCapabilityId}/>
+      {/each}
     </div>
     <div class="outcomes">
       {#each outcomes as outcome}
