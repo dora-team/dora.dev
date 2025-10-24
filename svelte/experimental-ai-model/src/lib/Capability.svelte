@@ -2,7 +2,7 @@
   let { capability, dimmed = false, hovered = false } = $props();
 </script>
 
-<div class="entity" class:dimmed class:hovered id={capability.id}>{capability.name}</div>
+<div class={["entity", { dimmed, hovered }]} id={capability.id}>{capability.name}</div>
 
 <style>
   .dimmed {
