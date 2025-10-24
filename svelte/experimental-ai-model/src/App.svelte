@@ -24,10 +24,10 @@
 <main>
   <div class="model">
     <div class="ai_adoption">
-      <div class="entity">AI Adoption</div>
+      <div class="entity" class:hovered={hoveredCapabilityId || hoveredOutcomeId}>AI Adoption</div>
     </div>
     <div class="x">
-      <div class="entity">&times;</div>
+      <div class="entity" class:hovered={hoveredCapabilityId || hoveredOutcomeId}>&times;</div>
     </div>
     <div class="capabilities">
       {#each capabilities as capability}
@@ -103,6 +103,10 @@
       transition: all 0.2s ease-in-out;
       cursor: pointer;
       font-size: clamp(0.6rem, .8vw, 1rem);
+    }
+
+    :global(.hovered) {
+      background-color: var(--dora-secondary-c);
     }
 
     .connectors {

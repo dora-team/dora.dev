@@ -8,8 +8,4 @@
   .dimmed {
     opacity: 0.35;
   }
-
-  .hovered {
-    background-color: var(--dora-secondary-c);
-  }
 </style>
