@@ -43,3 +43,4 @@ svelte/**/dist/
 # IDE files
 .idea/
 
+svelte/local/*
