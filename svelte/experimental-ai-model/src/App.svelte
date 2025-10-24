@@ -29,22 +29,23 @@
       {/each}
     </div>
     <div class="connectors">
-      <Connector fromId="user-centric-focus" toId="team-performance" index="0"/>
-      <Connector fromId="strong-version-control-practices" toId="team-performance" index="1" />
-      <Connector fromId="strong-version-control-practices" toId="individual-effectiveness" index="-1" />
-      <Connector fromId="ai-accessible-internal-data" toId="code-quality" index="0" />
-      <Connector fromId="ai-accessible-internal-data" toId="individual-effectiveness" index="0" />
-      <Connector fromId="ai-accessible-internal-data" toId="product-performance" index="-1" />
-      <Connector fromId="working-in-small-batches" toId="individual-effectiveness" index="1" />
-      <Connector fromId="working-in-small-batches" toId="product-performance" index="0" />
-      <Connector fromId="working-in-small-batches" toId="friction" index="-1" />
-      <Connector fromId="clear-communicated-ai-stance" toId="individual-effectiveness" index="2" />
-      <Connector fromId="clear-communicated-ai-stance" toId="product-performance" index="1" />
-      <Connector fromId="clear-communicated-ai-stance" toId="throughput" index="0" />
-      <Connector fromId="clear-communicated-ai-stance" toId="organizational-performance" index="-2" />
-      <Connector fromId="quality-internal-platform" toId="friction" index="0" />
-      <Connector fromId="quality-internal-platform" toId="organizational-performance" index="-1" />
-      <Connector fromId="healthy-data-ecosystems" toId="organizational-performance" index="0" />
+      <Connector fromId="user-centric-focus" toId="team-performance" index="0" {hoveredCapabilityId}/>
+      <Connector fromId="strong-version-control-practices" toId="team-performance" index="1" {hoveredCapabilityId}/>
+      <Connector fromId="strong-version-control-practices" toId="individual-effectiveness" index="-1" {hoveredCapabilityId}/>
+      <Connector fromId="ai-accessible-internal-data" toId="code-quality" index="0" {hoveredCapabilityId}/>
+      <Connector fromId="ai-accessible-internal-data" toId="individual-effectiveness" index="0" {hoveredCapabilityId}/>
+      <Connector fromId="ai-accessible-internal-data" toId="product-performance" index="-1" {hoveredCapabilityId}/>
+      <Connector fromId="working-in-small-batches" toId="individual-effectiveness" index="1" {hoveredCapabilityId}/>
+      <Connector fromId="working-in-small-batches" toId="product-performance" index="0" {hoveredCapabilityId}/>
+      <Connector fromId="working-in-small-batches" toId="friction" index="-1" {hoveredCapabilityId}/>
+      <Connector fromId="clear-communicated-ai-stance" toId="individual-effectiveness" index="2" {hoveredCapabilityId}/>
+      <Connector fromId="clear-communicated-ai-stance" toId="product-performance" index="1" {hoveredCapabilityId}/>
+      <Connector fromId="clear-communicated-ai-stance" toId="friction" index="0" {hoveredCapabilityId}/>
+      <Connector fromId="clear-communicated-ai-stance" toId="throughput" index="0" {hoveredCapabilityId}/>
+      <Connector fromId="clear-communicated-ai-stance" toId="organizational-performance" index="-2" {hoveredCapabilityId}/>
+      <Connector fromId="quality-internal-platform" toId="friction" index="1" {hoveredCapabilityId}/>
+      <Connector fromId="quality-internal-platform" toId="organizational-performance" index="-1" {hoveredCapabilityId}/>
+      <Connector fromId="healthy-data-ecosystems" toId="organizational-performance" index="0" {hoveredCapabilityId}/>
     </div>
     <div class="outcomes">
       {#each outcomes as outcome}

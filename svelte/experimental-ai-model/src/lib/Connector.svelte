@@ -4,6 +4,7 @@
   export let fromId;
   export let toId;
   export let index; // vertically, which # arrow is this (from the PoV of the "to" element)
+  export let hoveredCapabilityId = null;
   const yOffsetPx = 8;
 
   let x1 = 0, y1 = 0, x2 = 0, y2 = 0;
@@ -38,6 +39,8 @@
       window.removeEventListener('resize', updateConnector);
     };
   });
+
+  $: dimmed = hoveredCapabilityId && hoveredCapabilityId !== fromId && hoveredCapabilityId !== toId;
 </script>
 
 <svg bind:this={svgElement} style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
@@ -53,5 +56,14 @@
       <polyline points="0 0 8 6 0 12" fill="transparent" stroke="rgb(34,34,39)" stroke-width="1.5"/>
     </marker>
   </defs>
-  <line {x1} {y1} {x2} {y2} stroke="rgb(34,34,39)" stroke-width="1" marker-end="url(#arrow)" />
+  <line {x1} {y1} {x2} {y2} stroke="rgb(34,34,39)" stroke-width="1" marker-end="url(#arrow)" class:dimmed/>
 </svg>
+
+<style>
+  .dimmed {
+    opacity: 0.25;
+  }
+  line {
+    transition: opacity 0.2s ease-in-out;
+  }
+</style>
