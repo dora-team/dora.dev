@@ -2,6 +2,7 @@
   import data from "./data.json";
   import Connector from "./lib/Connector.svelte";
   import Capability from "./lib/Capability.svelte";
+  import Outcome from "./lib/Outcome.svelte";
   const { capabilities, outcomes } = data;
 </script>
 
@@ -38,7 +39,7 @@
     </div>
     <div class="outcomes">
       {#each outcomes as outcome}
-        <div class="entity" id={outcome.id}>{outcome.name}</div>
+        <Outcome {outcome} />
       {/each}
     </div>
   </div>
@@ -74,10 +75,6 @@
       padding-right:4px;
       position: relative;
       align-self: stretch;
-    }
-
-    .outcomes .entity {
-      background-color:var(--dora-highlight);
     }
   }
 </style>
