@@ -3,28 +3,8 @@
   import Connector from "./lib/Connector.svelte";
   import Capability from "./lib/Capability.svelte";
   import Outcome from "./lib/Outcome.svelte";
-  const { capabilities, outcomes } = data;
+  const { capabilities, outcomes, connections } = data;
   let hoveredCapabilityId = null;
-
-  const connections = [
-    { from: "user-centric-focus", to: "team-performance", index: 0 },
-    { from: "strong-version-control-practices", to: "team-performance", index: 1 },
-    { from: "strong-version-control-practices", to: "individual-effectiveness", index: -1 },
-    { from: "ai-accessible-internal-data", to: "code-quality", index: 0 },
-    { from: "ai-accessible-internal-data", to: "individual-effectiveness", index: 0 },
-    { from: "ai-accessible-internal-data", to: "product-performance", index: -1 },
-    { from: "working-in-small-batches", to: "individual-effectiveness", index: 1 },
-    { from: "working-in-small-batches", to: "product-performance", index: 0 },
-    { from: "working-in-small-batches", to: "friction", index: -1 },
-    { from: "clear-communicated-ai-stance", to: "individual-effectiveness", index: 2 },
-    { from: "clear-communicated-ai-stance", to: "product-performance", index: 1 },
-    { from: "clear-communicated-ai-stance", to: "friction", index: 0 },
-    { from: "clear-communicated-ai-stance", to: "throughput", index: 0 },
-    { from: "clear-communicated-ai-stance", to: "organizational-performance", index: -2 },
-    { from: "quality-internal-platform", to: "friction", index: 1 },
-    { from: "quality-internal-platform", to: "organizational-performance", index: -1 },
-    { from: "healthy-data-ecosystems", to: "organizational-performance", index: 0 },
-  ];
 
   let connectedOutcomeIds = [];
   $: {
@@ -93,7 +73,7 @@
       padding: 4px 12px;
       margin: 12px;
       font-size:14px;
-      font-weight: 400;
+      font-weight: 500;
       text-wrap: nowrap;
       transition:opacity 0.2s ease-in-out;
       cursor: pointer;
