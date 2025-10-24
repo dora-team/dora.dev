@@ -30,8 +30,8 @@
     <div class="capabilities">
       {#each capabilities as capability}
         <div
-          on:mouseover={() => (hoveredCapabilityId = capability.id)}
-          on:mouseout={() => (hoveredCapabilityId = null)}
+          onmouseover={() => (hoveredCapabilityId = capability.id)}
+          onmouseout={() => (hoveredCapabilityId = null)}
         >
           <Capability
             {capability}
@@ -49,8 +49,8 @@
     <div class="outcomes">
       {#each outcomes as outcome}
         <div
-          on:mouseover={() => (hoveredOutcomeId = outcome.id)}
-          on:mouseout={() => (hoveredOutcomeId = null)}
+          onmouseover={() => (hoveredOutcomeId = outcome.id)}
+          onmouseout={() => (hoveredOutcomeId = null)}
         >
           <Outcome {outcome} dimmed={(hoveredCapabilityId && !connectedOutcomeIds.includes(outcome.id)) || (hoveredOutcomeId && hoveredOutcomeId !== outcome.id)} />
         </div>
