@@ -4,18 +4,19 @@
   import Capability from "./lib/Capability.svelte";
   import Outcome from "./lib/Outcome.svelte";
   const { capabilities, outcomes, connections } = data;
-  let hoveredCapabilityId = null;
-  let hoveredOutcomeId = null;
+  let hoveredCapabilityId = $state(null);
+  let hoveredOutcomeId = $state(null);
 
-  let connectedOutcomeIds = [], connectedCapabilityIds = [];
-  $: {
-    connectedOutcomeIds = hoveredCapabilityId
+  let connectedOutcomeIds = $derived(
+    hoveredCapabilityId
       ? connections.filter((c) => c.from === hoveredCapabilityId).map((c) => c.to)
-      : [];
-    connectedCapabilityIds = hoveredOutcomeId
+      : []
+  );
+  let connectedCapabilityIds = $derived(
+    hoveredOutcomeId
       ? connections.filter((c) => c.to === hoveredOutcomeId).map((c) => c.from)
-      : [];
-  }
+      : []
+  );
 </script>
 
 <main>
