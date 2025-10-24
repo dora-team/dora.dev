@@ -7,26 +7,14 @@
   let hoveredCapabilityId = null;
   let hoveredOutcomeId = null;
 
-  let connectedOutcomeIds = [];
+  let connectedOutcomeIds = [], connectedCapabilityIds = [];
   $: {
-    if (hoveredCapabilityId) {
-      connectedOutcomeIds = connections
-        .filter((c) => c.from === hoveredCapabilityId)
-        .map((c) => c.to);
-    } else {
-      connectedOutcomeIds = [];
-    }
-  }
-
-  let connectedCapabilityIds = [];
-  $: {
-    if (hoveredOutcomeId) {
-      connectedCapabilityIds = connections
-        .filter((c) => c.to === hoveredOutcomeId)
-        .map((c) => c.from);
-    } else {
-      connectedCapabilityIds = [];
-    }
+    connectedOutcomeIds = hoveredCapabilityId
+      ? connections.filter((c) => c.from === hoveredCapabilityId).map((c) => c.to)
+      : [];
+    connectedCapabilityIds = hoveredOutcomeId
+      ? connections.filter((c) => c.to === hoveredOutcomeId).map((c) => c.from)
+      : [];
   }
 </script>
 
