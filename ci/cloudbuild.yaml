@@ -12,6 +12,9 @@ steps:
       # Build Core Model and move generated files into position
       ./svelte/core-v2/build-core.sh
 
+      # Build AI Model and move generated files into position
+      ./svelte/experimental-ai-model/build-core.sh
+
       # install hugo "extended"
       HUGO_VERSION=0.147.9
       wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb -O /tmp/hugo.deb
