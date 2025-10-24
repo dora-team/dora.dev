@@ -5,6 +5,7 @@
   import Outcome from "./lib/Outcome.svelte";
   const { capabilities, outcomes, connections } = data;
   let hoveredCapabilityId = null;
+  let hoveredOutcomeId = null;
 
   let connectedOutcomeIds = [];
   $: {
@@ -14,6 +15,17 @@
         .map((c) => c.to);
     } else {
       connectedOutcomeIds = [];
+    }
+  }
+
+  let connectedCapabilityIds = [];
+  $: {
+    if (hoveredOutcomeId) {
+      connectedCapabilityIds = connections
+        .filter((c) => c.to === hoveredOutcomeId)
+        .map((c) => c.from);
+    } else {
+      connectedCapabilityIds = [];
     }
   }
 </script>
@@ -34,19 +46,25 @@
         >
           <Capability
             {capability}
-            dimmed={hoveredCapabilityId && hoveredCapabilityId !== capability.id}
+            dimmed={(hoveredCapabilityId && hoveredCapabilityId !== capability.id) || (hoveredOutcomeId && !connectedCapabilityIds.includes(capability.id))}
+            hovered={hoveredCapabilityId === capability.id || (hoveredOutcomeId && connectedCapabilityIds.includes(capability.id))}
           />
         </div>
       {/each}
     </div>
     <div class="connectors">
       {#each connections as connection}
-        <Connector fromId={connection.from} toId={connection.to} index={connection.index} {hoveredCapabilityId}/>
+        <Connector fromId={connection.from} toId={connection.to} index={connection.index} {hoveredCapabilityId} {hoveredOutcomeId}/>
       {/each}
     </div>
     <div class="outcomes">
       {#each outcomes as outcome}
-        <Outcome {outcome} dimmed={hoveredCapabilityId && !connectedOutcomeIds.includes(outcome.id)} />
+        <div
+          on:mouseover={() => (hoveredOutcomeId = outcome.id)}
+          on:mouseout={() => (hoveredOutcomeId = null)}
+        >
+          <Outcome {outcome} dimmed={(hoveredCapabilityId && !connectedOutcomeIds.includes(outcome.id)) || (hoveredOutcomeId && hoveredOutcomeId !== outcome.id)} />
+        </div>
       {/each}
     </div>
   </div>
@@ -64,7 +82,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /* column-gap: 12px; */
     background-color: white;
 
     :global(.entity) {
@@ -75,7 +92,7 @@
       font-size:14px;
       font-weight: 500;
       text-wrap: nowrap;
-      transition:opacity 0.2s ease-in-out;
+      transition:all 0.2s ease-in-out;
       cursor: pointer;
     }
 
