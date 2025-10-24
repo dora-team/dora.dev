@@ -1,14 +1,13 @@
 <script>
   import { onMount, tick } from 'svelte';
 
-  export let fromId;
-  export let toId;
-  export let index; // vertically, which # arrow is this (from the PoV of the "to" element)
-  export let hoveredCapabilityId = null;
-  export let hoveredOutcomeId = null;
+  let { fromId, toId, index, hoveredCapabilityId = null, hoveredOutcomeId = null } = $props();
   const yOffsetPx = 8;
 
-  let x1 = 0, y1 = 0, x2 = 0, y2 = 0;
+  let x1 = $state(0);
+  let y1 = $state(0);
+  let x2 = $state(0);
+  let y2 = $state(0);
   let svgElement;
 
   function updateConnector() {
@@ -41,7 +40,7 @@
     };
   });
 
-  $: dimmed = (hoveredCapabilityId && hoveredCapabilityId !== fromId) || (hoveredOutcomeId && hoveredOutcomeId !== toId);
+  let dimmed = $derived((hoveredCapabilityId && hoveredCapabilityId !== fromId) || (hoveredOutcomeId && hoveredOutcomeId !== toId));
 </script>
 
 <svg bind:this={svgElement} style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">

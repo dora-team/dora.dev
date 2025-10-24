@@ -1,6 +1,5 @@
 <script lang="ts">
-  export let outcome;
-  export let dimmed = false;
+  let { outcome, dimmed = false } = $props();
 </script>
 
 <div class="entity" class:dimmed id={outcome.id}>{outcome.name}</div>
