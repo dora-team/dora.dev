@@ -12,7 +12,7 @@ layout: single
 ---
 
 ## State of AI-assisted Software Development
-<a href="https://cloud.google.com/dora" target="_blank"><img src="/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report.png" width="120em" style="float:left; margin-right: 1rem;" alt="State of AI-assisted Software Development"></a>
+<a href="https://cloud.google.com/dora" target="_blank"><img src="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png" width="120em" style="float:left; margin-right: 1rem;" alt="State of AI-assisted Software Development"></a>
 
 The 2025 State of AI-assisted Software Development report finds that AI's primary role is that of an amplifier, magnifying the strengths of high-performing organizations and the dysfunctions of struggling ones. Download the report to explore the new DORA AI Capabilities Model, which identifies seven foundational practices that are proven to amplify the positive impact of AI on organizational performance.
 

@@ -24,7 +24,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
   headline="State of AI-assisted Software Development"
   url="https://cloud.google.com/dora"
   cta="Learn more"
-  img_src="/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report.png"
+  img_src="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png"
   img_align="right"
   img_stroke="true"
   delete_on=""

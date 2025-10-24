@@ -57,7 +57,7 @@ layout: single
     Your version: <code>v.2025.2</code><br />
     Latest version: <code>v.2025.2</code>
   </p>
-  <a href="/research/2025/dora-report"><img src="/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report.png" alt="2025 DORA Report Cover" style="max-width:18em;"></a>
+  <a href="/research/2025/dora-report"><img src="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png" alt="2025 DORA Report Cover" style="max-width:18em;"></a>
 </div>
 
 <!-- version is 2025.1 -->
