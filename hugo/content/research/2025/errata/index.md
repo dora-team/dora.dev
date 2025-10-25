@@ -15,9 +15,7 @@ This page lists errors and corrections to the 2025 State of AI-assisted Software
 
 ### Errata in `v. 2025.2`
 
-Have you found an error in v. 2025.2 of the 2025 State of AI-assisted Software Development report?
-
-<a href='mailto:dora-advocacy@google.com?subject=DORA+2025+State+of+AI-assisted+Software+Development+error+report' class='button' target="_blank">Submit a change or correction</a>
+**p. 51** Figure 32 has an incorrect caption. The correct caption is "Figure 32: A clear and communicated AI stance determines AI’s impact on organizational performance"
 
 ### Errata in `v. 2025.1`
 
@@ -31,6 +29,8 @@ Have you found an error in v. 2025.2 of the 2025 State of AI-assisted Software D
 
 * Light blue ![light blue color swatch](light-blue.png) is No AI.
 * Dark purple ![dark purple color swatch](dark-purple.png) is AI.
+
+**p. 51** Figure 32 has an incorrect caption. The correct caption is "Figure 32: A clear and communicated AI stance determines AI’s impact on organizational performance"
 
 **p. 52** Figure 34 has an incorrect title and caption. _[Corrected in `v. 2025.2`]_
 
