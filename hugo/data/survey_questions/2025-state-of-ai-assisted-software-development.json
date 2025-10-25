@@ -35,7 +35,7 @@
           "questions": [
             "How important of a role does AI have in your company’s strategy?|Not at all important,Slightly important,Moderately important,Very important,Extremely important,I don't know",
             "To what extent does your organization support you with experimenting with AI?|Not at all,Slightly,Moderately,Very much,Extremely",
-            "To what extent do you feel that the use of AI at work is mandatory?|No",
+            "To what extent do you feel that the use of AI at work is mandatory?|Not at all,Slightly,Moderately,Very much,Extremely",
             "Has your organization introduced centralized training practices across teams on how to use AI tools? Please select all that apply|Yes. Mandatory training,Yes. Optional training,No training provided",
             "How frequently does your team have brown bag sessions, peer demos, or informal walkthroughs about the use of AI?|Never,Rarely,About once a month, About once a week,Multiple times a week",
             "To what extent does your organization’s AI policy directly apply to your work?|Not at all,Slightly,Moderately,Very much,Extremely",
