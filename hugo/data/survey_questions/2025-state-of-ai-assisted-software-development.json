@@ -355,7 +355,7 @@
       "question_groups": [
         {
           "questions": [
-            "In the last 3 months, to what extent did friction hinder your work?  Friction includes things like lack of smoothness, unnecessary manual work, or unexpected obstacles.|None at all,A little, A moderate amount,A lot,A great deal"
+            "In the last 3 months, to what extent did friction hinder your work?  Friction includes things like lack of smoothness, unnecessary manual work, or unexpected obstacles.|None at all,A little,A moderate amount,A lot,A great deal"
           ]
         }
       ]
@@ -445,7 +445,7 @@
       "question_groups": [
         {
           "description": "To what extent does your team dedicate resources, effort, focus, and time to monitoring and understanding the following areas?",
-          "group_responses": "Not at all,A little,A moderate amount,A lot, A great deal",
+          "group_responses": "Not at all,A little,A moderate amount,A lot,A great deal",
           "questions": [
             "Developer Well-being (for example, sustainability of work, individual fulfillment, team morale)",
             "Developer Performance & Delivery (for example, ability to create value, lead time for changes, deployment frequency)",
