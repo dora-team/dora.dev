@@ -1,31 +1,31 @@
 {
   "capabilities": [
-    { "name": "User-centric Focus", "id": "user-centric-focus" },
+    { "name": "User-centric focus", "id": "user-centric-focus" },
     {
-      "name": "Strong Version Control Practices",
+      "name": "Strong version control practices",
       "id": "strong-version-control-practices"
     },
     {
-      "name": "AI-accessible Internal Data",
+      "name": "AI-accessible internal data",
       "id": "ai-accessible-internal-data"
     },
-    { "name": "Working in Small Batches", "id": "working-in-small-batches" },
+    { "name": "Working in small batches", "id": "working-in-small-batches" },
     {
-      "name": "Clear + Communicated AI Stance",
+      "name": "Clear + communicated AI stance",
       "id": "clear-communicated-ai-stance"
     },
-    { "name": "Quality Internal Platform", "id": "quality-internal-platform" },
-    { "name": "Healthy Data Ecosystems", "id": "healthy-data-ecosystems" }
+    { "name": "Quality internal platform", "id": "quality-internal-platform" },
+    { "name": "Healthy data ecosystems", "id": "healthy-data-ecosystems" }
   ],
   "outcomes": [
-    { "name": "Team Performance", "id": "team-performance" },
-    { "name": "Code Quality", "id": "code-quality" },
-    { "name": "Individual Effectiveness", "id": "individual-effectiveness" },
-    { "name": "Product Performance", "id": "product-performance" },
-    { "name": "Friction", "id": "friction" },
-    { "name": "Throughput", "id": "throughput" },
+    { "name": "Team performance", "id": "team-performance" },
+    { "name": "Code quality", "id": "code-quality" },
+    { "name": "Individual effectiveness", "id": "individual-effectiveness" },
+    { "name": "Product performance", "id": "product-performance" },
+    { "name": "Reduced friction", "id": "friction" },
+    { "name": "Software delivery throughput", "id": "throughput" },
     {
-      "name": "Organizational Performance",
+      "name": "Organizational performance",
       "id": "organizational-performance"
     }
   ],

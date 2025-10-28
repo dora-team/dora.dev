@@ -24,7 +24,7 @@
 <main>
   <div class="model">
     <div class="ai_adoption">
-      <div class="entity" class:hovered={hoveredCapabilityId || hoveredOutcomeId}>AI Adoption</div>
+      <div class="entity" class:hovered={hoveredCapabilityId || hoveredOutcomeId}>AI adoption</div>
     </div>
     <div class="x">
       <div class="entity" class:hovered={hoveredCapabilityId || hoveredOutcomeId}>&times;</div>
