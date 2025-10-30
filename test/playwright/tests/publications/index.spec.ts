@@ -29,6 +29,13 @@ test.describe("Publications Page", () => {
         "https://cloud.google.com/dora",
       );
     });
+
+    test("shows the report image", async ({ page }) => {
+      const reportImage = page
+        .locator("section.publicationHighlight")
+        .getByRole("img");
+      await expect(reportImage).toBeVisible();
+    });
   });
 
   test.describe("Prior State of DevOps Reports", () => {
@@ -36,46 +43,57 @@ test.describe("Publications Page", () => {
       {
         name: "Impact of Generative AI in Software Development",
         url: "/research/ai/gen-ai-report/",
+        hasImage: true,
       },
       {
         name: "2024 Accelerate State of DevOps Report",
         url: "/research/2024/dora-report/",
+        hasImage: true,
       },
       {
         name: "2023 Accelerate State of DevOps Report",
         url: "/research/2023/dora-report/",
+        hasImage: true,
       },
       {
         name: "2022 Accelerate State of DevOps Report",
         url: "/research/2022/dora-report/",
+        hasImage: true,
       },
       {
         name: "2021 Accelerate State of DevOps Report",
         url: "/research/2021/dora-report/",
+        hasImage: true,
       },
       {
         name: "2019 Accelerate State of DevOps Report",
         url: "/research/2019/dora-report/",
+        hasImage: true,
       },
       {
         name: "2018 Accelerate State of DevOps Report",
         url: "/research/2018/dora-report/",
+        hasImage: true,
       },
       {
         name: "2017 State of DevOps Report",
         url: "/research/2017",
+        hasImage: true,
       },
       {
         name: "2016 State of DevOps Report",
         url: "/research/2016/",
+        hasImage: true,
       },
       {
         name: "2015 State of DevOps Report",
         url: "/research/2015/",
+        hasImage: true,
       },
       {
         name: "2014 State of DevOps Report",
         url: "/research/2014/",
+        hasImage: true,
       },
     ];
 
@@ -86,6 +104,14 @@ test.describe("Publications Page", () => {
           .getByRole("link", { name: "Download the report" });
         await expect(reportLink).toHaveAttribute("href", report.url);
       });
+
+      if (report.hasImage) {
+        test(`shows the image for ${report.name}`, async ({ page }) => {
+          const reportLocator = page.locator("li", { hasText: report.name });
+          const reportImage = reportLocator.getByRole("img");
+          await expect(reportImage).toBeVisible();
+        });
+      }
     }
   });
 
