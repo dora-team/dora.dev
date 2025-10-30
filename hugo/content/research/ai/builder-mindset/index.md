@@ -22,7 +22,7 @@ Because of this, the role-based personas that product teams have traditionally r
 
 So, how do we navigate this new landscape?
 
-We propose a new framework based on large-scale, mixed-methods research at Google. We argue that to build impactful AI based experiences for developers, we must focus on a builder’s intent as the most revealing indicator of what they need to succeed. We call this their Builder Mindset.
+We propose a new framework based on large-scale, mixed-methods research. We argue that to build impactful AI based experiences for developers, we must focus on a builder’s intent as the most revealing indicator of what they need to succeed. We call this their Builder Mindset.
 
 Our research identified four core mindsets that any builder can adopt for a given task. These aren't rigid personas; rather, they're fluid states that determine a user's approach, their definition of success, and the tools they require to build software safely and reliably.
 
