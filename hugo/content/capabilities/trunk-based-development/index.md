@@ -85,7 +85,7 @@ way.
 Analysis of DORA data from
 [2016](/research/2016/2016-state-of-devops-report.pdf#page=31)
 (PDF) and
-[2017](/research/2017-and-earlier/2017-state-of-devops-report.pdf#page=40)
+[2017](/research/2017/2017-state-of-devops-report.pdf#page=40)
 (PDF) shows that teams achieve higher levels of software delivery and operational
 performance (delivery speed, stability, and availability) if they follow these
 practices:

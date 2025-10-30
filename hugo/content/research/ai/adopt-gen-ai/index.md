@@ -57,7 +57,7 @@ Integrating AI into developer workflows has a learning curve. Our data indicates
 
 While providing resources including training materials and documentation can be helpful, our findings suggest that actively encouraging developers to integrate AI into their workflows leads to a 27% increase in AI adoption. However, these findings also suggest that simply giving developers dedicated time during work hours to explore and experiment with AI tools leads to a 131% increase in team AI adoption.
 
-We envision this dedicated time to be a combination of reducing productivity expectations during the adoption phase and giving developers ample heads-down time to explore these tools on their own — while also providing them with opportunities to collaborate and learn from others around them. This  may take the form of community-led hack-a-thons, lunch-n-learns, or [communities of practice](/guides/devops-culture-transform/#build-community-structures-to-spread-knowledge).
+We envision this dedicated time to be a combination of reducing productivity expectations during the adoption phase and giving developers ample heads-down time to explore these tools on their own — while also providing them with opportunities to collaborate and learn from others around them. This  may take the form of community-led hack-a-thons, lunch-n-learns, or [communities of practice](/guides/how-to-transform/#build-community-structures-to-spread-knowledge).
 
 Expecting developers to acquire these skills in their personal time can lead to frustration, burnout, and ultimately hinder adoption. By providing dedicated time for AI learning and exploration during work hours, organizations demonstrate a commitment to developer growth and create a supportive environment for successful AI adoption.
 
@@ -105,7 +105,7 @@ The value we're examining is how a specific strategy impacts a team's adoption o
 ### Next steps
 
 * [Download and read the 2024 DORA Report](/research/2024/dora-report/) for additional findings from the research program.
-* [Read more about how to transform your organization](/guides/devops-culture-transform/) for perspective into the importance of ensuring teams have the tools and resources to do their job, and of making good use of their skills and abilities.
+* [Read more about how to transform your organization](/guides/how-to-transform/) for perspective into the importance of ensuring teams have the tools and resources to do their job, and of making good use of their skills and abilities.
 * Read about strategies the DORA team has identified for [ensuring AI amplifies developer value](/research/ai/value-of-development-work/). This article provides further guidance for  ensuring job satisfaction and productivity among developers.
 * [Join the dora.community](https://dora.community) to share your approaches and learn about how other organizations are encouraging their developers to adopt AI.
 

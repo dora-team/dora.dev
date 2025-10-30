@@ -45,7 +45,7 @@ with
 In fact, DORA observed statistically significant differences in leadership
 characteristics between high-, medium- and low- performing software delivery
 teams (see the
-[2017 State of DevOps Report](/research/2017-and-earlier/2017-state-of-devops-report.pdf#page=12)
+[2017 State of DevOps Report](/research/2017/2017-state-of-devops-report.pdf#page=12)
 pp. 12-19). High-performing teams reported having leaders with the strongest
 behaviors across all dimensions. In
 contrast, low-performing teams reported the lowest levels of these leadership
@@ -156,7 +156,7 @@ consistent way without having to look it up.
     [Google Cloud DevOps page](https://cloud.google.com/devops).
 -   Read [Transformational Leadership: A Quick Start Guide](https://itrevolution.com/product/transformational-leadership-a-quick-start-guide/) from IT Revolution, which includes a self-assessment and action plan for improvement.
 -   Read [*Leadership and Performance Beyond Expectations*](https://books.google.com/books/about/Leadership_and_Performance_Beyond_Expect.html?id=NCd-QgAACAAJ) by Bernad M. Bass (Free Press, 1985.)
--   Check out the article [How to transform your organization.](/guides/devops-culture-transform)
+-   Check out the article [How to transform your organization.](/guides/how-to-transform/)
 -   Explore our DevOps
     [research program](https://www.devops-research.com/research.html).
 -   Take the
