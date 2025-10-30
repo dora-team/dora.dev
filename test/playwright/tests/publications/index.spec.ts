@@ -13,10 +13,10 @@ test.describe("Publications Page", () => {
     await expect(page.locator("h1")).toContainText("Publications by DORA");
   });
 
-  test("has a link to the sponsor email alias", async ({ page }) => {
+  test("has a link to the sponsor page", async ({ page }) => {
     await expect(
-      page.getByRole("link", { name: "sponsor-dora@google.com" }),
-    ).toBeVisible();
+      page.getByRole("link", { name: "Sponsorship opportunities" }),
+    ).toHaveAttribute("href", "/sponsors/");
   });
 
   test.describe("State of AI-assisted Software Development", () => {
