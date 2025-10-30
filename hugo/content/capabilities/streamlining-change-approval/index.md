@@ -4,6 +4,7 @@ titleForHTMLHead: "Capabilities: Streamlining Change Approval" # TODO: can we DR
 slug: streamlining-change-approval
 core: true
 date: 2023-03-22T11:02:58Z
+updated: 2025-10-30
 category: fast flow
 draft: false
 headline: "Replace heavyweight change-approval processes with peer review, to get the benefits of a more reliable, compliant release process without sacrificing speed."
@@ -170,12 +171,8 @@ While you consider your own environment, you will likely develop your own measur
 ## What's next
 
 -   See how to
-    [perform vulnerability scanning as part of your deployment pipeline](https://cloud.google.com/binary-authorization/docs/vulnerability-scanning-kritis)
-    with Cloud Build, Container Analysis, and Kritis Signer.
--   For links to other articles and resources, see the
-    [Google Cloud DevOps page](https://cloud.google.com/devops).
--   Explore our DevOps
-    [research program](/).
+    [perform vulnerability scanning as part of your deployment pipeline](https://docs.cloud.google.com/artifact-analysis/docs/scan-os-automatically)
+    with Artifact Analysis
 -   Take the
     [DORA quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.

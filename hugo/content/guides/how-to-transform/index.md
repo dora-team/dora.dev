@@ -325,7 +325,7 @@ Moving from a
 [project paradigm to the product paradigm](https://itrevolution.com/book/project-to-product/)
 is a long-term trend that will take most industries years to execute, but it's
 clear that this is the future. Even the US federal government has successfully
-[experimented with modular contracting](https://18f.gsa.gov/2019/04/09/why-we-love-modular-contracting/)
+[experimented with modular contracting](https://web.archive.org/web/20250126174814/https://18f.gsa.gov/2019/04/09/why-we-love-modular-contracting/)
 to pursue a more iterative, incremental approach to delivering large pieces of
 work.
 
