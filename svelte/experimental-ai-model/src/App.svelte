@@ -87,7 +87,7 @@
       </div>
     </div>
     <div class="snippet">
-      <strong>Team performance</strong> is a measure of lorem ipsum dolor sit
+      <strong>Team performance</strong> Lorem ipsum dolor sit
       amet, consectetur adipiscing elit. Fusce sit amet laoreet mi. Vivamus
       interdum justo ex, commodo porttitor ante mattis et. Pellentesque neque
       augue, sollicitudin vel massa et, lobortis bibendum libero. Ut arcu
@@ -156,9 +156,12 @@
       margin:4px 12px;
       font-size:.85em;
 
+      strong {
+       font-weight:700;
+      }
+
       .snippet-links {
         display: flex;
-        
       }
     }
   }
