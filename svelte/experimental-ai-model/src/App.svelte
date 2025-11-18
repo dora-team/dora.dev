@@ -190,7 +190,7 @@
         /* text-wrap: nowrap; */
         transition: all 0.2s ease-in-out;
         cursor: pointer;
-        font-size: clamp(0.6rem, 0.8vw, 1rem);
+        font-size: clamp(0.6rem, 1vw, 0.8rem);
       }
 
       :global(.hovered) {
