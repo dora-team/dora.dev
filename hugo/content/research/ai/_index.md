@@ -11,7 +11,16 @@ type: "research_archives/preview"
 layout: single
 ---
 
+## DORA AI Capabilities Model
+
+<a href="https://cloud.google.com/dora/ai-capabilities-model/" target="_blank"><img src="/research/shared/ai-capabilities-model-report/2025-dora-ai-capabilities-model-report.png" width="120em" style="float:left; margin-right: 1rem;" alt="DORA AI Capabilities Model report"></a>
+
+The DORA AI Capabilities Model report, a companion guide to the [2025 State of AI-assisted Software Development report](/research/2025/dora-report/), serves as a practical guide to the seven capabilities that amplify the benefits of AI. For each of the seven core capabilities, this report details implementation strategies, specific tactics for teams to get started, and methods for monitoring progress and fostering continuous improvement.
+
+<a href="https://cloud.google.com/dora/ai-capabilities-model/" target="_blank"><button class="secondary">Download the report</button></a>
+
 ## State of AI-assisted Software Development
+
 <a href="https://cloud.google.com/dora" target="_blank"><img src="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png" width="120em" style="float:left; margin-right: 1rem;" alt="State of AI-assisted Software Development"></a>
 
 The 2025 State of AI-assisted Software Development report finds that AI's primary role is that of an amplifier, magnifying the strengths of high-performing organizations and the dysfunctions of struggling ones. Download the report to explore the new DORA AI Capabilities Model, which identifies seven foundational practices that are proven to amplify the positive impact of AI on organizational performance.
@@ -19,6 +28,7 @@ The 2025 State of AI-assisted Software Development report finds that AI's primar
 <a href="https://cloud.google.com/dora" target="_blank"><button class="secondary">Download the report</button></a>
 
 ## Impact of Gen AI in Software Development
+
 <a href="/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development.pdf" target="_blank"><img src="/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png" width="120em" style="float:left; margin-right: 1rem;" alt="Impact of Generative AI in Software Development"></a>
 
 Generative AI is rapidly reshaping the software development landscape, presenting both exciting opportunities and complex challenges.
@@ -28,6 +38,7 @@ This report offers research-backed guidance for leaders and practitioners to eff
 <a href="/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development.pdf" target="_blank"><button class="secondary">Download the report</button></a>
 
 ## AI Research
+
 * [Report: State of AI-assisted Software Development](https://cloud.google.com/dora)
 * [Report: Impact of Gen AI in Software Development](/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development.pdf)
 * [Understanding builder intent in the AI era](/research/ai/builder-mindset/)

@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { sidebarLinks } from "../sidebarLinks";
-import { researchPartners } from "./sponsors-data";
+import { researchPartners } from "./research-partners";
 
 const pages = [
   {
