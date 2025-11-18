@@ -1,33 +1,70 @@
-<script>
+<script lang="ts">
   import data from "./data.json";
   import Connector from "./lib/Connector.svelte";
   import Capability from "./lib/Capability.svelte";
   import Outcome from "./lib/Outcome.svelte";
-  const { capabilities, outcomes, connections } = data;
-  let hoveredCapabilityId = $state(null);
-  let hoveredOutcomeId = $state(null);
+
+  type CapabilityData = { name: string; id: string };
+  type OutcomeData = { name: string; id: string };
+  type ConnectionData = { from: string; to: string; index: number };
+  type SelectedEntity = { id: string; type: "capability" | "outcome" } | null;
+
+  const { capabilities, outcomes, connections } = data as {
+    capabilities: CapabilityData[];
+    outcomes: OutcomeData[];
+    connections: ConnectionData[];
+  };
+
+  let hoveredCapabilityId = $state<string | null>(null);
+  let hoveredOutcomeId = $state<string | null>(null);
+  let selectedEntity = $state<SelectedEntity>(null);
+
+  let activeCapabilityId = $derived(
+    selectedEntity?.type === "capability"
+      ? selectedEntity.id
+      : hoveredCapabilityId,
+  );
+  let activeOutcomeId = $derived(
+    selectedEntity?.type === "outcome" ? selectedEntity.id : hoveredOutcomeId,
+  );
 
   let connectedOutcomeIds = $derived(
-    hoveredCapabilityId
+    activeCapabilityId
       ? connections
-          .filter((c) => c.from === hoveredCapabilityId)
+          .filter((c) => c.from === activeCapabilityId)
           .map((c) => c.to)
       : [],
   );
   let connectedCapabilityIds = $derived(
-    hoveredOutcomeId
-      ? connections.filter((c) => c.to === hoveredOutcomeId).map((c) => c.from)
+    activeOutcomeId
+      ? connections.filter((c) => c.to === activeOutcomeId).map((c) => c.from)
       : [],
   );
+
+  function handleBackgroundClick() {
+    selectedEntity = null;
+  }
+
+  function handleCapabilityClick(event: MouseEvent, id: string) {
+    event.stopPropagation();
+    selectedEntity = { id, type: "capability" };
+  }
+
+  function handleOutcomeClick(event: MouseEvent, id: string) {
+    event.stopPropagation();
+    selectedEntity = { id, type: "outcome" };
+  }
 </script>
 
 <main>
-  <div class="model-container">
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
+  <!-- svelte-ignore a11y_no_static_element_interactions -->
+  <div class="model-container" onclick={handleBackgroundClick}>
     <div class="model">
       <div class="ai_adoption">
         <div
           class="entity"
-          class:hovered={hoveredCapabilityId || hoveredOutcomeId}
+          class:hovered={activeCapabilityId || activeOutcomeId}
         >
           AI adoption
         </div>
@@ -35,26 +72,36 @@
       <div class="x">
         <div
           class="entity"
-          class:hovered={hoveredCapabilityId || hoveredOutcomeId}
+          class:hovered={activeCapabilityId || activeOutcomeId}
         >
           &times;
         </div>
       </div>
       <div class="capabilities">
         {#each capabilities as capability}
+          <!-- svelte-ignore a11y_click_events_have_key_events -->
+          <!-- svelte-ignore a11y_no_static_element_interactions -->
           <div
             onmouseover={() => (hoveredCapabilityId = capability.id)}
             onmouseout={() => (hoveredCapabilityId = null)}
+            onfocus={() => (hoveredCapabilityId = capability.id)}
+            onblur={() => (hoveredCapabilityId = null)}
+            onclick={(e) => handleCapabilityClick(e, capability.id)}
+            role="button"
+            tabindex="0"
           >
             <Capability
               {capability}
-              dimmed={(hoveredCapabilityId &&
-                hoveredCapabilityId !== capability.id) ||
-                (hoveredOutcomeId &&
-                  !connectedCapabilityIds.includes(capability.id))}
-              hovered={hoveredCapabilityId === capability.id ||
-                (hoveredOutcomeId &&
-                  connectedCapabilityIds.includes(capability.id))}
+              dimmed={!!(
+                (activeCapabilityId && activeCapabilityId !== capability.id) ||
+                (activeOutcomeId &&
+                  !connectedCapabilityIds.includes(capability.id))
+              )}
+              hovered={!!(
+                activeCapabilityId === capability.id ||
+                (activeOutcomeId &&
+                  connectedCapabilityIds.includes(capability.id))
+              )}
             />
           </div>
         {/each}
@@ -65,35 +112,44 @@
             fromId={connection.from}
             toId={connection.to}
             index={connection.index}
-            {hoveredCapabilityId}
-            {hoveredOutcomeId}
+            hoveredCapabilityId={activeCapabilityId}
+            hoveredOutcomeId={activeOutcomeId}
           />
         {/each}
       </div>
       <div class="outcomes">
         {#each outcomes as outcome}
+          <!-- svelte-ignore a11y_click_events_have_key_events -->
+          <!-- svelte-ignore a11y_no_static_element_interactions -->
           <div
             onmouseover={() => (hoveredOutcomeId = outcome.id)}
             onmouseout={() => (hoveredOutcomeId = null)}
+            onfocus={() => (hoveredOutcomeId = outcome.id)}
+            onblur={() => (hoveredOutcomeId = null)}
+            onclick={(e) => handleOutcomeClick(e, outcome.id)}
+            role="button"
+            tabindex="0"
           >
             <Outcome
               {outcome}
-              dimmed={(hoveredCapabilityId &&
-                !connectedOutcomeIds.includes(outcome.id)) ||
-                (hoveredOutcomeId && hoveredOutcomeId !== outcome.id)}
+              dimmed={!!(
+                (activeCapabilityId &&
+                  !connectedOutcomeIds.includes(outcome.id)) ||
+                (activeOutcomeId && activeOutcomeId !== outcome.id)
+              )}
             />
           </div>
         {/each}
       </div>
     </div>
     <div class="snippet">
-      <strong>Team performance</strong> Lorem ipsum dolor sit
-      amet, consectetur adipiscing elit. Fusce sit amet laoreet mi. Vivamus
-      interdum justo ex, commodo porttitor ante mattis et. Pellentesque neque
-      augue, sollicitudin vel massa et, lobortis bibendum libero. Ut arcu
-      tellus, dictum et consectetur vitae, euismod quis urna. Morbi dictum
-      molestie ligula, quis commodo orci pharetra a. Nulla consequat, purus eu
-      faucibus commodo, nisi purus egestas massa, eu tempus elit ligula non est.
+      <strong>Team performance</strong> Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Fusce sit amet laoreet mi. Vivamus interdum justo ex,
+      commodo porttitor ante mattis et. Pellentesque neque augue, sollicitudin
+      vel massa et, lobortis bibendum libero. Ut arcu tellus, dictum et
+      consectetur vitae, euismod quis urna. Morbi dictum molestie ligula, quis
+      commodo orci pharetra a. Nulla consequat, purus eu faucibus commodo, nisi
+      purus egestas massa, eu tempus elit ligula non est.
       <div class="snippet-links">
         <div>
           <a href="#" class="button">Learn more about Team performance</a>
@@ -153,11 +209,11 @@
     }
 
     .snippet {
-      margin:4px 12px;
-      font-size:.85em;
+      margin: 4px 12px;
+      font-size: 0.85em;
 
       strong {
-       font-weight:700;
+        font-weight: 700;
       }
 
       .snippet-links {
