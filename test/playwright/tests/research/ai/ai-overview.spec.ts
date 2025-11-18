@@ -12,11 +12,38 @@ test.describe("AI Research Overview Page", () => {
 
   test("has the correct headers", async ({ page }) => {
     await expect(page.locator("h2").first()).toContainText(
-      "State of AI-assisted Software Development",
+      "DORA AI Capabilities Model",
     );
     await expect(page.locator("h2").nth(1)).toContainText(
+      "State of AI-assisted Software Development",
+    );
+    await expect(page.locator("h2").nth(2)).toContainText(
       "Impact of Gen AI in Software Development",
     );
+  });
+
+  test.describe("DORA AI Capabilities Model report section", () => {
+    test("has the correct report image", async ({ page }) => {
+      const reportImage = page.locator(
+        'img[alt="DORA AI Capabilities Model report"]',
+      );
+      await expect(reportImage).toBeVisible();
+      await expect(reportImage).toHaveAttribute(
+        "src",
+        "/research/shared/ai-capabilities-model-report/2025-dora-ai-capabilities-model-report.png",
+      );
+    });
+
+    test("has the correct download button", async ({ page }) => {
+      const downloadLink = page
+        .locator('a:has-text("Download the report")')
+        .first();
+      await expect(downloadLink).toBeVisible();
+      await expect(downloadLink).toHaveAttribute(
+        "href",
+        "https://cloud.google.com/dora/ai-capabilities-model/",
+      );
+    });
   });
 
   test.describe("State of AI-assisted Software Development section", () => {
@@ -34,7 +61,7 @@ test.describe("AI Research Overview Page", () => {
     test("has the correct download button", async ({ page }) => {
       const downloadLink = page
         .locator('a:has-text("Download the report")')
-        .first();
+        .nth(1);
       await expect(downloadLink).toBeVisible();
       await expect(downloadLink).toHaveAttribute(
         "href",
@@ -58,7 +85,7 @@ test.describe("AI Research Overview Page", () => {
     test("has the correct download button", async ({ page }) => {
       const downloadLink = page
         .locator('a:has-text("Download the report")')
-        .nth(1);
+        .nth(2);
       await expect(downloadLink).toBeVisible();
       await expect(downloadLink).toHaveAttribute(
         "href",
