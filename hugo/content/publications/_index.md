@@ -15,7 +15,7 @@ bannerBackgroundColor: purple  # choose one of "yellow", "blue", "red", "purple"
 
 <section class="publicationHighlight">
     <aside>
-        <a href="https://cloud.google.com/dora" target="_blank"><img src="/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report.png" alt="State of AI-assisted Software Development"></a>
+        <a href="https://cloud.google.com/dora" target="_blank"><img src="/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report-thumb.png" alt="State of AI-assisted Software Development"></a>
     </aside>
     <article>
         <p>
