@@ -1,7 +1,7 @@
 ---
 title: "Partner with DORA"
 date: 2024-04-24T09:58:12-04:00
-updated: 2025-10-30
+updated: 2025-11-20
 draft: false
 bannerTitle: Sponsor DORA research
 bannerSubtitle: Partner with DORA and Google Cloud to shape the future of software development
