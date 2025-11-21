@@ -64,7 +64,9 @@ test.describe('Version Checker', () => {
         test('shows the correct version information', async ({ page }) => {
           const versionDiv = page.locator(`div[data-version="${version}"]`);
           await expect(versionDiv).toBeVisible();
-          await expect(versionDiv.getByRole('heading', { name: expectedText, level: 2 })).toBeVisible();
+          await expect(
+            versionDiv.getByRole('heading', { name: expectedText, level: 2 }),
+          ).toBeVisible();
         });
 
         if (expectedImage) {
