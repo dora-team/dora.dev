@@ -1,0 +1,12 @@
+.blog-list {
+  h2 {
+    a {
+      text-decoration: none;
+      color: $color-text;
+
+      &:hover {
+        color: $color-link-hover;
+      }
+    }
+  }
+}

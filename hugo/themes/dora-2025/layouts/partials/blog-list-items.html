@@ -1,0 +1,20 @@
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+            <h2><a href="{{ .RelPermalink }}">{{ .Params.headline | default .Title }}</a></h2>
+            <p>
+                <small>{{ .Date.Format "Jan 2, 2006" }}</small>
+                <br>
+                {{ with .GetTerms "tags" }}
+                <small class="tags">
+                    {{ range . }}
+                    <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
+                    {{ end }}
+                </small>
+                <br>
+                {{ end }}
+                {{ .Summary }}
+            </p>
+        </div>
+    </div>
+</article>
