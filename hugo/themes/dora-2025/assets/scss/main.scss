@@ -17,6 +17,7 @@
 @import "search-input.scss";
 @import "sponsors.scss";
 @import "awards.scss";
+@import "blog-list.scss";
 
 :root {
   font-family: "Google Sans Flex", Arial, Helvetica, sans-serif;
@@ -64,14 +65,14 @@ body {
 
     @include media-medium {
       padding: 0.75em;
-      width:100%;
-      margin:0;
+      width: 100%;
+      margin: 0;
     }
 
     @include media-small {
       padding: 0.5em;
-      width:100%;
-      margin:0;
+      width: 100%;
+      margin: 0;
     }
   }
 }
@@ -90,7 +91,7 @@ select {
   }
 }
 
-p > strong {
+p>strong {
   font-weight: 500;
 }
 
@@ -100,6 +101,7 @@ a {
   &:hover {
     color: $color-link-hover;
   }
+
   &:focus {
     color: $color-link-focus;
   }
@@ -141,6 +143,7 @@ section.banner {
 
   a {
     color: var(--dora-primary-dark);
+
     &:hover {
       color: var(--dora-primary-light);
     }
@@ -156,8 +159,9 @@ section.banner {
     article {
       padding: 1em 0.5em;
       margin: auto 0;
+
       h1 {
-        font-size: calc(min(72px,12vw));
+        font-size: calc(min(72px, 12vw));
         font-weight: 600;
       }
 
