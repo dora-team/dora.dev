@@ -1,9 +1,5 @@
 ---
-title: "Choosing measurement frameworks to fit your organizational goals"
-date: 2025-08-06
-draft: false
 headless: true
-# making changes? be sure to update the updated attribute of each of the shared pages
 ---
 
 Measuring software development can help drive impactful change. However, it’s a complex task, and getting started can be daunting as it involves understanding what you should measure, and determining what you *can* measure.
@@ -15,7 +11,7 @@ When industry and academia talk about measuring aspects of software development,
 ### Step 1: Decide on why
 The first step is to define what goals and decisions measurement will inform, because frameworks differ in their overarching goals. For example, common frameworks in software development focus on measuring developer experience, product excellence, and organizational effectiveness. Each of these overarching goals take a slightly different lens to understanding software development (see the figure below).
 
-<object data="/research/shared/measurement-frameworks/metrics-triangle.svg" id="metrics-triangle" type="image/svg+xml" class="responsive-svg"></object>
+<object data="/research/shared/ai/measurement-frameworks/metrics-triangle.svg" id="metrics-triangle" type="image/svg+xml" class="responsive-svg"></object>
 
 <figcaption>Types of frameworks typically applied to measuring software development.</figcaption>
 
@@ -56,7 +52,7 @@ While frameworks differ because they are intended to drive different outcomes, s
 
 In contrast, some metrics are more specialized. Developer well-being, often a key component of developer experience frameworks, is not typically a primary metric within organizational effectiveness or product excellence frameworks.
 
-<object data="/research/shared/measurement-frameworks/metrics-venn.svg" id="metrics-venn" type="image/svg+xml" class="responsive-svg"></object>
+<object data="/research/shared/ai/measurement-frameworks/metrics-venn.svg" id="metrics-venn" type="image/svg+xml" class="responsive-svg"></object>
 
 <figcaption>Examples of metrics that apply to different frameworks.</figcaption>
 
