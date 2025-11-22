@@ -15,4 +15,4 @@ headline: "Choosing measurement frameworks to fit your organizational goals"
 type: "research_archives/preview"
 ---
 
-{{< render_headless_bundle "research/shared/measurement-frameworks" >}}
+{{< render_headless_bundle "research/shared/ai/measurement-frameworks" >}}
