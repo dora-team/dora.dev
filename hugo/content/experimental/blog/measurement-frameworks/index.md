@@ -14,4 +14,4 @@ tags: ["Metrics", "AI"]
 summary: "Measuring software development effectiveness requires choosing the right framework to match your organizational goals. This guide explores popular frameworks like SPACE, DevEx, and DORA, offering practical steps for selecting metrics and adapting your measurement strategy for the AI era."
 ---
 
-{{< render_headless_bundle "research/shared/measurement-frameworks" >}}
+{{< render_headless_bundle "research/shared/ai/measurement-frameworks" >}}
