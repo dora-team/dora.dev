@@ -102,6 +102,9 @@
                 (activeOutcomeId &&
                   connectedCapabilityIds.includes(capability.id))
               )}
+              active={!!selectedEntity &&
+                (activeCapabilityId === capability.id ||
+                  connectedCapabilityIds.includes(capability.id))}
             />
           </div>
         {/each}
@@ -137,6 +140,9 @@
                   !connectedOutcomeIds.includes(outcome.id)) ||
                 (activeOutcomeId && activeOutcomeId !== outcome.id)
               )}
+              active={!!selectedEntity &&
+                (activeOutcomeId === outcome.id ||
+                  connectedOutcomeIds.includes(outcome.id))}
             />
           </div>
         {/each}
@@ -182,6 +188,7 @@
 
       :global(.entity) {
         border: 1px solid var(--dora-primary-dark);
+        background-color: var(--dora-warm-white);
         border-radius: 4px;
         padding: 4px 12px;
         margin: 12px;
