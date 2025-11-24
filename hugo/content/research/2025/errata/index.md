@@ -1,7 +1,7 @@
 ---
 title: "DORA Research: 2025 Errata"
 date: 2025-07-14
-updated: 2025-09-29
+updated: 2025-11-24
 draft: false
 research_collection: "2025"
 type: research_archives
@@ -12,6 +12,30 @@ tab_title: "Errata"
 ## Errata for the 2025 DORA Report
 
 This page lists errors and corrections to the 2025 State of AI-assisted Software Development report. To track revisions, report PDFs are stamped with a version number. The initial version of the 2025 report was `v. 2025.1`. The latest version is [`v. 2025.2`]({{< ref "/research/2025/dora-report" >}}).
+
+### Errata in `v. 2025.2.p`
+
+The printed version of the 2025 report has the following errata:
+
+* **p. 3** The page numbers in the table of contents are incorrect. They are all off by one, a classic error in computer science. The correct page numbers are:
+  * 04: Executive summary
+  * 09: Foreword
+  * 12: Understanding your software delivery performance
+  * 24: AI adoption and use
+  * 34: Exploring AI’s relationship to key outcomes
+  * 50: DORA AI Capabilities Model
+  * 66: Platform engineering
+  * 74: Value stream management
+  * 80: The AI mirror: How AI reflects and amplifies your organization’s true capabilities
+  * 90: Metrics frameworks
+  * 96: Final thoughts: From insight to action
+  * 98: Acknowledgements
+  * 100: Authors
+  * 104: Demographics and firmographics
+  * 114: Methodology
+  * 132: Our research model and its theory
+  * 138: Next steps
+  * 139: Appendix
 
 ### Errata in `v. 2025.2`
 
