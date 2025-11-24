@@ -15,17 +15,13 @@
     connections: ConnectionData[];
   };
 
-  let hoveredCapabilityId = $state<string | null>(null);
-  let hoveredOutcomeId = $state<string | null>(null);
   let selectedEntity = $state<SelectedEntity>(null);
 
   let activeCapabilityId = $derived(
-    selectedEntity?.type === "capability"
-      ? selectedEntity.id
-      : hoveredCapabilityId,
+    selectedEntity?.type === "capability" ? selectedEntity.id : null,
   );
   let activeOutcomeId = $derived(
-    selectedEntity?.type === "outcome" ? selectedEntity.id : hoveredOutcomeId,
+    selectedEntity?.type === "outcome" ? selectedEntity.id : null,
   );
 
   let connectedOutcomeIds = $derived(
@@ -64,7 +60,7 @@
       <div class="ai_adoption">
         <div
           class="entity"
-          class:hovered={activeCapabilityId || activeOutcomeId}
+          class:active={!!selectedEntity}
         >
           AI adoption
         </div>
@@ -72,7 +68,7 @@
       <div class="x">
         <div
           class="entity"
-          class:hovered={activeCapabilityId || activeOutcomeId}
+          class:active={!!selectedEntity}
         >
           &times;
         </div>
@@ -82,10 +78,6 @@
           <!-- svelte-ignore a11y_click_events_have_key_events -->
           <!-- svelte-ignore a11y_no_static_element_interactions -->
           <div
-            onmouseover={() => (hoveredCapabilityId = capability.id)}
-            onmouseout={() => (hoveredCapabilityId = null)}
-            onfocus={() => (hoveredCapabilityId = capability.id)}
-            onblur={() => (hoveredCapabilityId = null)}
             onclick={(e) => handleCapabilityClick(e, capability.id)}
             role="button"
             tabindex="0"
@@ -96,11 +88,6 @@
                 (activeCapabilityId && activeCapabilityId !== capability.id) ||
                 (activeOutcomeId &&
                   !connectedCapabilityIds.includes(capability.id))
-              )}
-              hovered={!!(
-                activeCapabilityId === capability.id ||
-                (activeOutcomeId &&
-                  connectedCapabilityIds.includes(capability.id))
               )}
               active={!!selectedEntity &&
                 (activeCapabilityId === capability.id ||
@@ -115,8 +102,8 @@
             fromId={connection.from}
             toId={connection.to}
             index={connection.index}
-            hoveredCapabilityId={activeCapabilityId}
-            hoveredOutcomeId={activeOutcomeId}
+            activeCapabilityId={activeCapabilityId}
+            activeOutcomeId={activeOutcomeId}
           />
         {/each}
       </div>
@@ -125,10 +112,6 @@
           <!-- svelte-ignore a11y_click_events_have_key_events -->
           <!-- svelte-ignore a11y_no_static_element_interactions -->
           <div
-            onmouseover={() => (hoveredOutcomeId = outcome.id)}
-            onmouseout={() => (hoveredOutcomeId = null)}
-            onfocus={() => (hoveredOutcomeId = outcome.id)}
-            onblur={() => (hoveredOutcomeId = null)}
             onclick={(e) => handleOutcomeClick(e, outcome.id)}
             role="button"
             tabindex="0"
@@ -158,10 +141,10 @@
       purus egestas massa, eu tempus elit ligula non est.
       <div class="snippet-links">
         <div>
-          <a href="#" class="button">Learn more about Team performance</a>
+          <button class="button">Learn more about Team performance</button>
         </div>
         <div>
-          <a href="#" class="button">How to assess Team performance</a>
+          <button class="button">How to assess Team performance</button>
         </div>
       </div>
     </div>
@@ -198,10 +181,10 @@
         transition: all 0.2s ease-in-out;
         cursor: pointer;
         font-size: clamp(0.6rem, 1vw, 0.8rem);
-      }
 
-      :global(.hovered) {
-        background-color: var(--dora-secondary-c);
+        &.active {
+          background-color: var(--dora-mauve);
+        }
       }
 
       .connectors {
