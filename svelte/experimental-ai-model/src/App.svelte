@@ -162,10 +162,10 @@
       purus egestas massa, eu tempus elit ligula non est.
       <div class="snippet-links">
         <div>
-          <button class="button">Learn more about Team performance</button>
+          <a class="button">Learn more about Team performance</a>
         </div>
         <div>
-          <button class="button">How to assess Team performance</button>
+          <a class="button">How to assess Team performance</a>
         </div>
       </div>
     </div>
@@ -189,6 +189,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
+      justify-content: center;
 
       :global(.entity) {
         border: 1px solid var(--dora-primary-dark);
@@ -221,14 +222,20 @@
 
     .snippet {
       margin: 4px 12px;
-      font-size: 0.85em;
+      font-size: 0.85rem;
 
       strong {
         font-weight: 700;
       }
 
       .snippet-links {
+        margin-top:8px;
         display: flex;
+        justify-content: space-around;
+
+        .button {
+          font-size:clamp(.8rem,1vw,1.2rem)
+        }
       }
     }
   }
