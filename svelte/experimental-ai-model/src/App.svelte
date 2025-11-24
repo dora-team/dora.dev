@@ -15,13 +15,24 @@
     connections: ConnectionData[];
   };
 
+  let hoveredEntity = $state<{ id: string; type: "capability" | "outcome" } | null>(
+    null,
+  );
   let selectedEntity = $state<SelectedEntity>(null);
 
   let activeCapabilityId = $derived(
-    selectedEntity?.type === "capability" ? selectedEntity.id : null,
+    hoveredEntity?.type === "capability"
+      ? hoveredEntity.id
+      : selectedEntity?.type === "capability"
+        ? selectedEntity.id
+        : null,
   );
   let activeOutcomeId = $derived(
-    selectedEntity?.type === "outcome" ? selectedEntity.id : null,
+    hoveredEntity?.type === "outcome"
+      ? hoveredEntity.id
+      : selectedEntity?.type === "outcome"
+        ? selectedEntity.id
+        : null,
   );
 
   let connectedOutcomeIds = $derived(
@@ -60,7 +71,7 @@
       <div class="ai_adoption">
         <div
           class="entity"
-          class:active={!!selectedEntity}
+          class:active={!!selectedEntity || !!hoveredEntity}
         >
           AI adoption
         </div>
@@ -68,7 +79,7 @@
       <div class="x">
         <div
           class="entity"
-          class:active={!!selectedEntity}
+          class:active={!!selectedEntity || !!hoveredEntity}
         >
           &times;
         </div>
@@ -78,6 +89,12 @@
           <!-- svelte-ignore a11y_click_events_have_key_events -->
           <!-- svelte-ignore a11y_no_static_element_interactions -->
           <div
+            onmouseover={() =>
+              (hoveredEntity = { id: capability.id, type: "capability" })}
+            onmouseout={() => (hoveredEntity = null)}
+            onfocus={() =>
+              (hoveredEntity = { id: capability.id, type: "capability" })}
+            onblur={() => (hoveredEntity = null)}
             onclick={(e) => handleCapabilityClick(e, capability.id)}
             role="button"
             tabindex="0"
@@ -89,9 +106,8 @@
                 (activeOutcomeId &&
                   !connectedCapabilityIds.includes(capability.id))
               )}
-              active={!!selectedEntity &&
-                (activeCapabilityId === capability.id ||
-                  connectedCapabilityIds.includes(capability.id))}
+              active={activeCapabilityId === capability.id ||
+                connectedCapabilityIds.includes(capability.id)}
             />
           </div>
         {/each}
@@ -112,6 +128,12 @@
           <!-- svelte-ignore a11y_click_events_have_key_events -->
           <!-- svelte-ignore a11y_no_static_element_interactions -->
           <div
+            onmouseover={() =>
+              (hoveredEntity = { id: outcome.id, type: "outcome" })}
+            onmouseout={() => (hoveredEntity = null)}
+            onfocus={() =>
+              (hoveredEntity = { id: outcome.id, type: "outcome" })}
+            onblur={() => (hoveredEntity = null)}
             onclick={(e) => handleOutcomeClick(e, outcome.id)}
             role="button"
             tabindex="0"
@@ -123,9 +145,8 @@
                   !connectedOutcomeIds.includes(outcome.id)) ||
                 (activeOutcomeId && activeOutcomeId !== outcome.id)
               )}
-              active={!!selectedEntity &&
-                (activeOutcomeId === outcome.id ||
-                  connectedOutcomeIds.includes(outcome.id))}
+              active={activeOutcomeId === outcome.id ||
+                connectedOutcomeIds.includes(outcome.id)}
             />
           </div>
         {/each}
