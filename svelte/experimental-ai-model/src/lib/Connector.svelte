@@ -38,6 +38,7 @@
   });
 
   let dimmed = $derived((activeCapabilityId && activeCapabilityId !== fromId) || (activeOutcomeId && activeOutcomeId !== toId));
+  let active = $derived((activeCapabilityId === fromId) || (activeOutcomeId === toId));
 </script>
 
 <svg bind:this={svgElement} style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
@@ -53,7 +54,7 @@
       <polyline points="0 0 8 6 0 12" fill="transparent" stroke="rgb(34,34,39)" stroke-width="1.5"/>
     </marker>
   </defs>
-  <line {x1} {y1} {x2} {y2} stroke="rgb(34,34,39)" stroke-width="1" marker-end="url(#arrow)" class={{dimmed}}/>
+  <line {x1} {y1} {x2} {y2} stroke="rgb(34,34,39)" stroke-width="1" marker-end="url(#arrow)" class={{dimmed, active}}/>
 </svg>
 
 <style>
