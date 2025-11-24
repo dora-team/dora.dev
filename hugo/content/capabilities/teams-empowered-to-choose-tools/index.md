@@ -14,7 +14,7 @@ If you want to achieve higher software delivery performance and increase the
 [job satisfaction](/capabilities/job-satisfaction)
 of your technical staff, you should empower them to make informed choices about
 the tools and technologies they use to do their work.
-[Research](/research/2017-and-earlier/2017-state-of-devops-report.pdf)
+[Research](/research/2017/2017-state-of-devops-report.pdf)
 (PDF) from the DORA team shows this contributes
 to better continuous delivery and higher software delivery performance. Teams
 that can choose their own tools are able to make these choices based on how they

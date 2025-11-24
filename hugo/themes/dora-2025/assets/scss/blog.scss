@@ -1,0 +1,45 @@
+h3 {
+    font-size: 1.25em;
+}
+
+h4 {
+    color: #666;
+    margin-bottom: 1em;
+}
+
+.mainContent li {
+    font-weight: 300;
+    font-family: "Roboto";
+    font-size: 14px;
+}
+
+p.description {
+    border-top: 1px solid lightgray;
+}
+
+li div:not(:first-child) {
+    font-size: 85%;
+}
+
+.posted,
+.tags,
+.footer-tags,
+.blog-navigation {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.posted {
+    margin-bottom: 0.5em;
+}
+
+.tags {
+    margin-bottom: 1em;
+}
+
+.post-separator {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border: 0;
+    border-top: 1px solid #eee;
+}

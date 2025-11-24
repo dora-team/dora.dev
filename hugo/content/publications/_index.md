@@ -7,15 +7,13 @@ bannerSubtitle: "Findings from DORA's research program are made available throug
 bannerHighlightImage: banner-publications.png
 bannerBackgroundColor: purple  # choose one of "yellow", "blue", "red", "purple"
 ---
-> Interested in being a sponsor of one of our upcoming Accelerate State of DevOps Reports?
->
-> Please reach out to sponsor-dora@google.com for more information on the sponsorship opportunities!
+> [Sponsorship opportunities](/sponsors/) are available for upcoming DORA reports.
 
 ## State of AI-assisted Software Development
 
 <section class="publicationHighlight">
     <aside>
-        <a href="https://cloud.google.com/dora" target="_blank"><img src="/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report-thumb.png" alt="State of AI-assisted Software Development"></a>
+        <a href="https://cloud.google.com/dora" target="_blank"><img src="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report-thumb.png" alt="State of AI-assisted Software Development"></a>
     </aside>
     <article>
         <p>

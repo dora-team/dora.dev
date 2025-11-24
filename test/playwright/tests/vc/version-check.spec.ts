@@ -9,6 +9,12 @@ test.describe('Version Checker', () => {
         '/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png',
     },
     {
+      version: '2025.2.a',
+      expectedText: '2025 DORA Report (Abridged Version)',
+      expectedImage:
+        '/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png',
+    },
+    {
       version: '2025.1',
       expectedText: 'Outdated 2025 DORA Report',
     },
@@ -58,7 +64,9 @@ test.describe('Version Checker', () => {
         test('shows the correct version information', async ({ page }) => {
           const versionDiv = page.locator(`div[data-version="${version}"]`);
           await expect(versionDiv).toBeVisible();
-          await expect(versionDiv.getByRole('heading', { name: expectedText, level: 2 })).toBeVisible();
+          await expect(
+            versionDiv.getByRole('heading', { name: expectedText, level: 2 }),
+          ).toBeVisible();
         });
 
         if (expectedImage) {

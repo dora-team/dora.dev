@@ -1,3 +1,15 @@
 {{ define "main" }}
-    {{ .Content }}
+<section class="section">
+    <div class="container">
+        <h1 class="title">DORA Blog: {{ .Title }}</h1>
+        <div class="content">
+            {{ .Content }}
+        </div>
+        <div class="blog-list">
+            {{ range .Pages.ByDate.Reverse }}
+            {{- partial "blog-list-items.html" . -}}
+            {{ end }}
+        </div>
+    </div>
+</section>
 {{ end }}

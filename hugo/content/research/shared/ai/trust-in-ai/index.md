@@ -1,19 +1,5 @@
 ---
-title: "Fostering Trust in AI"
-date: 2024-09-13
-updated: 2025-01-28T00:00:00Z
-research_year: "2024"
-draft: false
-tab_order: "8"
-tab_title: "Fostering Trust in AI"
-authors:
-    1: {name: 'Dr. Kevin M. Storer', url: '/research/team/#dr-kevin-m-storer'}
-    2: {name: 'Derek DeBellis', url: '/research/team/#derek-debellis'}
-    3: {name: "Sarah D'Angelo", url: 'https://www.linkedin.com/in/sarahrdangelo/'}
-    4: {name: 'Adam Brown', url: 'https://www.linkedin.com/in/adambrovvn/'}
-headline: "Fostering developers' trust in generative artificial intelligence"
-heroimage: "/research/2024/dora-report-ai-preview-hero.png"
-type: "research_archives/preview"
+headless: true
 ---
 
 It's no secret that generative artificial intelligence (gen AI) is rapidly changing the landscape of software development, with discussions about best practices for applying this transformative technology dominating the popular press. Perhaps nowhere on Earth have these discussions been more frequent and passionate than inside the organizations dedicated to making gen AI accessible and useful to developers, including at Google. During one such discussion between researchers on our [DORA](/research/team) and Engineering Productivity Research (EPR) teams, we were struck by a recurring finding common to development professionals both inside and outside of Google:
@@ -22,7 +8,7 @@ It's no secret that generative artificial intelligence (gen AI) is rapidly chang
 
 On the surface, this finding may seem somewhat... obvious. But, for us, it highlighted the deep need to better understand the factors that impact developers' trust in gen AI systems and ways to foster that trust, so that developers and development firms can yield the most benefit from their investment in gen AI development tools.
 
-Here, we reflect on findings from several studies conducted at Google, regarding the productivity gains of gen AI use in development, the impacts of developers' trust on gen AI use, and the factors we've observed which positively impact developers' trust in gen AI. We conclude with [five suggested strategies](/research/2024/trust-in-ai/#five-strategies-for-fostering-developers-trust-in-gen-ai) that organizations engaged in software development might employ to foster their developers' trust in gen AI, thereby increasing their gen AI use and maximizing gen AI-related productivity gains.
+Here, we reflect on findings from several studies conducted at Google, regarding the productivity gains of gen AI use in development, the impacts of developers' trust on gen AI use, and the factors we've observed which positively impact developers' trust in gen AI. We conclude with [five suggested strategies](/research/ai/trust-in-ai/#five-strategies-for-fostering-developers-trust-in-gen-ai) that organizations engaged in software development might employ to foster their developers' trust in gen AI, thereby increasing their gen AI use and maximizing gen AI-related productivity gains.
 
 ### Trust and productivity
 
@@ -30,11 +16,11 @@ Research conducted by Google and other respected voices in technology research h
 
 The DORA team found that, outside of Google, 75% of 2024 DORA survey respondents reported positive impacts of gen AI on their productivity. Internal to Google, the EPR team found a similar number of developers reported a positive impact of gen AI on their productivity, as well.
 
-![AI's perceived impact on productivity](ai-productivity-attitudes.png "AI's perceived impact on productivity")
+![AI's perceived impact on productivity](/research/shared/ai/trust-in-ai/ai-productivity-attitudes.png "AI's perceived impact on productivity")
 
 Importantly, developers who trust gen AI more reap more positive productivity benefits from its use. In a logs-based exploration of Google developers' trust in AI code completion, our EPR team found that developers who frequently accepted suggestions from a gen AI-assisted coding tool submitted more change lists (CLs) and spent less time seeking information than developers who infrequently accepted suggestions from the same tool. This was true even when controlling for confounding factors, including job level, tenure, development type, programming language, and CL count. Put simply, **developers who trust gen AI more are more productive**.
 
-Unfortunately, developers' trust in gen AI is relatively low. According to [StackOverflow's 2024 Developer Survey](https://survey.stackoverflow.co/2024/ai#developer-tools), trusting the output of gen AI is presently developers' number one challenge with AI at work, and Google's research supports this finding. The DORA team found 39% of developers outside of Google trust the quality of gen AI output only "a little" or "not at all," and these numbers are similar amongst developers at Google.
+Unfortunately, developers' trust in gen AI appears to be relatively low. According to [StackOverflow's 2024 Developer Survey](https://survey.stackoverflow.co/2024/ai#developer-tools), trusting the output of gen AI is presently developers' number one challenge with AI at work, and Google's research supports this finding. The DORA team found 39% of developers outside of Google trust the quality of gen AI output only "a little" or "not at all."
 
 We find these low levels of trust concerning, because they suggest that a subset of developers may not be experiencing the productivity gains they could from gen AI.
 
@@ -48,7 +34,7 @@ Given the significant investment many organizations are making in gen AI, and th
 
 1. **Provide opportunities for developers to gain exposure with gen AI, especially those which support using their preferred programming language**. Trust in gen AI increases as developers gain exposure to it and grow more familiar with its uses, strengths, and limitations. Additionally, developers appear to trust gen AI more when engaging it for tasks in their preferred programming language, likely because they have more expertise to assess and correct its outputs. Providing opportunities to gain exposure to gen AI, like training, unstructured activities, or slack time devoted to trying gen AI, will help increase trust, _especially if such activities can be performed in developers' preferred programming language_ in which they are best equipped to evaluate gen AI's quality.
 
-1. **Encourage gen AI use, but don't force it**. Leadership actively encouraging the use of gen AI in development work appears to be effective in promoting its use amongst individual contributor developers. At the same time, control over the degree to which gen AI intervenes and the tasks in which it is employed increases developers' overall trust in gen AI tools. So, while it is likely to be to the benefit of the organization for people in leadership roles to encourage their ICs to test, evaluate, and employ gen AI in their daily work, it is important developers do not feel obligated to use gen AI. One approach to encouraging gen AI use in a manner that prioritizes developers' sense of control is to promote the spread of knowledge organically, by [building community structures](/guides/devops-culture-transform/#build-community-structures-to-spread-knowledge) to foster conversations about gen AI.
+1. **Encourage gen AI use, but don't force it**. Leadership actively encouraging the use of gen AI in development work appears to be effective in promoting its use amongst individual contributor developers. At the same time, control over the degree to which gen AI intervenes and the tasks in which it is employed increases developers' overall trust in gen AI tools. So, while it is likely to be to the benefit of the organization for people in leadership roles to encourage their ICs to test, evaluate, and employ gen AI in their daily work, it is important developers do not feel obligated to use gen AI. One approach to encouraging gen AI use in a manner that prioritizes developers' sense of control is to promote the spread of knowledge organically, by [building community structures](/guides/how-to-transform/#build-community-structures-to-spread-knowledge) to foster conversations about gen AI.
 
 1. **Help developers think beyond automating their day-to-day work and envision what the future of their role might look like**. Fears that gen AI might lead to a future loss of employment for development professionals have been well-publicized and were a recurring theme in our interviews and survey data. We believe much of this fear stems from the fact that the most common uses of gen AI in development replicate the daily work of developers, like writing code or test cases. Delegating these tasks to gen AI has, indeed, made developers more productive. However, without a clear vision for what the transformed role of a developer working at a higher level of abstraction in which these repetitive tasks are delegated to gen AI resembles, it will be hard to assuage fears of unemployment. That is, delegating mundane tasks, such as generating test paths, creating documentation, and providing system health monitoring, is a clear small step toward using gen AI effectively. But, long-term, developers will likely need guidance about how to reallocate the time saved, and encouragement to explore new ways to improve user experience, innovate with emerging technologies, and add value for their companies and users. We are unable to predict what development work will look like in the future, or what new tasks will be performed as a result of gen AI increasing developer capacity. But, we believe that acknowledging gen AI will fundamentally change development work, and empowering developers to have a voice in shaping the future of their profession will foster trust in gen AI by helping developers co-create and move toward a world where gen AI _transforms_ their work, rather than simply _replicating_ it.
 

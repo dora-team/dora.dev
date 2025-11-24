@@ -24,6 +24,9 @@ layout: single
       <span class="google-material-icons" style="color: green; font-size:1em;">check_circle</span> <a href="/vc?v=2025.2">2025 DORA Report <code>v. 2025.2</code></a>
     </li>
     <li>
+      <span class="google-material-icons" style="color: green; font-size:1em;">check_circle</span> <a href="/vc?v=2025.2.a">2025 DORA Report (Abridged Version) <code>v. 2025.2.a</code></a>
+    </li>
+    <li>
       <span class="google-material-icons" style="color: orange; font-size:1em;">warning</span> <a href="/vc?v=2025.1">2025 DORA Report <code>v. 2025.1</code></a>
     </li>
     <li>
@@ -58,6 +61,28 @@ layout: single
     Latest version: <code>v.2025.2</code>
   </p>
   <a href="/research/2025/dora-report"><img src="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png" alt="2025 DORA Report Cover" style="max-width:18em;"></a>
+</div>
+
+<!-- version is 2025.2.a -->
+<div class="version-content" data-version="2025.2.a">
+  <h2><span class="google-material-icons" style="color: green; font-size:1em;">check_circle</span>2025 DORA Report (Abridged Version)</h2>
+  <p>
+    You have the most recent version of the 2025 report.
+  </p>
+  <p>
+    Your version: <code>v.2025.2.a</code><br />
+    Latest version: <code>v.2025.2.a</code>
+  </p>
+  <grid class="border_none mt-1">
+    <item>
+      <a href="/research/2025/dora-report"><img src="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png" alt="2025 DORA Report Cover" style="max-width:18em;"></a>
+    </item>
+    <item>
+      <p>
+        This is an abridged version of our 2025 report. The <a href="/research/2025/dora-report/">full report</a>, available only in English, offers a much deeper dive, including our complete data analysis, the new DORA AI Capabilities Model, a detailed breakdown of the seven team profiles we identified, and the full methodology behind our findings.
+      </p>
+    </item>
+  </grid>
 </div>
 
 <!-- version is 2025.1 -->

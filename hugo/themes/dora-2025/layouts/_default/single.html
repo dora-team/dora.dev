@@ -1,8 +1,17 @@
 {{ define "main" }}
-    {{ .Content }}
+  {{ .Content }}
 
-    {{ if .Params.updated }}
-    <div class="updated">Last updated: {{ .Params.updated | time.Format ":date_long" }}</div>
+  {{ with .GetTerms "tags" }}
+  <div class="tags">
+    <strong>Tags:</strong>
+    {{ range . }}
+      <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
     {{ end }}
+  </div>
+  {{ end }}
+
+  {{ if .Params.updated }}
+    <div class="updated">Last updated: {{ .Params.updated | time.Format ":date_long" }}</div>
+  {{ end }}
 
 {{ end }}
