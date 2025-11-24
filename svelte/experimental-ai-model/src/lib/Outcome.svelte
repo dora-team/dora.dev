@@ -1,8 +1,8 @@
 <script lang="ts">
-  let { outcome, dimmed = false } = $props();
+  let { outcome, dimmed = false, active = false } = $props();
 </script>
 
-<div class={["entity", { dimmed }]} id={outcome.id}>{outcome.name}</div>
+<div class={["entity", { dimmed, active }]} id={outcome.id}>{outcome.name}</div>
 
 <style>
   .entity {
@@ -11,5 +11,9 @@
   .dimmed {
     opacity: 0.5;
     background-color:transparent;
+  }
+
+  .active {
+    background-color: var(--dora-spotlight-yellow) !important;
   }
 </style>
