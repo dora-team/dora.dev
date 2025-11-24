@@ -93,7 +93,7 @@
       <div class="ai_adoption">
         <div
           class="entity"
-          class:active={!!selectedEntity}
+          class:active={!!selectedEntity || !!hoveredEntity}
         >
           AI adoption
         </div>
@@ -101,7 +101,7 @@
       <div class="x">
         <div
           class="entity"
-          class:active={!!selectedEntity}
+          class:active={!!selectedEntity || !!hoveredEntity}
         >
           &times;
         </div>
@@ -182,18 +182,20 @@
           <div class="snippet-links">
             <div>
               <SnippetLink
-                text={`Learn more about ${activeEntityData.name}`}
+                text={`Learn more`}
                 url={("url" in activeEntityData ? activeEntityData.url : "#") ||
                   "#"}
               />
             </div>
-            <div>
-              <SnippetLink
-                text={`How to assess ${activeEntityData.name}`}
-                url={("url" in activeEntityData ? activeEntityData.url : "#") ||
-                  "#"}
-              />
-            </div>
+            {#if selectedEntity && selectedEntity.type === "capability"}
+              <div>
+                <SnippetLink
+                  text={`How to assess`}
+                  url={("url" in activeEntityData ? activeEntityData.url : "#") ||
+                    "#"}
+                />
+              </div>
+            {/if}
           </div>
         </div>
       </div>
@@ -262,7 +264,8 @@
       .snippet-links {
         margin-top:8px;
         display: flex;
-        justify-content: space-around;
+        white-space: nowrap;
+        justify-content: center;
       }
     }
   }
