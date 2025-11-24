@@ -1,12 +1,18 @@
 <script lang="ts">
+  import { slide, fade } from "svelte/transition";
   import data from "./data.json";
   import Connector from "./lib/Connector.svelte";
   import Capability from "./lib/Capability.svelte";
   import Outcome from "./lib/Outcome.svelte";
   import SnippetLink from "./lib/SnippetLink.svelte";
 
-  type CapabilityData = { name: string; id: string };
-  type OutcomeData = { name: string; id: string };
+  type CapabilityData = {
+    name: string;
+    id: string;
+    description?: string;
+    url?: string;
+  };
+  type OutcomeData = { name: string; id: string; description?: string };
   type ConnectionData = { from: string; to: string; index: number };
   type SelectedEntity = { id: string; type: "capability" | "outcome" } | null;
 
@@ -35,6 +41,21 @@
         ? selectedEntity.id
         : null,
   );
+
+  let activeEntityData = $derived.by(() => {
+    const currentSelectedEntity = selectedEntity;
+    if (!currentSelectedEntity) {
+      return null;
+    }
+
+    if (currentSelectedEntity.type === "capability") {
+      return capabilities.find((c) => c.id === currentSelectedEntity.id);
+    }
+    if (currentSelectedEntity.type === "outcome") {
+      return outcomes.find((o) => o.id === currentSelectedEntity.id);
+    }
+    return null;
+  });
 
   let connectedOutcomeIds = $derived(
     activeCapabilityId
@@ -72,7 +93,7 @@
       <div class="ai_adoption">
         <div
           class="entity"
-          class:active={!!selectedEntity || !!hoveredEntity}
+          class:active={!!selectedEntity}
         >
           AI adoption
         </div>
@@ -80,7 +101,7 @@
       <div class="x">
         <div
           class="entity"
-          class:active={!!selectedEntity || !!hoveredEntity}
+          class:active={!!selectedEntity}
         >
           &times;
         </div>
@@ -153,23 +174,30 @@
         {/each}
       </div>
     </div>
-    <div class="snippet">
-      <strong>Team performance</strong> Lorem ipsum dolor sit amet, consectetur
-      adipiscing elit. Fusce sit amet laoreet mi. Vivamus interdum justo ex,
-      commodo porttitor ante mattis et. Pellentesque neque augue, sollicitudin
-      vel massa et, lobortis bibendum libero. Ut arcu tellus, dictum et
-      consectetur vitae, euismod quis urna. Morbi dictum molestie ligula, quis
-      commodo orci pharetra a. Nulla consequat, purus eu faucibus commodo, nisi
-      purus egestas massa, eu tempus elit ligula non est.
-      <div class="snippet-links">
-        <div>
-          <SnippetLink text="Learn more about Team performance" url="#" />
-        </div>
-        <div>
-          <SnippetLink text="How to assess Team performance" url="#" />
+    {#if activeEntityData}
+      <div class="snippet" transition:slide>
+        <div in:fade={{ delay: 100, duration: 200 }} out:fade={{ duration: 100 }}>
+          <strong>{activeEntityData.name}</strong>
+          {activeEntityData.description}
+          <div class="snippet-links">
+            <div>
+              <SnippetLink
+                text={`Learn more about ${activeEntityData.name}`}
+                url={("url" in activeEntityData ? activeEntityData.url : "#") ||
+                  "#"}
+              />
+            </div>
+            <div>
+              <SnippetLink
+                text={`How to assess ${activeEntityData.name}`}
+                url={("url" in activeEntityData ? activeEntityData.url : "#") ||
+                  "#"}
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    {/if}
   </div>
 </main>
 
@@ -179,7 +207,8 @@
   }
 
   :global(.model-container) {
-    width: fit-content;
+    width: 100%;
+    margin: 0 auto;
     border: 1px solid var(--dora-primary-dark);
     max-width: 800px;
     border-radius: 24px;
