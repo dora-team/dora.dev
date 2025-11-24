@@ -1,5 +1,5 @@
-<script>
-  let { fromId, toId, index, hoveredCapabilityId = null, hoveredOutcomeId = null } = $props();
+<script lang="ts">
+  let { fromId, toId, index, activeCapabilityId = null, activeOutcomeId = null } = $props();
   const yOffsetPx = 8;
   const rightMargin = 12;
 
@@ -7,7 +7,7 @@
   let y1 = $state(0);
   let x2 = $state(0);
   let y2 = $state(0);
-  let svgElement;
+  let svgElement: SVGSVGElement | undefined;
 
   function updateConnector() {
     const fromEl = document.getElementById(fromId);
@@ -37,7 +37,7 @@
     };
   });
 
-  let dimmed = $derived((hoveredCapabilityId && hoveredCapabilityId !== fromId) || (hoveredOutcomeId && hoveredOutcomeId !== toId));
+  let dimmed = $derived((activeCapabilityId && activeCapabilityId !== fromId) || (activeOutcomeId && activeOutcomeId !== toId));
 </script>
 
 <svg bind:this={svgElement} style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
