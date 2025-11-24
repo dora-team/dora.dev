@@ -3,6 +3,7 @@
   import Connector from "./lib/Connector.svelte";
   import Capability from "./lib/Capability.svelte";
   import Outcome from "./lib/Outcome.svelte";
+  import SnippetLink from "./lib/SnippetLink.svelte";
 
   type CapabilityData = { name: string; id: string };
   type OutcomeData = { name: string; id: string };
@@ -162,10 +163,10 @@
       purus egestas massa, eu tempus elit ligula non est.
       <div class="snippet-links">
         <div>
-          <a class="button">Learn more about Team performance</a>
+          <SnippetLink text="Learn more about Team performance" url="#" />
         </div>
         <div>
-          <a class="button">How to assess Team performance</a>
+          <SnippetLink text="How to assess Team performance" url="#" />
         </div>
       </div>
     </div>
@@ -221,8 +222,9 @@
     }
 
     .snippet {
-      margin: 4px 12px;
+      margin: 12px 24px;
       font-size: 0.85rem;
+      text-align: justify;
 
       strong {
         font-weight: 700;
@@ -232,10 +234,6 @@
         margin-top:8px;
         display: flex;
         justify-content: space-around;
-
-        .button {
-          font-size:clamp(.8rem,1vw,1.2rem)
-        }
       }
     }
   }
