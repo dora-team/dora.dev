@@ -15,6 +15,12 @@ test.describe('Version Checker', () => {
         '/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png',
     },
     {
+      version: '2025.2.p',
+      expectedText: '2025 DORA Report (Printed Version)',
+      expectedImage:
+        '/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png',
+    },
+    {
       version: '2025.1',
       expectedText: 'Outdated 2025 DORA Report',
     },
