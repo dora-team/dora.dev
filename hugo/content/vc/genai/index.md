@@ -77,10 +77,5 @@ bannerSubtitle: "Check if you have the most recent version of the report."
 
 <script src="/js/version-check-utils.js"></script>
 <script>
-  const version = getParameterByName('v');
-  if (version) {
-    showContent(version);
-  } else {
-     showContent();
-  }
+  showContent(getParameterByName('v'));
 </script>
