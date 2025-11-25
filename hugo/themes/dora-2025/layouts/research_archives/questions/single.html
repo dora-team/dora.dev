@@ -3,88 +3,92 @@
 
 {{ $researchCollectionTitle := "" }}
 {{ if .Params.research_collection_title }}
-  {{ $researchCollectionTitle = .Params.research_collection_title }}
+{{ $researchCollectionTitle = .Params.research_collection_title }}
 {{ else }}
-    {{ $researchCollectionTitle = .Params.research_collection }}
+{{ $researchCollectionTitle = .Params.research_collection }}
 {{ end }}
 
 {{/* dataLookupKey is a local variable for data lookup, similar to $researchCollectionTitle */}}
 {{ $dataLookupKey := .Params.research_collection }}
 {{ if eq .Params.research_collection "core" }}
-  {{ $dataLookupKey = "core" }}
-{{ else if eq  .Params.research_collection "ai-adoption" }}
-    {{ $dataLookupKey = "ai-adoption" }}
-{{ else if eq  .Params.research_collection "Artificial Intelligence" }}
-    {{ $dataLookupKey = "gen-ai-report" }}
-{{ else if eq  .Params.research_collection "2025" }}
-    {{ $dataLookupKey = "2025-state-of-ai-assisted-software-development" }}
+{{ $dataLookupKey = "core" }}
+{{ else if eq .Params.research_collection "ai-adoption" }}
+{{ $dataLookupKey = "ai-adoption" }}
+{{ else if eq .Params.research_collection "Artificial Intelligence" }}
+{{ $dataLookupKey = "gen-ai-report" }}
+{{ else if eq .Params.research_collection "2025" }}
+{{ $dataLookupKey = "2025-state-of-ai-assisted-software-development" }}
+{{ else if eq .Params.research_collection "ai-capabilities-model" }}
+{{ $dataLookupKey = "ai-capabilities-model" }}
 {{ else }}
-    {{ $dataLookupKey = .Params.research_collection }}
+{{ $dataLookupKey = .Params.research_collection }}
 {{ end }}
 
 
 <h1>DORA Research: {{ $researchCollectionTitle }}</h1>
 {{- partial "research_archives_tabs" . -}}
 
-        {{ .Content }}
+{{ .Content }}
 
 <section class="hasSidebar">
     <article id="questions">
         <h2>Survey Questions</h2>
         {{ if eq $dataLookupKey "core" }}
-            <h4>Responses to the following questions were used in the analysis of the <a href="/research/">DORA Core Model</a>.</h4>
+        <h4>Responses to the following questions were used in the analysis of the <a href="/research/">DORA Core Model</a>.</h4>
         {{ else if eq $dataLookupKey "ai-adoption" }}
-            <h4>Responses to the following questions were used in the analysis for <a href="/research/ai/adopt-gen-ai">Helping developers adopt generative AI: Four practical strategies for organizations</a>.</h4>
+        <h4>Responses to the following questions were used in the analysis for <a href="/research/ai/adopt-gen-ai">Helping developers adopt generative AI: Four practical strategies for organizations</a>.</h4>
         {{ else if eq $dataLookupKey "gen-ai-report" }}
-            <h4>Responses to the following questions were to inform the analysis published in the <a href="/research/ai/gen-ai-report/">Impact of Generative AI in Software Development report</a>.</h4>
+        <h4>Responses to the following questions were to inform the analysis published in the <a href="/research/ai/gen-ai-report/">Impact of Generative AI in Software Development report</a>.</h4>
         {{ else if eq $dataLookupKey "2025-state-of-ai-assisted-software-development" }}
-            <h4>Responses to the following questions were used in the analysis published in the <a href="/research/2025/dora-report/">2025 State of AI-assisted Software Development report</a>.</h4>
+        <h4>Responses to the following questions were used in the analysis published in the <a href="/research/2025/dora-report/">2025 State of AI-assisted Software Development report</a>.</h4>
+        {{ else if eq $dataLookupKey "ai-capabilities-model" }}
+        <h4>Responses to the following questions were used in the analysis published in the <a href="/ai/capabilities-model/report/">DORA AI Capabilities Model report</a>.</h4>
         {{ else }}
-            <h4>Responses to the following questions were used in the analysis published in the <a href="/research/{{ $researchCollectionTitle }}/dora-report/">{{ $researchCollectionTitle }} Accelerate State of DevOps Report</a>.</h4>
+        <h4>Responses to the following questions were used in the analysis published in the <a href="/research/{{ $researchCollectionTitle }}/dora-report/">{{ $researchCollectionTitle }} Accelerate State of DevOps Report</a>.</h4>
         {{ end }}
         {{ with index .Site.Data.survey_questions $dataLookupKey }}
-            {{  range sort .categories "heading" }}
-                <h3 id="{{ .heading | anchorize }}">{{ .heading }}</h3>
-                {{ if .description }}<p>{{ .description }}</p>{{ end }}
-                {{ range sort .question_groups "description" }}
-                    <p class="description">
-                        {{ .description }}
-                        {{ if .group_responses }}
-                            <div class="responses">
-                                <label>Response options:</label> {{ $responsesSlice := split .group_responses "," }}
-                                {{ range $responsesSlice }}
-                                    <span class="answer">{{ . }}</span>
-                                {{ end }}
-                            </div>
-                        {{ end }}
-                    </p>
-                    <ul>
-                        {{ range sort .questions }}
-                            {{ $thisQuestion := split . "|" }}
-                            {{ $thisQuestionText := index $thisQuestion 0 }}
-                            {{ $thisQuestionResponses := index $thisQuestion 1 }}
-                            <li>
-                                <div>{{ $thisQuestionText }}</div>
-                                {{ if $thisQuestionResponses }}
-                                    <div class="responses">
-                                        {{ $responsesSlice := split $thisQuestionResponses "," }}
-                                        {{ range $responsesSlice }}
-                                            <span class="answer">{{ . }}</span>
-                                        {{ end }}
-                                    </div>
-                                {{ end }}
-                            </li>
-                        {{ end }}
-                    </ul>
-                {{ end }}
+        {{ range sort .categories "heading" }}
+        <h3 id="{{ .heading | anchorize }}">{{ .heading }}</h3>
+        {{ if .description }}<p>{{ .description }}</p>{{ end }}
+        {{ range sort .question_groups "description" }}
+        <p class="description">
+            {{ .description }}
+            {{ if .group_responses }}
+        <div class="responses">
+            <label>Response options:</label> {{ $responsesSlice := split .group_responses "," }}
+            {{ range $responsesSlice }}
+            <span class="answer">{{ . }}</span>
             {{ end }}
+        </div>
+        {{ end }}
+        </p>
+        <ul>
+            {{ range sort .questions }}
+            {{ $thisQuestion := split . "|" }}
+            {{ $thisQuestionText := index $thisQuestion 0 }}
+            {{ $thisQuestionResponses := index $thisQuestion 1 }}
+            <li>
+                <div>{{ $thisQuestionText }}</div>
+                {{ if $thisQuestionResponses }}
+                <div class="responses">
+                    {{ $responsesSlice := split $thisQuestionResponses "," }}
+                    {{ range $responsesSlice }}
+                    <span class="answer">{{ . }}</span>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </li>
+            {{ end }}
+        </ul>
+        {{ end }}
+        {{ end }}
         {{ end }}
 
         {{ if .Params.updated }}
         <div class="updated">Last updated: {{ .Params.updated | time.Format ":date_long" }}</div>
         {{ end }}
 
-        </article>
+    </article>
     <sidebar>
         {{ partial "research_sidebar.html" . }}
     </sidebar>
