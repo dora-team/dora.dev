@@ -27,6 +27,9 @@ layout: single
       <span class="google-material-icons" style="color: green; font-size:1em;">check_circle</span> <a href="/vc?v=2025.2.a">2025 DORA Report (Abridged Version) <code>v. 2025.2.a</code></a>
     </li>
     <li>
+      <span class="google-material-icons" style="color: green; font-size:1em;">check_circle</span> <a href="/vc?v=2025.2.p">2025 DORA Report (Printed Version) <code>v. 2025.2.p</code></a>
+    </li>
+    <li>
       <span class="google-material-icons" style="color: orange; font-size:1em;">warning</span> <a href="/vc?v=2025.1">2025 DORA Report <code>v. 2025.1</code></a>
     </li>
     <li>
@@ -83,6 +86,19 @@ layout: single
       </p>
     </item>
   </grid>
+</div>
+
+<!-- version is 2025.2.p -->
+<div class="version-content" data-version="2025.2.p">
+  <h2><span class="google-material-icons" style="color: green; font-size:1em;">check_circle</span>2025 DORA Report (Printed Version)</h2>
+  <p>
+    You have the most recent version of the 2025 report.
+  </p>
+  <p>
+    Your version: <code>v.2025.2.p</code><br />
+    Latest version: <code>v.2025.2.p</code>
+  </p>
+  <a href="/research/2025/dora-report"><img src="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png" alt="2025 DORA Report Cover" style="max-width:18em;"></a>
 </div>
 
 <!-- version is 2025.1 -->
