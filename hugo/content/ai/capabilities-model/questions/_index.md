@@ -1,5 +1,5 @@
 ---
-title: "DORA AI Capabiltiies Model: Questions"
+title: "DORA AI Capabilities Model: Questions"
 date: 2025-11-25
 updated: 2025-11-25
 draft: false
