@@ -36,9 +36,9 @@ invalidVersions.forEach((version) => {
     await page.goto(`/vc/genai/?v=${version}`);
 
     // Check all known versions are hidden
-    versions.forEach(async ({ version }) => {
+    for (const { version } of versions) {
       await expect(page.locator(`div[data-version="${version}"]`)).toBeHidden();
-    });
+    }
 
     // Check "Unrecognized version" is visible
     await expect(page.locator('h2', { hasText: 'Unrecognized version' })).toBeVisible();
