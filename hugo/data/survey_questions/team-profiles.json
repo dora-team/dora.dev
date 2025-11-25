@@ -1,0 +1,36 @@
+{
+  "categories": [
+    {
+      "heading": "Team performance",
+      "question_groups": []
+    },
+    {
+      "heading": "Product performance",
+      "question_groups": []
+    },
+    {
+      "heading": "Software delivery throughput",
+      "question_groups": []
+    },
+    {
+      "heading": "Software delivery instability",
+      "question_groups": []
+    },
+    {
+      "heading": "Individual effectiveness",
+      "question_groups": []
+    },
+    {
+      "heading": "Valuable work",
+      "question_groups": []
+    },
+    {
+      "heading": "Friction",
+      "question_groups": []
+    },
+    {
+      "heading": "Burnout",
+      "question_groups": []
+    }
+  ]
+}
