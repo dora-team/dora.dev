@@ -53,7 +53,12 @@
         {{ range sort .categories "heading" }}
         <h3 id="{{ .heading | anchorize }}">{{ .heading }}</h3>
         {{ if .description }}<p>{{ .description }}</p>{{ end }}
-        {{ range sort .question_groups "description" }}
+        {{ range .question_groups }}
+        {{ if .subheading }}<h4 id="{{ .subheading | anchorize }}">{{ .subheading }}</h4>{{ end }}
+
+        {{/* Check for nested question groups */}}
+        {{ if .question_groups }}
+        {{ range .question_groups }}
         <p class="description">
             {{ .description }}
             {{ if .group_responses }}
@@ -66,7 +71,7 @@
         {{ end }}
         </p>
         <ul>
-            {{ range sort .questions }}
+            {{ range .questions }}
             {{ $thisQuestion := split . "|" }}
             {{ $thisQuestionText := index $thisQuestion 0 }}
             {{ $thisQuestionResponses := index $thisQuestion 1 }}
@@ -83,6 +88,39 @@
             </li>
             {{ end }}
         </ul>
+        {{ end }}
+        {{ else }}
+        {{/* Render single question group (existing logic) */}}
+        <p class="description">
+            {{ .description }}
+            {{ if .group_responses }}
+        <div class="responses">
+            <label>Response options:</label> {{ $responsesSlice := split .group_responses "," }}
+            {{ range $responsesSlice }}
+            <span class="answer">{{ . }}</span>
+            {{ end }}
+        </div>
+        {{ end }}
+        </p>
+        <ul>
+            {{ range .questions }}
+            {{ $thisQuestion := split . "|" }}
+            {{ $thisQuestionText := index $thisQuestion 0 }}
+            {{ $thisQuestionResponses := index $thisQuestion 1 }}
+            <li>
+                <div>{{ $thisQuestionText }}</div>
+                {{ if $thisQuestionResponses }}
+                <div class="responses">
+                    {{ $responsesSlice := split $thisQuestionResponses "," }}
+                    {{ range $responsesSlice }}
+                    <span class="answer">{{ . }}</span>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </li>
+            {{ end }}
+        </ul>
+        {{ end }}
         {{ end }}
         {{ end }}
         {{ end }}
