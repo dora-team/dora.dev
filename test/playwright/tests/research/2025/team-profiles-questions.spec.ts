@@ -14,6 +14,6 @@ test.describe('Team Profiles questions page', () => {
   });
 
   test('has the correct intro text', async ({ page }) => {
-    await expect(page.getByText('Responses to the following questions were used to assess team profiles in the 2025 report.')).toBeVisible();
+    await expect(page.getByText('Responses to the following questions were used to assess team profiles in the 2025 State of AI-assisted Software Development report.')).toBeVisible();
   });
 });

@@ -7,4 +7,6 @@ draft: false
 tab_order: "99"
 tab_title: "Questions"
 type: "research_archives/questions"
+survey_data_key: "gen-ai-report"
+survey_intro_text: 'Responses to the following questions were used to inform the analysis published in the <a href="/research/ai/gen-ai-report/">Impact of Generative AI in Software Development report</a>.'
 ---

@@ -8,4 +8,5 @@ draft: false
 tab_order: "10"
 tab_title: "Questions"
 type: "research_archives/questions"
+survey_intro_text: 'Responses to the following questions were used in the analysis of the <a href="/research/">DORA Core Model</a>.'
 ---

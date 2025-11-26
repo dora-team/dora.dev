@@ -6,5 +6,5 @@ type: "research_archives/questions"
 research_collection: "2025"
 research_collection_title: "Team profiles survey questions"
 survey_data_key: "team-profiles"
-survey_intro_text: "Responses to the following questions were used to assess team profiles in the 2025 report."
+survey_intro_text: "Responses to the following questions were used to assess team profiles in the <a href='/research/2025/dora-report/'>2025 State of AI-assisted Software Development report</a>."
 ---
