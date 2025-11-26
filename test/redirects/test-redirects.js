@@ -29,7 +29,7 @@ describe(`Redirects for ${baseUrl}`, () => {
         targetUrl,
         `Expected ${url} to redirect to${targetUrl}, but got ${response.headers.get('location')}`
       );
-   
+
       assert.strictEqual(
         response.status,
         parseInt(statusCode),
