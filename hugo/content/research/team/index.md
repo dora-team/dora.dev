@@ -1,7 +1,7 @@
 ---
 title: "Research Team"
 date: 2023-02-02T18:23:33Z
-updated: 2024-11-01
+updated: 2025-11-26
 draft: false
 layout: research_team
 ---
@@ -33,44 +33,53 @@ the factors that make developers happy and productive. Before Google, Daniella s
 of meditation training, and the psycho-social factors that affect the experiences of college
 students. She received her PhD in Experimental Psychology from Florida International University.)
 
-### Michelle Irvine
-![Michelle Irvine](michelle-irvine.jpeg)
-Michelle Irvine is a technical writer at Google, and her research focuses on documentation and
-other technical communication. Before Google, she worked in educational publishing and as a
-technical writer for physics simulation software. Michelle has a BSc in Physics, and an MA in
-Rhetoric and Communication Design.
-
-### Kim Castillo
-![Kim Castillo](kim-castillo.jpeg)
-Kim Castillo is a user experience program manager at Google. Kim leads the cross-functional effort
-behind DORA, overseeing its research operations and the publication of this report since 2022. Kim
-also works on UX research for Gemini in Google Cloud. Prior to Google, Kim enjoyed a career in tech
-and working in technical program management and agile coaching. Kim's roots are in psycho-social
-research focused on topics of extrajudicial killings, urban poor development, and community
-resilience in her country of origin, the Philippines.
-
 ## Meet the DORA Collective
 The collective includes current and former leaders, researchers, authors, and subject matter experts who have all made significant contributions to the research program.
 
-  - Amanda Lewis
-  - Benjamin Good
-  - Brenna Washington
-  - Claire Peters
-  - Dave Farley
-  - Dave Stanke
-  - Dustin Smith
-  - Eric Maxwell
-  - Frank Xu
-  - Gene Kim
-  - James Brookbank
-  - Jeffrey P. Winer, PhD
-  - Jessie Frazelle
-  - Jez Humble
-  - John Speed Mayers
-  - Lolly Chessie
-  - Nathen Harvey
-  - Nicole Forsgren, PhD
-  - Steve McGhee
-  - Todd Kulesza
+- Allison Park
+- Amanda Lewis
+- Ambar Murillo
+- Ameer Abbas
+- Ben Jose
+- Benjamin Good
+- Betsalel (Saul) Williamson
+- Brenna Washington
+- Cedric Yao
+- Claire Peters
+- Daniel Rock, Ph.D.
+- Dave Farley
+- Dave Stanke
+- Denali Lumma
+- Dhruv Agarwal
+- Dustin Smith
+- Edward Fraser
+- Eirini Kalliamvakou, Ph.D.
+- Eric Maxwell
+- Frank Xu
+- Gene Kim
+- James Brookbank
+- Jeffrey P. Winer, PhD
+- Jerome Simms
+- Jessie Frazelle
+- Jessie Young
+- Jez Humble
+- John Speed Mayers
+- Kim Castillo
+- Lisa Crispin
+- Lolly Chessie
+- Lucia Subatin
+- Matt Beane, Ph.D.
+- Michelle Irvine
+- Nathen Harvey
+- Nicole Forsgren, PhD
+- Rob Edwards
+- Sarah D’Angelo, Ph.D.
+- Sarah Inman, Ph.D.
+- Seth Rosenblatt
+- Steve Fenton
+- Steve McGhee
+- Steve Yegge
+- Todd Kulesza
+- Vivian Hu
 
 Prior to 2018, The State of DevOps Report was published [in partnership with Puppet](https://www.puppet.com/resources/history-of-devops-reports).
