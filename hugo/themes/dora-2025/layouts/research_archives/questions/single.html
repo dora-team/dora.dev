@@ -11,13 +11,6 @@
 {{/* dataLookupKey is a local variable for data lookup, similar to $researchCollectionTitle */}}
 {{ $dataLookupKey := .Params.research_collection }}
 
-{{/* Legacy overrides */}}
-{{ if eq .Params.research_collection "Artificial Intelligence" }}
-{{ $dataLookupKey = "gen-ai-report" }}
-{{ else if eq .Params.research_collection "2025" }}
-{{ $dataLookupKey = "2025-state-of-ai-assisted-software-development" }}
-{{ end }}
-
 {{/* Explicit override from frontmatter */}}
 {{ if .Params.survey_data_key }}
 {{ $dataLookupKey = .Params.survey_data_key }}
@@ -35,19 +28,7 @@
         {{ if .Params.survey_intro_text }}
         <h4>{{ .Params.survey_intro_text | markdownify }}</h4>
         {{ else }}
-        {{ if eq $dataLookupKey "core" }}
-        <h4>Responses to the following questions were used in the analysis of the <a href="/research/">DORA Core Model</a>.</h4>
-        {{ else if eq $dataLookupKey "ai-adoption" }}
-        <h4>Responses to the following questions were used in the analysis for <a href="/research/ai/adopt-gen-ai">Helping developers adopt generative AI: Four practical strategies for organizations</a>.</h4>
-        {{ else if eq $dataLookupKey "gen-ai-report" }}
-        <h4>Responses to the following questions were to inform the analysis published in the <a href="/research/ai/gen-ai-report/">Impact of Generative AI in Software Development report</a>.</h4>
-        {{ else if eq $dataLookupKey "2025-state-of-ai-assisted-software-development" }}
-        <h4>Responses to the following questions were used in the analysis published in the <a href="/research/2025/dora-report/">2025 State of AI-assisted Software Development report</a>.</h4>
-        {{ else if eq $dataLookupKey "ai-capabilities-model" }}
-        <h4>Responses to the following questions were used in the analysis published in the <a href="/ai/capabilities-model/report/">DORA AI Capabilities Model report</a>.</h4>
-        {{ else }}
         <h4>Responses to the following questions were used in the analysis published in the <a href="/research/{{ $researchCollectionTitle }}/dora-report/">{{ $researchCollectionTitle }} Accelerate State of DevOps Report</a>.</h4>
-        {{ end }}
         {{ end }}
         {{ with index .Site.Data.survey_questions $dataLookupKey }}
         {{ range sort .categories "heading" }}
@@ -71,7 +52,7 @@
         {{ end }}
         </p>
         <ul>
-            {{ range .questions }}
+            {{ range sort .questions }}
             {{ $thisQuestion := split . "|" }}
             {{ $thisQuestionText := index $thisQuestion 0 }}
             {{ $thisQuestionResponses := index $thisQuestion 1 }}
@@ -103,7 +84,7 @@
         {{ end }}
         </p>
         <ul>
-            {{ range .questions }}
+            {{ range sort .questions }}
             {{ $thisQuestion := split . "|" }}
             {{ $thisQuestionText := index $thisQuestion 0 }}
             {{ $thisQuestionResponses := index $thisQuestion 1 }}
