@@ -26,3 +26,10 @@ test("2025 questions page has the correct sidebar.", async ({ page }) => {
     ).toBeVisible();
   }
 });
+
+test("2025 questions page sorts questions alphabetically.", async ({ page }) => {
+  const questions = page.locator("h3#ai-customization ~ ul").first().locator("li");
+  await expect(questions.nth(0)).toContainText("How many AI models");
+  await expect(questions.nth(1)).toContainText("To what degree have you fine-tuned");
+  await expect(questions.nth(2)).toContainText("To what extent have you customized");
+});
