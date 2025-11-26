@@ -13,7 +13,7 @@ steps:
       ./svelte/core-v2/build-core.sh
 
       # Build AI Model and move generated files into position
-      ./svelte/experimental-ai-model/build-core.sh
+      ./svelte/experimental-ai-model/build-ai-model.sh
 
       # install hugo "extended"
       HUGO_VERSION=0.147.9
