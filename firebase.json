@@ -368,6 +368,16 @@
           "source": "/demosignup",
           "destination": "https://docs.google.com/forms/d/e/1FAIpQLSeeQRVKmJ0GYrtT8oGUP_nbPyyVrM6pbl3kRI3WPKS6h3dZfQ/viewform?usp=header",
           "type": 302
+        },
+        {
+          "source": "/dora-aicmr",
+          "destination": "/ai/capabilities-model/report/",
+          "type": 302
+        },
+        {
+          "source": "/dora-aicmr-2025",
+          "destination": "/ai/capabilities-model/report/",
+          "type": 302
         }
       ]
     }
