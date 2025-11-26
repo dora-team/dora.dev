@@ -53,7 +53,7 @@
         {
           "description": "The next set of questions are about various outcomes of your work. For the primary application or service you work on...",
           "questions": [
-            "Approximately what percentage of changes to production or releases to users result in degraded service (for example, leads to service impairment or service outage) and subsequently requires remediation (for example, requires a hotfix, rollback, fix forward or patch), if at all? |(value between 0% and 100%), I don't know or NA",
+            "Approximately what percentage of changes to production or releases to users result in degraded service (for example, leads to service impairment or service outage) and subsequently requires remediation (for example, requires a hotfix, rollback, fix forward or patch), if at all?|(value between 0% and 100%), I don't know or NA",
             "Approximately what percentage of deployments in the last 6 months were not planned but were performed to address a user-facing bug in the application?|(value between 0% and 100%), I don't know or NA"
           ]
         }
@@ -64,9 +64,9 @@
       "question_groups": [
         {
           "questions": [
-            "In the last 3 months,how effectively were you able to perform your tasks and responsibilities at work?|Not effectively at all,Slightly effectively,Moderately effectively,Very effectively,Extremely effectively",
-            "In the last 3 months, how productive did you feel in your work?|Not at all productive,Slightly productive,Moderately productive,Very productive,Extremely",
-            "In the last 3 months, how much impact do you think your work has had?|None at all,A little,A moderate amount,A lot, A great deal"
+            "In the last 3 months, how effectively were you able to perform your tasks and responsibilities at work?|Not effectively at all,Slightly effectively,Moderately effectively,Very effectively,Extremely effectively",
+            "In the last 3 months, how productive did you feel in your work?|Not at all productive,Slightly productive,Moderately productive,Very productive,Extremely productive",
+            "In the last 3 months, how much impact do you think your work has had?|None at all,A little,A moderate amount,A lot,A great deal"
           ]
         }
       ]
