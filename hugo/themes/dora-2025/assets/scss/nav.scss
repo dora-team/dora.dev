@@ -4,6 +4,7 @@
 
 #hamburgerContainer {
   display: none;
+
   @include media-medium {
     display: block;
   }
@@ -38,9 +39,10 @@
     margin: 0;
     margin-block-start: 0.5em;
     padding-inline-start: 0;
+
     li {
       list-style-type: none;
-      padding: 0.5em 1em;
+      padding: 0;
       margin: 0;
       border-bottom: 1px solid var(--grey-40);
 
@@ -49,6 +51,8 @@
       }
 
       a {
+        display: block;
+        padding: 0.5em 1em;
         text-decoration: none;
         color: var(--grey-70);
         white-space: nowrap;
@@ -69,10 +73,12 @@ body:has(#mobileMenuController:checked) {
     height: fit-content;
     padding: 0 18px 12px 18px;
   }
+
   #hamburgerContainer {
     #hamburgerIcon .close {
       display: block;
     }
+
     #hamburgerIcon .menu {
       display: none;
     }
@@ -95,6 +101,7 @@ header {
       display: block;
       line-height: 1;
     }
+
     nav {
       display: flex;
       flex-grow: 1;
@@ -106,12 +113,13 @@ header {
         display: flex;
         align-items: center;
         margin: 0;
+
         li {
           list-style-type: none;
           padding: 0 1em;
 
           @include media-large {
-            font-size:.85em;
+            font-size: .85em;
             padding: 0 .7em;
           }
 
@@ -144,6 +152,7 @@ header {
         }
       }
     }
+
     #searchIcon {
       font-size: 24px;
     }
@@ -192,6 +201,7 @@ header {
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
