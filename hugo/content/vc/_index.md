@@ -215,7 +215,7 @@ layout: single
   <p><a href="/publications">View all of DORA's publications</a>.</p>
 </div>
 
-<script src="/js/version-check-utils.js"></script>
+{{< version_check_assets >}}
 <script>
   showContent(getParameterByName('v'));
 </script>
