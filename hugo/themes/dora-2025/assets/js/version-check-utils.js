@@ -20,3 +20,6 @@ function showContent(version) {
     }
   }
 }
+
+window.getParameterByName = getParameterByName;
+window.showContent = showContent;
