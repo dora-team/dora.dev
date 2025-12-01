@@ -75,7 +75,7 @@ bannerSubtitle: "Check if you have the most recent version of the report."
 </div>
 
 
-<script src="/js/version-check-utils.js"></script>
+{{< version_check_assets >}}
 <script>
   showContent(getParameterByName('v'));
 </script>
