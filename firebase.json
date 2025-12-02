@@ -15,6 +15,11 @@
           "type": 301
         },
         {
+          "source": "/oopsies",
+          "destination": "/publications/errata/",
+          "type": 302
+        },
+        {
           "source": "/sponsors/dora-brand-guidelines",
           "destination": "/brand-guidelines/",
           "type": 301
