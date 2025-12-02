@@ -14,7 +14,7 @@ const pages = [
     header: 'DORA Research: Artificial Intelligence',
   },
   {
-    url: '/experimental/blog/measurement-frameworks/',
+    url: '/experimental/insights/measurement-frameworks/',
     title: 'DORA | Choosing measurement frameworks to fit your organizational goals',
     header: 'Choosing measurement frameworks to fit your organizational goals',
   },

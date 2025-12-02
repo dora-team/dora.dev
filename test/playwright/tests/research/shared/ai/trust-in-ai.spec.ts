@@ -9,7 +9,7 @@ const pages = [
     header: "Fostering developers' trust in generative artificial intelligence",
   },
   {
-    url: '/experimental/blog/trust-in-ai/',
+    url: '/experimental/insights/trust-in-ai/',
     title: 'DORA | Fostering Trust in AI',
     header: "Fostering developers' trust in generative artificial intelligence",
   },
