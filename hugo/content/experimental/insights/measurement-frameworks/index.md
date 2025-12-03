@@ -9,7 +9,7 @@ authors:
     3: {name: "Dr. Sarah Inman", url: "https://www.linkedin.com/in/scinman/"}
     4: {name: "Dr. Kevin M. Storer", url: "/research/team/#dr-kevin-m-storer"}
 headline: "Choosing measurement frameworks to fit your organizational goals"
-type: "blog"
+type: "insights"
 tags: ["Metrics", "AI"]
 summary: "Measuring software development effectiveness requires choosing the right framework to match your organizational goals. This guide explores popular frameworks like SPACE, DevEx, and DORA, offering practical steps for selecting metrics and adapting your measurement strategy for the AI era."
 ---

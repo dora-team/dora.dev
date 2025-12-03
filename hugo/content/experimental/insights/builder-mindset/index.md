@@ -9,7 +9,7 @@ authors:
     3: {name: "Dr. Kevin M. Storer", url: "/research/team/#dr-kevin-m-storer"}
     4: {name: 'Katharine Norwood', url: 'https://www.linkedin.com/in/katharine-norwood-33033a17/'}
 headline: "Understanding builder intent in the AI era"
-type: "blog"
+type: "insights"
 tags: ["AI", "Metrics", "Culture", "Security"]
 summary: "As AI decouples roles from tasks, traditional developer personas are becoming less relevant. This article introduces the \"Builder Mindset\" framework, identifying four core intents—Founder, Optimizer, Accelerator, and Learner—to help teams design better AI-assisted experiences."
 ---
