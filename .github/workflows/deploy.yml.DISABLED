@@ -1,0 +1,54 @@
+name: Deploy to prod
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'docs/**'
+      - 'adrs/**'
+      - '.gemini/**'
+      - '.github/**'      
+      - '**/README.md'
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build_drafts_off:
+    runs-on: ubuntu-latest
+    outputs:
+      preview_url: ${{ steps.deploy.outputs.details_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.147.9'
+          extended: true
+      - name: Build Svelte components
+        run: |
+          # build all svelte components (in parallel)
+          ./svelte/quick-check/build-quick-check.sh & \
+          ./svelte/core-v2/build-core.sh & \
+          ./svelte/experimental-ai-model/build-ai-model.sh & \
+          wait
+      - name: Build with Hugo
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+        run: |
+          hugo --source=./hugo --logLevel=debug --minify
+      - name: Deploy to Firebase
+        id: deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          projectId: ${{ vars.GOOGLE_CLOUD_PROJECT }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          channelId: live
