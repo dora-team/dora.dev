@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{- partial "link_styles" "scss/research.scss" -}}
-{{- partial "link_styles" "scss/blog.scss" -}}
+{{- partial "link_styles" "scss/insights.scss" -}}
 
 <section class="section">
     <div class="container">
@@ -57,7 +57,7 @@
             </div>
             {{ end }}
 
-            <div class="blog-navigation">
+            <div class="insights-navigation">
                 {{ if .PrevInSection }}
                 <div class="prev-post">
                     <strong>Previous post:</strong> <a href="{{ .PrevInSection.RelPermalink }}">{{ .PrevInSection.Params.headline | default .PrevInSection.Title }}</a>
