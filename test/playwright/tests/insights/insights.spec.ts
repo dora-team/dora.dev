@@ -11,16 +11,15 @@ test.describe('Insights', () => {
 
     test('lists articles', async ({ page }) => {
         await page.goto('/experimental/insights/');
-        await expect(page.locator('.blog-list')).toBeVisible();
-        const articles = page.locator('.blog-list article');
+        await expect(page.locator('.insights-list')).toBeVisible();
+        const articles = page.locator('.insights-list article');
         await expect(articles.first()).toBeVisible();
-        expect(await articles.count()).toBeGreaterThan(0);
     });
 
     test('lists articles in date order', async ({ page }) => {
         await page.goto('/experimental/insights/');
         const dates = await page
-            .locator('.blog-list article p > small:first-child')
+            .locator('.insights-list article p > small:first-child')
             .allTextContents();
         const sortedDates = [...dates].sort(
             (a, b) => new Date(b).getTime() - new Date(a).getTime(),
@@ -31,7 +30,7 @@ test.describe('Insights', () => {
     test('filters by tag', async ({ page }) => {
         await page.goto('/experimental/insights/');
         // Find an article with tags and click one
-        const tagLink = page.locator('.blog-list article .tags a').first();
+        const tagLink = page.locator('.insights-list article .tags a').first();
         const tagName = await tagLink.innerText();
         await tagLink.click();
 

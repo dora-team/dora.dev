@@ -5,9 +5,9 @@
         <div class="content">
             {{ .Content }}
         </div>
-        <div class="blog-list">
+        <div class="insights-list">
             {{ range .Pages.ByDate.Reverse }}
-            {{- partial "blog-list-items.html" . -}}
+            {{- partial "insights-list-items.html" . -}}
             {{ end }}
         </div>
     </div>
