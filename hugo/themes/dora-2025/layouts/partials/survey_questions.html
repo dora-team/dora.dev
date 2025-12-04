@@ -18,7 +18,7 @@
   {{ if .Params.survey_intro_text }}
   <h4>{{ .Params.survey_intro_text | markdownify }}</h4>
   {{ else }}
-  <h4>Responses to the following questions were used in the analysis published in the <a href="/research/{{ $researchCollectionTitle }}/dora-report/">{{ $researchCollectionTitle }} Accelerate State of DevOps Report</a>.</h4>
+  <h4>Responses to the following questions were used in the analysis published in the <a href="/research/{{ $researchCollectionTitle | urlize }}/dora-report/">{{ $researchCollectionTitle }} Accelerate State of DevOps Report</a>.</h4>
   {{ end }}
   {{ with index .Site.Data.survey_questions $dataLookupKey }}
   {{ range sort .categories "heading" }}
