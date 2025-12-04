@@ -1,9 +1,9 @@
-## Download the DORA AI Capabilities Model report
+## Coming soon!
 
 <grid class="border_none mt-1">
 <item>
 
-<a href="/ai/capabilities-model/report" target="_blank"><img src="/research/shared/ai-capabilities-model-report/2025-dora-ai-capabilities-model-report.png" alt="DORA AI Capabilities Model report" class="report-image"></a>
+<img src="/research/shared/ai-capabilities-model-report/2025-dora-ai-capabilities-model-report.png" alt="DORA AI Capabilities Model report" class="report-image">
 
 </item>
 <item>
