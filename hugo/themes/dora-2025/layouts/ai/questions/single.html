@@ -1,0 +1,15 @@
+{{ define "main" }}
+{{- partial "link_styles" "scss/ai.scss" -}}
+
+{{ $researchCollectionTitle := "" }}
+{{ if .Params.research_collection_title }}
+{{ $researchCollectionTitle = .Params.research_collection_title }}
+{{ else }}
+{{ $researchCollectionTitle = .Params.research_collection }}
+{{ end }}
+
+<h1>{{ $researchCollectionTitle }}</h1>
+
+
+{{ partial "survey_questions.html" . }}
+{{ end }}
