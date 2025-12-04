@@ -2,7 +2,7 @@
   let { text, url } = $props();
 </script>
 
-<a href={url} class="button">{text}</a>
+<a href={url} target="_blank" class="button">{text}</a>
 
 <style>
   .button {

@@ -1,16 +1,15 @@
 <script lang="ts">
-  import { slide, fade } from "svelte/transition";
   import data from "./data.json";
   import Connector from "./lib/Connector.svelte";
   import Capability from "./lib/Capability.svelte";
   import Outcome from "./lib/Outcome.svelte";
-  import SnippetLink from "./lib/SnippetLink.svelte";
+  import Snippet from "./lib/Snippet.svelte";
 
   type CapabilityData = {
     name: string;
     id: string;
     description?: string;
-    url?: string;
+    capabilityId?: string;
   };
   type OutcomeData = { name: string; id: string; description?: string };
   type ConnectionData = { from: string; to: string; index: number };
@@ -175,30 +174,7 @@
       </div>
     </div>
     {#if activeEntityData}
-      <div class="snippet" transition:slide>
-        <div in:fade={{ delay: 100, duration: 200 }} out:fade={{ duration: 100 }}>
-          <strong>{activeEntityData.name}</strong>
-          {activeEntityData.description}
-          <div class="snippet-links">
-            <div>
-              <SnippetLink
-                text={`Learn more`}
-                url={("url" in activeEntityData ? activeEntityData.url : "#") ||
-                  "#"}
-              />
-            </div>
-            {#if selectedEntity && selectedEntity.type === "capability"}
-              <div>
-                <SnippetLink
-                  text={`How to assess`}
-                  url={("url" in activeEntityData ? activeEntityData.url : "#") ||
-                    "#"}
-                />
-              </div>
-            {/if}
-          </div>
-        </div>
-      </div>
+      <Snippet {activeEntityData} {selectedEntity} />
     {/if}
   </div>
 </main>
@@ -249,23 +225,6 @@
 
       .x .entity {
         margin: 0px;
-      }
-    }
-
-    .snippet {
-      margin: 12px 24px;
-      font-size: 0.85rem;
-      text-align: justify;
-
-      strong {
-        font-weight: 700;
-      }
-
-      .snippet-links {
-        margin-top:8px;
-        display: flex;
-        white-space: nowrap;
-        justify-content: center;
       }
     }
   }
