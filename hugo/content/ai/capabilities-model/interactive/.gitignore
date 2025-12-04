@@ -1,0 +1,3 @@
+# the assets for the AI Capabilities model are generated from /svelte/ai-model via the build script in that folder
+ai-model.css
+ai-model.js
