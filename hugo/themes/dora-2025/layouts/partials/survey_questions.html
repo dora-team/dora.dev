@@ -1,0 +1,47 @@
+{{ $researchCollectionTitle := "" }}
+{{ if .Params.research_collection_title }}
+{{ $researchCollectionTitle = .Params.research_collection_title }}
+{{ else }}
+{{ $researchCollectionTitle = .Params.research_collection }}
+{{ end }}
+
+{{/* dataLookupKey is a local variable for data lookup, similar to $researchCollectionTitle */}}
+{{ $dataLookupKey := .Params.research_collection }}
+
+{{/* Explicit override from frontmatter */}}
+{{ if .Params.survey_data_key }}
+{{ $dataLookupKey = .Params.survey_data_key }}
+{{ end }}
+
+<article id="questions">
+  <h2>Survey Questions</h2>
+  {{ if .Params.survey_intro_text }}
+  <h4>{{ .Params.survey_intro_text | markdownify }}</h4>
+  {{ else }}
+  <h4>Responses to the following questions were used in the analysis published in the <a href="/research/{{ $researchCollectionTitle }}/dora-report/">{{ $researchCollectionTitle }} Accelerate State of DevOps Report</a>.</h4>
+  {{ end }}
+  {{ with index .Site.Data.survey_questions $dataLookupKey }}
+  {{ range sort .categories "heading" }}
+  <h3 id="{{ .heading | anchorize }}">{{ .heading }}</h3>
+  {{ if .description }}<p>{{ .description }}</p>{{ end }}
+  {{ range .question_groups }}
+  {{ if .subheading }}<h4 id="{{ .subheading | anchorize }}">{{ .subheading }}</h4>{{ end }}
+
+  {{/* Check for nested question groups */}}
+  {{ if .question_groups }}
+  {{ range .question_groups }}
+  {{ partial "question_group.html" . }}
+  {{ end }}
+  {{ else }}
+  {{/* Render single question group (existing logic) */}}
+  {{ partial "question_group.html" . }}
+  {{ end }}
+  {{ end }}
+  {{ end }}
+  {{ end }}
+
+  {{ if .Params.updated }}
+  <div class="updated">Last updated: {{ .Params.updated | time.Format ":date_long" }}</div>
+  {{ end }}
+
+</article>
