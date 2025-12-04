@@ -10,7 +10,7 @@ test.describe('AICM report page', () => {
   });
 
   test('has the correct header', async ({ page }) => {
-    await expect(page.locator('h1')).toContainText('DORA Research: DORA AI Capabilities Model');
+    await expect(page.locator('h1')).toContainText('DORA AI Capabilities Model');
   });
 
   test('does not show the research note', async ({ page }) => {

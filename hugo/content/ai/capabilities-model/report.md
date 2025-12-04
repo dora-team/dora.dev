@@ -3,7 +3,7 @@ title: "DORA AI Capabilities Model report"
 date: 2025-11-25
 updated: 2025-11-25
 draft: false
-type: "research_archives/report"
+type: "ai"
 tab_order: "1"
 tab_title: "Report"
 research_collection: "DORA AI Capabilities Model"
