@@ -33,11 +33,8 @@ jobs:
           extended: true
       - name: Build Svelte components
         run: |
-          # build all svelte components (in parallel)
-          ./svelte/quick-check/build-quick-check.sh & \
-          ./svelte/core-v2/build-core.sh & \
-          ./svelte/experimental-ai-model/build-ai-model.sh & \
-          wait
+          # Build Svelte apps and move generated files into position
+          ./svelte/build.sh
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache

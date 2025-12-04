@@ -5,15 +5,8 @@ steps:
     script: |
       #! /usr/bin/env bash
 
-      # Build Quick Check and move generated files into position
-      echo "Using Node version $(node --version)"
-      ./svelte/quick-check/build-quick-check.sh
-
-      # Build Core Model and move generated files into position
-      ./svelte/core-v2/build-core.sh
-
-      # Build AI Model and move generated files into position
-      ./svelte/ai-model/build-ai-model.sh
+      # Build Svelte apps and move generated files into position
+      ./svelte/build.sh
 
       # install hugo "extended"
       HUGO_VERSION=0.147.9
