@@ -48,12 +48,12 @@ for (const pageConfig of pages) {
 
       test("has the correct download button", async ({ page }) => {
         const downloadLink = page
-          .locator('a:has-text("Download the report")')
+          .locator('a:has-text("Coming soon")')
           .first();
         await expect(downloadLink).toBeVisible();
         await expect(downloadLink).toHaveAttribute(
           "href",
-          "https://cloud.google.com/dora/ai-capabilities-model/",
+          "/ai/capabilities-model/report/",
         );
       });
     });
@@ -73,7 +73,7 @@ for (const pageConfig of pages) {
       test("has the correct download button", async ({ page }) => {
         const downloadLink = page
           .locator('a:has-text("Download the report")')
-          .nth(1);
+          .first();
         await expect(downloadLink).toBeVisible();
         await expect(downloadLink).toHaveAttribute(
           "href",
@@ -97,7 +97,7 @@ for (const pageConfig of pages) {
       test("has the correct download button", async ({ page }) => {
         const downloadLink = page
           .locator('a:has-text("Download the report")')
-          .nth(2);
+          .nth(1);
         await expect(downloadLink).toBeVisible();
         await expect(downloadLink).toHaveAttribute(
           "href",
