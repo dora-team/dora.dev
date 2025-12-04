@@ -3,57 +3,51 @@
     {
       "name": "User-centric focus",
       "id": "user-centric-focus",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "url": "/capabilities/user-centric-focus"
+      "description": "A focus on user needs is essential to ensure that AI-accelerated teams are moving quickly in the right direction."
     },
     {
       "name": "Strong version control practices",
       "id": "strong-version-control-practices",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "url": "/capabilities/strong-version-control-practices"
+      "capabilityId": "version-control",
+      "description": "As AI increases the velocity of change, version control becomes the critical safety net that enables confident experimentation."
     },
     {
       "name": "AI-accessible internal data",
       "id": "ai-accessible-internal-data",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "url": "/capabilities/ai-accessible-internal-data"
+      "description": "Connecting AI to your internal documentation and codebases moves it from a generic assistant to a specialized expert."
     },
     {
       "name": "Working in small batches",
       "id": "working-in-small-batches",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "url": "/capabilities/working-in-batches"
+      "description": "This discipline counteracts the risk of AI generating large, unstable changes, ensuring that speed translates to better product performance."
     },
     {
       "name": "Clear + communicated AI stance",
-      "id": "clear-communicated-ai-stance",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "url": "/capabilities/clear-communicated-ai-stance"
+      "id": "clear-and-communicated-ai-stance",
+      "description": "Ambiguity creates risk. A clear policy provides the psychological safety needed for effective experimentation."
     },
     {
       "name": "Quality internal platform",
       "id": "quality-internal-platform",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "url": "/capabilities/quality-internal-platform"
+      "description": "A platform provides the automated, secure pathways that allow AI’s benefits to scale across the organization."
     },
     {
       "name": "Healthy data ecosystems",
       "id": "healthy-data-ecosystems",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "url": "/capabilities/healthy-data-ecosystems"
+      "description": "The benefits of AI are significantly amplified by high-quality, accessible, and unified internal data."
     }
   ],
   "outcomes": [
-    { "name": "Team performance", "id": "team-performance", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." },
-    { "name": "Code quality", "id": "code-quality", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." },
-    { "name": "Individual effectiveness", "id": "individual-effectiveness", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." },
-    { "name": "Product performance", "id": "product-performance", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." },
-    { "name": "Reduced friction", "id": "friction", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." },
-    { "name": "Software delivery throughput", "id": "throughput", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." },
+    { "name": "Team performance", "id": "team-performance", "description": "The perceived effectiveness and collaborative strength of an individual’s immediate team." },
+    { "name": "Code quality", "id": "code-quality", "description": "An individual’s assessment of the quality of code underlying the primary application or service they work on." },
+    { "name": "Individual effectiveness", "id": "individual-effectiveness", "description": "An individual’s self-assessed effectiveness and sense of accomplishment at work." },
+    { "name": "Product performance", "id": "product-performance", "description": "The success and quality of the products or services the team is building, based on characteristics like helping users accomplish important tasks and keeping information safe, and performance metrics such as latency." },
+    { "name": "Reduced friction", "id": "reduced-friction", "description": "Friction is the result of obstacles which hinder an individual’s work. Lower amounts of friction are generally considered to be a positive outcome." },
+    { "name": "Software delivery throughput", "id": "software-delivery-throughput", "description": "The speed and efficiency of the software delivery process." },
     {
       "name": "Organizational performance",
       "id": "organizational-performance",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      "description": "The overall success of the organization, based on characteristics like profitability, market share, and customer satisfaction."
     }
   ],
   "connections": [
@@ -65,13 +59,13 @@
     { "from": "ai-accessible-internal-data", "to": "product-performance", "index": -1 },
     { "from": "working-in-small-batches", "to": "individual-effectiveness", "index": 1 },
     { "from": "working-in-small-batches", "to": "product-performance", "index": 0 },
-    { "from": "working-in-small-batches", "to": "friction", "index": -1 },
-    { "from": "clear-communicated-ai-stance", "to": "individual-effectiveness", "index": 2 },
-    { "from": "clear-communicated-ai-stance", "to": "product-performance", "index": 1 },
-    { "from": "clear-communicated-ai-stance", "to": "friction", "index": 0 },
-    { "from": "clear-communicated-ai-stance", "to": "throughput", "index": 0 },
-    { "from": "clear-communicated-ai-stance", "to": "organizational-performance", "index": -2 },
-    { "from": "quality-internal-platform", "to": "friction", "index": 1 },
+    { "from": "working-in-small-batches", "to": "reduced-friction", "index": -1 },
+    { "from": "clear-and-communicated-ai-stance", "to": "individual-effectiveness", "index": 2 },
+    { "from": "clear-and-communicated-ai-stance", "to": "product-performance", "index": 1 },
+    { "from": "clear-and-communicated-ai-stance", "to": "reduced-friction", "index": 0 },
+    { "from": "clear-and-communicated-ai-stance", "to": "software-delivery-throughput", "index": 0 },
+    { "from": "clear-and-communicated-ai-stance", "to": "organizational-performance", "index": -2 },
+    { "from": "quality-internal-platform", "to": "reduced-friction", "index": 1 },
     { "from": "quality-internal-platform", "to": "organizational-performance", "index": -1 },
     { "from": "healthy-data-ecosystems", "to": "organizational-performance", "index": 0 }
   ]
