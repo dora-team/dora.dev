@@ -1,7 +1,9 @@
 {{ define "main" }} {{- partial "link_styles" "scss/ai.scss" -}}
 
 <h1>{{ .Params.research_collection }}</h1>
+{{ if .Params.research_collection }}
 {{- partial "research_archives_tabs" . -}}
+{{ end }}
 
 <article class="ai-content">
   {{ .Content }}
