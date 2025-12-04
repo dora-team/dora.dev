@@ -1,0 +1,29 @@
+<p class="description">
+  {{ .description }}
+  {{ if .group_responses }}
+<div class="responses">
+  <label>Response options:</label> {{ $responsesSlice := split .group_responses "," }}
+  {{ range $responsesSlice }}
+  <span class="answer">{{ . }}</span>
+  {{ end }}
+</div>
+{{ end }}
+</p>
+<ul>
+  {{ range sort .questions }}
+  {{ $thisQuestion := split . "|" }}
+  {{ $thisQuestionText := index $thisQuestion 0 }}
+  {{ $thisQuestionResponses := index $thisQuestion 1 }}
+  <li>
+    <div>{{ $thisQuestionText }}</div>
+    {{ if $thisQuestionResponses }}
+    <div class="responses">
+      {{ $responsesSlice := split $thisQuestionResponses "," }}
+      {{ range $responsesSlice }}
+      <span class="answer">{{ . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+  </li>
+  {{ end }}
+</ul>

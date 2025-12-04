@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{- partial "link_styles" "scss/research.scss" -}}
+{{- partial "link_styles" "scss/ai.scss" -}}
 
 {{ $researchCollectionTitle := "" }}
 {{ if .Params.research_collection_title }}
@@ -8,13 +8,8 @@
 {{ $researchCollectionTitle = .Params.research_collection }}
 {{ end }}
 
-<h1>DORA Research: {{ $researchCollectionTitle }}</h1>
+<h1>{{ $researchCollectionTitle }}</h1>
 {{- partial "research_archives_tabs" . -}}
 
-<section class="hasSidebar">
-    {{ partial "survey_questions.html" . }}
-    <sidebar>
-        {{ partial "research_sidebar.html" . }}
-    </sidebar>
-</section>
+{{ partial "survey_questions.html" . }}
 {{ end }}

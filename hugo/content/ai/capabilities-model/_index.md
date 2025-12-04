@@ -1,0 +1,22 @@
+---
+title: "DORA AI Capabilities Model"
+date: 2025-11-25
+updated: 2025-12-03
+draft: false
+research_collection: "DORA AI Capabilities Model"
+research_collection_title: "DORA AI Capabilities Model"
+type: ai
+layout: single
+tab_order: "0"
+tab_title: "Overview"
+---
+
+<grid class="border_none mt-1">
+<item>
+<p>
+  The <a href="/research/2025/dora-report/"> 2025 State of AI-assisted Software Development report</a> introduced the DORA AI Capabilities Model, a framework for understanding the capabilities that amplify the benefits of AI in software development.
+</p>
+
+<object data="ai-capabilities-model.svg" id="dora-ai-capabilities-model-report" type="image/svg+xml" class="responsive-svg"></object>
+</item>
+</grid>
