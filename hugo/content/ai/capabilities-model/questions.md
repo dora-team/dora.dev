@@ -3,7 +3,7 @@ title: "DORA AI Capabilities Model questions"
 date: 2025-11-25
 updated: 2025-11-25
 draft: false
-type: "research_archives/questions"
+type: "ai/questions"
 research_collection: "DORA AI Capabilities Model"
 research_collection_title: "DORA AI Capabilities Model"
 tab_order: "2"
