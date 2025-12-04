@@ -1,0 +1,150 @@
+@import "_variables.scss";
+
+h3 {
+  margin-top: 1.5em;
+}
+
+#rotate-tip {
+  display: none;
+}
+
+@media (orientation: portrait) {
+  #rotate-tip {
+    display: revert;
+  }
+}
+
+.ai-content {
+  padding: 1rem;
+
+  .responsive-svg {
+    width: 100%;
+    min-width: 815px;
+  }
+
+  @media (max-width: 799px) {
+    .responsive-svg {
+      min-width: 0;
+    }
+  }
+}
+
+#questions {
+  h3 {
+    font-size: 1.25em;
+  }
+
+  h4 {
+    color: #666;
+    margin-bottom: 1em;
+  }
+
+  li {
+    font-weight: 300;
+    font-family: "Roboto";
+    font-size: 0.9rem;
+  }
+
+  p.description {
+    border-top: 1px solid lightgray;
+  }
+
+  .responses {
+    margin-bottom: 0.5rem;
+
+    label {
+      font-family: $font-roboto;
+      font-size: 0.75rem;
+      font-weight: normal;
+    }
+
+    .answer {
+      display: inline-block;
+      font-size: 0.8rem;
+      border: none;
+      color: $color-text-medium;
+      background-color: $background-light;
+      border-radius: 0.25rem;
+      padding: 0.25rem 0.5rem;
+      margin: 0.2rem 0.05rem;
+    }
+  }
+}
+
+// Wider page allows room for Core diagram
+main:has(#app) {
+  padding: 0;
+}
+
+tab_links {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid $border-light;
+  padding-bottom: 1rem;
+
+  a {
+    display: inline-block;
+    padding: 4px 18px;
+    margin: 4px;
+    border-radius: 50vh;
+    cursor: pointer;
+
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: var(--dora-primary-dark);
+    border: 2px solid var(--dora-primary-dark);
+    transition: all 200ms ease-out;
+
+    &.selected,
+    &:hover {
+      background-color: var(--dora-primary-dark);
+      color: var(--dora-primary-light);
+    }
+  }
+}
+
+.hero-image img {
+  max-width: 100%;
+}
+
+.research-note {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: $color-text-medium;
+}
+
+.report-image {
+  max-width: 24em;
+}
+
+.mainContent table {
+  border: 1px solid $border-light;
+  border-collapse: collapse;
+  width: 100%;
+
+  tr {
+
+    th,
+    td {
+      margin: 0;
+      padding: 0.5em 0.75em;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: $background-medium;
+      text-align: left;
+    }
+
+    td {
+      font-family: $font-roboto;
+      font-weight: 300;
+      font-size: 0.9em;
+    }
+
+    &:nth-child(even) {
+      background-color: $background-light;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{{ define "main" }} {{- partial "link_styles" "scss/ai.scss" -}}
+
+<h1>{{ .Params.research_collection }}</h1>
+{{- partial "research_archives_tabs" . -}}
+
+<article class="ai-content">
+  {{ .Content }}
+  {{ if .Params.updated }}
+  <div class="updated">
+    Last updated: {{ .Params.updated | time.Format ":date_long" }}
+  </div>
+  {{ end }}
+</article>
+{{ end }}
