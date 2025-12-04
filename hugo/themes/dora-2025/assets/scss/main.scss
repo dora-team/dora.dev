@@ -41,6 +41,10 @@ body {
   margin: 0;
   padding: 0;
 
+  &.draft-mode {
+    background-color: var(--dora-warm-white);
+  }
+
   // use flex so footer sticks to bottom of page
   display: flex;
   flex-direction: column;

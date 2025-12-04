@@ -4,7 +4,8 @@
     <head>
         {{- partial "head" . -}}
     </head>
-    <body>
+
+    <body {{ if .Params.draft }}class="draft-mode"{{ end }}>
         {{- partial "header" . -}}
         {{- partial "page_banner" . -}}
         <main>
@@ -12,4 +13,5 @@
         </main>
         {{- partial "footer" . -}}
     </body>
+
 </html>
