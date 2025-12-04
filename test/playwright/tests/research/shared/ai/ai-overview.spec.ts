@@ -115,5 +115,15 @@ for (const pageConfig of pages) {
         }
       });
     }
+
+    if (pageConfig.url === "/ai/") {
+      test("does not have the research archives tabs", async ({ page }) => {
+        await expect(page.locator("tab_links")).not.toBeVisible();
+      });
+    } else {
+      test("has the research archives tabs", async ({ page }) => {
+        await expect(page.locator("tab_links")).toBeVisible();
+      });
+    }
   });
 }
