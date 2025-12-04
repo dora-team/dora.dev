@@ -4,11 +4,11 @@ headless: true
 
 ## DORA AI Capabilities Model
 
-<a href="/ai/capabilities-model/report/" target="_blank"><img src="/research/shared/ai-capabilities-model-report/2025-dora-ai-capabilities-model-report.png" width="120em" style="float:left; margin-right: 1rem;" alt="DORA AI Capabilities Model report"></a>
+<a href="/ai/capabilities-model/report/"><img src="/research/shared/ai-capabilities-model-report/2025-dora-ai-capabilities-model-report.png" width="120em" style="float:left; margin-right: 1rem;" alt="DORA AI Capabilities Model report"></a>
 
 The DORA AI Capabilities Model report, a companion guide to the [2025 State of AI-assisted Software Development report](/research/2025/dora-report/), serves as a practical guide to the seven capabilities that amplify the benefits of AI. For each of the seven core capabilities, this report details implementation strategies, specific tactics for teams to get started, and methods for monitoring progress and fostering continuous improvement.
 
-<a href="/ai/capabilities-model/report/" target="_blank"><button class="secondary">Coming soon</button></a>
+<a href="/ai/capabilities-model/report/"><button class="secondary">Coming soon</button></a>
 
 ## State of AI-assisted Software Development
 
