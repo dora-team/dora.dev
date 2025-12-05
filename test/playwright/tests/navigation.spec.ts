@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Global navigation', () => {
   const commonLinks = [
+    { name: 'AI', href: '/research/ai/' },
     { name: 'Publications', href: '/publications/' },
     { name: 'Research', href: '/research/' },
     { name: 'Capabilities', href: '/capabilities/' },
@@ -29,7 +30,6 @@ test.describe('Global navigation', () => {
     // So the order is: Pubs, Res, Cap, Guides, QC, Search(Icon), Community.
     // Let's explicitly check Community.
 
-    // We expect 7 items total (5 common + 1 search + 1 community)
     // verify the search item text is "search" (material icon ligatures)
     await expect(navItems.nth(commonLinks.length)).toHaveText('search');
 
