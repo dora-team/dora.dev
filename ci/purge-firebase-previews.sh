@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script will purge ALL firebase preview channels. (all channels except `live`)
-# It's not very discriminating, so use with caution 
+# It's not very discriminating, so use with caution
 # Before running it, run `firebase login`
 
 SITE="doradotdev"
