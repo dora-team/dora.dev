@@ -25,11 +25,6 @@ test.describe('Global navigation', () => {
       await expect(item).toHaveAttribute('href', link.href);
     }
 
-    // Verify Community link (last item, skipping the search icon which is a list item but might not match the simple 'a' selector if checking text)
-    // The search icon is: <li id="searchLinkDesktop"><a ...>search</a></li>. It IS an 'a' tag.
-    // So the order is: Pubs, Res, Cap, Guides, QC, Search(Icon), Community.
-    // Let's explicitly check Community.
-
     // verify the search item text is "search" (material icon ligatures)
     await expect(navItems.nth(commonLinks.length)).toHaveText('search');
 
