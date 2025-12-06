@@ -453,11 +453,6 @@
           "source": "/research/ai/value-of-development-work/",
           "destination": "/ai/value-of-development-work/",
           "type": 301
-        },
-        {
-          "source": "/research/shared/ai/value-of-development-work/five-views.png",
-          "destination": "/ai/value-of-development-work/five-views.png",
-          "type": 301
         }
       ]
     }
