@@ -413,6 +413,16 @@
           "source": "/research/ai/builder-mindset/",
           "destination": "/ai/builder-mindset/",
           "type": 301
+        },
+        {
+          "source": "/research/ai/measurement-frameworks",
+          "destination": "/ai/measurement-frameworks/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/measurement-frameworks/",
+          "destination": "/ai/measurement-frameworks/",
+          "type": 301
         }
       ]
     }
