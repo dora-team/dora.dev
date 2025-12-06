@@ -463,6 +463,16 @@
           "source": "/research/ai/trust-in-ai/",
           "destination": "/ai/trust-in-ai/",
           "type": 301
+        },
+        {
+          "source": "/research/ai/errata",
+          "destination": "/ai/gen-ai-report/errata/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/errata/",
+          "destination": "/ai/gen-ai-report/errata/",
+          "type": 301
         }
       ]
     }
