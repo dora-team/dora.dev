@@ -433,6 +433,16 @@
           "source": "/research/ai/concerns-beyond-accuracy-of-ai-output/",
           "destination": "/ai/concerns-beyond-accuracy-of-ai-output/",
           "type": 301
+        },
+        {
+          "source": "/research/ai/adopt-gen-ai",
+          "destination": "/ai/adopt-gen-ai/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/adopt-gen-ai/",
+          "destination": "/ai/adopt-gen-ai/",
+          "type": 301
         }
       ]
     }
