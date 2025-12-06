@@ -97,7 +97,7 @@ The strategies we recommend will help ensure that AI is used strategically and r
 
 #### Further Reading - notes on data analytic method
 
-This research was conducted via a survey that included [questions about AI adoption](/research/ai/questions/). We obtained 1000 responses from developer and developer-adjacent roles.
+This research was conducted via a survey that included [questions about AI adoption](/ai/adopt-gen-ai/questions/). We obtained 1000 responses from developer and developer-adjacent roles.
 
 Data was analyzed using a Bayesian regression model to quantify the effect of various AI adoption strategies on team-level AI usage.  AI usage was measured as a self-reported percentage of team work supported by AI over the past three months.
 
