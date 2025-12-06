@@ -1,8 +1,7 @@
 import { test, expect } from "@playwright/test";
-import { sidebarLinks } from "../sidebarLinks";
 
 test.beforeEach(async ({ page }) => {
-  await page.goto("/research/ai/gen-ai-report/");
+  await page.goto("/ai/gen-ai-report/");
 });
 
 test("Gen AI report page has the correct title.", async ({ page }) => {
@@ -13,7 +12,7 @@ test("Gen AI report page has the correct title.", async ({ page }) => {
 
 test("Gen AI report page has the correct header.", async ({ page }) => {
   await expect(page.locator("h1")).toContainText(
-    "DORA Research: Artificial Intelligence",
+    "Artificial Intelligence",
   );
 });
 
@@ -35,12 +34,4 @@ test("Gen AI report page has the correct download button", async ({ page }) => {
     "href",
     "dora-impact-of-generative-ai-in-software-development.pdf",
   );
-});
-
-test("Gen AI report page has the correct sidebar.", async ({ page }) => {
-  for (const sidebarLink of sidebarLinks) {
-    await expect(
-      page.getByRole("link", { name: sidebarLink, exact: true }),
-    ).toBeVisible();
-  }
 });

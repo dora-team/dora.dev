@@ -20,18 +20,18 @@ The 2025 State of AI-assisted Software Development report finds that AI's primar
 
 ## Impact of Gen AI in Software Development
 
-<a href="/research/ai/gen-ai-report/"><img src="/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png" width="120em" style="float:left; margin-right: 1rem;" alt="Impact of Generative AI in Software Development"></a>
+<a href="/ai/gen-ai-report/"><img src="/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png" width="120em" style="float:left; margin-right: 1rem;" alt="Impact of Generative AI in Software Development"></a>
 
 Generative AI is rapidly reshaping the software development landscape, presenting both exciting opportunities and complex challenges.
 
 This report offers research-backed guidance for leaders and practitioners to effectively navigate this transformation, providing actionable insights to maximize AI's benefits while mitigating potential risks.
 
-<a href="/research/ai/gen-ai-report/"><button class="secondary">Download the report</button></a>
+<a href="/ai/gen-ai-report/"><button class="secondary">Download the report</button></a>
 
 ## AI Research
 
 * [Report: State of AI-assisted Software Development](/research/2025/dora-report/)
-* [Report: Impact of Gen AI in Software Development](/research/ai/gen-ai-report/)
+* [Report: Impact of Gen AI in Software Development](/ai/gen-ai-report/)
 * [Understanding builder intent in the AI era](/research/ai/builder-mindset/)
 * [Choosing measurement frameworks to fit your organizational goals](/research/ai/measurement-frameworks/)
 * [Concerns beyond the accuracy of AI output](/research/ai/concerns-beyond-accuracy-of-ai-output)

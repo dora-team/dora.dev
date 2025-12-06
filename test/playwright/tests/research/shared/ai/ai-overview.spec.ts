@@ -90,7 +90,7 @@ for (const pageConfig of pages) {
         await expect(reportImage).toBeVisible();
         await expect(reportImage).toHaveAttribute(
           "src",
-          "/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png",
+          "/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png",
         );
       });
 
@@ -101,7 +101,7 @@ for (const pageConfig of pages) {
         await expect(downloadLink).toBeVisible();
         await expect(downloadLink).toHaveAttribute(
           "href",
-          "/research/ai/gen-ai-report/",
+          "/ai/gen-ai-report/",
         );
       });
     });
