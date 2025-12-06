@@ -478,6 +478,16 @@
           "source": "/research/ai/errata/",
           "destination": "/ai/gen-ai-report/errata/",
           "type": 301
+        },
+        {
+          "source": "/research/ai/questions",
+          "destination": "/ai/adopt-gen-ai/questions/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/questions/",
+          "destination": "/ai/adopt-gen-ai/questions/",
+          "type": 301
         }
       ]
     }

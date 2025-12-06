@@ -10,6 +10,7 @@ authors:
     1: {name: "Daniella Villalba", url: "/research/team/#daniella-villalba-phd"}
     2: {name: "Derek DeBellis", url: "/research/team/#derek-debellis"}
     3: {name: "Nathen Harvey", url: "https://www.linkedin.com/in/nathen/"}
+layout: "single"
 headline: "Helping developers adopt generative AI: Four practical strategies for organizations"
 type: "ai"
 ---
