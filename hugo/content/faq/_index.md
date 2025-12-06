@@ -44,7 +44,7 @@ The report has a version number printed in the footer of every page, for example
 
 ## Impact of Generative AI in Software Development
 ### I found an error in the report. How can I report it?
-The report has a version number printed in the footer of every page, for example `v. 2025.2`. Check that you have the [latest version of the report](/vc/genai) and the [list of errata for the report](/research/ai/errata/) before submitting a correction. If you've found an error in the Impact of Generative AI in Software Development, or any other DORA publication, please [submit a correction](mailto:dora-advocacy@google.com?subject=DORA+Impact+of+Generative+AI+Report+error). Thank you!
+The report has a version number printed in the footer of every page, for example `v. 2025.2`. Check that you have the [latest version of the report](/vc/genai) and the [list of errata for the report](/ai/gen-ai-report/errata/) before submitting a correction. If you've found an error in the Impact of Generative AI in Software Development, or any other DORA publication, please [submit a correction](mailto:dora-advocacy@google.com?subject=DORA+Impact+of+Generative+AI+Report+error). Thank you!
 
 ## Accelerate State of DevOps Report 2024
 ### I found an error in the report. How can I report it?

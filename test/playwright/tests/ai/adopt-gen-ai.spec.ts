@@ -1,12 +1,11 @@
 import { test, expect } from '@playwright/test';
-import { sidebarLinks } from '../../sidebarLinks';
-import { LAST_UPDATED_DATE_REGEX } from '../../../constants';
+import { LAST_UPDATED_DATE_REGEX } from '../constants';
 
 const pages = [
   {
-    url: '/research/ai/adopt-gen-ai/',
-    title: 'DORA | Adopt generative AI',
-    header: 'Helping developers adopt generative AI',
+    url: '/ai/adopt-gen-ai/',
+    title: 'DORA | Helping developers adopt generative AI: Four practical strategies for organizations',
+    header: 'Helping developers adopt generative AI: Four practical strategies for organizations',
   },
   {
     url: '/experimental/insights/adopt-gen-ai/',
@@ -32,13 +31,5 @@ for (const pageConfig of pages) {
     test('displays its last updated date', async ({ page }) => {
       await expect(page.locator('.updated')).toContainText(LAST_UPDATED_DATE_REGEX);
     });
-
-    if (pageConfig.url.includes('/research/')) {
-      test('has the correct sidebar.', async ({ page }) => {
-        for (const sidebarLink of sidebarLinks) {
-          await expect(page.getByRole('link', { name: sidebarLink, exact: true })).toBeVisible();
-        }
-      });
-    }
   });
 }

@@ -1,22 +1,27 @@
 import { test, expect } from '@playwright/test';
-import { sidebarLinks } from '../../sidebarLinks';
-import { LAST_UPDATED_DATE_REGEX } from '../../../constants';
+import { sidebarLinks } from '../research/sidebarLinks';
 
 const pages = [
   {
-    url: '/research/ai/builder-mindset/',
-    title: 'DORA | Understanding builder intent in the AI era',
-    header: 'Understanding builder intent in the AI era',
+    url: '/research/2025/measurement-frameworks/',
+    header: 'DORA Research: 2025',
+    title: 'DORA | Choosing measurement frameworks to fit your organizational goals',
+    name: '2025',
   },
   {
-    url: '/experimental/insights/builder-mindset/',
-    title: 'DORA | Understanding builder intent in the AI era',
-    header: 'Understanding builder intent in the AI era',
+    url: '/ai/measurement-frameworks/',
+    title: 'DORA | Choosing measurement frameworks to fit your organizational goals',
+    header: 'Choosing measurement frameworks to fit your organizational goals',
+  },
+  {
+    url: '/experimental/insights/measurement-frameworks/',
+    title: 'DORA | Choosing measurement frameworks to fit your organizational goals',
+    header: 'Choosing measurement frameworks to fit your organizational goals',
   },
 ];
 
 for (const pageConfig of pages) {
-  test.describe(`Builder mindset page at ${pageConfig.url}`, () => {
+  test.describe(`Measurement frameworks page at ${pageConfig.url}`, () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(pageConfig.url);
     });
@@ -27,10 +32,6 @@ for (const pageConfig of pages) {
 
     test('has the correct header.', async ({ page }) => {
       await expect(page.getByRole('heading', { name: pageConfig.header })).toBeVisible();
-    });
-
-    test('displays its last updated date.', async ({ page }) => {
-      await expect(page.locator('.updated')).toContainText(LAST_UPDATED_DATE_REGEX);
     });
 
     if (pageConfig.url.includes('/research/')) {

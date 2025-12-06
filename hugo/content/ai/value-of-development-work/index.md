@@ -9,7 +9,7 @@ authors:
 tab_order: "10"
 tab_title: "Value of Development Work"
 headline: "How gen AI affects the value of development work"
-type: "research_archives/preview"
+type: "ai"
 ---
 
 {{< render_headless_bundle "research/shared/ai/value-of-development-work" >}}

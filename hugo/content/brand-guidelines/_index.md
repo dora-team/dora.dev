@@ -31,7 +31,7 @@ Please refer to our [brand guidelines](https://storage.googleapis.com/dora-brand
 
 * [Impact of Generative AI on Software Development report graphics](https://storage.googleapis.com/dora-report-gen-ai-2025/impact-of-generative-ai-in-software-development-report-cover-art.zip) <small>(ZIP, 398KB)</small>
 
-<a href="https://storage.googleapis.com/dora-report-gen-ai-2025/impact-of-generative-ai-in-software-development-report-cover-art.zip"><img src="/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png" alt="Cover art for the Impact of Generative AI on Software Development report" style="max-width:24em;"></a>
+<a href="https://storage.googleapis.com/dora-report-gen-ai-2025/impact-of-generative-ai-in-software-development-report-cover-art.zip"><img src="/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png" alt="Cover art for the Impact of Generative AI on Software Development report" style="max-width:24em;"></a>
 
 ## 2024 DORA Report graphics
 

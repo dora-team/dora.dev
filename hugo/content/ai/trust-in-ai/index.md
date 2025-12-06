@@ -12,7 +12,7 @@ authors:
     3: {name: "Dr. Sarah D'Angelo", url: "https://www.linkedin.com/in/sarahrdangelo/"}
     4: {name: "Adam Brown", url: "https://www.linkedin.com/in/adambrovvn/"}
 headline: "Fostering developers' trust in generative artificial intelligence"
-type: "research_archives/preview"
+type: "ai"
 ---
 
 {{< render_headless_bundle "research/shared/ai/trust-in-ai" >}}

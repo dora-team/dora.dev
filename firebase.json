@@ -383,6 +383,111 @@
           "source": "/dora-aicmr-2025",
           "destination": "/ai/capabilities-model/report/",
           "type": 302
+        },
+        {
+          "source": "/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development.pdf",
+          "destination": "/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development.pdf",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/gen-ai-report/",
+          "destination": "/ai/gen-ai-report/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/gen-ai-report-questions",
+          "destination": "/ai/gen-ai-report/questions/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/gen-ai-report-questions/",
+          "destination": "/ai/gen-ai-report/questions/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/builder-mindset",
+          "destination": "/ai/builder-mindset/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/builder-mindset/",
+          "destination": "/ai/builder-mindset/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/measurement-frameworks",
+          "destination": "/ai/measurement-frameworks/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/measurement-frameworks/",
+          "destination": "/ai/measurement-frameworks/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/concerns-beyond-accuracy-of-ai-output",
+          "destination": "/ai/concerns-beyond-accuracy-of-ai-output/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/concerns-beyond-accuracy-of-ai-output/",
+          "destination": "/ai/concerns-beyond-accuracy-of-ai-output/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/adopt-gen-ai",
+          "destination": "/ai/adopt-gen-ai/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/adopt-gen-ai/",
+          "destination": "/ai/adopt-gen-ai/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/value-of-development-work",
+          "destination": "/ai/value-of-development-work/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/value-of-development-work/",
+          "destination": "/ai/value-of-development-work/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/trust-in-ai",
+          "destination": "/ai/trust-in-ai/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/trust-in-ai/",
+          "destination": "/ai/trust-in-ai/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png",
+          "destination": "/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/errata",
+          "destination": "/ai/gen-ai-report/errata/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/errata/",
+          "destination": "/ai/gen-ai-report/errata/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/questions",
+          "destination": "/ai/adopt-gen-ai/questions/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/questions/",
+          "destination": "/ai/adopt-gen-ai/questions/",
+          "type": 301
         }
       ]
     }

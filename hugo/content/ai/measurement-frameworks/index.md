@@ -12,7 +12,7 @@ authors:
     3: {name: "Dr. Sarah Inman", url: "https://www.linkedin.com/in/scinman/"}
     4: {name: "Dr. Kevin M. Storer", url: "/research/team/#dr-kevin-m-storer"}
 headline: "Choosing measurement frameworks to fit your organizational goals"
-type: "research_archives/preview"
+type: "ai"
 ---
 
 {{< render_headless_bundle "research/shared/ai/measurement-frameworks" >}}

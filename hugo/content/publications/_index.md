@@ -27,9 +27,9 @@ bannerBackgroundColor: purple  # choose one of "yellow", "blue", "red", "purple"
 
 ## Prior State of DevOps Reports
 
-- [![Impact of Generative AI in Software Development](/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report-landscape.png)](/research/ai/gen-ai-report/)
-  **[Impact of Generative AI in Software Development](/research/ai/gen-ai-report/)**
-  [Download the report](/research/ai/gen-ai-report/)
+- [![Impact of Generative AI in Software Development](/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report-landscape.png)](/ai/gen-ai-report/)
+  **[Impact of Generative AI in Software Development](/ai/gen-ai-report/)**
+  [Download the report](/ai/gen-ai-report/)
 
 - [![2024 Accelerate State of DevOps Report](/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report-landscape.png)](/research/2024/dora-report/)
   **[2024 Accelerate State of DevOps Report](/research/2024/dora-report/)**

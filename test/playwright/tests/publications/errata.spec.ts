@@ -2,10 +2,10 @@ import { test, expect } from '@playwright/test';
 
 // baseURL default is defined in playwright.config.ts
 
-const yearToURLMap = {
-    'Accelerate State of DevOps 2023': '/research/2023/errata/',
-    'Accelerate State of DevOps 2024': '/research/2024/errata/',
-    'Impact of Generative AI in Software Development': '/research/ai/errata/'
+const yearToURLMap: Record<string, string> = {
+  'Accelerate State of DevOps 2023': '/research/2023/errata/',
+  'Accelerate State of DevOps 2024': '/research/2024/errata/',
+  'Impact of Generative AI in Software Development': '/ai/gen-ai-report/errata/'
 };
 
 test.beforeEach(async ({ page }) => {

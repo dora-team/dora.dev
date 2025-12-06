@@ -42,7 +42,7 @@ test.describe("Publications Page", () => {
     const reports = [
       {
         name: "Impact of Generative AI in Software Development",
-        url: "/research/ai/gen-ai-report/",
+        url: "/ai/gen-ai-report/",
         hasImage: true,
       },
       {

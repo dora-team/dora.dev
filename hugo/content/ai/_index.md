@@ -5,6 +5,4 @@ draft: false
 layout: single
 ---
 
-# Artificial Intelligence
-
 {{< render_headless_bundle "research/shared/ai/overview" >}}
