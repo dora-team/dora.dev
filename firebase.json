@@ -393,6 +393,16 @@
           "source": "/research/ai/gen-ai-report/",
           "destination": "/ai/gen-ai-report/",
           "type": 301
+        },
+        {
+          "source": "/research/ai/gen-ai-report-questions",
+          "destination": "/ai/gen-ai-report/questions/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/gen-ai-report-questions/",
+          "destination": "/ai/gen-ai-report/questions/",
+          "type": 301
         }
       ]
     }
