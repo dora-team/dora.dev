@@ -6,8 +6,13 @@ draft: false
 
 # DORA Publications Errata
 
-### <a href='{{<relref "/research/2025/errata">}}'>State of AI-assisted Software Development 2025</a>
-### <a href='{{<relref "/research/ai/errata">}}'>Impact of Generative AI in Software Development</a>
+This page lists errors and corrections to the Impact of Generative AI in Software Development. To track revisions, report PDFs are stamped with a version number. The current version of the report is [`v.2025.2`](/ai/gen-ai-report).
+
+### Errata in `v.2025.2`
+
+All known errors in `v.2025.2` have been corrected in the online version of the report.
+
+### <a href='{{<relref "/ai/gen-ai-report/errata">}}'>Impact of Generative AI in Software Development</a>
 ### <a href='{{<relref "/research/2024/errata">}}'>Accelerate State of DevOps 2024</a>
 ### <a href='{{<relref "/research/2023/errata">}}'>Accelerate State of DevOps 2023</a>
 
