@@ -34,7 +34,7 @@ This report offers research-backed guidance for leaders and practitioners to eff
 * [Report: Impact of Gen AI in Software Development](/ai/gen-ai-report/)
 * [Understanding builder intent in the AI era](/ai/builder-mindset/)
 * [Choosing measurement frameworks to fit your organizational goals](/ai/measurement-frameworks/)
-* [Concerns beyond the accuracy of AI output](/research/ai/concerns-beyond-accuracy-of-ai-output)
+* [Concerns beyond the accuracy of AI output](/ai/concerns-beyond-accuracy-of-ai-output/)
 * [Helping developers adopt generative AI: Four practical strategies for organizations](/research/ai/adopt-gen-ai)
 * [How gen AI affects the value of development work](/research/ai/value-of-development-work/)
 * [Fostering developers' trust in generative artificial intelligence](/research/ai/trust-in-ai/)
