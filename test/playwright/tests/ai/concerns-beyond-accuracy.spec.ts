@@ -1,9 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { sidebarLinks } from '../../sidebarLinks';
 
 const pages = [
   {
-    url: '/research/ai/concerns-beyond-accuracy-of-ai-output/',
+    url: '/ai/concerns-beyond-accuracy-of-ai-output/',
     title: 'DORA | Concerns beyond the accuracy of AI output',
     header: 'Concerns beyond the accuracy of AI output',
   },
@@ -31,13 +30,5 @@ for (const pageConfig of pages) {
     test('displays its last updated date', async ({ page }) => {
       await expect(page.locator('.updated')).toContainText(/Last updated: \w+ \d{1,2}, \d{4}/);
     });
-
-    if (pageConfig.url.includes('/research/')) {
-      test('has the correct sidebar.', async ({ page }) => {
-        for (const sidebarLink of sidebarLinks) {
-          await expect(page.getByRole('link', { name: sidebarLink, exact: true })).toBeVisible();
-        }
-      });
-    }
   });
 }

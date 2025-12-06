@@ -423,6 +423,16 @@
           "source": "/research/ai/measurement-frameworks/",
           "destination": "/ai/measurement-frameworks/",
           "type": 301
+        },
+        {
+          "source": "/research/ai/concerns-beyond-accuracy-of-ai-output",
+          "destination": "/ai/concerns-beyond-accuracy-of-ai-output/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/concerns-beyond-accuracy-of-ai-output/",
+          "destination": "/ai/concerns-beyond-accuracy-of-ai-output/",
+          "type": 301
         }
       ]
     }
