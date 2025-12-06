@@ -36,7 +36,7 @@ This report offers research-backed guidance for leaders and practitioners to eff
 * [Choosing measurement frameworks to fit your organizational goals](/ai/measurement-frameworks/)
 * [Concerns beyond the accuracy of AI output](/ai/concerns-beyond-accuracy-of-ai-output/)
 * [Helping developers adopt generative AI: Four practical strategies for organizations](/ai/adopt-gen-ai/)
-* [How gen AI affects the value of development work](/research/ai/value-of-development-work/)
+* [How gen AI affects the value of development work](/ai/value-of-development-work/)
 * [Fostering developers' trust in generative artificial intelligence](/research/ai/trust-in-ai/)
 * The [2024 DORA report](/research/2024/dora-report/) includes deep dives into the adoption, attitudes, and downstream impacts of AI.
 
