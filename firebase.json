@@ -453,6 +453,16 @@
           "source": "/research/ai/value-of-development-work/",
           "destination": "/ai/value-of-development-work/",
           "type": 301
+        },
+        {
+          "source": "/research/ai/trust-in-ai",
+          "destination": "/ai/trust-in-ai/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/trust-in-ai/",
+          "destination": "/ai/trust-in-ai/",
+          "type": 301
         }
       ]
     }
