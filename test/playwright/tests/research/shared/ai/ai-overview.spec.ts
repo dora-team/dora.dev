@@ -77,7 +77,7 @@ for (const pageConfig of pages) {
         await expect(downloadLink).toBeVisible();
         await expect(downloadLink).toHaveAttribute(
           "href",
-          "https://cloud.google.com/dora",
+          "/research/2025/dora-report/",
         );
       });
     });
@@ -101,7 +101,7 @@ for (const pageConfig of pages) {
         await expect(downloadLink).toBeVisible();
         await expect(downloadLink).toHaveAttribute(
           "href",
-          "/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development.pdf",
+          "/research/ai/gen-ai-report/",
         );
       });
     });
