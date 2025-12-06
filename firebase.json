@@ -383,6 +383,11 @@
           "source": "/dora-aicmr-2025",
           "destination": "/ai/capabilities-model/report/",
           "type": 302
+        },
+        {
+          "source": "/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development.pdf",
+          "destination": "/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development.pdf",
+          "type": 301
         }
       ]
     }
