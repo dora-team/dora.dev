@@ -92,7 +92,7 @@ The strategies we recommend will help ensure that AI is used strategically and r
 
 * [Download and read the 2024 DORA Report](/research/2024/dora-report/) for additional findings from the research program.
 * [Read more about how to transform your organization](/guides/how-to-transform/) for perspective into the importance of ensuring teams have the tools and resources to do their job, and of making good use of their skills and abilities.
-* Read about strategies the DORA team has identified for [ensuring AI amplifies developer value](/research/ai/value-of-development-work/). This article provides further guidance for  ensuring job satisfaction and productivity among developers.
+* Read about strategies the DORA team has identified for [ensuring AI amplifies developer value](/ai/value-of-development-work/). This article provides further guidance for  ensuring job satisfaction and productivity among developers.
 * [Join the dora.community](https://dora.community) to share your approaches and learn about how other organizations are encouraging their developers to adopt AI.
 
 #### Further Reading - notes on data analytic method
