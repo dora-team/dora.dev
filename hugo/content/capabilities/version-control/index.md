@@ -5,7 +5,7 @@ slug: version-control
 core: true
 ai: true
 date: 2023-03-27T09:48:51+01:00
-updated: 2025-07-16
+updated: 2025-12-06
 category: fast flow
 draft: false
 headline: "A guide to implementing the right version control practices for reproducibility and traceability."
@@ -117,7 +117,7 @@ in the following assets to their shared version control repository:
 * Container orchestration (for example, Kubernetes configuration, OpenShift
     configuration, and Docker Swarm configuration)
 * All cloud configuration files (for example,
-    [Infrastructure Manager](https://cloud.google.com/infrastructure-manager/)
+    [Infrastructure Manager](https://docs.cloud.google.com/infrastructure-manager/docs)
     configuration, AWS Cloudformation templates, Microsoft Azure Stack
     DSC files, OpenStack HEAT, and Pulumi stacks)
 * Any other script or configuration information required to create
@@ -217,7 +217,7 @@ Read more about version control in the following publications:
 * Explore Google Cloud products referenced in this article
   * [Google Cloud Artifact Registry](https://cloud.google.com/artifact-registry/)
   * [Google Cloud Storage](https://cloud.google.com/storage)
-  * [Google Cloud Infrastructure Manager](https://cloud.google.com/infrastructure-manager/)
+  * [Google Cloud Infrastructure Manager](https://docs.cloud.google.com/infrastructure-manager/docs)
 * Take the
     [DORA quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.
