@@ -13,7 +13,7 @@ authors:
     3: {name: "Dr. Kevin M. Storer", url: "/research/team/#dr-kevin-m-storer"}
     4: {name: 'Katharine Norwood', url: 'https://www.linkedin.com/in/katharine-norwood-33033a17/'}
 headline: "Understanding builder intent in the AI era"
-type: "research_archives/preview"
+type: "ai"
 ---
 
 {{< render_headless_bundle "research/shared/ai/builder-mindset" >}}

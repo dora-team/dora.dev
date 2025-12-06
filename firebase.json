@@ -403,6 +403,16 @@
           "source": "/research/ai/gen-ai-report-questions/",
           "destination": "/ai/gen-ai-report/questions/",
           "type": 301
+        },
+        {
+          "source": "/research/ai/builder-mindset",
+          "destination": "/ai/builder-mindset/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/builder-mindset/",
+          "destination": "/ai/builder-mindset/",
+          "type": 301
         }
       ]
     }
