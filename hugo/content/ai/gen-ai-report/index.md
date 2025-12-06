@@ -2,11 +2,10 @@
 title: "Impact of Generative AI in Software Development"
 date: 2025-03-06
 draft: false
-type: research_archives
+type: ai
 research_collection: "Artificial Intelligence"
 tab_order: "2"
-tab_title: "Gen AI Report"
-type: "research_archives"
+tab_title: "Impact of Gen AI report"
 ---
 ## Impact of Generative AI in Software Development
 
