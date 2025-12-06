@@ -54,7 +54,7 @@ bannerSubtitle: "Check if you have the most recent version of the report."
     Latest version: <code>v.2025.2</code>
   </p>
   <p>
-    <a href="/research/ai/gen-ai-report">Download the latest version of the Impact of Generative AI on Software Development report</a>.
+    <a href="/ai/gen-ai-report">Download the latest version of the Impact of Generative AI on Software Development report</a>.
   </p>
 </div>
 
@@ -69,9 +69,9 @@ bannerSubtitle: "Check if you have the most recent version of the report."
     Latest version: <code>v.2025.2.p</code>
   </p>
   <p>
-    <a href="/research/ai/gen-ai-report/">Download the latest digital version of the Impact of Generative AI on Software Development</a>.
+    <a href="/ai/gen-ai-report/">Download the latest digital version of the Impact of Generative AI on Software Development</a>.
   </p>
-  <a href="/research/ai/gen-ai-report/"><img src="/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png" alt="Impact of Generative AI on Software Development Cover" style="max-width:18em;"></a>
+  <a href="/ai/gen-ai-report/"><img src="/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png" alt="Impact of Generative AI on Software Development Cover" style="max-width:18em;"></a>
 </div>
 
 

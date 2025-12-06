@@ -465,6 +465,11 @@
           "type": 301
         },
         {
+          "source": "/research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png",
+          "destination": "/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png",
+          "type": 301
+        },
+        {
           "source": "/research/ai/errata",
           "destination": "/ai/gen-ai-report/errata/",
           "type": 301
