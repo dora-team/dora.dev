@@ -11,13 +11,13 @@ test.describe("AI Research Overview Page", () => {
 
   test("has the correct headers", async ({ page }) => {
     await expect(page.locator("h2").first()).toContainText(
-      "DORA AI Capabilities Model",
+      "Explore the model",
     );
     await expect(page.locator("h2").nth(1)).toContainText(
-      "State of AI-assisted Software Development",
+      "Read all of our past reports",
     );
     await expect(page.locator("h2").nth(2)).toContainText(
-      "Impact of Gen AI in Software Development",
+      "DORA’s AI Research",
     );
   });
 
