@@ -1,21 +1,21 @@
 import { test, expect } from '@playwright/test';
-import { LAST_UPDATED_DATE_REGEX } from '../constants';
+import { LAST_UPDATED_DATE_REGEX } from '../../constants';
 
 const pages = [
   {
-    url: '/ai/adopt-gen-ai/',
-    title: 'DORA | Helping developers adopt generative AI: Four practical strategies for organizations',
-    header: 'Helping developers adopt generative AI: Four practical strategies for organizations',
+    url: '/ai/research-insights/trust-in-ai/',
+    title: 'DORA | Fostering Trust in AI',
+    header: "Fostering Trust in AI",
   },
   {
-    url: '/experimental/insights/adopt-gen-ai/',
-    title: 'DORA | Adopt generative AI',
-    header: 'Helping developers adopt generative AI',
+    url: '/experimental/insights/trust-in-ai/',
+    title: 'DORA | Fostering Trust in AI',
+    header: "Fostering developers' trust in generative artificial intelligence",
   },
 ];
 
 for (const pageConfig of pages) {
-  test.describe(`Adopt gen AI page at ${pageConfig.url}`, () => {
+  test.describe(`Trust in AI page at ${pageConfig.url}`, () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(pageConfig.url);
     });

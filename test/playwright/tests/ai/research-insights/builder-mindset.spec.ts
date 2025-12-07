@@ -1,21 +1,21 @@
 import { test, expect } from '@playwright/test';
-import { LAST_UPDATED_DATE_REGEX } from '../constants';
+import { LAST_UPDATED_DATE_REGEX } from '../../constants';
 
 const pages = [
   {
-    url: '/ai/trust-in-ai/',
-    title: 'DORA | Fostering Trust in AI',
-    header: "Fostering Trust in AI",
+    url: '/ai/research-insights/builder-mindset/',
+    title: 'DORA | Understanding builder intent in the AI era',
+    header: 'Understanding builder intent in the AI era',
   },
   {
-    url: '/experimental/insights/trust-in-ai/',
-    title: 'DORA | Fostering Trust in AI',
-    header: "Fostering developers' trust in generative artificial intelligence",
+    url: '/experimental/insights/builder-mindset/',
+    title: 'DORA | Understanding builder intent in the AI era',
+    header: 'Understanding builder intent in the AI era',
   },
 ];
 
 for (const pageConfig of pages) {
-  test.describe(`Trust in AI page at ${pageConfig.url}`, () => {
+  test.describe(`Builder mindset page at ${pageConfig.url}`, () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(pageConfig.url);
     });
@@ -28,7 +28,7 @@ for (const pageConfig of pages) {
       await expect(page.getByRole('heading', { name: pageConfig.header })).toBeVisible();
     });
 
-    test('displays its last updated date', async ({ page }) => {
+    test('displays its last updated date.', async ({ page }) => {
       await expect(page.locator('.updated')).toContainText(LAST_UPDATED_DATE_REGEX);
     });
   });

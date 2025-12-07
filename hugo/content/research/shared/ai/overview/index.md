@@ -32,12 +32,12 @@ This report offers research-backed guidance for leaders and practitioners to eff
 
 * [Report: State of AI-assisted Software Development](/research/2025/dora-report/)
 * [Report: Impact of Gen AI in Software Development](/ai/gen-ai-report/)
-* [Understanding builder intent in the AI era](/ai/builder-mindset/)
-* [Choosing measurement frameworks to fit your organizational goals](/ai/measurement-frameworks/)
-* [Concerns beyond the accuracy of AI output](/ai/concerns-beyond-accuracy-of-ai-output/)
-* [Helping developers adopt generative AI: Four practical strategies for organizations](/ai/adopt-gen-ai/)
-* [How gen AI affects the value of development work](/ai/value-of-development-work/)
-* [Fostering developers' trust in generative artificial intelligence](/ai/trust-in-ai/)
+* [Understanding builder intent in the AI era](/ai/research-insights/builder-mindset/)
+* [Choosing measurement frameworks to fit your organizational goals](/ai/research-insights/measurement-frameworks/)
+* [Concerns beyond the accuracy of AI output](/ai/research-insights/concerns-beyond-accuracy-of-ai-output/)
+* [Helping developers adopt generative AI: Four practical strategies for organizations](/ai/research-insights/adopt-gen-ai/)
+* [How gen AI affects the value of development work](/ai/research-insights/value-of-development-work/)
+* [Fostering developers' trust in generative artificial intelligence](/ai/research-insights/trust-in-ai/)
 * The [2024 DORA report](/research/2024/dora-report/) includes deep dives into the adoption, attitudes, and downstream impacts of AI.
 
 ## Generative AI Guide

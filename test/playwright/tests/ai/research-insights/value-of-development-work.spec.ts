@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { LAST_UPDATED_DATE_REGEX } from '../constants';
+import { LAST_UPDATED_DATE_REGEX } from '../../constants';
 
 const pages = [
   {
-    url: '/ai/value-of-development-work/',
+    url: '/ai/research-insights/value-of-development-work/',
     title: 'DORA | How gen AI affects the value of development work',
     header: 'How gen AI affects the value of development work',
   },

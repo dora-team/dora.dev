@@ -151,22 +151,22 @@
         },
         {
           "source": "/research/2024/trust-in-ai",
-          "destination": "/research/ai/trust-in-ai/",
+          "destination": "/ai/research-insights/trust-in-ai/",
           "type": 301
         },
         {
           "source": "/research/2024/trust-in-ai/",
-          "destination": "/research/ai/trust-in-ai/",
+          "destination": "/ai/research-insights/trust-in-ai/",
           "type": 301
         },
         {
           "source": "/research/2024/value-of-development-work",
-          "destination": "/research/ai/value-of-development-work/",
+          "destination": "/ai/research-insights/value-of-development-work/",
           "type": 301
         },
         {
           "source": "/research/2024/value-of-development-work/",
-          "destination": "/research/ai/value-of-development-work/",
+          "destination": "/ai/research-insights/value-of-development-work/",
           "type": 301
         },
         {
@@ -406,62 +406,42 @@
         },
         {
           "source": "/research/ai/builder-mindset",
-          "destination": "/ai/builder-mindset/",
+          "destination": "/ai/research-insights/builder-mindset/",
           "type": 301
         },
         {
           "source": "/research/ai/builder-mindset/",
-          "destination": "/ai/builder-mindset/",
+          "destination": "/ai/research-insights/builder-mindset/",
           "type": 301
         },
         {
           "source": "/research/ai/measurement-frameworks",
-          "destination": "/ai/measurement-frameworks/",
+          "destination": "/ai/research-insights/measurement-frameworks/",
           "type": 301
         },
         {
           "source": "/research/ai/measurement-frameworks/",
-          "destination": "/ai/measurement-frameworks/",
+          "destination": "/ai/research-insights/measurement-frameworks/",
           "type": 301
         },
         {
           "source": "/research/ai/concerns-beyond-accuracy-of-ai-output",
-          "destination": "/ai/concerns-beyond-accuracy-of-ai-output/",
+          "destination": "/ai/research-insights/concerns-beyond-accuracy-of-ai-output/",
           "type": 301
         },
         {
           "source": "/research/ai/concerns-beyond-accuracy-of-ai-output/",
-          "destination": "/ai/concerns-beyond-accuracy-of-ai-output/",
+          "destination": "/ai/research-insights/concerns-beyond-accuracy-of-ai-output/",
           "type": 301
         },
         {
           "source": "/research/ai/adopt-gen-ai",
-          "destination": "/ai/adopt-gen-ai/",
+          "destination": "/ai/research-insights/adopt-gen-ai/",
           "type": 301
         },
         {
           "source": "/research/ai/adopt-gen-ai/",
-          "destination": "/ai/adopt-gen-ai/",
-          "type": 301
-        },
-        {
-          "source": "/research/ai/value-of-development-work",
-          "destination": "/ai/value-of-development-work/",
-          "type": 301
-        },
-        {
-          "source": "/research/ai/value-of-development-work/",
-          "destination": "/ai/value-of-development-work/",
-          "type": 301
-        },
-        {
-          "source": "/research/ai/trust-in-ai",
-          "destination": "/ai/trust-in-ai/",
-          "type": 301
-        },
-        {
-          "source": "/research/ai/trust-in-ai/",
-          "destination": "/ai/trust-in-ai/",
+          "destination": "/ai/research-insights/adopt-gen-ai/",
           "type": 301
         },
         {
@@ -481,12 +461,32 @@
         },
         {
           "source": "/research/ai/questions",
-          "destination": "/ai/adopt-gen-ai/questions/",
+          "destination": "/ai/research-insights/adopt-gen-ai/questions/",
           "type": 301
         },
         {
           "source": "/research/ai/questions/",
-          "destination": "/ai/adopt-gen-ai/questions/",
+          "destination": "/ai/research-insights/adopt-gen-ai/questions/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/trust-in-ai",
+          "destination": "/ai/research-insights/trust-in-ai/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/trust-in-ai/",
+          "destination": "/ai/research-insights/trust-in-ai/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/value-of-development-work",
+          "destination": "/ai/research-insights/value-of-development-work/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai/value-of-development-work/",
+          "destination": "/ai/research-insights/value-of-development-work/",
           "type": 301
         }
       ]

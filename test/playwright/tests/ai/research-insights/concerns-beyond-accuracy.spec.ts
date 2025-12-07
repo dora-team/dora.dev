@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 const pages = [
   {
-    url: '/ai/concerns-beyond-accuracy-of-ai-output/',
+    url: '/ai/research-insights/concerns-beyond-accuracy-of-ai-output/',
     title: 'DORA | Concerns beyond the accuracy of AI output',
     header: 'Concerns beyond the accuracy of AI output',
   },
