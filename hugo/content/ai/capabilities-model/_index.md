@@ -18,6 +18,11 @@ tab_title: "Overview"
   The <a href="/research/2025/dora-report/"> 2025 State of AI-assisted Software Development report</a> introduced the DORA AI Capabilities Model, a framework for understanding the capabilities that amplify the benefits of AI in software development.
 </p>
 
-<object data="ai-capabilities-model.svg" id="dora-ai-capabilities-model-report" type="image/svg+xml" class="responsive-svg"></object>
+<!-- sources for the Capabilities model widget are generated from the /svelte/ai-model folder, then copied here. -->
+<!-- the timestamp shortcode is appended as a cache buster -->
+<script type="module" src="model.js?t={{% timestamp %}}"></script>
+<link rel="stylesheet" href="model.css?t={{% timestamp %}}">
+<div id="app"></div>
+
 </item>
 </grid>
