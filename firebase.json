@@ -488,6 +488,31 @@
           "source": "/research/ai/value-of-development-work/",
           "destination": "/ai/research-insights/value-of-development-work/",
           "type": 301
+        },
+        {
+          "source": "/research/2025/ai-capabilities-model",
+          "destination": "/ai/capabilities-model/report/",
+          "type": 302
+        },
+        {
+          "source": "/research/2025/ai-capabilities-model/",
+          "destination": "/ai/capabilities-model/report/",
+          "type": 302
+        },
+        {
+          "source": "/research/ai/ai-capabilities-model",
+          "destination": "/ai/capabilities-model/report/",
+          "type": 302
+        },
+        {
+          "source": "/research/ai/ai-capabilities-model/",
+          "destination": "/ai/capabilities-model/report/",
+          "type": 302
+        },
+        {
+          "source": "/research/shared/ai-capabilities-model-report/2025-dora-ai-capabilities-model-report.png",
+          "destination": "/ai/capabilities-model/report/2025-dora-ai-capabilities-model-report.png",
+          "type": 301
         }
       ]
     }
