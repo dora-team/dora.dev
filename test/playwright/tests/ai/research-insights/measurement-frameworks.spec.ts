@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { sidebarLinks } from '../research/sidebarLinks';
+import { sidebarLinks } from '../../research/sidebarLinks';
 
 const pages = [
   {
@@ -9,7 +9,7 @@ const pages = [
     name: '2025',
   },
   {
-    url: '/ai/measurement-frameworks/',
+    url: '/ai/research-insights/measurement-frameworks/',
     title: 'DORA | Choosing measurement frameworks to fit your organizational goals',
     header: 'Choosing measurement frameworks to fit your organizational goals',
   },

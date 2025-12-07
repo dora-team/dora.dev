@@ -2,10 +2,10 @@
 title:  "Understanding builder intent in the AI era"
 date:  2025-10-17
 updated: 2025-10-17
-research_collection: "Artificial Intelligence"
+research_collection: "AI research insights"
+research_collection_title: "Builder mindset"
 draft: false
-tab_order: "10"
-author: "Kevin Storer"
+tab_order: "1"
 tab_title: "Builder mindset"
 authors:
     1: {name: 'Abey Stenman', url: 'https://www.linkedin.com/in/abeytid/'}

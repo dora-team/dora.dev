@@ -9,7 +9,7 @@ test('Gen AI guide errata has the correct title.', async ({ page }) => {
 });
 
 test('Gen AI guide errata has the correct header.', async ({ page }) => {
-  await expect(page.locator('h1')).toContainText('DORA Research Errata');
+  await expect(page.getByRole('heading', { name: 'DORA Research Errata' })).toBeVisible();
 });
 
 
