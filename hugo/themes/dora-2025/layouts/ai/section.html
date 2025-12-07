@@ -1,0 +1,15 @@
+{{ define "main" }}
+{{- partial "link_styles" "scss/research.scss" -}}
+{{ .Content }}
+
+<section>
+
+    <h3 id="dora_research_archives">DORA Research Archives</h3>
+    {{- partial "research_archives" . -}}
+
+    <h3>Meet the team</h3>
+    <p>Learn more about <a href='{{ "/research/team/" | relURL }}'>DORA's Research Team</a></p>
+
+</section>
+
+{{ end }}

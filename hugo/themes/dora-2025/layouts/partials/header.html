@@ -64,3 +64,8 @@
 {{ if not .Params.hideSiteBanner }}
 {{- partial "site_banner" . -}}
 {{ end }}
+
+<!-- if this is in the "ai" section, show the partial: ai_header -->
+{{ if (eq .Section "ai") }}
+  {{- partial "ai_header" . -}}
+{{ end }}
