@@ -1,0 +1,51 @@
+.section-report-hero {
+    background-color: var(--dora-primary-dark);
+    color: var(--dora-primary-light);
+    position: relative;
+
+    .hero-content {
+        margin: auto;
+        margin-bottom: 24px;
+        width: $layout-breakpoint-max;
+        max-width: 100vw;
+    }
+
+    div.hero-link {
+        text-align: right;
+        margin-right: 24px;
+
+        @include media-medium {
+            display: none;
+        }
+    }
+}
+
+
+// styles for section-level nav headers, e.g. "AI", "Research"
+.section-header {
+    padding: 8px 40px;
+
+    .content {
+        margin:auto;
+        max-width: $layout-breakpoint-max;
+        a {
+            font-size: 1.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--dora-primary-dark);
+
+            &:hover {
+                color: var(--dora-primary-light);
+            }
+        }
+    }
+
+    &.ai {
+        background-color: var(--dora-secondary-c);
+    }
+}
+
+.section-homepage-content {
+    margin:auto;
+    max-width: $layout-breakpoint-max;
+}
