@@ -21,9 +21,8 @@ draft: false
 <link rel="stylesheet" href="capabilities-model/model.css?t={{% timestamp %}}">
 <div id="app"></div>
 
-## TODO: everything below here
 
-## DORA AI Capabilities Model
+## Read all of our past reports
 
 <a href="/ai/capabilities-model/report/"><img src="/ai/capabilities-model/report/2025-dora-ai-capabilities-model-report.png" width="120em" style="float:left; margin-right: 1rem;" alt="DORA AI Capabilities Model report"></a>
 
@@ -31,15 +30,13 @@ The DORA AI Capabilities Model report, a companion guide to the [2025 State of A
 
 <a href="/ai/capabilities-model/report/"><button class="secondary">Coming soon</button></a>
 
-## State of AI-assisted Software Development
-
 <a href="/research/2025/dora-report/"><img src="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png" width="120em" style="float:left; margin-right: 1rem;" alt="State of AI-assisted Software Development"></a>
 
 The 2025 State of AI-assisted Software Development report finds that AI's primary role is that of an amplifier, magnifying the strengths of high-performing organizations and the dysfunctions of struggling ones. Download the report to explore the new DORA AI Capabilities Model, which identifies seven foundational practices that are proven to amplify the positive impact of AI on organizational performance.
 
 <a href="/research/2025/dora-report/"><button class="secondary">Download the report</button></a>
 
-## Impact of Gen AI in Software Development
+## DORA's AI Research
 
 <a href="/ai/gen-ai-report/"><img src="/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png" width="120em" style="float:left; margin-right: 1rem;" alt="Impact of Generative AI in Software Development"></a>
 
@@ -49,7 +46,6 @@ This report offers research-backed guidance for leaders and practitioners to eff
 
 <a href="/ai/gen-ai-report/"><button class="secondary">Download the report</button></a>
 
-## AI Research
 
 * [Report: State of AI-assisted Software Development](/research/2025/dora-report/)
 * [Report: Impact of Gen AI in Software Development](/ai/gen-ai-report/)
