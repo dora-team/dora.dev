@@ -1,5 +1,8 @@
 ---
 title: "AI Research Insights"
+top_header: "AI: Research insights"
+updated: 2025-10-17
+date: 2025-12-07
 research_collection: "AI research insights"
 tab_title: "Overview"
 tab_order: 0

@@ -1,5 +1,6 @@
 ---
 title: "Helping developers adopt generative AI: Four practical strategies for organizations"
+top_header: "AI: Research insights"
 date: 2025-01-31
 updated: 2025-03-19
 research_collection: "AI research insights"

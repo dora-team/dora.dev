@@ -1,5 +1,6 @@
 ---
 title:  "Concerns beyond the accuracy of AI output"
+top_header: "AI: Research insights"
 date: 2025-06-30
 updated: 2025-07-31
 research_collection: "AI research insights"

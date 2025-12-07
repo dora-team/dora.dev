@@ -1,5 +1,6 @@
 ---
 title: "Fostering Trust in AI"
+top_header: "AI: Research insights"
 date: 2024-09-13
 updated: 2025-03-19
 research_collection: "AI research insights"

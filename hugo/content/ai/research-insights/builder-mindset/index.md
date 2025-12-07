@@ -1,5 +1,6 @@
 ---
 title:  "Understanding builder intent in the AI era"
+top_header: "AI: Research insights"
 date:  2025-10-17
 updated: 2025-10-17
 research_collection: "AI research insights"

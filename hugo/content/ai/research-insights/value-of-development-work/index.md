@@ -1,5 +1,6 @@
 ---
 title: "How gen AI affects the value of development work"
+top_header: "AI: Research insights"
 date: 2024-12-10
 updated: 2025-03-05T00:00:00Z
 research_collection: "AI research insights"
