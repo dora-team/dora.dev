@@ -513,6 +513,16 @@
           "source": "/research/shared/ai-capabilities-model-report/2025-dora-ai-capabilities-model-report.png",
           "destination": "/ai/capabilities-model/report/2025-dora-ai-capabilities-model-report.png",
           "type": 301
+        },
+        {
+          "source": "/research/ai/",
+          "destination": "/ai/",
+          "type": 301
+        },
+        {
+          "source": "/research/ai",
+          "destination": "/ai/",
+          "type": 301
         }
       ]
     }
