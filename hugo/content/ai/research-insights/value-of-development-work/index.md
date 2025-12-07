@@ -10,7 +10,7 @@ authors:
     1: {name: "Dr. Kevin M. Storer", url: "/research/team/#dr-kevin-m-storer"}
 tab_order: "5"
 tab_title: "Value of development work"
-dline: "How gen AI affects the value of development work"
+headline: "How gen AI affects the value of development work"
 type: "ai"
 ---
 
