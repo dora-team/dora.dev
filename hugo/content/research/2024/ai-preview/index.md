@@ -82,6 +82,6 @@ As AI continues to reshape the software development landscape, understanding the
 
 ### Next steps
 
-* [Read more AI research](/research/ai) from DORA.
+* [Read more AI research](/ai) from DORA.
 * [Enable your software delivery teams to innovate with generative AI](/guides/how-to-innovate-with-generative-ai/) with insights from this DORA Guide.
 * [Join the DORA Community](https://dora.community) to continue this discussion and be notified when the 2024 DORA Report is published.
