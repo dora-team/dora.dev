@@ -5,6 +5,15 @@ date: 2025-11-26
 draft: false
 ---
 
+{{< section_report_hero
+  href="https://cloud.google.com/dora/"
+  text="Read our latest report"
+  target="_blank"
+  >}}
+
+
+<section class="section-homepage-content">
+
 ## DORA AI Capabilities Model
 
 <a href="/ai/capabilities-model/report/"><img src="/ai/capabilities-model/report/2025-dora-ai-capabilities-model-report.png" width="120em" style="float:left; margin-right: 1rem;" alt="DORA AI Capabilities Model report"></a>
@@ -47,3 +56,4 @@ This report offers research-backed guidance for leaders and practitioners to eff
 
 * [How to enable your software delivery teams to innovate with generative AI](/guides/how-to-innovate-with-generative-ai/)
 
+</section>

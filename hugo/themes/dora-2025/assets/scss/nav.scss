@@ -230,22 +230,3 @@ header {
     }
   }
 }
-
-// styles for section-level nav headers, e.g. "AI", "Research"
-.section-header {
-  padding:8px 40px;
-  a {
-    font-size:1.75rem;
-    font-weight:600;
-    text-decoration:none;
-    color:var(--dora-primary-dark);
-
-    &:hover {
-      color:var(--dora-primary-light);
-    }
-  }
-
-  &.ai {
-    background-color:var(--dora-secondary-c);
-  }
-}
