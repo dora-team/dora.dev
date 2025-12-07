@@ -6,11 +6,11 @@
     {{- partial "head" . -}}
 </head>
 
-<body style="background-color: var(--dora-primary-light);">
+<body>
     {{- partial "header" . -}}
-
-    {{ .Content }}
-
+    <div style="background-color: var(--dora-primary-light);">
+        {{ .Content }}
+    </div>
     {{- partial "footer" . -}}
 </body>
 

@@ -23,16 +23,16 @@
 
   // other useful colors
   --background: white;
-  --grey-10: color-mix(in srgb, var(--dora-black), white 90%);
-  --grey-15: color-mix(in srgb, var(--dora-black), white 85%);
-  --grey-20: color-mix(in srgb, var(--dora-black), white 80%);
-  --grey-30: color-mix(in srgb, var(--dora-black), white 70%);
-  --grey-40: color-mix(in srgb, var(--dora-black), white 60%);
-  --grey-50: color-mix(in srgb, var(--dora-black), white 50%);
-  --grey-60: color-mix(in srgb, var(--dora-black), white 40%);
-  --grey-70: color-mix(in srgb, var(--dora-black), white 30%);
-  --grey-80: color-mix(in srgb, var(--dora-black), white 20%);
-  --grey-90: color-mix(in srgb, var(--dora-black), white 10%);
+  --grey-10: color-mix(in srgb, var(--dora-black), var(--background) 90%);
+  --grey-15: color-mix(in srgb, var(--dora-black), var(--background) 85%);
+  --grey-20: color-mix(in srgb, var(--dora-black), var(--background) 80%);
+  --grey-30: color-mix(in srgb, var(--dora-black), var(--background) 70%);
+  --grey-40: color-mix(in srgb, var(--dora-black), var(--background) 60%);
+  --grey-50: color-mix(in srgb, var(--dora-black), var(--background) 50%);
+  --grey-60: color-mix(in srgb, var(--dora-black), var(--background) 40%);
+  --grey-70: color-mix(in srgb, var(--dora-black), var(--background) 30%);
+  --grey-80: color-mix(in srgb, var(--dora-black), var(--background) 20%);
+  --grey-90: color-mix(in srgb, var(--dora-black), var(--background) 10%);
 }
 
 // colors
