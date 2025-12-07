@@ -11,8 +11,17 @@ draft: false
   target="_blank"
   >}}
 
-
 <section class="section-homepage-content">
+
+## Explore the model
+
+<!-- sources for the Capabilities model widget are generated from the /svelte/ai-model folder, then copied here. -->
+<!-- the timestamp shortcode is appended as a cache buster -->
+<script type="module" src="capabilities-model/model.js?t={{% timestamp %}}"></script>
+<link rel="stylesheet" href="capabilities-model/model.css?t={{% timestamp %}}">
+<div id="app"></div>
+
+## TODO: everything below here
 
 ## DORA AI Capabilities Model
 
