@@ -1,10 +1,14 @@
 {{ define "main" }} {{- partial "link_styles" "scss/ai.scss" -}}
 
-<h1>AI: Research insights</h1>
+{{ if .Params.top_header }}
+<h1>{{ .Params.top_header }}</h1>
+{{ end }}
 {{ if .Params.research_collection }}
 {{- partial "research_archives_tabs" . -}}
 {{ end }}
+{{ if ne .Params.top_header .Title }}
 <h1>{{ .Title }}</h1>
+{{ end }}
 
 <article class="ai-content">
   {{ .Content }}
