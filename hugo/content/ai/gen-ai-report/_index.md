@@ -1,5 +1,6 @@
 ---
 title: "Impact of Generative AI in Software Development"
+top_header: "Artificial Intelligence"
 date: 2025-03-06
 draft: false
 type: ai

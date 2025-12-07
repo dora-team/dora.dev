@@ -10,7 +10,7 @@ test.describe('AICM report page', () => {
   });
 
   test('has the correct header', async ({ page }) => {
-    await expect(page.getByRole('heading', { name: 'DORA AI Capabilities Model' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'DORA AI Capabilities Model', exact: true })).toBeVisible();
   });
 
   test('does not show the research note', async ({ page }) => {

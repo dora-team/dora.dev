@@ -11,6 +11,7 @@ test("Gen AI report page has the correct title.", async ({ page }) => {
 });
 
 test("Gen AI report page has the correct header.", async ({ page }) => {
+  await expect(page.getByRole("heading", { name: "Artificial Intelligence", exact: true })).toBeVisible();
   await expect(page.locator('h1').filter({ hasText: "Impact of Generative AI in Software Development" })).toBeVisible();
 });
 

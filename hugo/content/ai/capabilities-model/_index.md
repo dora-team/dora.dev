@@ -1,5 +1,6 @@
 ---
 title: "DORA AI Capabilities Model"
+top_header: "DORA AI Capabilities Model"
 date: 2025-11-25
 updated: 2025-12-03
 draft: false
