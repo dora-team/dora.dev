@@ -40,7 +40,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
     img_src="/img/homepage/snipes/genai.png"
     eyebrow="Guides"
     headline="Generative AI"
-    url="/research/ai/"
+    url="/ai/"
   >}}
     Leverage DORA’s research findings to apply a holistic, iterative strategy as you experiment with and adopt emerging AI technologies. Learn how a focus on users can help ensure positive outcomes.
     {{< /homepage/snipe >}}
