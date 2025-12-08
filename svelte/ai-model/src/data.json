@@ -28,7 +28,7 @@
     },
     {
       "name": "Quality internal platform",
-      "id": "quality-internal-platform",
+      "id": "platform-engineering",
       "description": "A platform provides the automated, secure pathways that allow AI’s benefits to scale across the organization."
     },
     {
@@ -38,12 +38,36 @@
     }
   ],
   "outcomes": [
-    { "name": "Team performance", "id": "team-performance", "description": "The perceived effectiveness and collaborative strength of an individual’s immediate team." },
-    { "name": "Code quality", "id": "code-quality", "description": "An individual’s assessment of the quality of code underlying the primary application or service they work on." },
-    { "name": "Individual effectiveness", "id": "individual-effectiveness", "description": "An individual’s self-assessed effectiveness and sense of accomplishment at work." },
-    { "name": "Product performance", "id": "product-performance", "description": "The success and quality of the products or services the team is building, based on characteristics like helping users accomplish important tasks and keeping information safe, and performance metrics such as latency." },
-    { "name": "Reduced friction", "id": "reduced-friction", "description": "Friction is the result of obstacles which hinder an individual’s work. Lower amounts of friction are generally considered to be a positive outcome." },
-    { "name": "Software delivery throughput", "id": "software-delivery-throughput", "description": "The speed and efficiency of the software delivery process." },
+    {
+      "name": "Team performance",
+      "id": "team-performance",
+      "description": "The perceived effectiveness and collaborative strength of an individual’s immediate team."
+    },
+    {
+      "name": "Code quality",
+      "id": "code-quality",
+      "description": "An individual’s assessment of the quality of code underlying the primary application or service they work on."
+    },
+    {
+      "name": "Individual effectiveness",
+      "id": "individual-effectiveness",
+      "description": "An individual’s self-assessed effectiveness and sense of accomplishment at work."
+    },
+    {
+      "name": "Product performance",
+      "id": "product-performance",
+      "description": "The success and quality of the products or services the team is building, based on characteristics like helping users accomplish important tasks and keeping information safe, and performance metrics such as latency."
+    },
+    {
+      "name": "Reduced friction",
+      "id": "reduced-friction",
+      "description": "Friction is the result of obstacles which hinder an individual’s work. Lower amounts of friction are generally considered to be a positive outcome."
+    },
+    {
+      "name": "Software delivery throughput",
+      "id": "software-delivery-throughput",
+      "description": "The speed and efficiency of the software delivery process."
+    },
     {
       "name": "Organizational performance",
       "id": "organizational-performance",
@@ -51,22 +75,90 @@
     }
   ],
   "connections": [
-    { "from": "user-centric-focus", "to": "team-performance", "index": 0 },
-    { "from": "strong-version-control-practices", "to": "team-performance", "index": 1 },
-    { "from": "strong-version-control-practices", "to": "individual-effectiveness", "index": -1 },
-    { "from": "ai-accessible-internal-data", "to": "code-quality", "index": 0 },
-    { "from": "ai-accessible-internal-data", "to": "individual-effectiveness", "index": 0 },
-    { "from": "ai-accessible-internal-data", "to": "product-performance", "index": -1 },
-    { "from": "working-in-small-batches", "to": "individual-effectiveness", "index": 1 },
-    { "from": "working-in-small-batches", "to": "product-performance", "index": 0 },
-    { "from": "working-in-small-batches", "to": "reduced-friction", "index": -1 },
-    { "from": "clear-and-communicated-ai-stance", "to": "individual-effectiveness", "index": 2 },
-    { "from": "clear-and-communicated-ai-stance", "to": "product-performance", "index": 1 },
-    { "from": "clear-and-communicated-ai-stance", "to": "reduced-friction", "index": 0 },
-    { "from": "clear-and-communicated-ai-stance", "to": "software-delivery-throughput", "index": 0 },
-    { "from": "clear-and-communicated-ai-stance", "to": "organizational-performance", "index": -2 },
-    { "from": "quality-internal-platform", "to": "reduced-friction", "index": 1 },
-    { "from": "quality-internal-platform", "to": "organizational-performance", "index": -1 },
-    { "from": "healthy-data-ecosystems", "to": "organizational-performance", "index": 0 }
+    {
+      "from": "user-centric-focus",
+      "to": "team-performance",
+      "index": 0
+    },
+    {
+      "from": "strong-version-control-practices",
+      "to": "team-performance",
+      "index": 1
+    },
+    {
+      "from": "strong-version-control-practices",
+      "to": "individual-effectiveness",
+      "index": -1
+    },
+    {
+      "from": "ai-accessible-internal-data",
+      "to": "code-quality",
+      "index": 0
+    },
+    {
+      "from": "ai-accessible-internal-data",
+      "to": "individual-effectiveness",
+      "index": 0
+    },
+    {
+      "from": "ai-accessible-internal-data",
+      "to": "product-performance",
+      "index": -1
+    },
+    {
+      "from": "working-in-small-batches",
+      "to": "individual-effectiveness",
+      "index": 1
+    },
+    {
+      "from": "working-in-small-batches",
+      "to": "product-performance",
+      "index": 0
+    },
+    {
+      "from": "working-in-small-batches",
+      "to": "reduced-friction",
+      "index": -1
+    },
+    {
+      "from": "clear-and-communicated-ai-stance",
+      "to": "individual-effectiveness",
+      "index": 2
+    },
+    {
+      "from": "clear-and-communicated-ai-stance",
+      "to": "product-performance",
+      "index": 1
+    },
+    {
+      "from": "clear-and-communicated-ai-stance",
+      "to": "reduced-friction",
+      "index": 0
+    },
+    {
+      "from": "clear-and-communicated-ai-stance",
+      "to": "software-delivery-throughput",
+      "index": 0
+    },
+    {
+      "from": "clear-and-communicated-ai-stance",
+      "to": "organizational-performance",
+      "index": -2
+    },
+    {
+      "from": "platform-engineering",
+      "to": "reduced-friction",
+      "index": 1
+    },
+    {
+      "from": "platform-engineering",
+      "to": "organizational-performance",
+      "index": -1
+    },
+    {
+      "from": "healthy-data-ecosystems",
+      "to": "organizational-performance",
+      "index": 0
+    }
   ]
 }

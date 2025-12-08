@@ -164,6 +164,18 @@ h1 a.core {
     vertical-align: middle;
 }
 
+h1 a.ai-badge {
+    display: inline-block;
+    background-color: $background-soft;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
 @include media-medium {
     .capabilitiesGrid {
         grid-template-columns: 1fr;
