@@ -4,6 +4,8 @@
 # It's not very discriminating, so use with caution 
 # Before running it, run `firebase login`
 
-firebase hosting:channel:list --site doradotdev --json | \
-  jq -r '.result.channels[] | select((.name | split("/")[-1]) != "live") | .name | split("/")[-1]' | \
-  xargs -r -I {} firebase hosting:channel:delete {} --site doradotdev --force
+SITE="doradotdev"
+
+firebase hosting:channel:list --site "${SITE}" --json | \
+  jq -r '.result.channels[] | .name | split("/")[-1] | select(. != "live")' | \
+  xargs -r -I {} firebase hosting:channel:delete {} --site "${SITE}" --force
