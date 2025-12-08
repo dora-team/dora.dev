@@ -5,7 +5,7 @@ slug: user-centric-focus
 core: false
 ai: true
 date: 2025-12-08
-updated: 2024-12-08
+updated: 2025-12-08
 category: AI
 draft: false
 headline: "Building the right thing is just as important as building the thing right. A user-centric focus ensures your speed and stability serve a purpose."
