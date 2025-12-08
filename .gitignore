@@ -44,3 +44,9 @@ svelte/**/dist/
 .idea/
 
 svelte/local/*
+
+# Playwright files
+**/test-results/
+**/playwright-report/
+**/blob-report/
+**/playwright/.cache/
