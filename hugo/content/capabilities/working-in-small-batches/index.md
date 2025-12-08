@@ -4,7 +4,7 @@ titleForHTMLHead: "Capabilities: Working in Small Batches" # TODO: can we DRY th
 date: 2023-03-24T12:54:18Z
 category: fast flow
 core: true
-draft: false
+ai: true
 updated: 2025-07-15
 headline: "Create shorter lead times and faster feedback loops by working in small batches. Learn common obstacles to this critical capability and how to overcome them."
 summary: "Create shorter lead times and faster feedback loops by working in small batches. Learn common obstacles to this critical capability and how to overcome them."
