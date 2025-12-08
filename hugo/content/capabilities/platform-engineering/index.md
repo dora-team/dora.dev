@@ -4,8 +4,8 @@ titleForHTMLHead: "Platform Engineering"
 slug: platform-engineering
 core: false
 ai: true
-date: 2024-01-01
-updated: 2024-12-08
+date: 2025-12-08
+updated: 2025-12-08
 category: AI
 draft: false
 headline: "Platform engineering delivers shared capabilities and self-service platforms to reduce cognitive load and improve developer productivity."
