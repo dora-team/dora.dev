@@ -188,7 +188,6 @@
     width: 100%;
     margin: 0 auto;
     border: 1px solid var(--dora-primary-dark);
-    max-width: 800px;
     border-radius: 24px;
     padding: 12px 6px;
     background-color: white;
@@ -210,7 +209,7 @@
         /* text-wrap: nowrap; */
         transition: all 0.2s ease-in-out;
         cursor: pointer;
-        font-size: clamp(0.6rem, 1vw, 0.8rem);
+        font-size: clamp(0.6rem, 1.5vw, 1rem);
 
         &.active {
           background-color: var(--dora-mauve);
