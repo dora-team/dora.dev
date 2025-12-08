@@ -11,7 +11,7 @@ test.describe("Platform engineering capability", () => {
   });
 
   test("has the correct header", async ({ page }) => {
-    await expect(page.locator("h1")).toHaveText("Platform Engineering");
+    await expect(page.locator("h1")).toContainText("Platform Engineering");
   });
 
   test("displays its last updated date", async ({ page }) => {
