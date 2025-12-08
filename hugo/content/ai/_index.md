@@ -45,7 +45,7 @@ The 2025 State of AI-assisted Software Development report finds that AI's primar
 
 <a href="/research/2025/dora-report/"><button class="secondary">Download the report</button></a>
 
-## DORA's AI Research
+#### DORA's AI Research
 
 <a href="/ai/gen-ai-report/"><img src="/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png" width="120em" style="float:left; margin-right: 1rem;" alt="Impact of Generative AI in Software Development"></a>
 
@@ -55,6 +55,11 @@ This report offers research-backed guidance for leaders and practitioners to eff
 
 <a href="/ai/gen-ai-report/"><button class="secondary">Download the report</button></a>
 
+{{% insights_list 
+  heading="DORA's AI Research"
+ %}}
+
+##### Generative AI Insights
 
 * [Report: State of AI-assisted Software Development](/research/2025/dora-report/)
 * [Report: Impact of Gen AI in Software Development](/ai/gen-ai-report/)
@@ -66,8 +71,10 @@ This report offers research-backed guidance for leaders and practitioners to eff
 * [Fostering developers' trust in generative artificial intelligence](/ai/research-insights/trust-in-ai/)
 * The [2024 DORA report](/research/2024/dora-report/) includes deep dives into the adoption, attitudes, and downstream impacts of AI.
 
-## Generative AI Guide
+##### Generative AI Guide
 
 * [How to enable your software delivery teams to innovate with generative AI](/guides/how-to-innovate-with-generative-ai/)
+
+{{% /insights_list %}}
 
 </section>
