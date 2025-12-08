@@ -10,6 +10,9 @@ test.describe("AI Research Overview Page", () => {
   });
 
   test("has the correct headers", async ({ page }) => {
+    await expect(page.locator("h1").first()).toContainText(
+      "AI Capabilities Model",
+    );
     await expect(page.locator("h2").first()).toContainText(
       "Explore the model",
     );
