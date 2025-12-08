@@ -23,6 +23,7 @@
 
   // other useful colors
   --background: white;
+
   --grey-10: color-mix(in srgb, var(--dora-black), var(--background) 90%);
   --grey-15: color-mix(in srgb, var(--dora-black), var(--background) 85%);
   --grey-20: color-mix(in srgb, var(--dora-black), var(--background) 80%);
@@ -33,9 +34,13 @@
   --grey-70: color-mix(in srgb, var(--dora-black), var(--background) 30%);
   --grey-80: color-mix(in srgb, var(--dora-black), var(--background) 20%);
   --grey-90: color-mix(in srgb, var(--dora-black), var(--background) 10%);
+
+  --dora-secondary-b-30: color-mix(in srgb, var(--dora-secondary-b), var(--background) 70%);
+  --dora-secondary-c-30: color-mix(in srgb, var(--dora-secondary-c), var(--background) 70%);
 }
 
-// colors
+
+// colors (mostly legacy; TODO: update these to use or inherit from the brand colors)
 $color-text: #202124;
 $color-text-light: #9aa0a6;
 $color-text-medium: #5b5e66;
@@ -51,7 +56,6 @@ $color-popover-background: #f8f9fa;
 $background-light: #f8f9fa;
 $background-medium: #f0f1f2;
 $background-highlight: #e8f0fe;
-$background-soft: #e1f3fc;
 
 $border-light: var(--grey-15);
 $border-medium: #aeb0b7;
