@@ -2,11 +2,11 @@
 {{- partial "link_styles" "scss/capabilities.scss" -}}
 
 <h4 class="categories"><a href="/capabilities">Capabilities</a>: {{ .Params.category }}</h4>
-<h1>
+<h1 class="tags">
     {{ .Title }}
     <span class="labels">
         {{ if .Params.core }}<a class="core" href='{{ relref . "/research/" }}'>core</a>{{ end }}
-        {{ if .Params.ai }}<a class="ai-badge" href='{{ relref . "/ai/#explore-the-model" }}'>AI</a>{{ end }}
+        {{ if .Params.ai }}<a class="ai" href='{{ relref . "/ai/#explore-the-model" }}'>AI</a>{{ end }}
     </span>
 </h1>
 {{ if .Params.authors }}
