@@ -33,15 +33,15 @@
             grid-area: core;
 
             a {
-                font-weight: 500;
-                background-color: $background-soft;
+                font-weight: 400;
+                background-color: var(--dora-secondary-b-30);
                 border-top-right-radius: 0.5em;
                 border-bottom-left-radius: 0.5em;
                 text-align: center;
                 display: block;
                 font-size: 0.8rem;
                 padding: 0.25rem 0;
-                color: $color-link;
+                color: var(--dora-primary-dark);
                 text-decoration: none;
             }
         }
@@ -157,7 +157,8 @@ section.hasSidebar {
 h1.tags {
     a {
         display: inline-block;
-        background-color: $background-soft;
+        background-color: var(--dora-secondary-b-30);
+        color: var(--dora-primary-dark);
         font-weight: 400;
         font-size: 1rem;
         line-height: 1rem;
@@ -165,6 +166,10 @@ h1.tags {
         border-radius: 0.5rem;
         text-decoration: none;
         vertical-align: middle;
+
+        &.ai {
+            background-color: var(--dora-secondary-c-30);
+        }
     }
 }
 
