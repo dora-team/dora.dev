@@ -16,6 +16,11 @@ test('Version control is a core capability.', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'core', exact: true })).toBeVisible();
 });
 
+test("is an AI capability", async ({ page }) => {
+  await expect(page.locator(".labels")).toContainText("AI");
+  await expect(page.getByRole('link', { name: 'AI', exact: true })).toBeVisible();
+});
+
 test('Version control page displays a sidebar', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Climate for Learning', exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Fast Flow', exact: true })).toBeVisible();

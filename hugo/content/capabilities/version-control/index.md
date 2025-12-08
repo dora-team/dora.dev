@@ -3,6 +3,7 @@ title: "Version control"
 titleForHTMLHead: "Capabilities: Version Control" # TODO: can we DRY this out?
 slug: version-control
 core: true
+ai: true
 date: 2023-03-27T09:48:51+01:00
 updated: 2025-07-16
 category: fast flow
