@@ -5,11 +5,20 @@ date: 2025-11-26
 draft: false
 ---
 
-{{< section_report_hero
-  href="https://cloud.google.com/dora/"
-  text="Read our latest report"
-  target="_blank"
+{{< report_feature
+  eyebrow="our latest report"
+  headline="AI Capabilities Model"
+  url="/ai/capabilities-model/report/"
+  cta="Coming soon"
+  url_2="/publications/"
+  cta_2="View all reports"
+  img_src="capabilities-model/report/2025-dora-ai-capabilities-model-report.png"
+  img_align="right"
+  img_stroke="true"
+  delete_on=""
   >}}
+  The DORA AI Capabilities Model report, a companion guide to the [2025 State of AI-assisted Software Development report](/research/2025/dora-report/), serves as a practical guide to the seven capabilities that amplify the benefits of AI. For each of the seven core capabilities, this report details implementation strategies, specific tactics for teams to get started, and methods for monitoring progress and fostering continuous improvement.
+  {{< /report_feature >}}
 
 <section class="section-homepage-content">
 

@@ -18,7 +18,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
   DORA is the largest and longest running research program of its kind, that seeks to understand the capabilities that drive software delivery and operations performance. DORA helps teams apply those capabilities, leading to better organizational performance.
   {{< /homepage/lede >}}
 
-{{< homepage/feature
+{{< report_feature
   eyebrow="our latest report"
   headline="State of AI-assisted Software Development"
   url="https://cloud.google.com/dora"
@@ -26,12 +26,13 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
   img_src="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png"
   img_align="right"
   img_stroke="true"
+  maxwidth="maxplus"
   delete_on=""
   >}}
   The State of AI-assisted Software Development report reveals AI's primary role is as an amplifier, magnifying an organization's existing strengths and weaknesses. The greatest returns on AI investment come not from the tools themselves, but from a strategic focus on the underlying organizational system.
 
   This year's research introduces the new DORA AI Capabilities Model, which identifies the key technical and cultural practices that are proven to amplify the positive impacts of AI on performance.
-  {{< /homepage/feature >}}
+  {{< /report_feature >}}
 
 {{< homepage/snipe-wrapper mode="start" >}}
 

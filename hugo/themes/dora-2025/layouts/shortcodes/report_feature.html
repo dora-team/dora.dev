@@ -1,0 +1,64 @@
+<!---
+    params:
+    eyebrow -- text for above headline (optional)
+    headline -- text for headline
+    url -- destination that header and image will link to (optional)
+    cta -- text for the "Call to Action" button (optional; if omitted, no CTA button will be displayed)
+    url_2 -- destination for secondary CTA button (optional)
+    cta_2 -- text for secondary CTA button (optional)
+    img_src -- source of image
+    img_alt -- alt text for image; (required if img-src is set)
+    img_align -- position of image [left|right] (optional; defaults to "right")
+    img_stroke -- boolean: draw a stroke around the image (defaults to "false")
+    delete_on [date] -- if specified, the article will be suppressed after this date
+    maxwidth -- "max" || "maxplus": these values correspond to the breakpoints set in _variables.scss (default: max)
+-->
+
+{{ $delete_on := (.Get "delete_on" | default "2999-12-31") | time.AsTime }}
+{{ $url := .Get "url" }}
+{{ $target := "" }}
+{{ $url_2 := .Get "url_2" }}
+{{ $target_2 := "" }}
+
+{{ if or (strings.HasPrefix $url "http") (strings.HasPrefix $url "https") (strings.HasPrefix $url "/pdf") }}
+  {{ $target = "_blank" }}
+{{ end }}
+
+{{ if or (strings.HasPrefix $url_2 "http") (strings.HasPrefix $url_2 "https") (strings.HasPrefix $url_2 "/pdf") }}
+  {{ $target_2 = "_blank" }}
+{{ end }}
+
+{{ $img_align := .Get "img_align" | default "right" }}
+
+{{ $maxwidth := .Get "maxwidth" | default "max" }}
+
+{{ if lt now $delete_on }}
+<div class="report-feature-container">
+  <div class="report-feature image-align-{{ $img_align }} {{ $maxwidth }}">
+    <div class="content">
+      {{ if .Get "eyebrow" }}
+        <h3>{{ .Get "eyebrow" }}</h3>
+      {{ end }}
+      <h1>{{ .Get "headline" }}</h1>
+      <p>{{ .Inner | markdownify }}</p>
+      {{- if and (.Get "cta") ($url) -}}
+        <br>
+        <a href='{{ $url }}' target="{{ $target }}">
+          <button class="inverted">{{ .Get "cta" }}</button>
+        </a>
+        {{- if and (.Get "cta_2") ($url_2) -}}
+          <a href='{{ $url_2 }}' target="{{ $target_2 }}">
+            <button class="inverted">{{ .Get "cta_2" }}</button>
+          </a>
+        {{- end -}}
+      {{- end -}}
+    </div>
+    <div class="image">
+      <a href='{{ $url }}' target="{{ $target }}">
+        <img src='{{ .Get "img_src" }}' alt='{{ .Get "img_alt" }}' {{- if .Get "img_stroke" -}}class="stroke" {{- end
+          -}}>
+      </a>
+    </div>
+  </div>
+</div>
+{{ end }}
