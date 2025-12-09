@@ -25,11 +25,11 @@
   padding: 8px 40px;
 
   .content {
-    background-image:url(/img/ai-illustration.png);
-    background-size:contain;
+    background-image: url(/img/ai-illustration.png);
+    background-size: contain;
     background-position: left center;
     background-repeat: no-repeat;
-    padding-left:70px;
+    padding-left: 70px;
 
     a {
       font-size: 1.75rem;
@@ -203,13 +203,21 @@
 }
 
 .report-gallery {
-  display: flex;
-  flex-direction: row;
-  column-gap: 1.5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1.5em;
   margin-bottom: 24px;
 
+  @include media-medium {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include media-small {
+    grid-template-columns: 1fr;
+  }
+
   .report-gallery-item {
-    width: 25%;
+
 
     a {
       text-decoration: none;
@@ -237,9 +245,11 @@
     &:nth-child(2) {
       background-color: var(--dora-highlight);
     }
+
     &:nth-child(3) {
       background-color: var(--dora-secondary-a);
     }
+
     &:nth-child(4) {
       background-color: var(--dora-secondary-c);
     }
