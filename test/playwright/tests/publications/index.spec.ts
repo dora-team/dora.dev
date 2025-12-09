@@ -19,10 +19,32 @@ test.describe("Publications Page", () => {
     ).toHaveAttribute("href", "/sponsors/");
   });
 
+  test.describe("DORA AI Capabilities Model report", () => {
+    test("links to the report", async ({ page }) => {
+      const reportLink = page
+        .locator("section.publicationHighlight")
+        .filter({ hasText: "DORA AI Capabilities Model report" })
+        .getByRole("link", { name: "Download the report" });
+      await expect(reportLink).toHaveAttribute(
+        "href",
+        "https://cloud.google.com/resources/content/2025-dora-ai-capabilities-model-report",
+      );
+    });
+
+    test("shows the report image", async ({ page }) => {
+      const reportImage = page
+        .locator("section.publicationHighlight")
+        .filter({ hasText: "DORA AI Capabilities Model report" })
+        .getByRole("img");
+      await expect(reportImage).toBeVisible();
+    });
+  });
+
   test.describe("State of AI-assisted Software Development", () => {
     test("links to the report", async ({ page }) => {
       const reportLink = page
         .locator("section.publicationHighlight")
+        .filter({ hasText: "finds that AI's primary role" })
         .getByRole("link", { name: "Download the report" });
       await expect(reportLink).toHaveAttribute(
         "href",
@@ -33,6 +55,7 @@ test.describe("Publications Page", () => {
     test("shows the report image", async ({ page }) => {
       const reportImage = page
         .locator("section.publicationHighlight")
+        .filter({ hasText: "finds that AI's primary role" })
         .getByRole("img");
       await expect(reportImage).toBeVisible();
     });
