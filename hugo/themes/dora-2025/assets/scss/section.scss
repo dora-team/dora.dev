@@ -26,7 +26,7 @@
 
   .content {
     background-image: url(/img/ai-illustration.png);
-    background-size: contain;
+    background-size: 70px;
     background-position: left center;
     background-repeat: no-repeat;
     padding-left: 70px;
@@ -206,7 +206,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1.5em;
-  margin-bottom: 24px;
+  margin-bottom: 12px 12px 24px 12px;
 
   @include media-medium {
     grid-template-columns: 1fr 1fr;
