@@ -5,7 +5,7 @@ date: 2023-03-24T12:54:18Z
 category: fast flow
 core: true
 ai: true
-updated: 2025-07-15
+updated: 2025-12-08
 headline: "Create shorter lead times and faster feedback loops by working in small batches. Learn common obstacles to this critical capability and how to overcome them."
 summary: "Create shorter lead times and faster feedback loops by working in small batches. Learn common obstacles to this critical capability and how to overcome them."
 ---
@@ -26,6 +26,8 @@ and
 [visibility into customer feedback](/capabilities/customer-feedback), working in small batches predicts software
 delivery performance and organizational performance.
 
+> In the era of generative AI, this capability has become even more critical. DORA research shows that working in small batches amplifies the positive impact of AI adoption on **product performance** and helps turn AI’s neutral effect on organizational friction into a net positive.
+
 One reason work is done in large batches is because of
 [the large fixed cost of handing off changes](/capabilities/streamlining-change-approval).
 In traditional phased approaches to software development, handoffs from
@@ -34,7 +36,7 @@ months worth of work by teams consisting of tens or hundreds of people. With
 this traditional approach, collecting feedback on a change can take weeks or
 months.
 
-In contrast, DevOps practices, which utilize cross-functional teams and
+In contrast, modern practices, which utilize cross-functional teams and
 lightweight approaches, allow for software to progress from development through
 test and operations into production in a matter of minutes. However, this
 rapid progression requires working with code in small batches.
@@ -45,6 +47,7 @@ Working in small batches has many benefits:
     easier to triage and remediate problems.
 * It increases efficiency and motivation.
 * It prevents your organization from succumbing to the sunk-cost fallacy.
+* It acts as a safety net for AI adoption. AI adoption often leads to increased [software delivery instability](/guides/dora-metrics-four-keys/#stability); working in small batches acts as a critical countermeasure to this risk, ensuring that the increased velocity from AI translates into value rather than chaos.
 
 You can apply the small batches approach at the feature and the product level.
 As an illustration, a minimum viable product, or MVP, is a prototype of a
@@ -83,6 +86,8 @@ feature into even smaller batches. This process can be difficult and requires
 experience to develop. Ideally, your developers should be checking multiple
 small releasable changes
 [into trunk at least once per day](/capabilities/trunk-based-development).
+
+This discipline is especially important when using AI coding assistants. While AI excels at generating large blocks of code quickly, large changes are difficult to review, test, and integrate safely. By enforcing small batches, you shift the developer's focus from raw code generation to thoughtful decomposition and verification.
 
 The key is to start development at the service or API layer, not at the UI
 layer. In this way, you can make additions to the API that won't initially be
@@ -126,6 +131,7 @@ When you break down work into small batches, you encounter two pitfalls:
     than a week to complete and check is too big. Throughout the development
     process, it's essential that you analyze how to break down ideas into
     increments that you can develop iteratively.
+    * *AI Note:* This pitfall is common with AI tools, which are often optimized for generating large, complete features. Avoid the temptation to generate massive pull requests; the cognitive load required to review a small chunk of machine-generated code may be higher per line than reviewing human-written code.
 
 * **Working in small batches but then regrouping the batches before
     sending them downstream for testing or release**. Regrouping work in this
@@ -186,6 +192,8 @@ Your measurements depend on the following:
 
 Read more about working in small batches in the following publications:
 
+* [DORA AI Capabilities Model report](/ai/capabilities-model/report/)
+* [2025 State of AI-assisted Software Development](/research/2025/dora-report)
 * [Accelerate State of DevOps Report 2023](/research/2023/dora-report)
 * [State of DevOps Report 2017](/research/2017/)
 * [State of DevOps Report 2016](/research/2016/)
@@ -195,3 +203,4 @@ Read more about working in small batches in the following publications:
 * Take the
     [DORA quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.
+* Explore the [DORA AI Capabilities Model](/ai/#explore-the-model) to see how small batches fit into a successful AI strategy.
