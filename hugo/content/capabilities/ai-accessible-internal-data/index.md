@@ -30,7 +30,7 @@ Many teams are familiar with *prompt engineering* (writing a specific command). 
 A simple prompt is like giving an assistant a single order. Context engineering is the system that automatically gathers relevant information—such as the latest API docs, company policies, and compliant code snippets—and uses it to manage an intelligent workflow. This enables the AI to critique its own work against your standards and improve its output.
 
 
-![Comparison of prompt engineering vs context engineering](prompt-vs-context-engineering.png)
+![Prompt engineering vs context engineering](prompt-vs-context.png)
 
 <figcaption>Prompt engineering vs context engineering</figcaption>
 
@@ -44,7 +44,7 @@ This capability is the bridge between “using AI” and “getting value from A
   * **Pattern enforcement:** automatically validating code against internal standards
 * **Risks**
   * **Delivery instability:** Rapid code generation can harm stability if [small batch sizes](/capabilities/working-in-small-batches) are ignored.
-  * **Techncial debt:** replicating deprecated patterns amplifies debt.
+  * **Technical debt:** replicating deprecated patterns amplifies debt.
   * **Data exposure:** surfacing sensitive information or secrets if access controls are not enforced.
 
 ## How to implement AI-accessible internal data
