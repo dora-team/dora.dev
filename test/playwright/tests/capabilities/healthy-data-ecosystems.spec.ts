@@ -26,6 +26,6 @@ test.describe("Healthy data ecosystems capability", () => {
 
   test("is an AI capability", async ({ page }) => {
     await expect(page.locator(".labels")).toContainText("AI");
-    await expect(page.getByRole('link', { name: 'AI', exact: true })).toBeVisible();
+    await expect(page.locator("h1").getByRole('link', { name: 'AI', exact: true })).toBeVisible();
   });
 });

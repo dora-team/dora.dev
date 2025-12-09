@@ -5,7 +5,7 @@ slug: version-control
 core: true
 ai: true
 date: 2023-03-27T09:48:51+01:00
-updated: 2025-12-06
+updated: 2025-12-09
 category: fast flow
 draft: false
 headline: "A guide to implementing the right version control practices for reproducibility and traceability."
@@ -20,6 +20,8 @@ closely related to automation. In fact, automation and
 files for the source code of the automation itself, as well as the
 configuration to be automated and the data to be distributed.
 
+> Research consistently shows that comprehensive use of version control predicts continuous delivery. In the era of AI, this capability is even more potent: strong version control practices **amplify the positive impact of AI adoption on individual effectiveness and team performance**.
+
 In order to improve software delivery, teams need to use version control for
 source code, test and deployment scripts, infrastructure and application
 configuration information, and the many libraries and packages they depend upon.
@@ -27,9 +29,7 @@ In the version control system, teams must be able to query the current (and
 historical) state of their environments. Version control also offers direct
 benefits such as disaster recovery and auditability.
 
-Research shows that comprehensive use of version control, among other
-capabilities, predicts continuous delivery. In particular, version control helps
-you meet these critical requirements:
+In particular, version control helps you meet these critical requirements:
 
 * **Reproducibility**. Teams must be able to provision any environment in
     a fully automated fashion, and know that any new environment reproduced
@@ -79,6 +79,19 @@ of configuration management is working to simplify the architecture,
 environments, and processes to reduce the investment required to achieve the
 expected benefits.
 
+## The AI angle: The safety net for speed
+
+As organizations adopt AI, the volume and velocity of code generation are dramatically increasing. While this boosts throughput, it is often associated with increased software delivery instability. Strong version control practices are the essential safety net that allows teams to experiment with AI-generated code confidently.
+
+AI transforms the principle of frequent commits from a best practice into a critical safeguard. Because AI tools can introduce powerful nondeterminism into a developer's workflow, the "trial and error" cycle makes the old "commit when ready" model insufficient. To effectively harness AI, developers must bring the discipline of the outer loop (clean, reviewable changes) into their inner loop, creating small, frequent commits at every clean state.
+
+Furthermore, version control is now the place to store AI artifacts. Teams should version **AI prompts** to share knowledge and create audit trails, as well as **agent configuration files** (like `GEMINI.md` or `CLAUDE.md`) to establish team norms and guardrails for AI assistants.
+
+## Why this matters now
+
+> We are bringing AI into our workflow to move faster, but that speed comes with risk. Version control is our safety net. It allows us to revert AI-generated mistakes instantly and gives us a history we can audit. If we don't version everything—including our AI prompts and configurations—we are moving fast with no brakes. Investing in these practices now is what allows us to be aggressive with innovation later.
+
+
 ## How to implement version control
 
 When implementing version control, we recommend that you start by defining in
@@ -114,6 +127,7 @@ in the following assets to their shared version control repository:
     and environment provisioning
 * Supporting project artifacts (for example, requirements documentation,
     deployment procedures, and release notes)
+* AI artifacts (for example, prompts and agent configuration files)
 * Container orchestration (for example, Kubernetes configuration, OpenShift
     configuration, and Docker Swarm configuration)
 * All cloud configuration files (for example,
@@ -143,12 +157,9 @@ build processes rely on, including tools and the environments they depend upon.
 
 ## Common pitfalls in version control
 
-The most common pitfall in using version control is **limited application or
-use**; in other words,  applying version control only to software application
-code. Best practice requires the ability to reproduce all testing and production
-environments, including the software deployed on them, in a fully automated
-fashion by using scripts, source code, and configuration information that's
-stored in version control.
+* **Limited application:** Applying version control only to software application code. Best practice requires the ability to reproduce all testing and production environments.
+* **Neglecting the inner loop:** With AI, developers may generate code rapidly but delay committing until a feature is "perfect." This loses the safety of version history. Bring the discipline of small, frequent commits into the local development workflow.
+* **Merge conflicts:** Frequent or complex merge conflicts are often a sign of process issues, such as long-lived branches. This is exacerbated by the high volume of code AI can produce.
 
 ## Ways to improve version control
 
@@ -177,6 +188,8 @@ might indicate a problem to work on with your system's
 To measure how effectively your teams are using version control in their
 systems, try these recommendations:
 
+* **Commit frequency:** How frequently do you commit changes? High frequency is associated with higher individual effectiveness, especially when using AI.
+* **Rollback reliance:** How much do you rely on the ability to revert changes? Frequent use of rollbacks amplifies the positive influence of AI on team performance.
 * **Application code**. Do you use version control for application code?
     What percentage of application code do you store in version control? How
     easily and quickly can a team recover application code from the version
@@ -208,6 +221,8 @@ new systems or configurations using assets from version control?
 
 Read more about version control in the following publications:
 
+* [DORA AI Capabilities Model reprot](/ai/ai-capabilities-model/report/)
+* [2025 State of AI-assisted Software Development](/research/2025/dora-report)
 * [Accelerate State of DevOps Report 2022](https://dora.dev/research/2022/dora-report/)
 * [Accelerate State of DevOps Report 2019](https://dora.dev/research/2019/dora-report/)
 * [State of DevOps Report 2014](https://dora.dev/research/2014/)
@@ -221,3 +236,4 @@ Read more about version control in the following publications:
 * Take the
     [DORA quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.
+* Explore the [DORA AI Capabilities Model](/capabilities/ai/) to see how version control fits into a successful AI strategy.
