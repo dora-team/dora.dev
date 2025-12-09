@@ -6,6 +6,7 @@ draft: false
 
 # DORA Publications Errata
 
+### <a href='{{<relref "/ai/capabilities-model/errata">}}'>DORA AI Capabilities Model report</a>
 ### <a href='{{<relref "/research/2025/errata">}}'>State of AI-assisted Software Development 2025</a>
 ### <a href='{{<relref "/ai/gen-ai-report/errata">}}'>Impact of Generative AI in Software Development</a>
 ### <a href='{{<relref "/research/2024/errata">}}'>Accelerate State of DevOps 2024</a>
