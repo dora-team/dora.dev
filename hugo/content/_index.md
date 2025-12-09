@@ -7,7 +7,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 ---
 
 {{< homepage/hero
-  href="https://cloud.google.com/dora/"
+  href="https://cloud.google.com/resources/content/2025-dora-ai-capabilities-model-report"
   text="Read our latest report"
   target="_blank"
   >}}
@@ -20,18 +20,17 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 
 {{< report_feature
   eyebrow="our latest report"
-  headline="State of AI-assisted Software Development"
-  url="https://cloud.google.com/dora"
+  headline="DORA AI Capabilities Model report"
+  url="https://cloud.google.com/resources/content/2025-dora-ai-capabilities-model-report"
   cta="Learn more"
-  img_src="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png"
+  img_src="/ai/capabilities-model/report/2025-dora-ai-capabilities-model-report.png"
+  img_alt="DORA AI Capabilities Model report"
   img_align="right"
   img_stroke="true"
   maxwidth="maxplus"
   delete_on=""
   >}}
-  The State of AI-assisted Software Development report reveals AI's primary role is as an amplifier, magnifying an organization's existing strengths and weaknesses. The greatest returns on AI investment come not from the tools themselves, but from a strategic focus on the underlying organizational system.
-
-  This year's research introduces the new DORA AI Capabilities Model, which identifies the key technical and cultural practices that are proven to amplify the positive impacts of AI on performance.
+  The DORA AI Capabilities Model report, a companion guide to the [2025 State of AI-assisted Software Development report](/research/2025/dora-report), serves as a practical guide to the seven capabilities that amplify the benefits of AI. For each of the seven core capabilities, this report details implementation strategies, specific tactics for teams to get started, and methods for monitoring progress and fostering continuous improvement.
   {{< /report_feature >}}
 
 {{< homepage/snipe-wrapper mode="start" >}}
