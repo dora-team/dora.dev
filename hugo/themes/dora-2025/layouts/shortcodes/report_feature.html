@@ -43,13 +43,9 @@
       <p>{{ .Inner | markdownify }}</p>
       {{- if and (.Get "cta") ($url) -}}
         <br>
-        <a href='{{ $url }}' target="{{ $target }}">
-          <button class="inverted">{{ .Get "cta" }}</button>
-        </a>
+        <a href='{{ $url }}' target="{{ $target }}"><button class="inverted">{{ .Get "cta" }}</button></a>
         {{- if and (.Get "cta_2") ($url_2) -}}
-          <a href='{{ $url_2 }}' target="{{ $target_2 }}">
-            <button class="inverted">{{ .Get "cta_2" }}</button>
-          </a>
+          <a href='{{ $url_2 }}' target="{{ $target_2 }}"><button class="inverted">{{ .Get "cta_2" }}</button></a>
         {{- end -}}
       {{- end -}}
     </div>

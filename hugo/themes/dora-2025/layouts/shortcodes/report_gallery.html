@@ -1,0 +1,33 @@
+<!-- params:
+    img_1
+    url_1
+    title_1
+    [repeat for 2-4]
+-->
+
+<div class='report-gallery'>
+    <div class='report-gallery-item'>
+        <a href='{{ .Get "url_1" }}'>
+            <img src='{{ .Get "img_1" }}'>
+            <h4>{{ .Get "title_1" }}</h4>
+        </a>
+    </div>
+    <div class='report-gallery-item'>
+        <a href='{{ .Get "url_2" }}'>
+            <img src='{{ .Get "img_2" }}'>
+            <h4>{{ .Get "title_2" }}</h4>
+        </a>
+    </div>
+    <div class='report-gallery-item'>
+        <a href='{{ .Get "url_3" }}'>
+            <img src='{{ .Get "img_3" }}'>
+            <h4>{{ .Get "title_3" }}</h4>
+        </a>
+    </div>
+    <div class='report-gallery-item'>
+        <a href='{{ .Get "url_4" }}'>
+            <img src='{{ .Get "img_4" }}'>
+            <h4>{{ .Get "title_4" }}</h4>
+        </a>
+    </div>
+</div>
