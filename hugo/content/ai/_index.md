@@ -8,8 +8,8 @@ draft: false
 {{< report_feature
   eyebrow="our latest report"
   headline="AI Capabilities Model"
-  url="/ai/capabilities-model/report/"
-  cta="Coming soon"
+  url="https://cloud.google.com/resources/content/2025-dora-ai-capabilities-model-report"
+  cta="Get the report"
   url_2="/publications/"
   cta_2="View all reports"
   img_src="capabilities-model/report/2025-dora-ai-capabilities-model-report.png"
@@ -48,13 +48,14 @@ draft: false
   title_4="2024 DORA Report"
 >}}
 
-{{% insights_list 
+{{% insights_list
   heading="DORA’s AI Research"
   img_url="/img/homepage/snipes/core.png"
  %}}
 
 ##### Generative AI Insights
 
+* [Report: DORA AI Capabilities Model](/ai/capabilities-model/report/)
 * [Report: State of AI-assisted Software Development](/research/2025/dora-report/)
 * [Report: Impact of Gen AI in Software Development](/ai/gen-ai-report/)
 * [Understanding builder intent in the AI era](/ai/research-insights/builder-mindset/)

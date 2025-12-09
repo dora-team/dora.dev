@@ -38,12 +38,12 @@ test.describe("AI Research Overview Page", () => {
 
     test("has the correct download button", async ({ page }) => {
       const downloadLink = page
-        .locator('a:has-text("Coming soon")')
+        .locator('a:has-text("Get the report")')
         .first();
       await expect(downloadLink).toBeVisible();
       await expect(downloadLink).toHaveAttribute(
         "href",
-        "/ai/capabilities-model/report/",
+        "https://cloud.google.com/resources/content/2025-dora-ai-capabilities-model-report",
       );
     });
   });
