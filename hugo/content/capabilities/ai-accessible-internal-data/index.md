@@ -29,11 +29,10 @@ Many teams are familiar with *prompt engineering* (writing a specific command). 
 
 A simple prompt is like giving an assistant a single order. Context engineering is the system that automatically gathers relevant information—such as the latest API docs, company policies, and compliant code snippets—and uses it to manage an intelligent workflow. This enables the AI to critique its own work against your standards and improve its output.
 
-
-![Prompt engineering vs context engineering](prompt-vs-context.png)
-
-<figcaption>Prompt engineering vs context engineering</figcaption>
-
+<figure>
+  <img src="prompt-vs-context.svg" id="prompt-vs-context" class="responsive-svg" alt="Prompt engineering vs context engineering" />
+  <figcaption>Prompt engineering vs context engineering</figcaption>
+</figure>
 
 ## The AI angle
 
