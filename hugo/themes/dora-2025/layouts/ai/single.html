@@ -6,7 +6,7 @@
 {{ if .Params.research_collection }}
 {{- partial "research_archives_tabs" . -}}
 {{ end }}
-{{ if ne .Params.top_header .Title }}
+{{ if and (ne .Params.top_header .Title) (not .Params.hide_title) }}
 <h1>{{ .Title }}</h1>
 {{ end }}
 
