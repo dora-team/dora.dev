@@ -523,6 +523,16 @@
           "source": "/research/ai",
           "destination": "/ai/",
           "type": 301
+        },
+        {
+          "source": "/ai/capabilities-model/",
+          "destination": "/ai/capabilities-model/report/",
+          "type": 302
+        },
+        {
+          "source": "/ai/capabilities-model",
+          "destination": "/ai/capabilities-model/report/",
+          "type": 302
         }
       ]
     }
