@@ -15,7 +15,6 @@ hide_title: true
 ### DORA AI Capabilities Model report errata
 
 This page lists errors and corrections to the DORA AI Capabilities Model report. To track revisions, report PDFs are stamped with a version number. The initial version of the report is `v. 2025.1`.
-`
 
 -----
 <div style="text-align:center; margin-top:2em;">

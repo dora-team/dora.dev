@@ -10,6 +10,7 @@ tab_title: "AI Capabilities Model report"
 research_collection: "DORA AI Capabilities Model"
 research_collection_title: "DORA AI Capabilities Model"
 hide_title: true
+hideSiteBanner: true
 ---
 
 ## Download the DORA AI Capabilities Model report
