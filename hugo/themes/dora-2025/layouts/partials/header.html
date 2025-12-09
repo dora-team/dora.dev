@@ -5,7 +5,7 @@
     </div>
     <nav>
       <ul class="menuLinksDesktop">
-        <li><a href="/research/ai/" {{ if or (in .RelPermalink "/research/ai/" ) (in .RelPermalink "/ai/" ) }}class="active" {{ end }}>AI</a></li>
+        <li><a href="/ai/" {{ if or (in .RelPermalink "/research/ai/" ) (in .RelPermalink "/ai/" ) }}class="active" {{ end }}>AI</a></li>
         <li><a href="/publications/" {{ if (eq .Section "publications" ) }}class="active" {{ end }}>Publications</a>
         </li>
         <li><a href="/research/" {{ if and (eq .Section "research" ) (not (in .RelPermalink "/research/ai/" )) }}class="active" {{ end }}>Research</a></li>
@@ -36,7 +36,7 @@
 </header>
 <div class="menuLinksMobile">
   <ul>
-    <li><a href="/research/ai/" {{ if or (in .RelPermalink "/research/ai/" ) (in .RelPermalink "/ai/" ) }}class="active" {{ end }}>AI</a></li>
+    <li><a href="/ai/" {{ if or (in .RelPermalink "/research/ai/" ) (in .RelPermalink "/ai/" ) }}class="active" {{ end }}>AI</a></li>
     <li><a href="/publications/" {{ if (eq .Section "publications" ) }}class="active" {{ end }}>Publications</a>
     </li>
     <li><a href="/research/" {{ if and (eq .Section "research" ) (not (in .RelPermalink "/research/ai/" )) }}class="active" {{ end }}>Research</a></li>

@@ -3,10 +3,10 @@ import { test, expect } from '@playwright/test';
 test.describe('Active Navigation State', () => {
 
   test('AI page should have AI active and Research inactive', async ({ page }) => {
-    await page.goto('/research/ai/');
+    await page.goto('/ai/');
 
     // Desktop
-    const aiLinkDesktop = page.locator('.menuLinksDesktop a[href="/research/ai/"]');
+    const aiLinkDesktop = page.locator('.menuLinksDesktop a[href="/ai/"]');
     const researchLinkDesktop = page.locator('.menuLinksDesktop a[href="/research/"]');
     await expect(aiLinkDesktop).toHaveClass(/active/);
     await expect(researchLinkDesktop).not.toHaveClass(/active/);
@@ -14,7 +14,7 @@ test.describe('Active Navigation State', () => {
     // Mobile
     await page.setViewportSize({ width: 375, height: 667 });
     await page.locator('#hamburgerContainer').click();
-    const aiLinkMobile = page.locator('.menuLinksMobile a[href="/research/ai/"]');
+    const aiLinkMobile = page.locator('.menuLinksMobile a[href="/ai/"]');
     const researchLinkMobile = page.locator('.menuLinksMobile a[href="/research/"]');
     await expect(aiLinkMobile).toHaveClass(/active/);
     await expect(researchLinkMobile).not.toHaveClass(/active/);
@@ -24,7 +24,7 @@ test.describe('Active Navigation State', () => {
     await page.goto('/research/');
 
     // Desktop
-    const aiLinkDesktop = page.locator('.menuLinksDesktop a[href="/research/ai/"]');
+    const aiLinkDesktop = page.locator('.menuLinksDesktop a[href="/ai/"]');
     const researchLinkDesktop = page.locator('.menuLinksDesktop a[href="/research/"]');
     await expect(researchLinkDesktop).toHaveClass(/active/);
     await expect(aiLinkDesktop).not.toHaveClass(/active/); // Should allow not present or not active, but likely present so just check class
@@ -33,7 +33,7 @@ test.describe('Active Navigation State', () => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.locator('#hamburgerContainer').click();
     const researchLinkMobile = page.locator('.menuLinksMobile a[href="/research/"]');
-    const aiLinkMobile = page.locator('.menuLinksMobile a[href="/research/ai/"]');
+    const aiLinkMobile = page.locator('.menuLinksMobile a[href="/ai/"]');
     await expect(researchLinkMobile).toHaveClass(/active/);
     await expect(aiLinkMobile).not.toHaveClass(/active/);
   });
@@ -46,7 +46,7 @@ test.describe('Active Navigation State', () => {
     await page.goto('/ai/');
 
     // Desktop
-    const aiLinkDesktop = page.locator('.menuLinksDesktop a[href="/research/ai/"]');
+    const aiLinkDesktop = page.locator('.menuLinksDesktop a[href="/ai/"]');
     // Check possible conflicts
     const capabilitiesLinkDesktop = page.locator('.menuLinksDesktop a[href="/capabilities/"]');
 
@@ -56,7 +56,7 @@ test.describe('Active Navigation State', () => {
     // Mobile
     await page.setViewportSize({ width: 375, height: 667 });
     await page.locator('#hamburgerContainer').click();
-    const aiLinkMobile = page.locator('.menuLinksMobile a[href="/research/ai/"]');
+    const aiLinkMobile = page.locator('.menuLinksMobile a[href="/ai/"]');
     await expect(aiLinkMobile).toHaveClass(/active/);
   });
 

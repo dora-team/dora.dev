@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Global navigation', () => {
   const commonLinks = [
-    { name: 'AI', href: '/research/ai/' },
+    { name: 'AI', href: '/ai/' },
     { name: 'Publications', href: '/publications/' },
     { name: 'Research', href: '/research/' },
     { name: 'Capabilities', href: '/capabilities/' },
