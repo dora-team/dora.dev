@@ -8,7 +8,7 @@ date: 2025-12-08
 updated: 2025-12-08
 category: AI
 draft: false
-headline: "Clarity around AI usage provides the psychological safety needed for effective experimentation and reduced friction."
+headline: "Ambiguity creates risk. A clear policy provides the psychological safety needed for effective experimentation."
 summary: "A clear and communicated AI stance is an organization's official, widely understood position on how developers are expected and permitted to use AI tools. It moves beyond restrictive policies to provide practical guardrails, ensuring developers know which tools are allowed, which data is safe to use, and that the organization supports their experimentation."
 ---
 
