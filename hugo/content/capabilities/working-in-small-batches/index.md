@@ -6,7 +6,7 @@ category: fast flow
 core: true
 ai: true
 updated: 2025-12-08
-headline: "Create shorter lead times and faster feedback loops by working in small batches. Learn common obstacles to this critical capability and how to overcome them."
+headline: "Create shorter lead times and faster feedback loops by working in small batches, counteracting the risk of instability as AI accelerates development."
 summary: "Create shorter lead times and faster feedback loops by working in small batches. Learn common obstacles to this critical capability and how to overcome them."
 ---
 
