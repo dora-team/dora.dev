@@ -1,0 +1,60 @@
+.dora-perspective {
+  background-color: var(--dora-warm-white);
+  border: 1px solid var(--dora-primary-dark);
+  padding: 1rem 1.25rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.25rem 1rem;
+  align-items: start;
+
+  .dora-perspective-icon {
+    grid-column: 1;
+    grid-row: 1;
+    color: var(--dora-primary-dark);
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  .dora-perspective-title {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    font-family: $font-roboto;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    color: var(--dora-primary-dark);
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+  }
+
+  .dora-perspective-content {
+    grid-column: 2;
+    grid-row: 2;
+
+    font-family: $font-roboto;
+    font-weight: 300;
+    font-size: 0.95rem;
+    line-height: 1.6;
+
+    p:first-child {
+      margin-top: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

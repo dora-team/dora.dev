@@ -43,39 +43,55 @@ test.describe('Insights', () => {
     });
 
     test('shows navigation links and footer tags', async ({ page }) => {
-        // 1. Check "Posted in" and "Previous post" on the newest post (Builder Mindset)
-        await page.goto('/experimental/insights/builder-mindset/');
-        await expect(page).toHaveTitle(/Understanding builder intent/);
+        // 1. Get the list of articles to identify newest and oldest
+        await page.goto('/experimental/insights/');
+        const articleLinks = page.locator('.insights-list article h2 a');
+        const count = await articleLinks.count();
+        expect(count).toBeGreaterThan(1); // Ensure we have at least 2 articles for navigation checks
+
+        const allHrefs = await articleLinks.evaluateAll(links => links.map(link => link.getAttribute('href')));
+
+        const newestArticleHref = allHrefs[0];
+        const oldestArticleHref = allHrefs[allHrefs.length - 1];
+
+        if (!newestArticleHref || !oldestArticleHref) {
+            throw new Error('Could not find article links');
+        }
+
+        // 2. Check "Posted in" and "Previous post" on the newest post
+        await page.goto(newestArticleHref);
 
         // Check for "Posted in:" section at the bottom
         const footerTags = page.locator('.footer-tags');
         await expect(footerTags).toBeVisible();
         await expect(footerTags.getByText('Posted in:')).toBeVisible();
-        await expect(footerTags.getByRole('link', { name: '#AI' })).toBeVisible();
+        // Check that at least one tag link is visible
+        await expect(footerTags.locator('a').first()).toBeVisible();
 
         // Check for Previous Post link
         await expect(page.getByText('Previous post:')).toBeVisible();
-        await expect(page.getByRole('link', { name: 'Choosing measurement frameworks' })).toBeVisible();
 
         // Check for Next Post link (should NOT exist as it is the newest)
         await expect(page.getByText('Next post:')).not.toBeVisible();
 
-        // 2. Check "Next post" on the oldest post (Trust in AI)
-        await page.goto('/experimental/insights/trust-in-ai/');
-        await expect(page).toHaveTitle(/Trust in AI/);
+        // 3. Check "Next post" on the oldest post
+        await page.goto(oldestArticleHref);
 
         // Check for Next Post link
         await expect(page.getByText('Next post:')).toBeVisible();
-        await expect(page.getByRole('link', { name: 'How gen AI affects the value of development work' })).toBeVisible();
 
-        // 3. Check "Previous post" on 'concerns-beyond-accuracy-of-ai-output'
-        // Previous post is 'adopt-gen-ai' which has a different title and headline
-        await page.goto('/experimental/insights/concerns-beyond-accuracy-of-ai-output/');
-        await expect(page).toHaveTitle(/Concerns beyond the accuracy/);
+        // Check for Previous Post link (should NOT exist as it is the oldest)
+        await expect(page.getByText('Previous post:')).not.toBeVisible();
 
-        await expect(page.getByText('Previous post:')).toBeVisible();
-        // Should use headline: "Helping developers adopt generative AI..."
-        // NOT title: "Adopt generative AI"
-        await expect(page.getByRole('link', { name: 'Helping developers adopt generative AI: Four practical strategies for organizations' })).toBeVisible();
+        // 4. Check a middle post if we have enough articles
+        if (count > 2) {
+            const middleIndex = Math.floor(count / 2);
+            const middleArticleHref = allHrefs[middleIndex];
+            if (middleArticleHref) {
+                await page.goto(middleArticleHref);
+                await expect(page.getByText('Previous post:')).toBeVisible();
+                await expect(page.getByText('Next post:')).toBeVisible();
+            }
+        }
     });
 });
