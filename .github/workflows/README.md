@@ -7,4 +7,4 @@ Repository variables:
 * `GOOGLE_CLOUD_PROJECT` -- name of the GCP project associated with this site's Firebase Hosting project
 
 Repository secrets:
-* `FIREBASE_SERVICE_ACCOUNT` -- complete JSON key of a GCP service account with role `roles/firebasehosting.admin` for `GOOGLE_CLOUD_PROJECT`
+* `SERVICE_ACCOUNT_KEY` -- complete JSON key of a GCP service account, with the role `roles/firebasehosting.admin` on `GOOGLE_CLOUD_PROJECT`
