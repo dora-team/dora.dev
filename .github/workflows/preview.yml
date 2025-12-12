@@ -55,7 +55,7 @@ jobs:
           firebaseServiceAccount: ${{ secrets.SERVICE_ACCOUNT }}
           expires: 30d
           projectId: ${{ vars.GOOGLE_CLOUD_PROJECT }}
-          channelId: ${{ github.event.pull_request.number }}_drafts_off
+          channelId: ${{ github.ref.name }}_drafts_off
   build_drafts_on:
     runs-on: ubuntu-latest
     outputs:
