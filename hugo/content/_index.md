@@ -8,7 +8,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 
 {{< homepage/hero
   href="https://cloud.google.com/resources/content/2025-dora-ai-capabilities-model-report"
-  text="Read our latest report"
+  text="Read our latest RAD report"
   target="_blank"
   >}}
 
