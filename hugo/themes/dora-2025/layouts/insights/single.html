@@ -16,7 +16,7 @@
             <h4 class="authors">
                 by
                 {{ range .Params.authors }}
-                <a href="{{ .url }}" class="author" {{ if ne (substr .url 0 1) "/" }}target="blank" {{ end }}>{{ .name }}</a>
+                <a href="{{ .url }}" class="author" {{ if ne (substr .url 0 1) "/" }}target="_blank" {{ end }}>{{ .name }}</a>
                 {{ end }}
             </h4>
             {{ end }}
