@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { LAST_UPDATED_DATE_REGEX } from '../../constants';
+import { verifyAuthors } from './shared';
 
 const pages = [
   {
@@ -30,6 +31,10 @@ for (const pageConfig of pages) {
 
     test('displays its last updated date.', async ({ page }) => {
       await expect(page.locator('.updated')).toContainText(LAST_UPDATED_DATE_REGEX);
+    });
+
+    test('displays authors.', async ({ page }) => {
+      await verifyAuthors(page);
     });
   });
 }
