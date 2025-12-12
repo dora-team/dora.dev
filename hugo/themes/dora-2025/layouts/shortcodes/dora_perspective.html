@@ -1,0 +1,11 @@
+<div class="dora-perspective">
+  <div class="dora-perspective-icon">
+    <img src="/ai/research-insights/dora-perspective-icon.png" alt="DORA perspective" />
+  </div>
+  <div class="dora-perspective-title">
+    DORA Perspective: {{ .Get "title" }}
+  </div>
+  <div class="dora-perspective-content">
+    {{ .Inner | markdownify }}
+  </div>
+</div>
