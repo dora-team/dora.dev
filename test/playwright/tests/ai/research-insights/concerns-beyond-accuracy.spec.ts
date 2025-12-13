@@ -8,7 +8,7 @@ const pages = [
     header: 'Concerns beyond the accuracy of AI output',
   },
   {
-    url: '/experimental/insights/concerns-beyond-accuracy-of-ai-output/',
+    url: '/insights/concerns-beyond-accuracy-of-ai-output/',
     title: 'DORA | Concerns beyond the accuracy of AI output',
     header: 'Concerns beyond the accuracy of AI output',
   },

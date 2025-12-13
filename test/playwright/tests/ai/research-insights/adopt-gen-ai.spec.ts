@@ -9,7 +9,7 @@ const pages = [
     header: 'Helping developers adopt generative AI: Four practical strategies for organizations',
   },
   {
-    url: '/experimental/insights/adopt-gen-ai/',
+    url: '/insights/adopt-gen-ai/',
     title: 'DORA | Adopt generative AI',
     header: 'Helping developers adopt generative AI',
   },

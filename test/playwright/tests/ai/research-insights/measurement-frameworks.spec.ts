@@ -15,7 +15,7 @@ const pages = [
     header: 'Choosing measurement frameworks to fit your organizational goals',
   },
   {
-    url: '/experimental/insights/measurement-frameworks/',
+    url: '/insights/measurement-frameworks/',
     title: 'DORA | Choosing measurement frameworks to fit your organizational goals',
     header: 'Choosing measurement frameworks to fit your organizational goals',
   },

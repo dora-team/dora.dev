@@ -8,7 +8,7 @@ ignoreFiles = "README.md"
   tag = "tags"
 
 [permalinks]
-  tags = "/experimental/insights/tags/:slug/"
+  tags = "/insights/tags/:slug/"
 
 [markup]
     [markup.highlight]

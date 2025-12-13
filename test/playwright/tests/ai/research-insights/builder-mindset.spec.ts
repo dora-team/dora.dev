@@ -9,7 +9,7 @@ const pages = [
     header: 'Understanding builder intent in the AI era',
   },
   {
-    url: '/experimental/insights/builder-mindset/',
+    url: '/insights/builder-mindset/',
     title: 'DORA | Understanding builder intent in the AI era',
     header: 'Understanding builder intent in the AI era',
   },

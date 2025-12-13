@@ -9,7 +9,7 @@ const pages = [
     header: 'How gen AI affects the value of development work',
   },
   {
-    url: '/experimental/insights/value-of-development-work/',
+    url: '/insights/value-of-development-work/',
     title: 'DORA | How gen AI affects the value of development work',
     header: 'How gen AI affects the value of development work',
   },
