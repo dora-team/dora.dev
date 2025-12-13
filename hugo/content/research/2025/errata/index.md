@@ -17,7 +17,7 @@ This page lists errors and corrections to the 2025 State of AI-assisted Software
 
 The printed version of the 2025 report has the following errata:
 
-* **p. 3** The page numbers in the table of contents are incorrect. They are all off by one, a classic error in computer science. The correct page numbers are:
+**p. 3** The page numbers in the table of contents are incorrect. They are all off by one, a classic error in computer science. The correct page numbers are:
   * 04: Executive summary
   * 09: Foreword
   * 12: Understanding your software delivery performance
@@ -37,9 +37,15 @@ The printed version of the 2025 report has the following errata:
   * 138: Next steps
   * 139: Appendix
 
+**p. 71** In the fourth paragraph, "stabilty" should be "instability."
+  * "The increase in performance in spite of the increase in stability, suggests a form of risk compensation where the platform makes it fast and cheap to recover..." should be "The increase in performance in spite of the increase in instability, suggests a form of risk compensation where the platform makes it fast and cheap to recover..."
+
 ### Errata in `v. 2025.2`
 
 **p. 51** Figure 32 has an incorrect caption. The correct caption is "Figure 32: A clear and communicated AI stance determines AI’s impact on organizational performance"
+
+**p. 70** In the fourth paragraph, "stabilty" should be "instability."
+  * "The increase in performance in spite of the increase in stability, suggests a form of risk compensation where the platform makes it fast and cheap to recover..." should be "The increase in performance in spite of the increase in instability, suggests a form of risk compensation where the platform makes it fast and cheap to recover..."
 
 ### Errata in `v. 2025.1`
 
@@ -65,6 +71,9 @@ The printed version of the 2025 report has the following errata:
 
 * The correct title is "Version control commit frequency moderates AI’s impact on individual effectiveness"
 * The correct caption is "Figure 38: Version control commit frequency moderates AI’s impact on individual effectiveness"
+
+**p. 70** In the fourth paragraph, "stabilty" should be "instability."
+  * "The increase in performance in spite of the increase in stability, suggests a form of risk compensation where the platform makes it fast and cheap to recover..." should be "The increase in performance in spite of the increase in instability, suggests a form of risk compensation where the platform makes it fast and cheap to recover..."
 
 **p. 97** Footnote 1 should link to [https://dora.dev/research/2025/questions](/research/2025/questions).<br />
 _[Corrected in `v. 2025.2`]_
