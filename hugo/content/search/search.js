@@ -79,11 +79,26 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     function showPDFResults(pdfs) {
         publicationResultsHeader.innerHTML = '<h3>DORA publications</h3>';
+
+        const specialReports = {
+            'DORA AI Capabilities Model report (2025)': {
+                title: 'DORA AI Capabilities Model report',
+                link: '/ai/capabilities-model/report/',
+                thumbnail_url: '/img/sodr_thumbnails/aicmr.png',
+            },
+            'Impact of Generative AI in Software Development (2025)': {
+                title: 'Impact of Generative AI in Software Development',
+                link: '/ai/gen-ai-report/',
+                thumbnail_url: '/img/sodr_thumbnails/en-ai-report.png',
+            },
+        };
+
         let year = 0;
         pdfs.forEach((result) => {
             year = result.publication_year;
-            snippet = result.snippet;
-            page_number = result.page_number;
+            const snippet = result.snippet;
+            const page_number = result.page_number;
+            const pdf_title = result.title;
             let title = ""
             if (year === "2020") {
                 title = "ROI of DevOps Transformation"
@@ -92,12 +107,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
             } else {
                 title = `Accelerate State of DevOps Report ${year}`
             }
+
             // URL `/dora-report-${year}` requires Firebase redirect, so it won't work if site is served by Hugo
+            let link = `/dora-report-${year}`
+            let thumbnail_url = `/img/sodr_thumbnails/${year}.png`
+
+            // handle the outliers
+            const specialReportData = specialReports[pdf_title];
+            if (specialReportData) {
+                title = specialReportData.title;
+                link = specialReportData.link;
+                thumbnail_url = specialReportData.thumbnail_url;
+            }
+
             publicationResultsBox.innerHTML += `
-            <a href="/dora-report-${year}" target="_blank">
+            <a href="${link}">
                 <div class="publication">
                     <div class="thumbnail">
-                        <img src="/img/sodr_thumbnails/${year}.png">
+                        <img src="${thumbnail_url}">
                         <br>
                         <h3>${title}</h3>
                         <h4>p. ${page_number}</h4>
