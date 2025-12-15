@@ -5,7 +5,7 @@
         <div class="content">
             {{ .Content }}
         </div>
-        <div class="insights-list">
+        <div class="insights-feed">
             {{ range .Pages.ByDate.Reverse }}
             {{- partial "insights-list-items.html" . -}}
             {{ end }}
