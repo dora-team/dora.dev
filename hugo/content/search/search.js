@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         resetPage();
         resultsBox.innerHTML = `<span class="searching">Searching "${searchTerm}..."</span>`;
-        console.log(`searching ${searchTerm}...`)
+        // console.log(`searching ${searchTerm}...`)
         searchURI = `${searchServer}?query=${searchTerm}&max_web_records=${max_web_records}`;
 
         fetch(searchURI)
@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             'Impact of Generative AI in Software Development (2025)': {
                 title: 'Impact of Generative AI in Software Development',
                 link: '/ai/gen-ai-report/',
-                thumbnail_url: '/img/sodr_thumbnails/en-ai-report.png',
+                thumbnail_url: '/img/sodr_thumbnails/gen-ai-report.png',
             },
         };
 
@@ -98,7 +98,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
             year = result.publication_year;
             const snippet = result.snippet;
             const page_number = result.page_number;
-            const pdf_title = result.title;
+            const pdf_title = result.publication_title;
+
             let title = ""
             if (year === "2020") {
                 title = "ROI of DevOps Transformation"
