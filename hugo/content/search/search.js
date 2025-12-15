@@ -81,6 +81,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
         publicationResultsHeader.innerHTML = '<h3>DORA publications</h3>';
 
         const specialReports = {
+            '2025 State of AI-assisted Software Development': {
+                title: '2025 State of AI-assisted Software Development',
+                link: '/dora-report-2025',
+                thumbnail_url: '/img/sodr_thumbnails/2025.png',
+            },
             'DORA AI Capabilities Model report (2025)': {
                 title: 'DORA AI Capabilities Model report',
                 link: '/ai/capabilities-model/report/',
