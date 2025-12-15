@@ -80,6 +80,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     function showPDFResults(pdfs) {
         publicationResultsHeader.innerHTML = '<h3>DORA publications</h3>';
 
+        // Adding another? Be sure to update the playwright tests.
         const specialReports = {
             '2025 State of AI-assisted Software Development': {
                 title: '2025 State of AI-assisted Software Development',
@@ -98,15 +99,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
             },
         };
 
-        let year = 0;
         pdfs.forEach((result) => {
-            year = result.publication_year;
+            const year = parseInt(result.publication_year, 10);
             const snippet = result.snippet;
             const page_number = result.page_number;
             const pdf_title = result.publication_title;
 
             let title = ""
-            if (year === "2020") {
+            if (year === 2020) {
                 title = "ROI of DevOps Transformation"
             } else if (year < 2018) {
                 title = `State of DevOps Report ${year}`
