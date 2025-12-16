@@ -264,3 +264,25 @@ tab_links {
         }
     }
 }
+
+.meet-the-team-section {
+    text-align: center;
+    padding: 4rem 0;
+
+    .button {
+        display: inline-block;
+        padding: 10px 30px;
+        border-radius: 50vh;
+        background-color: var(--dora-sky-blue);
+        color: var(--dora-black);
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 1rem;
+        border: none;
+
+        &:hover {
+            background-color: var(--dora-black);
+            color: white;
+        }
+    }
+}
