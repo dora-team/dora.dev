@@ -46,6 +46,18 @@
   &.ai {
     background-color: var(--dora-secondary-c);
   }
+
+  &.research {
+    background-color: var(--dora-highlight);
+
+    .content {
+      background-image: url(/research/banner-research.png);
+
+      a:hover {
+        color: var(--dora-tertiary-a); // Deep Plum for better contrast on yellow
+      }
+    }
+  }
 }
 
 .section-homepage-content {
