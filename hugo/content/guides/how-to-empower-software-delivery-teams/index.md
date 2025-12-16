@@ -62,5 +62,5 @@ We’ve observed that alignment and autonomy are a potent combination. The stron
 ## Next steps
 
 * Explore the [DORA Core model](/research), a collection of the most firmly-established findings from throughout DORA's history
-* Read the latest [DORA Research Reports](/publications)
+* Read the latest [DORA Research Reports](/research/publications/)
 * Join the [DORA Community of Practice](https://dora.community) to share your experience with fellow travelers

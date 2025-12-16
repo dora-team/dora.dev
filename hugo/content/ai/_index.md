@@ -10,7 +10,7 @@ draft: false
   headline="AI Capabilities Model"
   url="https://cloud.google.com/resources/content/2025-dora-ai-capabilities-model-report"
   cta="Get the report"
-  url_2="/publications/"
+  url_2="/research/publications/"
   cta_2="View all reports"
   img_src="capabilities-model/report/2025-dora-ai-capabilities-model-report.png"
   img_align="right"

@@ -27,7 +27,7 @@ validate compliance requirements, which typically require evidence that all
 changes are appropriately authorized.
 
 Research by DORA, presented in the
-[2019 State of DevOps Report (PDF)](/publications/),
+[2019 State of DevOps Report](/research/2019/dora-report/),
 finds that change approvals are best implemented through peer review during the
 development process, supplemented by automation to detect, prevent, and correct
 bad changes early in the software delivery life cycle. Techniques such as
@@ -142,7 +142,7 @@ To improve your change approval processes, focus on implementing the following:
     reviewing them manually as part of the software delivery process.
 
 Research from the
-[2019 State of DevOps Report (PDF)](/publications/)
+[2019 State of DevOps Report](/research/2019/dora-report/)
 shows that while moving away from traditional, formal change management
 processes is the ultimate goal, simply doing a better job of communicating the
 existing process and helping teams navigate it efficiently has a positive impact
