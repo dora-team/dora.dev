@@ -3,24 +3,21 @@
 <h1>DORA Research: {{ .Params.research_collection }}</h1>
 {{- partial "research_archives_tabs" . -}}
 
-<section class="hasSidebar">
-    <article>
-        {{ if and (ne .Params.research_collection "Artificial Intelligence") (ne .Params.research_collection "DORA AI Capabilities Model") }} {{
-        if le .Params.research_collection 2017 }}
-        <div class="research-note">
-            <p>
-                Prior to 2018, research was conducted in partnership with
-                Puppet, as an extension of their original State of DevOps
-                research. Read the
-                <a href="https://www.puppet.com/resources/history-of-devops-reports" target="_blank">history of Puppet's DevOps Reports</a>.
-            </p>
-        </div>
-        {{ end }} {{ end }} {{ .Content }} {{ if .Params.updated }}
-        <div class="updated">
-            Last updated: {{ .Params.updated | time.Format ":date_long" }}
-        </div>
-        {{ end }}
-    </article>
-    <sidebar> {{ partial "research_sidebar.html" . }} </sidebar>
-</section>
+<article>
+    {{ if and (ne .Params.research_collection "Artificial Intelligence") (ne .Params.research_collection "DORA AI Capabilities Model") }} {{
+    if le .Params.research_collection 2017 }}
+    <div class="research-note">
+        <p>
+            Prior to 2018, research was conducted in partnership with
+            Puppet, as an extension of their original State of DevOps
+            research. Read the
+            <a href="https://www.puppet.com/resources/history-of-devops-reports" target="_blank">history of Puppet's DevOps Reports</a>.
+        </p>
+    </div>
+    {{ end }} {{ end }} {{ .Content }} {{ if .Params.updated }}
+    <div class="updated">
+        Last updated: {{ .Params.updated | time.Format ":date_long" }}
+    </div>
+    {{ end }}
+</article>
 {{ end }}
