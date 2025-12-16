@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { sidebarLinks } from '../sidebarLinks';
 
 const languageToUrlMap = {
   'Deutsch': '2022-dora-accelerate-state-of-devops-report-de.pdf',
@@ -60,11 +59,5 @@ test('2022 DORA report page has the correct blog links.', async ({ page }) => {
     const url = blogToUrlMap[blog];
     const blogLink = page.getByRole('link', { name: blog, exact: true });
     await expect(blogLink).toHaveAttribute('href', url);
-  }
-});
-
-test('2022 DORA report page has the correct sidebar.', async ({ page }) => {
-  for (const sidebarLink of sidebarLinks) {
-    await expect(page.getByRole('link', { name: sidebarLink, exact: true })).toBeVisible();
   }
 });

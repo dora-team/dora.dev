@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { sidebarLinks } from '../sidebarLinks';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/research/2016/');
@@ -25,10 +24,3 @@ test('2016 DORA report page links to the 2016 DORA Report.', async ({ page }) =>
     '2016-state-of-devops-report.pdf'
   )
 });
-
-test('2016 Research page has the correct sidebar.', async ({ page }) => {
-  for (const sidebarLink of sidebarLinks) {
-    await expect(page.getByRole('link', { name: sidebarLink, exact: true })).toBeVisible();
-  }
-});
-

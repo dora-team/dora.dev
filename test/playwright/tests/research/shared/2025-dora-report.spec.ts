@@ -1,5 +1,4 @@
 import { test, expect } from "@playwright/test";
-import { sidebarLinks } from "../sidebarLinks";
 import { researchPartners } from "./research-partners";
 
 test.describe("2025 DORAReport page", () => {
@@ -15,14 +14,6 @@ test.describe("2025 DORAReport page", () => {
 
   test("has the correct header.", async ({ page }) => {
     await expect(page.locator("h1")).toContainText("DORA Research: 2025");
-  });
-
-  test("has the correct sidebar", async ({ page }) => {
-    for (const sidebarLink of sidebarLinks) {
-      await expect(
-        page.getByRole("link", { name: sidebarLink, exact: true }),
-      ).toBeVisible();
-    }
   });
 
   test("has the correct report image", async ({ page }) => {

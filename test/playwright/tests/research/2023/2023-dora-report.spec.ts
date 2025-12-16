@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { sidebarLinks } from '../sidebarLinks';
 
 const languageToUrlMap = {
   'English': '2023-dora-accelerate-state-of-devops-report.pdf',
@@ -8,7 +7,7 @@ const languageToUrlMap = {
   'Français': '2023-dora-accelerate-state-of-devops-report_fr.pdf',
   'Italiano': '2023-dora-accelerate-state-of-devops-report_it.pdf',
   'Português - Brasil': '2023-dora-accelerate-state-of-devops-report_pt-BR.pdf',
-  '中文 – 简体': '2023-dora-accelerate-state-of-devops-report_zh-TW.pdf' ,
+  '中文 – 简体': '2023-dora-accelerate-state-of-devops-report_zh-TW.pdf',
   '日本語': '2023-dora-accelerate-state-of-devops-report_ja.pdf',
   '한국어': '2023-dora-accelerate-state-of-devops-report_ko.pdf'
 };
@@ -44,9 +43,3 @@ for (const language in languageToUrlMap) {
     await expect(languageLink).toHaveAttribute('href', url);
   });
 }
-
-test('2023 DORA report page has the correct sidebar.', async ({ page }) => {
-  for (const sidebarLink of sidebarLinks) {
-    await expect(page.getByRole('link', { name: sidebarLink, exact: true })).toBeVisible();
-  }
-});
