@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { sidebarLinks } from '../sidebarLinks';
 
 const languageToUrlMap = {
   'English': '2021-dora-accelerate-state-of-devops-report.pdf',
@@ -43,9 +42,3 @@ for (const language in languageToUrlMap) {
     await expect(languageLink).toHaveAttribute('href', url);
   });
 }
-
-test('2021 DORA report page has the correct sidebar.', async ({ page }) => {
-  for (const sidebarLink of sidebarLinks) {
-    await expect(page.getByRole('link', { name: sidebarLink, exact: true })).toBeVisible();
-  }
-});

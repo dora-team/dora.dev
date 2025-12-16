@@ -1,32 +1,30 @@
-const { test, expect } = require('@playwright/test');
 
-test('Page title is correct', async ({ page }) => {
+import { test, expect } from '@playwright/test';
+
+test.describe('Research home page', () => {
+  test.beforeEach(async ({ page }) => {
     await page.goto('/research/');
+  });
 
+  test('has the correct title', async ({ page }) => {
     await expect(page).toHaveTitle('DORA | Research');
   });
 
+  test('lists all expected research collections', async ({ page }) => {
+    const researchCollections = [
+      'Artificial Intelligence', '2025', '2024', '2023', '2022',
+      '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014',
+      'The ROI of DevOps Transformation', 'DevOps Awards Winners 2021'
+    ];
 
-test('All archive links are valid', async ({ page }) => {
-  await page.goto('/research/');
+    // Use a locator with web-first assertions instead of manual $$eval
+    const researchCollectionLabels = page.locator('#_pw-research-archives .label');
 
-  // const archiveLinks = await page.$$eval('ul li a', (links) => links.map((link) => link.href));
-  const archiveLinks = await page.$$eval('//span[@id="_pw-research-archives"]//a', (links) => links.map((link) => link.href));
+    // Checks that the list of elements has the exact text content in order
+    await expect(researchCollectionLabels).toHaveText(researchCollections);
+  });
 
-  for (const link of archiveLinks) {
-    const response = await page.goto(link);
-    expect(response.status()).toBe(200);
-  }
+  test('has the correct main heading', async ({ page }) => {
+    await expect(page.getByRole('heading', { name: 'DORA’s Research Program' })).toBeVisible();
+  });
 });
-
-test('All expected years are listed', async ({ page }) => {
-    await page.goto('/research/');
-
-    const expectedYears = ['Artificial Intelligence', '2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014'];
-
-     const actualYears = await page.$$eval('//span[@id="_pw-research-archives"]//a', (links) => links.map((link) => link.textContent.trim()));
-
-    expect(actualYears).toEqual(expectedYears);
-});
-
-

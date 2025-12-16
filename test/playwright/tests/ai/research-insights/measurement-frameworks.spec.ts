@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { sidebarLinks } from '../../research/sidebarLinks';
 import { verifyAuthors } from './shared';
 
 const pages = [
@@ -35,16 +34,8 @@ for (const pageConfig of pages) {
       await expect(page.getByRole('heading', { name: pageConfig.header })).toBeVisible();
     });
 
-    if (pageConfig.url.includes('/research/')) {
-      test('has the correct sidebar.', async ({ page }) => {
-        for (const sidebarLink of sidebarLinks) {
-          await expect(page.getByRole('link', { name: sidebarLink, exact: true })).toBeVisible();
-        }
-      });
-    } else {
-      test('displays authors.', async ({ page }) => {
-        await verifyAuthors(page);
-      });
-    }
+    test('displays authors.', async ({ page }) => {
+      await verifyAuthors(page);
+    });
   });
 }

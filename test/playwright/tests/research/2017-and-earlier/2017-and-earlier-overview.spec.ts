@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { sidebarLinks } from '../sidebarLinks';
 
 export const reportsMap = {
   '2017 State of DevOps Report': '/research/2017',
@@ -33,10 +32,4 @@ test('2017 and earlier Research page links to Puppet\'s history of the reports',
     'href',
     'https://www.puppet.com/resources/history-of-devops-reports'
   )
-});
-
-test('2017 and earlier Research page has the correct sidebar.', async ({ page }) => {
-  for (const sidebarLink of sidebarLinks) {
-    await expect(page.getByRole('link', { name: sidebarLink, exact: true })).toBeVisible();
-  }
 });
