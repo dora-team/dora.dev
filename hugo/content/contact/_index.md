@@ -13,7 +13,7 @@ Do you have questions or suggestions about DORA research, or how to apply it in 
 #### Report an issue
 **on dora.dev:** Have you found a technical issue on this website? [Open an issue in our issue tracker](https://github.com/dora-team/dora.dev/issues).
 
-**in a publication:** Have you found an error in one of our publications? Check to see if it has already been acknowledged in [DORA publications errata](/publications/errata/). If not, [contact us to report it](mailto:dora-advocacy@google.com?subject=DORA+Publication+error+report). Please include the publication title and page number.
+**in a publication:** Have you found an error in one of our publications? Check to see if it has already been acknowledged in [DORA publications errata](/research/errata/). If not, [contact us to report it](mailto:dora-advocacy@google.com?subject=DORA+Publication+error+report). Please include the publication title and page number.
 
 Please include the publication title and page number.
 
