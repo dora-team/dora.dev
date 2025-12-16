@@ -126,7 +126,7 @@
 /demosignup,https://docs.google.com/forms/d/e/1FAIpQLSeeQRVKmJ0GYrtT8oGUP_nbPyyVrM6pbl3kRI3WPKS6h3dZfQ/viewform?usp=header,302
 /dora-aicmr,/ai/capabilities-model/report/,302
 /dora-aicmr-2025,/ai/capabilities-model/report/,302
-/oopsies,/publications/errata/,302
+/oopsies,/research/publications-errata/,302
 /research/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development.pdf,/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development.pdf,301
 /research/ai/gen-ai-report/,/ai/gen-ai-report/,301
 /research/ai/gen-ai-report-questions,/ai/gen-ai-report/questions/,301
@@ -152,6 +152,10 @@
 /research/2025/ai-capabilities-model/,/ai/capabilities-model/report/,302
 /research/ai/ai-capabilities-model,/ai/capabilities-model/report/,302
 /research/ai/ai-capabilities-model/,/ai/capabilities-model/report/,302
+/publications/,/research/,301
+/publications,/research/,301
+/publications/errata/,/research/publications-errata/,301
+/publications/errata,/research/publications-errata/,301
 /research/shared/ai-capabilities-model-report/2025-dora-ai-capabilities-model-report.png,/ai/capabilities-model/report/2025-dora-ai-capabilities-model-report.png,301
 /research/ai/,/ai/,301
 /ai/capabilities-model/,/ai/capabilities-model/report/,302
