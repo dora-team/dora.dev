@@ -21,12 +21,12 @@
         },
         {
           "source": "/publications",
-          "destination": "/research/",
+          "destination": "/research/publications/",
           "type": 301
         },
         {
           "source": "/publications/",
-          "destination": "/research/",
+          "destination": "/research/publications/",
           "type": 301
         },
         {
