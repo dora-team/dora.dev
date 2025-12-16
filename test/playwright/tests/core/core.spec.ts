@@ -6,7 +6,7 @@ test.describe('Core Model', () => {
   });
 
   test('displays the Core Model heading', async ({ page }) => {
-    await expect(page.getByRole('heading', { name: 'Core Model' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Core Model', exact: true })).toBeVisible();
   });
 
   test('starts in summary view mode', async ({ page }) => {
