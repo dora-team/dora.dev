@@ -14,7 +14,9 @@
 
     img {
         max-width: 8em;
+        width: auto;
         height: 2.5em;
+        object-fit: contain;
     }
 
     p {
