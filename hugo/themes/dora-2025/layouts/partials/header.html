@@ -6,8 +6,6 @@
     <nav>
       <ul class="menuLinksDesktop">
         <li><a href="/ai/" {{ if (in .RelPermalink "/ai/" ) }}class="active" {{ end }}>AI</a></li>
-        <li><a href="/publications/" {{ if (eq .Section "publications" ) }}class="active" {{ end }}>Publications</a>
-        </li>
         <li><a href="/research/" {{ if (eq .Section "research" ) }}class="active" {{ end }}>Research</a></li>
         <li><a href="/capabilities/" {{ if (eq .Section "capabilities" ) }}class="active" {{ end }}>Capabilities</a>
         </li>
@@ -36,8 +34,7 @@
 <div class="menuLinksMobile">
   <ul>
     <li><a href="/ai/" {{ if (in .RelPermalink "/ai/" ) }}class="active" {{ end }}>AI</a></li>
-    <li><a href="/publications/" {{ if (eq .Section "publications" ) }}class="active" {{ end }}>Publications</a>
-    </li>
+
     <li><a href="/research/" {{ if (eq .Section "research" ) }}class="active" {{ end }}>Research</a></li>
     <li><a href="/capabilities/" {{ if (eq .Section "capabilities" ) }}class="active" {{ end }}>Capabilities</a>
     </li>

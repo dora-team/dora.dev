@@ -160,3 +160,106 @@ tab_links {
         }
     }
 }
+
+.container-wide {
+    max-width: $layout-breakpoint-maxplus;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.dark-section {
+    background-color: var(--dora-black);
+    color: var(--dora-warm-white);
+    padding: 4rem 1rem;
+    margin-top: 2rem;
+
+    .content-wrapper {
+        max-width: $layout-breakpoint-max;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+
+        @include media-large {
+            padding: 0 1rem;
+        }
+
+        @media (min-width: $layout-breakpoint-large) {
+            flex-direction: row;
+            gap: 4rem;
+        }
+
+        h2,
+        h3 {
+            color: var(--dora-warm-white);
+            flex: 1;
+            margin-top: 0;
+            font-size: 2.5rem;
+            line-height: 1.1;
+        }
+
+        div {
+            flex: 2;
+            font-size: 1.1rem;
+            line-height: 1.6;
+
+            p {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.past-research-section {
+    background-color: var(--dora-warm-white);
+    padding: 4rem 1rem;
+
+    .content-wrapper {
+        max-width: $layout-breakpoint-max;
+        margin: 0 auto;
+    }
+
+    h2,
+    h3 {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+
+    ul.past-research-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--grey-30);
+
+            .label {
+                font-family: $font-google-sans;
+                font-size: 1.1rem;
+                font-weight: 500;
+            }
+
+            a.button {
+                display: inline-block;
+                padding: 8px 24px;
+                border-radius: 50vh;
+                text-decoration: none;
+                color: var(--dora-black);
+                border: 1px solid var(--dora-black);
+                font-family: $font-google-sans;
+                font-weight: 500;
+                font-size: 0.9rem;
+                transition: all 0.2s ease;
+                white-space: nowrap;
+
+                &:hover {
+                    background-color: var(--dora-black);
+                    color: white;
+                }
+            }
+        }
+    }
+}

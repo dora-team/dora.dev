@@ -2,14 +2,17 @@
 {{- partial "link_styles" "scss/research.scss" -}}
 {{ .Content }}
 
-<section>
-
-    <h3 id="dora_research_archives">DORA Research Archives</h3>
-    {{- partial "research_archives" . -}}
-
-    <h3>Meet the team</h3>
-    <p>Learn more about <a href='{{ "/research/team/" | relURL }}'>DORA's Research Team</a></p>
-
+<section class="past-research-section" id="dora_research_archives">
+    <div class="content-wrapper">
+        <h3>Past research</h3>
+        {{- partial "research_archives" . -}}
+    </div>
 </section>
+
+<!-- Meet the team section - reusing existing but styling might need check, sticking to default for now as it wasn't explicitly detailed other than blue in mock which might be footer default -->
+<div class="container-wide" style="text-align: center; padding: 4rem 0;">
+    <p>The DORA research program and Core model are led by a global team of researchers at Google.</p>
+    <a href='{{ "/research/team/" | relURL }}' class="button" style="display: inline-block; padding: 10px 30px; border-radius: 50vh; background-color: var(--dora-sky-blue); color: var(--dora-black); text-decoration: none; font-weight: bold; margin-top: 1rem;">Meet the team</a>
+</div>
 
 {{ end }}
