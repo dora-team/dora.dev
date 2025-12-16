@@ -11,10 +11,5 @@
 <h1>DORA Research: {{ $researchCollectionTitle }}</h1>
 {{- partial "research_archives_tabs" . -}}
 
-<section class="hasSidebar">
-    {{ partial "survey_questions.html" . }}
-    <sidebar>
-        {{ partial "research_sidebar.html" . }}
-    </sidebar>
-</section>
+{{ partial "survey_questions.html" . }}
 {{ end }}

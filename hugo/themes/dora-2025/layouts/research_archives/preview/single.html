@@ -6,58 +6,57 @@
 
 <style type="text/css">
     h3 {
-        font-size:1.25em;
+        font-size: 1.25em;
     }
 
     h4 {
-        color:#666;
+        color: #666;
         margin-bottom: 1em;
     }
+
     .mainContent li {
-        font-weight:300;
+        font-weight: 300;
         font-family: "Roboto";
         font-size: 14px;
     }
+
     p.description {
         border-top: 1px solid lightgray;
     }
+
     li div:not(:first-child) {
         font-size: 85%;
     }
 </style>
 
-<section class="hasSidebar">
-    <div class="mainContent">
-        <h1>
-            {{ .Params.headline }}
-        </h1>
-        {{ if .Params.subhead }}
-            <h2>{{ .Params.subhead }}</h2>
-        {{ end }}
+<div class="mainContent">
+    <h1>
+        {{ .Params.headline }}
+    </h1>
+    {{ if .Params.subhead }}
+    <h2>{{ .Params.subhead }}</h2>
+    {{ end }}
 
-        {{ if .Params.authors }}
-        <h4 class="authors">
-            by
-            {{ range .Params.authors }}
-            <a href="{{ .url }}" class="author" {{ if ne (substr .url 0 1) "/" }}target="blank"{{ end }}>{{ .name }}</a>
-            {{ end }}
-        </h4>
+    {{ if .Params.authors }}
+    <h4 class="authors">
+        by
+        {{ range .Params.authors }}
+        <a href="{{ .url }}" class="author" {{ if ne (substr .url 0 1) "/" }}target="blank" {{ end }}>{{ .name }}</a>
         {{ end }}
+    </h4>
+    {{ end }}
 
-        {{ if .Params.heroimage }}
-            <div class="hero-image">
-                <img src="{{ .Params.heroimage }}" alt="{{.Params.headline}}">
-            </div>
-        {{ end }}
-
-        <article id="questions">
-            {{ .Content }}
-        </article>
+    {{ if .Params.heroimage }}
+    <div class="hero-image">
+        <img src="{{ .Params.heroimage }}" alt="{{.Params.headline}}">
     </div>
-    <sidebar>
-        {{ partial "research_sidebar.html" . }}
-    </sidebar>
-</section>
+    {{ end }}
+
+    <article id="questions">
+        {{ .Content }}
+    </article>
+</div>
+
 {{ if .Params.updated }}
 <div class="updated">Last updated: {{ .Params.updated | time.Format ":date_long" }}</div>
 {{ end }}
