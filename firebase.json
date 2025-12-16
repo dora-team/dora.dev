@@ -16,8 +16,28 @@
         },
         {
           "source": "/oopsies",
-          "destination": "/publications/errata/",
+          "destination": "/research/publications-errata/",
           "type": 302
+        },
+        {
+          "source": "/publications",
+          "destination": "/research/",
+          "type": 301
+        },
+        {
+          "source": "/publications/",
+          "destination": "/research/",
+          "type": 301
+        },
+        {
+          "source": "/publications/errata",
+          "destination": "/research/publications-errata/",
+          "type": 301
+        },
+        {
+          "source": "/publications/errata/",
+          "destination": "/research/publications-errata/",
+          "type": 301
         },
         {
           "source": "/sponsors/dora-brand-guidelines",
