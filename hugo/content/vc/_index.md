@@ -131,7 +131,7 @@ layout: single
   </p>
   <a href="/research/2024/dora-report"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 DORA Report Cover" style="max-width:18em;"></a>
   <h3>Newer DORA reports available</h3>
-  <p><a href="/publications">View all of DORA's publications</a>.</p>
+  <p><a href="/research/publications/">View all of DORA's publications</a>.</p>
 </div>
 
 <!-- version is 2024.3 -->
@@ -146,7 +146,7 @@ layout: single
   </p>
   <a href="/research/2024/dora-report"><img src="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png" alt="2024 DORA Report Cover" style="max-width:18em;"></a>
   <h3>Newer DORA reports available</h3>
-  <p><a href="/publications">View all of DORA's publications</a>.</p>
+  <p><a href="/research/publications/">View all of DORA's publications</a>.</p>
 </div>
 
 <!-- version is 2024.2 -->
@@ -163,7 +163,7 @@ layout: single
     <a href="/research/2024/dora-report">Download the latest version of the 2024 DORA report</a>.
   </p>
   <h3>Newer DORA reports available</h3>
-  <p><a href="/publications">View all of DORA's publications</a>.</p>
+  <p><a href="/research/publications/">View all of DORA's publications</a>.</p>
 </div>
 
 <!-- version is 2024.1 -->
@@ -180,7 +180,7 @@ layout: single
     <a href="/research/2024/dora-report">Download the latest version of the 2024 DORA report</a>.
   </p>
   <h3>Newer DORA reports available</h3>
-  <p><a href="/publications">View all of DORA's publications</a>.</p>
+  <p><a href="/research/publications/">View all of DORA's publications</a>.</p>
 </div>
 
 <!-- version is 2023-12 -->
@@ -194,7 +194,7 @@ layout: single
     Latest version: <code>v.2023-12</code><br />
   </p>
   <h3>Newer DORA reports available</h3>
-  <p><a href="/publications">View all of DORA's publications</a>.</p>
+  <p><a href="/research/publications/">View all of DORA's publications</a>.</p>
 </div>
 
 <!-- version is 2023-10 -->
@@ -212,7 +212,7 @@ layout: single
   </p>
 
   <h3>Newer DORA reports available</h3>
-  <p><a href="/publications">View all of DORA's publications</a>.</p>
+  <p><a href="/research/publications/">View all of DORA's publications</a>.</p>
 </div>
 
 {{< version_check_assets >}}
