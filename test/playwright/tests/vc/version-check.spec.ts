@@ -90,7 +90,7 @@ test.describe('Version Checker', () => {
             ).toBeVisible();
             await expect(
               versionDiv.getByRole('link', { name: "View all of DORA's publications" }),
-            ).toHaveAttribute('href', '/publications');
+            ).toHaveAttribute('href', '/research/publications/');
           });
         } else {
           test('does not show the "Newer Reports Available" section', async ({ page }) => {

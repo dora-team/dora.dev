@@ -1,10 +1,10 @@
 ---
-title: "Errata"
+title: "DORA Research Errata"
 date: 2023-09-28T09:32:16-04:00
 draft: false
 ---
 
-# DORA Publications Errata
+# DORA Research Errata
 
 ### <a href='{{<relref "/ai/capabilities-model/errata">}}'>DORA AI Capabilities Model report</a>
 ### <a href='{{<relref "/research/2025/errata">}}'>State of AI-assisted Software Development 2025</a>
