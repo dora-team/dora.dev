@@ -4,6 +4,11 @@ date: 2023-02-01
 draft: false
 type: "publications"
 ---
+
+# Publications by DORA
+
+Findings from DORA’s research program are made available through a series of publications.
+
 > [Sponsorship opportunities](/sponsors/) are available for upcoming DORA reports.
 
 ## DORA AI Capabilities Model report
