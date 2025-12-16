@@ -64,3 +64,8 @@
 {{ if (eq .Section "ai") }}
 {{- partial "ai_header" . -}}
 {{ end }}
+
+<!-- if this is in the "research" section and not the root, show the partial: research_header -->
+{{ if and (eq .Section "research") (ne .RelPermalink "/research/") }}
+{{- partial "research_header" . -}}
+{{ end }}
