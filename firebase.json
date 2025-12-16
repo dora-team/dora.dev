@@ -16,7 +16,7 @@
         },
         {
           "source": "/oopsies",
-          "destination": "/research/publications-errata/",
+          "destination": "/research/errata/",
           "type": 302
         },
         {
@@ -31,12 +31,12 @@
         },
         {
           "source": "/publications/errata",
-          "destination": "/research/publications-errata/",
+          "destination": "/research/errata/",
           "type": 301
         },
         {
           "source": "/publications/errata/",
-          "destination": "/research/publications-errata/",
+          "destination": "/research/errata/",
           "type": 301
         },
         {
