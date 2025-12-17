@@ -10,14 +10,14 @@ test.describe('Core Model', () => {
   });
 
   test('starts in summary view mode', async ({ page }) => {
-    await expect(page.locator('#app')).toContainText('Well-being');
+    await expect(page.locator('#core-model')).toContainText('Well-being');
   });
 
   test('toggles between summary and detail views', async ({ page }) => {
     // Switch to detail view
     await page.getByText('detail').click();
     // Verify detail content appears
-    await expect(page.locator('#app')).toContainText('Service Level Objectives (SLOs):');
+    await expect(page.locator('#core-model')).toContainText('Service Level Objectives (SLOs):');
 
     // Switch back to summary view
     await page.getByText('summary').click();

@@ -10,10 +10,10 @@
         <h4><a href="{{ .RelPermalink }}">{{ .Params.title }}</a></h4>
         <div class="tags">
             {{ if .Params.core }}
-            <div class="core"><a href='{{ relref . "/research/"}}'>core</a></div>
+            <div class="core"><a href='{{ relref . "/research/"}}#core-model'>core</a></div>
             {{ end }}
             {{ if .Params.ai }}
-            <div class="ai"><a href='{{ relref . "/ai/"}}'>AI</a></div>
+            <div class="ai"><a href='{{ relref . "/ai/"}}#explore-the-model'>AI</a></div>
             {{ end }}
         </div>
         <p>

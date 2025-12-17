@@ -31,4 +31,9 @@ test.describe('Research home page', () => {
   test('has the correct main heading', async ({ page }) => {
     await expect(page.getByRole('heading', { name: 'DORA’s Research Program' })).toBeVisible();
   });
+
+  test('has an anchor for the Core Model section', async ({ page }) => {
+    const coreModelAnchor = page.locator('#core-model');
+    await expect(coreModelAnchor).toBeAttached();
+  });
 });

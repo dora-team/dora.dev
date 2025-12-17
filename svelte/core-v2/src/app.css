@@ -1,6 +1,6 @@
 @import url("./assets/_variables.css");
 
-#app {
+#core-model {
     max-width: 1280px;
     margin: 0 auto;
     text-align: center;
