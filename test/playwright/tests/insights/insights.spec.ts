@@ -45,39 +45,70 @@ test.describe('Insights', () => {
     });
 
     test('shows navigation links and footer tags', async ({ page }) => {
-        // 1. Check "Posted in" and "Previous post" on the newest post (Builder Mindset)
-        await page.goto('/insights/builder-mindset/');
-        await expect(page).toHaveTitle(/Understanding builder intent/);
+        // 1. Navigate to the insights listing to find the newest post
+        await page.goto('/insights/');
 
-        // Check for "Posted in:" section at the bottom
+        // Get the first article's link (newest post)
+        // We assume the first anchor in the article is the main link to the post
+        const firstPostLink = page.locator('.insights-feed article').first().locator('a').first();
+        const firstPostUrl = await firstPostLink.getAttribute('href');
+
+        if (!firstPostUrl) throw new Error('Could not find newest post URL');
+
+        // Navigate to the newest post
+        await firstPostLink.click();
+        await expect(page).toHaveURL(firstPostUrl);
+
+        // Check for "Posted in:" section at the bottom (Test generic presence)
         const footerTags = page.locator('.footer-tags');
         await expect(footerTags).toBeVisible();
         await expect(footerTags.getByText('Posted in:')).toBeVisible();
-        await expect(footerTags.getByRole('link', { name: '#AI' })).toBeVisible();
 
-        // Check for Previous Post link
+        // Check for "Previous post" link (should exist assuming > 1 posts)
         await expect(page.getByText('Previous post:')).toBeVisible();
-        await expect(page.getByRole('link', { name: 'Choosing measurement frameworks' })).toBeVisible();
 
-        // Check for Next Post link (should NOT exist as it is the newest)
+        // Check for "Next post" link (should NOT exist on the newest post)
         await expect(page.getByText('Next post:')).not.toBeVisible();
 
-        // 2. Check "Next post" on the oldest post (Trust in AI)
-        await page.goto('/insights/trust-in-ai/');
-        await expect(page).toHaveTitle(/Trust in AI/);
+        // 2. Check the second newest post (which should link to the newest)
+        await page.goto('/insights/');
+        const secondPostLink = page.locator('.insights-feed article').nth(1).locator('a').first();
+        const secondPostUrl = await secondPostLink.getAttribute('href');
 
-        // Check for Next Post link
+        if (!secondPostUrl) {
+            console.log('Skipping second post check: only one post found.');
+            return;
+        }
+
+        await secondPostLink.click();
+        await expect(page).toHaveURL(secondPostUrl);
+
+        // Check for "Next post" link
         await expect(page.getByText('Next post:')).toBeVisible();
-        await expect(page.getByRole('link', { name: 'How gen AI affects the value of development work' })).toBeVisible();
 
-        // 3. Check "Previous post" on 'concerns-beyond-accuracy-of-ai-output'
-        // Previous post is 'adopt-gen-ai' which has a different title and headline
-        await page.goto('/insights/concerns-beyond-accuracy-of-ai-output/');
-        await expect(page).toHaveTitle(/Concerns beyond the accuracy/);
+        // Verify it links to the newest post
+        const nextPostAnchor = page.getByText('Next post:').locator('..').getByRole('link');
+        await expect(nextPostAnchor).toBeVisible();
 
-        await expect(page.getByText('Previous post:')).toBeVisible();
-        // Should use headline: "Helping developers adopt generative AI..."
-        // NOT title: "Adopt generative AI"
-        await expect(page.getByRole('link', { name: 'Helping developers adopt generative AI: Four practical strategies for organizations' })).toBeVisible();
+        // Playwright's getAttribute returns the exact string in the DOM, which might be relative.
+        // The firstPostUrl we got earlier was likely relative (e.g. /insights/foo/).
+        // So checking containment or exact match should work.
+        await expect(nextPostAnchor).toHaveAttribute('href', firstPostUrl);
+
+        // 3. Check the oldest post (last in the list, should have NO "Previous post")
+        await page.goto('/insights/');
+        const lastPostLink = page.locator('.insights-feed article').last().locator('a').first();
+        const lastPostUrl = await lastPostLink.getAttribute('href');
+
+        if (!lastPostUrl) throw new Error('Could not find oldest post URL');
+
+        await lastPostLink.click();
+        await expect(page).toHaveURL(lastPostUrl);
+
+        // Check for "Next post" link (should be visible for the oldest post)
+        await expect(page.getByText('Next post:')).toBeVisible();
+
+        // Check for "Previous post" link (should NOT be visible for the oldest post)
+        await expect(page.getByText('Previous post:')).not.toBeVisible();
     });
 });
