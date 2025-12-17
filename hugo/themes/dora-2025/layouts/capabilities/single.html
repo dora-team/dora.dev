@@ -15,33 +15,10 @@
     {{ end }}
 </div>
 {{ end }}
-<section class="hasSidebar">
+<section>
     <article>
         {{ .Content }}
     </article>
-    <sidebar>
-        <section>
-            <h4>Capabilities</h4>
-            <h5>Climate for Learning</h5>
-            <ul>
-                {{ range (where (where .Site.RegularPages "Section" .Section) "Params.Category" "climate for learning").ByParam "Title" }}
-                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                {{ end }}
-            </ul>
-            <h5>Fast Flow</h5>
-            <ul>
-                {{ range (where (where .Site.RegularPages "Section" .Section) "Params.Category" "fast flow").ByParam "Title" }}
-                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                {{ end }}
-            </ul>
-            <h5>Fast Feedback</h5>
-            <ul>
-                {{ range (where (where .Site.RegularPages "Section" .Section) "Params.Category" "fast feedback").ByParam "Title" }}
-                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                {{ end }}
-            </ul>
-        </section>
-    </sidebar>
 </section>
 
 {{ if .Params.updated }}

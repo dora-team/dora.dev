@@ -11,9 +11,4 @@ test('Well-being limits page loads correctly', async ({ page }) => {
 
   // This is a core capability
   await expect(page.getByRole('link', { name: 'core', exact: true })).toBeVisible();
-
-  //Check the sidebar
-  await expect(page.getByRole('heading', { name: 'Climate for Learning', exact: true })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Fast Flow', exact: true })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Fast Feedback', exact: true })).toBeVisible();
 });

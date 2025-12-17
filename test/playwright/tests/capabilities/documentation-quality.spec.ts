@@ -32,13 +32,6 @@ test('Documentation quality page contains all expected links', async ({ page }) 
   }
 });
 
-test('Documentation quality page contains all expected headings', async ({ page }) => {
-  const headings = ['Climate for Learning', 'Fast Flow', 'Fast Feedback'];
-  for (const heading of headings) {
-    await expect(page.getByRole('heading', { name: heading, exact: true })).toBeVisible();
-  }
-});
-
 test('Documentation quality page contains "core" link', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'core', exact: true })).toBeVisible();
 });
