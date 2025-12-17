@@ -22,6 +22,30 @@
   {{ end }}
 </h4>
 {{ end }}
+{{ if .Params.guides }}
+<h4 class="authors">
+  guidance from
+  {{ range .Params.guides }}
+  {{ if .url }}
+  <a href="{{ .url }}" class="author" {{ if ne (substr .url 0 1) "/" }}target="_blank" {{ end }}>{{ .name }}</a>
+  {{ else }}
+  <span class="author">{{ .name }}</span>
+  {{ end }}
+  {{ end }}
+</h4>
+{{ end }}
+{{ if .Params.additional_research_support }}
+<h4 class="authors">
+  additional research support from
+  {{ range .Params.additional_research_support }}
+  {{ if .url }}
+  <a href="{{ .url }}" class="author" {{ if ne (substr .url 0 1) "/" }}target="_blank" {{ end }}>{{ .name }}</a>
+  {{ else }}
+  <span class="author">{{ .name }}</span>
+  {{ end }}
+  {{ end }}
+</h4>
+{{ end }}
 
 <article class="ai-content">
   {{ .Content }}
