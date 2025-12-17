@@ -77,4 +77,12 @@ test.describe("AI Research Overview Page", () => {
   test("does not have the research archives tabs", async ({ page }) => {
     await expect(page.locator("tab_links")).not.toBeVisible();
   });
+
+  test("insights links have underline text-decoration on hover", async ({ page }) => {
+    const link = page.locator('.insights-list .insights-content ul li a').first();
+    await expect(link).toBeVisible();
+    await expect(link).toHaveCSS('text-decoration-line', 'none');
+    await link.hover();
+    await expect(link).toHaveCSS('text-decoration-line', 'underline');
+  });
 });
