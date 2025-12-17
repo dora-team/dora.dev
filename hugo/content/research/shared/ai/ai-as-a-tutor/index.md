@@ -6,13 +6,13 @@ headless: true
 
 While critics worry students use AI to cheat, our research reveals something different: students are using AI to learn. At UC Berkeley, many students in technical fields are using AI to *teach them* rather than *do for them*: AI was a supplement to the role of professor, TA, or tutor. It was a resource for understanding difficult material, clarifying concepts, and refining technical work.
 
-This finding emerged from an eight-month mixed-methods research project to understand how UC Berkeley students in Electrical Engineering, Computer Science, Design, and Data Science are using artificial intelligence in their academic workflow. We focused on these fields as they provide an interesting lens for understanding how the next generation of developers are currently navigating AI. Our research began with a simple observation: AI use is no longer a unique edge-case; it is pervasive. Google’s DORA 2025 report found that more than 90% of professionals already use AI in their day-to-day work (DORA State of Software Development Report 2025). As these tools become foundational to industry, it’s crucial that students learn how to work with them thoughtfully. Understanding *how* students use these tools is now as important as teaching them technical skills.
+This finding emerged from an eight-month mixed-methods research project to understand how UC Berkeley students in Electrical Engineering, Computer Science, Design, and Data Science are using artificial intelligence in their academic workflow. We focused on gathering perspectives from these  fields through in-depth interviewing and survey responses as they provide a lens for understanding how the next generation of developers are currently navigating AI. Our research began with a simple observation: AI use is no longer a unique edge-case; it is pervasive. Google’s 2025 DORA report found that more than 90% of professionals already use AI in their day-to-day work ([State of AI-assisted Software Development 2025](/research/2025/dora-report/)). As these tools become foundational to industry, it’s crucial for future developers to learn how to work with them thoughtfully.
 
 ## Students as learners, AI as teacher
 
 Each of the students we spoke to described AI as a supplement to their typical learning resources. These engineering students stated that, rather than using AI to finish tasks for them, they wanted to use AI to help them understand the material, refine their technical skills, and quickly iterate on project ideas. AI was able to offer quick advice, further resources to check out, and high-level conceptual guidance. Before AI, this type of work was often limited to the scope of an office hour with a professor or a TA. If students wanted to discuss an idea for a project, for example, this was limited to the short amount of time allocated to each student in an office hour. Additionally, using AI gave technical students room to think more conceptually and creatively, since they were not burning time on the low level details. It also gave them the chance to step into the kind of project shaping role you would expect from a Product Manager or Creative Director.
 
-### Use for conceptual understanding
+## Use for conceptual understanding
 
 Across our interviews, a clear pattern emerged: students viewed AI as a learning companion rather than a productivity tool. In all 11 interviews, participants used the terms *“tutor”* or *“teacher”* when describing their relationship to AI.
 
@@ -22,7 +22,7 @@ Across our interviews, a clear pattern emerged: students viewed AI as a learning
 
 > “For me, AI has been most helpful when I’m studying for a class—whether that’s getting clarification on an assignment or just learning a specific topic. I’ve found that it’s really good at explaining things in a simple manner.”
 
-Rather than using AI to shortcut assignments, students engaged it strategically to refine understanding, strengthen skills, and prepare for class assessments. Students also mentioned that using AI has sped up their time-to-understanding for core concepts as they can simply engage with a chat bot rather than searching Stack Overflow or other developer resources. They described using AI to streamline study sessions, clarify assignment goals, and identify gaps in knowledge. In this way, using AI allowed students to quickly iterate on ideas and to think collaboratively with a brainstorming partner.
+Students engaged AI strategically to refine understanding, strengthen skills, and prepare for class assessments. Students also mentioned that using AI has sped up their time-to-understanding for core concepts as they can simply engage with a chat bot rather than searching Stack Overflow or other developer resources. They described using AI to streamline study sessions, clarify assignment goals, and identify gaps in knowledge. In this way, using AI allowed students to quickly iterate on ideas and to think collaboratively with a brainstorming partner.
 
 {{< dora_perspective title="Scaling continuous learning" >}}
 A [learning culture](/capabilities/learning-culture/) predicts high organizational performance. Building a practice of continuous learning can be difficult when information is difficult to find or access.  The students’ experience of using AI to “understand dense content” is an example of how AI can help build this capability within an organization. Teams can enable better self-service learning and, potentially, accelerate onboarding of new team members by making sure [AI models have access to internal data](/capabilities/ai-accessible-internal-data/).
@@ -37,9 +37,9 @@ According to our survey results, the three primary functions students mentioned 
   <figcaption>Figure 1: Survey results showing the three primary functions students mentioned when describing their AI use.</figcaption>
 </figure>
 
-These tasks, which had previously been under the purview of the instructor, are now being handled by AI. This finding also importantly gestures at the ways in which students are using AI to further refine their understanding of low-level issues such as syntax, trouble-shooting, and best practices. Many computer science students also mentioned that using AI to catch small errors allowed them to be more creative and approach problems from a conceptual/systems-thinking position.
+Before AI tools became prevalent, students relied on instructor support during office hours and lab sessions, or searched through online forums like Stack Overflow for answers. Both approaches had inherent limitations: instructor availability was constrained by scheduling, while online searches required students to parse through multiple threads to find solutions applicable to their specific problem. This finding also importantly gestures at the ways in which students are using AI to further refine their understanding of low-level issues such as syntax, trouble-shooting, and best practices. Many computer science students also mentioned that using AI to catch small errors allowed them to be more creative and approach problems from a conceptual/systems-thinking position. We believe that this shift could lead to a greater sense of satisfaction in both the educational process and coding workflow for students.
 
-> “I spend less time actually coding and more time on big picture ideation. Now, my time is spent thinking through logic, concepts, and coming up with ideas creatively, rather than producing code manually.”
+> “I spend less time actually coding and more time on big picture ideation. Now, my time is spent thinking through logic, concepts, and coming up with ideas creatively, rather than producing code manually.”*
 
 {{< dora_perspective title="A focus on value" >}}
 Offloading the “toil” of syntax allows individuals to reclaim cognitive space for other activities like “big picture ideation.” Letting AI handle the implementation details creates more capacity for engineers to strengthen their [user-centric focus](/capabilities/user-centric-focus/). This shift allows developers to operate more like product owners, ensuring that their increased velocity translates directly into better product performance rather than just more code.
@@ -59,9 +59,7 @@ Another student described using AI as a study guide:
 
 These examples illustrate how students weave AI into the early stages of research and coursework, using it to scope relevance, sequence learning tasks, and manage time efficiently.
 
-Many used AI *metacognitively*, as a way to pinpoint what they did not yet understand or needed to study further. One student mentioned:
-
-> “I try to break down the code into chunks. Usually AI gives comments for the code and so I try to see how the code is relating to the comment. If I still don’t understand, I ask the AI tool to break down the code and explain certain chunks.”
+Many used AI *metacognitively*, as a way to identify what they did not yet understand or needed to study further.
 
 Of course, these computer science students were not limited to a single use case of AI within a project. Many described integrating AI across multiple stages of their workflow, drawing on it for ideation, data exploration, and technical execution.
 
