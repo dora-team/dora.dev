@@ -69,3 +69,8 @@
 {{ if and (eq .Section "research") (ne .RelPermalink "/research/") }}
 {{- partial "research_header" . -}}
 {{ end }}
+
+<!-- if this is in the "capabilities" section and not the root, show the partial: capabilities_header -->
+{{ if and (eq .Section "capabilities") (ne .RelPermalink "/capabilities/") }}
+{{- partial "capabilities_header" . -}}
+{{ end }}
