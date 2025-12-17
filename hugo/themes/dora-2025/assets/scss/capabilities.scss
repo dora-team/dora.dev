@@ -14,7 +14,7 @@
         grid-auto-rows: min-content;
         gap: 0px 0px;
         grid-template-areas:
-            "heading core"
+            "heading tags"
             "content content";
 
         h4 {
@@ -29,20 +29,33 @@
             }
         }
 
-        .core {
-            grid-area: core;
+        .tags {
+            grid-area: tags;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 2px;
 
-            a {
-                font-weight: 400;
-                background-color: var(--dora-secondary-b-30);
-                border-top-right-radius: 0.5em;
-                border-bottom-left-radius: 0.5em;
-                text-align: center;
-                display: block;
-                font-size: 0.8rem;
-                padding: 0.25rem 0;
-                color: var(--dora-primary-dark);
-                text-decoration: none;
+            .core,
+            .ai {
+
+                a {
+                    font-weight: 400;
+                    background-color: var(--dora-secondary-b-30);
+                    border-top-right-radius: 0.5em;
+                    border-bottom-left-radius: 0.5em;
+                    text-align: center;
+                    display: block;
+                    font-size: 0.8rem;
+                    padding: 0.25rem 0;
+                    color: var(--dora-primary-dark);
+                    text-decoration: none;
+                    width: 3rem;
+                }
+            }
+
+            .ai a {
+                background-color: var(--dora-secondary-c-30);
             }
         }
 
