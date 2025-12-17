@@ -1,30 +1,30 @@
 {{ define "main" }}
 
-    {{- partial "link_styles" "scss/capabilities.scss" -}}
+{{- partial "link_styles" "scss/capabilities.scss" -}}
 
-    {{ range (slice "climate for learning" "fast flow" "fast feedback") }}
-        {{ if eq . "climate for learning" }}
-            <h2 id="{{ . }}">Capabilities that enable a {{ . | title }}</h2>
-        {{ else }}
-            <h2 id="{{ . }}">Capabilities that enable {{ . | title }}</h2>
-        {{ end  }}
-        <section class="capabilitiesGrid">
-            {{ $capabilities := where site.RegularPages "Params.category" . }}
-            {{ range ($capabilities.ByParam "title") }}
-                <article>
-                        <h4><a href="{{ .RelPermalink }}">{{ .Params.title }}</a></h4>
-                        {{ if .Params.core }}
-                            <div class="core"><a href='{{ relref . "/research/"}}'>core</a></div>
-                        {{ end }}
-                        <p>
-                            <a href="{{ .RelPermalink }}">
-                                {{ .Params.headline }}
-                                <span class="learn_more">Learn&nbsp;more&nbsp;<img src="https://www.gstatic.com/images/icons/material/system_gm/svg/arrow_right_alt_24px.svg"></span>
-                            </a>
-                        </p>
-                </article>
+
+<section class="capabilitiesGrid">
+    {{ $capabilities := where .Site.RegularPages "Section" "capabilities" }}
+    {{ range ($capabilities.ByParam "title") }}
+    <article>
+        <h4><a href="{{ .RelPermalink }}">{{ .Params.title }}</a></h4>
+        <div class="tags">
+            {{ if .Params.core }}
+            <div class="core"><a href='{{ relref . "/research/"}}'>core</a></div>
             {{ end }}
-        </section>
+            {{ if .Params.ai }}
+            <div class="ai"><a href='{{ relref . "/ai/"}}'>AI</a></div>
+            {{ end }}
+        </div>
+        <p>
+            <a href="{{ .RelPermalink }}">
+                {{ .Params.headline }}
+                <span class="learn_more">Learn&nbsp;more&nbsp;<img src="https://www.gstatic.com/images/icons/material/system_gm/svg/arrow_right_alt_24px.svg"></span>
+            </a>
+        </p>
+    </article>
     {{ end }}
+</section>
+
 
 {{ end }}
