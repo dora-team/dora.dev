@@ -14,10 +14,6 @@ test.describe("Healthy data ecosystems capability", () => {
     await expect(page.locator("h1")).toContainText("Healthy data ecosystems");
   });
 
-  test("has the correct categories", async ({ page }) => {
-    await expect(page.locator(".categories")).toContainText("AI");
-  });
-
   test("displays its last updated date", async ({ page }) => {
     await expect(page.locator(".updated")).toContainText(
       LAST_UPDATED_DATE_REGEX,

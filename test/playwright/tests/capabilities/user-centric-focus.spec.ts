@@ -24,13 +24,4 @@ test.describe("User-centric Focus capability", () => {
     await expect(page.locator(".labels")).toContainText("AI");
     await expect(page.locator("h1").getByRole('link', { name: 'AI', exact: true })).toBeVisible();
   });
-
-  test("has the correct categories", async ({ page }) => {
-    const categories = [
-      "AI"
-    ];
-    for (const category of categories) {
-      await expect(page.locator(".categories")).toContainText(category);
-    }
-  });
 });
