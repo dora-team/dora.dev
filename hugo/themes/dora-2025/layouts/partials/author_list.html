@@ -1,0 +1,12 @@
+{{ if .list }}
+<h4 class="authors">
+  {{ .label }}
+  {{ range .list }}
+  {{ if .url }}
+  <a href="{{ .url }}" class="author" {{ if ne (substr .url 0 1) "/" }}target="_blank" {{ end }}>{{ .name }}</a>
+  {{ else }}
+  <span class="author">{{ .name }}</span>
+  {{ end }}
+  {{ end }}
+</h4>
+{{ end }}
