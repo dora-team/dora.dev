@@ -10,7 +10,7 @@ This finding emerged from an eight-month mixed-methods research project to under
 
 ## Students as learners, AI as teacher
 
-Each of the students we spoke to described AI as a supplement to their typical learning resources. These engineering students stated that, rather than using AI to finish tasks for them, they wanted to use AI to help them understand the material, refine their technical skills, and quickly iterate on project ideas. AI was able to offer quick advice, further resources to check out, and high-level conceptual guidance. Before AI, this type of work was often limited to the scope of an office hour with a professor or a TA. If students wanted to discuss an idea for a project, for example, this was limited to the short amount of time allocated to each student in an office hour. Additionally, using AI gave technical students room to think more conceptually and creatively, since they were not burning time on the low level details. It also gave them the chance to step into the kind of project shaping role you would expect from a Product Manager or Creative Director.
+Each of the students we spoke to described AI as a supplement to their typical learning resources. These engineering students stated that, rather than using AI to finish tasks for them, they wanted to use AI to help them understand the material, refine their technical skills, and quickly iterate on project ideas. AI was able to offer quick advice, further resources to check out, and high-level conceptual guidance. Before AI, this type of work was often limited to the scope of an office hour with a professor or a TA. If students wanted to discuss an idea for a project, for example, this was limited to the short amount of time allocated to each student in an office hour. Additionally, students felt that using AI gave them more time to think conceptually, since they were able to spend less effort on low-level details. It also gave them the chance to step into the kind of project shaping role you would expect from a Product Manager or Creative Director.
 
 ## Use for conceptual understanding
 
@@ -30,14 +30,14 @@ A [learning culture](/capabilities/learning-culture/) predicts high organization
 
 ## Use for skill development
 
-According to our survey results, the three primary functions students mentioned when describing their AI use were: identifying and fixing code errors, and explaining new programming concepts (see figure 1).
+According to our survey results from May 2025 (N=85), the three primary functions students mentioned when describing their AI use were: identifying and fixing code errors, and explaining new programming concepts (see figure 1).
 
 <figure>
   <img src="/research/shared/ai/ai-as-a-tutor/top-three-usecases.svg" id="top-three-usecases" class="responsive-svg" alt="Top three use cases for AI" />
   <figcaption>Figure 1: Survey results showing the three primary functions students mentioned when describing their AI use.</figcaption>
 </figure>
 
-Before AI tools became prevalent, students relied on instructor support during office hours and lab sessions, or searched through online forums like Stack Overflow for answers. Both approaches had inherent limitations: instructor availability was constrained by scheduling, while online searches required students to parse through multiple threads to find solutions applicable to their specific problem. This finding also importantly gestures at the ways in which students are using AI to further refine their understanding of low-level issues such as syntax, trouble-shooting, and best practices. Many computer science students also mentioned that using AI to catch small errors allowed them to be more creative and approach problems from a conceptual/systems-thinking position. We believe that this shift could lead to a greater sense of satisfaction in both the educational process and coding workflow for students.
+Before AI tools became prevalent, students relied on instructor support during office hours and lab sessions, or searched through online forums like Stack Overflow for answers. Both approaches had inherent limitations: instructor availability was constrained by scheduling, while online searches required students to parse through multiple threads to find solutions applicable to their specific problem. This finding also importantly gestures at the ways in which students are using AI to further refine their understanding of low-level issues such as syntax, trouble-shooting, and best practices. Many computer science students also mentioned that using AI to catch small errors allowed them to be more creative and approach problems from a conceptual/systems-thinking position.
 
 > “I spend less time actually coding and more time on big picture ideation. Now, my time is spent thinking through logic, concepts, and coming up with ideas creatively, rather than producing code manually.”*
 

@@ -20,7 +20,6 @@ To add a new group:
 {{ $contributors := slice
 (dict "key" "authors" "label" "by")
 (dict "key" "guides" "label" "guidance from")
-(dict "key" "additional_research_support" "label" "additional research support from")
 }}
 {{ range $contributors }}
 {{ partial "author_list" (dict "list" (index $.Params .key) "label" .label) }}
