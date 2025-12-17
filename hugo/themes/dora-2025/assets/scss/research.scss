@@ -86,7 +86,7 @@ article {
 }
 
 // Wider page allows room for Core diagram
-main:has(#app) {
+main:has(#core-model) {
     padding: 0;
 }
 

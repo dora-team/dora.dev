@@ -4,8 +4,8 @@
 <h1 class="tags">
     {{ .Title }}
     <span class="labels">
-        {{ if .Params.core }}<a class="core" href='{{ relref . "/research/" }}'>core</a>{{ end }}
-        {{ if .Params.ai }}<a class="ai" href='{{ relref . "/ai/#explore-the-model" }}'>AI</a>{{ end }}
+        {{ if .Params.core }}<a class="core" href='{{ relref . "/research/" }}#core-model'>core</a>{{ end }}
+        {{ if .Params.ai }}<a class="ai" href='{{ relref . "/ai/" }}#explore-the-model'>AI</a>{{ end }}
     </span>
 </h1>
 {{ if .Params.authors }}

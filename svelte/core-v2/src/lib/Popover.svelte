@@ -61,8 +61,11 @@
 
     <p>{@html summary}</p>
     <div class="footer">
-        {#if link}
-            <a href={link} target="_blank">Learn more about {name.toLowerCase()}</a>
+        <!-- TODO: Remove this conditional check. To permanently remove the "Learn more" links for these items, remove the "link" property from the corresponding entries in src/core_data.json -->
+        {#if link && !["Climate for learning", "Fast flow", "Fast feedback"].includes(name)}
+            <a href={link} target="_blank"
+                >Learn more about {name.toLowerCase()}</a
+            >
         {/if}
     </div>
 </div>
@@ -143,13 +146,13 @@
 
         .footer {
             text-align: center;
-            padding: 0 .5rem 1rem .5rem;
+            padding: 0 0.5rem 1rem 0.5rem;
 
             a {
-                border:1px solid var(--color-grey-light);
-                display:inline-block;
-                border-radius: .25rem;
-                padding:.25rem .75rem;
+                border: 1px solid var(--color-grey-light);
+                display: inline-block;
+                border-radius: 0.25rem;
+                padding: 0.25rem 0.75rem;
                 text-decoration: none;
             }
         }

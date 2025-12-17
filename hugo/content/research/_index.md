@@ -15,7 +15,7 @@ bannerBackgroundColor: yellow  # choose one of "yellow", "blue", "red", "purple"
 <!-- the timestamp shortcode is appended as a cache buster -->
 <script type="module" src="core/assets/index.js?t={{% timestamp %}}"></script>
 <link rel="stylesheet" href="core/assets/index.css?t={{% timestamp %}}">
-<div id="app"></div>
+<div id="core-model"></div>
 
 
 <section class="dark-section">
