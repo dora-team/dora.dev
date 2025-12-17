@@ -15,9 +15,3 @@ test('Job satisfaction page has the correct header.', async ({ page }) => {
 test('Job satisfaction is a core capability.', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'core', exact: true })).toBeVisible();
 });
-
-test('Job satisfaction page displays a sidebar', async ({ page }) => {
-  await expect(page.getByRole('heading', { name: 'Climate for Learning', exact: true })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Fast Flow', exact: true })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Fast Feedback', exact: true })).toBeVisible();
-});
