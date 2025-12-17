@@ -237,6 +237,15 @@ tab_links {
             padding: 1.5rem 0;
             border-bottom: 1px solid var(--grey-30);
 
+            a.label-link {
+                text-decoration: none;
+                color: inherit;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
             .label {
                 font-family: $font-google-sans;
                 font-size: 1.1rem;
