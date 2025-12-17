@@ -202,6 +202,10 @@
           text-decoration: none;
           color: var(--dora-primary-dark);
           font-weight: 500;
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
