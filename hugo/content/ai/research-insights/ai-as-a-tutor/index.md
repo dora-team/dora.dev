@@ -5,7 +5,7 @@ date: 2025-12-12
 updated: 2025-12-17
 research_collection: "AI research insights"
 research_collection_title: "AI as a tutor"
-draft: true
+draft: false
 tab_order: "7"
 tab_title: "AI as a tutor"
 authors:

@@ -58,6 +58,7 @@ draft: false
 * [Report: DORA AI Capabilities Model](/ai/capabilities-model/report/)
 * [Report: State of AI-assisted Software Development](/research/2025/dora-report/)
 * [Report: Impact of Gen AI in Software Development](/ai/gen-ai-report/)
+* [AI as a tutor](/ai/research-insights/ai-as-a-tutor/)
 * [Understanding builder intent in the AI era](/ai/research-insights/builder-mindset/)
 * [Choosing measurement frameworks to fit your organizational goals](/ai/research-insights/measurement-frameworks/)
 * [Concerns beyond the accuracy of AI output](/ai/research-insights/concerns-beyond-accuracy-of-ai-output/)
