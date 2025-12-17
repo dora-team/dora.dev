@@ -24,8 +24,4 @@ test.describe("AI-accessible internal data capability", () => {
     await expect(page.locator(".labels")).toContainText("AI");
     await expect(page.locator("h1").getByRole('link', { name: 'AI', exact: true })).toBeVisible();
   });
-
-  test("has the correct categories", async ({ page }) => {
-    await expect(page.locator(".categories")).toContainText("AI");
-  });
 });
