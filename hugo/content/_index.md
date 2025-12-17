@@ -57,7 +57,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
     img_src="/img/homepage/snipes/core.png"
     eyebrow="Framework"
     headline="DORA Core"
-    url="/research/"
+    url="/research/#core-model"
   >}}
     DORA Core represents the most well-established findings across the history and breadth our research program. Use it to guide transformation efforts in your organization.
     {{< /homepage/snipe >}}
