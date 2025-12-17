@@ -22,6 +22,10 @@ test.describe('Research home page', () => {
 
     // Checks that the list of elements has the exact text content in order
     await expect(researchCollectionLabels).toHaveText(researchCollections);
+
+    // Verify that the labels are clickable links
+    const researchCollectionLinks = page.locator('#_pw-research-archives a.label-link');
+    await expect(researchCollectionLinks).toHaveCount(researchCollections.length);
   });
 
   test('has the correct main heading', async ({ page }) => {
