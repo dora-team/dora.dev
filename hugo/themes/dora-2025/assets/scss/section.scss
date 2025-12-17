@@ -47,6 +47,14 @@
     background-color: var(--dora-secondary-c);
   }
 
+  &.capabilities {
+    background-color: var(--dora-secondary-b);
+
+    .content {
+      background-image: url(/capabilities/banner-capabilities.png);
+    }
+  }
+
   &.research {
     background-color: var(--dora-highlight);
 
