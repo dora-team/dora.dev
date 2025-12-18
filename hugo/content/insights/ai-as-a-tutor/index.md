@@ -11,11 +11,12 @@ authors:
     3: {name: "Mindy Tsai", url: "http://www.linkedin.com/in/mindytsai0308/"}
     4: {name: "Karissa Wong", url: "https://www.linkedin.com/in/karissa-wong/"}
 guides:
-    1: {name: "Jamie Benario", url: "https://www.linkedin.com/in/jamiegorson/"}
+    1: {name: "Harini Sampath", url: "https://www.linkedin.com/in/harinisampath/"}
     2: {name: "Derek DeBellis", url: "/research/team/#derek-debellis"}
-    3: {name: "Nathen Harvey", url: "https://www.linkedin.com/in/nathen/"}
-    4: {name: "Steve Fadden", url: "https://www.linkedin.com/in/stevefadden/"}
-    5: {name: "Harini Sampath", url: "https://www.linkedin.com/in/harinisampath/"}
+    3: {name: "Steve Fadden", url: "https://www.linkedin.com/in/stevefadden/"}
+    4: {name: "Becky Sohn", url: "https://www.linkedin.com/in/rebeccasohn/"}
+    5: {name: "Jamie Benario", url: "https://www.linkedin.com/in/jamiegorson/"}
+    6: {name: "Nathen Harvey", url: "https://www.linkedin.com/in/nathen/"}
 headline: "AI as a tutor"
 type: "insights"
 tags: ["AI", "Education", "Learning"]
