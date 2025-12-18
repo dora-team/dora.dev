@@ -8,7 +8,6 @@ on:
       - 'docs/**'
       - 'adrs/**'
       - '.gemini/**'
-      - '.github/**'      
       - '**/README.md'
   schedule:
     - cron: "0 7 * * *"
