@@ -21,8 +21,6 @@ defaults:
 jobs:
   build_drafts_off:
     runs-on: ubuntu-latest
-    outputs:
-      preview_url: ${{ steps.deploy.outputs.details_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -47,5 +45,5 @@ jobs:
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           projectId: ${{ vars.GOOGLE_CLOUD_PROJECT }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          firebaseServiceAccount: ${{ secrets.SERVICE_ACCOUNT }}
           channelId: live
