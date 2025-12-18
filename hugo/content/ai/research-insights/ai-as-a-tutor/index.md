@@ -15,7 +15,7 @@ authors:
     4: {name: "Karissa Wong", url: "https://www.linkedin.com/in/karissa-wong/"}
 guides:
     1: {name: "Jamie Benario", url: "https://www.linkedin.com/in/jamiegorson/"}
-    2: {name: "Dereck DeBellis", url: "/research/team/#derek-debellis"}
+    2: {name: "Derek DeBellis", url: "/research/team/#derek-debellis"}
     3: {name: "Nathen Harvey", url: "https://www.linkedin.com/in/nathen/"}
     4: {name: "Steve Fadden", url: "https://www.linkedin.com/in/stevefadden/"}
     5: {name: "Harini Sampath", url: "https://www.linkedin.com/in/harinisampath/"}
