@@ -12,15 +12,20 @@
             <h2>{{ .Params.subhead }}</h2>
             {{ end }}
 
-            {{ if .Params.authors }}
-            <h4 class="authors">
-                by
-                {{ range .Params.authors }}
-                <a href="{{ .url }}" class="author" {{ if ne (substr .url 0 1) "/" }}target="_blank" {{ end }}>{{ .name }}</a>
-                {{ end }}
-            </h4>
+            {{/*
+            Define the groups of people to display.
+            To add a new group:
+            1. Add a new dict to this slice.
+            2. "key": matches the param name in the content front matter (e.g. "contributors").
+            3. "label": the text to display before the names (e.g. "with contributions from").
+            */}}
+            {{ $contributors := slice
+            (dict "key" "authors" "label" "by")
+            (dict "key" "guides" "label" "guidance from")
+            }}
+            {{ range $contributors }}
+            {{ partial "author_list" (dict "list" (index $.Params .key) "label" .label) }}
             {{ end }}
-
             {{ if .Date }}
             <div class="posted">{{ .Date.Format "January 2, 2006" }}</div>
             {{ end }}

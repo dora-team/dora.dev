@@ -1,6 +1,6 @@
 ---
 # These are optional elements. Feel free to remove any of them.
-status: accepted
+status: superseded by [ADR-010](010-use-github-actions-for-ci.md)
 date: 2023-03-01
 deciders: davidstanke
 consulted: nathenharvey
