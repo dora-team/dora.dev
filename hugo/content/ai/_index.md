@@ -7,7 +7,7 @@ draft: false
 
 {{< report_feature
   eyebrow="our latest report"
-  headline="AI Capabilities Model"
+  headline="Super rad AI Capabilities Model"
   url="https://cloud.google.com/resources/content/2025-dora-ai-capabilities-model-report"
   cta="Get the report"
   url_2="/research/publications/"
