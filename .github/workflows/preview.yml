@@ -53,7 +53,7 @@ jobs:
           firebaseServiceAccount: ${{ secrets.SERVICE_ACCOUNT }}
           expires: 30d
           projectId: ${{ vars.GOOGLE_CLOUD_PROJECT }}
-          channelId: ${{ github.event.pull_request.number || 'manual' }}_drafts_off
+          channelId: pr${{ github.event.pull_request.number || 'manual' }}_drafts_off
   build_drafts_on:
     runs-on: ubuntu-latest
     outputs:
@@ -84,7 +84,7 @@ jobs:
           firebaseServiceAccount: ${{ secrets.SERVICE_ACCOUNT }}
           expires: 30d
           projectId: ${{ vars.GOOGLE_CLOUD_PROJECT }}
-          channelId: ${{ github.event.pull_request.number || 'manual' }}_drafts_on
+          channelId: pr${{ github.event.pull_request.number || 'manual' }}_drafts_on
   # shard tests across multiple workers
   test:
     strategy:
