@@ -7,19 +7,19 @@
     {{ $capabilities := where .Site.RegularPages "Section" "capabilities" }}
     {{ range ($capabilities.ByParam "title") }}
     <article>
-        <h4><a href="{{ .RelPermalink }}">{{ .Params.title }}</a></h4>
-        <div class="tags">
+        <h4><a href="{{ .RelPermalink }}">{{ .Params.title }}</a>
             {{ if .Params.core }}
-            <div class="core"><a href='{{ relref . "/research/"}}#core-model'>core</a></div>
+                <div class="core"><a href='{{ relref . "/research/"}}#core-model'>core</a></div>
             {{ end }}
             {{ if .Params.ai }}
-            <div class="ai"><a href='{{ relref . "/ai/"}}#explore-the-model'>AI</a></div>
+                <div class="ai"><a href='{{ relref . "/ai/"}}#explore-the-model'>AI</a></div>
             {{ end }}
-        </div>
+        </h4>
         <p>
             <a href="{{ .RelPermalink }}">
                 {{ .Params.headline }}
-                <span class="learn_more">Learn&nbsp;more&nbsp;<img src="https://www.gstatic.com/images/icons/material/system_gm/svg/arrow_right_alt_24px.svg"></span>
+                <span class="learn_more">Learn&nbsp;more&nbsp;<img
+                        src="https://www.gstatic.com/images/icons/material/system_gm/svg/arrow_right_alt_24px.svg"></span>
             </a>
         </p>
     </article>

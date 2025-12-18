@@ -9,32 +9,26 @@
     article {
         border: 1px solid $border-light;
         border-radius: 0.5em;
-        display: grid;
-        grid-template-columns: 1fr 3rem;
-        grid-auto-rows: min-content;
-        gap: 0px 0px;
+        display: flex;
+       flex-direction: column;
         grid-template-areas:
-            "heading tags"
-            "content content";
+            "heading"
+            "content";
 
         h4 {
             font-size: 1em;
             grid-area: heading;
             margin: 0;
-            padding: 1rem 0.5rem 0 0.75rem;
+            padding: .75rem 0.5rem 0 0.75rem;
+            display: flex;
+            gap:4px;
+            flex-direction: row;
 
             a {
                 color: $color-text;
                 text-decoration: none;
+                flex-grow:1;
             }
-        }
-
-        .tags {
-            grid-area: tags;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 2px;
 
             .core,
             .ai {
@@ -42,15 +36,13 @@
                 a {
                     font-weight: 400;
                     background-color: var(--dora-secondary-b-30);
-                    border-top-right-radius: 0.5em;
-                    border-bottom-left-radius: 0.5em;
+                    border-radius: 4px;
                     text-align: center;
-                    display: block;
-                    font-size: 0.8rem;
-                    padding: 0.25rem 0;
+                    display: inline;
+                    font-size: 0.7rem;
+                    padding: 4px 6px;
                     color: var(--dora-primary-dark);
                     text-decoration: none;
-                    width: 3rem;
                 }
             }
 
