@@ -26,3 +26,5 @@ Cloud Build has served us well for several years, but it has a few limitations. 
 ## Decision Outcome
 
 Chosen option: **Switch to GitHub Actions** because of its widespread use, breadth of capabilities, and cost (free for public repos)
+
+GitHub Actions workflow configuration files are located in the `.github/workflows` folder.

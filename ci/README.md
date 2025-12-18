@@ -1,3 +1,10 @@
+# DEPRECATED
+We have adopted GitHub Actions for CI/CD. See [ADR #010](../adrs/010-use-github-actions-for-ci.md) for more information.
+
+The build configurations in this folder are no longer in use.
+
+
+---
 # Hosting / Deployment / Continuous Integration
 
 ## Environments
