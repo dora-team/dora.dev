@@ -119,7 +119,7 @@ jobs:
           key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
 
       - name: Install dependencies
-        run: ppm install
+        run: npm install
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
