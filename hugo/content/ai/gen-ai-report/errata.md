@@ -1,6 +1,5 @@
 ---
-title: "DORA Research Errata"
-top_header: "Artificial Intelligence"
+title: "Impact of Generative AI in Software Development report errata"
 date: 2025-03-06
 updated: 2025-03-06
 research_collection: "Impact of Generative AI in Software Development"
@@ -8,6 +7,7 @@ draft: false
 tab_order: "100"
 tab_title: "Errata"
 type: "ai"
+layout: "report"
 ---
 
 This page lists errors and corrections to the Impact of Generative AI in Software Development. To track revisions, report PDFs are stamped with a version number. The current version of the report is [`v.2025.2`](/ai/gen-ai-report).
