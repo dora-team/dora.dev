@@ -6,7 +6,7 @@ test.describe('AICM questions page', () => {
   });
 
   test('has the correct title', async ({ page }) => {
-    await expect(page).toHaveTitle(/DORA AI Capabilities Model questions/);
+    await expect(page).toHaveTitle(/Survey Questions/);
   });
 
   test('has the "AI adoption" section with subheadings', async ({ page }) => {

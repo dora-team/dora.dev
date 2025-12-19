@@ -1,12 +1,11 @@
 ---
 title: "Choosing measurement frameworks to fit your organizational goals"
-top_header: "AI: Research insights"
 date: 2025-08-06
 updated: 2025-08-26
 research_collection: "AI research insights"
 research_collection_title: "Measurement frameworks"
 draft: false
-tab_order: "2"
+tab_order: "3"
 tab_title: "Measurement frameworks"
 authors:
     1: {name: "Dr. Sarah D'Angelo", url: "https://www.linkedin.com/in/sarahrdangelo/"}

@@ -6,7 +6,7 @@ test.describe('AICM report page', () => {
   });
 
   test('has the correct title', async ({ page }) => {
-    await expect(page).toHaveTitle(/DORA AI Capabilities Model report/);
+    await expect(page).toHaveTitle(/Download the DORA AI Capabilities Model report/);
   });
 
   test('has the correct header', async ({ page }) => {
