@@ -91,22 +91,48 @@ jobs:
         shard: [1, 2, 3, 4]
     runs-on: ubuntu-latest
     needs: build_drafts_on
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./test/playwright
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
+
       - name: Set up node. # establish build cache
         uses: actions/setup-node@v6
         with:
-          node-version: 24
-          cache: 'npm'
-          cache-dependency-path: test/playwright/package-lock.json
-      - name: Set up playwright
-        working-directory: test/playwright
-        run: npm ci && npx playwright install --with-deps
+          node-version: '24.x'
+
+      - name: Get installed Playwright version
+        id: playwright-version
+        run: echo "PLAYWRIGHT_VERSION=$(node -e "console.log(require('./package-lock.json').dependencies['@playwright/test'].version)")" >> $GITHUB_ENV
+      
+      - name: Restore cache - playwright binaries
+        uses: actions/cache/restore@v5
+        id: playwright-cache
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
+
+      - name: Install dependencies
+        run: ppm install
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Save cache - playwright binaries
+        if: always() && steps.playwright-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v5
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
+
       - name: Playwright tests
-        working-directory: test/playwright
         env:
           PLAYWRIGHT_BASE_URL: ${{needs.build_drafts_on.outputs.preview_url}}
         run: |
