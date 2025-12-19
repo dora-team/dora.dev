@@ -1,19 +1,16 @@
 ---
-title: "DORA AI Capabilities Model report"
-top_header: "DORA AI Capabilities Model"
+title: "Download the DORA AI Capabilities Model report"
 date: 2025-11-25
 updated: 2025-11-25
 draft: false
 type: "ai"
+layout: "report"
 tab_order: "1"
 tab_title: "AI Capabilities Model report"
 research_collection: "DORA AI Capabilities Model"
 research_collection_title: "DORA AI Capabilities Model"
-hide_title: true
 hideSiteBanner: true
 ---
-
-## Download the DORA AI Capabilities Model report
 
 <grid class="border_none mt-1">
 <item>

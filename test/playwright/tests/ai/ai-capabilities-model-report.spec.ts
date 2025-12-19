@@ -7,12 +7,12 @@ test.describe("AI Capabilities Model report page", () => {
 
   test("has the correct title.", async ({ page }) => {
     await expect(page).toHaveTitle(
-      "DORA | DORA AI Capabilities Model report",
+      "DORA | Download the DORA AI Capabilities Model report",
     );
   });
 
   test("has the correct header.", async ({ page }) => {
-    const header = page.getByRole("heading", { name: "DORA AI Capabilities Model", exact: true });
+    const header = page.getByRole("heading", { name: "DORA AI Capabilities Model", exact: true, level: 1 });
     await expect(header).toBeVisible();
   });
 
@@ -22,7 +22,7 @@ test.describe("AI Capabilities Model report page", () => {
   });
 
   test("has the correct download header.", async ({ page }) => {
-    const downloadHeader = page.getByRole("heading", { name: "Download the DORA AI Capabilities Model report", exact: true });
+    const downloadHeader = page.getByRole("heading", { name: "Download the DORA AI Capabilities Model report", exact: true, level: 2 });
     await expect(downloadHeader).toBeVisible();
   });
 

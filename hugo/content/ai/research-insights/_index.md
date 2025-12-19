@@ -1,6 +1,5 @@
 ---
-title: "AI Research Insights"
-top_header: "AI: Research insights"
+title: "AI research insights"
 updated: 2025-12-17
 date: 2025-12-07
 research_collection: "AI research insights"

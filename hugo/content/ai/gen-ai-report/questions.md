@@ -1,5 +1,5 @@
 ---
-title: "DORA Research Questions"
+title: "Survey Questions"
 date: 2025-03-10
 updated: 2025-03-10
 research_collection: "Impact of Generative AI in Software Development"
