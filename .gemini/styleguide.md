@@ -62,6 +62,7 @@ You should focus on these areas in your code review:
      appearance.
    * Magic Numbers: Using unexplained numerical values directly in the code, making it harder to
      understand the purpose and adjust the values later.
+   * "Magic" Front Matter: Avoid creating custom front matter variables to control layout logic (like `top_header` or `hide_title`) when standard Hugo variables (like defined hierarchy or `.Title`) can achieve the same result. Standardizing on core logic makes templates easier to understand and maintain.
 
 4. Security: Identify potential vulnerabilities in data handling or input validation. Examples here
    include things like storing passwords or credentials, vulnerabilities in the way APIs are designed

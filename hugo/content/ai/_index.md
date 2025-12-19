@@ -1,6 +1,5 @@
 ---
 title: "Artificial Intelligence"
-top_header: "Artificial Intelligence"
 date: 2025-11-26
 draft: false
 ---

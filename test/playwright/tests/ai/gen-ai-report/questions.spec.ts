@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('Gen AI report questions page has the correct title.', async ({ page }) => {
-  await expect(page).toHaveTitle('DORA | DORA Research Questions');
+  await expect(page).toHaveTitle('DORA | Survey Questions');
 });
 
 test('Gen AI report questions page lists the correct research collection.', async ({ page }) => {

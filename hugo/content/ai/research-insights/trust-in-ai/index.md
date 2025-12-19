@@ -1,12 +1,11 @@
 ---
 title: "Fostering Trust in AI"
-top_header: "AI: Research insights"
 date: 2024-09-13
 updated: 2025-03-19
 research_collection: "AI research insights"
 research_collection_title: "Trust in AI"
 draft: false
-tab_order: "6"
+tab_order: "7"
 tab_title: "Trust in AI"
 authors:
     1: {name: "Dr. Kevin M. Storer", url: "/research/team/#dr-kevin-m-storer"}

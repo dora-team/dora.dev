@@ -1,8 +1,6 @@
 {{ define "main" }} {{- partial "link_styles" "scss/ai.scss" -}}
 
-{{ if .Params.top_header }}
-<h1>{{ .Params.top_header }}</h1>
-{{ end }}
+<h1>{{ .Title }}</h1>
 {{ if .Params.research_collection }}
 {{- partial "research_archives_tabs" . -}}
 {{ end }}

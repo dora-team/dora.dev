@@ -553,6 +553,16 @@
           "source": "/ai/capabilities-model",
           "destination": "/ai/capabilities-model/report/",
           "type": 302
+        },
+        {
+          "source": "/ai/gen-ai-report/",
+          "destination": "/ai/gen-ai-report/report/",
+          "type": 302
+        },
+        {
+          "source": "/ai/gen-ai-report",
+          "destination": "/ai/gen-ai-report/report/",
+          "type": 302
         }
       ]
     }
