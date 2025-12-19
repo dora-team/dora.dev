@@ -1,7 +1,7 @@
 ---
 title: "AI Research Insights"
 top_header: "AI: Research insights"
-updated: 2025-10-17
+updated: 2025-12-17
 date: 2025-12-07
 research_collection: "AI research insights"
 tab_title: "Overview"
@@ -10,6 +10,7 @@ layout: overview
 type: ai
 ---
 
+* [AI as a tutor](/ai/research-insights/ai-as-a-tutor/)
 * [Understanding builder intent in the AI era](/ai/research-insights/builder-mindset/)
 * [Choosing measurement frameworks to fit your organizational goals](/ai/research-insights/measurement-frameworks/)
 * [Concerns beyond the accuracy of AI output](/ai/research-insights/concerns-beyond-accuracy-of-ai-output/)
