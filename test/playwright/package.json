@@ -2,6 +2,16 @@
   "name": "playwright",
   "version": "1.0.0",
   "description": "",
+  "devEngines": {
+    "packageManager": {
+      "name": "npm"
+    },
+    "runtime": {
+      "name": "node",
+      "version": ">=24.0.0",
+      "onFail": "warn"
+    }
+  },
   "main": "index.js",
   "scripts": {},
   "keywords": [],
