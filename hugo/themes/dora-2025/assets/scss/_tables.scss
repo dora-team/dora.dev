@@ -1,0 +1,32 @@
+@import "_variables.scss";
+
+main table {
+    border: 1px solid $border-light;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1.5rem;
+
+    tr {
+
+        th,
+        td {
+            margin: 0;
+            padding: 0.5em 0.75em;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: $background-medium;
+            text-align: left;
+        }
+
+        td {
+            font-weight: 300;
+            font-size: 0.9em;
+        }
+
+        &:nth-child(even) {
+            background-color: $background-light;
+        }
+    }
+}

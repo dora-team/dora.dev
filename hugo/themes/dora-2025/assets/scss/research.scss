@@ -132,37 +132,6 @@ tab_links {
     max-width: 24em;
 }
 
-.mainContent table {
-    border: 1px solid $border-light;
-    border-collapse: collapse;
-    width: 100%;
-
-    tr {
-
-        th,
-        td {
-            margin: 0;
-            padding: 0.5em 0.75em;
-            vertical-align: top;
-        }
-
-        th {
-            background-color: $background-medium;
-            text-align: left;
-        }
-
-        td {
-            font-family: $font-roboto;
-            font-weight: 300;
-            font-size: 0.9em;
-        }
-
-        &:nth-child(even) {
-            background-color: $background-light;
-        }
-    }
-}
-
 .container-wide {
     max-width: $layout-breakpoint-maxplus;
     margin: 0 auto;
