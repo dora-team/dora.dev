@@ -10,6 +10,51 @@
       ],
       "redirects": [
         {
+          "source": "/resources/img/2023-DORA-Report-Infographic.v10.pdf",
+          "destination": "/research/2023/2023-DORA-Report-Infographic.v10.pdf",
+          "type": 301
+        },
+        {
+          "source": "/resources/img/2023-DORA-Report-Infographic_thumb.png",
+          "destination": "/research/2023/2023-DORA-Report-Infographic_thumb.png",
+          "type": 301
+        },
+        {
+          "source": "/pdf/big_friendly_diagram.pdf",
+          "destination": "/research/2019/big_friendly_diagram.pdf",
+          "type": 301
+        },
+        {
+          "source": "/img/big_friendly_diagram.png",
+          "destination": "/research/2019/big_friendly_diagram.png",
+          "type": 301
+        },
+        {
+          "source": "/img/misc/2024_1920x1080_survey_future_blue_alt.png",
+          "destination": "/research/2024/2024_1920x1080_survey_future_blue_alt.png",
+          "type": 301
+        },
+        {
+          "source": "/img/misc/2024_1920x1080_survey_future_white.png",
+          "destination": "/research/2024/2024_1920x1080_survey_future_white.png",
+          "type": 301
+        },
+        {
+          "source": "/img/misc/2024_1920x1080_survey_teams_white_alt.png",
+          "destination": "/research/2024/2024_1920x1080_survey_teams_white_alt.png",
+          "type": 301
+        },
+        {
+          "source": "/img/misc/2024_1920x1080_survey_voice_blue_alt.png",
+          "destination": "/research/2024/2024_1920x1080_survey_voice_blue_alt.png",
+          "type": 301
+        },
+        {
+          "source": "/img/misc/2024_1920x1080_teams_white.png",
+          "destination": "/research/2024/2024_1920x1080_teams_white.png",
+          "type": 301
+        },
+        {
           "source": "/dora-brand-guidelines",
           "destination": "/brand-guidelines/",
           "type": 301
