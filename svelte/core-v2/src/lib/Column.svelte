@@ -28,14 +28,17 @@
 <style lang="scss">
     section {
         display: flex;
-        width:100%;
         flex-direction: column;
         background-color: black; /* default; this may be overridden per instance */
         border: 2px solid black; /* default; this may be overridden per instance */
         border-radius: 1rem;
         overflow: hidden;
-        width:18rem;
+        width: 18rem;
         transition: var(--default-transition);
+
+        @media (max-width: 800px) {
+            width: 100%;
+        }
 
         .heading {
             display: block;
@@ -52,14 +55,20 @@
             background-color: var(--color-background);
             display: flex;
             flex-direction: column;
-            padding-bottom:.25rem;
+            padding-bottom: 0.25rem;
         }
     }
     section.capabilities {
-
         &.detail {
-            width:35rem;
+            width: 35rem;
         }
+
+        @media (max-width: 800px) {
+            &.detail {
+                width: 100%;
+            }
+        }
+
         background-color: var(--color-capabilities);
         border-color: var(--color-capabilities);
 
@@ -69,7 +78,10 @@
     }
     section.performance {
         &.detail {
-            width:22.25rem;
+            width: 22.25rem;
+            @media (max-width: 800px) {
+                width: 100%;
+            }
         }
         background-color: var(--color-performance);
         border-color: var(--color-performance);
@@ -78,9 +90,11 @@
         }
     }
     section.outcomes {
-
         &.detail {
-            width:21rem;
+            width: 21rem;
+            @media (max-width: 800px) {
+                width: 100%;
+            }
         }
 
         background-color: var(--color-outcomes);
