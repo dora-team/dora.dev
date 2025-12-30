@@ -30,5 +30,21 @@
                 opacity: 0;
             }
         }
+
+        @media (max-width: 800px) {
+            flex-direction: column;
+            align-items: center;
+            margin: 0.5rem 0;
+
+            span:last-child {
+                transform: rotate(90deg);
+                display: inline-block; /* transform requires block/inline-block */
+            }
+
+            .text {
+                width: auto; /* Allow text to be visible if needed or keep existing logic */
+                text-align: center;
+            }
+        }
     }
 </style>
