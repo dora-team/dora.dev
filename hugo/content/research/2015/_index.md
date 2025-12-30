@@ -5,6 +5,7 @@ draft: false
 research_collection: "2015"
 type: research_archives
 layout: single
+archive_summary: "High-performing IT organizations consistently outperform their counterparts in terms of four key software delivery metrics."
 ---
 
 <grid class="border_none" style="margin-top:1rem;">

@@ -5,6 +5,7 @@ draft: false
 research_collection: "2014"
 type: research_archives
 layout: single
+archive_summary: "DevOps is a cultural shift, not just technical practices, that drives significant improvements in IT and organizational performance."
 ---
 <grid class="border_none" style="margin-top:1rem;">
 <item>
