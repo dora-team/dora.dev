@@ -7,6 +7,7 @@ type: research_archives
 layout: single
 tab_order: "0"
 tab_title: "Overview"
+archive_summary: "AI acts as an amplifier, but the greatest returns come from focusing on the underlying sociotechnical systems."
 ---
 
 <object data="2025-dora-report-infographic.svg" id="dora-2025-infographic" type="image/svg+xml" class="responsive-svg"></object>

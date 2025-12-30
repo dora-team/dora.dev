@@ -214,12 +214,30 @@ tab_links {
                 &:hover {
                     text-decoration: underline;
                 }
+
+                @media (min-width: 1000px) {
+                    min-width: 16rem;
+                    display: inline-block; // Ensure width is respected
+                }
             }
 
             .label {
                 font-family: $font-google-sans;
                 font-size: 1.1rem;
                 font-weight: 500;
+                white-space: nowrap; // Prevent wrapping of label
+            }
+
+            .archive-summary {
+                display: none;
+                flex: 1;
+                margin: 0 2rem;
+                color: $color-text-medium;
+                // font-family: $font-roboto; // Inherited
+
+                @media (min-width: 1000px) {
+                    display: block;
+                }
             }
 
             a.button {

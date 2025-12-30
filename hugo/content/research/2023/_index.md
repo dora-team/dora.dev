@@ -7,6 +7,7 @@ type: "research_archives"
 tab_order: "0"
 tab_title: "Overview"
 layout: single
+archive_summary: "User-centricity predicts 40% higher performance, while quality documentation amplifies the impact of technical capabilities."
 ---
 
 <object data="dora-report/2023-dora-report-infographic.svg" id="dora-core-model" type="image/svg+xml" style="width:100%;"></object>

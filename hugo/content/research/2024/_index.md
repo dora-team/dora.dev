@@ -7,6 +7,7 @@ tab_order: "2"
 tab_title: "Overview"
 type: "research_archives"
 layout: single
+archive_summary: "Platform engineering and user-centricity drive success, while AI begins to reshape the software delivery landscape."
 comment: This file is also hosted at https://services.google.com/fh/files/misc/dora_one_pager_2024.pdf update both together. allisonpark@ can update the PDF at services.google.com using go/gumdrop.
 ---
 

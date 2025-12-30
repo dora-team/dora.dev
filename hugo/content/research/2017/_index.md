@@ -5,6 +5,7 @@ draft: false
 research_collection: "2017"
 type: research_archives
 layout: single
+archive_summary: "Transformational leadership plays a key role in fostering a culture of high performance."
 ---
 
 <grid class="border_none" style="margin-top:1rem;">
