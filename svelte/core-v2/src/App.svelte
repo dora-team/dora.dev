@@ -62,5 +62,10 @@
         flex-direction: row;
         column-gap: 0.25em;
         align-items: center;
+
+        @media (max-width: 800px) {
+            flex-direction: column;
+            row-gap: 0.5rem;
+        }
     }
 </style>
