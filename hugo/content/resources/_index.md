@@ -8,7 +8,7 @@ bannerSubtitle: "Here are some of the many resources available to help you under
 
 ## Source-available tools
 
-Each of these tools will help your team collect and visualize <a href="/guides/dora-metrics-four-keys/">DORA’s software delivery metrics: the four keys</a>. The source code for each is available free of charge.
+Each of these tools will help your team collect and visualize <a href="/guides/dora-metrics/">DORA’s software delivery metrics</a>. The source code for each is available free of charge.
 
 <section>
     <article>
@@ -31,7 +31,7 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
     </a>
     <aside>
     <h4 class="source-available-project"><a href="https://github.com/liatrio/backstage-dora-plugin" target="_blank">Liatrio backstage-dora-plugin</a> <a class="google-material-icons" href="https://github.com/liatrio/backstage-dora-plugin" target="_blank" aria-label="Liatrio backstage-dora-plugin's code repository">open_in_new</a></h4>
-    <p align="justify">This is a plugin for the <a href="https://backstage.io/" target="_blank">Backstage project</a> that provides a seamless way to display <a href="/guides/dora-metrics-four-keys/">DORA Metrics</a> in your developer portals. <a class="google-material-icons source-available-repo" href="https://github.com/liatrio/backstage-dora-plugin"" target="_blank" aria-label="Liatrio backstage-dora-plugin's code repository">github</a></p>
+    <p align="justify">This is a plugin for the <a href="https://backstage.io/" target="_blank">Backstage project</a> that provides a seamless way to display <a href="/guides/dora-metrics/">DORA Metrics</a> in your developer portals. <a class="google-material-icons source-available-repo" href="https://github.com/liatrio/backstage-dora-plugin" target="_blank" aria-label="Liatrio backstage-dora-plugin's code repository">github</a></p>
     </aside>
     </article>
 </section>
@@ -45,7 +45,7 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
     </a>
     <aside>
     <h4 class="source-available-project"><a href="https://github.com/middlewarehq/middleware" target="_blank">Middleware</a> <a class="google-material-icons" href="https://github.com/middlewarehq/middleware" target="_blank" aria-label="Middleware's code repository">open_in_new</a></h4>
-    <p align="justify">Middleware is an open-source tool designed to help engineering leaders measure and analyze the effectiveness of their teams using the DORA  metrics. The DORA metrics are a set of <a href="/guides/dora-metrics-four-keys/">four key values</a> that provide insights into software delivery performance and operational efficiency. <a class="google-material-icons source-available-repo" href="https://github.com/middlewarehq/middleware" target="_blank" aria-label="Middleware's source code">github</a></p>
+    <p align="justify">Middleware is an open-source tool designed to help engineering leaders measure and analyze the effectiveness of their teams using the DORA  metrics. The DORA metrics are a set of <a href="/guides/dora-metrics/">four key values</a> that provide insights into software delivery performance and operational efficiency. <a class="google-material-icons source-available-repo" href="https://github.com/middlewarehq/middleware" target="_blank" aria-label="Middleware's source code">github</a></p>
     </aside>
     </article>
 </section>
@@ -58,7 +58,7 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
         <img src="img/devoteam-logo.png" width="60">
     </a>
     <aside>
-    <h4 class="source-available-project"><a href="https://github.com/DevoteamNL/opendora" target="_blank">OpenDORA</a> <a class="google-material-icons" href="https://github.com/DevoteamNL/opendora"" target="_blank" aria-label="OpenDORA's code repository">open_in_new</a></h4>
+    <h4 class="source-available-project"><a href="https://github.com/DevoteamNL/opendora" target="_blank">OpenDORA</a> <a class="google-material-icons" href="https://github.com/DevoteamNL/opendora" target="_blank" aria-label="OpenDORA's code repository">open_in_new</a></h4>
     <p align="justify">OpenDORA includes an open-source plugin for <a href="https://backstage.io/" target="_blank">Backstage</a>, a popular developer portal platform. It integrates with <a href="https://devlake.apache.org/" target="_blank">Apache DevLake</a> to organize and aggregate data from deployment and project management tooling like Gitlab, GitHub, Jira, and Jenkins. OpenDORA extracts meaningful insights from this data through its API, and renders dashboards within Backstage that provide insights on the teams' performance. <a class="google-material-icons source-available-repo" href="https://github.com/DevoteamNL/opendora" target="_blank" aria-label="OpenDORA's source code">github</a></p>
     </aside>
     </article>

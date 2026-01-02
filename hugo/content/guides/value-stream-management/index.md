@@ -64,9 +64,9 @@ The outcome should be stated specifically. For example, rather than saying “_i
 
 ## Understanding the two key software delivery value streams
 
-There are actually two critical value streams involved in software delivery. The first is the **happy path**: the normal delivery process through which teams deliver new features and fixes. DORA's [throughput](/guides/dora-metrics-four-keys/#throughput) keys (lead time and deployment frequency) can be used to measure the efficiency of this happy path.
+There are actually two critical value streams involved in software delivery. The first is the **happy path**: the normal delivery process through which teams deliver new features and fixes. DORA's [throughput](/guides/dora-metrics/#throughput) keys (lead time and deployment frequency) can be used to measure the efficiency of this happy path.
 
-The second critical value stream is the path to **recovering from an incident**, the “recovery value stream”. This too involves fixes needing to be rapidly deployed to production. Rather than these changes delivering new value, such urgent fixes are designed to mitigate the risk and cost of downtime. DORA's [stability](/guides/dora-metrics-four-keys/#stability) keys (change failure rate and failed deployment recovery time) can help gauge the effectiveness of the break/fix path.
+The second critical value stream is the path to **recovering from an incident**, the “recovery value stream”. This too involves fixes needing to be rapidly deployed to production. Rather than these changes delivering new value, such urgent fixes are designed to mitigate the risk and cost of downtime. DORA's [stability](/guides/dora-metrics/#instability) keys (change failure rate and failed deployment recovery time) can help gauge the effectiveness of the break/fix path.
 
 The recovery value stream is just as important as feature delivery. Its work items are urgent fixes, and their volume is the change failure rate (as a percentage) multiplied by the deployment frequency. The goal is to minimize breakfixes by reducing the change failure rate, even as deployment frequency rises.
 

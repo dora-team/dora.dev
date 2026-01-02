@@ -47,7 +47,7 @@ Working in small batches has many benefits:
     easier to triage and remediate problems.
 * It increases efficiency and motivation.
 * It prevents your organization from succumbing to the sunk-cost fallacy.
-* It acts as a safety net for AI adoption. AI adoption often leads to increased [software delivery instability](/guides/dora-metrics-four-keys/#stability); working in small batches acts as a critical countermeasure to this risk, ensuring that the increased velocity from AI translates into value rather than chaos.
+* It acts as a safety net for AI adoption. AI adoption often leads to increased [software delivery instability](/guides/dora-metrics/#instability); working in small batches acts as a critical countermeasure to this risk, ensuring that the increased velocity from AI translates into value rather than chaos.
 
 You can apply the small batches approach at the feature and the product level.
 As an illustration, a minimum viable product, or MVP, is a prototype of a
