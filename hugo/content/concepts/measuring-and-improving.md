@@ -17,8 +17,8 @@ summary: |
 
     **Time to restore service:** How long does it generally take to restore service when a service incident or a defect that impacts users occurs (e.g., unplanned outage, service impairment)?
 
-    <div class="core-model-learn-more"><a href="/guides/dora-metrics-four-keys/">Learn more about software delivery performance.</a></div>
-    
+    <div class="core-model-learn-more"><a href="/guides/dora-metrics/">Learn more about software delivery performance.</a></div>
+
     ---
 
     Want to assess your team's software delivery performance? Try our [DORA Quick Check](/quickcheck) for insights on how to improve.

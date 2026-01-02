@@ -1,0 +1,11 @@
+<div class="dora-callout">
+  <div class="dora-callout-icon">
+    <img src="/ai/research-insights/dora-perspective-icon.png" alt="DORA callout" />
+  </div>
+  <div class="dora-callout-title">
+    {{ .Get "title" }}
+  </div>
+  <div class="dora-callout-content">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

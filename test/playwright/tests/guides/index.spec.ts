@@ -13,7 +13,7 @@ test('Guides page has the correct header.', async ({ page }) => {
 });
 
 export const guideTitles = [
-    "DORA’s software delivery metrics: the four keys",
+    "DORA’s software delivery performance metrics",
     "How to enable your software delivery teams to innovate with generative AI",
     "Value stream mapping for software delivery",
     "How to transform your organization",

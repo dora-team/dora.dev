@@ -608,6 +608,26 @@
           "source": "/ai/gen-ai-report",
           "destination": "/ai/gen-ai-report/report/",
           "type": 302
+        },
+        {
+          "source": "/guides/dora-metrics-four-keys/",
+          "destination": "/guides/dora-metrics/",
+          "type": 301
+        },
+        {
+          "source": "/guides/dora-metrics-four-keys",
+          "destination": "/guides/dora-metrics/",
+          "type": 301
+        },
+        {
+          "source": "/guides/dora-metrics-four-keys/dora-metrics-four-keys.png",
+          "destination": "/guides/dora-metrics/dora-metrics-four-keys.png",
+          "type": 301
+        },
+        {
+          "source": "/guides/dora-metrics-four-keys/hero-fourkeys.png",
+          "destination": "/guides/dora-metrics/hero-fourkeys.png",
+          "type": 301
         }
       ]
     }
