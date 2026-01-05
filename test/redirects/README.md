@@ -15,3 +15,6 @@ Optionally set a `BASE_URL` environment varilable to test redirects against a di
 
 `BASE_URL=https://staging.dora.dev npx mocha test-redirects.js`
 `docker run -it --env BASE_URL=https://staging.dora.dev test-redirects`
+
+These tests are run as part of the preview workflow on GitHub via the `test_redirects` job specified in the `preview.yml` file.
+
