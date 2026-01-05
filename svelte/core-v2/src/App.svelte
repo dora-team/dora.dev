@@ -66,6 +66,7 @@
         @media (max-width: 800px) {
             flex-direction: column;
             row-gap: 0.5rem;
+            margin:0 1em;
         }
     }
 </style>
