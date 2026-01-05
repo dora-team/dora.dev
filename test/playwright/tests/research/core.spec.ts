@@ -72,3 +72,31 @@ test('core capabilities exclusion', async ({ page }) => {
   await expect(page.locator('#entityPopover h1')).toHaveText('Climate for learning');
   await expect(page.getByRole('link', { name: 'Learn more about climate for learning' })).toBeHidden();
 });
+
+test('mobile layout stacking', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 812 }); // iPhone 12 width
+  await page.goto(url);
+
+  // Wait for the core model to load
+  await expect(page.locator('.coremodel')).toBeVisible();
+
+  const capabilities = page.locator('section.capabilities');
+  const performance = page.locator('section.performance');
+  const outcomes = page.locator('section.outcomes');
+
+  await expect(capabilities).toBeVisible();
+  await expect(performance).toBeVisible();
+  await expect(outcomes).toBeVisible();
+
+  const capabilitiesBox = await capabilities.boundingBox();
+  const performanceBox = await performance.boundingBox();
+  const outcomesBox = await outcomes.boundingBox();
+
+  // Verify vertical stacking: capabilities above performance above outcomes
+  expect(capabilitiesBox!.y + capabilitiesBox!.height).toBeLessThan(performanceBox!.y);
+  expect(performanceBox!.y + performanceBox!.height).toBeLessThan(outcomesBox!.y);
+
+  // Verify they are roughly the same x-coordinate (stacked)
+  expect(Math.abs(capabilitiesBox!.x - performanceBox!.x)).toBeLessThan(20);
+  expect(Math.abs(capabilitiesBox!.x - outcomesBox!.x)).toBeLessThan(20);
+});
