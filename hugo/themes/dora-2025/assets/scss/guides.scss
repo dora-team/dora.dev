@@ -2,6 +2,7 @@
 
 img {
   max-width: 100%;
+
   &.heroimage {
     border-radius: 18px;
   }
@@ -12,6 +13,7 @@ img {
     text-decoration: none;
     color: $color-text;
   }
+
   img {
     max-width: 100%;
   }
@@ -19,6 +21,7 @@ img {
   h2 {
     background-color: transparent;
   }
+
   h4 {
     color: $color-text-medium;
     padding: 1rem;
@@ -35,6 +38,7 @@ img {
     h2 {
       color: $color-text-medium;
     }
+
     margin-bottom: 0.5em;
   }
 
@@ -42,3 +46,5 @@ img {
     margin-bottom: 0.5em;
   }
 }
+
+@import "_dora-callout.scss";

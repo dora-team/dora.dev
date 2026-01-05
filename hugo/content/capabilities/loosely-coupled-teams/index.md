@@ -364,7 +364,7 @@ independently, quickly, and safely.
 
 Whether on a mainframe or in microservices, facilitating the practices required
 for architectural improvement is essential for improving
-[software delivery performance](/guides/dora-metrics-four-keys/). As your
+[software delivery performance](/guides/dora-metrics/). As your
 services and products become less tightly coupled, your deployment frequency
 should increase. Additionally, you should see a reduction in time to detect and
 recover from problems and in the time for changes to reach production.

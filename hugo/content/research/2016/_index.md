@@ -5,6 +5,7 @@ draft: false
 research_collection: "2016"
 type: research_archives
 layout: single
+archive_summary: "Integrating quality into every stage and adopting experimental product development drives higher performance."
 ---
 <grid class="border_none" style="margin-top:1rem;">
 <item>

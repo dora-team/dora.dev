@@ -7,6 +7,7 @@ type: research_archives
 layout: single
 tab_order: "0"
 tab_title: "Overview"
+archive_summary: "Communities of practice outperform centers of excellence, while heavyweight change approval processes negatively impact performance."
 ---
 
 <div style="border:1px solid #ddd;">

@@ -5,7 +5,7 @@ slug: platform-engineering
 core: false
 ai: true
 date: 2025-12-08
-updated: 2025-12-08
+updated: 2026-01-05
 category: AI
 draft: false
 headline: "A platform provides the automated, secure pathways that allow AI’s benefits to scale across the organization."
@@ -65,9 +65,9 @@ As organizations invest in platform engineering, recognizing common antipatterns
 
 ### Measuring impact
 
-To measure the impact of your platform, utilize both [software delivery metrics](/guides/dora-metrics-four-keys/) and developer satisfaction signals. DORA research has found that while platforms improve productivity and organizational performance, they can sometimes lead to a decrease in throughput and change stability if not carefully managed. Therefore, a balanced scorecard is essential.
+To measure the impact of your platform, utilize both [software delivery metrics](/guides/dora-metrics/) and developer satisfaction signals. DORA research has found that while platforms improve productivity and organizational performance, they can sometimes lead to a decrease in throughput and change stability if not carefully managed. Therefore, a balanced scorecard is essential.
 
-* **Software delivery performance:** Track [change lead time](/guides/dora-metrics-four-keys/#throughput), [deployment frequency](/guides/dora-metrics-four-keys/#throughput), [change failure percentage](/guides/dora-metrics-four-keys/#stability), and [failed deployment recovery time](/guides/dora-metrics-four-keys/#stability). Platform teams should use these to measure their own performance, while application teams should see these metrics exposed by the platform to understand the impact on their work.
+* **Software delivery performance:** Track [change lead time](/guides/dora-metrics/#throughput), [deployment frequency](/guides/dora-metrics/#throughput), [failed deployment recovery time](/guides/dora-metrics/#throughput), [change failure percentage](/guides/dora-metrics/#instability), and [deployment rework rate](/guides/dora-metrics/#instability). Platform teams should use these to measure their own performance, while application teams should see these metrics exposed by the platform to understand the impact on their work.
 * **Developer satisfaction (DevEx):** Regularly survey developers using CSAT or Net Promoter Score (NPS) to track sentiment. This is vital for connecting platform improvements directly to developer productivity.
 * **Adoption & retention:** Using the [H.E.A.R.T. framework](https://cloud.google.com/transform/unlocking-product-success-by-combining-dora-and-heart/), measure the rate of new teams onboarding to the platform and the rate at which they continue to use it.
 * **Task success:** Measure the efficiency and effectiveness of developers completing key workflows on the platform.

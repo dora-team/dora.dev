@@ -6,6 +6,7 @@ research_collection: "2020"
 # SEM and survey questions are included via template: templates/research_archives/single.html, if specified in front matter. The data for survey questions can be found at data/survey_questions.json
 type: research_archives
 layout: single
+archive_summary: "DevOps transformations deliver significant Return on Investment (ROI) across the entire organization."
 ---
 
 <grid class="border_none" style="margin-top:1rem;">

@@ -1,57 +1,22 @@
 <span id="_pw-research-archives">
     <ul class="past-research-list">
+        {{ $links := slice
+        (dict "path" "/ai" "label" "Artificial Intelligence")
+        }}
+        {{ range seq 2025 -1 2014 }}
+        {{ $links = $links | append (dict "path" (printf "/research/%d" .) "label" (printf "%d" .)) }}
+        {{ end }}
+
+        {{ range $links }}
+        {{ $page := $.Site.GetPage .path }}
+        {{ if $page }}
         <li>
-            <a href='{{ relref . "/ai/" }}' class="label-link"><span class="label">Artificial Intelligence</span></a>
-            <a href='{{ relref . "/ai/" }}' class="button">View research</a>
+            <a href='{{ $page.RelPermalink }}' class="label-link"><span class="label">{{ .label }}</span></a>
+            {{ with $page.Params.archive_summary }}<span class="archive-summary">{{ . }}</span>{{ end }}
+            <a href='{{ $page.RelPermalink }}' class="button">View research</a>
         </li>
-        <li>
-            <a href='{{ relref . "/research/2025/" }}' class="label-link"><span class="label">2025</span></a>
-            <a href='{{ relref . "/research/2025/" }}' class="button">View research</a>
-        </li>
-        <li>
-            <a href='{{ relref . "/research/2024/" }}' class="label-link"><span class="label">2024</span></a>
-            <a href='{{ relref . "/research/2024/" }}' class="button">View research</a>
-        </li>
-        <li>
-            <a href='{{ relref . "/research/2023/" }}' class="label-link"><span class="label">2023</span></a>
-            <a href='{{ relref . "/research/2023/" }}' class="button">View research</a>
-        </li>
-        <li>
-            <a href='{{ relref . "/research/2022/" }}' class="label-link"><span class="label">2022</span></a>
-            <a href='{{ relref . "/research/2022/" }}' class="button">View research</a>
-        </li>
-        <li>
-            <a href='{{ relref . "/research/2021/" }}' class="label-link"><span class="label">2021</span></a>
-            <a href='{{ relref . "/research/2021/" }}' class="button">View research</a>
-        </li>
-        <li>
-            <a href='{{ relref . "/research/2020/" }}' class="label-link"><span class="label">2020</span></a>
-            <a href='{{ relref . "/research/2020/" }}' class="button">View research</a>
-        </li>
-        <li>
-            <a href='{{ relref . "/research/2019/" }}' class="label-link"><span class="label">2019</span></a>
-            <a href='{{ relref . "/research/2019/" }}' class="button">View research</a>
-        </li>
-        <li>
-            <a href='{{ relref . "/research/2018/" }}' class="label-link"><span class="label">2018</span></a>
-            <a href='{{ relref . "/research/2018/" }}' class="button">View research</a>
-        </li>
-        <li>
-            <a href='{{ relref . "/research/2017/" }}' class="label-link"><span class="label">2017</span></a>
-            <a href='{{ relref . "/research/2017/" }}' class="button">View research</a>
-        </li>
-        <li>
-            <a href='{{ relref . "/research/2016/" }}' class="label-link"><span class="label">2016</span></a>
-            <a href='{{ relref . "/research/2016/" }}' class="button">View research</a>
-        </li>
-        <li>
-            <a href='{{ relref . "/research/2015/" }}' class="label-link"><span class="label">2015</span></a>
-            <a href='{{ relref . "/research/2015/" }}' class="button">View research</a>
-        </li>
-        <li>
-            <a href='{{ relref . "/research/2014/" }}' class="label-link"><span class="label">2014</span></a>
-            <a href='{{ relref . "/research/2014/" }}' class="button">View research</a>
-        </li>
+        {{ end }}
+        {{ end }}
     </ul>
     <h4 id="publications-legacy" style="margin-top: 3rem;">Additional Publications</h4>
     <ul class="past-research-list">

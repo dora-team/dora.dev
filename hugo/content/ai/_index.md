@@ -2,6 +2,7 @@
 title: "Artificial Intelligence"
 date: 2025-11-26
 draft: false
+archive_summary: "AI is fundamentally reshaping software delivery and organizational performance."
 ---
 
 {{< report_feature
