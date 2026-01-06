@@ -22,9 +22,9 @@
 
 // styles for section-level nav headers, e.g. "AI", "Research"
 .section-header {
-  padding: 8px 40px;
 
   .content {
+    height:60px;
     background-image: url(/img/ai-illustration.png);
     background-size: 70px;
     background-position: left center;
@@ -33,6 +33,8 @@
 
     a {
       font-size: 1.75rem;
+      line-height:60px;
+      padding-left:12px;
       font-weight: 600;
       text-decoration: none;
       color: var(--dora-primary-dark);

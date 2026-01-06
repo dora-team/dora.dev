@@ -1,12 +1,39 @@
 .insights-feed {
-  h2 {
-    a {
-      text-decoration: none;
-      color: $color-text;
 
-      &:hover {
-        color: $color-link-hover;
-      }
+  .tags a {
+    border: 1px solid var(--dora-primary-light);
+    padding: 2px 8px;
+    border-radius:50vh;
+  }
+
+  article {
+    border-bottom: 1px solid var(--dora-primary-light);
+    padding: 1em 0;
+
+    &:last-child {
+      border-bottom: none;
     }
+  }
+
+  h2 {
+    margin-top: 0px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-text;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+
+  .readmore {
+    display: inline-block;
+    background-color: var(--dora-primary-light);
+    margin-left: 1rem;
+    padding: 0 .5rem;
+    border-radius: 50vh;
+    font-size: .9rem;
   }
 }
