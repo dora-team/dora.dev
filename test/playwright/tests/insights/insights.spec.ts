@@ -50,7 +50,7 @@ test.describe('Insights', () => {
 
         // Get the first article's link (newest post)
         // We assume the first anchor in the article is the main link to the post
-        const firstPostLink = page.locator('.insights-feed article').first().locator('a').first();
+        const firstPostLink = page.locator('.insights-feed article .content').first().locator('a').first();
         const firstPostUrl = await firstPostLink.getAttribute('href');
 
         if (!firstPostUrl) throw new Error('Could not find newest post URL');
@@ -72,7 +72,7 @@ test.describe('Insights', () => {
 
         // 2. Check the second newest post (which should link to the newest)
         await page.goto('/insights/');
-        const secondPostLink = page.locator('.insights-feed article').nth(1).locator('a').first();
+        const secondPostLink = page.locator('.insights-feed article .content').nth(1).locator('a').first();
         const secondPostUrl = await secondPostLink.getAttribute('href');
 
         if (!secondPostUrl) {
@@ -97,7 +97,7 @@ test.describe('Insights', () => {
 
         // 3. Check the oldest post (last in the list, should have NO "Previous post")
         await page.goto('/insights/');
-        const lastPostLink = page.locator('.insights-feed article').last().locator('a').first();
+        const lastPostLink = page.locator('.insights-feed article .content').last().locator('a').first();
         const lastPostUrl = await lastPostLink.getAttribute('href');
 
         if (!lastPostUrl) throw new Error('Could not find oldest post URL');
