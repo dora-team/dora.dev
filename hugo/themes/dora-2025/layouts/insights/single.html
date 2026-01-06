@@ -31,10 +31,9 @@
             {{ end }}
 
             {{ with .GetTerms "tags" }}
-            <div class="tags">
-                <strong>Posted in:</strong>
+            <div class="tags">Posted in:
                 {{ range . }}
-                <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
+                <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
                 {{ end }}
             </div>
             {{ end }}
@@ -54,10 +53,9 @@
             <hr class="post-separator">
 
             {{ with .GetTerms "tags" }}
-            <div class="footer-tags">
-                <strong>Posted in:</strong>
+            <div class="tags footer-tags">Posted in:
                 {{ range . }}
-                <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
+                <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
                 {{ end }}
             </div>
             {{ end }}
