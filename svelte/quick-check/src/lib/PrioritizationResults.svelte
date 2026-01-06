@@ -2,7 +2,7 @@
     import PrioritizationResult from "./PrioritizationResult.svelte";
 
     export let capability_prioritization_questions;
-    
+
     export let capability_responses;
 </script>
 
@@ -30,20 +30,20 @@
         <ul>
             <li>
                 <h3>
-                    <a href="/capabilities/" target="_blank"
-                        >Explore DORA's Capabilities Catalog</a
+                    <a href="/research/?view=detail#core-model" target="_blank"
+                        >Explore DORA's research</a
                     >
                 </h3>
                 <p>
-                    Learn about all of the technical, process, and cultural
-                    capabilities that our research has shown to be predictive of
-                    software delivery performance.
+                    Learn about the capabilities and conditions that our
+                    research has shown to be predictive of software delivery
+                    performance.
                 </p>
             </li>
             <li>
                 <h3>
-                    <a href="https://bit.ly/dora-sodr" target="_blank"
-                        >Read the latest Accelerate State of DevOps Report</a
+                    <a href="/research/publications/" target="_blank"
+                        >Read DORA's most recent reports.</a
                     >
                 </h3>
                 <p>Explore recent findings from DORA's research project.</p>
@@ -68,7 +68,7 @@
         padding: 2rem 4rem;
     }
 
-    /* There's no elegant way to use global variables for media queries (css variables aren't supported for this purpose, 
+    /* There's no elegant way to use global variables for media queries (css variables aren't supported for this purpose,
     and SCSS vars are hard to propagate between different svelte components).
     So we'll use a "magic number" of 800px, in each file */
     @media (max-width: 800px) {
