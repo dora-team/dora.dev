@@ -4,13 +4,13 @@ h3 {
 
 h4 {
     color: #666;
-    margin-bottom: 1em;
+    margin-bottom: 0.25em;
+    font-size: 0.9em;
+    font-weight: 300;
 }
 
 .mainContent li {
     font-weight: 300;
-    font-family: "Roboto";
-    font-size: 14px;
 }
 
 p.description {
@@ -30,16 +30,42 @@ li div:not(:first-child) {
 }
 
 .posted {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
+}
+
+.tags strong,
+.insights-navigation strong {
+    font-weight: 300;
+    color: #666;
 }
 
 .tags {
     margin-bottom: 1em;
+    margin-top: 0.25em;
+    display: block;
+
+    a {
+        border: 1px solid var(--dora-primary-light);
+        padding: 2px 8px;
+        border-radius: 50vh;
+        text-decoration: none;
+        color: #666;
+        margin-left: 0.25em;
+
+        &:hover {
+            color: var(--dora-primary-dark);
+            border-color: var(--dora-primary-dark);
+        }
+    }
+}
+
+.tags.footer-tags {
+    margin-bottom: 0.5em;
 }
 
 .post-separator {
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
     border: 0;
     border-top: 1px solid #eee;
 }
