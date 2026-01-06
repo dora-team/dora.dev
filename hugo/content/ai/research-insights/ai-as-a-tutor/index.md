@@ -23,4 +23,4 @@ headline: "AI as a tutor"
 type: "ai"
 ---
 
-{{< render_headless_bundle "research/shared/ai/ai-as-a-tutor" >}}
+{{< render_headless_bundle "insights/shared/ai-as-a-tutor" >}}

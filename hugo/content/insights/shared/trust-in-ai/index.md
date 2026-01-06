@@ -16,7 +16,7 @@ Research conducted by Google and other respected voices in technology research h
 
 The DORA team found that, outside of Google, 75% of 2024 DORA survey respondents reported positive impacts of gen AI on their productivity. Internal to Google, the EPR team found a similar number of developers reported a positive impact of gen AI on their productivity, as well.
 
-![AI's perceived impact on productivity](/research/shared/ai/trust-in-ai/ai-productivity-attitudes.png "AI's perceived impact on productivity")
+![AI's perceived impact on productivity](/insights/shared/trust-in-ai/ai-productivity-attitudes.png "AI's perceived impact on productivity")
 
 Importantly, developers who trust gen AI more reap more positive productivity benefits from its use. In a logs-based exploration of Google developers' trust in AI code completion, our EPR team found that developers who frequently accepted suggestions from a gen AI-assisted coding tool submitted more change lists (CLs) and spent less time seeking information than developers who infrequently accepted suggestions from the same tool. This was true even when controlling for confounding factors, including job level, tenure, development type, programming language, and CL count. Put simply, **developers who trust gen AI more are more productive**.
 

@@ -16,4 +16,4 @@ headline: "Fostering developers' trust in generative artificial intelligence"
 type: "ai"
 ---
 
-{{< render_headless_bundle "research/shared/ai/trust-in-ai" >}}
+{{< render_headless_bundle "insights/shared/trust-in-ai" >}}

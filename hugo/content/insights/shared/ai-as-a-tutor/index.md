@@ -33,7 +33,7 @@ A [learning culture](/capabilities/learning-culture/) predicts high organization
 According to our survey results from May 2025 (N=85), the three primary functions students mentioned when describing their AI use were: identifying and fixing code errors, and explaining new programming concepts (see figure 1).
 
 <figure>
-  <img src="/research/shared/ai/ai-as-a-tutor/top-three-usecases.svg" id="top-three-usecases" class="responsive-svg" alt="Top three use cases for AI" />
+  <img src="/insights/shared/ai-as-a-tutor/top-three-usecases.svg" id="top-three-usecases" class="responsive-svg" alt="Top three use cases for AI" />
   <figcaption>Figure 1: Survey results showing the three primary functions students mentioned when describing their AI use.</figcaption>
 </figure>
 

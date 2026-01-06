@@ -16,4 +16,4 @@ headline: "Understanding builder intent in the AI era"
 type: "ai"
 ---
 
-{{< render_headless_bundle "research/shared/ai/builder-mindset" >}}
+{{< render_headless_bundle "insights/shared/builder-mindset" >}}

@@ -10,6 +10,7 @@
         <li><a href="/capabilities/" {{ if (eq .Section "capabilities" ) }}class="active" {{ end }}>Capabilities</a>
         </li>
         <li><a href="/guides/" {{ if (eq .Section "guides" ) }}class="active" {{ end }}>Guides</a></li>
+        <li><a href="/insights/" {{ if or (eq .Section "insights" ) (in .RelPermalink "/insights/" ) }}class="active" {{ end }}>Insights</a></li>
         <li><a href="/quickcheck/" {{ if (eq .Section "quickcheck" ) }}class="active" {{ end }}>Quick Check</a>
         </li>
         <li id="searchLinkDesktop"><a class="google-material-icons" id="searchIcon" aria-label="Search dora.dev">search</a></li>
@@ -39,6 +40,7 @@
     <li><a href="/capabilities/" {{ if (eq .Section "capabilities" ) }}class="active" {{ end }}>Capabilities</a>
     </li>
     <li><a href="/guides/" {{ if (eq .Section "guides" ) }}class="active" {{ end }}>Guides</a></li>
+    <li><a href="/insights/" {{ if or (eq .Section "insights" ) (in .RelPermalink "/insights/" ) }}class="active" {{ end }}>Insights</a></li>
     <li><a href="/quickcheck/" {{ if (eq .Section "quickcheck" ) }}class="active" {{ end }}>Quick Check</a>
     </li>
     <li id="searchLinkMobile"><a href="/search/" {{ if (eq .Section "search" ) }}class="active" {{ end }}>Search</a>
@@ -73,4 +75,9 @@
 <!-- if this is in the "capabilities" section and not the root, show the partial: capabilities_header -->
 {{ if and (eq .Section "capabilities") (ne .RelPermalink "/capabilities/") }}
 {{- partial "capabilities_header" . -}}
+{{ end }}
+
+<!-- if this is in the "insights" section, show the partial: insights_header -->
+{{ if or (eq .Section "insights") (in .RelPermalink "/insights/") }}
+{{- partial "insights_header" . -}}
 {{ end }}

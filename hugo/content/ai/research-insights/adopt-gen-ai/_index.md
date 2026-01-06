@@ -16,4 +16,4 @@ headline: "Helping developers adopt generative AI: Four practical strategies for
 type: "ai"
 ---
 
-{{< render_headless_bundle "research/shared/ai/adopt-gen-ai" >}}
+{{< render_headless_bundle "insights/shared/adopt-gen-ai" >}}
