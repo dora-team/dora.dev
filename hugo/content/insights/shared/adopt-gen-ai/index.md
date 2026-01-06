@@ -77,7 +77,7 @@ All of these strategies suggest that fostering widespread and effective AI adopt
 
 The strategies we recommend will help ensure that AI is used strategically and responsibly to enhance productivity, foster innovation, and drive organizational success.
 
-<object data="/research/shared/ai/adopt-gen-ai/policy_impact.svg" id="policy_impact" type="image/svg+xml" class="responsive-svg"></object>
+<object data="/insights/shared/adopt-gen-ai/policy_impact.svg" id="policy_impact" type="image/svg+xml" class="responsive-svg"></object>
 
 <figcaption>
   <p>

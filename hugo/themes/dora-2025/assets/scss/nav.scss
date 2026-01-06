@@ -156,6 +156,10 @@ header {
     #searchIcon {
       font-size: 24px;
     }
+
+    nav:has(#searchInputPopover:popover-open) .menuLinksDesktop {
+      visibility: hidden;
+    }
   }
 
   @include media-medium {

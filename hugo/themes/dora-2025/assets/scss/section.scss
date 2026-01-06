@@ -66,6 +66,14 @@
       }
     }
   }
+
+  &.insights {
+    background-color: var(--dora-vermillion);
+
+    .content {
+      background-image: url(/insights/banner-insights.png);
+    }
+  }
 }
 
 .section-homepage-content {

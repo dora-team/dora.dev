@@ -13,4 +13,4 @@ headline: "Concerns beyond the accuracy of AI output"
 type: "ai"
 ---
 
-{{< render_headless_bundle "research/shared/ai/concerns-beyond-accuracy-of-ai-output" >}}
+{{< render_headless_bundle "insights/shared/concerns-beyond-accuracy-of-ai-output" >}}

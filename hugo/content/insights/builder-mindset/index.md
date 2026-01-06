@@ -2,7 +2,7 @@
 title:  "Understanding builder intent in the AI era"
 date:  2025-10-17
 updated: 2025-10-17
-draft: true
+draft: false
 authors:
     1: {name: 'Abey Stenman', url: 'https://www.linkedin.com/in/abeytid/'}
     2: {name: 'Bre Arder', url: 'https://www.linkedin.com/in/brearder/' }
@@ -14,4 +14,4 @@ tags: ["AI", "Metrics", "Culture", "Security"]
 summary: "As AI decouples roles from tasks, traditional developer personas are becoming less relevant. This article introduces the \"Builder Mindset\" framework, identifying four core intents—Founder, Optimizer, Accelerator, and Learner—to help teams design better AI-assisted experiences."
 ---
 
-{{< render_headless_bundle "research/shared/ai/builder-mindset" >}}
+{{< render_headless_bundle "insights/shared/builder-mindset" >}}

@@ -13,4 +13,4 @@ headline: "How gen AI affects the value of development work"
 type: "ai"
 ---
 
-{{< render_headless_bundle "research/shared/ai/value-of-development-work" >}}
+{{< render_headless_bundle "insights/shared/value-of-development-work" >}}

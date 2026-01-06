@@ -32,7 +32,7 @@ So, in September 2024, we conducted a series of 10 in-depth interviews with deve
 
 Across these interviews, developers described the value of their work using five main views of "value," from which a framework was derived for understanding the value of development work and gen AI's impacts on those facets of value. This framework is visualized in Table 1 and further described below.
 
-![Five "views" of value in development work](/research/shared/ai/value-of-development-work/five-views.png 'The five views of "value" of development work described by participants, their meanings, and the anticipated impacts of gen AI on each of these perspectives.')
+![Five "views" of value in development work](/insights/shared/value-of-development-work/five-views.png 'The five views of "value" of development work described by participants, their meanings, and the anticipated impacts of gen AI on each of these perspectives.')
 
 **Utilitarian value** describes the impact that the work has on the world.
 * Utilitarian value is determined by the impact that developers perceive their product having in the world and the impact of specific development tasks on the creation of that product.

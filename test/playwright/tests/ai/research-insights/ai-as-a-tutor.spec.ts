@@ -10,7 +10,7 @@ const pages = [
     header: 'AI as a tutor',
   },
   {
-    url: '/experimental/insights/ai-as-a-tutor/',
+    url: '/insights/ai-as-a-tutor/',
     title: 'DORA | AI as a tutor',
     header: 'AI as a tutor',
   },

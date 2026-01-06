@@ -3,7 +3,7 @@ title: "AI as a tutor"
 top_header: "AI: Research insights"
 date: 2025-12-12
 updated: 2025-12-17
-draft: true
+draft: false
 tab_title: "AI as a tutor"
 authors:
     1: {name: "Andrew Harlan", url: "https://www.linkedin.com/in/andrew-harlan-phd/"}
@@ -23,5 +23,5 @@ tags: ["AI", "Education", "Learning"]
 summary: "While critics worry students use AI to cheat, our research reveals something different: students are using AI to learn. At UC Berkeley, many students in technical fields are using AI to teach them rather than do for them: AI was a supplement to the role of professor, TA, or tutor."
 ---
 
-{{< render_headless_bundle "research/shared/ai/ai-as-a-tutor" >}}
+{{< render_headless_bundle "insights/shared/ai-as-a-tutor" >}}
 

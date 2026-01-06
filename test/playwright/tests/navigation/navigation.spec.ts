@@ -7,6 +7,7 @@ test.describe('Global navigation', () => {
     { name: 'Research', href: '/research/' },
     { name: 'Capabilities', href: '/capabilities/' },
     { name: 'Guides', href: '/guides/' },
+    { name: 'Insights', href: '/insights/' },
     { name: 'Quick Check', href: '/quickcheck/' },
   ];
 
