@@ -9,6 +9,8 @@ tags: ["DORA", "Community"]
 summary: "A look back at the highlights and community contributions from 2025."
 ---
 
+<small>This was originally [published](https://www.linkedin.com/pulse/dora-2025-year-review-doradotdev-bcfle) on [DORA's LinkedIn page](https://www.linkedin.com/company/doradotdev/).</small>
+
 ## DORA research
 
 This year, we didn't just release one annual report; we released a trilogy. Each built on the last to tell the complete story of how AI is reshaping our industry—from the individual developer experience to the organizational bottom line.
@@ -17,10 +19,13 @@ This year, we didn't just release one annual report; we released a trilogy. Each
 {{< report_gallery
   img_1="/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png"
   url_1="/ai/gen-ai-report/report/"
+  alt_1="Impact of Generative AI in Software Development"
   img_2="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png"
   url_2="/research/2025/dora-report/"
+  alt_2="State of AI-assisted Software Development"
   img_3="/ai/capabilities-model/report/2025-dora-ai-capabilities-model-report.png"
   url_3="/ai/capabilities-model/report/"
+  alt_3="DORA AI Capabilities Model"
 >}}
 </div>
 
@@ -100,3 +105,5 @@ DORA will continue to research and provide insights into the capabilities, condi
 * Share your story: [Reply in this thread](https://groups.google.com/g/dora-community/c/_dS2C5TO8M4)—what was your biggest "aha!" moment in 2025?
 
 Here’s to a 2026 full of _getting better at getting better_!
+
+<small>This was originally [published](https://www.linkedin.com/pulse/dora-2025-year-review-doradotdev-bcfle) on [DORA's LinkedIn page](https://www.linkedin.com/company/doradotdev/).</small>
