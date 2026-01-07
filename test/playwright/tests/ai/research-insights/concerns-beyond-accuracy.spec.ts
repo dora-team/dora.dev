@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { verifyAuthors } from './shared';
+import { LAST_UPDATED_DATE_REGEX } from '../../constants';
+import { verifyAuthors } from '../../verify-authors';
 
 const pages = [
   {
