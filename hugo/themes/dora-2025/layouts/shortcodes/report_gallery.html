@@ -11,10 +11,11 @@
     {{ $imgKey := printf "img_%d" $index }}
     {{ $urlKey := printf "url_%d" $index }}
     {{ $titleKey := printf "title_%d" $index }}
+    {{ $altKey := printf "alt_%d" $index }}
     {{ if $.Get $imgKey }}
     <div class='report-gallery-item'>
         <a href='{{ $.Get $urlKey }}'>
-            <img src='{{ $.Get $imgKey }}' alt='{{ $.Get $titleKey }}'>
+            <img src='{{ $.Get $imgKey }}' alt='{{ or ($.Get $altKey) ($.Get $titleKey) }}'>
             {{ if $.Get $titleKey }}<h4>{{ $.Get $titleKey }}</h4>{{ end }}
         </a>
     </div>
