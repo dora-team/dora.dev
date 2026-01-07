@@ -41,7 +41,7 @@ archive_summary: "AI is fundamentally reshaping software delivery and organizati
   url_2="/research/2025/dora-report/"
   title_2="DORA Report 2025"
   img_3="/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png"
-  url_3="/ai/gen-ai-report/"
+  url_3="/ai/gen-ai-report/report/"
   title_3="Impact of Gen AI"
   img_4="/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.png"
   url_4="/research/2024/dora-report/"
