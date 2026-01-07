@@ -2,32 +2,22 @@
     img_1
     url_1
     title_1
-    [repeat for 2-4]
+    [repeat for 2-20]
 -->
 
 <div class='report-gallery'>
+    {{ range seq 1 20 }}
+    {{ $index := . }}
+    {{ $imgKey := printf "img_%d" $index }}
+    {{ $urlKey := printf "url_%d" $index }}
+    {{ $titleKey := printf "title_%d" $index }}
+    {{ if $.Get $imgKey }}
     <div class='report-gallery-item'>
-        <a href='{{ .Get "url_1" }}'>
-            <img src='{{ .Get "img_1" }}' alt='{{ .Get "title_1" }}'>
-            <h4>{{ .Get "title_1" }}</h4>
+        <a href='{{ $.Get $urlKey }}'>
+            <img src='{{ $.Get $imgKey }}' alt='{{ $.Get $titleKey }}'>
+            {{ if $.Get $titleKey }}<h4>{{ $.Get $titleKey }}</h4>{{ end }}
         </a>
     </div>
-    <div class='report-gallery-item'>
-        <a href='{{ .Get "url_2" }}'>
-            <img src='{{ .Get "img_2" }}' alt='{{ .Get "title_2" }}'>
-            <h4>{{ .Get "title_2" }}</h4>
-        </a>
-    </div>
-    <div class='report-gallery-item'>
-        <a href='{{ .Get "url_3" }}'>
-            <img src='{{ .Get "img_3" }}' alt='{{ .Get "title_3" }}'>
-            <h4>{{ .Get "title_3" }}</h4>
-        </a>
-    </div>
-    <div class='report-gallery-item'>
-        <a href='{{ .Get "url_4" }}'>
-            <img src='{{ .Get "img_4" }}' alt='{{ .Get "title_4" }}'>
-            <h4>{{ .Get "title_4" }}</h4>
-        </a>
-    </div>
+    {{ end }}
+    {{ end }}
 </div>
