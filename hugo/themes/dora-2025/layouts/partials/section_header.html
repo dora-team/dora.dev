@@ -1,0 +1,25 @@
+{{/*
+Unified section header partial
+
+Parameters (passed via dict):
+- slug: The URL slug for the section (e.g., "ai", "capabilities")
+- name: The display name for the section (e.g., "Artificial Intelligence")
+- context: The page context (.) for accessing .RelPermalink
+*/}}
+
+{{ $slug := .slug }}
+{{ $name := .name }}
+{{ $ctx := .context }}
+{{ $indexPath := printf "/%s/" $slug }}
+
+<div class="section-header {{ $slug }}">
+  {{ if ne $ctx.RelPermalink $indexPath }}
+  <a href="/{{ $slug }}/" class="content">
+    <span>{{ $name }}</span>
+  </a>
+  {{ else }}
+  <div class="content">
+    <span>{{ $name }}</span>
+  </div>
+  {{ end }}
+</div>

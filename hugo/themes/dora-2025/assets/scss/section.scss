@@ -24,24 +24,28 @@
 .section-header {
 
   .content {
+    display: block;
     height: 60px;
     background-image: url(/img/ai-illustration.png);
     background-size: 70px;
     background-position: left center;
     background-repeat: no-repeat;
     padding-left: 70px;
+    font-size: 1.75rem;
+    line-height: 60px;
+    font-weight: 600;
+    color: var(--dora-primary-dark);
 
-    a {
-      font-size: 1.75rem;
-      line-height: 60px;
+    span {
       padding-left: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      color: var(--dora-primary-dark);
+    }
+  }
 
-      &:hover {
-        color: var(--dora-primary-light);
-      }
+  a.content {
+    text-decoration: none;
+
+    &:hover {
+      color: var(--dora-primary-light);
     }
   }
 
@@ -62,10 +66,10 @@
 
     .content {
       background-image: url(/research/banner-research.png);
+    }
 
-      a:hover {
-        color: var(--dora-tertiary-a); // Deep Plum for better contrast on yellow
-      }
+    a.content:hover {
+      color: var(--dora-tertiary-a); // Deep Plum for better contrast on yellow
     }
   }
 
