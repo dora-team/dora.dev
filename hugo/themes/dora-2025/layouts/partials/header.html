@@ -62,22 +62,19 @@
 {{- partial "site_banner" . -}}
 {{ end }}
 
-<!-- if this is in the "ai" section, show the partial: ai_header -->
+<!-- Section headers using unified partial -->
 {{ if (eq .Section "ai") }}
-{{- partial "ai_header" . -}}
+{{- partial "section_header" (dict "slug" "ai" "name" "Artificial Intelligence" "context" .) -}}
 {{ end }}
 
-<!-- if this is in the "research" section and not the root, show the partial: research_header -->
 {{ if and (eq .Section "research") (ne .RelPermalink "/research/") }}
-{{- partial "research_header" . -}}
+{{- partial "section_header" (dict "slug" "research" "name" "Research" "context" .) -}}
 {{ end }}
 
-<!-- if this is in the "capabilities" section and not the root, show the partial: capabilities_header -->
 {{ if and (eq .Section "capabilities") (ne .RelPermalink "/capabilities/") }}
-{{- partial "capabilities_header" . -}}
+{{- partial "section_header" (dict "slug" "capabilities" "name" "Capabilities" "context" .) -}}
 {{ end }}
 
-<!-- if this is in the "insights" section, show the partial: insights_header -->
 {{ if or (eq .Section "insights") (in .RelPermalink "/insights/") }}
-{{- partial "insights_header" . -}}
+{{- partial "section_header" (dict "slug" "insights" "name" "Insights" "context" .) -}}
 {{ end }}

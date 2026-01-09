@@ -50,3 +50,6 @@ svelte/local/*
 **/playwright-report/
 **/blob-report/
 **/playwright/.cache/
+
+# Claude Code
+.claude/
