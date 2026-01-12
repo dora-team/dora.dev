@@ -20,9 +20,7 @@ summary: |
     - Measured service
 ---
 
-Many organizations seek flexible technical infrastructure, often in the form of cloud computing. But there's more to it than
-buying your infrastructure from a cloud provider. The US National Institute of
-Standards and Technologies (NIST)
+Many organizations seek flexible technical infrastructure, often in the form of cloud computing. However, simply buying infrastructure from a cloud provider isn't enough. The US National Institute of Standards and Technologies (NIST)
 [defines](https://csrc.nist.gov/pubs/sp/800/145/final)
 five essential characteristics of cloud computing:
 

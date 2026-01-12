@@ -12,7 +12,7 @@ Goal: Identify all capabilities and determine the extent of updates needed.
 Goal: Update the content of each capability to align with project guidelines.
 
 - [x] Task: Update capability front matter for consistency (tags, descriptions, etc.) af12e99
-- [ ] Task: Refactor capability prose to match the "Pragmatic & Practical" tone
+- [~] Task: Refactor capability prose to match the "Pragmatic & Practical" tone
 - [ ] Task: Ensure all capability pages have a clear, accessible heading structure
 - [ ] Task: Verify that all links within capability pages are functional and descriptive
 - [ ] Task: Conductor - User Manual Verification 'Content Refinement' (Protocol in workflow.md)
