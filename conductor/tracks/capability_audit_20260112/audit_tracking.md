@@ -159,7 +159,21 @@
 - [x] Front Matter (Tags, Slug, TODOs)
 - [x] Links Verified
 
+### proactive-failure-notification
+- [x] Tone Check
+- [x] Visuals Check
+- [x] Accessibility (Heading Levels)
+- [x] Front Matter (Tags, Slug, TODOs)
+- [x] Links Verified
+
 ### streamlining-change-approval
+- [x] Tone Check
+- [x] Visuals Check
+- [x] Accessibility (Heading Levels)
+- [x] Front Matter (Tags, Slug, TODOs)
+- [x] Links Verified
+
+### team-experimentation
 - [x] Tone Check
 - [x] Visuals Check
 - [x] Accessibility (Heading Levels)
