@@ -1,6 +1,6 @@
 ---
 title: "Trunk-based development"
-titleForHTMLHead: "Capabilities: Trunk-based Development" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Trunk-based Development"
 slug: trunk-based-development
 core: false
 date: 2023-03-27T09:48:50+01:00

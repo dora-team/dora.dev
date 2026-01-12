@@ -1,12 +1,13 @@
 ---
 title: "Flexible infrastructure"
-titleForHTMLHead: "Capabilities: Flexible Infrastructure" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Flexible Infrastructure"
 date: 2023-03-27T09:48:50+01:00
 category: fast flow
 draft: false
-slug: flexible-infrastructure
+slug: cloud-infrastructure
 aliases:
-    cloud-infrastructure
+    - cloud-infrastructure
+    - flexible-infrastructure
 core: true
 headline: "Find out how to manage cloud infrastructure effectively so you can achieve higher levels of agility, availability, and cost visibility."
 summary: |

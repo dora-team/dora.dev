@@ -1,6 +1,6 @@
 ---
 title: "Monitoring and observability"
-titleForHTMLHead: "Capabilities: Monitoring and Observability" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Monitoring and Observability"
 slug: monitoring-and-observability
 core: true
 date: 2023-03-25T16:35:37Z
