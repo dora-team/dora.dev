@@ -17,21 +17,21 @@
 ## Capabilities
 
 ### ai-accessible-internal-data
-- [ ] Tone Check
+- [x] Tone Check
 - [ ] Visuals Check
 - [ ] Accessibility (Heading Levels)
 - [ ] Front Matter (Tags, Slug, TODOs)
 - [ ] Links Verified
 
 ### clear-and-communicated-ai-stance
-- [ ] Tone Check
+- [x] Tone Check
 - [ ] Visuals Check
 - [ ] Accessibility (Heading Levels)
 - [ ] Front Matter (Tags, Slug, TODOs)
 - [ ] Links Verified
 
 ### cloud-infrastructure
-- [ ] Tone Check
+- [x] Tone Check
 - [ ] Visuals Check
 - [ ] Accessibility (Heading Levels)
 - [ ] Front Matter (Tags, Slug, TODOs)

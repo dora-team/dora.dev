@@ -14,7 +14,7 @@ summary: "A clear and communicated AI stance is an organization's official, wide
 
 ## The cost of ambiguity
 
-In the rapidly evolving landscape of software development, ambiguity is the enemy of both innovation and safety. Without clear guidance, organizations face two equally detrimental extremes: developers acting too conservatively out of fear they will cross an invisible line, or acting too permissively and using unvetted tools that introduce significant risk.
+Ambiguity stifles innovation and safety. Without clear guidance, organizations face two equally detrimental extremes: developers acting too conservatively out of fear they will cross an invisible line, or acting too permissively and using unvetted tools that introduce significant risk.
 
 A **clear and communicated AI stance** acts as a corrective to this uncertainty. It is not merely a legal document buried in a wiki; it is a comprehensible, widely socialized framework that tells developers: "Here is how we expect you to use AI, here are the tools you can use, and here is how we support you."
 
