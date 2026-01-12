@@ -4,11 +4,11 @@ titleForHTMLHead: "Capabilities: Flexible Infrastructure"
 date: 2023-03-27T09:48:50+01:00
 category: fast flow
 draft: false
-slug: cloud-infrastructure
+slug: flexible-infrastructure
 aliases:
     - cloud-infrastructure
-    - flexible-infrastructure
 core: true
+updated: 2026-01-12
 headline: "Find out how to manage cloud infrastructure effectively so you can achieve higher levels of agility, availability, and cost visibility."
 summary: |
     Infrastructure flexibility is often a motivation for organizations to adopt cloud computing. However, the use of a cloud provider alone may not be sufficient to achieve the desired agility. DORA's research uses [a definition](https://csrc.nist.gov/pubs/sp/800/145/final) from The USA's National Institute of Standards and Technology (NIST) to establish the five essential characteristics that enable cloud computing to provide its full potential benefit to an organization:

@@ -3,7 +3,8 @@ title: "Monitoring and observability"
 titleForHTMLHead: "Capabilities: Monitoring and Observability"
 slug: monitoring-and-observability
 core: true
-date: 2023-03-25T16:35:37Z
+
+updated: 2026-01-12
 category: fast feedback
 draft: false
 headline: "Learn how to build tooling to help you understand and debug your production systems."

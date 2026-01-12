@@ -5,7 +5,7 @@ slug: platform-engineering
 core: false
 ai: true
 date: 2025-12-08
-updated: 2026-01-05
+updated: 2026-01-12
 category: AI
 draft: false
 headline: "A platform provides the automated, secure pathways that allow AI’s benefits to scale across the organization."

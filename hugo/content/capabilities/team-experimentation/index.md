@@ -1,7 +1,8 @@
 ---
 title: "Team experimentation"
 titleForHTMLHead: "Capabilities: Team Experimentation"
-date: 2023-03-24T12:54:18Z
+
+updated: 2026-01-12
 category: climate for learning
 draft: false
 headline: "Innovate faster by building empowered teams that can try out new ideas without approval from people outside the team."
