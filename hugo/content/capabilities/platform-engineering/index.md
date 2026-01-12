@@ -18,7 +18,7 @@ Rather than viewing the platform merely as a collection of infrastructure ticket
 
 > When platform quality is high, the effect of AI adoption on organizational performance becomes **strong and positive**. Conversely, when platform quality is low, the effect of AI adoption on organizational performance is negligible.
 
-### The AI angle
+## The AI angle
 
 The central theme of [DORA's 2025 research](/research/2025/dora-report/) is that **AI is an amplifier**: it magnifies an organization's existing strengths, but also its dysfunctions.
 

@@ -23,7 +23,7 @@ Think of it as providing the complete “briefing packet” a developer needs to
 
 > DORA research confirms that giving teams AI tools that can access internal data directly **amplifies the positive impact** of AI adoption, serving as a statistically significant multiplier for **individual effectiveness** and **code quality**.
 
-### Defining the new discipline: A system, not a string
+## Defining the new discipline: A system, not a string
 
 Many teams are familiar with *prompt engineering* (writing a specific command). To unlock real value, organizations must start iterating to context engineering.
 
@@ -80,25 +80,25 @@ Use the pilot’s success to obtain sponsorship from leaders for broader strateg
 
 ## Common Pitfalls
 
-#### Poor quality or “messy” internal data
+### Poor quality or “messy” internal data
 
 An AI connected to bad data will only produce bad answers (“garbage in, garbage out”).
 
 * **Mitigation:** Don’t boil the ocean. Pilot with a single, high-value data source (like one service’s API docs) and use AI to help distill/clean it before scaling.
 
-#### Polluting the AI with bad examples
+### Polluting the AI with bad examples
 
 Indexing all code—including deprecated projects—means the AI learns bad habits as easily as good ones.
 
 * **Mitigation:** Curate a specific “curriculum” of gold-standard repositories to index.
 
-#### Context rot (overloading)
+### Context rot (overloading)
 
 Don’t rely on massive context windows to handle irrelevant data. Overloading the model dilutes the signal and leads to hallucinations.
 
 * **Mitigation:** Focus on relevance, not volume. Use RAG or MCP to retrieve only the specific *chunks* of relevant data (a practice emerging as “context harvesting”).
 
-#### Security and access control concerns
+### Security and access control concerns
 
 Never connect AI tools to internal data using a “super user mode” or shared service account.
 
