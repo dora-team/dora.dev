@@ -1,7 +1,7 @@
 ---
 title: "Job satisfaction"
-titleForHTMLHead: "Capabilities: Job Satisfaction"
-updated: 2026-01-12
+titleForHTMLHead: "Capabilities: Job Satisfaction" # TODO: can we DRY this out?
+date: 2023-03-22T13:43:36Z
 category: climate for learning
 core: true
 draft: false

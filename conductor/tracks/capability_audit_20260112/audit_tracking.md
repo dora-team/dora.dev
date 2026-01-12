@@ -170,13 +170,6 @@
 - [x] Front Matter (Tags, Slug, TODOs)
 - [x] Links Verified
 
-### team-experimentation
-- [x] Tone Check
-- [x] Visuals Check
-- [x] Accessibility (Heading Levels)
-- [x] Front Matter (Tags, Slug, TODOs)
-- [x] Links Verified
-
 ### teams-empowered-to-choose-tools
 - [x] Tone Check
 - [x] Visuals Check

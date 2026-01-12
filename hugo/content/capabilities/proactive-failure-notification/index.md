@@ -1,7 +1,7 @@
 ---
 title: "Proactive failure notification"
-titleForHTMLHead: "Capabilities: Proactive Failure Notification"
-updated: 2026-01-12
+titleForHTMLHead: "Capabilities: Proactive Failure Notification" # TODO: can we DRY this out?
+date: 2023-03-25T16:35:37Z
 category: fast feedback
 draft: false
 headline: "Set proactive failure notifications to identify critical issues and act on problems before they arise."

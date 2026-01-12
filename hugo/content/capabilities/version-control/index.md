@@ -1,6 +1,6 @@
 ---
 title: "Version control"
-titleForHTMLHead: "Capabilities: Version Control"
+titleForHTMLHead: "Capabilities: Version Control" # TODO: can we DRY this out?
 slug: version-control
 core: true
 ai: true
@@ -221,7 +221,7 @@ new systems or configurations using assets from version control?
 
 Read more about version control in the following publications:
 
-* [DORA AI Capabilities Model report](/ai/capabilities-model/report/)
+* [DORA AI Capabilities Model reprot](/ai/capabilities-model/report/)
 * [2025 State of AI-assisted Software Development](/research/2025/dora-report)
 * [Accelerate State of DevOps Report 2022](https://dora.dev/research/2022/dora-report/)
 * [Accelerate State of DevOps Report 2019](https://dora.dev/research/2019/dora-report/)

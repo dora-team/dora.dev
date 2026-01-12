@@ -1,7 +1,7 @@
 ---
 title: "Transformational leadership"
-titleForHTMLHead: "Capabilities: Transformational Leadership"
-updated: 2026-01-12
+titleForHTMLHead: "Capabilities: Transformational Leadership" # TODO: can we DRY this out?
+date: 2023-03-22T13:43:36Z
 category: climate for learning
 draft: false
 headline: "Learn how effective leaders influence software delivery performance by driving the adoption of technical and product management capabilities."

@@ -2,6 +2,7 @@
 draft: false
 slug: well-being
 title: "Well-being"
+titleForHTMLHead: "Well-being" # TODO: can we DRY this out?
 category: climate for learning
 core: true
 headline: A focus on employee happiness and work environment can improve organizational performance while helping retain talent.
@@ -13,6 +14,7 @@ summary: |
     **Rework** is reactive unplanned work, including any break/fix work, emergency software deployments and patches, responding to urgent audit documentation requests, and so on.
 
     **Burnout** is physical, mental, or emotional exhaustion caused by overwork or stress.
+date: 2023-03-25T16:35:37Z
 ---
 
 Well-being is a reflection of individuals' happiness and job satisfaction. Increased well-being predicts organizational performance and employees' job tenure. DORA has studied the impact of deployment pain, rework, and burnout on well-being.
