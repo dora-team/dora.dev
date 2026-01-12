@@ -12,7 +12,7 @@ This document outlines general coding principles that apply across all languages
 
 ## Simplicity
 - Prefer simple solutions over complex ones.
-- Break down complex problems into smaller, manageable parts.
+- Break down complex problems into smaller, manageable, independently deployable parts.
 
 ## Maintainability
 - Write code that is easy to modify and extend.

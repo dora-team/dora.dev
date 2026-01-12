@@ -13,3 +13,4 @@
 
 ## Testing
 - **E2E Testing:** Playwright - Used for end-to-end testing of capabilities and critical user flows.
+- **Redirect Testing:** Automated tests to ensure URL aliases and legacy paths correctly redirect to canonical URLs.
