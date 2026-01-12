@@ -18,7 +18,7 @@ A user-centric focus is not just a design philosophy; it is a measurable capabil
 
 > Teams that focus on the user have 40% higher organizational performance.
 
-### The AI angle
+## The AI angle
 
 The rise of AI has made a user-centric focus more critical than ever. In the [2025 State of AI-assisted Software Development report](/research/2025/dora-report/), DORA found that AI acts as an amplifier: it magnifies the strengths of high-performing organizations and the dysfunctions of struggling ones. Without a user-centric compass, AI's ability to accelerate code generation can simply propel a team faster in the wrong direction.
 
