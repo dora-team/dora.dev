@@ -88,6 +88,7 @@
 
 ### generative-organizational-culture
 - [x] Tone Check
+- [x] Tone Check
 - [x] Visuals Check
 - [x] Accessibility (Heading Levels)
 - [x] Front Matter (Tags, Slug, TODOs)
@@ -95,12 +96,14 @@
 
 ### healthy-data-ecosystems
 - [x] Tone Check
+- [x] Tone Check
 - [x] Visuals Check
 - [x] Accessibility (Heading Levels)
 - [x] Front Matter (Tags, Slug, TODOs)
 - [x] Links Verified
 
 ### job-satisfaction
+- [x] Tone Check
 - [x] Tone Check
 - [x] Visuals Check
 - [x] Accessibility (Heading Levels)
