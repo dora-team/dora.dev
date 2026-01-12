@@ -221,7 +221,7 @@ new systems or configurations using assets from version control?
 
 Read more about version control in the following publications:
 
-* [DORA AI Capabilities Model reprot](/ai/ai-capabilities-model/report/)
+* [DORA AI Capabilities Model report](/ai/capabilities-model/report/)
 * [2025 State of AI-assisted Software Development](/research/2025/dora-report)
 * [Accelerate State of DevOps Report 2022](https://dora.dev/research/2022/dora-report/)
 * [Accelerate State of DevOps Report 2019](https://dora.dev/research/2019/dora-report/)
@@ -236,4 +236,4 @@ Read more about version control in the following publications:
 * Take the
     [DORA quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.
-* Explore the [DORA AI Capabilities Model](/capabilities/ai/) to see how version control fits into a successful AI strategy.
+* Explore the [DORA AI Capabilities Model](/ai/capabilities-model/) to see how version control fits into a successful AI strategy.
