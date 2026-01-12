@@ -253,4 +253,3 @@
 - [x] Accessibility (Heading Levels)
 - [x] Front Matter (Tags, Slug, TODOs)
 - [x] Links Verified
-
