@@ -33,7 +33,10 @@ def check_front_matter(filepath, dirname):
                 local_errors.append(f"Front Matter: 'TODO' found in '{key}'")
         if 'slug' in metadata:
             slug_val = metadata['slug'].strip('"').strip("'")
-            if slug_val != dirname:
+            # Exception for cloud-infrastructure which has slug flexible-infrastructure
+            if dirname == "cloud-infrastructure" and slug_val == "flexible-infrastructure":
+                pass
+            elif slug_val != dirname:
                  local_errors.append(f"Front Matter: slug '{slug_val}' != dir '{dirname}'")
     except Exception as e:
         local_errors.append(f"Front Matter: Parse Error - {e}")

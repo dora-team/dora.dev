@@ -19,4 +19,3 @@ if errors:
 else:
     print("Cohesion Check PASSED.")
     sys.exit(0)
-
