@@ -16,7 +16,8 @@ DORA's capabilities are the heart of the site's research-backed content. As the 
 ## Guidelines to Apply
 - **Tone:** Direct, actionable, and helpful for practitioners.
 - **Visuals:** Minimal distractions, focus on readability.
-- **Accessibility:** Proper heading structure, alt text for any images, clear links.
+- **Accessibility:** Proper heading structure (strictly sequential, no skipping levels), alt text for any images, clear links.
+- **Front Matter:** Ensure consistency (resolve TODOs, verify slugs match folders where appropriate).
 
 ## Acceptance Criteria
 - [ ] Comprehensive list of capabilities and their current status is created.
