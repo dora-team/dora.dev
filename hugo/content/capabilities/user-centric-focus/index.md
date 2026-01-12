@@ -29,27 +29,27 @@ Our research reveals a stark contrast in how AI impacts teams based on their foc
 
 > If a team's priorities are not aligned to the North Star of user needs, amplification with AI can propel them even further in the wrong direction.
 
-### How to implement a user-centric focus
+## How to implement a user-centric focus
 
 Building a user-centric focus requires a cultural shift that moves user stories, feedback, and analytics from the periphery to the core of the development process.
 
-#### Integrate user feedback loops
+### Integrate user feedback loops
 
 Teams must actively solicit and make use of direct user feedback. This involves creating low-latency channels for feedback, such as in-app surveys or direct observation sessions. Critically, this feedback must be available to the team immediately and used to refine development priorities. For AI-assisted teams, this feedback is essential for refining prompts and validating that the AI's output aligns with user needs.
 
-#### Make user metrics visible
+### Make user metrics visible
 
 A team's focus follows what it measures. If dashboards only show metrics like velocity and deployment frequency, the user is easily forgotten. To shift focus, teams should display user experience metrics, such as customer satisfaction (CSAT), task completion rates, or the [H.E.A.R.T. framework metrics](https://cloud.google.com/transform/unlocking-product-success-by-combining-dora-and-heart/), prominently alongside technical metrics. By making the "why" and "for whom" visible, teams remain grounded in the impact of their work.
 
-#### Involve engineering in user research
+### Involve engineering in user research
 
 Product managers and UX researchers play a vital role, but they should facilitate connection rather than enforce distance between engineers and users. Distilled findings often strip away nuance. Invite developers to observe user testing sessions directly. Seeing a user struggle firsthand creates a lasting empathy that informs how developers design solutions and write tests.
 
-#### Leverage "Spec-driven Development"
+### Leverage "Spec-driven Development"
 
 An emerging paradigm for aligning AI with user needs is **spec-driven development (SDD)**. In this approach, developers refine user needs and constraints into detailed documentation (specs) *before* writing code. This documentation becomes the source of truth for AI agents, ensuring that generated code is constrained by actual user requirements rather than just generic patterns.
 
-### Common pitfalls
+## Common pitfalls
 
 Even teams with good intentions can lose sight of the user. Watch out for these common antipatterns:
 
@@ -57,7 +57,7 @@ Even teams with good intentions can lose sight of the user. Watch out for these 
 * **Resume-driven development:** Teams may fall into the trap of "solutionism," adopting new technologies—including specific AI models—for their own sake rather than to solve a specific user problem. This adds complexity and pulls focus away from the user.
 * **Organizational silos:** Policies or team structures that systematically disconnect developers from end users create a "gatekeeper" model. This robs developers of the deep context required to build valuable solutions and verify AI outputs effectively.
 
-### Measuring impact
+## Measuring impact
 
 The ultimate measure of a user-centric focus is reflected in product metrics like adoption, retention, and customer satisfaction. However, you can also evaluate your team's orientation using the following signals:
 
@@ -67,14 +67,14 @@ The ultimate measure of a user-centric focus is reflected in product metrics lik
 
 > Prioritizing user-centricity isn't just a design choice; it's a performance multiplier. DORA research shows that teams who focus on the user have 40% higher organizational performance and significantly higher job satisfaction. In an era where AI allows us to build faster than ever, a user-centric focus acts as our steering wheel. Without it, we risk simply crashing faster. By investing in user feedback loops and connecting our engineers directly to user problems, we ensure that our increased velocity translates directly into business value.
 
-### More from DORA
+## More from DORA
 
 * [DORA AI Capabilities Model report](/ai/capabilities-model/report/)
 * [2025 State of AI-assisted Software Development](/research/2025/dora-report/)
 * [2024 Accelerate State of DevOps Report](/research/2024/dora-report/)
 * [2023 Accelerate State of DevOps Report](/research/2023/dora-report/)
 
-### What's next?
+## What's next?
 
 * Read the blog post: [Unlocking product success by combining DORA and H.E.A.R.T.](https://cloud.google.com/transform/unlocking-product-success-by-combining-dora-and-heart/)
 * Take the [DORA quick check](/quickcheck/) to get a baseline of your team's software delivery performance.

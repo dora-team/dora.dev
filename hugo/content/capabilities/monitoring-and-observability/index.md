@@ -1,10 +1,9 @@
 ---
 title: "Monitoring and observability"
-titleForHTMLHead: "Capabilities: Monitoring and Observability"
+titleForHTMLHead: "Capabilities: Monitoring and Observability" # TODO: can we DRY this out?
+date: 2023-03-25T16:35:37Z
 slug: monitoring-and-observability
 core: true
-
-updated: 2026-01-12
 category: fast feedback
 draft: false
 headline: "Learn how to build tooling to help you understand and debug your production systems."

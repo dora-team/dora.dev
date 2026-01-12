@@ -1,10 +1,9 @@
 ---
 title: "Database change management"
-titleForHTMLHead: "Capabilities: Database Change Management"
+titleForHTMLHead: "Capabilities: Database Change Management" # TODO: can we DRY this out?
+date: 2023-03-27T09:48:50+01:00
 slug: database-change-management
 core: true
-
-updated: 2026-01-12
 category: fast flow
 draft: false
 headline: "Make sure database changes don't cause problems or slow you down."

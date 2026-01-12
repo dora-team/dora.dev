@@ -1,10 +1,9 @@
 ---
 title: "Pervasive security"
-titleForHTMLHead: "Capabilities: Pervasive Security"
+titleForHTMLHead: "Capabilities: Pervasive Security" # TODO: can we DRY this out?
+date: 2023-03-27T09:48:50+01:00
 slug: pervasive-security
 core: true
-
-updated: 2026-01-12
 category: fast feedback
 draft: false
 headline: "Build security into the software development lifecycle without compromising delivery speed."

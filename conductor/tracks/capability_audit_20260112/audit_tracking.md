@@ -1,7 +1,7 @@
 # Capability Audit Tracking
 
 **Legend:**
-- [x] Pending
+- [ ] Pending
 - [x] Completed
 - [~] In Progress
 

@@ -5,7 +5,6 @@ import sys
 capabilities_dir = "hugo/content/capabilities"
 content_root = "hugo/content"
 static_root = "hugo/static"
-audit_tracking = "conductor/tracks/capability_audit_20260112/audit_tracking.md"
 
 errors = []
 
@@ -47,11 +46,11 @@ def check_headings(filepath):
     local_errors = []
     with open(filepath, 'r') as f:
         lines = f.readlines()
-    
+
     in_front_matter = False
     front_matter_count = 0
     last_level = 0
-    
+
     for i, line in enumerate(lines):
         line = line.strip()
         if line == "---":
@@ -62,13 +61,13 @@ def check_headings(filepath):
             in_front_matter = True
             continue
         if in_front_matter: continue
-            
+
         if line.startswith("#"):
             level = 0
             for char in line:
                 if char == '#': level += 1
                 else: break
-            
+
             effective_last = last_level if last_level > 0 else 1
             if level > effective_last + 1:
                 local_errors.append(f"Headings: Line {i+1}: Jumped from H{effective_last} to H{level}")
@@ -81,13 +80,13 @@ def check_links(filepath):
     local_errors = []
     with open(filepath, 'r') as f:
         content = f.read()
-    
+
     for match in link_pattern.finditer(content):
         text = match.group(1)
         url = match.group(2)
         clean_url = url.split('#')[0]
         if clean_url.startswith("http") or clean_url.startswith("mailto:"): continue
-            
+
         if clean_url.startswith("/"):
             normalized_path = clean_url.lstrip('/').rstrip('/')
             path_variants = [
@@ -99,7 +98,8 @@ def check_links(filepath):
             found = False
             for p in path_variants:
                 if os.path.exists(p):
-                    found = True; break
+                    found = True
+                    break
             if not found:
                 dir_path = os.path.join(content_root, normalized_path)
                 if os.path.isdir(dir_path) and os.path.exists(os.path.join(dir_path, "_index.md")):
@@ -114,12 +114,12 @@ for root, dirs, files in os.walk(capabilities_dir):
         if file == "index.md":
             filepath = os.path.join(root, file)
             dirname = os.path.basename(root)
-            
+
             # Run Checks
             fm_errs = check_front_matter(filepath, dirname)
             hd_errs = check_headings(filepath)
             lnk_errs = check_links(filepath)
-            
+
             if fm_errs or hd_errs or lnk_errs:
                 errors.append(f"{filepath}:")
                 for e in fm_errs + hd_errs + lnk_errs:
