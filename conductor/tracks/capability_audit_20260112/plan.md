@@ -21,5 +21,5 @@ Goal: Update the content of each capability to align with project guidelines.
 Goal: Ensure the entire catalog is consistent and ready for production.
 
 - [x] Task: Perform a final pass on the capability catalog for overall cohesion ec5dcb5
-- [ ] Task: Run a site-wide accessibility check on the capability section
+- [~] Task: Run a site-wide accessibility check on the capability section
 - [ ] Task: Conductor - User Manual Verification 'Final Verification' (Protocol in workflow.md)
