@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/capabilities/cloud-infrastructure/');
+  await page.goto('/capabilities/flexible-infrastructure/');
 });
 
 test('Cloud infrastructure page has the correct title.', async ({ page }) => {
@@ -16,7 +16,7 @@ test('Cloud infrastructure is a core capability.', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'core', exact: true })).toBeVisible();
 });
 
-test('Redirect from flexible-infrastructure works.', async ({ page }) => {
-  await page.goto('/capabilities/flexible-infrastructure/');
-  await expect(page).toHaveURL(/\/capabilities\/cloud-infrastructure\//);
+test('Redirect from cloud-infrastructure works.', async ({ page }) => {
+  await page.goto('/capabilities/cloud-infrastructure/');
+  await expect(page).toHaveURL(/\/capabilities\/flexible-infrastructure\//);
 });

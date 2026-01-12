@@ -4,7 +4,7 @@ titleForHTMLHead: "Capabilities: Loosely Coupled Teams"
 slug: loosely-coupled-teams
 core: true
 date: 2023-03-27T09:48:50+01:00
-updated: 2025-10-20
+updated: 2026-01-12
 category: fast flow
 draft: false
 headline: "Learn about moving from a tightly coupled architecture to service-oriented and microservice architectures without re-architecting everything at once"

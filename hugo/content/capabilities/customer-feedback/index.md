@@ -1,7 +1,7 @@
 ---
 title: "Customer feedback"
 titleForHTMLHead: "Capabilities: Customer Feedback"
-date: 2023-03-24T12:54:18Z
+updated: 2026-01-12
 category: fast feedback
 draft: false
 headline: "Drive better organizational outcomes by gathering customer feedback and incorporating it into product and feature design."

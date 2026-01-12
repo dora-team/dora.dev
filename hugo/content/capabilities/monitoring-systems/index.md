@@ -1,7 +1,7 @@
 ---
 title: "Monitoring systems to inform business decisions"
 titleForHTMLHead: "Capabilities: Monitoring systems to inform business decisions"
-date: 2023-03-25T16:35:37Z
+updated: 2026-01-12
 category: fast feedback
 draft: false
 headline: "Improve monitoring across infrastructure platforms, middleware, and the application tier, so you can provide fast feedback to developers."
