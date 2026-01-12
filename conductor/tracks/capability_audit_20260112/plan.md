@@ -30,6 +30,11 @@ Goal: Update the content of each capability to align with project guidelines.
  - [ ] Task: Ensure all capability pages have a clear, accessible heading structure
  - [ ] Task: Verify that all links within capability pages are functional and descriptive
  - [ ] Task: Conductor - User Manual Verification 'Content Refinement' (Protocol in workflow.md)
+ - [x] Task: Update capability front matter for consistency (tags, descriptions, etc.) af12e99
+ - [~] Task: Refactor capability prose to match the "Pragmatic & Practical" tone
+ - [ ] Task: Ensure all capability pages have a clear, accessible heading structure
+ - [ ] Task: Verify that all links within capability pages are functional and descriptive
+ - [ ] Task: Conductor - User Manual Verification 'Content Refinement' (Protocol in workflow.md)
 
 ## Phase 3: Final Verification [checkpoint: fd9d00b]
 Goal: Ensure the entire catalog is consistent and ready for production.
