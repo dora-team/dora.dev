@@ -1,7 +1,7 @@
 ---
 title: "Visibility of work in the value stream"
 titleForHTMLHead: "Capabilities: Visibility of work in the value stream"
-
+
 updated: 2026-01-12
 category: fast feedback
 draft: false

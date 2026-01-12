@@ -14,7 +14,8 @@ summary: |
 
     **Burnout** is physical, mental, or emotional exhaustion caused by overwork or stress.
 
-updated: 2026-01-12---
+updated: 2026-01-12
+---
 
 Well-being is a reflection of individuals' happiness and job satisfaction. Increased well-being predicts organizational performance and employees' job tenure. DORA has studied the impact of deployment pain, rework, and burnout on well-being.
 

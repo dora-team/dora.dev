@@ -3,7 +3,7 @@ title: "Monitoring and observability"
 titleForHTMLHead: "Capabilities: Monitoring and Observability"
 slug: monitoring-and-observability
 core: true
-
+
 updated: 2026-01-12
 category: fast feedback
 draft: false

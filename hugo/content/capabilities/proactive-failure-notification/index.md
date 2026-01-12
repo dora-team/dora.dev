@@ -1,7 +1,7 @@
 ---
 title: "Proactive failure notification"
 titleForHTMLHead: "Capabilities: Proactive Failure Notification"
-
+
 updated: 2026-01-12
 category: fast feedback
 draft: false

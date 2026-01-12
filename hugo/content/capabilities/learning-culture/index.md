@@ -1,7 +1,7 @@
 ---
 title: "Learning culture"
 titleForHTMLHead: "Capabilities: Learning Culture"
-
+
 updated: 2026-01-12
 category: climate for learning
 draft: false

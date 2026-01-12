@@ -3,7 +3,7 @@ title: "Trunk-based development"
 titleForHTMLHead: "Capabilities: Trunk-based Development"
 slug: trunk-based-development
 core: false
-
+
 updated: 2026-01-12
 category: fast flow
 draft: false
