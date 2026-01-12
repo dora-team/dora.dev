@@ -5,7 +5,7 @@ slug: user-centric-focus
 core: false
 ai: true
 date: 2025-12-08
-updated: 2025-12-08
+updated: 2026-01-12
 category: AI
 draft: false
 headline: "A focus on user needs is essential to ensure that AI-accelerated teams are moving quickly in the right direction."

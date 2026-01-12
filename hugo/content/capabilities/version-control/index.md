@@ -5,7 +5,7 @@ slug: version-control
 core: true
 ai: true
 date: 2023-03-27T09:48:51+01:00
-updated: 2025-12-09
+updated: 2026-01-12
 category: fast flow
 draft: false
 headline: "Version control ensures reproducibility and traceability, serving as a critical safety net as AI accelerates the velocity of change."

@@ -1,7 +1,8 @@
 ---
 title: "Proactive failure notification"
 titleForHTMLHead: "Capabilities: Proactive Failure Notification"
-date: 2023-03-25T16:35:37Z
+
+updated: 2026-01-12
 category: fast feedback
 draft: false
 headline: "Set proactive failure notifications to identify critical issues and act on problems before they arise."

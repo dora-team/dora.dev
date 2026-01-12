@@ -1,7 +1,8 @@
 ---
 title: "Documentation quality"
 titleForHTMLHead: "Capabilities: Documentation quality"
-date: 2023-03-24T12:54:18Z
+
+updated: 2026-01-12
 category: climate for learning
 draft: false
 slug: documentation-quality

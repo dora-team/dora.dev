@@ -5,7 +5,7 @@ slug: clear-and-communicated-ai-stance
 core: false
 ai: true
 date: 2025-12-08
-updated: 2025-12-08
+updated: 2026-01-12
 category: AI
 draft: false
 headline: "Ambiguity creates risk. A clear policy provides the psychological safety needed for effective experimentation."

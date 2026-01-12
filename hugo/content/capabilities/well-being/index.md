@@ -13,7 +13,8 @@ summary: |
     **Rework** is reactive unplanned work, including any break/fix work, emergency software deployments and patches, responding to urgent audit documentation requests, and so on.
 
     **Burnout** is physical, mental, or emotional exhaustion caused by overwork or stress.
----
+
+updated: 2026-01-12---
 
 Well-being is a reflection of individuals' happiness and job satisfaction. Increased well-being predicts organizational performance and employees' job tenure. DORA has studied the impact of deployment pain, rework, and burnout on well-being.
 

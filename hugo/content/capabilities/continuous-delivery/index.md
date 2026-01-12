@@ -2,7 +2,8 @@
 title: "Continuous delivery"
 slug: "continuous-delivery"
 titleForHTMLHead: "Capabilities: Continuous Delivery"
-date: 2023-03-27T09:48:50+01:00
+
+updated: 2026-01-12
 category: fast flow
 draft: false
 core: true

@@ -1,7 +1,8 @@
 ---
 title: "Visibility of work in the value stream"
 titleForHTMLHead: "Capabilities: Visibility of work in the value stream"
-date: 2023-03-24T12:54:18Z
+
+updated: 2026-01-12
 category: fast feedback
 draft: false
 headline: "Understand and visualize the flow of work from idea to customer outcome in order to drive higher performance."
