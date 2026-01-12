@@ -5,7 +5,7 @@ Goal: Identify all capabilities and determine the extent of updates needed.
 
 - [x] Task: List all capability content files in `hugo/content/capabilities/` muqlrvqy
 - [x] Task: Perform a sample audit of 3 capabilities to refine the update checklist 97917d9
-- [ ] Task: Create a tracking document or list for the audit status of each capability
+- [~] Task: Create a tracking document or list for the audit status of each capability
 - [ ] Task: Conductor - User Manual Verification 'Inventory and Assessment' (Protocol in workflow.md)
 
 ## Phase 2: Content Refinement
