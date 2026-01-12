@@ -1,7 +1,7 @@
 ---
 title: "Customer feedback"
 titleForHTMLHead: "Capabilities: Customer Feedback"
-
+
 updated: 2026-01-12
 category: fast feedback
 draft: false

@@ -1,7 +1,7 @@
 ---
 title: "Continuous integration"
 titleForHTMLHead: "Capabilities: Continuous Integration"
-
+
 updated: 2026-01-12
 category: fast feedback
 draft: false

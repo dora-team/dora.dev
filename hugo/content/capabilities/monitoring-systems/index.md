@@ -1,7 +1,7 @@
 ---
 title: "Monitoring systems to inform business decisions"
 titleForHTMLHead: "Capabilities: Monitoring systems to inform business decisions"
-
+
 updated: 2026-01-12
 category: fast feedback
 draft: false

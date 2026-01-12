@@ -1,7 +1,7 @@
 ---
 title: "Visual management"
 titleForHTMLHead: "Capabilities: Visual Management"
-
+
 updated: 2026-01-12
 category: fast flow
 draft: false

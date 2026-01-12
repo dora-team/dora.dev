@@ -1,7 +1,7 @@
 ---
 title: "Generative organizational culture"
 titleForHTMLHead: "Capabilities: Generative Organizational Culture"
-
+
 updated: 2026-01-12
 category: climate for learning
 slug: generative-organizational-culture

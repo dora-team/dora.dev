@@ -1,7 +1,7 @@
 ---
 title: "Transformational leadership"
 titleForHTMLHead: "Capabilities: Transformational Leadership"
-
+
 updated: 2026-01-12
 category: climate for learning
 draft: false

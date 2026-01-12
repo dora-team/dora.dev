@@ -3,7 +3,7 @@ title: "Empowering teams to choose tools"
 titleForHTMLHead: "Capabilities: Empowering teams to choose tools"
 slug: teams-empowered-to-choose-tools
 core: true
-
+
 updated: 2026-01-12
 category: climate for learning
 draft: false

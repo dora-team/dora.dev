@@ -3,7 +3,7 @@ title: "Database change management"
 titleForHTMLHead: "Capabilities: Database Change Management"
 slug: database-change-management
 core: true
-
+
 updated: 2026-01-12
 category: fast flow
 draft: false

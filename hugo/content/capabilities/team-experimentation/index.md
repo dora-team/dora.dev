@@ -1,7 +1,7 @@
 ---
 title: "Team experimentation"
 titleForHTMLHead: "Capabilities: Team Experimentation"
-
+
 updated: 2026-01-12
 category: climate for learning
 draft: false

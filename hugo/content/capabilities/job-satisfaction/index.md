@@ -1,7 +1,7 @@
 ---
 title: "Job satisfaction"
 titleForHTMLHead: "Capabilities: Job Satisfaction"
-
+
 updated: 2026-01-12
 category: climate for learning
 core: true

@@ -3,7 +3,7 @@ title: "Pervasive security"
 titleForHTMLHead: "Capabilities: Pervasive Security"
 slug: pervasive-security
 core: true
-
+
 updated: 2026-01-12
 category: fast feedback
 draft: false

@@ -1,7 +1,7 @@
 ---
 title: "Code maintainability"
 titleForHTMLHead: "Capabilities: Code Maintainability"
-
+
 updated: 2026-01-12
 category: climate for learning
 draft: false
