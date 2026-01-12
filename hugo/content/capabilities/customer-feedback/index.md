@@ -1,6 +1,6 @@
 ---
 title: "Customer feedback"
-titleForHTMLHead: "Capabilities: Customer Feedback" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Customer Feedback"
 date: 2023-03-24T12:54:18Z
 category: fast feedback
 draft: false

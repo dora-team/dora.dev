@@ -1,6 +1,6 @@
 ---
 title: "Visual management"
-titleForHTMLHead: "Capabilities: Visual Management" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Visual Management"
 date: 2023-03-25T16:35:37Z
 category: fast flow
 draft: false

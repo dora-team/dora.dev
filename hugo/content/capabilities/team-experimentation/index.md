@@ -1,6 +1,6 @@
 ---
 title: "Team experimentation"
-titleForHTMLHead: "Capabilities: Team Experimentation" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Team Experimentation"
 date: 2023-03-24T12:54:18Z
 category: climate for learning
 draft: false
