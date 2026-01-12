@@ -1,6 +1,6 @@
 ---
 title: "Deployment automation"
-titleForHTMLHead: "Capabilities: Deployment Automation" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Deployment Automation"
 slug: deployment-automation
 core: true
 date: 2023-03-27T09:48:50+01:00

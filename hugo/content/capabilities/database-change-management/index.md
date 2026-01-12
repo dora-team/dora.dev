@@ -1,6 +1,6 @@
 ---
 title: "Database change management"
-titleForHTMLHead: "Capabilities: Database Change Management" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Database Change Management"
 slug: database-change-management
 core: true
 date: 2023-03-27T09:48:50+01:00

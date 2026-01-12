@@ -1,6 +1,6 @@
 ---
 title: "Test data management"
-titleForHTMLHead: "Capabilities: Test Data Management" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Test Data Management"
 slug: test-data-management
 core: true
 date: 2023-03-27T09:48:50+01:00

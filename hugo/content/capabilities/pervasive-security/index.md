@@ -1,6 +1,6 @@
 ---
 title: "Pervasive security"
-titleForHTMLHead: "Capabilities: Pervasive Security" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Pervasive Security"
 slug: pervasive-security
 core: true
 date: 2023-03-27T09:48:50+01:00

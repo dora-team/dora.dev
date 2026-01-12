@@ -1,6 +1,6 @@
 ---
 title: "Proactive failure notification"
-titleForHTMLHead: "Capabilities: Proactive Failure Notification" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Proactive Failure Notification"
 date: 2023-03-25T16:35:37Z
 category: fast feedback
 draft: false
