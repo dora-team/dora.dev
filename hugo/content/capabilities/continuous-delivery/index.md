@@ -2,7 +2,7 @@
 title: "Continuous delivery"
 slug: "continuous-delivery"
 titleForHTMLHead: "Capabilities: Continuous Delivery"
-
+
 updated: 2026-01-12
 category: fast flow
 draft: false
