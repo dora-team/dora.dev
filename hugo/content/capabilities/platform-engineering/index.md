@@ -26,26 +26,26 @@ While organizations are currently racing to equip individual developers with AI 
 
 A high-quality internal platform mitigates this risk by acting as the essential distribution and governance layer for AI. It provides the automated, standardized, and secure pathways necessary to turn AI's potential into systemic organizational improvements. By ensuring that AI-generated code is consistently tested, secured, and deployed, a platform allows an organization to harness the speed of AI without sacrificing stability.
 
-### How to implement quality internal platforms
+## How to implement quality internal platforms
 
 To improve an internal platform, organizations must move beyond viewing it as a technical project and adopt a user-centric, product-centric approach.
 
-#### Adopt a product management mindset
+### Adopt a product management mindset
 A platform is an internal product, and the developers are its customers. Successful implementation requires assigning a product manager to focus on the developer experience (DevEx) and creating a strategic roadmap based on a deep understanding of developer needs. This work should be driven by mapping out critical user journeys—such as "spinning up a new service" or "debugging a production issue"—to identify and eliminate the most significant points of friction.
 
-#### Proactively "shift down" cognitive load
+### Proactively "shift down" cognitive load
 The platform's primary goal is to reduce the cognitive load on developers by abstracting away underlying complexity. Instead of forcing developers to become experts in Kubernetes, cloud networking, or security policies, platform engineers should "[shift down](https://cloud.google.com/blog/products/application-development/richard-seroter-on-shifting-down-vs-shifting-left)" this complexity into the platform itself. By providing simple, self-service "golden paths," the platform enables developers to focus on what they do best: delivering user value. [Research from 2024](/research/2024/dora-report/) highlights that **developer independence**, the ability to perform tasks without relying on an enabling team, resulted in a 5% improvement in productivity at both the team and individual levels.
 
-#### Start with a "minimum viable platform"
+### Start with a "minimum viable platform"
 Organizations should avoid the temptation to build a comprehensive platform all at once. Instead, they should identify the golden path for the *most common* workflow and build just enough to make that specific journey demonstrably better. This approach allows the team to deliver value quickly, gather crucial feedback, and build momentum for future iterations.
 
-#### Design for extensibility
+### Design for extensibility
 A central platform team cannot—and should not—build everything. A successful platform must be designed for extensibility, allowing other teams to contribute their own tools and services in a standardized way. By building with clear APIs and a well-defined contribution model, organizations can leverage domain expertise from other teams and prevent the platform team from becoming a bottleneck.
 
-#### Prioritize clear feedback
+### Prioritize clear feedback
 Developers need to understand what is happening when they use the platform, especially when something fails. [DORA's 2025 data](/research/2025/dora-report/) showed that the platform capability most correlated with a positive user experience is giving "clear feedback on the outcome of my tasks". Providing clear, actionable feedback, logs, and diagnostics empowers developers to self-serve and troubleshoot independently.
 
-### Why this matters now
+## Why this matters now
 
 Investing in a quality internal platform is no longer optional; it is the critical enabler for realizing the value of AI investments. Currently, individual productivity gains from AI are often absorbed by downstream bottlenecks in deployment and testing processes.
 
@@ -53,7 +53,7 @@ It is important to manage expectations regarding the timeline of these benefits.
 
 By building a platform that abstracts complexity and automates delivery, organizations create a "paved road" that scales these benefits securely. This isn't just about speed; it is about risk mitigation. A quality platform creates a safe space for experimentation by making failure cheap and recovery fast. It transforms platform engineering efforts from a cost center managing tickets into a value driver that accelerates every team.
 
-### Common pitfalls
+## Common pitfalls
 
 As organizations invest in platform engineering, recognizing common antipatterns is the first step to avoiding them.
 
@@ -63,7 +63,7 @@ As organizations invest in platform engineering, recognizing common antipatterns
 * **The "Big bang" release:** Attempting to build an all-encompassing platform before releasing anything is high-risk. By the time the "perfect" platform launches, developer needs have likely changed.
 * **A "One-size-fits-all" mentality:** Creating a rigid "golden cage" fails to account for the diverse needs of different teams (for example, data science and mobile development). A successful platform provides enabling constraints while offering enough flexibility for teams to use the right tools for their specific jobs.
 
-### Measuring impact
+## Measuring impact
 
 To measure the impact of your platform, utilize both [software delivery metrics](/guides/dora-metrics/) and developer satisfaction signals. DORA research has found that while platforms improve productivity and organizational performance, they can sometimes lead to a decrease in throughput and change stability if not carefully managed. Therefore, a balanced scorecard is essential.
 
@@ -72,7 +72,7 @@ To measure the impact of your platform, utilize both [software delivery metrics]
 * **Adoption & retention:** Using the [H.E.A.R.T. framework](https://cloud.google.com/transform/unlocking-product-success-by-combining-dora-and-heart/), measure the rate of new teams onboarding to the platform and the rate at which they continue to use it.
 * **Task success:** Measure the efficiency and effectiveness of developers completing key workflows on the platform.
 
-### More from DORA
+## More from DORA
 
 Read more about platform engineering in the following publications:
 
@@ -82,7 +82,7 @@ Read more about platform engineering in the following publications:
 * [2023 Accelerate State of DevOps Report](/research/2023/dora-report/)
 
 
-### What's next?
+## What's next?
 
 * [Shift down with platform engineering on Google Cloud](https://cloud.google.com/solutions/platform-engineering)
 * Read the blog post: [How Google does it: Your guide to platform engineering](https://cloud.google.com/blog/products/application-modernization/a-guide-to-platform-engineering)

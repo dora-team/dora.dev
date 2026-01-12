@@ -4,15 +4,15 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/capabilities/flexible-infrastructure/');
 });
 
-test('Cloud infrastructure page has the correct title.', async ({ page }) => {
+test('Flexible infrastructure page has the correct title.', async ({ page }) => {
   await expect(page).toHaveTitle('DORA | Capabilities: Flexible Infrastructure');
 });
 
-test('Cloud infrastructure page has the correct header.', async ({ page }) => {
+test('Flexible infrastructure page has the correct header.', async ({ page }) => {
   await expect(page.locator('h1')).toContainText('Flexible infrastructure');
 });
 
-test('Cloud infrastructure is a core capability.', async ({ page }) => {
+test('Flexible infrastructure is a core capability.', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'core', exact: true })).toBeVisible();
 });
 

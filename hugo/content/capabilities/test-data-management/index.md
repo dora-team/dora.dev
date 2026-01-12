@@ -1,10 +1,9 @@
 ---
 title: "Test data management"
-titleForHTMLHead: "Capabilities: Test Data Management"
+titleForHTMLHead: "Capabilities: Test Data Management" # TODO: can we DRY this out?
+date: 2023-03-27T09:48:50+01:00
 slug: test-data-management
 core: true
-
-updated: 2026-01-12
 category: fast feedback
 draft: false
 headline: "Understand the right strategies for managing test data effectively along with approaches to provide fast, secure data access for testing."

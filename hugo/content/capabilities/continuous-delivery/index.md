@@ -1,9 +1,8 @@
 ---
 title: "Continuous delivery"
 slug: "continuous-delivery"
-titleForHTMLHead: "Capabilities: Continuous Delivery"
-
-updated: 2026-01-12
+titleForHTMLHead: "Capabilities: Continuous Delivery" # TODO: can we DRY this out?
+date: 2023-03-27T09:48:50+01:00
 category: fast flow
 draft: false
 core: true

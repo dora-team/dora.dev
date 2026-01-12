@@ -1,10 +1,9 @@
 ---
 title: "Deployment automation"
-titleForHTMLHead: "Capabilities: Deployment Automation"
+titleForHTMLHead: "Capabilities: Deployment Automation" # TODO: can we DRY this out?
+date: 2023-03-27T09:48:50+01:00
 slug: deployment-automation
 core: true
-
-updated: 2026-01-12
 category: fast flow
 draft: false
 headline: "Best practices and approaches for deployment automation and reducing manual intervention in the release process."

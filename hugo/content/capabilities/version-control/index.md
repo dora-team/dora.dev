@@ -1,10 +1,10 @@
 ---
 title: "Version control"
-titleForHTMLHead: "Capabilities: Version Control"
+titleForHTMLHead: "Capabilities: Version Control" # TODO: can we DRY this out?
 slug: version-control
 core: true
 ai: true
-date: 2023-03-27T09:48:51+01:00
+date: 2023-03-27
 updated: 2026-01-12
 category: fast flow
 draft: false
@@ -236,4 +236,4 @@ Read more about version control in the following publications:
 * Take the
     [DORA quick check](/quickcheck/)
     to understand where you stand in comparison with the rest of the industry.
-* Explore the [DORA AI Capabilities Model](/ai/capabilities-model/) to see how version control fits into a successful AI strategy.
+* Explore the [DORA AI Capabilities Model](/ai/#explore-the-model) to see how version control fits into a successful AI strategy.

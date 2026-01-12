@@ -1,10 +1,10 @@
 ---
 title: "Streamlining change approval"
-titleForHTMLHead: "Capabilities: Streamlining Change Approval"
+titleForHTMLHead: "Capabilities: Streamlining Change Approval" # TODO: can we DRY this out?
 slug: streamlining-change-approval
 core: true
 date: 2023-03-22T11:02:58Z
-updated: 2026-01-12
+updated: 2025-10-30
 category: fast flow
 draft: false
 headline: "Replace heavyweight change-approval processes with peer review, to get the benefits of a more reliable, compliant release process without sacrificing speed."
