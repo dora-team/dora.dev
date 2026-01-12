@@ -1,7 +1,7 @@
 ---
 title: "Visibility of work in the value stream"
-titleForHTMLHead: "Capabilities: Visibility of work in the value stream"
-updated: 2026-01-12
+titleForHTMLHead: "Capabilities: Visibility of work in the value stream" # TODO: can we DRY this out?
+date: 2023-03-24T12:54:18Z
 category: fast feedback
 draft: false
 headline: "Understand and visualize the flow of work from idea to customer outcome in order to drive higher performance."

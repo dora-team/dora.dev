@@ -1,7 +1,7 @@
 ---
 title: "Work in process limits"
-titleForHTMLHead: "Capabilities: Work in process limits"
-updated: 2026-01-12
+titleForHTMLHead: "Capabilities: Work in process limits" # TODO: can we DRY this out?
+date: 2023-03-25T16:35:37Z
 category: fast flow
 draft: false
 headline:  "Prioritize work, limit the amount of things that people are working on, and focus on getting a small number of high-priority tasks done."
