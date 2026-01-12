@@ -20,9 +20,7 @@ Goal: Update the content of each capability to align with project guidelines.
  - [x] Task: Ensure all capability pages have a clear, accessible heading structure a0f7d31
  - [x] Task: Verify that all links within capability pages are functional and descriptive a544add
  - [x] Task: Conductor - User Manual Verification 'Content Refinement' (Protocol in workflow.md) 78f1f86
- - [x] Task: Update capability front matter for consistency (tags, descriptions, etc.) af12e99
- - [x] Task: Refactor capability prose to match the "Pragmatic & Practical" tone 16e02fe
- - [ ] Task: Ensure all capability pages have a clear, accessible heading structure
+ - [~] Task: Ensure all capability pages have a clear, accessible heading structure
  - [ ] Task: Verify that all links within capability pages are functional and descriptive
  - [ ] Task: Conductor - User Manual Verification 'Content Refinement' (Protocol in workflow.md)
 
