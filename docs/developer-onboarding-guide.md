@@ -10,13 +10,15 @@ Purpose: dora.dev is the public-facing knowledge site of DORA. It serves as a ce
 * [**Svelte:**](https://svelte.dev/) A JavaScript framework used to build interactive components like the Quick Check tool and Core Model
 diagram.
 * [**Firebase:**](https://firebase.google.com/) A suite of Google Cloud services used for hosting, data storage (Firestore), serverless functions, and deployment.
+* [**Conductor:**](https://github.com/google/conductor) A spec-driven development framework used to manage project tracks and ensure documentation synchronization.
 
 ## 2. Setting Up Your Development Environment
 
 ### Prerequisites:
-* *Git*: For version control (https://git-scm.com/).
+* *Git*: For version control (https://git-scm.com/) or *Jujutsu (jj)* (https://martinvonz.github.io/jj/).
 * *Node.js*: For running JavaScript (https://nodejs.org/).
 * *Hugo* (extended): For static site generation (https://gohugo.io/). Install the "extended" version, which includes additional functionality required for this project.
+* *Conductor Extension*: We highly recommend installing the [Conductor extension](https://marketplace.visualstudio.com/items?itemName=Googlecloud.conductor) for your IDE to streamline the spec-driven development workflow.
 * Optional: *Firebase CLI*: For interacting with Firebase ([https://firebase.google.com/docs/cli](https://firebase.google.com/docs/cli)).
   * Only required for some scenarios, such as configuring and testing redirects.
 
@@ -44,6 +46,13 @@ diagram.
 * `/docs`: Contains technical documentation for the project.
 
 ## 4. Workflow
+
+This project follows the **Conductor** spec-driven development methodology. Major features and audits are tracked as "tracks" within the `conductor/` directory.
+
+**General Workflow:**
+1. Use Conductor to select or create a track for your task.
+2. Follow the detailed plan in the track's `plan.md`.
+3. Use `jj` or `git` for version control.
 
 **Content changes**:
 1. Create a new branch for your work.
