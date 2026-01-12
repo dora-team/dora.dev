@@ -1,6 +1,6 @@
 ---
 title: "Transformational leadership"
-titleForHTMLHead: "Capabilities: Transformational Leadership" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Transformational Leadership"
 date: 2023-03-22T13:43:36Z
 category: climate for learning
 draft: false

@@ -1,6 +1,6 @@
 ---
 title: "Loosely coupled teams"
-titleForHTMLHead: "Capabilities: Loosely Coupled Teams" # TODO: can we DRY this out?
+titleForHTMLHead: "Capabilities: Loosely Coupled Teams"
 slug: loosely-coupled-teams
 core: true
 date: 2023-03-27T09:48:50+01:00
