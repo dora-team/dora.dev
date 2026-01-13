@@ -9,5 +9,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-## [~] Track: Refactor for content that uses titleForHTMLHead in the front matter
+## [x] Track: Refactor for content that uses titleForHTMLHead in the front matter
 *Link: [./conductor/tracks/refactor_titleforhtmlhead_20260113/](./conductor/tracks/refactor_titleforhtmlhead_20260113/)*

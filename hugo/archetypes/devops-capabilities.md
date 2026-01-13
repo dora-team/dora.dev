@@ -1,6 +1,5 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-titleForHTMLHead: "Capabilities: {{ replace .Name "-" " " | title }}" # TODO: can we DRY this out?
 date: {{ .Date }}
 category: 
 authors: 

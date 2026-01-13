@@ -16,7 +16,6 @@ From the repo root:
 - Edit the markdown file
   - In the front matter (the metadata between the `---` separators), edit the following:
     - title -- This will be auto-generated from the path name but may be edited if desired.
-    - titleForHTMLHead -- usually "`Capabilities: <title>`"
     - slug -- a kebab-case short reference for the URL. Example:  `flexible-infrastructure`
     - core -- set to `true` if this capability is a part of DORA Core
     - headline -- a brief snippet to augment the title. Example: `Replace heavyweight change-approval processes with peer review, to get the benefits of a more reliable, compliant release process without sacrificing speed.`
