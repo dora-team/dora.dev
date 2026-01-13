@@ -1,5 +1,5 @@
 ---
-title: "Dora Joins Google Cloud"
+title: "DORA Joins Google Cloud"
 date: 2018-12-20
 draft: false
 ---

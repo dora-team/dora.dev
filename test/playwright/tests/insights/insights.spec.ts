@@ -7,7 +7,7 @@ test.describe('Insights', () => {
         });
 
         test('shows the insights home page', async ({ page }) => {
-            await expect(page).toHaveTitle(/DORA Insights/);
+            await expect(page).toHaveTitle('DORA | DORA Insights');
             await expect(
                 page.getByRole('heading', { name: 'DORA Insights', level: 1 }),
             ).toBeVisible();
