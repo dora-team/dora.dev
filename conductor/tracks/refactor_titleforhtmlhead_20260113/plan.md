@@ -9,7 +9,7 @@
 ## Phase 2: Test Baseline (Red Phase)
 - [x] Task: Create Playwright tests for **EVERY** page currently using `titleForHTMLHead` to verify current behavior and ensure no gaps. [41258c1]
 - [x] Task: Create Playwright tests for other affected sections (News, Research, etc.) if not covered above. [56562ec]
-- [ ] Task: Verify all new tests pass against the current site (Baseline)
+- [x] Task: Verify all new tests pass against the current site (Baseline) [56562ec]
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Test Baseline' (Protocol in workflow.md)
 
 ## Phase 3: Template Refactoring (Green Phase)
