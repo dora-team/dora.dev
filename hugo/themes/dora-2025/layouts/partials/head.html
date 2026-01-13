@@ -11,7 +11,7 @@
 {{ end }}
 
 
-<title>DORA | {{ if eq .Section "capabilities" }}Capabilities: {{ end }}{{ .Title }}</title>
+<title>DORA | {{ if and (eq .Section "capabilities") (ne .Title "Capabilities") }}Capabilities: {{ end }}{{ .Title }}</title>
 {{- partial "link_styles" "scss/main.scss" -}}
 {{ partial "quickcheck_variables_link" . }}
 
@@ -39,7 +39,7 @@
 <!-- Facebook Meta Tags -->
 <meta property="og:url" content="https://dora.dev">
 <meta property="og:type" content="website">
-<meta property="og:title" content="DORA | {{ if eq .Section "capabilities" }}Capabilities: {{ end }}{{ .Title }}">
+<meta property="og:title" content="DORA | {{ if and (eq .Section "capabilities") (ne .Title "Capabilities") }}Capabilities: {{ end }}{{ .Title }}">
 <meta property="og:description" content="{{ .Site.Params.Description }}">
 <meta property="og:image" content="{{ if .Params.heroimage}}{{.Page.RelPermalink }}{{.Params.heroimage}}{{ else }}{{ .Site.Params.DefaultSocialImage }}{{ end }}">
 
@@ -47,7 +47,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:domain" content="dora.dev">
 <meta property="twitter:url" content="https://dora.dev">
-<meta name="twitter:title" content="DORA | {{ if eq .Section "capabilities" }}Capabilities: {{ end }}{{ .Title }}">
+<meta name="twitter:title" content="DORA | {{ if and (eq .Section "capabilities") (ne .Title "Capabilities") }}Capabilities: {{ end }}{{ .Title }}">
 <meta name="twitter:description" content="{{ .Site.Params.Description }}">
 <meta name="twitter:image" content="{{ if .Params.heroimage}}{{.Page.RelPermalink }}{{.Params.heroimage}}{{ else }}{{ .Site.Params.DefaultSocialImage }}{{ end }}">
 
