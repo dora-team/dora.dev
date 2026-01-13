@@ -13,13 +13,13 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Test Baseline' (Protocol in workflow.md)
 
 ## Phase 3: Template Refactoring (Green Phase)
-- [ ] Task: Implement new title generation logic in Hugo templates (e.g., `layouts/partials/head.html`)
+- [x] Task: Implement new title generation logic in Hugo templates (e.g., `layouts/partials/head.html`) [096dc64]
     - Standard: `DORA | [Section]: [Title]`
     - Guides: `DORA | [Title]`
     - Note: Ensure all capabilities follow the standard format, correcting exceptions like "Platform Engineering".
-- [ ] Task: Verify that Playwright tests now fail (if the expected title format changed) or pass (if aiming for parity)
-- [ ] Task: Update Playwright tests to reflect the new standardized title format
-- [ ] Task: Verify Playwright tests pass with the new template logic
+- [x] Task: Verify that Playwright tests now fail (if the expected title format changed) or pass (if aiming for parity) [096dc64]
+- [x] Task: Update Playwright tests to reflect the new standardized title format [096dc64]
+- [x] Task: Verify Playwright tests pass with the new template logic [096dc64]
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Template Refactoring' (Protocol in workflow.md)
 
 ## Phase 4: Content Cleanup

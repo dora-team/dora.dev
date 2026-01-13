@@ -1,5 +1,5 @@
 ---
-title: "Generative organizational culture"
+title: "Generative Organizational Culture"
 titleForHTMLHead: "Capabilities: Generative Organizational Culture" # TODO: can we DRY this out?
 date: 2023-03-22T13:43:36Z
 category: climate for learning

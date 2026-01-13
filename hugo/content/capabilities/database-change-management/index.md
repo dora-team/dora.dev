@@ -1,5 +1,5 @@
 ---
-title: "Database change management"
+title: "Database Change Management"
 titleForHTMLHead: "Capabilities: Database Change Management" # TODO: can we DRY this out?
 date: 2023-03-27T09:48:50+01:00
 slug: database-change-management

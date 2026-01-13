@@ -1,5 +1,5 @@
 ---
-title: "Streamlining change approval"
+title: "Streamlining Change Approval"
 titleForHTMLHead: "Capabilities: Streamlining Change Approval" # TODO: can we DRY this out?
 slug: streamlining-change-approval
 core: true

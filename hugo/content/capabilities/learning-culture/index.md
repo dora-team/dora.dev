@@ -1,5 +1,5 @@
 ---
-title: "Learning culture"
+title: "Learning Culture"
 titleForHTMLHead: "Capabilities: Learning Culture" # TODO: can we DRY this out?
 date: 2023-03-22T13:43:36Z
 category: climate for learning
