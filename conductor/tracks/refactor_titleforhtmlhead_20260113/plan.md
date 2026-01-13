@@ -23,7 +23,7 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Template Refactoring' (Protocol in workflow.md)
 
 ## Phase 4: Content Cleanup
-- [ ] Task: Bulk remove `titleForHTMLHead` from all markdown front matter
+- [~] Task: Bulk remove `titleForHTMLHead` from all markdown front matter
 - [ ] Task: Final execution of Playwright test suite to ensure no regressions
 - [ ] Task: Manual browser verification of random pages across different sections
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: Content Cleanup' (Protocol in workflow.md)
