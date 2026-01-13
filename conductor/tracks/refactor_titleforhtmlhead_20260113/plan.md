@@ -1,7 +1,7 @@
 # Implementation Plan - Refactor titleForHTMLHead
 
 ## Phase 1: Audit and Analysis
-- [ ] Task: Identify all Hugo templates and shortcodes using `titleForHTMLHead`
+- [~] Task: Identify all Hugo templates and shortcodes using `titleForHTMLHead`
 - [ ] Task: Identify all content files (`.md`) containing `titleForHTMLHead` in front matter
 - [ ] Task: Document any unique edge cases where `titleForHTMLHead` differs significantly from `title`
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Audit and Analysis' (Protocol in workflow.md)
