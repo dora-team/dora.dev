@@ -185,7 +185,11 @@ cd tests/redirects
 npx mocha test-redirects.js
 ```
 
-## Testing Requirements
+### Testing Requirements
+
+### Test Organization
+- **Granularity:** Prefer individual test files for distinct features or pages (e.g., `capabilities/continuous-delivery.spec.ts` instead of `capabilities.spec.ts`). This improves test isolation and makes debugging failures easier.
+- **Maintainability:** Ensure tests are easy to read and update. Use helper functions or fixtures for repetitive logic.
 
 ### Unit Testing
 - Every module must have corresponding tests.
