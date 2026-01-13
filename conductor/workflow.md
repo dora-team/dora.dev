@@ -7,13 +7,19 @@
 3. **Test-Driven Development:** Write tests (playwright and/or redirect tests) before implementing functionality
 4. **User Experience First:** Every decision should prioritize user experience
 5. **Non-Interactive & CI-Aware:** Prefer non-interactive commands. Use `CI=true` for watch-mode tools (tests, linters) to ensure single execution.
-6. **Version Control Agnostic:** While instructions may reference `git`, the project supports both `git` and `jj` (Jujutsu). Adapt commands accordingly (e.g., `jj describe` includes the note/summary; `jj new` creates the commit).
+6. **VCS-Aware & Frequent Commits:** At the start of a session or track, determine if the project uses `git` or `jj`. Every task marked `[x]` in `plan.md` must immediately be followed by a commit (or `jj` change) using the appropriate VCS tool. Do not batch multiple tasks into a single commit.
+7. **Version Control Agnostic:** While instructions may reference `git`, the project supports both `git` and `jj` (Jujutsu). Adapt commands accordingly (e.g., `jj describe` includes the note/summary; `jj new` creates the commit).
 
 ## Task Workflow
 
 All tasks follow a strict lifecycle:
 
 ### Standard Task Workflow
+
+0. **Prerequisite: Detect VCS:**
+   - Check for the existence of `.jj/` or `.git/` directories.
+   - Set the `VCS_TOOL` context variable to `jj` or `git`.
+   - Adapt all subsequent commands (commit, diff, log) to the detected tool.
 
 1. **Select Task:** Choose the next available task from `plan.md` in sequential order
 
@@ -39,26 +45,32 @@ All tasks follow a strict lifecycle:
    - Resume implementation
 
 7. **Commit Code Changes:**
-   - Stage all code changes related to the task.
-   - Propose a clear, concise commit message e.g, `feat(ui): Create basic HTML structure for calculator`.
-   - Perform the commit.
+   - **Mandatory:** You must commit changes after *every* completed task.
+   - If `VCS_TOOL` is `jj`:
+     - Use `jj describe -m "<type>(<scope>): <description>"` to update the current change description.
+   - If `VCS_TOOL` is `git`:
+     - Stage all code changes related to the task.
+     - Perform the commit with a clear, concise message.
 
-8. **Attach Task Summary with Git Notes:**
-   - **Step 8.1: Get Commit Hash:** Obtain the hash of the *just-completed commit* (`git log -1 --format="%H"`).
-   - **Step 8.2: Draft Note Content:** Create a detailed summary for the completed task. This should include the task name, a summary of changes, a list of all created/modified files, and the core "why" for the change.
-   - **Step 8.3: Attach Note:** Use the `git notes` command to attach the summary to the commit.
-     ```bash
-     # The note content from the previous step is passed via the -m flag.
-     git notes add -m "<note content>" <commit_hash>
-     ```
+8. **Attach Task Summary:**
+   - If `VCS_TOOL` is `jj`:
+     - Append the detailed summary directly to the change description (since `jj` doesn't use notes in the same way).
+   - If `VCS_TOOL` is `git`:
+     - **Step 8.1: Get Commit Hash:** Obtain the hash of the *just-completed commit* (`git log -1 --format="%H"`).
+     - **Step 8.2: Draft Note Content:** Create a detailed summary for the completed task.
+     - **Step 8.3: Attach Note:** Use the `git notes` command to attach the summary to the commit.
 
 9. **Get and Record Task Commit SHA:**
-    - **Step 9.1: Update Plan:** Read `plan.md`, find the line for the completed task, update its status from `[~]` to `[x]`, and append the first 7 characters of the *just-completed commit's* commit hash.
+    - **Step 9.1: Update Plan:** Read `plan.md`, find the line for the completed task, update its status from `[~]` to `[x]`, and append the first 7 characters of the commit hash.
+      - **jj:** `jj log -r @ -T "commit_id.short()"`
+      - **git:** `git rev-parse --short HEAD`
     - **Step 9.2: Write Plan:** Write the updated content back to `plan.md`.
 
 10. **Commit Plan Update:**
-    - **Action:** Stage the modified `plan.md` file.
-    - **Action:** Commit this change with a descriptive message (e.g., `conductor(plan): Mark task 'Create user model' as complete`).
+    - **Action:** Stage/Track the modified `plan.md` file.
+    - **Action:** Commit this change.
+      - **jj:** Use `jj new` to start a new change, then `jj describe`.
+      - **git:** `git commit`
 
 ### Phase Completion Verification and Checkpointing Protocol
 
@@ -67,9 +79,11 @@ All tasks follow a strict lifecycle:
 1.  **Announce Protocol Start:** Inform the user that the phase is complete and the verification and checkpointing protocol has begun.
 
 2.  **Ensure Test Coverage for Phase Changes:**
-    -   **Step 2.1: Determine Phase Scope:** To identify the files changed in this phase, you must first find the starting point. Read `plan.md` to find the Git commit SHA of the *previous* phase's checkpoint. If no previous checkpoint exists, the scope is all changes since the first commit.
-    -   **Step 2.2: List Changed Files:** Execute `git diff --name-only <previous_checkpoint_sha> HEAD` to get a precise list of all files modified during this phase.
-    -   **Step 2.3: Verify and Create Tests:** For each file in the list:
+    -   **Step 2.1: Determine Phase Scope:** To identify the files changed in this phase, find the commit SHA of the *previous* phase's checkpoint in `plan.md`.
+    -   **Step 2.2: List Changed Files:**
+        -   **jj:** `jj diff --from <previous_checkpoint_sha> --to @ --name-only`
+        -   **git:** `git diff --name-only <previous_checkpoint_sha> HEAD`
+    -   **Step 2.3: Verify and Create Tests:** For each file in the list...
         -   **CRITICAL:** First, check its extension. Exclude non-code files (e.g., `.json`, `.md`, `.yaml`).
         -   For each remaining code file, verify a corresponding test file exists.
         -   If a test file is missing, you **must** create one. Before writing the test, **first, analyze other test files in the repository to determine the correct naming convention and testing style.** The new tests **must** validate the functionality described in this phase's tasks (`plan.md`).
@@ -110,15 +124,18 @@ All tasks follow a strict lifecycle:
     -   **PAUSE** and await the user's response. Do not proceed without an explicit yes or confirmation.
 
 6.  **Create Checkpoint Commit:**
-    -   Stage all changes. If no changes occurred in this step, proceed with an empty commit.
     -   Perform the commit with a clear and concise message (e.g., `conductor(checkpoint): Checkpoint end of Phase X`).
+    -   **jj:** Use `jj describe` then `jj new`.
+    -   **git:** Stage changes and `git commit`.
 
-7.  **Attach Auditable Verification Report using Git Notes:**
-    -   **Step 7.1: Draft Note Content:** Create a detailed verification report including the automated test command, the manual verification steps, and the user's confirmation.
-    -   **Step 7.2: Attach Note:** Use the `git notes` command and the full commit hash from the previous step to attach the full report to the checkpoint commit.
+7.  **Attach Auditable Verification Report:**
+    -   **jj:** Include the report in the commit message of the checkpoint change.
+    -   **git:** Use `git notes` to attach the report to the checkpoint commit.
 
 8.  **Get and Record Phase Checkpoint SHA:**
-    -   **Step 8.1: Get Commit Hash:** Obtain the hash of the *just-created checkpoint commit* (`git log -1 --format="%H"`).
+    -   **Step 8.1: Get Commit Hash:**
+        -   **jj:** `jj log -r @ -T "commit_id.short()"`
+        -   **git:** `git log -1 --format="%H"`
     -   **Step 8.2: Update Plan:** Read `plan.md`, find the heading for the completed phase, and append the first 7 characters of the commit hash in the format `[checkpoint: <sha>]`.
     -   **Step 8.3: Write Plan:** Write the updated content back to `plan.md`.
 
