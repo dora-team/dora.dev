@@ -27,4 +27,4 @@
 - [x] Task: Final execution of Playwright test suite to ensure no regressions [413969d]
 - [x] Task: Manual browser verification of random pages across different sections [413969d]
 - [x] Task: Fix nested title tags and update existing tests to match new title format [e17f1ae]
-- [x] Task: Conductor - User Manual Verification 'Phase 4: Content Cleanup' (Protocol in workflow.md) [checkpoint: 413969d]
+- [x] Task: Conductor - User Manual Verification 'Phase 4: Content Cleanup' (Protocol in workflow.md) [checkpoint: 831e6f2]
