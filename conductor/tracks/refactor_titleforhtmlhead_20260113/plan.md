@@ -7,7 +7,7 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Audit and Analysis' (Protocol in workflow.md) [a6611e9]
 
 ## Phase 2: Test Baseline (Red Phase)
-- [ ] Task: Create Playwright tests for **EVERY** page currently using `titleForHTMLHead` to verify current behavior and ensure no gaps.
+- [~] Task: Create Playwright tests for **EVERY** page currently using `titleForHTMLHead` to verify current behavior and ensure no gaps.
 - [ ] Task: Create Playwright tests for other affected sections (News, Research, etc.) if not covered above.
 - [ ] Task: Verify all new tests pass against the current site (Baseline)
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Test Baseline' (Protocol in workflow.md)
