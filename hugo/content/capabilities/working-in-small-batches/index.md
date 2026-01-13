@@ -1,6 +1,5 @@
 ---
-title: "Working in Small Batches"
-titleForHTMLHead: "Capabilities: Working in Small Batches" # TODO: can we DRY this out?
+title: "Working in small batches"
 date: 2023-03-24T12:54:18Z
 category: fast flow
 core: true

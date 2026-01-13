@@ -1,6 +1,5 @@
 ---
 title: "How to enable your software delivery teams to innovate with generative AI"
-titleForHTMLHead: "How to enable your software delivery teams to innovate with generative AI"
 date: 2024-06-12
 updated: 2024-08-16
 authors:

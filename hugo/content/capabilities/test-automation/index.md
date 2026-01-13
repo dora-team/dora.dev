@@ -1,6 +1,5 @@
 ---
 title: "Test automation"
-titleForHTMLHead: "Capabilities: Test automation" # TODO: can we DRY this out?
 slug: test-automation
 core: true
 date: 2023-03-27T09:48:50+01:00

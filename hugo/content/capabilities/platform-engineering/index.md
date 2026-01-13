@@ -1,6 +1,5 @@
 ---
-title: "Platform Engineering"
-titleForHTMLHead: "Platform Engineering"
+title: "Platform engineering"
 slug: platform-engineering
 core: false
 ai: true

@@ -4,7 +4,7 @@ test('Proactive failure notification page loads correctly', async ({ page }) => 
   await page.goto('/capabilities/proactive-failure-notification/');
 
   // Check for page title
-  await expect(page).toHaveTitle('DORA | Capabilities: Proactive Failure Notification');
+  await expect(page).toHaveTitle('DORA | Capabilities: Proactive failure notification');
 
   // Check for page heading
   await expect(page.locator('h1')).toContainText('Proactive failure notification');

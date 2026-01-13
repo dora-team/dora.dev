@@ -1,6 +1,5 @@
 ---
 title: "Clear and communicated AI stance"
-titleForHTMLHead: "Clear and communicated AI stance"
 slug: clear-and-communicated-ai-stance
 core: false
 ai: true

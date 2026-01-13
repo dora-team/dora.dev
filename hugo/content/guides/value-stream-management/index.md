@@ -1,6 +1,5 @@
 ---
 title: "Value stream mapping for software delivery"
-titleForHTMLHead: "Value stream mapping for software delivery"
 date: 2024-08-19
 updated: 2024-11-13
 authors:

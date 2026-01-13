@@ -7,7 +7,7 @@ test.describe("Healthy data ecosystems capability", () => {
   });
 
   test("has the correct title", async ({ page }) => {
-    await expect(page).toHaveTitle("DORA | Healthy data ecosystems");
+    await expect(page).toHaveTitle("DORA | Capabilities: Healthy data ecosystems");
   });
 
   test("has the correct header", async ({ page }) => {

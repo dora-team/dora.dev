@@ -1,6 +1,5 @@
 ---
-title: "Streamlining Change Approval"
-titleForHTMLHead: "Capabilities: Streamlining Change Approval" # TODO: can we DRY this out?
+title: "Streamlining change approval"
 slug: streamlining-change-approval
 core: true
 date: 2023-03-22T11:02:58Z

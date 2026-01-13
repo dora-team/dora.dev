@@ -4,7 +4,7 @@ test('Capabilities index page loads correctly', async ({ page }) => {
   await page.goto('/capabilities/');
 
   // Check for page title
-  await expect(page).toHaveTitle('DORA | Capabilities');
+  await expect(page).toHaveTitle('DORA | Capabilities: Catalog');
 
   // Check for page heading
   await expect(page.locator('h1')).toContainText('Capability catalog');

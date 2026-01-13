@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('Loosely coupled teams page has the correct title.', async ({ page }) => {
-  await expect(page).toHaveTitle('DORA | Capabilities: Loosely Coupled Teams');
+  await expect(page).toHaveTitle('DORA | Capabilities: Loosely coupled teams');
 });
 
 test('Loosely coupled teams page has the correct header.', async ({ page }) => {

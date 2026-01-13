@@ -1,6 +1,5 @@
 ---
 title: "Work in process limits"
-titleForHTMLHead: "Capabilities: Work in process limits" # TODO: can we DRY this out?
 date: 2023-03-25T16:35:37Z
 category: fast flow
 draft: false
