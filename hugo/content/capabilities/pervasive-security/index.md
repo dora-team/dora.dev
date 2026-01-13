@@ -1,5 +1,5 @@
 ---
-title: "Pervasive security"
+title: "Pervasive Security"
 titleForHTMLHead: "Capabilities: Pervasive Security" # TODO: can we DRY this out?
 slug: pervasive-security
 core: true

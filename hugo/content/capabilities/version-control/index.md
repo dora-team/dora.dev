@@ -1,5 +1,5 @@
 ---
-title: "Version control"
+title: "Version Control"
 titleForHTMLHead: "Capabilities: Version Control" # TODO: can we DRY this out?
 slug: version-control
 core: true

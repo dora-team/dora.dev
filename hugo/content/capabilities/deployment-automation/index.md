@@ -1,5 +1,5 @@
 ---
-title: "Deployment automation"
+title: "Deployment Automation"
 titleForHTMLHead: "Capabilities: Deployment Automation" # TODO: can we DRY this out?
 slug: deployment-automation
 core: true
