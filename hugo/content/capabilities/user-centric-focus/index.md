@@ -1,6 +1,5 @@
 ---
 title: "User-centric focus"
-titleForHTMLHead: "User-centric focus"
 slug: user-centric-focus
 core: false
 ai: true

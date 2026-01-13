@@ -7,7 +7,7 @@ test.describe("User-centric Focus capability", () => {
   });
 
   test("has the correct title", async ({ page }) => {
-    await expect(page).toHaveTitle("DORA | User-centric focus");
+    await expect(page).toHaveTitle("DORA | Capabilities: User-centric focus");
   });
 
   test("has the correct header", async ({ page }) => {

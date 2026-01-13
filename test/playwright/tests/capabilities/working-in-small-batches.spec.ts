@@ -7,7 +7,7 @@ test.describe("Working in small batches capability", () => {
   });
 
   test("has the correct title", async ({ page }) => {
-    await expect(page).toHaveTitle("DORA | Capabilities: Working in Small Batches");
+    await expect(page).toHaveTitle("DORA | Capabilities: Working in small batches");
   });
 
   test("has the correct header", async ({ page }) => {

@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('Version control page has the correct title.', async ({ page }) => {
-  await expect(page).toHaveTitle('DORA | Capabilities: Version Control');
+  await expect(page).toHaveTitle('DORA | Capabilities: Version control');
 });
 
 test('Version control page has the correct header.', async ({ page }) => {

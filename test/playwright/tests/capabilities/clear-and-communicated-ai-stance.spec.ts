@@ -7,7 +7,7 @@ test.describe("Clear and communicated AI stance capability", () => {
   });
 
   test("has the correct title", async ({ page }) => {
-    await expect(page).toHaveTitle("DORA | Clear and communicated AI stance");
+    await expect(page).toHaveTitle("DORA | Capabilities: Clear and communicated AI stance");
   });
 
   test("has the correct header", async ({ page }) => {

@@ -1,5 +1,5 @@
 ---
-title: Capabilities
+title: Catalog
 bannerTitle: Capability catalog
 bannerSubtitle: |
     Explore the practices and capabilities that foster a learning environment, efficient processes, and rapid feedback, all of which accelerate software delivery and enhance overall organizational performance. Each of these articles presentes specific practices, providing implementation guidance and strategies to overcome common challenges.

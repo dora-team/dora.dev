@@ -7,11 +7,11 @@ test.describe("Platform engineering capability", () => {
   });
 
   test("has the correct title", async ({ page }) => {
-    await expect(page).toHaveTitle("DORA | Platform Engineering");
+    await expect(page).toHaveTitle("DORA | Capabilities: Platform engineering");
   });
 
   test("has the correct header", async ({ page }) => {
-    await expect(page.locator("h1")).toContainText("Platform Engineering");
+    await expect(page.locator("h1")).toContainText("Platform engineering");
   });
 
   test("displays its last updated date", async ({ page }) => {

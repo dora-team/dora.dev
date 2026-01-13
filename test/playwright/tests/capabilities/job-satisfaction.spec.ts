@@ -4,8 +4,8 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/capabilities/job-satisfaction/');
 });
 
-test('2Job satisfaction page has the correct title.', async ({ page }) => {
-  await expect(page).toHaveTitle('DORA | Capabilities: Job Satisfaction');
+test('Job satisfaction page has the correct title.', async ({ page }) => {
+  await expect(page).toHaveTitle('DORA | Capabilities: Job satisfaction');
 });
 
 test('Job satisfaction page has the correct header.', async ({ page }) => {

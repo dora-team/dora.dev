@@ -1,6 +1,5 @@
 ---
 title: "Healthy data ecosystems"
-titleForHTMLHead: "Healthy data ecosystems"
 slug: healthy-data-ecosystems
 core: false
 ai: true

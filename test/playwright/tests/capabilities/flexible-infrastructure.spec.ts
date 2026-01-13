@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('Flexible infrastructure page has the correct title.', async ({ page }) => {
-  await expect(page).toHaveTitle('DORA | Capabilities: Flexible Infrastructure');
+  await expect(page).toHaveTitle('DORA | Capabilities: Flexible infrastructure');
 });
 
 test('Flexible infrastructure page has the correct header.', async ({ page }) => {

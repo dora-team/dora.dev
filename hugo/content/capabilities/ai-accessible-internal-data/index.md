@@ -1,6 +1,5 @@
 ---
 title: "AI-accessible internal data"
-titleForHTMLHead: "AI-accessible internal data"
 slug: ai-accessible-internal-data
 core: false
 ai: true

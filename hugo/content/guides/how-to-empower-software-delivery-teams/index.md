@@ -1,6 +1,5 @@
 ---
 title: "How to empower software delivery teams as a business leader"
-titleForHTMLHead: "How to empower software delivery teams as a business leader" # TODO: can we DRY this out?
 date: 2023-10-01T13:45:46-04:00
 updated: 2024-04-19T00:00:00Z
 authors:

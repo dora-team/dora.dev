@@ -7,7 +7,7 @@ test.describe("AI-accessible internal data capability", () => {
   });
 
   test("has the correct title", async ({ page }) => {
-    await expect(page).toHaveTitle("DORA | AI-accessible internal data");
+    await expect(page).toHaveTitle("DORA | Capabilities: AI-accessible internal data");
   });
 
   test("has the correct header", async ({ page }) => {
