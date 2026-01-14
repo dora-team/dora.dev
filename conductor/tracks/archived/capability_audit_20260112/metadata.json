@@ -1,7 +1,7 @@
 {
   "track_id": "capability_audit_20260112",
   "type": "feature",
-  "status": "done",
+  "status": "archived",
   "created_at": "2026-01-12T10:00:00Z",
   "updated_at": "2026-01-12T10:00:00Z",
   "description": "Audit and update documentation for the DORA capabilities to ensure alignment with product guidelines."

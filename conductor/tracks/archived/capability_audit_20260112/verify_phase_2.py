@@ -5,7 +5,7 @@ import sys
 capabilities_dir = "hugo/content/capabilities"
 content_root = "hugo/content"
 static_root = "hugo/static"
-audit_tracking = "conductor/tracks/capability_audit_20260112/audit_tracking.md"
+audit_tracking = "conductor/tracks/archived/capability_audit_20260112/audit_tracking.md"
 
 errors = []
 
