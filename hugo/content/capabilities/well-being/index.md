@@ -2,7 +2,6 @@
 draft: false
 slug: well-being
 title: "Well-being"
-titleForHTMLHead: "Well-being" # TODO: can we DRY this out?
 category: climate for learning
 core: true
 headline: A focus on employee happiness and work environment can improve organizational performance while helping retain talent.

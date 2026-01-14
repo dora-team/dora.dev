@@ -3,7 +3,6 @@ title: "Pervasive security"
 date: 2023-03-27T09:48:50+01:00
 slug: pervasive-security
 core: true
-date: 2023-03-27T09:48:50+01:00
 category: fast feedback
 draft: false
 headline: "Build security into the software development lifecycle without compromising delivery speed."
