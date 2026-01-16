@@ -228,15 +228,25 @@ tab_links {
                 white-space: nowrap; // Prevent wrapping of label
             }
 
-            .archive-summary {
+            a.archive-summary-link {
+                text-decoration: none;
+                color: inherit;
                 display: none;
                 flex: 1;
-                margin: 0 2rem;
-                color: $color-text-medium;
-                // font-family: $font-roboto; // Inherited
+                font-weight: normal;
+
+                &:hover {
+                    text-decoration: underline;
+                }
 
                 @media (min-width: 1000px) {
                     display: block;
+                }
+
+                .archive-summary {
+                    display: block;
+                    margin: 0 2rem;
+                    color: $color-text-medium;
                 }
             }
 
