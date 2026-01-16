@@ -16,6 +16,11 @@
 <div style="text-align: right;">
 <a href="https://cloud.google.com/dora" target="_blank" class="button secondary">Get the report</a>
 </div>
+<div style="margin-top: 3rem;">
+    <p>
+        Next, checkout the <a href="/ai/capabilities-model/report/">DORA AI Capabilities Model</a>, a companion guide to this report with more information on how to improve your organization's AI-assisted software development practices.
+    </p>
+</div>
 </item>
 </grid>
 
