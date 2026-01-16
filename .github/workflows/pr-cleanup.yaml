@@ -1,0 +1,16 @@
+name: PR Cleanup (after PR is closed)
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Post-Merge Tasks
+        run: |
+          echo "Preview channel 1: pr${{ github.event.pull_request.number}}_drafts_off"
+          echo "Preview channel 2: pr${{ github.event.pull_request.number}}_drafts_on"
+          # TODO: delete these PRs
