@@ -5,7 +5,7 @@ rssLimit = 10
 ignoreFiles = 'README.md'
 
 [taxonomies]
-  tag = "tags"
+  tag = 'tags'
 
 [permalinks]
   tags = "/insights/tags/:slug/"
