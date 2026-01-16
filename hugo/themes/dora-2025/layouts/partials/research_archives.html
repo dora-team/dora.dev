@@ -12,7 +12,7 @@
         {{ if $page }}
         <li>
             <a href='{{ $page.RelPermalink }}' class="label-link"><span class="label">{{ .label }}</span></a>
-            {{ with $page.Params.archive_summary }}<span class="archive-summary">{{ . }}</span>{{ end }}
+            {{ with $page.Params.archive_summary }}<a href='{{ $page.RelPermalink }}' class="archive-summary-link"><span class="archive-summary">{{ . }}</span></a>{{ end }}
             <a href='{{ $page.RelPermalink }}' class="button">View research</a>
         </li>
         {{ end }}

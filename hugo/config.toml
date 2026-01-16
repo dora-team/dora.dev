@@ -1,6 +1,6 @@
-baseURL = 'https://dora.dev/'
-languageCode = 'en-us'
-theme = 'dora-2025'
+baseURL = "https://dora.dev/"
+languageCode = "en-us"
+theme = "dora-2025"
 rssLimit = 10
 ignoreFiles = "README.md"
 
@@ -23,8 +23,8 @@ ignoreFiles = "README.md"
     DefaultSocialImage = "/img/misc/dora_social_image.png"
 
 [sitemap]
-  changefreq = 'monthly'
-  filename = 'sitemap.xml'
+  changefreq = "monthly"
+  filename = "sitemap.xml"
   priority = 0.5
 
 [[cascade]]
