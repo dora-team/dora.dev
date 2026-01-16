@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v6
       - name: Delete "drafts on" preview channel
         uses: w9jds/firebase-action@v15.3.1
         with:
