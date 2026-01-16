@@ -1,6 +1,8 @@
 ---
 title: "DORA Research {{ replace .Name "-" " " | title }}"
-date: {{ .Name }}-01-01
+date: {{ now.Format "2006-01-02" }}
+updated: {{ now.Format "2006-01-02" }}
 draft: false
 ---
 
+# {{ replace .Name "-" " " | title }}

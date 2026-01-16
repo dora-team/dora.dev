@@ -1,0 +1,27 @@
+name: PR Cleanup (after PR is closed)
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Delete "drafts on" preview channel
+        uses: w9jds/firebase-action@v15.3.1
+        with:
+          args: hosting:channel:delete pr${{ github.event.pull_request.number}}_drafts_on --force
+        env:
+          GCP_SA_KEY: ${{ secrets.SERVICE_ACCOUNT }}
+          PROJECT_ID: ${{ vars.GOOGLE_CLOUD_PROJECT }}
+      - name: Delete "drafts off" preview channel
+        uses: w9jds/firebase-action@v15.3.1
+        with:
+          args: hosting:channel:delete pr${{ github.event.pull_request.number}}_drafts_off --force
+        env:
+          GCP_SA_KEY: ${{ secrets.SERVICE_ACCOUNT }}
+          PROJECT_ID: ${{ vars.GOOGLE_CLOUD_PROJECT }}
