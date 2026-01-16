@@ -18,6 +18,8 @@ When a pull request is opened or edited, the `preview.yml` workflow will:
 1. Posts a comment to the PR containing links to both preview channels
   * _There will be only one comment posted, which will show that it has been "edited." Each of the revisions of this comment contains the link to one of the preview channels. You can tell which is which by the presence of "drafts_off" or "drafts_on" in the URL._
 
+When a pull request is closed (whether or not it was merged), the `pr-cleanup.yml` workflow will delete the Firebase preview channels associated with that PR.
+
 ### Pipeline run on merge to `main`
 When a PR is merged to `main`, the pipeline `deploy.yml` workflow will render the site in _drafts-off_ mode and publish it to the live Firebase channel.
 
