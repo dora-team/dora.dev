@@ -58,6 +58,7 @@ archive_summary: "AI is fundamentally reshaping software delivery and organizati
 * [Report: DORA AI Capabilities Model](/ai/capabilities-model/report/)
 * [Report: State of AI-assisted Software Development](/research/2025/dora-report/)
 * [Report: Impact of Gen AI in Software Development](/ai/gen-ai-report/)
+* [Managing AI dependency](/ai/research-insights/managing-ai-dependency/)
 * [AI as a tutor](/ai/research-insights/ai-as-a-tutor/)
 * [Understanding builder intent in the AI era](/ai/research-insights/builder-mindset/)
 * [Choosing measurement frameworks to fit your organizational goals](/ai/research-insights/measurement-frameworks/)
