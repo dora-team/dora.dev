@@ -1,6 +1,5 @@
 ---
 title: "AI as a tutor"
-top_header: "AI: Research insights"
 date: 2025-12-12
 updated: 2025-12-17
 draft: false

@@ -9,6 +9,7 @@ layout: overview
 type: ai
 ---
 
+* [Managing AI dependency](/ai/research-insights/managing-ai-dependency/)
 * [AI as a tutor](/ai/research-insights/ai-as-a-tutor/)
 * [Understanding builder intent in the AI era](/ai/research-insights/builder-mindset/)
 * [Choosing measurement frameworks to fit your organizational goals](/ai/research-insights/measurement-frameworks/)

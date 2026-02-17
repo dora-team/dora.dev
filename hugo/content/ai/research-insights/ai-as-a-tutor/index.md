@@ -5,7 +5,7 @@ updated: 2025-12-17
 research_collection: "AI research insights"
 research_collection_title: "AI as a tutor"
 draft: false
-tab_order: "1"
+tab_order: "2"
 tab_title: "AI as a tutor"
 authors:
     1: {name: "Andrew Harlan", url: "https://www.linkedin.com/in/andrew-harlan-phd/"}
