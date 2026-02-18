@@ -4,11 +4,6 @@ import { verifyAuthors } from '../../verify-authors';
 
 const pages = [
   {
-    url: '/ai/research-insights/managing-ai-dependency/',
-    title: 'DORA | Managing AI dependency: How students are establishing guardrails with AI',
-    header: 'Managing AI dependency',
-  },
-  {
     url: '/insights/managing-ai-dependency/',
     title: 'DORA | Managing AI dependency',
     header: 'Managing AI dependency',
