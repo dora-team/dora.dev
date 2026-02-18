@@ -4,11 +4,6 @@ import { verifyAuthors } from '../../verify-authors';
 
 const pages = [
   {
-    url: '/ai/research-insights/adopt-gen-ai/',
-    title: 'DORA | Helping developers adopt generative AI: Four practical strategies for organizations',
-    header: 'Helping developers adopt generative AI: Four practical strategies for organizations',
-  },
-  {
     url: '/insights/adopt-gen-ai/',
     title: 'DORA | Adopt generative AI',
     header: 'Helping developers adopt generative AI',

@@ -4,11 +4,6 @@ import { verifyAuthors } from '../../verify-authors';
 
 const pages = [
   {
-    url: '/ai/research-insights/trust-in-ai/',
-    title: 'DORA | Fostering Trust in AI',
-    header: "Fostering Trust in AI",
-  },
-  {
     url: '/insights/trust-in-ai/',
     title: 'DORA | Fostering Trust in AI',
     header: "Fostering developers' trust in generative artificial intelligence",

@@ -11,11 +11,6 @@ const pages = [
     name: '2025',
   },
   {
-    url: '/ai/research-insights/measurement-frameworks/',
-    title: 'DORA | Choosing measurement frameworks to fit your organizational goals',
-    header: 'Choosing measurement frameworks to fit your organizational goals',
-  },
-  {
     url: '/insights/measurement-frameworks/',
     title: 'DORA | Choosing measurement frameworks to fit your organizational goals',
     header: 'Choosing measurement frameworks to fit your organizational goals',

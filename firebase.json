@@ -628,6 +628,51 @@
           "source": "/guides/dora-metrics-four-keys/hero-fourkeys.png",
           "destination": "/guides/dora-metrics/hero-fourkeys.png",
           "type": 301
+        },
+        {
+          "source": "/ai/research-insights/",
+          "destination": "/insights/tags/ai/",
+          "type": 301
+        },
+        {
+          "source": "/ai/research-insights/managing-ai-dependency/",
+          "destination": "/insights/managing-ai-dependency/",
+          "type": 301
+        },
+        {
+          "source": "/ai/research-insights/ai-as-a-tutor/",
+          "destination": "/insights/ai-as-a-tutor/",
+          "type": 301
+        },
+        {
+          "source": "/ai/research-insights/builder-mindset/",
+          "destination": "/insights/builder-mindset/",
+          "type": 301
+        },
+        {
+          "source": "/ai/research-insights/measurement-frameworks/",
+          "destination": "/insights/measurement-frameworks/",
+          "type": 301
+        },
+        {
+          "source": "/ai/research-insights/concerns-beyond-accuracy-of-ai-output/",
+          "destination": "/insights/concerns-beyond-accuracy-of-ai-output/",
+          "type": 301
+        },
+        {
+          "source": "/ai/research-insights/adopt-gen-ai/",
+          "destination": "/insights/adopt-gen-ai/",
+          "type": 301
+        },
+        {
+          "source": "/ai/research-insights/trust-in-ai/",
+          "destination": "/insights/trust-in-ai/",
+          "type": 301
+        },
+        {
+          "source": "/ai/research-insights/value-of-development-work/",
+          "destination": "/insights/value-of-development-work/",
+          "type": 301
         }
       ]
     }
