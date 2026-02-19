@@ -23,7 +23,7 @@ test.describe("DORA metrics guide", () => {
     test("displays the DORA callout icon", async ({ page }) => {
         const icon = page.locator('.dora-callout-icon img');
         await expect(icon).toBeVisible();
-        await expect(icon).toHaveAttribute('src', '/ai/research-insights/dora-perspective-icon.png');
+        await expect(icon).toHaveAttribute('src', '/insights/dora-perspective-icon.png');
         const box = await icon.boundingBox();
         expect(box).not.toBeNull();
         expect(box!.width).toBeGreaterThan(0);

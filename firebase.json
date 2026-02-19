@@ -673,6 +673,16 @@
           "source": "/ai/research-insights/value-of-development-work/",
           "destination": "/insights/value-of-development-work/",
           "type": 301
+        },
+        {
+          "source": "/ai/research-insights/adopt-gen-ai/questions/",
+          "destination": "/insights/adopt-gen-ai/questions/",
+          "type": 301
+        },
+        {
+          "source": "/ai/research-insights/dora-perspective-icon.png",
+          "destination": "/insights/dora-perspective-icon.png",
+          "type": 301
         }
       ]
     }

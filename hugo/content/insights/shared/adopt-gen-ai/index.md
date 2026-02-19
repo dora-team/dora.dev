@@ -92,12 +92,12 @@ The strategies we recommend will help ensure that AI is used strategically and r
 
 * [Download and read the 2024 DORA Report](/research/2024/dora-report/) for additional findings from the research program.
 * [Read more about how to transform your organization](/guides/how-to-transform/) for perspective into the importance of ensuring teams have the tools and resources to do their job, and of making good use of their skills and abilities.
-* Read about strategies the DORA team has identified for [ensuring AI amplifies developer value](/ai/research-insights/value-of-development-work/). This article provides further guidance for  ensuring job satisfaction and productivity among developers.
+* Read about strategies the DORA team has identified for [ensuring AI amplifies developer value](/insights/value-of-development-work/). This article provides further guidance for  ensuring job satisfaction and productivity among developers.
 * [Join the dora.community](https://dora.community) to share your approaches and learn about how other organizations are encouraging their developers to adopt AI.
 
 #### Further Reading - notes on data analytic method
 
-This research was conducted via a survey that included [questions about AI adoption](/ai/research-insights/adopt-gen-ai/questions/). We obtained 1000 responses from developer and developer-adjacent roles.
+This research was conducted via a survey that included [questions about AI adoption](/insights/adopt-gen-ai/questions/). We obtained 1000 responses from developer and developer-adjacent roles.
 
 Data was analyzed using a Bayesian regression model to quantify the effect of various AI adoption strategies on team-level AI usage.  AI usage was measured as a self-reported percentage of team work supported by AI over the past three months.
 

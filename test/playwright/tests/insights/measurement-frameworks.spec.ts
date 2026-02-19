@@ -1,22 +1,24 @@
 import { test, expect } from '@playwright/test';
-import { LAST_UPDATED_DATE_REGEX } from '../../constants';
-import { verifyAuthors } from '../../verify-authors';
+import { LAST_UPDATED_DATE_REGEX } from '../constants';
+import { verifyAuthors } from '../verify-authors';
+
 
 const pages = [
   {
-    url: '/ai/research-insights/ai-as-a-tutor/',
-    title: 'DORA | AI as a tutor',
-    header: 'AI as a tutor',
+    url: '/research/2025/measurement-frameworks/',
+    header: 'DORA Research: 2025',
+    title: 'DORA | Choosing measurement frameworks to fit your organizational goals',
+    name: '2025',
   },
   {
-    url: '/insights/ai-as-a-tutor/',
-    title: 'DORA | AI as a tutor',
-    header: 'AI as a tutor',
+    url: '/insights/measurement-frameworks/',
+    title: 'DORA | Choosing measurement frameworks to fit your organizational goals',
+    header: 'Choosing measurement frameworks to fit your organizational goals',
   },
 ];
 
 for (const pageConfig of pages) {
-  test.describe(`AI as a tutor page at ${pageConfig.url}`, () => {
+  test.describe(`Measurement frameworks page at ${pageConfig.url}`, () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(pageConfig.url);
     });
