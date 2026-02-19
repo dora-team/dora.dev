@@ -1,9 +1,9 @@
 
 import { test, expect } from '@playwright/test';
-import { LAST_UPDATED_DATE_REGEX } from '../../constants';
+import { LAST_UPDATED_DATE_REGEX } from '../constants';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/ai/research-insights/adopt-gen-ai/questions/');
+  await page.goto('/insights/adopt-gen-ai/questions/');
 });
 
 test('AI research questions page has the correct title.', async ({ page }) => {

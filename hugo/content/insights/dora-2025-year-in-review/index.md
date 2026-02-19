@@ -37,11 +37,11 @@ This year, we didn't just release one annual report; we released a trilogy. Each
 
 Beyond these three reports, we also published five additional research insights expanding our understanding of the human side of AI.
 
-1. [AI is a tutor, not a cheater](/ai/research-insights/ai-as-a-tutor/): Students are treating AI as a supplement to professors and TAs—a tireless "learning companion" that helps refine technical skills and clarify dense concepts.
-1. [Rise of the "builder's mindset"](/ai/research-insights/builder-mindset/): We proposed a new framework based on intent rather than job title. Whether you are in a Founder, Optimizer, Accelerator, or Learner mindset, your tools need to adapt to your goal.
-1. [Four strategies to scale AI adoption](/ai/research-insights/adopt-gen-ai/): We identified the four practical strategies that separate successful adoption from chaos.
-1. [Measurement frameworks](/ai/research-insights/measurement-frameworks/): Choose the framework that resonates with your organization. If it speaks to you and spurs your organization into action, it’s the right framework for right now.
-1. [It’s not just about accuracy](/ai/research-insights/concerns-beyond-accuracy-of-ai-output/): Our research uncovered that the real barriers to trust aren't just about wrong code: they are about deskilling, job displacement, and malicious use.
+1. [AI is a tutor, not a cheater](/insights/ai-as-a-tutor/): Students are treating AI as a supplement to professors and TAs—a tireless "learning companion" that helps refine technical skills and clarify dense concepts.
+1. [Rise of the "builder's mindset"](/insights/builder-mindset/): We proposed a new framework based on intent rather than job title. Whether you are in a Founder, Optimizer, Accelerator, or Learner mindset, your tools need to adapt to your goal.
+1. [Four strategies to scale AI adoption](/insights/adopt-gen-ai/): We identified the four practical strategies that separate successful adoption from chaos.
+1. [Measurement frameworks](/insights/measurement-frameworks/): Choose the framework that resonates with your organization. If it speaks to you and spurs your organization into action, it’s the right framework for right now.
+1. [It’s not just about accuracy](/insights/concerns-beyond-accuracy-of-ai-output/): Our research uncovered that the real barriers to trust aren't just about wrong code: they are about deskilling, job displacement, and malicious use.
 
 ## DORA around the world
 

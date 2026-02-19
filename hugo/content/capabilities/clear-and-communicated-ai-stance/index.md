@@ -95,9 +95,9 @@ Read more about healthy data ecosystems in the following sources:
 
 * [DORA AI Capabilities Model report](/ai/capabilities-model/report/)
 * [2025 State of AI-assisted Software Development report](/research/2025/dora-report/)
-* [Fostering developers’ trust in generative artificial intelligence](/ai/research-insights/trust-in-ai/)
-* [Concerns beyond the accuracy of AI output](/ai/research-insights/concerns-beyond-accuracy-of-ai-output/)
-* [Helping developers adopt generative AI: Four practical strategies for organizations](/ai/research-insights/adopt-gen-ai/)
+* [Fostering developers’ trust in generative artificial intelligence](/insights/trust-in-ai/)
+* [Concerns beyond the accuracy of AI output](/insights/concerns-beyond-accuracy-of-ai-output/)
+* [Helping developers adopt generative AI: Four practical strategies for organizations](/insights/adopt-gen-ai/)
 
 ## What's next?
 
