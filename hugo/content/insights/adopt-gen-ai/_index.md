@@ -10,6 +10,7 @@ authors:
 headline: "Helping developers adopt generative AI: Four practical strategies for organizations"
 type: "insights"
 tags: ["AI", "Metrics", "Culture", "Adoption"]
+layout: single
 summary: "DORA research identifies four practical strategies to help organizations scale generative AI adoption from isolated experiments to widespread use. Key recommendations include increasing transparency about AI plans, addressing developer concerns, providing dedicated learning time, and establishing clear usage policies."
 ---
 
