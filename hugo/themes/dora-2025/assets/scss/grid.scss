@@ -1,5 +1,6 @@
 @import "_variables.scss";
 
+
 grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -13,13 +14,13 @@ grid {
 
         h2 {
             background-color: $background-light;
-            margin:0;
-            padding:1rem 1rem .5rem 1rem;
+            margin: 0;
+            padding: 1rem 1rem .5rem 1rem;
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
 
             a {
-                color:$color-text;
+                color: $color-text;
                 text-decoration: none;
             }
         }
@@ -30,29 +31,26 @@ grid {
             align-items: stretch;
 
             p {
-                padding:.5rem;
+                padding: .5rem;
             }
 
             img {
-                margin:.5rem;
+                margin: .5rem;
 
                 &.stroke {
-                    border:1px solid $border-light;
+                    border: 1px solid $border-light;
                 }
             }
         }
-    
+
     }
 
     &.border_none {
         item {
-            border:none;
+            border: none;
         }
     }
 
-    &.mt-1 {
-        margin-top: 1rem;
-    }
 
     &.grid-single {
         grid-template-columns: 1fr;
