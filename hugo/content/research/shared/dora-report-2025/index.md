@@ -3,20 +3,36 @@
 <grid class="border_none mt-1">
 <item>
 
-<a href="https://cloud.google.com/dora" target="_blank"><img src="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png" alt="State of AI-assisted Software Development 2025" class="report-image"></a>
+<a href="https://cloud.google.com/dora?hl=en&region=US" target="_blank"><img src="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png" alt="State of AI-assisted Software Development 2025" class="report-image"></a>
 
+</item>
+<item>
+<div>
+  <h3 style="margin-top: 0;">Full report</h3>
+  <a href="https://cloud.google.com/dora?hl=en&region=US" target="_blank" class="button secondary">English</a>
+</div>
+
+<div style="margin-top: 2rem;">
+  <h3>Abridged versions</h3>
+  <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+    <a href="https://cloud.google.com/dora?hl=es&region=ES" target="_blank" class="button secondary">Español</a>
+    <a href="https://cloud.google.com/dora?hl=es-419&region=MX" target="_blank" class="button secondary">Español - América Latina</a>
+    <a href="https://cloud.google.com/dora?hl=fr&region=FR" target="_blank" class="button secondary">Français</a>
+    <a href="https://cloud.google.com/dora?hl=pt-br&region=BR" target="_blank" class="button secondary">Português - Brasil</a>
+    <a href="https://cloud.google.com/dora?hl=zh-cn&region=CN" target="_blank" class="button secondary">中文 – 简体</a>
+    <a href="https://cloud.google.com/dora?hl=zh-tw&region=TW" target="_blank" class="button secondary">繁體中文</a>
+    <a href="https://cloud.google.com/dora?hl=ja&region=JP" target="_blank" class="button secondary">日本語</a>
+    <a href="https://cloud.google.com/dora?hl=ko&region=KR" target="_blank" class="button secondary">한국어</a>
+  </div>
+</div>
 </item>
 <item>
 <p>
     The State of AI-assisted Software Development report reveals AI’s primary role is as an amplifier, magnifying an organization’s existing strengths and weaknesses. The greatest returns on AI investment come not from the tools themselves, but from a strategic focus on the underlying organizational system.
 </p>
-<p>
-    This year’s research introduces the new DORA AI Capabilities Model, which identifies the key technical and cultural practices that are proven to amplify the positive impacts of AI on performance.
-</p>
-<div style="text-align: right;">
-<a href="https://cloud.google.com/dora" target="_blank" class="button secondary">Get the report</a>
-</div>
-<div style="margin-top: 3rem;">
+</item>
+<item>
+<div>
     <p>
         Next, checkout the <a href="/ai/capabilities-model/report/">DORA AI Capabilities Model</a>, a companion guide to this report with more information on how to improve your organization's AI-assisted software development practices.
     </p>
