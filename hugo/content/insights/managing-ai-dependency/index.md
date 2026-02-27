@@ -17,7 +17,7 @@ guides:
     6: {name: "Becky Sohn", url: "https://www.linkedin.com/in/rebeccasohn/"}
 headline: "Managing AI dependency: How students are establishing guardrails with AI"
 type: "insights"
-tags: ["AI", "Education", "Learning"]
+tags: ["AI", "Education", "Learning", "UC Berkeley"]
 summary: "While AI makes challenging projects feel more accessible, it also sparks anxiety about becoming too dependent. Our research with UC Berkeley students found that students are establishing guardrails for themselves, treating AI as a support tool rather than a replacement for deep understanding."
 ---
 

@@ -18,7 +18,7 @@ guides:
     6: {name: "Nathen Harvey", url: "https://www.linkedin.com/in/nathen/"}
 headline: "AI as a tutor"
 type: "insights"
-tags: ["AI", "Education", "Learning"]
+tags: ["AI", "Education", "Learning", "UC Berkeley"]
 summary: "While critics worry students use AI to cheat, our research reveals something different: students are using AI to learn. At UC Berkeley, many students in technical fields are using AI to teach them rather than do for them: AI was a supplement to the role of professor, TA, or tutor."
 ---
 
