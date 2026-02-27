@@ -683,6 +683,11 @@
           "source": "/ai/research-insights/dora-perspective-icon.png",
           "destination": "/insights/dora-perspective-icon.png",
           "type": 301
+        },
+        {
+          "source": "/research/ai/dora-report/",
+          "destination": "/research/2025/dora-report/",
+          "type": 301
         }
       ]
     }
