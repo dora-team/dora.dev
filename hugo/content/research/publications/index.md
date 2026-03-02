@@ -31,7 +31,7 @@ Findings from DORA’s research program are made available through a series of p
 
 <section class="publicationHighlight">
     <aside>
-        <a href="https://cloud.google.com/dora" target="_blank"><img src="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report-thumb.png" alt="State of AI-assisted Software Development"></a>
+        <a href="https://cloud.google.com/dora" target="_blank"><img src="/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report-thumb.png" alt="State of AI-assisted Software Development"></a>
     </aside>
     <article>
         <p>

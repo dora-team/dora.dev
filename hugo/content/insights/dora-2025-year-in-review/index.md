@@ -20,7 +20,7 @@ This year, we didn't just release one annual report; we released a trilogy. Each
   img_1="/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png"
   url_1="/ai/gen-ai-report/report/"
   alt_1="Impact of Generative AI in Software Development"
-  img_2="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png"
+  img_2="/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report.png"
   url_2="/research/2025/dora-report/"
   alt_2="State of AI-assisted Software Development"
   img_3="/ai/capabilities-model/report/2025-dora-ai-capabilities-model-report.png"

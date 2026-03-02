@@ -37,7 +37,7 @@ archive_summary: "AI is fundamentally reshaping software delivery and organizati
   img_1="/ai/capabilities-model/report/2025-dora-ai-capabilities-model-report.png"
   url_1="/ai/capabilities-model/report/"
   title_1="AI Capabilities Report"
-  img_2="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png"
+  img_2="/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report.png"
   url_2="/research/2025/dora-report/"
   title_2="DORA Report 2025"
   img_3="/ai/gen-ai-report/dora-impact-of-generative-ai-in-software-development-report.png"

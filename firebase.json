@@ -688,6 +688,16 @@
           "source": "/research/ai/dora-report/",
           "destination": "/research/2025/dora-report/",
           "type": 301
+        },
+        {
+          "source": "/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report-thumb.png",
+          "destination": "/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report-thumb.png",
+          "type": 301
+        },
+        {
+          "source": "/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png",
+          "destination": "/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report.png",
+          "type": 301
         }
       ]
     }
