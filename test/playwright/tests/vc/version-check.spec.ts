@@ -6,19 +6,19 @@ test.describe('Version Checker', () => {
       version: '2025.2',
       expectedText: '2025 DORA Report',
       expectedImage:
-        '/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png',
+        '/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report.png',
     },
     {
       version: '2025.2.a',
       expectedText: '2025 DORA Report (Abridged Version)',
       expectedImage:
-        '/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png',
+        '/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report.png',
     },
     {
       version: '2025.2.p',
       expectedText: '2025 DORA Report (Printed Version)',
       expectedImage:
-        '/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png',
+        '/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report.png',
     },
     {
       version: '2025.1',

@@ -56,7 +56,7 @@ test.describe("AI Research Overview Page", () => {
       await expect(reportImage).toBeVisible();
       await expect(reportImage).toHaveAttribute(
         "src",
-        "/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png",
+        "/research/2025/dora-report/2025-state-of-ai-assisted-software-development-report.png",
       );
     });
   });

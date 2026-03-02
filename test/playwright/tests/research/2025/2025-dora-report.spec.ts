@@ -29,14 +29,12 @@ test.describe("2025 DORAReport page", () => {
   });
 
   test("has the correct report image", async ({ page }) => {
-    const reportImage = page.locator(
-      'img[src="/research/shared/dora-report-2025/2025-state-of-ai-assisted-software-development-report.png"]',
-    );
+    const reportImage = page.getByRole("img", {
+      name: "State of AI-assisted Software Development 2025",
+    });
+
     await expect(reportImage).toBeVisible();
-    await expect(reportImage).toHaveAttribute(
-      "alt",
-      "State of AI-assisted Software Development 2025",
-    );
+
     await expect(reportImage.locator("..")).toHaveAttribute(
       "href",
       "https://cloud.google.com/dora?hl=en&region=US",
