@@ -35,7 +35,8 @@ Several other specialized applications received notable volume, indicating areas
 Methodologically, it’s important to note that respondents may have been primed to some extent to comment on code generation based on preceding survey questions. Nevertheless, use case frequency in the comments may still underscore how prominent each is as touchpoints for engineers.
 
 When analyzing the qualitative feedback across these applications, researchers identified clear universal themes mapping to positive (✅) and negative (❌) sentiments. The table below illustrates where AI is currently driving value versus where it is introducing friction across the top and secondary use cases based on respondents’ comments.
-<div class="table-dense-headers">
+
+<div class="table-responsive-wrapper table-dense-headers">
 
 | Themes | Code<br>generation<br><span class="table-subtitle">(600+ comments)</span> | Info<br>seeking<br><span class="table-subtitle">(150+ comments)</span> | Code<br>review<br><span class="table-subtitle">(150+ comments)</span> | Testing<br><span class="table-subtitle">(150+ comments)</span> | Debugging<br><span class="table-subtitle">(50+ comments)</span> | Proto-<br>typing<br><span class="table-subtitle">(50+ comments)</span> | Idea<br>generation<br><span class="table-subtitle">(50+ comments)</span> | Writing<br>docs<br><span class="table-subtitle">(50+ comments)</span> | Refactoring<br><span class="table-subtitle">(50+ comments)</span> | Learning<br><span class="table-subtitle">(50+ comments)</span> |
 | :---- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
