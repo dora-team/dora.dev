@@ -1,4 +1,6 @@
 <script>
+    import { sanitizeNumericInput } from './inputUtils.js';
+
     let { label, value = $bindable(), id, suffix = "", min = 0.000001, description = "", defaultValue = undefined, isCurrency = false } = $props();
 
     let displayValue = $state("");
@@ -17,19 +19,7 @@
     });
 
     function handleInput(e) {
-        // Strip non-numeric characters except decimal point and minus sign
-        let raw = e.target.value.replace(/[^0-9.-]/g, '');
-        
-        // Handle multiple decimal points
-        const parts = raw.split('.');
-        if (parts.length > 2) {
-            raw = parts[0] + '.' + parts.slice(1).join('');
-        }
-
-        // Handle minus sign only at the start
-        if (raw.lastIndexOf('-') > 0) {
-            raw = raw.charAt(0) === '-' ? '-' + raw.substring(1).replace(/-/g, '') : raw.replace(/-/g, '');
-        }
+        let raw = sanitizeNumericInput(e.target.value);
 
         if (raw === "" || raw === "-") {
             displayValue = isCurrency ? `$${raw}` : raw;

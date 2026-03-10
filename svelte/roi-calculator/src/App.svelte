@@ -45,9 +45,12 @@
     });
 
     $effect(() => {
-        // Debounce or ensure we don't save invalid temporary states? 
-        // For now, save whenever inputs change.
-        saveToHash();
+        // Debounce to avoid excessive URL hash updates on every keystroke.
+        const timer = setTimeout(() => {
+            saveToHash();
+        }, 300);
+
+        return () => clearTimeout(timer);
     });
 
     const resetToDefaults = () => {
