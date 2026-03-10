@@ -60,10 +60,6 @@
 </script>
 
 <div class="roi-calculator">
-    <div class="roi-calculator-controls">
-        <button class="secondary" onclick={resetToDefaults}>Reset to defaults</button>
-    </div>
-
     <div class="grid">
         <section class="inputs">
             <h2>Input variables</h2>
@@ -292,6 +288,10 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="roi-calculator-controls">
+                    <button class="secondary" onclick={resetToDefaults}>Reset to defaults</button>
+                </div>
             </div>
         </section>
     </div>
@@ -315,9 +315,9 @@
 
     .roi-calculator-controls {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
-        margin-bottom: 2rem;
+        margin-top: 2rem;
     }
 
     .grid {
