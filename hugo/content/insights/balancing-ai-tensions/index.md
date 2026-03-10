@@ -1,8 +1,8 @@
 ---
 title: "Balancing AI tensions: Moving from AI adoption to effective SDLC use"
-date: 2026-03-09
-updated: 2026-03-09
-draft: true
+date: 2026-03-10
+updated: 2026-03-10
+draft: false
 authors:
     1: {name: "Jessica Baolin", url: "https://www.linkedin.com/in/jessicalin5/"}
     2: {name: "Nathen Harvey", url: "https://www.linkedin.com/in/nathen"}
@@ -14,7 +14,7 @@ summary: "While AI accelerates initial code generation and reduces start-up fric
 
 ---
 
-The [2025 DORA State of AI-assisted Software Development report](/dora-report-2025/) found that 90% of technology professionals now use AI at work, and over 80% believe it has increased their productivity.
+The [2025 DORA State of AI-assisted Software Development report](/research/2025/dora-report/) found that 90% of technology professionals now use AI at work, and over 80% believe it has increased their productivity.
 
 Extensive qualitative analysis of enterprise software engineers reveals that AI's impact on the SDLC is not a simple linear improvement. Instead, it presents a series of profound tradeoffs. While AI successfully accelerates initial code generation and reduces the friction of starting new tasks, the time saved in creation is frequently re-allocated to auditing and verification. This tension may explain some of our own findings: higher AI adoption is associated with an increase in  both [software delivery throughput](/guides/dora-metrics/#throughput) and [software delivery instability](/guides/dora-metrics/#instability).
 
@@ -26,7 +26,7 @@ Before exploring three key tradeoffs of AI adoption and providing actionable str
 
 ### Research methodology
 
-To better understand the practical impact of AI on the SDLC, researchers conducted a thematic deep dive into 1,110 open-ended survey responses from Google software engineers in Q3 2025\. This survey item asked engineers to share their thoughts on how AI-powered tools had impacted their development workflows over the previous three months.
+To better understand the practical impact of AI on the SDLC, researchers conducted a thematic deep dive into 1,110 open-ended survey responses from Google software engineers in Q3 2025. This survey item asked engineers to share their thoughts on how AI-powered tools had impacted their development workflows over the previous three months.
 
 The frequency of specific use cases in the survey data provides a strong signal of where AI is currently most visible and impactful for engineering teams. The majority of feedback centered on four core activities: code generation, information seeking, code review, and testing.
 
@@ -35,8 +35,9 @@ Several other specialized applications received notable volume, indicating areas
 Methodologically, it’s important to note that respondents may have been primed to some extent to comment on code generation based on preceding survey questions. Nevertheless, use case frequency in the comments may still underscore how prominent each is as touchpoints for engineers.
 
 When analyzing the qualitative feedback across these applications, researchers identified clear universal themes mapping to positive (✅) and negative (❌) sentiments. The table below illustrates where AI is currently driving value versus where it is introducing friction across the top and secondary use cases based on respondents’ comments.
+<div class="table-dense-headers">
 
-| Themes | Code generation | Information seeking | Code review | Testing | Debugging | Prototyping | Idea generation | Writing documentation | Refactoring | Learning |
+| Themes | Code<br>generation<br><span class="table-subtitle">(600+ comments)</span> | Info<br>seeking<br><span class="table-subtitle">(150+ comments)</span> | Code<br>review<br><span class="table-subtitle">(150+ comments)</span> | Testing<br><span class="table-subtitle">(150+ comments)</span> | Debugging<br><span class="table-subtitle">(50+ comments)</span> | Proto-<br>typing<br><span class="table-subtitle">(50+ comments)</span> | Idea<br>generation<br><span class="table-subtitle">(50+ comments)</span> | Writing<br>docs<br><span class="table-subtitle">(50+ comments)</span> | Refactoring<br><span class="table-subtitle">(50+ comments)</span> | Learning<br><span class="table-subtitle">(50+ comments)</span> |
 | :---- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
 | ✅ Increased velocity | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | ✅ Bridge knowledge gaps | ✅ | ✅ |  | ✅ | ✅ | ✅ | ✅ |  |  | ✅ |
@@ -50,6 +51,8 @@ When analyzing the qualitative feedback across these applications, researchers i
 | ❌ Skill degradation | ❌ |  |  |  |  |  |  |  |  | ❌ |
 | ❌ Creating debt | ❌ |  |  |  |  |  |  | ❌ |  |  |
 
+</div>
+
 AI successfully drives increased velocity across all ten use cases, from code generation to learning. However, this speed comes with tradeoffs.
 
 ## Where AI is driving immediate value
@@ -62,17 +65,17 @@ Furthermore, AI serves a powerful psychological function by reducing the frictio
 
 AI is also highly effective at helping developers bridge knowledge gaps. It functions as a timely tutor, allowing engineers to remain productive in unfamiliar languages or navigate legacy codebases without prior domain context. Similarly, AI aids in information synthesis by summarizing fragmented documentation, logs, or source files into concise summaries and actionable insights, which can collapse multi-hour research tasks.
 
-These results are similar to the findings in the [2025 DORA report](/dora-report-2025/) which shows that a vast majority of developers surveyed widely recognize AI's positive impacts on their individual productivity.
+These results are similar to the findings in the [2025 DORA report]( /research/2025/dora-report/) which shows that a vast majority of developers surveyed widely recognize AI's positive impacts on their individual productivity.
 
 ## The hidden taxes of AI adoption: Navigating the tradeoffs
 
 While AI acts as a capable tutor and drafting assistant, this rapid generation of code and concepts comes with a cost. Despite widespread adoption and clear productivity boosts in certain parts of the SDLC, relying on AI introduces new friction points. Rather than a linear improvement, AI introduces a series of tradeoffs where gains in one area often create new challenges elsewhere.
 
-Here are the three core tensions technology leaders must navigate:
+Here are three core tensions technology teams and leaders must navigate:
 
 ### 1\. The push and pull on velocity
 
-**The verification tax: Time saved writing is often re-spent auditing.** While the perception of increased velocity is a primary driver of AI adoption, it is constantly moderated by a hidden verification tax. The [2025 DORA report](/dora-report-2025/) highlights a critical vulnerability, noting that 30% of developers currently report little to no trust in the code generated by AI. Because AI tools are currently incapable of signaling uncertainty and output hallucinations with high confidence, engineers are forced to treat every interaction as potentially deceptive.
+**The verification tax: Time saved writing is often re-spent auditing.** While the perception of increased velocity is a primary driver of AI adoption, it is constantly moderated by a hidden verification tax. The [2025 DORA report]( /research/2025/dora-report/) highlights a critical vulnerability, noting that 30% of developers currently report little to no trust in the code generated by AI. Because AI tools are currently incapable of signaling uncertainty and output hallucinations with high confidence, engineers are forced to treat every interaction as potentially deceptive.
 
 Consequently, the time saved during initial code or content generation is often re-allocated to verification overhead and prompting overhead, where engineers spend significant time auditing output or fine-tuning instructions to achieve correctness. Verification is a fundamentally different cognitive task than creation. As one developer explained:
 
@@ -82,13 +85,11 @@ This dynamic is creating a shifting burden within engineering teams, specificall
 
 >> “Reviewing \[another’s\] code is so much harder than writing it. AI tools are increasing the rate at which people can churn out code that needs to be reviewed…”
 
-###
-
 **The drive for rapid output risks introducing subtle bugs, technical debt, and hollow documentation, at least in the short term.** It’s one of many factors that can stand in opposition to the long-term health of the codebase; this is because we are offloading a lot of development work to non-deterministic tools that are not fully adequate yet at producing fully trustworthy and high quality outputs. Right now, the combination of mediocre code and generic documentation risks lowering codebase quality, effectively polluting the ecosystem. As AI tools mature–in their ability to both generate code and verify intent, correctness, and quality– the tradeoffs between creation speed and output quality will likely diminish.
 
 >> “AI tools increase my productivity, they write code faster than I could, but the code is (currently) lower quality than I could write myself.”
 
-This tension is mirrored at the macro level where the 2025 DORA report points out that higher AI adoption is associated with an increase in both [software delivery throughput](/guides/dora-metrics/#throughput) and [software delivery instability](/guides/dora-metrics/#instability).
+This tension is mirrored at the macro level where the [2025 DORA report](/research/2025/dora-report/) points out that higher AI adoption is associated with an increase in both [software delivery throughput](/guides/dora-metrics/#throughput) and [software delivery instability](/guides/dora-metrics/#instability).
 
 ### 2\. The expertise paradox
 
@@ -96,7 +97,7 @@ This tension is mirrored at the macro level where the 2025 DORA report points ou
 
 >> “AI powered development has allowed me to develop more quickly in areas I don't have experience in, but that means that I occasionally get a sense of 'the blind leading the blind' where I don't have enough context to ensure that the AI is correct.”
 
-The [2025 DORA report](/dora-report-2025/) echoes this, noting that these usage patterns deliver breakthrough productivity while simultaneously blocking skill development, effectively limiting the hands-on problem-solving essential for true apprenticeship.
+The [2025 DORA report](/research/2025/dora-report/) echoes this, noting that these usage patterns deliver breakthrough productivity while simultaneously blocking skill development, effectively limiting the hands-on problem-solving essential for true apprenticeship.
 
 ### 3\. The workflow gap
 

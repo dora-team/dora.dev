@@ -30,3 +30,49 @@ main table {
         }
     }
 }
+
+.table-dense-headers {
+    table {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    th,
+    td {
+        border: 1px solid $border-light;
+        padding: 0.4rem 0.2rem !important;
+    }
+
+    th {
+        text-align: center !important;
+        vertical-align: bottom !important;
+        font-weight: 500;
+        font-size: 0.8em;
+
+        .table-subtitle {
+            font-size: 0.85em;
+            font-weight: 300;
+            color: $color-text-medium;
+            margin-top: 0.25em;
+            display: block;
+            line-height: 1.2;
+        }
+
+        &:first-child {
+            text-align: left !important;
+            width: 15%;
+        }
+    }
+
+    td {
+        text-align: center !important;
+        vertical-align: middle !important;
+        font-size: 0.85em;
+
+        &:first-child {
+            text-align: left !important;
+            width: 15%;
+            font-size: 0.8em;
+        }
+    }
+}
