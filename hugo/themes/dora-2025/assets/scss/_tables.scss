@@ -31,48 +31,103 @@ main table {
     }
 }
 
+.table-responsive-wrapper {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    overflow-y: auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid $border-light;
+
+    table {
+        margin-bottom: 0;
+        border: none;
+        
+        th, td {
+            border: 1px solid $border-light;
+            &:first-child {
+                border-left: none;
+            }
+            &:last-child {
+                border-right: none;
+            }
+        }
+        
+        tr:first-child th {
+            border-top: none;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+    }
+}
+
 .table-dense-headers {
     table {
+        min-width: 800px;
         table-layout: fixed;
         width: 100%;
-    }
 
-    th,
-    td {
-        border: 1px solid $border-light;
-        padding: 0.4rem 0.2rem !important;
-    }
-
-    th {
-        text-align: center !important;
-        vertical-align: bottom !important;
-        font-weight: 500;
-        font-size: 0.8em;
-
-        .table-subtitle {
-            font-size: 0.85em;
-            font-weight: 300;
-            color: $color-text-medium;
-            margin-top: 0.25em;
-            display: block;
-            line-height: 1.2;
+        th,
+        td {
+            padding: 0.4rem 0.2rem !important;
         }
 
-        &:first-child {
-            text-align: left !important;
-            width: 15%;
-        }
-    }
-
-    td {
-        text-align: center !important;
-        vertical-align: middle !important;
-        font-size: 0.85em;
-
-        &:first-child {
-            text-align: left !important;
-            width: 15%;
+        th {
+            text-align: center !important;
+            vertical-align: bottom !important;
+            font-weight: 500;
             font-size: 0.8em;
+
+            .table-subtitle {
+                font-size: 0.85em;
+                font-weight: 300;
+                color: $color-text-medium;
+                margin-top: 0.25em;
+                display: block;
+                line-height: 1.2;
+            }
+
+            &:first-child {
+                text-align: left !important;
+                width: 12%;
+                min-width: 120px;
+            }
+        }
+
+        td {
+            text-align: center !important;
+            vertical-align: middle !important;
+            font-size: 0.85em;
+
+            &:first-child {
+                text-align: left !important;
+                width: 12%;
+                min-width: 120px;
+                font-size: 0.8em;
+            }
+        }
+    }
+
+    @include media-medium {
+        table {
+            th, td {
+                padding: 0.3rem 0.15rem !important;
+                font-size: 0.75em;
+            }
+            
+            th .table-subtitle {
+                font-size: 0.8em;
+            }
+            
+            td:first-child {
+                font-size: 0.75em;
+                min-width: 100px;
+            }
+            
+            th:first-child {
+                min-width: 100px;
+            }
         }
     }
 }
