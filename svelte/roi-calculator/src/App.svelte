@@ -64,8 +64,8 @@
         <section class="inputs">
             <h2>Input variables</h2>
             
-            <fieldset>
-                <legend>Organizational metrics</legend>
+            <div class="input-section">
+                <h3>Organizational metrics</h3>
                 <NumericInput 
                     label="Technical staff size" 
                     id="staff_size" 
@@ -82,10 +82,10 @@
                     isCurrency={true}
                     description="Software engineer salaries vary greatly between regions in the world. The 'fully loaded' cost (total cost to the employer) typically adds between 30% (US) to 100% (Europe) on top of the average base salary to account for taxes, benefits, and overhead."
                 />
-            </fieldset>
+            </div>
 
-            <fieldset>
-                <legend>Baseline software delivery metrics</legend>
+            <div class="input-section">
+                <h3>Baseline software delivery metrics</h3>
                 <NumericInput 
                     label="Product portfolio revenue" 
                     id="revenue" 
@@ -145,10 +145,10 @@
                     defaultValue={DEFAULTS.current_fdrt}
                     description="Average number of hours it generally takes to restore service after a change to production or release to users results in degraded service."
                 />
-            </fieldset>
+            </div>
 
-            <fieldset>
-                <legend>AI estimates</legend>
+            <div class="input-section">
+                <h3>AI estimates</h3>
                 <PercentInput 
                     label="Net time saved per developer" 
                     id="time_saved_per_developer" 
@@ -229,7 +229,7 @@
                     defaultValue={DEFAULTS.j_curve_duration}
                     description="The length of the productivity decrease."
                 />
-            </fieldset>
+            </div>
         </section>
 
         <section class="results">
@@ -333,19 +333,21 @@
         color: var(--dora-prussian-blue);
     }
 
-    fieldset {
+    .input-section {
         border: 1px solid var(--border-color-medium);
         border-radius: 8px;
         padding: 1.5rem;
         margin-bottom: 2rem;
         background-color: #fcfcfc;
-    }
 
-    legend {
-        padding: 0 0.75rem;
-        font-weight: 600;
-        color: var(--dora-prussian-blue);
-        font-size: 1.1rem;
+        h3 {
+            margin: 0 0 1.5rem 0;
+            font-weight: 600;
+            color: var(--dora-prussian-blue);
+            font-size: 1.1rem;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
     }
 
     .sticky-results {
