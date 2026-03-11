@@ -64,7 +64,7 @@ export const calculateROI = (inputs) => {
     // Costs
     const total_hard_costs = ((i.ai_license_cost_per_user + i.additional_ai_cost_per_user + i.training_cost_per_user) * i.staff_size) + i.additional_ai_infra_cost;
     const j_curve_cost = i.staff_size * i.salary * i.j_curve_drop * (i.j_curve_duration / 12);
-    const total_investment = total_hard_costs + j_curve_cost;
+    const total_first_year_investment = total_hard_costs + j_curve_cost;
 
     // Value
     const headcount_reinvestment_capacity = i.staff_size * i.salary * i.time_saved_per_developer;
@@ -73,19 +73,19 @@ export const calculateROI = (inputs) => {
     const total_annual_value = headcount_reinvestment_capacity + revenue_from_extra_features + downtime_savings;
 
     // Summary
-    const year_1_net_profit = total_annual_value - total_investment;
-    const roi = total_investment !== 0 ? year_1_net_profit / total_investment : 0;
-    const payback_period = total_annual_value > 0 ? total_investment / total_annual_value : Infinity;
+    const first_year_benefit = total_annual_value - total_first_year_investment;
+    const roi = total_first_year_investment !== 0 ? first_year_benefit / total_first_year_investment : 0;
+    const payback_period = total_annual_value > 0 ? total_first_year_investment / total_annual_value : Infinity;
 
     return {
         total_hard_costs,
         j_curve_cost,
-        total_investment,
+        total_first_year_investment,
         headcount_reinvestment_capacity,
         revenue_from_extra_features,
         downtime_savings,
         total_annual_value,
-        year_1_net_profit,
+        first_year_benefit,
         roi,
         payback_period
     };

@@ -237,8 +237,8 @@
                 <h2>Calculated ROI</h2>
                 
                 <div class="summary-card primary">
-                    <h3>Year 1 net profit</h3>
-                    <p class="value">{formatCurrency(results.year_1_net_profit)}</p>
+                    <h3>First year benefit</h3>
+                    <p class="value">{formatCurrency(results.first_year_benefit)}</p>
                     <div class="roi-stats">
                         <div class="stat">
                             <span class="label">Return on investment (ROI)</span>
@@ -253,7 +253,7 @@
 
                 <div class="result-sections">
                     <div class="result-section">
-                        <h3>Costs (1st year investment)</h3>
+                        <h3>Costs (first year investment)</h3>
                         <div class="stat">
                             <span class="label">Total hard costs (tooling and training)</span>
                             <span class="value">{formatCurrency(results.total_hard_costs)}</span>
@@ -263,8 +263,8 @@
                             <span class="value">{formatCurrency(results.j_curve_cost)}</span>
                         </div>
                         <div class="stat total">
-                            <span class="label">Total 1 year investment</span>
-                            <span class="value">{formatCurrency(results.total_investment)}</span>
+                            <span class="label">Total first year investment</span>
+                            <span class="value">{formatCurrency(results.total_first_year_investment)}</span>
                         </div>
                     </div>
 
