@@ -26,6 +26,7 @@
 
         if (raw === "" || raw === "-") {
             displayValue = raw;
+            value = Math.max(0, min);
         } else {
             let numValue = parseFloat(raw) / 100;
             if (!isNaN(numValue)) {

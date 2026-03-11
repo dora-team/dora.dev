@@ -32,6 +32,7 @@
 
         if (raw === "" || raw === "-") {
             displayValue = isCurrency ? `$${raw}` : raw;
+            value = Math.max(0, min);
         } else {
             let num = parseFloat(raw);
             if (!isNaN(num)) {
