@@ -14,7 +14,7 @@ layout: "single"
 Technology-driven teams need ways to measure performance so that they can assess how they’re doing today, prioritize improvements, and validate their progress. DORA has identified five software delivery performance metrics that provide an effective way of measuring the outcomes of the software delivery process. DORA’s [research](/research) shows that these performance metrics predict better organizational performance and well-being for team members.
 
 {{< dora_callout title="A history of DORA's software delivery metrics" >}}
-These metrics have evolved alongside the technology landscape: shifting from the original four keys to the current five-metric model. To understand the research behind changes like the move from MTTR to Failed Deployment Recovery Time, read [A history of DORA's software delivery metrics](/guides/dora-metrics/history).
+These metrics have evolved alongside the technology landscape: shifting from the original four keys to the current five-metric model. To understand the research behind changes like the move from MTTR to Failed Deployment Recovery Time, read [A history of DORA's software delivery metrics](/insights/dora-metrics-history).
 {{< /dora_callout >}}
 
 These software delivery performance metrics can be viewed as both leading and lagging indicators. Leading indicators typically signal potential future changes in a system while lagging indicators reflect past performance and outcomes.

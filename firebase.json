@@ -610,6 +610,11 @@
           "type": 302
         },
         {
+          "source": "/guides/dora-metrics/history/",
+          "destination": "/insights/dora-metrics-history/",
+          "type": 301
+        },
+        {
           "source": "/guides/dora-metrics-four-keys/",
           "destination": "/guides/dora-metrics/",
           "type": 301

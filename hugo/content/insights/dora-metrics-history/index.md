@@ -1,12 +1,14 @@
 ---
 title: "A history of DORA’s software delivery metrics"
-date: 2024-03-29T16:06:31-04:00
-updated: 2026-01-05
+date: 2026-01-02
+updated: 2026-01-02
 draft: false
 authors:
     1: {name: "Nathen Harvey", url: "https://linkedin.com/in/nathen"}
 headline: "A history of DORA’s software delivery metrics"
-heroimage: "/guides/dora-metrics/hero-fourkeys.png"
+type: "insights"
+tags: ["Metrics", "DORA"]
+summary: "DORA's software delivery performance metrics have evolved over time to reflect the changing technology landscape. Learn about the transition from the four keys to the current five-metric model."
 ---
 
 For over a decade, DORA has rigorously investigated the capabilities that drive high-performing technology organizations. Throughout this history, [software delivery performance metrics](/guides/dora-metrics) have served as the research’s “center of gravity.” While these metrics have become industry standards, they have not been static. They have evolved in name, definition, and scope to reflect the changing realities of the technology landscape.
