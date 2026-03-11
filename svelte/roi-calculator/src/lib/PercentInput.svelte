@@ -1,7 +1,14 @@
 <script>
-    import { sanitizeNumericInput } from './inputUtils.js';
+    import { sanitizeNumericInput } from "./inputUtils.js";
 
-    let { label, value = $bindable(), id, min = 0.0001, description = "", defaultValue = undefined } = $props();
+    let {
+        label,
+        value = $bindable(),
+        id,
+        min = 0.0001,
+        description = "",
+        defaultValue = undefined,
+    } = $props();
 
     let displayValue = $state("");
     let showDescription = $state(false);
@@ -42,20 +49,24 @@
         showDescription = !showDescription;
     }
 
-    let formattedDefault = $derived(defaultValue !== undefined ? ((defaultValue * 100).toFixed(2).replace(/\.?0+$/, "")) + "%" : "");
+    let formattedDefault = $derived(
+        defaultValue !== undefined
+            ? (defaultValue * 100).toFixed(2).replace(/\.?0+$/, "") + "%"
+            : "",
+    );
 </script>
 
 <div class="input-group">
     <div class="label-container">
         <label for={id}>{label} (%)</label>
         {#if description || defaultValue !== undefined}
-            <button 
-                type="button" 
-                class="info-icon" 
+            <button
+                type="button"
+                class="info-icon"
                 onclick={toggleDescription}
                 aria-label="Show description"
             >
-                <span class="google-material-icons">info</span>
+                <span class="google-material-icons">info_outline</span>
             </button>
         {/if}
     </div>
@@ -66,7 +77,10 @@
                 <p>{description}</p>
             {/if}
             {#if defaultValue !== undefined}
-                <p class="default-note"><strong>Default value:</strong> {formattedDefault}</p>
+                <p class="default-note">
+                    <strong>Default value:</strong>
+                    {formattedDefault}
+                </p>
             {/if}
         </div>
     {/if}
@@ -109,13 +123,14 @@
         display: flex;
         align-items: center;
         color: var(--dora-sky-blue);
-        
+
         .google-material-icons {
             font-size: 18px;
         }
 
         &:hover {
-            color: var(--dora-blue);
+            color: var(--dora-prussian-blue);
+            background-color: transparent !important;
         }
     }
 

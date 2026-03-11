@@ -1,13 +1,22 @@
 <script>
-    import { sanitizeNumericInput } from './inputUtils.js';
+    import { sanitizeNumericInput } from "./inputUtils.js";
 
-    let { label, value = $bindable(), id, suffix = "", min = 0.000001, description = "", defaultValue = undefined, isCurrency = false } = $props();
+    let {
+        label,
+        value = $bindable(),
+        id,
+        suffix = "",
+        min = 0.000001,
+        description = "",
+        defaultValue = undefined,
+        isCurrency = false,
+    } = $props();
 
     let displayValue = $state("");
     let showDescription = $state(false);
 
     const format = (val) => {
-        const base = new Intl.NumberFormat('en-US').format(val);
+        const base = new Intl.NumberFormat("en-US").format(val);
         return isCurrency ? `$${base}` : base;
     };
 
@@ -48,7 +57,7 @@
 
     let formattedDefault = $derived.by(() => {
         if (defaultValue === undefined) return "";
-        const base = new Intl.NumberFormat('en-US').format(defaultValue);
+        const base = new Intl.NumberFormat("en-US").format(defaultValue);
         if (isCurrency) {
             return `$${base} USD`;
         }
@@ -58,26 +67,31 @@
 
 <div class="input-group">
     <div class="label-container">
-        <label for={id}>{label}{suffix ? ` (${suffix})` : ''}</label>
+        <label for={id}>{label}{suffix ? ` (${suffix})` : ""}</label>
         {#if description || defaultValue !== undefined}
-            <button 
-                type="button" 
-                class="info-icon" 
+            <button
+                type="button"
+                class="info-icon"
                 onclick={toggleDescription}
                 aria-label="Show description"
             >
-                <span class="google-material-icons">info</span>
+                <span class="google-material-icons">info_outline</span>
             </button>
         {/if}
     </div>
-    
+
     {#if showDescription}
         <div class="description-box">
             {#if description}
                 <p>{description}</p>
             {/if}
             {#if defaultValue !== undefined}
-                <p class="default-note"><strong>Default value:</strong> {formattedDefault}{(!isCurrency && suffix) ? ` ${suffix}` : ''}</p>
+                <p class="default-note">
+                    <strong>Default value:</strong>
+                    {formattedDefault}{!isCurrency && suffix
+                        ? ` ${suffix}`
+                        : ""}
+                </p>
             {/if}
         </div>
     {/if}
@@ -120,13 +134,14 @@
         display: flex;
         align-items: center;
         color: var(--dora-sky-blue);
-        
+
         .google-material-icons {
             font-size: 18px;
         }
 
         &:hover {
-            color: var(--dora-blue);
+            color: var(--dora-prussian-blue);
+            background-color: transparent !important;
         }
     }
 
