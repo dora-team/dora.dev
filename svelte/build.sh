@@ -5,10 +5,10 @@ set -euo pipefail
 # RUN THIS SCRIPT FROM THE REPOSITORY ROOT
 
 # doing roi steps manually to test the build in CI
-cd svelte/roi-calculator && npm install &
-# ./svelte/ai-model/build-ai-model.sh &
-# ./svelte/core-v2/build-core.sh &
-# ./svelte/quick-check/build-quick-check.sh &
+./svelte/roi-calculator/build-roi-calculator.sh &
+./svelte/ai-model/build-ai-model.sh &
+./svelte/core-v2/build-core.sh &
+./svelte/quick-check/build-quick-check.sh &
 
 for job in $(jobs -p); do
   wait "$job"
