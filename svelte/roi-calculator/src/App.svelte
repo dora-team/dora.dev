@@ -269,7 +269,7 @@
                     </div>
 
                     <div class="result-section">
-                        <h3>Value (annual return)</h3>
+                        <h3>Value (first year)</h3>
                         <div class="stat">
                             <span class="label">Headcount reinvestment capacity</span>
                             <span class="value">{formatCurrency(results.headcount_reinvestment_capacity)}</span>
@@ -283,8 +283,8 @@
                             <span class="value">{formatCurrency(results.downtime_savings)}</span>
                         </div>
                         <div class="stat total">
-                            <span class="label">Total annual value</span>
-                            <span class="value">{formatCurrency(results.total_annual_value)}</span>
+                            <span class="label">Total first year value</span>
+                            <span class="value">{formatCurrency(results.total_first_year_value)}</span>
                         </div>
                     </div>
                 </div>

@@ -70,12 +70,12 @@ export const calculateROI = (inputs) => {
     const headcount_reinvestment_capacity = i.staff_size * i.salary * i.time_saved_per_developer;
     const revenue_from_extra_features = (i.target_features_per_year - i.current_features_per_year) * i.idea_success_rate * i.revenue_impact_per_feature * i.revenue;
     const downtime_savings = (i.current_deployments_per_year * i.current_cfr * i.current_fdrt * i.downtime_cost_per_hour) - (i.target_deployments_per_year * i.target_cfr * i.current_fdrt * i.downtime_cost_per_hour);
-    const total_annual_value = headcount_reinvestment_capacity + revenue_from_extra_features + downtime_savings;
+    const total_first_year_value = headcount_reinvestment_capacity + revenue_from_extra_features + downtime_savings;
 
     // Summary
-    const first_year_benefit = total_annual_value - total_first_year_investment;
+    const first_year_benefit = total_first_year_value - total_first_year_investment;
     const roi = total_first_year_investment !== 0 ? first_year_benefit / total_first_year_investment : 0;
-    const payback_period = total_annual_value > 0 ? total_first_year_investment / total_annual_value : Infinity;
+    const payback_period = total_first_year_value > 0 ? total_first_year_investment / total_first_year_value : Infinity;
 
     return {
         total_hard_costs,
@@ -84,7 +84,7 @@ export const calculateROI = (inputs) => {
         headcount_reinvestment_capacity,
         revenue_from_extra_features,
         downtime_savings,
-        total_annual_value,
+        total_first_year_value,
         first_year_benefit,
         roi,
         payback_period
