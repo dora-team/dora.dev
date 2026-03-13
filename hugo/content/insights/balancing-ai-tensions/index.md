@@ -142,7 +142,7 @@ While AI significantly lowers the barrier to start, it does not inherently simpl
 * **Enable AI-accessible internal data:** Generic tools struggle with the "last mile" of production integration. [Linking AI directly to your proprietary codebase and documentation](/capabilities/ai-accessible-internal-data/) reduces this friction, which has the potential to multiply code quality and developer effectiveness.
 * **Reduce tool sprawl:** Minimizing this sprawl prevents decision-making toil and preserves the developer's flow state. Rather than considering how to add AI into individual tools, consider holistic journeys that developers take. Additionally, organizations need to consider stability in a time where new tools are popping up at a rapid pace; there is a balance to ensuring you are keeping up with the latest new tools but ensuring your development organization is not impeded by constant change.
 
-### Safeguard Deep Expertise
+### Safeguard deep expertise
 
 To combat skill degradation and superficial learning, engineering leaders must actively preserve time and space for deep learning. Lowering entry barriers to new domains risks creating false expertise by allowing engineers to bypass the productive struggle necessary for deep, long-term learning.
 
