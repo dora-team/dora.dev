@@ -23,7 +23,10 @@
     // Sync display value with the internal numeric value
     $effect(() => {
         if (value !== undefined) {
-            displayValue = format(value);
+            const formatted = format(value);
+            if (displayValue !== formatted) {
+                displayValue = formatted;
+            }
         }
     });
 

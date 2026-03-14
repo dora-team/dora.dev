@@ -17,7 +17,10 @@
     $effect(() => {
         if (value !== undefined) {
             // value is 0.33, display should be 33
-            displayValue = (value * 100).toFixed(2).replace(/\.?0+$/, "");
+            const formatted = (value * 100).toFixed(2).replace(/\.?0+$/, "");
+            if (displayValue !== formatted) {
+                displayValue = formatted;
+            }
         }
     });
 

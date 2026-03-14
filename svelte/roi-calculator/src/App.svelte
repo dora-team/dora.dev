@@ -1,5 +1,5 @@
 <script>
-    import { onMount } from 'svelte';
+    import { untrack } from 'svelte';
     import { DEFAULTS, calculateROI, sanitizeInputs } from './lib/calculations';
     import { formatCurrency, formatPercent, formatNumber } from './lib/formatters';
     import NumericInput from './lib/NumericInput.svelte';
@@ -27,9 +27,9 @@
         }
     };
 
-    const saveToHash = () => {
+    const saveToHash = (currentInputs) => {
         const params = new URLSearchParams();
-        for (const [key, value] of Object.entries(inputs)) {
+        for (const [key, value] of Object.entries(currentInputs)) {
             params.set(key, value);
         }
         const newHash = params.toString();
@@ -38,16 +38,20 @@
         }
     };
 
-    onMount(() => {
-        loadFromHash();
+    $effect(() => {
+        untrack(loadFromHash);
         window.addEventListener('hashchange', loadFromHash);
         return () => window.removeEventListener('hashchange', loadFromHash);
     });
 
     $effect(() => {
+        // Track all properties of inputs by taking a snapshot.
+        // This ensures the effect re-runs when any property of the state object changes.
+        const currentInputs = $state.snapshot(inputs);
+
         // Debounce to avoid excessive URL hash updates on every keystroke.
         const timer = setTimeout(() => {
-            saveToHash();
+            saveToHash(currentInputs);
         }, 300);
 
         return () => clearTimeout(timer);
@@ -58,6 +62,13 @@
     };
 
 </script>
+
+{#snippet stat(label, value, isTotal = false)}
+    <div class="stat" class:total={isTotal}>
+        <span class="label">{label}</span>
+        <span class="value">{value}</span>
+    </div>
+{/snippet}
 
 <div class="roi-calculator">
     <div class="grid">
@@ -254,38 +265,17 @@
                 <div class="result-sections">
                     <div class="result-section">
                         <h3>Costs (first year investment)</h3>
-                        <div class="stat">
-                            <span class="label">Total hard costs (tooling and training)</span>
-                            <span class="value">{formatCurrency(results.total_hard_costs)}</span>
-                        </div>
-                        <div class="stat">
-                            <span class="label">J-Curve cost</span>
-                            <span class="value">{formatCurrency(results.j_curve_cost)}</span>
-                        </div>
-                        <div class="stat total">
-                            <span class="label">Total first year investment</span>
-                            <span class="value">{formatCurrency(results.total_first_year_investment)}</span>
-                        </div>
+                        {@render stat("Total hard costs (tooling and training)", formatCurrency(results.total_hard_costs))}
+                        {@render stat("J-Curve cost", formatCurrency(results.j_curve_cost))}
+                        {@render stat("Total first year investment", formatCurrency(results.total_first_year_investment), true)}
                     </div>
 
                     <div class="result-section">
                         <h3>Value (first year)</h3>
-                        <div class="stat">
-                            <span class="label">Headcount reinvestment capacity</span>
-                            <span class="value">{formatCurrency(results.headcount_reinvestment_capacity)}</span>
-                        </div>
-                        <div class="stat">
-                            <span class="label">Revenue from extra feature deployments</span>
-                            <span class="value">{formatCurrency(results.revenue_from_extra_features)}</span>
-                        </div>
-                        <div class="stat">
-                            <span class="label">Downtime impact (savings/costs)</span>
-                            <span class="value">{formatCurrency(results.downtime_savings)}</span>
-                        </div>
-                        <div class="stat total">
-                            <span class="label">Total first year value</span>
-                            <span class="value">{formatCurrency(results.total_first_year_value)}</span>
-                        </div>
+                        {@render stat("Headcount reinvestment capacity", formatCurrency(results.headcount_reinvestment_capacity))}
+                        {@render stat("Revenue from extra feature deployments", formatCurrency(results.revenue_from_extra_features))}
+                        {@render stat("Downtime impact (savings/costs)", formatCurrency(results.downtime_savings))}
+                        {@render stat("Total first year value", formatCurrency(results.total_first_year_value), true)}
                     </div>
                 </div>
 
