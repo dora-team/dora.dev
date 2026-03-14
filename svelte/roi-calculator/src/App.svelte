@@ -90,7 +90,7 @@
                     id="salary" 
                     bind:value={inputs.salary} 
                     defaultValue={DEFAULTS.salary}
-                    isCurrency={true}
+                    isCurrency
                     description="Software engineer salaries vary greatly between regions in the world. The 'fully loaded' cost (total cost to the employer) typically adds between 30% (US) to 100% (Europe) on top of the average base salary to account for taxes, benefits, and overhead."
                 />
             </div>
@@ -102,7 +102,7 @@
                     id="revenue" 
                     bind:value={inputs.revenue} 
                     defaultValue={DEFAULTS.revenue}
-                    isCurrency={true}
+                    isCurrency
                     description="This is the annual revenue driven by this software."
                 />
                 <NumericInput 
@@ -110,7 +110,7 @@
                     id="downtime_cost_per_hour" 
                     bind:value={inputs.downtime_cost_per_hour} 
                     defaultValue={DEFAULTS.downtime_cost_per_hour}
-                    isCurrency={true}
+                    isCurrency
                     description="This is an estimate of the cost of 1 hour of system outage. We recommend considering revenue lost as well as additional costs, such as reputational damage. You could also estimate this by dividing the product portfolio revenue by the number of hours in a year (8,760)."
                 />
                 <NumericInput 
@@ -174,7 +174,7 @@
                     min={0} 
                     bind:value={inputs.ai_license_cost_per_user} 
                     defaultValue={DEFAULTS.ai_license_cost_per_user}
-                    isCurrency={true}
+                    isCurrency
                     description="The annual price per user of an AI subscription."
                 />
                 <NumericInput 
@@ -183,7 +183,7 @@
                     min={0} 
                     bind:value={inputs.additional_ai_cost_per_user} 
                     defaultValue={DEFAULTS.additional_ai_cost_per_user}
-                    isCurrency={true}
+                    isCurrency
                     description="Any additional per user costs, such as API or Token costs."
                 />
                 <NumericInput 
@@ -192,7 +192,7 @@
                     min={0} 
                     bind:value={inputs.additional_ai_infra_cost} 
                     defaultValue={DEFAULTS.additional_ai_infra_cost}
-                    isCurrency={true}
+                    isCurrency
                     description="New AI-related infrastructure costs including compute, networking, storage, and monitoring."
                 />
                 <NumericInput 
@@ -201,7 +201,7 @@
                     min={0} 
                     bind:value={inputs.training_cost_per_user} 
                     defaultValue={DEFAULTS.training_cost_per_user}
-                    isCurrency={true}
+                    isCurrency
                     description="Training and enablement costs for each employee."
                 />
                 <NumericInput 
