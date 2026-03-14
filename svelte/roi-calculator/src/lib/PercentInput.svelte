@@ -5,17 +5,18 @@
         label,
         value = $bindable(),
         id,
-        min = 0.0001,
+        min = 0.000001,
         description = "",
         defaultValue = undefined,
     } = $props();
 
     let displayValue = $state("");
     let showDescription = $state(false);
+    let isEditing = $state(false);
 
-    // Sync display value with the internal numeric value
+    // Sync display value with the internal numeric value when not actively editing
     $effect(() => {
-        if (value !== undefined) {
+        if (!isEditing && value !== undefined) {
             // value is 0.33, display should be 33
             const formatted = (value * 100).toFixed(2).replace(/\.?0+$/, "");
             if (displayValue !== formatted) {
@@ -45,6 +46,7 @@
     }
 
     function handleBlur() {
+        isEditing = false;
         if (value < min) value = min;
         displayValue = (value * 100).toFixed(2).replace(/\.?0+$/, "");
     }
@@ -77,7 +79,7 @@
     </div>
 
     {#if showDescription}
-        <div class="description-box" role="region" aria-live="polite">
+        <div class="description-box" id="{id}-description" role="region" aria-live="polite">
             {#if description}
                 <p>{description}</p>
             {/if}
@@ -95,8 +97,10 @@
         {id}
         value={displayValue}
         oninput={handleInput}
+        onfocus={() => isEditing = true}
         onblur={handleBlur}
         inputmode="decimal"
+        aria-describedby={showDescription ? `${id}-description` : undefined}
     />
 </div>
 
@@ -135,7 +139,7 @@
 
         &:hover {
             color: var(--dora-prussian-blue);
-            background-color: transparent !important;
+            background-color: transparent;
         }
     }
 

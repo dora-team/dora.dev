@@ -1,7 +1,7 @@
 <script>
-    import { untrack } from 'svelte';
+    import { onMount } from 'svelte';
     import { DEFAULTS, calculateROI, sanitizeInputs } from './lib/calculations';
-    import { formatCurrency, formatPercent, formatNumber } from './lib/formatters';
+    import { formatCurrency, formatPercent } from './lib/formatters';
     import NumericInput from './lib/NumericInput.svelte';
     import PercentInput from './lib/PercentInput.svelte';
 
@@ -38,8 +38,8 @@
         }
     };
 
-    $effect(() => {
-        untrack(() => loadFromHash());
+    onMount(() => {
+        loadFromHash();
         window.addEventListener('hashchange', loadFromHash);
         return () => window.removeEventListener('hashchange', loadFromHash);
     });
