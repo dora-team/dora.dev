@@ -10,10 +10,10 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^6.2.1",
-    "sass": "^1.93.2",
-    "svelte": "^5.53.5",
-    "vite": "^7.1.12",
-    "vitest": "^3.0.7"
+    "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "sass": "^1.98.0",
+    "svelte": "^5.53.12",
+    "vite": "^8.0.0",
+    "vitest": "^4.1.0"
   }
 }

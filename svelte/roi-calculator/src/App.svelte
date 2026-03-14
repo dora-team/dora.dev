@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { DEFAULTS, calculateROI, sanitizeInputs } from './lib/calculations';
-    import { formatCurrency, formatPercent, formatNumber } from './lib/formatters';
+    import { formatCurrency, formatPercent } from './lib/formatters';
     import NumericInput from './lib/NumericInput.svelte';
     import PercentInput from './lib/PercentInput.svelte';
 
@@ -27,9 +27,9 @@
         }
     };
 
-    const saveToHash = () => {
+    const saveToHash = (currentInputs) => {
         const params = new URLSearchParams();
-        for (const [key, value] of Object.entries(inputs)) {
+        for (const [key, value] of Object.entries(currentInputs)) {
             params.set(key, value);
         }
         const newHash = params.toString();
@@ -45,9 +45,13 @@
     });
 
     $effect(() => {
+        // Track all properties of inputs by taking a snapshot.
+        // This ensures the effect re-runs when any property of the state object changes.
+        const currentInputs = $state.snapshot(inputs);
+
         // Debounce to avoid excessive URL hash updates on every keystroke.
         const timer = setTimeout(() => {
-            saveToHash();
+            saveToHash(currentInputs);
         }, 300);
 
         return () => clearTimeout(timer);
@@ -59,13 +63,20 @@
 
 </script>
 
+{#snippet stat(label, value, isTotal = false)}
+    <div class="stat" class:total={isTotal}>
+        <span class="label">{label}</span>
+        <span class="value">{value}</span>
+    </div>
+{/snippet}
+
 <div class="roi-calculator">
     <div class="grid">
         <section class="inputs">
             <h2>Input variables</h2>
             
-            <fieldset>
-                <legend>Organizational metrics</legend>
+            <div class="input-section">
+                <h3>Organizational metrics</h3>
                 <NumericInput 
                     label="Technical staff size" 
                     id="staff_size" 
@@ -79,19 +90,19 @@
                     id="salary" 
                     bind:value={inputs.salary} 
                     defaultValue={DEFAULTS.salary}
-                    isCurrency={true}
+                    isCurrency
                     description="Software engineer salaries vary greatly between regions in the world. The 'fully loaded' cost (total cost to the employer) typically adds between 30% (US) to 100% (Europe) on top of the average base salary to account for taxes, benefits, and overhead."
                 />
-            </fieldset>
+            </div>
 
-            <fieldset>
-                <legend>Baseline software delivery metrics</legend>
+            <div class="input-section">
+                <h3>Baseline software delivery metrics</h3>
                 <NumericInput 
                     label="Product portfolio revenue" 
                     id="revenue" 
                     bind:value={inputs.revenue} 
                     defaultValue={DEFAULTS.revenue}
-                    isCurrency={true}
+                    isCurrency
                     description="This is the annual revenue driven by this software."
                 />
                 <NumericInput 
@@ -99,7 +110,7 @@
                     id="downtime_cost_per_hour" 
                     bind:value={inputs.downtime_cost_per_hour} 
                     defaultValue={DEFAULTS.downtime_cost_per_hour}
-                    isCurrency={true}
+                    isCurrency
                     description="This is an estimate of the cost of 1 hour of system outage. We recommend considering revenue lost as well as additional costs, such as reputational damage. You could also estimate this by dividing the product portfolio revenue by the number of hours in a year (8,760)."
                 />
                 <NumericInput 
@@ -145,10 +156,10 @@
                     defaultValue={DEFAULTS.current_fdrt}
                     description="Average number of hours it generally takes to restore service after a change to production or release to users results in degraded service."
                 />
-            </fieldset>
+            </div>
 
-            <fieldset>
-                <legend>AI estimates</legend>
+            <div class="input-section">
+                <h3>AI estimates</h3>
                 <PercentInput 
                     label="Net time saved per developer" 
                     id="time_saved_per_developer" 
@@ -163,7 +174,7 @@
                     min={0} 
                     bind:value={inputs.ai_license_cost_per_user} 
                     defaultValue={DEFAULTS.ai_license_cost_per_user}
-                    isCurrency={true}
+                    isCurrency
                     description="The annual price per user of an AI subscription."
                 />
                 <NumericInput 
@@ -172,7 +183,7 @@
                     min={0} 
                     bind:value={inputs.additional_ai_cost_per_user} 
                     defaultValue={DEFAULTS.additional_ai_cost_per_user}
-                    isCurrency={true}
+                    isCurrency
                     description="Any additional per user costs, such as API or Token costs."
                 />
                 <NumericInput 
@@ -181,7 +192,7 @@
                     min={0} 
                     bind:value={inputs.additional_ai_infra_cost} 
                     defaultValue={DEFAULTS.additional_ai_infra_cost}
-                    isCurrency={true}
+                    isCurrency
                     description="New AI-related infrastructure costs including compute, networking, storage, and monitoring."
                 />
                 <NumericInput 
@@ -190,7 +201,7 @@
                     min={0} 
                     bind:value={inputs.training_cost_per_user} 
                     defaultValue={DEFAULTS.training_cost_per_user}
-                    isCurrency={true}
+                    isCurrency
                     description="Training and enablement costs for each employee."
                 />
                 <NumericInput 
@@ -229,7 +240,7 @@
                     defaultValue={DEFAULTS.j_curve_duration}
                     description="The length of the productivity decrease."
                 />
-            </fieldset>
+            </div>
         </section>
 
         <section class="results">
@@ -237,8 +248,8 @@
                 <h2>Calculated ROI</h2>
                 
                 <div class="summary-card primary">
-                    <h3>Year 1 net profit</h3>
-                    <p class="value">{formatCurrency(results.year_1_net_profit)}</p>
+                    <h3>First year benefit</h3>
+                    <p class="value">{formatCurrency(results.first_year_benefit)}</p>
                     <div class="roi-stats">
                         <div class="stat">
                             <span class="label">Return on investment (ROI)</span>
@@ -253,39 +264,18 @@
 
                 <div class="result-sections">
                     <div class="result-section">
-                        <h3>Costs (1st year investment)</h3>
-                        <div class="stat">
-                            <span class="label">Total hard costs (tooling and training)</span>
-                            <span class="value">{formatCurrency(results.total_hard_costs)}</span>
-                        </div>
-                        <div class="stat">
-                            <span class="label">J-Curve cost</span>
-                            <span class="value">{formatCurrency(results.j_curve_cost)}</span>
-                        </div>
-                        <div class="stat total">
-                            <span class="label">Total 1 year investment</span>
-                            <span class="value">{formatCurrency(results.total_investment)}</span>
-                        </div>
+                        <h3>Costs (first year investment)</h3>
+                        {@render stat("Total hard costs (tooling and training)", formatCurrency(results.total_hard_costs))}
+                        {@render stat("J-Curve cost", formatCurrency(results.j_curve_cost))}
+                        {@render stat("Total first year investment", formatCurrency(results.total_first_year_investment), true)}
                     </div>
 
                     <div class="result-section">
-                        <h3>Value (annual return)</h3>
-                        <div class="stat">
-                            <span class="label">Headcount reinvestment capacity</span>
-                            <span class="value">{formatCurrency(results.headcount_reinvestment_capacity)}</span>
-                        </div>
-                        <div class="stat">
-                            <span class="label">Revenue from extra feature deployments</span>
-                            <span class="value">{formatCurrency(results.revenue_from_extra_features)}</span>
-                        </div>
-                        <div class="stat">
-                            <span class="label">Downtime impact (savings/costs)</span>
-                            <span class="value">{formatCurrency(results.downtime_savings)}</span>
-                        </div>
-                        <div class="stat total">
-                            <span class="label">Total annual value</span>
-                            <span class="value">{formatCurrency(results.total_annual_value)}</span>
-                        </div>
+                        <h3>Value (first year)</h3>
+                        {@render stat("Headcount reinvestment capacity", formatCurrency(results.headcount_reinvestment_capacity))}
+                        {@render stat("Revenue from extra feature deployments", formatCurrency(results.revenue_from_extra_features))}
+                        {@render stat("Downtime impact (savings/costs)", formatCurrency(results.downtime_savings))}
+                        {@render stat("Total first year value", formatCurrency(results.total_first_year_value), true)}
                     </div>
                 </div>
 
@@ -333,19 +323,21 @@
         color: var(--dora-prussian-blue);
     }
 
-    fieldset {
+    .input-section {
         border: 1px solid var(--border-color-medium);
         border-radius: 8px;
         padding: 1.5rem;
         margin-bottom: 2rem;
         background-color: #fcfcfc;
-    }
 
-    legend {
-        padding: 0 0.75rem;
-        font-weight: 600;
-        color: var(--dora-prussian-blue);
-        font-size: 1.1rem;
+        h3 {
+            margin: 0 0 1.5rem 0;
+            font-weight: 600;
+            color: var(--dora-prussian-blue);
+            font-size: 1.1rem;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
     }
 
     .sticky-results {

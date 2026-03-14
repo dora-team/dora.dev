@@ -91,4 +91,43 @@ test.describe('ROI calculator', () => {
         const staffInput = page.locator('#staff_size');
         await expect(staffInput).toHaveValue('0');
     });
+
+    test('deleting a value sets it to 0 and updates calculations', async ({ page }) => {
+        const staffInput = page.locator('#staff_size');
+        const netProfit = page.locator('.summary-card.primary .value').first();
+        
+        // Initial value is 500
+        await expect(staffInput).toHaveValue('500');
+        await expect(netProfit).toContainText('$3,281,000');
+
+        // Change to 1000
+        await staffInput.fill('1000');
+        await staffInput.blur();
+        await expect(staffInput).toHaveValue('1,000');
+        await expect(netProfit).toContainText('$6,016,000');
+
+        // Delete the value
+        await staffInput.focus();
+        await staffInput.fill('');
+        await staffInput.blur();
+
+        // Check if it becomes "0" and profit updates
+        await expect(staffInput).toHaveValue('0');
+        await expect(netProfit).toContainText('$546,000');
+    });
+
+    test('deleting Net time saved (%) sets it to 0, not -100', async ({ page }) => {
+        const timeSavedInput = page.locator('#time_saved_per_developer');
+        
+        // Initial value 12.5%
+        await expect(timeSavedInput).toHaveValue('12.5');
+
+        // Delete it
+        await timeSavedInput.focus();
+        await timeSavedInput.fill('');
+        await timeSavedInput.blur();
+
+        // Should be 0
+        await expect(timeSavedInput).toHaveValue('0');
+    });
 });

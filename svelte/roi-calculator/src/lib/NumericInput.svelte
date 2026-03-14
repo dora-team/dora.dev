@@ -1,20 +1,33 @@
 <script>
-    import { sanitizeNumericInput } from './inputUtils.js';
+    import { sanitizeNumericInput } from "./inputUtils.js";
 
-    let { label, value = $bindable(), id, suffix = "", min = 0.000001, description = "", defaultValue = undefined, isCurrency = false } = $props();
+    let {
+        label,
+        value = $bindable(),
+        id,
+        suffix = "",
+        min = 0.000001,
+        description = "",
+        defaultValue = undefined,
+        isCurrency = false,
+    } = $props();
 
     let displayValue = $state("");
     let showDescription = $state(false);
+    let isEditing = $state(false);
 
     const format = (val) => {
-        const base = new Intl.NumberFormat('en-US').format(val);
+        const base = new Intl.NumberFormat("en-US").format(val);
         return isCurrency ? `$${base}` : base;
     };
 
-    // Sync display value with the internal numeric value
+    // Sync display value with the internal numeric value when not actively editing
     $effect(() => {
-        if (value !== undefined) {
-            displayValue = format(value);
+        if (!isEditing && value !== undefined) {
+            const formatted = format(value);
+            if (displayValue !== formatted) {
+                displayValue = formatted;
+            }
         }
     });
 
@@ -23,6 +36,7 @@
 
         if (raw === "" || raw === "-") {
             displayValue = isCurrency ? `$${raw}` : raw;
+            value = Math.max(0, min);
         } else {
             let num = parseFloat(raw);
             if (!isNaN(num)) {
@@ -38,6 +52,7 @@
     }
 
     function handleBlur() {
+        isEditing = false;
         if (value < min) value = min;
         displayValue = format(value);
     }
@@ -48,7 +63,7 @@
 
     let formattedDefault = $derived.by(() => {
         if (defaultValue === undefined) return "";
-        const base = new Intl.NumberFormat('en-US').format(defaultValue);
+        const base = new Intl.NumberFormat("en-US").format(defaultValue);
         if (isCurrency) {
             return `$${base} USD`;
         }
@@ -58,26 +73,34 @@
 
 <div class="input-group">
     <div class="label-container">
-        <label for={id}>{label}{suffix ? ` (${suffix})` : ''}</label>
+        <label for={id}>{label}{suffix ? ` (${suffix})` : ""}</label>
         {#if description || defaultValue !== undefined}
-            <button 
-                type="button" 
-                class="info-icon" 
+            <button
+                type="button"
+                class="info-icon"
                 onclick={toggleDescription}
-                aria-label="Show description"
+                aria-label={showDescription
+                    ? "Hide description"
+                    : "Show description"}
+                aria-expanded={showDescription}
             >
-                <span class="google-material-icons">info</span>
+                <span class="google-material-icons">info_outline</span>
             </button>
         {/if}
     </div>
-    
+
     {#if showDescription}
-        <div class="description-box">
+        <div class="description-box" id="{id}-description" role="region" aria-live="polite">
             {#if description}
                 <p>{description}</p>
             {/if}
             {#if defaultValue !== undefined}
-                <p class="default-note"><strong>Default value:</strong> {formattedDefault}{(!isCurrency && suffix) ? ` ${suffix}` : ''}</p>
+                <p class="default-note">
+                    <strong>Default value:</strong>
+                    {formattedDefault}{!isCurrency && suffix
+                        ? ` ${suffix}`
+                        : ""}
+                </p>
             {/if}
         </div>
     {/if}
@@ -87,8 +110,10 @@
         {id}
         value={displayValue}
         oninput={handleInput}
+        onfocus={() => isEditing = true}
         onblur={handleBlur}
         inputmode="decimal"
+        aria-describedby={showDescription ? `${id}-description` : undefined}
     />
 </div>
 
@@ -120,13 +145,14 @@
         display: flex;
         align-items: center;
         color: var(--dora-sky-blue);
-        
+
         .google-material-icons {
             font-size: 18px;
         }
 
         &:hover {
-            color: var(--dora-blue);
+            color: var(--dora-prussian-blue);
+            background-color: transparent;
         }
     }
 

@@ -13,7 +13,3 @@ export const formatPercent = (value) => {
         maximumFractionDigits: 1,
     }).format(value);
 };
-
-export const formatNumber = (value) => {
-    return new Intl.NumberFormat('en-US').format(value);
-};

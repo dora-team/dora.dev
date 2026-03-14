@@ -4,7 +4,7 @@
 cd svelte/roi-calculator
 
 # build production assets
-npm install
+npm ci --registry=https://registry.npmjs.org/
 npm run build
 
 # ensure target directory exists
