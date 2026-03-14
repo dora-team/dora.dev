@@ -39,7 +39,7 @@
     };
 
     $effect(() => {
-        untrack(loadFromHash);
+        untrack(() => loadFromHash());
         window.addEventListener('hashchange', loadFromHash);
         return () => window.removeEventListener('hashchange', loadFromHash);
     });

@@ -1,3 +1,5 @@
+const MONTHS_PER_YEAR = 12;
+
 export const DEFAULTS = {
     staff_size: 500,
     salary: 176000,
@@ -63,7 +65,7 @@ export const calculateROI = (inputs) => {
 
     // Costs
     const total_hard_costs = ((i.ai_license_cost_per_user + i.additional_ai_cost_per_user + i.training_cost_per_user) * i.staff_size) + i.additional_ai_infra_cost;
-    const j_curve_cost = i.staff_size * i.salary * i.j_curve_drop * (i.j_curve_duration / 12);
+    const j_curve_cost = i.staff_size * i.salary * i.j_curve_drop * (i.j_curve_duration / MONTHS_PER_YEAR);
     const total_first_year_investment = total_hard_costs + j_curve_cost;
 
     // Value

@@ -77,7 +77,8 @@
                 type="button"
                 class="info-icon"
                 onclick={toggleDescription}
-                aria-label="Show description"
+                aria-label={showDescription ? "Hide description" : "Show description"}
+                aria-expanded={showDescription}
             >
                 <span class="google-material-icons">info_outline</span>
             </button>
@@ -85,7 +86,7 @@
     </div>
 
     {#if showDescription}
-        <div class="description-box">
+        <div class="description-box" role="region" aria-live="polite">
             {#if description}
                 <p>{description}</p>
             {/if}
