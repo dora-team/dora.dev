@@ -1,16 +1,27 @@
 <script>
-    import { sanitizeNumericInput } from './inputUtils.js';
+    import { sanitizeNumericInput } from "./inputUtils.js";
 
-    let { label, value = $bindable(), id, min = 0.0001, description = "", defaultValue = undefined } = $props();
+    let {
+        label,
+        value = $bindable(),
+        id,
+        min = 0.000001,
+        description = "",
+        defaultValue = undefined,
+    } = $props();
 
     let displayValue = $state("");
     let showDescription = $state(false);
+    let isEditing = $state(false);
 
-    // Sync display value with the internal numeric value
+    // Sync display value with the internal numeric value when not actively editing
     $effect(() => {
-        if (value !== undefined) {
+        if (!isEditing && value !== undefined) {
             // value is 0.33, display should be 33
-            displayValue = (value * 100).toFixed(2).replace(/\.?0+$/, "");
+            const formatted = (value * 100).toFixed(2).replace(/\.?0+$/, "");
+            if (displayValue !== formatted) {
+                displayValue = formatted;
+            }
         }
     });
 
@@ -19,6 +30,7 @@
 
         if (raw === "" || raw === "-") {
             displayValue = raw;
+            value = Math.max(0, min);
         } else {
             let numValue = parseFloat(raw) / 100;
             if (!isNaN(numValue)) {
@@ -34,6 +46,7 @@
     }
 
     function handleBlur() {
+        isEditing = false;
         if (value < min) value = min;
         displayValue = (value * 100).toFixed(2).replace(/\.?0+$/, "");
     }
@@ -42,31 +55,39 @@
         showDescription = !showDescription;
     }
 
-    let formattedDefault = $derived(defaultValue !== undefined ? ((defaultValue * 100).toFixed(2).replace(/\.?0+$/, "")) + "%" : "");
+    let formattedDefault = $derived(
+        defaultValue !== undefined
+            ? (defaultValue * 100).toFixed(2).replace(/\.?0+$/, "") + "%"
+            : "",
+    );
 </script>
 
 <div class="input-group">
     <div class="label-container">
         <label for={id}>{label} (%)</label>
         {#if description || defaultValue !== undefined}
-            <button 
-                type="button" 
-                class="info-icon" 
+            <button
+                type="button"
+                class="info-icon"
                 onclick={toggleDescription}
-                aria-label="Show description"
+                aria-label={showDescription ? "Hide description" : "Show description"}
+                aria-expanded={showDescription}
             >
-                <span class="google-material-icons">info</span>
+                <span class="google-material-icons">info_outline</span>
             </button>
         {/if}
     </div>
 
     {#if showDescription}
-        <div class="description-box">
+        <div class="description-box" id="{id}-description" role="region" aria-live="polite">
             {#if description}
                 <p>{description}</p>
             {/if}
             {#if defaultValue !== undefined}
-                <p class="default-note"><strong>Default value:</strong> {formattedDefault}</p>
+                <p class="default-note">
+                    <strong>Default value:</strong>
+                    {formattedDefault}
+                </p>
             {/if}
         </div>
     {/if}
@@ -76,8 +97,10 @@
         {id}
         value={displayValue}
         oninput={handleInput}
+        onfocus={() => isEditing = true}
         onblur={handleBlur}
         inputmode="decimal"
+        aria-describedby={showDescription ? `${id}-description` : undefined}
     />
 </div>
 
@@ -109,13 +132,14 @@
         display: flex;
         align-items: center;
         color: var(--dora-sky-blue);
-        
+
         .google-material-icons {
             font-size: 18px;
         }
 
         &:hover {
-            color: var(--dora-blue);
+            color: var(--dora-prussian-blue);
+            background-color: transparent;
         }
     }
 
@@ -146,5 +170,7 @@
         border: 1px solid #ccc;
         border-radius: 4px;
         font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 </style>
