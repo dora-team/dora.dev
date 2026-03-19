@@ -170,5 +170,7 @@
         border: 1px solid #ccc;
         border-radius: 4px;
         font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 </style>

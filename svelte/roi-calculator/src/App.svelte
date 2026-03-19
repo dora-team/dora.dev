@@ -301,6 +301,14 @@
         margin: 0 auto;
         padding: 2rem;
         color: var(--dora-primary-dark);
+
+        @media (max-width: 800px) {
+            padding: 1.5rem;
+        }
+
+        @media (max-width: 480px) {
+            padding: 1rem 0.25rem;
+        }
     }
 
     .roi-calculator-controls {
@@ -314,6 +322,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 3rem;
+
+        @media (max-width: 1000px) {
+            gap: 1.5rem;
+        }
     }
 
     h2 {
@@ -321,6 +333,11 @@
         margin-top: 0;
         margin-bottom: 1.5rem;
         color: var(--dora-prussian-blue);
+
+        @media (max-width: 480px) {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
     }
 
     .input-section {
@@ -330,6 +347,11 @@
         margin-bottom: 2rem;
         background-color: #fcfcfc;
 
+        @media (max-width: 480px) {
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
         h3 {
             margin: 0 0 1.5rem 0;
             font-weight: 600;
@@ -337,6 +359,11 @@
             font-size: 1.1rem;
             border-bottom: none;
             padding-bottom: 0;
+
+            @media (max-width: 480px) {
+                margin-bottom: 1rem;
+                font-size: 1rem;
+            }
         }
     }
 
@@ -352,6 +379,11 @@
         text-align: center;
         margin-bottom: 2rem;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+        @media (max-width: 480px) {
+            padding: 1.5rem 1rem;
+            margin-bottom: 1.5rem;
+        }
 
         &.primary {
             background-color: var(--dora-prussian-blue);
@@ -369,6 +401,11 @@
             font-weight: 700;
             margin: 0.5rem 0 1.5rem 0;
             color: var(--dora-highlight);
+
+            @media (max-width: 480px) {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
         }
 
         .roi-stats {
@@ -391,6 +428,10 @@
                     font-size: 1.75rem;
                     margin: 0;
                     color: white;
+
+                    @media (max-width: 480px) {
+                        font-size: 1.25rem;
+                    }
                 }
             }
         }
@@ -402,6 +443,10 @@
         border-radius: 8px;
         padding: 1.5rem;
         margin-bottom: 1rem;
+
+        @media (max-width: 480px) {
+            padding: 1rem;
+        }
 
         h3 {
             margin-top: 0;
@@ -418,6 +463,11 @@
             margin-bottom: 0.75rem;
             font-size: 0.95rem;
 
+            @media (max-width: 480px) {
+                flex-direction: column;
+                margin-bottom: 1rem;
+            }
+
             &.total {
                 margin-top: 1rem;
                 padding-top: 1rem;
@@ -425,6 +475,10 @@
                 font-weight: 700;
                 font-size: 1.15rem;
                 color: var(--dora-prussian-blue);
+
+                @media (max-width: 480px) {
+                    flex-direction: row;
+                }
             }
 
             .label {
