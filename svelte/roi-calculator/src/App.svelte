@@ -76,166 +76,166 @@
 
             <div class="input-section">
                 <h3>Organizational metrics</h3>
-                <NumericInput 
-                    label="Technical staff size" 
-                    id="staff_size" 
-                    suffix="FTE" 
-                    bind:value={inputs.staff_size} 
+                <NumericInput
+                    label="Technical staff size"
+                    id="staff_size"
+                    suffix="FTE"
+                    bind:value={inputs.staff_size}
                     defaultValue={DEFAULTS.staff_size}
-                    description="The count of full time employees, or equivalent, who are involved in the software development lifecycle. Include all roles that may use AI to contribute to the process, including product managers, software engineers, user experience designers, technical leads, site reliability engineers, and more."
+                    description="The count of full-time employees, or equivalent, who are involved in the software development lifecycle. Covers all roles that may use AI to contribute to the process, including product managers, software engineers, user experience designers, technical leads, site reliability engineers, and more"
                 />
-                <NumericInput 
-                    label="Average fully loaded technical staff salary" 
-                    id="salary" 
-                    bind:value={inputs.salary} 
+                <NumericInput
+                    label="Average fully loaded technical staff salary"
+                    id="salary"
+                    bind:value={inputs.salary}
                     defaultValue={DEFAULTS.salary}
                     isCurrency
-                    description="Software engineer salaries vary greatly between regions in the world. The 'fully loaded' cost (total cost to the employer) typically adds between 30% (US) to 100% (Europe) on top of the average base salary to account for taxes, benefits, and overhead."
+                    description="Software engineer salaries vary greatly between regions in the world. The “fully loaded” cost (total cost to the employer) typically adds between 30% (U.S.) and 100% (Europe) on top of the average base salary to account for taxes, benefits, and overhead."
                 />
             </div>
 
             <div class="input-section">
                 <h3>Baseline software delivery metrics</h3>
-                <NumericInput 
-                    label="Product portfolio revenue" 
-                    id="revenue" 
-                    bind:value={inputs.revenue} 
+                <NumericInput
+                    label="Product portfolio revenue"
+                    id="revenue"
+                    bind:value={inputs.revenue}
                     defaultValue={DEFAULTS.revenue}
                     isCurrency
-                    description="This is the annual revenue driven by this software."
+                    description="The annual revenue driven by this software."
                 />
-                <NumericInput 
-                    label="Cost of downtime per hour" 
-                    id="downtime_cost_per_hour" 
-                    bind:value={inputs.downtime_cost_per_hour} 
+                <NumericInput
+                    label="Cost of downtime per hour"
+                    id="downtime_cost_per_hour"
+                    bind:value={inputs.downtime_cost_per_hour}
                     defaultValue={DEFAULTS.downtime_cost_per_hour}
                     isCurrency
-                    description="This is an estimate of the cost of 1 hour of system outage. We recommend considering revenue lost as well as additional costs, such as reputational damage. You could also estimate this by dividing the product portfolio revenue by the number of hours in a year (8,760)."
+                    description="An estimate of the cost of one hour of system outage. We recommend considering revenue lost as well as additional costs, such as reputational damage. You could also estimate this by dividing the product portfolio revenue by the number of hours in a year (8,760), though this has a lot of assumptions built in."
                 />
-                <NumericInput 
-                    label="Current deployments per year" 
-                    id="current_deployments_per_year" 
-                    bind:value={inputs.current_deployments_per_year} 
+                <NumericInput
+                    label="Current deployments per year"
+                    id="current_deployments_per_year"
+                    bind:value={inputs.current_deployments_per_year}
                     defaultValue={DEFAULTS.current_deployments_per_year}
-                    description="Estimate the total number of deployments per year for this application or service."
+                    description="The total number of deployments per year for this application or service."
                 />
-                <NumericInput 
-                    label="Current features deployed per year" 
-                    id="current_features_per_year" 
-                    bind:value={inputs.current_features_per_year} 
+                <NumericInput
+                    label="Current features deployed per year"
+                    id="current_features_per_year"
+                    bind:value={inputs.current_features_per_year}
                     defaultValue={DEFAULTS.current_features_per_year}
-                    description="Features are user-facing enhancements designed to improve the product experience. Features and deployments rarely have a one-to-one relationship; a single deployment might bundle several new features, or a single complex feature might be rolled out incrementally across multiple deployments. The deployments per year can be used as a reasonable proxy."
+                    description="The number of features deployed each year. Features are user-facing enhancements designed to improve the product experience. Features and deployments rarely have a one-to-one relationship; a single deployment might bundle several new features, or a single complex feature might be rolled out incrementally across multiple deployments."
                 />
-                <PercentInput 
-                    label="Idea success rate" 
-                    id="idea_success_rate" 
-                    bind:value={inputs.idea_success_rate} 
+                <PercentInput
+                    label="Idea success rate"
+                    id="idea_success_rate"
+                    bind:value={inputs.idea_success_rate}
                     defaultValue={DEFAULTS.idea_success_rate}
-                    description="The percentage of shipped features that increase revenue for the application. Research suggests that about one-third (33%) of features shipped increase revenue for the application."
+                    description="The percentage of deployed features that increase revenue. Research suggests that about one-third (33%) of features shipped increase revenue for the application."
                 />
-                <PercentInput 
-                    label="Average revenue impact per feature" 
-                    id="revenue_impact_per_feature" 
-                    bind:value={inputs.revenue_impact_per_feature} 
+                <PercentInput
+                    label="Average revenue impact per feature"
+                    id="revenue_impact_per_feature"
+                    bind:value={inputs.revenue_impact_per_feature}
                     defaultValue={DEFAULTS.revenue_impact_per_feature}
-                    description="Average revenue lift per successful feature. We recognize this is likely very difficult to project and recommend a conservative value here between 0.01% and 1%."
+                    description="The average revenue increase for each successful feature. We recognize this is very difficult to project and recommend a conservative value here between 0.01% and 1%."
                 />
-                <PercentInput 
-                    label="Current change failure rate" 
-                    id="current_cfr" 
-                    bind:value={inputs.current_cfr} 
+                <PercentInput
+                    label="Current change failure rate"
+                    id="current_cfr"
+                    bind:value={inputs.current_cfr}
                     defaultValue={DEFAULTS.current_cfr}
-                    description="Current percentage of changes to production or released to users result in degraded service."
+                    description="The current percentage of changes to production or released to users that results in degraded service."
                 />
-                <NumericInput 
-                    label="Failed deployment recovery time" 
-                    id="current_fdrt" 
-                    suffix="hours" 
-                    bind:value={inputs.current_fdrt} 
+                <NumericInput
+                    label="Failed deployment recovery time"
+                    id="current_fdrt"
+                    suffix="hours"
+                    bind:value={inputs.current_fdrt}
                     defaultValue={DEFAULTS.current_fdrt}
-                    description="Average number of hours it generally takes to restore service after a change to production or release to users results in degraded service."
+                    description="The average number of hours it generally takes to restore service after a change to production or release to users results in degraded service."
                 />
             </div>
 
             <div class="input-section">
                 <h3>AI estimates</h3>
-                <PercentInput 
-                    label="Net time saved per developer" 
-                    id="time_saved_per_developer" 
-                    min={-1} 
-                    bind:value={inputs.time_saved_per_developer} 
+                <PercentInput
+                    label="Net time saved per developer"
+                    id="time_saved_per_developer"
+                    min={-1}
+                    bind:value={inputs.time_saved_per_developer}
                     defaultValue={DEFAULTS.time_saved_per_developer}
-                    description="Net productivity boost as a percentage. Be sure to consider both time saved in generating and the verification tax associated with things like code reviews."
+                    description="The net productivity boost per developer, captured as a percentage. Be sure to consider both time saved in generating and the verification tax associated with things like code reviews. There are many sources for time-saving estimates, and the estimates vary between 40 minutes and 150 minutes per day in software development."
                 />
-                <NumericInput 
-                    label="Annual AI license cost per user" 
-                    id="ai_license_cost_per_user" 
-                    min={0} 
-                    bind:value={inputs.ai_license_cost_per_user} 
+                <NumericInput
+                    label="Annual AI license cost per user"
+                    id="ai_license_cost_per_user"
+                    min={0}
+                    bind:value={inputs.ai_license_cost_per_user}
                     defaultValue={DEFAULTS.ai_license_cost_per_user}
                     isCurrency
                     description="The annual price per user of an AI subscription."
                 />
-                <NumericInput 
-                    label="Additional annual AI costs per user" 
-                    id="additional_ai_cost_per_user" 
-                    min={0} 
-                    bind:value={inputs.additional_ai_cost_per_user} 
+                <NumericInput
+                    label="Additional annual AI costs per user"
+                    id="additional_ai_cost_per_user"
+                    min={0}
+                    bind:value={inputs.additional_ai_cost_per_user}
                     defaultValue={DEFAULTS.additional_ai_cost_per_user}
                     isCurrency
-                    description="Any additional per user costs, such as API or Token costs."
+                    description="The additional per-user costs, such as API or token costs."
                 />
-                <NumericInput 
-                    label="Additional annual AI infrastructure costs" 
-                    id="additional_ai_infra_cost" 
-                    min={0} 
-                    bind:value={inputs.additional_ai_infra_cost} 
+                <NumericInput
+                    label="Additional annual AI infrastructure costs"
+                    id="additional_ai_infra_cost"
+                    min={0}
+                    bind:value={inputs.additional_ai_infra_cost}
                     defaultValue={DEFAULTS.additional_ai_infra_cost}
                     isCurrency
-                    description="New AI-related infrastructure costs including compute, networking, storage, and monitoring."
+                    description="The new AI-related infrastructure costs including compute, networking, storage, and monitoring."
                 />
-                <NumericInput 
-                    label="Annual training costs per user" 
-                    id="training_cost_per_user" 
-                    min={0} 
-                    bind:value={inputs.training_cost_per_user} 
+                <NumericInput
+                    label="Annual training costs per user"
+                    id="training_cost_per_user"
+                    min={0}
+                    bind:value={inputs.training_cost_per_user}
                     defaultValue={DEFAULTS.training_cost_per_user}
                     isCurrency
-                    description="Training and enablement costs for each employee."
+                    description="The training and enablement costs for each employee."
                 />
-                <NumericInput 
-                    label="Target number of deployments per year" 
-                    id="target_deployments_per_year" 
-                    bind:value={inputs.target_deployments_per_year} 
+                <NumericInput
+                    label="Target number of deployments per year"
+                    id="target_deployments_per_year"
+                    bind:value={inputs.target_deployments_per_year}
                     defaultValue={DEFAULTS.target_deployments_per_year}
-                    description="Expected deployments per year. DORA's research shows that adopting AI is associated with an increase in software delivery throughput."
+                    description="The number of expected deployments per year while using AI in the SDLC. DORA’s research shows that adopting AI is associated with an increase in software delivery throughput."
                 />
-                <NumericInput 
-                    label="Target number of features deployed per year" 
-                    id="target_features_per_year" 
-                    bind:value={inputs.target_features_per_year} 
+                <NumericInput
+                    label="Target number of features deployed per year"
+                    id="target_features_per_year"
+                    bind:value={inputs.target_features_per_year}
                     defaultValue={DEFAULTS.target_features_per_year}
-                    description="Expected features delivered per year. Features are user-facing enhancements designed to improve the product experience."
+                    description="The number of expected features deployed per year. Features are user-facing enhancements designed to improve the product experience. Features and deployments rarely have a one-to-one relationship; a single deployment might bundle several new features, or a single complex feature might be rolled out incrementally across multiple deployments."
                 />
-                <PercentInput 
-                    label="Target change failure rate" 
-                    id="target_cfr" 
-                    bind:value={inputs.target_cfr} 
+                <PercentInput
+                    label="Target change failure rate"
+                    id="target_cfr"
+                    bind:value={inputs.target_cfr}
                     defaultValue={DEFAULTS.target_cfr}
-                    description="Target percentage of changes to production or released to users result in degraded service. DORA's research shows an increase in delivery instability is associated with the adoption of AI."
+                    description="The target percentage of changes to production or released to users that result in degraded service. DORA’s research shows an increase in delivery instability is associated with the adoption of AI."
                 />
-                <PercentInput 
-                    label="J-Curve productivity drop" 
-                    id="j_curve_drop" 
-                    bind:value={inputs.j_curve_drop} 
+                <PercentInput
+                    label="J-Curve productivity drop"
+                    id="j_curve_drop"
+                    bind:value={inputs.j_curve_drop}
                     defaultValue={DEFAULTS.j_curve_drop}
-                    description="Temporary productivity decreases during AI learning phase."
+                    description="The temporary productivity decrease during the AI learning phase."
                 />
-                <NumericInput 
-                    label="J-Curve productivity drop timeline" 
-                    id="j_curve_duration" 
-                    suffix="months" 
-                    bind:value={inputs.j_curve_duration} 
+                <NumericInput
+                    label="J-Curve productivity drop timeline"
+                    id="j_curve_duration"
+                    suffix="months"
+                    bind:value={inputs.j_curve_duration}
                     defaultValue={DEFAULTS.j_curve_duration}
                     description="The length of the productivity decrease."
                 />
@@ -245,7 +245,7 @@
         <section class="results">
             <div class="sticky-results">
                 <h2>Calculated ROI</h2>
-                
+
                 <div class="summary-card primary">
                     <h3>First year benefit</h3>
                     <p class="value">
