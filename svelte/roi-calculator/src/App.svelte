@@ -322,11 +322,51 @@
         </section>
     </div>
 
-    <div class="dora-callout">
-        <div class="dora-callout-title">Note on methodology</div>
-        <div class="dora-callout-content">
-            <p>Treat these calculations as a high-uncertainty estimate meant to spark a conversation, rather than a rigid mathematical formula. As the saying goes, all models are wrong, but we hope this one proves useful for your team as you assess the impact of AI in the software development lifecycle.</p>
-            <p>As with any DORA insights, the real value comes from contextualizing the findings and applying them within your own organization. We’ve provided the ROI of AI-assisted software development calculator so you can explore the mechanics, adjust the assumptions to match your reality, and build your own estimate. Once you’ve had a chance to experiment, we invite you to share how it’s working out for your team in the <a href="https://dora.community" target="_blank">DORA Community</a>.</p>
+    <div class="dora-callout methodology-note">
+        <div class="callout-icon">
+            <span class="google-material-icons">info_outline</span>
+        </div>
+        <div>
+            <div class="dora-callout-title">Note on methodology</div>
+            <div class="dora-callout-content">
+                <p>
+                    Treat these calculations as a high-uncertainty estimate meant to
+                    spark a conversation rather than a rigid mathematical formula.
+                    As the saying goes, all models are wrong, but we hope this one
+                    proves useful for your team as you assess the impact of AI in
+                    the software development lifecycle.
+                </p>
+                <p>
+                    As with any DORA insights, the real value comes from
+                    contextualizing the findings and applying them within your own
+                    organization. We’ve provided the ROI of AI-assisted software
+                    development calculator so you can explore the mechanics, adjust
+                    the assumptions to match your reality, and build your own
+                    estimate. Once you’ve had a chance to experiment, we invite you
+                    to share how it’s working out for your team in the <a
+                        href="https://dora.community"
+                        target="_blank">DORA Community</a
+                    >.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="dora-callout reach-out-cta">
+        <a href="/ai/roi/contact/" class="callout-icon">
+            <span class="google-material-icons">contact_support</span>
+        </a>
+        <div>
+            <div class="dora-callout-title">
+                Reach out to go beyond the calculator
+            </div>
+            <div class="dora-callout-content">
+                <p>
+                    If you want to move beyond these and take a deeper look into
+                    your specific situation, <a href="/ai/roi/contact/" class="cta-link"
+                        >Google Cloud Consulting’s delta team</a
+                    > is here to help you.
+                </p>
+            </div>
         </div>
     </div>
 </div>
@@ -523,6 +563,98 @@
 
             .value {
                 font-weight: 500;
+            }
+        }
+    }
+
+    .dora-callout {
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        border-radius: 8px;
+        align-items: start;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+        @media (max-width: 480px) {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        &.methodology-note {
+            background-color: var(--dora-warm-white);
+            border: 1px solid var(--dora-prussian-blue);
+            color: var(--dora-primary-dark);
+
+            .callout-icon {
+                color: var(--dora-prussian-blue);
+            }
+        }
+
+        &.reach-out-cta {
+            background-color: var(--dora-warm-white);
+            border: 1px solid var(--dora-deep-plum);
+
+            .callout-icon {
+                color: var(--dora-deep-plum);
+            }
+
+            .dora-callout-title {
+                color: var(--dora-deep-plum);
+            }
+
+            .cta-link {
+                color: var(--dora-deep-plum);
+                font-weight: 600;
+                text-decoration: underline;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .callout-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+
+            .google-material-icons {
+                font-size: 32px;
+                cursor: default; /* Reset global cursor:pointer */
+
+                &:hover {
+                    color: inherit; /* Reset any global hover color */
+                }
+            }
+
+            &[href] .google-material-icons {
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        .dora-callout-title {
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            color: var(--dora-prussian-blue);
+        }
+
+        .dora-callout-content {
+            font-size: 0.95rem;
+            line-height: 1.5;
+
+            p {
+                margin: 0;
+                &:not(:last-child) {
+                    margin-bottom: 1rem;
+                }
             }
         }
     }
