@@ -1,9 +1,9 @@
 <script>
-    import { onMount } from 'svelte';
-    import { DEFAULTS, calculateROI, sanitizeInputs } from './lib/calculations';
-    import { formatCurrency, formatPercent } from './lib/formatters';
-    import NumericInput from './lib/NumericInput.svelte';
-    import PercentInput from './lib/PercentInput.svelte';
+    import { onMount } from "svelte";
+    import { DEFAULTS, calculateROI, sanitizeInputs } from "./lib/calculations";
+    import { formatCurrency, formatPercent } from "./lib/formatters";
+    import NumericInput from "./lib/NumericInput.svelte";
+    import PercentInput from "./lib/PercentInput.svelte";
 
     let inputs = $state({ ...DEFAULTS });
     let results = $derived(calculateROI(inputs));
@@ -40,8 +40,8 @@
 
     onMount(() => {
         loadFromHash();
-        window.addEventListener('hashchange', loadFromHash);
-        return () => window.removeEventListener('hashchange', loadFromHash);
+        window.addEventListener("hashchange", loadFromHash);
+        return () => window.removeEventListener("hashchange", loadFromHash);
     });
 
     $effect(() => {
@@ -60,7 +60,6 @@
     const resetToDefaults = () => {
         inputs = { ...DEFAULTS };
     };
-
 </script>
 
 {#snippet stat(label, value, isTotal = false)}
@@ -74,7 +73,7 @@
     <div class="grid">
         <section class="inputs">
             <h2>Input variables</h2>
-            
+
             <div class="input-section">
                 <h3>Organizational metrics</h3>
                 <NumericInput 
@@ -249,15 +248,25 @@
                 
                 <div class="summary-card primary">
                     <h3>First year benefit</h3>
-                    <p class="value">{formatCurrency(results.first_year_benefit)}</p>
+                    <p class="value">
+                        {formatCurrency(results.first_year_benefit)}
+                    </p>
                     <div class="roi-stats">
                         <div class="stat">
-                            <span class="label">Return on investment (ROI)</span>
-                            <span class="value">{formatPercent(results.roi)}</span>
+                            <span class="label">Return on investment (ROI)</span
+                            >
+                            <span class="value"
+                                >{formatPercent(results.roi)}</span
+                            >
                         </div>
                         <div class="stat">
                             <span class="label">Payback period</span>
-                            <span class="value">{results.payback_period === Infinity ? "N/A" : results.payback_period.toFixed(1) + " years"}</span>
+                            <span class="value"
+                                >{results.payback_period === Infinity
+                                    ? "N/A"
+                                    : results.payback_period.toFixed(1) +
+                                      " years"}</span
+                            >
                         </div>
                     </div>
                 </div>
@@ -265,22 +274,49 @@
                 <div class="result-sections">
                     <div class="result-section">
                         <h3>Costs (first year investment)</h3>
-                        {@render stat("Total hard costs (tooling and training)", formatCurrency(results.total_hard_costs))}
-                        {@render stat("J-Curve cost", formatCurrency(results.j_curve_cost))}
-                        {@render stat("Total first year investment", formatCurrency(results.total_first_year_investment), true)}
+                        {@render stat(
+                            "Total hard costs (tooling and training)",
+                            formatCurrency(results.total_hard_costs),
+                        )}
+                        {@render stat(
+                            "J-Curve cost",
+                            formatCurrency(results.j_curve_cost),
+                        )}
+                        {@render stat(
+                            "Total first year investment",
+                            formatCurrency(results.total_first_year_investment),
+                            true,
+                        )}
                     </div>
 
                     <div class="result-section">
                         <h3>Value (first year)</h3>
-                        {@render stat("Headcount reinvestment capacity", formatCurrency(results.headcount_reinvestment_capacity))}
-                        {@render stat("Revenue from extra feature deployments", formatCurrency(results.revenue_from_extra_features))}
-                        {@render stat("Downtime impact (savings/costs)", formatCurrency(results.downtime_savings))}
-                        {@render stat("Total first year value", formatCurrency(results.total_first_year_value), true)}
+                        {@render stat(
+                            "Headcount reinvestment capacity",
+                            formatCurrency(
+                                results.headcount_reinvestment_capacity,
+                            ),
+                        )}
+                        {@render stat(
+                            "Revenue from extra feature deployments",
+                            formatCurrency(results.revenue_from_extra_features),
+                        )}
+                        {@render stat(
+                            "Downtime impact (savings/costs)",
+                            formatCurrency(results.downtime_savings),
+                        )}
+                        {@render stat(
+                            "Total first year value",
+                            formatCurrency(results.total_first_year_value),
+                            true,
+                        )}
                     </div>
                 </div>
 
                 <div class="roi-calculator-controls">
-                    <button class="secondary" onclick={resetToDefaults}>Reset to defaults</button>
+                    <button class="secondary" onclick={resetToDefaults}
+                        >Reset to defaults</button
+                    >
                 </div>
             </div>
         </section>
@@ -378,7 +414,7 @@
         border-radius: 12px;
         text-align: center;
         margin-bottom: 2rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
         @media (max-width: 480px) {
             padding: 1.5rem 1rem;
@@ -411,7 +447,7 @@
         .roi-stats {
             display: flex;
             justify-content: space-around;
-            border-top: 1px solid rgba(255,255,255,0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
             padding-top: 1.5rem;
 
             .stat {
@@ -495,7 +531,7 @@
         .grid {
             grid-template-columns: 1fr;
         }
-        
+
         .sticky-results {
             position: static;
         }
