@@ -394,9 +394,18 @@
         margin-top: 2rem;
     }
 
+    .inputs {
+        grid-area: inputs;
+    }
+
+    .results {
+        grid-area: results;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-areas: "inputs results";
         gap: 3rem;
 
         @media (max-width: 1000px) {
@@ -662,6 +671,9 @@
     @media (max-width: 900px) {
         .grid {
             grid-template-columns: 1fr;
+            grid-template-areas:
+                "results"
+                "inputs";
         }
 
         .sticky-results {
