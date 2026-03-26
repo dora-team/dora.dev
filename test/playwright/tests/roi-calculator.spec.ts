@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('ROI calculator', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('/experimental/roi-calculator/');
+        await page.goto('/ai/roi/calculator/');
     });
 
     test('has the correct title and header', async ({ page }) => {
@@ -86,7 +86,7 @@ test.describe('ROI calculator', () => {
 
     test('handles invalid hash values by sanitizing', async ({ page }) => {
         // Navigate with a broken staff_size
-        await page.goto('/experimental/roi-calculator/#staff_size=-25');
+        await page.goto('/ai/roi/calculator/#staff_size=-25');
 
         const staffInput = page.locator('#staff_size');
         await expect(staffInput).toHaveValue('0');
