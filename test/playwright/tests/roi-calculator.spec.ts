@@ -7,6 +7,17 @@ test.describe('ROI calculator', () => {
 
     test('has the correct title and header', async ({ page }) => {
         await expect(page).toHaveTitle('DORA | ROI of AI-assisted software development calculator');
+
+        // Check for global header elements
+        await expect(page.locator('header')).toBeVisible();
+        await expect(page.getByRole('link', { name: 'DORA', exact: true })).toBeVisible();
+
+        // Check for the banner (re-added in this task)
+        await expect(page.getByRole('heading', { name: 'ROI of AI calculator' })).toBeVisible();
+        await expect(page.getByText('Measure the potential return on investment')).toBeVisible();
+        await expect(page.locator('img.highlight')).toBeVisible();
+
+        // Check for ROI calculator content
         await expect(page.getByRole('heading', { name: 'Input variables' })).toBeVisible();
         await expect(page.getByRole('heading', { name: 'Calculated ROI' })).toBeVisible();
     });
@@ -95,7 +106,7 @@ test.describe('ROI calculator', () => {
     test('deleting a value sets it to 0 and updates calculations', async ({ page }) => {
         const staffInput = page.locator('#staff_size');
         const netProfit = page.locator('.summary-card.primary .value').first();
-        
+
         // Initial value is 500
         await expect(staffInput).toHaveValue('500');
         await expect(netProfit).toContainText('$3,281,000');
@@ -118,7 +129,7 @@ test.describe('ROI calculator', () => {
 
     test('deleting Net time saved (%) sets it to 0, not -100', async ({ page }) => {
         const timeSavedInput = page.locator('#time_saved_per_developer');
-        
+
         // Initial value 12.5%
         await expect(timeSavedInput).toHaveValue('12.5');
 
