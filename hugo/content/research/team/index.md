@@ -26,12 +26,12 @@ spanning diverse problem contexts, participant profiles, and research methods. K
 been published in top scientific venues on the topics of artificial intelligence, ubiquitous
 computing, and interaction design.
 
-### Daniella Villalba, PhD
-![Daniella Villalba, PhD](daniella-villalba.jpeg)
+### Daniella Villalba, Ph.D.
+![Daniella Villalba, Ph.D.](daniella-villalba.jpeg)
 Daniella Villalba is a user experience researcher at Google. She uses survey research to understand
 the factors that make developers happy and productive. Before Google, Daniella studied the benefits
 of meditation training, and the psycho-social factors that affect the experiences of college
-students. She received her PhD in Experimental Psychology from Florida International University.)
+students. She received her Ph.D. in Experimental Psychology from Florida International University.)
 
 ## Meet the DORA Collective
 The collective includes current and former leaders, researchers, authors, and subject matter experts who have all made significant contributions to the research program.
@@ -58,7 +58,7 @@ The collective includes current and former leaders, researchers, authors, and su
 - Frank Xu
 - Gene Kim
 - James Brookbank
-- Jeffrey P. Winer, PhD
+- Jeffrey P. Winer, Ph.D.
 - Jerome Simms
 - Jessie Frazelle
 - Jessie Young
@@ -71,7 +71,7 @@ The collective includes current and former leaders, researchers, authors, and su
 - Matt Beane, Ph.D.
 - Michelle Irvine
 - Nathen Harvey
-- Nicole Forsgren, PhD
+- Nicole Forsgren, Ph.D.
 - Rob Edwards
 - Sarah D’Angelo, Ph.D.
 - Sarah Inman, Ph.D.
