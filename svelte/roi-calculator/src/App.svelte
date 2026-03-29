@@ -165,7 +165,7 @@
                     min={-1}
                     bind:value={inputs.time_saved_per_developer}
                     defaultValue={DEFAULTS.time_saved_per_developer}
-                    description="The net productivity boost per developer, captured as a percentage. Be sure to consider both time saved in generating and the verification tax associated with things like code reviews. There are many sources for time-saving estimates, and the estimates vary between 40 minutes and 150 minutes per day in software development."
+                    description="The net productivity boost per developer, captured as a percentage. Be sure to consider both time saved in generating solutions and the verification tax associated with things like code reviews. There are many sources for time-saving estimates, and the estimates vary between 40 minutes and 150 minutes per day in software development."
                 />
                 <NumericInput
                     label="Annual AI license cost per user"
