@@ -1,0 +1,326 @@
+{
+    "government": {
+        "name": "Government",
+        "leadtime": {
+            "mean": 4.828947368,
+            "std": 2.53655739
+        },
+        "deployfreq": {
+            "mean": 5.094117648000001,
+            "std": 3.51538808
+        },
+        "changefailure": {
+            "mean": 7.697560976,
+            "std": 2.291805195
+        },
+        "failurerecovery": {
+            "mean": 6.893333333999999,
+            "std": 2.143028862
+        },
+        "rework": {
+            "mean": 7.460330579000001,
+            "std": 2.2719844240000002
+        },
+        "performance_average": {
+            "mean": 6.4,
+            "std": 1.8
+        }
+    },
+    "healthcare_pharmaceuticals": {
+        "name": "Healthcare & Pharmaceuticals",
+        "leadtime": {
+            "mean": 5.032520326,
+            "std": 2.475792874
+        },
+        "deployfreq": {
+            "mean": 5.03076923,
+            "std": 3.1997549660000004
+        },
+        "changefailure": {
+            "mean": 7.069302326000001,
+            "std": 2.479464627
+        },
+        "failurerecovery": {
+            "mean": 6.771784232,
+            "std": 2.298956406
+        },
+        "rework": {
+            "mean": 7.188584475000001,
+            "std": 2.426895798
+        },
+        "performance_average": {
+            "mean": 6.2,
+            "std": 1.8
+        }
+    },
+    "industrials_manufacturing": {
+        "name": "Industrials & Manufacturing",
+        "leadtime": {
+            "mean": 4.969162996,
+            "std": 2.419303034
+        },
+        "deployfreq": {
+            "mean": 4.49372385,
+            "std": 3.090878818
+        },
+        "changefailure": {
+            "mean": 7.418905473,
+            "std": 2.388815773
+        },
+        "failurerecovery": {
+            "mean": 6.285714285999999,
+            "std": 2.430850196
+        },
+        "rework": {
+            "mean": 7.191787440000001,
+            "std": 2.505930867
+        },
+        "performance_average": {
+            "mean": 6.1,
+            "std": 1.8
+        }
+    },
+    "insurance": {
+        "name": "Insurance",
+        "leadtime": {
+            "mean": 4.87037037,
+            "std": 2.2921752
+        },
+        "deployfreq": {
+            "mean": 5.026086956,
+            "std": 2.966067956
+        },
+        "changefailure": {
+            "mean": 7.779381443,
+            "std": 2.2659130860000003
+        },
+        "failurerecovery": {
+            "mean": 7.037037037999999,
+            "std": 2.21264812
+        },
+        "rework": {
+            "mean": 7.778125,
+            "std": 2.080192457
+        },
+        "performance_average": {
+            "mean": 6.5,
+            "std": 1.8
+        }
+    },
+    "non_profit": {
+        "name": "Non-profit",
+        "leadtime": {
+            "mean": 5.714285714000001,
+            "std": 2.614064524
+        },
+        "deployfreq": {
+            "mean": 5.529411764,
+            "std": 3.214672246
+        },
+        "changefailure": {
+            "mean": 7.4418604649999995,
+            "std": 2.86632605
+        },
+        "failurerecovery": {
+            "mean": 7.375,
+            "std": 1.9853184534
+        },
+        "rework": {
+            "mean": 7.451111111,
+            "std": 2.6124372300000003
+        },
+        "performance_average": {
+            "mean": 6.7,
+            "std": 1.8
+        }
+    },
+    "other": {
+        "name": "Other (please specify)",
+        "leadtime": {
+            "mean": 5.716049382,
+            "std": 2.441816144
+        },
+        "deployfreq": {
+            "mean": 6.028571427999999,
+            "std": 3.199083986
+        },
+        "changefailure": {
+            "mean": 8.426923077000001,
+            "std": 1.8909370710000002
+        },
+        "failurerecovery": {
+            "mean": 7.628664496000001,
+            "std": 2.027319742
+        },
+        "rework": {
+            "mean": 7.996923077,
+            "std": 1.9938878979999999
+        },
+        "performance_average": {
+            "mean": 7.2,
+            "std": 1.8
+        }
+    },
+    "technology": {
+        "name": "Technology",
+        "leadtime": {
+            "mean": 5.577102804000001,
+            "std": 2.401760316
+        },
+        "deployfreq": {
+            "mean": 5.560088201999999,
+            "std": 3.176456968
+        },
+        "changefailure": {
+            "mean": 7.5502998,
+            "std": 2.472727558
+        },
+        "failurerecovery": {
+            "mean": 7.071044776000001,
+            "std": 2.29728239
+        },
+        "rework": {
+            "mean": 7.297901639,
+            "std": 2.438594062
+        },
+        "performance_average": {
+            "mean": 6.6,
+            "std": 1.8
+        }
+    },
+    "telecommunications": {
+        "name": "Telecommunications",
+        "leadtime": {
+            "mean": 5.36,
+            "std": 2.363704036
+        },
+        "deployfreq": {
+            "mean": 5.404580152,
+            "std": 3.065386476
+        },
+        "changefailure": {
+            "mean": 7.211214953,
+            "std": 2.777413182
+        },
+        "failurerecovery": {
+            "mean": 6.950819672,
+            "std": 2.415009742
+        },
+        "rework": {
+            "mean": 7.035294118,
+            "std": 2.639593693
+        },
+        "performance_average": {
+            "mean": 6.4,
+            "std": 1.8
+        }
+    },
+    "na": {
+        "name": "NA",
+        "leadtime": {
+            "mean": 5.529411764,
+            "std": 2.424533956
+        },
+        "deployfreq": {
+            "mean": 6.455882352,
+            "std": 3.683532216
+        },
+        "changefailure": {
+            "mean": 7.638372092999999,
+            "std": 2.4464701389999997
+        },
+        "failurerecovery": {
+            "mean": 6.9814814819999995,
+            "std": 2.43794567
+        },
+        "rework": {
+            "mean": 7.135106383,
+            "std": 2.697777159
+        },
+        "performance_average": {
+            "mean": 6.7,
+            "std": 1.8
+        }
+    },
+    "media_entertainment": {
+        "name": "Media/Entertainment",
+        "leadtime": {
+            "mean": 5.905263158,
+            "std": 2.340374637
+        },
+        "deployfreq": {
+            "mean": 5.841804682999999,
+            "std": 2.7380869260000003
+        },
+        "changefailure": {
+            "mean": 7.494580303999999,
+            "std": 2.20379595
+        },
+        "failurerecovery": {
+            "mean": 6.907120743,
+            "std": 2.388144798
+        },
+        "rework": {
+            "mean": 7.354117646999999,
+            "std": 1.979912435
+        },
+        "performance_average": {
+            "mean": 6.7,
+            "std": 1.8
+        }
+    },
+    "consumer": {
+        "name": "Retail/Consumer/e-Commerce",
+        "leadtime": {
+            "mean": 5.583399209,
+            "std": 2.214331118
+        },
+        "deployfreq": {
+            "mean": 5.739428571,
+            "std": 2.6999642340000003
+        },
+        "changefailure": {
+            "mean": 7.413740182500001,
+            "std": 2.1924280505000002
+        },
+        "failurerecovery": {
+            "mean": 6.961625101,
+            "std": 2.1249098770000003
+        },
+        "rework": {
+            "mean": 7.1839366515,
+            "std": 2.220983149
+        },
+        "performance_average": {
+            "mean": 6.6,
+            "std": 1.8
+        }
+    },
+    "all": {
+        "name": "All industries",
+        "leadtime": {
+            "mean": 5.3715011900909095,
+            "std": 2.4113102935454545
+        },
+        "deployfreq": {
+            "mean": 5.473133166909091,
+            "std": 3.140842988363637
+        },
+        "changefailure": {
+            "mean": 7.558376462954545,
+            "std": 2.3887360619545457
+        },
+        "failurerecovery": {
+            "mean": 6.987602287272727,
+            "std": 2.2510376596727273
+        },
+        "rework": {
+            "mean": 7.370292556409091,
+            "std": 2.351653561090909
+        },
+        "performance_average": {
+            "mean": 6.6,
+            "std": 1.8
+        }
+    }
+}
