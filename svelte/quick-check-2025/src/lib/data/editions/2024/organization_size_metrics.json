@@ -1,0 +1,232 @@
+{
+    "all": {
+        "name": "All organizations",
+        "performance_average": {
+            "mean": 6.7,
+            "std": 1.8
+        },
+        "leadtime": {
+            "mean": 5.1,
+            "std": 2.6
+        },
+        "deployfreq": {
+            "mean": 5.3,
+            "std": 2.9
+        },
+        "changefailure": {
+            "mean": 8.3,
+            "std": 2.0
+        },
+        "failurerecovery": {
+            "mean": 7.5,
+            "std": 2.3
+        }
+    },
+    "fewer_than_00002": {
+        "name": "Just me - I am a freelancer or sole proprietor",
+        "performance_average": {
+            "mean": 6.2,
+            "std": 2.2
+        },
+        "leadtime": {
+            "mean": 5.2,
+            "std": 3.5
+        },
+        "deployfreq": {
+            "mean": 4.8,
+            "std": 3.6
+        },
+        "changefailure": {
+            "mean": 6.3,
+            "std": 3.3
+        },
+        "failurerecovery": {
+            "mean": 5.3,
+            "std": 3.6
+        }
+    },
+    "fewer_than_010": {
+        "name": "2 to 9 employees",
+        "performance_average": {
+            "mean": 6.6,
+            "std": 2.1
+        },
+        "leadtime": {
+            "mean": 5.32,
+            "std": 2.8
+        },
+        "deployfreq": {
+            "mean": 5.1,
+            "std": 2.9
+        },
+        "changefailure": {
+            "mean": 8.2,
+            "std": 1.9
+        },
+        "failurerecovery": {
+            "mean": 7.1,
+            "std": 2.6
+        }
+    },
+    "fewer_than_020": {
+        "name": "10 to 19 employees",
+        "performance_average": {
+            "mean": 7.4,
+            "std": 1.7
+        },
+        "leadtime": {
+            "mean": 6.3,
+            "std": 2.5
+        },
+        "deployfreq": {
+            "mean": 6.1,
+            "std": 2.6
+        },
+        "changefailure": {
+            "mean": 8.1,
+            "std": 2.0
+        },
+        "failurerecovery": {
+            "mean": 8.0,
+            "std": 2.4
+        }
+    },
+    "fewer_than_100": {
+        "name": "20 to 99 employees",
+        "performance_average": {
+            "mean": 6.9,
+            "std": 1.7
+        },
+        "leadtime": {
+            "mean": 5.4,
+            "std": 2.6
+        },
+        "deployfreq": {
+            "mean": 5.4,
+            "std": 2.8
+        },
+        "changefailure": {
+            "mean": 8.4,
+            "std": 1.9
+        },
+        "failurerecovery": {
+            "mean": 7.9,
+            "std": 1.9
+        }
+    },
+    "fewer_than_500": {
+        "name": "100 to 499 employees",
+        "performance_average": {
+            "mean": 7.0,
+            "std": 1.8
+        },
+        "leadtime": {
+            "mean": 5.6,
+            "std": 2.5
+        },
+        "deployfreq": {
+            "mean": 6.0,
+            "std": 2.9
+        },
+        "changefailure": {
+            "mean": 8.4,
+            "std": 1.8
+        },
+        "failurerecovery": {
+            "mean": 7.82,
+            "std": 2.1
+        }
+    },
+    "fewer_than_1000": {
+        "name": "500 to 999 employees",
+        "performance_average": {
+            "mean": 6.8,
+            "std": 1.9
+        },
+        "leadtime": {
+            "mean": 5.0,
+            "std": 2.6
+        },
+        "deployfreq": {
+            "mean": 5.4,
+            "std": 3.0
+        },
+        "changefailure": {
+            "mean": 8.2,
+            "std": 2.1
+        },
+        "failurerecovery": {
+            "mean": 7.5,
+            "std": 2.4
+        }
+    },
+    "fewer_than_5000": {
+        "name":"1000 to 4999 employees",
+        "performance_average": {
+            "mean": 6.7,
+            "std": 1.7
+        },
+        "leadtime": {
+            "mean": 5.1,
+            "std": 2.5
+        },
+        "deployfreq": {
+            "mean": 5.3,
+            "std": 2.9
+        },
+        "changefailure": {
+            "mean": 8.4,
+            "std": 1.8
+        },
+        "failurerecovery": {
+            "mean": 7.6,
+            "std": 2.0
+        }
+    },
+    "fewer_than_10000": {
+        "name": "5000 to 9999 employees",
+        "performance_average": {
+            "mean": 6.62,
+            "std": 1.8
+        },
+        "leadtime": {
+            "mean": 4.9,
+            "std": 2.5
+        },
+        "deployfreq": {
+            "mean": 5.2,
+            "std": 3.0
+        },
+        "changefailure": {
+            "mean": 8.3,
+            "std": 2.0
+        },
+        "failurerecovery": {
+            "mean": 7.4,
+            "std": 2.5
+        }
+    },
+    "more_than_9999": {
+        "name":"10000 or more employees",
+        "performance_average": {
+            "mean": 6.4,
+            "std": 1.7
+        },
+        "leadtime": {
+            "mean": 4.8,
+            "std": 2.5
+        },
+        "deployfreq": {
+            "mean": 4.8,
+            "std": 2.8
+        },
+        "changefailure": {
+            "mean": 8.4,
+            "std": 1.8
+        },
+        "failurerecovery": {
+            "mean": 7.5,
+            "std": 2.0
+        }
+    }
+}
