@@ -2,6 +2,8 @@
 title: "DORA Quick Check 2025"
 date: 2025-03-30
 draft: false
+type: "quickcheck"
+layout: "section"
 bannerTitle: "Take the DORA Quick Check 2025"
 bannerSubtitle: "Measure your team's software delivery performance in less than a minute! Compare it to the rest of the industry by responding to **five multiple-choice questions**. This is an experimental version featuring the new Rework Rate metric."
 bannerHighlightImage: "header.png"
