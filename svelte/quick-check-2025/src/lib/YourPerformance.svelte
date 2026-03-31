@@ -250,14 +250,13 @@
     .YourPerformance {
         display: flex;
         flex-direction: column;
-        max-width: 1000px;
-        margin: 0 auto;
 
         .performance-graphs {
             display: grid;
             align-items: center;
-            grid-template-columns: 250px auto;
-            gap: 2rem;
+            grid-template-columns: fit-content(20rem) auto;
+            gap: 2rem 2rem;
+            margin-top: 2rem;
             padding: 0 1.25em;
 
             aside {

@@ -28,7 +28,10 @@
     let displayMode = "embedded";
 
     // Adjust metric_names based on version
-    $: active_metric_names = version === "2025" ? metric_names : metric_names.filter(m => m !== "rework");
+    $: active_metric_names =
+        version === "2025"
+            ? metric_names
+            : metric_names.filter((m) => m !== "rework");
 
     function saveURLParams() {
         if (typeof window !== "undefined" && displayMode === "embedded") {
@@ -53,6 +56,7 @@
         }
 
         // Wait for reactive declaration of active_metric_names to catch up with version change
+        // TODO: is this required?
         await tick();
 
         if (searchParams.has("displayMode")) {
@@ -118,11 +122,19 @@
 
 <!-- Vite provides environment variables; if running in dev, show some debug -->
 {#if typeof import.meta.env.MODE !== "undefined" && import.meta.env.MODE === "development"}
-    <div class="debug" style="position:fixed; top:0; right:0; background:rgba(0,0,0,0.8); color:white; padding:1rem; z-index:10000; font-size:10px;">
+    <div
+        class="debug"
+        style="position:fixed; top:0; right:0; background:rgba(0,0,0,0.8); color:white; padding:1rem; z-index:10000; font-size:10px;"
+    >
         DisplayMode: {displayMode}<br />
         Step: {step}<br />
         Version: {version}<br />
-        <button on:click={() => { version = version === "2025" ? "2024" : "2025"; current_metric = 0; }}>Toggle Version</button>
+        <button
+            on:click={() => {
+                version = version === "2025" ? "2024" : "2025";
+                current_metric = 0;
+            }}>Toggle Version</button
+        >
     </div>
 {/if}
 
@@ -177,9 +189,16 @@
         <div class="resultsContainer">
             {#if version === "2024"}
                 <div class="version-prompt">
-                    You are viewing results using 2024 benchmark data. 
-                    <button on:click={() => { version = "2025"; metrics.rework = -1; step = "input"; }}>
-                        Answer the new Rework Rate question to see 2025 benchmarks
+                    You are viewing results using 2024 benchmark data.
+                    <button
+                        on:click={() => {
+                            version = "2025";
+                            metrics.rework = -1;
+                            step = "input";
+                        }}
+                    >
+                        Answer the new Deployment rework rate question to see
+                        2025 benchmarks
                     </button>
                 </div>
             {/if}
