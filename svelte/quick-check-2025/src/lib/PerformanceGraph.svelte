@@ -3,7 +3,8 @@
         industry_score,
         displayMode,
         std = 0,
-        tickmarks = [];
+        tickmarks = [],
+        showBenchmarks = true;
     export let featured = false;
 
     let user_score_position = "0%";
@@ -13,12 +14,14 @@
 
 <div class="graph {displayMode}" class:featured>
     <div class="axis"></div>
-    <div
-        class="std"
-        style:left="{Math.max((industry_score - std) * 10, 0)}%"
-        style:right="{Math.max(100 - (industry_score + std) * 10, 0)}%"
-    ></div>
-    <div class="metric industry" style:left="{industry_score * 10}%"></div>
+    {#if showBenchmarks}
+        <div
+            class="std"
+            style:left="{Math.max((industry_score - std) * 10, 0)}%"
+            style:right="{Math.max(100 - (industry_score + std) * 10, 0)}%"
+        ></div>
+        <div class="metric industry" style:left="{industry_score * 10}%"></div>
+    {/if}
     <div class="metric user" style:left={user_score_position}></div>
     <div class="user_score" style:left={user_score_position}>{user_score}</div>
     <div class="tickmarks">

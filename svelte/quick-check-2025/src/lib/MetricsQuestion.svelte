@@ -134,9 +134,7 @@
     display: block;
   }
 
-  .question-container {
-    width: 100%;
-  }
+
 
   section.question {
     display: flex;
@@ -171,7 +169,6 @@
     fieldset {
       width: 65%;
       padding: 12px;
-      border: none;
     }
 
     img {
