@@ -1,26 +1,31 @@
-<script>
-    //@ts-nocheck
+<script lang="ts">
     import { onMount } from "svelte";
-
     import PerformanceGraph from "./PerformanceGraph.svelte";
-    import { DataService } from "./data-service";
-    import { sendAnalyticsEvent } from "./utils.js";
-    import metrics_question_responses from "./data/metrics_question_responses.json";
+    import { DataService, type BenchmarkData, type IndustryMetrics } from "./data-service";
+    import { sendAnalyticsEvent } from "./utils";
+    import type { Metrics, DisplayMode } from "./types";
+    // @ts-ignore
+    import metrics_question_responses_raw from "./data/metrics_question_responses.json";
 
-    export let metrics, industry, displayMode, version = "2025";
+    const metrics_question_responses = metrics_question_responses_raw as Record<string, Record<string, string>>;
+
+    export let metrics: Metrics;
+    export let industry: string;
+    export let displayMode: DisplayMode;
+    export let version = "2025";
 
     let metrics_recoded = {
-        leadtime: -1,
-        deployfreq: -1,
-        changefailure: -1,
-        failurerecovery: -1,
-        rework: -1
+        leadtime: 0,
+        deployfreq: 0,
+        changefailure: 0,
+        failurerecovery: 0,
+        rework: 0
     };
-    let performance_average = 0;
-    let industry_metrics_data = {};
-    let organization_size_metrics = {};
-    let industry_metrics = {}; 
-    let comparisonType = "industry"; 
+    let performance_average = "0.0";
+    let industry_metrics_data: BenchmarkData = {};
+    let organization_size_metrics: BenchmarkData = {};
+    let industry_metrics: BenchmarkData = {}; 
+    let comparisonType: "industry" | "size" = "industry"; 
     let currentIndustry = industry;
     let loading = true;
 
@@ -42,21 +47,21 @@
     }
 
     const calculate_recoded_metrics = () => {
-        metrics_recoded.leadtime = DataService.calculateRecodedMetric(parseInt(metrics.leadtime), 'categorical');
-        metrics_recoded.deployfreq = DataService.calculateRecodedMetric(parseInt(metrics.deployfreq), 'categorical');
-        metrics_recoded.failurerecovery = DataService.calculateRecodedMetric(parseInt(metrics.failurerecovery), 'categorical');
-        metrics_recoded.changefailure = DataService.calculateRecodedMetric(parseInt(metrics.changefailure), 'percentage');
+        metrics_recoded.leadtime = DataService.calculateRecodedMetric(parseInt(metrics.leadtime.toString()), 'categorical');
+        metrics_recoded.deployfreq = DataService.calculateRecodedMetric(parseInt(metrics.deployfreq.toString()), 'categorical');
+        metrics_recoded.failurerecovery = DataService.calculateRecodedMetric(parseInt(metrics.failurerecovery.toString()), 'categorical');
+        metrics_recoded.changefailure = DataService.calculateRecodedMetric(parseInt(metrics.changefailure.toString()), 'percentage');
         
         if (version === "2025") {
-            metrics_recoded.rework = DataService.calculateRecodedMetric(parseInt(metrics.rework), 'percentage');
+            metrics_recoded.rework = DataService.calculateRecodedMetric(parseInt(metrics.rework.toString()), 'percentage');
         }
     };
 
-    const setIndustryInURL = (industry) => {
+    const setIndustryInURL = (industryName: string) => {
         if (typeof window !== "undefined") {
-            const url = new URL(window.location);
-            url.searchParams.set("industry", industry);
-            window.history.replaceState({}, "", url);
+            const url = new URL(window.location.href);
+            url.searchParams.set("industry", industryName);
+            window.history.replaceState({}, "", url.toString());
         }
     };
 
@@ -70,7 +75,12 @@
         loadData();
     });
 
-    $: metrics, version, calculate_recoded_metrics();
+    $: {
+        if (metrics && version) {
+            calculate_recoded_metrics();
+        }
+    }
+
     $: {
         const active_scores = [
             metrics_recoded.leadtime,
@@ -93,10 +103,21 @@
             currentIndustry = industry;
         }
     }
-    $: selected_industry_metrics = industry_metrics[currentIndustry] || { performance_average: {mean: 0, std: 0}, leadtime: {mean: 0, std: 0}, deployfreq: {mean: 0, std: 0}, changefailure: {mean: 0, std: 0}, failurerecovery: {mean: 0, std: 0}, rework: {mean: 0, std: 0} };
+
+    const defaultIndustryMetrics: IndustryMetrics = {
+        name: "All industries",
+        performance_average: {mean: 0, std: 0},
+        leadtime: {mean: 0, std: 0},
+        deployfreq: {mean: 0, std: 0},
+        changefailure: {mean: 0, std: 0},
+        failurerecovery: {mean: 0, std: 0},
+        rework: {mean: 0, std: 0}
+    };
+
+    $: selected_industry_metrics = industry_metrics[currentIndustry] || defaultIndustryMetrics;
     $: setIndustryInURL(currentIndustry);
     $: comparisonText = comparisonType === "industry" ? "Compare to industry benchmark:" : "Compare to organization size benchmark:";
-    $: baselineText = !loading ? (comparisonType === "industry" ? `${version} Industry baseline (${industry_metrics[industry]["name"]}):` : `${version} Organization size benchmark (${industry_metrics[currentIndustry]["name"]}):`) : "";
+    $: baselineText = !loading && industry_metrics[industry] ? (comparisonType === "industry" ? `${version} Industry baseline (${industry_metrics[industry]["name"]}):` : `${version} Organization size benchmark (${industry_metrics[currentIndustry]["name"]}):`) : "";
 </script>
 
 {#if loading}
@@ -107,8 +128,8 @@
     <div class="comparison-selector">
         {comparisonText}
         <select bind:value={industry}>
-            {#each Object.entries(industry_metrics) as [industry, industry_data]}
-                <option value={industry}>{industry_data["name"]}</option>
+            {#each Object.entries(industry_metrics) as [industryKey, industry_data]}
+                <option value={industryKey}>{industry_data["name"]}</option>
             {/each}
         </select>
     </div>
@@ -119,13 +140,13 @@
             <b>Your performance</b>
             <span
                 class="performance-average"
-                style:background-position={`${performance_average * 10}%`}
+                style:background-position={`${parseFloat(performance_average) * 10}%`}
                 >{performance_average}</span
             >
         </aside>
         <div class="graph">
             <PerformanceGraph
-                user_score={performance_average}
+                user_score={parseFloat(performance_average)}
                 industry_score={selected_industry_metrics.performance_average?.mean || 0}
                 std={selected_industry_metrics.performance_average?.std || 0}
                 tickmarks={[0, 2, 4, 6, 8, 10]}
@@ -214,8 +235,8 @@
         <div class="graph">
             <PerformanceGraph
                 user_score={+metrics_recoded.rework.toFixed(1)}
-                industry_score={selected_industry_metrics.rework.mean}
-                std={selected_industry_metrics.rework.std}
+                industry_score={(selected_industry_metrics.rework as any).mean}
+                std={(selected_industry_metrics.rework as any).std}
                 tickmarks={["100%", "80%", "60%", "40%", "20%", "0%"]}
                 {displayMode}
             />

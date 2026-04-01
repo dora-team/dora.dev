@@ -1,17 +1,16 @@
-<script>
-    // @ts-nocheck
-
+<script lang="ts">
     import { onMount, tick } from "svelte";
     import MetricsQuestion from "./lib/MetricsQuestion.svelte";
     import YourPerformance from "./lib/YourPerformance.svelte";
     import HelpMePrioritize from "./lib/HelpMePrioritize.svelte";
     import GoFurther from "./lib/GoFurther.svelte";
-    import { sendAnalyticsEvent } from "./lib/utils.js";
+    import { sendAnalyticsEvent } from "./lib/utils";
     import FullScreenButton from "./lib/kiosk/FullScreenButton.svelte";
     import NextSteps from "./lib/kiosk/NextSteps.svelte";
     import StartOver from "./lib/kiosk/StartOver.svelte";
+    import type { Metrics, Step, DisplayMode } from "./lib/types";
 
-    let metrics = {
+    let metrics: Metrics = {
         leadtime: -1,
         deployfreq: -1,
         changefailure: -1,
@@ -19,32 +18,32 @@
         rework: -1,
     };
 
-    let step = "input";
+    let step: Step = "input";
     let industry = "all";
     let version = "2025";
     let current_capability = -1;
-    let metric_names = Object.keys(metrics);
+    let metric_names = Object.keys(metrics).filter(k => k !== 'rework' || true) as (keyof Metrics)[];
     let current_metric = 0; // for kiosk mode
-    let displayMode = "embedded";
+    let displayMode: DisplayMode = "embedded";
 
     // Adjust metric_names based on version
     $: active_metric_names =
         version === "2025"
-            ? metric_names
-            : metric_names.filter((m) => m !== "rework");
+            ? (metric_names as string[])
+            : (metric_names as string[]).filter((m) => m !== "rework");
 
     function saveURLParams() {
         if (typeof window !== "undefined" && displayMode === "embedded") {
-            const url = new URL(window.location);
+            const url = new URL(window.location.href);
             active_metric_names.forEach((metric) => {
                 if (metrics[metric] !== -1) {
-                    url.searchParams.set(metric, metrics[metric]);
+                    url.searchParams.set(metric, metrics[metric].toString());
                 } else {
                     url.searchParams.delete(metric);
                 }
             });
             url.searchParams.set("v", version);
-            window.history.pushState({}, "", url);
+            window.history.pushState({}, "", url.toString());
         }
     }
 
@@ -52,7 +51,7 @@
         const searchParams = new URLSearchParams(window.location.search);
 
         if (searchParams.has("v")) {
-            version = searchParams.get("v");
+            version = searchParams.get("v")!;
         }
 
         // Wait for reactive declaration of active_metric_names to catch up with version change
@@ -60,18 +59,18 @@
         await tick();
 
         if (searchParams.has("displayMode")) {
-            displayMode = searchParams.get("displayMode");
-        } else if (
-            document.getElementsByName("displayMode").length &&
-            document.getElementsByName("displayMode")[0].content
-        ) {
-            displayMode = document.getElementsByName("displayMode")[0].content;
+            displayMode = searchParams.get("displayMode") as DisplayMode;
+        } else {
+            const displayModeMeta = document.getElementsByName("displayMode")[0] as HTMLMetaElement;
+            if (displayModeMeta && displayModeMeta.content) {
+                displayMode = displayModeMeta.content as DisplayMode;
+            }
         }
 
         // Populate any metrics present in the URL
         metric_names.forEach((metric) => {
-            if (searchParams.has(metric)) {
-                metrics[metric] = searchParams.get(metric);
+            if (searchParams.has(metric as string)) {
+                metrics[metric as string] = searchParams.get(metric as string)!;
             }
         });
 
@@ -87,7 +86,7 @@
         }
 
         if (searchParams.has("industry")) {
-            industry = searchParams.get("industry");
+            industry = searchParams.get("industry")!;
         }
 
         sendAnalyticsEvent("quick_check_start");
@@ -110,7 +109,7 @@
 
     function reset() {
         metric_names.forEach((metric) => {
-            metrics[metric] = -1;
+            metrics[metric as string] = -1;
         });
         step = "input";
         industry = "all";

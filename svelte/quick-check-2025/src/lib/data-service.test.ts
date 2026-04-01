@@ -24,7 +24,7 @@ describe('DataService', () => {
         const data = await DataService.getIndustryMetrics('2025');
         expect(data.all.name).toBe('All industries');
         expect(data.all.rework).toBeDefined();
-        expect(typeof data.all.rework.mean).toBe('number');
+        expect(typeof data.all.rework!.mean).toBe('number');
     });
 
     it('should calculate performance average for 2024 (4 metrics)', () => {

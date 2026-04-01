@@ -1,15 +1,17 @@
-<script>
-    export let user_score,
-        industry_score,
-        displayMode,
+<script lang="ts">
+    import type { DisplayMode } from "./types";
+
+    export let user_score: number | string,
+        industry_score: number,
+        displayMode: DisplayMode,
         std = 0,
-        tickmarks = [],
+        tickmarks: (string | number)[] = [],
         showBenchmarks = true;
     export let featured = false;
 
     let user_score_position = "0%";
 
-    $: user_score_position = `${user_score * 10}%`;
+    $: user_score_position = `${parseFloat(user_score.toString()) * 10}%`;
 </script>
 
 <div class="graph {displayMode}" class:featured>

@@ -1,12 +1,13 @@
-<script>
-    //@ts-nocheck
+<script lang="ts">
     import { createEventDispatcher } from "svelte";
-    export let capability;
-    export let capability_count;
-    export let current_capability_index;
+    import type { Capability } from "./types";
+
+    export let capability: Capability;
+    export let capability_count: number;
+    export let current_capability_index: number;
 
     // initialize user response data with dummy values
-    export let this_capability_responses;
+    export let this_capability_responses: number[];
     let thisCapabilityCompleted = false;
 
     const dispatch = createEventDispatcher();
@@ -14,7 +15,7 @@
     function nextCapability() {
         // push data to URL
         if (typeof window !== "undefined") {
-            const url = new URL(window.location);
+            const url = new URL(window.location.href);
             url.searchParams.set(
                 capability.shortname,
                 this_capability_responses.join(""),
@@ -22,7 +23,7 @@
             if (current_capability_index == capability_count - 1) {
                 url.searchParams.set("step", "priorities");
             }
-            window.history.replaceState({}, "", url);
+            window.history.replaceState({}, "", url.toString());
         }
         dispatch("nextCapability");
     }

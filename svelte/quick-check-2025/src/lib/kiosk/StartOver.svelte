@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { createEventDispatcher } from "svelte";
     import { onMount } from "svelte";
     import { onDestroy } from "svelte";
@@ -12,7 +12,7 @@
 
     const dispatch = createEventDispatcher();
 
-    let countDownTimer;
+    let countDownTimer: number | ReturnType<typeof setTimeout>;
 
     const reset = () => {
         seconds_remaining = TIMER_DURATION_IN_SEC;
@@ -29,7 +29,6 @@
     }
 
     onMount(() => {
-        console.log("hi");
         countDown();
     });
     onDestroy(() => {
