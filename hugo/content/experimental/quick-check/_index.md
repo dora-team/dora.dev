@@ -1,7 +1,7 @@
 ---
 title: "DORA Quick Check 2025"
 date: 2025-03-30
-draft: false
+draft: true
 type: "quickcheck"
 layout: "section"
 bannerTitle: "Take the DORA Quick Check 2025"
