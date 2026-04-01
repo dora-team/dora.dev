@@ -126,10 +126,11 @@
         <div class="graph">
             <PerformanceGraph
                 user_score={performance_average}
-                industry_score={selected_industry_metrics.performance_average.mean}
-                std={selected_industry_metrics.performance_average.std}
+                industry_score={selected_industry_metrics.performance_average?.mean || 0}
+                std={selected_industry_metrics.performance_average?.std || 0}
                 tickmarks={[0, 2, 4, 6, 8, 10]}
                 featured
+                showBenchmarks={!!selected_industry_metrics.performance_average}
                 {displayMode}
             />
         </div>
