@@ -24,7 +24,7 @@ test('quick check 2025 full flow test', async ({ page }) => {
     await page.getByRole('row', { name: 'Developers get feedback from' }).getByLabel('Neither agree nor disagree').check();
     
     // Advance from CI to Arch
-    await page.getByRole('button', { name: 'Next' }).click();
+    await page.locator('.capability.ci').getByRole('button', { name: 'Next' }).click();
     
     // Step 4: Capabilities - Architecture (Loosely Coupled Teams)
     await page.getByRole('row', { name: 'On my team, we can make large-scale changes to the design of our system without creating' }).getByLabel('Strongly disagree').check();
@@ -35,7 +35,7 @@ test('quick check 2025 full flow test', async ({ page }) => {
     await page.getByRole('row', { name: 'On my team, we perform' }).getByLabel('Strongly disagree').check();
     
     // Advance from Arch to Culture
-    await page.getByRole('button', { name: 'Next' }).click();
+    await page.locator('.capability.arch').getByRole('button', { name: 'Next' }).click();
     
     // Step 5: Capabilities - Culture
     await page.getByRole('row', { name: 'Information is actively' }).getByLabel('Strongly agree').check();
@@ -46,7 +46,7 @@ test('quick check 2025 full flow test', async ({ page }) => {
     await page.getByRole('row', { name: 'New ideas are welcomed.' }).getByLabel('Strongly agree').check();
     
     // Final results
-    await page.getByRole('button', { name: 'View Results' }).click();
+    await page.locator('.capability.culture').getByRole('button', { name: 'View Results' }).click();
     
     // Verify capability scores
     await expect(page.locator('.score_text.ci')).toContainText('5.0');
@@ -79,7 +79,7 @@ test('quick check 2025 URL parameter pre-population', async ({ page }) => {
     await expect(page.locator('.version-prompt')).toContainText('You are viewing results using 2024 benchmark data');
     
     // Click button to answer rework question for 2025
-    await page.getByRole('button', { name: 'Answer the new Rework Rate question' }).click();
+    await page.getByRole('button', { name: /Answer the new Deployment rework rate question/ }).click();
     
     await expect(page.getByText('Deployment rework rate')).toBeVisible();
     
