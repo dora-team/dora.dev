@@ -1,23 +1,20 @@
-<script>
-    //@ts-nocheck
+<script lang="ts">
     import { arrayAverage, recode_numeric_range } from "./utils";
+    import type { Capability } from "./types";
 
-    export let question;
-    export let this_capability_responses;
-    let this_capability_recoded_average = 0;
+    export let question: Capability;
+    export let this_capability_responses: number[];
+    let this_capability_recoded_average: string | number = 0;
 
-    let this_capability_recoded_responses = [];
+    let this_capability_recoded_responses: (number | null)[] = [];
 
-    $: this_capability_responses.forEach((response, _) => {
-        this_capability_recoded_responses = [
-            ...this_capability_recoded_responses,
-            recode_numeric_range(response, 1, 5, 0, 10),
-        ];
-    });
+    $: this_capability_recoded_responses = this_capability_responses.map(
+        (response) => recode_numeric_range(response, 1, 5, 0, 10),
+    );
 
     $: this_capability_recoded_average =
         this_capability_recoded_responses.length
-            ? arrayAverage(this_capability_recoded_responses).toFixed(1)
+            ? (arrayAverage(this_capability_recoded_responses as number[]) || 0).toFixed(1)
             : 0;
 </script>
 
@@ -32,9 +29,9 @@
         >
             <div
                 class="score_bar_value"
-                style:width={`${this_capability_recoded_average * 10}%`}
+                style:width={`${parseFloat(this_capability_recoded_average.toString()) * 10}%`}
                 style:background-position={`${
-                    this_capability_recoded_average * 10
+                    parseFloat(this_capability_recoded_average.toString()) * 10
                 }%`}
             ></div>
         </div>

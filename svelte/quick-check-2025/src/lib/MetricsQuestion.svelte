@@ -1,15 +1,28 @@
-<script>
-  //@ts-nocheck
+<script lang="ts">
   import { createEventDispatcher } from "svelte";
   import { fade } from "svelte/transition";
-  export let metrics;
-  export let metric_name = "METRIC",
-    metric_position = 0,
-    total_metrics = 5,
-    displayMode = "embedded";
-  import metrics_question_responses from "./data/metrics_question_responses.json";
-  import metrics_images from "./data/metrics_images.json";
-  const metrics_details = {
+  import type { Metrics, DisplayMode } from "./types";
+  
+  // @ts-ignore
+  import metrics_question_responses_raw from "./data/metrics_question_responses.json";
+  // @ts-ignore
+  import metrics_images_raw from "./data/metrics_images.json";
+
+  const metrics_question_responses = metrics_question_responses_raw as Record<string, Record<string, string>>;
+  const metrics_images = metrics_images_raw as Record<string, string>;
+
+  export let metrics: Metrics;
+  export let metric_name: keyof Metrics = "leadtime";
+  export let metric_position = 0;
+  export let total_metrics = 5;
+  export let displayMode: DisplayMode = "embedded";
+
+  interface MetricDetail {
+    friendly_name: string;
+    description: string;
+  }
+
+  const metrics_details: Record<string, MetricDetail> = {
     leadtime: {
       friendly_name: "Lead time",
       description:
@@ -37,8 +50,8 @@
     },
   };
 
-  $: metric_friendly_name = metrics_details[metric_name]["friendly_name"];
-  $: metric_question_text = metrics_details[metric_name].description;
+  $: metric_friendly_name = metrics_details[metric_name as string]["friendly_name"];
+  $: metric_question_text = metrics_details[metric_name as string].description;
 
   const dispatch = createEventDispatcher();
 
@@ -56,8 +69,8 @@
         Question {metric_position + 1} of {total_metrics}
       </h5>
       <h2>{metric_friendly_name}</h2>
-      {#if metrics_images[metric_name]}
-        <img alt={metric_friendly_name} src={metrics_images[metric_name]} />
+      {#if metrics_images[metric_name as string]}
+        <img alt={metric_friendly_name} src={metrics_images[metric_name as string]} />
       {:else}
         <div class="placeholder-icon"></div>
       {/if}
@@ -72,13 +85,13 @@
             <slider>
               <input
                 type="range"
-                name={metric_name}
+                name={metric_name as string}
                 min="0"
                 max="100"
-                bind:value={metrics[metric_name]}
+                bind:value={metrics[metric_name as string]}
               />
               <echo>
-                {#if metrics[metric_name] >= 0}{metrics[metric_name]}%<br/>{metric_name === "changefailure" ? "of changes fail" : "of changes were unplanned"}{/if}
+                {#if Number(metrics[metric_name as string]) >= 0}{metrics[metric_name as string]}%<br/>{metric_name === "changefailure" ? "of changes fail" : "of changes were unplanned"}{/if}
               </echo>
               <tickmarks>
                 <tick>|<br />0</tick>
@@ -98,9 +111,9 @@
             {#each { length: 11 } as _, value}
               <label
                 ><input
-                  name={metric_name}
+                  name={metric_name as string}
                   type="radio"
-                  bind:group={metrics[metric_name]}
+                  bind:group={metrics[metric_name as string]}
                   on:change={nextMetric}
                   value={value * 10}
                 />{value * 10}%</label
@@ -108,12 +121,12 @@
             {/each}
           {/if}
         {:else}
-          {#each Object.entries(metrics_question_responses[metric_name]) as [value, text]}
+          {#each Object.entries(metrics_question_responses[metric_name as string]) as [value, text]}
             <label
               ><input
-                name={metric_name}
+                name={metric_name as string}
                 type="radio"
-                bind:group={metrics[metric_name]}
+                bind:group={metrics[metric_name as string]}
                 on:change={nextMetric}
                 {value}
               />{text}</label

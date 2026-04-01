@@ -1,20 +1,20 @@
-<script>
-    // @ts-nocheck
+<script lang="ts">
     import { onMount } from "svelte";
-
-    import { sendAnalyticsEvent } from "./utils.js";
-
+    import { sendAnalyticsEvent } from "./utils";
     import Capability from "./Capability.svelte";
     import PrioritizationResults from "./PrioritizationResults.svelte";
+    // @ts-ignore
+    import capability_prioritization_questions_raw from "./data/capability_prioritization_questions.json";
+    import type { Capability as CapabilityType } from "./types";
 
-    import capability_prioritization_questions from "./data/capability_prioritization_questions.json";
+    const capability_prioritization_questions = capability_prioritization_questions_raw as CapabilityType[];
 
     export let current_capability = -1;
     let capability_count = capability_prioritization_questions.length;
-    let capability_dom_elements = [];
-    let capability_container;
+    let capability_dom_elements: HTMLElement[] = [];
+    let capability_container: HTMLElement;
 
-    let capability_responses = {};
+    let capability_responses: Record<string, number[]> = {};
     capability_prioritization_questions.forEach((capability) => {
         capability_responses[capability.shortname] = [];
     });
@@ -37,10 +37,13 @@
         capability_container.style.height = `${capability_dom_elements[current_capability].offsetHeight}px`;
 
         if (current_capability > 0) {
-            window.scrollTo({
-                top: document.getElementById("help-me-prioritize").offsetTop,
-                behavior: "smooth",
-            });
+            const el = document.getElementById("help-me-prioritize");
+            if (el) {
+                window.scrollTo({
+                    top: el.offsetTop,
+                    behavior: "smooth",
+                });
+            }
 
             if (current_capability == capability_count) {
                 sendAnalyticsEvent("quick_check_priorities");
@@ -51,12 +54,12 @@
     onMount(() => {
         // extract responses from URL and cast as Int
         if (typeof window !== "undefined") {
-            const url = new URL(window.location);
+            const url = new URL(window.location.href);
             capability_prioritization_questions.forEach((capability) => {
                 if (url.searchParams.has(capability.shortname)) {
                     capability_responses[capability.shortname] =
                         url.searchParams
-                            .get(capability.shortname)
+                            .get(capability.shortname)!
                             .split("")
                             .map((x) => parseInt(x));
                 }

@@ -5,7 +5,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR"
 
 # build production assets
-npm install
+npm ci --registry=https://registry.npmjs.org/
 npm run build
 
 # Set-up the target directory
