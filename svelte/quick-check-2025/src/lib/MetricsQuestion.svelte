@@ -2,13 +2,16 @@
   import { createEventDispatcher } from "svelte";
   import { fade } from "svelte/transition";
   import type { Metrics, DisplayMode } from "./types";
-  
+
   // @ts-ignore
   import metrics_question_responses_raw from "./data/metrics_question_responses.json";
   // @ts-ignore
   import metrics_images_raw from "./data/metrics_images.json";
 
-  const metrics_question_responses = metrics_question_responses_raw as Record<string, Record<string, string>>;
+  const metrics_question_responses = metrics_question_responses_raw as Record<
+    string,
+    Record<string, string>
+  >;
   const metrics_images = metrics_images_raw as Record<string, string>;
 
   export let metrics: Metrics;
@@ -50,7 +53,8 @@
     },
   };
 
-  $: metric_friendly_name = metrics_details[metric_name as string]["friendly_name"];
+  $: metric_friendly_name =
+    metrics_details[metric_name as string]["friendly_name"];
   $: metric_question_text = metrics_details[metric_name as string].description;
 
   const dispatch = createEventDispatcher();
@@ -70,7 +74,10 @@
       </h5>
       <h2>{metric_friendly_name}</h2>
       {#if metrics_images[metric_name as string]}
-        <img alt={metric_friendly_name} src={metrics_images[metric_name as string]} />
+        <img
+          alt={metric_friendly_name}
+          src={metrics_images[metric_name as string]}
+        />
       {:else}
         <div class="placeholder-icon"></div>
       {/if}
@@ -91,7 +98,11 @@
                 bind:value={metrics[metric_name as string]}
               />
               <echo>
-                {#if Number(metrics[metric_name as string]) >= 0}{metrics[metric_name as string]}%<br/>{metric_name === "changefailure" ? "of changes fail" : "of changes were unplanned"}{/if}
+                {#if Number(metrics[metric_name as string]) >= 0}{metrics[
+                    metric_name as string
+                  ]}%<br />{metric_name === "changefailure"
+                    ? "of changes fail"
+                    : "of changes were unplanned"}{/if}
               </echo>
               <tickmarks>
                 <tick>|<br />0</tick>
@@ -147,19 +158,31 @@
     display: block;
   }
 
-
-
   section.question {
     display: flex;
     flex-direction: row;
     margin-bottom: 16px;
-    background-color: color-mix(in srgb, var(--dora-primary-light), transparent 50%);
+    background-color: color-mix(
+      in srgb,
+      var(--dora-primary-light),
+      transparent 50%
+    );
 
-    &.leadtime aside { background-color: var(--dora-highlight); }
-    &.deployfreq aside { background-color: var(--dora-secondary-b); }
-    &.failurerecovery aside { background-color: var(--dora-secondary-a); }
-    &.changefailure aside { background-color: var(--dora-secondary-c); }
-    &.rework aside { background-color: #e1f5fe; } // Light blue for rework
+    &.leadtime aside {
+      background-color: var(--dora-highlight);
+    }
+    &.deployfreq aside {
+      background-color: var(--dora-secondary-b);
+    }
+    &.failurerecovery aside {
+      background-color: var(--dora-secondary-a);
+    }
+    &.changefailure aside {
+      background-color: var(--dora-secondary-c);
+    }
+    &.rework aside {
+      background-color: var(--dora-highlight);
+    }
 
     aside {
       padding: 1rem;
@@ -175,7 +198,7 @@
     .description {
       padding-top: 1.5rem;
       font-size: calc(clamp(16px, 1.25vw, 20px));
-      line-height:1.4;
+      line-height: 1.4;
       font-weight: 400;
     }
 
@@ -189,7 +212,7 @@
     }
 
     legend {
-      margin-bottom: .5em;
+      margin-bottom: 0.5em;
     }
 
     label {
@@ -303,13 +326,13 @@
   }
 
   .placeholder-icon {
-      width: 100%;
-      aspect-ratio: 1/1;
-      background-color: rgba(255,255,255,0.2);
-      border: 1px dashed rgba(0,0,0,0.1);
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px dashed rgba(0, 0, 0, 0.1);
   }
 
-  /* There's no elegant way to use global variables for media queries (css variables aren't supported for this purpose, 
+  /* There's no elegant way to use global variables for media queries (css variables aren't supported for this purpose,
     and SCSS vars are cumbersome to propagate between different svelte components).
     So we'll use a "magic number" of 800px, in each file */
   @media (max-width: 800px) {

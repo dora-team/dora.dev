@@ -13,8 +13,8 @@
     let metrics: Metrics = {
         leadtime: -1,
         deployfreq: -1,
-        changefailure: -1,
         failurerecovery: -1,
+        changefailure: -1,
         rework: -1,
     };
 
@@ -22,7 +22,7 @@
     let industry = "all";
     let version = "2025";
     let current_capability = -1;
-    let metric_names = Object.keys(metrics).filter(k => k !== 'rework' || true) as (keyof Metrics)[];
+    let metric_names = ["leadtime", "deployfreq", "failurerecovery", "changefailure", "rework"] as (keyof Metrics)[];
     let current_metric = 0; // for kiosk mode
     let displayMode: DisplayMode = "embedded";
 
@@ -166,6 +166,11 @@
         {:else}
             <div class="embeddedMetricsQuestions">
                 {#each active_metric_names as metric, idx}
+                    {#if metric === "leadtime"}
+                        <h3 class="group-header">Software delivery throughput</h3>
+                    {:else if metric === "changefailure"}
+                        <h3 class="group-header">Software delivery instability</h3>
+                    {/if}
                     <MetricsQuestion
                         bind:metrics
                         metric_name={metric}
@@ -269,6 +274,20 @@
                 cursor: not-allowed;
             }
         }
+    }
+
+    .group-header {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        background-color: var(--dora-tertiary-b);
+        color: var(--dora-warm-white);
+        padding: 0.75rem 1.25rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        display: block;
+        width: 100%;
     }
 
     .faq {
