@@ -1,17 +1,19 @@
 <!doctype html>
 <meta charset="utf-8">
 <html lang="en">
-    <head>
-        {{- partial "head" . -}}
-    </head>
 
-    <body {{ if .Params.draft }}class="draft-mode"{{ end }}>
-        {{- partial "header" . -}}
-        {{- partial "page_banner" . -}}
-        <main>
-            {{- block "main" . }}{{- end }}
-        </main>
-        {{- partial "footer" . -}}
-    </body>
+<head>
+    {{- partial "head" . -}}
+</head>
+
+<body>
+    {{- partial "draft_indicator" . -}}
+    {{- partial "header" . -}}
+    {{- partial "page_banner" . -}}
+    <main>
+        {{- block "main" . }}{{- end }}
+    </main>
+    {{- partial "footer" . -}}
+</body>
 
 </html>

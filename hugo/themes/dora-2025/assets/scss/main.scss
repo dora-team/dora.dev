@@ -43,8 +43,20 @@ body {
   margin: 0;
   padding: 0;
 
-  &.draft-mode {
-    background-color: var(--dora-warm-white);
+  .draft-indicator {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--dora-spotlight-yellow);
+    color: var(--dora-black);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 10000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+    letter-spacing: 0.05em;
   }
 
   // use flex so footer sticks to bottom of page
