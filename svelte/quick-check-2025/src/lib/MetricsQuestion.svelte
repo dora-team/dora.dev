@@ -102,7 +102,7 @@
                     metric_name as string
                   ]}%<br />{metric_name === "changefailure"
                     ? "of changes fail"
-                    : "of changes were unplanned"}{/if}
+                    : "of deployments were unplanned"}{/if}
               </echo>
               <tickmarks>
                 <tick>|<br />0</tick>
@@ -360,3 +360,4 @@
     }
   }
 </style>
+>
