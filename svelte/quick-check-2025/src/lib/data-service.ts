@@ -11,6 +11,8 @@ export interface MetricBenchmark {
 export interface IndustryMetrics {
     name: string;
     performance_average?: MetricBenchmark;
+    software_delivery_throughput?: MetricBenchmark;
+    software_delivery_instability?: MetricBenchmark;
     leadtime: MetricBenchmark;
     deployfreq: MetricBenchmark;
     changefailure: MetricBenchmark;

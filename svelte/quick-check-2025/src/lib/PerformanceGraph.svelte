@@ -47,8 +47,8 @@
             background-color: #eee;
             height: 0.3rem;
             position: absolute;
-            left: -0.25rem;
-            right: -0.25rem;
+            left: 0;
+            right: 0;
             top: 50%;
             transform: translateY(-50%);
             border-radius: 0.15rem;
@@ -120,8 +120,8 @@
                 height: 2.5em;
                 border-radius: 1.25em;
                 background: var(--performance-spectrum);
-                left: -1.25em;
-                right: -1.25em;
+                left: 0;
+                right: 0;
             }
 
             .std {
