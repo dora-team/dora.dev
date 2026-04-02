@@ -200,18 +200,21 @@
     }
 
     slider {
-      display: grid;
+      display: flex;
+      flex-direction: column;
       max-width: 600px;
-      grid-template-columns: auto 2rem;
+      margin-bottom: 1rem;
       input[type="range"] {
         width: 100%;
+        margin-bottom: 0.25rem;
       }
       echo {
         padding: 0 0.5rem;
-        height: 1.5rem;
-        vertical-align: middle;
+        height: 2.5rem;
         font-weight: bold;
         color: var(--dora-blue);
+        text-align: center;
+        line-height: 1.2;
       }
     }
     tickmarks {
@@ -220,15 +223,14 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      margin-left: 0rem;
-      margin-right: -3rem;
+      margin-top: 0.25rem;
       tick {
         display: inline-block;
         text-align: right;
         font-size: 0.65rem;
         color: #666;
         text-align: center;
-        width: 1rem;
+        width: 1.5rem;
       }
     }
 
