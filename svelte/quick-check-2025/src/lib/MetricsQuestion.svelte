@@ -245,7 +245,7 @@
         background-color: transparent !important;
       }
 
-      p.description {
+      .description {
         padding-top: 0;
         font-size: 1.5rem;
       }
@@ -321,7 +321,7 @@
           display: none;
         }
       }
-      p.description {
+      .description {
         padding-top: 0;
       }
 

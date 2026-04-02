@@ -55,7 +55,7 @@
         grid-template-columns: auto fit-content(60%);
         align-items: center;
 
-        .capability_name {
+        .learn_more {
             a {
                 font-size: 85%;
             }
