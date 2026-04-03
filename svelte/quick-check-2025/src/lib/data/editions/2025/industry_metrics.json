@@ -22,7 +22,7 @@
       "std": 2.8
     },
     "changefailure": {
-      "mean": 8.1,
+      "mean": 1.9,
       "std": 2.1
     },
     "failurerecovery": {
@@ -30,7 +30,7 @@
       "std": 2.1
     },
     "rework": {
-      "mean": 7.8,
+      "mean": 2.2,
       "std": 2.2
     }
   },
@@ -57,7 +57,7 @@
       "std": 2.7
     },
     "changefailure": {
-      "mean": 8.3,
+      "mean": 1.7,
       "std": 2.0
     },
     "failurerecovery": {
@@ -65,7 +65,7 @@
       "std": 1.8
     },
     "rework": {
-      "mean": 8.0,
+      "mean": 2.0,
       "std": 1.9
     }
   },
@@ -92,7 +92,7 @@
       "std": 2.7
     },
     "changefailure": {
-      "mean": 8.2,
+      "mean": 1.8,
       "std": 1.8
     },
     "failurerecovery": {
@@ -100,7 +100,7 @@
       "std": 2.1
     },
     "rework": {
-      "mean": 8.2,
+      "mean": 1.8,
       "std": 1.7
     }
   },
@@ -127,7 +127,7 @@
       "std": 2.6
     },
     "changefailure": {
-      "mean": 7.8,
+      "mean": 2.2,
       "std": 2.8
     },
     "failurerecovery": {
@@ -162,7 +162,7 @@
       "std": 2.8
     },
     "changefailure": {
-      "mean": 8.1,
+      "mean": 1.9,
       "std": 2.0
     },
     "failurerecovery": {
@@ -170,7 +170,7 @@
       "std": 2.1
     },
     "rework": {
-      "mean": 7.7,
+      "mean": 2.3,
       "std": 2.2
     }
   },
@@ -197,7 +197,7 @@
       "std": 2.6
     },
     "changefailure": {
-      "mean": 7.6,
+      "mean": 2.4,
       "std": 2.5
     },
     "failurerecovery": {
@@ -205,7 +205,7 @@
       "std": 2.3
     },
     "rework": {
-      "mean": 7.4,
+      "mean": 2.6,
       "std": 2.5
     }
   },
@@ -232,7 +232,7 @@
       "std": 2.7
     },
     "changefailure": {
-      "mean": 8.4,
+      "mean": 1.6,
       "std": 1.9
     },
     "failurerecovery": {
@@ -240,7 +240,7 @@
       "std": 2.0
     },
     "rework": {
-      "mean": 8.0,
+      "mean": 2.0,
       "std": 2.0
     }
   },
@@ -267,7 +267,7 @@
       "std": 2.9
     },
     "changefailure": {
-      "mean": 7.3,
+      "mean": 2.7,
       "std": 2.4
     },
     "failurerecovery": {
@@ -275,7 +275,7 @@
       "std": 2.6
     },
     "rework": {
-      "mean": 7.1,
+      "mean": 2.9,
       "std": 2.3
     }
   },
@@ -302,7 +302,7 @@
       "std": 2.6
     },
     "changefailure": {
-      "mean": 8.3,
+      "mean": 1.7,
       "std": 2.1
     },
     "failurerecovery": {
@@ -310,7 +310,7 @@
       "std": 1.9
     },
     "rework": {
-      "mean": 8.1,
+      "mean": 1.9,
       "std": 1.9
     }
   },
@@ -337,7 +337,7 @@
       "std": 2.8
     },
     "changefailure": {
-      "mean": 7.5,
+      "mean": 2.5,
       "std": 2.3
     },
     "failurerecovery": {
@@ -345,7 +345,7 @@
       "std": 2.2
     },
     "rework": {
-      "mean": 7.4,
+      "mean": 2.6,
       "std": 2.4
     }
   },
@@ -372,7 +372,7 @@
       "std": 2.7
     },
     "changefailure": {
-      "mean": 8.2,
+      "mean": 1.8,
       "std": 1.8
     },
     "failurerecovery": {
@@ -380,7 +380,7 @@
       "std": 1.9
     },
     "rework": {
-      "mean": 7.9,
+      "mean": 2.1,
       "std": 1.9
     }
   },
@@ -407,7 +407,7 @@
       "std": 3.0
     },
     "changefailure": {
-      "mean": 7.9,
+      "mean": 2.1,
       "std": 2.2
     },
     "failurerecovery": {
@@ -415,7 +415,7 @@
       "std": 2.1
     },
     "rework": {
-      "mean": 7.6,
+      "mean": 2.4,
       "std": 2.2
     }
   },
@@ -442,11 +442,11 @@
       "std": 2.5
     },
     "changefailure": {
-      "mean": 8.3,
+      "mean": 1.7,
       "std": 2.0
     },
     "failurerecovery": {
-      "mean": 7.5,
+      "mean": 2.5,
       "std": 1.8
     },
     "rework": {
@@ -477,7 +477,7 @@
       "std": 2.7
     },
     "changefailure": {
-      "mean": 8.0,
+      "mean": 2.0,
       "std": 1.9
     },
     "failurerecovery": {
@@ -485,7 +485,7 @@
       "std": 2.3
     },
     "rework": {
-      "mean": 7.6,
+      "mean": 2.4,
       "std": 2.3
     }
   }

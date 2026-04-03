@@ -14,7 +14,7 @@
             "std": 2.9
         },
         "changefailure": {
-            "mean": 8.3,
+            "mean": 1.7,
             "std": 2.0
         },
         "failurerecovery": {
@@ -37,7 +37,7 @@
             "std": 3.2
         },
         "changefailure": {
-            "mean": 8.4,
+            "mean": 1.6,
             "std": 2.1
         },
         "failurerecovery": {
@@ -60,7 +60,7 @@
             "std": 3.1
         },
         "changefailure": {
-            "mean": 7.3,
+            "mean": 2.7,
             "std": 2.7
         },
         "failurerecovery": {
@@ -83,7 +83,7 @@
             "std": 2.7
         },
         "changefailure": {
-            "mean": 8.4,
+            "mean": 1.6,
             "std": 1.8
         },
         "failurerecovery": {
@@ -106,7 +106,7 @@
             "std": 2.6
         },
         "changefailure": {
-            "mean": 7.6,
+            "mean": 2.4,
             "std": 2.3
         },
         "failurerecovery": {
@@ -129,7 +129,7 @@
             "std": 2.6
         },
         "changefailure": {
-            "mean": 8.6,
+            "mean": 1.4,
             "std": 1.5
         },
         "failurerecovery": {
@@ -152,7 +152,7 @@
             "std": 2.9
         },
         "changefailure": {
-            "mean": 8.3,
+            "mean": 1.7,
             "std": 1.9
         },
         "failurerecovery": {
@@ -161,7 +161,7 @@
         }
     },
     "insurance": {
-        "name":"Insurance",
+        "name": "Insurance",
         "performance_average": {
             "mean": 6.3,
             "std": 1.6
@@ -175,7 +175,7 @@
             "std": 3.0
         },
         "changefailure": {
-            "mean": 8.2,
+            "mean": 1.8,
             "std": 2.2
         },
         "failurerecovery": {
@@ -198,7 +198,7 @@
             "std": 2.7
         },
         "changefailure": {
-            "mean": 8.5,
+            "mean": 1.5,
             "std": 1.9
         },
         "failurerecovery": {
@@ -207,7 +207,7 @@
         }
     },
     "non_profit": {
-        "name":"Non-profit",
+        "name": "Non-profit",
         "performance_average": {
             "mean": 7.1,
             "std": 1.8
@@ -221,7 +221,7 @@
             "std": 2.5
         },
         "changefailure": {
-            "mean": 8.5,
+            "mean": 1.5,
             "std": 2.3
         },
         "failurerecovery": {
@@ -244,7 +244,7 @@
             "std": 3.0
         },
         "changefailure": {
-            "mean": 8.5,
+            "mean": 1.5,
             "std": 1.6
         },
         "failurerecovery": {
@@ -253,7 +253,7 @@
         }
     },
     "technology": {
-        "name":"Technology",
+        "name": "Technology",
         "performance_average": {
             "mean": 6.8,
             "std": 1.8
@@ -267,7 +267,7 @@
             "std": 2.9
         },
         "changefailure": {
-            "mean": 8.4,
+            "mean": 1.6,
             "std": 1.9
         },
         "failurerecovery": {
@@ -276,7 +276,7 @@
         }
     },
     "telecommunications": {
-        "name":"Telecommunications",
+        "name": "Telecommunications",
         "performance_average": {
             "mean": 6.3,
             "std": 1.8
@@ -290,7 +290,7 @@
             "std": 2.7
         },
         "changefailure": {
-            "mean": 8.1,
+            "mean": 1.9,
             "std": 2.0
         },
         "failurerecovery": {
@@ -299,7 +299,7 @@
         }
     },
     "other": {
-        "name":"Other",
+        "name": "Other",
         "performance_average": {
             "mean": 6.9,
             "std": 1.7
@@ -313,7 +313,7 @@
             "std": 2.9
         },
         "changefailure": {
-            "mean": 8.3,
+            "mean": 1.7,
             "std": 1.9
         },
         "failurerecovery": {

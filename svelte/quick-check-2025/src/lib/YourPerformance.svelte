@@ -1,13 +1,20 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import PerformanceGraph from "./PerformanceGraph.svelte";
-    import { DataService, type BenchmarkData, type IndustryMetrics } from "./data-service";
+    import {
+        DataService,
+        type BenchmarkData,
+        type IndustryMetrics,
+    } from "./data-service";
     import { sendAnalyticsEvent } from "./utils";
     import type { Metrics, DisplayMode } from "./types";
     // @ts-ignore
     import metrics_question_responses_raw from "./data/metrics_question_responses.json";
 
-    const metrics_question_responses = metrics_question_responses_raw as Record<string, Record<string, string>>;
+    const metrics_question_responses = metrics_question_responses_raw as Record<
+        string,
+        Record<string, string>
+    >;
 
     export let metrics: Metrics;
     export let industry: string;
@@ -19,23 +26,24 @@
         deployfreq: 0,
         changefailure: 0,
         failurerecovery: 0,
-        rework: 0
+        rework: 0,
     };
     let performance_average = "0.0";
     let throughput_average = "0.0";
     let instability_average = "0.0";
     let industry_metrics_data: BenchmarkData = {};
     let organization_size_metrics: BenchmarkData = {};
-    let industry_metrics: BenchmarkData = {}; 
-    let comparisonType: "industry" | "size" = "industry"; 
+    let industry_metrics: BenchmarkData = {};
+    let comparisonType: "industry" | "size" = "industry";
     let currentIndustry = industry;
     let loading = true;
 
     async function loadData() {
         loading = true;
         industry_metrics_data = await DataService.getIndustryMetrics(version);
-        organization_size_metrics = await DataService.getOrgSizeMetrics(version);
-        
+        organization_size_metrics =
+            await DataService.getOrgSizeMetrics(version);
+
         const urlParams = new URLSearchParams(window.location.search);
         const comp = urlParams.get("comp");
         if (comp === "size") {
@@ -49,13 +57,28 @@
     }
 
     const calculate_recoded_metrics = () => {
-        metrics_recoded.leadtime = DataService.calculateRecodedMetric(parseInt(metrics.leadtime.toString()), 'categorical');
-        metrics_recoded.deployfreq = DataService.calculateRecodedMetric(parseInt(metrics.deployfreq.toString()), 'categorical');
-        metrics_recoded.failurerecovery = DataService.calculateRecodedMetric(parseInt(metrics.failurerecovery.toString()), 'categorical');
-        metrics_recoded.changefailure = DataService.calculateRecodedMetric(parseInt(metrics.changefailure.toString()), 'percentage');
-        
+        metrics_recoded.leadtime = DataService.calculateRecodedMetric(
+            parseInt(metrics.leadtime.toString()),
+            "categorical",
+        );
+        metrics_recoded.deployfreq = DataService.calculateRecodedMetric(
+            parseInt(metrics.deployfreq.toString()),
+            "categorical",
+        );
+        metrics_recoded.failurerecovery = DataService.calculateRecodedMetric(
+            parseInt(metrics.failurerecovery.toString()),
+            "categorical",
+        );
+        metrics_recoded.changefailure = DataService.calculateRecodedMetric(
+            parseInt(metrics.changefailure.toString()),
+            "percentage",
+        );
+
         if (version === "2025") {
-            metrics_recoded.rework = DataService.calculateRecodedMetric(parseInt(metrics.rework.toString()), 'percentage');
+            metrics_recoded.rework = DataService.calculateRecodedMetric(
+                parseInt(metrics.rework.toString()),
+                "percentage",
+            );
         }
     };
 
@@ -88,27 +111,32 @@
             metrics_recoded.leadtime,
             metrics_recoded.deployfreq,
             metrics_recoded.changefailure,
-            metrics_recoded.failurerecovery
+            metrics_recoded.failurerecovery,
         ];
         if (version === "2025") {
             active_scores.push(metrics_recoded.rework);
         }
-        performance_average = (active_scores.reduce((a, b) => a + b, 0) / active_scores.length).toFixed(1);
+        performance_average = (
+            active_scores.reduce((a, b) => a + b, 0) / active_scores.length
+        ).toFixed(1);
 
         // Throughput: Lead Time, Deploy Freq, Failure Recovery (3 metrics)
         throughput_average = (
-            (metrics_recoded.leadtime + metrics_recoded.deployfreq + metrics_recoded.failurerecovery) / 3
+            (metrics_recoded.leadtime +
+                metrics_recoded.deployfreq +
+                metrics_recoded.failurerecovery) /
+            3
         ).toFixed(1);
 
         // Instability: Change Failure, Rework (2 metrics)
         // Note: The benchmark "instability" mean (e.g., 2.1) is (10 - average_stability_score)
-        const instability_stability_scores = [
-            metrics_recoded.changefailure
-        ];
+        const instability_stability_scores = [metrics_recoded.changefailure];
         if (version === "2025") {
             instability_stability_scores.push(metrics_recoded.rework);
         }
-        const stability_avg = instability_stability_scores.reduce((a, b) => a + b, 0) / instability_stability_scores.length;
+        const stability_avg =
+            instability_stability_scores.reduce((a, b) => a + b, 0) /
+            instability_stability_scores.length;
         instability_average = (10 - stability_avg).toFixed(1);
     }
 
@@ -124,173 +152,254 @@
 
     const defaultIndustryMetrics: IndustryMetrics = {
         name: "All industries",
-        performance_average: {mean: 0, std: 0},
-        leadtime: {mean: 0, std: 0},
-        deployfreq: {mean: 0, std: 0},
-        changefailure: {mean: 0, std: 0},
-        failurerecovery: {mean: 0, std: 0},
-        rework: {mean: 0, std: 0}
+        performance_average: { mean: 0, std: 0 },
+        leadtime: { mean: 0, std: 0 },
+        deployfreq: { mean: 0, std: 0 },
+        changefailure: { mean: 0, std: 0 },
+        failurerecovery: { mean: 0, std: 0 },
+        rework: { mean: 0, std: 0 },
     };
 
-    $: selected_industry_metrics = industry_metrics[currentIndustry] || defaultIndustryMetrics;
+    $: selected_industry_metrics =
+        industry_metrics[currentIndustry] || defaultIndustryMetrics;
+
+    $: {
+        if (selected_industry_metrics && !loading) {
+            console.log("Selected Industry Metrics:", selected_industry_metrics.name);
+            console.log("Change Failure Rate - Mean:", selected_industry_metrics.changefailure.mean, "Std:", selected_industry_metrics.changefailure.std);
+            if (version === "2025") {
+                console.log("Rework Rate - Mean:", (selected_industry_metrics.rework as any)?.mean, "Std:", (selected_industry_metrics.rework as any)?.std);
+            }
+        }
+    }
+
     $: setIndustryInURL(currentIndustry);
-    $: comparisonText = comparisonType === "industry" ? "Compare to industry benchmark:" : "Compare to organization size benchmark:";
-    $: baselineText = !loading && industry_metrics[industry] ? (comparisonType === "industry" ? `${version} Industry baseline (${industry_metrics[industry]["name"]}):` : `${version} Organization size benchmark (${industry_metrics[currentIndustry]["name"]}):`) : "";
+    $: comparisonText =
+        comparisonType === "industry"
+            ? "Compare to industry benchmark:"
+            : "Compare to organization size benchmark:";
+    $: baselineText =
+        !loading && industry_metrics[industry]
+            ? comparisonType === "industry"
+                ? `${version} Industry baseline (${industry_metrics[industry]["name"]}):`
+                : `${version} Organization size benchmark (${industry_metrics[currentIndustry]["name"]}):`
+            : "";
 </script>
 
 {#if loading}
     <div class="loading">Loading benchmark data...</div>
 {:else}
-<div class="heading">
-    <h1 id="results">Your software delivery performance</h1>
-    <div class="comparison-selector">
-        {comparisonText}
-        <select bind:value={industry}>
-            {#each Object.entries(industry_metrics) as [industryKey, industry_data]}
-                <option value={industryKey}>{industry_data["name"]}</option>
-            {/each}
-        </select>
+    <div class="heading">
+        <h1 id="results">Your software delivery performance</h1>
+        <div class="comparison-selector">
+            {comparisonText}
+            <select bind:value={industry}>
+                {#each Object.entries(industry_metrics) as [industryKey, industry_data]}
+                    <option value={industryKey}>{industry_data["name"]}</option>
+                {/each}
+            </select>
+        </div>
     </div>
-</div>
-<div class="YourPerformance {displayMode}">
-    <section class="performance-graphs">
-        <!-- Overall -->
-        <div class="level overall-level">
-            <aside>
-                <b class="level-label">Overall Performance</b>
-                <span
-                    class="performance-average"
-                    style:background-position={`${parseFloat(performance_average) * 10}%`}
-                    >{performance_average}</span
-                >
-            </aside>
-            <div class="graph">
-                <PerformanceGraph
-                    user_score={parseFloat(performance_average)}
-                    industry_score={selected_industry_metrics.performance_average?.mean || 0}
-                    std={selected_industry_metrics.performance_average?.std || 0}
-                    tickmarks={[0, 2, 4, 6, 8, 10]}
-                    featured
-                    showBenchmarks={!!selected_industry_metrics.performance_average}
-                    {displayMode}
-                />
-            </div>
-        </div>
-
-        <!-- Throughput Group -->
-        <div class="level-group">
-            <h3 class="group-header">Software delivery throughput ({throughput_average})</h3>
-            
-            <div class="level throughput-level">
+    <div class="YourPerformance {displayMode}">
+        <section class="performance-graphs">
+            <!-- Overall -->
+            <div class="level overall-level">
                 <aside>
-                    <b>Lead time for changes</b>
-                    <span class="metric_description"
-                        >{metrics_question_responses.leadtime[metrics.leadtime]}</span
+                    <b class="level-label">Overall Performance</b>
+                    <span
+                        class="performance-average"
+                        style:background-position={`${parseFloat(performance_average) * 10}%`}
+                        >{performance_average}</span
                     >
                 </aside>
                 <div class="graph">
                     <PerformanceGraph
-                        user_score={metrics_recoded.leadtime}
-                        industry_score={selected_industry_metrics.leadtime.mean}
-                        std={selected_industry_metrics.leadtime.std}
-                        tickmarks={[">6mo", "1-6mo", "1w-1mo", "1d-1w", "<1d", "<1h"]}
+                        user_score={parseFloat(performance_average)}
+                        industry_score={selected_industry_metrics
+                            .performance_average?.mean || 0}
+                        std={selected_industry_metrics.performance_average
+                            ?.std || 0}
+                        tickmarks={[0, 2, 4, 6, 8, 10]}
+                        featured
+                        showBenchmarks={!!selected_industry_metrics.performance_average}
                         {displayMode}
                     />
                 </div>
             </div>
 
-            <div class="level throughput-level">
-                <aside>
-                    <b>Deployment frequency</b>
-                    <span class="metric_description"
-                        >{metrics_question_responses.deployfreq[metrics.deployfreq]}</span
-                    >
-                </aside>
-                <div class="graph">
-                    <PerformanceGraph
-                        user_score={metrics_recoded.deployfreq}
-                        industry_score={selected_industry_metrics.deployfreq.mean}
-                        std={selected_industry_metrics.deployfreq.std}
-                        tickmarks={["<6mo", "1-6mo", "1w-1mo", "1d-1w", "1h-1d", "on demand"]}
-                        {displayMode}
-                    />
+            <!-- Throughput Group -->
+            <div class="level-group">
+                <h3 class="group-header">
+                    Software delivery throughput ({throughput_average})
+                </h3>
+
+                <div class="level throughput-level">
+                    <aside>
+                        <b>Lead time for changes</b>
+                        <span class="metric_description"
+                            >{metrics_question_responses.leadtime[
+                                metrics.leadtime
+                            ]}</span
+                        >
+                    </aside>
+                    <div class="graph">
+                        <PerformanceGraph
+                            user_score={metrics_recoded.leadtime}
+                            industry_score={selected_industry_metrics.leadtime
+                                .mean}
+                            std={selected_industry_metrics.leadtime.std}
+                            tickmarks={[
+                                ">6mo",
+                                "1-6mo",
+                                "1w-1mo",
+                                "1d-1w",
+                                "<1d",
+                                "<1h",
+                            ]}
+                            {displayMode}
+                        />
+                    </div>
+                </div>
+
+                <div class="level throughput-level">
+                    <aside>
+                        <b>Deployment frequency</b>
+                        <span class="metric_description"
+                            >{metrics_question_responses.deployfreq[
+                                metrics.deployfreq
+                            ]}</span
+                        >
+                    </aside>
+                    <div class="graph">
+                        <PerformanceGraph
+                            user_score={metrics_recoded.deployfreq}
+                            industry_score={selected_industry_metrics.deployfreq
+                                .mean}
+                            std={selected_industry_metrics.deployfreq.std}
+                            tickmarks={[
+                                "<6mo",
+                                "1-6mo",
+                                "1w-1mo",
+                                "1d-1w",
+                                "1h-1d",
+                                "on demand",
+                            ]}
+                            {displayMode}
+                        />
+                    </div>
+                </div>
+
+                <div class="level throughput-level">
+                    <aside>
+                        <b>Failed deployment recovery time</b>
+                        <span class="metric_description"
+                            >{metrics_question_responses.failurerecovery[
+                                metrics.failurerecovery
+                            ]}</span
+                        >
+                    </aside>
+                    <div class="graph">
+                        <PerformanceGraph
+                            user_score={metrics_recoded.failurerecovery}
+                            industry_score={selected_industry_metrics
+                                .failurerecovery.mean}
+                            std={selected_industry_metrics.failurerecovery.std}
+                            tickmarks={[
+                                ">6mo",
+                                "1-6mo",
+                                "1w-1mo",
+                                "1d-1w",
+                                "<1d",
+                                "<1h",
+                            ]}
+                            {displayMode}
+                        />
+                    </div>
                 </div>
             </div>
 
-            <div class="level throughput-level">
-                <aside>
-                    <b>Failed deployment recovery time</b>
-                    <span class="metric_description"
-                        >{metrics_question_responses.failurerecovery[metrics.failurerecovery]}</span
-                    >
-                </aside>
-                <div class="graph">
-                    <PerformanceGraph
-                        user_score={metrics_recoded.failurerecovery}
-                        industry_score={selected_industry_metrics.failurerecovery.mean}
-                        std={selected_industry_metrics.failurerecovery.std}
-                        tickmarks={[">6mo", "1-6mo", "1w-1mo", "1d-1w", "<1d", "<1h"]}
-                        {displayMode}
-                    />
-                </div>
-            </div>
-        </div>
+            <!-- Instability Group -->
+            <div class="level-group">
+                <h3 class="group-header">
+                    Software delivery instability ({instability_average})
+                </h3>
 
-        <!-- Instability Group -->
-        <div class="level-group">
-            <h3 class="group-header">Software delivery instability ({instability_average})</h3>
-            
-            <div class="level instability-level">
-                <aside>
-                    <b>Change fail rate</b>
-                    <span class="metric_description"
-                        >{metrics.changefailure}% of changes fail</span
-                    >
-                </aside>
-                <div class="graph">
-                    <PerformanceGraph
-                        user_score={+metrics_recoded.changefailure.toFixed(1)}
-                        industry_score={selected_industry_metrics.changefailure.mean}
-                        std={selected_industry_metrics.changefailure.std}
-                        tickmarks={["100%", "80%", "60%", "40%", "20%", "0%"]}
-                        {displayMode}
-                    />
+                <div class="level instability-level">
+                    <aside>
+                        <b>Change fail rate</b>
+                        <span class="metric_description"
+                            >{metrics.changefailure}% of changes fail</span
+                        >
+                    </aside>
+                    <div class="graph">
+                        <PerformanceGraph
+                            user_score={+(
+                                10 - metrics_recoded.changefailure
+                            ).toFixed(1)}
+                            industry_score={selected_industry_metrics.changefailure.mean}
+                            std={selected_industry_metrics.changefailure.std}
+                            tickmarks={[
+                                "0%",
+                                "20%",
+                                "40%",
+                                "60%",
+                                "80%",
+                                "100%",
+                            ]}
+                            {displayMode}
+                        />
+                    </div>
                 </div>
-            </div>
 
-            {#if version === "2025"}
-            <div class="level instability-level">
-                <aside>
-                    <b>Rework rate</b>
-                    <span class="metric_description"
-                        >{metrics.rework}% of changes were unplanned</span
-                    >
-                </aside>
-                <div class="graph">
-                    <PerformanceGraph
-                        user_score={+metrics_recoded.rework.toFixed(1)}
-                        industry_score={(selected_industry_metrics.rework as any).mean}
-                        std={(selected_industry_metrics.rework as any).std}
-                        tickmarks={["100%", "80%", "60%", "40%", "20%", "0%"]}
-                        {displayMode}
-                    />
+                {#if version === "2025"}
+                    <div class="level instability-level">
+                        <aside>
+                            <b>Rework rate</b>
+                            <span class="metric_description"
+                                >{metrics.rework}% of changes were unplanned</span
+                            >
+                        </aside>
+                        <div class="graph">
+                            <PerformanceGraph
+                                user_score={+(
+                                    10 - metrics_recoded.rework
+                                ).toFixed(1)}
+                                industry_score={selected_industry_metrics.rework.mean}
+                                std={(selected_industry_metrics.rework as any)
+                                    .std}
+                                tickmarks={[
+                                    "0%",
+                                    "20%",
+                                    "40%",
+                                    "60%",
+                                    "80%",
+                                    "100%",
+                                ]}
+                                {displayMode}
+                            />
+                        </div>
+                    </div>
+                {/if}
+            </div>
+        </section>
+
+        <section class="legend">
+            <div class="legend-header">
+                <span>{baselineText}</span>
+            </div>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <span class="industry">&nbsp;</span> Average
+                </div>
+                <div class="legend-item">
+                    <span class="std">&nbsp;</span> Standard deviation
+                </div>
+                <div class="legend-item">
+                    <span class="your">&nbsp;</span> Your performance
                 </div>
             </div>
-            {/if}
-        </div>
-    </section>
-    
-    <section class="legend">
-        <div class="legend-header">
-            <span>{baselineText}</span>
-        </div>
-        <div class="legend-items">
-            <div class="legend-item"><span class="industry">&nbsp;</span> Average</div>
-            <div class="legend-item"><span class="std">&nbsp;</span> Standard deviation</div>
-            <div class="legend-item"><span class="your">&nbsp;</span> Your performance</div>
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
 {/if}
 
 <style lang="scss">
@@ -401,9 +510,20 @@
             span {
                 display: inline-block;
                 height: 1rem;
-                &.your { width: 4px; background-color: var(--dora-blue); border-radius: 2px; }
-                &.industry { width: 1px; background-color: #333; }
-                &.std { width: 32px; background-color: var(--std-background); border-radius: 0.25rem; }
+                &.your {
+                    width: 4px;
+                    background-color: var(--dora-blue);
+                    border-radius: 2px;
+                }
+                &.industry {
+                    width: 1px;
+                    background-color: #333;
+                }
+                &.std {
+                    width: 32px;
+                    background-color: var(--std-background);
+                    border-radius: 0.25rem;
+                }
             }
         }
     }
@@ -414,7 +534,10 @@
                 .level {
                     grid-template-columns: 1fr;
                     gap: 1rem;
-                    aside { text-align: center; padding-right: 0; }
+                    aside {
+                        text-align: center;
+                        padding-right: 0;
+                    }
                 }
             }
             .legend-items {
