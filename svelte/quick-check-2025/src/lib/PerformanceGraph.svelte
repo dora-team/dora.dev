@@ -11,7 +11,8 @@
 
     let user_score_position = "0%";
 
-    $: user_score_position = `${parseFloat(user_score.toString()) * 10}%`;
+    $: score_to_position = (score: number) => `${score * 10}%`;
+    $: user_score_position = score_to_position(parseFloat(user_score.toString()));
 </script>
 
 <div class="graph {displayMode}" class:featured>
@@ -19,10 +20,10 @@
     {#if showBenchmarks}
         <div
             class="std"
-            style:left="{Math.max((industry_score - std) * 10, 0)}%"
+            style:left={score_to_position(Math.max(industry_score - std, 0))}
             style:right="{Math.max(100 - (industry_score + std) * 10, 0)}%"
         ></div>
-        <div class="metric industry" style:left="{industry_score * 10}%"></div>
+        <div class="metric industry" style:left={score_to_position(industry_score)}></div>
     {/if}
     <div class="metric user" style:left={user_score_position}></div>
     <div class="user_score" style:left={user_score_position}>{user_score}</div>

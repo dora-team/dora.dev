@@ -14,7 +14,7 @@
             "std": 2.9
         },
         "changefailure": {
-            "mean": 8.3,
+            "mean": 1.7,
             "std": 2.0
         },
         "failurerecovery": {
@@ -37,7 +37,7 @@
             "std": 3.6
         },
         "changefailure": {
-            "mean": 6.3,
+            "mean": 3.7,
             "std": 3.3
         },
         "failurerecovery": {
@@ -60,7 +60,7 @@
             "std": 2.9
         },
         "changefailure": {
-            "mean": 8.2,
+            "mean": 1.8,
             "std": 1.9
         },
         "failurerecovery": {
@@ -83,7 +83,7 @@
             "std": 2.6
         },
         "changefailure": {
-            "mean": 8.1,
+            "mean": 1.9,
             "std": 2.0
         },
         "failurerecovery": {
@@ -106,7 +106,7 @@
             "std": 2.8
         },
         "changefailure": {
-            "mean": 8.4,
+            "mean": 1.6,
             "std": 1.9
         },
         "failurerecovery": {
@@ -129,7 +129,7 @@
             "std": 2.9
         },
         "changefailure": {
-            "mean": 8.4,
+            "mean": 1.6,
             "std": 1.8
         },
         "failurerecovery": {
@@ -152,7 +152,7 @@
             "std": 3.0
         },
         "changefailure": {
-            "mean": 8.2,
+            "mean": 1.8,
             "std": 2.1
         },
         "failurerecovery": {
@@ -161,7 +161,7 @@
         }
     },
     "fewer_than_5000": {
-        "name":"1000 to 4999 employees",
+        "name": "1000 to 4999 employees",
         "performance_average": {
             "mean": 6.7,
             "std": 1.7
@@ -175,7 +175,7 @@
             "std": 2.9
         },
         "changefailure": {
-            "mean": 8.4,
+            "mean": 1.6,
             "std": 1.8
         },
         "failurerecovery": {
@@ -198,7 +198,7 @@
             "std": 3.0
         },
         "changefailure": {
-            "mean": 8.3,
+            "mean": 1.7,
             "std": 2.0
         },
         "failurerecovery": {
@@ -207,7 +207,7 @@
         }
     },
     "more_than_9999": {
-        "name":"10000 or more employees",
+        "name": "10000 or more employees",
         "performance_average": {
             "mean": 6.4,
             "std": 1.7
@@ -221,7 +221,7 @@
             "std": 2.8
         },
         "changefailure": {
-            "mean": 8.4,
+            "mean": 1.6,
             "std": 1.8
         },
         "failurerecovery": {
