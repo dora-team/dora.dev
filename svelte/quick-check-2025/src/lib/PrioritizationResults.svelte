@@ -1,5 +1,6 @@
 <script>
     import PrioritizationResult from "./PrioritizationResult.svelte";
+    import { numberToWord } from "./utils";
 
     export let capability_prioritization_questions;
 
@@ -21,10 +22,11 @@
     </div>
     <div>
         <p>
-            These are only three of the capabilities that our research has shown
-            to predict software delivery and operations performance. Here are
-            some resources to help you plan the next step of your DevOps
-            journey:
+            These are only {numberToWord(
+                capability_prioritization_questions.length,
+            )} of the capabilities that our research has shown to predict
+            software delivery and operations performance. Here are some
+            resources to help you plan the next step of your DevOps journey:
         </p>
 
         <ul>

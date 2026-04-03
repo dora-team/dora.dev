@@ -40,3 +40,11 @@ export const sendAnalyticsEvent = (eventName: string): void => {
         gtag('event', eventName);
     }
 }
+
+export const numberToWord = (num: number): string => {
+    const words = [
+        "zero", "one", "two", "three", "four", "five", 
+        "six", "seven", "eight", "nine", "ten"
+    ];
+    return words[num] || num.toString();
+}

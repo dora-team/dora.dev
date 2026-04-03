@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { sendAnalyticsEvent } from "./utils";
+    import { sendAnalyticsEvent, numberToWord } from "./utils";
     import Capability from "./Capability.svelte";
     import PrioritizationResults from "./PrioritizationResults.svelte";
     // @ts-ignore
@@ -18,6 +18,13 @@
     capability_prioritization_questions.forEach((capability) => {
         capability_responses[capability.shortname] = [];
     });
+
+    $: capability_names_list = new Intl.ListFormat("en", {
+        style: "long",
+        type: "conjunction",
+    }).format(
+        capability_prioritization_questions.map((c) => c.capability_name),
+    );
 
     // TODO: change this to allow direct specification of step (ie. `loadCapability(x)`) -- this will be cleaner for the onMount event so we can e.g. skip directly to priorities
     function nextCapability() {
@@ -79,11 +86,11 @@
             cultural capabilities can help your team deliver more value to your
             customers and organization. It's important to focus your efforts on
             the specific thing that is currently holding you back. While every
-            team will take a different journey, we have identified three
+            team will take a different journey, we have identified {numberToWord(
+                capability_count,
+            )}
             capabilities that are often beneficial to improve:
-            <strong>Continuous Integration</strong>,
-            <strong>Loosely Coupled Teams</strong>, and
-            <strong>Generative Organizational Culture</strong>.
+            <strong>{capability_names_list}</strong>.
         </p>
     </div>
 
