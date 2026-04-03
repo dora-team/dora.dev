@@ -22,7 +22,13 @@
     let industry = "all";
     let version = "2025";
     let current_capability = -1;
-    let metric_names = ["leadtime", "deployfreq", "failurerecovery", "changefailure", "rework"] as (keyof Metrics)[];
+    let metric_names = [
+        "leadtime",
+        "deployfreq",
+        "failurerecovery",
+        "changefailure",
+        "rework",
+    ] as (keyof Metrics)[];
     let current_metric = 0; // for kiosk mode
     let displayMode: DisplayMode = "embedded";
 
@@ -55,13 +61,15 @@
         }
 
         // Wait for reactive declaration of active_metric_names to catch up with version change
-        // TODO: is this required?
+        // guarantees that active_metric_names gets recalculated before advancing to results
         await tick();
 
         if (searchParams.has("displayMode")) {
             displayMode = searchParams.get("displayMode") as DisplayMode;
         } else {
-            const displayModeMeta = document.getElementsByName("displayMode")[0] as HTMLMetaElement;
+            const displayModeMeta = document.getElementsByName(
+                "displayMode",
+            )[0] as HTMLMetaElement;
             if (displayModeMeta && displayModeMeta.content) {
                 displayMode = displayModeMeta.content as DisplayMode;
             }
@@ -167,9 +175,13 @@
             <div class="embeddedMetricsQuestions">
                 {#each active_metric_names as metric, idx}
                     {#if metric === "leadtime"}
-                        <h3 class="group-header">Software delivery throughput</h3>
+                        <h3 class="group-header">
+                            Software delivery throughput
+                        </h3>
                     {:else if metric === "changefailure"}
-                        <h3 class="group-header">Software delivery instability</h3>
+                        <h3 class="group-header">
+                            Software delivery instability
+                        </h3>
                     {/if}
                     <MetricsQuestion
                         bind:metrics
