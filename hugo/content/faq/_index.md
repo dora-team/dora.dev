@@ -8,17 +8,7 @@ bannerTitle: Frequently Asked Questions
 ---
 ## DORA Quick Check
 ### What do my results mean?
-
-Your results provide a snapshot of your software delivery performance. Everything is measured on a standardized **0 to 10 scale** to make it easy to read and compare.
-
-Your report includes:
-
-*   **Overall Performance Score:** A primary score (out of 10) that blends your performance across five different areas.
-*   **Five Individual Metrics:** A detailed look at the five specific metrics that make up your overall score.
-*   **Throughput & Instability Scores:** Two additional overall scores that specifically highlight how fast you deliver software (throughput) and how reliable those deliveries are (instability).
-*   **Industry Benchmarks:** The quick check allows you to compare your scores to industry benchmarks from the [2025 DORA research]({{< ref "/research/2025/" >}}).
-
-> **Key Takeaway:** Your report takes complex delivery data, converts it into a simple 10-point scoring system, and lets you see how you compare to the rest of the industry.
+Your quick check results include an overall software delivery performance score, on a a scale from 0 to 10. This blended metric is derived from the four individual metrics, which are also presented individually. Following the methodology from the [2023 Accelerate State of DevOps Report]({{< ref "/research/2023/" >}}), all scores are normalized to a 10-point scale for convenience. You can compare your results to benchmarks derived from DORA's 2024 research program.
 
 ## DORA Core
 ### What is [DORA Core](/core/)?
