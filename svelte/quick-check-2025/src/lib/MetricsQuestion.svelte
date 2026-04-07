@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { createEventDispatcher } from "svelte";
   import { fade } from "svelte/transition";
   import type { Metrics, DisplayMode } from "./types";
 
@@ -20,19 +19,32 @@
     { friendly_name: string; description: string }
   >;
 
-  export let metrics: Metrics;
-  export let metric_name: keyof Metrics = "leadtime";
-  export let metric_position = 0;
-  export let total_metrics = 5;
-  export let displayMode: DisplayMode = "embedded";
+  let {
+    metrics = $bindable(),
+    metric_name = "leadtime",
+    metric_position = 0,
+    total_metrics = 5,
+    displayMode = "embedded",
+    onNextMetric,
+  }: {
+    metrics: Metrics;
+    metric_name: keyof Metrics;
+    metric_position: number;
+    total_metrics: number;
+    displayMode: DisplayMode;
+    onNextMetric?: () => void;
+  } = $props();
 
-  $: metric_friendly_name =
-    metrics_details[metric_name as string]["friendly_name"];
-  $: metric_question_text = metrics_details[metric_name as string].description;
+  let metric_friendly_name = $derived(
+    metrics_details[metric_name as string]["friendly_name"],
+  );
+  let metric_question_text = $derived(
+    metrics_details[metric_name as string].description,
+  );
 
-  const dispatch = createEventDispatcher();
-
-  const nextMetric = () => dispatch("nextMetric");
+  const nextMetric = () => {
+    if (onNextMetric) onNextMetric();
+  };
 </script>
 
 <div
@@ -98,7 +110,7 @@
                   name={metric_name as string}
                   type="radio"
                   bind:group={metrics[metric_name as string]}
-                  on:change={nextMetric}
+                  onchange={nextMetric}
                   value={value * 10}
                 />{value * 10}%</label
               >
@@ -111,7 +123,7 @@
                 name={metric_name as string}
                 type="radio"
                 bind:group={metrics[metric_name as string]}
-                on:change={nextMetric}
+                onchange={nextMetric}
                 {value}
               />{text}</label
             >
