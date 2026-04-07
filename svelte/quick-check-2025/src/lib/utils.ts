@@ -5,11 +5,11 @@ export const recode_numeric_range = (
     output_min: string | number,
     output_max: string | number,
 ): number | null => {
-    const val = typeof input_value === 'string' ? parseInt(input_value) : input_value;
-    const iMin = typeof input_min === 'string' ? parseInt(input_min) : input_min;
-    const iMax = typeof input_max === 'string' ? parseInt(input_max) : input_max;
-    const oMin = typeof output_min === 'string' ? parseInt(output_min) : output_min;
-    const oMax = typeof output_max === 'string' ? parseInt(output_max) : output_max;
+    const val = typeof input_value === 'string' ? parseInt(input_value, 10) : input_value;
+    const iMin = typeof input_min === 'string' ? parseInt(input_min, 10) : input_min;
+    const iMax = typeof input_max === 'string' ? parseInt(input_max, 10) : input_max;
+    const oMin = typeof output_min === 'string' ? parseInt(output_min, 10) : output_min;
+    const oMax = typeof output_max === 'string' ? parseInt(output_max, 10) : output_max;
 
     if (val >= iMin && val <= iMax) {
         return (

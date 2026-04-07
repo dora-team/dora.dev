@@ -58,25 +58,25 @@
 
     const calculate_recoded_metrics = () => {
         metrics_recoded.leadtime = DataService.calculateRecodedMetric(
-            parseInt(metrics.leadtime.toString()),
+            parseInt(metrics.leadtime.toString(), 10),
             "categorical",
         );
         metrics_recoded.deployfreq = DataService.calculateRecodedMetric(
-            parseInt(metrics.deployfreq.toString()),
+            parseInt(metrics.deployfreq.toString(), 10),
             "categorical",
         );
         metrics_recoded.failurerecovery = DataService.calculateRecodedMetric(
-            parseInt(metrics.failurerecovery.toString()),
+            parseInt(metrics.failurerecovery.toString(), 10),
             "categorical",
         );
         metrics_recoded.changefailure = DataService.calculateRecodedMetric(
-            parseInt(metrics.changefailure.toString()),
+            parseInt(metrics.changefailure.toString(), 10),
             "percentage",
         );
 
         if (version === "2025") {
             metrics_recoded.rework = DataService.calculateRecodedMetric(
-                parseInt(metrics.rework.toString()),
+                parseInt(metrics.rework.toString(), 10),
                 "percentage",
             );
         }
@@ -168,7 +168,7 @@
             console.log("Selected Industry Metrics:", selected_industry_metrics.name);
             console.log("Change Failure Rate - Mean:", selected_industry_metrics.changefailure.mean, "Std:", selected_industry_metrics.changefailure.std);
             if (version === "2025") {
-                console.log("Rework Rate - Mean:", (selected_industry_metrics.rework as any)?.mean, "Std:", (selected_industry_metrics.rework as any)?.std);
+               console.log("Rework Rate - Mean:", selected_industry_metrics.rework?.mean, "Std:", selected_industry_metrics.rework?.std);
             }
         }
     }
@@ -364,10 +364,8 @@
                                 user_score={+(
                                     10 - metrics_recoded.rework
                                 ).toFixed(1)}
-                                industry_score={selected_industry_metrics.rework.mean}
-                                std={(selected_industry_metrics.rework as any)
-                                    .std}
-                                tickmarks={[
+                                industry_score={selected_industry_metrics.rework?.mean || 0}
+                                std={selected_industry_metrics.rework?.std || 0}                                tickmarks={[
                                     "0%",
                                     "20%",
                                     "40%",
