@@ -179,7 +179,7 @@
 
     .description {
       padding-top: 1.5rem;
-      font-size: calc(clamp(16px, 1.25vw, 20px));
+      font-size: clamp(16px, 1.25vw, 20px);
       line-height: 1.4;
       font-weight: 400;
     }
