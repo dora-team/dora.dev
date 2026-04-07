@@ -39,7 +39,7 @@ export class DataService {
     }
 
     static calculateRecodedMetric(value: number, type: 'categorical' | 'percentage'): number {
-        const val = parseFloat(value as any);
+        const val = typeof value === 'string' ? parseInt(value, 10) : value;
         if (isNaN(val) || val === -1) return 0;
 
         if (type === 'categorical') {
