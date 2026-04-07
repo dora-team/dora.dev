@@ -1,12 +1,22 @@
 # DORA Quick Check 2025 (Experimental)
 
-This folder contains the updated DORA Quick Check implementation for 2025. It's a Single Page Application (SPA) built with [Svelte 5](https://svelte.dev) and [TypeScript](https://www.typescriptlang.org/).
+This folder contains the updated DORA Quick Check implementation for 2025. It is a Single Page Application (SPA) built with [Svelte 5](https://svelte.dev) and [TypeScript](https://www.typescriptlang.org/).
+
+## Overview
+
+The Quick Check allows users to measure their software delivery performance across five key metrics, compare their results against DORA benchmarks, and identify prioritization capabilities through a data-driven questionnaire.
 
 ## Features (2025)
 *   **Deployment Rework Rate**: A new metric integrated into the performance calculation.
 *   **Multi-step/Single-page Hybrid**: Embedded mode shows all questions on one page, while Kiosk mode remains multi-step.
 *   **Versioned Benchmarks**: Supports 2024 and 2025 benchmark data via an internal API.
 *   **TypeScript**: Fully typed for better maintainability.
+
+## Architecture & Integration
+
+-   **Framework**: Svelte 5 (utilizing runes like `$state`, `$derived`, and `$effect`).
+-   **Integration**: The application is embedded into the Hugo site via `/hugo/content/experimental/quick-check/_index.md`.
+-   **Assets**: When built, the application generates `quickcheck-2025.js` and `quickcheck-2025.css` which are copied to the Hugo content directory.
 
 ## Development
 
@@ -19,9 +29,37 @@ This folder contains the updated DORA Quick Check implementation for 2025. It's 
 3.  Run the dev server: `npm run dev`
 
 ### Building for Hugo
-To build the SPA and copy it to the experimental Hugo content directory:
-1.  From the project root, run: `bash svelte/quick-check-2025/build-quick-check.sh`
-2.  Preview with Hugo: `hugo serve -s hugo`
+To build the SPA and copy it to the experimental Hugo content directory, run the following from the project root:
+```bash
+bash svelte/quick-check-2025/build-quick-check.sh
+```
+This script compiles the assets and places them in `hugo/public/experimental/quick-check/`.
+
+---
+
+## Extending the Application
+
+The "What's holding you back?" section is data-driven. To add a new capability:
+
+### 1. Update the Data
+Add the new capability details to the JSON configuration file.
+-   **File**: `src/lib/data/capability_prioritization_questions.json`
+-   **Action**: Add a new entry to the array with a unique `shortname` and at least 5-6 questions.
+
+### 2. Update Application Logic
+Update the application to recognize the new capability when loading state from URL parameters.
+-   **File**: `src/App.svelte`
+-   **Action**: Locate the `onMount` block (around line 92). Update the check to include your new `shortname` and update the `current_capability` index:
+    ```typescript
+    if (["ci", "arch", "culture", "your-new-cap"].every((param) => searchParams.has(param))) {
+        current_capability = 3; // Index (0-based) for the results summary
+    }
+    ```
+
+### 3. Build and Deploy
+Run the build script mentioned above to update the assets used by the Hugo site.
+
+---
 
 ## Internal API (`DataService`)
 
@@ -29,38 +67,15 @@ The 2025 Quick Check uses a centralized `DataService` (`src/lib/data-service.ts`
 
 ### Accessing the API
 
-External Svelte components or TypeScript modules within this project can consume the `DataService` as follows:
-
 ```typescript
 import { DataService } from './lib/data-service';
 
 // Get industry benchmarks for a specific version (default is '2025')
 const industryBenchmarks = await DataService.getIndustryMetrics('2025');
-console.log(industryBenchmarks['technology'].name); // "Technology"
-
-// Get organization size benchmarks
-const orgBenchmarks = await DataService.getOrgSizeMetrics('2025');
-console.log(orgBenchmarks['fewer_than_100'].name); // "20 to 99 employees"
 
 // Calculate a recoded metric (0-10 scale)
-const recodedLeadTime = DataService.calculateRecodedMetric(4, 'categorical'); // 4 maps to 6.0
-
-// Calculate overall performance average
-const metrics = {
-    leadtime: 4,
-    deployfreq: 4,
-    failurerecovery: 3,
-    changefailure: 15,
-    rework: 10
-};
-const avg = DataService.calculatePerformanceAverage(metrics, '2025');
+const recodedLeadTime = DataService.calculateRecodedMetric(4, 'categorical');
 ```
-
-### Future Externalization
-
-The `DataService` is designed to be easily extracted into a standalone library or replaced by a fetch-based client for a remote REST/GraphQL API. To externalize:
-1.  Replace the static JSON imports in `data-service.ts` with `fetch()` calls to a backend endpoint.
-2.  Maintain the existing interface (`getIndustryMetrics`, `calculateRecodedMetric`, etc.) to ensure the UI components continue to function without modification.
 
 ## Testing
 
@@ -77,5 +92,5 @@ Run the 2025 specific tests:
 
 ## Legacy Features
 
-### Comparison by industry size
+### Comparison by organization size
 Enable organization size comparisons by adding `comp=size` to the query string. Data is stored in `src/lib/data/editions/[year]/organization_size_metrics.json`.
