@@ -158,7 +158,7 @@
                     Take the
                     <h1>DORA Quick Check</h1>
                     {#if current_metric > 0}
-                        <StartOver on:reset={reset} {displayMode} />
+                        <StartOver onreset={reset} {displayMode} />
                     {/if}
                 </aside>
                 <div class="questionWrapper">
@@ -223,7 +223,7 @@
             <YourPerformance {metrics} bind:industry {displayMode} {version} />
             <HelpMePrioritize bind:current_capability />
             {#if displayMode === "kiosk"}
-                <NextSteps {displayMode} on:reset={reset} />
+                <NextSteps {displayMode} onreset={reset} />
             {/if}
         </div>
     {/if}

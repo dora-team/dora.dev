@@ -16,27 +16,23 @@
         Record<string, string>
     >;
 
-    export let metrics: Metrics;
-    export let industry: string;
-    export let displayMode: DisplayMode;
-    export let version = "2025";
+    let {
+        metrics,
+        industry = $bindable(),
+        displayMode,
+        version = "2025",
+    }: {
+        metrics: Metrics;
+        industry: string;
+        displayMode: DisplayMode;
+        version?: string;
+    } = $props();
 
-    let metrics_recoded = {
-        leadtime: 0,
-        deployfreq: 0,
-        changefailure: 0,
-        failurerecovery: 0,
-        rework: 0,
-    };
-    let performance_average = "0.0";
-    let throughput_average = "0.0";
-    let instability_average = "0.0";
-    let industry_metrics_data: BenchmarkData = {};
-    let organization_size_metrics: BenchmarkData = {};
-    let industry_metrics: BenchmarkData = {};
-    let comparisonType: "industry" | "size" = "industry";
-    let currentIndustry = industry;
-    let loading = true;
+    let industry_metrics_data: BenchmarkData = $state({});
+    let organization_size_metrics: BenchmarkData = $state({});
+    let industry_metrics: BenchmarkData = $state({});
+    let comparisonType: "industry" | "size" = $state("industry");
+    let loading = $state(true);
 
     async function loadData() {
         loading = true;
@@ -56,57 +52,37 @@
         loading = false;
     }
 
-    const calculate_recoded_metrics = () => {
-        metrics_recoded.leadtime = DataService.calculateRecodedMetric(
-            parseInt(metrics.leadtime.toString(), 10),
-            "categorical",
-        );
-        metrics_recoded.deployfreq = DataService.calculateRecodedMetric(
-            parseInt(metrics.deployfreq.toString(), 10),
-            "categorical",
-        );
-        metrics_recoded.failurerecovery = DataService.calculateRecodedMetric(
-            parseInt(metrics.failurerecovery.toString(), 10),
-            "categorical",
-        );
-        metrics_recoded.changefailure = DataService.calculateRecodedMetric(
-            parseInt(metrics.changefailure.toString(), 10),
-            "percentage",
-        );
+    const metrics_recoded = $derived.by(() => {
+        const recoded = {
+            leadtime: DataService.calculateRecodedMetric(
+                parseInt(metrics.leadtime.toString(), 10),
+                "categorical",
+            ),
+            deployfreq: DataService.calculateRecodedMetric(
+                parseInt(metrics.deployfreq.toString(), 10),
+                "categorical",
+            ),
+            failurerecovery: DataService.calculateRecodedMetric(
+                parseInt(metrics.failurerecovery.toString(), 10),
+                "categorical",
+            ),
+            changefailure: DataService.calculateRecodedMetric(
+                parseInt(metrics.changefailure.toString(), 10),
+                "percentage",
+            ),
+            rework: 0,
+        };
 
         if (version === "2025") {
-            metrics_recoded.rework = DataService.calculateRecodedMetric(
+            recoded.rework = DataService.calculateRecodedMetric(
                 parseInt(metrics.rework.toString(), 10),
                 "percentage",
             );
         }
-    };
-
-    const setIndustryInURL = (industryName: string) => {
-        if (typeof window !== "undefined") {
-            const url = new URL(window.location.href);
-            url.searchParams.set("industry", industryName);
-            window.history.replaceState({}, "", url.toString());
-        }
-    };
-
-    onMount(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-
-        sendAnalyticsEvent("quick_check_results");
-        loadData();
+        return recoded;
     });
 
-    $: {
-        if (metrics && version) {
-            calculate_recoded_metrics();
-        }
-    }
-
-    $: {
+    const performance_average = $derived.by(() => {
         const active_scores = [
             metrics_recoded.leadtime,
             metrics_recoded.deployfreq,
@@ -116,20 +92,21 @@
         if (version === "2025") {
             active_scores.push(metrics_recoded.rework);
         }
-        performance_average = (
+        return (
             active_scores.reduce((a, b) => a + b, 0) / active_scores.length
         ).toFixed(1);
+    });
 
-        // Throughput: Lead Time, Deploy Freq, Failure Recovery (3 metrics)
-        throughput_average = (
+    const throughput_average = $derived(
+        (
             (metrics_recoded.leadtime +
                 metrics_recoded.deployfreq +
                 metrics_recoded.failurerecovery) /
             3
-        ).toFixed(1);
+        ).toFixed(1),
+    );
 
-        // Instability: Change Failure, Rework (2 metrics)
-        // Note: The benchmark "instability" mean (e.g., 2.1) is (10 - average_stability_score)
+    const instability_average = $derived.by(() => {
         const instability_stability_scores = [metrics_recoded.changefailure];
         if (version === "2025") {
             instability_stability_scores.push(metrics_recoded.rework);
@@ -137,18 +114,15 @@
         const stability_avg =
             instability_stability_scores.reduce((a, b) => a + b, 0) /
             instability_stability_scores.length;
-        instability_average = (10 - stability_avg).toFixed(1);
-    }
+        return (10 - stability_avg).toFixed(1);
+    });
 
-    $: {
+    const currentIndustry = $derived.by(() => {
         if (!loading && !industry_metrics[industry]) {
-            currentIndustry = "all";
-            industry = "all";
-            setIndustryInURL(currentIndustry);
-        } else {
-            currentIndustry = industry;
+            return "all";
         }
-    }
+        return industry;
+    });
 
     const defaultIndustryMetrics: IndustryMetrics = {
         name: "All industries",
@@ -160,30 +134,48 @@
         rework: { mean: 0, std: 0 },
     };
 
-    $: selected_industry_metrics =
-        industry_metrics[currentIndustry] || defaultIndustryMetrics;
+    const selected_industry_metrics = $derived(
+        industry_metrics[currentIndustry] || defaultIndustryMetrics,
+    );
 
-    $: {
-        if (selected_industry_metrics && !loading) {
-            console.log("Selected Industry Metrics:", selected_industry_metrics.name);
-            console.log("Change Failure Rate - Mean:", selected_industry_metrics.changefailure.mean, "Std:", selected_industry_metrics.changefailure.std);
-            if (version === "2025") {
-               console.log("Rework Rate - Mean:", selected_industry_metrics.rework?.mean, "Std:", selected_industry_metrics.rework?.std);
-            }
-        }
-    }
-
-    $: setIndustryInURL(currentIndustry);
-    $: comparisonText =
+    const comparisonText = $derived(
         comparisonType === "industry"
             ? "Compare to industry benchmark:"
-            : "Compare to organization size benchmark:";
-    $: baselineText =
+            : "Compare to organization size benchmark:",
+    );
+
+    const baselineText = $derived(
         !loading && industry_metrics[industry]
             ? comparisonType === "industry"
                 ? `${version} Industry baseline (${industry_metrics[industry]["name"]}):`
                 : `${version} Organization size benchmark (${industry_metrics[currentIndustry]["name"]}):`
-            : "";
+            : "",
+    );
+
+    const setIndustryInURL = (industryName: string) => {
+        if (typeof window !== "undefined") {
+            const url = new URL(window.location.href);
+            url.searchParams.set("industry", industryName);
+            window.history.replaceState({}, "", url.toString());
+        }
+    };
+
+    $effect(() => {
+        if (!loading && currentIndustry === "all" && industry !== "all") {
+            industry = "all";
+        }
+        setIndustryInURL(currentIndustry);
+    });
+
+    onMount(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+
+        sendAnalyticsEvent("quick_check_results");
+        loadData();
+    });
 </script>
 
 {#if loading}

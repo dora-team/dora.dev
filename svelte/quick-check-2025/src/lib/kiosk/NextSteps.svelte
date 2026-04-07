@@ -1,15 +1,12 @@
 <script>
     import StartOver from "./StartOver.svelte";
-    import { createEventDispatcher } from "svelte";
-    export let displayMode="kiosk";
+    let { displayMode = "kiosk", onreset } = $props();
 
-    const dispatch = createEventDispatcher();
-
-    const reset = () => dispatch("reset");
+    const reset = () => onreset();
 </script>
 
 <section class="nextSteps">
-    <StartOver on:reset={reset} {displayMode} />
+    <StartOver {onreset} {displayMode} />
     <h1>Next Steps</h1>
     <div>
         <ul>

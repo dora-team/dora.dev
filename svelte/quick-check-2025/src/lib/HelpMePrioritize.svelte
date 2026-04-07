@@ -7,26 +7,33 @@
     import capability_prioritization_questions_raw from "./data/capability_prioritization_questions.json";
     import type { Capability as CapabilityType } from "./types";
 
-    const capability_prioritization_questions = capability_prioritization_questions_raw as CapabilityType[];
+    const capability_prioritization_questions =
+        capability_prioritization_questions_raw as CapabilityType[];
 
-    export let current_capability = -1;
+    let {
+        current_capability = $bindable(-1),
+    }: {
+        current_capability: number;
+    } = $props();
+
     let capability_count = capability_prioritization_questions.length;
-    let capability_dom_elements: HTMLElement[] = [];
-    let capability_container: HTMLElement;
+    let capability_dom_elements: HTMLElement[] = $state([]);
+    let capability_container: HTMLElement | undefined = $state();
 
-    let capability_responses: Record<string, number[]> = {};
+    let capability_responses: Record<string, number[]> = $state({});
     capability_prioritization_questions.forEach((capability) => {
         capability_responses[capability.shortname] = [];
     });
 
-    $: capability_names_list = new Intl.ListFormat("en", {
-        style: "long",
-        type: "conjunction",
-    }).format(
-        capability_prioritization_questions.map((c) => c.capability_name),
+    let capability_names_list = $derived(
+        new Intl.ListFormat("en", {
+            style: "long",
+            type: "conjunction",
+        }).format(
+            capability_prioritization_questions.map((c) => c.capability_name),
+        ),
     );
 
-    // TODO: change this to allow direct specification of step (ie. `loadCapability(x)`) -- this will be cleaner for the onMount event so we can e.g. skip directly to priorities
     function nextCapability() {
         current_capability++;
 
@@ -36,12 +43,16 @@
                 "translateX(-100%)";
             capability_dom_elements[current_capability - 1].style.opacity = "0";
         }
-        capability_dom_elements[current_capability].style.transform =
-            "translateX(0%)";
-        capability_dom_elements[current_capability].style.opacity = "1";
+        if (capability_dom_elements[current_capability]) {
+            capability_dom_elements[current_capability].style.transform =
+                "translateX(0%)";
+            capability_dom_elements[current_capability].style.opacity = "1";
 
-        // resize container to fit its contents
-        capability_container.style.height = `${capability_dom_elements[current_capability].offsetHeight}px`;
+            // resize container to fit its contents
+            if (capability_container) {
+                capability_container.style.height = `${capability_dom_elements[current_capability].offsetHeight}px`;
+            }
+        }
 
         if (current_capability > 0) {
             const el = document.getElementById("help-me-prioritize");
@@ -68,7 +79,7 @@
                         url.searchParams
                             .get(capability.shortname)!
                             .split("")
-                            .map((x) => parseInt(x));
+                            .map((x) => parseInt(x, 10));
                 }
             });
         }
@@ -77,7 +88,11 @@
 </script>
 
 <section id="help-me-prioritize">
-    <div id="whats-holding-you-back" class:show={current_capability == 0}>
+    <div
+        id="whats-holding-you-back"
+        class:show={current_capability == 0}
+        aria-hidden={current_capability != 0}
+    >
         <h2>What's holding you back?</h2>
         <p>
             In our <a href="/research">research</a>, DORA has identified several
@@ -103,15 +118,14 @@
                     : "translateX(100%)"}
                 bind:this={capability_dom_elements[counter]}
             >
-                <!-- render each set of capabilty questions; listen for the 'next Capability' event  -->
                 <Capability
                     {capability}
                     {capability_count}
-                    bind:current_capability_index={current_capability}
+                    current_capability_index={current_capability}
                     bind:this_capability_responses={capability_responses[
                         capability.shortname
                     ]}
-                    on:nextCapability={nextCapability}
+                    onNextCapability={nextCapability}
                 />
             </div>
         {/each}
@@ -139,7 +153,7 @@
         &.show {
             height: auto;
         }
-        transform: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
     }
     #capability_container {
         padding: 0.75rem 0;
@@ -150,6 +164,7 @@
             position: absolute;
             opacity: 0;
             transition: all 0.5s ease-in-out;
+            width: 100%;
         }
     }
 

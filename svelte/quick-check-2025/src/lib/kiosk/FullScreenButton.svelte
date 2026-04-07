@@ -1,10 +1,7 @@
 <script lang="ts">
-    let fullscreen = false;
+    let fullscreen = $state(false);
 
-    const fullscreen_modes: Record<string, string> = {
-        "false": "fullscreen_exit",
-        "true": "fullscreen",
-    };
+    const fullscreen_icon = $derived(fullscreen ? "fullscreen_exit" : "fullscreen");
 
     function toggleFullScreen() {
         if (!fullscreen && !document.fullscreenElement) {
@@ -21,10 +18,10 @@
 <button
     class="google-material-icons"
     id="fullscreen_container"
-    on:click={toggleFullScreen}
+    onclick={toggleFullScreen}
     aria-label={fullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
 >
-    {fullscreen_modes[(!fullscreen).toString()]}
+    {fullscreen_icon}
 </button>
 {/if}
 
