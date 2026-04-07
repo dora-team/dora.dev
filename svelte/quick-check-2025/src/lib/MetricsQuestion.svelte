@@ -47,6 +47,19 @@
   };
 </script>
 
+{#snippet radioOption(value: string | number, labelText: string | number)}
+  <label>
+    <input
+      name={metric_name as string}
+      type="radio"
+      bind:group={metrics[metric_name as string]}
+      onchange={nextMetric}
+      {value}
+    />
+    {labelText}
+  </label>
+{/snippet}
+
 <div
   in:fade={{ delay: 250, duration: 100 }}
   out:fade={{ delay: 150, duration: 100 }}
@@ -105,28 +118,12 @@
             </slider>
           {:else}
             {#each { length: 11 } as _, value}
-              <label
-                ><input
-                  name={metric_name as string}
-                  type="radio"
-                  bind:group={metrics[metric_name as string]}
-                  onchange={nextMetric}
-                  value={value * 10}
-                />{value * 10}%</label
-              >
+              {@render radioOption(value * 10, `${value * 10}%`)}
             {/each}
           {/if}
         {:else}
           {#each Object.entries(metrics_question_responses[metric_name as string]) as [value, text]}
-            <label
-              ><input
-                name={metric_name as string}
-                type="radio"
-                bind:group={metrics[metric_name as string]}
-                onchange={nextMetric}
-                {value}
-              />{text}</label
-            >
+            {@render radioOption(value, text)}
           {/each}
         {/if}
       </div>
