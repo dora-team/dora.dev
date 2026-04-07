@@ -1,8 +1,8 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-    import { onDestroy } from "svelte";
+    import { onMount } from 'svelte';
+    import { onDestroy } from 'svelte';
 
-    let { displayMode = "kiosk", onreset }: { displayMode?: string; onreset: () => void } = $props();
+    let { displayMode = 'kiosk', onreset }: { displayMode?: string; onreset: () => void } = $props();
 
     const TIMER_DURATION_IN_SEC = 90;
     const TIMER_HIDDEN_FOR_SEC = 60;

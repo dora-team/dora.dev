@@ -22,5 +22,5 @@ export interface Metrics {
     [key: string]: number | string;
 }
 
-export type DisplayMode = "embedded" | "kiosk";
-export type Step = "input" | "results" | "priorities";
+export type DisplayMode = 'embedded' | 'kiosk';
+export type Step = 'input' | 'results' | 'priorities';

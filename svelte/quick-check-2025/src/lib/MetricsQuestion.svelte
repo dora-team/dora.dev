@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { fade } from "svelte/transition";
-  import type { Metrics, DisplayMode } from "./types";
+  import { fade } from 'svelte/transition';
+  import type { Metrics, DisplayMode } from './types';
 
   // @ts-ignore
-  import metrics_question_responses_raw from "./data/metrics_question_responses.json";
+  import metrics_question_responses_raw from './data/metrics_question_responses.json';
   // @ts-ignore
-  import metrics_images_raw from "./data/metrics_images.json";
+  import metrics_images_raw from './data/metrics_images.json';
   // @ts-ignore
-  import metrics_details_raw from "./data/metrics_details.json";
+  import metrics_details_raw from './data/metrics_details.json';
 
   const metrics_question_responses = metrics_question_responses_raw as Record<
     string,
@@ -21,10 +21,10 @@
 
   let {
     metrics = $bindable(),
-    metric_name = "leadtime",
+    metric_name = 'leadtime',
     metric_position = 0,
     total_metrics = 5,
-    displayMode = "embedded",
+    displayMode = 'embedded',
     onNextMetric,
   }: {
     metrics: Metrics;
@@ -36,7 +36,7 @@
   } = $props();
 
   let metric_friendly_name = $derived(
-    metrics_details[metric_name as string]["friendly_name"],
+    metrics_details[metric_name as string]['friendly_name'],
   );
   let metric_question_text = $derived(
     metrics_details[metric_name as string].description,
@@ -85,8 +85,8 @@
         <div class="description">{@html metric_question_text}</div>
       </legend>
       <div class="inputs">
-        {#if metric_name === "changefailure" || metric_name === "rework"}
-          {#if displayMode === "embedded"}
+        {#if metric_name === 'changefailure' || metric_name === 'rework'}
+          {#if displayMode === 'embedded'}
             <slider>
               <input
                 type="range"
@@ -98,9 +98,9 @@
               <echo>
                 {#if Number(metrics[metric_name as string]) >= 0}{metrics[
                     metric_name as string
-                  ]}%<br />{metric_name === "changefailure"
-                    ? "of changes fail"
-                    : "of deployments were unplanned"}{/if}
+                  ]}%<br />{metric_name === 'changefailure'
+                    ? 'of changes fail'
+                    : 'of deployments were unplanned'}{/if}
               </echo>
               <tickmarks>
                 <tick>|<br />0</tick>

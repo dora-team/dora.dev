@@ -1,14 +1,14 @@
 <script lang="ts">
-    import { onMount, tick } from "svelte";
-    import MetricsQuestion from "./lib/MetricsQuestion.svelte";
-    import YourPerformance from "./lib/YourPerformance.svelte";
-    import HelpMePrioritize from "./lib/HelpMePrioritize.svelte";
-    import GoFurther from "./lib/GoFurther.svelte";
-    import { sendAnalyticsEvent } from "./lib/utils";
-    import FullScreenButton from "./lib/kiosk/FullScreenButton.svelte";
-    import NextSteps from "./lib/kiosk/NextSteps.svelte";
-    import StartOver from "./lib/kiosk/StartOver.svelte";
-    import type { Metrics, Step, DisplayMode } from "./lib/types";
+    import { onMount, tick } from 'svelte';
+    import MetricsQuestion from './lib/MetricsQuestion.svelte';
+    import YourPerformance from './lib/YourPerformance.svelte';
+    import HelpMePrioritize from './lib/HelpMePrioritize.svelte';
+    import GoFurther from './lib/GoFurther.svelte';
+    import { sendAnalyticsEvent } from './lib/utils';
+    import FullScreenButton from './lib/kiosk/FullScreenButton.svelte';
+    import NextSteps from './lib/kiosk/NextSteps.svelte';
+    import StartOver from './lib/kiosk/StartOver.svelte';
+    import type { Metrics, Step, DisplayMode } from './lib/types';
 
     let metrics: Metrics = $state({
         leadtime: -1,
@@ -18,29 +18,29 @@
         rework: -1,
     });
 
-    let step: Step = $state("input");
-    let industry = $state("all");
-    let version = $state("2025");
+    let step: Step = $state('input');
+    let industry = $state('all');
+    let version = $state('2025');
     let current_capability = $state(-1);
     let metric_names = [
-        "leadtime",
-        "deployfreq",
-        "failurerecovery",
-        "changefailure",
-        "rework",
+        'leadtime',
+        'deployfreq',
+        'failurerecovery',
+        'changefailure',
+        'rework',
     ] as (keyof Metrics)[];
     let current_metric = $state(0); // for kiosk mode
-    let displayMode: DisplayMode = $state("embedded");
+    let displayMode: DisplayMode = $state('embedded');
 
     // Adjust metric_names based on version
     let active_metric_names = $derived(
-        version === "2025"
+        version === '2025'
             ? (metric_names as string[])
-            : (metric_names as string[]).filter((m) => m !== "rework")
+            : (metric_names as string[]).filter((m) => m !== 'rework')
     );
 
     function saveURLParams() {
-        if (typeof window !== "undefined" && displayMode === "embedded") {
+        if (typeof window !== 'undefined' && displayMode === 'embedded') {
             const url = new URL(window.location.href);
             active_metric_names.forEach((metric) => {
                 if (metrics[metric] !== -1) {
@@ -49,27 +49,27 @@
                     url.searchParams.delete(metric);
                 }
             });
-            url.searchParams.set("v", version);
-            window.history.pushState({}, "", url.toString());
+            url.searchParams.set('v', version);
+            window.history.pushState({}, '', url.toString());
         }
     }
 
     onMount(async () => {
         const searchParams = new URLSearchParams(window.location.search);
 
-        if (searchParams.has("v")) {
-            version = searchParams.get("v")!;
+        if (searchParams.has('v')) {
+            version = searchParams.get('v')!;
         }
 
         // Wait for reactive declaration of active_metric_names to catch up with version change
         // guarantees that active_metric_names gets recalculated before advancing to results
         await tick();
 
-        if (searchParams.has("displayMode")) {
-            displayMode = searchParams.get("displayMode") as DisplayMode;
+        if (searchParams.has('displayMode')) {
+            displayMode = searchParams.get('displayMode') as DisplayMode;
         } else {
             const displayModeMeta = document.getElementsByName(
-                "displayMode",
+                'displayMode',
             )[0] as HTMLMetaElement;
             if (displayModeMeta && displayModeMeta.content) {
                 displayMode = displayModeMeta.content as DisplayMode;
@@ -85,24 +85,24 @@
 
         // Advance to results ONLY if all active metrics are present
         if (active_metric_names.every((metric) => searchParams.has(metric))) {
-            step = "results";
+            step = 'results';
         }
 
         if (
-            ["ci", "arch", "culture"].every((param) => searchParams.has(param))
+            ['ci', 'arch', 'culture'].every((param) => searchParams.has(param))
         ) {
             current_capability = 2;
         }
 
-        if (searchParams.has("industry")) {
-            industry = searchParams.get("industry")!;
+        if (searchParams.has('industry')) {
+            industry = searchParams.get('industry')!;
         }
 
-        sendAnalyticsEvent("quick_check_start");
+        sendAnalyticsEvent('quick_check_start');
     });
 
     function nextMetric() {
-        if (displayMode === "kiosk") {
+        if (displayMode === 'kiosk') {
             if (current_metric < active_metric_names.length - 1) {
                 current_metric++;
             } else {
@@ -113,15 +113,15 @@
 
     function showResults() {
         saveURLParams();
-        step = "results";
+        step = 'results';
     }
 
     function reset() {
         metric_names.forEach((metric) => {
             metrics[metric as string] = -1;
         });
-        step = "input";
-        industry = "all";
+        step = 'input';
+        industry = 'all';
         current_capability = -1;
         current_metric = 0;
         saveURLParams();
@@ -129,7 +129,7 @@
 </script>
 
 <!-- Vite provides environment variables; if running in dev, show some debug -->
-{#if typeof import.meta.env.MODE !== "undefined" && import.meta.env.MODE === "development"}
+{#if typeof import.meta.env.MODE !== 'undefined' && import.meta.env.MODE === 'development'}
     <div
         class="debug"
         style="position:fixed; top:0; right:0; background:rgba(0,0,0,0.8); color:white; padding:1rem; z-index:10000; font-size:10px;"
@@ -139,21 +139,21 @@
         Version: {version}<br />
         <button
             onclick={() => {
-                version = version === "2025" ? "2024" : "2025";
+                version = version === '2025' ? '2024' : '2025';
                 current_metric = 0;
             }}>Toggle Version</button
         >
     </div>
 {/if}
 
-{#if displayMode === "kiosk"}
+{#if displayMode === 'kiosk'}
     <FullScreenButton />
 {/if}
 
 {#snippet groupHeader(metric: string)}
-    {#if metric === "leadtime"}
+    {#if metric === 'leadtime'}
         <h3 class="group-header">Software delivery throughput</h3>
-    {:else if metric === "changefailure"}
+    {:else if metric === 'changefailure'}
         <h3 class="group-header">Software delivery instability</h3>
     {/if}
 {/snippet}
@@ -170,8 +170,8 @@
 {/snippet}
 
 <div class="quickcheck {displayMode}">
-    {#if step === "input"}
-        {#if displayMode === "kiosk"}
+    {#if step === 'input'}
+        {#if displayMode === 'kiosk'}
             <div class="kioskMetricsQuestions">
                 <aside class="kioskAside">
                     Take the
@@ -203,16 +203,16 @@
                 </section>
             </div>
         {/if}
-    {:else if step === "results" || step === "priorities"}
+    {:else if step === 'results' || step === 'priorities'}
         <div class="resultsContainer">
-            {#if version === "2024"}
+            {#if version === '2024'}
                 <div class="version-prompt">
                     You are viewing results using 2024 benchmark data.
                     <button
                         onclick={() => {
-                            version = "2025";
+                            version = '2025';
                             metrics.rework = -1;
-                            step = "input";
+                            step = 'input';
                         }}
                     >
                         Answer the new Deployment rework rate question to see
@@ -222,7 +222,7 @@
             {/if}
             <YourPerformance {metrics} bind:industry {displayMode} {version} />
             <HelpMePrioritize bind:current_capability />
-            {#if displayMode === "kiosk"}
+            {#if displayMode === 'kiosk'}
                 <NextSteps {displayMode} onreset={reset} />
             {/if}
         </div>
@@ -231,7 +231,7 @@
     <div class="faq">
         <a href="/faq/#dora-quick-check">Quick Check FAQ</a>
     </div>
-    {#if step !== "input"}
+    {#if step !== 'input'}
         <GoFurther />
     {/if}
 </div>

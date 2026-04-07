@@ -1,6 +1,6 @@
 <script>
-    import PrioritizationResult from "./PrioritizationResult.svelte";
-    import { numberToWord } from "./utils";
+    import PrioritizationResult from './PrioritizationResult.svelte';
+    import { numberToWord } from './utils';
 
     let { capability_prioritization_questions, capability_responses } = $props();
 </script>

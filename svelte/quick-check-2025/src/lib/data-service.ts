@@ -1,7 +1,7 @@
-import industry_2024 from "./data/editions/2024/industry_metrics.json";
-import org_2024 from "./data/editions/2024/organization_size_metrics.json";
-import industry_2025 from "./data/editions/2025/industry_metrics.json";
-import org_2025 from "./data/editions/2025/organization_size_metrics.json";
+import industry_2024 from './data/editions/2024/industry_metrics.json';
+import org_2024 from './data/editions/2024/organization_size_metrics.json';
+import industry_2025 from './data/editions/2025/industry_metrics.json';
+import org_2025 from './data/editions/2025/organization_size_metrics.json';
 
 export interface MetricBenchmark {
     mean: number;
@@ -26,16 +26,16 @@ export interface BenchmarkData {
 
 export class DataService {
     private static editions: Record<string, { industry: BenchmarkData, org: BenchmarkData }> = {
-        "2024": { industry: industry_2024 as BenchmarkData, org: org_2024 as BenchmarkData },
-        "2025": { industry: industry_2025 as BenchmarkData, org: org_2025 as BenchmarkData }
+        '2024': { industry: industry_2024 as BenchmarkData, org: org_2024 as BenchmarkData },
+        '2025': { industry: industry_2025 as BenchmarkData, org: org_2025 as BenchmarkData }
     };
 
     static async getIndustryMetrics(version: string = '2025'): Promise<BenchmarkData> {
-        return this.editions[version]?.industry || this.editions["2025"].industry;
+        return this.editions[version]?.industry || this.editions['2025'].industry;
     }
 
     static async getOrgSizeMetrics(version: string = '2025'): Promise<BenchmarkData> {
-        return this.editions[version]?.org || this.editions["2025"].org;
+        return this.editions[version]?.org || this.editions['2025'].org;
     }
 
     static calculateRecodedMetric(value: number, type: 'categorical' | 'percentage'): number {

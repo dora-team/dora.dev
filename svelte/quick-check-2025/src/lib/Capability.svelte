@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Capability } from "./types";
+    import type { Capability } from './types';
 
     let {
         capability,
@@ -17,26 +17,26 @@
 
     function nextCapability() {
         // push data to URL
-        if (typeof window !== "undefined") {
+        if (typeof window !== 'undefined') {
             const url = new URL(window.location.href);
             url.searchParams.set(
                 capability.shortname,
-                this_capability_responses.join(""),
+                this_capability_responses.join(''),
             );
             if (current_capability_index == capability_count - 1) {
-                url.searchParams.set("step", "priorities");
+                url.searchParams.set('step', 'priorities');
             }
-            window.history.replaceState({}, "", url.toString());
+            window.history.replaceState({}, '', url.toString());
         }
         if (onNextCapability) onNextCapability();
     }
 
     let response_options = [
-        "Strongly disagree",
-        "Disagree",
-        "Neither agree nor disagree",
-        "Agree",
-        "Strongly agree",
+        'Strongly disagree',
+        'Disagree',
+        'Neither agree nor disagree',
+        'Agree',
+        'Strongly agree',
     ];
 
     // has user entered a value for every question of this capability?
@@ -94,7 +94,7 @@
                 Results{/if}</button
         >
         <!-- Vite provides environment variables; if running in dev, show some debug -->
-        {#if typeof import.meta.env.MODE != "undefined" && import.meta.env.MODE === "development"}
+        {#if typeof import.meta.env.MODE != 'undefined' && import.meta.env.MODE === 'development'}
             <div class="debug">
                 debug: index = {current_capability_index}<br />
                 debug: thisCapabilityCompleted = {thisCapabilityCompleted}<br />

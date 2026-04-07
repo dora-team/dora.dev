@@ -1,15 +1,15 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-    import PerformanceGraph from "./PerformanceGraph.svelte";
+    import { onMount } from 'svelte';
+    import PerformanceGraph from './PerformanceGraph.svelte';
     import {
         DataService,
         type BenchmarkData,
         type IndustryMetrics,
-    } from "./data-service";
-    import { sendAnalyticsEvent } from "./utils";
-    import type { Metrics, DisplayMode } from "./types";
+    } from './data-service';
+    import { sendAnalyticsEvent } from './utils';
+    import type { Metrics, DisplayMode } from './types';
     // @ts-ignore
-    import metrics_question_responses_raw from "./data/metrics_question_responses.json";
+    import metrics_question_responses_raw from './data/metrics_question_responses.json';
 
     const metrics_question_responses = metrics_question_responses_raw as Record<
         string,
@@ -20,7 +20,7 @@
         metrics,
         industry = $bindable(),
         displayMode,
-        version = "2025",
+        version = '2025',
     }: {
         metrics: Metrics;
         industry: string;
@@ -31,7 +31,7 @@
     let industry_metrics_data: BenchmarkData = $state({});
     let organization_size_metrics: BenchmarkData = $state({});
     let industry_metrics: BenchmarkData = $state({});
-    let comparisonType: "industry" | "size" = $state("industry");
+    let comparisonType: 'industry' | 'size' = $state('industry');
     let loading = $state(true);
 
     async function loadData() {
@@ -41,13 +41,13 @@
             await DataService.getOrgSizeMetrics(version);
 
         const urlParams = new URLSearchParams(window.location.search);
-        const comp = urlParams.get("comp");
-        if (comp === "size") {
+        const comp = urlParams.get('comp');
+        if (comp === 'size') {
             industry_metrics = organization_size_metrics;
-            comparisonType = "size";
+            comparisonType = 'size';
         } else {
             industry_metrics = industry_metrics_data;
-            comparisonType = "industry";
+            comparisonType = 'industry';
         }
         loading = false;
     }
@@ -56,27 +56,27 @@
         const recoded = {
             leadtime: DataService.calculateRecodedMetric(
                 parseInt(metrics.leadtime.toString(), 10),
-                "categorical",
+                'categorical',
             ),
             deployfreq: DataService.calculateRecodedMetric(
                 parseInt(metrics.deployfreq.toString(), 10),
-                "categorical",
+                'categorical',
             ),
             failurerecovery: DataService.calculateRecodedMetric(
                 parseInt(metrics.failurerecovery.toString(), 10),
-                "categorical",
+                'categorical',
             ),
             changefailure: DataService.calculateRecodedMetric(
                 parseInt(metrics.changefailure.toString(), 10),
-                "percentage",
+                'percentage',
             ),
             rework: 0,
         };
 
-        if (version === "2025") {
+        if (version === '2025') {
             recoded.rework = DataService.calculateRecodedMetric(
                 parseInt(metrics.rework.toString(), 10),
-                "percentage",
+                'percentage',
             );
         }
         return recoded;
@@ -89,7 +89,7 @@
             metrics_recoded.changefailure,
             metrics_recoded.failurerecovery,
         ];
-        if (version === "2025") {
+        if (version === '2025') {
             active_scores.push(metrics_recoded.rework);
         }
         return (
@@ -108,7 +108,7 @@
 
     const instability_average = $derived.by(() => {
         const instability_stability_scores = [metrics_recoded.changefailure];
-        if (version === "2025") {
+        if (version === '2025') {
             instability_stability_scores.push(metrics_recoded.rework);
         }
         const stability_avg =
@@ -119,13 +119,13 @@
 
     const currentIndustry = $derived.by(() => {
         if (!loading && !industry_metrics[industry]) {
-            return "all";
+            return 'all';
         }
         return industry;
     });
 
     const defaultIndustryMetrics: IndustryMetrics = {
-        name: "All industries",
+        name: 'All industries',
         performance_average: { mean: 0, std: 0 },
         leadtime: { mean: 0, std: 0 },
         deployfreq: { mean: 0, std: 0 },
@@ -139,30 +139,30 @@
     );
 
     const comparisonText = $derived(
-        comparisonType === "industry"
-            ? "Compare to industry benchmark:"
-            : "Compare to organization size benchmark:",
+        comparisonType === 'industry'
+            ? 'Compare to industry benchmark:'
+            : 'Compare to organization size benchmark:',
     );
 
     const baselineText = $derived(
         !loading && industry_metrics[industry]
-            ? comparisonType === "industry"
-                ? `${version} Industry baseline (${industry_metrics[industry]["name"]}):`
-                : `${version} Organization size benchmark (${industry_metrics[currentIndustry]["name"]}):`
-            : "",
+            ? comparisonType === 'industry'
+                ? `${version} Industry baseline (${industry_metrics[industry]['name']}):`
+                : `${version} Organization size benchmark (${industry_metrics[currentIndustry]['name']}):`
+            : '',
     );
 
     const setIndustryInURL = (industryName: string) => {
-        if (typeof window !== "undefined") {
+        if (typeof window !== 'undefined') {
             const url = new URL(window.location.href);
-            url.searchParams.set("industry", industryName);
-            window.history.replaceState({}, "", url.toString());
+            url.searchParams.set('industry', industryName);
+            window.history.replaceState({}, '', url.toString());
         }
     };
 
     $effect(() => {
-        if (!loading && currentIndustry === "all" && industry !== "all") {
-            industry = "all";
+        if (!loading && currentIndustry === 'all' && industry !== 'all') {
+            industry = 'all';
         }
         setIndustryInURL(currentIndustry);
     });
@@ -170,10 +170,10 @@
     onMount(() => {
         window.scrollTo({
             top: 0,
-            behavior: "smooth",
+            behavior: 'smooth',
         });
 
-        sendAnalyticsEvent("quick_check_results");
+        sendAnalyticsEvent('quick_check_results');
         loadData();
     });
 </script>
@@ -212,7 +212,7 @@
             {comparisonText}
             <select bind:value={industry}>
                 {#each Object.entries(industry_metrics) as [industryKey, industry_data]}
-                    <option value={industryKey}>{industry_data["name"]}</option>
+                    <option value={industryKey}>{industry_data['name']}</option>
                 {/each}
             </select>
         </div>
@@ -251,32 +251,32 @@
                 </h3>
 
                 {@render performanceLevel(
-                    "Lead time for changes",
+                    'Lead time for changes',
                     metrics_question_responses.leadtime[metrics.leadtime],
                     metrics_recoded.leadtime,
                     selected_industry_metrics.leadtime.mean,
                     selected_industry_metrics.leadtime.std,
-                    [">6mo", "1-6mo", "1w-1mo", "1d-1w", "<1d", "<1h"],
+                    ['>6mo', '1-6mo', '1w-1mo', '1d-1w', '<1d', '<1h'],
                 )}
 
                 {@render performanceLevel(
-                    "Deployment frequency",
+                    'Deployment frequency',
                     metrics_question_responses.deployfreq[metrics.deployfreq],
                     metrics_recoded.deployfreq,
                     selected_industry_metrics.deployfreq.mean,
                     selected_industry_metrics.deployfreq.std,
-                    ["<6mo", "1-6mo", "1w-1mo", "1d-1w", "1h-1d", "on demand"],
+                    ['<6mo', '1-6mo', '1w-1mo', '1d-1w', '1h-1d', 'on demand'],
                 )}
 
                 {@render performanceLevel(
-                    "Failed deployment recovery time",
+                    'Failed deployment recovery time',
                     metrics_question_responses.failurerecovery[
                         metrics.failurerecovery
                     ],
                     metrics_recoded.failurerecovery,
                     selected_industry_metrics.failurerecovery.mean,
                     selected_industry_metrics.failurerecovery.std,
-                    [">6mo", "1-6mo", "1w-1mo", "1d-1w", "<1d", "<1h"],
+                    ['>6mo', '1-6mo', '1w-1mo', '1d-1w', '<1d', '<1h'],
                 )}
             </div>
 
@@ -287,22 +287,22 @@
                 </h3>
 
                 {@render performanceLevel(
-                    "Change fail rate",
+                    'Change fail rate',
                     `${metrics.changefailure}% of changes fail`,
                     +(10 - metrics_recoded.changefailure).toFixed(1),
                     selected_industry_metrics.changefailure.mean,
                     selected_industry_metrics.changefailure.std,
-                    ["0%", "20%", "40%", "60%", "80%", "100%"],
+                    ['0%', '20%', '40%', '60%', '80%', '100%'],
                 )}
 
-                {#if version === "2025"}
+                {#if version === '2025'}
                     {@render performanceLevel(
-                        "Rework rate",
+                        'Rework rate',
                         `${metrics.rework}% of changes were unplanned`,
                         +(10 - metrics_recoded.rework).toFixed(1),
                         selected_industry_metrics.rework?.mean || 0,
                         selected_industry_metrics.rework?.std || 0,
-                        ["0%", "20%", "40%", "60%", "80%", "100%"],
+                        ['0%', '20%', '40%', '60%', '80%', '100%'],
                     )}
                 {/if}
             </div>

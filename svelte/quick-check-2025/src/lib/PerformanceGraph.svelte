@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { DisplayMode } from "./types";
+    import type { DisplayMode } from './types';
 
     let {
         user_score,

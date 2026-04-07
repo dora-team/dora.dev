@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { arrayAverage, recode_numeric_range } from "./utils";
-    import type { Capability } from "./types";
+    import { arrayAverage, recode_numeric_range } from './utils';
+    import type { Capability } from './types';
 
     let {
         question,
