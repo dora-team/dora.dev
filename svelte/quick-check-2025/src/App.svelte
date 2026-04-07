@@ -10,18 +10,18 @@
     import StartOver from "./lib/kiosk/StartOver.svelte";
     import type { Metrics, Step, DisplayMode } from "./lib/types";
 
-    let metrics: Metrics = {
+    let metrics: Metrics = $state({
         leadtime: -1,
         deployfreq: -1,
         failurerecovery: -1,
         changefailure: -1,
         rework: -1,
-    };
+    });
 
-    let step: Step = "input";
-    let industry = "all";
-    let version = "2025";
-    let current_capability = -1;
+    let step: Step = $state("input");
+    let industry = $state("all");
+    let version = $state("2025");
+    let current_capability = $state(-1);
     let metric_names = [
         "leadtime",
         "deployfreq",
@@ -29,14 +29,15 @@
         "changefailure",
         "rework",
     ] as (keyof Metrics)[];
-    let current_metric = 0; // for kiosk mode
-    let displayMode: DisplayMode = "embedded";
+    let current_metric = $state(0); // for kiosk mode
+    let displayMode: DisplayMode = $state("embedded");
 
     // Adjust metric_names based on version
-    $: active_metric_names =
+    let active_metric_names = $derived(
         version === "2025"
             ? (metric_names as string[])
-            : (metric_names as string[]).filter((m) => m !== "rework");
+            : (metric_names as string[]).filter((m) => m !== "rework")
+    );
 
     function saveURLParams() {
         if (typeof window !== "undefined" && displayMode === "embedded") {
@@ -137,7 +138,7 @@
         Step: {step}<br />
         Version: {version}<br />
         <button
-            on:click={() => {
+            onclick={() => {
                 version = version === "2025" ? "2024" : "2025";
                 current_metric = 0;
             }}>Toggle Version</button
@@ -167,7 +168,7 @@
                         metric_position={current_metric}
                         total_metrics={active_metric_names.length}
                         {displayMode}
-                        on:nextMetric={nextMetric}
+                        onNextMetric={nextMetric}
                     />
                 </div>
             </div>
@@ -189,6 +190,7 @@
                         metric_position={idx}
                         total_metrics={active_metric_names.length}
                         {displayMode}
+                        onNextMetric={nextMetric}
                     />
                 {/each}
                 <section class="submit">
@@ -196,7 +198,7 @@
                         disabled={!active_metric_names.every(
                             (metric) => metrics[metric] != -1,
                         )}
-                        on:click={showResults}>View Results</button
+                        onclick={showResults}>View Results</button
                     >
                 </section>
             </div>
@@ -207,7 +209,7 @@
                 <div class="version-prompt">
                     You are viewing results using 2024 benchmark data.
                     <button
-                        on:click={() => {
+                        onclick={() => {
                             version = "2025";
                             metrics.rework = -1;
                             step = "input";
