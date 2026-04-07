@@ -1,25 +1,23 @@
+export const clamp = (val: number, min: number, max: number): number =>
+    Math.max(min, Math.min(max, val));
+
 export const recode_numeric_range = (
     input_value: string | number,
-    input_min: string | number,
-    input_max: string | number,
-    output_min: string | number,
-    output_max: string | number,
-): number | null => {
+    input_min: number,
+    input_max: number,
+    output_min: number,
+    output_max: number,
+): number => {
     const val = typeof input_value === 'string' ? parseInt(input_value, 10) : input_value;
-    const iMin = typeof input_min === 'string' ? parseInt(input_min, 10) : input_min;
-    const iMax = typeof input_max === 'string' ? parseInt(input_max, 10) : input_max;
-    const oMin = typeof output_min === 'string' ? parseInt(output_min, 10) : output_min;
-    const oMax = typeof output_max === 'string' ? parseInt(output_max, 10) : output_max;
+    if (isNaN(val) || val === -1) return output_min;
 
-    if (val >= iMin && val <= iMax) {
-        return (
-            ((val - iMin) / (iMax - iMin)) *
-            (oMax - oMin) +
-            oMin
-        );
-    } else {
-        return null;
-    }
+    const clampedVal = clamp(val, Math.min(input_min, input_max), Math.max(input_min, input_max));
+    
+    return (
+        ((clampedVal - input_min) / (input_max - input_min)) *
+        (output_max - output_min) +
+        output_min
+    );
 };
 
 export const arrayAverage = (array: (number | string)[]): number | null => {

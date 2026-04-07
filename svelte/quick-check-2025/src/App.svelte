@@ -10,6 +10,14 @@
     import StartOver from './lib/kiosk/StartOver.svelte';
     import type { Metrics, Step, DisplayMode } from './lib/types';
 
+    const METRIC_NAMES = [
+        'leadtime',
+        'deployfreq',
+        'failurerecovery',
+        'changefailure',
+        'rework',
+    ] as (keyof Metrics)[];
+
     let metrics: Metrics = $state({
         leadtime: -1,
         deployfreq: -1,
@@ -21,38 +29,36 @@
     let step: Step = $state('input');
     let industry = $state('all');
     let version = $state('2025');
-    let current_capability = $state(-1);
-    let metric_names = [
-        'leadtime',
-        'deployfreq',
-        'failurerecovery',
-        'changefailure',
-        'rework',
-    ] as (keyof Metrics)[];
+    let current_capability = $state(0);
     let current_metric = $state(0); // for kiosk mode
     let displayMode: DisplayMode = $state('embedded');
 
     // Adjust metric_names based on version
     let active_metric_names = $derived(
         version === '2025'
-            ? (metric_names as string[])
-            : (metric_names as string[]).filter((m) => m !== 'rework')
+            ? METRIC_NAMES
+            : METRIC_NAMES.filter((m) => m !== 'rework')
     );
 
-    function saveURLParams() {
+    function syncURLParams() {
         if (typeof window !== 'undefined' && displayMode === 'embedded') {
             const url = new URL(window.location.href);
             active_metric_names.forEach((metric) => {
-                if (metrics[metric] !== -1) {
-                    url.searchParams.set(metric, metrics[metric].toString());
+                const val = metrics[metric];
+                if (val !== -1 && val !== '-1') {
+                    url.searchParams.set(metric as string, val.toString());
                 } else {
-                    url.searchParams.delete(metric);
+                    url.searchParams.delete(metric as string);
                 }
             });
             url.searchParams.set('v', version);
-            window.history.pushState({}, '', url.toString());
+            window.history.replaceState({}, '', url.toString());
         }
     }
+
+    $effect(() => {
+        syncURLParams();
+    });
 
     onMount(async () => {
         const searchParams = new URLSearchParams(window.location.search);
@@ -77,21 +83,21 @@
         }
 
         // Populate any metrics present in the URL
-        metric_names.forEach((metric) => {
+        METRIC_NAMES.forEach((metric) => {
             if (searchParams.has(metric as string)) {
-                metrics[metric as string] = searchParams.get(metric as string)!;
+                metrics[metric] = searchParams.get(metric as string)!;
             }
         });
 
         // Advance to results ONLY if all active metrics are present
-        if (active_metric_names.every((metric) => searchParams.has(metric))) {
+        if (active_metric_names.every((metric) => searchParams.has(metric as string))) {
             step = 'results';
         }
 
         if (
             ['ci', 'arch', 'culture'].every((param) => searchParams.has(param))
         ) {
-            current_capability = 2;
+            current_capability = 3;
         }
 
         if (searchParams.has('industry')) {
@@ -112,19 +118,17 @@
     }
 
     function showResults() {
-        saveURLParams();
         step = 'results';
     }
 
     function reset() {
-        metric_names.forEach((metric) => {
-            metrics[metric as string] = -1;
+        METRIC_NAMES.forEach((metric) => {
+            metrics[metric] = -1;
         });
         step = 'input';
         industry = 'all';
         current_capability = -1;
         current_metric = 0;
-        saveURLParams();
     }
 </script>
 
