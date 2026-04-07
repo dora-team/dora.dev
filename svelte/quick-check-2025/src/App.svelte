@@ -32,6 +32,7 @@
     let current_capability = $state(0);
     let current_metric = $state(0); // for kiosk mode
     let displayMode: DisplayMode = $state('embedded');
+    let initialized = $state(false);
 
     // Adjust metric_names based on version
     let active_metric_names = $derived(
@@ -41,6 +42,7 @@
     );
 
     function syncURLParams() {
+        if (!initialized) return;
         if (typeof window !== 'undefined' && displayMode === 'embedded') {
             const url = new URL(window.location.href);
             active_metric_names.forEach((metric) => {
@@ -105,6 +107,7 @@
         }
 
         sendAnalyticsEvent('quick_check_start');
+        initialized = true;
     });
 
     function nextMetric() {
