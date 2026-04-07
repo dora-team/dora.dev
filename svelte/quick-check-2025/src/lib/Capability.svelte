@@ -46,6 +46,19 @@
     );
 </script>
 
+{#snippet radioCell(question_num: number, value: number, option_text: string)}
+    <td>
+        <label>
+            <input
+                type="radio"
+                name={`${capability.shortname}_${question_num}`}
+                {value}
+                bind:group={this_capability_responses[question_num - 1]}
+            /><span>{option_text}</span></label
+        >
+    </td>
+{/snippet}
+
 <section class="capability {capability.shortname}">
     <h3>
         Capability {capability.number} of {capability_count}: {capability.capability_name}
@@ -68,18 +81,7 @@
                 <tr>
                     <td>{question.question_text}</td>
                     {#each response_options as option_text, idx}
-                        <td>
-                            <label
-                                ><input
-                                    type="radio"
-                                    name={`${capability.shortname}_${question.number}`}
-                                    value={idx + 1}
-                                    bind:group={this_capability_responses[
-                                        question.number - 1
-                                    ]}
-                                /><span>{option_text}</span></label
-                            >
-                        </td>
+                        {@render radioCell(question.number, idx + 1, option_text)}
                     {/each}
                 </tr>
             {/each}

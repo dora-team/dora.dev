@@ -150,6 +150,25 @@
     <FullScreenButton />
 {/if}
 
+{#snippet groupHeader(metric: string)}
+    {#if metric === "leadtime"}
+        <h3 class="group-header">Software delivery throughput</h3>
+    {:else if metric === "changefailure"}
+        <h3 class="group-header">Software delivery instability</h3>
+    {/if}
+{/snippet}
+
+{#snippet metricQuestion(metric: string, idx: number)}
+    <MetricsQuestion
+        bind:metrics
+        metric_name={metric}
+        metric_position={idx}
+        total_metrics={active_metric_names.length}
+        {displayMode}
+        onNextMetric={nextMetric}
+    />
+{/snippet}
+
 <div class="quickcheck {displayMode}">
     {#if step === "input"}
         {#if displayMode === "kiosk"}
@@ -162,36 +181,17 @@
                     {/if}
                 </aside>
                 <div class="questionWrapper">
-                    <MetricsQuestion
-                        bind:metrics
-                        metric_name={active_metric_names[current_metric]}
-                        metric_position={current_metric}
-                        total_metrics={active_metric_names.length}
-                        {displayMode}
-                        onNextMetric={nextMetric}
-                    />
+                    {@render metricQuestion(
+                        active_metric_names[current_metric],
+                        current_metric,
+                    )}
                 </div>
             </div>
         {:else}
             <div class="embeddedMetricsQuestions">
                 {#each active_metric_names as metric, idx}
-                    {#if metric === "leadtime"}
-                        <h3 class="group-header">
-                            Software delivery throughput
-                        </h3>
-                    {:else if metric === "changefailure"}
-                        <h3 class="group-header">
-                            Software delivery instability
-                        </h3>
-                    {/if}
-                    <MetricsQuestion
-                        bind:metrics
-                        metric_name={metric}
-                        metric_position={idx}
-                        total_metrics={active_metric_names.length}
-                        {displayMode}
-                        onNextMetric={nextMetric}
-                    />
+                    {@render groupHeader(metric)}
+                    {@render metricQuestion(metric, idx)}
                 {/each}
                 <section class="submit">
                     <button
