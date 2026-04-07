@@ -9,7 +9,10 @@ bannerSubtitle: "Measure your team's software delivery performance in less than 
 bannerHighlightImage: "/experimental/quick-check/header.png"
 ---
 
-<!-- sources for the Quick Check single-page application are generated from the /svelte/quick-check-2025 folder, then copied here. -->
+<!-- 
+Assets for the Quick Check single-page application are built from the /svelte/quick-check-2025 folder.
+To update these assets, run: cd svelte/quick-check-2025 && ./build-quick-check.sh
+-->
 <!-- the timestamp shortcode is appended as a cache buster -->
 <script type="module" src="quickcheck-2025.js?t={{% timestamp %}}"></script>
 <link rel="stylesheet" href="quickcheck-2025.css?t={{% timestamp %}}">
