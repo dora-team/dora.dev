@@ -7,51 +7,24 @@
   import metrics_question_responses_raw from "./data/metrics_question_responses.json";
   // @ts-ignore
   import metrics_images_raw from "./data/metrics_images.json";
+  // @ts-ignore
+  import metrics_details_raw from "./data/metrics_details.json";
 
   const metrics_question_responses = metrics_question_responses_raw as Record<
     string,
     Record<string, string>
   >;
   const metrics_images = metrics_images_raw as Record<string, string>;
+  const metrics_details = metrics_details_raw as Record<
+    string,
+    { friendly_name: string; description: string }
+  >;
 
   export let metrics: Metrics;
   export let metric_name: keyof Metrics = "leadtime";
   export let metric_position = 0;
   export let total_metrics = 5;
   export let displayMode: DisplayMode = "embedded";
-
-  interface MetricDetail {
-    friendly_name: string;
-    description: string;
-  }
-
-  const metrics_details: Record<string, MetricDetail> = {
-    leadtime: {
-      friendly_name: "Lead time",
-      description:
-        "For the primary application or service you work on, what is your <b>lead time for changes</b> (that is, how long does it take to go from code committed to code successfully running in production)?",
-    },
-    deployfreq: {
-      friendly_name: "Deploy frequency",
-      description:
-        "For the primary application or service you work on, <b>how often does your organization deploy code</b> to production or release it to end users?",
-    },
-    failurerecovery: {
-      friendly_name: "Failure recovery",
-      description:
-        "For the primary application or service you work on, <b>how long does it generally take to restore service</b> after a change to production or release to users results in degraded service (for example, lead to service impairment or service outage) and subsequently requires remediation (for example, require a hotfix, rollback, fix forward, or patch)?",
-    },
-    changefailure: {
-      friendly_name: "Change fail rate",
-      description:
-        "Approximately what percentage of changes to production or releases to users result in degraded service (for example, leads to service impairment or service outage) and subsequently requires remediation (for example, requires a hotfix, rollback, fix forward or patch), if at all?",
-    },
-    rework: {
-      friendly_name: "Deployment rework rate",
-      description:
-        "Approximately what percentage of deployments in the last 6 months were not planned but were performed to address a user-facing bug in the application?",
-    },
-  };
 
   $: metric_friendly_name =
     metrics_details[metric_name as string]["friendly_name"];
@@ -332,9 +305,6 @@
     border: 1px dashed rgba(0, 0, 0, 0.1);
   }
 
-  /* There's no elegant way to use global variables for media queries (css variables aren't supported for this purpose,
-    and SCSS vars are cumbersome to propagate between different svelte components).
-    So we'll use a "magic number" of 800px, in each file */
   @media (max-width: 800px) {
     section.question {
       flex-direction: column;
