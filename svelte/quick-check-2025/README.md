@@ -33,7 +33,7 @@ To build the SPA and copy it to the experimental Hugo content directory, run the
 ```bash
 bash svelte/quick-check-2025/build-quick-check.sh
 ```
-This script compiles the assets and places them in `hugo/public/experimental/quick-check/`.
+This script compiles the assets and places them in `hugo/content/experimental/quick-check/`.
 
 ---
 
@@ -49,10 +49,10 @@ Add the new capability details to the JSON configuration file.
 ### 2. Update Application Logic
 Update the application to recognize the new capability when loading state from URL parameters.
 -   **File**: `src/App.svelte`
--   **Action**: Locate the `onMount` block (around line 92). Update the check to include your new `shortname` and update the `current_capability` index:
+-   **Action**: Locate the `onMount` block (around line 92). Update the check to include your new `shortname` and update the `current_capability` index. The index should be equal to the total number of capabilities to show the results summary:
     ```typescript
     if (["ci", "arch", "culture", "your-new-cap"].every((param) => searchParams.has(param))) {
-        current_capability = 3; // Index (0-based) for the results summary
+        current_capability = 4; // Index for the results summary (total capability count)
     }
     ```
 
@@ -71,10 +71,10 @@ The 2025 Quick Check uses a centralized `DataService` (`src/lib/data-service.ts`
 import { DataService } from './lib/data-service';
 
 // Get industry benchmarks for a specific version (default is '2025')
-const industryBenchmarks = await DataService.getIndustryMetrics('2025');
+const industryBenchmarks = DataService.getIndustryMetrics('2025');
 
-// Calculate a recoded metric (0-10 scale)
-const recodedLeadTime = DataService.calculateRecodedMetric(4, 'categorical');
+// Calculate a performance score (0-10 scale)
+const performanceScore = DataService.calculatePerformanceScore(4, 'categorical');
 ```
 
 ## Testing
@@ -85,8 +85,10 @@ Run unit tests for the `DataService` and recoding logic:
 
 ### Playwright Tests
 End-to-end tests are located in the root `test/playwright` directory.
-Run the 2025 specific tests:
-`npx playwright test tests/quickcheck2025.spec.ts`
+Run the 2025 specific tests from that directory:
+```bash
+cd test/playwright && npx playwright test tests/quickcheck2025.spec.ts
+```
 
 ---
 
