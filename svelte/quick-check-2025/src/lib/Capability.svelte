@@ -1,16 +1,19 @@
 <script lang="ts">
-    import { createEventDispatcher } from "svelte";
     import type { Capability } from "./types";
 
-    export let capability: Capability;
-    export let capability_count: number;
-    export let current_capability_index: number;
-
-    // initialize user response data with dummy values
-    export let this_capability_responses: number[];
-    let thisCapabilityCompleted = false;
-
-    const dispatch = createEventDispatcher();
+    let {
+        capability,
+        capability_count,
+        current_capability_index,
+        this_capability_responses = $bindable(),
+        onNextCapability,
+    }: {
+        capability: Capability;
+        capability_count: number;
+        current_capability_index: number;
+        this_capability_responses: number[];
+        onNextCapability?: () => void;
+    } = $props();
 
     function nextCapability() {
         // push data to URL
@@ -25,7 +28,7 @@
             }
             window.history.replaceState({}, "", url.toString());
         }
-        dispatch("nextCapability");
+        if (onNextCapability) onNextCapability();
     }
 
     let response_options = [
@@ -37,12 +40,13 @@
     ];
 
     // has user entered a value for every question of this capability?
-    $: thisCapabilityCompleted = this_capability_responses.length == capability.questions.length && this_capability_responses.every(
-        (x) => x !== -1,
+    let thisCapabilityCompleted = $derived(
+        this_capability_responses.length == capability.questions.length &&
+            this_capability_responses.every((x) => x !== -1),
     );
 </script>
 
-<section>
+<section class="capability {capability.shortname}">
     <h3>
         Capability {capability.number} of {capability_count}: {capability.capability_name}
     </h3>
@@ -83,13 +87,13 @@
     </table>
 
     <div class="next">
-        <button on:click={nextCapability} disabled={!thisCapabilityCompleted}>
+        <button onclick={nextCapability} disabled={!thisCapabilityCompleted}>
             {#if current_capability_index < capability_count - 1}Next{:else}View
                 Results{/if}</button
         >
         <!-- Vite provides environment variables; if running in dev, show some debug -->
         {#if typeof import.meta.env.MODE != "undefined" && import.meta.env.MODE === "development"}
-            <div>
+            <div class="debug">
                 debug: index = {current_capability_index}<br />
                 debug: thisCapabilityCompleted = {thisCapabilityCompleted}<br />
                 debug: mode = {import.meta.env.MODE}
@@ -147,6 +151,26 @@
     }
     div.next {
         text-align: center;
+        margin-top: 2rem;
+        button {
+            padding: 1rem 3rem;
+            font-size: 1.25rem;
+            background-color: var(--dora-blue);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            &:disabled {
+                background-color: #ccc;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    .debug {
+        font-size: 10px;
+        margin-top: 1rem;
+        color: #999;
     }
 
     /* There's no elegant way to use global variables for media queries (css variables aren't supported for this purpose, 

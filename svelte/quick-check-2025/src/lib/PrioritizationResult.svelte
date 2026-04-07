@@ -2,20 +2,25 @@
     import { arrayAverage, recode_numeric_range } from "./utils";
     import type { Capability } from "./types";
 
-    export let question: Capability;
-    export let this_capability_responses: number[];
-    let this_capability_recoded_average: string | number = 0;
+    let {
+        question,
+        this_capability_responses,
+    }: { question: Capability; this_capability_responses: number[] } = $props();
 
-    let this_capability_recoded_responses: (number | null)[] = [];
-
-    $: this_capability_recoded_responses = this_capability_responses.map(
-        (response) => recode_numeric_range(response, 1, 5, 0, 10),
+    const this_capability_recoded_responses = $derived(
+        this_capability_responses.map((response) =>
+            recode_numeric_range(response, 1, 5, 0, 10),
+        ),
     );
 
-    $: this_capability_recoded_average =
+    const this_capability_recoded_average = $derived(
         this_capability_recoded_responses.length
-            ? (arrayAverage(this_capability_recoded_responses as number[]) || 0).toFixed(1)
-            : 0;
+            ? (
+                  arrayAverage(this_capability_recoded_responses as number[]) ||
+                  0
+              ).toFixed(1)
+            : 0,
+    );
 </script>
 
 <div class="prioritization_result">

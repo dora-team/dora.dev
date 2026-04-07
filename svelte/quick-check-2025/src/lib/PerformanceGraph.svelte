@@ -1,18 +1,28 @@
 <script lang="ts">
     import type { DisplayMode } from "./types";
 
-    export let user_score: number | string,
-        industry_score: number,
-        displayMode: DisplayMode,
+    let {
+        user_score,
+        industry_score,
+        displayMode,
         std = 0,
-        tickmarks: (string | number)[] = [],
-        showBenchmarks = true;
-    export let featured = false;
+        tickmarks = [],
+        showBenchmarks = true,
+        featured = false,
+    }: {
+        user_score: number | string;
+        industry_score: number;
+        displayMode: DisplayMode;
+        std?: number;
+        tickmarks?: (string | number)[];
+        showBenchmarks?: boolean;
+        featured?: boolean;
+    } = $props();
 
-    let user_score_position = "0%";
-
-    $: score_to_position = (score: number) => `${score * 10}%`;
-    $: user_score_position = score_to_position(parseFloat(user_score.toString()));
+    const score_to_position = (score: number) => `${score * 10}%`;
+    const user_score_position = $derived(
+        score_to_position(parseFloat(user_score.toString())),
+    );
 </script>
 
 <div class="graph {displayMode}" class:featured>
