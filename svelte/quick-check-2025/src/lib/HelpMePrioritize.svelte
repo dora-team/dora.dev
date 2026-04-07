@@ -1,11 +1,11 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-    import { sendAnalyticsEvent, numberToWord } from "./utils";
-    import Capability from "./Capability.svelte";
-    import PrioritizationResults from "./PrioritizationResults.svelte";
+    import { onMount } from 'svelte';
+    import { sendAnalyticsEvent, numberToWord } from './utils';
+    import Capability from './Capability.svelte';
+    import PrioritizationResults from './PrioritizationResults.svelte';
     // @ts-ignore
-    import capability_prioritization_questions_raw from "./data/capability_prioritization_questions.json";
-    import type { Capability as CapabilityType } from "./types";
+    import capability_prioritization_questions_raw from './data/capability_prioritization_questions.json';
+    import type { Capability as CapabilityType } from './types';
 
     const capability_prioritization_questions =
         capability_prioritization_questions_raw as CapabilityType[];
@@ -26,9 +26,9 @@
     });
 
     let capability_names_list = $derived(
-        new Intl.ListFormat("en", {
-            style: "long",
-            type: "conjunction",
+        new Intl.ListFormat('en', {
+            style: 'long',
+            type: 'conjunction',
         }).format(
             capability_prioritization_questions.map((c) => c.capability_name),
         ),
@@ -40,13 +40,13 @@
         // move the previous question out of the way, and the next question into place.
         if (capability_dom_elements[current_capability - 1]) {
             capability_dom_elements[current_capability - 1].style.transform =
-                "translateX(-100%)";
-            capability_dom_elements[current_capability - 1].style.opacity = "0";
+                'translateX(-100%)';
+            capability_dom_elements[current_capability - 1].style.opacity = '0';
         }
         if (capability_dom_elements[current_capability]) {
             capability_dom_elements[current_capability].style.transform =
-                "translateX(0%)";
-            capability_dom_elements[current_capability].style.opacity = "1";
+                'translateX(0%)';
+            capability_dom_elements[current_capability].style.opacity = '1';
 
             // resize container to fit its contents
             if (capability_container) {
@@ -55,30 +55,30 @@
         }
 
         if (current_capability > 0) {
-            const el = document.getElementById("help-me-prioritize");
+            const el = document.getElementById('help-me-prioritize');
             if (el) {
                 window.scrollTo({
                     top: el.offsetTop,
-                    behavior: "smooth",
+                    behavior: 'smooth',
                 });
             }
 
             if (current_capability == capability_count) {
-                sendAnalyticsEvent("quick_check_priorities");
+                sendAnalyticsEvent('quick_check_priorities');
             }
         }
     }
 
     onMount(() => {
         // extract responses from URL and cast as Int
-        if (typeof window !== "undefined") {
+        if (typeof window !== 'undefined') {
             const url = new URL(window.location.href);
             capability_prioritization_questions.forEach((capability) => {
                 if (url.searchParams.has(capability.shortname)) {
                     capability_responses[capability.shortname] =
                         url.searchParams
                             .get(capability.shortname)!
-                            .split("")
+                            .split('')
                             .map((x) => parseInt(x, 10));
                 }
             });
@@ -114,8 +114,8 @@
             <div
                 class="capability {capability.shortname}"
                 style:transform={counter == 0
-                    ? "translateX(0)"
-                    : "translateX(100%)"}
+                    ? 'translateX(0)'
+                    : 'translateX(100%)'}
                 bind:this={capability_dom_elements[counter]}
             >
                 <Capability
@@ -131,7 +131,7 @@
         {/each}
         <div
             class="capability results"
-            style:transform={"translateX(100%)"}
+            style:transform={'translateX(100%)'}
             bind:this={capability_dom_elements[capability_count]}
         >
             <PrioritizationResults

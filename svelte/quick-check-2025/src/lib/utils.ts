@@ -34,7 +34,7 @@ declare const gtag: Function | undefined;
 
 export const sendAnalyticsEvent = (eventName: string): void => {
     console.debug(`send "${eventName}" event to GA`)
-    if (typeof import.meta.env.MODE !== "undefined" && import.meta.env.MODE === "development") {
+    if (typeof import.meta.env.MODE !== 'undefined' && import.meta.env.MODE === 'development') {
         console.debug(`(sendAnalyticsEvent disabled in dev environment)`)
     } else if (typeof gtag !== 'undefined') {
         gtag('event', eventName);
@@ -43,8 +43,8 @@ export const sendAnalyticsEvent = (eventName: string): void => {
 
 export const numberToWord = (num: number): string => {
     const words = [
-        "zero", "one", "two", "three", "four", "five", 
-        "six", "seven", "eight", "nine", "ten"
+        'zero', 'one', 'two', 'three', 'four', 'five', 
+        'six', 'seven', 'eight', 'nine', 'ten'
     ];
     return words[num] || num.toString();
 }
