@@ -36,9 +36,8 @@
 
     async function loadData() {
         loading = true;
-        industry_metrics_data = await DataService.getIndustryMetrics(version);
-        organization_size_metrics =
-            await DataService.getOrgSizeMetrics(version);
+        industry_metrics_data = DataService.getIndustryMetrics(version);
+        organization_size_metrics = DataService.getOrgSizeMetrics(version);
 
         const urlParams = new URLSearchParams(window.location.search);
         const comp = urlParams.get('comp');
@@ -52,70 +51,7 @@
         loading = false;
     }
 
-    const metrics_recoded = $derived.by(() => {
-        const recoded = {
-            leadtime: DataService.calculateRecodedMetric(
-                parseInt(metrics.leadtime.toString(), 10),
-                'categorical',
-            ),
-            deployfreq: DataService.calculateRecodedMetric(
-                parseInt(metrics.deployfreq.toString(), 10),
-                'categorical',
-            ),
-            failurerecovery: DataService.calculateRecodedMetric(
-                parseInt(metrics.failurerecovery.toString(), 10),
-                'categorical',
-            ),
-            changefailure: DataService.calculateRecodedMetric(
-                parseInt(metrics.changefailure.toString(), 10),
-                'percentage',
-            ),
-            rework: 0,
-        };
-
-        if (version === '2025') {
-            recoded.rework = DataService.calculateRecodedMetric(
-                parseInt(metrics.rework.toString(), 10),
-                'percentage',
-            );
-        }
-        return recoded;
-    });
-
-    const performance_average = $derived.by(() => {
-        const active_scores = [
-            metrics_recoded.leadtime,
-            metrics_recoded.deployfreq,
-            metrics_recoded.changefailure,
-            metrics_recoded.failurerecovery,
-        ];
-        if (version === '2025') {
-            active_scores.push(metrics_recoded.rework);
-        }
-        return (
-            active_scores.reduce((a, b) => a + b, 0) / active_scores.length
-        ).toFixed(1);
-    });
-
-    const throughput_average = $derived(
-        (
-            (metrics_recoded.leadtime +
-                metrics_recoded.deployfreq +
-                metrics_recoded.failurerecovery) /
-            3
-        ).toFixed(1),
-    );
-
-    const instability_average = $derived.by(() => {
-        const instability_stability_scores = [metrics_recoded.changefailure];
-        if (version === '2025') {
-            instability_stability_scores.push(metrics_recoded.rework);
-        }
-        const stability_avg =
-            instability_stability_scores.reduce((a, b) => a + b, 0) /
-            instability_stability_scores.length;
-        return (10 - stability_avg).toFixed(1);
-    });
+    const calculatedResults = $derived(DataService.calculateAll(metrics, version));
 
     const currentIndustry = $derived.by(() => {
         if (!loading && !industry_metrics[industry]) {
@@ -225,13 +161,13 @@
                     <b class="level-label">Overall Performance</b>
                     <span
                         class="performance-average"
-                        style:background-position={`${parseFloat(performance_average) * 10}%`}
-                        >{performance_average}</span
+                        style:background-position={`${calculatedResults.performanceAverage * 10}%`}
+                        >{calculatedResults.performanceAverage.toFixed(1)}</span
                     >
                 </aside>
                 <div class="graph">
                     <PerformanceGraph
-                        user_score={parseFloat(performance_average)}
+                        user_score={calculatedResults.performanceAverage.toFixed(1)}
                         industry_score={selected_industry_metrics
                             .performance_average?.mean || 0}
                         std={selected_industry_metrics.performance_average
@@ -247,13 +183,13 @@
             <!-- Throughput Group -->
             <div class="level-group">
                 <h3 class="group-header">
-                    Software delivery throughput ({throughput_average})
+                    Software delivery throughput ({calculatedResults.throughputAverage.toFixed(1)})
                 </h3>
 
                 {@render performanceLevel(
                     'Lead time for changes',
                     metrics_question_responses.leadtime[metrics.leadtime],
-                    metrics_recoded.leadtime,
+                    calculatedResults.individual.leadtime.displayScore,
                     selected_industry_metrics.leadtime.mean,
                     selected_industry_metrics.leadtime.std,
                     ['>6mo', '1-6mo', '1w-1mo', '1d-1w', '<1d', '<1h'],
@@ -262,7 +198,7 @@
                 {@render performanceLevel(
                     'Deployment frequency',
                     metrics_question_responses.deployfreq[metrics.deployfreq],
-                    metrics_recoded.deployfreq,
+                    calculatedResults.individual.deployfreq.displayScore,
                     selected_industry_metrics.deployfreq.mean,
                     selected_industry_metrics.deployfreq.std,
                     ['<6mo', '1-6mo', '1w-1mo', '1d-1w', '1h-1d', 'on demand'],
@@ -273,7 +209,7 @@
                     metrics_question_responses.failurerecovery[
                         metrics.failurerecovery
                     ],
-                    metrics_recoded.failurerecovery,
+                    calculatedResults.individual.failurerecovery.displayScore,
                     selected_industry_metrics.failurerecovery.mean,
                     selected_industry_metrics.failurerecovery.std,
                     ['>6mo', '1-6mo', '1w-1mo', '1d-1w', '<1d', '<1h'],
@@ -283,13 +219,13 @@
             <!-- Instability Group -->
             <div class="level-group">
                 <h3 class="group-header">
-                    Software delivery instability ({instability_average})
+                    Software delivery instability ({calculatedResults.instabilityAverage.toFixed(1)})
                 </h3>
 
                 {@render performanceLevel(
                     'Change fail rate',
                     `${metrics.changefailure}% of changes fail`,
-                    +(10 - metrics_recoded.changefailure).toFixed(1),
+                    calculatedResults.individual.changefailure.displayScore,
                     selected_industry_metrics.changefailure.mean,
                     selected_industry_metrics.changefailure.std,
                     ['0%', '20%', '40%', '60%', '80%', '100%'],
@@ -299,7 +235,7 @@
                     {@render performanceLevel(
                         'Rework rate',
                         `${metrics.rework}% of changes were unplanned`,
-                        +(10 - metrics_recoded.rework).toFixed(1),
+                        calculatedResults.individual.rework.displayScore,
                         selected_industry_metrics.rework?.mean || 0,
                         selected_industry_metrics.rework?.std || 0,
                         ['0%', '20%', '40%', '60%', '80%', '100%'],
