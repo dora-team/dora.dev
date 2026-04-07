@@ -1,7 +1,31 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
+
+// Helper to mock gtag and track events
+test.beforeEach(async ({ page }) => {
+    await page.addInitScript(() => {
+        (window as any).dataLayer = [];
+        (window as any).gtag = function () {
+            // Convert arguments to a real array for easier checking
+            (window as any).dataLayer.push(Array.from(arguments));
+        };
+    });
+});
+
+async function expectGAEvent(page: Page, eventName: string) {
+    await expect(async () => {
+        const dataLayer = await page.evaluate(() => (window as any).dataLayer);
+        const eventFound = dataLayer.some(
+            (args: any[]) => args[0] === 'event' && args[1] === eventName
+        );
+        if (!eventFound) {
+            throw new Error(`Event "${eventName}" not found in dataLayer. Current dataLayer: ${JSON.stringify(dataLayer)}`);
+        }
+    }).toPass();
+}
 
 test('quick check 2025 full flow test', async ({ page }) => {
     await page.goto('/experimental/quick-check/');
+    await expectGAEvent(page, 'quick_check_start');
 
     // Step 1: Metrics
     await page.locator('input[name="leadtime"][value="6"]').check();
@@ -11,6 +35,7 @@ test('quick check 2025 full flow test', async ({ page }) => {
     await page.locator('input[name="rework"]').fill('0');
 
     await page.getByRole('button', { name: 'View Results' }).click();
+    await expectGAEvent(page, 'quick_check_results');
 
     // Step 2: Results & Industry Selection
     await expect(page.locator('.performance-average')).toContainText('10.0');
@@ -47,6 +72,7 @@ test('quick check 2025 full flow test', async ({ page }) => {
 
     // Final results
     await page.locator('.capability.culture').getByRole('button', { name: 'View Results' }).click();
+    await expectGAEvent(page, 'quick_check_priorities');
 
     // Verify capability scores
     await expect(page.locator('.score_text.ci')).toContainText('5.0');
@@ -56,6 +82,7 @@ test('quick check 2025 full flow test', async ({ page }) => {
 
 test('quick check 2025 org size comparison', async ({ page }) => {
     await page.goto('/experimental/quick-check/?comp=size');
+    await expectGAEvent(page, 'quick_check_start');
 
     await page.locator('input[name="leadtime"][value="6"]').check();
     await page.locator('input[name="deployfreq"][value="6"]').check();
@@ -64,6 +91,8 @@ test('quick check 2025 org size comparison', async ({ page }) => {
     await page.locator('input[name="rework"]').fill('0');
 
     await page.getByRole('button', { name: 'View Results' }).click();
+    await expectGAEvent(page, 'quick_check_results');
+
     await expect(page.locator('.performance-average')).toContainText('10.0');
     await page.getByRole('combobox').selectOption('fewer_than_5000');
 });
@@ -71,9 +100,11 @@ test('quick check 2025 org size comparison', async ({ page }) => {
 test('quick check 2025 URL parameter pre-population', async ({ page }) => {
     // 4 metrics + 2024 version
     await page.goto('/experimental/quick-check/?leadtime=6&deployfreq=6&failurerecovery=6&changefailure=0&v=2024');
+    await expectGAEvent(page, 'quick_check_start');
 
     // Should automatically advance to results
     await expect(page.locator('.performance-average')).toContainText('10.0');
+    await expectGAEvent(page, 'quick_check_results');
 
     // Should show version prompt
     await expect(page.locator('.version-prompt')).toContainText('You are viewing results using 2024 benchmark data');
@@ -86,6 +117,8 @@ test('quick check 2025 URL parameter pre-population', async ({ page }) => {
     // Fill rework and view results
     await page.locator('input[name="rework"]').fill('0');
     await page.getByRole('button', { name: 'View Results' }).click();
+    // This re-triggers results view
+    await expectGAEvent(page, 'quick_check_results');
 
     // Should show 10.0 for 2025 now
     await expect(page.locator('.performance-average')).toContainText('10.0');
@@ -94,6 +127,7 @@ test('quick check 2025 URL parameter pre-population', async ({ page }) => {
 
 test('quick check 2025 dynamic content verification', async ({ page }) => {
     await page.goto('/experimental/quick-check/');
+    await expectGAEvent(page, 'quick_check_start');
 
     // Fill metrics to reach the "What's holding you back?" section
     await page.locator('input[name="leadtime"][value="6"]').check();
@@ -103,6 +137,7 @@ test('quick check 2025 dynamic content verification', async ({ page }) => {
     await page.locator('input[name="rework"]').fill('0');
 
     await page.getByRole('button', { name: 'View Results' }).click();
+    await expectGAEvent(page, 'quick_check_results');
 
     // Now we should be at the "What's holding you back?" section
     const introSection = page.locator('#whats-holding-you-back');
@@ -134,6 +169,7 @@ test('quick check 2025 dynamic content verification', async ({ page }) => {
         await page.locator(`.capability.culture input[value="3"]`).nth(i - 1).check();
     }
     await page.locator('.capability.culture').getByRole('button', { name: 'View Results' }).click();
+    await expectGAEvent(page, 'quick_check_priorities');
 
     // Verify the results summary dynamic text
     const resultsSummary = page.locator('.prioritize_step');
