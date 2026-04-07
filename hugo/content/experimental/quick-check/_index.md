@@ -5,11 +5,11 @@ draft: true
 type: "quickcheck"
 layout: "section"
 bannerTitle: "Take the DORA Quick Check"
-bannerSubtitle: "Measure your team's software delivery performance in less than a minute! Compare it to the rest of the industry by responding to **five multiple-choice questions**. Compare your team’s performance to others, and discover which capabilities you should focus on improving. We don’t store your answers or personal information."
+bannerSubtitle: "Measure your team's software delivery performance in less than a minute! Compare it to the rest of the industry by responding to multiple-choice questions. Compare your team’s performance to others, and discover which capabilities you should focus on improving. We don’t store your answers or personal information."
 bannerHighlightImage: "/experimental/quick-check/header.png"
 ---
 
-<!-- 
+<!--
 Assets for the Quick Check single-page application are built from the /svelte/quick-check-2025 folder.
 To update these assets, run: cd svelte/quick-check-2025 && ./build-quick-check.sh
 -->
