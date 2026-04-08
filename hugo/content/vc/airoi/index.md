@@ -35,7 +35,7 @@ bannerSubtitle: "Check if you have the most recent version of the report."
     Your version: <code>v.2026.1</code><br />
     Latest version: <code>v.2026.1</code>
   </p>
-  <img src="airoi-report-cover.png" alt="ROI of AI-assisted Software Development Cover" style="max-width:18em;">
+  <img src="/ai/roi/report/roi-of-ai-asssited-software-development-report-thumb.png" alt="ROI of AI-assisted Software Development Cover" style="max-width:18em;">
 </div>
 
 
