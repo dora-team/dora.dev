@@ -135,6 +135,28 @@ test.describe('Version Checker', () => {
     });
   });
 
+  test('handles malicious version strings safely', async ({ page }) => {
+    const errors: any[] = [];
+    page.on('pageerror', error => {
+      errors.push(error);
+    });
+
+    // This contains characters that would break an unescaped CSS selector
+    const maliciousVersion = '"] , .other-class [data-version="';
+    await page.goto(`/vc/?v=${maliciousVersion}`);
+
+    // Wait for scripts to execute
+    await page.waitForTimeout(500);
+
+    // Verify that NO error was caught (CSS.escape handles it)
+    expect(errors.length).toBe(0);
+
+    // Should show "Unrecognized version" since it won't match any data-version
+    await expect(
+      page.getByRole('heading', { name: 'Unrecognized version', level: 2 }),
+    ).toBeVisible();
+  });
+
   test('handles extra data in the query string', async ({
     page,
   }) => {

@@ -6,7 +6,8 @@ function getParameterByName(name, url = window.location.href) {
 
 function showContent(version) {
   // Show content for exact version match
-  document.querySelectorAll(`.version-content[data-version="${version}"]`).forEach(el => {
+  const escapedVersion = CSS.escape(version);
+  document.querySelectorAll(`.version-content[data-version="${escapedVersion}"]`).forEach(el => {
     if (el) {
       el.style.display = 'block';
     }
