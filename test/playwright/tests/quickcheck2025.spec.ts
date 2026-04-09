@@ -175,3 +175,56 @@ test('quick check 2025 dynamic content verification', async ({ page }) => {
     const resultsSummary = page.locator('.prioritize_step');
     await expect(resultsSummary).toContainText('These are only three of the capabilities');
 });
+
+test.describe('Quick Check 2025 Image Verification', () => {
+    test('verify metric images are correctly loaded in embedded mode', async ({ page }) => {
+        // Set a large viewport to ensure images are not hidden by media queries
+        await page.setViewportSize({ width: 1280, height: 1024 });
+
+        await page.goto('/experimental/quick-check/');
+
+        const metricNames = ['leadtime', 'deployfreq', 'failurerecovery', 'changefailure', 'rework'];
+
+        for (const name of metricNames) {
+            const img = page.locator(`.question.embedded.${name} aside img`);
+            await expect(img).toBeVisible();
+
+            // Check if image is actually loaded and not broken
+            const isLoaded = await img.evaluate((node: HTMLImageElement) => {
+                return node.complete && node.naturalWidth > 0;
+            });
+            expect(isLoaded, `Image for ${name} should be loaded with non-zero width`).toBe(true);
+        }
+    });
+
+    test('verify QR code image is correctly loaded in kiosk mode', async ({ page }) => {
+        // Kiosk mode usually expects a large screen
+        await page.setViewportSize({ width: 1920, height: 1080 });
+
+        await page.goto('/experimental/quick-check/?displayMode=kiosk');
+
+        // Complete the 5 metrics to reach the results page where NextSteps (and QR code) is shown
+        // In kiosk mode, radio buttons are hidden (display: none) and styled labels are shown instead.
+        // We click the labels for the text-based options.
+        await page.getByText('Less than one hour').click();
+        await page.getByText('On demand (multiple deploys per day)').click();
+        await page.getByText('Less than one hour', { exact: true }).click();
+
+        // For changefailure and rework in kiosk mode, they are shown as circular buttons with percentages.
+        // We click the labels (0% for both).
+        await page.getByText('0%').first().click(); // changefailure
+        await page.getByText('0%').first().click(); // rework
+
+        // Should be on results page now
+        await expect(page.locator('.performance-average')).toBeVisible();
+
+        // QR code should be visible in NextSteps component
+        const qrCode = page.locator('.qrcode img');
+        await expect(qrCode).toBeVisible();
+
+        const isLoaded = await qrCode.evaluate((node: HTMLImageElement) => {
+            return node.complete && node.naturalWidth > 0;
+        });
+        expect(isLoaded, 'QR code image should be loaded with non-zero width').toBe(true);
+    });
+});
