@@ -2,7 +2,10 @@
 title: "ROI of AI-assisted Software Development"
 date: 2026-03-11
 draft: false
-bannerTitle: Contact us
+tab_order: "5"
+tab_title: "Contact us"
+research_collection: "ROI of AI-assisted Software Development"
+research_collection_title: "ROI of AI-assisted Software Development"
 ---
 
 We wanted to keep things simple and get an initial ROI estimate into your hands quickly so that you can start a discussion. That’s why our calculator does not include all the positive and negative impacts of using AI in the SDLC, only the major ones.

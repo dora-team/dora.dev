@@ -690,6 +690,11 @@
           "type": 301
         },
         {
+          "source": "/ai/roi/",
+          "destination": "/ai/roi/report/",
+          "type": 302
+        },
+        {
           "source": "/research/ai/dora-report/",
           "destination": "/research/2025/dora-report/",
           "type": 301
