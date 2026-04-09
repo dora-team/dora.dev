@@ -228,3 +228,29 @@ test.describe('Quick Check 2025 Image Verification', () => {
         expect(isLoaded, 'QR code image should be loaded with non-zero width').toBe(true);
     });
 });
+
+test.describe('Quick Check 2025 Rounding Verification', () => {
+    test('verify performance numbers are rounded to the nearest tenth in the graph', async ({ page }) => {
+        // Navigate with pre-populated metrics that might cause floating point issues
+        // 47% change failure: ((47 - 0) / (100 - 0)) * (10 - 0) + 0 = 4.7
+        // But in JS: 0.47 * 10 can be 4.70000000000000018... or similar
+        // Let's try to find a value that specifically fails if not rounded.
+        // Actually, 4.699999999999999 often comes from (clampedVal - input_min) / (input_max - input_min)
+
+        await page.goto('/experimental/quick-check/?leadtime=5&deployfreq=5&failurerecovery=5&changefailure=47&rework=0');
+
+        // Should be on results page
+        await expect(page.locator('.performance-average')).toBeVisible();
+
+        // Check the Change fail rate graph user score
+        const changeFailScore = page.locator('.level:has-text("Change fail rate") .user_score');
+        await expect(changeFailScore).toBeVisible();
+
+        const scoreText = await changeFailScore.innerText();
+
+        // We expect it to be "4.7" (rounded to tenth)
+        // If it's "4.699999999999999", this regex will fail
+        expect(scoreText).toMatch(/^\d+\.\d$/);
+        expect(scoreText).toBe('4.7');
+    });
+});

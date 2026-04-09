@@ -23,6 +23,10 @@
     const user_score_position = $derived(
         score_to_position(parseFloat(user_score.toString())),
     );
+    const displayed_user_score = $derived.by(() => {
+        const val = parseFloat(user_score.toString());
+        return isNaN(val) ? user_score : val.toFixed(1);
+    });
 </script>
 
 <div class="graph {displayMode}" class:featured>
@@ -36,7 +40,7 @@
         <div class="metric industry" style:left={score_to_position(industry_score)}></div>
     {/if}
     <div class="metric user" style:left={user_score_position}></div>
-    <div class="user_score" style:left={user_score_position}>{user_score}</div>
+    <div class="user_score" style:left={user_score_position}>{displayed_user_score}</div>
     <div class="tickmarks">
         {#each tickmarks as tick, index}
             <div
