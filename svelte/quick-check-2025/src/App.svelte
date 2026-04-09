@@ -161,7 +161,7 @@
     {#if metric === 'leadtime'}
         <h3 class="group-header">Software delivery throughput</h3>
     {:else if metric === 'changefailure'}
-        <h3 class="group-header">Software delivery instability</h3>
+        <h3 class="group-header">Software delivery stability</h3>
     {/if}
 {/snippet}
 

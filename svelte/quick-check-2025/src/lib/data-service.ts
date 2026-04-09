@@ -13,7 +13,7 @@ export interface IndustryMetrics {
     name: string;
     performance_average?: MetricBenchmark;
     software_delivery_throughput?: MetricBenchmark;
-    software_delivery_instability?: MetricBenchmark;
+    software_delivery_stability?: MetricBenchmark;
     leadtime: MetricBenchmark;
     deployfreq: MetricBenchmark;
     changefailure: MetricBenchmark;
@@ -47,12 +47,60 @@ export class DataService {
         '2025': { industry: industry_2025 as BenchmarkData, org: org_2025 as BenchmarkData }
     };
 
+    private static transformMetrics(data: BenchmarkData, version: string): BenchmarkData {
+        const transformed: BenchmarkData = {};
+        
+        for (const [key, entry] of Object.entries(data)) {
+            const newEntry = JSON.parse(JSON.stringify(entry)); // Deep clone
+            
+            // 1. Invert percentage-based metrics (Change Fail Rate and Rework Rate)
+            if (newEntry.changefailure) {
+                newEntry.changefailure.mean = 10 - newEntry.changefailure.mean;
+            }
+            if (newEntry.rework) {
+                newEntry.rework.mean = 10 - newEntry.rework.mean;
+            }
+
+            // 2. Transform "Software delivery instability" to "Software delivery stability"
+            // The JSON contains "software_delivery_instability"
+            const instability = (newEntry as any).software_delivery_instability;
+            if (instability) {
+                newEntry.software_delivery_stability = {
+                    mean: 10 - instability.mean,
+                    std: instability.std
+                };
+                delete (newEntry as any).software_delivery_instability;
+            }
+
+            // 3. Recalculate performance_average based on the now-consistent "High is best" metrics
+            const metricsToAverage = ['leadtime', 'deployfreq', 'failurerecovery', 'changefailure'];
+            if (version === '2025') {
+                metricsToAverage.push('rework');
+            }
+
+            const sum = metricsToAverage.reduce((acc, m) => {
+                return acc + (newEntry[m] ? newEntry[m].mean : 0);
+            }, 0);
+            const count = metricsToAverage.filter(m => newEntry[m]).length;
+            
+            if (count > 0 && newEntry.performance_average) {
+                newEntry.performance_average.mean = sum / count;
+            }
+
+            transformed[key] = newEntry;
+        }
+        
+        return transformed;
+    }
+
     static getIndustryMetrics(version: string = '2025'): BenchmarkData {
-        return this.editions[version]?.industry || this.editions['2025'].industry;
+        const rawData = this.editions[version]?.industry || this.editions['2025'].industry;
+        return this.transformMetrics(rawData, version);
     }
 
     static getOrgSizeMetrics(version: string = '2025'): BenchmarkData {
-        return this.editions[version]?.org || this.editions['2025'].org;
+        const rawData = this.editions[version]?.org || this.editions['2025'].org;
+        return this.transformMetrics(rawData, version);
     }
 
     /**
@@ -70,15 +118,15 @@ export class DataService {
 
     /**
      * Calculates the display score (0-10, where 0 is left and 10 is right on the graph).
-     * For throughput, 10 is best. For instability, 0 is best.
+     * 10 is always best for all metrics.
      */
     static calculateDisplayScore(value: number | string, type: 'categorical' | 'percentage'): number {
         if (type === 'categorical') {
-            // 1 (left) to 6 (right) -> 0 to 10. (Right is best)
+            // 1 (left/worst) to 6 (right/best) -> 0 to 10. (Right is best)
             return recode_numeric_range(value, 1, 6, 0, 10);
         } else {
-            // 0% (left) to 100% (right) -> 0 to 10. (Left is best)
-            return recode_numeric_range(value, 0, 100, 0, 10);
+            // 0% (right/best) to 100% (left/worst) -> 10 to 0. (Right is best)
+            return recode_numeric_range(value, 0, 100, 10, 0);
         }
     }
 
@@ -117,17 +165,14 @@ export class DataService {
             .map(name => individual[name].performanceScore);
         const throughputAverage = throughputScores.reduce((a, b) => a + b, 0) / throughputScores.length;
 
-        const instabilityMetrics = METRIC_DEFINITIONS.filter(d => d.type === 'percentage' && (!d.version || d.version === version));
-        const instabilityScores = instabilityMetrics.map(d => individual[d.name].performanceScore);
-        const instabilityAverage = instabilityScores.reduce((a, b) => a + b, 0) / instabilityScores.length;
+        const stabilityMetrics = METRIC_DEFINITIONS.filter(d => d.type === 'percentage' && (!d.version || d.version === version));
+        const stabilityScores = stabilityMetrics.map(d => individual[d.name].performanceScore);
+        const stabilityAverage = stabilityScores.reduce((a, b) => a + b, 0) / stabilityScores.length;
 
         return {
             performanceAverage: perfAverage,
             throughputAverage,
-            instabilityAverage: 10 - instabilityAverage, // The UI expects 0 to be "stable" and 10 to be "unstable" for the group header? 
-            // Wait, instability_average in YourPerformance.svelte was (10 - stability_avg).
-            // instability_stability_scores are performance scores (10 is best).
-            // So if stability_avg is 10 (perfect), instability is 0. Correct.
+            stabilityAverage, 
             individual
         };
     }

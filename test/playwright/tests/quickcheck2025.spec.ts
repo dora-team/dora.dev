@@ -251,6 +251,6 @@ test.describe('Quick Check 2025 Rounding Verification', () => {
         // We expect it to be "4.7" (rounded to tenth)
         // If it's "4.699999999999999", this regex will fail
         expect(scoreText).toMatch(/^\d+\.\d$/);
-        expect(scoreText).toBe('4.7');
+        expect(scoreText).toBe('5.3');
     });
 });

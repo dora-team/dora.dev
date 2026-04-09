@@ -216,10 +216,10 @@
                 )}
             </div>
 
-            <!-- Instability Group -->
+            <!-- Stability Group -->
             <div class="level-group">
                 <h3 class="group-header">
-                    Software delivery instability ({calculatedResults.instabilityAverage.toFixed(1)})
+                    Software delivery stability ({calculatedResults.stabilityAverage.toFixed(1)})
                 </h3>
 
                 {@render performanceLevel(
@@ -228,7 +228,7 @@
                     calculatedResults.individual.changefailure.displayScore,
                     selected_industry_metrics.changefailure.mean,
                     selected_industry_metrics.changefailure.std,
-                    ['0%', '20%', '40%', '60%', '80%', '100%'],
+                    ['100%', '80%', '60%', '40%', '20%', '0%'],
                 )}
 
                 {#if version === '2025'}
@@ -238,7 +238,7 @@
                         calculatedResults.individual.rework.displayScore,
                         selected_industry_metrics.rework?.mean || 0,
                         selected_industry_metrics.rework?.std || 0,
-                        ['0%', '20%', '40%', '60%', '80%', '100%'],
+                        ['100%', '80%', '60%', '40%', '20%', '0%'],
                     )}
                 {/if}
             </div>
