@@ -65,6 +65,17 @@ Run the build script mentioned above to update the assets used by the Hugo site.
 
 The 2025 Quick Check uses a centralized `DataService` (`src/lib/data-service.ts`) to manage benchmark data and metric calculations. This service acts as an internal API, abstracting the underlying JSON data structures.
 
+### Metric Orientation and Scoring
+
+All scoring and visualization follow a **"High is better"** (0-10) scale, including the switch from reporting on "Software delivery instability" to **"Software delivery stability."**
+
+#### Key Transformations:
+*   **Scale Inversion**: Percentage-based metrics (Change Fail Rate and Rework Rate) are internally inverted. 0% (best) maps to a performance/display score of 10 (right side), while 100% (worst) maps to 0 (left side).
+*   **On-the-fly Benchmark Transformation**: The raw benchmark JSON files (e.g., `src/lib/data/editions/2025/industry_metrics.json`) store values on the traditional "Instability" (low is better) scale for percentage metrics. The `DataService.transformMetrics()` method inverts these values (e.g., a raw mean of `2.1` becomes `7.9`) and recalculates the overall `performance_average` dynamically.
+*   **Descending UI Scales**: In the results view, the tickmarks for stability metrics are displayed in descending order (`100%` to `0%`) to align with the "High is better" visual direction.
+
+**Note to developers**: When updating the JSON benchmark data, provide values in the **original DORA survey scale** (where lower percentages are "better" in raw terms, but are stored as low values like `2.1` for "Instability"). The application logic handles the inversion for the UI.
+
 ### Accessing the API
 
 ```typescript
