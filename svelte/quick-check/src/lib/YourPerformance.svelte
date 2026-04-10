@@ -73,8 +73,8 @@
 
         sendAnalyticsEvent("quick_check_results");
 
-         // Check for "comp" in query string on mount
-         if (typeof window !== "undefined") {
+        // Check for "comp" in query string on mount
+        if (typeof window !== "undefined") {
             const urlParams = new URLSearchParams(window.location.search);
             const comp = urlParams.get("comp");
             if (comp === "size") {
@@ -98,7 +98,9 @@
     $: {
         if (!industry_metrics[industry]) {
             currentIndustry = "all"; // Reset to "all" if not found
-            console.warn(`Industry "${industry}" not found in ${comparisonType} dataset. Resetting to "all".`);
+            console.warn(
+                `Industry "${industry}" not found in ${comparisonType} dataset. Resetting to "all".`,
+            );
             industry = "all";
             setIndustryInURL(currentIndustry);
         } else {
@@ -107,8 +109,14 @@
     }
     $: selected_industry_metrics = industry_metrics[currentIndustry];
     $: setIndustryInURL(currentIndustry);
-    $: comparisonText = comparisonType === "industry" ? "Compare to industry benchmark:" : "Compare to organization size benchmark:";
-    $: baselineText = comparisonType === "industry" ? `2024 Industry baseline (${industry_metrics[industry]["name"]}):` : `2024 Organization size benchmark (${industry_metrics[currentIndustry]["name"]}):`;
+    $: comparisonText =
+        comparisonType === "industry"
+            ? "Compare to industry benchmark:"
+            : "Compare to organization size benchmark:";
+    $: baselineText =
+        comparisonType === "industry"
+            ? `2024 Industry baseline (${industry_metrics[industry]["name"]}):`
+            : `2024 Organization size benchmark (${industry_metrics[currentIndustry]["name"]}):`;
 </script>
 
 <div class="heading">
@@ -189,21 +197,21 @@
         <div class="graph">
             <!-- display change fail score with zero decimal places if it's a round number, else round to 1 decimal place -->
             <PerformanceGraph
-                user_score={+metrics_recoded.changefailure.toFixed(1)}
+                user_score={+(10 - metrics_recoded.changefailure).toFixed(1)}
                 industry_score={selected_industry_metrics.changefailure.mean}
                 std={selected_industry_metrics.changefailure.std}
                 tickmarks={[
-                    "100%",
-                    "90%",
-                    "80%",
-                    "70%",
-                    "60%",
-                    "50%",
-                    "40%",
-                    "30%",
-                    "20%",
-                    "10%",
                     "0%",
+                    "10%",
+                    "20%",
+                    "30%",
+                    "40%",
+                    "50%",
+                    "60%",
+                    "70%",
+                    "80%",
+                    "90%",
+                    "100%",
                 ]}
                 {displayMode}
             />
@@ -229,7 +237,7 @@
     <section class="legend">
         <div class="legend-header">
             <span>
-            {baselineText}
+                {baselineText}
             </span>
         </div>
         <div class="legend-item">
@@ -270,7 +278,7 @@
                     display: block;
                     font-size: 1rem;
                     color: #333;
-                    font-weight:500;
+                    font-weight: 500;
                 }
 
                 .performance-average {
@@ -294,46 +302,46 @@
             color: #666;
             justify-content: center;
 
-                .legend-header {
-                    margin-right: 1.5rem; /* Add spacing between header and items */
-                    margin-bottom: 1rem; /* Add spacing below the header */
+            .legend-header {
+                margin-right: 1.5rem; /* Add spacing between header and items */
+                margin-bottom: 1rem; /* Add spacing below the header */
+            }
+
+            .legend-item {
+                margin-right: 1.5rem; /* Add spacing between legend items */
+                margin-bottom: 0.5rem; /* Add spacing between legend items */
+                display: flex;
+                align-items: center;
+            }
+
+            span {
+                display: inline-block;
+                height: 1.5rem;
+                vertical-align: middle;
+                margin-left: 0.5rem;
+
+                &.your {
+                    width: 4px;
+                    height: 1rem;
+                    background-color: var(--dora-blue);
+                    border-radius: 2px;
+                    margin-right: 0.5rem;
                 }
 
-                .legend-item {
-                    margin-right: 1.5rem; /* Add spacing between legend items */
-                    margin-bottom: 0.5rem; /* Add spacing between legend items */
-                    display: flex;
-                    align-items: center;
+                &.industry {
+                    background-color: var(--metric-background) !important;
+                    width: 1px;
+                    height: 1rem;
+                    margin-right: 0.5rem;
                 }
 
-                span {
-                    display: inline-block;
-                    height: 1.5rem;
-                    vertical-align: middle;
-                    margin-left: 0.5rem;
-
-                    &.your {
-                        width: 4px;
-                        height: 1rem;
-                        background-color: var(--dora-blue);
-                        border-radius: 2px;
-                        margin-right: 0.5rem;
-                    }
-
-                    &.industry {
-                        background-color: var(--metric-background) !important;
-                        width: 1px;
-                        height: 1rem;
-                        margin-right: 0.5rem;
-                    }
-
-                    &.std {
-                        background-color: var(--std-background);
-                        width: 32px;
-                        height: 1rem;
-                        border-radius: 0.25rem;
-                        margin-right: 0.5rem;
-                    }
+                &.std {
+                    background-color: var(--std-background);
+                    width: 32px;
+                    height: 1rem;
+                    border-radius: 0.25rem;
+                    margin-right: 0.5rem;
+                }
             }
         }
 
