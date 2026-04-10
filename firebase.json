@@ -690,6 +690,11 @@
           "type": 301
         },
         {
+          "source": "/ai/roi",
+          "destination": "/ai/roi/report/",
+          "type": 302
+        },
+        {
           "source": "/ai/roi/",
           "destination": "/ai/roi/report/",
           "type": 302
