@@ -11,10 +11,10 @@ test.describe("AI Research Overview Page", () => {
 
   test("has the correct headers", async ({ page }) => {
     await expect(page.locator("h1").first()).toContainText(
-      "AI Capabilities Model",
+      "ROI of AI-assisted Software Development",
     );
     await expect(page.locator("h2").first()).toContainText(
-      "Explore the model",
+      "Explore the DORA AI Capabilities Model",
     );
     await expect(page.locator("h2").nth(1)).toContainText(
       "Read the reports",
@@ -24,10 +24,34 @@ test.describe("AI Research Overview Page", () => {
     );
   });
 
+  test.describe("DORA ROI of AI report section", () => {
+    test("has the correct report image", async ({ page }) => {
+      const reportImage = page.locator(
+        'img[alt="ROI of AI"]',
+      );
+      await expect(reportImage).toBeVisible();
+      await expect(reportImage).toHaveAttribute(
+        "src",
+        "/ai/roi/report/roi-of-ai-assisted-software-development-report-thumb.png",
+      );
+    });
+
+    test("has the correct download button", async ({ page }) => {
+      const downloadLink = page
+        .locator('a:has-text("Get the report")')
+        .first();
+      await expect(downloadLink).toBeVisible();
+      await expect(downloadLink).toHaveAttribute(
+        "href",
+        "https://cloud.google.com/resources/content/dora-roi-of-ai-assisted-software-development",
+      );
+    });
+  });
+
   test.describe("DORA AI Capabilities Model report section", () => {
     test("has the correct report image", async ({ page }) => {
       const reportImage = page.locator(
-        'img[alt="AI Capabilities Report"]',
+        'img[alt="AI Capabilities Model"]',
       );
       await expect(reportImage).toBeVisible();
       await expect(reportImage).toHaveAttribute(
@@ -43,7 +67,7 @@ test.describe("AI Research Overview Page", () => {
       await expect(downloadLink).toBeVisible();
       await expect(downloadLink).toHaveAttribute(
         "href",
-        "https://cloud.google.com/resources/content/2025-dora-ai-capabilities-model-report",
+        "https://cloud.google.com/resources/content/dora-roi-of-ai-assisted-software-development",
       );
     });
   });
@@ -51,7 +75,7 @@ test.describe("AI Research Overview Page", () => {
   test.describe("State of AI-assisted Software Development section", () => {
     test("has the correct report image", async ({ page }) => {
       const reportImage = page.locator(
-        'img[alt="DORA Report 2025"]',
+        'img[alt="2025 DORA report"]',
       );
       await expect(reportImage).toBeVisible();
       await expect(reportImage).toHaveAttribute(

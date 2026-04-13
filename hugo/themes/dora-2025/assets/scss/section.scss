@@ -264,7 +264,6 @@
         background-color: white;
         max-width: 100%;
         display: block;
-        border-bottom: 1px solid var(--dora-primary-dark);
       }
 
       h4 {
@@ -276,20 +275,26 @@
       }
     }
 
-    &:nth-child(1) {
-      background-color: var(--dora-secondary-b);
-    }
+    &.has-title {
+      a img {
+        border-bottom: 1px solid var(--dora-primary-dark);
+      }
 
-    &:nth-child(2) {
-      background-color: var(--dora-highlight);
-    }
+      &:nth-child(1) {
+        background-color: var(--dora-highlight);
+      }
 
-    &:nth-child(3) {
-      background-color: var(--dora-secondary-a);
-    }
+      &:nth-child(2) {
+        background-color: var(--dora-secondary-b);
+      }
 
-    &:nth-child(4) {
-      background-color: var(--dora-secondary-c);
+      &:nth-child(3) {
+        background-color: var(--dora-highlight);
+      }
+
+      &:nth-child(4) {
+        background-color: var(--dora-secondary-a);
+      }
     }
   }
 }
