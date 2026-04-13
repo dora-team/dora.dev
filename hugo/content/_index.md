@@ -7,7 +7,7 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 ---
 
 {{< homepage/hero
-  href="https://cloud.google.com/resources/content/2025-dora-ai-capabilities-model-report"
+  href="https://cloud.google.com/resources/content/dora-roi-of-ai-assisted-software-development"
   text="Read our latest report"
   target="_blank"
   >}}
@@ -20,17 +20,17 @@ bannerSubtitle: "DORA is the largest and longest running research program of its
 
 {{< report_feature
   eyebrow="our latest report"
-  headline="DORA AI Capabilities Model report"
-  url="https://cloud.google.com/resources/content/2025-dora-ai-capabilities-model-report"
+  headline="DORA ROI of AI-assisted Software Development report"
+  url="https://cloud.google.com/resources/content/dora-roi-of-ai-assisted-software-development"
   cta="Learn more"
-  img_src="/ai/capabilities-model/report/2025-dora-ai-capabilities-model-report.png"
-  img_alt="DORA AI Capabilities Model report"
+  img_src="/ai/roi/report/roi-of-ai-assisted-software-development-report-thumb.png"
+  img_alt="DORA ROI of AI-assisted Software Development report"
   img_align="right"
   img_stroke="true"
   maxwidth="maxplus"
   delete_on=""
   >}}
-  The DORA AI Capabilities Model report, a companion guide to the [2025 State of AI-assisted Software Development report](/research/2025/dora-report), serves as a practical guide to the seven capabilities that amplify the benefits of AI. For each of the seven core capabilities, this report details implementation strategies, specific tactics for teams to get started, and methods for monitoring progress and fostering continuous improvement.
+  DORA's ROI of AI-assisted Software Development report provides a practical framework to help you navigate the complexities of AI adoption. Whether you are managing the initial "productivity dip" of a new rollout or looking to defend your budget for the next fiscal year, this guide provides the calculations and conversation starters you need.
   {{< /report_feature >}}
 
 {{< homepage/snipe-wrapper mode="start" >}}
