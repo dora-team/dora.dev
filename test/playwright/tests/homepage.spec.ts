@@ -17,27 +17,22 @@ test.describe('Homepage', () => {
   test('hero report link is visible and correct.', async ({ page }) => {
     const heroButton = page.getByRole('link', { name: 'Read our latest report' });
     await expect(heroButton).toBeVisible();
-    await expect(heroButton).toHaveAttribute('href', 'https://cloud.google.com/resources/content/2025-dora-ai-capabilities-model-report');
+    await expect(heroButton).toHaveAttribute('href', 'https://cloud.google.com/resources/content/dora-roi-of-ai-assisted-software-development');
   });
 
   test('feature section is visible and has correct content.', async ({ page }) => {
     // Check headline
-    await expect(page.getByRole('heading', { name: 'DORA AI Capabilities Model report' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'DORA ROI of AI-assisted Software Development report' })).toBeVisible();
 
     // Check "Learn more" button
     const learnMore = page.getByRole('link', { name: 'Learn more' });
     await expect(learnMore).toBeVisible();
-    await expect(learnMore).toHaveAttribute('href', 'https://cloud.google.com/resources/content/2025-dora-ai-capabilities-model-report');
+    await expect(learnMore).toHaveAttribute('href', 'https://cloud.google.com/resources/content/dora-roi-of-ai-assisted-software-development');
 
     // Check report image
-    const reportImage = page.getByRole('img', { name: 'DORA AI Capabilities Model report' });
+    const reportImage = page.getByRole('img', { name: 'DORA ROI of AI-assisted Software Development report' });
     await expect(reportImage).toBeVisible();
-    await expect(reportImage).toHaveAttribute('src', '/ai/capabilities-model/report/2025-dora-ai-capabilities-model-report.png');
-
-    // Check companion link
-    const companionLink = page.getByRole('link', { name: '2025 State of AI-assisted Software Development report' });
-    await expect(companionLink).toBeVisible();
-    await expect(companionLink).toHaveAttribute('href', '/research/2025/dora-report');
+    await expect(reportImage).toHaveAttribute('src', '/ai/roi/report/roi-of-ai-assisted-software-development-report-thumb.png');
   });
 
   test('resources header is visible.', async ({ page }) => {
