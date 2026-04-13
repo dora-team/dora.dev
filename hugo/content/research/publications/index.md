@@ -11,6 +11,22 @@ Findings from DORA’s research program are made available through a series of p
 
 > [Sponsorship opportunities](/sponsors/) are available for upcoming DORA reports.
 
+## ROI of AI-assisted Software Development report
+
+<section class="publicationHighlight">
+    <aside>
+        <a href="https://cloud.google.com/resources/content/dora-roi-of-ai-assisted-software-development" target="_blank"><img src="/ai/roi/report/roi-of-ai-assisted-software-development-report-thumb.png" alt="DORA ROI of AI-assisted Software Development report"></a>
+    </aside>
+    <article>
+        <p>
+            DORA's ROI of AI-assisted Software Development report provides a practical framework to help you navigate the complexities of AI adoption. Whether you are managing the initial "productivity dip" of a new rollout or looking to defend your budget for the next fiscal year, this guide provides the calculations and conversation starters you need.
+        </p>
+        <p>
+            <a href="https://cloud.google.com/resources/content/dora-roi-of-ai-assisted-software-development" target="_blank"><button class="secondary">Download the report</button></a>
+        </p>
+    </article>
+</section>
+
 ## DORA AI Capabilities Model report
 
 <section class="publicationHighlight">

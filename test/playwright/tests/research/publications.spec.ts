@@ -19,6 +19,27 @@ test.describe("Publications Page", () => {
     ).toHaveAttribute("href", "/sponsors/");
   });
 
+  test.describe("ROI of AI report", () => {
+    test("links to the report", async ({ page }) => {
+      const reportLink = page
+        .locator("section.publicationHighlight")
+        .filter({ hasText: "ROI of AI-assisted Software Development report" })
+        .getByRole("link", { name: "Download the report" });
+      await expect(reportLink).toHaveAttribute(
+        "href",
+        "https://cloud.google.com/resources/content/dora-roi-of-ai-assisted-software-development",
+      );
+    });
+
+    test("shows the report image", async ({ page }) => {
+      const reportImage = page
+        .locator("section.publicationHighlight")
+        .filter({ hasText: "ROI of AI-assisted Software Development report" })
+        .getByRole("img");
+      await expect(reportImage).toBeVisible();
+    });
+  });
+
   test.describe("DORA AI Capabilities Model report", () => {
     test("links to the report", async ({ page }) => {
       const reportLink = page
