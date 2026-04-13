@@ -4,7 +4,6 @@ date: 2024-04-08T23:26:21Z
 updated: 2025-12-07
 draft: false
 layout: single
-hideSiteBanner: true
 ---
 
 ![DORA Survey Banner](survey-banner.png)

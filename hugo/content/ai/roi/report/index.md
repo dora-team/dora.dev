@@ -9,6 +9,7 @@ tab_order: "1"
 tab_title: "ROI of AI-assisted Software Development report"
 research_collection: "ROI of AI-assisted Software Development"
 research_collection_title: "ROI of AI-assisted Software Development"
+hideSiteBanner: true
 ---
 
 <grid class="border_none mt-1">
