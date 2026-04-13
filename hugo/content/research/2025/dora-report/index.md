@@ -6,7 +6,6 @@ research_collection: "2025"
 tab_order: "2"
 tab_title: "DORA Report"
 type: "research_archives"
-hideSiteBanner: true
 ---
 
 ## Download the 2025 DORA Report

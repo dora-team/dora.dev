@@ -9,7 +9,6 @@ tab_order: "1"
 tab_title: "Impact of Gen AI Report"
 research_collection: "Impact of Generative AI in Software Development"
 research_collection_title: "Impact of Generative AI in Software Development"
-hideSiteBanner: true
 ---
 
 <grid class="border_none mt-1">

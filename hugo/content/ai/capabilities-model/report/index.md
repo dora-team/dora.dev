@@ -9,7 +9,6 @@ tab_order: "1"
 tab_title: "AI Capabilities Model report"
 research_collection: "DORA AI Capabilities Model"
 research_collection_title: "DORA AI Capabilities Model"
-hideSiteBanner: true
 ---
 
 <grid class="border_none mt-1">
