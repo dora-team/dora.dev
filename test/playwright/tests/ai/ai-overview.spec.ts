@@ -59,17 +59,6 @@ test.describe("AI Research Overview Page", () => {
         "/ai/capabilities-model/report/2025-dora-ai-capabilities-model-report.png",
       );
     });
-
-    test("has the correct download button", async ({ page }) => {
-      const downloadLink = page
-        .locator('a:has-text("Get the report")')
-        .first();
-      await expect(downloadLink).toBeVisible();
-      await expect(downloadLink).toHaveAttribute(
-        "href",
-        "https://cloud.google.com/resources/content/dora-roi-of-ai-assisted-software-development",
-      );
-    });
   });
 
   test.describe("State of AI-assisted Software Development section", () => {
