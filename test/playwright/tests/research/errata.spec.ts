@@ -2,6 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 const yearToURLMap: Record<string, string> = {
+  'ROI of AI-assisted Software Development report': '/ai/roi/errata/',
   'DORA AI Capabilities Model report': '/ai/capabilities-model/errata/',
   'State of AI-assisted Software Development 2025': '/research/2025/errata/',
   'Accelerate State of DevOps 2023': '/research/2023/errata/',
