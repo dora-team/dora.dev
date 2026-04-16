@@ -10,10 +10,10 @@ npm ci --registry=https://registry.npmjs.org/
 npm run build
 
 # Set-up the target directory
-TARGET_DIR="../../hugo/content/experimental/quick-check"
+TARGET_DIR="../../hugo/content/quickcheck"
 mkdir -p "$TARGET_DIR"
 
 # copy assets to the experimental quickcheck folder
 # use -f to overwrite and ensure it fails if files are missing
-cp -f dist/assets/index.js "$TARGET_DIR/quickcheck-2025.js"
-cp -f dist/assets/index.css "$TARGET_DIR/quickcheck-2025.css"
+cp -f dist/assets/index.js "$TARGET_DIR/quickcheck.js"
+cp -f dist/assets/index.css "$TARGET_DIR/quickcheck.css"

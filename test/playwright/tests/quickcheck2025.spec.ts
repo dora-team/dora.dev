@@ -24,7 +24,7 @@ async function expectGAEvent(page: Page, eventName: string) {
 }
 
 test('quick check 2025 full flow test', async ({ page }) => {
-    await page.goto('/experimental/quick-check/');
+    await page.goto('/quickcheck/');
     await expectGAEvent(page, 'quick_check_start');
 
     // Step 1: Metrics
@@ -81,7 +81,7 @@ test('quick check 2025 full flow test', async ({ page }) => {
 });
 
 test('quick check 2025 org size comparison', async ({ page }) => {
-    await page.goto('/experimental/quick-check/?comp=size');
+    await page.goto('/quickcheck/?comp=size');
     await expectGAEvent(page, 'quick_check_start');
 
     await page.locator('input[name="leadtime"][value="6"]').check();
@@ -99,7 +99,7 @@ test('quick check 2025 org size comparison', async ({ page }) => {
 
 test('quick check 2025 URL parameter pre-population', async ({ page }) => {
     // 4 metrics + 2024 version
-    await page.goto('/experimental/quick-check/?leadtime=6&deployfreq=6&failurerecovery=6&changefailure=0&v=2024');
+    await page.goto('/quickcheck/?leadtime=6&deployfreq=6&failurerecovery=6&changefailure=0&v=2024');
     await expectGAEvent(page, 'quick_check_start');
 
     // Should automatically advance to results
@@ -126,7 +126,7 @@ test('quick check 2025 URL parameter pre-population', async ({ page }) => {
 });
 
 test('quick check 2025 dynamic content verification', async ({ page }) => {
-    await page.goto('/experimental/quick-check/');
+    await page.goto('/quickcheck/');
     await expectGAEvent(page, 'quick_check_start');
 
     // Fill metrics to reach the "What's holding you back?" section
@@ -181,7 +181,7 @@ test.describe('Quick Check 2025 Image Verification', () => {
         // Set a large viewport to ensure images are not hidden by media queries
         await page.setViewportSize({ width: 1280, height: 1024 });
 
-        await page.goto('/experimental/quick-check/');
+        await page.goto('/quickcheck/');
 
         const metricNames = ['leadtime', 'deployfreq', 'failurerecovery', 'changefailure', 'rework'];
 
@@ -201,7 +201,7 @@ test.describe('Quick Check 2025 Image Verification', () => {
         // Kiosk mode usually expects a large screen
         await page.setViewportSize({ width: 1920, height: 1080 });
 
-        await page.goto('/experimental/quick-check/?displayMode=kiosk');
+        await page.goto('/quickcheck/?displayMode=kiosk');
 
         // Complete the 5 metrics to reach the results page where NextSteps (and QR code) is shown
         // In kiosk mode, radio buttons are hidden (display: none) and styled labels are shown instead.
@@ -237,7 +237,7 @@ test.describe('Quick Check 2025 Rounding Verification', () => {
         // Let's try to find a value that specifically fails if not rounded.
         // Actually, 4.699999999999999 often comes from (clampedVal - input_min) / (input_max - input_min)
 
-        await page.goto('/experimental/quick-check/?leadtime=5&deployfreq=5&failurerecovery=5&changefailure=47&rework=0');
+        await page.goto('/quickcheck/?leadtime=5&deployfreq=5&failurerecovery=5&changefailure=47&rework=0');
 
         // Should be on results page
         await expect(page.locator('.performance-average')).toBeVisible();

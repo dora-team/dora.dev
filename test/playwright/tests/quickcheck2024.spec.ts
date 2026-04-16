@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 
 test('quick check test', async ({ page }) => {
-    await page.goto('/');
-    await page.getByRole('link', { name: 'Quick Check', exact: true }).first().click();
+    await page.goto('/quickcheck-2024');
+    // await page.getByRole('link', { name: 'Quick Check', exact: true }).first().click();
     await page.click('input[name="leadtime"][value="6"]')
     await page.click('input[name="deployfreq"][value="6"]')
     await page.getByRole('slider').fill('0');
@@ -36,7 +36,7 @@ test('quick check test', async ({ page }) => {
 });
 
 test('quick check org size comparison', async ({ page }) => {
-    await page.goto('/quickcheck/?comp=size');
+    await page.goto('/quickcheck-2024/?comp=size');
     await page.getByRole('group', { name: 'For the primary application or service you work on, what is your lead time for' }).getByLabel('Less than one hour').check();
     await page.getByLabel('On demand (multiple deploys').check();
     await page.getByRole('slider').fill('0');
