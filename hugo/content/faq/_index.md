@@ -9,16 +9,14 @@ bannerTitle: Frequently Asked Questions
 ## DORA Quick Check
 ### What do my results mean?
 
-Your results provide a snapshot of your software delivery performance. Everything is measured on a standardized **0 to 10 scale** to make it easy to read and compare.
+Your quick check results include an overall software delivery performance score, on a a scale from 0 to 10. This blended metric is derived from the five individual metrics, which are also presented individually. All scores are normalized to a 10-point scale for convenience. You can compare your results to benchmarks derived from [DORA's 2025 research program]({{< ref "/research/2025/" >}}).
 
 Your report includes:
 
-*   **Overall Performance Score:** A primary score (out of 10) that blends your performance across five different areas.
-*   **Five Individual Metrics:** A detailed look at the five specific metrics that make up your overall score.
-*   **Throughput & Instability Scores:** Two additional overall scores that specifically highlight how fast you deliver software (throughput) and how reliable those deliveries are (instability).
-*   **Industry Benchmarks:** The quick check allows you to compare your scores to industry benchmarks from the [2025 DORA research]({{< ref "/research/2025/" >}}).
-
-> **Key Takeaway:** Your report takes complex delivery data, converts it into a simple 10-point scoring system, and lets you see how you compare to the rest of the industry.
+*   **Overall performance score:** A primary score (out of 10) that blends your performance across [five different areas](/guides/dora-metrics/#throughput-and-instability).
+*   **Five individual metrics:** A detailed look at the five specific metrics that make up your overall score.
+*   **Throughput & stability scores:** Two additional overall scores that specifically highlight how fast you deliver software (throughput) and how reliable those deliveries are (stability).
+*   **Industry benchmarks:** The quick check allows you to compare your scores to industry benchmarks from the [2025 DORA research]({{< ref "/research/2025/" >}}).
 
 ## DORA Core
 ### What is [DORA Core](/core/)?
