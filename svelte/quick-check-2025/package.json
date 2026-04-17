@@ -19,8 +19,5 @@
     "typescript": "^6.0.2",
     "vite": "^7.3.2",
     "vitest": "^4.1.2"
-  },
-  "dependencies": {
-    "vite-plugin-svelte-monorepo": "github:sveltejs/vite-plugin-svelte"
   }
 }
