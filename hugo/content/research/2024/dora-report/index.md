@@ -1,6 +1,7 @@
 ---
 title: "Accelerate State of DevOps Report 2024"
 date: 2023-09-01
+updated: 2026-04-13
 draft: false
 research_collection: "2024"
 tab_order: "2"
@@ -29,9 +30,18 @@ type: "research_archives"
 </item>
 </grid>
 
-DORA has been investigating the capabilities, practices, and measures of high-performing technology-driven teams and organizations for over a decade. This is our tenth DORA report. We have heard from more than 39,000 professionals working at organizations of every size and across many different industries globally.
+The 2024 report highlights that navigating today's rapidly shifting technological landscape requires balancing emerging tools with a steadfast focus on the human element of software development. While Artificial Intelligence is creating a paradigm shift in daily workflows, teams that prioritize end-user needs and operate under stable organizational priorities are the ones truly driving product quality and organizational success.
 
-This report highlights the significant impact of AI on software development, explores platform engineering’s promises and challenges, and emphasizes user-centricity and stable priorities for organizational success.
+Taking an experimental approach to continuous improvement remains essential for modern teams. Organizations are encouraged to assess their current baseline, formulate hypotheses, and measure the impact of changes iteratively. Embracing transformational leadership and fostering an environment of continuous learning are critical to navigating the growing pains associated with new technologies and platforms.
+
+**Key findings include:**
+
+*   **AI brings clear benefits but unexpected tradeoffs:** AI adoption significantly increases individual productivity, flow, and job satisfaction. However, it also negatively impacts [software delivery stability and throughput](/guides/dora-metrics/), reminding teams that fundamentals like [small batch sizes](/capabilities/working-in-small-batches/) and [robust testing](/capabilities/test-automation/) remain crucial.
+*   **User-centricity is the ultimate driver of performance:** Organizations that prioritize the end-user experience build higher-quality products. Developers working with a [user-centric mindset](/capabilities/user-centric-focus/) are more productive, more satisfied, and less likely to experience burnout.
+*   **Stable priorities are critical for well-being:** Unstable organizational priorities cause meaningful decreases in productivity and substantial increases in burnout. This negative impact is highly resistant to mitigation and persists even in environments with strong leaders and high-quality documentation.
+*   **Platform engineering boosts productivity, but monitor stability:** Utilizing an [internal developer platform](/capabilities/platform-engineering/) improves individual productivity, team performance, and overall organizational performance. However, it can also lead to decreased change stability and throughput, requiring careful implementation focused on developer independence.
+*   **Transformational leadership matters:** [Leaders who inspire, intellectually stimulate, and support their teams](/capabilities/transformational-leadership/) significantly improve employee productivity, organizational performance, and job satisfaction while simultaneously decreasing burnout.
+*   **Infrastructure flexibility remains essential:** Leveraging [flexible cloud infrastructure](/capabilities/flexible-infrastructure/) directly increases organizational performance. Conversely, simply migrating to the cloud without adopting its inherent flexibility can be more harmful than staying in a traditional data center.
 
 ### Gold Sponsors
 
