@@ -27,7 +27,7 @@ test("Gen AI report page has the correct report image", async ({ page }) => {
 });
 
 test("Gen AI report page has the correct download button", async ({ page }) => {
-  const downloadLink = page.getByRole("link", { name: "Download the report" });
+  const downloadLink = page.getByRole("link", { name: "Download the report" }).first();
   await expect(downloadLink).toBeVisible();
   await expect(downloadLink).toHaveAttribute(
     "href",

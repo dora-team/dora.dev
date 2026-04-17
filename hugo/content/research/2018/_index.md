@@ -5,7 +5,6 @@ draft: false
 research_collection: "2018"
 type: research_archives
 layout: single
-tab_order: "0"
 tab_title: "Overview"
 archive_summary: 'Operational performance joins the metrics, and the "Elite" cluster is introduced to define the highest level of software delivery.'
 ---
