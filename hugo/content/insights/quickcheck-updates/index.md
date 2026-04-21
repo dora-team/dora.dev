@@ -1,12 +1,12 @@
 ---
 title: "Quick Check updates"
-date: 2026-04-21
-updated: 2026-04-21
+date: 2026-04-22
+updated: 2026-04-22
 draft: false
 authors:
     1: {name: "Nathen Harvey", url: "https://linkedin.com/in/nathen"}
 tags: ["DORA", "Metrics"]
-summary: "The DORA Quick Check was recently updated to include deployment rework rate, design improvements, and the latest industry benchmarks. Measure your team’s software delivery performance and compare it to the rest of the industry by responding to multiple-choice questions."
+summary: "The DORA Quick Check was recently updated to include deployment rework rate and the latest industry benchmarks. Measure your team’s software delivery performance and compare it to the rest of the industry by responding to multiple-choice questions."
 ---
 
 ## Measure your team’s software delivery performance
