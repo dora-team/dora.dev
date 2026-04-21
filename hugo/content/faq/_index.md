@@ -9,7 +9,7 @@ bannerTitle: Frequently Asked Questions
 ## DORA Quick Check
 ### What do my results mean?
 
-Your quick check results include an overall software delivery performance score, on a a scale from 0 to 10. This blended metric is derived from the five individual metrics, which are also presented individually. All scores are normalized to a 10-point scale for convenience. You can compare your results to benchmarks derived from [DORA's 2025 research program]({{< ref "/research/2025/" >}}).
+Your quick check results include an overall software delivery performance score, on a scale from 0 to 10. This blended metric is derived from the five individual metrics, which are also presented individually. All scores are normalized to a 10-point scale for convenience. You can compare your results to benchmarks derived from [DORA's 2025 research program]({{< ref "/research/2025/" >}}).
 
 Your report includes:
 
