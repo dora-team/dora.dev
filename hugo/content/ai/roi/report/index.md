@@ -1,7 +1,7 @@
 ---
 title: "ROI of AI-assisted Software Development report"
 date: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-22
 draft: false
 type: "ai"
 layout: "report"
@@ -25,5 +25,9 @@ hideSiteBanner: true
     <div style="text-align: right;">
         <a href="https://cloud.google.com/resources/content/dora-roi-of-ai-assisted-software-development" target="_blank" class="button secondary">Get the report</a>
     </div>
+    <h3>ROI of AI calculator</h3>
+    <p>
+        Measure the potential return on investment for adopting AI in your software development lifecycle using DORA's <a href="/ai/roi/calculator">ROI of AI calculator</a>.
+    </p>
 </item>
 </grid>
