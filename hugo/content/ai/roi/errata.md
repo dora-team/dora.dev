@@ -1,7 +1,7 @@
 ---
 title: "DORA ROI of AI-assisted Software Development report errata"
-date: 2026-04-13
-updated: 2026-04-13
+date: 2026-04-22
+updated: 2026-04-22
 draft: false
 research_collection: "ROI of AI-assisted Software Development"
 research_collection_title: "ROI of AI-assisted Software Development"
@@ -15,7 +15,7 @@ This page lists errors and corrections to the DORA ROI of AI-assisted Software D
 
 -----
 <div style="text-align:center; margin-top:2em;">
-Have you found an error in the ORA ROI of AI-assisted Software Development report?
+Have you found an error in the DORA ROI of AI-assisted Software Development report?
 
 <a href='mailto:dora-advocacy@google.com?subject=DORA+ROI+of+AI+error+report' class='button' target="_blank">Submit a change or correction</a>
 </div>
