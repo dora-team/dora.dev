@@ -46,13 +46,12 @@ test.describe('PDF search results', () => {
       expectedLink: '/dora-report-2020',
       expectedImg: '/img/sodr_thumbnails/2020.png'
     },
-    // TODO: uncomment once the report has been added to the search index
-    // {
-    //   searchQuery: 'ROI of AI-assisted Software Development',
-    //   expectedTitle: '2026 ROI of AI-assisted Software Development',
-    //   expectedLink: '/ai/roi/report/',
-    //   expectedImg: '/img/sodr_thumbnails/roi-of-ai-assisted-software.png'
-    // },
+    {
+      searchQuery: 'ROI of AI-assisted Software Development',
+      expectedTitle: 'ROI of AI-assisted Software Development',
+      expectedLink: '/ai/roi/report/',
+      expectedImg: '/img/sodr_thumbnails/roi-of-ai-assisted-software.png'
+    },
   ];
 
   for (const report of reports) {
