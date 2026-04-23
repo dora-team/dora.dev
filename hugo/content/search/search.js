@@ -97,6 +97,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 link: '/ai/gen-ai-report/',
                 thumbnail_url: '/img/sodr_thumbnails/gen-ai-report.png',
             },
+            'dora-roi-of-ai-assisted-software-development-2026': {
+                title: 'ROI of AI-assisted Software Development',
+                link: '/ai/roi/report/',
+                thumbnail_url: '/img/sodr_thumbnails/roi-of-ai-assisted-software.png',
+            },
         };
 
         pdfs.forEach((result) => {
