@@ -330,20 +330,25 @@
             <div class="dora-callout-title">Note on methodology</div>
             <div class="dora-callout-content">
                 <p>
-                    Treat these calculations as a high-uncertainty estimate meant to
-                    spark a conversation rather than a rigid mathematical formula.
-                    As the saying goes, all models are wrong, but we hope this one
-                    proves useful for your team as you assess the impact of AI in
-                    the software development lifecycle.
+                    This calculator is a companion to the
+                    <a href="/ai/roi/report/"
+                        >ROI of AI-assisted Software Development report
+                    </a>. Treat these calculations as a high-uncertainty
+                    estimate meant to spark a conversation rather than a rigid
+                    mathematical formula. As the saying goes, all models are
+                    wrong, but we hope this one proves useful for your team as
+                    you assess the impact of AI in the software development
+                    lifecycle.
                 </p>
                 <p>
                     As with any DORA insights, the real value comes from
-                    contextualizing the findings and applying them within your own
-                    organization. We’ve provided the ROI of AI-assisted software
-                    development calculator so you can explore the mechanics, adjust
-                    the assumptions to match your reality, and build your own
-                    estimate. Once you’ve had a chance to experiment, we invite you
-                    to share how it’s working out for your team in the <a
+                    contextualizing the findings and applying them within your
+                    own organization. We’ve provided the ROI of AI-assisted
+                    software development calculator so you can explore the
+                    mechanics, adjust the assumptions to match your reality, and
+                    build your own estimate. Once you’ve had a chance to
+                    experiment, we invite you to share how it’s working out for
+                    your team in the <a
                         href="https://dora.community"
                         target="_blank">DORA Community</a
                     >.
@@ -362,8 +367,9 @@
             <div class="dora-callout-content">
                 <p>
                     If you want to move beyond these and take a deeper look into
-                    your specific situation, <a href="/ai/roi/contact/" class="cta-link"
-                        >Google Cloud Consulting’s delta team</a
+                    your specific situation, <a
+                        href="/ai/roi/contact/"
+                        class="cta-link">Google Cloud Consulting’s delta team</a
                     > is here to help you.
                 </p>
             </div>
