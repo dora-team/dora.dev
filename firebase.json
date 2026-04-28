@@ -70,17 +70,7 @@
           "type": 301
         },
         {
-          "source": "/publications/",
-          "destination": "/research/publications/",
-          "type": 301
-        },
-        {
           "source": "/publications/errata",
-          "destination": "/research/errata/",
-          "type": 301
-        },
-        {
-          "source": "/publications/errata/",
           "destination": "/research/errata/",
           "type": 301
         },
@@ -220,17 +210,7 @@
           "type": 301
         },
         {
-          "source": "/research/2024/trust-in-ai/",
-          "destination": "/ai/research-insights/trust-in-ai/",
-          "type": 301
-        },
-        {
           "source": "/research/2024/value-of-development-work",
-          "destination": "/ai/research-insights/value-of-development-work/",
-          "type": 301
-        },
-        {
-          "source": "/research/2024/value-of-development-work/",
           "destination": "/ai/research-insights/value-of-development-work/",
           "type": 301
         },
@@ -240,17 +220,7 @@
           "type": 302
         },
         {
-          "source": "/dora-report-gen-ai/",
-          "destination": "/research/ai/gen-ai-report/",
-          "type": 302
-        },
-        {
           "source": "/dora-gen-ai-report",
-          "destination": "/research/ai/gen-ai-report/",
-          "type": 302
-        },
-        {
-          "source": "/dora-gen-ai-report/",
           "destination": "/research/ai/gen-ai-report/",
           "type": 302
         },
@@ -315,17 +285,7 @@
           "type": 302
         },
         {
-          "source": "/devops-capabilities/cultural/how-to-empower-software-delivery-teams/",
-          "destination": "/guides/how-to-empower-software-delivery-teams/",
-          "type": 302
-        },
-        {
           "source": "/devops-capabilities/cultural/devops-culture-transform",
-          "destination": "/guides/how-to-transform/",
-          "type": 301
-        },
-        {
-          "source": "/devops-capabilities/cultural/devops-culture-transform/",
           "destination": "/guides/how-to-transform/",
           "type": 301
         },
@@ -335,17 +295,7 @@
           "type": 301
         },
         {
-          "source": "/capabilities/cultural/devops-culture-transform/",
-          "destination": "/guides/how-to-transform/",
-          "type": 301
-        },
-        {
           "source": "/guides/devops-culture-transform",
-          "destination": "/guides/how-to-transform/",
-          "type": 301
-        },
-        {
-          "source": "/guides/devops-culture-transform/",
           "destination": "/guides/how-to-transform/",
           "type": 301
         },
@@ -361,11 +311,6 @@
         },
         {
           "source": "/capabilities/how-to-empower-software-delivery-teams",
-          "destination": "/guides/how-to-empower-software-delivery-teams/",
-          "type": 301
-        },
-        {
-          "source": "/capabilities/how-to-empower-software-delivery-teams/",
           "destination": "/guides/how-to-empower-software-delivery-teams/",
           "type": 301
         },
@@ -420,11 +365,6 @@
           "type": 301
         },
         {
-          "source": "/research/2018/",
-          "destination": "/research/2018/dora-report/",
-          "type": 301
-        },
-        {
           "source": "/publications/pdf/state-of-devops-2019.pdf",
           "destination": "/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf",
           "type": 301
@@ -465,7 +405,7 @@
           "type": 301
         },
         {
-          "source": "/research/ai/gen-ai-report/",
+          "source": "/research/ai/gen-ai-report",
           "destination": "/ai/gen-ai-report/",
           "type": 301
         },
@@ -475,17 +415,7 @@
           "type": 301
         },
         {
-          "source": "/research/ai/gen-ai-report-questions/",
-          "destination": "/ai/gen-ai-report/questions/",
-          "type": 301
-        },
-        {
           "source": "/research/ai/builder-mindset",
-          "destination": "/ai/research-insights/builder-mindset/",
-          "type": 301
-        },
-        {
-          "source": "/research/ai/builder-mindset/",
           "destination": "/ai/research-insights/builder-mindset/",
           "type": 301
         },
@@ -495,27 +425,12 @@
           "type": 301
         },
         {
-          "source": "/research/ai/measurement-frameworks/",
-          "destination": "/ai/research-insights/measurement-frameworks/",
-          "type": 301
-        },
-        {
           "source": "/research/ai/concerns-beyond-accuracy-of-ai-output",
           "destination": "/ai/research-insights/concerns-beyond-accuracy-of-ai-output/",
           "type": 301
         },
         {
-          "source": "/research/ai/concerns-beyond-accuracy-of-ai-output/",
-          "destination": "/ai/research-insights/concerns-beyond-accuracy-of-ai-output/",
-          "type": 301
-        },
-        {
           "source": "/research/ai/adopt-gen-ai",
-          "destination": "/ai/research-insights/adopt-gen-ai/",
-          "type": 301
-        },
-        {
-          "source": "/research/ai/adopt-gen-ai/",
           "destination": "/ai/research-insights/adopt-gen-ai/",
           "type": 301
         },
@@ -530,17 +445,7 @@
           "type": 301
         },
         {
-          "source": "/research/ai/errata/",
-          "destination": "/ai/gen-ai-report/errata/",
-          "type": 301
-        },
-        {
           "source": "/research/ai/questions",
-          "destination": "/ai/research-insights/adopt-gen-ai/questions/",
-          "type": 301
-        },
-        {
-          "source": "/research/ai/questions/",
           "destination": "/ai/research-insights/adopt-gen-ai/questions/",
           "type": 301
         },
@@ -550,17 +455,7 @@
           "type": 301
         },
         {
-          "source": "/research/ai/trust-in-ai/",
-          "destination": "/ai/research-insights/trust-in-ai/",
-          "type": 301
-        },
-        {
           "source": "/research/ai/value-of-development-work",
-          "destination": "/ai/research-insights/value-of-development-work/",
-          "type": 301
-        },
-        {
-          "source": "/research/ai/value-of-development-work/",
           "destination": "/ai/research-insights/value-of-development-work/",
           "type": 301
         },
@@ -570,17 +465,7 @@
           "type": 302
         },
         {
-          "source": "/research/2025/ai-capabilities-model/",
-          "destination": "/ai/capabilities-model/report/",
-          "type": 302
-        },
-        {
           "source": "/research/ai/ai-capabilities-model",
-          "destination": "/ai/capabilities-model/report/",
-          "type": 302
-        },
-        {
-          "source": "/research/ai/ai-capabilities-model/",
           "destination": "/ai/capabilities-model/report/",
           "type": 302
         },
@@ -590,28 +475,13 @@
           "type": 301
         },
         {
-          "source": "/research/ai/",
-          "destination": "/ai/",
-          "type": 301
-        },
-        {
           "source": "/research/ai",
           "destination": "/ai/",
           "type": 301
         },
         {
-          "source": "/ai/capabilities-model/",
-          "destination": "/ai/capabilities-model/report/",
-          "type": 302
-        },
-        {
           "source": "/ai/capabilities-model",
           "destination": "/ai/capabilities-model/report/",
-          "type": 302
-        },
-        {
-          "source": "/ai/gen-ai-report/",
-          "destination": "/ai/gen-ai-report/report/",
           "type": 302
         },
         {
@@ -620,13 +490,8 @@
           "type": 302
         },
         {
-          "source": "/guides/dora-metrics/history/",
+          "source": "/guides/dora-metrics/history",
           "destination": "/insights/dora-metrics-history/",
-          "type": 301
-        },
-        {
-          "source": "/guides/dora-metrics-four-keys/",
-          "destination": "/guides/dora-metrics/",
           "type": 301
         },
         {
@@ -645,52 +510,52 @@
           "type": 301
         },
         {
-          "source": "/ai/research-insights/",
+          "source": "/ai/research-insights",
           "destination": "/insights/tags/ai/",
           "type": 301
         },
         {
-          "source": "/ai/research-insights/managing-ai-dependency/",
+          "source": "/ai/research-insights/managing-ai-dependency",
           "destination": "/insights/managing-ai-dependency/",
           "type": 301
         },
         {
-          "source": "/ai/research-insights/ai-as-a-tutor/",
+          "source": "/ai/research-insights/ai-as-a-tutor",
           "destination": "/insights/ai-as-a-tutor/",
           "type": 301
         },
         {
-          "source": "/ai/research-insights/builder-mindset/",
+          "source": "/ai/research-insights/builder-mindset",
           "destination": "/insights/builder-mindset/",
           "type": 301
         },
         {
-          "source": "/ai/research-insights/measurement-frameworks/",
+          "source": "/ai/research-insights/measurement-frameworks",
           "destination": "/insights/measurement-frameworks/",
           "type": 301
         },
         {
-          "source": "/ai/research-insights/concerns-beyond-accuracy-of-ai-output/",
+          "source": "/ai/research-insights/concerns-beyond-accuracy-of-ai-output",
           "destination": "/insights/concerns-beyond-accuracy-of-ai-output/",
           "type": 301
         },
         {
-          "source": "/ai/research-insights/adopt-gen-ai/",
+          "source": "/ai/research-insights/adopt-gen-ai",
           "destination": "/insights/adopt-gen-ai/",
           "type": 301
         },
         {
-          "source": "/ai/research-insights/trust-in-ai/",
+          "source": "/ai/research-insights/trust-in-ai",
           "destination": "/insights/trust-in-ai/",
           "type": 301
         },
         {
-          "source": "/ai/research-insights/value-of-development-work/",
+          "source": "/ai/research-insights/value-of-development-work",
           "destination": "/insights/value-of-development-work/",
           "type": 301
         },
         {
-          "source": "/ai/research-insights/adopt-gen-ai/questions/",
+          "source": "/ai/research-insights/adopt-gen-ai/questions",
           "destination": "/insights/adopt-gen-ai/questions/",
           "type": 301
         },
@@ -705,12 +570,7 @@
           "type": 302
         },
         {
-          "source": "/ai/roi/",
-          "destination": "/ai/roi/report/",
-          "type": 302
-        },
-        {
-          "source": "/research/ai/dora-report/",
+          "source": "/research/ai/dora-report",
           "destination": "/research/2025/dora-report/",
           "type": 301
         },
@@ -726,11 +586,6 @@
         },
         {
           "source": "/roi-ai-report",
-          "destination": "/ai/roi/report/",
-          "type": 301
-        },
-        {
-          "source": "/roi-ai-report/",
           "destination": "/ai/roi/report/",
           "type": 301
         }
