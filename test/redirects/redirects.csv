@@ -209,4 +209,6 @@
 /research/2018,/research/2018/dora-report/,301
 /youtube,https://www.youtube.com/@dora-dev,302
 /youtube/,https://www.youtube.com/@dora-dev,302
-
+/quickcheck-2024,/quickcheck/,301
+/quickcheck-2024/,/quickcheck/,301
+/quickcheck-2024/?leadtime=3&deployfreq=2&changefailure=25&failurerecovery=2&v=2024&industry=all&ci=22233&arch=333444&culture=555554&step=priorities,/quickcheck/?leadtime=3&deployfreq=2&changefailure=25&failurerecovery=2&v=2024&industry=all&ci=22233&arch=333444&culture=555554&step=priorities,301

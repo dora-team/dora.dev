@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('quick check test', async ({ page }) => {
+test.skip('quick check test', async ({ page }) => {
     await page.goto('/quickcheck-2024');
     // await page.getByRole('link', { name: 'Quick Check', exact: true }).first().click();
     await page.click('input[name="leadtime"][value="6"]')
@@ -35,7 +35,7 @@ test('quick check test', async ({ page }) => {
     await expect(page.locator('.score_text.culture')).toContainText('10.0');
 });
 
-test('quick check org size comparison', async ({ page }) => {
+test.skip('quick check org size comparison', async ({ page }) => {
     await page.goto('/quickcheck-2024/?comp=size');
     await page.getByRole('group', { name: 'For the primary application or service you work on, what is your lead time for' }).getByLabel('Less than one hour').check();
     await page.getByLabel('On demand (multiple deploys').check();

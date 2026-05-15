@@ -110,6 +110,11 @@
           "type": 301
         },
         {
+          "source": "/quickcheck-2024",
+          "destination": "/quickcheck/",
+          "type": 301
+        },
+        {
           "source": "/performance.html**",
           "destination": "/quickcheck/",
           "type": 301
