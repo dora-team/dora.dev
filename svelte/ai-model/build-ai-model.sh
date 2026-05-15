@@ -1,10 +1,15 @@
 #! /bin/bash
+set -e
 
-# run this script from the project root
-cd svelte/ai-model
+# run this script from its parent directory (svelte)
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$SCRIPT_DIR"/..
+
+# Install dependencies at the workspace root
+npm ci --registry=https://registry.npmjs.org/
 
 # build production artifacts
-npm install
+cd ai-model
 npm run build
 
 # Set-up the target directory
