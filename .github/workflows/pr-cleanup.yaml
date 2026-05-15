@@ -3,6 +3,11 @@ name: PR Cleanup (after PR is closed)
 on:
   pull_request:
     types: [closed]
+    paths-ignore:
+      - 'docs/**'
+      - 'adrs/**'
+      - '.gemini/**'
+      - '**/README.md'
 
 jobs:
   cleanup:
