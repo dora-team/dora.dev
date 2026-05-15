@@ -1,0 +1,7 @@
+{
+  "name": "dora-svelte-workspace",
+  "private": true,
+  "workspaces": [
+    "ai-model"
+  ]
+}
