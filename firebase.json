@@ -380,6 +380,11 @@
           "type": 302
         },
         {
+          "source": "/youtube",
+          "destination": "https://www.youtube.com/@dora-dev",
+          "type": 302
+        },
+        {
           "source": "/demo-signup",
           "destination": "https://docs.google.com/forms/d/e/1FAIpQLSeeQRVKmJ0GYrtT8oGUP_nbPyyVrM6pbl3kRI3WPKS6h3dZfQ/viewform?usp=header",
           "type": 302
