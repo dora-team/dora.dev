@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+# Install workspace dependencies first to avoid parallel race conditions
+(cd svelte && npm ci --registry=https://registry.npmjs.org/)
+
 # This script will trigger builds of each of the svelte applications, in parallel.
 # RUN THIS SCRIPT FROM THE REPOSITORY ROOT
 

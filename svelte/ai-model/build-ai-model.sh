@@ -1,15 +1,13 @@
 #! /bin/bash
-set -e
+set -euo pipefail
 
-# run this script from its parent directory (svelte)
+# Dependencies should be installed at the workspace root before running this script
+
+# run this script from this directory
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd "$SCRIPT_DIR"/..
-
-# Install dependencies at the workspace root
-npm ci --registry=https://registry.npmjs.org/
+cd "$SCRIPT_DIR"
 
 # build production artifacts
-cd ai-model
 npm run build
 
 # Set-up the target directory
@@ -20,4 +18,3 @@ mkdir -p "$TARGET_DIR"
 mkdir -p $TARGET_DIR/interactive
 cp dist/assets/index-*.js $TARGET_DIR/model.js
 cp dist/assets/index-*.css $TARGET_DIR/model.css
-

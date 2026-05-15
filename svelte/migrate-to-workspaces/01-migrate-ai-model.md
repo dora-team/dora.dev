@@ -16,7 +16,7 @@ We have successfully completed Phase 1 of our rollout plan for the first applica
    ```
 2. **App Cleanup**: Removed the standalone `package-lock.json` and `node_modules` from `svelte/ai-model/` to force it to use the new unified workspace root lockfile.
 3. **Workspace Lockfile Generation**: Ran `npm install` from the `svelte/` root directory to install dependencies and generate a single unified `package-lock.json` file.
-4. **Build Script Update**: Updated `svelte/ai-model/build-ai-model.sh` to correctly run `npm install` from the `svelte/` workspace root prior to running its specific build steps.
+4. **Build Script Update**: Updated `svelte/ai-model/build-ai-model.sh` to a streamlined pattern that assumes dependencies are already installed at the workspace root, preparing for centralized dependency management.
 
 ## Verification & Validation
 

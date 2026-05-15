@@ -2,6 +2,7 @@
   "name": "dora-svelte-workspace",
   "private": true,
   "workspaces": [
-    "ai-model"
+    "ai-model",
+    "core-v2"
   ]
 }
