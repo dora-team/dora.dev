@@ -1,12 +1,12 @@
-# DORA Quick Check 2025 (Experimental)
+# DORA Quick Check
 
-This folder contains the updated DORA Quick Check implementation for 2025. It is a Single Page Application (SPA) built with [Svelte 5](https://svelte.dev) and [TypeScript](https://www.typescriptlang.org/).
+This folder contains the DORA Quick Check implementation. It is a Single Page Application (SPA) built with [Svelte 5](https://svelte.dev) and [TypeScript](https://www.typescriptlang.org/).
 
 ## Overview
 
 The Quick Check allows users to measure their software delivery performance across five key metrics, compare their results against DORA benchmarks, and identify prioritization capabilities through a data-driven questionnaire.
 
-## Features (2025)
+## Features
 *   **Deployment Rework Rate**: A new metric integrated into the performance calculation.
 *   **Multi-step/Single-page Hybrid**: Embedded mode shows all questions on one page, while Kiosk mode remains multi-step.
 *   **Versioned Benchmarks**: Supports 2024 and 2025 benchmark data via an internal API.
@@ -16,7 +16,7 @@ The Quick Check allows users to measure their software delivery performance acro
 
 -   **Framework**: Svelte 5 (utilizing runes like `$state`, `$derived`, and `$effect`).
 -   **Integration**: The application is embedded into the Hugo site via `/hugo/content/experimental/quick-check/_index.md`.
--   **Assets**: When built, the application generates `quickcheck-2025.js` and `quickcheck-2025.css` which are copied to the Hugo content directory.
+-   **Assets**: When built, the application generates `quickcheck.js` and `quickcheck.css` which are copied to the Hugo content directory.
 
 ## Development
 
@@ -24,14 +24,14 @@ The Quick Check allows users to measure their software delivery performance acro
 *   Node.js and npm
 
 ### Local Development
-1.  Navigate to this folder: `cd svelte/quick-check-2025`
+1.  Navigate to this folder: `cd svelte/quick-check`
 2.  Install dependencies: `npm install`
 3.  Run the dev server: `npm run dev`
 
 ### Building for Hugo
 To build the SPA and copy it to the experimental Hugo content directory, run the following from the project root:
 ```bash
-bash svelte/quick-check-2025/build-quick-check.sh
+bash svelte/quick-check/build-quick-check.sh
 ```
 This script compiles the assets and places them in `hugo/content/experimental/quick-check/`.
 
@@ -63,7 +63,7 @@ Run the build script mentioned above to update the assets used by the Hugo site.
 
 ## Internal API (`DataService`)
 
-The 2025 Quick Check uses a centralized `DataService` (`src/lib/data-service.ts`) to manage benchmark data and metric calculations. This service acts as an internal API, abstracting the underlying JSON data structures.
+The Quick Check uses a centralized `DataService` (`src/lib/data-service.ts`) to manage benchmark data and metric calculations. This service acts as an internal API, abstracting the underlying JSON data structures.
 
 ### Metric Orientation and Scoring
 
@@ -96,9 +96,9 @@ Run unit tests for the `DataService` and recoding logic:
 
 ### Playwright Tests
 End-to-end tests are located in the root `test/playwright` directory.
-Run the 2025 specific tests from that directory:
+Run the tests from that directory:
 ```bash
-cd test/playwright && npx playwright test tests/quickcheck2025.spec.ts
+cd test/playwright && npx playwright test tests/quickcheck.spec.ts
 ```
 
 ---

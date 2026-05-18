@@ -10,7 +10,7 @@ set -euo pipefail
 ./svelte/roi-calculator/build-roi-calculator.sh &
 ./svelte/ai-model/build-ai-model.sh &
 ./svelte/core-v2/build-core.sh &
-./svelte/quick-check-2025/build-quick-check.sh &
+./svelte/quick-check/build-quick-check.sh &
 
 for job in $(jobs -p); do
   wait "$job"

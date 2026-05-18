@@ -23,7 +23,7 @@ async function expectGAEvent(page: Page, eventName: string) {
     }).toPass();
 }
 
-test('quick check 2025 full flow test', async ({ page }) => {
+test('quick check full flow test', async ({ page }) => {
     await page.goto('/quickcheck/');
     await expectGAEvent(page, 'quick_check_start');
 
@@ -80,7 +80,7 @@ test('quick check 2025 full flow test', async ({ page }) => {
     await expect(page.locator('.score_text.culture')).toContainText('10.0');
 });
 
-test('quick check 2025 org size comparison', async ({ page }) => {
+test('quick check org size comparison', async ({ page }) => {
     await page.goto('/quickcheck/?comp=size');
     await expectGAEvent(page, 'quick_check_start');
 
@@ -97,7 +97,7 @@ test('quick check 2025 org size comparison', async ({ page }) => {
     await page.getByRole('combobox').selectOption('fewer_than_5000');
 });
 
-test('quick check 2025 URL parameter pre-population', async ({ page }) => {
+test('quick check URL parameter pre-population', async ({ page }) => {
     // 4 metrics + 2024 version
     await page.goto('/quickcheck/?leadtime=6&deployfreq=6&failurerecovery=6&changefailure=0&v=2024');
     await expectGAEvent(page, 'quick_check_start');
@@ -125,7 +125,7 @@ test('quick check 2025 URL parameter pre-population', async ({ page }) => {
     await expect(page.locator('.version-prompt')).not.toBeVisible();
 });
 
-test('quick check 2025 dynamic content verification', async ({ page }) => {
+test('quick check dynamic content verification', async ({ page }) => {
     await page.goto('/quickcheck/');
     await expectGAEvent(page, 'quick_check_start');
 
@@ -176,7 +176,7 @@ test('quick check 2025 dynamic content verification', async ({ page }) => {
     await expect(resultsSummary).toContainText('These are only three of the capabilities');
 });
 
-test.describe('Quick Check 2025 Image Verification', () => {
+test.describe('Quick Check Image Verification', () => {
     test('verify metric images are correctly loaded in embedded mode', async ({ page }) => {
         // Set a large viewport to ensure images are not hidden by media queries
         await page.setViewportSize({ width: 1280, height: 1024 });
@@ -229,7 +229,7 @@ test.describe('Quick Check 2025 Image Verification', () => {
     });
 });
 
-test.describe('Quick Check 2025 Rounding Verification', () => {
+test.describe('Quick Check Rounding Verification', () => {
     test('verify performance numbers are rounded to the nearest tenth in the graph', async ({ page }) => {
         // Navigate with pre-populated metrics that might cause floating point issues
         // 47% change failure: ((47 - 0) / (100 - 0)) * (10 - 0) + 0 = 4.7
