@@ -1,12 +1,13 @@
 #! /bin/bash
-set -e
+set -euo pipefail
+
+# Dependencies should be installed at the workspace root before running this script
 
 # run this script from its directory
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR"
 
 # build production assets
-npm ci --registry=https://registry.npmjs.org/
 npm run build
 
 # Set-up the target directory

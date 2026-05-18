@@ -3,6 +3,7 @@
   "private": true,
   "workspaces": [
     "ai-model",
-    "core-v2"
+    "core-v2",
+    "quick-check"
   ]
 }
