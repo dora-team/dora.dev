@@ -27,7 +27,7 @@ diagram.
 * Navigate to the project directory: `cd dora.dev`
 
 **Install Node.js dependencies:**
-* For the Quick Check (Svelte): `cd svelte/quick-check-2025 && npm install`
+* For the Quick Check (Svelte): `cd svelte/quick-check && npm install`
 * For the Core Model (Svelte): `cd svelte/core-v2 && npm install`
 * Review `/ci/README.md` for CI/CD pipeline setup.
 * Optionally review `/docs/README.md` for instructions on using Firebase emulators to preview certain features locally.
@@ -40,8 +40,7 @@ diagram.
     * `/layouts`: Hugo templates for rendering different page types.
     * `/static`: Static assets like images, JavaScript, and CSS.
 * `/svelte`: Contains the Svelte applications.
-    * `/quick-check-2025`: Source code for the Quick Check tool (2025 version).
-    * `/quick-check`: Legacy source code for the Quick Check tool.
+    * `/quick-check`: Source code for the Quick Check tool.
     * `/core-v2`: Source code for the DORA Core Model interactive diagram.
 * `/functions`: Contains serverless functions written in Node.js, e.g. for processing contact form submissions.
 * `/docs`: Contains technical documentation for the project.
@@ -67,7 +66,7 @@ This project follows the **Conductor** spec-driven development methodology. Majo
 1. Create a new branch for your work.
 2. Develop your changes in the relevant Svelte or Node.js directory.
 3. Build the component:
-    * For Quick Check: `cd svelte/quick-check-2025 && ./build-quick-check.sh`
+    * For Quick Check: `cd svelte/quick-check && ./build-quick-check.sh`
     * For Core Model: `cd svelte/core-v2 && npm run build`.
 4. Copy the built artifacts to the appropriate directory within `hugo` (see build scripts in svelte directories).
 5. Preview the changes in a local Hugo server.

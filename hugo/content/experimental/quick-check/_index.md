@@ -10,10 +10,10 @@ bannerHighlightImage: "/experimental/quick-check/header.png"
 ---
 
 <!--
-Assets for the Quick Check single-page application are built from the /svelte/quick-check-2025 folder.
-To update these assets, run: cd svelte/quick-check-2025 && ./build-quick-check.sh
+Assets for the Quick Check single-page application are built from the /svelte/quick-check folder.
+To update these assets, run: cd svelte/quick-check && ./build-quick-check.sh
 -->
 <!-- the timestamp shortcode is appended as a cache buster -->
-<script type="module" src="quickcheck-2025.js?t={{% timestamp %}}"></script>
-<link rel="stylesheet" href="quickcheck-2025.css?t={{% timestamp %}}">
+<script type="module" src="quickcheck.js?t={{% timestamp %}}"></script>
+<link rel="stylesheet" href="quickcheck.css?t={{% timestamp %}}">
 <div id="app"></div>
