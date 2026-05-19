@@ -5,9 +5,11 @@
 
     import core_data from "./core_data.json";
 
-    export let column;
-    export let selected_entity;
-    export let view_mode = "summary";
+    let {
+        column,
+        selected_entity = $bindable(),
+        view_mode = "summary"
+    } = $props();
 </script>
 
 <section class="{column} {view_mode}">

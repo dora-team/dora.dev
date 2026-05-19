@@ -1,11 +1,13 @@
 <script>
     import Entity from "./Entity.svelte";
 
-    export let column; // column containing this group (e.g. "capabilities")
-    export let entity_group_id;
-    export let entity_group;
-    export let view_mode;
-    export let selected_entity;
+    let {
+        column,
+        entity_group_id,
+        entity_group,
+        view_mode,
+        selected_entity = $bindable()
+    } = $props();
 
     function openPopover(entity) {
         selected_entity = entity;
@@ -16,7 +18,7 @@
 <div class="entity-group {view_mode} {column}">
     <div
         class="group-name"
-        on:click={() => openPopover(entity_group_id)}
+        onclick={() => openPopover(entity_group_id)}
         role="link"
         tabindex="-1"
     >

@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
 
-    export let view_mode = "summary";
+    let { view_mode = $bindable("summary") } = $props();
 
     // Function to update view_mode based on URL query parameter
     const updateViewModeFromQuery = () => {
@@ -39,7 +39,7 @@
             bind:group={view_mode}
             value="summary"
             id="summary"
-            on:change={updateUrlQuery}
+            onchange={updateUrlQuery}
         />summary
     </label>
     <label for="detail" class:active={view_mode === "detail"}>
@@ -49,7 +49,7 @@
             bind:group={view_mode}
             value="detail"
             id="detail"
-            on:change={updateUrlQuery}
+            onchange={updateUrlQuery}
         />detail
     </label>
 </div>

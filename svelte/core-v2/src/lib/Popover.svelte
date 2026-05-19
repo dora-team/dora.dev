@@ -1,57 +1,50 @@
 <script>
     import core_data from "./core_data.json";
 
-    export let selected_entity = "unspecified";
+    let { selected_entity = "unspecified" } = $props();
 
-    let name = "";
-    let summary = "";
-    let link = "";
-
-    // TODO: this can probably be made more spiffy/functional
-    function populateDetails(entity) {
+    let details = $derived.by(() => {
         for (const column in core_data) {
             for (const entity_group in core_data[column]) {
                 if (entity_group === selected_entity) {
                     // user has clicked on a group title
-                    name = core_data[column][entity_group]["name"];
-                    summary = core_data[column][entity_group]["summary"];
-                    link = core_data[column][entity_group]["link"];
+                    return {
+                        name: core_data[column][entity_group]["name"],
+                        summary: core_data[column][entity_group]["summary"],
+                        link: core_data[column][entity_group]["link"],
+                    };
                 } else {
                     // user has clicked on an entity title
                     for (const entity in core_data[column][entity_group][
                         "entities"
                     ]) {
                         if (entity === selected_entity) {
-                            name =
-                                core_data[column][entity_group]["entities"][
+                            return {
+                                name: core_data[column][entity_group]["entities"][
                                     entity
-                                ]["name"];
-                            summary =
-                                core_data[column][entity_group]["entities"][
+                                ]["name"],
+                                summary:
+                                    core_data[column][entity_group]["entities"][
+                                        entity
+                                    ]["summary"],
+                                link: core_data[column][entity_group]["entities"][
                                     entity
-                                ]["summary"];
-                            link =
-                                core_data[column][entity_group]["entities"][
-                                    entity
-                                ]["link"];
+                                ]["link"],
+                            };
                         }
-                    }
-                }
             }
         }
-    }
-
-    // when the selected entity changes, find its associated info
-    $: populateDetails(selected_entity);
+        return { name: "", summary: "", link: "" };
+    });
 </script>
 
 <div id="entityPopover" popover="auto">
     <div class="header">
-        <h1>{name}</h1>
+        <h1>{details.name}</h1>
         <div>
             <a
                 href="."
-                on:click={(e) => {
+                onclick={(e) => {
                     e.preventDefault();
                     document.getElementById("entityPopover").hidePopover();
                 }}>&times;</a
@@ -59,12 +52,12 @@
         </div>
     </div>
 
-    <p>{@html summary}</p>
+    <p>{@html details.summary}</p>
     <div class="footer">
         <!-- TODO: Remove this conditional check. To permanently remove the "Learn more" links for these items, remove the "link" property from the corresponding entries in src/core_data.json -->
-        {#if link && !["Climate for learning", "Fast flow", "Fast feedback"].includes(name)}
-            <a href={link} target="_blank"
-                >Learn more about {name.toLowerCase()}</a
+        {#if details.link && !["Climate for learning", "Fast flow", "Fast feedback"].includes(details.name)}
+            <a href={details.link} target="_blank"
+                >Learn more about {details.name.toLowerCase()}</a
             >
         {/if}
     </div>

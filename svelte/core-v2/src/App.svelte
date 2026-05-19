@@ -7,9 +7,9 @@
 
     import DORAlogo from "./assets/dora-icon-color-alt.svg";
 
-    let selected_entity = "unspecified";
+    let selected_entity = $state("unspecified");
 
-    let view_mode = "summary";
+    let view_mode = $state("summary");
 </script>
 
 <!-- Popover shows summaries of entities -->
