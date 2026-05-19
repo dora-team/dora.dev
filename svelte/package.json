@@ -4,6 +4,7 @@
   "workspaces": [
     "ai-model",
     "core-v2",
-    "quick-check"
+    "quick-check",
+    "roi-calculator"
   ]
 }
