@@ -1,5 +1,5 @@
 <script>
-    export let view_mode = "summary";
+    let { view_mode = "summary" } = $props();
     import png_url_summary from "../assets/png/dora-core-v2.1.0-summary.png";
     import png_url_detail from "../assets/png/dora-core-v2.1.0-detail.png";
     import pdf_url_summary from "../assets/pdf/dora-core-v2.1.0-summary.pdf";

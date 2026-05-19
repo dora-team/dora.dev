@@ -1,6 +1,8 @@
 <script>
-    export let text = "predicts";
-    export let view_mode = "summary";
+    let {
+        text = "predicts",
+        view_mode = "summary"
+    } = $props();
 </script>
 
 <div class={view_mode}>

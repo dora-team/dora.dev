@@ -1,8 +1,10 @@
 <script>
-    export let entity;
-    export let details;
-    export let view_mode;
-    export let selected_entity;
+    let {
+        entity,
+        details,
+        view_mode,
+        selected_entity = $bindable()
+    } = $props();
 
     function openPopover(entity) {
         selected_entity = entity;
@@ -12,7 +14,7 @@
 
 <div
     class={view_mode}
-    on:click={() => openPopover(entity)}
+    onclick={() => openPopover(entity)}
     role="link"
     tabindex="-1"
 >
