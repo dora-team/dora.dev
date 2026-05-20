@@ -8,16 +8,12 @@
         entity_group
     } = $props();
 
-    function openPopover(entity) {
-        appState.selected_entity = entity;
-        document.getElementById("entityPopover").showPopover();
-    }
 </script>
 
 <div class="entity-group {appState.view_mode} {column}">
     <div
         class="group-name"
-        onclick={() => openPopover(entity_group_id)}
+        onclick={() => appState.selected_entity = entity_group_id}
         role="link"
         tabindex="-1"
     >
