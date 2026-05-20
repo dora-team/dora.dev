@@ -6,15 +6,11 @@
         details
     } = $props();
 
-    function openPopover(entity) {
-        appState.selected_entity = entity;
-        document.getElementById("entityPopover").showPopover();
-    }
 </script>
 
 <div
     class={appState.view_mode}
-    onclick={() => openPopover(entity)}
+    onclick={() => appState.selected_entity = entity}
     role="link"
     tabindex="-1"
 >

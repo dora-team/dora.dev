@@ -16,9 +16,30 @@
     let details = $derived(
         entityLookup[appState.selected_entity] || { name: "", summary: "", link: "" }
     );
+
+    let popoverElement;
+
+    $effect(() => {
+        const entity = appState.selected_entity;
+        if (entity !== "unspecified") {
+            if (popoverElement && !popoverElement.matches(':popover-open')) {
+                popoverElement.showPopover();
+            }
+        } else {
+            if (popoverElement && popoverElement.matches(':popover-open')) {
+                popoverElement.hidePopover();
+            }
+        }
+    });
+
+    function handleToggle(event) {
+        if (event.newState === "closed") {
+            appState.selected_entity = "unspecified";
+        }
+    }
 </script>
 
-<div id="entityPopover" popover="auto">
+<div bind:this={popoverElement} id="entityPopover" popover="auto" ontoggle={handleToggle}>
     <div class="header">
         <h1>{details.name}</h1>
         <div>
@@ -26,7 +47,7 @@
                 href="."
                 onclick={(e) => {
                     e.preventDefault();
-                    document.getElementById("entityPopover").hidePopover();
+                    appState.selected_entity = "unspecified";
                 }}>&times;</a
             >
         </div>
