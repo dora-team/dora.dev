@@ -2,41 +2,20 @@
     import core_data from "./core_data.json";
     import { appState } from "./state.svelte.js";
 
-    let details = $derived.by(() => {
-        for (const column in core_data) {
-            for (const entity_group in core_data[column]) {
-                if (entity_group === appState.selected_entity) {
-                    // user has clicked on a group title
-                    return {
-                        name: core_data[column][entity_group]["name"],
-                        summary: core_data[column][entity_group]["summary"],
-                        link: core_data[column][entity_group]["link"],
-                    };
-                } else {
-                    // user has clicked on an entity title
-                    for (const entity in core_data[column][entity_group][
-                        "entities"
-                    ]) {
-                        if (entity === appState.selected_entity) {
-                            return {
-                                name: core_data[column][entity_group]["entities"][
-                                    entity
-                                ]["name"],
-                                summary:
-                                    core_data[column][entity_group]["entities"][
-                                        entity
-                                    ]["summary"],
-                                link: core_data[column][entity_group]["entities"][
-                                    entity
-                                ]["link"],
-                            };
-                        }
-                    }
-                }
+    // Create a flat dictionary once on load
+    const entityLookup = {};
+    for (const column in core_data) {
+        for (const group in core_data[column]) {
+            entityLookup[group] = core_data[column][group];
+            for (const entity in core_data[column][group].entities) {
+                entityLookup[entity] = core_data[column][group].entities[entity];
             }
         }
-        return { name: "", summary: "", link: "" };
-    });
+    }
+
+    let details = $derived(
+        entityLookup[appState.selected_entity] || { name: "", summary: "", link: "" }
+    );
 </script>
 
 <div id="entityPopover" popover="auto">
