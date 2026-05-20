@@ -1,5 +1,5 @@
 <script>
-    let { view_mode = "summary" } = $props();
+    import { appState } from "./state.svelte.js";
     import png_url_summary from "../assets/png/dora-core-v2.1.0-summary.png";
     import png_url_detail from "../assets/png/dora-core-v2.1.0-detail.png";
     import pdf_url_summary from "../assets/pdf/dora-core-v2.1.0-summary.pdf";
@@ -21,8 +21,8 @@
     <div class="version">DORA Core model v2.1.0</div>
     <div>
         download:
-        <a href={download_urls["png"][view_mode]} target="_blank">PNG</a>
-        <a href={download_urls["pdf"][view_mode]} target="_blank">PDF</a>
+        <a href={download_urls["png"][appState.view_mode]} target="_blank">PNG</a>
+        <a href={download_urls["pdf"][appState.view_mode]} target="_blank">PDF</a>
     </div>
 </div>
 

@@ -1,12 +1,11 @@
 <script>
     import core_data from "./core_data.json";
-
-    let { selected_entity = "unspecified" } = $props();
+    import { appState } from "./state.svelte.js";
 
     let details = $derived.by(() => {
         for (const column in core_data) {
             for (const entity_group in core_data[column]) {
-                if (entity_group === selected_entity) {
+                if (entity_group === appState.selected_entity) {
                     // user has clicked on a group title
                     return {
                         name: core_data[column][entity_group]["name"],
@@ -18,7 +17,7 @@
                     for (const entity in core_data[column][entity_group][
                         "entities"
                     ]) {
-                        if (entity === selected_entity) {
+                        if (entity === appState.selected_entity) {
                             return {
                                 name: core_data[column][entity_group]["entities"][
                                     entity
@@ -32,6 +31,8 @@
                                 ]["link"],
                             };
                         }
+                    }
+                }
             }
         }
         return { name: "", summary: "", link: "" };

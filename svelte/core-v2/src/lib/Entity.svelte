@@ -1,19 +1,19 @@
 <script>
+    import { appState } from "./state.svelte.js";
+
     let {
         entity,
-        details,
-        view_mode,
-        selected_entity = $bindable()
+        details
     } = $props();
 
     function openPopover(entity) {
-        selected_entity = entity;
+        appState.selected_entity = entity;
         document.getElementById("entityPopover").showPopover();
     }
 </script>
 
 <div
-    class={view_mode}
+    class={appState.view_mode}
     onclick={() => openPopover(entity)}
     role="link"
     tabindex="-1"

@@ -1,11 +1,12 @@
 <script>
+    import { appState } from "./state.svelte.js";
+
     let {
-        text = "predicts",
-        view_mode = "summary"
+        text = "predicts"
     } = $props();
 </script>
 
-<div class={view_mode}>
+<div class={appState.view_mode}>
     <span class="text">{text}</span> <span>→</span>
 </div>
 
