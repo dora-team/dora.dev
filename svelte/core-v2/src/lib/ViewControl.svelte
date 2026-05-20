@@ -22,12 +22,10 @@
 
     onMount(() => {
         updateViewModeFromQuery();
-        window.addEventListener("popstate", updateViewModeFromQuery); // Handle back/forward
-        return () => {
-            window.removeEventListener("popstate", updateViewModeFromQuery);
-        };
     });
 </script>
+
+<svelte:window onpopstate={updateViewModeFromQuery} />
 
 <div class="viewcontrol">
     View mode:
