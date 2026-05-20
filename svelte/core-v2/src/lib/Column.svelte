@@ -4,15 +4,12 @@
     import EntityGroup from "./EntityGroup.svelte";
 
     import core_data from "./core_data.json";
+    import { appState } from "./state.svelte.js";
 
-    let {
-        column,
-        selected_entity = $bindable(),
-        view_mode = "summary"
-    } = $props();
+    let { column } = $props();
 </script>
 
-<section class="{column} {view_mode}">
+<section class="{column} {appState.view_mode}">
     <div class="heading">{sentenceCase(column)}</div>
     <div class="entities">
         {#each Object.entries(core_data[column]) as [entity_group_id, entity_group]}
@@ -20,8 +17,6 @@
                 {column}
                 {entity_group_id}
                 {entity_group}
-                {view_mode}
-                bind:selected_entity
             />
         {/each}
     </div>

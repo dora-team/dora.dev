@@ -1,19 +1,18 @@
 <script>
     import { onMount } from "svelte";
-
-    let { view_mode = $bindable("summary") } = $props();
+    import { appState } from "./state.svelte.js";
 
     // Function to update view_mode based on URL query parameter
     const updateViewModeFromQuery = () => {
         const urlParams = new URLSearchParams(window.location.search);
         const mode = urlParams.get("view");
-        view_mode = mode === "detail" ? "detail" : "summary";
+        appState.view_mode = mode === "detail" ? "detail" : "summary";
     };
 
     // Function to update URL query parameter based on view_mode
     const updateUrlQuery = () => {
         const urlParams = new URLSearchParams(window.location.search);
-        urlParams.set("view", view_mode);
+        urlParams.set("view", appState.view_mode);
         window.history.replaceState(
             {},
             "",
@@ -32,21 +31,21 @@
 
 <div class="viewcontrol">
     View mode:
-    <label for="summary" class:active={view_mode === "summary"}>
+    <label for="summary" class:active={appState.view_mode === "summary"}>
         <input
             type="radio"
             name="view_mode"
-            bind:group={view_mode}
+            bind:group={appState.view_mode}
             value="summary"
             id="summary"
             onchange={updateUrlQuery}
         />summary
     </label>
-    <label for="detail" class:active={view_mode === "detail"}>
+    <label for="detail" class:active={appState.view_mode === "detail"}>
         <input
             type="radio"
             name="view_mode"
-            bind:group={view_mode}
+            bind:group={appState.view_mode}
             value="detail"
             id="detail"
             onchange={updateUrlQuery}

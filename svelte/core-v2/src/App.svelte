@@ -6,28 +6,24 @@
     import Footer from "./lib/Footer.svelte";
 
     import DORAlogo from "./assets/dora-icon-color-alt.svg";
-
-    let selected_entity = $state("unspecified");
-
-    let view_mode = $state("summary");
 </script>
 
 <!-- Popover shows summaries of entities -->
-<Popover {selected_entity} />
+<Popover />
 
 <div class="header">
     <div class="title"><img src="{DORAlogo}" alt="DORA"><h1>Core Model</h1></div>
-    <div class="view-control"><ViewControl bind:view_mode /></div>
+    <div class="view-control"><ViewControl /></div>
 </div>
 
 <div class="coremodel">
-    <Column column="capabilities" {view_mode} bind:selected_entity />
-    <Arrow text="predict" {view_mode} />
-    <Column column="performance" {view_mode} bind:selected_entity />
-    <Arrow text="predicts" {view_mode} />
-    <Column column="outcomes" {view_mode} bind:selected_entity />
+    <Column column="capabilities" />
+    <Arrow text="predict" />
+    <Column column="performance" />
+    <Arrow text="predicts" />
+    <Column column="outcomes" />
 </div>
-<Footer {view_mode} />
+<Footer />
 
 <style lang="scss">
     .header {

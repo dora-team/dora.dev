@@ -1,21 +1,20 @@
 <script>
     import Entity from "./Entity.svelte";
+    import { appState } from "./state.svelte.js";
 
     let {
         column,
         entity_group_id,
-        entity_group,
-        view_mode,
-        selected_entity = $bindable()
+        entity_group
     } = $props();
 
     function openPopover(entity) {
-        selected_entity = entity;
+        appState.selected_entity = entity;
         document.getElementById("entityPopover").showPopover();
     }
 </script>
 
-<div class="entity-group {view_mode} {column}">
+<div class="entity-group {appState.view_mode} {column}">
     <div
         class="group-name"
         onclick={() => openPopover(entity_group_id)}
@@ -26,14 +25,14 @@
         {#if entity_group["measured_by"]}
             <small>measured by</small>
             <h5>
-                {entity_group["measured_by"]}{#if view_mode === "detail"}:{/if}
+                {entity_group["measured_by"]}{#if appState.view_mode === "detail"}:{/if}
             </h5>
         {/if}
     </div>
     <div class="entities-wrapper" id={entity_group_id}>
         <div class="entities">
             {#each Object.entries(entity_group["entities"]) as [entity, details]}
-                <Entity {entity} {details} {view_mode} bind:selected_entity />
+                <Entity {entity} {details} />
             {/each}
         </div>
     </div>
