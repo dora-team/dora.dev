@@ -53,3 +53,7 @@ svelte/local/*
 
 # Claude Code
 .claude/
+
+# Jetski
+.jetskicli/
+
