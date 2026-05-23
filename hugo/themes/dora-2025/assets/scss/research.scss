@@ -207,6 +207,12 @@ tab_links {
             padding: 1.5rem 0;
             border-bottom: 1px solid var(--grey-30);
 
+            @include media-medium {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
             a.label-link {
                 text-decoration: none;
                 color: inherit;
@@ -226,6 +232,10 @@ tab_links {
                 font-size: 1.1rem;
                 font-weight: 500;
                 white-space: nowrap; // Prevent wrapping of label
+
+                @include media-medium {
+                    white-space: normal;
+                }
             }
 
             a.archive-summary-link {
