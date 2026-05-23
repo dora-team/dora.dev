@@ -46,6 +46,17 @@ DORA is committed to sharing our research insights and methodologies to benefit 
 
 While we openly share our research insights and methodologies, we do not share the raw data collected from our studies. This is to ensure the privacy and confidentiality of the organizations and individuals who participate in our research.
 
+## ROI of AI-assisted Software Development
+### I found an error in the report. How can I report it?
+
+The report has a version number printed in the footer of every page, for example `v. 2026.1`. Check that you have the [latest version of the report](/vc/airoi/) and the [list of errata for the report](/ai/roi/errata/) before submitting a correction. If you've found an error in the ROI of AI-assisted Software Development report, or any other DORA publication, please [submit a correction](mailto:dora-advocacy@google.com?subject=DORA+ROI+of+AI-assisted+Software+Development+error). Thank you!
+
+## DORA AI Capabilities Model
+### I found an error in the report. How can I report it?
+
+The report has a version number printed in the footer of every page, for example `v. 2025.1`. Check that you have the [latest version of the report](/vc/aicm/) and the [list of errata for the report](/ai/capabilities-model/errata/) before submitting a correction. If you've found an error in the DORA AI Capabilities Model report, or any other DORA publication, please [submit a correction](mailto:dora-advocacy@google.com?subject=DORA+AI+Capabilities+Model+report+error). Thank you!
+
+
 ## State of AI-assisted Software Development 2025
 ### I found an error in the report. How can I report it?
 The report has a version number printed in the footer of every page, for example `v. 2025.1`. Check that you have the [latest version of the report](/vc) and the [list of errata for the 2025 report](/research/2025/errata/) before submitting a correction. If you've found an error in the State of AI-assisted Software Development 2025, or any other DORA publication, please [submit a correction](mailto:dora-advocacy@google.com?subject=DORA+2025+State+of+AI-assisted+Software+Development+error+report). Thank you!
