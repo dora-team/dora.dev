@@ -36,4 +36,43 @@ test.describe('Research home page', () => {
     const coreModelAnchor = page.locator('#core-model');
     await expect(coreModelAnchor).toBeAttached();
   });
+
+  test.describe('Mobile layout', () => {
+    test.use({ viewport: { width: 375, height: 667 } });
+
+    test('additional publications do not overflow their list item container horizontally', async ({ page }) => {
+      await page.goto('/research/');
+      
+      const pastResearchSection = page.locator('#_pw-research-archives');
+      await expect(pastResearchSection).toBeVisible();
+      
+      const listItems = pastResearchSection.locator('ul.past-research-list li');
+      const count = await listItems.count();
+      expect(count).toBeGreaterThan(0);
+      
+      for (let i = 0; i < count; i++) {
+        const li = listItems.nth(i);
+        const labelLink = li.locator('a.label-link');
+        const button = li.locator('a.button');
+        
+        const liBox = await li.boundingBox();
+        const labelBox = await labelLink.boundingBox();
+        const buttonBox = await button.boundingBox();
+        
+        expect(liBox).not.toBeNull();
+        expect(labelBox).not.toBeNull();
+        expect(buttonBox).not.toBeNull();
+        
+        const containerRight = liBox!.x + liBox!.width;
+        const labelRight = labelBox!.x + labelBox!.width;
+        const buttonRight = buttonBox!.x + buttonBox!.width;
+        
+        // Assert that the label fits horizontally within the list item container
+        expect(labelRight).toBeLessThanOrEqual(containerRight + 1);
+        // Assert that the button fits horizontally within the list item container
+        expect(buttonRight).toBeLessThanOrEqual(containerRight + 1);
+      }
+    });
+  });
 });
+
