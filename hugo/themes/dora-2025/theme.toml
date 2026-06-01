@@ -2,8 +2,8 @@
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
 name = "dora-2025"
-license = "CC BY-NC-SA 4.0 DEED"
-licenselink = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+license = "CC BY 4.0"
+licenselink = "https://creativecommons.org/licenses/by/4.0/"
 description = ""
 homepage = ""
 tags = []
