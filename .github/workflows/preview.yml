@@ -119,7 +119,7 @@ jobs:
 
       - name: Install Playwright Browsers
         if: always() && steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
+        run: npx playwright install chromium --with-deps
 
       - name: Save cache - playwright binaries
         if: always() && steps.playwright-cache.outputs.cache-hit != 'true'
