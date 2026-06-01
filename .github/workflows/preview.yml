@@ -104,7 +104,7 @@ jobs:
       - name: Set up node.
         uses: actions/setup-node@v6
         with:
-          node-version: '22.x'
+          node-version: '24.x'
 
       - name: Restore cache - playwright binaries
         uses: actions/cache/restore@v5
@@ -148,7 +148,7 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v6
         with:
-          node-version: '22.x'
+          node-version: '24.x'
       - name: Install dependencies
         run: npm ci --registry=https://registry.npmjs.org/
       - name: Run redirect tests
