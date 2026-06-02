@@ -5,7 +5,7 @@ category: fast flow
 draft: false
 slug: flexible-infrastructure
 aliases:
-    - cloud-infrastructure
+    - /capabilities/cloud-infrastructure/
 core: true
 updated: 2026-01-12
 headline: "Find out how to manage cloud infrastructure effectively so you can achieve higher levels of agility, availability, and cost visibility."
