@@ -104,7 +104,8 @@ jobs:
       - name: Set up node.
         uses: actions/setup-node@v6
         with:
-          node-version: '22.x'  # pin to v22 b/c v24 is causing build issues (https://github.com/dora-team/dora.dev/pull/1431)
+          # pin to v22 b/c v24 is causing build issues (https://github.com/dora-team/dora.dev/pull/1431)
+          node-version: '22.x'
 
       - name: Restore cache - playwright binaries
         uses: actions/cache/restore@v5
