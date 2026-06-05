@@ -80,6 +80,11 @@
           "type": 301
         },
         {
+          "source": "/capabilities/cloud-infrastructure",
+          "destination": "/capabilities/flexible-infrastructure/",
+          "type": 301
+        },
+        {
           "source": "/concepts/wellbeing",
           "destination": "/capabilities/well-being/",
           "type": 302
