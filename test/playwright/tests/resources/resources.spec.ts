@@ -20,7 +20,6 @@ test('Resources page has the correct header.', async ({ page }) => {
 });
 
 test('Resources page includes source-available tools.', async ({ page }) => {
-  await expect(page.getByText('Source-available tools')).toBeVisible();
   for (const tool in toolsMap) {
     const url = toolsMap[tool];
     await expect(page.getByRole('link', { name: tool, exact: true })).toHaveAttribute(
@@ -30,10 +29,15 @@ test('Resources page includes source-available tools.', async ({ page }) => {
   }
 });
 
-test('Resources page includes books.', async ({ page }) => {
-  await expect(page.getByText('Books')).toBeVisible();
-});
+export const sections = [
+  "Source-available tools",
+  "Books",
+  "Graphics",
+  "Websites",
+];
 
-test('Resources page includes graphics.', async ({ page }) => {
-  await expect(page.getByText('Graphics')).toBeVisible();
+sections.forEach((section) => {
+  test(`Resources page includes ${section}.`, async ({ page }) => {
+    await expect(page.getByText(section)).toBeVisible();
+  });
 });
