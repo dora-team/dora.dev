@@ -126,6 +126,7 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
     <item>
         <h3>dora.community</h3>
         <content>
+        <a href="https://dora.community/" target="_blank"><img src="img/dora-community-of-practice.png" style="max-width:120px;"></a>
         <p>
             Join the DORA Community to connect with other practitioners, ask questions, share experiences, and stay up to date with the latest DORA research and events.
             <br>
