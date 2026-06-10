@@ -123,4 +123,14 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
         </p>
         </content>
     </item>
+    <item>
+        <h3>dora.community</h3>
+        <content>
+        <p>
+            Join the DORA Community to connect with other practitioners, ask questions, share experiences, and stay up to date with the latest DORA research and events.
+            <br>
+            <a href="https://dora.community/" target="_blank">dora.community</a>
+        </p>
+        </content>
+    </item>
 </grid>
