@@ -104,7 +104,7 @@
           ]
         },
         {
-          "description": "In the last 3 months, how much have you relied on AI for each of the following tasks at work",
+          "description": "In the last 3 months, how much have you relied on AI for each of the following tasks at work?",
           "group_responses": "Not at all,A little,A moderate amount,A lot,A great deal",
           "questions": [
             "Brainstorming",
@@ -147,7 +147,7 @@
           ]
         },
         {
-          "description": "We are interested in understanding how you are interacting with AI assistants throughout the software development and delivery lifecycle. In the last 3 months, how frequently have you interacted with AI in each of the following modes at work:",
+          "description": "We are interested in understanding how you are interacting with AI assistants throughout the software development and delivery lifecycle. In the last 3 months, how frequently have you interacted with AI in each of the following modes at work?",
           "group_responses": "Never,A few times a month,1—3 days a week,4—6 days a week,Once a day,A few times a day, Hourly or more, I don't know or NA",
           "questions": [
             "Predictive text, for example code completions.",
@@ -274,13 +274,8 @@
           ]
         },
         {
-          "description": "Which of the following describe you, if any?  Please check all that apply.",
           "questions": [
-            "Man",
-            "Woman",
-            "Non-Binary",
-            "Prefer not to say",
-            "Or, in your own words"
+            "Which of the following describe you, if any?  Please check all that apply.|Man,Woman,Non-binary,Prefer not to say,In your own words"
           ]
         },
         {
@@ -289,15 +284,8 @@
           ]
         },
         {
-          "description": "Which of the following describes you, if any? Please check all that apply.",
           "questions": [
-            "I am blind / have difficulty seeing",
-            "I am deaf / hard of hearing",
-            "I am unable to / find it difficult to type",
-            "I am unable to / find it difficult to walk or stand without assistance",
-            "In your own words",
-            "Prefer not to say",
-            "None of the above apply to me"
+            "Which of the following describes you, if any? Please check all that apply.|I am blind / have difficulty seeing,I am deaf / hard of hearing,I am unable to / find it difficult to type,I am unable to / find it difficult to walk or stand without assistance,Prefer not to say,In your own words,None of the above apply to me"
           ]
         },
         {
