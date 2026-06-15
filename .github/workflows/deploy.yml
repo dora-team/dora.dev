@@ -26,7 +26,7 @@ jobs:
       - name: Set up Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.147.9'
+          hugo-version: '0.163.2'
           extended: true
       - name: Build Svelte components
         run: |

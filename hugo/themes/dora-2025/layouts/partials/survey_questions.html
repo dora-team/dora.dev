@@ -20,7 +20,7 @@
   {{ else }}
   <h4>Responses to the following questions were used in the analysis published in the <a href="/research/{{ $researchCollectionTitle | urlize }}/dora-report/">{{ $researchCollectionTitle }} Accelerate State of DevOps Report</a>.</h4>
   {{ end }}
-  {{ with index .Site.Data.survey_questions $dataLookupKey }}
+  {{ with index hugo.Data.survey_questions $dataLookupKey }}
   {{ range sort .categories "heading" }}
   <h3 id="{{ .heading | anchorize }}">{{ .heading }}</h3>
   {{ if .description }}<p>{{ .description }}</p>{{ end }}
