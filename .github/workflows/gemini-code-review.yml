@@ -1,0 +1,55 @@
+name: Gemini Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false # Skip draft PRs to save tokens/costs
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-antigravity pydantic requests
+
+      - name: Authenticate Google Cloud Service Account
+        run: |
+          if [ -z "$GOOGLE_SERVICE_ACCOUNT_KEY" ]; then
+            echo "::error::SERVICE_ACCOUNT secret is missing or empty."
+            exit 1
+          fi
+          echo "$GOOGLE_SERVICE_ACCOUNT_KEY" > /tmp/sa_key.json
+          echo "GOOGLE_APPLICATION_CREDENTIALS=/tmp/sa_key.json" >> $GITHUB_ENV
+        env:
+          GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT }}
+
+      - name: Run Gemini Code Review
+        run: |
+          python scripts/gemini_code_review.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          # Supplied via actions variables (if configured) or defaults to Python's script fallbacks
+          GCP_PROJECT: ${{ vars.GCP_PROJECT || 'doradotdev' }}
+          GCP_LOCATION: ${{ vars.GCP_LOCATION || 'global' }}
+
+      - name: Clean up temporary credentials
+        if: always()
+        run: |
+          rm -f /tmp/sa_key.json
