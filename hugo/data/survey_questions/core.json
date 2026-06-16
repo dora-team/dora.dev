@@ -51,7 +51,7 @@
                     "questions": [
                         "All significant changes must be approved by a senior manager prior to implementation.",
                         "Production changes must be approved by an external body (for example, change approval board) before implementation or deployment."
-                      ]
+                    ]
                 }
             ]
         },
@@ -71,7 +71,7 @@
                         "It’s easy for me to add new dependencies to my project.",
                         "It’s easy for me to find examples in our codebase.",
                         "It’s easy for us to change code maintained by other teams if we need to."
-                      ]
+                    ]
                 }
             ]
         },
@@ -167,7 +167,7 @@
                     "questions": [
                         "Everyone in our engineering org has visibility into the progress of pending database changes.",
                         "Production database changes are managed in the same way as production application changes."
-                      ]
+                    ]
                 }
             ]
         },
@@ -224,7 +224,7 @@
                     "questions": [
                         "On my team, our tool choices are based on what is best for the people who use the tools.",
                         "On my team, we can decide which tools we use."
-                      ]
+                    ]
                 }
             ]
         },
@@ -276,9 +276,9 @@
                     "description": "Think about your experiences with your organization’s leadership when answering the following questions. Rate how strongly you agree or disagree with the following statements about your organization’s leadership.",
                     "group_responses": "Strongly agree,Mostly agree,Somewhat agree,Neither agree nor disagree,Somewhat disagree,Mostly disagree,Strongly disagree,I don't know or NA",
                     "questions": [
-                      "They understand where the organization is going, and where we want to be.",
-                      "They encourage people to see changing conditions as situations full of opportunities.",
-                      "They consider others’ personal feelings before acting."
+                        "They understand where the organization is going, and where we want to be.",
+                        "They encourage people to see changing conditions as situations full of opportunities.",
+                        "They consider others’ personal feelings before acting."
                     ]
                 }
             ]
@@ -298,7 +298,7 @@
                     "questions": [
                         "My team can deploy and release our product or service on demand, independently of other services it depends upon.",
                         "We can do most of our testing on demand, without requiring an integrated test environment."
-                        ]
+                    ]
                 }
             ]
         },
@@ -317,7 +317,7 @@
                     "questions": [
                         "My team has tooling in place that can help us with understanding and debugging our systems in production.",
                         "My team has tooling in place that provides the ability to find information about things we did not previously know (“unknown unknowns“)."
-                      ]
+                    ]
                 }
             ]
         },
@@ -333,7 +333,7 @@
                         }
                     ],
                     "description": "For each of the following performance indicators, how well did your organization meet its goals over the past year?",
-                    "group_responses": "Performed well above goals,I don't know or NA,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals",
+                    "group_responses": "Performed well above goals,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals,I don't know or NA",
                     "questions": [
                         "My organization is profitable.",
                         "My organization has a strong position in the market for our primary products or services."
@@ -347,7 +347,7 @@
                         }
                     ],
                     "description": "For the following questions, we are interested in hearing about your organization's performance. If you are in a contract position, consider your current client to be your organization.",
-                    "group_responses": "Performed well above goals,I don't know or NA,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals",
+                    "group_responses": "Performed well above goals,Performed above goals,Performed slightly above goals,Met goals,Performed slightly below goals,Performed below goals,Performed well below goals,I don't know or NA",
                     "questions": [
                         "My organization achieves its overall organizational and mission goals.",
                         "My organization operates efficiently.",
@@ -408,8 +408,8 @@
                         "We regularly test our reliability incident preparedness through simulated disruptions, failover exercises, table-top exercises, etc.",
                         "My team has well-defined procedures for incident management (for example, responder roles, communications channels, or playbooks).",
                         "When we miss our reliability targets, we perform improvement work, adjust our development work, and/or re-prioritize."
-                      ],
-                      "group_responses": "Strongly agree,Agree,Slightly agree,Neither agree nor disagree,Slightly disagree,Disagree,Strongly disagree,I don't know or NA"
+                    ],
+                    "group_responses": "Strongly agree,Agree,Slightly agree,Neither agree nor disagree,Slightly disagree,Disagree,Strongly disagree,I don't know or NA"
                 }
             ]
         },
@@ -467,7 +467,7 @@
                     "questions": [
                         "Developers use their own development environment to reproduce acceptance test failures.",
                         "When the automated tests pass, I am confident the software is releasable."
-                      ]
+                    ]
                 }
             ]
         },
@@ -509,7 +509,6 @@
                 }
             ]
         },
-
         {
             "heading": "User-centricity",
             "question_groups": [
