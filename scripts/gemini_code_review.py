@@ -157,12 +157,15 @@ def post_github_review(repo: str, pr_number: str, github_token: str, review: Rev
             continue
 
         # 3. Verify lines exist within file limits
-        try:
-            with open(path, "r", encoding="utf-8", errors="ignore") as f:
-                file_len = len(f.readlines())
-        except Exception as e:
-            logging.warning(f"Could not read '{path}' to check line numbers: {e}")
-            file_len = None
+        if path not in file_lengths_cache:
+            try:
+                with open(path, "r", encoding="utf-8", errors="ignore") as f:
+                    file_lengths_cache[path] = len(f.readlines())
+            except Exception as e:
+                logging.warning(f"Could not read '{path}' to check line numbers: {e}")
+                file_lengths_cache[path] = None
+        
+        file_len = file_lengths_cache[path]
             
         if file_len is not None:
             if s.end_line > file_len:
