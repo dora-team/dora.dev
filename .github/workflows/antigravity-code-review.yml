@@ -1,4 +1,4 @@
-name: Gemini Code Review
+name: Antigravity Code Review
 
 on:
   pull_request:
@@ -31,7 +31,7 @@ jobs:
         id: auth
         run: |
           if [ -z "$GOOGLE_SERVICE_ACCOUNT_KEY" ]; then
-            echo "::warning::SERVICE_ACCOUNT secret is missing or empty. Skipping Gemini Code Review."
+            echo "::warning::SERVICE_ACCOUNT secret is missing or empty. Skipping Antigravity Code Review."
             echo "skip=true" >> $GITHUB_OUTPUT
             exit 0
           fi
@@ -41,10 +41,10 @@ jobs:
         env:
           GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT }}
 
-      - name: Run Gemini Code Review
+      - name: Run Antigravity Code Review
         if: steps.auth.outputs.skip != 'true'
         run: |
-          python scripts/gemini_code_review.py
+          python scripts/antigravity_code_review.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
