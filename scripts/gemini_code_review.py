@@ -277,8 +277,6 @@ async def run_review():
             response = await agent.chat(prompt)
             review_data = await response.structured_output()
             
-            review_data = await response.structured_output()
-            
             if not review_data:
                 raise ValueError("Structured output from agent was empty or failed to parse.")
                 
@@ -288,6 +286,7 @@ async def run_review():
                 review = ReviewResponse(**review_data)
             else:
                 raise ValueError(f"Unexpected structured output format: {type(review_data)}")
+    except Exception as e:
         logging.error(f"Error during Antigravity Agent execution or output parsing: {e}", exc_info=True)
         sys.exit(1)
         
