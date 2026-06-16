@@ -54,6 +54,13 @@ svelte/local/*
 # Claude Code
 .claude/
 
-# Jetski
-.jetskicli/
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
 
