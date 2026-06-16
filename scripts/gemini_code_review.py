@@ -167,9 +167,6 @@ def post_github_review(repo: str, pr_number: str, github_token: str, review: Rev
                 continue
             if s.start_line is not None:
                 if s.start_line < 1 or s.start_line > file_len or s.start_line > s.end_line:
-                    logging.warning(f"Start line {s.start_line} is invalid for '{path}' (end_line is {s.end_line}). Removing start_line constraint.")
-                    s.start_line = None
-
         # 4. CRITICAL FILTER: comment must ONLY apply to changed/added lines
         if changed_lines_map is not None:
             if path not in changed_lines_map:
@@ -177,9 +174,10 @@ def post_github_review(repo: str, pr_number: str, github_token: str, review: Rev
                 continue
                 
             file_changed_lines = changed_lines_map[path]
-            start_check = s.start_line if s.start_line is not None else s.end_line
-            line_range = set(range(start_check, s.end_line + 1))
-            
+            # Ensure the targeted end_line is a line that was actually changed/added in the diff
+            if s.end_line not in file_changed_lines:
+                logging.warning(f"Suggestion for '{path}' end line {s.end_line} is not among the added/modified lines. Skipping suggestion.")
+                continue
             if not (line_range & file_changed_lines):
                 logging.warning(f"Suggestion for '{path}' lines {start_check}-{s.end_line} does not target added/modified lines in diff. Skipping suggestion.")
                 continue
