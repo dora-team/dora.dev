@@ -144,10 +144,11 @@ def post_github_review(repo: str, pr_number: str, github_token: str, review: Rev
         path = s.file_path
         if path.startswith("b/") or path.startswith("a/"):
             path = path[2:]
+        path = os.path.normpath(path)
             
-        # 1. Verify file exists in workspace
-        if not os.path.exists(path):
-            logging.warning(f"File '{s.file_path}' (resolved to '{path}') does not exist. Skipping suggestion.")
+        # 1. Verify file exists in workspace and is a file
+        if not os.path.isfile(path):
+            logging.warning(f"File '{s.file_path}' (resolved to '{path}') does not exist or is not a file. Skipping suggestion.")
             continue
             
         # 2. Verify line numbers are positive
