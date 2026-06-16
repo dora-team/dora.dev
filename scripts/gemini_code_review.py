@@ -79,10 +79,57 @@ def get_pr_diff(pr_number: str) -> str:
         raise e
 
 
-def post_github_review(repo: str, pr_number: str, github_token: str, review: ReviewResponse):
-    """Submits the code review comments and summary back to the GitHub PR."""
-    logging.info(f"Submitting {len(review.suggestions)} comments and summary to PR #{pr_number}...")
+def parse_diff_changed_lines(diff_text: str) -> dict[str, set[int]]:
+    """Parses a unified diff and returns a dict mapping file paths to a set of added/modified line numbers in the new version."""
+    changed_lines = {}
+    current_file = None
+    current_line = 0
     
+    for line in diff_text.splitlines():
+        if line.startswith("diff --git"):
+            current_file = None
+        elif line.startswith("+++ "):
+            path_part = line[4:]
+            if path_part.startswith("b/") or path_part.startswith("a/"):
+                current_file = path_part[2:]
+            else:
+                current_file = path_part
+        elif line.startswith("@@"):
+            try:
+                parts = line.split(" ")
+                new_file_part = parts[2]  # This is "+new_start,new_count" or "+new_start"
+                if "," in new_file_part:
+                    new_start = int(new_file_part.split(",")[0][1:])
+                else:
+                    new_start = int(new_file_part[1:])
+                current_line = new_start - 1
+            except Exception as e:
+                logging.warning(f"Error parsing diff hunk header '{line}': {e}")
+                current_file = None
+        elif current_file is not None:
+            if line.startswith("+") and not line.startswith("+++"):
+                current_line += 1
+                if current_file not in changed_lines:
+                    changed_lines[current_file] = set()
+                changed_lines[current_file].add(current_line)
+            elif line.startswith("-") and not line.startswith("---"):
+                pass
+            elif line.startswith(" "):
+                current_line += 1
+                
+    return changed_lines
+
+
+def post_github_review(repo: str, pr_number: str, github_token: str, review: ReviewResponse, diff_text: str):
+    """Submits the code review comments and summary back to the GitHub PR."""
+    logging.info("Analyzing diff to identify changed lines for filtering...")
+    try:
+        changed_lines_map = parse_diff_changed_lines(diff_text)
+        logging.info(f"Successfully parsed changed lines for {len(changed_lines_map)} files.")
+    except Exception as e:
+        logging.warning(f"Failed to parse diff for changed lines: {e}")
+        changed_lines_map = None
+
     url = f"https://api.github.com/repos/{repo}/pulls/{pr_number}/reviews"
     headers = {
         "Authorization": f"Bearer {github_token}",
@@ -90,31 +137,76 @@ def post_github_review(repo: str, pr_number: str, github_token: str, review: Rev
         "X-GitHub-Api-Version": "2022-11-28",
     }
     
-    # Format inline comments
+    # Format and filter inline comments
     api_comments = []
     for s in review.suggestions:
+        path = s.file_path
+        if path.startswith("b/") or path.startswith("a/"):
+            path = path[2:]
+            
+        # 1. Verify file exists in workspace
+        if not os.path.exists(path):
+            logging.warning(f"File '{s.file_path}' (resolved to '{path}') does not exist. Skipping suggestion.")
+            continue
+            
+        # 2. Verify line numbers are positive
+        if s.end_line < 1:
+            logging.warning(f"Invalid end line {s.end_line} for file '{path}'. Skipping suggestion.")
+            continue
+
+        # 3. Verify lines exist within file limits
+        try:
+            with open(path, "r", encoding="utf-8", errors="ignore") as f:
+                file_len = len(f.readlines())
+        except Exception as e:
+            logging.warning(f"Could not read '{path}' to check line numbers: {e}")
+            file_len = None
+            
+        if file_len is not None:
+            if s.end_line > file_len:
+                logging.warning(f"Line number {s.end_line} exceeds file length {file_len} for '{path}'. Skipping suggestion.")
+                continue
+            if s.start_line is not None:
+                if s.start_line < 1 or s.start_line > file_len or s.start_line > s.end_line:
+                    logging.warning(f"Start line {s.start_line} is invalid for '{path}' (end_line is {s.end_line}). Removing start_line constraint.")
+                    s.start_line = None
+
+        # 4. CRITICAL FILTER: comment must ONLY apply to changed/added lines
+        if changed_lines_map is not None:
+            if path not in changed_lines_map:
+                logging.warning(f"File '{path}' has no changed lines in the diff. Skipping suggestion.")
+                continue
+                
+            file_changed_lines = changed_lines_map[path]
+            start_check = s.start_line if s.start_line is not None else s.end_line
+            line_range = set(range(start_check, s.end_line + 1))
+            
+            if not (line_range & file_changed_lines):
+                logging.warning(f"Suggestion for '{path}' lines {start_check}-{s.end_line} does not target added/modified lines in diff. Skipping suggestion.")
+                continue
+
         body = s.comment
         if s.suggestion is not None:
-            # Wrap the code suggestion in the standard GitHub suggestion markdown block
             body += f"\n\n```suggestion\n{s.suggestion}\n```"
             
         comment_item = {
-            "path": s.file_path,
+            "path": path,
             "line": s.end_line,
             "side": "RIGHT",
             "body": body
         }
         
-        # If a start_line is provided and differs from end_line, specify multi-line comment parameters
         if s.start_line is not None and s.start_line < s.end_line:
             comment_item["start_line"] = s.start_line
             comment_item["start_side"] = "RIGHT"
             
         api_comments.append(comment_item)
         
+    logging.info(f"Submitting {len(api_comments)} (out of {len(review.suggestions)}) comments and summary to PR #{pr_number}...")
+    
     payload = {
         "body": review.summary,
-        "event": "COMMENT",  # Submit as a comment review
+        "event": "COMMENT",
         "comments": api_comments
     }
     
@@ -186,10 +278,11 @@ async def run_review():
         async with Agent(config=config) as agent:
             logging.info("Requesting Gemini code review from Vertex AI...")
             response = await agent.chat(prompt)
-            response_text = await response.text()
+            review_data = await response.structured_output()
             
-            # The response is structured JSON matching ReviewResponse
-            review_data = json.loads(response_text)
+            if not review_data:
+                raise ValueError("Structured output from agent was empty or failed to parse.")
+                
             review = ReviewResponse(**review_data)
             
     except Exception as e:
@@ -198,7 +291,7 @@ async def run_review():
         
     # 4. Post the review comments back to GitHub
     try:
-        post_github_review(github_repository, pr_number, github_token, review)
+        post_github_review(github_repository, pr_number, github_token, review, diff_text)
     except Exception as e:
         logging.error(f"Error posting review back to GitHub: {e}")
         sys.exit(1)
