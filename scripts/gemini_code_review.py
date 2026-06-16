@@ -20,6 +20,7 @@ import sys
 import subprocess
 import json
 import logging
+import asyncio
 from pydantic import BaseModel, Field
 import requests
 
