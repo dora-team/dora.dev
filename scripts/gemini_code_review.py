@@ -16,8 +16,8 @@
 """Python script that uses Google Antigravity SDK to review a PR and post suggestions."""
 
 import os
+import sys
 import subprocess
-import logging
 import logging
 import asyncio
 from pydantic import BaseModel, Field
