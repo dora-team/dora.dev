@@ -178,9 +178,14 @@ def post_github_review(repo: str, pr_number: str, github_token: str, review: Rev
                     s.start_line = None
 
         # 4. CRITICAL FILTER: comment must ONLY apply to changed/added lines
-        if changed_lines_map is not None:
-            if path not in changed_lines_map:
-                logging.warning(f"File '{path}' has no changed lines in the diff. Skipping suggestion.")
+            if s.end_line not in file_changed_lines:
+                logging.warning(f"Suggestion for '{path}' end line {s.end_line} is not among the added/modified lines. Skipping suggestion.")
+                continue
+
+            # Fallback to single-line comment if start_line is not within the changed lines
+            if s.start_line is not None and s.start_line not in file_changed_lines:
+                logging.warning(f"Start line {s.start_line} is not a changed line in '{path}'. Removing start-line constraint to avoid API error.")
+                s.start_line = None
                 continue
                 
             file_changed_lines = changed_lines_map[path]
