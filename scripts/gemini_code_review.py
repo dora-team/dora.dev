@@ -88,11 +88,13 @@ def parse_diff_changed_lines(diff_text: str) -> dict[str, set[int]]:
         if line.startswith("diff --git"):
             current_file = None
         elif line.startswith("+++ "):
-            path_part = line[4:]
+            path_part = line[4:].strip('"')
             if path_part.startswith("b/") or path_part.startswith("a/"):
                 current_file = path_part[2:]
             else:
                 current_file = path_part
+            if current_file is not None:
+                current_file = os.path.normpath(current_file)
         elif line.startswith("@@"):
             try:
                 parts = line.split(" ")
