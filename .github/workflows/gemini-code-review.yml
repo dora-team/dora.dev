@@ -28,17 +28,21 @@ jobs:
           pip install google-antigravity pydantic requests
 
       - name: Authenticate Google Cloud Service Account
+        id: auth
         run: |
           if [ -z "$GOOGLE_SERVICE_ACCOUNT_KEY" ]; then
-            echo "::error::SERVICE_ACCOUNT secret is missing or empty."
-            exit 1
+            echo "::warning::SERVICE_ACCOUNT secret is missing or empty. Skipping Gemini Code Review."
+            echo "skip=true" >> $GITHUB_OUTPUT
+            exit 0
           fi
           echo "$GOOGLE_SERVICE_ACCOUNT_KEY" > /tmp/sa_key.json
           echo "GOOGLE_APPLICATION_CREDENTIALS=/tmp/sa_key.json" >> $GITHUB_ENV
+          echo "skip=false" >> $GITHUB_OUTPUT
         env:
           GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT }}
 
       - name: Run Gemini Code Review
+        if: steps.auth.outputs.skip != 'true'
         run: |
           python scripts/gemini_code_review.py
         env:
