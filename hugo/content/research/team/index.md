@@ -1,7 +1,7 @@
 ---
 title: "Research Team"
 date: 2023-02-02T18:23:33Z
-updated: 2025-11-26
+updated: 2026-06-17
 draft: false
 layout: research_team
 ---
@@ -26,20 +26,19 @@ spanning diverse problem contexts, participant profiles, and research methods. K
 been published in top scientific venues on the topics of artificial intelligence, ubiquitous
 computing, and interaction design.
 
-### Daniella Villalba, Ph.D.
-![Daniella Villalba, Ph.D.](daniella-villalba.jpeg)
-Daniella Villalba is a user experience researcher at Google. She uses survey research to understand
-the factors that make developers happy and productive. Before Google, Daniella studied the benefits
-of meditation training, and the psycho-social factors that affect the experiences of college
-students. She received her Ph.D. in Experimental Psychology from Florida International University.)
+### Dr. Evan Conaway
+![Dr. Evan Conaway](evan-conaway.jpeg)
+Evan is a user experience researcher at Google, contributing qualitative insights to the DORA team. Since 2021, he has studied the workflows and tools of software engineers, spanning both internal infrastructure and external-facing application development. Prior to Google, Evan completed a Ph.D. in Anthropology, focusing on online gaming communities and the impacts of virtual worlds and social media on mental health.
 
 ## Meet the DORA Collective
 The collective includes current and former leaders, researchers, authors, and subject matter experts who have all made significant contributions to the research program.
 
+- Aaron Wanjala
 - Allison Park
 - Amanda Lewis
 - Ambar Murillo
 - Ameer Abbas
+- Andre Ellis Jr.
 - Ben Jose
 - Benjamin Good
 - Betsalel (Saul) Williamson
@@ -47,6 +46,7 @@ The collective includes current and former leaders, researchers, authors, and su
 - Cedric Yao
 - Claire Peters
 - Daniel Rock, Ph.D.
+- Daniella Villalba, Ph.D.
 - Dave Farley
 - Dave Stanke
 - Denali Lumma
@@ -55,6 +55,7 @@ The collective includes current and former leaders, researchers, authors, and su
 - Edward Fraser
 - Eirini Kalliamvakou, Ph.D.
 - Eric Maxwell
+- Eva Dong
 - Frank Xu
 - Gene Kim
 - James Brookbank
@@ -64,15 +65,18 @@ The collective includes current and former leaders, researchers, authors, and su
 - Jessie Young
 - Jez Humble
 - John Speed Mayers
+- Katharine Norwood
 - Kim Castillo
 - Lisa Crispin
 - Lolly Chessie
 - Lucia Subatin
+- Margaret-Anne Storey, Ph.D.
 - Matt Beane, Ph.D.
 - Michelle Irvine
 - Nathen Harvey
 - Nicole Forsgren, Ph.D.
 - Rob Edwards
+- Ryan J. Salva
 - Sarah D’Angelo, Ph.D.
 - Sarah Inman, Ph.D.
 - Seth Rosenblatt
@@ -80,6 +84,7 @@ The collective includes current and former leaders, researchers, authors, and su
 - Steve McGhee
 - Steve Yegge
 - Todd Kulesza
+- Ursula Löbbert-Passing, Ph.D.
 - Vivian Hu
 
 Prior to 2018, The State of DevOps Report was published [in partnership with Puppet](https://www.puppet.com/resources/history-of-devops-reports).
