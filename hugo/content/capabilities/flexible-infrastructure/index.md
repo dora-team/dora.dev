@@ -28,7 +28,7 @@ Infrastructure flexibility is a proven driver of top-line business outcomes. DOR
 
 > Flexible infrastructures lead to 30% higher organizational performance. ([Accelerate State of DevOps 2023](/research/2023/dora-report/))
 
-As generative AI accelerates the pace of code creation, flexible infrastructure has become a critical safety net. While AI tools significantly increase individual productivity and flow, the resulting surge in code volume can severely strain deployment pipelines, negatively impacting software delivery stability and throughput. Flexible, elastic infrastructure allows teams to spin up automated, on-demand test environments to absorb this increased volume and catch AI-generated regressions before they reach production.
+As AI accelerates the pace of code creation, flexible infrastructure has become a critical safety net. While AI tools significantly increase individual productivity and flow, the resulting surge in code volume can severely strain deployment pipelines, negatively impacting software delivery stability and throughput. Flexible, elastic infrastructure allows teams to spin up automated, on-demand test environments to absorb this increased volume and catch AI-generated regressions before they reach production.
 
 ## Flexible infrastructure defined
 
@@ -56,7 +56,7 @@ When moving to the cloud, organizations must invest in re-designing the processe
 
 ## How to implement flexible infrastructure
 
-Adopting cloud-native processes and practices to implement NIST's five characteristics involves substantial change by several IT functions, including developers, operations teams, information security, procurement, and finance. The changes require close collaboration between these functions in order to identify and resolve conflicting aims.
+Adopting cloud-native processes and practices to implement NIST's five characteristics involves substantial change by several functions, including business stakeholders, developers, operations teams, information security, procurement, and finance. The changes require close collaboration between these functions in order to identify and resolve conflicting aims.
 
 For example, many developers expect complete control over production infrastructure when using cloud platforms. Information security professionals oppose this practice, and with good reason — without disciplined [change management](/capabilities/streamlining-change-approval), cloud infrastructure can turn into a fragile work of art that is hard to manage, vulnerable to external threats, and does not meet regulatory requirements.
 
