@@ -29,6 +29,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
       - name: Set up Hugo
         uses: peaceiris/actions-hugo@v3
         with:
@@ -60,6 +62,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
       - name: Set up Hugo
         uses: peaceiris/actions-hugo@v3
         with:
