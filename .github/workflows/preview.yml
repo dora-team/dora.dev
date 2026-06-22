@@ -36,6 +36,13 @@ jobs:
         with:
           hugo-version: '0.163.2'
           extended: true
+      - name: Set up node.
+        uses: actions/setup-node@v6
+        with:
+          # pin to v22 b/c v24 is causing build issues (https://github.com/dora-team/dora.dev/pull/1431)
+          node-version: '22.x'
+          cache: 'npm'
+          cache-dependency-path: './svelte/package-lock.json'
       - name: Build Svelte components
         run: |
           # Build Svelte apps and move generated files into position
@@ -69,6 +76,13 @@ jobs:
         with:
           hugo-version: '0.163.2'
           extended: true
+      - name: Set up node.
+        uses: actions/setup-node@v6
+        with:
+          # pin to v22 b/c v24 is causing build issues (https://github.com/dora-team/dora.dev/pull/1431)
+          node-version: '22.x'
+          cache: 'npm'
+          cache-dependency-path: './svelte/package-lock.json'
       - name: Build Svelte components
         run: |
           # Build Svelte apps and move generated files into position
