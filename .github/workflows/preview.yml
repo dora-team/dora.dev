@@ -144,7 +144,7 @@ jobs:
           key: ${{ runner.os }}-playwright-${{ hashFiles('./test/playwright/package-lock.json') }}
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci --registry=https://registry.npmjs.org/
 
       - name: Install Playwright Browsers
         if: always() && steps.playwright-cache.outputs.cache-hit != 'true'
