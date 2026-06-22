@@ -43,6 +43,11 @@ jobs:
           node-version: '22.x'
           cache: 'npm'
           cache-dependency-path: './svelte/package-lock.json'
+      - name: Cache Svelte node_modules
+        uses: actions/cache@v4
+        with:
+          path: svelte/node_modules
+          key: ${{ runner.os }}-svelte-${{ hashFiles('svelte/package-lock.json') }}
       - name: Build Svelte components
         run: |
           # Build Svelte apps and move generated files into position
@@ -83,6 +88,11 @@ jobs:
           node-version: '22.x'
           cache: 'npm'
           cache-dependency-path: './svelte/package-lock.json'
+      - name: Cache Svelte node_modules
+        uses: actions/cache@v4
+        with:
+          path: svelte/node_modules
+          key: ${{ runner.os }}-svelte-${{ hashFiles('svelte/package-lock.json') }}
       - name: Build Svelte components
         run: |
           # Build Svelte apps and move generated files into position
