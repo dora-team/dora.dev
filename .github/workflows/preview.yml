@@ -11,6 +11,10 @@ on:
       - '**/README.md'
   workflow_dispatch:
 
+# Force the runner to use Node 20 for actions that require it (bypassing Node 24 keep-alive bugs)
+env:
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+
 permissions:
   checks: write
   contents: read
