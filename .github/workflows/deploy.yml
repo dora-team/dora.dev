@@ -41,6 +41,8 @@ jobs:
       - name: Deploy to Firebase
         id: deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
+        env:
+          NODE_OPTIONS: "--require ${{ github.workspace }}/.github/workflows/disable-fetch.js --dns-result-order=ipv4first"
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           projectId: ${{ vars.GOOGLE_CLOUD_PROJECT }}
