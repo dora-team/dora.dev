@@ -24,18 +24,18 @@ This year's 13 winners have showcased achievements in leveraging technology to i
 
 ![2025 Google Cloud DORA Award Winners](dora-award-winners-2025.png)
 
-* Architecting for the Future with AI: **Elasticsearch**
-* Augmenting Human Expertise with AI: **IKS Health**
+* Architecting for the Future with AI: **[Elasticsearch](https://cloud.google.com/customers/elasticsearch)**
+* Augmenting Human Expertise with AI: **[IKS Health](https://cloud.google.com/customers/iks-health)**
 * Developer Productivity and Velocity: **Exabeam**
-* Embracing Artificial Intelligence: **Wayfair** and **Buildkite**
+* Embracing Artificial Intelligence: **[Wayfair](https://cloud.google.com/customers/wayfair-developer)** and **Buildkite**
 * Enterprise-Scale Transformation: **Honeywell**
 * Going Beyond the Four Keys: **Moloco**
-* Improving Developer Experience: **Delivery Hero**
-* Leveraging Loosely Coupled Teams: **TBC Bank**
+* Improving Developer Experience: **[Delivery Hero](https://cloud.google.com/customers/delivery-hero-dora)**
+* Leveraging Loosely Coupled Teams: **[TBC Bank](https://cloud.google.com/customers/tbcbank)**
 * Nurturing Team Culture: **Commerzbank AG**
 * Operational Excellence and Automation: **LiveRamp**
 * Scaling AI Transformation: **Vodafone**
-* Scaling Improvement Throughout Your Organization: **Visma**
+* Scaling Improvement Throughout Your Organization: **[Visma](https://cloud.google.com/customers/visma)**
 * Unleashing the Full Power of the Cloud: **Buildertrend**
 
 > "**Cultural transformation** is just as critical as tooling. Success required not only introducing automation and metrics but also aligning teams around shared goals and ownership.” - **TBC Bank**
@@ -45,7 +45,3 @@ This year's 13 winners have showcased achievements in leveraging technology to i
 Watch the awards ceremony to see the winners accept their awards and share their insights.
 
 {{< youtube w8ovjAB3g6c >}}
-
-## A look ahead: The 2025 DORA Report
-
-The annual DORA Report draws upon the insights and achievements of our award winners and thousands of other organizations. This year's report will once again provide a comprehensive exploration of AI, including capabilities such as AI fluency, AI policy and governance, and its impact on team performance. Get a [sneak peek into this year's report](/research/2025/) and [subscribe to the DORA Community](https://dora.community/) to be notified the moment the 2025 DORA Report is released.
