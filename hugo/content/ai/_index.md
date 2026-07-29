@@ -61,6 +61,7 @@ archive_summary: "AI is fundamentally reshaping software delivery and organizati
 * [Report: DORA AI Capabilities Model](/ai/capabilities-model/report/)
 * [Report: State of AI-assisted Software Development](/research/2025/dora-report/)
 * [Report: Impact of Gen AI in Software Development](/ai/gen-ai-report/)
+* [Finding balance in the era of tokenmaxxing](/insights/finding-balance-in-the-era-of-tokenmaxxing/)
 * [Balancing AI tensions: Moving from AI adoption to effective SDLC use](/insights/balancing-ai-tensions/)
 * [Managing AI dependency: How students are establishing guardrails with AI](/insights/managing-ai-dependency/)
 * [AI as a tutor](/insights/ai-as-a-tutor/)
