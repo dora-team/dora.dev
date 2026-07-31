@@ -122,6 +122,6 @@ test.describe('${TITLE} page', () => {
 EOF
 fi
 
-echo "✅ Success!"
+echo "✅ Success!!!"
 echo "Content: hugo/content/$CONTENT_ARG"
 echo "Test:    $TEST_FILE"
