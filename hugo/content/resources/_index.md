@@ -106,6 +106,30 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
         </p>
         </content>
     </item>
+    <item>
+        <h3>DORA Core Model — Summary</h3>
+        <content>
+        <a href="/research/core/assets/dora-core-v2.1.0-summary.pdf" target="_blank" rel="noopener"><img src="/research/core/assets/dora-core-v2.1.0-summary.png" alt="DORA Core Model summary diagram" style="max-width:120px;"></a>
+        <p>
+            A summary of the capabilities, metrics, and outcomes in the DORA Core Model.
+            <br>
+            <a href="/research/core/assets/dora-core-v2.1.0-summary.png" target="_blank" rel="noopener" aria-label="Download DORA Core Model summary as PNG">PNG</a> |
+            <a href="/research/core/assets/dora-core-v2.1.0-summary.pdf" target="_blank" rel="noopener" aria-label="Download DORA Core Model summary as PDF">PDF</a>
+        </p>
+        </content>
+    </item>
+    <item>
+        <h3>DORA Core Model — Detail</h3>
+        <content>
+        <a href="/research/core/assets/dora-core-v2.1.0-detail.pdf" target="_blank" rel="noopener"><img src="/research/core/assets/dora-core-v2.1.0-detail.png" alt="DORA Core Model detailed diagram" style="max-width:120px;"></a>
+        <p>
+            A detailed view of the capabilities, metrics, outcomes, and relationships in the DORA Core Model.
+            <br>
+            <a href="/research/core/assets/dora-core-v2.1.0-detail.png" target="_blank" rel="noopener" aria-label="Download DORA Core Model detail as PNG">PNG</a> |
+            <a href="/research/core/assets/dora-core-v2.1.0-detail.pdf" target="_blank" rel="noopener" aria-label="Download DORA Core Model detail as PDF">PDF</a>
+        </p>
+        </content>
+    </item>
 </grid>
 
 -----
