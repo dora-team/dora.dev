@@ -155,7 +155,7 @@ following conditions are true:
     can be completed in the space of hours, not days.
 
 For practical advice on splitting code changes into small, self-contained units,
-see Google's [Small CLs](https://google.github.io/eng-practices/review/developer/small-cls.html)
+see Google's [Small CLs (changelists)](https://google.github.io/eng-practices/review/developer/small-cls.html)
 guide. Smaller changes are easier to review, merge, and roll back.
 
 To become an expert in small batch development, strive to meet each of these conditions in
