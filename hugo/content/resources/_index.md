@@ -17,7 +17,7 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
     </a>
     <aside>
     <h4 class="source-available-project"><a href="https://devlake.apache.org/" target="_blank">Apache DevLake&#8482;</a> <a class="google-material-icons" href="https://devlake.apache.org/" target="_blank" aria-label="Apache DevLake&#8482;'s website">open_in_new</a></h4>
-    <p align="justify">Apache DevLake™ (Incubating) ingests, analyzes, and visualizes the fragmented data from DevOps tools to distill insights for engineering excellence. Debug engineering processes and discover opportunities with DORA, Community Growth, Engineering Throughput and more DevLake dashboards. <a class="google-material-icons source-available-repo" href="https://github.com/apache/incubator-devlake" target="_blank" aria-label="Apache DevLake&#8482;'s source code">github</a></p>
+    <p align="justify">Apache DevLake™ ingests, analyzes, and visualizes the fragmented data from DevOps tools to distill insights for engineering excellence. Debug engineering processes and discover opportunities with DORA, Community Growth, Engineering Throughput and more DevLake dashboards. <a class="google-material-icons source-available-repo" href="https://github.com/apache/devlake" target="_blank" aria-label="Apache DevLake&#8482;'s source code">github</a></p>
     </aside>
     </article>
 </section>
@@ -115,7 +115,7 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
     <item>
         <h3>conversations.dora.dev</h3>
         <content>
-        <a href="https://conversations.dora.dev/" target="_blank"><img src="img/conversations_thumb.png" style="max-width:120px;"></a>
+        <a href="https://conversations.dora.dev/\" target="_blank"><img src="img/conversations_thumb.png" style="max-width:120px;"></a>
         <p>
             Want better team performance and well-being? Start a conversation to understand where you are today, and discover opportunities for improvement. Use these questions to kick off a discussion and see where it takes you.
             <br>
