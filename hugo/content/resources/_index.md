@@ -17,7 +17,7 @@ Each of these tools will help your team collect and visualize <a href="/guides/d
     </a>
     <aside>
     <h4 class="source-available-project"><a href="https://devlake.apache.org/" target="_blank">Apache DevLake&#8482;</a> <a class="google-material-icons" href="https://devlake.apache.org/" target="_blank" aria-label="Apache DevLake&#8482;'s website">open_in_new</a></h4>
-    <p align="justify">Apache DevLake™ (Incubating) ingests, analyzes, and visualizes the fragmented data from DevOps tools to distill insights for engineering excellence. Debug engineering processes and discover opportunities with DORA, Community Growth, Engineering Throughput and more DevLake dashboards. <a class="google-material-icons source-available-repo" href="https://github.com/apache/incubator-devlake" target="_blank" aria-label="Apache DevLake&#8482;'s source code">github</a></p>
+    <p align="justify">Apache DevLake™ ingests, analyzes, and visualizes the fragmented data from DevOps tools to distill insights for engineering excellence. Debug engineering processes and discover opportunities with DORA, Community Growth, Engineering Throughput and more DevLake dashboards. <a class="google-material-icons source-available-repo" href="https://github.com/apache/devlake" target="_blank" aria-label="Apache DevLake&#8482;'s source code">github</a></p>
     </aside>
     </article>
 </section>
