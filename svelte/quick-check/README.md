@@ -15,25 +15,26 @@ The Quick Check allows users to measure their software delivery performance acro
 ## Architecture & Integration
 
 -   **Framework**: Svelte 5 (utilizing runes like `$state`, `$derived`, and `$effect`).
--   **Integration**: The application is embedded into the Hugo site via `/hugo/content/experimental/quick-check/_index.md`.
--   **Assets**: When built, the application generates `quickcheck.js` and `quickcheck.css` which are copied to the Hugo content directory.
+-   **Integration**: The application is embedded into the Hugo site at [`/quickcheck/`](https://dora.dev/quickcheck/) via `/hugo/content/quickcheck/_index.md`, and in kiosk mode via `/hugo/content/quickcheck/kiosk/_index.md`.
+-   **Assets**: When built, the application generates `quickcheck.js` and `quickcheck.css`, which are copied to `/hugo/content/quickcheck/`. These files are git-ignored; they are produced at build time (locally and in CI).
 
 ## Development
 
 ### Prerequisites
-*   Node.js and npm
+*   Node.js 22.x and npm (see the [developer onboarding guide](../../docs/developer-onboarding-guide.md))
 
 ### Local Development
-1.  Navigate to this folder: `cd svelte/quick-check`
-2.  Install dependencies: `npm install`
-3.  Run the dev server: `npm run dev`
+This app is part of the npm workspace in `/svelte` ([ADR 011](../../docs/adrs/011-use-npm-workspaces-for-svelte-apps.md)), so dependencies are installed at the workspace root:
+1.  Navigate to the workspace root: `cd svelte`
+2.  Install dependencies: `npm ci`
+3.  Run the dev server: `npm run dev --workspace=quick-check`
 
 ### Building for Hugo
-To build the SPA and copy it to the experimental Hugo content directory, run the following from the project root:
+To build the SPA and copy it into the Hugo content directory, run the following from the project root (after installing dependencies):
 ```bash
-bash svelte/quick-check/build-quick-check.sh
+./svelte/quick-check/build-quick-check.sh
 ```
-This script compiles the assets and places them in `hugo/content/experimental/quick-check/`.
+This script compiles the assets and places them in `hugo/content/quickcheck/`. To build all Svelte apps at once (including the dependency install), run `./svelte/build.sh`.
 
 ---
 
@@ -91,8 +92,8 @@ const performanceScore = DataService.calculatePerformanceScore(4, 'categorical')
 ## Testing
 
 ### Unit Tests
-Run unit tests for the `DataService` and recoding logic:
-`npm test`
+Run unit tests for the `DataService` and recoding logic (from `/svelte`):
+`npm test --workspace=quick-check`
 
 ### Playwright Tests
 End-to-end tests are located in the root `test/playwright` directory.
