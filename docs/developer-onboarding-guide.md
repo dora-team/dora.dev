@@ -16,7 +16,6 @@ dora.dev is DORA's public-facing knowledge site. It shares research findings, ca
 | Hosting and redirects | [Firebase Hosting](https://firebase.google.com/docs/hosting) | `firebase.json`, `.firebaserc` |
 | CI/CD | GitHub Actions | `.github/workflows/` |
 | Tests | [Playwright](https://playwright.dev) end-to-end tests, Mocha redirect tests, Vitest unit tests | `test/`, `svelte/*/` |
-| Planning | [Conductor](https://github.com/google/conductor) spec-driven development tracks | `conductor/` |
 
 ### How the pieces fit together
 
@@ -36,7 +35,6 @@ Each Svelte app compiles to a JavaScript and CSS bundle. A build script copies t
 | [Hugo **extended**](https://gohugo.io/installation/) | **0.163.2** (the version CI uses). The theme's minimum is 0.147.9+extended. | Yes | The standard (non-extended) edition can't compile the site's SCSS. |
 | [Node.js](https://nodejs.org/) and npm | **22.x** | Yes, for the Svelte tools and tests | CI pins Node 22 because Node 24 caused build issues ([#1431](https://github.com/dora-team/dora.dev/pull/1431)). |
 | [Firebase CLI](https://firebase.google.com/docs/cli) | latest | Optional | Only needed to test Firebase-provided features (for example, redirects) locally. |
-| [Conductor extension](https://marketplace.visualstudio.com/items?itemName=Googlecloud.conductor) | latest | Recommended | Streamlines the spec-driven workflow. |
 
 ### Installing on macOS (Homebrew)
 
@@ -140,14 +138,11 @@ The search tests (`tests/search/`) query the live search service at `search.dora
 
 ## 6. Workflow
 
-This project follows the **Conductor** spec-driven development method. Major features and audits are tracked as "tracks" in `conductor/` (see [conductor/workflow.md](../conductor/workflow.md)).
-
-1. Pick or create a Conductor track for your task.
-2. Create a branch (Git) or a new change (`jj new`).
-3. Make your changes and preview them locally (see section 3).
-4. Open a pull request against `main`.
-5. CI builds the site and deploys two Firebase preview channels: one with drafts and one without. A PR comment links to both. CI then runs the Playwright and redirect tests against the drafts-on preview.
-6. After review and merge, `deploy.yml` publishes to production. It also runs daily at 07:00 UTC to pick up scheduled content.
+1. Create a branch (Git) or a new change (`jj new`).
+2. Make your changes and preview them locally (see section 3).
+3. Open a pull request against `main`.
+4. CI builds the site and deploys two Firebase preview channels: one with drafts and one without. A PR comment links to both. CI then runs the Playwright and redirect tests against the drafts-on preview.
+5. After review and merge, `deploy.yml` publishes to production. It also runs daily at 07:00 UTC to pick up scheduled content.
 
 ### Content changes
 
