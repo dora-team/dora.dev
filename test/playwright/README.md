@@ -11,4 +11,5 @@ This folder contains tests for use with [Playwright](https://playwright.dev).
         * Example: `PLAYWRIGHT_BASE_URL=https://dora.dev npx playwright test`
 
 ### In CI:
-The Cloud Build pipeline `/ci/preview-content.cloudbuild.yaml` includes a step that runs playwright tests.
+The GitHub Actions pipeline `/.github/workflows/preview.yml` includes a step that runs playwright tests.
+
