@@ -157,7 +157,7 @@
     <FullScreenButton />
 {/if}
 
-{#snippet groupHeader(metric: string)}
+{#snippet groupHeader(metric: keyof Metrics)}
     {#if metric === 'leadtime'}
         <h3 class="group-header">Software delivery throughput</h3>
     {:else if metric === 'changefailure'}
@@ -165,7 +165,7 @@
     {/if}
 {/snippet}
 
-{#snippet metricQuestion(metric: string, idx: number)}
+{#snippet metricQuestion(metric: keyof Metrics, idx: number)}
     <MetricsQuestion
         bind:metrics
         metric_name={metric}
