@@ -216,3 +216,5 @@
 /quickcheck-2024/?leadtime=3&deployfreq=2&changefailure=25&failurerecovery=2&v=2024&industry=all&ci=22233&arch=333444&culture=555554&step=priorities,/quickcheck/?leadtime=3&deployfreq=2&changefailure=25&failurerecovery=2&v=2024&industry=all&ci=22233&arch=333444&culture=555554&step=priorities,301
 /capabilities/cloud-infrastructure,/capabilities/flexible-infrastructure/,301
 /capabilities/cloud-infrastructure/,/capabilities/flexible-infrastructure/,301
+/experimental/quick-check,/quickcheck/,301
+/experimental/quick-check/,/quickcheck/,301
