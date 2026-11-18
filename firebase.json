@@ -125,6 +125,11 @@
           "type": 301
         },
         {
+          "source": "/experimental/quick-check",
+          "destination": "/quickcheck/",
+          "type": 301
+        },
+        {
           "source": "/performance.html**",
           "destination": "/quickcheck/",
           "type": 301
